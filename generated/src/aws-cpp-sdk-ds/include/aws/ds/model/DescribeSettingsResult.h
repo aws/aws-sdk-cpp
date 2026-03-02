@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -105,6 +106,8 @@ class DescribeSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_directoryId;
 
@@ -113,6 +116,7 @@ class DescribeSettingsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_directoryIdHasBeenSet = false;
   bool m_settingEntriesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

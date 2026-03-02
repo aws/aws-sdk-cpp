@@ -7,6 +7,7 @@
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/b2bi/model/S3Location.h>
 #include <aws/b2bi/model/TransformerJobStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -102,6 +103,8 @@ class GetTransformerJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TransformerJobStatus m_status{TransformerJobStatus::NOT_SET};
 
@@ -110,6 +113,7 @@ class GetTransformerJobResult {
   Aws::String m_message;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_outputFilesHasBeenSet = false;
   bool m_messageHasBeenSet = false;

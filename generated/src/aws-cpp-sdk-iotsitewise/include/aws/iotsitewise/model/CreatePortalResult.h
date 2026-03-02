@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/PortalStatus.h>
@@ -135,6 +136,8 @@ class CreatePortalResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_portalId;
 
@@ -147,6 +150,7 @@ class CreatePortalResult {
   Aws::String m_ssoApplicationId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_portalIdHasBeenSet = false;
   bool m_portalArnHasBeenSet = false;
   bool m_portalStartUrlHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
 #include <aws/socialmessaging/model/WhatsAppSignupCallbackResult.h>
@@ -74,12 +75,15 @@ class AssociateWhatsAppBusinessAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   WhatsAppSignupCallbackResult m_signupCallbackResult;
 
   int m_statusCode{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_signupCallbackResultHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

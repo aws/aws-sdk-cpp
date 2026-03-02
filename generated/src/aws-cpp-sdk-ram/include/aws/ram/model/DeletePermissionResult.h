@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/ram/model/PermissionStatus.h>
@@ -93,6 +94,8 @@ class DeletePermissionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_returnValue{false};
 
@@ -101,6 +104,7 @@ class DeletePermissionResult {
   PermissionStatus m_permissionStatus{PermissionStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_returnValueHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_permissionStatusHasBeenSet = false;

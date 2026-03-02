@@ -87,7 +87,7 @@ class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJ
    * SCEP clients include the challenge password as part of their certificate request
    * to Connector for SCEP. To retrieve the connector Amazon Resource Names (ARNs)
    * for the connectors in your account, call <a
-   * href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_ListConnectors.html">ListConnectors</a>.</p>
+   * href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_ListConnectors.html">ListConnectors</a>.</p>
    * <p>To create additional challenge passwords for the connector, call
    * <code>CreateChallenge</code> again. We recommend frequently rotating your
    * challenge passwords.</p><p><h3>See Also:</h3>   <a
@@ -147,7 +147,7 @@ class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJ
 
   /**
    * <p>Deletes the specified <a
-   * href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.</p><p><h3>See
+   * href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/DeleteChallenge">AWS
    * API Reference</a></p>
@@ -174,7 +174,7 @@ class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJ
 
   /**
    * <p>Deletes the specified <a
-   * href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>.
+   * href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>.
    * This operation also deletes any challenges associated with the
    * connector.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/DeleteConnector">AWS
@@ -202,7 +202,7 @@ class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJ
 
   /**
    * <p>Retrieves the metadata for the specified <a
-   * href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.</p><p><h3>See
+   * href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/GetChallengeMetadata">AWS
    * API Reference</a></p>
@@ -230,7 +230,7 @@ class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJ
 
   /**
    * <p>Retrieves the challenge password for the specified <a
-   * href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.</p><p><h3>See
+   * href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/GetChallengePassword">AWS
    * API Reference</a></p>
@@ -258,7 +258,7 @@ class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJ
 
   /**
    * <p>Retrieves details about the specified <a
-   * href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>.
+   * href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>.
    * Calling this action returns important details about the connector, such as the
    * public SCEP URL where your clients can request certificates.</p><p><h3>See
    * Also:</h3>   <a

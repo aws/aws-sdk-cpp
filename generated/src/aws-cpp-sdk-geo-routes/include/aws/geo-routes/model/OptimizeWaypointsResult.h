@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
@@ -181,6 +182,8 @@ class OptimizeWaypointsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<WaypointOptimizationConnection> m_connections;
 
@@ -197,6 +200,7 @@ class OptimizeWaypointsResult {
   WaypointOptimizationTimeBreakdown m_timeBreakdown;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectionsHasBeenSet = false;
   bool m_distanceHasBeenSet = false;
   bool m_durationHasBeenSet = false;

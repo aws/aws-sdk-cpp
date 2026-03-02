@@ -325,7 +325,7 @@ class Deployment {
 
   ///@{
   /**
-   *  <p>The <code>rolloutState</code> of a service is only returned for
+   * <p> <p>The <code>rolloutState</code> of a service is only returned for
    * services that use the rolling update (<code>ECS</code>) deployment type that
    * aren't behind a Classic Load Balancer.</p>  <p>The rollout state of the
    * deployment. When a service deployment is started, it begins in an
@@ -334,7 +334,7 @@ class Deployment {
    * to reach a steady state and circuit breaker is turned on, the deployment
    * transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code>
    * state doesn't launch any new tasks. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeploymentCircuitBreaker.html">DeploymentCircuitBreaker</a>.</p>
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeploymentCircuitBreaker.html">DeploymentCircuitBreaker</a>.</p></p>
    */
   inline DeploymentRolloutState GetRolloutState() const { return m_rolloutState; }
   inline bool RolloutStateHasBeenSet() const { return m_rolloutStateHasBeenSet; }

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateDeploymentResult::CreateDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateDeploymentResult& CreateDeploymentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
@@ -36,12 +37,12 @@ CreateDeploymentResult& CreateDeploymentResult::operator=(const Aws::AmazonWebSe
   if (jsonValue.ValueExists("apiSummary")) {
     Aws::Map<Aws::String, JsonView> apiSummaryJsonMap = jsonValue.GetObject("apiSummary").GetAllObjects();
     for (auto& apiSummaryItem : apiSummaryJsonMap) {
-      Aws::Map<Aws::String, JsonView> mapOfMethodSnapshotJsonMap = apiSummaryItem.second.GetAllObjects();
-      Aws::Map<Aws::String, MethodSnapshot> mapOfMethodSnapshotMap;
-      for (auto& mapOfMethodSnapshotItem : mapOfMethodSnapshotJsonMap) {
-        mapOfMethodSnapshotMap[mapOfMethodSnapshotItem.first] = mapOfMethodSnapshotItem.second.AsObject();
+      Aws::Map<Aws::String, JsonView> mapOfMethodSnapshot2JsonMap = apiSummaryItem.second.GetAllObjects();
+      Aws::Map<Aws::String, MethodSnapshot> mapOfMethodSnapshot2Map;
+      for (auto& mapOfMethodSnapshot2Item : mapOfMethodSnapshot2JsonMap) {
+        mapOfMethodSnapshot2Map[mapOfMethodSnapshot2Item.first] = mapOfMethodSnapshot2Item.second.AsObject();
       }
-      m_apiSummary[apiSummaryItem.first] = std::move(mapOfMethodSnapshotMap);
+      m_apiSummary[apiSummaryItem.first] = std::move(mapOfMethodSnapshot2Map);
     }
     m_apiSummaryHasBeenSet = true;
   }

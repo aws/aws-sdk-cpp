@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 
@@ -142,6 +143,8 @@ class CreateDynamicThingGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_thingGroupName;
 
@@ -156,6 +159,7 @@ class CreateDynamicThingGroupResult {
   Aws::String m_queryVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_thingGroupNameHasBeenSet = false;
   bool m_thingGroupArnHasBeenSet = false;
   bool m_thingGroupIdHasBeenSet = false;

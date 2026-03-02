@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -131,6 +132,8 @@ class DescribeProductResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ProductViewSummary m_productViewSummary;
 
@@ -141,6 +144,7 @@ class DescribeProductResult {
   Aws::Vector<LaunchPath> m_launchPaths;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_productViewSummaryHasBeenSet = false;
   bool m_provisioningArtifactsHasBeenSet = false;
   bool m_budgetsHasBeenSet = false;

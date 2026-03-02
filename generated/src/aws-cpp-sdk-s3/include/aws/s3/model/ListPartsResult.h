@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -345,6 +346,8 @@ class ListPartsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_abortDate{};
 
@@ -379,6 +382,7 @@ class ListPartsResult {
   ChecksumType m_checksumType{ChecksumType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_abortDateHasBeenSet = false;
   bool m_abortRuleIdHasBeenSet = false;
   bool m_bucketHasBeenSet = false;

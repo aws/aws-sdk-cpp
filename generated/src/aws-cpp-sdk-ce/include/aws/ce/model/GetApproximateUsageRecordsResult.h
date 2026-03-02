@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/DateInterval.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -96,6 +97,8 @@ class GetApproximateUsageRecordsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<Aws::String, long long> m_services;
 
@@ -104,6 +107,7 @@ class GetApproximateUsageRecordsResult {
   DateInterval m_lookbackPeriod;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_servicesHasBeenSet = false;
   bool m_totalRecordsHasBeenSet = false;
   bool m_lookbackPeriodHasBeenSet = false;

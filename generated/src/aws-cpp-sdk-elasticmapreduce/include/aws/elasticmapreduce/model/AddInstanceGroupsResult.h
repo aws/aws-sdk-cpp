@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
@@ -103,6 +104,8 @@ class AddInstanceGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_jobFlowId;
 
@@ -111,6 +114,7 @@ class AddInstanceGroupsResult {
   Aws::String m_clusterArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobFlowIdHasBeenSet = false;
   bool m_instanceGroupIdsHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;

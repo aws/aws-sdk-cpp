@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/ivs-realtime/model/ListCompositionsPaginationTraits.h>
 #include <aws/ivs-realtime/model/ListEncoderConfigurationsPaginationTraits.h>
@@ -33,6 +34,7 @@ class IvsrealtimePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCompositionsRequest,
                                     Pagination::ListCompositionsPaginationTraits<DerivedClient>>
   ListCompositionsPaginator(const Model::ListCompositionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCompositionsRequest,
                                              Pagination::ListCompositionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -44,6 +46,7 @@ class IvsrealtimePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEncoderConfigurationsRequest,
                                     Pagination::ListEncoderConfigurationsPaginationTraits<DerivedClient>>
   ListEncoderConfigurationsPaginator(const Model::ListEncoderConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEncoderConfigurationsRequest,
                                              Pagination::ListEncoderConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -55,6 +58,7 @@ class IvsrealtimePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestConfigurationsRequest,
                                     Pagination::ListIngestConfigurationsPaginationTraits<DerivedClient>>
   ListIngestConfigurationsPaginator(const Model::ListIngestConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestConfigurationsRequest,
                                              Pagination::ListIngestConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -66,6 +70,7 @@ class IvsrealtimePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListParticipantEventsRequest,
                                     Pagination::ListParticipantEventsPaginationTraits<DerivedClient>>
   ListParticipantEventsPaginator(const Model::ListParticipantEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListParticipantEventsRequest,
                                              Pagination::ListParticipantEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -77,6 +82,7 @@ class IvsrealtimePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListParticipantReplicasRequest,
                                     Pagination::ListParticipantReplicasPaginationTraits<DerivedClient>>
   ListParticipantReplicasPaginator(const Model::ListParticipantReplicasRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListParticipantReplicasRequest,
                                              Pagination::ListParticipantReplicasPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -88,6 +94,7 @@ class IvsrealtimePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListParticipantsRequest,
                                     Pagination::ListParticipantsPaginationTraits<DerivedClient>>
   ListParticipantsPaginator(const Model::ListParticipantsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListParticipantsRequest,
                                              Pagination::ListParticipantsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -98,6 +105,7 @@ class IvsrealtimePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublicKeysRequest, Pagination::ListPublicKeysPaginationTraits<DerivedClient>>
   ListPublicKeysPaginator(const Model::ListPublicKeysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublicKeysRequest,
                                              Pagination::ListPublicKeysPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -108,6 +116,7 @@ class IvsrealtimePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStagesRequest, Pagination::ListStagesPaginationTraits<DerivedClient>>
   ListStagesPaginator(const Model::ListStagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStagesRequest,
                                              Pagination::ListStagesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -119,6 +128,7 @@ class IvsrealtimePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStageSessionsRequest,
                                     Pagination::ListStageSessionsPaginationTraits<DerivedClient>>
   ListStageSessionsPaginator(const Model::ListStageSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStageSessionsRequest,
                                              Pagination::ListStageSessionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -130,6 +140,7 @@ class IvsrealtimePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStorageConfigurationsRequest,
                                     Pagination::ListStorageConfigurationsPaginationTraits<DerivedClient>>
   ListStorageConfigurationsPaginator(const Model::ListStorageConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStorageConfigurationsRequest,
                                              Pagination::ListStorageConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

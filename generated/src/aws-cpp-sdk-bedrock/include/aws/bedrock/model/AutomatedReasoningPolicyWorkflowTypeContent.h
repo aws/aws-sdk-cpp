@@ -7,6 +7,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyBuildWorkflowDocument.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyBuildWorkflowRepairContent.h>
+#include <aws/bedrock/model/AutomatedReasoningPolicyGenerateFidelityReportContent.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -76,12 +77,37 @@ class AutomatedReasoningPolicyWorkflowTypeContent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The content configuration for generating a fidelity report workflow. This can
+   * include source documents to analyze or an existing fidelity report to update
+   * with a new policy definition.</p>
+   */
+  inline const AutomatedReasoningPolicyGenerateFidelityReportContent& GetGenerateFidelityReportContent() const {
+    return m_generateFidelityReportContent;
+  }
+  inline bool GenerateFidelityReportContentHasBeenSet() const { return m_generateFidelityReportContentHasBeenSet; }
+  template <typename GenerateFidelityReportContentT = AutomatedReasoningPolicyGenerateFidelityReportContent>
+  void SetGenerateFidelityReportContent(GenerateFidelityReportContentT&& value) {
+    m_generateFidelityReportContentHasBeenSet = true;
+    m_generateFidelityReportContent = std::forward<GenerateFidelityReportContentT>(value);
+  }
+  template <typename GenerateFidelityReportContentT = AutomatedReasoningPolicyGenerateFidelityReportContent>
+  AutomatedReasoningPolicyWorkflowTypeContent& WithGenerateFidelityReportContent(GenerateFidelityReportContentT&& value) {
+    SetGenerateFidelityReportContent(std::forward<GenerateFidelityReportContentT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<AutomatedReasoningPolicyBuildWorkflowDocument> m_documents;
 
   AutomatedReasoningPolicyBuildWorkflowRepairContent m_policyRepairAssets;
+
+  AutomatedReasoningPolicyGenerateFidelityReportContent m_generateFidelityReportContent;
   bool m_documentsHasBeenSet = false;
   bool m_policyRepairAssetsHasBeenSet = false;
+  bool m_generateFidelityReportContentHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/RestoreJobSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -108,6 +109,8 @@ class ListRestoreJobSummariesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<RestoreJobSummary> m_restoreJobSummaries;
 
@@ -116,6 +119,7 @@ class ListRestoreJobSummariesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_restoreJobSummariesHasBeenSet = false;
   bool m_aggregationPeriodHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

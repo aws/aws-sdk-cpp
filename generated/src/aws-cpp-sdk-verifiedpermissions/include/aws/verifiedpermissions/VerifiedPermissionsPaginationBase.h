@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/verifiedpermissions/model/ListIdentitySourcesPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListPoliciesPaginationTraits.h>
@@ -27,6 +28,7 @@ class VerifiedPermissionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentitySourcesRequest,
                                     Pagination::ListIdentitySourcesPaginationTraits<DerivedClient>>
   ListIdentitySourcesPaginator(const Model::ListIdentitySourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentitySourcesRequest,
                                              Pagination::ListIdentitySourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class VerifiedPermissionsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPoliciesRequest, Pagination::ListPoliciesPaginationTraits<DerivedClient>>
   ListPoliciesPaginator(const Model::ListPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPoliciesRequest,
                                              Pagination::ListPoliciesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -48,6 +51,7 @@ class VerifiedPermissionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyStoresRequest,
                                     Pagination::ListPolicyStoresPaginationTraits<DerivedClient>>
   ListPolicyStoresPaginator(const Model::ListPolicyStoresRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyStoresRequest,
                                              Pagination::ListPolicyStoresPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -59,6 +63,7 @@ class VerifiedPermissionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyTemplatesRequest,
                                     Pagination::ListPolicyTemplatesPaginationTraits<DerivedClient>>
   ListPolicyTemplatesPaginator(const Model::ListPolicyTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyTemplatesRequest,
                                              Pagination::ListPolicyTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

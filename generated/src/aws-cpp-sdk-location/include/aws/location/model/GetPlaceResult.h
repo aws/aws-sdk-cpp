@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/model/Place.h>
@@ -58,10 +59,13 @@ class GetPlaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Place m_place;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_placeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

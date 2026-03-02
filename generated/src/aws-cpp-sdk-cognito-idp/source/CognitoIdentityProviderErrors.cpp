@@ -37,6 +37,7 @@ static const int WEB_AUTHN_CONFIGURATION_MISSING_HASH = HashingUtils::HashString
 static const int EXPIRED_CODE_HASH = HashingUtils::HashString("ExpiredCodeException");
 static const int UNSUPPORTED_IDENTITY_PROVIDER_HASH = HashingUtils::HashString("UnsupportedIdentityProviderException");
 static const int DEVICE_KEY_EXISTS_HASH = HashingUtils::HashString("DeviceKeyExistsException");
+static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int CODE_MISMATCH_HASH = HashingUtils::HashString("CodeMismatchException");
 static const int INVALID_O_AUTH_FLOW_HASH = HashingUtils::HashString("InvalidOAuthFlowException");
@@ -115,6 +116,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DEVICE_KEY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::DEVICE_KEY_EXISTS), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INTERNAL_SERVER_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == FORBIDDEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CODE_MISMATCH_HASH) {

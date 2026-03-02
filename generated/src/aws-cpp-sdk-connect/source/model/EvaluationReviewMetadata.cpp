@@ -22,13 +22,13 @@ EvaluationReviewMetadata& EvaluationReviewMetadata::operator=(JsonView jsonValue
     m_reviewId = jsonValue.GetString("ReviewId");
     m_reviewIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("CreatedTime")) {
-    m_createdTime = jsonValue.GetDouble("CreatedTime");
-    m_createdTimeHasBeenSet = true;
+  if (jsonValue.ValueExists("RequestedTime")) {
+    m_requestedTime = jsonValue.GetDouble("RequestedTime");
+    m_requestedTimeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("CreatedBy")) {
-    m_createdBy = jsonValue.GetString("CreatedBy");
-    m_createdByHasBeenSet = true;
+  if (jsonValue.ValueExists("RequestedBy")) {
+    m_requestedBy = jsonValue.GetString("RequestedBy");
+    m_requestedByHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ReviewRequestComments")) {
     Aws::Utils::Array<JsonView> reviewRequestCommentsJsonList = jsonValue.GetArray("ReviewRequestComments");
@@ -48,12 +48,12 @@ JsonValue EvaluationReviewMetadata::Jsonize() const {
     payload.WithString("ReviewId", m_reviewId);
   }
 
-  if (m_createdTimeHasBeenSet) {
-    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  if (m_requestedTimeHasBeenSet) {
+    payload.WithDouble("RequestedTime", m_requestedTime.SecondsWithMSPrecision());
   }
 
-  if (m_createdByHasBeenSet) {
-    payload.WithString("CreatedBy", m_createdBy);
+  if (m_requestedByHasBeenSet) {
+    payload.WithString("RequestedBy", m_requestedBy);
   }
 
   if (m_reviewRequestCommentsHasBeenSet) {

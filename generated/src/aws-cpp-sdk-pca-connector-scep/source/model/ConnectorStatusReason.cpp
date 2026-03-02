@@ -19,6 +19,8 @@ static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAIL
 static const int PRIVATECA_ACCESS_DENIED_HASH = HashingUtils::HashString("PRIVATECA_ACCESS_DENIED");
 static const int PRIVATECA_INVALID_STATE_HASH = HashingUtils::HashString("PRIVATECA_INVALID_STATE");
 static const int PRIVATECA_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("PRIVATECA_RESOURCE_NOT_FOUND");
+static const int VPC_ENDPOINT_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("VPC_ENDPOINT_RESOURCE_NOT_FOUND");
+static const int VPC_ENDPOINT_DNS_ENTRIES_NOT_FOUND_HASH = HashingUtils::HashString("VPC_ENDPOINT_DNS_ENTRIES_NOT_FOUND");
 
 ConnectorStatusReason GetConnectorStatusReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +32,10 @@ ConnectorStatusReason GetConnectorStatusReasonForName(const Aws::String& name) {
     return ConnectorStatusReason::PRIVATECA_INVALID_STATE;
   } else if (hashCode == PRIVATECA_RESOURCE_NOT_FOUND_HASH) {
     return ConnectorStatusReason::PRIVATECA_RESOURCE_NOT_FOUND;
+  } else if (hashCode == VPC_ENDPOINT_RESOURCE_NOT_FOUND_HASH) {
+    return ConnectorStatusReason::VPC_ENDPOINT_RESOURCE_NOT_FOUND;
+  } else if (hashCode == VPC_ENDPOINT_DNS_ENTRIES_NOT_FOUND_HASH) {
+    return ConnectorStatusReason::VPC_ENDPOINT_DNS_ENTRIES_NOT_FOUND;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +58,10 @@ Aws::String GetNameForConnectorStatusReason(ConnectorStatusReason enumValue) {
       return "PRIVATECA_INVALID_STATE";
     case ConnectorStatusReason::PRIVATECA_RESOURCE_NOT_FOUND:
       return "PRIVATECA_RESOURCE_NOT_FOUND";
+    case ConnectorStatusReason::VPC_ENDPOINT_RESOURCE_NOT_FOUND:
+      return "VPC_ENDPOINT_RESOURCE_NOT_FOUND";
+    case ConnectorStatusReason::VPC_ENDPOINT_DNS_ENTRIES_NOT_FOUND:
+      return "VPC_ENDPOINT_DNS_ENTRIES_NOT_FOUND";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

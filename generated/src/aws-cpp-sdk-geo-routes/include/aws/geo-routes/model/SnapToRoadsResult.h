@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
@@ -141,6 +142,8 @@ class SnapToRoadsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<RoadSnapNotice> m_notices;
 
@@ -153,6 +156,7 @@ class SnapToRoadsResult {
   Aws::Vector<RoadSnapSnappedTracePoint> m_snappedTracePoints;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_noticesHasBeenSet = false;
   bool m_pricingBucketHasBeenSet = false;
   bool m_snappedGeometryHasBeenSet = false;

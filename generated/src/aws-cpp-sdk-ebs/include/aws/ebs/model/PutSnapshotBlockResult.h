@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ebs/EBS_EXPORTS.h>
 #include <aws/ebs/model/ChecksumAlgorithm.h>
@@ -73,12 +74,15 @@ class PutSnapshotBlockResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_checksum;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_checksumHasBeenSet = false;
   bool m_checksumAlgorithmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

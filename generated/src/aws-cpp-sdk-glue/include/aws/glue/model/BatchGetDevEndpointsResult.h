@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/Glue_EXPORTS.h>
@@ -88,12 +89,15 @@ class BatchGetDevEndpointsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<DevEndpoint> m_devEndpoints;
 
   Aws::Vector<Aws::String> m_devEndpointsNotFound;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_devEndpointsHasBeenSet = false;
   bool m_devEndpointsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

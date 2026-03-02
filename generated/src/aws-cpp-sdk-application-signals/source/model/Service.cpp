@@ -28,12 +28,12 @@ Service& Service::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("AttributeMaps")) {
     Aws::Utils::Array<JsonView> attributeMapsJsonList = jsonValue.GetArray("AttributeMaps");
     for (unsigned attributeMapsIndex = 0; attributeMapsIndex < attributeMapsJsonList.GetLength(); ++attributeMapsIndex) {
-      Aws::Map<Aws::String, JsonView> attributeMapJsonMap = attributeMapsJsonList[attributeMapsIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> attributeMapMap;
-      for (auto& attributeMapItem : attributeMapJsonMap) {
-        attributeMapMap[attributeMapItem.first] = attributeMapItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> attributeMap2JsonMap = attributeMapsJsonList[attributeMapsIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> attributeMap2Map;
+      for (auto& attributeMap2Item : attributeMap2JsonMap) {
+        attributeMap2Map[attributeMap2Item.first] = attributeMap2Item.second.AsString();
       }
-      m_attributeMaps.push_back(std::move(attributeMapMap));
+      m_attributeMaps.push_back(std::move(attributeMap2Map));
     }
     m_attributeMapsHasBeenSet = true;
   }
@@ -55,12 +55,12 @@ Service& Service::operator=(JsonView jsonValue) {
     Aws::Utils::Array<JsonView> logGroupReferencesJsonList = jsonValue.GetArray("LogGroupReferences");
     for (unsigned logGroupReferencesIndex = 0; logGroupReferencesIndex < logGroupReferencesJsonList.GetLength();
          ++logGroupReferencesIndex) {
-      Aws::Map<Aws::String, JsonView> attributesJsonMap = logGroupReferencesJsonList[logGroupReferencesIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> attributesMap;
-      for (auto& attributesItem : attributesJsonMap) {
-        attributesMap[attributesItem.first] = attributesItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> attributes2JsonMap = logGroupReferencesJsonList[logGroupReferencesIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> attributes2Map;
+      for (auto& attributes2Item : attributes2JsonMap) {
+        attributes2Map[attributes2Item.first] = attributes2Item.second.AsString();
       }
-      m_logGroupReferences.push_back(std::move(attributesMap));
+      m_logGroupReferences.push_back(std::move(attributes2Map));
     }
     m_logGroupReferencesHasBeenSet = true;
   }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/iottwinmaker/model/PricingPlan.h>
@@ -75,12 +76,15 @@ class GetPricingPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   PricingPlan m_currentPricingPlan;
 
   PricingPlan m_pendingPricingPlan;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_currentPricingPlanHasBeenSet = false;
   bool m_pendingPricingPlanHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

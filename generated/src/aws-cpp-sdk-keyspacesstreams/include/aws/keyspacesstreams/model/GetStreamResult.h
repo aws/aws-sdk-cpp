@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -89,7 +90,7 @@ class GetStreamResult {
   ///@{
   /**
    * <p> The format of the data records in this stream. Currently, this can be one of
-   * the following options:</p> <ul> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both
+   * the following options: </p> <ul> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both
    * versions of the row, before and after the change. This is the default.</p> </li>
    * <li> <p> <code>NEW_IMAGE</code> - the version of the row after the change.</p>
    * </li> <li> <p> <code>OLD_IMAGE</code> - the version of the row before the
@@ -220,6 +221,8 @@ class GetStreamResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_streamArn;
 
@@ -240,6 +243,7 @@ class GetStreamResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_streamArnHasBeenSet = false;
   bool m_streamLabelHasBeenSet = false;
   bool m_streamStatusHasBeenSet = false;

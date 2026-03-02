@@ -9,6 +9,7 @@
 #include <aws/bedrock/model/AuthorizationStatus.h>
 #include <aws/bedrock/model/EntitlementAvailability.h>
 #include <aws/bedrock/model/RegionAvailability.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -123,6 +124,8 @@ class GetFoundationModelAvailabilityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_modelId;
 
@@ -135,6 +138,7 @@ class GetFoundationModelAvailabilityResult {
   RegionAvailability m_regionAvailability{RegionAvailability::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelIdHasBeenSet = false;
   bool m_agreementAvailabilityHasBeenSet = false;
   bool m_authorizationStatusHasBeenSet = false;

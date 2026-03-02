@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/personalize/model/FeatureTransformation.h>
@@ -59,10 +60,13 @@ class DescribeFeatureTransformationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   FeatureTransformation m_featureTransformation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_featureTransformationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

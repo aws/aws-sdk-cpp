@@ -19,9 +19,9 @@ Aws::String ListOrganizationRecommendationAccountsRequest::SerializePayload() co
 
 void ListOrganizationRecommendationAccountsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_affectedAccountIdHasBeenSet) {
-    ss << m_affectedAccountId;
-    uri.AddQueryStringParameter("affectedAccountId", ss.str());
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 
@@ -31,9 +31,9 @@ void ListOrganizationRecommendationAccountsRequest::AddQueryStringParameters(URI
     ss.str("");
   }
 
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
+  if (m_affectedAccountIdHasBeenSet) {
+    ss << m_affectedAccountId;
+    uri.AddQueryStringParameter("affectedAccountId", ss.str());
     ss.str("");
   }
 }

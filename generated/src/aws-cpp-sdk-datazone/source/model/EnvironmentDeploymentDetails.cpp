@@ -26,14 +26,16 @@ EnvironmentDeploymentDetails& EnvironmentDeploymentDetails::operator=(JsonView j
   if (jsonValue.ValueExists("environmentFailureReasons")) {
     Aws::Map<Aws::String, JsonView> environmentFailureReasonsJsonMap = jsonValue.GetObject("environmentFailureReasons").GetAllObjects();
     for (auto& environmentFailureReasonsItem : environmentFailureReasonsJsonMap) {
-      Aws::Utils::Array<JsonView> environmentFailureReasonsListJsonList = environmentFailureReasonsItem.second.AsArray();
-      Aws::Vector<EnvironmentError> environmentFailureReasonsListList;
-      environmentFailureReasonsListList.reserve((size_t)environmentFailureReasonsListJsonList.GetLength());
-      for (unsigned environmentFailureReasonsListIndex = 0;
-           environmentFailureReasonsListIndex < environmentFailureReasonsListJsonList.GetLength(); ++environmentFailureReasonsListIndex) {
-        environmentFailureReasonsListList.push_back(environmentFailureReasonsListJsonList[environmentFailureReasonsListIndex].AsObject());
+      Aws::Utils::Array<JsonView> environmentFailureReasonsList2JsonList = environmentFailureReasonsItem.second.AsArray();
+      Aws::Vector<EnvironmentError> environmentFailureReasonsList2List;
+      environmentFailureReasonsList2List.reserve((size_t)environmentFailureReasonsList2JsonList.GetLength());
+      for (unsigned environmentFailureReasonsList2Index = 0;
+           environmentFailureReasonsList2Index < environmentFailureReasonsList2JsonList.GetLength();
+           ++environmentFailureReasonsList2Index) {
+        environmentFailureReasonsList2List.push_back(
+            environmentFailureReasonsList2JsonList[environmentFailureReasonsList2Index].AsObject());
       }
-      m_environmentFailureReasons[environmentFailureReasonsItem.first] = std::move(environmentFailureReasonsListList);
+      m_environmentFailureReasons[environmentFailureReasonsItem.first] = std::move(environmentFailureReasonsList2List);
     }
     m_environmentFailureReasonsHasBeenSet = true;
   }

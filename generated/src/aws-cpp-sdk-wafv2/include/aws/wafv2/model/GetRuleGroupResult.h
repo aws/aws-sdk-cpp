@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/RuleGroup.h>
@@ -82,12 +83,15 @@ class GetRuleGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RuleGroup m_ruleGroup;
 
   Aws::String m_lockToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ruleGroupHasBeenSet = false;
   bool m_lockTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

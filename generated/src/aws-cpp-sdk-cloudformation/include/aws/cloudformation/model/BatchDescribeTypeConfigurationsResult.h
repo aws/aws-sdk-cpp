@@ -9,6 +9,7 @@
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/TypeConfigurationDetails.h>
 #include <aws/cloudformation/model/TypeConfigurationIdentifier.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -119,6 +120,8 @@ class BatchDescribeTypeConfigurationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<BatchDescribeTypeConfigurationsError> m_errors;
 
@@ -127,6 +130,7 @@ class BatchDescribeTypeConfigurationsResult {
   Aws::Vector<TypeConfigurationDetails> m_typeConfigurations;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_errorsHasBeenSet = false;
   bool m_unprocessedTypeConfigurationsHasBeenSet = false;
   bool m_typeConfigurationsHasBeenSet = false;

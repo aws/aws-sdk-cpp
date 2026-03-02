@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amplify/Amplify_EXPORTS.h>
 #include <aws/amplify/model/JobSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -64,10 +65,13 @@ class StopJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   JobSummary m_jobSummary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

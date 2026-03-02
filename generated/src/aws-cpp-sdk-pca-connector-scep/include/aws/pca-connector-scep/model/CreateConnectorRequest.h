@@ -87,8 +87,28 @@ class CreateConnectorRequest : public PcaConnectorScepRequest {
 
   ///@{
   /**
+   * <p>If you don't supply a value, by default Connector for SCEP creates a
+   * connector accessible over the public internet. If you provide a VPC endpoint ID,
+   * creates a connector accessible only through that specific VPC endpoint.</p>
+   */
+  inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
+  inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
+  template <typename VpcEndpointIdT = Aws::String>
+  void SetVpcEndpointId(VpcEndpointIdT&& value) {
+    m_vpcEndpointIdHasBeenSet = true;
+    m_vpcEndpointId = std::forward<VpcEndpointIdT>(value);
+  }
+  template <typename VpcEndpointIdT = Aws::String>
+  CreateConnectorRequest& WithVpcEndpointId(VpcEndpointIdT&& value) {
+    SetVpcEndpointId(std::forward<VpcEndpointIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Custom string that can be used to distinguish between calls to the <a
-   * href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_CreateChallenge.html">CreateChallenge</a>
+   * href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_CreateChallenge.html">CreateChallenge</a>
    * action. Client tokens for <code>CreateChallenge</code> time out after five
    * minutes. Therefore, if you call <code>CreateChallenge</code> multiple times with
    * the same client token within five minutes, Connector for SCEP recognizes that
@@ -138,11 +158,14 @@ class CreateConnectorRequest : public PcaConnectorScepRequest {
 
   MobileDeviceManagement m_mobileDeviceManagement;
 
+  Aws::String m_vpcEndpointId;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_certificateAuthorityArnHasBeenSet = false;
   bool m_mobileDeviceManagementHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };

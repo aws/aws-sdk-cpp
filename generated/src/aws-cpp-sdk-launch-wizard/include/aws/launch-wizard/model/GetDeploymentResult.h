@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 #include <aws/launch-wizard/model/DeploymentData.h>
@@ -58,10 +59,13 @@ class GetDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DeploymentData m_deployment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deploymentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

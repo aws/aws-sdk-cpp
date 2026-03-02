@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepository_EXPORTS.h>
@@ -270,6 +271,8 @@ in which it is being retrieved.</p>
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_applicationId;
 
@@ -290,6 +293,7 @@ in which it is being retrieved.</p>
   Aws::String m_templateUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_parameterDefinitionsHasBeenSet = false;

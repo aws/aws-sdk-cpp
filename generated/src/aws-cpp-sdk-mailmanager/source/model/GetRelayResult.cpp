@@ -20,6 +20,7 @@ using namespace Aws;
 GetRelayResult::GetRelayResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetRelayResult& GetRelayResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("RelayId")) {
     m_relayId = jsonValue.GetString("RelayId");

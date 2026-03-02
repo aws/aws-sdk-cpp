@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/importexport/ImportExport_EXPORTS.h>
 #include <aws/importexport/model/ResponseMetadata.h>
 
@@ -58,10 +59,13 @@ class CancelJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_success{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

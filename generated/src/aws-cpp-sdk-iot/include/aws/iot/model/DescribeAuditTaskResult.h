@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -152,6 +153,8 @@ class DescribeAuditTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AuditTaskStatus m_taskStatus{AuditTaskStatus::NOT_SET};
 
@@ -166,6 +169,7 @@ class DescribeAuditTaskResult {
   Aws::Map<Aws::String, AuditCheckDetails> m_auditDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskStatusHasBeenSet = false;
   bool m_taskTypeHasBeenSet = false;
   bool m_taskStartTimeHasBeenSet = false;

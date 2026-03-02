@@ -52,6 +52,7 @@
 #include <aws/trustedadvisor/model/RecommendationSummary.h>
 #include <aws/trustedadvisor/model/RecommendationType.h>
 #include <aws/trustedadvisor/model/ResourceStatus.h>
+#include <aws/trustedadvisor/model/StatusReason.h>
 #include <aws/trustedadvisor/model/UpdateOrganizationRecommendationLifecycleRequest.h>
 #include <aws/trustedadvisor/model/UpdateRecommendationLifecycleRequest.h>
 #include <aws/trustedadvisor/model/UpdateRecommendationLifecycleStage.h>

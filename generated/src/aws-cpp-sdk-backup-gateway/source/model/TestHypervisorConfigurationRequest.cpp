@@ -23,12 +23,12 @@ Aws::String TestHypervisorConfigurationRequest::SerializePayload() const {
     payload.WithString("Host", m_host);
   }
 
-  if (m_passwordHasBeenSet) {
-    payload.WithString("Password", m_password);
-  }
-
   if (m_usernameHasBeenSet) {
     payload.WithString("Username", m_username);
+  }
+
+  if (m_passwordHasBeenSet) {
+    payload.WithString("Password", m_password);
   }
 
   return payload.View().WriteReadable();

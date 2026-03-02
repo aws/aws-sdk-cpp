@@ -7,6 +7,7 @@
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/billingconductor/model/BillingGroupStatus.h>
 #include <aws/billingconductor/model/UpdateBillingGroupAccountGrouping.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -210,6 +211,8 @@ class UpdateBillingGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -232,6 +235,7 @@ class UpdateBillingGroupResult {
   UpdateBillingGroupAccountGrouping m_accountGrouping;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

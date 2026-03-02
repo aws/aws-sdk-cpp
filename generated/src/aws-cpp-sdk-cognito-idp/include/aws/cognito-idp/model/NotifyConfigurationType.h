@@ -56,7 +56,9 @@ class NotifyConfigurationType {
 
   ///@{
   /**
-   * <p>The reply-to email address of an email template.</p>
+   * <p>The reply-to email address of an email template. Can be an email address in
+   * the format <code>admin@example.com</code> or <code>Administrator
+   * &lt;admin@example.com&gt;</code>.</p>
    */
   inline const Aws::String& GetReplyTo() const { return m_replyTo; }
   inline bool ReplyToHasBeenSet() const { return m_replyToHasBeenSet; }

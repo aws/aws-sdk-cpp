@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
@@ -109,6 +110,8 @@ class CreateIdentitySourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_createdDate{};
 
@@ -119,6 +122,7 @@ class CreateIdentitySourceResult {
   Aws::String m_policyStoreId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createdDateHasBeenSet = false;
   bool m_identitySourceIdHasBeenSet = false;
   bool m_lastUpdatedDateHasBeenSet = false;

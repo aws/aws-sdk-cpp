@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/partnercentral-channel/model/ListChannelHandshakesPaginationTraits.h>
 #include <aws/partnercentral-channel/model/ListProgramManagementAccountsPaginationTraits.h>
@@ -26,6 +27,7 @@ class PartnerCentralChannelPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelHandshakesRequest,
                                     Pagination::ListChannelHandshakesPaginationTraits<DerivedClient>>
   ListChannelHandshakesPaginator(const Model::ListChannelHandshakesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelHandshakesRequest,
                                              Pagination::ListChannelHandshakesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class PartnerCentralChannelPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProgramManagementAccountsRequest,
                                     Pagination::ListProgramManagementAccountsPaginationTraits<DerivedClient>>
   ListProgramManagementAccountsPaginator(const Model::ListProgramManagementAccountsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProgramManagementAccountsRequest,
                                              Pagination::ListProgramManagementAccountsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +51,7 @@ class PartnerCentralChannelPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRelationshipsRequest,
                                     Pagination::ListRelationshipsPaginationTraits<DerivedClient>>
   ListRelationshipsPaginator(const Model::ListRelationshipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRelationshipsRequest,
                                              Pagination::ListRelationshipsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

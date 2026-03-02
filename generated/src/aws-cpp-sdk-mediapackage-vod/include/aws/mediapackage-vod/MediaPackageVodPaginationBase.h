@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/mediapackage-vod/model/ListAssetsPaginationTraits.h>
 #include <aws/mediapackage-vod/model/ListPackagingConfigurationsPaginationTraits.h>
@@ -25,6 +26,7 @@ class MediaPackageVodPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetsRequest, Pagination::ListAssetsPaginationTraits<DerivedClient>>
   ListAssetsPaginator(const Model::ListAssetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssetsRequest,
                                              Pagination::ListAssetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -36,6 +38,7 @@ class MediaPackageVodPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPackagingConfigurationsRequest,
                                     Pagination::ListPackagingConfigurationsPaginationTraits<DerivedClient>>
   ListPackagingConfigurationsPaginator(const Model::ListPackagingConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPackagingConfigurationsRequest,
                                              Pagination::ListPackagingConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -47,6 +50,7 @@ class MediaPackageVodPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPackagingGroupsRequest,
                                     Pagination::ListPackagingGroupsPaginationTraits<DerivedClient>>
   ListPackagingGroupsPaginator(const Model::ListPackagingGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPackagingGroupsRequest,
                                              Pagination::ListPackagingGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

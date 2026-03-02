@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
@@ -84,12 +85,15 @@ class GetMobileDeviceAccessEffectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MobileDeviceAccessRuleEffect m_effect{MobileDeviceAccessRuleEffect::NOT_SET};
 
   Aws::Vector<MobileDeviceAccessMatchedRule> m_matchedRules;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_effectHasBeenSet = false;
   bool m_matchedRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
@@ -125,6 +126,8 @@ class DeauthorizeConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_connectionArn;
 
@@ -137,6 +140,7 @@ class DeauthorizeConnectionResult {
   Aws::Utils::DateTime m_lastAuthorizedTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectionArnHasBeenSet = false;
   bool m_connectionStateHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

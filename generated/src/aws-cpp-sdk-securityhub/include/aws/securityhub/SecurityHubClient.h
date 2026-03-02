@@ -15,61 +15,62 @@
 namespace Aws {
 namespace SecurityHub {
 /**
- * <p>Security Hub provides you with a comprehensive view of your security state in
- * Amazon Web Services and helps you assess your Amazon Web Services environment
- * against security industry standards and best practices.</p> <p>Security Hub
- * collects security data across Amazon Web Services accounts, Amazon Web Services
- * services, and supported third-party products and helps you analyze your security
- * trends and identify the highest priority security issues.</p> <p>To help you
- * manage the security state of your organization, Security Hub supports multiple
- * security standards. These include the Amazon Web Services Foundational Security
- * Best Practices (FSBP) standard developed by Amazon Web Services, and external
- * compliance frameworks such as the Center for Internet Security (CIS), the
- * Payment Card Industry Data Security Standard (PCI DSS), and the National
- * Institute of Standards and Technology (NIST). Each standard includes several
- * security controls, each of which represents a security best practice. Security
- * Hub runs checks against security controls and generates control findings to help
- * you assess your compliance against security best practices.</p> <p>In addition
- * to generating control findings, Security Hub also receives findings from other
- * Amazon Web Services services, such as Amazon GuardDuty and Amazon Inspector, and
- * supported third-party products. This gives you a single pane of glass into a
- * variety of security-related issues. You can also send Security Hub findings to
- * other Amazon Web Services services and supported third-party products.</p>
- * <p>Security Hub offers automation features that help you triage and remediate
- * security issues. For example, you can use automation rules to automatically
- * update critical findings when a security check fails. You can also leverage the
- * integration with Amazon EventBridge to trigger automatic responses to specific
- * findings.</p> <p>This guide, the <i>Security Hub API Reference</i>, provides
- * information about the Security Hub API. This includes supported resources, HTTP
- * methods, parameters, and schemas. If you're new to Security Hub, you might find
- * it helpful to also review the <a
+ * <p>Security Hub CSPM provides you with a comprehensive view of your security
+ * state in Amazon Web Services and helps you assess your Amazon Web Services
+ * environment against security industry standards and best practices.</p>
+ * <p>Security Hub CSPM collects security data across Amazon Web Services accounts,
+ * Amazon Web Services services, and supported third-party products and helps you
+ * analyze your security trends and identify the highest priority security
+ * issues.</p> <p>To help you manage the security state of your organization,
+ * Security Hub CSPM supports multiple security standards. These include the Amazon
+ * Web Services Foundational Security Best Practices (FSBP) standard developed by
+ * Amazon Web Services, and external compliance frameworks such as the Center for
+ * Internet Security (CIS), the Payment Card Industry Data Security Standard (PCI
+ * DSS), and the National Institute of Standards and Technology (NIST). Each
+ * standard includes several security controls, each of which represents a security
+ * best practice. Security Hub CSPM runs checks against security controls and
+ * generates control findings to help you assess your compliance against security
+ * best practices.</p> <p>In addition to generating control findings, Security Hub
+ * CSPM also receives findings from other Amazon Web Services services, such as
+ * Amazon GuardDuty and Amazon Inspector, and supported third-party products. This
+ * gives you a single pane of glass into a variety of security-related issues. You
+ * can also send Security Hub CSPM findings to other Amazon Web Services services
+ * and supported third-party products.</p> <p>Security Hub CSPM offers automation
+ * features that help you triage and remediate security issues. For example, you
+ * can use automation rules to automatically update critical findings when a
+ * security check fails. You can also leverage the integration with Amazon
+ * EventBridge to trigger automatic responses to specific findings.</p> <p>This
+ * guide, the <i>Security Hub CSPM API Reference</i>, provides information about
+ * the Security Hub CSPM API. This includes supported resources, HTTP methods,
+ * parameters, and schemas. If you're new to Security Hub CSPM, you might find it
+ * helpful to also review the <a
  * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">
- * <i>Security Hub User Guide</i> </a>. The user guide explains key concepts and
- * provides procedures that demonstrate how to use Security Hub features. It also
- * provides information about topics such as integrating Security Hub with other
- * Amazon Web Services services.</p> <p>In addition to interacting with Security
- * Hub by making calls to the Security Hub API, you can use a current version of an
- * Amazon Web Services command line tool or SDK. Amazon Web Services provides tools
- * and SDKs that consist of libraries and sample code for various languages and
- * platforms, such as PowerShell, Java, Go, Python, C++, and .NET. These tools and
- * SDKs provide convenient, programmatic access to Security Hub and other Amazon
- * Web Services services . They also handle tasks such as signing requests,
- * managing errors, and retrying requests automatically. For information about
- * installing and using the Amazon Web Services tools and SDKs, see <a
- * href="http://aws.amazon.com/developer/tools/">Tools to Build on Amazon Web
- * Services</a>.</p> <p>With the exception of operations that are related to
- * central configuration, Security Hub API requests are executed only in the Amazon
- * Web Services Region that is currently active or in the specific Amazon Web
- * Services Region that you specify in your request. Any configuration or settings
- * change that results from the operation is applied only to that Region. To make
- * the same change in other Regions, call the same API operation in each Region in
- * which you want to apply the change. When you use central configuration, API
- * requests for enabling Security Hub, standards, and controls are executed in the
- * home Region and all linked Regions. For a list of central configuration
- * operations, see the <a
+ * <i>Security Hub CSPM User Guide</i> </a>. The user guide explains key concepts
+ * and provides procedures that demonstrate how to use Security Hub CSPM features.
+ * It also provides information about topics such as integrating Security Hub CSPM
+ * with other Amazon Web Services services.</p> <p>In addition to interacting with
+ * Security Hub CSPM by making calls to the Security Hub CSPM API, you can use a
+ * current version of an Amazon Web Services command line tool or SDK. Amazon Web
+ * Services provides tools and SDKs that consist of libraries and sample code for
+ * various languages and platforms, such as PowerShell, Java, Go, Python, C++, and
+ * .NET. These tools and SDKs provide convenient, programmatic access to Security
+ * Hub CSPM and other Amazon Web Services services . They also handle tasks such as
+ * signing requests, managing errors, and retrying requests automatically. For
+ * information about installing and using the Amazon Web Services tools and SDKs,
+ * see <a href="http://aws.amazon.com/developer/tools/">Tools to Build on Amazon
+ * Web Services</a>.</p> <p>With the exception of operations that are related to
+ * central configuration, Security Hub CSPM API requests are executed only in the
+ * Amazon Web Services Region that is currently active or in the specific Amazon
+ * Web Services Region that you specify in your request. Any configuration or
+ * settings change that results from the operation is applied only to that Region.
+ * To make the same change in other Regions, call the same API operation in each
+ * Region in which you want to apply the change. When you use central
+ * configuration, API requests for enabling Security Hub CSPM, standards, and
+ * controls are executed in the home Region and all linked Regions. For a list of
+ * central configuration operations, see the <a
  * href="https://docs.aws.amazon.com/securityhub/latest/userguide/central-configuration-intro.html#central-configuration-concepts">Central
- * configuration terms and concepts</a> section of the <i>Security Hub User
- * Guide</i>.</p> <p>The following throttling limits apply to Security Hub API
+ * configuration terms and concepts</a> section of the <i>Security Hub CSPM User
+ * Guide</i>.</p> <p>The following throttling limits apply to Security Hub CSPM API
  * operations.</p> <ul> <li> <p> <code>BatchEnableStandards</code> -
  * <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 1
  * request per second.</p> </li> <li> <p> <code>GetFindings</code> -
@@ -144,14 +145,14 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   virtual ~SecurityHubClient();
 
   /**
-   *  <p>We recommend using Organizations instead of Security Hub invitations
-   * to manage your member accounts. For information, see <a
+   *  <p>We recommend using Organizations instead of Security Hub CSPM
+   * invitations to manage your member accounts. For information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-   * Security Hub administrator and member accounts with Organizations</a> in the
-   * <i>Security Hub User Guide</i>.</p>  <p>Accepts the invitation to be a
-   * member account and be monitored by the Security Hub administrator account that
-   * the invitation was sent from.</p> <p>This operation is only used by member
-   * accounts that are not added through Organizations.</p> <p>When the member
+   * Security Hub CSPM administrator and member accounts with Organizations</a> in
+   * the <i>Security Hub CSPM User Guide</i>.</p>  <p>Accepts the invitation
+   * to be a member account and be monitored by the Security Hub CSPM administrator
+   * account that the invitation was sent from.</p> <p>This operation is only used by
+   * member accounts that are not added through Organizations.</p> <p>When the member
    * account accepts the invitation, permission is granted to the administrator
    * account to view findings generated in the member account.</p><p><h3>See
    * Also:</h3>   <a
@@ -215,7 +216,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * <p>Disables the standards specified by the provided
    * <code>StandardsSubscriptionArns</code>.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-   * Standards</a> section of the <i>Security Hub User Guide</i>.</p><p><h3>See
+   * Standards</a> section of the <i>Security Hub CSPM User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
    * API Reference</a></p>
@@ -246,7 +247,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * obtain the ARN for a standard, use the <code>DescribeStandards</code>
    * operation.</p> <p>For more information, see the <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
-   * Standards</a> section of the <i>Security Hub User Guide</i>.</p><p><h3>See
+   * Standards</a> section of the <i>Security Hub CSPM User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">AWS
    * API Reference</a></p>
@@ -301,9 +302,9 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Returns associations between an Security Hub configuration and a batch of
-   * target accounts, organizational units, or the root. Only the Security Hub
-   * delegated administrator can invoke this operation from the home Region. A
+   * <p> Returns associations between an Security Hub CSPM configuration and a batch
+   * of target accounts, organizational units, or the root. Only the Security Hub
+   * CSPM delegated administrator can invoke this operation from the home Region. A
    * configuration can refer to a configuration policy or to a self-managed
    * configuration. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetConfigurationPolicyAssociations">AWS
@@ -397,25 +398,26 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Imports security findings generated by a finding provider into Security Hub.
-   * This action is requested by the finding provider to import its findings into
-   * Security Hub.</p> <p> <code>BatchImportFindings</code> must be called by one of
-   * the following:</p> <ul> <li> <p>The Amazon Web Services account that is
-   * associated with a finding if you are using the <a
+   * <p>Imports security findings generated by a finding provider into Security Hub
+   * CSPM. This action is requested by the finding provider to import its findings
+   * into Security Hub CSPM.</p> <p> <code>BatchImportFindings</code> must be called
+   * by one of the following:</p> <ul> <li> <p>The Amazon Web Services account that
+   * is associated with a finding if you are using the <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-providers.html#securityhub-custom-providers-bfi-reqs">default
    * product ARN</a> or are a partner sending findings from within a customer's
    * Amazon Web Services account. In these cases, the identifier of the account that
    * you are calling <code>BatchImportFindings</code> from needs to be the same as
    * the <code>AwsAccountId</code> attribute for the finding.</p> </li> <li> <p>An
-   * Amazon Web Services account that Security Hub has allow-listed for an official
-   * partner integration. In this case, you can call <code>BatchImportFindings</code>
-   * from the allow-listed account and send findings from different customer accounts
-   * in the same batch.</p> </li> </ul> <p>The maximum allowed size for a finding is
-   * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
-   * finding is created, <code>BatchImportFindings</code> cannot be used to update
-   * the following finding fields and objects, which Security Hub customers use to
-   * manage their investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p>
-   * </li> <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+   * Amazon Web Services account that Security Hub CSPM has allow-listed for an
+   * official partner integration. In this case, you can call
+   * <code>BatchImportFindings</code> from the allow-listed account and send findings
+   * from different customer accounts in the same batch.</p> </li> </ul> <p>The
+   * maximum allowed size for a finding is 240 Kb. An error is returned for any
+   * finding larger than 240 Kb.</p> <p>After a finding is created,
+   * <code>BatchImportFindings</code> cannot be used to update the following finding
+   * fields and objects, which Security Hub CSPM customers use to manage their
+   * investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p> </li> <li> <p>
+   * <code>UserDefinedFields</code> </p> </li> <li> <p>
    * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
    * </li> </ul> <p>Finding providers also should not use
    * <code>BatchImportFindings</code> to update the following attributes.</p> <ul>
@@ -479,7 +481,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Used by Security Hub customers to update information about their
+   * <p> Used by Security Hub CSPM customers to update information about their
    * investigation into one or more findings. Requested by administrator accounts or
    * member accounts. Administrator accounts can update findings for their account
    * and their member accounts. A member account can update findings only for their
@@ -492,13 +494,13 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
    * </li> </ul> <p> If you use this operation to update a finding, your updates
    * don’t affect the value for the <code>UpdatedAt</code> field of the finding. Also
-   * note that it can take several minutes for Security Hub to process your request
-   * and update each finding specified in the request. </p> <p> You can configure IAM
-   * policies to restrict access to fields and field values. For example, you might
-   * not want member accounts to be able to suppress findings or change the finding
-   * severity. For more information see <a
+   * note that it can take several minutes for Security Hub CSPM to process your
+   * request and update each finding specified in the request. </p> <p> You can
+   * configure IAM policies to restrict access to fields and field values. For
+   * example, you might not want member accounts to be able to suppress findings or
+   * change the finding severity. For more information see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
-   * access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>.
+   * access to BatchUpdateFindings</a> in the <i>Security Hub CSPM User Guide</i>.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">AWS
    * API Reference</a></p>
@@ -593,9 +595,9 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a custom action target in Security Hub.</p> <p>You can use custom
-   * actions on findings and insights in Security Hub to trigger target actions in
-   * Amazon CloudWatch Events.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a custom action target in Security Hub CSPM.</p> <p>You can use
+   * custom actions on findings and insights in Security Hub CSPM to trigger target
+   * actions in Amazon CloudWatch Events.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateActionTarget">AWS
    * API Reference</a></p>
    */
@@ -703,8 +705,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> Creates a configuration policy with the defined configuration. Only the
-   * Security Hub delegated administrator can invoke this operation from the home
-   * Region. </p><p><h3>See Also:</h3>   <a
+   * Security Hub CSPM delegated administrator can invoke this operation from the
+   * home Region. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConfigurationPolicy">AWS
    * API Reference</a></p>
    */
@@ -764,8 +766,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * operation can be invoked from the home Region only.</p> <p>For information about
    * how cross-Region aggregation works, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Understanding
-   * cross-Region aggregation in Security Hub</a> in the <i>Security Hub User
-   * Guide</i>. </p><p><h3>See Also:</h3>   <a
+   * cross-Region aggregation in Security Hub CSPM</a> in the <i>Security Hub CSPM
+   * User Guide</i>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateFindingAggregator">AWS
    * API Reference</a></p>
    */
@@ -792,8 +794,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a custom insight in Security Hub. An insight is a consolidation of
-   * findings that relate to a security issue that requires attention or
+   * <p>Creates a custom insight in Security Hub CSPM. An insight is a consolidation
+   * of findings that relate to a security issue that requires attention or
    * remediation.</p> <p>To group the related findings in the insight, use the
    * <code>GroupByAttribute</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateInsight">AWS
@@ -820,36 +822,37 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a member association in Security Hub between the specified accounts
-   * and the account used to make the request, which is the administrator account. If
-   * you are integrated with Organizations, then the administrator account is
-   * designated by the organization management account.</p> <p>
+   * <p>Creates a member association in Security Hub CSPM between the specified
+   * accounts and the account used to make the request, which is the administrator
+   * account. If you are integrated with Organizations, then the administrator
+   * account is designated by the organization management account.</p> <p>
    * <code>CreateMembers</code> is always used to add accounts that are not
    * organization members.</p> <p>For accounts that are managed using Organizations,
    * <code>CreateMembers</code> is only used in the following cases:</p> <ul> <li>
-   * <p>Security Hub is not configured to automatically add new organization
+   * <p>Security Hub CSPM is not configured to automatically add new organization
    * accounts.</p> </li> <li> <p>The account was disassociated or deleted in Security
-   * Hub.</p> </li> </ul> <p>This action can only be used by an account that has
-   * Security Hub enabled. To enable Security Hub, you can use the
+   * Hub CSPM.</p> </li> </ul> <p>This action can only be used by an account that has
+   * Security Hub CSPM enabled. To enable Security Hub CSPM, you can use the
    * <code>EnableSecurityHub</code> operation.</p> <p>For accounts that are not
    * organization members, you create the account association and then send an
    * invitation to the member account. To send the invitation, you use the
    * <code>InviteMembers</code> operation. If the account owner accepts the
-   * invitation, the account becomes a member account in Security Hub.</p>
+   * invitation, the account becomes a member account in Security Hub CSPM.</p>
    * <p>Accounts that are managed using Organizations don't receive an invitation.
-   * They automatically become a member account in Security Hub.</p> <ul> <li> <p>If
-   * the organization account does not have Security Hub enabled, then Security Hub
-   * and the default standards are automatically enabled. Note that Security Hub
-   * cannot be enabled automatically for the organization management account. The
-   * organization management account must enable Security Hub before the
-   * administrator account enables it as a member account.</p> </li> <li> <p>For
-   * organization accounts that already have Security Hub enabled, Security Hub does
-   * not make any other changes to those accounts. It does not change their enabled
-   * standards or controls.</p> </li> </ul> <p>A permissions policy is added that
-   * permits the administrator account to view the findings generated in the member
-   * account.</p> <p>To remove the association between the administrator and member
-   * accounts, use the <code>DisassociateFromMasterAccount</code> or
-   * <code>DisassociateMembers</code> operation.</p><p><h3>See Also:</h3>   <a
+   * They automatically become a member account in Security Hub CSPM.</p> <ul> <li>
+   * <p>If the organization account does not have Security Hub CSPM enabled, then
+   * Security Hub CSPM and the default standards are automatically enabled. Note that
+   * Security Hub CSPM cannot be enabled automatically for the organization
+   * management account. The organization management account must enable Security Hub
+   * CSPM before the administrator account enables it as a member account.</p> </li>
+   * <li> <p>For organization accounts that already have Security Hub CSPM enabled,
+   * Security Hub CSPM does not make any other changes to those accounts. It does not
+   * change their enabled standards or controls.</p> </li> </ul> <p>A permissions
+   * policy is added that permits the administrator account to view the findings
+   * generated in the member account.</p> <p>To remove the association between the
+   * administrator and member accounts, use the
+   * <code>DisassociateFromMasterAccount</code> or <code>DisassociateMembers</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
    * API Reference</a></p>
    */
@@ -900,16 +903,16 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>We recommend using Organizations instead of Security Hub invitations
-   * to manage your member accounts. For information, see <a
+   *  <p>We recommend using Organizations instead of Security Hub CSPM
+   * invitations to manage your member accounts. For information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-   * Security Hub administrator and member accounts with Organizations</a> in the
-   * <i>Security Hub User Guide</i>.</p>  <p>Declines invitations to become a
-   * Security Hub member account.</p> <p>A prospective member account uses this
-   * operation to decline an invitation to become a member.</p> <p>Only member
-   * accounts that aren't part of an Amazon Web Services organization should use this
-   * operation. Organization accounts don't receive invitations.</p><p><h3>See
-   * Also:</h3>   <a
+   * Security Hub CSPM administrator and member accounts with Organizations</a> in
+   * the <i>Security Hub CSPM User Guide</i>.</p>  <p>Declines invitations to
+   * become a Security Hub CSPM member account.</p> <p>A prospective member account
+   * uses this operation to decline an invitation to become a member.</p> <p>Only
+   * member accounts that aren't part of an Amazon Web Services organization should
+   * use this operation. Organization accounts don't receive
+   * invitations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeclineInvitations">AWS
    * API Reference</a></p>
    */
@@ -935,9 +938,10 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a custom action target from Security Hub.</p> <p>Deleting a custom
-   * action target does not affect any findings or insights that were already sent to
-   * Amazon CloudWatch Events using the custom action.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a custom action target from Security Hub CSPM.</p> <p>Deleting a
+   * custom action target does not affect any findings or insights that were already
+   * sent to Amazon CloudWatch Events using the custom action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteActionTarget">AWS
    * API Reference</a></p>
    */
@@ -1016,7 +1020,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Deletes a configuration policy. Only the Security Hub delegated
+   * <p> Deletes a configuration policy. Only the Security Hub CSPM delegated
    * administrator can invoke this operation from the home Region. For the deletion
    * to succeed, you must first disassociate a configuration policy from target
    * accounts, organizational units, or the root by invoking the
@@ -1135,17 +1139,17 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>We recommend using Organizations instead of Security Hub invitations
-   * to manage your member accounts. For information, see <a
+   *  <p>We recommend using Organizations instead of Security Hub CSPM
+   * invitations to manage your member accounts. For information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-   * Security Hub administrator and member accounts with Organizations</a> in the
-   * <i>Security Hub User Guide</i>.</p>  <p>Deletes invitations to become a
-   * Security Hub member account.</p> <p>A Security Hub administrator account can use
-   * this operation to delete invitations sent to one or more prospective member
-   * accounts.</p> <p>This operation is only used to delete invitations that are sent
-   * to prospective member accounts that aren't part of an Amazon Web Services
-   * organization. Organization accounts don't receive invitations.</p><p><h3>See
-   * Also:</h3>   <a
+   * Security Hub CSPM administrator and member accounts with Organizations</a> in
+   * the <i>Security Hub CSPM User Guide</i>.</p>  <p>Deletes invitations to
+   * become a Security Hub CSPM member account.</p> <p>A Security Hub CSPM
+   * administrator account can use this operation to delete invitations sent to one
+   * or more prospective member accounts.</p> <p>This operation is only used to
+   * delete invitations that are sent to prospective member accounts that aren't part
+   * of an Amazon Web Services organization. Organization accounts don't receive
+   * invitations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations">AWS
    * API Reference</a></p>
    */
@@ -1171,7 +1175,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes the specified member accounts from Security Hub.</p> <p>You can
+   * <p>Deletes the specified member accounts from Security Hub CSPM.</p> <p>You can
    * invoke this API only to delete accounts that became members through invitation.
    * You can't invoke this API to delete accounts that belong to an Organizations
    * organization.</p><p><h3>See Also:</h3>   <a
@@ -1199,7 +1203,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns a list of the custom action targets in Security Hub in your
+   * <p>Returns a list of the custom action targets in Security Hub CSPM in your
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeActionTargets">AWS
    * API Reference</a></p>
@@ -1228,8 +1232,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Returns details about the Hub resource in your account, including the
-   * <code>HubArn</code> and the time when you enabled Security Hub.</p><p><h3>See
-   * Also:</h3>   <a
+   * <code>HubArn</code> and the time when you enabled Security Hub
+   * CSPM.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeHub">AWS
    * API Reference</a></p>
    */
@@ -1256,7 +1260,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Returns information about the way your organization is configured in Security
-   * Hub. Only the Security Hub administrator account can invoke this
+   * Hub CSPM. Only the Security Hub CSPM administrator account can invoke this
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeOrganizationConfiguration">AWS
    * API Reference</a></p>
@@ -1286,10 +1290,10 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns information about product integrations in Security Hub.</p> <p>You
-   * can optionally provide an integration ARN. If you provide an integration ARN,
-   * then the results only include that integration.</p> <p>If you don't provide an
-   * integration ARN, then the results include all of the available product
+   * <p>Returns information about product integrations in Security Hub CSPM.</p>
+   * <p>You can optionally provide an integration ARN. If you provide an integration
+   * ARN, then the results only include that integration.</p> <p>If you don't provide
+   * an integration ARN, then the results include all of the available product
    * integrations. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">AWS
    * API Reference</a></p>
@@ -1372,9 +1376,9 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns a list of the available standards in Security Hub.</p> <p>For each
-   * standard, the results include the standard ARN, the name, and a description.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Returns a list of the available standards in Security Hub CSPM.</p> <p>For
+   * each standard, the results include the standard ARN, the name, and a
+   * description. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandards">AWS
    * API Reference</a></p>
    */
@@ -1433,9 +1437,9 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Disables the integration of the specified product with Security Hub. After
-   * the integration is disabled, findings from that product are no longer sent to
-   * Security Hub.</p><p><h3>See Also:</h3>   <a
+   * <p>Disables the integration of the specified product with Security Hub CSPM.
+   * After the integration is disabled, findings from that product are no longer sent
+   * to Security Hub CSPM.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableImportFindingsForProduct">AWS
    * API Reference</a></p>
    */
@@ -1464,7 +1468,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Disables a Security Hub administrator account. Can only be called by the
+   * <p>Disables a Security Hub CSPM administrator account. Can only be called by the
    * organization management account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableOrganizationAdminAccount">AWS
    * API Reference</a></p>
@@ -1494,16 +1498,16 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Disables Security Hub in your account only in the current Amazon Web Services
-   * Region. To disable Security Hub in all Regions, you must submit one request per
-   * Region where you have enabled Security Hub.</p> <p>You can't disable Security
-   * Hub in an account that is currently the Security Hub administrator.</p> <p>When
-   * you disable Security Hub, your existing findings and insights and any Security
-   * Hub configuration settings are deleted after 90 days and cannot be recovered.
-   * Any standards that were enabled are disabled, and your administrator and member
-   * account associations are removed.</p> <p>If you want to save your existing
-   * findings, you must export them before you disable Security Hub.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Disables Security Hub CSPM in your account only in the current Amazon Web
+   * Services Region. To disable Security Hub CSPM in all Regions, you must submit
+   * one request per Region where you have enabled Security Hub CSPM.</p> <p>You
+   * can't disable Security Hub CSPM in an account that is currently the Security Hub
+   * CSPM administrator.</p> <p>When you disable Security Hub CSPM, your existing
+   * findings and insights and any Security Hub CSPM configuration settings are
+   * deleted after 90 days and cannot be recovered. Any standards that were enabled
+   * are disabled, and your administrator and member account associations are
+   * removed.</p> <p>If you want to save your existing findings, you must export them
+   * before you disable Security Hub CSPM.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">AWS
    * API Reference</a></p>
    */
@@ -1558,10 +1562,11 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Disassociates the current Security Hub member account from the associated
-   * administrator account.</p> <p>This operation is only used by accounts that are
-   * not part of an organization. For organization accounts, only the administrator
-   * account can disassociate a member account.</p><p><h3>See Also:</h3>   <a
+   * <p>Disassociates the current Security Hub CSPM member account from the
+   * associated administrator account.</p> <p>This operation is only used by accounts
+   * that are not part of an organization. For organization accounts, only the
+   * administrator account can disassociate a member account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromAdministratorAccount">AWS
    * API Reference</a></p>
    */
@@ -1619,10 +1624,10 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Enables the integration of a partner product with Security Hub. Integrated
-   * products send findings to Security Hub.</p> <p>When you enable a product
-   * integration, a permissions policy that grants permission for the product to send
-   * findings to Security Hub is applied.</p><p><h3>See Also:</h3>   <a
+   * <p>Enables the integration of a partner product with Security Hub CSPM.
+   * Integrated products send findings to Security Hub CSPM.</p> <p>When you enable a
+   * product integration, a permissions policy that grants permission for the product
+   * to send findings to Security Hub CSPM is applied.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableImportFindingsForProduct">AWS
    * API Reference</a></p>
    */
@@ -1651,9 +1656,9 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Designates the Security Hub administrator account for an organization. Can
-   * only be called by the organization management account.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Designates the Security Hub CSPM administrator account for an organization.
+   * Can only be called by the organization management account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableOrganizationAdminAccount">AWS
    * API Reference</a></p>
    */
@@ -1682,23 +1687,23 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Enables Security Hub for your account in the current Region or the Region you
-   * specify in the request.</p> <p>When you enable Security Hub, you grant to
-   * Security Hub the permissions necessary to gather findings from other services
-   * that are integrated with Security Hub.</p> <p>When you use the
-   * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
-   * automatically enable the following standards:</p> <ul> <li> <p>Center for
+   * <p>Enables Security Hub CSPM for your account in the current Region or the
+   * Region you specify in the request.</p> <p>When you enable Security Hub CSPM, you
+   * grant to Security Hub CSPM the permissions necessary to gather findings from
+   * other services that are integrated with Security Hub CSPM.</p> <p>When you use
+   * the <code>EnableSecurityHub</code> operation to enable Security Hub CSPM, you
+   * also automatically enable the following standards:</p> <ul> <li> <p>Center for
    * Internet Security (CIS) Amazon Web Services Foundations Benchmark v1.2.0</p>
    * </li> <li> <p>Amazon Web Services Foundational Security Best Practices</p> </li>
    * </ul> <p>Other standards are not automatically enabled. </p> <p>To opt out of
    * automatically enabled standards, set <code>EnableDefaultStandards</code> to
-   * <code>false</code>.</p> <p>After you enable Security Hub, to enable a standard,
-   * use the <code>BatchEnableStandards</code> operation. To disable a standard, use
-   * the <code>BatchDisableStandards</code> operation.</p> <p>To learn more, see the
-   * <a
+   * <code>false</code>.</p> <p>After you enable Security Hub CSPM, to enable a
+   * standard, use the <code>BatchEnableStandards</code> operation. To disable a
+   * standard, use the <code>BatchDisableStandards</code> operation.</p> <p>To learn
+   * more, see the <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup
-   * information</a> in the <i>Security Hub User Guide</i>.</p><p><h3>See Also:</h3>
-   * <a
+   * information</a> in the <i>Security Hub CSPM User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">AWS
    * API Reference</a></p>
    */
@@ -1753,7 +1758,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Provides the details for the Security Hub administrator account for the
+   * <p>Provides the details for the Security Hub CSPM administrator account for the
    * current member account.</p> <p>Can be used by both member accounts that are
    * managed using Organizations and accounts that were invited
    * manually.</p><p><h3>See Also:</h3>   <a
@@ -1836,7 +1841,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> Provides information about a configuration policy. Only the Security Hub
-   * delegated administrator can invoke this operation from the home Region.
+   * CSPM delegated administrator can invoke this operation from the home Region.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConfigurationPolicy">AWS
    * API Reference</a></p>
@@ -1866,8 +1871,9 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   /**
    * <p> Returns the association between a configuration and a target account,
    * organizational unit, or the root. The configuration can be a configuration
-   * policy or self-managed behavior. Only the Security Hub delegated administrator
-   * can invoke this operation from the home Region. </p><p><h3>See Also:</h3>   <a
+   * policy or self-managed behavior. Only the Security Hub CSPM delegated
+   * administrator can invoke this operation from the home Region. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConfigurationPolicyAssociation">AWS
    * API Reference</a></p>
    */
@@ -1980,9 +1986,9 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Returns the history of a Security Hub finding. The history includes changes
-   * made to any fields in the Amazon Web Services Security Finding Format (ASFF)
-   * except top-level timestamp fields, such as the <code>CreatedAt</code> and
+   * <p> Returns the history of a Security Hub CSPM finding. The history includes
+   * changes made to any fields in the Amazon Web Services Security Finding Format
+   * (ASFF) except top-level timestamp fields, such as the <code>CreatedAt</code> and
    * <code>UpdatedAt</code> fields. </p> <p>This operation might return fewer results
    * than the maximum number of results (<code>MaxResults</code>) specified in a
    * request, even when more results are available. If this occurs, the response
@@ -2135,7 +2141,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists the results of the Security Hub insight specified by the insight
+   * <p>Lists the results of the Security Hub CSPM insight specified by the insight
    * ARN.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInsightResults">AWS
    * API Reference</a></p>
@@ -2189,13 +2195,14 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>We recommend using Organizations instead of Security Hub invitations
-   * to manage your member accounts. For information, see <a
+   *  <p>We recommend using Organizations instead of Security Hub CSPM
+   * invitations to manage your member accounts. For information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-   * Security Hub administrator and member accounts with Organizations</a> in the
-   * <i>Security Hub User Guide</i>.</p>  <p>Returns the count of all Security
-   * Hub membership invitations that were sent to the calling member account, not
-   * including the currently accepted invitation. </p><p><h3>See Also:</h3>   <a
+   * Security Hub CSPM administrator and member accounts with Organizations</a> in
+   * the <i>Security Hub CSPM User Guide</i>.</p>  <p>Returns the count of all
+   * Security Hub CSPM membership invitations that were sent to the calling member
+   * account, not including the currently accepted invitation. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInvitationsCount">AWS
    * API Reference</a></p>
    */
@@ -2222,12 +2229,12 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns the details for the Security Hub member accounts for the specified
-   * account IDs.</p> <p>An administrator account can be either the delegated
-   * Security Hub administrator account for an organization or an administrator
-   * account that enabled Security Hub manually.</p> <p>The results include both
-   * member accounts that are managed using Organizations and accounts that were
-   * invited manually.</p><p><h3>See Also:</h3>   <a
+   * <p>Returns the details for the Security Hub CSPM member accounts for the
+   * specified account IDs.</p> <p>An administrator account can be either the
+   * delegated Security Hub CSPM administrator account for an organization or an
+   * administrator account that enabled Security Hub CSPM manually.</p> <p>The
+   * results include both member accounts that are managed using Organizations and
+   * accounts that were invited manually.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMembers">AWS
    * API Reference</a></p>
    */
@@ -2365,20 +2372,20 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>We recommend using Organizations instead of Security Hub invitations
-   * to manage your member accounts. For information, see <a
+   *  <p>We recommend using Organizations instead of Security Hub CSPM
+   * invitations to manage your member accounts. For information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-   * Security Hub administrator and member accounts with Organizations</a> in the
-   * <i>Security Hub User Guide</i>.</p>  <p>Invites other Amazon Web Services
-   * accounts to become member accounts for the Security Hub administrator account
-   * that the invitation is sent from.</p> <p>This operation is only used to invite
-   * accounts that don't belong to an Amazon Web Services organization. Organization
-   * accounts don't receive invitations.</p> <p>Before you can use this action to
-   * invite a member, you must first use the <code>CreateMembers</code> action to
-   * create the member account in Security Hub.</p> <p>When the account owner enables
-   * Security Hub and accepts the invitation to become a member account, the
-   * administrator account can view the findings generated in the member
-   * account.</p><p><h3>See Also:</h3>   <a
+   * Security Hub CSPM administrator and member accounts with Organizations</a> in
+   * the <i>Security Hub CSPM User Guide</i>.</p>  <p>Invites other Amazon Web
+   * Services accounts to become member accounts for the Security Hub CSPM
+   * administrator account that the invitation is sent from.</p> <p>This operation is
+   * only used to invite accounts that don't belong to an Amazon Web Services
+   * organization. Organization accounts don't receive invitations.</p> <p>Before you
+   * can use this action to invite a member, you must first use the
+   * <code>CreateMembers</code> action to create the member account in Security Hub
+   * CSPM.</p> <p>When the account owner enables Security Hub CSPM and accepts the
+   * invitation to become a member account, the administrator account can view the
+   * findings generated in the member account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InviteMembers">AWS
    * API Reference</a></p>
    */
@@ -2486,7 +2493,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Lists the configuration policies that the Security Hub delegated
+   * <p> Lists the configuration policies that the Security Hub CSPM delegated
    * administrator has created for your organization. Only the delegated
    * administrator can invoke this operation from the home Region. </p><p><h3>See
    * Also:</h3>   <a
@@ -2519,8 +2526,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> Provides information about the associations for your configuration policies
-   * and self-managed behavior. Only the Security Hub delegated administrator can
-   * invoke this operation from the home Region. </p><p><h3>See Also:</h3>   <a
+   * and self-managed behavior. Only the Security Hub CSPM delegated administrator
+   * can invoke this operation from the home Region. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConfigurationPolicyAssociations">AWS
    * API Reference</a></p>
    */
@@ -2578,7 +2585,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Lists all findings-generating solutions (products) that you are subscribed to
-   * receive findings from in Security Hub.</p><p><h3>See Also:</h3>   <a
+   * receive findings from in Security Hub CSPM.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListEnabledProductsForImport">AWS
    * API Reference</a></p>
    */
@@ -2637,15 +2644,15 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>We recommend using Organizations instead of Security Hub invitations
-   * to manage your member accounts. For information, see <a
+   *  <p>We recommend using Organizations instead of Security Hub CSPM
+   * invitations to manage your member accounts. For information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
-   * Security Hub administrator and member accounts with Organizations</a> in the
-   * <i>Security Hub User Guide</i>.</p>  <p>Lists all Security Hub membership
-   * invitations that were sent to the calling account.</p> <p>Only accounts that are
-   * managed by invitation can use this operation. Accounts that are managed using
-   * the integration with Organizations don't receive invitations.</p><p><h3>See
-   * Also:</h3>   <a
+   * Security Hub CSPM administrator and member accounts with Organizations</a> in
+   * the <i>Security Hub CSPM User Guide</i>.</p>  <p>Lists all Security Hub
+   * CSPM membership invitations that were sent to the calling account.</p> <p>Only
+   * accounts that are managed by invitation can use this operation. Accounts that
+   * are managed using the integration with Organizations don't receive
+   * invitations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">AWS
    * API Reference</a></p>
    */
@@ -2671,7 +2678,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists details about all member accounts for the current Security Hub
+   * <p>Lists details about all member accounts for the current Security Hub CSPM
    * administrator account.</p> <p>The results include both member accounts that
    * belong to an organization and member accounts that were invited
    * manually.</p><p><h3>See Also:</h3>   <a
@@ -2700,7 +2707,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists the Security Hub administrator accounts. Can only be called by the
+   * <p>Lists the Security Hub CSPM administrator accounts. Can only be called by the
    * organization management account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListOrganizationAdminAccounts">AWS
    * API Reference</a></p>
@@ -2849,8 +2856,9 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   /**
    * <p> Associates a target account, organizational unit, or the root with a
    * specified configuration. The target can be associated with a configuration
-   * policy or self-managed behavior. Only the Security Hub delegated administrator
-   * can invoke this operation from the home Region. </p><p><h3>See Also:</h3>   <a
+   * policy or self-managed behavior. Only the Security Hub CSPM delegated
+   * administrator can invoke this operation from the home Region. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartConfigurationPolicyAssociation">AWS
    * API Reference</a></p>
    */
@@ -2884,7 +2892,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * the target inherits the configuration of the closest parent. If there’s no
    * configuration to inherit, the target retains its settings but becomes a
    * self-managed account. A target can be disassociated from a configuration policy
-   * or self-managed behavior. Only the Security Hub delegated administrator can
+   * or self-managed behavior. Only the Security Hub CSPM delegated administrator can
    * invoke this operation from the home Region. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartConfigurationPolicyDisassociation">AWS
    * API Reference</a></p>
@@ -2964,8 +2972,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the name and description of a custom action target in Security
-   * Hub.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the name and description of a custom action target in Security Hub
+   * CSPM.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateActionTarget">AWS
    * API Reference</a></p>
    */
@@ -3045,7 +3053,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> Updates a configuration policy. Only the Security Hub delegated
+   * <p> Updates a configuration policy. Only the Security Hub CSPM delegated
    * administrator can invoke this operation from the home Region. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConfigurationPolicy">AWS
@@ -3137,14 +3145,14 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * <p> <code>UpdateFindings</code> is a deprecated operation. Instead of
    * <code>UpdateFindings</code>, use the <code>BatchUpdateFindings</code>
    * operation.</p> <p>The <code>UpdateFindings</code> operation updates the
-   * <code>Note</code> and <code>RecordState</code> of the Security Hub aggregated
-   * findings that the filter attributes specify. Any member account that can view
-   * the finding can also see the update to the finding.</p> <p>Finding updates made
-   * with <code>UpdateFindings</code> aren't persisted if the same finding is later
-   * updated by the finding provider through the <code>BatchImportFindings</code>
-   * operation. In addition, Security Hub doesn't record updates made with
-   * <code>UpdateFindings</code> in the finding history.</p><p><h3>See Also:</h3>
-   * <a
+   * <code>Note</code> and <code>RecordState</code> of the Security Hub CSPM
+   * aggregated findings that the filter attributes specify. Any member account that
+   * can view the finding can also see the update to the finding.</p> <p>Finding
+   * updates made with <code>UpdateFindings</code> aren't persisted if the same
+   * finding is later updated by the finding provider through the
+   * <code>BatchImportFindings</code> operation. In addition, Security Hub CSPM
+   * doesn't record updates made with <code>UpdateFindings</code> in the finding
+   * history.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindings">AWS
    * API Reference</a></p>
    */
@@ -3169,7 +3177,7 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the Security Hub insight identified by the specified insight
+   * <p>Updates the Security Hub CSPM insight identified by the specified insight
    * ARN.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateInsight">AWS
    * API Reference</a></p>
@@ -3195,8 +3203,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the configuration of your organization in Security Hub. Only the
-   * Security Hub administrator account can invoke this operation.</p><p><h3>See
+   * <p>Updates the configuration of your organization in Security Hub CSPM. Only the
+   * Security Hub CSPM administrator account can invoke this operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateOrganizationConfiguration">AWS
    * API Reference</a></p>
@@ -3252,7 +3260,8 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates configuration options for Security Hub.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates configuration options for Security Hub CSPM.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityHubConfiguration">AWS
    * API Reference</a></p>
    */

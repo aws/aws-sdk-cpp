@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -385,6 +386,8 @@ class DescribeLabelingJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LabelingJobStatus m_labelingJobStatus{LabelingJobStatus::NOT_SET};
 
@@ -423,6 +426,7 @@ class DescribeLabelingJobResult {
   LabelingJobOutput m_labelingJobOutput;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_labelingJobStatusHasBeenSet = false;
   bool m_labelCountersHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;

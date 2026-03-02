@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/chime-sdk-media-pipelines/model/KinesisVideoStreamPoolConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -63,10 +64,13 @@ class CreateMediaPipelineKinesisVideoStreamPoolResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   KinesisVideoStreamPoolConfiguration m_kinesisVideoStreamPoolConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_kinesisVideoStreamPoolConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

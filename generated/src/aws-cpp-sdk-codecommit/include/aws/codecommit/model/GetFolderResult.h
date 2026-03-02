@@ -9,6 +9,7 @@
 #include <aws/codecommit/model/Folder.h>
 #include <aws/codecommit/model/SubModule.h>
 #include <aws/codecommit/model/SymbolicLink.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -191,6 +192,8 @@ class GetFolderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_commitId;
 
@@ -207,6 +210,7 @@ class GetFolderResult {
   Aws::Vector<SubModule> m_subModules;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_commitIdHasBeenSet = false;
   bool m_folderPathHasBeenSet = false;
   bool m_treeIdHasBeenSet = false;

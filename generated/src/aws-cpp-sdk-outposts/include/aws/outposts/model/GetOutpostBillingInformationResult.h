@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
@@ -101,6 +102,8 @@ class GetOutpostBillingInformationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -109,6 +112,7 @@ class GetOutpostBillingInformationResult {
   Aws::String m_contractEndDate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_subscriptionsHasBeenSet = false;
   bool m_contractEndDateHasBeenSet = false;

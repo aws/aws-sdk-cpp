@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/workdocs/model/User.h>
@@ -58,10 +59,13 @@ class UpdateUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   User m_user;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

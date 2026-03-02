@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
@@ -109,6 +110,8 @@ class DescribeResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_policyRevisionId;
 
@@ -119,6 +122,7 @@ class DescribeResourcePolicyResult {
   Aws::Utils::DateTime m_lastModifiedTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyRevisionIdHasBeenSet = false;
   bool m_resourcePolicyHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

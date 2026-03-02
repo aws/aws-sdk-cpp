@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -131,6 +132,8 @@ class ListChangedBlocksResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ChangedBlock> m_changedBlocks;
 
@@ -143,6 +146,7 @@ class ListChangedBlocksResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_changedBlocksHasBeenSet = false;
   bool m_expiryTimeHasBeenSet = false;
   bool m_volumeSizeHasBeenSet = false;

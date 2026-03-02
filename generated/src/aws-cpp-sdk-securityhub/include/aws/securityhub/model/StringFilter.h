@@ -21,8 +21,8 @@ namespace SecurityHub {
 namespace Model {
 
 /**
- * <p>A string filter for filtering Security Hub findings.</p><p><h3>See Also:</h3>
- * <a
+ * <p>A string filter for filtering Security Hub CSPM findings.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StringFilter">AWS
  * API Reference</a></p>
  */
@@ -36,8 +36,8 @@ class StringFilter {
   ///@{
   /**
    * <p>The string filter value. Filter values are case sensitive. For example, the
-   * product name for control-based findings is <code>Security Hub</code>. If you
-   * provide <code>security hub</code> as the filter value, there's no match.</p>
+   * product name for control-based findings is <code>Security Hub CSPM</code>. If
+   * you provide <code>security hub</code> as the filter value, there's no match.</p>
    */
   inline const Aws::String& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
@@ -55,7 +55,7 @@ class StringFilter {
 
   ///@{
   /**
-   * <p>The condition to apply to a string value when filtering Security Hub
+   * <p>The condition to apply to a string value when filtering Security Hub CSPM
    * findings.</p> <p>To search for values that have the filter value, use one of the
    * following comparison operators:</p> <ul> <li> <p>To search for values that
    * include the filter value, use <code>CONTAINS</code>. For example, the filter
@@ -100,24 +100,24 @@ class StringFilter {
    * other <code>CONTAINS</code> filters. <code>NOT_CONTAINS</code> filters can only
    * be used with other <code>NOT_CONTAINS</code> filters. </p> <p>You can combine
    * <code>PREFIX</code> filters with <code>NOT_EQUALS</code> or
-   * <code>PREFIX_NOT_EQUALS</code> filters for the same field. Security Hub first
-   * processes the <code>PREFIX</code> filters, and then the <code>NOT_EQUALS</code>
-   * or <code>PREFIX_NOT_EQUALS</code> filters.</p> <p>For example, for the following
-   * filters, Security Hub first identifies findings that have resource types that
-   * start with either <code>AwsIam</code> or <code>AwsEc2</code>. It then excludes
-   * findings that have a resource type of <code>AwsIamPolicy</code> and findings
-   * that have a resource type of <code>AwsEc2NetworkInterface</code>.</p> <ul> <li>
-   * <p> <code>ResourceType PREFIX AwsIam</code> </p> </li> <li> <p>
-   * <code>ResourceType PREFIX AwsEc2</code> </p> </li> <li> <p> <code>ResourceType
-   * NOT_EQUALS AwsIamPolicy</code> </p> </li> <li> <p> <code>ResourceType NOT_EQUALS
-   * AwsEc2NetworkInterface</code> </p> </li> </ul> <p> <code>CONTAINS</code> and
-   * <code>NOT_CONTAINS</code> operators can be used only with automation rules V1.
-   * <code>CONTAINS_WORD</code> operator is only supported in
-   * <code>GetFindingsV2</code>, <code>GetFindingStatisticsV2</code>,
+   * <code>PREFIX_NOT_EQUALS</code> filters for the same field. Security Hub CSPM
+   * first processes the <code>PREFIX</code> filters, and then the
+   * <code>NOT_EQUALS</code> or <code>PREFIX_NOT_EQUALS</code> filters.</p> <p>For
+   * example, for the following filters, Security Hub CSPM first identifies findings
+   * that have resource types that start with either <code>AwsIam</code> or
+   * <code>AwsEc2</code>. It then excludes findings that have a resource type of
+   * <code>AwsIamPolicy</code> and findings that have a resource type of
+   * <code>AwsEc2NetworkInterface</code>.</p> <ul> <li> <p> <code>ResourceType PREFIX
+   * AwsIam</code> </p> </li> <li> <p> <code>ResourceType PREFIX AwsEc2</code> </p>
+   * </li> <li> <p> <code>ResourceType NOT_EQUALS AwsIamPolicy</code> </p> </li> <li>
+   * <p> <code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code> </p> </li> </ul>
+   * <p> <code>CONTAINS</code> and <code>NOT_CONTAINS</code> operators can be used
+   * only with automation rules V1. <code>CONTAINS_WORD</code> operator is only
+   * supported in <code>GetFindingsV2</code>, <code>GetFindingStatisticsV2</code>,
    * <code>GetResourcesV2</code>, and <code>GetResourceStatisticsV2</code> APIs. For
    * more information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation
-   * rules</a> in the <i>Security Hub User Guide</i>.</p>
+   * rules</a> in the <i>Security Hub CSPM User Guide</i>.</p>
    */
   inline StringFilterComparison GetComparison() const { return m_comparison; }
   inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }

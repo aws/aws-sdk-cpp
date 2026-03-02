@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -76,12 +77,15 @@ class CreateCertificateAuthorityAuditReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_auditReportId;
 
   Aws::String m_s3Key;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_auditReportIdHasBeenSet = false;
   bool m_s3KeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

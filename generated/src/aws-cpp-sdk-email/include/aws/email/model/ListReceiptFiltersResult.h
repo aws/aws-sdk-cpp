@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/model/ReceiptFilter.h>
@@ -72,10 +73,13 @@ class ListReceiptFiltersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ReceiptFilter> m_filters;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_filtersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

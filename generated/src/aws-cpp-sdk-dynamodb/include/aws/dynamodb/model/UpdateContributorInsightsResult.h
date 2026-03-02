@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/ContributorInsightsMode.h>
@@ -108,6 +109,8 @@ class UpdateContributorInsightsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_tableName;
 
@@ -118,6 +121,7 @@ class UpdateContributorInsightsResult {
   ContributorInsightsMode m_contributorInsightsMode{ContributorInsightsMode::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tableNameHasBeenSet = false;
   bool m_indexNameHasBeenSet = false;
   bool m_contributorInsightsStatusHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/LoginProfile.h>
 #include <aws/iam/model/ResponseMetadata.h>
@@ -66,10 +67,13 @@ class GetLoginProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LoginProfile m_loginProfile;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_loginProfileHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

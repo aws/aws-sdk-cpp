@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/UnprocessedDataSourcesResult.h>
@@ -76,12 +77,15 @@ class CreateDetectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_detectorId;
 
   UnprocessedDataSourcesResult m_unprocessedDataSources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_detectorIdHasBeenSet = false;
   bool m_unprocessedDataSourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

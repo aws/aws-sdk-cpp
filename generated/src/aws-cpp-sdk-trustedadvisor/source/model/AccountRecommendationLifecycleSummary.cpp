@@ -26,13 +26,17 @@ AccountRecommendationLifecycleSummary& AccountRecommendationLifecycleSummary::op
     m_accountRecommendationArn = jsonValue.GetString("accountRecommendationArn");
     m_accountRecommendationArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("lastUpdatedAt")) {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("lifecycleStage")) {
     m_lifecycleStage = RecommendationLifecycleStageMapper::GetRecommendationLifecycleStageForName(jsonValue.GetString("lifecycleStage"));
     m_lifecycleStageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedOnBehalfOf")) {
+    m_updatedOnBehalfOf = jsonValue.GetString("updatedOnBehalfOf");
+    m_updatedOnBehalfOfHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("updatedOnBehalfOfJobTitle")) {
+    m_updatedOnBehalfOfJobTitle = jsonValue.GetString("updatedOnBehalfOfJobTitle");
+    m_updatedOnBehalfOfJobTitleHasBeenSet = true;
   }
   if (jsonValue.ValueExists("updateReason")) {
     m_updateReason = jsonValue.GetString("updateReason");
@@ -43,13 +47,9 @@ AccountRecommendationLifecycleSummary& AccountRecommendationLifecycleSummary::op
         jsonValue.GetString("updateReasonCode"));
     m_updateReasonCodeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("updatedOnBehalfOf")) {
-    m_updatedOnBehalfOf = jsonValue.GetString("updatedOnBehalfOf");
-    m_updatedOnBehalfOfHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("updatedOnBehalfOfJobTitle")) {
-    m_updatedOnBehalfOfJobTitle = jsonValue.GetString("updatedOnBehalfOfJobTitle");
-    m_updatedOnBehalfOfJobTitleHasBeenSet = true;
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
   }
   return *this;
 }
@@ -65,12 +65,16 @@ JsonValue AccountRecommendationLifecycleSummary::Jsonize() const {
     payload.WithString("accountRecommendationArn", m_accountRecommendationArn);
   }
 
-  if (m_lastUpdatedAtHasBeenSet) {
-    payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if (m_lifecycleStageHasBeenSet) {
     payload.WithString("lifecycleStage", RecommendationLifecycleStageMapper::GetNameForRecommendationLifecycleStage(m_lifecycleStage));
+  }
+
+  if (m_updatedOnBehalfOfHasBeenSet) {
+    payload.WithString("updatedOnBehalfOf", m_updatedOnBehalfOf);
+  }
+
+  if (m_updatedOnBehalfOfJobTitleHasBeenSet) {
+    payload.WithString("updatedOnBehalfOfJobTitle", m_updatedOnBehalfOfJobTitle);
   }
 
   if (m_updateReasonHasBeenSet) {
@@ -83,12 +87,8 @@ JsonValue AccountRecommendationLifecycleSummary::Jsonize() const {
         UpdateRecommendationLifecycleStageReasonCodeMapper::GetNameForUpdateRecommendationLifecycleStageReasonCode(m_updateReasonCode));
   }
 
-  if (m_updatedOnBehalfOfHasBeenSet) {
-    payload.WithString("updatedOnBehalfOf", m_updatedOnBehalfOf);
-  }
-
-  if (m_updatedOnBehalfOfJobTitleHasBeenSet) {
-    payload.WithString("updatedOnBehalfOfJobTitle", m_updatedOnBehalfOfJobTitle);
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

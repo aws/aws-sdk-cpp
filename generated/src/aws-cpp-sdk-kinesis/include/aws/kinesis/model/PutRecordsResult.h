@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
@@ -109,6 +110,8 @@ class PutRecordsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_failedRecordCount{0};
 
@@ -117,6 +120,7 @@ class PutRecordsResult {
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_failedRecordCountHasBeenSet = false;
   bool m_recordsHasBeenSet = false;
   bool m_encryptionTypeHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 #include <aws/globalaccelerator/model/CustomRoutingAcceleratorAttributes.h>
@@ -60,10 +61,13 @@ class DescribeCustomRoutingAcceleratorAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CustomRoutingAcceleratorAttributes m_acceleratorAttributes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_acceleratorAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

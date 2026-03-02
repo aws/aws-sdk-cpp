@@ -256,6 +256,25 @@ class CapacityBlockExtensionOffering {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of zone where the Capacity Block extension offering is
+   * available.</p>
+   */
+  inline const Aws::String& GetZoneType() const { return m_zoneType; }
+  inline bool ZoneTypeHasBeenSet() const { return m_zoneTypeHasBeenSet; }
+  template <typename ZoneTypeT = Aws::String>
+  void SetZoneType(ZoneTypeT&& value) {
+    m_zoneTypeHasBeenSet = true;
+    m_zoneType = std::forward<ZoneTypeT>(value);
+  }
+  template <typename ZoneTypeT = Aws::String>
+  CapacityBlockExtensionOffering& WithZoneType(ZoneTypeT&& value) {
+    SetZoneType(std::forward<ZoneTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityBlockExtensionOfferingId;
 
@@ -280,6 +299,8 @@ class CapacityBlockExtensionOffering {
   Aws::String m_currencyCode;
 
   CapacityReservationTenancy m_tenancy{CapacityReservationTenancy::NOT_SET};
+
+  Aws::String m_zoneType;
   bool m_capacityBlockExtensionOfferingIdHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;
@@ -292,6 +313,7 @@ class CapacityBlockExtensionOffering {
   bool m_upfrontFeeHasBeenSet = false;
   bool m_currencyCodeHasBeenSet = false;
   bool m_tenancyHasBeenSet = false;
+  bool m_zoneTypeHasBeenSet = false;
 };
 
 }  // namespace Model

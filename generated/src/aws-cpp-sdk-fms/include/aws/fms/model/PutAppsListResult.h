@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/AppsListData.h>
@@ -75,12 +76,15 @@ class PutAppsListResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AppsListData m_appsList;
 
   Aws::String m_appsListArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appsListHasBeenSet = false;
   bool m_appsListArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

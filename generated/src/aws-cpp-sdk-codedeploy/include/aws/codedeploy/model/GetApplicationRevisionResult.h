@@ -7,6 +7,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/GenericRevisionInfo.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -99,6 +100,8 @@ class GetApplicationRevisionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_applicationName;
 
@@ -107,6 +110,7 @@ class GetApplicationRevisionResult {
   GenericRevisionInfo m_revisionInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationNameHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
   bool m_revisionInfoHasBeenSet = false;

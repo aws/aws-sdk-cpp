@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/ControlFindingGenerator.h>
@@ -46,7 +47,7 @@ class DescribeHubResult {
 
   ///@{
   /**
-   * <p>The date and time when Security Hub was enabled in the account.</p>
+   * <p>The date and time when Security Hub CSPM was enabled in the account.</p>
    */
   inline const Aws::String& GetSubscribedAt() const { return m_subscribedAt; }
   template <typename SubscribedAtT = Aws::String>
@@ -70,11 +71,11 @@ class DescribeHubResult {
    * you can interact with the controls in the console and programmatically
    * immediately after release. However, automatically enabled controls have a
    * temporary default status of <code>DISABLED</code>. It can take up to several
-   * days for Security Hub to process the control release and designate the control
-   * as <code>ENABLED</code> in your account. During the processing period, you can
-   * manually enable or disable a control, and Security Hub will maintain that
-   * designation regardless of whether you have <code>AutoEnableControls</code> set
-   * to <code>true</code>.</p>
+   * days for Security Hub CSPM to process the control release and designate the
+   * control as <code>ENABLED</code> in your account. During the processing period,
+   * you can manually enable or disable a control, and Security Hub CSPM will
+   * maintain that designation regardless of whether you have
+   * <code>AutoEnableControls</code> set to <code>true</code>.</p>
    */
   inline bool GetAutoEnableControls() const { return m_autoEnableControls; }
   inline void SetAutoEnableControls(bool value) {
@@ -91,14 +92,14 @@ class DescribeHubResult {
   /**
    * <p>Specifies whether the calling account has consolidated control findings
    * turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>,
-   * Security Hub generates a single finding for a control check even when the check
-   * applies to multiple enabled standards.</p> <p>If the value for this field is set
-   * to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a
-   * control check when the check applies to multiple enabled standards.</p> <p>The
-   * value for this field in a member account matches the value in the administrator
-   * account. For accounts that aren't part of an organization, the default value of
-   * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
-   * after February 23, 2023.</p>
+   * Security Hub CSPM generates a single finding for a control check even when the
+   * check applies to multiple enabled standards.</p> <p>If the value for this field
+   * is set to <code>STANDARD_CONTROL</code>, Security Hub CSPM generates separate
+   * findings for a control check when the check applies to multiple enabled
+   * standards.</p> <p>The value for this field in a member account matches the value
+   * in the administrator account. For accounts that aren't part of an organization,
+   * the default value of this field is <code>SECURITY_CONTROL</code> if you enabled
+   * Security Hub CSPM on or after February 23, 2023.</p>
    */
   inline ControlFindingGenerator GetControlFindingGenerator() const { return m_controlFindingGenerator; }
   inline void SetControlFindingGenerator(ControlFindingGenerator value) {
@@ -125,6 +126,8 @@ class DescribeHubResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_hubArn;
 
@@ -135,6 +138,7 @@ class DescribeHubResult {
   ControlFindingGenerator m_controlFindingGenerator{ControlFindingGenerator::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hubArnHasBeenSet = false;
   bool m_subscribedAtHasBeenSet = false;
   bool m_autoEnableControlsHasBeenSet = false;

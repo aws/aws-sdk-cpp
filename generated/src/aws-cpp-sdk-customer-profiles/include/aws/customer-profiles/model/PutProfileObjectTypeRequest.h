@@ -203,6 +203,24 @@ class PutProfileObjectTypeRequest : public CustomerProfilesRequest {
 
   ///@{
   /**
+   * <p>An integer that determines the priority of this object type when data from
+   * multiple sources is ingested. Lower values take priority. Object types without a
+   * specified source priority default to the lowest priority.</p>
+   */
+  inline int GetSourcePriority() const { return m_sourcePriority; }
+  inline bool SourcePriorityHasBeenSet() const { return m_sourcePriorityHasBeenSet; }
+  inline void SetSourcePriority(int value) {
+    m_sourcePriorityHasBeenSet = true;
+    m_sourcePriority = value;
+  }
+  inline PutProfileObjectTypeRequest& WithSourcePriority(int value) {
+    SetSourcePriority(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of the name and ObjectType field.</p>
    */
   inline const Aws::Map<Aws::String, ObjectTypeField>& GetFields() const { return m_fields; }
@@ -291,6 +309,8 @@ class PutProfileObjectTypeRequest : public CustomerProfilesRequest {
 
   int m_maxProfileObjectCount{0};
 
+  int m_sourcePriority{0};
+
   Aws::Map<Aws::String, ObjectTypeField> m_fields;
 
   Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>> m_keys;
@@ -305,6 +325,7 @@ class PutProfileObjectTypeRequest : public CustomerProfilesRequest {
   bool m_allowProfileCreationHasBeenSet = false;
   bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
   bool m_maxProfileObjectCountHasBeenSet = false;
+  bool m_sourcePriorityHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
   bool m_keysHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

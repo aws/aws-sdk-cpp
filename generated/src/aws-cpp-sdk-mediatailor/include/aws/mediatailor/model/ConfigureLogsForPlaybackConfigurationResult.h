@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
@@ -141,6 +142,8 @@ class ConfigureLogsForPlaybackConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_percentEnabled{0};
 
@@ -153,6 +156,7 @@ class ConfigureLogsForPlaybackConfigurationResult {
   ManifestServiceInteractionLog m_manifestServiceInteractionLog;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_percentEnabledHasBeenSet = false;
   bool m_playbackConfigurationNameHasBeenSet = false;
   bool m_enabledLoggingStrategiesHasBeenSet = false;

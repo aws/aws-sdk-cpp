@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/Sbom.h>
@@ -108,6 +109,8 @@ class AssociateSbomWithPackageVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_packageName;
 
@@ -118,6 +121,7 @@ class AssociateSbomWithPackageVersionResult {
   SbomValidationStatus m_sbomValidationStatus{SbomValidationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_packageNameHasBeenSet = false;
   bool m_versionNameHasBeenSet = false;
   bool m_sbomHasBeenSet = false;

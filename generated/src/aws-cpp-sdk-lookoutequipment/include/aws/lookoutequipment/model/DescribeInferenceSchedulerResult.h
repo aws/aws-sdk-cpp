@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
@@ -298,6 +299,8 @@ class DescribeInferenceSchedulerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_modelArn;
 
@@ -328,6 +331,7 @@ class DescribeInferenceSchedulerResult {
   LatestInferenceResult m_latestInferenceResult{LatestInferenceResult::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelArnHasBeenSet = false;
   bool m_modelNameHasBeenSet = false;
   bool m_inferenceSchedulerNameHasBeenSet = false;

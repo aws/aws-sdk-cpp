@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -128,6 +129,8 @@ class DetectLabelsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Label> m_labels;
 
@@ -138,6 +141,7 @@ class DetectLabelsResult {
   DetectLabelsImageProperties m_imageProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_labelsHasBeenSet = false;
   bool m_orientationCorrectionHasBeenSet = false;
   bool m_labelModelVersionHasBeenSet = false;

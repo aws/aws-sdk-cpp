@@ -8,6 +8,7 @@
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/TemplateParameter.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -158,6 +159,8 @@ class ValidateTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<TemplateParameter> m_parameters;
 
@@ -170,6 +173,7 @@ class ValidateTemplateResult {
   Aws::Vector<Aws::String> m_declaredTransforms;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_parametersHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;

@@ -11,6 +11,7 @@
 #include <aws/cloudformation/model/HookStatus.h>
 #include <aws/cloudformation/model/HookTarget.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -281,6 +282,8 @@ class GetHookResultResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_hookResultId;
 
@@ -309,6 +312,7 @@ class GetHookResultResult {
   Aws::Vector<Annotation> m_annotations;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hookResultIdHasBeenSet = false;
   bool m_invocationPointHasBeenSet = false;
   bool m_failureModeHasBeenSet = false;

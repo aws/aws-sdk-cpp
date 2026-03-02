@@ -8,6 +8,7 @@
 #include <aws/cloudtrail/model/DashboardType.h>
 #include <aws/cloudtrail/model/RefreshSchedule.h>
 #include <aws/cloudtrail/model/Widget.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -183,6 +184,8 @@ class UpdateDashboardResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dashboardArn;
 
@@ -201,6 +204,7 @@ class UpdateDashboardResult {
   Aws::Utils::DateTime m_updatedTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dashboardArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;

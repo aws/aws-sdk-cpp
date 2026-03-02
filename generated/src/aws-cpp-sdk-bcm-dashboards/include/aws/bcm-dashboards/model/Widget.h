@@ -38,6 +38,24 @@ class Widget {
 
   ///@{
   /**
+   * <p>The unique identifier for the widget.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  Widget& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The title of the widget.</p>
    */
   inline const Aws::String& GetTitle() const { return m_title; }
@@ -148,6 +166,8 @@ class Widget {
   }
   ///@}
  private:
+  Aws::String m_id;
+
   Aws::String m_title;
 
   Aws::String m_description;
@@ -159,6 +179,7 @@ class Widget {
   int m_horizontalOffset{0};
 
   Aws::Vector<WidgetConfig> m_configs;
+  bool m_idHasBeenSet = false;
   bool m_titleHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_widthHasBeenSet = false;

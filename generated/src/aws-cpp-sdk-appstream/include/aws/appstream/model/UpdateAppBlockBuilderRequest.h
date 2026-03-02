@@ -240,6 +240,23 @@ class UpdateAppBlockBuilderRequest : public AppStreamRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and
+   * enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+   */
+  inline bool GetDisableIMDSV1() const { return m_disableIMDSV1; }
+  inline bool DisableIMDSV1HasBeenSet() const { return m_disableIMDSV1HasBeenSet; }
+  inline void SetDisableIMDSV1(bool value) {
+    m_disableIMDSV1HasBeenSet = true;
+    m_disableIMDSV1 = value;
+  }
+  inline UpdateAppBlockBuilderRequest& WithDisableIMDSV1(bool value) {
+    SetDisableIMDSV1(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -260,6 +277,8 @@ class UpdateAppBlockBuilderRequest : public AppStreamRequest {
   Aws::Vector<AccessEndpoint> m_accessEndpoints;
 
   Aws::Vector<AppBlockBuilderAttribute> m_attributesToDelete;
+
+  bool m_disableIMDSV1{false};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
@@ -270,6 +289,7 @@ class UpdateAppBlockBuilderRequest : public AppStreamRequest {
   bool m_iamRoleArnHasBeenSet = false;
   bool m_accessEndpointsHasBeenSet = false;
   bool m_attributesToDeleteHasBeenSet = false;
+  bool m_disableIMDSV1HasBeenSet = false;
 };
 
 }  // namespace Model

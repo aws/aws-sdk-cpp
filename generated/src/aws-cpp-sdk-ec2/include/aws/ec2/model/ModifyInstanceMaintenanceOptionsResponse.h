@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/InstanceAutoRecoveryState.h>
@@ -102,6 +103,8 @@ class ModifyInstanceMaintenanceOptionsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_instanceId;
 
@@ -110,6 +113,7 @@ class ModifyInstanceMaintenanceOptionsResponse {
   InstanceRebootMigrationState m_rebootMigration{InstanceRebootMigrationState::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_instanceIdHasBeenSet = false;
   bool m_autoRecoveryHasBeenSet = false;
   bool m_rebootMigrationHasBeenSet = false;

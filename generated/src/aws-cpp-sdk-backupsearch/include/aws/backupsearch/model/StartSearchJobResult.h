@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -96,6 +97,8 @@ class StartSearchJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_searchJobArn;
 
@@ -104,6 +107,7 @@ class StartSearchJobResult {
   Aws::String m_searchJobIdentifier;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_searchJobArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_searchJobIdentifierHasBeenSet = false;

@@ -67,30 +67,30 @@ Policy& Policy::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("IncludeMap")) {
     Aws::Map<Aws::String, JsonView> includeMapJsonMap = jsonValue.GetObject("IncludeMap").GetAllObjects();
     for (auto& includeMapItem : includeMapJsonMap) {
-      Aws::Utils::Array<JsonView> customerPolicyScopeIdListJsonList = includeMapItem.second.AsArray();
-      Aws::Vector<Aws::String> customerPolicyScopeIdListList;
-      customerPolicyScopeIdListList.reserve((size_t)customerPolicyScopeIdListJsonList.GetLength());
-      for (unsigned customerPolicyScopeIdListIndex = 0; customerPolicyScopeIdListIndex < customerPolicyScopeIdListJsonList.GetLength();
-           ++customerPolicyScopeIdListIndex) {
-        customerPolicyScopeIdListList.push_back(customerPolicyScopeIdListJsonList[customerPolicyScopeIdListIndex].AsString());
+      Aws::Utils::Array<JsonView> customerPolicyScopeIdList2JsonList = includeMapItem.second.AsArray();
+      Aws::Vector<Aws::String> customerPolicyScopeIdList2List;
+      customerPolicyScopeIdList2List.reserve((size_t)customerPolicyScopeIdList2JsonList.GetLength());
+      for (unsigned customerPolicyScopeIdList2Index = 0; customerPolicyScopeIdList2Index < customerPolicyScopeIdList2JsonList.GetLength();
+           ++customerPolicyScopeIdList2Index) {
+        customerPolicyScopeIdList2List.push_back(customerPolicyScopeIdList2JsonList[customerPolicyScopeIdList2Index].AsString());
       }
       m_includeMap[CustomerPolicyScopeIdTypeMapper::GetCustomerPolicyScopeIdTypeForName(includeMapItem.first)] =
-          std::move(customerPolicyScopeIdListList);
+          std::move(customerPolicyScopeIdList2List);
     }
     m_includeMapHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ExcludeMap")) {
     Aws::Map<Aws::String, JsonView> excludeMapJsonMap = jsonValue.GetObject("ExcludeMap").GetAllObjects();
     for (auto& excludeMapItem : excludeMapJsonMap) {
-      Aws::Utils::Array<JsonView> customerPolicyScopeIdListJsonList = excludeMapItem.second.AsArray();
-      Aws::Vector<Aws::String> customerPolicyScopeIdListList;
-      customerPolicyScopeIdListList.reserve((size_t)customerPolicyScopeIdListJsonList.GetLength());
-      for (unsigned customerPolicyScopeIdListIndex = 0; customerPolicyScopeIdListIndex < customerPolicyScopeIdListJsonList.GetLength();
-           ++customerPolicyScopeIdListIndex) {
-        customerPolicyScopeIdListList.push_back(customerPolicyScopeIdListJsonList[customerPolicyScopeIdListIndex].AsString());
+      Aws::Utils::Array<JsonView> customerPolicyScopeIdList2JsonList = excludeMapItem.second.AsArray();
+      Aws::Vector<Aws::String> customerPolicyScopeIdList2List;
+      customerPolicyScopeIdList2List.reserve((size_t)customerPolicyScopeIdList2JsonList.GetLength());
+      for (unsigned customerPolicyScopeIdList2Index = 0; customerPolicyScopeIdList2Index < customerPolicyScopeIdList2JsonList.GetLength();
+           ++customerPolicyScopeIdList2Index) {
+        customerPolicyScopeIdList2List.push_back(customerPolicyScopeIdList2JsonList[customerPolicyScopeIdList2Index].AsString());
       }
       m_excludeMap[CustomerPolicyScopeIdTypeMapper::GetCustomerPolicyScopeIdTypeForName(excludeMapItem.first)] =
-          std::move(customerPolicyScopeIdListList);
+          std::move(customerPolicyScopeIdList2List);
     }
     m_excludeMapHasBeenSet = true;
   }

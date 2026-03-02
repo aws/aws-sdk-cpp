@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -134,14 +135,14 @@ class GetConfigurationPolicyResult {
 
   ///@{
   /**
-   * <p> An object that defines how Security Hub is configured. It includes whether
-   * Security Hub is enabled or disabled, a list of enabled security standards, a
-   * list of enabled or disabled security controls, and a list of custom parameter
-   * values for specified controls. If the policy includes a list of security
-   * controls that are enabled, Security Hub disables all other controls (including
-   * newly released controls). If the policy includes a list of security controls
-   * that are disabled, Security Hub enables all other controls (including newly
-   * released controls). </p>
+   * <p> An object that defines how Security Hub CSPM is configured. It includes
+   * whether Security Hub CSPM is enabled or disabled, a list of enabled security
+   * standards, a list of enabled or disabled security controls, and a list of custom
+   * parameter values for specified controls. If the policy includes a list of
+   * security controls that are enabled, Security Hub CSPM disables all other
+   * controls (including newly released controls). If the policy includes a list of
+   * security controls that are disabled, Security Hub CSPM enables all other
+   * controls (including newly released controls). </p>
    */
   inline const Policy& GetConfigurationPolicy() const { return m_configurationPolicy; }
   template <typename ConfigurationPolicyT = Policy>
@@ -170,6 +171,8 @@ class GetConfigurationPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -186,6 +189,7 @@ class GetConfigurationPolicyResult {
   Policy m_configurationPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;

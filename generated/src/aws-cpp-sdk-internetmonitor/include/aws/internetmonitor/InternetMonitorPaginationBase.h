@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/internetmonitor/model/GetQueryResultsPaginationTraits.h>
 #include <aws/internetmonitor/model/ListHealthEventsPaginationTraits.h>
@@ -27,6 +28,7 @@ class InternetMonitorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetQueryResultsRequest,
                                     Pagination::GetQueryResultsPaginationTraits<DerivedClient>>
   GetQueryResultsPaginator(const Model::GetQueryResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetQueryResultsRequest,
                                              Pagination::GetQueryResultsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -38,6 +40,7 @@ class InternetMonitorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHealthEventsRequest,
                                     Pagination::ListHealthEventsPaginationTraits<DerivedClient>>
   ListHealthEventsPaginator(const Model::ListHealthEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHealthEventsRequest,
                                              Pagination::ListHealthEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -49,6 +52,7 @@ class InternetMonitorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInternetEventsRequest,
                                     Pagination::ListInternetEventsPaginationTraits<DerivedClient>>
   ListInternetEventsPaginator(const Model::ListInternetEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInternetEventsRequest,
                                              Pagination::ListInternetEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +63,7 @@ class InternetMonitorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMonitorsRequest, Pagination::ListMonitorsPaginationTraits<DerivedClient>>
   ListMonitorsPaginator(const Model::ListMonitorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMonitorsRequest,
                                              Pagination::ListMonitorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

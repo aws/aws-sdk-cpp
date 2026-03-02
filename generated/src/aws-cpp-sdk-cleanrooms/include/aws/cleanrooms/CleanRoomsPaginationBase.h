@@ -25,6 +25,7 @@
 #include <aws/cleanrooms/model/ListProtectedJobsPaginationTraits.h>
 #include <aws/cleanrooms/model/ListProtectedQueriesPaginationTraits.h>
 #include <aws/cleanrooms/model/ListSchemasPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -43,6 +44,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnalysisTemplatesRequest,
                                     Pagination::ListAnalysisTemplatesPaginationTraits<DerivedClient>>
   ListAnalysisTemplatesPaginator(const Model::ListAnalysisTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnalysisTemplatesRequest,
                                              Pagination::ListAnalysisTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -54,6 +56,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationAnalysisTemplatesRequest,
                                     Pagination::ListCollaborationAnalysisTemplatesPaginationTraits<DerivedClient>>
   ListCollaborationAnalysisTemplatesPaginator(const Model::ListCollaborationAnalysisTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationAnalysisTemplatesRequest,
                                              Pagination::ListCollaborationAnalysisTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -65,6 +68,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationChangeRequestsRequest,
                                     Pagination::ListCollaborationChangeRequestsPaginationTraits<DerivedClient>>
   ListCollaborationChangeRequestsPaginator(const Model::ListCollaborationChangeRequestsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationChangeRequestsRequest,
                                              Pagination::ListCollaborationChangeRequestsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -77,6 +81,7 @@ class CleanRoomsPaginationBase {
                                     Pagination::ListCollaborationConfiguredAudienceModelAssociationsPaginationTraits<DerivedClient>>
   ListCollaborationConfiguredAudienceModelAssociationsPaginator(
       const Model::ListCollaborationConfiguredAudienceModelAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<
         DerivedClient, Model::ListCollaborationConfiguredAudienceModelAssociationsRequest,
         Pagination::ListCollaborationConfiguredAudienceModelAssociationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
@@ -89,6 +94,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationIdNamespaceAssociationsRequest,
                                     Pagination::ListCollaborationIdNamespaceAssociationsPaginationTraits<DerivedClient>>
   ListCollaborationIdNamespaceAssociationsPaginator(const Model::ListCollaborationIdNamespaceAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationIdNamespaceAssociationsRequest,
                                              Pagination::ListCollaborationIdNamespaceAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -100,6 +106,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationPrivacyBudgetsRequest,
                                     Pagination::ListCollaborationPrivacyBudgetsPaginationTraits<DerivedClient>>
   ListCollaborationPrivacyBudgetsPaginator(const Model::ListCollaborationPrivacyBudgetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationPrivacyBudgetsRequest,
                                              Pagination::ListCollaborationPrivacyBudgetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -111,6 +118,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationPrivacyBudgetTemplatesRequest,
                                     Pagination::ListCollaborationPrivacyBudgetTemplatesPaginationTraits<DerivedClient>>
   ListCollaborationPrivacyBudgetTemplatesPaginator(const Model::ListCollaborationPrivacyBudgetTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationPrivacyBudgetTemplatesRequest,
                                              Pagination::ListCollaborationPrivacyBudgetTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -122,6 +130,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationsRequest,
                                     Pagination::ListCollaborationsPaginationTraits<DerivedClient>>
   ListCollaborationsPaginator(const Model::ListCollaborationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollaborationsRequest,
                                              Pagination::ListCollaborationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -133,6 +142,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfiguredAudienceModelAssociationsRequest,
                                     Pagination::ListConfiguredAudienceModelAssociationsPaginationTraits<DerivedClient>>
   ListConfiguredAudienceModelAssociationsPaginator(const Model::ListConfiguredAudienceModelAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfiguredAudienceModelAssociationsRequest,
                                              Pagination::ListConfiguredAudienceModelAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -144,6 +154,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfiguredTableAssociationsRequest,
                                     Pagination::ListConfiguredTableAssociationsPaginationTraits<DerivedClient>>
   ListConfiguredTableAssociationsPaginator(const Model::ListConfiguredTableAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfiguredTableAssociationsRequest,
                                              Pagination::ListConfiguredTableAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -155,6 +166,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfiguredTablesRequest,
                                     Pagination::ListConfiguredTablesPaginationTraits<DerivedClient>>
   ListConfiguredTablesPaginator(const Model::ListConfiguredTablesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfiguredTablesRequest,
                                              Pagination::ListConfiguredTablesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -166,6 +178,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdMappingTablesRequest,
                                     Pagination::ListIdMappingTablesPaginationTraits<DerivedClient>>
   ListIdMappingTablesPaginator(const Model::ListIdMappingTablesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdMappingTablesRequest,
                                              Pagination::ListIdMappingTablesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -177,6 +190,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdNamespaceAssociationsRequest,
                                     Pagination::ListIdNamespaceAssociationsPaginationTraits<DerivedClient>>
   ListIdNamespaceAssociationsPaginator(const Model::ListIdNamespaceAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdNamespaceAssociationsRequest,
                                              Pagination::ListIdNamespaceAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -187,6 +201,7 @@ class CleanRoomsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembersRequest, Pagination::ListMembersPaginationTraits<DerivedClient>>
   ListMembersPaginator(const Model::ListMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembersRequest,
                                              Pagination::ListMembersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -198,6 +213,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembershipsRequest,
                                     Pagination::ListMembershipsPaginationTraits<DerivedClient>>
   ListMembershipsPaginator(const Model::ListMembershipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembershipsRequest,
                                              Pagination::ListMembershipsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -209,6 +225,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrivacyBudgetsRequest,
                                     Pagination::ListPrivacyBudgetsPaginationTraits<DerivedClient>>
   ListPrivacyBudgetsPaginator(const Model::ListPrivacyBudgetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrivacyBudgetsRequest,
                                              Pagination::ListPrivacyBudgetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -220,6 +237,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrivacyBudgetTemplatesRequest,
                                     Pagination::ListPrivacyBudgetTemplatesPaginationTraits<DerivedClient>>
   ListPrivacyBudgetTemplatesPaginator(const Model::ListPrivacyBudgetTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrivacyBudgetTemplatesRequest,
                                              Pagination::ListPrivacyBudgetTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -231,6 +249,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectedJobsRequest,
                                     Pagination::ListProtectedJobsPaginationTraits<DerivedClient>>
   ListProtectedJobsPaginator(const Model::ListProtectedJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectedJobsRequest,
                                              Pagination::ListProtectedJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -242,6 +261,7 @@ class CleanRoomsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectedQueriesRequest,
                                     Pagination::ListProtectedQueriesPaginationTraits<DerivedClient>>
   ListProtectedQueriesPaginator(const Model::ListProtectedQueriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectedQueriesRequest,
                                              Pagination::ListProtectedQueriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -252,6 +272,7 @@ class CleanRoomsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchemasRequest, Pagination::ListSchemasPaginationTraits<DerivedClient>>
   ListSchemasPaginator(const Model::ListSchemasRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchemasRequest,
                                              Pagination::ListSchemasPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

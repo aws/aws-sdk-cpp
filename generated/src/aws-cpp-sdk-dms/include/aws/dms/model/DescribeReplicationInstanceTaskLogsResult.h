@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
@@ -104,6 +105,8 @@ class DescribeReplicationInstanceTaskLogsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_replicationInstanceArn;
 
@@ -112,6 +115,7 @@ class DescribeReplicationInstanceTaskLogsResult {
   Aws::String m_marker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replicationInstanceArnHasBeenSet = false;
   bool m_replicationInstanceTaskLogsHasBeenSet = false;
   bool m_markerHasBeenSet = false;

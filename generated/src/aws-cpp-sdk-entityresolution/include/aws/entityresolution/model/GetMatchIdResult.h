@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class GetMatchIdResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_matchId;
 
   Aws::String m_matchRule;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_matchIdHasBeenSet = false;
   bool m_matchRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

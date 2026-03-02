@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/DomainConfig.h>
@@ -100,6 +101,8 @@ class UpdateDomainConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DomainConfig m_domainConfig;
 
@@ -108,6 +111,7 @@ class UpdateDomainConfigResult {
   DryRunProgressStatus m_dryRunProgressStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainConfigHasBeenSet = false;
   bool m_dryRunResultsHasBeenSet = false;
   bool m_dryRunProgressStatusHasBeenSet = false;

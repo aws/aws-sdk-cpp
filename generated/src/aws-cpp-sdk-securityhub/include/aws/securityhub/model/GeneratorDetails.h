@@ -25,7 +25,8 @@ namespace Model {
  * finding. This field pertains to findings that relate to Lambda functions. Amazon
  * Inspector identifies policy violations and vulnerabilities in Lambda function
  * code based on internal detectors developed in collaboration with Amazon
- * CodeGuru. Security Hub receives those findings. </p><p><h3>See Also:</h3>   <a
+ * CodeGuru. Security Hub CSPM receives those findings. </p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GeneratorDetails">AWS
  * API Reference</a></p>
  */

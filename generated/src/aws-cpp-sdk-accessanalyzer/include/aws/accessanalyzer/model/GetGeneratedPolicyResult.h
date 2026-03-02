@@ -7,6 +7,7 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/accessanalyzer/model/GeneratedPolicyResults.h>
 #include <aws/accessanalyzer/model/JobDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -78,12 +79,15 @@ class GetGeneratedPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   JobDetails m_jobDetails;
 
   GeneratedPolicyResults m_generatedPolicyResults;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobDetailsHasBeenSet = false;
   bool m_generatedPolicyResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

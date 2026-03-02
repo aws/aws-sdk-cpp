@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 #include <aws/docdb-elastic/model/Cluster.h>
@@ -56,10 +57,13 @@ class StartClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Cluster m_cluster;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

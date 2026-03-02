@@ -50,6 +50,14 @@ GatewayDetails& GatewayDetails::operator=(JsonView jsonValue) {
     m_vpcEndpoint = jsonValue.GetString("VpcEndpoint");
     m_vpcEndpointHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DeprecationDate")) {
+    m_deprecationDate = jsonValue.GetDouble("DeprecationDate");
+    m_deprecationDateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SoftwareVersion")) {
+    m_softwareVersion = jsonValue.GetString("SoftwareVersion");
+    m_softwareVersionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +94,14 @@ JsonValue GatewayDetails::Jsonize() const {
 
   if (m_vpcEndpointHasBeenSet) {
     payload.WithString("VpcEndpoint", m_vpcEndpoint);
+  }
+
+  if (m_deprecationDateHasBeenSet) {
+    payload.WithDouble("DeprecationDate", m_deprecationDate.SecondsWithMSPrecision());
+  }
+
+  if (m_softwareVersionHasBeenSet) {
+    payload.WithString("SoftwareVersion", m_softwareVersion);
   }
 
   return payload;

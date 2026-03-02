@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/firehose/Firehose_EXPORTS.h>
@@ -100,6 +101,8 @@ class PutRecordBatchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_failedPutCount{0};
 
@@ -108,6 +111,7 @@ class PutRecordBatchResult {
   Aws::Vector<PutRecordBatchResponseEntry> m_requestResponses;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_failedPutCountHasBeenSet = false;
   bool m_encryptedHasBeenSet = false;
   bool m_requestResponsesHasBeenSet = false;

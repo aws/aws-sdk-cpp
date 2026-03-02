@@ -42,6 +42,10 @@ Entitlement& Entitlement::operator=(JsonView jsonValue) {
     m_expirationDate = jsonValue.GetDouble("ExpirationDate");
     m_expirationDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LicenseArn")) {
+    m_licenseArn = jsonValue.GetString("LicenseArn");
+    m_licenseArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue Entitlement::Jsonize() const {
 
   if (m_expirationDateHasBeenSet) {
     payload.WithDouble("ExpirationDate", m_expirationDate.SecondsWithMSPrecision());
+  }
+
+  if (m_licenseArnHasBeenSet) {
+    payload.WithString("LicenseArn", m_licenseArn);
   }
 
   return payload;

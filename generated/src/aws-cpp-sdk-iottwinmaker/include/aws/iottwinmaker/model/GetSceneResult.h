@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -250,6 +251,8 @@ class GetSceneResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_workspaceId;
 
@@ -274,6 +277,7 @@ class GetSceneResult {
   SceneError m_error;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_workspaceIdHasBeenSet = false;
   bool m_sceneIdHasBeenSet = false;
   bool m_contentLocationHasBeenSet = false;

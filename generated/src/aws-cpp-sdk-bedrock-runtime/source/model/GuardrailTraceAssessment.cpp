@@ -35,14 +35,14 @@ GuardrailTraceAssessment& GuardrailTraceAssessment::operator=(JsonView jsonValue
   if (jsonValue.ValueExists("outputAssessments")) {
     Aws::Map<Aws::String, JsonView> outputAssessmentsJsonMap = jsonValue.GetObject("outputAssessments").GetAllObjects();
     for (auto& outputAssessmentsItem : outputAssessmentsJsonMap) {
-      Aws::Utils::Array<JsonView> guardrailAssessmentListJsonList = outputAssessmentsItem.second.AsArray();
-      Aws::Vector<GuardrailAssessment> guardrailAssessmentListList;
-      guardrailAssessmentListList.reserve((size_t)guardrailAssessmentListJsonList.GetLength());
-      for (unsigned guardrailAssessmentListIndex = 0; guardrailAssessmentListIndex < guardrailAssessmentListJsonList.GetLength();
-           ++guardrailAssessmentListIndex) {
-        guardrailAssessmentListList.push_back(guardrailAssessmentListJsonList[guardrailAssessmentListIndex].AsObject());
+      Aws::Utils::Array<JsonView> guardrailAssessmentList2JsonList = outputAssessmentsItem.second.AsArray();
+      Aws::Vector<GuardrailAssessment> guardrailAssessmentList2List;
+      guardrailAssessmentList2List.reserve((size_t)guardrailAssessmentList2JsonList.GetLength());
+      for (unsigned guardrailAssessmentList2Index = 0; guardrailAssessmentList2Index < guardrailAssessmentList2JsonList.GetLength();
+           ++guardrailAssessmentList2Index) {
+        guardrailAssessmentList2List.push_back(guardrailAssessmentList2JsonList[guardrailAssessmentList2Index].AsObject());
       }
-      m_outputAssessments[outputAssessmentsItem.first] = std::move(guardrailAssessmentListList);
+      m_outputAssessments[outputAssessmentsItem.first] = std::move(guardrailAssessmentList2List);
     }
     m_outputAssessmentsHasBeenSet = true;
   }

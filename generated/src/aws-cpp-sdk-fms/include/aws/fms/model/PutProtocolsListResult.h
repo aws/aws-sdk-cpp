@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/ProtocolsListData.h>
@@ -75,12 +76,15 @@ class PutProtocolsListResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ProtocolsListData m_protocolsList;
 
   Aws::String m_protocolsListArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_protocolsListHasBeenSet = false;
   bool m_protocolsListArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

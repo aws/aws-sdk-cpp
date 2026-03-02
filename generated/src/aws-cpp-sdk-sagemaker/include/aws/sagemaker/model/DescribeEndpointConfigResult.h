@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -284,6 +285,8 @@ class DescribeEndpointConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_endpointConfigName;
 
@@ -312,6 +315,7 @@ class DescribeEndpointConfigResult {
   MetricsConfig m_metricsConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_endpointConfigNameHasBeenSet = false;
   bool m_endpointConfigArnHasBeenSet = false;
   bool m_productionVariantsHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
@@ -160,6 +161,8 @@ class GetQueueLimitAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_createdAt{};
 
@@ -176,6 +179,7 @@ class GetQueueLimitAssociationResult {
   QueueLimitAssociationStatus m_status{QueueLimitAssociationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;

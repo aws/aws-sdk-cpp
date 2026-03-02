@@ -24,6 +24,7 @@ GetTemporaryGluePartitionCredentialsResult::GetTemporaryGluePartitionCredentials
 
 GetTemporaryGluePartitionCredentialsResult& GetTemporaryGluePartitionCredentialsResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AccessKeyId")) {
     m_accessKeyId = jsonValue.GetString("AccessKeyId");

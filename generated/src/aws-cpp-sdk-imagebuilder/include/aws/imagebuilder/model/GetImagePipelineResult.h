@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/imagebuilder/model/ImagePipeline.h>
@@ -60,10 +61,13 @@ class GetImagePipelineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_requestId;
 
   ImagePipeline m_imagePipeline;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_imagePipelineHasBeenSet = false;
 };

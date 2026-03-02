@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/Summary.h>
@@ -99,6 +100,8 @@ class DescribeRuleGroupSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_ruleGroupName;
 
@@ -107,6 +110,7 @@ class DescribeRuleGroupSummaryResult {
   Summary m_summary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ruleGroupNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_summaryHasBeenSet = false;

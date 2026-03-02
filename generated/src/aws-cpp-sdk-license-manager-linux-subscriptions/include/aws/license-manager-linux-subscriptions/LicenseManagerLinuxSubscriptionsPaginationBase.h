@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionInstancesPaginationTraits.h>
 #include <aws/license-manager-linux-subscriptions/model/ListLinuxSubscriptionsPaginationTraits.h>
@@ -26,6 +27,7 @@ class LicenseManagerLinuxSubscriptionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinuxSubscriptionInstancesRequest,
                                     Pagination::ListLinuxSubscriptionInstancesPaginationTraits<DerivedClient>>
   ListLinuxSubscriptionInstancesPaginator(const Model::ListLinuxSubscriptionInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinuxSubscriptionInstancesRequest,
                                              Pagination::ListLinuxSubscriptionInstancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class LicenseManagerLinuxSubscriptionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinuxSubscriptionsRequest,
                                     Pagination::ListLinuxSubscriptionsPaginationTraits<DerivedClient>>
   ListLinuxSubscriptionsPaginator(const Model::ListLinuxSubscriptionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinuxSubscriptionsRequest,
                                              Pagination::ListLinuxSubscriptionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +51,7 @@ class LicenseManagerLinuxSubscriptionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegisteredSubscriptionProvidersRequest,
                                     Pagination::ListRegisteredSubscriptionProvidersPaginationTraits<DerivedClient>>
   ListRegisteredSubscriptionProvidersPaginator(const Model::ListRegisteredSubscriptionProvidersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegisteredSubscriptionProvidersRequest,
                                              Pagination::ListRegisteredSubscriptionProvidersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

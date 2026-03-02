@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -81,12 +82,15 @@ class DescribeLoaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_loaContent{};
 
   LoaContentType m_loaContentType{LoaContentType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_loaContentHasBeenSet = false;
   bool m_loaContentTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

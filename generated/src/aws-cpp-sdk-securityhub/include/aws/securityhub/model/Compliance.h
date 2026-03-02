@@ -28,8 +28,8 @@ namespace Model {
  * <p>This object typically provides details about a control finding, such as
  * applicable standards and the status of control checks. While finding providers
  * can add custom content in <code>Compliance</code> object fields, they are
- * typically used to review details of Security Hub control findings.</p><p><h3>See
- * Also:</h3>   <a
+ * typically used to review details of Security Hub CSPM control
+ * findings.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Compliance">AWS
  * API Reference</a></p>
  */
@@ -43,16 +43,17 @@ class Compliance {
   ///@{
   /**
    * <p>Typically summarizes the result of a control check.</p> <p>For Security Hub
-   * controls, valid values for <code>Status</code> are as follows.</p> <ul> <li>
-   * <ul> <li> <p> <code>PASSED</code> - Standards check passed for all evaluated
-   * resources.</p> </li> <li> <p> <code>WARNING</code> - Some information is missing
-   * or this check is not supported for your configuration.</p> </li> <li> <p>
-   * <code>FAILED</code> - Standards check failed for at least one evaluated
+   * CSPM controls, valid values for <code>Status</code> are as follows.</p> <ul>
+   * <li> <ul> <li> <p> <code>PASSED</code> - Standards check passed for all
+   * evaluated resources.</p> </li> <li> <p> <code>WARNING</code> - Some information
+   * is missing or this check is not supported for your configuration.</p> </li> <li>
+   * <p> <code>FAILED</code> - Standards check failed for at least one evaluated
    * resource.</p> </li> <li> <p> <code>NOT_AVAILABLE</code> - Check could not be
    * performed due to a service outage, API error, or because the result of the
    * Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation
-   * result was <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub
-   * automatically archives the finding after 3 days.</p> </li> </ul> </li> </ul>
+   * result was <code>NOT_APPLICABLE</code> for a Security Hub CSPM control, Security
+   * Hub CSPM automatically archives the finding after 3 days.</p> </li> </ul> </li>
+   * </ul>
    */
   inline ComplianceStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -120,8 +121,8 @@ class Compliance {
   ///@{
   /**
    * <p> Typically provides the unique identifier of a control across standards. For
-   * Security Hub controls, this field consists of an Amazon Web Services service and
-   * a unique number, such as <code>APIGateway.5</code>. </p>
+   * Security Hub CSPM controls, this field consists of an Amazon Web Services
+   * service and a unique number, such as <code>APIGateway.5</code>. </p>
    */
   inline const Aws::String& GetSecurityControlId() const { return m_securityControlId; }
   inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }

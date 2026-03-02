@@ -11,6 +11,7 @@
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/BillingMode.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexUpdate.h>
+#include <aws/dynamodb/model/GlobalTableSettingsReplicationMode.h>
 #include <aws/dynamodb/model/GlobalTableWitnessGroupUpdate.h>
 #include <aws/dynamodb/model/MultiRegionConsistency.h>
 #include <aws/dynamodb/model/OnDemandThroughput.h>
@@ -379,6 +380,29 @@ class UpdateTableRequest : public DynamoDBRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Controls the settings replication mode for a global table replica. This
+   * attribute can be defined using UpdateTable operation only on a regional table
+   * with values:</p> <ul> <li> <p> <code>ENABLED</code>: Defines settings
+   * replication on a regional table to be used as a source table for creating
+   * Multi-Account Global Table.</p> </li> <li> <p> <code>DISABLED</code>: Remove
+   * settings replication on a regional table. Settings replication needs to be
+   * defined to ENABLED again in order to create a Multi-Account Global Table using
+   * this table. </p> </li> </ul>
+   */
+  inline GlobalTableSettingsReplicationMode GetGlobalTableSettingsReplicationMode() const { return m_globalTableSettingsReplicationMode; }
+  inline bool GlobalTableSettingsReplicationModeHasBeenSet() const { return m_globalTableSettingsReplicationModeHasBeenSet; }
+  inline void SetGlobalTableSettingsReplicationMode(GlobalTableSettingsReplicationMode value) {
+    m_globalTableSettingsReplicationModeHasBeenSet = true;
+    m_globalTableSettingsReplicationMode = value;
+  }
+  inline UpdateTableRequest& WithGlobalTableSettingsReplicationMode(GlobalTableSettingsReplicationMode value) {
+    SetGlobalTableSettingsReplicationMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<AttributeDefinition> m_attributeDefinitions;
 
@@ -407,6 +431,8 @@ class UpdateTableRequest : public DynamoDBRequest {
   OnDemandThroughput m_onDemandThroughput;
 
   WarmThroughput m_warmThroughput;
+
+  GlobalTableSettingsReplicationMode m_globalTableSettingsReplicationMode{GlobalTableSettingsReplicationMode::NOT_SET};
   bool m_attributeDefinitionsHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
   bool m_billingModeHasBeenSet = false;
@@ -421,6 +447,7 @@ class UpdateTableRequest : public DynamoDBRequest {
   bool m_globalTableWitnessUpdatesHasBeenSet = false;
   bool m_onDemandThroughputHasBeenSet = false;
   bool m_warmThroughputHasBeenSet = false;
+  bool m_globalTableSettingsReplicationModeHasBeenSet = false;
 };
 
 }  // namespace Model

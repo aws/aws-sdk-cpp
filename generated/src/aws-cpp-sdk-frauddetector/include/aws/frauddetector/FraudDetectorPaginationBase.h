@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/frauddetector/model/DescribeModelVersionsPaginationTraits.h>
 #include <aws/frauddetector/model/GetBatchImportJobsPaginationTraits.h>
@@ -39,6 +40,7 @@ class FraudDetectorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeModelVersionsRequest,
                                     Pagination::DescribeModelVersionsPaginationTraits<DerivedClient>>
   DescribeModelVersionsPaginator(const Model::DescribeModelVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeModelVersionsRequest,
                                              Pagination::DescribeModelVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +52,7 @@ class FraudDetectorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetBatchImportJobsRequest,
                                     Pagination::GetBatchImportJobsPaginationTraits<DerivedClient>>
   GetBatchImportJobsPaginator(const Model::GetBatchImportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetBatchImportJobsRequest,
                                              Pagination::GetBatchImportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +64,7 @@ class FraudDetectorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetBatchPredictionJobsRequest,
                                     Pagination::GetBatchPredictionJobsPaginationTraits<DerivedClient>>
   GetBatchPredictionJobsPaginator(const Model::GetBatchPredictionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetBatchPredictionJobsRequest,
                                              Pagination::GetBatchPredictionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -71,6 +75,7 @@ class FraudDetectorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDetectorsRequest, Pagination::GetDetectorsPaginationTraits<DerivedClient>>
   GetDetectorsPaginator(const Model::GetDetectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDetectorsRequest,
                                              Pagination::GetDetectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -81,6 +86,7 @@ class FraudDetectorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEntityTypesRequest, Pagination::GetEntityTypesPaginationTraits<DerivedClient>>
   GetEntityTypesPaginator(const Model::GetEntityTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEntityTypesRequest,
                                              Pagination::GetEntityTypesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -91,6 +97,7 @@ class FraudDetectorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEventTypesRequest, Pagination::GetEventTypesPaginationTraits<DerivedClient>>
   GetEventTypesPaginator(const Model::GetEventTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEventTypesRequest,
                                              Pagination::GetEventTypesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -102,6 +109,7 @@ class FraudDetectorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetExternalModelsRequest,
                                     Pagination::GetExternalModelsPaginationTraits<DerivedClient>>
   GetExternalModelsPaginator(const Model::GetExternalModelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetExternalModelsRequest,
                                              Pagination::GetExternalModelsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -112,6 +120,7 @@ class FraudDetectorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLabelsRequest, Pagination::GetLabelsPaginationTraits<DerivedClient>>
   GetLabelsPaginator(const Model::GetLabelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLabelsRequest, Pagination::GetLabelsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -122,6 +131,7 @@ class FraudDetectorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetListElementsRequest,
                                     Pagination::GetListElementsPaginationTraits<DerivedClient>>
   GetListElementsPaginator(const Model::GetListElementsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetListElementsRequest,
                                              Pagination::GetListElementsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -133,6 +143,7 @@ class FraudDetectorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetListsMetadataRequest,
                                     Pagination::GetListsMetadataPaginationTraits<DerivedClient>>
   GetListsMetadataPaginator(const Model::GetListsMetadataRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetListsMetadataRequest,
                                              Pagination::GetListsMetadataPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -143,6 +154,7 @@ class FraudDetectorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetModelsRequest, Pagination::GetModelsPaginationTraits<DerivedClient>>
   GetModelsPaginator(const Model::GetModelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetModelsRequest, Pagination::GetModelsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -152,6 +164,7 @@ class FraudDetectorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetOutcomesRequest, Pagination::GetOutcomesPaginationTraits<DerivedClient>>
   GetOutcomesPaginator(const Model::GetOutcomesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetOutcomesRequest,
                                              Pagination::GetOutcomesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -162,6 +175,7 @@ class FraudDetectorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRulesRequest, Pagination::GetRulesPaginationTraits<DerivedClient>>
   GetRulesPaginator(const Model::GetRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRulesRequest, Pagination::GetRulesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -171,6 +185,7 @@ class FraudDetectorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetVariablesRequest, Pagination::GetVariablesPaginationTraits<DerivedClient>>
   GetVariablesPaginator(const Model::GetVariablesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetVariablesRequest,
                                              Pagination::GetVariablesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -182,6 +197,7 @@ class FraudDetectorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventPredictionsRequest,
                                     Pagination::ListEventPredictionsPaginationTraits<DerivedClient>>
   ListEventPredictionsPaginator(const Model::ListEventPredictionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventPredictionsRequest,
                                              Pagination::ListEventPredictionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -193,6 +209,7 @@ class FraudDetectorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

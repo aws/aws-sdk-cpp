@@ -45,13 +45,13 @@ Pattern& Pattern::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("targetFrames")) {
     Aws::Utils::Array<JsonView> targetFramesJsonList = jsonValue.GetArray("targetFrames");
     for (unsigned targetFramesIndex = 0; targetFramesIndex < targetFramesJsonList.GetLength(); ++targetFramesIndex) {
-      Aws::Utils::Array<JsonView> targetFrameJsonList = targetFramesJsonList[targetFramesIndex].AsArray();
-      Aws::Vector<Aws::String> targetFrameList;
-      targetFrameList.reserve((size_t)targetFrameJsonList.GetLength());
-      for (unsigned targetFrameIndex = 0; targetFrameIndex < targetFrameJsonList.GetLength(); ++targetFrameIndex) {
-        targetFrameList.push_back(targetFrameJsonList[targetFrameIndex].AsString());
+      Aws::Utils::Array<JsonView> targetFrame2JsonList = targetFramesJsonList[targetFramesIndex].AsArray();
+      Aws::Vector<Aws::String> targetFrame2List;
+      targetFrame2List.reserve((size_t)targetFrame2JsonList.GetLength());
+      for (unsigned targetFrame2Index = 0; targetFrame2Index < targetFrame2JsonList.GetLength(); ++targetFrame2Index) {
+        targetFrame2List.push_back(targetFrame2JsonList[targetFrame2Index].AsString());
       }
-      m_targetFrames.push_back(std::move(targetFrameList));
+      m_targetFrames.push_back(std::move(targetFrame2List));
     }
     m_targetFramesHasBeenSet = true;
   }

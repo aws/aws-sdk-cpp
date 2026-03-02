@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/timestream-write/model/ListBatchLoadTasksPaginationTraits.h>
 #include <aws/timestream-write/model/ListDatabasesPaginationTraits.h>
@@ -26,6 +27,7 @@ class TimestreamWritePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBatchLoadTasksRequest,
                                     Pagination::ListBatchLoadTasksPaginationTraits<DerivedClient>>
   ListBatchLoadTasksPaginator(const Model::ListBatchLoadTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBatchLoadTasksRequest,
                                              Pagination::ListBatchLoadTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -36,6 +38,7 @@ class TimestreamWritePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatabasesRequest, Pagination::ListDatabasesPaginationTraits<DerivedClient>>
   ListDatabasesPaginator(const Model::ListDatabasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatabasesRequest,
                                              Pagination::ListDatabasesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -46,6 +49,7 @@ class TimestreamWritePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTablesRequest, Pagination::ListTablesPaginationTraits<DerivedClient>>
   ListTablesPaginator(const Model::ListTablesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTablesRequest,
                                              Pagination::ListTablesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};

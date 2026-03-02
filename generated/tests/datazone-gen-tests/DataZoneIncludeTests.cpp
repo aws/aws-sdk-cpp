@@ -752,6 +752,10 @@
 #include <aws/datazone/model/UserSearchType.h>
 #include <aws/datazone/model/UserType.h>
 #include <aws/datazone/model/UsernamePassword.h>
+#include <aws/datazone/model/WorkflowsMwaaPropertiesInput.h>
+#include <aws/datazone/model/WorkflowsMwaaPropertiesOutput.h>
+#include <aws/datazone/model/WorkflowsServerlessPropertiesInput.h>
+#include <aws/datazone/model/WorkflowsServerlessPropertiesOutput.h>
 
 using DataZoneIncludeTest = ::testing::Test;
 

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3control/S3Control_EXPORTS.h>
@@ -233,6 +234,8 @@ class CreateAccessGrantResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_createdAt{};
 
@@ -255,6 +258,7 @@ class CreateAccessGrantResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createdAtHasBeenSet = false;
   bool m_accessGrantIdHasBeenSet = false;
   bool m_accessGrantArnHasBeenSet = false;

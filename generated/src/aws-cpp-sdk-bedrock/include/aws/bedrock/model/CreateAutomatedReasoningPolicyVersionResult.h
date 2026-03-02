@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -144,6 +145,8 @@ class CreateAutomatedReasoningPolicyVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_policyArn;
 
@@ -158,6 +161,7 @@ class CreateAutomatedReasoningPolicyVersionResult {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyArnHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_nameHasBeenSet = false;

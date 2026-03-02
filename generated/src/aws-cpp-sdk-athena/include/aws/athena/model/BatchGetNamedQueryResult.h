@@ -7,6 +7,7 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/NamedQuery.h>
 #include <aws/athena/model/UnprocessedNamedQueryId.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -89,12 +90,15 @@ class BatchGetNamedQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<NamedQuery> m_namedQueries;
 
   Aws::Vector<UnprocessedNamedQueryId> m_unprocessedNamedQueryIds;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_namedQueriesHasBeenSet = false;
   bool m_unprocessedNamedQueryIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

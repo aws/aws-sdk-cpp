@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
@@ -57,7 +58,7 @@ class GetRecordsResult {
   ///@{
   /**
    * <p> The next position in the shard from which to start sequentially reading data
-   * records. If null, the shard has been closed and the requested iterator doesn't
+   * records. If null, the shard has been closed and the requested iterator will not
    * return any more data. </p>
    */
   inline const Aws::String& GetNextShardIterator() const { return m_nextShardIterator; }
@@ -87,12 +88,15 @@ class GetRecordsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Record> m_changeRecords;
 
   Aws::String m_nextShardIterator;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_changeRecordsHasBeenSet = false;
   bool m_nextShardIteratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

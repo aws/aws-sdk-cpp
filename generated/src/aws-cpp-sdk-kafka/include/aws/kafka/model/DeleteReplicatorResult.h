@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/ReplicatorState.h>
@@ -73,12 +74,15 @@ class DeleteReplicatorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_replicatorArn;
 
   ReplicatorState m_replicatorState{ReplicatorState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replicatorArnHasBeenSet = false;
   bool m_replicatorStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

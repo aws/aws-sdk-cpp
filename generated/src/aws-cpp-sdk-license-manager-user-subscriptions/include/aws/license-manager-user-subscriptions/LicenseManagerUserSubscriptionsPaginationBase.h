@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/license-manager-user-subscriptions/model/ListIdentityProvidersPaginationTraits.h>
 #include <aws/license-manager-user-subscriptions/model/ListInstancesPaginationTraits.h>
@@ -28,6 +29,7 @@ class LicenseManagerUserSubscriptionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentityProvidersRequest,
                                     Pagination::ListIdentityProvidersPaginationTraits<DerivedClient>>
   ListIdentityProvidersPaginator(const Model::ListIdentityProvidersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentityProvidersRequest,
                                              Pagination::ListIdentityProvidersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class LicenseManagerUserSubscriptionsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInstancesRequest, Pagination::ListInstancesPaginationTraits<DerivedClient>>
   ListInstancesPaginator(const Model::ListInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInstancesRequest,
                                              Pagination::ListInstancesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -49,6 +52,7 @@ class LicenseManagerUserSubscriptionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLicenseServerEndpointsRequest,
                                     Pagination::ListLicenseServerEndpointsPaginationTraits<DerivedClient>>
   ListLicenseServerEndpointsPaginator(const Model::ListLicenseServerEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLicenseServerEndpointsRequest,
                                              Pagination::ListLicenseServerEndpointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class LicenseManagerUserSubscriptionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProductSubscriptionsRequest,
                                     Pagination::ListProductSubscriptionsPaginationTraits<DerivedClient>>
   ListProductSubscriptionsPaginator(const Model::ListProductSubscriptionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProductSubscriptionsRequest,
                                              Pagination::ListProductSubscriptionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -71,6 +76,7 @@ class LicenseManagerUserSubscriptionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUserAssociationsRequest,
                                     Pagination::ListUserAssociationsPaginationTraits<DerivedClient>>
   ListUserAssociationsPaginator(const Model::ListUserAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUserAssociationsRequest,
                                              Pagination::ListUserAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

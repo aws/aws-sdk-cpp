@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/SFN_EXPORTS.h>
 
@@ -78,12 +79,15 @@ class GetActivityTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_taskToken;
 
   Aws::String m_input;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskTokenHasBeenSet = false;
   bool m_inputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

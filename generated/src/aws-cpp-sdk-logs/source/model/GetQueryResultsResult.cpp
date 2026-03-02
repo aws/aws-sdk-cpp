@@ -20,6 +20,7 @@ using namespace Aws;
 GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetQueryResultsResult& GetQueryResultsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("queryLanguage")) {
     m_queryLanguage = QueryLanguageMapper::GetQueryLanguageForName(jsonValue.GetString("queryLanguage"));
@@ -28,13 +29,13 @@ GetQueryResultsResult& GetQueryResultsResult::operator=(const Aws::AmazonWebServ
   if (jsonValue.ValueExists("results")) {
     Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("results");
     for (unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex) {
-      Aws::Utils::Array<JsonView> resultRowsJsonList = resultsJsonList[resultsIndex].AsArray();
-      Aws::Vector<ResultField> resultRowsList;
-      resultRowsList.reserve((size_t)resultRowsJsonList.GetLength());
-      for (unsigned resultRowsIndex = 0; resultRowsIndex < resultRowsJsonList.GetLength(); ++resultRowsIndex) {
-        resultRowsList.push_back(resultRowsJsonList[resultRowsIndex].AsObject());
+      Aws::Utils::Array<JsonView> resultRows2JsonList = resultsJsonList[resultsIndex].AsArray();
+      Aws::Vector<ResultField> resultRows2List;
+      resultRows2List.reserve((size_t)resultRows2JsonList.GetLength());
+      for (unsigned resultRows2Index = 0; resultRows2Index < resultRows2JsonList.GetLength(); ++resultRows2Index) {
+        resultRows2List.push_back(resultRows2JsonList[resultRows2Index].AsObject());
       }
-      m_results.push_back(std::move(resultRowsList));
+      m_results.push_back(std::move(resultRows2List));
     }
     m_resultsHasBeenSet = true;
   }

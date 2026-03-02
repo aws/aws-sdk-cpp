@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/license-manager/model/TokenType.h>
@@ -90,6 +91,8 @@ class CreateTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_tokenId;
 
@@ -98,6 +101,7 @@ class CreateTokenResult {
   Aws::String m_token;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tokenIdHasBeenSet = false;
   bool m_tokenTypeHasBeenSet = false;
   bool m_tokenHasBeenSet = false;

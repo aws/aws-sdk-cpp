@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/connectparticipant/model/Item.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -100,6 +101,8 @@ class GetTranscriptResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_initialContactId;
 
@@ -108,6 +111,7 @@ class GetTranscriptResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_initialContactIdHasBeenSet = false;
   bool m_transcriptHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

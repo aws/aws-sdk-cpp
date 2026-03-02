@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/TaskStatusType.h>
@@ -90,6 +91,8 @@ class CancelMLTaskRunResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_transformId;
 
@@ -98,6 +101,7 @@ class CancelMLTaskRunResult {
   TaskStatusType m_status{TaskStatusType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transformIdHasBeenSet = false;
   bool m_taskRunIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

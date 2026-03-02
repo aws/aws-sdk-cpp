@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/HttpTokensEnforcedState.h>
 #include <aws/ec2/model/HttpTokensState.h>
 #include <aws/ec2/model/InstanceMetadataEndpointState.h>
 #include <aws/ec2/model/InstanceMetadataTagsState.h>
@@ -149,6 +150,24 @@ class InstanceMetadataDefaultsResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether to enforce the requirement of IMDSv2 on an instance at the
+   * time of launch. When enforcement is enabled, the instance can't launch unless
+   * IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>.</p>
+   */
+  inline HttpTokensEnforcedState GetHttpTokensEnforced() const { return m_httpTokensEnforced; }
+  inline bool HttpTokensEnforcedHasBeenSet() const { return m_httpTokensEnforcedHasBeenSet; }
+  inline void SetHttpTokensEnforced(HttpTokensEnforcedState value) {
+    m_httpTokensEnforcedHasBeenSet = true;
+    m_httpTokensEnforced = value;
+  }
+  inline InstanceMetadataDefaultsResponse& WithHttpTokensEnforced(HttpTokensEnforcedState value) {
+    SetHttpTokensEnforced(value);
+    return *this;
+  }
+  ///@}
  private:
   HttpTokensState m_httpTokens{HttpTokensState::NOT_SET};
 
@@ -161,12 +180,15 @@ class InstanceMetadataDefaultsResponse {
   ManagedBy m_managedBy{ManagedBy::NOT_SET};
 
   Aws::String m_managedExceptionMessage;
+
+  HttpTokensEnforcedState m_httpTokensEnforced{HttpTokensEnforcedState::NOT_SET};
   bool m_httpTokensHasBeenSet = false;
   bool m_httpPutResponseHopLimitHasBeenSet = false;
   bool m_httpEndpointHasBeenSet = false;
   bool m_instanceMetadataTagsHasBeenSet = false;
   bool m_managedByHasBeenSet = false;
   bool m_managedExceptionMessageHasBeenSet = false;
+  bool m_httpTokensEnforcedHasBeenSet = false;
 };
 
 }  // namespace Model

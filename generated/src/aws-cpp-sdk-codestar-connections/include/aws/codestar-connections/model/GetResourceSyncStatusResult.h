@@ -7,6 +7,7 @@
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/codestar-connections/model/ResourceSyncAttempt.h>
 #include <aws/codestar-connections/model/Revision.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -96,6 +97,8 @@ class GetResourceSyncStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Revision m_desiredState;
 
@@ -104,6 +107,7 @@ class GetResourceSyncStatusResult {
   ResourceSyncAttempt m_latestSync;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_desiredStateHasBeenSet = false;
   bool m_latestSuccessfulSyncHasBeenSet = false;
   bool m_latestSyncHasBeenSet = false;

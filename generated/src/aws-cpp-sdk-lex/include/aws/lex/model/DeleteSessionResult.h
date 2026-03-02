@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 
@@ -108,6 +109,8 @@ class DeleteSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_botName;
 
@@ -118,6 +121,7 @@ class DeleteSessionResult {
   Aws::String m_sessionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_botNameHasBeenSet = false;
   bool m_botAliasHasBeenSet = false;
   bool m_userIdHasBeenSet = false;

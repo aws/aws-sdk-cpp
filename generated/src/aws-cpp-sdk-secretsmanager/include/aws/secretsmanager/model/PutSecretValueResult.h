@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -117,6 +118,8 @@ class PutSecretValueResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_aRN;
 
@@ -127,6 +130,7 @@ class PutSecretValueResult {
   Aws::Vector<Aws::String> m_versionStages;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aRNHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;

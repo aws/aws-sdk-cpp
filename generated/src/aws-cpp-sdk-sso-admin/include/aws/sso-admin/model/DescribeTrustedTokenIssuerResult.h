@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/model/TrustedTokenIssuerConfiguration.h>
@@ -109,6 +110,8 @@ class DescribeTrustedTokenIssuerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_trustedTokenIssuerArn;
 
@@ -119,6 +122,7 @@ class DescribeTrustedTokenIssuerResult {
   TrustedTokenIssuerConfiguration m_trustedTokenIssuerConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trustedTokenIssuerArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_trustedTokenIssuerTypeHasBeenSet = false;

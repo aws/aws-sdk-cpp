@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/storagegateway/model/DescribeTapeArchivesPaginationTraits.h>
 #include <aws/storagegateway/model/DescribeTapeRecoveryPointsPaginationTraits.h>
@@ -35,6 +36,7 @@ class StorageGatewayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTapeArchivesRequest,
                                     Pagination::DescribeTapeArchivesPaginationTraits<DerivedClient>>
   DescribeTapeArchivesPaginator(const Model::DescribeTapeArchivesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTapeArchivesRequest,
                                              Pagination::DescribeTapeArchivesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -46,6 +48,7 @@ class StorageGatewayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTapeRecoveryPointsRequest,
                                     Pagination::DescribeTapeRecoveryPointsPaginationTraits<DerivedClient>>
   DescribeTapeRecoveryPointsPaginator(const Model::DescribeTapeRecoveryPointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTapeRecoveryPointsRequest,
                                              Pagination::DescribeTapeRecoveryPointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -56,6 +59,7 @@ class StorageGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTapesRequest, Pagination::DescribeTapesPaginationTraits<DerivedClient>>
   DescribeTapesPaginator(const Model::DescribeTapesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTapesRequest,
                                              Pagination::DescribeTapesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -67,6 +71,7 @@ class StorageGatewayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVTLDevicesRequest,
                                     Pagination::DescribeVTLDevicesPaginationTraits<DerivedClient>>
   DescribeVTLDevicesPaginator(const Model::DescribeVTLDevicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVTLDevicesRequest,
                                              Pagination::DescribeVTLDevicesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -78,6 +83,7 @@ class StorageGatewayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCacheReportsRequest,
                                     Pagination::ListCacheReportsPaginationTraits<DerivedClient>>
   ListCacheReportsPaginator(const Model::ListCacheReportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCacheReportsRequest,
                                              Pagination::ListCacheReportsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -88,6 +94,7 @@ class StorageGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFileSharesRequest, Pagination::ListFileSharesPaginationTraits<DerivedClient>>
   ListFileSharesPaginator(const Model::ListFileSharesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFileSharesRequest,
                                              Pagination::ListFileSharesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -99,6 +106,7 @@ class StorageGatewayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFileSystemAssociationsRequest,
                                     Pagination::ListFileSystemAssociationsPaginationTraits<DerivedClient>>
   ListFileSystemAssociationsPaginator(const Model::ListFileSystemAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFileSystemAssociationsRequest,
                                              Pagination::ListFileSystemAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -109,6 +117,7 @@ class StorageGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewaysRequest, Pagination::ListGatewaysPaginationTraits<DerivedClient>>
   ListGatewaysPaginator(const Model::ListGatewaysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewaysRequest,
                                              Pagination::ListGatewaysPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -120,6 +129,7 @@ class StorageGatewayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -130,6 +140,7 @@ class StorageGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTapePoolsRequest, Pagination::ListTapePoolsPaginationTraits<DerivedClient>>
   ListTapePoolsPaginator(const Model::ListTapePoolsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTapePoolsRequest,
                                              Pagination::ListTapePoolsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -140,6 +151,7 @@ class StorageGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTapesRequest, Pagination::ListTapesPaginationTraits<DerivedClient>>
   ListTapesPaginator(const Model::ListTapesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTapesRequest, Pagination::ListTapesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -149,6 +161,7 @@ class StorageGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVolumesRequest, Pagination::ListVolumesPaginationTraits<DerivedClient>>
   ListVolumesPaginator(const Model::ListVolumesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVolumesRequest,
                                              Pagination::ListVolumesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

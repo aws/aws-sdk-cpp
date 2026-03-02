@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 
@@ -28,8 +29,8 @@ class GetInvitationsCountResult {
 
   ///@{
   /**
-   * <p>The number of all membership invitations sent to this Security Hub member
-   * account, not including the currently accepted invitation.</p>
+   * <p>The number of all membership invitations sent to this Security Hub CSPM
+   * member account, not including the currently accepted invitation.</p>
    */
   inline int GetInvitationsCount() const { return m_invitationsCount; }
   inline void SetInvitationsCount(int value) {
@@ -56,10 +57,13 @@ class GetInvitationsCountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_invitationsCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_invitationsCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

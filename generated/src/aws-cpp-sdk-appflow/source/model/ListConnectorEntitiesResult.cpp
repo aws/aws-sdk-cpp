@@ -20,18 +20,19 @@ using namespace Aws;
 ListConnectorEntitiesResult::ListConnectorEntitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListConnectorEntitiesResult& ListConnectorEntitiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("connectorEntityMap")) {
     Aws::Map<Aws::String, JsonView> connectorEntityMapJsonMap = jsonValue.GetObject("connectorEntityMap").GetAllObjects();
     for (auto& connectorEntityMapItem : connectorEntityMapJsonMap) {
-      Aws::Utils::Array<JsonView> connectorEntityListJsonList = connectorEntityMapItem.second.AsArray();
-      Aws::Vector<ConnectorEntity> connectorEntityListList;
-      connectorEntityListList.reserve((size_t)connectorEntityListJsonList.GetLength());
-      for (unsigned connectorEntityListIndex = 0; connectorEntityListIndex < connectorEntityListJsonList.GetLength();
-           ++connectorEntityListIndex) {
-        connectorEntityListList.push_back(connectorEntityListJsonList[connectorEntityListIndex].AsObject());
+      Aws::Utils::Array<JsonView> connectorEntityList2JsonList = connectorEntityMapItem.second.AsArray();
+      Aws::Vector<ConnectorEntity> connectorEntityList2List;
+      connectorEntityList2List.reserve((size_t)connectorEntityList2JsonList.GetLength());
+      for (unsigned connectorEntityList2Index = 0; connectorEntityList2Index < connectorEntityList2JsonList.GetLength();
+           ++connectorEntityList2Index) {
+        connectorEntityList2List.push_back(connectorEntityList2JsonList[connectorEntityList2Index].AsObject());
       }
-      m_connectorEntityMap[connectorEntityMapItem.first] = std::move(connectorEntityListList);
+      m_connectorEntityMap[connectorEntityMapItem.first] = std::move(connectorEntityList2List);
     }
     m_connectorEntityMapHasBeenSet = true;
   }

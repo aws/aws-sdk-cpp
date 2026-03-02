@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/model/BootMode.h>
@@ -237,6 +238,8 @@ class GetLaunchConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_sourceServerID;
 
@@ -263,6 +266,7 @@ class GetLaunchConfigurationResult {
   Aws::String m_mapAutoTaggingMpeID;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceServerIDHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_ec2LaunchTemplateIDHasBeenSet = false;

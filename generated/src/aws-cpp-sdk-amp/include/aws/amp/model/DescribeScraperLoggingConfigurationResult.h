@@ -8,6 +8,7 @@
 #include <aws/amp/model/ScraperComponent.h>
 #include <aws/amp/model/ScraperLoggingConfigurationStatus.h>
 #include <aws/amp/model/ScraperLoggingDestination.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -138,6 +139,8 @@ class DescribeScraperLoggingConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ScraperLoggingConfigurationStatus m_status;
 
@@ -150,6 +153,7 @@ class DescribeScraperLoggingConfigurationResult {
   Aws::Utils::DateTime m_modifiedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_scraperIdHasBeenSet = false;
   bool m_loggingDestinationHasBeenSet = false;

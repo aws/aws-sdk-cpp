@@ -7,6 +7,7 @@
 
 #include <aws/cloudcontrol/model/ListResourceRequestsPaginationTraits.h>
 #include <aws/cloudcontrol/model/ListResourcesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -25,6 +26,7 @@ class CloudControlApiPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceRequestsRequest,
                                     Pagination::ListResourceRequestsPaginationTraits<DerivedClient>>
   ListResourceRequestsPaginator(const Model::ListResourceRequestsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceRequestsRequest,
                                              Pagination::ListResourceRequestsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -35,6 +37,7 @@ class CloudControlApiPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesRequest, Pagination::ListResourcesPaginationTraits<DerivedClient>>
   ListResourcesPaginator(const Model::ListResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesRequest,
                                              Pagination::ListResourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 
@@ -78,12 +79,15 @@ class CreateChatResponseConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_chatResponseConfigurationId;
 
   Aws::String m_chatResponseConfigurationArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_chatResponseConfigurationIdHasBeenSet = false;
   bool m_chatResponseConfigurationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie2/Macie2_EXPORTS.h>
@@ -302,6 +303,8 @@ class GetBucketStatisticsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   long long m_bucketCount{0};
 
@@ -332,6 +335,7 @@ class GetBucketStatisticsResult {
   ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bucketCountHasBeenSet = false;
   bool m_bucketCountByEffectivePermissionHasBeenSet = false;
   bool m_bucketCountByEncryptionTypeHasBeenSet = false;

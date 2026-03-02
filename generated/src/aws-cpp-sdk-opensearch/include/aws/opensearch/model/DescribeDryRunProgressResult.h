@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/DomainStatus.h>
@@ -94,6 +95,8 @@ class DescribeDryRunProgressResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DryRunProgressStatus m_dryRunProgressStatus;
 
@@ -102,6 +105,7 @@ class DescribeDryRunProgressResult {
   DryRunResults m_dryRunResults;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dryRunProgressStatusHasBeenSet = false;
   bool m_dryRunConfigHasBeenSet = false;
   bool m_dryRunResultsHasBeenSet = false;

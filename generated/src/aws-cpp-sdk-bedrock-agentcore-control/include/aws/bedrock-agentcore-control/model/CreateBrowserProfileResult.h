@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/BrowserProfileStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -109,6 +110,8 @@ class CreateBrowserProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_profileId;
 
@@ -119,6 +122,7 @@ class CreateBrowserProfileResult {
   BrowserProfileStatus m_status{BrowserProfileStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_profileIdHasBeenSet = false;
   bool m_profileArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

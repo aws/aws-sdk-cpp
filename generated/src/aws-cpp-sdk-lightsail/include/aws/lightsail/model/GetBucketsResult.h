@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -108,6 +109,8 @@ class GetBucketsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Bucket> m_buckets;
 
@@ -116,6 +119,7 @@ class GetBucketsResult {
   AccountLevelBpaSync m_accountLevelBpaSync;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bucketsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_accountLevelBpaSyncHasBeenSet = false;

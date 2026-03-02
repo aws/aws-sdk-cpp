@@ -15,6 +15,8 @@ enum class StandardIdentifier {
   PROFILE,
   ASSET,
   CASE,
+  DEVICE,
+  WEB_ANALYTICS,
   ORDER,
   COMMUNICATION_RECORD,
   AIR_PREFERENCE,

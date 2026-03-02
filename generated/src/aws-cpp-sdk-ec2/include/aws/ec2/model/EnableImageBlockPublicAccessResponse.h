@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ImageBlockPublicAccessEnabledState.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -57,10 +58,13 @@ class EnableImageBlockPublicAccessResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ImageBlockPublicAccessEnabledState m_imageBlockPublicAccessState{ImageBlockPublicAccessEnabledState::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_imageBlockPublicAccessStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

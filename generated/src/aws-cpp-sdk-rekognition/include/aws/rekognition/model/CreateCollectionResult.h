@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 
@@ -91,6 +92,8 @@ class CreateCollectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_statusCode{0};
 
@@ -99,6 +102,7 @@ class CreateCollectionResult {
   Aws::String m_faceModelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusCodeHasBeenSet = false;
   bool m_collectionArnHasBeenSet = false;
   bool m_faceModelVersionHasBeenSet = false;

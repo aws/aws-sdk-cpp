@@ -28,6 +28,7 @@ static const int security_hub_HASH = HashingUtils::HashString("security_hub");
 static const int stir_HASH = HashingUtils::HashString("stir");
 static const int ta_check_HASH = HashingUtils::HashString("ta_check");
 static const int well_architected_HASH = HashingUtils::HashString("well_architected");
+static const int cost_optimization_hub_HASH = HashingUtils::HashString("cost_optimization_hub");
 
 RecommendationSource GetRecommendationSourceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +58,8 @@ RecommendationSource GetRecommendationSourceForName(const Aws::String& name) {
     return RecommendationSource::ta_check;
   } else if (hashCode == well_architected_HASH) {
     return RecommendationSource::well_architected;
+  } else if (hashCode == cost_optimization_hub_HASH) {
+    return RecommendationSource::cost_optimization_hub;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +100,8 @@ Aws::String GetNameForRecommendationSource(RecommendationSource enumValue) {
       return "ta_check";
     case RecommendationSource::well_architected:
       return "well_architected";
+    case RecommendationSource::cost_optimization_hub:
+      return "cost_optimization_hub";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

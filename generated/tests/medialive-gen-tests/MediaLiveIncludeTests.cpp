@@ -244,6 +244,7 @@
 #include <aws/medialive/model/DescribeClusterSdkResult.h>
 #include <aws/medialive/model/DescribeClusterSummary.h>
 #include <aws/medialive/model/DescribeFollowerChannelSettings.h>
+#include <aws/medialive/model/DescribeInferenceSettings.h>
 #include <aws/medialive/model/DescribeInputDeviceRequest.h>
 #include <aws/medialive/model/DescribeInputDeviceResult.h>
 #include <aws/medialive/model/DescribeInputDeviceThumbnailRequest.h>
@@ -460,6 +461,7 @@
 #include <aws/medialive/model/Id3SegmentTaggingScheduleActionSettings.h>
 #include <aws/medialive/model/ImmediateModeScheduleActionStartSettings.h>
 #include <aws/medialive/model/IncludeFillerNalUnits.h>
+#include <aws/medialive/model/InferenceSettings.h>
 #include <aws/medialive/model/Input.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <aws/medialive/model/InputChannelLevel.h>

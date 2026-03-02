@@ -73,15 +73,15 @@ AutoMLCandidate& AutoMLCandidate::operator=(JsonView jsonValue) {
     Aws::Map<Aws::String, JsonView> inferenceContainerDefinitionsJsonMap =
         jsonValue.GetObject("InferenceContainerDefinitions").GetAllObjects();
     for (auto& inferenceContainerDefinitionsItem : inferenceContainerDefinitionsJsonMap) {
-      Aws::Utils::Array<JsonView> autoMLContainerDefinitionsJsonList = inferenceContainerDefinitionsItem.second.AsArray();
-      Aws::Vector<AutoMLContainerDefinition> autoMLContainerDefinitionsList;
-      autoMLContainerDefinitionsList.reserve((size_t)autoMLContainerDefinitionsJsonList.GetLength());
-      for (unsigned autoMLContainerDefinitionsIndex = 0; autoMLContainerDefinitionsIndex < autoMLContainerDefinitionsJsonList.GetLength();
-           ++autoMLContainerDefinitionsIndex) {
-        autoMLContainerDefinitionsList.push_back(autoMLContainerDefinitionsJsonList[autoMLContainerDefinitionsIndex].AsObject());
+      Aws::Utils::Array<JsonView> autoMLContainerDefinitions2JsonList = inferenceContainerDefinitionsItem.second.AsArray();
+      Aws::Vector<AutoMLContainerDefinition> autoMLContainerDefinitions2List;
+      autoMLContainerDefinitions2List.reserve((size_t)autoMLContainerDefinitions2JsonList.GetLength());
+      for (unsigned autoMLContainerDefinitions2Index = 0;
+           autoMLContainerDefinitions2Index < autoMLContainerDefinitions2JsonList.GetLength(); ++autoMLContainerDefinitions2Index) {
+        autoMLContainerDefinitions2List.push_back(autoMLContainerDefinitions2JsonList[autoMLContainerDefinitions2Index].AsObject());
       }
       m_inferenceContainerDefinitions[AutoMLProcessingUnitMapper::GetAutoMLProcessingUnitForName(inferenceContainerDefinitionsItem.first)] =
-          std::move(autoMLContainerDefinitionsList);
+          std::move(autoMLContainerDefinitions2List);
     }
     m_inferenceContainerDefinitionsHasBeenSet = true;
   }

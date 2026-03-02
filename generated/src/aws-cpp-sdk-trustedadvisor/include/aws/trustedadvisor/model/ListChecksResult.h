@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
@@ -30,6 +31,24 @@ class ListChecksResult {
 
   ///@{
   /**
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListChecksResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of Checks</p>
    */
   inline const Aws::Vector<CheckSummary>& GetCheckSummaries() const { return m_checkSummaries; }
@@ -52,24 +71,6 @@ class ListChecksResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results. </p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListChecksResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -83,14 +84,17 @@ class ListChecksResult {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<CheckSummary> m_checkSummaries;
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
+ private:
   Aws::String m_nextToken;
 
+  Aws::Vector<CheckSummary> m_checkSummaries;
+
   Aws::String m_requestId;
-  bool m_checkSummariesHasBeenSet = false;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
+  bool m_checkSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

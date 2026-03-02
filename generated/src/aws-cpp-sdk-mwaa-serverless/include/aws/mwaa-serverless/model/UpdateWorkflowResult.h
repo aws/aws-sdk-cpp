@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -117,6 +118,8 @@ class UpdateWorkflowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_workflowArn;
 
@@ -127,6 +130,7 @@ class UpdateWorkflowResult {
   Aws::Vector<Aws::String> m_warnings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_workflowArnHasBeenSet = false;
   bool m_modifiedAtHasBeenSet = false;
   bool m_workflowVersionHasBeenSet = false;

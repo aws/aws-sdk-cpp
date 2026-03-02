@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/model/SharedDirectory.h>
@@ -58,10 +59,13 @@ class AcceptSharedDirectoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SharedDirectory m_sharedDirectory;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sharedDirectoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

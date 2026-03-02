@@ -23,6 +23,7 @@
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -41,6 +42,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRuntimeEndpointsRequest,
                                     Pagination::ListAgentRuntimeEndpointsPaginationTraits<DerivedClient>>
   ListAgentRuntimeEndpointsPaginator(const Model::ListAgentRuntimeEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRuntimeEndpointsRequest,
                                              Pagination::ListAgentRuntimeEndpointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -52,6 +54,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRuntimesRequest,
                                     Pagination::ListAgentRuntimesPaginationTraits<DerivedClient>>
   ListAgentRuntimesPaginator(const Model::ListAgentRuntimesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRuntimesRequest,
                                              Pagination::ListAgentRuntimesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -63,6 +66,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRuntimeVersionsRequest,
                                     Pagination::ListAgentRuntimeVersionsPaginationTraits<DerivedClient>>
   ListAgentRuntimeVersionsPaginator(const Model::ListAgentRuntimeVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentRuntimeVersionsRequest,
                                              Pagination::ListAgentRuntimeVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -74,6 +78,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApiKeyCredentialProvidersRequest,
                                     Pagination::ListApiKeyCredentialProvidersPaginationTraits<DerivedClient>>
   ListApiKeyCredentialProvidersPaginator(const Model::ListApiKeyCredentialProvidersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApiKeyCredentialProvidersRequest,
                                              Pagination::ListApiKeyCredentialProvidersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -85,6 +90,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBrowserProfilesRequest,
                                     Pagination::ListBrowserProfilesPaginationTraits<DerivedClient>>
   ListBrowserProfilesPaginator(const Model::ListBrowserProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBrowserProfilesRequest,
                                              Pagination::ListBrowserProfilesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -95,6 +101,7 @@ class BedrockAgentCoreControlPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBrowsersRequest, Pagination::ListBrowsersPaginationTraits<DerivedClient>>
   ListBrowsersPaginator(const Model::ListBrowsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBrowsersRequest,
                                              Pagination::ListBrowsersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -106,6 +113,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodeInterpretersRequest,
                                     Pagination::ListCodeInterpretersPaginationTraits<DerivedClient>>
   ListCodeInterpretersPaginator(const Model::ListCodeInterpretersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodeInterpretersRequest,
                                              Pagination::ListCodeInterpretersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -116,6 +124,7 @@ class BedrockAgentCoreControlPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEvaluatorsRequest, Pagination::ListEvaluatorsPaginationTraits<DerivedClient>>
   ListEvaluatorsPaginator(const Model::ListEvaluatorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEvaluatorsRequest,
                                              Pagination::ListEvaluatorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -126,6 +135,7 @@ class BedrockAgentCoreControlPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewaysRequest, Pagination::ListGatewaysPaginationTraits<DerivedClient>>
   ListGatewaysPaginator(const Model::ListGatewaysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewaysRequest,
                                              Pagination::ListGatewaysPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -137,6 +147,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewayTargetsRequest,
                                     Pagination::ListGatewayTargetsPaginationTraits<DerivedClient>>
   ListGatewayTargetsPaginator(const Model::ListGatewayTargetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewayTargetsRequest,
                                              Pagination::ListGatewayTargetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -147,6 +158,7 @@ class BedrockAgentCoreControlPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemoriesRequest, Pagination::ListMemoriesPaginationTraits<DerivedClient>>
   ListMemoriesPaginator(const Model::ListMemoriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemoriesRequest,
                                              Pagination::ListMemoriesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -158,6 +170,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOauth2CredentialProvidersRequest,
                                     Pagination::ListOauth2CredentialProvidersPaginationTraits<DerivedClient>>
   ListOauth2CredentialProvidersPaginator(const Model::ListOauth2CredentialProvidersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOauth2CredentialProvidersRequest,
                                              Pagination::ListOauth2CredentialProvidersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -169,6 +182,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOnlineEvaluationConfigsRequest,
                                     Pagination::ListOnlineEvaluationConfigsPaginationTraits<DerivedClient>>
   ListOnlineEvaluationConfigsPaginator(const Model::ListOnlineEvaluationConfigsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOnlineEvaluationConfigsRequest,
                                              Pagination::ListOnlineEvaluationConfigsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -179,6 +193,7 @@ class BedrockAgentCoreControlPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPoliciesRequest, Pagination::ListPoliciesPaginationTraits<DerivedClient>>
   ListPoliciesPaginator(const Model::ListPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPoliciesRequest,
                                              Pagination::ListPoliciesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -190,6 +205,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyEnginesRequest,
                                     Pagination::ListPolicyEnginesPaginationTraits<DerivedClient>>
   ListPolicyEnginesPaginator(const Model::ListPolicyEnginesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyEnginesRequest,
                                              Pagination::ListPolicyEnginesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -201,6 +217,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyGenerationAssetsRequest,
                                     Pagination::ListPolicyGenerationAssetsPaginationTraits<DerivedClient>>
   ListPolicyGenerationAssetsPaginator(const Model::ListPolicyGenerationAssetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyGenerationAssetsRequest,
                                              Pagination::ListPolicyGenerationAssetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -212,6 +229,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyGenerationsRequest,
                                     Pagination::ListPolicyGenerationsPaginationTraits<DerivedClient>>
   ListPolicyGenerationsPaginator(const Model::ListPolicyGenerationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyGenerationsRequest,
                                              Pagination::ListPolicyGenerationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -223,6 +241,7 @@ class BedrockAgentCoreControlPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkloadIdentitiesRequest,
                                     Pagination::ListWorkloadIdentitiesPaginationTraits<DerivedClient>>
   ListWorkloadIdentitiesPaginator(const Model::ListWorkloadIdentitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkloadIdentitiesRequest,
                                              Pagination::ListWorkloadIdentitiesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

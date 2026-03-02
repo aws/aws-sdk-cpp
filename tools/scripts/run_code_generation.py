@@ -58,6 +58,9 @@ def parse_arguments() -> dict:
                         help="Do NOT mark operation functions in service client as virtual functions",
                         action="store_true")
 
+    parser.add_argument("--disable-smithy-generation",
+                        help="Disable smithy-based generation in c2j generator",
+                        action="store_true")
     parser.add_argument("--generate_smoke_tests",
                         help="Run smithy code generator for smoke tests",
                         action="store_true")
@@ -120,6 +123,7 @@ def parse_arguments() -> dict:
             raw_generator_arguments[raw_argument] = args[raw_argument]
     arg_map["raw_generator_arguments"] = raw_generator_arguments
     arg_map["disable_virtual_operations"] = args.get("disable_virtual_operations", False)
+    arg_map["disable_smithy_generation"] = args.get("disable_smithy_generation", False)
     arg_map["generate_smoke_tests"] = args.get("generate_smoke_tests", None)
     arg_map["generate_protocol_tests"] = args.get("generate_protocol_tests", None)
     if arg_map["debug"]:

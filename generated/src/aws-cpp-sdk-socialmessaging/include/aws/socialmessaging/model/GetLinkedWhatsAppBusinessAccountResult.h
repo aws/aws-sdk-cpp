@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
 #include <aws/socialmessaging/model/LinkedWhatsAppBusinessAccount.h>
@@ -59,10 +60,13 @@ class GetLinkedWhatsAppBusinessAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LinkedWhatsAppBusinessAccount m_account;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

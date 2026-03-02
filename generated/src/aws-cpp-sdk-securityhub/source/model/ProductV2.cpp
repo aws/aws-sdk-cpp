@@ -54,6 +54,10 @@ ProductV2& ProductV2::operator=(JsonView jsonValue) {
     m_activationUrl = jsonValue.GetString("ActivationUrl");
     m_activationUrlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MarketplaceProductId")) {
+    m_marketplaceProductId = jsonValue.GetString("MarketplaceProductId");
+    m_marketplaceProductIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -96,6 +100,10 @@ JsonValue ProductV2::Jsonize() const {
 
   if (m_activationUrlHasBeenSet) {
     payload.WithString("ActivationUrl", m_activationUrl);
+  }
+
+  if (m_marketplaceProductIdHasBeenSet) {
+    payload.WithString("MarketplaceProductId", m_marketplaceProductId);
   }
 
   return payload;

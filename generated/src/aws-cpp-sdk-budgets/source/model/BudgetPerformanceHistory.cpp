@@ -29,13 +29,13 @@ BudgetPerformanceHistory& BudgetPerformanceHistory::operator=(JsonView jsonValue
   if (jsonValue.ValueExists("CostFilters")) {
     Aws::Map<Aws::String, JsonView> costFiltersJsonMap = jsonValue.GetObject("CostFilters").GetAllObjects();
     for (auto& costFiltersItem : costFiltersJsonMap) {
-      Aws::Utils::Array<JsonView> dimensionValuesJsonList = costFiltersItem.second.AsArray();
-      Aws::Vector<Aws::String> dimensionValuesList;
-      dimensionValuesList.reserve((size_t)dimensionValuesJsonList.GetLength());
-      for (unsigned dimensionValuesIndex = 0; dimensionValuesIndex < dimensionValuesJsonList.GetLength(); ++dimensionValuesIndex) {
-        dimensionValuesList.push_back(dimensionValuesJsonList[dimensionValuesIndex].AsString());
+      Aws::Utils::Array<JsonView> dimensionValues2JsonList = costFiltersItem.second.AsArray();
+      Aws::Vector<Aws::String> dimensionValues2List;
+      dimensionValues2List.reserve((size_t)dimensionValues2JsonList.GetLength());
+      for (unsigned dimensionValues2Index = 0; dimensionValues2Index < dimensionValues2JsonList.GetLength(); ++dimensionValues2Index) {
+        dimensionValues2List.push_back(dimensionValues2JsonList[dimensionValues2Index].AsString());
       }
-      m_costFilters[costFiltersItem.first] = std::move(dimensionValuesList);
+      m_costFilters[costFiltersItem.first] = std::move(dimensionValues2List);
     }
     m_costFiltersHasBeenSet = true;
   }

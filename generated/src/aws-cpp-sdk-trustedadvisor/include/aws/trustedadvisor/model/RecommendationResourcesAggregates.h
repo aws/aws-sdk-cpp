@@ -30,23 +30,6 @@ class RecommendationResourcesAggregates {
 
   ///@{
   /**
-   * <p>The number of AWS resources that were flagged to have errors according to the
-   * Trusted Advisor check</p>
-   */
-  inline long long GetErrorCount() const { return m_errorCount; }
-  inline bool ErrorCountHasBeenSet() const { return m_errorCountHasBeenSet; }
-  inline void SetErrorCount(long long value) {
-    m_errorCountHasBeenSet = true;
-    m_errorCount = value;
-  }
-  inline RecommendationResourcesAggregates& WithErrorCount(long long value) {
-    SetErrorCount(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The number of AWS resources that were flagged to be OK according to the
    * Trusted Advisor check</p>
    */
@@ -78,15 +61,52 @@ class RecommendationResourcesAggregates {
     return *this;
   }
   ///@}
- private:
-  long long m_errorCount{0};
 
+  ///@{
+  /**
+   * <p>The number of AWS resources that were flagged to have errors according to the
+   * Trusted Advisor check</p>
+   */
+  inline long long GetErrorCount() const { return m_errorCount; }
+  inline bool ErrorCountHasBeenSet() const { return m_errorCountHasBeenSet; }
+  inline void SetErrorCount(long long value) {
+    m_errorCountHasBeenSet = true;
+    m_errorCount = value;
+  }
+  inline RecommendationResourcesAggregates& WithErrorCount(long long value) {
+    SetErrorCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of AWS resources belonging to this Trusted Advisor check that were
+   * excluded by the customer</p>
+   */
+  inline long long GetExcludedCount() const { return m_excludedCount; }
+  inline bool ExcludedCountHasBeenSet() const { return m_excludedCountHasBeenSet; }
+  inline void SetExcludedCount(long long value) {
+    m_excludedCountHasBeenSet = true;
+    m_excludedCount = value;
+  }
+  inline RecommendationResourcesAggregates& WithExcludedCount(long long value) {
+    SetExcludedCount(value);
+    return *this;
+  }
+  ///@}
+ private:
   long long m_okCount{0};
 
   long long m_warningCount{0};
-  bool m_errorCountHasBeenSet = false;
+
+  long long m_errorCount{0};
+
+  long long m_excludedCount{0};
   bool m_okCountHasBeenSet = false;
   bool m_warningCountHasBeenSet = false;
+  bool m_errorCountHasBeenSet = false;
+  bool m_excludedCountHasBeenSet = false;
 };
 
 }  // namespace Model

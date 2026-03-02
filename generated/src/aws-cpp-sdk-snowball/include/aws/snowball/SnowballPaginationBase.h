@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/snowball/model/DescribeAddressesPaginationTraits.h>
 #include <aws/snowball/model/ListClusterJobsPaginationTraits.h>
@@ -30,6 +31,7 @@ class SnowballPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAddressesRequest,
                                     Pagination::DescribeAddressesPaginationTraits<DerivedClient>>
   DescribeAddressesPaginator(const Model::DescribeAddressesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAddressesRequest,
                                              Pagination::DescribeAddressesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -41,6 +43,7 @@ class SnowballPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterJobsRequest,
                                     Pagination::ListClusterJobsPaginationTraits<DerivedClient>>
   ListClusterJobsPaginator(const Model::ListClusterJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterJobsRequest,
                                              Pagination::ListClusterJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -51,6 +54,7 @@ class SnowballPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersRequest, Pagination::ListClustersPaginationTraits<DerivedClient>>
   ListClustersPaginator(const Model::ListClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersRequest,
                                              Pagination::ListClustersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -62,6 +66,7 @@ class SnowballPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCompatibleImagesRequest,
                                     Pagination::ListCompatibleImagesPaginationTraits<DerivedClient>>
   ListCompatibleImagesPaginator(const Model::ListCompatibleImagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCompatibleImagesRequest,
                                              Pagination::ListCompatibleImagesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +77,7 @@ class SnowballPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
   ListJobsPaginator(const Model::ListJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -82,6 +88,7 @@ class SnowballPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLongTermPricingRequest,
                                     Pagination::ListLongTermPricingPaginationTraits<DerivedClient>>
   ListLongTermPricingPaginator(const Model::ListLongTermPricingRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLongTermPricingRequest,
                                              Pagination::ListLongTermPricingPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -93,6 +100,7 @@ class SnowballPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPickupLocationsRequest,
                                     Pagination::ListPickupLocationsPaginationTraits<DerivedClient>>
   ListPickupLocationsPaginator(const Model::ListPickupLocationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPickupLocationsRequest,
                                              Pagination::ListPickupLocationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

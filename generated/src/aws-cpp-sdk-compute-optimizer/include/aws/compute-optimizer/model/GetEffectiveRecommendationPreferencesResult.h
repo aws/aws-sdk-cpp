@@ -10,6 +10,7 @@
 #include <aws/compute-optimizer/model/ExternalMetricsPreference.h>
 #include <aws/compute-optimizer/model/LookBackPeriodPreference.h>
 #include <aws/compute-optimizer/model/UtilizationPreference.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -181,6 +182,8 @@ class GetEffectiveRecommendationPreferencesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics{EnhancedInfrastructureMetrics::NOT_SET};
 
@@ -193,6 +196,7 @@ class GetEffectiveRecommendationPreferencesResult {
   Aws::Vector<EffectivePreferredResource> m_preferredResources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_enhancedInfrastructureMetricsHasBeenSet = false;
   bool m_externalMetricsPreferenceHasBeenSet = false;
   bool m_lookBackPeriodHasBeenSet = false;

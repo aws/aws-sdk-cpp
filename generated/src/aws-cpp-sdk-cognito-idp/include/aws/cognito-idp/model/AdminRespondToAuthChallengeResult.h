@@ -7,6 +7,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/AuthenticationResultType.h>
 #include <aws/cognito-idp/model/ChallengeNameType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -197,6 +198,8 @@ class AdminRespondToAuthChallengeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ChallengeNameType m_challengeName{ChallengeNameType::NOT_SET};
 
@@ -207,6 +210,7 @@ class AdminRespondToAuthChallengeResult {
   AuthenticationResultType m_authenticationResult;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_challengeNameHasBeenSet = false;
   bool m_sessionHasBeenSet = false;
   bool m_challengeParametersHasBeenSet = false;

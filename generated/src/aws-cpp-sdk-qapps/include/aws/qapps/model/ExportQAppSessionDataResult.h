@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qapps/QApps_EXPORTS.h>
@@ -93,6 +94,8 @@ class ExportQAppSessionDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_csvFileLink;
 
@@ -101,6 +104,7 @@ class ExportQAppSessionDataResult {
   Aws::String m_sessionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_csvFileLinkHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
   bool m_sessionArnHasBeenSet = false;

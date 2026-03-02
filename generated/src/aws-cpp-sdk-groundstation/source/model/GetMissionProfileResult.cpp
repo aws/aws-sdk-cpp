@@ -20,6 +20,7 @@ using namespace Aws;
 GetMissionProfileResult::GetMissionProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetMissionProfileResult& GetMissionProfileResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("missionProfileId")) {
     m_missionProfileId = jsonValue.GetString("missionProfileId");
@@ -52,13 +53,13 @@ GetMissionProfileResult& GetMissionProfileResult::operator=(const Aws::AmazonWeb
   if (jsonValue.ValueExists("dataflowEdges")) {
     Aws::Utils::Array<JsonView> dataflowEdgesJsonList = jsonValue.GetArray("dataflowEdges");
     for (unsigned dataflowEdgesIndex = 0; dataflowEdgesIndex < dataflowEdgesJsonList.GetLength(); ++dataflowEdgesIndex) {
-      Aws::Utils::Array<JsonView> dataflowEdgeJsonList = dataflowEdgesJsonList[dataflowEdgesIndex].AsArray();
-      Aws::Vector<Aws::String> dataflowEdgeList;
-      dataflowEdgeList.reserve((size_t)dataflowEdgeJsonList.GetLength());
-      for (unsigned dataflowEdgeIndex = 0; dataflowEdgeIndex < dataflowEdgeJsonList.GetLength(); ++dataflowEdgeIndex) {
-        dataflowEdgeList.push_back(dataflowEdgeJsonList[dataflowEdgeIndex].AsString());
+      Aws::Utils::Array<JsonView> dataflowEdge2JsonList = dataflowEdgesJsonList[dataflowEdgesIndex].AsArray();
+      Aws::Vector<Aws::String> dataflowEdge2List;
+      dataflowEdge2List.reserve((size_t)dataflowEdge2JsonList.GetLength());
+      for (unsigned dataflowEdge2Index = 0; dataflowEdge2Index < dataflowEdge2JsonList.GetLength(); ++dataflowEdge2Index) {
+        dataflowEdge2List.push_back(dataflowEdge2JsonList[dataflowEdge2Index].AsString());
       }
-      m_dataflowEdges.push_back(std::move(dataflowEdgeList));
+      m_dataflowEdges.push_back(std::move(dataflowEdge2List));
     }
     m_dataflowEdgesHasBeenSet = true;
   }

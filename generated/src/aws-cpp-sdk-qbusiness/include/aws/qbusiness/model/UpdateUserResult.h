@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
@@ -111,6 +112,8 @@ class UpdateUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<UserAlias> m_userAliasesAdded;
 
@@ -119,6 +122,7 @@ class UpdateUserResult {
   Aws::Vector<UserAlias> m_userAliasesDeleted;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userAliasesAddedHasBeenSet = false;
   bool m_userAliasesUpdatedHasBeenSet = false;
   bool m_userAliasesDeletedHasBeenSet = false;

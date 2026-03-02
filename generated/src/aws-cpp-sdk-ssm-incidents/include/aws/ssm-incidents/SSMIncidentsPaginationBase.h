@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/ssm-incidents/model/GetResourcePoliciesPaginationTraits.h>
 #include <aws/ssm-incidents/model/ListIncidentFindingsPaginationTraits.h>
@@ -30,6 +31,7 @@ class SSMIncidentsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourcePoliciesRequest,
                                     Pagination::GetResourcePoliciesPaginationTraits<DerivedClient>>
   GetResourcePoliciesPaginator(const Model::GetResourcePoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourcePoliciesRequest,
                                              Pagination::GetResourcePoliciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -41,6 +43,7 @@ class SSMIncidentsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIncidentFindingsRequest,
                                     Pagination::ListIncidentFindingsPaginationTraits<DerivedClient>>
   ListIncidentFindingsPaginator(const Model::ListIncidentFindingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIncidentFindingsRequest,
                                              Pagination::ListIncidentFindingsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -52,6 +55,7 @@ class SSMIncidentsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIncidentRecordsRequest,
                                     Pagination::ListIncidentRecordsPaginationTraits<DerivedClient>>
   ListIncidentRecordsPaginator(const Model::ListIncidentRecordsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIncidentRecordsRequest,
                                              Pagination::ListIncidentRecordsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -63,6 +67,7 @@ class SSMIncidentsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRelatedItemsRequest,
                                     Pagination::ListRelatedItemsPaginationTraits<DerivedClient>>
   ListRelatedItemsPaginator(const Model::ListRelatedItemsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRelatedItemsRequest,
                                              Pagination::ListRelatedItemsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -74,6 +79,7 @@ class SSMIncidentsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReplicationSetsRequest,
                                     Pagination::ListReplicationSetsPaginationTraits<DerivedClient>>
   ListReplicationSetsPaginator(const Model::ListReplicationSetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReplicationSetsRequest,
                                              Pagination::ListReplicationSetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -85,6 +91,7 @@ class SSMIncidentsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResponsePlansRequest,
                                     Pagination::ListResponsePlansPaginationTraits<DerivedClient>>
   ListResponsePlansPaginator(const Model::ListResponsePlansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResponsePlansRequest,
                                              Pagination::ListResponsePlansPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -96,6 +103,7 @@ class SSMIncidentsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTimelineEventsRequest,
                                     Pagination::ListTimelineEventsPaginationTraits<DerivedClient>>
   ListTimelineEventsPaginator(const Model::ListTimelineEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTimelineEventsRequest,
                                              Pagination::ListTimelineEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

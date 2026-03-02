@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/outposts/model/Site.h>
@@ -57,10 +58,13 @@ class UpdateSiteRackPhysicalPropertiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Site m_site;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_siteHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

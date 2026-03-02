@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediastore/MediaStore_EXPORTS.h>
 #include <aws/mediastore/model/MetricPolicy.h>
@@ -58,10 +59,13 @@ class GetMetricPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MetricPolicy m_metricPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metricPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

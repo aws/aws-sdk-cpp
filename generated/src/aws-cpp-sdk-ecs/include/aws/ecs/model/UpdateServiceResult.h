@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/Service.h>
@@ -21,6 +22,11 @@ class JsonValue;
 }  // namespace Utils
 namespace ECS {
 namespace Model {
+/**
+ * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServiceResponse">AWS
+ * API Reference</a></p>
+ */
 class UpdateServiceResult {
  public:
   AWS_ECS_API UpdateServiceResult() = default;
@@ -58,10 +64,13 @@ class UpdateServiceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Service m_service;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serviceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

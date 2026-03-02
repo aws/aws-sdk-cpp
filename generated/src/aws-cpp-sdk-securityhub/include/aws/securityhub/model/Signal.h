@@ -26,10 +26,10 @@ namespace Model {
  * Extended Threat Detection attack sequence. An attack sequence is a type of
  * threat detected by GuardDuty. GuardDuty generates an attack sequence finding
  * when multiple events, or signals, align to a potentially suspicious activity.
- * When GuardDuty and Security Hub are integrated, GuardDuty sends attack sequence
- * findings to Security Hub.</p> <p>A signal can be an API activity or a finding
- * that GuardDuty uses to detect an attack sequence finding.</p><p><h3>See
- * Also:</h3>   <a
+ * When GuardDuty and Security Hub CSPM are integrated, GuardDuty sends attack
+ * sequence findings to Security Hub CSPM.</p> <p>A signal can be an API activity
+ * or a finding that GuardDuty uses to detect an attack sequence
+ * finding.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Signal">AWS
  * API Reference</a></p>
  */

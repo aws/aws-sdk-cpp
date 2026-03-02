@@ -72,19 +72,19 @@ Association& Association::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("TargetMaps")) {
     Aws::Utils::Array<JsonView> targetMapsJsonList = jsonValue.GetArray("TargetMaps");
     for (unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex) {
-      Aws::Map<Aws::String, JsonView> targetMapJsonMap = targetMapsJsonList[targetMapsIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::Vector<Aws::String>> targetMapMap;
-      for (auto& targetMapItem : targetMapJsonMap) {
-        Aws::Utils::Array<JsonView> targetMapValueListJsonList = targetMapItem.second.AsArray();
-        Aws::Vector<Aws::String> targetMapValueListList;
-        targetMapValueListList.reserve((size_t)targetMapValueListJsonList.GetLength());
-        for (unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength();
-             ++targetMapValueListIndex) {
-          targetMapValueListList.push_back(targetMapValueListJsonList[targetMapValueListIndex].AsString());
+      Aws::Map<Aws::String, JsonView> targetMap2JsonMap = targetMapsJsonList[targetMapsIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::Vector<Aws::String>> targetMap2Map;
+      for (auto& targetMap2Item : targetMap2JsonMap) {
+        Aws::Utils::Array<JsonView> targetMapValueList3JsonList = targetMap2Item.second.AsArray();
+        Aws::Vector<Aws::String> targetMapValueList3List;
+        targetMapValueList3List.reserve((size_t)targetMapValueList3JsonList.GetLength());
+        for (unsigned targetMapValueList3Index = 0; targetMapValueList3Index < targetMapValueList3JsonList.GetLength();
+             ++targetMapValueList3Index) {
+          targetMapValueList3List.push_back(targetMapValueList3JsonList[targetMapValueList3Index].AsString());
         }
-        targetMapMap[targetMapItem.first] = std::move(targetMapValueListList);
+        targetMap2Map[targetMap2Item.first] = std::move(targetMapValueList3List);
       }
-      m_targetMaps.push_back(std::move(targetMapMap));
+      m_targetMaps.push_back(std::move(targetMap2Map));
     }
     m_targetMapsHasBeenSet = true;
   }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/ResponseMetadata.h>
@@ -121,6 +122,8 @@ class ModifyLakehouseConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clusterIdentifier;
 
@@ -131,6 +134,7 @@ class ModifyLakehouseConfigurationResult {
   Aws::String m_catalogArn;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_lakehouseIdcApplicationArnHasBeenSet = false;
   bool m_lakehouseRegistrationStatusHasBeenSet = false;

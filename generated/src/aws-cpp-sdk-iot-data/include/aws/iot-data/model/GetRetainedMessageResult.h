@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
@@ -133,6 +134,8 @@ class GetRetainedMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_topic;
 
@@ -145,6 +148,7 @@ class GetRetainedMessageResult {
   Aws::Utils::ByteBuffer m_userProperties{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_topicHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
   bool m_qosHasBeenSet = false;

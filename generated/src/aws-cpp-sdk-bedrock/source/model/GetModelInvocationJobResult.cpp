@@ -20,6 +20,7 @@ using namespace Aws;
 GetModelInvocationJobResult::GetModelInvocationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetModelInvocationJobResult& GetModelInvocationJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("jobArn")) {
     m_jobArn = jsonValue.GetString("jobArn");
@@ -80,6 +81,10 @@ GetModelInvocationJobResult& GetModelInvocationJobResult::operator=(const Aws::A
   if (jsonValue.ValueExists("jobExpirationTime")) {
     m_jobExpirationTime = jsonValue.GetString("jobExpirationTime");
     m_jobExpirationTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("modelInvocationType")) {
+    m_modelInvocationType = ModelInvocationTypeMapper::GetModelInvocationTypeForName(jsonValue.GetString("modelInvocationType"));
+    m_modelInvocationTypeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

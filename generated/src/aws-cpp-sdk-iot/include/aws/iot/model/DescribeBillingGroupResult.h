@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/BillingGroupMetadata.h>
@@ -142,6 +143,8 @@ class DescribeBillingGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_billingGroupName;
 
@@ -156,6 +159,7 @@ class DescribeBillingGroupResult {
   BillingGroupMetadata m_billingGroupMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_billingGroupNameHasBeenSet = false;
   bool m_billingGroupIdHasBeenSet = false;
   bool m_billingGroupArnHasBeenSet = false;

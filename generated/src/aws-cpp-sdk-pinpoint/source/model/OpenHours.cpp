@@ -21,70 +21,70 @@ OpenHours& OpenHours::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("EMAIL")) {
     Aws::Map<Aws::String, JsonView> eMAILJsonMap = jsonValue.GetObject("EMAIL").GetAllObjects();
     for (auto& eMAILItem : eMAILJsonMap) {
-      Aws::Utils::Array<JsonView> listOfOpenHoursRulesJsonList = eMAILItem.second.AsArray();
-      Aws::Vector<OpenHoursRule> listOfOpenHoursRulesList;
-      listOfOpenHoursRulesList.reserve((size_t)listOfOpenHoursRulesJsonList.GetLength());
-      for (unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength();
-           ++listOfOpenHoursRulesIndex) {
-        listOfOpenHoursRulesList.push_back(listOfOpenHoursRulesJsonList[listOfOpenHoursRulesIndex].AsObject());
+      Aws::Utils::Array<JsonView> listOfOpenHoursRules2JsonList = eMAILItem.second.AsArray();
+      Aws::Vector<OpenHoursRule> listOfOpenHoursRules2List;
+      listOfOpenHoursRules2List.reserve((size_t)listOfOpenHoursRules2JsonList.GetLength());
+      for (unsigned listOfOpenHoursRules2Index = 0; listOfOpenHoursRules2Index < listOfOpenHoursRules2JsonList.GetLength();
+           ++listOfOpenHoursRules2Index) {
+        listOfOpenHoursRules2List.push_back(listOfOpenHoursRules2JsonList[listOfOpenHoursRules2Index].AsObject());
       }
-      m_eMAIL[DayOfWeekMapper::GetDayOfWeekForName(eMAILItem.first)] = std::move(listOfOpenHoursRulesList);
+      m_eMAIL[DayOfWeekMapper::GetDayOfWeekForName(eMAILItem.first)] = std::move(listOfOpenHoursRules2List);
     }
     m_eMAILHasBeenSet = true;
   }
   if (jsonValue.ValueExists("SMS")) {
     Aws::Map<Aws::String, JsonView> sMSJsonMap = jsonValue.GetObject("SMS").GetAllObjects();
     for (auto& sMSItem : sMSJsonMap) {
-      Aws::Utils::Array<JsonView> listOfOpenHoursRulesJsonList = sMSItem.second.AsArray();
-      Aws::Vector<OpenHoursRule> listOfOpenHoursRulesList;
-      listOfOpenHoursRulesList.reserve((size_t)listOfOpenHoursRulesJsonList.GetLength());
-      for (unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength();
-           ++listOfOpenHoursRulesIndex) {
-        listOfOpenHoursRulesList.push_back(listOfOpenHoursRulesJsonList[listOfOpenHoursRulesIndex].AsObject());
+      Aws::Utils::Array<JsonView> listOfOpenHoursRules2JsonList = sMSItem.second.AsArray();
+      Aws::Vector<OpenHoursRule> listOfOpenHoursRules2List;
+      listOfOpenHoursRules2List.reserve((size_t)listOfOpenHoursRules2JsonList.GetLength());
+      for (unsigned listOfOpenHoursRules2Index = 0; listOfOpenHoursRules2Index < listOfOpenHoursRules2JsonList.GetLength();
+           ++listOfOpenHoursRules2Index) {
+        listOfOpenHoursRules2List.push_back(listOfOpenHoursRules2JsonList[listOfOpenHoursRules2Index].AsObject());
       }
-      m_sMS[DayOfWeekMapper::GetDayOfWeekForName(sMSItem.first)] = std::move(listOfOpenHoursRulesList);
+      m_sMS[DayOfWeekMapper::GetDayOfWeekForName(sMSItem.first)] = std::move(listOfOpenHoursRules2List);
     }
     m_sMSHasBeenSet = true;
   }
   if (jsonValue.ValueExists("PUSH")) {
     Aws::Map<Aws::String, JsonView> pUSHJsonMap = jsonValue.GetObject("PUSH").GetAllObjects();
     for (auto& pUSHItem : pUSHJsonMap) {
-      Aws::Utils::Array<JsonView> listOfOpenHoursRulesJsonList = pUSHItem.second.AsArray();
-      Aws::Vector<OpenHoursRule> listOfOpenHoursRulesList;
-      listOfOpenHoursRulesList.reserve((size_t)listOfOpenHoursRulesJsonList.GetLength());
-      for (unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength();
-           ++listOfOpenHoursRulesIndex) {
-        listOfOpenHoursRulesList.push_back(listOfOpenHoursRulesJsonList[listOfOpenHoursRulesIndex].AsObject());
+      Aws::Utils::Array<JsonView> listOfOpenHoursRules2JsonList = pUSHItem.second.AsArray();
+      Aws::Vector<OpenHoursRule> listOfOpenHoursRules2List;
+      listOfOpenHoursRules2List.reserve((size_t)listOfOpenHoursRules2JsonList.GetLength());
+      for (unsigned listOfOpenHoursRules2Index = 0; listOfOpenHoursRules2Index < listOfOpenHoursRules2JsonList.GetLength();
+           ++listOfOpenHoursRules2Index) {
+        listOfOpenHoursRules2List.push_back(listOfOpenHoursRules2JsonList[listOfOpenHoursRules2Index].AsObject());
       }
-      m_pUSH[DayOfWeekMapper::GetDayOfWeekForName(pUSHItem.first)] = std::move(listOfOpenHoursRulesList);
+      m_pUSH[DayOfWeekMapper::GetDayOfWeekForName(pUSHItem.first)] = std::move(listOfOpenHoursRules2List);
     }
     m_pUSHHasBeenSet = true;
   }
   if (jsonValue.ValueExists("VOICE")) {
     Aws::Map<Aws::String, JsonView> vOICEJsonMap = jsonValue.GetObject("VOICE").GetAllObjects();
     for (auto& vOICEItem : vOICEJsonMap) {
-      Aws::Utils::Array<JsonView> listOfOpenHoursRulesJsonList = vOICEItem.second.AsArray();
-      Aws::Vector<OpenHoursRule> listOfOpenHoursRulesList;
-      listOfOpenHoursRulesList.reserve((size_t)listOfOpenHoursRulesJsonList.GetLength());
-      for (unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength();
-           ++listOfOpenHoursRulesIndex) {
-        listOfOpenHoursRulesList.push_back(listOfOpenHoursRulesJsonList[listOfOpenHoursRulesIndex].AsObject());
+      Aws::Utils::Array<JsonView> listOfOpenHoursRules2JsonList = vOICEItem.second.AsArray();
+      Aws::Vector<OpenHoursRule> listOfOpenHoursRules2List;
+      listOfOpenHoursRules2List.reserve((size_t)listOfOpenHoursRules2JsonList.GetLength());
+      for (unsigned listOfOpenHoursRules2Index = 0; listOfOpenHoursRules2Index < listOfOpenHoursRules2JsonList.GetLength();
+           ++listOfOpenHoursRules2Index) {
+        listOfOpenHoursRules2List.push_back(listOfOpenHoursRules2JsonList[listOfOpenHoursRules2Index].AsObject());
       }
-      m_vOICE[DayOfWeekMapper::GetDayOfWeekForName(vOICEItem.first)] = std::move(listOfOpenHoursRulesList);
+      m_vOICE[DayOfWeekMapper::GetDayOfWeekForName(vOICEItem.first)] = std::move(listOfOpenHoursRules2List);
     }
     m_vOICEHasBeenSet = true;
   }
   if (jsonValue.ValueExists("CUSTOM")) {
     Aws::Map<Aws::String, JsonView> cUSTOMJsonMap = jsonValue.GetObject("CUSTOM").GetAllObjects();
     for (auto& cUSTOMItem : cUSTOMJsonMap) {
-      Aws::Utils::Array<JsonView> listOfOpenHoursRulesJsonList = cUSTOMItem.second.AsArray();
-      Aws::Vector<OpenHoursRule> listOfOpenHoursRulesList;
-      listOfOpenHoursRulesList.reserve((size_t)listOfOpenHoursRulesJsonList.GetLength());
-      for (unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength();
-           ++listOfOpenHoursRulesIndex) {
-        listOfOpenHoursRulesList.push_back(listOfOpenHoursRulesJsonList[listOfOpenHoursRulesIndex].AsObject());
+      Aws::Utils::Array<JsonView> listOfOpenHoursRules2JsonList = cUSTOMItem.second.AsArray();
+      Aws::Vector<OpenHoursRule> listOfOpenHoursRules2List;
+      listOfOpenHoursRules2List.reserve((size_t)listOfOpenHoursRules2JsonList.GetLength());
+      for (unsigned listOfOpenHoursRules2Index = 0; listOfOpenHoursRules2Index < listOfOpenHoursRules2JsonList.GetLength();
+           ++listOfOpenHoursRules2Index) {
+        listOfOpenHoursRules2List.push_back(listOfOpenHoursRules2JsonList[listOfOpenHoursRules2Index].AsObject());
       }
-      m_cUSTOM[DayOfWeekMapper::GetDayOfWeekForName(cUSTOMItem.first)] = std::move(listOfOpenHoursRulesList);
+      m_cUSTOM[DayOfWeekMapper::GetDayOfWeekForName(cUSTOMItem.first)] = std::move(listOfOpenHoursRules2List);
     }
     m_cUSTOMHasBeenSet = true;
   }

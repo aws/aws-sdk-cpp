@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/model/ReceiptRule.h>
@@ -90,12 +91,15 @@ class DescribeActiveReceiptRuleSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReceiptRuleSetMetadata m_metadata;
 
   Aws::Vector<ReceiptRule> m_rules;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metadataHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

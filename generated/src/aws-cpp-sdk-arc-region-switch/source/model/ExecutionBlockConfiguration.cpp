@@ -64,6 +64,14 @@ ExecutionBlockConfiguration& ExecutionBlockConfiguration::operator=(JsonView jso
     m_documentDbConfig = jsonValue.GetObject("documentDbConfig");
     m_documentDbConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rdsPromoteReadReplicaConfig")) {
+    m_rdsPromoteReadReplicaConfig = jsonValue.GetObject("rdsPromoteReadReplicaConfig");
+    m_rdsPromoteReadReplicaConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("rdsCreateCrossRegionReadReplicaConfig")) {
+    m_rdsCreateCrossRegionReadReplicaConfig = jsonValue.GetObject("rdsCreateCrossRegionReadReplicaConfig");
+    m_rdsCreateCrossRegionReadReplicaConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -112,6 +120,14 @@ JsonValue ExecutionBlockConfiguration::Jsonize() const {
 
   if (m_documentDbConfigHasBeenSet) {
     payload.WithObject("documentDbConfig", m_documentDbConfig.Jsonize());
+  }
+
+  if (m_rdsPromoteReadReplicaConfigHasBeenSet) {
+    payload.WithObject("rdsPromoteReadReplicaConfig", m_rdsPromoteReadReplicaConfig.Jsonize());
+  }
+
+  if (m_rdsCreateCrossRegionReadReplicaConfigHasBeenSet) {
+    payload.WithObject("rdsCreateCrossRegionReadReplicaConfig", m_rdsCreateCrossRegionReadReplicaConfig.Jsonize());
   }
 
   return payload;

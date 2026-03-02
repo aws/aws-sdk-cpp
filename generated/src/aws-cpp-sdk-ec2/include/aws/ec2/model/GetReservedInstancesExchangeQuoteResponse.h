@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -216,6 +217,8 @@ class GetReservedInstancesExchangeQuoteResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_currencyCode;
 
@@ -236,6 +239,7 @@ class GetReservedInstancesExchangeQuoteResponse {
   Aws::String m_validationFailureReason;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_currencyCodeHasBeenSet = false;
   bool m_isValidExchangeHasBeenSet = false;
   bool m_outputReservedInstancesWillExpireAtHasBeenSet = false;

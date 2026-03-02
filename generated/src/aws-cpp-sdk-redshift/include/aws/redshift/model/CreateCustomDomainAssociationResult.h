@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/ResponseMetadata.h>
@@ -110,6 +111,8 @@ class CreateCustomDomainAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_customDomainName;
 
@@ -120,6 +123,7 @@ class CreateCustomDomainAssociationResult {
   Aws::String m_customDomainCertExpiryTime;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_customDomainNameHasBeenSet = false;
   bool m_customDomainCertificateArnHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;

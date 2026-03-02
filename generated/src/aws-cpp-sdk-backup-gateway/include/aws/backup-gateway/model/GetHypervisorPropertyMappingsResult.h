@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/backup-gateway/model/VmwareToAwsTagMapping.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -48,25 +49,8 @@ class GetHypervisorPropertyMappingsResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the IAM role.</p>
-   */
-  inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
-  template <typename IamRoleArnT = Aws::String>
-  void SetIamRoleArn(IamRoleArnT&& value) {
-    m_iamRoleArnHasBeenSet = true;
-    m_iamRoleArn = std::forward<IamRoleArnT>(value);
-  }
-  template <typename IamRoleArnT = Aws::String>
-  GetHypervisorPropertyMappingsResult& WithIamRoleArn(IamRoleArnT&& value) {
-    SetIamRoleArn(std::forward<IamRoleArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>This is a display of the mappings of on-premises VMware tags to the Amazon
-   * Web Services tags.</p>
+   * <p>This is a display of the mappings of VMware tags to the Amazon Web Services
+   * tags.</p>
    */
   inline const Aws::Vector<VmwareToAwsTagMapping>& GetVmwareToAwsTagMappings() const { return m_vmwareToAwsTagMappings; }
   template <typename VmwareToAwsTagMappingsT = Aws::Vector<VmwareToAwsTagMapping>>
@@ -88,6 +72,23 @@ class GetHypervisorPropertyMappingsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+   */
+  inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
+  template <typename IamRoleArnT = Aws::String>
+  void SetIamRoleArn(IamRoleArnT&& value) {
+    m_iamRoleArnHasBeenSet = true;
+    m_iamRoleArn = std::forward<IamRoleArnT>(value);
+  }
+  template <typename IamRoleArnT = Aws::String>
+  GetHypervisorPropertyMappingsResult& WithIamRoleArn(IamRoleArnT&& value) {
+    SetIamRoleArn(std::forward<IamRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -101,17 +102,20 @@ class GetHypervisorPropertyMappingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_hypervisorArn;
 
-  Aws::String m_iamRoleArn;
-
   Aws::Vector<VmwareToAwsTagMapping> m_vmwareToAwsTagMappings;
 
+  Aws::String m_iamRoleArn;
+
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hypervisorArnHasBeenSet = false;
-  bool m_iamRoleArnHasBeenSet = false;
   bool m_vmwareToAwsTagMappingsHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

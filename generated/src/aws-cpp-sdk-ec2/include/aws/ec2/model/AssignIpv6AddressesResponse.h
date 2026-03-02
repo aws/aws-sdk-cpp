@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -107,6 +108,8 @@ class AssignIpv6AddressesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Aws::String> m_assignedIpv6Addresses;
 
@@ -115,6 +118,7 @@ class AssignIpv6AddressesResponse {
   Aws::String m_networkInterfaceId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assignedIpv6AddressesHasBeenSet = false;
   bool m_assignedIpv6PrefixesHasBeenSet = false;
   bool m_networkInterfaceIdHasBeenSet = false;

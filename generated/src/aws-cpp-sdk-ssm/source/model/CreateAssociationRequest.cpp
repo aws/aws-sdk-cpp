@@ -138,6 +138,10 @@ Aws::String CreateAssociationRequest::SerializePayload() const {
     payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
   }
 
+  if (m_associationDispatchAssumeRoleHasBeenSet) {
+    payload.WithString("AssociationDispatchAssumeRole", m_associationDispatchAssumeRole);
+  }
+
   return payload.View().WriteReadable();
 }
 

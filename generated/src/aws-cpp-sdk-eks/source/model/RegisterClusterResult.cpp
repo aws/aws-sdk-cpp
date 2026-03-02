@@ -20,6 +20,7 @@ using namespace Aws;
 RegisterClusterResult::RegisterClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 RegisterClusterResult& RegisterClusterResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("cluster")) {
     m_cluster = jsonValue.GetObject("cluster");

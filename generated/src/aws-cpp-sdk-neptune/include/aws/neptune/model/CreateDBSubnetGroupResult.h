@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/model/DBSubnetGroup.h>
 #include <aws/neptune/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class CreateDBSubnetGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DBSubnetGroup m_dBSubnetGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBSubnetGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

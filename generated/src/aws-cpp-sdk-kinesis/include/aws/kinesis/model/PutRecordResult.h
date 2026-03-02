@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/kinesis/model/EncryptionType.h>
@@ -103,6 +104,8 @@ class PutRecordResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_shardId;
 
@@ -111,6 +114,7 @@ class PutRecordResult {
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_shardIdHasBeenSet = false;
   bool m_sequenceNumberHasBeenSet = false;
   bool m_encryptionTypeHasBeenSet = false;

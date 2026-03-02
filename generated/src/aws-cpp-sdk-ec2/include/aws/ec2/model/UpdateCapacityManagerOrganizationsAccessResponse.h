@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/CapacityManagerStatus.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -73,12 +74,15 @@ class UpdateCapacityManagerOrganizationsAccessResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CapacityManagerStatus m_capacityManagerStatus{CapacityManagerStatus::NOT_SET};
 
   bool m_organizationsAccess{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_capacityManagerStatusHasBeenSet = false;
   bool m_organizationsAccessHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

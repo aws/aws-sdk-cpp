@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amplify/Amplify_EXPORTS.h>
 #include <aws/amplify/model/DomainAssociation.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -56,10 +57,13 @@ class DeleteDomainAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DomainAssociation m_domainAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
 #include <aws/neptune-graph/model/Format.h>
@@ -164,6 +165,8 @@ class CancelImportTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_graphId;
 
@@ -180,6 +183,7 @@ class CancelImportTaskResult {
   ImportTaskStatus m_status{ImportTaskStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_graphIdHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
   bool m_sourceHasBeenSet = false;

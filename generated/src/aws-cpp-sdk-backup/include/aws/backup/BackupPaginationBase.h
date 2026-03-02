@@ -34,6 +34,7 @@
 #include <aws/backup/model/ListScanJobsPaginationTraits.h>
 #include <aws/backup/model/ListTagsPaginationTraits.h>
 #include <aws/backup/model/ListTieringConfigurationsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -51,6 +52,7 @@ class BackupPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupJobsRequest, Pagination::ListBackupJobsPaginationTraits<DerivedClient>>
   ListBackupJobsPaginator(const Model::ListBackupJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupJobsRequest,
                                              Pagination::ListBackupJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -62,6 +64,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupJobSummariesRequest,
                                     Pagination::ListBackupJobSummariesPaginationTraits<DerivedClient>>
   ListBackupJobSummariesPaginator(const Model::ListBackupJobSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupJobSummariesRequest,
                                              Pagination::ListBackupJobSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -73,6 +76,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupPlansRequest,
                                     Pagination::ListBackupPlansPaginationTraits<DerivedClient>>
   ListBackupPlansPaginator(const Model::ListBackupPlansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupPlansRequest,
                                              Pagination::ListBackupPlansPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -84,6 +88,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupPlanTemplatesRequest,
                                     Pagination::ListBackupPlanTemplatesPaginationTraits<DerivedClient>>
   ListBackupPlanTemplatesPaginator(const Model::ListBackupPlanTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupPlanTemplatesRequest,
                                              Pagination::ListBackupPlanTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -95,6 +100,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupPlanVersionsRequest,
                                     Pagination::ListBackupPlanVersionsPaginationTraits<DerivedClient>>
   ListBackupPlanVersionsPaginator(const Model::ListBackupPlanVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupPlanVersionsRequest,
                                              Pagination::ListBackupPlanVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -106,6 +112,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupSelectionsRequest,
                                     Pagination::ListBackupSelectionsPaginationTraits<DerivedClient>>
   ListBackupSelectionsPaginator(const Model::ListBackupSelectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupSelectionsRequest,
                                              Pagination::ListBackupSelectionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -117,6 +124,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupVaultsRequest,
                                     Pagination::ListBackupVaultsPaginationTraits<DerivedClient>>
   ListBackupVaultsPaginator(const Model::ListBackupVaultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBackupVaultsRequest,
                                              Pagination::ListBackupVaultsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -127,6 +135,7 @@ class BackupPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCopyJobsRequest, Pagination::ListCopyJobsPaginationTraits<DerivedClient>>
   ListCopyJobsPaginator(const Model::ListCopyJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCopyJobsRequest,
                                              Pagination::ListCopyJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -138,6 +147,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCopyJobSummariesRequest,
                                     Pagination::ListCopyJobSummariesPaginationTraits<DerivedClient>>
   ListCopyJobSummariesPaginator(const Model::ListCopyJobSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCopyJobSummariesRequest,
                                              Pagination::ListCopyJobSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -148,6 +158,7 @@ class BackupPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFrameworksRequest, Pagination::ListFrameworksPaginationTraits<DerivedClient>>
   ListFrameworksPaginator(const Model::ListFrameworksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFrameworksRequest,
                                              Pagination::ListFrameworksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -159,6 +170,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndexedRecoveryPointsRequest,
                                     Pagination::ListIndexedRecoveryPointsPaginationTraits<DerivedClient>>
   ListIndexedRecoveryPointsPaginator(const Model::ListIndexedRecoveryPointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndexedRecoveryPointsRequest,
                                              Pagination::ListIndexedRecoveryPointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -169,6 +181,7 @@ class BackupPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLegalHoldsRequest, Pagination::ListLegalHoldsPaginationTraits<DerivedClient>>
   ListLegalHoldsPaginator(const Model::ListLegalHoldsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLegalHoldsRequest,
                                              Pagination::ListLegalHoldsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -180,6 +193,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectedResourcesRequest,
                                     Pagination::ListProtectedResourcesPaginationTraits<DerivedClient>>
   ListProtectedResourcesPaginator(const Model::ListProtectedResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectedResourcesRequest,
                                              Pagination::ListProtectedResourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -191,6 +205,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectedResourcesByBackupVaultRequest,
                                     Pagination::ListProtectedResourcesByBackupVaultPaginationTraits<DerivedClient>>
   ListProtectedResourcesByBackupVaultPaginator(const Model::ListProtectedResourcesByBackupVaultRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtectedResourcesByBackupVaultRequest,
                                              Pagination::ListProtectedResourcesByBackupVaultPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -202,6 +217,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPointsByBackupVaultRequest,
                                     Pagination::ListRecoveryPointsByBackupVaultPaginationTraits<DerivedClient>>
   ListRecoveryPointsByBackupVaultPaginator(const Model::ListRecoveryPointsByBackupVaultRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPointsByBackupVaultRequest,
                                              Pagination::ListRecoveryPointsByBackupVaultPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -213,6 +229,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPointsByLegalHoldRequest,
                                     Pagination::ListRecoveryPointsByLegalHoldPaginationTraits<DerivedClient>>
   ListRecoveryPointsByLegalHoldPaginator(const Model::ListRecoveryPointsByLegalHoldRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPointsByLegalHoldRequest,
                                              Pagination::ListRecoveryPointsByLegalHoldPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -224,6 +241,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPointsByResourceRequest,
                                     Pagination::ListRecoveryPointsByResourcePaginationTraits<DerivedClient>>
   ListRecoveryPointsByResourcePaginator(const Model::ListRecoveryPointsByResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPointsByResourceRequest,
                                              Pagination::ListRecoveryPointsByResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -234,6 +252,7 @@ class BackupPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportJobsRequest, Pagination::ListReportJobsPaginationTraits<DerivedClient>>
   ListReportJobsPaginator(const Model::ListReportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportJobsRequest,
                                              Pagination::ListReportJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -245,6 +264,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportPlansRequest,
                                     Pagination::ListReportPlansPaginationTraits<DerivedClient>>
   ListReportPlansPaginator(const Model::ListReportPlansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportPlansRequest,
                                              Pagination::ListReportPlansPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -256,6 +276,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreAccessBackupVaultsRequest,
                                     Pagination::ListRestoreAccessBackupVaultsPaginationTraits<DerivedClient>>
   ListRestoreAccessBackupVaultsPaginator(const Model::ListRestoreAccessBackupVaultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreAccessBackupVaultsRequest,
                                              Pagination::ListRestoreAccessBackupVaultsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -267,6 +288,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreJobsRequest,
                                     Pagination::ListRestoreJobsPaginationTraits<DerivedClient>>
   ListRestoreJobsPaginator(const Model::ListRestoreJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreJobsRequest,
                                              Pagination::ListRestoreJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -278,6 +300,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreJobsByProtectedResourceRequest,
                                     Pagination::ListRestoreJobsByProtectedResourcePaginationTraits<DerivedClient>>
   ListRestoreJobsByProtectedResourcePaginator(const Model::ListRestoreJobsByProtectedResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreJobsByProtectedResourceRequest,
                                              Pagination::ListRestoreJobsByProtectedResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -289,6 +312,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreJobSummariesRequest,
                                     Pagination::ListRestoreJobSummariesPaginationTraits<DerivedClient>>
   ListRestoreJobSummariesPaginator(const Model::ListRestoreJobSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreJobSummariesRequest,
                                              Pagination::ListRestoreJobSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -300,6 +324,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreTestingPlansRequest,
                                     Pagination::ListRestoreTestingPlansPaginationTraits<DerivedClient>>
   ListRestoreTestingPlansPaginator(const Model::ListRestoreTestingPlansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreTestingPlansRequest,
                                              Pagination::ListRestoreTestingPlansPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -311,6 +336,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreTestingSelectionsRequest,
                                     Pagination::ListRestoreTestingSelectionsPaginationTraits<DerivedClient>>
   ListRestoreTestingSelectionsPaginator(const Model::ListRestoreTestingSelectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRestoreTestingSelectionsRequest,
                                              Pagination::ListRestoreTestingSelectionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -321,6 +347,7 @@ class BackupPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScanJobsRequest, Pagination::ListScanJobsPaginationTraits<DerivedClient>>
   ListScanJobsPaginator(const Model::ListScanJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScanJobsRequest,
                                              Pagination::ListScanJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -332,6 +359,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScanJobSummariesRequest,
                                     Pagination::ListScanJobSummariesPaginationTraits<DerivedClient>>
   ListScanJobSummariesPaginator(const Model::ListScanJobSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScanJobSummariesRequest,
                                              Pagination::ListScanJobSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -342,6 +370,7 @@ class BackupPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsRequest, Pagination::ListTagsPaginationTraits<DerivedClient>>
   ListTagsPaginator(const Model::ListTagsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsRequest, Pagination::ListTagsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -352,6 +381,7 @@ class BackupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTieringConfigurationsRequest,
                                     Pagination::ListTieringConfigurationsPaginationTraits<DerivedClient>>
   ListTieringConfigurationsPaginator(const Model::ListTieringConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTieringConfigurationsRequest,
                                              Pagination::ListTieringConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/backup-gateway/model/BandwidthRateLimitInterval.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -28,6 +29,26 @@ class GetBandwidthRateLimitScheduleResult {
   AWS_BACKUPGATEWAY_API GetBandwidthRateLimitScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_BACKUPGATEWAY_API GetBandwidthRateLimitScheduleResult& operator=(
       const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
+   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
+   * <code>ListGateways</code> </a> operation to return a list of gateways for your
+   * account and Amazon Web Services Region.</p>
+   */
+  inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
+  template <typename GatewayArnT = Aws::String>
+  void SetGatewayArn(GatewayArnT&& value) {
+    m_gatewayArnHasBeenSet = true;
+    m_gatewayArn = std::forward<GatewayArnT>(value);
+  }
+  template <typename GatewayArnT = Aws::String>
+  GetBandwidthRateLimitScheduleResult& WithGatewayArn(GatewayArnT&& value) {
+    SetGatewayArn(std::forward<GatewayArnT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -55,26 +76,6 @@ class GetBandwidthRateLimitScheduleResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a
-   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html">
-   * <code>ListGateways</code> </a> operation to return a list of gateways for your
-   * account and Amazon Web Services Region.</p>
-   */
-  inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
-  template <typename GatewayArnT = Aws::String>
-  void SetGatewayArn(GatewayArnT&& value) {
-    m_gatewayArnHasBeenSet = true;
-    m_gatewayArn = std::forward<GatewayArnT>(value);
-  }
-  template <typename GatewayArnT = Aws::String>
-  GetBandwidthRateLimitScheduleResult& WithGatewayArn(GatewayArnT&& value) {
-    SetGatewayArn(std::forward<GatewayArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -88,14 +89,17 @@ class GetBandwidthRateLimitScheduleResult {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
+ private:
   Aws::String m_gatewayArn;
 
+  Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
+
   Aws::String m_requestId;
-  bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayArnHasBeenSet = false;
+  bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

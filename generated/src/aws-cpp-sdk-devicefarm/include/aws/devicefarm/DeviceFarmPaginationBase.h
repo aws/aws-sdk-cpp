@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/devicefarm/model/GetOfferingStatusPaginationTraits.h>
 #include <aws/devicefarm/model/ListArtifactsPaginationTraits.h>
@@ -41,6 +42,7 @@ class DeviceFarmPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetOfferingStatusRequest,
                                     Pagination::GetOfferingStatusPaginationTraits<DerivedClient>>
   GetOfferingStatusPaginator(const Model::GetOfferingStatusRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetOfferingStatusRequest,
                                              Pagination::GetOfferingStatusPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -51,6 +53,7 @@ class DeviceFarmPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListArtifactsRequest, Pagination::ListArtifactsPaginationTraits<DerivedClient>>
   ListArtifactsPaginator(const Model::ListArtifactsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListArtifactsRequest,
                                              Pagination::ListArtifactsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -62,6 +65,7 @@ class DeviceFarmPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicePoolsRequest,
                                     Pagination::ListDevicePoolsPaginationTraits<DerivedClient>>
   ListDevicePoolsPaginator(const Model::ListDevicePoolsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicePoolsRequest,
                                              Pagination::ListDevicePoolsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -72,6 +76,7 @@ class DeviceFarmPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesRequest, Pagination::ListDevicesPaginationTraits<DerivedClient>>
   ListDevicesPaginator(const Model::ListDevicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesRequest,
                                              Pagination::ListDevicesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -82,6 +87,7 @@ class DeviceFarmPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
   ListJobsPaginator(const Model::ListJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -91,6 +97,7 @@ class DeviceFarmPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOfferingsRequest, Pagination::ListOfferingsPaginationTraits<DerivedClient>>
   ListOfferingsPaginator(const Model::ListOfferingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOfferingsRequest,
                                              Pagination::ListOfferingsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -102,6 +109,7 @@ class DeviceFarmPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOfferingTransactionsRequest,
                                     Pagination::ListOfferingTransactionsPaginationTraits<DerivedClient>>
   ListOfferingTransactionsPaginator(const Model::ListOfferingTransactionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOfferingTransactionsRequest,
                                              Pagination::ListOfferingTransactionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -112,6 +120,7 @@ class DeviceFarmPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest, Pagination::ListProjectsPaginationTraits<DerivedClient>>
   ListProjectsPaginator(const Model::ListProjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest,
                                              Pagination::ListProjectsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -122,6 +131,7 @@ class DeviceFarmPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRunsRequest, Pagination::ListRunsPaginationTraits<DerivedClient>>
   ListRunsPaginator(const Model::ListRunsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRunsRequest, Pagination::ListRunsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -131,6 +141,7 @@ class DeviceFarmPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSamplesRequest, Pagination::ListSamplesPaginationTraits<DerivedClient>>
   ListSamplesPaginator(const Model::ListSamplesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSamplesRequest,
                                              Pagination::ListSamplesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -141,6 +152,7 @@ class DeviceFarmPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSuitesRequest, Pagination::ListSuitesPaginationTraits<DerivedClient>>
   ListSuitesPaginator(const Model::ListSuitesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSuitesRequest,
                                              Pagination::ListSuitesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -152,6 +164,7 @@ class DeviceFarmPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestGridProjectsRequest,
                                     Pagination::ListTestGridProjectsPaginationTraits<DerivedClient>>
   ListTestGridProjectsPaginator(const Model::ListTestGridProjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestGridProjectsRequest,
                                              Pagination::ListTestGridProjectsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -163,6 +176,7 @@ class DeviceFarmPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestGridSessionActionsRequest,
                                     Pagination::ListTestGridSessionActionsPaginationTraits<DerivedClient>>
   ListTestGridSessionActionsPaginator(const Model::ListTestGridSessionActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestGridSessionActionsRequest,
                                              Pagination::ListTestGridSessionActionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -174,6 +188,7 @@ class DeviceFarmPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestGridSessionArtifactsRequest,
                                     Pagination::ListTestGridSessionArtifactsPaginationTraits<DerivedClient>>
   ListTestGridSessionArtifactsPaginator(const Model::ListTestGridSessionArtifactsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestGridSessionArtifactsRequest,
                                              Pagination::ListTestGridSessionArtifactsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -185,6 +200,7 @@ class DeviceFarmPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestGridSessionsRequest,
                                     Pagination::ListTestGridSessionsPaginationTraits<DerivedClient>>
   ListTestGridSessionsPaginator(const Model::ListTestGridSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestGridSessionsRequest,
                                              Pagination::ListTestGridSessionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -195,6 +211,7 @@ class DeviceFarmPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestsRequest, Pagination::ListTestsPaginationTraits<DerivedClient>>
   ListTestsPaginator(const Model::ListTestsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTestsRequest, Pagination::ListTestsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -205,6 +222,7 @@ class DeviceFarmPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUniqueProblemsRequest,
                                     Pagination::ListUniqueProblemsPaginationTraits<DerivedClient>>
   ListUniqueProblemsPaginator(const Model::ListUniqueProblemsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUniqueProblemsRequest,
                                              Pagination::ListUniqueProblemsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -215,6 +233,7 @@ class DeviceFarmPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUploadsRequest, Pagination::ListUploadsPaginationTraits<DerivedClient>>
   ListUploadsPaginator(const Model::ListUploadsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUploadsRequest,
                                              Pagination::ListUploadsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

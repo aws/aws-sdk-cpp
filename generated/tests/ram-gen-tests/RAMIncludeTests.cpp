@@ -93,6 +93,7 @@
 #include <aws/ram/model/ResourceShareAssociation.h>
 #include <aws/ram/model/ResourceShareAssociationStatus.h>
 #include <aws/ram/model/ResourceShareAssociationType.h>
+#include <aws/ram/model/ResourceShareConfiguration.h>
 #include <aws/ram/model/ResourceShareFeatureSet.h>
 #include <aws/ram/model/ResourceShareInvitation.h>
 #include <aws/ram/model/ResourceShareInvitationStatus.h>

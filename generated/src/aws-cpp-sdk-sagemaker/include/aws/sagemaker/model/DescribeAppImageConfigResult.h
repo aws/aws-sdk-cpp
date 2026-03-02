@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -163,6 +164,8 @@ class DescribeAppImageConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_appImageConfigArn;
 
@@ -179,6 +182,7 @@ class DescribeAppImageConfigResult {
   CodeEditorAppImageConfig m_codeEditorAppImageConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appImageConfigArnHasBeenSet = false;
   bool m_appImageConfigNameHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

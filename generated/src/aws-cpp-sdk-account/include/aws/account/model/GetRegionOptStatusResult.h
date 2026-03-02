@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/account/Account_EXPORTS.h>
 #include <aws/account/model/RegionOptStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -74,12 +75,15 @@ class GetRegionOptStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_regionName;
 
   RegionOptStatus m_regionOptStatus{RegionOptStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_regionNameHasBeenSet = false;
   bool m_regionOptStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/AggregateComplianceCount.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -102,6 +103,8 @@ class GetAggregateConfigRuleComplianceSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_groupByKey;
 
@@ -110,6 +113,7 @@ class GetAggregateConfigRuleComplianceSummaryResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_groupByKeyHasBeenSet = false;
   bool m_aggregateComplianceCountsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

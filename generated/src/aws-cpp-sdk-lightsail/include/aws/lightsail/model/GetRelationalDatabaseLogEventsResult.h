@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -102,6 +103,8 @@ class GetRelationalDatabaseLogEventsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<LogEvent> m_resourceLogEvents;
 
@@ -110,6 +113,7 @@ class GetRelationalDatabaseLogEventsResult {
   Aws::String m_nextForwardToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceLogEventsHasBeenSet = false;
   bool m_nextBackwardTokenHasBeenSet = false;
   bool m_nextForwardTokenHasBeenSet = false;

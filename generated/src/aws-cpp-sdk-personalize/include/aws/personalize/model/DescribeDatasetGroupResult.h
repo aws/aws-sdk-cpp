@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/personalize/model/DatasetGroup.h>
@@ -58,10 +59,13 @@ class DescribeDatasetGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DatasetGroup m_datasetGroup;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datasetGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

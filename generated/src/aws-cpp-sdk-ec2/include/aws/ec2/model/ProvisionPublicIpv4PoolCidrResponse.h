@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/PublicIpv4PoolRange.h>
@@ -76,12 +77,15 @@ class ProvisionPublicIpv4PoolCidrResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_poolId;
 
   PublicIpv4PoolRange m_poolAddressRange;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_poolIdHasBeenSet = false;
   bool m_poolAddressRangeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

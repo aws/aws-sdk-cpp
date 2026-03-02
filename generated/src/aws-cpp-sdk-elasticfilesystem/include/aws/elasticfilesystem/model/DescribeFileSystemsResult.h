@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
@@ -101,6 +102,8 @@ class DescribeFileSystemsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_marker;
 
@@ -109,6 +112,7 @@ class DescribeFileSystemsResult {
   Aws::String m_nextMarker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_markerHasBeenSet = false;
   bool m_fileSystemsHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;

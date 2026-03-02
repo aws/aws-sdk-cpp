@@ -26,6 +26,10 @@ DestinationLogsConfiguration& DestinationLogsConfiguration::operator=(JsonView j
     m_backupConfiguration = jsonValue.GetObject("BackupConfiguration");
     m_backupConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LogGroupNameConfiguration")) {
+    m_logGroupNameConfiguration = jsonValue.GetObject("LogGroupNameConfiguration");
+    m_logGroupNameConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue DestinationLogsConfiguration::Jsonize() const {
 
   if (m_backupConfigurationHasBeenSet) {
     payload.WithObject("BackupConfiguration", m_backupConfiguration.Jsonize());
+  }
+
+  if (m_logGroupNameConfigurationHasBeenSet) {
+    payload.WithObject("LogGroupNameConfiguration", m_logGroupNameConfiguration.Jsonize());
   }
 
   return payload;

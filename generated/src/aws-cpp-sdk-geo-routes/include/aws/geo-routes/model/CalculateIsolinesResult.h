@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
@@ -184,6 +185,8 @@ class CalculateIsolinesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arrivalTime;
 
@@ -200,6 +203,7 @@ class CalculateIsolinesResult {
   Aws::Vector<double> m_snappedOrigin;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arrivalTimeHasBeenSet = false;
   bool m_departureTimeHasBeenSet = false;
   bool m_isolineGeometryFormatHasBeenSet = false;

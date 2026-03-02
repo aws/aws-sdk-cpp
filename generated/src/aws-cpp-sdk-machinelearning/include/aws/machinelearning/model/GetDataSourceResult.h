@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
@@ -403,6 +404,8 @@ class GetDataSourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dataSourceId;
 
@@ -445,6 +448,7 @@ class GetDataSourceResult {
   Aws::String m_dataSourceSchema;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataSourceIdHasBeenSet = false;
   bool m_dataLocationS3HasBeenSet = false;
   bool m_dataRearrangementHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/AuthFactorType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -128,6 +129,8 @@ class GetUserAuthFactorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_username;
 
@@ -138,6 +141,7 @@ class GetUserAuthFactorsResult {
   Aws::Vector<AuthFactorType> m_configuredUserAuthFactors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_usernameHasBeenSet = false;
   bool m_preferredMfaSettingHasBeenSet = false;
   bool m_userMFASettingListHasBeenSet = false;

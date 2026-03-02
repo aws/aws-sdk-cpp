@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -89,6 +90,8 @@ class ActivateEvaluationFormResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_evaluationFormId;
 
@@ -97,6 +100,7 @@ class ActivateEvaluationFormResult {
   int m_evaluationFormVersion{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_evaluationFormIdHasBeenSet = false;
   bool m_evaluationFormArnHasBeenSet = false;
   bool m_evaluationFormVersionHasBeenSet = false;

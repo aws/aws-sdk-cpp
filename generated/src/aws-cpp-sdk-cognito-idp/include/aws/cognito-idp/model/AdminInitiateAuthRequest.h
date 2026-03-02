@@ -167,32 +167,31 @@ class AdminInitiateAuthRequest : public CognitoIdentityProviderRequest {
 
   ///@{
   /**
-   * <p>A map of custom key-value pairs that you can provide as input for certain
-   * custom workflows that this action triggers.</p> <p>You create custom workflows
-   * by assigning Lambda functions to user pool triggers. When you use the
-   * AdminInitiateAuth API action, Amazon Cognito invokes the Lambda functions that
-   * are specified for various triggers. The ClientMetadata value is passed as input
-   * to the functions for only the following triggers:</p> <ul> <li> <p>Pre
-   * signup</p> </li> <li> <p>Pre authentication</p> </li> <li> <p>User migration</p>
-   * </li> </ul> <p>When Amazon Cognito invokes the functions for these triggers, it
-   * passes a JSON payload, which the function receives as input. This payload
-   * contains a <code>validationData</code> attribute, which provides the data that
-   * you assigned to the ClientMetadata parameter in your AdminInitiateAuth request.
-   * In your function code in Lambda, you can process the <code>validationData</code>
-   * value to enhance your workflow for your specific needs.</p> <p>When you use the
-   * AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the
-   * following triggers, but it doesn't provide the ClientMetadata value as
-   * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
-   * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-   * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Custom email sender</p>
-   * </li> <li> <p>Custom SMS sender</p> </li> </ul> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-   * Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-   *  <p>When you use the <code>ClientMetadata</code> parameter, note that
-   * Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
-   * <code>ClientMetadata</code> value. This data is available only to Lambda
-   * triggers that are assigned to a user pool to support custom workflows. If your
-   * user pool configuration doesn't include triggers, the
+   * <p>A map of custom key-value pairs that you can provide as input for any custom
+   * workflows that this action triggers. You create custom workflows by assigning
+   * Lambda functions to user pool triggers.</p> <p>When Amazon Cognito invokes any
+   * of these functions, it passes a JSON payload, which the function receives as
+   * input. This payload contains a <code>clientMetadata</code> attribute that
+   * provides the data that you assigned to the ClientMetadata parameter in your
+   * request. In your function code, you can process the <code>clientMetadata</code>
+   * value to enhance your workflow for your specific needs.</p> <p>To review the
+   * Lambda trigger types that Amazon Cognito invokes at runtime with API requests,
+   * see <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event">
+   * Connecting API actions to Lambda triggers</a> in the <i>Amazon Cognito Developer
+   * Guide</i>.</p> <p>The <code>ClientMetadata</code> value is passed as input to
+   * the functions for only the following triggers:</p> <ul> <li> <p>Pre signup</p>
+   * </li> <li> <p>Pre authentication</p> </li> <li> <p>User migration</p> </li>
+   * </ul> <p>This request also invokes the functions for the following triggers, but
+   * doesn't pass <code>ClientMetadata</code>:</p> <ul> <li> <p>Post
+   * authentication</p> </li> <li> <p>Custom message</p> </li> <li> <p>Pre token
+   * generation</p> </li> <li> <p>Create auth challenge</p> </li> <li> <p>Define auth
+   * challenge</p> </li> <li> <p>Custom email sender</p> </li> <li> <p>Custom SMS
+   * sender</p> </li> </ul>  <p>When you use the <code>ClientMetadata</code>
+   * parameter, note that Amazon Cognito won't do the following:</p> <ul> <li>
+   * <p>Store the <code>ClientMetadata</code> value. This data is available only to
+   * Lambda triggers that are assigned to a user pool to support custom workflows. If
+   * your user pool configuration doesn't include triggers, the
    * <code>ClientMetadata</code> parameter serves no purpose.</p> </li> <li>
    * <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li> <p>Encrypt the
    * <code>ClientMetadata</code> value. Don't send sensitive information in this

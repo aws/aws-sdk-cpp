@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/model/CacheReportInfo.h>
@@ -59,10 +60,13 @@ class DescribeCacheReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CacheReportInfo m_cacheReportInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_cacheReportInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

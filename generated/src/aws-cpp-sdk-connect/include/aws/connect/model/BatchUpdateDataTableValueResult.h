@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/BatchUpdateDataTableValueFailureResult.h>
 #include <aws/connect/model/BatchUpdateDataTableValueSuccessResult.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -91,12 +92,15 @@ class BatchUpdateDataTableValueResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<BatchUpdateDataTableValueSuccessResult> m_successful;
 
   Aws::Vector<BatchUpdateDataTableValueFailureResult> m_failed;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulHasBeenSet = false;
   bool m_failedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class DescribeSecurityHubV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_hubV2Arn;
 
   Aws::String m_subscribedAt;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hubV2ArnHasBeenSet = false;
   bool m_subscribedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

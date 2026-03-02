@@ -8,6 +8,7 @@
 #include <aws/chime-sdk-meetings/model/Attendee.h>
 #include <aws/chime-sdk-meetings/model/CreateAttendeeError.h>
 #include <aws/chime-sdk-meetings/model/Meeting.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -110,6 +111,8 @@ class CreateMeetingWithAttendeesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Meeting m_meeting;
 
@@ -118,6 +121,7 @@ class CreateMeetingWithAttendeesResult {
   Aws::Vector<CreateAttendeeError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_meetingHasBeenSet = false;
   bool m_attendeesHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

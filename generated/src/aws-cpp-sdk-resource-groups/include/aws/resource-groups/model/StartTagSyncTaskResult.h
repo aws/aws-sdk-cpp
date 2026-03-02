@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/resource-groups/model/ResourceQuery.h>
@@ -160,6 +161,8 @@ class StartTagSyncTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_groupArn;
 
@@ -176,6 +179,7 @@ class StartTagSyncTaskResult {
   Aws::String m_roleArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_groupArnHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
   bool m_taskArnHasBeenSet = false;

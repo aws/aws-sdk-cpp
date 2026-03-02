@@ -1180,19 +1180,18 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
    * <code>tenant_id</code>, <code>workspace_id</code> (Windows only), OAuth2
    * credentials (<code>client_id</code>, <code>client_secret</code>)</p> </dd>
    * <dt>Okta Sources (SSO, Auth0)</dt> <dd> <p> <b>Updatable:</b> All Amazon Web
-   * Services Secrets Manager attributes, <code>domain</code>, <code>range</code>
-   * (SSO only), OAuth2 credentials (<code>client_id</code>,
-   * <code>client_secret</code>)</p> </dd> <dt>Palo Alto Networks</dt> <dd> <p>
-   * <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes,
-   * <code>hostname</code>, basic authentication credentials (<code>username</code>,
-   * <code>password</code>)</p> </dd> <dt>ServiceNow CMDB</dt> <dd> <p>
-   * <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes,
-   * <code>instance_url</code>, <code>range</code>, OAuth2 credentials
-   * (<code>client_id</code>, <code>client_secret</code>)</p> </dd> <dt>Wiz
-   * CNAPP</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager
-   * attributes, <code>region</code>, <code>range</code>, OAuth2 credentials
-   * (<code>client_id</code>, <code>client_secret</code>)</p> </dd> </dl><p><h3>See
-   * Also:</h3>   <a
+   * Services Secrets Manager attributes, <code>domain</code>, <code>range</code>,
+   * OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p>
+   * </dd> <dt>Palo Alto Networks</dt> <dd> <p> <b>Updatable:</b> All Amazon Web
+   * Services Secrets Manager attributes, <code>hostname</code>, basic authentication
+   * credentials (<code>username</code>, <code>password</code>)</p> </dd>
+   * <dt>ServiceNow CMDB</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services
+   * Secrets Manager attributes, <code>instance_url</code>, <code>range</code>,
+   * OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p>
+   * </dd> <dt>Wiz CNAPP</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services
+   * Secrets Manager attributes, <code>region</code>, <code>range</code>, OAuth2
+   * credentials (<code>client_id</code>, <code>client_secret</code>)</p> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryPipeline">AWS
    * API Reference</a></p>
    */

@@ -20,6 +20,7 @@ using namespace Aws;
 CreateIAMPolicyAssignmentResult::CreateIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateIAMPolicyAssignmentResult& CreateIAMPolicyAssignmentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AssignmentName")) {
     m_assignmentName = jsonValue.GetString("AssignmentName");
@@ -40,13 +41,13 @@ CreateIAMPolicyAssignmentResult& CreateIAMPolicyAssignmentResult::operator=(cons
   if (jsonValue.ValueExists("Identities")) {
     Aws::Map<Aws::String, JsonView> identitiesJsonMap = jsonValue.GetObject("Identities").GetAllObjects();
     for (auto& identitiesItem : identitiesJsonMap) {
-      Aws::Utils::Array<JsonView> identityNameListJsonList = identitiesItem.second.AsArray();
-      Aws::Vector<Aws::String> identityNameListList;
-      identityNameListList.reserve((size_t)identityNameListJsonList.GetLength());
-      for (unsigned identityNameListIndex = 0; identityNameListIndex < identityNameListJsonList.GetLength(); ++identityNameListIndex) {
-        identityNameListList.push_back(identityNameListJsonList[identityNameListIndex].AsString());
+      Aws::Utils::Array<JsonView> identityNameList2JsonList = identitiesItem.second.AsArray();
+      Aws::Vector<Aws::String> identityNameList2List;
+      identityNameList2List.reserve((size_t)identityNameList2JsonList.GetLength());
+      for (unsigned identityNameList2Index = 0; identityNameList2Index < identityNameList2JsonList.GetLength(); ++identityNameList2Index) {
+        identityNameList2List.push_back(identityNameList2JsonList[identityNameList2Index].AsString());
       }
-      m_identities[identitiesItem.first] = std::move(identityNameListList);
+      m_identities[identitiesItem.first] = std::move(identityNameList2List);
     }
     m_identitiesHasBeenSet = true;
   }

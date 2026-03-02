@@ -44,12 +44,12 @@ LibraryTemplateButtonInput& LibraryTemplateButtonInput::operator=(JsonView jsonV
   if (jsonValue.ValueExists("supportedApps")) {
     Aws::Utils::Array<JsonView> supportedAppsJsonList = jsonValue.GetArray("supportedApps");
     for (unsigned supportedAppsIndex = 0; supportedAppsIndex < supportedAppsJsonList.GetLength(); ++supportedAppsIndex) {
-      Aws::Map<Aws::String, JsonView> supportedAppJsonMap = supportedAppsJsonList[supportedAppsIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> supportedAppMap;
-      for (auto& supportedAppItem : supportedAppJsonMap) {
-        supportedAppMap[supportedAppItem.first] = supportedAppItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> supportedApp2JsonMap = supportedAppsJsonList[supportedAppsIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> supportedApp2Map;
+      for (auto& supportedApp2Item : supportedApp2JsonMap) {
+        supportedApp2Map[supportedApp2Item.first] = supportedApp2Item.second.AsString();
       }
-      m_supportedApps.push_back(std::move(supportedAppMap));
+      m_supportedApps.push_back(std::move(supportedApp2Map));
     }
     m_supportedAppsHasBeenSet = true;
   }

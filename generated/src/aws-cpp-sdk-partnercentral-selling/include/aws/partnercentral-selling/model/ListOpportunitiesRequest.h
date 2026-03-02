@@ -13,6 +13,7 @@
 #include <aws/partnercentral-selling/model/OpportunitySort.h>
 #include <aws/partnercentral-selling/model/ReviewStatus.h>
 #include <aws/partnercentral-selling/model/Stage.h>
+#include <aws/partnercentral-selling/model/TargetCloseDateFilter.h>
 
 #include <utility>
 
@@ -257,6 +258,26 @@ class ListOpportunitiesRequest : public PartnerCentralSellingRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filters opportunities based on their target close date. This filter helps
+   * retrieve opportunities with an expected close date before or after a specified
+   * date.</p>
+   */
+  inline const TargetCloseDateFilter& GetTargetCloseDate() const { return m_targetCloseDate; }
+  inline bool TargetCloseDateHasBeenSet() const { return m_targetCloseDateHasBeenSet; }
+  template <typename TargetCloseDateT = TargetCloseDateFilter>
+  void SetTargetCloseDate(TargetCloseDateT&& value) {
+    m_targetCloseDateHasBeenSet = true;
+    m_targetCloseDate = std::forward<TargetCloseDateT>(value);
+  }
+  template <typename TargetCloseDateT = TargetCloseDateFilter>
+  ListOpportunitiesRequest& WithTargetCloseDate(TargetCloseDateT&& value) {
+    SetTargetCloseDate(std::forward<TargetCloseDateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalog;
 
@@ -277,6 +298,8 @@ class ListOpportunitiesRequest : public PartnerCentralSellingRequest {
   Aws::Vector<Aws::String> m_customerCompanyName;
 
   CreatedDateFilter m_createdDate;
+
+  TargetCloseDateFilter m_targetCloseDate;
   bool m_catalogHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
@@ -287,6 +310,7 @@ class ListOpportunitiesRequest : public PartnerCentralSellingRequest {
   bool m_lifeCycleReviewStatusHasBeenSet = false;
   bool m_customerCompanyNameHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
+  bool m_targetCloseDateHasBeenSet = false;
 };
 
 }  // namespace Model

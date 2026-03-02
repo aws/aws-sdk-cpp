@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
@@ -114,6 +115,8 @@ class DescribeRegionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_regionName;
 
@@ -124,6 +127,7 @@ class DescribeRegionResult {
   bool m_isPrimaryRegion{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_regionNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_addedDateHasBeenSet = false;

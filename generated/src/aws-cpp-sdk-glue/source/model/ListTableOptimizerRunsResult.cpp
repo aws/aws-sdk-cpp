@@ -20,6 +20,7 @@ using namespace Aws;
 ListTableOptimizerRunsResult::ListTableOptimizerRunsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTableOptimizerRunsResult& ListTableOptimizerRunsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CatalogId")) {
     m_catalogId = jsonValue.GetString("CatalogId");

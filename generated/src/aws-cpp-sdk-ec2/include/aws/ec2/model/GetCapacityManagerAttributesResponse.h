@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -163,6 +164,8 @@ class GetCapacityManagerAttributesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CapacityManagerStatus m_capacityManagerStatus{CapacityManagerStatus::NOT_SET};
 
@@ -179,6 +182,7 @@ class GetCapacityManagerAttributesResponse {
   Aws::Utils::DateTime m_latestDatapointTimestamp{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_capacityManagerStatusHasBeenSet = false;
   bool m_organizationsAccessHasBeenSet = false;
   bool m_dataExportCountHasBeenSet = false;

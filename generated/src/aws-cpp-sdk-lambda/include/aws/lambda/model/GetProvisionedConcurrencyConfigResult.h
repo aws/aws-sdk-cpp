@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/ProvisionedConcurrencyStatusEnum.h>
@@ -140,6 +141,8 @@ class GetProvisionedConcurrencyConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_requestedProvisionedConcurrentExecutions{0};
 
@@ -154,6 +157,7 @@ class GetProvisionedConcurrencyConfigResult {
   Aws::String m_lastModified;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_requestedProvisionedConcurrentExecutionsHasBeenSet = false;
   bool m_availableProvisionedConcurrentExecutionsHasBeenSet = false;
   bool m_allocatedProvisionedConcurrentExecutionsHasBeenSet = false;

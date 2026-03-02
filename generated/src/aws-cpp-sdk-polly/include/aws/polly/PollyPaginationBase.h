@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/polly/model/ListSpeechSynthesisTasksPaginationTraits.h>
 
@@ -24,6 +25,7 @@ class PollyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSpeechSynthesisTasksRequest,
                                     Pagination::ListSpeechSynthesisTasksPaginationTraits<DerivedClient>>
   ListSpeechSynthesisTasksPaginator(const Model::ListSpeechSynthesisTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSpeechSynthesisTasksRequest,
                                              Pagination::ListSpeechSynthesisTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

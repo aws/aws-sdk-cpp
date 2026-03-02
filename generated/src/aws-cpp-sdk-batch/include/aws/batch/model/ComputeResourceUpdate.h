@@ -7,6 +7,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/CRType.h>
 #include <aws/batch/model/CRUpdateAllocationStrategy.h>
+#include <aws/batch/model/ComputeScalingPolicy.h>
 #include <aws/batch/model/Ec2Configuration.h>
 #include <aws/batch/model/LaunchTemplateSpecification.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -614,6 +615,26 @@ class ComputeResourceUpdate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scaling policy configuration for the compute environment.</p>
+   * <p>This parameter isn't applicable to jobs that are running on Fargate
+   * resources. Don't specify it.</p>
+   */
+  inline const ComputeScalingPolicy& GetScalingPolicy() const { return m_scalingPolicy; }
+  inline bool ScalingPolicyHasBeenSet() const { return m_scalingPolicyHasBeenSet; }
+  template <typename ScalingPolicyT = ComputeScalingPolicy>
+  void SetScalingPolicy(ScalingPolicyT&& value) {
+    m_scalingPolicyHasBeenSet = true;
+    m_scalingPolicy = std::forward<ScalingPolicyT>(value);
+  }
+  template <typename ScalingPolicyT = ComputeScalingPolicy>
+  ComputeResourceUpdate& WithScalingPolicy(ScalingPolicyT&& value) {
+    SetScalingPolicy(std::forward<ScalingPolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_minvCpus{0};
 
@@ -648,6 +669,8 @@ class ComputeResourceUpdate {
   CRType m_type{CRType::NOT_SET};
 
   Aws::String m_imageId;
+
+  ComputeScalingPolicy m_scalingPolicy;
   bool m_minvCpusHasBeenSet = false;
   bool m_maxvCpusHasBeenSet = false;
   bool m_desiredvCpusHasBeenSet = false;
@@ -665,6 +688,7 @@ class ComputeResourceUpdate {
   bool m_updateToLatestImageVersionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
+  bool m_scalingPolicyHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -20,6 +20,7 @@ using namespace Aws;
 GetSnapshotsResult::GetSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSnapshotsResult& GetSnapshotsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("SnapShotTimeFilter")) {
     m_snapShotTimeFilter = jsonValue.GetObject("SnapShotTimeFilter");
@@ -36,14 +37,14 @@ GetSnapshotsResult& GetSnapshotsResult::operator=(const Aws::AmazonWebServiceRes
   if (jsonValue.ValueExists("SnapshotsData")) {
     Aws::Utils::Array<JsonView> snapshotsDataJsonList = jsonValue.GetArray("SnapshotsData");
     for (unsigned snapshotsDataIndex = 0; snapshotsDataIndex < snapshotsDataJsonList.GetLength(); ++snapshotsDataIndex) {
-      Aws::Utils::Array<JsonView> snapshotsDataRecordJsonList = snapshotsDataJsonList[snapshotsDataIndex].AsArray();
-      Aws::Vector<Aws::String> snapshotsDataRecordList;
-      snapshotsDataRecordList.reserve((size_t)snapshotsDataRecordJsonList.GetLength());
-      for (unsigned snapshotsDataRecordIndex = 0; snapshotsDataRecordIndex < snapshotsDataRecordJsonList.GetLength();
-           ++snapshotsDataRecordIndex) {
-        snapshotsDataRecordList.push_back(snapshotsDataRecordJsonList[snapshotsDataRecordIndex].AsString());
+      Aws::Utils::Array<JsonView> snapshotsDataRecord2JsonList = snapshotsDataJsonList[snapshotsDataIndex].AsArray();
+      Aws::Vector<Aws::String> snapshotsDataRecord2List;
+      snapshotsDataRecord2List.reserve((size_t)snapshotsDataRecord2JsonList.GetLength());
+      for (unsigned snapshotsDataRecord2Index = 0; snapshotsDataRecord2Index < snapshotsDataRecord2JsonList.GetLength();
+           ++snapshotsDataRecord2Index) {
+        snapshotsDataRecord2List.push_back(snapshotsDataRecord2JsonList[snapshotsDataRecord2Index].AsString());
       }
-      m_snapshotsData.push_back(std::move(snapshotsDataRecordList));
+      m_snapshotsData.push_back(std::move(snapshotsDataRecord2List));
     }
     m_snapshotsDataHasBeenSet = true;
   }

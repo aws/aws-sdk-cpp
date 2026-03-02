@@ -22,13 +22,13 @@ VmwareTag& VmwareTag::operator=(JsonView jsonValue) {
     m_vmwareCategory = jsonValue.GetString("VmwareCategory");
     m_vmwareCategoryHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("VmwareTagDescription")) {
-    m_vmwareTagDescription = jsonValue.GetString("VmwareTagDescription");
-    m_vmwareTagDescriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("VmwareTagName")) {
     m_vmwareTagName = jsonValue.GetString("VmwareTagName");
     m_vmwareTagNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("VmwareTagDescription")) {
+    m_vmwareTagDescription = jsonValue.GetString("VmwareTagDescription");
+    m_vmwareTagDescriptionHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue VmwareTag::Jsonize() const {
     payload.WithString("VmwareCategory", m_vmwareCategory);
   }
 
-  if (m_vmwareTagDescriptionHasBeenSet) {
-    payload.WithString("VmwareTagDescription", m_vmwareTagDescription);
-  }
-
   if (m_vmwareTagNameHasBeenSet) {
     payload.WithString("VmwareTagName", m_vmwareTagName);
+  }
+
+  if (m_vmwareTagDescriptionHasBeenSet) {
+    payload.WithString("VmwareTagDescription", m_vmwareTagDescription);
   }
 
   return payload;

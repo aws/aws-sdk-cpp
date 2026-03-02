@@ -21,6 +21,7 @@
 #include <aws/codebuild/model/ListSandboxesPaginationTraits.h>
 #include <aws/codebuild/model/ListSharedProjectsPaginationTraits.h>
 #include <aws/codebuild/model/ListSharedReportGroupsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -39,6 +40,7 @@ class CodeBuildPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCodeCoveragesRequest,
                                     Pagination::DescribeCodeCoveragesPaginationTraits<DerivedClient>>
   DescribeCodeCoveragesPaginator(const Model::DescribeCodeCoveragesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCodeCoveragesRequest,
                                              Pagination::DescribeCodeCoveragesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +52,7 @@ class CodeBuildPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTestCasesRequest,
                                     Pagination::DescribeTestCasesPaginationTraits<DerivedClient>>
   DescribeTestCasesPaginator(const Model::DescribeTestCasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTestCasesRequest,
                                              Pagination::DescribeTestCasesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +64,7 @@ class CodeBuildPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuildBatchesRequest,
                                     Pagination::ListBuildBatchesPaginationTraits<DerivedClient>>
   ListBuildBatchesPaginator(const Model::ListBuildBatchesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuildBatchesRequest,
                                              Pagination::ListBuildBatchesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -72,6 +76,7 @@ class CodeBuildPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuildBatchesForProjectRequest,
                                     Pagination::ListBuildBatchesForProjectPaginationTraits<DerivedClient>>
   ListBuildBatchesForProjectPaginator(const Model::ListBuildBatchesForProjectRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuildBatchesForProjectRequest,
                                              Pagination::ListBuildBatchesForProjectPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -82,6 +87,7 @@ class CodeBuildPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuildsRequest, Pagination::ListBuildsPaginationTraits<DerivedClient>>
   ListBuildsPaginator(const Model::ListBuildsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuildsRequest,
                                              Pagination::ListBuildsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -93,6 +99,7 @@ class CodeBuildPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuildsForProjectRequest,
                                     Pagination::ListBuildsForProjectPaginationTraits<DerivedClient>>
   ListBuildsForProjectPaginator(const Model::ListBuildsForProjectRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuildsForProjectRequest,
                                              Pagination::ListBuildsForProjectPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -104,6 +111,7 @@ class CodeBuildPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCommandExecutionsForSandboxRequest,
                                     Pagination::ListCommandExecutionsForSandboxPaginationTraits<DerivedClient>>
   ListCommandExecutionsForSandboxPaginator(const Model::ListCommandExecutionsForSandboxRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCommandExecutionsForSandboxRequest,
                                              Pagination::ListCommandExecutionsForSandboxPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -114,6 +122,7 @@ class CodeBuildPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetsRequest, Pagination::ListFleetsPaginationTraits<DerivedClient>>
   ListFleetsPaginator(const Model::ListFleetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetsRequest,
                                              Pagination::ListFleetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -124,6 +133,7 @@ class CodeBuildPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest, Pagination::ListProjectsPaginationTraits<DerivedClient>>
   ListProjectsPaginator(const Model::ListProjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest,
                                              Pagination::ListProjectsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -135,6 +145,7 @@ class CodeBuildPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportGroupsRequest,
                                     Pagination::ListReportGroupsPaginationTraits<DerivedClient>>
   ListReportGroupsPaginator(const Model::ListReportGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportGroupsRequest,
                                              Pagination::ListReportGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -145,6 +156,7 @@ class CodeBuildPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportsRequest, Pagination::ListReportsPaginationTraits<DerivedClient>>
   ListReportsPaginator(const Model::ListReportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportsRequest,
                                              Pagination::ListReportsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -156,6 +168,7 @@ class CodeBuildPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportsForReportGroupRequest,
                                     Pagination::ListReportsForReportGroupPaginationTraits<DerivedClient>>
   ListReportsForReportGroupPaginator(const Model::ListReportsForReportGroupRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReportsForReportGroupRequest,
                                              Pagination::ListReportsForReportGroupPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -166,6 +179,7 @@ class CodeBuildPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSandboxesRequest, Pagination::ListSandboxesPaginationTraits<DerivedClient>>
   ListSandboxesPaginator(const Model::ListSandboxesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSandboxesRequest,
                                              Pagination::ListSandboxesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -177,6 +191,7 @@ class CodeBuildPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSandboxesForProjectRequest,
                                     Pagination::ListSandboxesForProjectPaginationTraits<DerivedClient>>
   ListSandboxesForProjectPaginator(const Model::ListSandboxesForProjectRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSandboxesForProjectRequest,
                                              Pagination::ListSandboxesForProjectPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -188,6 +203,7 @@ class CodeBuildPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSharedProjectsRequest,
                                     Pagination::ListSharedProjectsPaginationTraits<DerivedClient>>
   ListSharedProjectsPaginator(const Model::ListSharedProjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSharedProjectsRequest,
                                              Pagination::ListSharedProjectsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -199,6 +215,7 @@ class CodeBuildPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSharedReportGroupsRequest,
                                     Pagination::ListSharedReportGroupsPaginationTraits<DerivedClient>>
   ListSharedReportGroupsPaginator(const Model::ListSharedReportGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSharedReportGroupsRequest,
                                              Pagination::ListSharedReportGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

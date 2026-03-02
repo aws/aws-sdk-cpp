@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -83,12 +84,15 @@ class AssociateMacSecKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_connectionId;
 
   Aws::Vector<MacSecKey> m_macSecKeys;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectionIdHasBeenSet = false;
   bool m_macSecKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

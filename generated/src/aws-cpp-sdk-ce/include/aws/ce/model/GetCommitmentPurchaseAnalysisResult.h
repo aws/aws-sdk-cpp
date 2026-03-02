@@ -9,6 +9,7 @@
 #include <aws/ce/model/AnalysisStatus.h>
 #include <aws/ce/model/CommitmentPurchaseAnalysisConfiguration.h>
 #include <aws/ce/model/ErrorCode.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -179,6 +180,8 @@ class GetCommitmentPurchaseAnalysisResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_estimatedCompletionTime;
 
@@ -197,6 +200,7 @@ class GetCommitmentPurchaseAnalysisResult {
   CommitmentPurchaseAnalysisConfiguration m_commitmentPurchaseAnalysisConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_estimatedCompletionTimeHasBeenSet = false;
   bool m_analysisCompletionTimeHasBeenSet = false;
   bool m_analysisStartedTimeHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -191,6 +192,8 @@ class ModifyUsageLimitResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_usageLimitId;
 
@@ -209,6 +212,7 @@ class ModifyUsageLimitResult {
   Aws::Vector<Tag> m_tags;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_usageLimitIdHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_featureTypeHasBeenSet = false;

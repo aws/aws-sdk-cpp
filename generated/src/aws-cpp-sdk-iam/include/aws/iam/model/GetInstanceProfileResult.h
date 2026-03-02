@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/InstanceProfile.h>
 #include <aws/iam/model/ResponseMetadata.h>
@@ -65,10 +66,13 @@ class GetInstanceProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   InstanceProfile m_instanceProfile;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_instanceProfileHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

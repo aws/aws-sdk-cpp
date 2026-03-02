@@ -18,8 +18,7 @@ public class PaginationEmptyHeaderGenerator {
     // TODO: Remove once all services have proper Smithy models
     private static final Map<String, String> LEGACY_SERVICES = Map.of(
         "importexport", "ImportExport",
-        "sdb", "SimpleDB",
-        "s3-crt", "S3Crt"
+        "sdb", "SimpleDB"
     );
     
     public static void generate(PluginContext context) {

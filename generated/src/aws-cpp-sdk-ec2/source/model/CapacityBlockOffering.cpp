@@ -95,6 +95,11 @@ CapacityBlockOffering& CapacityBlockOffering::operator=(const XmlNode& xmlNode) 
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityBlockDurationMinutesNode.GetText()).c_str()).c_str());
       m_capacityBlockDurationMinutesHasBeenSet = true;
     }
+    XmlNode zoneTypeNode = resultNode.FirstChild("zoneType");
+    if (!zoneTypeNode.IsNull()) {
+      m_zoneType = Aws::Utils::Xml::DecodeEscapedXmlText(zoneTypeNode.GetText());
+      m_zoneTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -157,6 +162,10 @@ void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* lo
   if (m_capacityBlockDurationMinutesHasBeenSet) {
     oStream << location << index << locationValue << ".CapacityBlockDurationMinutes=" << m_capacityBlockDurationMinutes << "&";
   }
+
+  if (m_zoneTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".ZoneType=" << StringUtils::URLEncode(m_zoneType.c_str()) << "&";
+  }
 }
 
 void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -201,6 +210,9 @@ void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if (m_capacityBlockDurationMinutesHasBeenSet) {
     oStream << location << ".CapacityBlockDurationMinutes=" << m_capacityBlockDurationMinutes << "&";
+  }
+  if (m_zoneTypeHasBeenSet) {
+    oStream << location << ".ZoneType=" << StringUtils::URLEncode(m_zoneType.c_str()) << "&";
   }
 }
 

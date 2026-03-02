@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/backup-gateway/model/VirtualMachine.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -27,26 +28,6 @@ class ListVirtualMachinesResult {
   AWS_BACKUPGATEWAY_API ListVirtualMachinesResult() = default;
   AWS_BACKUPGATEWAY_API ListVirtualMachinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_BACKUPGATEWAY_API ListVirtualMachinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-  ///@{
-  /**
-   * <p>The next item following a partial list of returned resources. For example, if
-   * a request is made to return <code>maxResults</code> number of resources,
-   * <code>NextToken</code> allows you to return more items in your list starting at
-   * the location pointed to by the next token.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListVirtualMachinesResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -73,6 +54,26 @@ class ListVirtualMachinesResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The next item following a partial list of returned resources. For example, if
+   * a request is made to return <code>maxResults</code> number of resources,
+   * <code>NextToken</code> allows you to return more items in your list starting at
+   * the location pointed to by the next token.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListVirtualMachinesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -86,14 +87,17 @@ class ListVirtualMachinesResult {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_nextToken;
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
+ private:
   Aws::Vector<VirtualMachine> m_virtualMachines;
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
-  bool m_nextTokenHasBeenSet = false;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_virtualMachinesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

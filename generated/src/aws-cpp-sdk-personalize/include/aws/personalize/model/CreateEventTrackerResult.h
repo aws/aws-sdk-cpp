@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
 
@@ -76,12 +77,15 @@ class CreateEventTrackerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_eventTrackerArn;
 
   Aws::String m_trackingId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventTrackerArnHasBeenSet = false;
   bool m_trackingIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

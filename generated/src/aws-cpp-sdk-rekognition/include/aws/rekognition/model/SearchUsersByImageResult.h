@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -132,6 +133,8 @@ class SearchUsersByImageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<UserMatch> m_userMatches;
 
@@ -142,6 +145,7 @@ class SearchUsersByImageResult {
   Aws::Vector<UnsearchedFace> m_unsearchedFaces;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userMatchesHasBeenSet = false;
   bool m_faceModelVersionHasBeenSet = false;
   bool m_searchedFaceHasBeenSet = false;

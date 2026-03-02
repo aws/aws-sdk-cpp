@@ -11,6 +11,7 @@
 #include <aws/backup/model/ScanResourceType.h>
 #include <aws/backup/model/ScanResultInfo.h>
 #include <aws/backup/model/ScanState.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -402,6 +403,8 @@ class DescribeScanJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_accountId;
 
@@ -444,6 +447,7 @@ class DescribeScanJobResult {
   Aws::String m_statusMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountIdHasBeenSet = false;
   bool m_backupVaultArnHasBeenSet = false;
   bool m_backupVaultNameHasBeenSet = false;

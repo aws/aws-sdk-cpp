@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
 #include <aws/s3vectors/model/VectorBucket.h>
@@ -58,10 +59,13 @@ class GetVectorBucketResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VectorBucket m_vectorBucket;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vectorBucketHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/model/ResponseMetadata.h>
 #include <aws/neptune/model/ValidDBInstanceModificationsMessage.h>
@@ -59,10 +60,13 @@ class DescribeValidDBInstanceModificationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ValidDBInstanceModificationsMessage m_validDBInstanceModificationsMessage;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_validDBInstanceModificationsMessageHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

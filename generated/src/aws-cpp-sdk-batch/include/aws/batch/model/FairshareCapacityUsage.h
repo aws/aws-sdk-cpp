@@ -36,7 +36,7 @@ class FairshareCapacityUsage {
   /**
    * <p>The unit of measure for the capacity usage. For compute jobs, this is
    * <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For
-   * service jobs, this is <code>NUM_INSTANCES</code>.</p>
+   * service jobs, this is the instance type.</p>
    */
   inline const Aws::String& GetCapacityUnit() const { return m_capacityUnit; }
   inline bool CapacityUnitHasBeenSet() const { return m_capacityUnitHasBeenSet; }

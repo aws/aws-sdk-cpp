@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/waf/WAF_EXPORTS.h>
 #include <aws/waf/model/SqlInjectionMatchSet.h>
@@ -72,10 +73,13 @@ class GetSqlInjectionMatchSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SqlInjectionMatchSet m_sqlInjectionMatchSet;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sqlInjectionMatchSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

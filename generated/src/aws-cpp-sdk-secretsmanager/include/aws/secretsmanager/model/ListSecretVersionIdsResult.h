@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -120,6 +121,8 @@ class ListSecretVersionIdsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<SecretVersionsListEntry> m_versions;
 
@@ -130,6 +133,7 @@ class ListSecretVersionIdsResult {
   Aws::String m_name;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_versionsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_aRNHasBeenSet = false;

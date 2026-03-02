@@ -49,6 +49,10 @@ TelemetryConfiguration& TelemetryConfiguration::operator=(JsonView jsonValue) {
     m_lastUpdateTimeStamp = jsonValue.GetInt64("LastUpdateTimeStamp");
     m_lastUpdateTimeStampHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TelemetrySourceType")) {
+    m_telemetrySourceType = TelemetrySourceTypeMapper::GetTelemetrySourceTypeForName(jsonValue.GetString("TelemetrySourceType"));
+    m_telemetrySourceTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue TelemetryConfiguration::Jsonize() const {
 
   if (m_lastUpdateTimeStampHasBeenSet) {
     payload.WithInt64("LastUpdateTimeStamp", m_lastUpdateTimeStamp);
+  }
+
+  if (m_telemetrySourceTypeHasBeenSet) {
+    payload.WithString("TelemetrySourceType", TelemetrySourceTypeMapper::GetNameForTelemetrySourceType(m_telemetrySourceType));
   }
 
   return payload;

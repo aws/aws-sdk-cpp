@@ -17,6 +17,8 @@ namespace RegionToRunInMapper {
 
 static const int activatingRegion_HASH = HashingUtils::HashString("activatingRegion");
 static const int deactivatingRegion_HASH = HashingUtils::HashString("deactivatingRegion");
+static const int activeRegion_HASH = HashingUtils::HashString("activeRegion");
+static const int inactiveRegion_HASH = HashingUtils::HashString("inactiveRegion");
 
 RegionToRunIn GetRegionToRunInForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ RegionToRunIn GetRegionToRunInForName(const Aws::String& name) {
     return RegionToRunIn::activatingRegion;
   } else if (hashCode == deactivatingRegion_HASH) {
     return RegionToRunIn::deactivatingRegion;
+  } else if (hashCode == activeRegion_HASH) {
+    return RegionToRunIn::activeRegion;
+  } else if (hashCode == inactiveRegion_HASH) {
+    return RegionToRunIn::inactiveRegion;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForRegionToRunIn(RegionToRunIn enumValue) {
       return "activatingRegion";
     case RegionToRunIn::deactivatingRegion:
       return "deactivatingRegion";
+    case RegionToRunIn::activeRegion:
+      return "activeRegion";
+    case RegionToRunIn::inactiveRegion:
+      return "inactiveRegion";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

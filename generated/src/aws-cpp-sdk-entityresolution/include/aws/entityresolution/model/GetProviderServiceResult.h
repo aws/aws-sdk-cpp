@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
@@ -271,6 +272,8 @@ class GetProviderServiceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_providerName;
 
@@ -299,6 +302,7 @@ class GetProviderServiceResult {
   ProviderComponentSchema m_providerComponentSchema;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_providerNameHasBeenSet = false;
   bool m_providerServiceNameHasBeenSet = false;
   bool m_providerServiceDisplayNameHasBeenSet = false;

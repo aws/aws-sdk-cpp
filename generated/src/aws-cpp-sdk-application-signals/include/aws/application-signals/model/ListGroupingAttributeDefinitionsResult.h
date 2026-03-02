@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/application-signals/model/GroupingAttributeDefinition.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -105,6 +106,8 @@ class ListGroupingAttributeDefinitionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<GroupingAttributeDefinition> m_groupingAttributeDefinitions;
 
@@ -113,6 +116,7 @@ class ListGroupingAttributeDefinitionsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_groupingAttributeDefinitionsHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

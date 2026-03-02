@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
@@ -124,6 +125,8 @@ class UpdateFirewallPolicyChangeProtectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_updateToken;
 
@@ -134,6 +137,7 @@ class UpdateFirewallPolicyChangeProtectionResult {
   bool m_firewallPolicyChangeProtection{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_updateTokenHasBeenSet = false;
   bool m_firewallArnHasBeenSet = false;
   bool m_firewallNameHasBeenSet = false;

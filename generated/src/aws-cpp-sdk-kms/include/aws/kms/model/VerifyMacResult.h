@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/model/MacAlgorithmSpec.h>
@@ -94,6 +95,8 @@ class VerifyMacResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_keyId;
 
@@ -102,6 +105,7 @@ class VerifyMacResult {
   MacAlgorithmSpec m_macAlgorithm{MacAlgorithmSpec::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyIdHasBeenSet = false;
   bool m_macValidHasBeenSet = false;
   bool m_macAlgorithmHasBeenSet = false;

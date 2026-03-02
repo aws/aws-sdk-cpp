@@ -21,13 +21,13 @@ TimeSeriesTransformations& TimeSeriesTransformations::operator=(JsonView jsonVal
   if (jsonValue.ValueExists("Filling")) {
     Aws::Map<Aws::String, JsonView> fillingJsonMap = jsonValue.GetObject("Filling").GetAllObjects();
     for (auto& fillingItem : fillingJsonMap) {
-      Aws::Map<Aws::String, JsonView> fillingTransformationMapJsonMap = fillingItem.second.GetAllObjects();
-      Aws::Map<FillingType, Aws::String> fillingTransformationMapMap;
-      for (auto& fillingTransformationMapItem : fillingTransformationMapJsonMap) {
-        fillingTransformationMapMap[FillingTypeMapper::GetFillingTypeForName(fillingTransformationMapItem.first)] =
-            fillingTransformationMapItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> fillingTransformationMap2JsonMap = fillingItem.second.GetAllObjects();
+      Aws::Map<FillingType, Aws::String> fillingTransformationMap2Map;
+      for (auto& fillingTransformationMap2Item : fillingTransformationMap2JsonMap) {
+        fillingTransformationMap2Map[FillingTypeMapper::GetFillingTypeForName(fillingTransformationMap2Item.first)] =
+            fillingTransformationMap2Item.second.AsString();
       }
-      m_filling[fillingItem.first] = std::move(fillingTransformationMapMap);
+      m_filling[fillingItem.first] = std::move(fillingTransformationMap2Map);
     }
     m_fillingHasBeenSet = true;
   }

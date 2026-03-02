@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector/Inspector_EXPORTS.h>
@@ -92,6 +93,8 @@ class DescribeCrossAccountAccessRoleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_roleArn;
 
@@ -100,6 +103,7 @@ class DescribeCrossAccountAccessRoleResult {
   Aws::Utils::DateTime m_registeredAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_roleArnHasBeenSet = false;
   bool m_validHasBeenSet = false;
   bool m_registeredAtHasBeenSet = false;

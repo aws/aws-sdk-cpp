@@ -28,7 +28,7 @@ namespace Model {
  * </ul> <p>If a <a
  * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
  * <code>BatchImportFindings</code> </a> request for a new finding only provides
- * <code>Label</code> or only provides <code>Normalized</code>, Security Hub
+ * <code>Label</code> or only provides <code>Normalized</code>, Security Hub CSPM
  * automatically populates the value of the other field.</p> <p>The
  * <code>Normalized</code> and <code>Product</code> attributes are included in the
  * <code>FindingProviderSeverity</code> structure to preserve the historical
@@ -37,10 +37,10 @@ namespace Model {
  * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
  * <code>BatchUpdateFindings</code> </a> operation.</p> <p>If the top-level
  * <code>Finding.Severity</code> object is present, but
- * <code>Finding.FindingProviderFields</code> isn't present, Security Hub creates
- * the <code>FindingProviderFields.Severity</code> object and copies the entire
- * <code>Finding.Severity</code> object into it. This ensures that the original,
- * provider-supplied details are retained within the
+ * <code>Finding.FindingProviderFields</code> isn't present, Security Hub CSPM
+ * creates the <code>FindingProviderFields.Severity</code> object and copies the
+ * entire <code>Finding.Severity</code> object into it. This ensures that the
+ * original, provider-supplied details are retained within the
  * <code>FindingProviderFields.Severity</code> object, even if the top-level
  * <code>Severity</code> object is overwritten. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/FindingProviderSeverity">AWS

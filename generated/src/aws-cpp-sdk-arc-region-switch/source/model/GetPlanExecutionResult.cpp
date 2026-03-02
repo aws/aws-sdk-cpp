@@ -20,6 +20,7 @@ using namespace Aws;
 GetPlanExecutionResult::GetPlanExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPlanExecutionResult& GetPlanExecutionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("planArn")) {
     m_planArn = jsonValue.GetString("planArn");
@@ -64,6 +65,10 @@ GetPlanExecutionResult& GetPlanExecutionResult::operator=(const Aws::AmazonWebSe
   if (jsonValue.ValueExists("executionRegion")) {
     m_executionRegion = jsonValue.GetString("executionRegion");
     m_executionRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("recoveryExecutionId")) {
+    m_recoveryExecutionId = jsonValue.GetString("recoveryExecutionId");
+    m_recoveryExecutionIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("stepStates")) {
     Aws::Utils::Array<JsonView> stepStatesJsonList = jsonValue.GetArray("stepStates");

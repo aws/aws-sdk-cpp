@@ -8,6 +8,7 @@
 #include <aws/codeguru-security/model/GetFindingsPaginationTraits.h>
 #include <aws/codeguru-security/model/ListFindingsMetricsPaginationTraits.h>
 #include <aws/codeguru-security/model/ListScansPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -25,6 +26,7 @@ class CodeGuruSecurityPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetFindingsRequest, Pagination::GetFindingsPaginationTraits<DerivedClient>>
   GetFindingsPaginator(const Model::GetFindingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetFindingsRequest,
                                              Pagination::GetFindingsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -36,6 +38,7 @@ class CodeGuruSecurityPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFindingsMetricsRequest,
                                     Pagination::ListFindingsMetricsPaginationTraits<DerivedClient>>
   ListFindingsMetricsPaginator(const Model::ListFindingsMetricsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFindingsMetricsRequest,
                                              Pagination::ListFindingsMetricsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -46,6 +49,7 @@ class CodeGuruSecurityPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScansRequest, Pagination::ListScansPaginationTraits<DerivedClient>>
   ListScansPaginator(const Model::ListScansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScansRequest, Pagination::ListScansPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

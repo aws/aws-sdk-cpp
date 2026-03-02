@@ -304,7 +304,7 @@ class ServiceManagedEBSVolumeConfiguration {
    * <p>The filesystem type for the volume. For volumes created from a snapshot, you
    * must specify the same filesystem type that the volume was using when the
    * snapshot was created. If there is a filesystem type mismatch, the tasks will
-   * fail to start.</p> <p>The available Linux filesystem types are&#x2028;
+   * fail to start.</p> <p>The available Linux filesystem types are
    * <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is
    * specified, the <code>xfs</code> filesystem type is used by default.</p> <p>The
    * available Windows filesystem types are <code>NTFS</code>.</p>

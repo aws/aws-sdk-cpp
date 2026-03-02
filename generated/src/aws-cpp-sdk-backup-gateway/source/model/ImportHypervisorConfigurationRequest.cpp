@@ -15,20 +15,24 @@ using namespace Aws::Utils;
 Aws::String ImportHypervisorConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_hostHasBeenSet) {
-    payload.WithString("Host", m_host);
-  }
-
-  if (m_kmsKeyArnHasBeenSet) {
-    payload.WithString("KmsKeyArn", m_kmsKeyArn);
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("Name", m_name);
   }
 
+  if (m_hostHasBeenSet) {
+    payload.WithString("Host", m_host);
+  }
+
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
+  }
+
   if (m_passwordHasBeenSet) {
     payload.WithString("Password", m_password);
+  }
+
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("KmsKeyArn", m_kmsKeyArn);
   }
 
   if (m_tagsHasBeenSet) {
@@ -37,10 +41,6 @@ Aws::String ImportHypervisorConfigurationRequest::SerializePayload() const {
       tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
     }
     payload.WithArray("Tags", std::move(tagsJsonList));
-  }
-
-  if (m_usernameHasBeenSet) {
-    payload.WithString("Username", m_username);
   }
 
   return payload.View().WriteReadable();

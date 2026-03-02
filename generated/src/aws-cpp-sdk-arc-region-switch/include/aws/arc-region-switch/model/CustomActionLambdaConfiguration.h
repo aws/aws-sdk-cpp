@@ -93,7 +93,11 @@ class CustomActionLambdaConfiguration {
 
   ///@{
   /**
-   * <p>The Amazon Web Services Region for the function to run in.</p>
+   * <p>The Amazon Web Services Region for the function to run in. For recovery
+   * workflows use <code>activatingRegion</code> or <code>deactivatingRegion</code>.
+   * For post-recovery workflows, use <code>activeRegion</code> (the Region with
+   * customer traffic) or <code>inactiveRegion</code> (the Region with no customer
+   * traffic).</p>
    */
   inline RegionToRunIn GetRegionToRun() const { return m_regionToRun; }
   inline bool RegionToRunHasBeenSet() const { return m_regionToRunHasBeenSet; }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 #include <aws/docdb/model/GlobalCluster.h>
 #include <aws/docdb/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class FailoverGlobalClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   GlobalCluster m_globalCluster;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_globalClusterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -238,6 +239,8 @@ class DescribeSecurityProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_securityProfileName;
 
@@ -260,6 +263,7 @@ class DescribeSecurityProfileResult {
   MetricsExportConfig m_metricsExportConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_securityProfileNameHasBeenSet = false;
   bool m_securityProfileArnHasBeenSet = false;
   bool m_securityProfileDescriptionHasBeenSet = false;

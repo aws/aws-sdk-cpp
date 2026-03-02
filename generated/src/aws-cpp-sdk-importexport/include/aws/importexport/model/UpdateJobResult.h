@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/importexport/ImportExport_EXPORTS.h>
@@ -97,6 +98,8 @@ class UpdateJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_success{false};
 
@@ -105,6 +108,7 @@ class UpdateJobResult {
   Aws::Vector<Artifact> m_artifactList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successHasBeenSet = false;
   bool m_warningMessageHasBeenSet = false;
   bool m_artifactListHasBeenSet = false;

@@ -37,7 +37,7 @@ class AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
    * <p>A date on which to transition objects to the specified storage class. If you
    * provide <code>Date</code>, you cannot provide <code>Days</code>.</p> <p>For more
    * information about the validation and formatting of timestamp fields in Security
-   * Hub, see <a
+   * Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetDate() const { return m_date; }

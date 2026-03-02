@@ -10,6 +10,7 @@
 #include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsPaginationTraits.h>
 #include <aws/compute-optimizer/model/GetRecommendationPreferencesPaginationTraits.h>
 #include <aws/compute-optimizer/model/GetRecommendationSummariesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -28,6 +29,7 @@ class ComputeOptimizerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRecommendationExportJobsRequest,
                                     Pagination::DescribeRecommendationExportJobsPaginationTraits<DerivedClient>>
   DescribeRecommendationExportJobsPaginator(const Model::DescribeRecommendationExportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRecommendationExportJobsRequest,
                                              Pagination::DescribeRecommendationExportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -39,6 +41,7 @@ class ComputeOptimizerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEnrollmentStatusesForOrganizationRequest,
                                     Pagination::GetEnrollmentStatusesForOrganizationPaginationTraits<DerivedClient>>
   GetEnrollmentStatusesForOrganizationPaginator(const Model::GetEnrollmentStatusesForOrganizationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetEnrollmentStatusesForOrganizationRequest,
                                              Pagination::GetEnrollmentStatusesForOrganizationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +53,7 @@ class ComputeOptimizerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLambdaFunctionRecommendationsRequest,
                                     Pagination::GetLambdaFunctionRecommendationsPaginationTraits<DerivedClient>>
   GetLambdaFunctionRecommendationsPaginator(const Model::GetLambdaFunctionRecommendationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLambdaFunctionRecommendationsRequest,
                                              Pagination::GetLambdaFunctionRecommendationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +65,7 @@ class ComputeOptimizerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRecommendationPreferencesRequest,
                                     Pagination::GetRecommendationPreferencesPaginationTraits<DerivedClient>>
   GetRecommendationPreferencesPaginator(const Model::GetRecommendationPreferencesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRecommendationPreferencesRequest,
                                              Pagination::GetRecommendationPreferencesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +77,7 @@ class ComputeOptimizerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRecommendationSummariesRequest,
                                     Pagination::GetRecommendationSummariesPaginationTraits<DerivedClient>>
   GetRecommendationSummariesPaginator(const Model::GetRecommendationSummariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRecommendationSummariesRequest,
                                              Pagination::GetRecommendationSummariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

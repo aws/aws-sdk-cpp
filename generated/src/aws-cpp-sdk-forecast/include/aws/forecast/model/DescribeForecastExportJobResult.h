@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/forecast/ForecastService_EXPORTS.h>
@@ -210,6 +211,8 @@ class DescribeForecastExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_forecastExportJobArn;
 
@@ -230,6 +233,7 @@ class DescribeForecastExportJobResult {
   Aws::String m_format;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_forecastExportJobArnHasBeenSet = false;
   bool m_forecastExportJobNameHasBeenSet = false;
   bool m_forecastArnHasBeenSet = false;

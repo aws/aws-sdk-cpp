@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/SavingsPlansUtilizationAggregates.h>
 #include <aws/ce/model/SavingsPlansUtilizationByTime.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -87,12 +88,15 @@ class GetSavingsPlansUtilizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<SavingsPlansUtilizationByTime> m_savingsPlansUtilizationsByTime;
 
   SavingsPlansUtilizationAggregates m_total;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_savingsPlansUtilizationsByTimeHasBeenSet = false;
   bool m_totalHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

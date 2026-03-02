@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/license-manager/model/LicenseStatus.h>
@@ -90,6 +91,8 @@ class CreateLicenseVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_licenseArn;
 
@@ -98,6 +101,7 @@ class CreateLicenseVersionResult {
   LicenseStatus m_status{LicenseStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_licenseArnHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_statusHasBeenSet = false;

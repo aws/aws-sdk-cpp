@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
@@ -81,12 +82,15 @@ class AddProfileKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_keyName;
 
   Aws::Vector<Aws::String> m_values;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyNameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

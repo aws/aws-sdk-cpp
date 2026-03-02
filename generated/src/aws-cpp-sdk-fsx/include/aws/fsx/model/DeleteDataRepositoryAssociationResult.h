@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/DataRepositoryLifecycle.h>
@@ -90,6 +91,8 @@ class DeleteDataRepositoryAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_associationId;
 
@@ -98,6 +101,7 @@ class DeleteDataRepositoryAssociationResult {
   bool m_deleteDataInFileSystem{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_associationIdHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
   bool m_deleteDataInFileSystemHasBeenSet = false;

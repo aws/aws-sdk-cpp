@@ -7,6 +7,7 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/Index.h>
 #include <aws/backup/model/IndexStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -116,6 +117,8 @@ class UpdateRecoveryPointIndexSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_backupVaultName;
 
@@ -126,6 +129,7 @@ class UpdateRecoveryPointIndexSettingsResult {
   Index m_index{Index::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_backupVaultNameHasBeenSet = false;
   bool m_recoveryPointArnHasBeenSet = false;
   bool m_indexStatusHasBeenSet = false;

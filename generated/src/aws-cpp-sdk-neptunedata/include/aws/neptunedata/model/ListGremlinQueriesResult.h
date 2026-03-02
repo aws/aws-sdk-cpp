@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/neptunedata/Neptunedata_EXPORTS.h>
@@ -96,6 +97,8 @@ class ListGremlinQueriesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_acceptedQueryCount{0};
 
@@ -104,6 +107,7 @@ class ListGremlinQueriesResult {
   Aws::Vector<GremlinQueryStatus> m_queries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_acceptedQueryCountHasBeenSet = false;
   bool m_runningQueryCountHasBeenSet = false;
   bool m_queriesHasBeenSet = false;

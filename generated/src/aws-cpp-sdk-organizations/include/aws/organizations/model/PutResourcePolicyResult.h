@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/model/ResourcePolicy.h>
@@ -58,10 +59,13 @@ class PutResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ResourcePolicy m_resourcePolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourcePolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

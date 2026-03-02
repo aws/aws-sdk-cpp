@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
@@ -124,6 +125,8 @@ class RenderMessageTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MessageTemplateContentProvider m_content;
 
@@ -134,6 +137,7 @@ class RenderMessageTemplateResult {
   Aws::Vector<MessageTemplateAttachment> m_attachments;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentHasBeenSet = false;
   bool m_sourceConfigurationSummaryHasBeenSet = false;
   bool m_attributesNotInterpolatedHasBeenSet = false;

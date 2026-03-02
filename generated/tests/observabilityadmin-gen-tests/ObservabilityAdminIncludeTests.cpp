@@ -93,6 +93,7 @@
 #include <aws/observabilityadmin/model/ListTelemetryRulesRequest.h>
 #include <aws/observabilityadmin/model/ListTelemetryRulesResult.h>
 #include <aws/observabilityadmin/model/LogDeliveryParameters.h>
+#include <aws/observabilityadmin/model/LogGroupNameConfiguration.h>
 #include <aws/observabilityadmin/model/LogType.h>
 #include <aws/observabilityadmin/model/LoggingFilter.h>
 #include <aws/observabilityadmin/model/LogsBackupConfiguration.h>

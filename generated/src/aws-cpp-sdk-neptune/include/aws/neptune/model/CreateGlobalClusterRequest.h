@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/neptune/NeptuneRequest.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
+#include <aws/neptune/model/Tag.h>
 
 #include <utility>
 
@@ -126,6 +128,48 @@ class CreateGlobalClusterRequest : public NeptuneRequest {
 
   ///@{
   /**
+   * <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+   */
+  inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
+  inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+  template <typename DatabaseNameT = Aws::String>
+  void SetDatabaseName(DatabaseNameT&& value) {
+    m_databaseNameHasBeenSet = true;
+    m_databaseName = std::forward<DatabaseNameT>(value);
+  }
+  template <typename DatabaseNameT = Aws::String>
+  CreateGlobalClusterRequest& WithDatabaseName(DatabaseNameT&& value) {
+    SetDatabaseName(std::forward<DatabaseNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Tags to assign to the global cluster.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  CreateGlobalClusterRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  CreateGlobalClusterRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The storage encryption setting for the new global database cluster.</p>
    */
   inline bool GetStorageEncrypted() const { return m_storageEncrypted; }
@@ -150,12 +194,18 @@ class CreateGlobalClusterRequest : public NeptuneRequest {
 
   bool m_deletionProtection{false};
 
+  Aws::String m_databaseName;
+
+  Aws::Vector<Tag> m_tags;
+
   bool m_storageEncrypted{false};
   bool m_globalClusterIdentifierHasBeenSet = false;
   bool m_sourceDBClusterIdentifierHasBeenSet = false;
   bool m_engineHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_storageEncryptedHasBeenSet = false;
 };
 

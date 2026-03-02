@@ -20,6 +20,7 @@ using namespace Aws;
 GetResourcesTrendsV2Result::GetResourcesTrendsV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetResourcesTrendsV2Result& GetResourcesTrendsV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Granularity")) {
     m_granularity = GranularityFieldMapper::GetGranularityFieldForName(jsonValue.GetString("Granularity"));

@@ -37,11 +37,11 @@ class UpdateSecurityHubConfigurationRequest : public SecurityHubRequest {
    * controls, you can interact with the controls in the console and programmatically
    * immediately after release. However, automatically enabled controls have a
    * temporary default status of <code>DISABLED</code>. It can take up to several
-   * days for Security Hub to process the control release and designate the control
-   * as <code>ENABLED</code> in your account. During the processing period, you can
-   * manually enable or disable a control, and Security Hub will maintain that
-   * designation regardless of whether you have <code>AutoEnableControls</code> set
-   * to <code>true</code>.</p>
+   * days for Security Hub CSPM to process the control release and designate the
+   * control as <code>ENABLED</code> in your account. During the processing period,
+   * you can manually enable or disable a control, and Security Hub CSPM will
+   * maintain that designation regardless of whether you have
+   * <code>AutoEnableControls</code> set to <code>true</code>.</p>
    */
   inline bool GetAutoEnableControls() const { return m_autoEnableControls; }
   inline bool AutoEnableControlsHasBeenSet() const { return m_autoEnableControlsHasBeenSet; }
@@ -59,12 +59,12 @@ class UpdateSecurityHubConfigurationRequest : public SecurityHubRequest {
   /**
    * <p>Updates whether the calling account has consolidated control findings turned
    * on. If the value for this field is set to <code>SECURITY_CONTROL</code>,
-   * Security Hub generates a single finding for a control check even when the check
-   * applies to multiple enabled standards.</p> <p>If the value for this field is set
-   * to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a
-   * control check when the check applies to multiple enabled standards.</p> <p>For
-   * accounts that are part of an organization, this value can only be updated in the
-   * administrator account.</p>
+   * Security Hub CSPM generates a single finding for a control check even when the
+   * check applies to multiple enabled standards.</p> <p>If the value for this field
+   * is set to <code>STANDARD_CONTROL</code>, Security Hub CSPM generates separate
+   * findings for a control check when the check applies to multiple enabled
+   * standards.</p> <p>For accounts that are part of an organization, this value can
+   * only be updated in the administrator account.</p>
    */
   inline ControlFindingGenerator GetControlFindingGenerator() const { return m_controlFindingGenerator; }
   inline bool ControlFindingGeneratorHasBeenSet() const { return m_controlFindingGeneratorHasBeenSet; }

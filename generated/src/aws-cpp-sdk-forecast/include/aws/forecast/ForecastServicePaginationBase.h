@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/forecast/model/ListDatasetGroupsPaginationTraits.h>
 #include <aws/forecast/model/ListDatasetImportJobsPaginationTraits.h>
@@ -37,6 +38,7 @@ class ForecastServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetGroupsRequest,
                                     Pagination::ListDatasetGroupsPaginationTraits<DerivedClient>>
   ListDatasetGroupsPaginator(const Model::ListDatasetGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetGroupsRequest,
                                              Pagination::ListDatasetGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +50,7 @@ class ForecastServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetImportJobsRequest,
                                     Pagination::ListDatasetImportJobsPaginationTraits<DerivedClient>>
   ListDatasetImportJobsPaginator(const Model::ListDatasetImportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetImportJobsRequest,
                                              Pagination::ListDatasetImportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -58,6 +61,7 @@ class ForecastServicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest, Pagination::ListDatasetsPaginationTraits<DerivedClient>>
   ListDatasetsPaginator(const Model::ListDatasetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest,
                                              Pagination::ListDatasetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -69,6 +73,7 @@ class ForecastServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExplainabilitiesRequest,
                                     Pagination::ListExplainabilitiesPaginationTraits<DerivedClient>>
   ListExplainabilitiesPaginator(const Model::ListExplainabilitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExplainabilitiesRequest,
                                              Pagination::ListExplainabilitiesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -80,6 +85,7 @@ class ForecastServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExplainabilityExportsRequest,
                                     Pagination::ListExplainabilityExportsPaginationTraits<DerivedClient>>
   ListExplainabilityExportsPaginator(const Model::ListExplainabilityExportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExplainabilityExportsRequest,
                                              Pagination::ListExplainabilityExportsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -91,6 +97,7 @@ class ForecastServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListForecastExportJobsRequest,
                                     Pagination::ListForecastExportJobsPaginationTraits<DerivedClient>>
   ListForecastExportJobsPaginator(const Model::ListForecastExportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListForecastExportJobsRequest,
                                              Pagination::ListForecastExportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -101,6 +108,7 @@ class ForecastServicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListForecastsRequest, Pagination::ListForecastsPaginationTraits<DerivedClient>>
   ListForecastsPaginator(const Model::ListForecastsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListForecastsRequest,
                                              Pagination::ListForecastsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -112,6 +120,7 @@ class ForecastServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMonitorEvaluationsRequest,
                                     Pagination::ListMonitorEvaluationsPaginationTraits<DerivedClient>>
   ListMonitorEvaluationsPaginator(const Model::ListMonitorEvaluationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMonitorEvaluationsRequest,
                                              Pagination::ListMonitorEvaluationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -122,6 +131,7 @@ class ForecastServicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMonitorsRequest, Pagination::ListMonitorsPaginationTraits<DerivedClient>>
   ListMonitorsPaginator(const Model::ListMonitorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMonitorsRequest,
                                              Pagination::ListMonitorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -133,6 +143,7 @@ class ForecastServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPredictorBacktestExportJobsRequest,
                                     Pagination::ListPredictorBacktestExportJobsPaginationTraits<DerivedClient>>
   ListPredictorBacktestExportJobsPaginator(const Model::ListPredictorBacktestExportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPredictorBacktestExportJobsRequest,
                                              Pagination::ListPredictorBacktestExportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -143,6 +154,7 @@ class ForecastServicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPredictorsRequest, Pagination::ListPredictorsPaginationTraits<DerivedClient>>
   ListPredictorsPaginator(const Model::ListPredictorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPredictorsRequest,
                                              Pagination::ListPredictorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -154,6 +166,7 @@ class ForecastServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWhatIfAnalysesRequest,
                                     Pagination::ListWhatIfAnalysesPaginationTraits<DerivedClient>>
   ListWhatIfAnalysesPaginator(const Model::ListWhatIfAnalysesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWhatIfAnalysesRequest,
                                              Pagination::ListWhatIfAnalysesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -165,6 +178,7 @@ class ForecastServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWhatIfForecastExportsRequest,
                                     Pagination::ListWhatIfForecastExportsPaginationTraits<DerivedClient>>
   ListWhatIfForecastExportsPaginator(const Model::ListWhatIfForecastExportsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWhatIfForecastExportsRequest,
                                              Pagination::ListWhatIfForecastExportsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -176,6 +190,7 @@ class ForecastServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWhatIfForecastsRequest,
                                     Pagination::ListWhatIfForecastsPaginationTraits<DerivedClient>>
   ListWhatIfForecastsPaginator(const Model::ListWhatIfForecastsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWhatIfForecastsRequest,
                                              Pagination::ListWhatIfForecastsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

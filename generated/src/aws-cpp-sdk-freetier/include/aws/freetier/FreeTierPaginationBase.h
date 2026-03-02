@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/freetier/model/GetFreeTierUsagePaginationTraits.h>
 #include <aws/freetier/model/ListAccountActivitiesPaginationTraits.h>
@@ -25,6 +26,7 @@ class FreeTierPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetFreeTierUsageRequest,
                                     Pagination::GetFreeTierUsagePaginationTraits<DerivedClient>>
   GetFreeTierUsagePaginator(const Model::GetFreeTierUsageRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetFreeTierUsageRequest,
                                              Pagination::GetFreeTierUsagePaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -36,6 +38,7 @@ class FreeTierPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccountActivitiesRequest,
                                     Pagination::ListAccountActivitiesPaginationTraits<DerivedClient>>
   ListAccountActivitiesPaginator(const Model::ListAccountActivitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccountActivitiesRequest,
                                              Pagination::ListAccountActivitiesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

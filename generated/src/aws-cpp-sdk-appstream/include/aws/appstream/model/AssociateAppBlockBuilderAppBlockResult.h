@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/AppBlockBuilderAppBlockAssociation.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -61,10 +62,13 @@ class AssociateAppBlockBuilderAppBlockResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AppBlockBuilderAppBlockAssociation m_appBlockBuilderAppBlockAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appBlockBuilderAppBlockAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

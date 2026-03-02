@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/resource-explorer-2/model/ServiceView.h>
@@ -59,10 +60,13 @@ class GetServiceViewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ServiceView m_view;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_viewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

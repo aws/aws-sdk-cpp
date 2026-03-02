@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -126,6 +127,8 @@ class DescribeInputDeviceThumbnailResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
 
@@ -138,6 +141,7 @@ class DescribeInputDeviceThumbnailResult {
   Aws::Utils::DateTime m_lastModified{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bodyHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_contentLengthHasBeenSet = false;

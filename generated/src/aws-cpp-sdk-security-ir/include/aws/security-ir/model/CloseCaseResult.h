@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
@@ -77,12 +78,15 @@ class CloseCaseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CaseStatus m_caseStatus{CaseStatus::NOT_SET};
 
   Aws::Utils::DateTime m_closedDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_caseStatusHasBeenSet = false;
   bool m_closedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

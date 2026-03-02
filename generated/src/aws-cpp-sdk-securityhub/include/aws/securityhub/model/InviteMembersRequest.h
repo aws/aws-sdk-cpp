@@ -32,7 +32,7 @@ class InviteMembersRequest : public SecurityHubRequest {
   ///@{
   /**
    * <p>The list of account IDs of the Amazon Web Services accounts to invite to
-   * Security Hub as members. </p>
+   * Security Hub CSPM as members. </p>
    */
   inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
   inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }

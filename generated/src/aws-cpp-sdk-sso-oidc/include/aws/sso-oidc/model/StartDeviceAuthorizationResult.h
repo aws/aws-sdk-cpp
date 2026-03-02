@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
 
@@ -145,6 +146,8 @@ class StartDeviceAuthorizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_deviceCode;
 
@@ -159,6 +162,7 @@ class StartDeviceAuthorizationResult {
   int m_interval{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deviceCodeHasBeenSet = false;
   bool m_userCodeHasBeenSet = false;
   bool m_verificationUriHasBeenSet = false;

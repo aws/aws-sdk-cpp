@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/CacheSubnetGroup.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class ModifyCacheSubnetGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CacheSubnetGroup m_cacheSubnetGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_cacheSubnetGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

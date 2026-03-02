@@ -7773,10 +7773,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <ul> <li> <p>A Search operation, unlike a List operation, takes time to index
    * changes to resource (create, update or delete). If you don't see updated
    * information for recently changed contact evaluations, try calling the API again
-   * in a few seconds. Contact Evaluations may not be fully backfilled with
-   * historical data in all regions yet, however all recently created Contact
-   * Evaluations should be available for search.</p> </li> </ul> <p>
-   * <b>Endpoints</b>: See <a
+   * in a few seconds.</p> </li> </ul> <p> <b>Endpoints</b>: See <a
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
    * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactEvaluations">AWS

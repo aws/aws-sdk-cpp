@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -140,6 +141,8 @@ class DescribeFlowSourceMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_flowArn;
 
@@ -152,6 +155,7 @@ class DescribeFlowSourceMetadataResult {
   NdiSourceMetadataInfo m_ndiInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_flowArnHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
   bool m_timestampHasBeenSet = false;

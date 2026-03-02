@@ -7,6 +7,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/Comment.h>
 #include <aws/codecommit/model/Location.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -164,6 +165,8 @@ class PostCommentForComparedCommitResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_repositoryName;
 
@@ -180,6 +183,7 @@ class PostCommentForComparedCommitResult {
   Comment m_comment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_repositoryNameHasBeenSet = false;
   bool m_beforeCommitIdHasBeenSet = false;
   bool m_afterCommitIdHasBeenSet = false;

@@ -7,6 +7,7 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/AutoScalingGroupRecommendation.h>
 #include <aws/compute-optimizer/model/GetRecommendationError.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -114,6 +115,8 @@ class GetAutoScalingGroupRecommendationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -122,6 +125,7 @@ class GetAutoScalingGroupRecommendationsResult {
   Aws::Vector<GetRecommendationError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_autoScalingGroupRecommendationsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

@@ -20,8 +20,8 @@ namespace BackupGateway {
 namespace Model {
 
 /**
- * <p>This displays the mapping of on-premises VMware tags to the corresponding
- * Amazon Web Services tags.</p><p><h3>See Also:</h3>   <a
+ * <p>This displays the mapping of VMware tags to the corresponding Amazon Web
+ * Services tags.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/VmwareToAwsTagMapping">AWS
  * API Reference</a></p>
  */
@@ -31,42 +31,6 @@ class VmwareToAwsTagMapping {
   AWS_BACKUPGATEWAY_API VmwareToAwsTagMapping(Aws::Utils::Json::JsonView jsonValue);
   AWS_BACKUPGATEWAY_API VmwareToAwsTagMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-  ///@{
-  /**
-   * <p>The key part of the Amazon Web Services tag's key-value pair.</p>
-   */
-  inline const Aws::String& GetAwsTagKey() const { return m_awsTagKey; }
-  inline bool AwsTagKeyHasBeenSet() const { return m_awsTagKeyHasBeenSet; }
-  template <typename AwsTagKeyT = Aws::String>
-  void SetAwsTagKey(AwsTagKeyT&& value) {
-    m_awsTagKeyHasBeenSet = true;
-    m_awsTagKey = std::forward<AwsTagKeyT>(value);
-  }
-  template <typename AwsTagKeyT = Aws::String>
-  VmwareToAwsTagMapping& WithAwsTagKey(AwsTagKeyT&& value) {
-    SetAwsTagKey(std::forward<AwsTagKeyT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The value part of the Amazon Web Services tag's key-value pair.</p>
-   */
-  inline const Aws::String& GetAwsTagValue() const { return m_awsTagValue; }
-  inline bool AwsTagValueHasBeenSet() const { return m_awsTagValueHasBeenSet; }
-  template <typename AwsTagValueT = Aws::String>
-  void SetAwsTagValue(AwsTagValueT&& value) {
-    m_awsTagValueHasBeenSet = true;
-    m_awsTagValue = std::forward<AwsTagValueT>(value);
-  }
-  template <typename AwsTagValueT = Aws::String>
-  VmwareToAwsTagMapping& WithAwsTagValue(AwsTagValueT&& value) {
-    SetAwsTagValue(std::forward<AwsTagValueT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -103,18 +67,54 @@ class VmwareToAwsTagMapping {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The key part of the Amazon Web Services tag's key-value pair.</p>
+   */
+  inline const Aws::String& GetAwsTagKey() const { return m_awsTagKey; }
+  inline bool AwsTagKeyHasBeenSet() const { return m_awsTagKeyHasBeenSet; }
+  template <typename AwsTagKeyT = Aws::String>
+  void SetAwsTagKey(AwsTagKeyT&& value) {
+    m_awsTagKeyHasBeenSet = true;
+    m_awsTagKey = std::forward<AwsTagKeyT>(value);
+  }
+  template <typename AwsTagKeyT = Aws::String>
+  VmwareToAwsTagMapping& WithAwsTagKey(AwsTagKeyT&& value) {
+    SetAwsTagKey(std::forward<AwsTagKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The value part of the Amazon Web Services tag's key-value pair.</p>
+   */
+  inline const Aws::String& GetAwsTagValue() const { return m_awsTagValue; }
+  inline bool AwsTagValueHasBeenSet() const { return m_awsTagValueHasBeenSet; }
+  template <typename AwsTagValueT = Aws::String>
+  void SetAwsTagValue(AwsTagValueT&& value) {
+    m_awsTagValueHasBeenSet = true;
+    m_awsTagValue = std::forward<AwsTagValueT>(value);
+  }
+  template <typename AwsTagValueT = Aws::String>
+  VmwareToAwsTagMapping& WithAwsTagValue(AwsTagValueT&& value) {
+    SetAwsTagValue(std::forward<AwsTagValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_awsTagKey;
-
-  Aws::String m_awsTagValue;
-
   Aws::String m_vmwareCategory;
 
   Aws::String m_vmwareTagName;
-  bool m_awsTagKeyHasBeenSet = false;
-  bool m_awsTagValueHasBeenSet = false;
+
+  Aws::String m_awsTagKey;
+
+  Aws::String m_awsTagValue;
   bool m_vmwareCategoryHasBeenSet = false;
   bool m_vmwareTagNameHasBeenSet = false;
+  bool m_awsTagKeyHasBeenSet = false;
+  bool m_awsTagValueHasBeenSet = false;
 };
 
 }  // namespace Model

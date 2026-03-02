@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -125,6 +126,8 @@ class GetExecutionPreviewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_executionPreviewId;
 
@@ -137,6 +140,7 @@ class GetExecutionPreviewResult {
   ExecutionPreview m_executionPreview;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_executionPreviewIdHasBeenSet = false;
   bool m_endedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;

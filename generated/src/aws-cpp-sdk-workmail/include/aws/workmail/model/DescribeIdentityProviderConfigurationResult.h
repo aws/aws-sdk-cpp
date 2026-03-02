@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
 #include <aws/workmail/model/IdentityCenterConfiguration.h>
@@ -93,6 +94,8 @@ class DescribeIdentityProviderConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IdentityProviderAuthenticationMode m_authenticationMode{IdentityProviderAuthenticationMode::NOT_SET};
 
@@ -101,6 +104,7 @@ class DescribeIdentityProviderConfigurationResult {
   PersonalAccessTokenConfiguration m_personalAccessTokenConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authenticationModeHasBeenSet = false;
   bool m_identityCenterConfigurationHasBeenSet = false;
   bool m_personalAccessTokenConfigurationHasBeenSet = false;

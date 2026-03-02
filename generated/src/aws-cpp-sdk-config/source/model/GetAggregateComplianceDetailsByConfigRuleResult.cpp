@@ -24,6 +24,7 @@ GetAggregateComplianceDetailsByConfigRuleResult::GetAggregateComplianceDetailsBy
 
 GetAggregateComplianceDetailsByConfigRuleResult& GetAggregateComplianceDetailsByConfigRuleResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("AggregateEvaluationResults")) {
     Aws::Utils::Array<JsonView> aggregateEvaluationResultsJsonList = jsonValue.GetArray("AggregateEvaluationResults");

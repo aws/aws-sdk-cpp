@@ -20,6 +20,7 @@ using namespace Aws;
 GetDataIntegrationResult::GetDataIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetDataIntegrationResult& GetDataIntegrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
@@ -63,18 +64,18 @@ GetDataIntegrationResult& GetDataIntegrationResult::operator=(const Aws::AmazonW
   if (jsonValue.ValueExists("ObjectConfiguration")) {
     Aws::Map<Aws::String, JsonView> objectConfigurationJsonMap = jsonValue.GetObject("ObjectConfiguration").GetAllObjects();
     for (auto& objectConfigurationItem : objectConfigurationJsonMap) {
-      Aws::Map<Aws::String, JsonView> fieldsMapJsonMap = objectConfigurationItem.second.GetAllObjects();
-      Aws::Map<Aws::String, Aws::Vector<Aws::String>> fieldsMapMap;
-      for (auto& fieldsMapItem : fieldsMapJsonMap) {
-        Aws::Utils::Array<JsonView> fieldsListJsonList = fieldsMapItem.second.AsArray();
-        Aws::Vector<Aws::String> fieldsListList;
-        fieldsListList.reserve((size_t)fieldsListJsonList.GetLength());
-        for (unsigned fieldsListIndex = 0; fieldsListIndex < fieldsListJsonList.GetLength(); ++fieldsListIndex) {
-          fieldsListList.push_back(fieldsListJsonList[fieldsListIndex].AsString());
+      Aws::Map<Aws::String, JsonView> fieldsMap2JsonMap = objectConfigurationItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::Vector<Aws::String>> fieldsMap2Map;
+      for (auto& fieldsMap2Item : fieldsMap2JsonMap) {
+        Aws::Utils::Array<JsonView> fieldsList3JsonList = fieldsMap2Item.second.AsArray();
+        Aws::Vector<Aws::String> fieldsList3List;
+        fieldsList3List.reserve((size_t)fieldsList3JsonList.GetLength());
+        for (unsigned fieldsList3Index = 0; fieldsList3Index < fieldsList3JsonList.GetLength(); ++fieldsList3Index) {
+          fieldsList3List.push_back(fieldsList3JsonList[fieldsList3Index].AsString());
         }
-        fieldsMapMap[fieldsMapItem.first] = std::move(fieldsListList);
+        fieldsMap2Map[fieldsMap2Item.first] = std::move(fieldsList3List);
       }
-      m_objectConfiguration[objectConfigurationItem.first] = std::move(fieldsMapMap);
+      m_objectConfiguration[objectConfigurationItem.first] = std::move(fieldsMap2Map);
     }
     m_objectConfigurationHasBeenSet = true;
   }

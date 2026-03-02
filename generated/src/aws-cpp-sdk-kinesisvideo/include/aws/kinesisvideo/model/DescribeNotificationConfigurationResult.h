@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 #include <aws/kinesisvideo/model/NotificationConfiguration.h>
@@ -60,10 +61,13 @@ class DescribeNotificationConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   NotificationConfiguration m_notificationConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_notificationConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

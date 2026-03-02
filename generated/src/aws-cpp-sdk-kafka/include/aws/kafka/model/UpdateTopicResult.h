@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/TopicState.h>
@@ -97,6 +98,8 @@ class UpdateTopicResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_topicArn;
 
@@ -105,6 +108,7 @@ class UpdateTopicResult {
   TopicState m_status{TopicState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_topicArnHasBeenSet = false;
   bool m_topicNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

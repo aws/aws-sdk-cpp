@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
@@ -93,6 +94,8 @@ class GetSdkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_contentType;
 
@@ -101,6 +104,7 @@ class GetSdkResult {
   Aws::Utils::Stream::ResponseStream m_body{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentTypeHasBeenSet = false;
   bool m_contentDispositionHasBeenSet = false;
   bool m_bodyHasBeenSet = false;

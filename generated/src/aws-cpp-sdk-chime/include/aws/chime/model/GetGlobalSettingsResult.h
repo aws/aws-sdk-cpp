@@ -7,6 +7,7 @@
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/chime/model/BusinessCallingSettings.h>
 #include <aws/chime/model/VoiceConnectorSettings.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -76,12 +77,15 @@ class GetGlobalSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   BusinessCallingSettings m_businessCalling;
 
   VoiceConnectorSettings m_voiceConnector;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_businessCallingHasBeenSet = false;
   bool m_voiceConnectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

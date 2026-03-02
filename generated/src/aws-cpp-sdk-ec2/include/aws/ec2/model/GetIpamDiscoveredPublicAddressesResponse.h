@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -104,6 +105,8 @@ class GetIpamDiscoveredPublicAddressesResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<IpamDiscoveredPublicAddress> m_ipamDiscoveredPublicAddresses;
 
@@ -112,6 +115,7 @@ class GetIpamDiscoveredPublicAddressesResponse {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipamDiscoveredPublicAddressesHasBeenSet = false;
   bool m_oldestSampleTimeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/BridgeSource.h>
@@ -75,12 +76,15 @@ class UpdateBridgeSourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_bridgeArn;
 
   BridgeSource m_source;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bridgeArnHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

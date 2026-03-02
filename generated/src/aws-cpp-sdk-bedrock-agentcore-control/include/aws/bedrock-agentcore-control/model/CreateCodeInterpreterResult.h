@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -109,6 +110,8 @@ class CreateCodeInterpreterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_codeInterpreterId;
 
@@ -119,6 +122,7 @@ class CreateCodeInterpreterResult {
   CodeInterpreterStatus m_status{CodeInterpreterStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_codeInterpreterIdHasBeenSet = false;
   bool m_codeInterpreterArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

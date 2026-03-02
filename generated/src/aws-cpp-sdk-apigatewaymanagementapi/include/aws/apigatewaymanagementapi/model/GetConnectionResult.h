@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApi_EXPORTS.h>
 #include <aws/apigatewaymanagementapi/model/Identity.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -91,6 +92,8 @@ class GetConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_connectedAt{};
 
@@ -99,6 +102,7 @@ class GetConnectionResult {
   Aws::Utils::DateTime m_lastActiveAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectedAtHasBeenSet = false;
   bool m_identityHasBeenSet = false;
   bool m_lastActiveAtHasBeenSet = false;

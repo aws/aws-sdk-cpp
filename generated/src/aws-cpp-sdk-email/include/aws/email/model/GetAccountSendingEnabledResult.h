@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/model/ResponseMetadata.h>
 
@@ -62,10 +63,13 @@ class GetAccountSendingEnabledResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_enabled{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_enabledHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

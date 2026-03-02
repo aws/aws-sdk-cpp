@@ -15,28 +15,28 @@ using namespace Aws::Utils;
 Aws::String UpdateHypervisorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_hostHasBeenSet) {
-    payload.WithString("Host", m_host);
-  }
-
   if (m_hypervisorArnHasBeenSet) {
     payload.WithString("HypervisorArn", m_hypervisorArn);
   }
 
-  if (m_logGroupArnHasBeenSet) {
-    payload.WithString("LogGroupArn", m_logGroupArn);
+  if (m_hostHasBeenSet) {
+    payload.WithString("Host", m_host);
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
   if (m_passwordHasBeenSet) {
     payload.WithString("Password", m_password);
   }
 
-  if (m_usernameHasBeenSet) {
-    payload.WithString("Username", m_username);
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
+  }
+
+  if (m_logGroupArnHasBeenSet) {
+    payload.WithString("LogGroupArn", m_logGroupArn);
   }
 
   return payload.View().WriteReadable();

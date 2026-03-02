@@ -9,6 +9,7 @@
 #include <aws/appintegrations/model/ApplicationSourceConfig.h>
 #include <aws/appintegrations/model/ApplicationType.h>
 #include <aws/appintegrations/model/IframeConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -296,6 +297,8 @@ class GetApplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -326,6 +329,7 @@ class GetApplicationResult {
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;

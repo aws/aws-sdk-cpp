@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ManagedBy.h>
@@ -82,12 +83,15 @@ class GetImageBlockPublicAccessStateResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_imageBlockPublicAccessState;
 
   ManagedBy m_managedBy{ManagedBy::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_imageBlockPublicAccessStateHasBeenSet = false;
   bool m_managedByHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

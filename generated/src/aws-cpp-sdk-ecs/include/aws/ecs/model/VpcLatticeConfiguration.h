@@ -36,8 +36,8 @@ class VpcLatticeConfiguration {
   ///@{
   /**
    * <p>The ARN of the IAM role to associate with this VPC Lattice configuration.
-   * This is the Amazon ECS&#x2028; infrastructure IAM role that is used to manage
-   * your VPC Lattice infrastructure.</p>
+   * This is the Amazon ECS infrastructure IAM role that is used to manage your VPC
+   * Lattice infrastructure.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
   inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

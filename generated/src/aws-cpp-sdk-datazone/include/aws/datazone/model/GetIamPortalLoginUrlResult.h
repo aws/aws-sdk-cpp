@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class GetIamPortalLoginUrlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_authCodeUrl;
 
   Aws::String m_userProfileId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authCodeUrlHasBeenSet = false;
   bool m_userProfileIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

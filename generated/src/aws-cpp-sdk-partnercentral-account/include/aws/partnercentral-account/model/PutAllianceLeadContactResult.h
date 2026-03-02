@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
 #include <aws/partnercentral-account/model/AllianceLeadContact.h>
@@ -110,6 +111,8 @@ class PutAllianceLeadContactResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_catalog;
 
@@ -120,6 +123,7 @@ class PutAllianceLeadContactResult {
   AllianceLeadContact m_allianceLeadContact;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_catalogHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;

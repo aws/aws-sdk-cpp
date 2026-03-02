@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 
@@ -104,6 +105,8 @@ class UpdateShardCountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_streamName;
 
@@ -114,6 +117,7 @@ class UpdateShardCountResult {
   Aws::String m_streamARN;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_streamNameHasBeenSet = false;
   bool m_currentShardCountHasBeenSet = false;
   bool m_targetShardCountHasBeenSet = false;

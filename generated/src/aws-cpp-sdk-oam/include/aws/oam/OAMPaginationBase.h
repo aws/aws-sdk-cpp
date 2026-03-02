@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/oam/model/ListAttachedLinksPaginationTraits.h>
 #include <aws/oam/model/ListLinksPaginationTraits.h>
@@ -26,6 +27,7 @@ class OAMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachedLinksRequest,
                                     Pagination::ListAttachedLinksPaginationTraits<DerivedClient>>
   ListAttachedLinksPaginator(const Model::ListAttachedLinksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachedLinksRequest,
                                              Pagination::ListAttachedLinksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -36,6 +38,7 @@ class OAMPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinksRequest, Pagination::ListLinksPaginationTraits<DerivedClient>>
   ListLinksPaginator(const Model::ListLinksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinksRequest, Pagination::ListLinksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -45,6 +48,7 @@ class OAMPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSinksRequest, Pagination::ListSinksPaginationTraits<DerivedClient>>
   ListSinksPaginator(const Model::ListSinksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSinksRequest, Pagination::ListSinksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

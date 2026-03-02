@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -221,6 +222,8 @@ class GetConfigurationSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_configurationSetName;
 
@@ -241,6 +244,7 @@ class GetConfigurationSetResult {
   ArchivingOptions m_archivingOptions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationSetNameHasBeenSet = false;
   bool m_trackingOptionsHasBeenSet = false;
   bool m_deliveryOptionsHasBeenSet = false;

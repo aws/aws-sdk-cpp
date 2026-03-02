@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pi/PI_EXPORTS.h>
@@ -86,12 +87,15 @@ class GetResourceMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_identifier;
 
   Aws::Map<Aws::String, FeatureMetadata> m_features;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identifierHasBeenSet = false;
   bool m_featuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

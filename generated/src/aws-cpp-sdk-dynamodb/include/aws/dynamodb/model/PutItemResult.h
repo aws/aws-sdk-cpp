@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -133,6 +134,8 @@ class PutItemResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<Aws::String, AttributeValue> m_attributes;
 
@@ -141,6 +144,7 @@ class PutItemResult {
   ItemCollectionMetrics m_itemCollectionMetrics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_attributesHasBeenSet = false;
   bool m_consumedCapacityHasBeenSet = false;
   bool m_itemCollectionMetricsHasBeenSet = false;

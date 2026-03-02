@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -542,6 +543,8 @@ class DescribeUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_identityStoreId;
 
@@ -596,6 +599,7 @@ class DescribeUserResult {
   Aws::Map<Aws::String, Aws::Utils::Document> m_extensions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
   bool m_userNameHasBeenSet = false;

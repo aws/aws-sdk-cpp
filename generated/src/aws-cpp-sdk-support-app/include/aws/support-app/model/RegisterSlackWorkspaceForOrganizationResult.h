@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/support-app/SupportApp_EXPORTS.h>
 #include <aws/support-app/model/AccountType.h>
@@ -93,6 +94,8 @@ class RegisterSlackWorkspaceForOrganizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AccountType m_accountType{AccountType::NOT_SET};
 
@@ -101,6 +104,7 @@ class RegisterSlackWorkspaceForOrganizationResult {
   Aws::String m_teamName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountTypeHasBeenSet = false;
   bool m_teamIdHasBeenSet = false;
   bool m_teamNameHasBeenSet = false;

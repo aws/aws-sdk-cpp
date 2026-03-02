@@ -20,6 +20,7 @@
 #include <aws/ce/model/ListCostCategoryDefinitionsPaginationTraits.h>
 #include <aws/ce/model/ListCostCategoryResourceAssociationsPaginationTraits.h>
 #include <aws/ce/model/ListSavingsPlansPurchaseRecommendationGenerationPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -37,6 +38,7 @@ class CostExplorerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAnomaliesRequest, Pagination::GetAnomaliesPaginationTraits<DerivedClient>>
   GetAnomaliesPaginator(const Model::GetAnomaliesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAnomaliesRequest,
                                              Pagination::GetAnomaliesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -48,6 +50,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAnomalyMonitorsRequest,
                                     Pagination::GetAnomalyMonitorsPaginationTraits<DerivedClient>>
   GetAnomalyMonitorsPaginator(const Model::GetAnomalyMonitorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAnomalyMonitorsRequest,
                                              Pagination::GetAnomalyMonitorsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +62,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAnomalySubscriptionsRequest,
                                     Pagination::GetAnomalySubscriptionsPaginationTraits<DerivedClient>>
   GetAnomalySubscriptionsPaginator(const Model::GetAnomalySubscriptionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAnomalySubscriptionsRequest,
                                              Pagination::GetAnomalySubscriptionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -70,6 +74,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCostAndUsageComparisonsRequest,
                                     Pagination::GetCostAndUsageComparisonsPaginationTraits<DerivedClient>>
   GetCostAndUsageComparisonsPaginator(const Model::GetCostAndUsageComparisonsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCostAndUsageComparisonsRequest,
                                              Pagination::GetCostAndUsageComparisonsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -81,6 +86,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCostComparisonDriversRequest,
                                     Pagination::GetCostComparisonDriversPaginationTraits<DerivedClient>>
   GetCostComparisonDriversPaginator(const Model::GetCostComparisonDriversRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCostComparisonDriversRequest,
                                              Pagination::GetCostComparisonDriversPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -92,6 +98,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetReservationPurchaseRecommendationRequest,
                                     Pagination::GetReservationPurchaseRecommendationPaginationTraits<DerivedClient>>
   GetReservationPurchaseRecommendationPaginator(const Model::GetReservationPurchaseRecommendationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetReservationPurchaseRecommendationRequest,
                                              Pagination::GetReservationPurchaseRecommendationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -103,6 +110,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRightsizingRecommendationRequest,
                                     Pagination::GetRightsizingRecommendationPaginationTraits<DerivedClient>>
   GetRightsizingRecommendationPaginator(const Model::GetRightsizingRecommendationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetRightsizingRecommendationRequest,
                                              Pagination::GetRightsizingRecommendationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -114,6 +122,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSavingsPlansCoverageRequest,
                                     Pagination::GetSavingsPlansCoveragePaginationTraits<DerivedClient>>
   GetSavingsPlansCoveragePaginator(const Model::GetSavingsPlansCoverageRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSavingsPlansCoverageRequest,
                                              Pagination::GetSavingsPlansCoveragePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -125,6 +134,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSavingsPlansUtilizationDetailsRequest,
                                     Pagination::GetSavingsPlansUtilizationDetailsPaginationTraits<DerivedClient>>
   GetSavingsPlansUtilizationDetailsPaginator(const Model::GetSavingsPlansUtilizationDetailsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSavingsPlansUtilizationDetailsRequest,
                                              Pagination::GetSavingsPlansUtilizationDetailsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -136,6 +146,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCommitmentPurchaseAnalysesRequest,
                                     Pagination::ListCommitmentPurchaseAnalysesPaginationTraits<DerivedClient>>
   ListCommitmentPurchaseAnalysesPaginator(const Model::ListCommitmentPurchaseAnalysesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCommitmentPurchaseAnalysesRequest,
                                              Pagination::ListCommitmentPurchaseAnalysesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -147,6 +158,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCostAllocationTagBackfillHistoryRequest,
                                     Pagination::ListCostAllocationTagBackfillHistoryPaginationTraits<DerivedClient>>
   ListCostAllocationTagBackfillHistoryPaginator(const Model::ListCostAllocationTagBackfillHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCostAllocationTagBackfillHistoryRequest,
                                              Pagination::ListCostAllocationTagBackfillHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -158,6 +170,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCostAllocationTagsRequest,
                                     Pagination::ListCostAllocationTagsPaginationTraits<DerivedClient>>
   ListCostAllocationTagsPaginator(const Model::ListCostAllocationTagsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCostAllocationTagsRequest,
                                              Pagination::ListCostAllocationTagsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -169,6 +182,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCostCategoryDefinitionsRequest,
                                     Pagination::ListCostCategoryDefinitionsPaginationTraits<DerivedClient>>
   ListCostCategoryDefinitionsPaginator(const Model::ListCostCategoryDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCostCategoryDefinitionsRequest,
                                              Pagination::ListCostCategoryDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -180,6 +194,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCostCategoryResourceAssociationsRequest,
                                     Pagination::ListCostCategoryResourceAssociationsPaginationTraits<DerivedClient>>
   ListCostCategoryResourceAssociationsPaginator(const Model::ListCostCategoryResourceAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCostCategoryResourceAssociationsRequest,
                                              Pagination::ListCostCategoryResourceAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -191,6 +206,7 @@ class CostExplorerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSavingsPlansPurchaseRecommendationGenerationRequest,
                                     Pagination::ListSavingsPlansPurchaseRecommendationGenerationPaginationTraits<DerivedClient>>
   ListSavingsPlansPurchaseRecommendationGenerationPaginator(const Model::ListSavingsPlansPurchaseRecommendationGenerationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSavingsPlansPurchaseRecommendationGenerationRequest,
                                              Pagination::ListSavingsPlansPurchaseRecommendationGenerationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/CheckpointUpdatedExecutionState.h>
@@ -85,12 +86,15 @@ class CheckpointDurableExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_checkpointToken;
 
   CheckpointUpdatedExecutionState m_newExecutionState;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_checkpointTokenHasBeenSet = false;
   bool m_newExecutionStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

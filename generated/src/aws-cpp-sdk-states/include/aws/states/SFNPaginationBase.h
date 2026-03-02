@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/states/model/GetExecutionHistoryPaginationTraits.h>
 #include <aws/states/model/ListActivitiesPaginationTraits.h>
@@ -28,6 +29,7 @@ class SFNPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetExecutionHistoryRequest,
                                     Pagination::GetExecutionHistoryPaginationTraits<DerivedClient>>
   GetExecutionHistoryPaginator(const Model::GetExecutionHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetExecutionHistoryRequest,
                                              Pagination::GetExecutionHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class SFNPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActivitiesRequest, Pagination::ListActivitiesPaginationTraits<DerivedClient>>
   ListActivitiesPaginator(const Model::ListActivitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActivitiesRequest,
                                              Pagination::ListActivitiesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -48,6 +51,7 @@ class SFNPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExecutionsRequest, Pagination::ListExecutionsPaginationTraits<DerivedClient>>
   ListExecutionsPaginator(const Model::ListExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExecutionsRequest,
                                              Pagination::ListExecutionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -58,6 +62,7 @@ class SFNPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMapRunsRequest, Pagination::ListMapRunsPaginationTraits<DerivedClient>>
   ListMapRunsPaginator(const Model::ListMapRunsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMapRunsRequest,
                                              Pagination::ListMapRunsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -69,6 +74,7 @@ class SFNPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStateMachinesRequest,
                                     Pagination::ListStateMachinesPaginationTraits<DerivedClient>>
   ListStateMachinesPaginator(const Model::ListStateMachinesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStateMachinesRequest,
                                              Pagination::ListStateMachinesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

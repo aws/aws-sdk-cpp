@@ -9,6 +9,7 @@
 #include <aws/backup/model/LatestMpaApprovalTeamUpdate.h>
 #include <aws/backup/model/VaultState.h>
 #include <aws/backup/model/VaultType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -365,6 +366,8 @@ class DescribeBackupVaultResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_backupVaultName;
 
@@ -401,6 +404,7 @@ class DescribeBackupVaultResult {
   EncryptionKeyType m_encryptionKeyType{EncryptionKeyType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_backupVaultNameHasBeenSet = false;
   bool m_backupVaultArnHasBeenSet = false;
   bool m_vaultTypeHasBeenSet = false;

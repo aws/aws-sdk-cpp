@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -234,6 +235,8 @@ class CreateMultipartReadSetUploadResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_sequenceStoreId;
 
@@ -258,6 +261,7 @@ class CreateMultipartReadSetUploadResult {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sequenceStoreIdHasBeenSet = false;
   bool m_uploadIdHasBeenSet = false;
   bool m_sourceFileTypeHasBeenSet = false;

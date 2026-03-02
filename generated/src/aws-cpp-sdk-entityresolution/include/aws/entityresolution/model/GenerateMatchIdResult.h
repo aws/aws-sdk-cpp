@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
@@ -89,12 +90,15 @@ class GenerateMatchIdResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<MatchGroup> m_matchGroups;
 
   Aws::Vector<FailedRecord> m_failedRecords;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_matchGroupsHasBeenSet = false;
   bool m_failedRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

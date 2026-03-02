@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/osis/model/ListPipelineEndpointConnectionsPaginationTraits.h>
 #include <aws/osis/model/ListPipelineEndpointsPaginationTraits.h>
@@ -26,6 +27,7 @@ class OSISPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelineEndpointConnectionsRequest,
                                     Pagination::ListPipelineEndpointConnectionsPaginationTraits<DerivedClient>>
   ListPipelineEndpointConnectionsPaginator(const Model::ListPipelineEndpointConnectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelineEndpointConnectionsRequest,
                                              Pagination::ListPipelineEndpointConnectionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class OSISPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelineEndpointsRequest,
                                     Pagination::ListPipelineEndpointsPaginationTraits<DerivedClient>>
   ListPipelineEndpointsPaginator(const Model::ListPipelineEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelineEndpointsRequest,
                                              Pagination::ListPipelineEndpointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -47,6 +50,7 @@ class OSISPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelinesRequest, Pagination::ListPipelinesPaginationTraits<DerivedClient>>
   ListPipelinesPaginator(const Model::ListPipelinesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPipelinesRequest,
                                              Pagination::ListPipelinesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

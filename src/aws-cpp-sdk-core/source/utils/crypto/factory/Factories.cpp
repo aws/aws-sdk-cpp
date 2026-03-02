@@ -67,6 +67,12 @@ static std::shared_ptr<HMACFactory>& GetSha256HMACFactory()
     return s_Sha256HMACFactory;
 }
 
+static std::shared_ptr<HashFactory>& GetSha512Factory()
+{
+  static std::shared_ptr<HashFactory> s_Sha512Factory(nullptr);
+  return s_Sha512Factory;
+}
+
 static std::shared_ptr<SymmetricCipherFactory>& GetAES_CBCFactory()
 {
     static std::shared_ptr<SymmetricCipherFactory> s_AES_CBCFactory(nullptr);
@@ -250,6 +256,33 @@ public:
     {
         // No-op for backwards compatibility.
     }
+};
+
+class DefaultSHA512Factory : public HashFactory {
+ public:
+  std::shared_ptr<Hash> CreateImplementation() const override {
+#ifndef NO_ENCRYPTION
+    return Aws::MakeShared<CRTHash>(s_allocationTag, Aws::Crt::Crypto::Hash::CreateSHA512());
+#else
+    return nullptr;
+#endif
+  }
+
+  /**
+   * Opportunity to make any static initialization calls you need to make.
+   * Will only be called once.
+   */
+  void InitStaticState() override {
+    // No-op for backwards compatibility.
+  }
+
+  /**
+   * Opportunity to make any static cleanup calls you need to make.
+   * will only be called at the end of the application.
+   */
+  void CleanupStaticState() override {
+    // No-op for backwards compatibility.
+  }
 };
 
 
@@ -596,6 +629,16 @@ void Aws::Utils::Crypto::InitCrypto()
         GetSha256HMACFactory()->InitStaticState();
     }
 
+    if(GetSha512Factory())
+    {
+        GetSha512Factory()->InitStaticState();
+    }
+    else
+    {
+        GetSha512Factory() = Aws::MakeShared<DefaultSHA512Factory>(s_allocationTag);
+        GetSha512Factory()->InitStaticState();
+    }
+
     if(GetAES_CBCFactory())
     {
         GetAES_CBCFactory()->InitStaticState();
@@ -682,6 +725,12 @@ void Aws::Utils::Crypto::CleanupCrypto()
     {
         GetSha256HMACFactory()->CleanupStaticState();
         GetSha256HMACFactory() =  nullptr;
+    }
+
+    if(GetSha512Factory())
+    {
+        GetSha512Factory()->CleanupStaticState();
+        GetSha512Factory() = nullptr;
     }
 
     if(GetAES_CBCFactory())
@@ -807,6 +856,10 @@ std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha256Implementation() {
 std::shared_ptr<Aws::Utils::Crypto::HMAC> Aws::Utils::Crypto::CreateSha256HMACImplementation()
 {
     return GetSha256HMACFactory()->CreateImplementation();
+}
+
+std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha512Implementation() {
+  return GetSha512Factory()->CreateImplementation();
 }
 
 #ifdef _MSC_VER

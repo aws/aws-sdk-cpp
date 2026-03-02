@@ -11,6 +11,7 @@
 #include <aws/controltower/model/ListEnabledControlsPaginationTraits.h>
 #include <aws/controltower/model/ListLandingZoneOperationsPaginationTraits.h>
 #include <aws/controltower/model/ListLandingZonesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -28,6 +29,7 @@ class ControlTowerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBaselinesRequest, Pagination::ListBaselinesPaginationTraits<DerivedClient>>
   ListBaselinesPaginator(const Model::ListBaselinesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBaselinesRequest,
                                              Pagination::ListBaselinesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -39,6 +41,7 @@ class ControlTowerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlOperationsRequest,
                                     Pagination::ListControlOperationsPaginationTraits<DerivedClient>>
   ListControlOperationsPaginator(const Model::ListControlOperationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListControlOperationsRequest,
                                              Pagination::ListControlOperationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +53,7 @@ class ControlTowerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnabledBaselinesRequest,
                                     Pagination::ListEnabledBaselinesPaginationTraits<DerivedClient>>
   ListEnabledBaselinesPaginator(const Model::ListEnabledBaselinesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnabledBaselinesRequest,
                                              Pagination::ListEnabledBaselinesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +65,7 @@ class ControlTowerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnabledControlsRequest,
                                     Pagination::ListEnabledControlsPaginationTraits<DerivedClient>>
   ListEnabledControlsPaginator(const Model::ListEnabledControlsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnabledControlsRequest,
                                              Pagination::ListEnabledControlsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +77,7 @@ class ControlTowerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLandingZoneOperationsRequest,
                                     Pagination::ListLandingZoneOperationsPaginationTraits<DerivedClient>>
   ListLandingZoneOperationsPaginator(const Model::ListLandingZoneOperationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLandingZoneOperationsRequest,
                                              Pagination::ListLandingZoneOperationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -83,6 +89,7 @@ class ControlTowerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLandingZonesRequest,
                                     Pagination::ListLandingZonesPaginationTraits<DerivedClient>>
   ListLandingZonesPaginator(const Model::ListLandingZonesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLandingZonesRequest,
                                              Pagination::ListLandingZonesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

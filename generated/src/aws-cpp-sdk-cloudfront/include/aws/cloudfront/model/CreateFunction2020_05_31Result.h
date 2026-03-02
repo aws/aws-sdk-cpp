@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/FunctionSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -95,6 +96,8 @@ class CreateFunction2020_05_31Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   FunctionSummary m_functionSummary;
 
@@ -103,6 +106,7 @@ class CreateFunction2020_05_31Result {
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_functionSummaryHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_eTagHasBeenSet = false;

@@ -7,6 +7,7 @@
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/auditmanager/model/Assessment.h>
 #include <aws/auditmanager/model/Role.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -72,12 +73,15 @@ class GetAssessmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Assessment m_assessment;
 
   Role m_userRole;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assessmentHasBeenSet = false;
   bool m_userRoleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

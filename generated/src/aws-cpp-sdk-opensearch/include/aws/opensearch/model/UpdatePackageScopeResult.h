@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
@@ -97,6 +98,8 @@ class UpdatePackageScopeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_packageID;
 
@@ -105,6 +108,7 @@ class UpdatePackageScopeResult {
   Aws::Vector<Aws::String> m_packageUserList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_packageIDHasBeenSet = false;
   bool m_operationHasBeenSet = false;
   bool m_packageUserListHasBeenSet = false;

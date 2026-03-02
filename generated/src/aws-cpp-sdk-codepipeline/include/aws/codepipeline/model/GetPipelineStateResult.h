@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/StageState.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -140,6 +141,8 @@ class GetPipelineStateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_pipelineName;
 
@@ -152,6 +155,7 @@ class GetPipelineStateResult {
   Aws::Utils::DateTime m_updated{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_pipelineNameHasBeenSet = false;
   bool m_pipelineVersionHasBeenSet = false;
   bool m_stageStatesHasBeenSet = false;

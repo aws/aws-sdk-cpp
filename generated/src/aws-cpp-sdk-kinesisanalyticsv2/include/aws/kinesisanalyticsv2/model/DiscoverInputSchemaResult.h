@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
@@ -132,6 +133,8 @@ class DiscoverInputSchemaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SourceSchema m_inputSchema;
 
@@ -142,6 +145,7 @@ class DiscoverInputSchemaResult {
   Aws::Vector<Aws::String> m_rawInputRecords;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_inputSchemaHasBeenSet = false;
   bool m_parsedInputRecordsHasBeenSet = false;
   bool m_processedInputRecordsHasBeenSet = false;

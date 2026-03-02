@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/elasticloadbalancingv2/model/DescribeAccountLimitsPaginationTraits.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenerCertificatesPaginationTraits.h>
@@ -32,6 +33,7 @@ class ElasticLoadBalancingv2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAccountLimitsRequest,
                                     Pagination::DescribeAccountLimitsPaginationTraits<DerivedClient>>
   DescribeAccountLimitsPaginator(const Model::DescribeAccountLimitsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAccountLimitsRequest,
                                              Pagination::DescribeAccountLimitsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -43,6 +45,7 @@ class ElasticLoadBalancingv2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeListenerCertificatesRequest,
                                     Pagination::DescribeListenerCertificatesPaginationTraits<DerivedClient>>
   DescribeListenerCertificatesPaginator(const Model::DescribeListenerCertificatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeListenerCertificatesRequest,
                                              Pagination::DescribeListenerCertificatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -54,6 +57,7 @@ class ElasticLoadBalancingv2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeListenersRequest,
                                     Pagination::DescribeListenersPaginationTraits<DerivedClient>>
   DescribeListenersPaginator(const Model::DescribeListenersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeListenersRequest,
                                              Pagination::DescribeListenersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -65,6 +69,7 @@ class ElasticLoadBalancingv2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLoadBalancersRequest,
                                     Pagination::DescribeLoadBalancersPaginationTraits<DerivedClient>>
   DescribeLoadBalancersPaginator(const Model::DescribeLoadBalancersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLoadBalancersRequest,
                                              Pagination::DescribeLoadBalancersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -75,6 +80,7 @@ class ElasticLoadBalancingv2PaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRulesRequest, Pagination::DescribeRulesPaginationTraits<DerivedClient>>
   DescribeRulesPaginator(const Model::DescribeRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeRulesRequest,
                                              Pagination::DescribeRulesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -86,6 +92,7 @@ class ElasticLoadBalancingv2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTargetGroupsRequest,
                                     Pagination::DescribeTargetGroupsPaginationTraits<DerivedClient>>
   DescribeTargetGroupsPaginator(const Model::DescribeTargetGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTargetGroupsRequest,
                                              Pagination::DescribeTargetGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -97,6 +104,7 @@ class ElasticLoadBalancingv2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrustStoreAssociationsRequest,
                                     Pagination::DescribeTrustStoreAssociationsPaginationTraits<DerivedClient>>
   DescribeTrustStoreAssociationsPaginator(const Model::DescribeTrustStoreAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrustStoreAssociationsRequest,
                                              Pagination::DescribeTrustStoreAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -108,6 +116,7 @@ class ElasticLoadBalancingv2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrustStoreRevocationsRequest,
                                     Pagination::DescribeTrustStoreRevocationsPaginationTraits<DerivedClient>>
   DescribeTrustStoreRevocationsPaginator(const Model::DescribeTrustStoreRevocationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrustStoreRevocationsRequest,
                                              Pagination::DescribeTrustStoreRevocationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -119,6 +128,7 @@ class ElasticLoadBalancingv2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrustStoresRequest,
                                     Pagination::DescribeTrustStoresPaginationTraits<DerivedClient>>
   DescribeTrustStoresPaginator(const Model::DescribeTrustStoresRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrustStoresRequest,
                                              Pagination::DescribeTrustStoresPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

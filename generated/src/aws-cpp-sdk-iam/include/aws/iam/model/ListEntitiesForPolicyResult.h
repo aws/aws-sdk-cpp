@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iam/IAM_EXPORTS.h>
@@ -161,6 +162,8 @@ class ListEntitiesForPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<PolicyGroup> m_policyGroups;
 
@@ -173,6 +176,7 @@ class ListEntitiesForPolicyResult {
   Aws::String m_marker;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyGroupsHasBeenSet = false;
   bool m_policyUsersHasBeenSet = false;
   bool m_policyRolesHasBeenSet = false;

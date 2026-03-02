@@ -22,6 +22,7 @@ GetTableAutoScalingSettingsResult::GetTableAutoScalingSettingsResult(const Aws::
 }
 
 GetTableAutoScalingSettingsResult& GetTableAutoScalingSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("keyspaceName")) {
     m_keyspaceName = jsonValue.GetString("keyspaceName");

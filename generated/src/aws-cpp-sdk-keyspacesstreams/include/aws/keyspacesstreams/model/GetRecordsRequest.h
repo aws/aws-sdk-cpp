@@ -34,8 +34,9 @@ class GetRecordsRequest : public KeyspacesStreamsRequest {
   /**
    * <p> The unique identifier of the shard iterator. A shard iterator specifies the
    * position in the shard from which you want to start reading data records
-   * sequentially. You obtain this value by calling the <code>GetShardIterator</code>
-   * operation. Each shard iterator is valid for 15 minutes after creation. </p>
+   * sequentially. You obtain this value by calling the <code>GetShardIterator
+   * </code> operation. Each shard iterator is valid for 15 minutes after creation.
+   * </p>
    */
   inline const Aws::String& GetShardIterator() const { return m_shardIterator; }
   inline bool ShardIteratorHasBeenSet() const { return m_shardIteratorHasBeenSet; }
@@ -54,9 +55,9 @@ class GetRecordsRequest : public KeyspacesStreamsRequest {
   ///@{
   /**
    * <p> The maximum number of records to return in a single <code>GetRecords</code>
-   * request. Default value is 1000. You can specify a limit between 1 and 1000, but
-   * the actual number returned might be less than the specified maximum if the size
-   * of the data for the returned records exceeds the internal size limit. </p>
+   * request. The default value is 100. You can specify a limit between 1 and 1000,
+   * but the actual number returned might be less than the specified maximum if the
+   * size of the data for the returned records exceeds the internal size limit. </p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

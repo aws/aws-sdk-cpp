@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
@@ -148,6 +149,8 @@ class GetDomainMaintenanceStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MaintenanceStatus m_status{MaintenanceStatus::NOT_SET};
 
@@ -162,6 +165,7 @@ class GetDomainMaintenanceStatusResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
   bool m_nodeIdHasBeenSet = false;

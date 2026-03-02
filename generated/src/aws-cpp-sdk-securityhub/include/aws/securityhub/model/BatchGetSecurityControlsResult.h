@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -94,12 +95,15 @@ class BatchGetSecurityControlsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<SecurityControl> m_securityControls;
 
   Aws::Vector<UnprocessedSecurityControl> m_unprocessedIds;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_securityControlsHasBeenSet = false;
   bool m_unprocessedIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

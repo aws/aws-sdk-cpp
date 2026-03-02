@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
@@ -292,6 +293,8 @@ class DescribeDomainHealthResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DomainState m_domainState{DomainState::NOT_SET};
 
@@ -320,6 +323,7 @@ class DescribeDomainHealthResult {
   Aws::Vector<EnvironmentInfo> m_environmentInformation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainStateHasBeenSet = false;
   bool m_availabilityZoneCountHasBeenSet = false;
   bool m_activeAvailabilityZoneCountHasBeenSet = false;

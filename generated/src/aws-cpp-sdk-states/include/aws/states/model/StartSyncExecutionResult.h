@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/SFN_EXPORTS.h>
@@ -289,6 +290,8 @@ class StartSyncExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_executionArn;
 
@@ -319,6 +322,7 @@ class StartSyncExecutionResult {
   BillingDetails m_billingDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_executionArnHasBeenSet = false;
   bool m_stateMachineArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

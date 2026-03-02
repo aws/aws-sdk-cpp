@@ -15,14 +15,6 @@ using namespace Aws::Utils;
 Aws::String PutMaintenanceStartTimeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_dayOfMonthHasBeenSet) {
-    payload.WithInteger("DayOfMonth", m_dayOfMonth);
-  }
-
-  if (m_dayOfWeekHasBeenSet) {
-    payload.WithInteger("DayOfWeek", m_dayOfWeek);
-  }
-
   if (m_gatewayArnHasBeenSet) {
     payload.WithString("GatewayArn", m_gatewayArn);
   }
@@ -33,6 +25,14 @@ Aws::String PutMaintenanceStartTimeRequest::SerializePayload() const {
 
   if (m_minuteOfHourHasBeenSet) {
     payload.WithInteger("MinuteOfHour", m_minuteOfHour);
+  }
+
+  if (m_dayOfWeekHasBeenSet) {
+    payload.WithInteger("DayOfWeek", m_dayOfWeek);
+  }
+
+  if (m_dayOfMonthHasBeenSet) {
+    payload.WithInteger("DayOfMonth", m_dayOfMonth);
   }
 
   return payload.View().WriteReadable();

@@ -20,6 +20,7 @@ using namespace Aws;
 GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetQueryResultsResult& GetQueryResultsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("QueryStatus")) {
     m_queryStatus = QueryStatusMapper::GetQueryStatusForName(jsonValue.GetString("QueryStatus"));
@@ -32,18 +33,18 @@ GetQueryResultsResult& GetQueryResultsResult::operator=(const Aws::AmazonWebServ
   if (jsonValue.ValueExists("QueryResultRows")) {
     Aws::Utils::Array<JsonView> queryResultRowsJsonList = jsonValue.GetArray("QueryResultRows");
     for (unsigned queryResultRowsIndex = 0; queryResultRowsIndex < queryResultRowsJsonList.GetLength(); ++queryResultRowsIndex) {
-      Aws::Utils::Array<JsonView> queryResultRowJsonList = queryResultRowsJsonList[queryResultRowsIndex].AsArray();
-      Aws::Vector<Aws::Map<Aws::String, Aws::String>> queryResultRowList;
-      queryResultRowList.reserve((size_t)queryResultRowJsonList.GetLength());
-      for (unsigned queryResultRowIndex = 0; queryResultRowIndex < queryResultRowJsonList.GetLength(); ++queryResultRowIndex) {
-        Aws::Map<Aws::String, JsonView> queryResultColumnJsonMap = queryResultRowJsonList[queryResultRowIndex].GetAllObjects();
-        Aws::Map<Aws::String, Aws::String> queryResultColumnMap;
-        for (auto& queryResultColumnItem : queryResultColumnJsonMap) {
-          queryResultColumnMap[queryResultColumnItem.first] = queryResultColumnItem.second.AsString();
+      Aws::Utils::Array<JsonView> queryResultRow2JsonList = queryResultRowsJsonList[queryResultRowsIndex].AsArray();
+      Aws::Vector<Aws::Map<Aws::String, Aws::String>> queryResultRow2List;
+      queryResultRow2List.reserve((size_t)queryResultRow2JsonList.GetLength());
+      for (unsigned queryResultRow2Index = 0; queryResultRow2Index < queryResultRow2JsonList.GetLength(); ++queryResultRow2Index) {
+        Aws::Map<Aws::String, JsonView> queryResultColumn3JsonMap = queryResultRow2JsonList[queryResultRow2Index].GetAllObjects();
+        Aws::Map<Aws::String, Aws::String> queryResultColumn3Map;
+        for (auto& queryResultColumn3Item : queryResultColumn3JsonMap) {
+          queryResultColumn3Map[queryResultColumn3Item.first] = queryResultColumn3Item.second.AsString();
         }
-        queryResultRowList.push_back(std::move(queryResultColumnMap));
+        queryResultRow2List.push_back(std::move(queryResultColumn3Map));
       }
-      m_queryResultRows.push_back(std::move(queryResultRowList));
+      m_queryResultRows.push_back(std::move(queryResultRow2List));
     }
     m_queryResultRowsHasBeenSet = true;
   }

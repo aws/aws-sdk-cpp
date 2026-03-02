@@ -22,6 +22,7 @@ GetProfileObjectTypeTemplateResult::GetProfileObjectTypeTemplateResult(const Aws
 }
 
 GetProfileObjectTypeTemplateResult& GetProfileObjectTypeTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TemplateId")) {
     m_templateId = jsonValue.GetString("TemplateId");
@@ -53,13 +54,14 @@ GetProfileObjectTypeTemplateResult& GetProfileObjectTypeTemplateResult::operator
   if (jsonValue.ValueExists("Keys")) {
     Aws::Map<Aws::String, JsonView> keysJsonMap = jsonValue.GetObject("Keys").GetAllObjects();
     for (auto& keysItem : keysJsonMap) {
-      Aws::Utils::Array<JsonView> objectTypeKeyListJsonList = keysItem.second.AsArray();
-      Aws::Vector<ObjectTypeKey> objectTypeKeyListList;
-      objectTypeKeyListList.reserve((size_t)objectTypeKeyListJsonList.GetLength());
-      for (unsigned objectTypeKeyListIndex = 0; objectTypeKeyListIndex < objectTypeKeyListJsonList.GetLength(); ++objectTypeKeyListIndex) {
-        objectTypeKeyListList.push_back(objectTypeKeyListJsonList[objectTypeKeyListIndex].AsObject());
+      Aws::Utils::Array<JsonView> objectTypeKeyList2JsonList = keysItem.second.AsArray();
+      Aws::Vector<ObjectTypeKey> objectTypeKeyList2List;
+      objectTypeKeyList2List.reserve((size_t)objectTypeKeyList2JsonList.GetLength());
+      for (unsigned objectTypeKeyList2Index = 0; objectTypeKeyList2Index < objectTypeKeyList2JsonList.GetLength();
+           ++objectTypeKeyList2Index) {
+        objectTypeKeyList2List.push_back(objectTypeKeyList2JsonList[objectTypeKeyList2Index].AsObject());
       }
-      m_keys[keysItem.first] = std::move(objectTypeKeyListList);
+      m_keys[keysItem.first] = std::move(objectTypeKeyList2List);
     }
     m_keysHasBeenSet = true;
   }

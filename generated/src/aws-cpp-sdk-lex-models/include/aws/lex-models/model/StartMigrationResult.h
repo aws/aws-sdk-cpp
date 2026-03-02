@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
@@ -176,6 +177,8 @@ class StartMigrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_v1BotName;
 
@@ -194,6 +197,7 @@ class StartMigrationResult {
   Aws::Utils::DateTime m_migrationTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_v1BotNameHasBeenSet = false;
   bool m_v1BotVersionHasBeenSet = false;
   bool m_v1BotLocaleHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 
@@ -91,6 +92,8 @@ class CreateSoftwareUpdateJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_iotJobArn;
 
@@ -99,6 +102,7 @@ class CreateSoftwareUpdateJobResult {
   Aws::String m_platformSoftwareVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_iotJobArnHasBeenSet = false;
   bool m_iotJobIdHasBeenSet = false;
   bool m_platformSoftwareVersionHasBeenSet = false;

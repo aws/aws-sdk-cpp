@@ -99,7 +99,8 @@ class CreateEngagementInvitationRequest : public PartnerCentralSellingRequest {
    * sender, the invitation's receiver, and a payload. The <code>Payload</code> can
    * be the <code>OpportunityInvitation</code>, which includes detailed structures
    * for sender contacts, partner responsibilities, customer information, and project
-   * details. </p>
+   * details, or <code>LeadInvitation</code>, which includes structures for customer
+   * information and interaction details. </p>
    */
   inline const Invitation& GetInvitation() const { return m_invitation; }
   inline bool InvitationHasBeenSet() const { return m_invitationHasBeenSet; }

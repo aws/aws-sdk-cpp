@@ -17,6 +17,7 @@ namespace CapacityOptionTypeMapper {
 
 static const int ON_DEMAND_HASH = HashingUtils::HashString("ON_DEMAND");
 static const int SPOT_HASH = HashingUtils::HashString("SPOT");
+static const int RESERVED_HASH = HashingUtils::HashString("RESERVED");
 
 CapacityOptionType GetCapacityOptionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ CapacityOptionType GetCapacityOptionTypeForName(const Aws::String& name) {
     return CapacityOptionType::ON_DEMAND;
   } else if (hashCode == SPOT_HASH) {
     return CapacityOptionType::SPOT;
+  } else if (hashCode == RESERVED_HASH) {
+    return CapacityOptionType::RESERVED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForCapacityOptionType(CapacityOptionType enumValue) {
       return "ON_DEMAND";
     case CapacityOptionType::SPOT:
       return "SPOT";
+    case CapacityOptionType::RESERVED:
+      return "RESERVED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

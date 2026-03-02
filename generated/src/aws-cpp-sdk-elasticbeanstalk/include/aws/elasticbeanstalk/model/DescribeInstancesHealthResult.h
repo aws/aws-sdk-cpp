@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -111,6 +112,8 @@ class DescribeInstancesHealthResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<SingleInstanceHealth> m_instanceHealthList;
 
@@ -119,6 +122,7 @@ class DescribeInstancesHealthResult {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_instanceHealthListHasBeenSet = false;
   bool m_refreshedAtHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

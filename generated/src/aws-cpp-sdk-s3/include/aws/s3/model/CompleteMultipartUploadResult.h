@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/ChecksumType.h>
@@ -365,6 +366,8 @@ class CompleteMultipartUploadResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_location;
 
@@ -399,6 +402,7 @@ class CompleteMultipartUploadResult {
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_locationHasBeenSet = false;
   bool m_bucketHasBeenSet = false;
   bool m_keyHasBeenSet = false;

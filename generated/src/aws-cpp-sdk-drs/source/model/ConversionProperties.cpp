@@ -33,25 +33,25 @@ ConversionProperties& ConversionProperties::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("volumeToConversionMap")) {
     Aws::Map<Aws::String, JsonView> volumeToConversionMapJsonMap = jsonValue.GetObject("volumeToConversionMap").GetAllObjects();
     for (auto& volumeToConversionMapItem : volumeToConversionMapJsonMap) {
-      Aws::Map<Aws::String, JsonView> conversionMapJsonMap = volumeToConversionMapItem.second.GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> conversionMapMap;
-      for (auto& conversionMapItem : conversionMapJsonMap) {
-        conversionMapMap[conversionMapItem.first] = conversionMapItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> conversionMap2JsonMap = volumeToConversionMapItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> conversionMap2Map;
+      for (auto& conversionMap2Item : conversionMap2JsonMap) {
+        conversionMap2Map[conversionMap2Item.first] = conversionMap2Item.second.AsString();
       }
-      m_volumeToConversionMap[volumeToConversionMapItem.first] = std::move(conversionMapMap);
+      m_volumeToConversionMap[volumeToConversionMapItem.first] = std::move(conversionMap2Map);
     }
     m_volumeToConversionMapHasBeenSet = true;
   }
   if (jsonValue.ValueExists("volumeToProductCodes")) {
     Aws::Map<Aws::String, JsonView> volumeToProductCodesJsonMap = jsonValue.GetObject("volumeToProductCodes").GetAllObjects();
     for (auto& volumeToProductCodesItem : volumeToProductCodesJsonMap) {
-      Aws::Utils::Array<JsonView> productCodesJsonList = volumeToProductCodesItem.second.AsArray();
-      Aws::Vector<ProductCode> productCodesList;
-      productCodesList.reserve((size_t)productCodesJsonList.GetLength());
-      for (unsigned productCodesIndex = 0; productCodesIndex < productCodesJsonList.GetLength(); ++productCodesIndex) {
-        productCodesList.push_back(productCodesJsonList[productCodesIndex].AsObject());
+      Aws::Utils::Array<JsonView> productCodes2JsonList = volumeToProductCodesItem.second.AsArray();
+      Aws::Vector<ProductCode> productCodes2List;
+      productCodes2List.reserve((size_t)productCodes2JsonList.GetLength());
+      for (unsigned productCodes2Index = 0; productCodes2Index < productCodes2JsonList.GetLength(); ++productCodes2Index) {
+        productCodes2List.push_back(productCodes2JsonList[productCodes2Index].AsObject());
       }
-      m_volumeToProductCodes[volumeToProductCodesItem.first] = std::move(productCodesList);
+      m_volumeToProductCodes[volumeToProductCodesItem.first] = std::move(productCodes2List);
     }
     m_volumeToProductCodesHasBeenSet = true;
   }

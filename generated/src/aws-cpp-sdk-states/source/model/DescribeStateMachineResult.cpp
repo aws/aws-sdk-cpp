@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeStateMachineResult::DescribeStateMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeStateMachineResult& DescribeStateMachineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("stateMachineArn")) {
     m_stateMachineArn = jsonValue.GetString("stateMachineArn");
@@ -76,13 +77,13 @@ DescribeStateMachineResult& DescribeStateMachineResult::operator=(const Aws::Ama
   if (jsonValue.ValueExists("variableReferences")) {
     Aws::Map<Aws::String, JsonView> variableReferencesJsonMap = jsonValue.GetObject("variableReferences").GetAllObjects();
     for (auto& variableReferencesItem : variableReferencesJsonMap) {
-      Aws::Utils::Array<JsonView> variableNameListJsonList = variableReferencesItem.second.AsArray();
-      Aws::Vector<Aws::String> variableNameListList;
-      variableNameListList.reserve((size_t)variableNameListJsonList.GetLength());
-      for (unsigned variableNameListIndex = 0; variableNameListIndex < variableNameListJsonList.GetLength(); ++variableNameListIndex) {
-        variableNameListList.push_back(variableNameListJsonList[variableNameListIndex].AsString());
+      Aws::Utils::Array<JsonView> variableNameList2JsonList = variableReferencesItem.second.AsArray();
+      Aws::Vector<Aws::String> variableNameList2List;
+      variableNameList2List.reserve((size_t)variableNameList2JsonList.GetLength());
+      for (unsigned variableNameList2Index = 0; variableNameList2Index < variableNameList2JsonList.GetLength(); ++variableNameList2Index) {
+        variableNameList2List.push_back(variableNameList2JsonList[variableNameList2Index].AsString());
       }
-      m_variableReferences[variableReferencesItem.first] = std::move(variableNameListList);
+      m_variableReferences[variableReferencesItem.first] = std::move(variableNameList2List);
     }
     m_variableReferencesHasBeenSet = true;
   }

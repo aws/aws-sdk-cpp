@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
@@ -89,12 +90,15 @@ class BatchUpdateClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Cluster> m_processedClusters;
 
   Aws::Vector<UnprocessedCluster> m_unprocessedClusters;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_processedClustersHasBeenSet = false;
   bool m_unprocessedClustersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

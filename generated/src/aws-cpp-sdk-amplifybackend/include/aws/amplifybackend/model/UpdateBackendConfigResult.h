@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/amplifybackend/AmplifyBackend_EXPORTS.h>
 #include <aws/amplifybackend/model/LoginAuthConfigReqObj.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -110,6 +111,8 @@ class UpdateBackendConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_appId;
 
@@ -120,6 +123,7 @@ class UpdateBackendConfigResult {
   LoginAuthConfigReqObj m_loginAuthConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appIdHasBeenSet = false;
   bool m_backendManagerAppIdHasBeenSet = false;
   bool m_errorHasBeenSet = false;

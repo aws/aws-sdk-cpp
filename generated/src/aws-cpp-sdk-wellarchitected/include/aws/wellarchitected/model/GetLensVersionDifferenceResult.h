@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/wellarchitected/model/VersionDifferences.h>
@@ -139,6 +140,8 @@ class GetLensVersionDifferenceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_lensAlias;
 
@@ -153,6 +156,7 @@ class GetLensVersionDifferenceResult {
   VersionDifferences m_versionDifferences;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lensAliasHasBeenSet = false;
   bool m_lensArnHasBeenSet = false;
   bool m_baseLensVersionHasBeenSet = false;

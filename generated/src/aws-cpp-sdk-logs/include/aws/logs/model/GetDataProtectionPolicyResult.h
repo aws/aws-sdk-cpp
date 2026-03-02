@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
@@ -89,6 +90,8 @@ class GetDataProtectionPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_logGroupIdentifier;
 
@@ -97,6 +100,7 @@ class GetDataProtectionPolicyResult {
   long long m_lastUpdatedTime{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_logGroupIdentifierHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/chime/model/RetentionSettings.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -77,12 +78,15 @@ class GetRetentionSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RetentionSettings m_retentionSettings;
 
   Aws::Utils::DateTime m_initiateDeletionTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_retentionSettingsHasBeenSet = false;
   bool m_initiateDeletionTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

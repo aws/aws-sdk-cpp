@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/s3vectors/model/ListIndexesPaginationTraits.h>
 #include <aws/s3vectors/model/ListVectorBucketsPaginationTraits.h>
@@ -25,6 +26,7 @@ class S3VectorsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndexesRequest, Pagination::ListIndexesPaginationTraits<DerivedClient>>
   ListIndexesPaginator(const Model::ListIndexesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIndexesRequest,
                                              Pagination::ListIndexesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -36,6 +38,7 @@ class S3VectorsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVectorBucketsRequest,
                                     Pagination::ListVectorBucketsPaginationTraits<DerivedClient>>
   ListVectorBucketsPaginator(const Model::ListVectorBucketsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVectorBucketsRequest,
                                              Pagination::ListVectorBucketsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -46,6 +49,7 @@ class S3VectorsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVectorsRequest, Pagination::ListVectorsPaginationTraits<DerivedClient>>
   ListVectorsPaginator(const Model::ListVectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVectorsRequest,
                                              Pagination::ListVectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

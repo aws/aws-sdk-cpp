@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
@@ -77,12 +78,15 @@ class StopContinuousExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_startTime{};
 
   Aws::Utils::DateTime m_stopTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_startTimeHasBeenSet = false;
   bool m_stopTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -24,6 +24,7 @@ GetCollaborationIdNamespaceAssociationResult::GetCollaborationIdNamespaceAssocia
 
 GetCollaborationIdNamespaceAssociationResult& GetCollaborationIdNamespaceAssociationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("collaborationIdNamespaceAssociation")) {
     m_collaborationIdNamespaceAssociation = jsonValue.GetObject("collaborationIdNamespaceAssociation");

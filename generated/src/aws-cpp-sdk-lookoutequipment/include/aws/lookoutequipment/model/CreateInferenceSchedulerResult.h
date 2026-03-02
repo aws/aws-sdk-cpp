@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 #include <aws/lookoutequipment/model/InferenceSchedulerStatus.h>
@@ -120,6 +121,8 @@ class CreateInferenceSchedulerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_inferenceSchedulerArn;
 
@@ -130,6 +133,7 @@ class CreateInferenceSchedulerResult {
   ModelQuality m_modelQuality{ModelQuality::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_inferenceSchedulerArnHasBeenSet = false;
   bool m_inferenceSchedulerNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

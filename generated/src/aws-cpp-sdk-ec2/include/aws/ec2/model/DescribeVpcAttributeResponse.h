@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
@@ -114,6 +115,8 @@ class DescribeVpcAttributeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AttributeBooleanValue m_enableDnsHostnames;
 
@@ -124,6 +127,7 @@ class DescribeVpcAttributeResponse {
   Aws::String m_vpcId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_enableDnsHostnamesHasBeenSet = false;
   bool m_enableDnsSupportHasBeenSet = false;
   bool m_enableNetworkAddressUsageMetricsHasBeenSet = false;

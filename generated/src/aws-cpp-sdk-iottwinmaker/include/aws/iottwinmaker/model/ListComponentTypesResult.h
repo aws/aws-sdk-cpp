@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
@@ -114,6 +115,8 @@ class ListComponentTypesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_workspaceId;
 
@@ -124,6 +127,7 @@ class ListComponentTypesResult {
   int m_maxResults{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_workspaceIdHasBeenSet = false;
   bool m_componentTypeSummariesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

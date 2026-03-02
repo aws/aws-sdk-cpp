@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/model/ReportGroup.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -90,12 +91,15 @@ class BatchGetReportGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ReportGroup> m_reportGroups;
 
   Aws::Vector<Aws::String> m_reportGroupsNotFound;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reportGroupsHasBeenSet = false;
   bool m_reportGroupsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

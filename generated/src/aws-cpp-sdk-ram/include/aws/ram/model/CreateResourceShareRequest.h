@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ram/RAMRequest.h>
 #include <aws/ram/RAM_EXPORTS.h>
+#include <aws/ram/model/ResourceShareConfiguration.h>
 #include <aws/ram/model/Tag.h>
 
 #include <utility>
@@ -245,6 +246,24 @@ class CreateResourceShareRequest : public RAMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the configuration of this resource share.</p>
+   */
+  inline const ResourceShareConfiguration& GetResourceShareConfiguration() const { return m_resourceShareConfiguration; }
+  inline bool ResourceShareConfigurationHasBeenSet() const { return m_resourceShareConfigurationHasBeenSet; }
+  template <typename ResourceShareConfigurationT = ResourceShareConfiguration>
+  void SetResourceShareConfiguration(ResourceShareConfigurationT&& value) {
+    m_resourceShareConfigurationHasBeenSet = true;
+    m_resourceShareConfiguration = std::forward<ResourceShareConfigurationT>(value);
+  }
+  template <typename ResourceShareConfigurationT = ResourceShareConfiguration>
+  CreateResourceShareRequest& WithResourceShareConfiguration(ResourceShareConfigurationT&& value) {
+    SetResourceShareConfiguration(std::forward<ResourceShareConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -261,6 +280,8 @@ class CreateResourceShareRequest : public RAMRequest {
   Aws::Vector<Aws::String> m_permissionArns;
 
   Aws::Vector<Aws::String> m_sources;
+
+  ResourceShareConfiguration m_resourceShareConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_resourceArnsHasBeenSet = false;
   bool m_principalsHasBeenSet = false;
@@ -269,6 +290,7 @@ class CreateResourceShareRequest : public RAMRequest {
   bool m_clientTokenHasBeenSet = false;
   bool m_permissionArnsHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
+  bool m_resourceShareConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -57,14 +57,14 @@ TraceSummary& TraceSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Annotations")) {
     Aws::Map<Aws::String, JsonView> annotationsJsonMap = jsonValue.GetObject("Annotations").GetAllObjects();
     for (auto& annotationsItem : annotationsJsonMap) {
-      Aws::Utils::Array<JsonView> valuesWithServiceIdsJsonList = annotationsItem.second.AsArray();
-      Aws::Vector<ValueWithServiceIds> valuesWithServiceIdsList;
-      valuesWithServiceIdsList.reserve((size_t)valuesWithServiceIdsJsonList.GetLength());
-      for (unsigned valuesWithServiceIdsIndex = 0; valuesWithServiceIdsIndex < valuesWithServiceIdsJsonList.GetLength();
-           ++valuesWithServiceIdsIndex) {
-        valuesWithServiceIdsList.push_back(valuesWithServiceIdsJsonList[valuesWithServiceIdsIndex].AsObject());
+      Aws::Utils::Array<JsonView> valuesWithServiceIds2JsonList = annotationsItem.second.AsArray();
+      Aws::Vector<ValueWithServiceIds> valuesWithServiceIds2List;
+      valuesWithServiceIds2List.reserve((size_t)valuesWithServiceIds2JsonList.GetLength());
+      for (unsigned valuesWithServiceIds2Index = 0; valuesWithServiceIds2Index < valuesWithServiceIds2JsonList.GetLength();
+           ++valuesWithServiceIds2Index) {
+        valuesWithServiceIds2List.push_back(valuesWithServiceIds2JsonList[valuesWithServiceIds2Index].AsObject());
       }
-      m_annotations[annotationsItem.first] = std::move(valuesWithServiceIdsList);
+      m_annotations[annotationsItem.first] = std::move(valuesWithServiceIds2List);
     }
     m_annotationsHasBeenSet = true;
   }

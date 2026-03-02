@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/CacheCluster.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class ModifyCacheClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CacheCluster m_cacheCluster;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_cacheClusterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

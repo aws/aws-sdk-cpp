@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/elasticfilesystem/model/LifeCycleState.h>
@@ -241,6 +242,8 @@ class CreateMountTargetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_ownerId;
 
@@ -265,6 +268,7 @@ class CreateMountTargetResult {
   Aws::String m_vpcId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ownerIdHasBeenSet = false;
   bool m_mountTargetIdHasBeenSet = false;
   bool m_fileSystemIdHasBeenSet = false;

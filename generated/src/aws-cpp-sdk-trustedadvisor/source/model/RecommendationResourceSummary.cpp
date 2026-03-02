@@ -18,6 +18,10 @@ namespace Model {
 RecommendationResourceSummary::RecommendationResourceSummary(JsonView jsonValue) { *this = jsonValue; }
 
 RecommendationResourceSummary& RecommendationResourceSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
@@ -25,29 +29,6 @@ RecommendationResourceSummary& RecommendationResourceSummary::operator=(JsonView
   if (jsonValue.ValueExists("awsResourceId")) {
     m_awsResourceId = jsonValue.GetString("awsResourceId");
     m_awsResourceIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("exclusionStatus")) {
-    m_exclusionStatus = ExclusionStatusMapper::GetExclusionStatusForName(jsonValue.GetString("exclusionStatus"));
-    m_exclusionStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("id")) {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lastUpdatedAt")) {
-    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("metadata")) {
-    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
-    for (auto& metadataItem : metadataJsonMap) {
-      m_metadata[metadataItem.first] = metadataItem.second.AsString();
-    }
-    m_metadataHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("recommendationArn")) {
-    m_recommendationArn = jsonValue.GetString("recommendationArn");
-    m_recommendationArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("regionCode")) {
     m_regionCode = jsonValue.GetString("regionCode");
@@ -57,11 +38,34 @@ RecommendationResourceSummary& RecommendationResourceSummary::operator=(JsonView
     m_status = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metadata")) {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for (auto& metadataItem : metadataJsonMap) {
+      m_metadata[metadataItem.first] = metadataItem.second.AsString();
+    }
+    m_metadataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
+    m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
+    m_lastUpdatedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("exclusionStatus")) {
+    m_exclusionStatus = ExclusionStatusMapper::GetExclusionStatusForName(jsonValue.GetString("exclusionStatus"));
+    m_exclusionStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("recommendationArn")) {
+    m_recommendationArn = jsonValue.GetString("recommendationArn");
+    m_recommendationArnHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue RecommendationResourceSummary::Jsonize() const {
   JsonValue payload;
+
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
+  }
 
   if (m_arnHasBeenSet) {
     payload.WithString("arn", m_arn);
@@ -71,16 +75,12 @@ JsonValue RecommendationResourceSummary::Jsonize() const {
     payload.WithString("awsResourceId", m_awsResourceId);
   }
 
-  if (m_exclusionStatusHasBeenSet) {
-    payload.WithString("exclusionStatus", ExclusionStatusMapper::GetNameForExclusionStatus(m_exclusionStatus));
+  if (m_regionCodeHasBeenSet) {
+    payload.WithString("regionCode", m_regionCode);
   }
 
-  if (m_idHasBeenSet) {
-    payload.WithString("id", m_id);
-  }
-
-  if (m_lastUpdatedAtHasBeenSet) {
-    payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ResourceStatusMapper::GetNameForResourceStatus(m_status));
   }
 
   if (m_metadataHasBeenSet) {
@@ -91,16 +91,16 @@ JsonValue RecommendationResourceSummary::Jsonize() const {
     payload.WithObject("metadata", std::move(metadataJsonMap));
   }
 
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithString("lastUpdatedAt", m_lastUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_exclusionStatusHasBeenSet) {
+    payload.WithString("exclusionStatus", ExclusionStatusMapper::GetNameForExclusionStatus(m_exclusionStatus));
+  }
+
   if (m_recommendationArnHasBeenSet) {
     payload.WithString("recommendationArn", m_recommendationArn);
-  }
-
-  if (m_regionCodeHasBeenSet) {
-    payload.WithString("regionCode", m_regionCode);
-  }
-
-  if (m_statusHasBeenSet) {
-    payload.WithString("status", ResourceStatusMapper::GetNameForResourceStatus(m_status));
   }
 
   return payload;

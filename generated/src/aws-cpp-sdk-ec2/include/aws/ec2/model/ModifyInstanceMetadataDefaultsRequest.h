@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/DefaultHttpTokensEnforcedState.h>
 #include <aws/ec2/model/DefaultInstanceMetadataEndpointState.h>
 #include <aws/ec2/model/DefaultInstanceMetadataTagsState.h>
 #include <aws/ec2/model/MetadataDefaultHttpTokensState.h>
@@ -127,6 +128,27 @@ class ModifyInstanceMetadataDefaultsRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to enforce the requirement of IMDSv2 on an instance at the
+   * time of launch. When enforcement is enabled, the instance can't launch unless
+   * IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#enforce-imdsv2-at-the-account-level">Enforce
+   * IMDSv2 at the account level</a> in the <i>Amazon EC2 User Guide</i>.</p>
+   */
+  inline DefaultHttpTokensEnforcedState GetHttpTokensEnforced() const { return m_httpTokensEnforced; }
+  inline bool HttpTokensEnforcedHasBeenSet() const { return m_httpTokensEnforcedHasBeenSet; }
+  inline void SetHttpTokensEnforced(DefaultHttpTokensEnforcedState value) {
+    m_httpTokensEnforcedHasBeenSet = true;
+    m_httpTokensEnforced = value;
+  }
+  inline ModifyInstanceMetadataDefaultsRequest& WithHttpTokensEnforced(DefaultHttpTokensEnforcedState value) {
+    SetHttpTokensEnforced(value);
+    return *this;
+  }
+  ///@}
  private:
   MetadataDefaultHttpTokensState m_httpTokens{MetadataDefaultHttpTokensState::NOT_SET};
 
@@ -137,11 +159,14 @@ class ModifyInstanceMetadataDefaultsRequest : public EC2Request {
   DefaultInstanceMetadataTagsState m_instanceMetadataTags{DefaultInstanceMetadataTagsState::NOT_SET};
 
   bool m_dryRun{false};
+
+  DefaultHttpTokensEnforcedState m_httpTokensEnforced{DefaultHttpTokensEnforcedState::NOT_SET};
   bool m_httpTokensHasBeenSet = false;
   bool m_httpPutResponseHopLimitHasBeenSet = false;
   bool m_httpEndpointHasBeenSet = false;
   bool m_instanceMetadataTagsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
+  bool m_httpTokensEnforcedHasBeenSet = false;
 };
 
 }  // namespace Model

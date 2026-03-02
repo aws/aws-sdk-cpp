@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/KMS_EXPORTS.h>
@@ -117,6 +118,8 @@ class ScheduleKeyDeletionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_keyId;
 
@@ -127,6 +130,7 @@ class ScheduleKeyDeletionResult {
   int m_pendingWindowInDays{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyIdHasBeenSet = false;
   bool m_deletionDateHasBeenSet = false;
   bool m_keyStateHasBeenSet = false;

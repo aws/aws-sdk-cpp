@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/chime-sdk-voice/model/Address.h>
 #include <aws/chime-sdk-voice/model/CandidateAddress.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -121,6 +122,8 @@ class ValidateE911AddressResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_validationResult{0};
 
@@ -131,6 +134,7 @@ class ValidateE911AddressResult {
   Aws::Vector<CandidateAddress> m_candidateAddressList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_validationResultHasBeenSet = false;
   bool m_addressExternalIdHasBeenSet = false;
   bool m_addressHasBeenSet = false;

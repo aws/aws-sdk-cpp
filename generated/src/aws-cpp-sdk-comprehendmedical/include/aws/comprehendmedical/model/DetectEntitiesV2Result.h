@@ -7,6 +7,7 @@
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/comprehendmedical/model/Entity.h>
 #include <aws/comprehendmedical/model/UnmappedAttribute.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -131,6 +132,8 @@ class DetectEntitiesV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Entity> m_entities;
 
@@ -141,6 +144,7 @@ class DetectEntitiesV2Result {
   Aws::String m_modelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_entitiesHasBeenSet = false;
   bool m_unmappedAttributesHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;

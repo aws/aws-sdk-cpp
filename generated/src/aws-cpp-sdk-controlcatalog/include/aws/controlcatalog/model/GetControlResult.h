@@ -10,6 +10,7 @@
 #include <aws/controlcatalog/model/ControlSeverity.h>
 #include <aws/controlcatalog/model/ImplementationDetails.h>
 #include <aws/controlcatalog/model/RegionConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -261,6 +262,8 @@ class GetControlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -285,6 +288,7 @@ class GetControlResult {
   Aws::Vector<Aws::String> m_governedResources;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_aliasesHasBeenSet = false;
   bool m_nameHasBeenSet = false;

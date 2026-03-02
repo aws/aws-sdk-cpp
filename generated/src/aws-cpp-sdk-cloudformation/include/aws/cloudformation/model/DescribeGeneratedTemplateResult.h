@@ -10,6 +10,7 @@
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/TemplateConfiguration.h>
 #include <aws/cloudformation/model/TemplateProgress.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -256,6 +257,8 @@ class DescribeGeneratedTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_generatedTemplateId;
 
@@ -280,6 +283,7 @@ class DescribeGeneratedTemplateResult {
   int m_totalWarnings{0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_generatedTemplateIdHasBeenSet = false;
   bool m_generatedTemplateNameHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;

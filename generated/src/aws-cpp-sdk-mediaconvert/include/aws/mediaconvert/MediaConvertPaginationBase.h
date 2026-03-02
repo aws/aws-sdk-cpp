@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/mediaconvert/model/ListJobTemplatesPaginationTraits.h>
 #include <aws/mediaconvert/model/ListJobsPaginationTraits.h>
@@ -28,6 +29,7 @@ class MediaConvertPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
   ListJobsPaginator(const Model::ListJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -38,6 +40,7 @@ class MediaConvertPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobTemplatesRequest,
                                     Pagination::ListJobTemplatesPaginationTraits<DerivedClient>>
   ListJobTemplatesPaginator(const Model::ListJobTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobTemplatesRequest,
                                              Pagination::ListJobTemplatesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -48,6 +51,7 @@ class MediaConvertPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPresetsRequest, Pagination::ListPresetsPaginationTraits<DerivedClient>>
   ListPresetsPaginator(const Model::ListPresetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPresetsRequest,
                                              Pagination::ListPresetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -58,6 +62,7 @@ class MediaConvertPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuesRequest, Pagination::ListQueuesPaginationTraits<DerivedClient>>
   ListQueuesPaginator(const Model::ListQueuesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuesRequest,
                                              Pagination::ListQueuesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -68,6 +73,7 @@ class MediaConvertPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVersionsRequest, Pagination::ListVersionsPaginationTraits<DerivedClient>>
   ListVersionsPaginator(const Model::ListVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVersionsRequest,
                                              Pagination::ListVersionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -78,6 +84,7 @@ class MediaConvertPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchJobsRequest, Pagination::SearchJobsPaginationTraits<DerivedClient>>
   SearchJobsPaginator(const Model::SearchJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchJobsRequest,
                                              Pagination::SearchJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};

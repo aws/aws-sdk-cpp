@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 
@@ -72,12 +73,15 @@ class CreateProfileShareResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_shareId;
 
   Aws::String m_profileArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_shareIdHasBeenSet = false;
   bool m_profileArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -383,6 +384,8 @@ class PostTextResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_intentName;
 
@@ -413,6 +416,7 @@ class PostTextResult {
   Aws::Vector<ActiveContext> m_activeContexts;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_intentNameHasBeenSet = false;
   bool m_nluIntentConfidenceHasBeenSet = false;
   bool m_alternativeIntentsHasBeenSet = false;

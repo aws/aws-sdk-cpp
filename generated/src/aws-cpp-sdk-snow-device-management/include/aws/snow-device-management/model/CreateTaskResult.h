@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class CreateTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_taskArn;
 
   Aws::String m_taskId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskArnHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

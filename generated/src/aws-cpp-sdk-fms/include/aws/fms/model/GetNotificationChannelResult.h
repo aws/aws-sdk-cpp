@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fms/FMS_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class GetNotificationChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_snsTopicArn;
 
   Aws::String m_snsRoleName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_snsTopicArnHasBeenSet = false;
   bool m_snsRoleNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/odb/model/ListAutonomousVirtualMachinesPaginationTraits.h>
 #include <aws/odb/model/ListCloudAutonomousVmClustersPaginationTraits.h>
@@ -34,6 +35,7 @@ class OdbPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousVirtualMachinesRequest,
                                     Pagination::ListAutonomousVirtualMachinesPaginationTraits<DerivedClient>>
   ListAutonomousVirtualMachinesPaginator(const Model::ListAutonomousVirtualMachinesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAutonomousVirtualMachinesRequest,
                                              Pagination::ListAutonomousVirtualMachinesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -45,6 +47,7 @@ class OdbPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCloudAutonomousVmClustersRequest,
                                     Pagination::ListCloudAutonomousVmClustersPaginationTraits<DerivedClient>>
   ListCloudAutonomousVmClustersPaginator(const Model::ListCloudAutonomousVmClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCloudAutonomousVmClustersRequest,
                                              Pagination::ListCloudAutonomousVmClustersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -56,6 +59,7 @@ class OdbPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCloudExadataInfrastructuresRequest,
                                     Pagination::ListCloudExadataInfrastructuresPaginationTraits<DerivedClient>>
   ListCloudExadataInfrastructuresPaginator(const Model::ListCloudExadataInfrastructuresRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCloudExadataInfrastructuresRequest,
                                              Pagination::ListCloudExadataInfrastructuresPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -67,6 +71,7 @@ class OdbPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCloudVmClustersRequest,
                                     Pagination::ListCloudVmClustersPaginationTraits<DerivedClient>>
   ListCloudVmClustersPaginator(const Model::ListCloudVmClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCloudVmClustersRequest,
                                              Pagination::ListCloudVmClustersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -77,6 +82,7 @@ class OdbPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbNodesRequest, Pagination::ListDbNodesPaginationTraits<DerivedClient>>
   ListDbNodesPaginator(const Model::ListDbNodesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbNodesRequest,
                                              Pagination::ListDbNodesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -87,6 +93,7 @@ class OdbPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbServersRequest, Pagination::ListDbServersPaginationTraits<DerivedClient>>
   ListDbServersPaginator(const Model::ListDbServersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbServersRequest,
                                              Pagination::ListDbServersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -98,6 +105,7 @@ class OdbPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbSystemShapesRequest,
                                     Pagination::ListDbSystemShapesPaginationTraits<DerivedClient>>
   ListDbSystemShapesPaginator(const Model::ListDbSystemShapesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDbSystemShapesRequest,
                                              Pagination::ListDbSystemShapesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -108,6 +116,7 @@ class OdbPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGiVersionsRequest, Pagination::ListGiVersionsPaginationTraits<DerivedClient>>
   ListGiVersionsPaginator(const Model::ListGiVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGiVersionsRequest,
                                              Pagination::ListGiVersionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -119,6 +128,7 @@ class OdbPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOdbNetworksRequest,
                                     Pagination::ListOdbNetworksPaginationTraits<DerivedClient>>
   ListOdbNetworksPaginator(const Model::ListOdbNetworksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOdbNetworksRequest,
                                              Pagination::ListOdbNetworksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -130,6 +140,7 @@ class OdbPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOdbPeeringConnectionsRequest,
                                     Pagination::ListOdbPeeringConnectionsPaginationTraits<DerivedClient>>
   ListOdbPeeringConnectionsPaginator(const Model::ListOdbPeeringConnectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOdbPeeringConnectionsRequest,
                                              Pagination::ListOdbPeeringConnectionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -141,6 +152,7 @@ class OdbPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSystemVersionsRequest,
                                     Pagination::ListSystemVersionsPaginationTraits<DerivedClient>>
   ListSystemVersionsPaginator(const Model::ListSystemVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSystemVersionsRequest,
                                              Pagination::ListSystemVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

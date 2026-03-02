@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
@@ -111,6 +112,8 @@ class CancelDomainConfigChangeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_dryRun{false};
 
@@ -119,6 +122,7 @@ class CancelDomainConfigChangeResult {
   Aws::Vector<CancelledChangeProperty> m_cancelledChangeProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dryRunHasBeenSet = false;
   bool m_cancelledChangeIdsHasBeenSet = false;
   bool m_cancelledChangePropertiesHasBeenSet = false;

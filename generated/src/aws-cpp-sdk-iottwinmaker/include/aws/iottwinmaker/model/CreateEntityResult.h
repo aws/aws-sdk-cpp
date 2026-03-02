@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
@@ -108,6 +109,8 @@ class CreateEntityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_entityId;
 
@@ -118,6 +121,7 @@ class CreateEntityResult {
   State m_state{State::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_entityIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_creationDateTimeHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
@@ -482,6 +483,8 @@ class PutPlaybackConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_adDecisionServerUrl;
 
@@ -528,6 +531,7 @@ class PutPlaybackConfigurationResult {
   AdDecisionServerConfiguration m_adDecisionServerConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_adDecisionServerUrlHasBeenSet = false;
   bool m_availSuppressionHasBeenSet = false;
   bool m_bumperHasBeenSet = false;

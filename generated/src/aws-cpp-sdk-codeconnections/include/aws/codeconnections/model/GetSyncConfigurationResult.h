@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeconnections/CodeConnections_EXPORTS.h>
 #include <aws/codeconnections/model/SyncConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -59,10 +60,13 @@ class GetSyncConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SyncConfiguration m_syncConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_syncConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/S3_EXPORTS.h>
@@ -123,6 +124,8 @@ class ListBucketsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Bucket> m_buckets;
 
@@ -133,6 +136,7 @@ class ListBucketsResult {
   Aws::String m_prefix;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bucketsHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
   bool m_continuationTokenHasBeenSet = false;

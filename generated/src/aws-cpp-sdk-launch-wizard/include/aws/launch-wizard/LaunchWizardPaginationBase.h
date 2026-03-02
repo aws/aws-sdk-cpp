@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/launch-wizard/model/ListDeploymentEventsPaginationTraits.h>
 #include <aws/launch-wizard/model/ListDeploymentPatternVersionsPaginationTraits.h>
@@ -28,6 +29,7 @@ class LaunchWizardPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeploymentEventsRequest,
                                     Pagination::ListDeploymentEventsPaginationTraits<DerivedClient>>
   ListDeploymentEventsPaginator(const Model::ListDeploymentEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeploymentEventsRequest,
                                              Pagination::ListDeploymentEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -39,6 +41,7 @@ class LaunchWizardPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeploymentPatternVersionsRequest,
                                     Pagination::ListDeploymentPatternVersionsPaginationTraits<DerivedClient>>
   ListDeploymentPatternVersionsPaginator(const Model::ListDeploymentPatternVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeploymentPatternVersionsRequest,
                                              Pagination::ListDeploymentPatternVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +53,7 @@ class LaunchWizardPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeploymentsRequest,
                                     Pagination::ListDeploymentsPaginationTraits<DerivedClient>>
   ListDeploymentsPaginator(const Model::ListDeploymentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeploymentsRequest,
                                              Pagination::ListDeploymentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -61,6 +65,7 @@ class LaunchWizardPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkloadDeploymentPatternsRequest,
                                     Pagination::ListWorkloadDeploymentPatternsPaginationTraits<DerivedClient>>
   ListWorkloadDeploymentPatternsPaginator(const Model::ListWorkloadDeploymentPatternsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkloadDeploymentPatternsRequest,
                                              Pagination::ListWorkloadDeploymentPatternsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -71,6 +76,7 @@ class LaunchWizardPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkloadsRequest, Pagination::ListWorkloadsPaginationTraits<DerivedClient>>
   ListWorkloadsPaginator(const Model::ListWorkloadsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkloadsRequest,
                                              Pagination::ListWorkloadsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

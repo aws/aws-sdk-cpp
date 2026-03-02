@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
@@ -96,6 +97,8 @@ class GetQueryStatisticsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ExecutionStatistics m_executionStatistics;
 
@@ -104,6 +107,7 @@ class GetQueryStatisticsResult {
   Aws::Utils::DateTime m_querySubmissionTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_executionStatisticsHasBeenSet = false;
   bool m_planningStatisticsHasBeenSet = false;
   bool m_querySubmissionTimeHasBeenSet = false;

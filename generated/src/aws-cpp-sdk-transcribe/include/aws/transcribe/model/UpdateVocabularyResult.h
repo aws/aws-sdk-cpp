@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -112,6 +113,8 @@ class UpdateVocabularyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_vocabularyName;
 
@@ -122,6 +125,7 @@ class UpdateVocabularyResult {
   VocabularyState m_vocabularyState{VocabularyState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vocabularyNameHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;

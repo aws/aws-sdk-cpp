@@ -11,6 +11,7 @@
 #include <aws/arc-region-switch/model/GeneratedReport.h>
 #include <aws/arc-region-switch/model/Plan.h>
 #include <aws/arc-region-switch/model/StepState.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -221,6 +222,24 @@ class GetPlanExecutionResult {
 
   ///@{
   /**
+   * <p>The unique identifier of the most recent recovery execution. Required when
+   * starting a post-recovery execution.</p>
+   */
+  inline const Aws::String& GetRecoveryExecutionId() const { return m_recoveryExecutionId; }
+  template <typename RecoveryExecutionIdT = Aws::String>
+  void SetRecoveryExecutionId(RecoveryExecutionIdT&& value) {
+    m_recoveryExecutionIdHasBeenSet = true;
+    m_recoveryExecutionId = std::forward<RecoveryExecutionIdT>(value);
+  }
+  template <typename RecoveryExecutionIdT = Aws::String>
+  GetPlanExecutionResult& WithRecoveryExecutionId(RecoveryExecutionIdT&& value) {
+    SetRecoveryExecutionId(std::forward<RecoveryExecutionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The states of the steps in the plan execution.</p>
    */
   inline const Aws::Vector<StepState>& GetStepStates() const { return m_stepStates; }
@@ -338,6 +357,8 @@ class GetPlanExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_planArn;
 
@@ -361,6 +382,8 @@ class GetPlanExecutionResult {
 
   Aws::String m_executionRegion;
 
+  Aws::String m_recoveryExecutionId;
+
   Aws::Vector<StepState> m_stepStates;
 
   Plan m_plan;
@@ -372,6 +395,7 @@ class GetPlanExecutionResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_planArnHasBeenSet = false;
   bool m_executionIdHasBeenSet = false;
   bool m_versionHasBeenSet = false;
@@ -383,6 +407,7 @@ class GetPlanExecutionResult {
   bool m_executionStateHasBeenSet = false;
   bool m_executionActionHasBeenSet = false;
   bool m_executionRegionHasBeenSet = false;
+  bool m_recoveryExecutionIdHasBeenSet = false;
   bool m_stepStatesHasBeenSet = false;
   bool m_planHasBeenSet = false;
   bool m_actualRecoveryTimeHasBeenSet = false;

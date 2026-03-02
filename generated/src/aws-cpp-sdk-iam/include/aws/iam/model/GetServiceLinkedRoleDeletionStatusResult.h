@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/DeletionTaskFailureReasonType.h>
 #include <aws/iam/model/DeletionTaskStatusType.h>
@@ -74,12 +75,15 @@ class GetServiceLinkedRoleDeletionStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DeletionTaskStatusType m_status{DeletionTaskStatusType::NOT_SET};
 
   DeletionTaskFailureReasonType m_reason;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -95,12 +96,15 @@ class ListTablesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Aws::String> m_tableNames;
 
   Aws::String m_lastEvaluatedTableName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tableNamesHasBeenSet = false;
   bool m_lastEvaluatedTableNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

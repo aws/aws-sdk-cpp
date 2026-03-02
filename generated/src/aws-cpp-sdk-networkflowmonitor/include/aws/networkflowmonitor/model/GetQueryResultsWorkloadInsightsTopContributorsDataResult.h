@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
@@ -101,6 +102,8 @@ class GetQueryResultsWorkloadInsightsTopContributorsDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MetricUnit m_unit{MetricUnit::NOT_SET};
 
@@ -109,6 +112,7 @@ class GetQueryResultsWorkloadInsightsTopContributorsDataResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_unitHasBeenSet = false;
   bool m_datapointsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

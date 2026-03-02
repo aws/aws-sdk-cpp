@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
 #include <aws/iotevents/model/LoggingOptions.h>
@@ -58,10 +59,13 @@ class DescribeLoggingOptionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LoggingOptions m_loggingOptions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_loggingOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

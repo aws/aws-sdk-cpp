@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ram/RAM_EXPORTS.h>
+#include <aws/ram/model/ResourceShareConfiguration.h>
 #include <aws/ram/model/ResourceShareFeatureSet.h>
 #include <aws/ram/model/ResourceShareStatus.h>
 #include <aws/ram/model/Tag.h>
@@ -239,6 +240,24 @@ class ResourceShare {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration of the resource share</p>
+   */
+  inline const ResourceShareConfiguration& GetResourceShareConfiguration() const { return m_resourceShareConfiguration; }
+  inline bool ResourceShareConfigurationHasBeenSet() const { return m_resourceShareConfigurationHasBeenSet; }
+  template <typename ResourceShareConfigurationT = ResourceShareConfiguration>
+  void SetResourceShareConfiguration(ResourceShareConfigurationT&& value) {
+    m_resourceShareConfigurationHasBeenSet = true;
+    m_resourceShareConfiguration = std::forward<ResourceShareConfigurationT>(value);
+  }
+  template <typename ResourceShareConfigurationT = ResourceShareConfiguration>
+  ResourceShare& WithResourceShareConfiguration(ResourceShareConfigurationT&& value) {
+    SetResourceShareConfiguration(std::forward<ResourceShareConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceShareArn;
 
@@ -259,6 +278,8 @@ class ResourceShare {
   Aws::Utils::DateTime m_lastUpdatedTime{};
 
   ResourceShareFeatureSet m_featureSet{ResourceShareFeatureSet::NOT_SET};
+
+  ResourceShareConfiguration m_resourceShareConfiguration;
   bool m_resourceShareArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_owningAccountIdHasBeenSet = false;
@@ -269,6 +290,7 @@ class ResourceShare {
   bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_featureSetHasBeenSet = false;
+  bool m_resourceShareConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

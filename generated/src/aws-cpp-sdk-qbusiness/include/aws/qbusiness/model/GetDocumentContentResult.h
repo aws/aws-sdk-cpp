@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 
@@ -81,12 +82,15 @@ class GetDocumentContentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_presignedUrl;
 
   Aws::String m_mimeType;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_presignedUrlHasBeenSet = false;
   bool m_mimeTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

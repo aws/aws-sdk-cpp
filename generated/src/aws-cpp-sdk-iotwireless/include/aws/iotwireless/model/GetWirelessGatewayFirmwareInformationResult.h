@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/LoRaWANGatewayCurrentVersion.h>
@@ -59,10 +60,13 @@ class GetWirelessGatewayFirmwareInformationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LoRaWANGatewayCurrentVersion m_loRaWAN;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_loRaWANHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -111,6 +112,8 @@ class SearchProductsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ProductViewSummary> m_productViewSummaries;
 
@@ -119,6 +122,7 @@ class SearchProductsResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_productViewSummariesHasBeenSet = false;
   bool m_productViewAggregationsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

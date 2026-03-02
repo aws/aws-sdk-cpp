@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -100,6 +101,8 @@ class CreateBackupVaultResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_backupVaultName;
 
@@ -108,6 +111,7 @@ class CreateBackupVaultResult {
   Aws::Utils::DateTime m_creationDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_backupVaultNameHasBeenSet = false;
   bool m_backupVaultArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;

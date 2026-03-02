@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/SchemaStatus.h>
@@ -90,6 +91,8 @@ class DeleteSchemaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_schemaArn;
 
@@ -98,6 +101,7 @@ class DeleteSchemaResult {
   SchemaStatus m_status{SchemaStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_schemaArnHasBeenSet = false;
   bool m_schemaNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

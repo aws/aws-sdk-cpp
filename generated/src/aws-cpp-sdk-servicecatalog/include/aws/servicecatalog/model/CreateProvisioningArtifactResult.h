@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -106,6 +107,8 @@ class CreateProvisioningArtifactResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ProvisioningArtifactDetail m_provisioningArtifactDetail;
 
@@ -114,6 +117,7 @@ class CreateProvisioningArtifactResult {
   Status m_status{Status::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_provisioningArtifactDetailHasBeenSet = false;
   bool m_infoHasBeenSet = false;
   bool m_statusHasBeenSet = false;

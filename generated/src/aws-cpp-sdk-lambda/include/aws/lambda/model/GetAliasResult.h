@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/AliasRoutingConfiguration.h>
@@ -152,6 +153,8 @@ class GetAliasResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_aliasArn;
 
@@ -166,6 +169,7 @@ class GetAliasResult {
   Aws::String m_revisionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aliasArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_functionVersionHasBeenSet = false;

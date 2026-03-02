@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/SSM_EXPORTS.h>
@@ -150,6 +151,8 @@ class UpdateMaintenanceWindowTargetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_windowId;
 
@@ -164,6 +167,7 @@ class UpdateMaintenanceWindowTargetResult {
   Aws::String m_description;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_windowIdHasBeenSet = false;
   bool m_windowTargetIdHasBeenSet = false;
   bool m_targetsHasBeenSet = false;

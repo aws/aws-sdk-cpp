@@ -235,6 +235,25 @@ class AbbreviatedExecution {
 
   ///@{
   /**
+   * <p>The unique identifier of the most recent recovery execution. Required when
+   * starting a post-recovery execution.</p>
+   */
+  inline const Aws::String& GetRecoveryExecutionId() const { return m_recoveryExecutionId; }
+  inline bool RecoveryExecutionIdHasBeenSet() const { return m_recoveryExecutionIdHasBeenSet; }
+  template <typename RecoveryExecutionIdT = Aws::String>
+  void SetRecoveryExecutionId(RecoveryExecutionIdT&& value) {
+    m_recoveryExecutionIdHasBeenSet = true;
+    m_recoveryExecutionId = std::forward<RecoveryExecutionIdT>(value);
+  }
+  template <typename RecoveryExecutionIdT = Aws::String>
+  AbbreviatedExecution& WithRecoveryExecutionId(RecoveryExecutionIdT&& value) {
+    SetRecoveryExecutionId(std::forward<RecoveryExecutionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The actual recovery time that Region switch calculates for a plan execution.
    * Actual recovery time includes the time for the plan to run added to the time
    * elapsed until the application health alarms that you've specified are healthy
@@ -276,6 +295,8 @@ class AbbreviatedExecution {
 
   Aws::String m_executionRegion;
 
+  Aws::String m_recoveryExecutionId;
+
   Aws::String m_actualRecoveryTime;
   bool m_planArnHasBeenSet = false;
   bool m_executionIdHasBeenSet = false;
@@ -288,6 +309,7 @@ class AbbreviatedExecution {
   bool m_executionStateHasBeenSet = false;
   bool m_executionActionHasBeenSet = false;
   bool m_executionRegionHasBeenSet = false;
+  bool m_recoveryExecutionIdHasBeenSet = false;
   bool m_actualRecoveryTimeHasBeenSet = false;
 };
 

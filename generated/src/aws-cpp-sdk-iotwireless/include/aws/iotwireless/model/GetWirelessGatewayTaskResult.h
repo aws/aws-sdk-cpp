@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/WirelessGatewayTaskStatus.h>
@@ -125,6 +126,8 @@ class GetWirelessGatewayTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_wirelessGatewayId;
 
@@ -137,6 +140,7 @@ class GetWirelessGatewayTaskResult {
   WirelessGatewayTaskStatus m_status{WirelessGatewayTaskStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_wirelessGatewayIdHasBeenSet = false;
   bool m_wirelessGatewayTaskDefinitionIdHasBeenSet = false;
   bool m_lastUplinkReceivedAtHasBeenSet = false;

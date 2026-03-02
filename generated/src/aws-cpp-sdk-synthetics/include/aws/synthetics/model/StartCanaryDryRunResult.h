@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 #include <aws/synthetics/model/DryRunConfigOutput.h>
@@ -58,10 +59,13 @@ class StartCanaryDryRunResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DryRunConfigOutput m_dryRunConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dryRunConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

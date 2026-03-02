@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
@@ -107,6 +108,8 @@ class ListPipelinesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<PipelineIdName> m_pipelineIdList;
 
@@ -115,6 +118,7 @@ class ListPipelinesResult {
   bool m_hasMoreResults{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_pipelineIdListHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_hasMoreResultsHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/InboundCrossClusterSearchConnection.h>
@@ -68,10 +69,13 @@ class DeleteInboundCrossClusterSearchConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   InboundCrossClusterSearchConnection m_crossClusterSearchConnection;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_crossClusterSearchConnectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

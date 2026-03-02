@@ -22,6 +22,7 @@ UpdateConnectorRegistrationResult::UpdateConnectorRegistrationResult(const Aws::
 }
 
 UpdateConnectorRegistrationResult& UpdateConnectorRegistrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("connectorArn")) {
     m_connectorArn = jsonValue.GetString("connectorArn");

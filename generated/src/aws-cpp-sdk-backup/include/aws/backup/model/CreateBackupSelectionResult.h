@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -96,6 +97,8 @@ class CreateBackupSelectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_selectionId;
 
@@ -104,6 +107,7 @@ class CreateBackupSelectionResult {
   Aws::Utils::DateTime m_creationDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_selectionIdHasBeenSet = false;
   bool m_backupPlanIdHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
