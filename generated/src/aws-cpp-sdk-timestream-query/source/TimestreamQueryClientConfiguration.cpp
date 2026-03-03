@@ -39,7 +39,7 @@ void TimestreamQueryClientConfiguration::LoadTimestreamQuerySpecificConfig(const
   }
 }
 
-TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const Client::ClientConfigurationInitValues& configuration)
+TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
     : BaseClientConfigClass(configuration), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadTimestreamQuerySpecificConfig(this->profileName);
 }
@@ -56,7 +56,7 @@ TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(bool useS
   LoadTimestreamQuerySpecificConfig(this->profileName);
 }
 
-TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const Client::ClientConfiguration& config)
+TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const Aws::Client::ClientConfiguration& config)
     : BaseClientConfigClass(config), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadTimestreamQuerySpecificConfig(this->profileName);
 }

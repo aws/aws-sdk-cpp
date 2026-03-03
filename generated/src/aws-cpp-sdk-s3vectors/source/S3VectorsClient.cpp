@@ -97,7 +97,7 @@ S3VectorsClient::S3VectorsClient(const std::shared_ptr<AWSCredentialsProvider>& 
 }
 
 /* Legacy constructors due deprecation */
-S3VectorsClient::S3VectorsClient(const Client::ClientConfiguration& clientConfiguration)
+S3VectorsClient::S3VectorsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -109,7 +109,7 @@ S3VectorsClient::S3VectorsClient(const Client::ClientConfiguration& clientConfig
   init(m_clientConfiguration);
 }
 
-S3VectorsClient::S3VectorsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+S3VectorsClient::S3VectorsClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -120,7 +120,7 @@ S3VectorsClient::S3VectorsClient(const AWSCredentials& credentials, const Client
 }
 
 S3VectorsClient::S3VectorsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Client::ClientConfiguration& clientConfiguration)
+                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -108,7 +108,7 @@ SupplyChainClient::SupplyChainClient(const std::shared_ptr<AWSCredentialsProvide
 }
 
 /* Legacy constructors due deprecation */
-SupplyChainClient::SupplyChainClient(const Client::ClientConfiguration& clientConfiguration)
+SupplyChainClient::SupplyChainClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -120,7 +120,7 @@ SupplyChainClient::SupplyChainClient(const Client::ClientConfiguration& clientCo
   init(m_clientConfiguration);
 }
 
-SupplyChainClient::SupplyChainClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SupplyChainClient::SupplyChainClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -131,7 +131,7 @@ SupplyChainClient::SupplyChainClient(const AWSCredentials& credentials, const Cl
 }
 
 SupplyChainClient::SupplyChainClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                     const Client::ClientConfiguration& clientConfiguration)
+                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

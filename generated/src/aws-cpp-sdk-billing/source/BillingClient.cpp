@@ -90,7 +90,7 @@ BillingClient::BillingClient(const std::shared_ptr<AWSCredentialsProvider>& cred
 }
 
 /* Legacy constructors due deprecation */
-BillingClient::BillingClient(const Client::ClientConfiguration& clientConfiguration)
+BillingClient::BillingClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -102,7 +102,7 @@ BillingClient::BillingClient(const Client::ClientConfiguration& clientConfigurat
   init(m_clientConfiguration);
 }
 
-BillingClient::BillingClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+BillingClient::BillingClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -113,7 +113,7 @@ BillingClient::BillingClient(const AWSCredentials& credentials, const Client::Cl
 }
 
 BillingClient::BillingClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                             const Client::ClientConfiguration& clientConfiguration)
+                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

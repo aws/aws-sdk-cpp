@@ -106,7 +106,7 @@ CodeGuruProfilerClient::CodeGuruProfilerClient(const std::shared_ptr<AWSCredenti
 }
 
 /* Legacy constructors due deprecation */
-CodeGuruProfilerClient::CodeGuruProfilerClient(const Client::ClientConfiguration& clientConfiguration)
+CodeGuruProfilerClient::CodeGuruProfilerClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -118,7 +118,8 @@ CodeGuruProfilerClient::CodeGuruProfilerClient(const Client::ClientConfiguration
   init(m_clientConfiguration);
 }
 
-CodeGuruProfilerClient::CodeGuruProfilerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+CodeGuruProfilerClient::CodeGuruProfilerClient(const AWSCredentials& credentials,
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -130,7 +131,7 @@ CodeGuruProfilerClient::CodeGuruProfilerClient(const AWSCredentials& credentials
 }
 
 CodeGuruProfilerClient::CodeGuruProfilerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                               const Client::ClientConfiguration& clientConfiguration)
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -87,7 +87,7 @@ PersonalizeEventsClient::PersonalizeEventsClient(const std::shared_ptr<AWSCreden
 }
 
 /* Legacy constructors due deprecation */
-PersonalizeEventsClient::PersonalizeEventsClient(const Client::ClientConfiguration& clientConfiguration)
+PersonalizeEventsClient::PersonalizeEventsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -99,7 +99,8 @@ PersonalizeEventsClient::PersonalizeEventsClient(const Client::ClientConfigurati
   init(m_clientConfiguration);
 }
 
-PersonalizeEventsClient::PersonalizeEventsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+PersonalizeEventsClient::PersonalizeEventsClient(const AWSCredentials& credentials,
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -110,7 +111,7 @@ PersonalizeEventsClient::PersonalizeEventsClient(const AWSCredentials& credentia
 }
 
 PersonalizeEventsClient::PersonalizeEventsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                 const Client::ClientConfiguration& clientConfiguration)
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -113,7 +113,7 @@ SFNClient::SFNClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
 }
 
 /* Legacy constructors due deprecation */
-SFNClient::SFNClient(const Client::ClientConfiguration& clientConfiguration)
+SFNClient::SFNClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -125,7 +125,7 @@ SFNClient::SFNClient(const Client::ClientConfiguration& clientConfiguration)
   init(m_clientConfiguration);
 }
 
-SFNClient::SFNClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SFNClient::SFNClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -136,7 +136,7 @@ SFNClient::SFNClient(const AWSCredentials& credentials, const Client::ClientConf
 }
 
 SFNClient::SFNClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                     const Client::ClientConfiguration& clientConfiguration)
+                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

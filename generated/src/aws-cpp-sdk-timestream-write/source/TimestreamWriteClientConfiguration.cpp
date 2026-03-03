@@ -39,7 +39,7 @@ void TimestreamWriteClientConfiguration::LoadTimestreamWriteSpecificConfig(const
   }
 }
 
-TimestreamWriteClientConfiguration::TimestreamWriteClientConfiguration(const Client::ClientConfigurationInitValues& configuration)
+TimestreamWriteClientConfiguration::TimestreamWriteClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
     : BaseClientConfigClass(configuration), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadTimestreamWriteSpecificConfig(this->profileName);
 }
@@ -56,7 +56,7 @@ TimestreamWriteClientConfiguration::TimestreamWriteClientConfiguration(bool useS
   LoadTimestreamWriteSpecificConfig(this->profileName);
 }
 
-TimestreamWriteClientConfiguration::TimestreamWriteClientConfiguration(const Client::ClientConfiguration& config)
+TimestreamWriteClientConfiguration::TimestreamWriteClientConfiguration(const Aws::Client::ClientConfiguration& config)
     : BaseClientConfigClass(config), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadTimestreamWriteSpecificConfig(this->profileName);
 }

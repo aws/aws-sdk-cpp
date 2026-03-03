@@ -101,7 +101,7 @@ TimestreamInfluxDBClient::TimestreamInfluxDBClient(const std::shared_ptr<AWSCred
 }
 
 /* Legacy constructors due deprecation */
-TimestreamInfluxDBClient::TimestreamInfluxDBClient(const Client::ClientConfiguration& clientConfiguration)
+TimestreamInfluxDBClient::TimestreamInfluxDBClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -114,7 +114,7 @@ TimestreamInfluxDBClient::TimestreamInfluxDBClient(const Client::ClientConfigura
 }
 
 TimestreamInfluxDBClient::TimestreamInfluxDBClient(const AWSCredentials& credentials,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -125,7 +125,7 @@ TimestreamInfluxDBClient::TimestreamInfluxDBClient(const AWSCredentials& credent
 }
 
 TimestreamInfluxDBClient::TimestreamInfluxDBClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

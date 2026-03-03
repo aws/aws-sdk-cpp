@@ -106,7 +106,8 @@ MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsCl
 }
 
 /* Legacy constructors due deprecation */
-MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsClient(const Client::ClientConfiguration& clientConfiguration)
+MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsClient(
+    const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -118,8 +119,8 @@ MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsCl
   init(m_clientConfiguration);
 }
 
-MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsClient(const AWSCredentials& credentials,
-                                                                                     const Client::ClientConfiguration& clientConfiguration)
+MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsClient(
+    const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -130,7 +131,7 @@ MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsCl
 }
 
 MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsClient(
-    const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfiguration)
+    const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

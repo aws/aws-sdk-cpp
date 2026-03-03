@@ -122,7 +122,7 @@ WorkDocsClient::WorkDocsClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-WorkDocsClient::WorkDocsClient(const Client::ClientConfiguration& clientConfiguration)
+WorkDocsClient::WorkDocsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -134,7 +134,7 @@ WorkDocsClient::WorkDocsClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-WorkDocsClient::WorkDocsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+WorkDocsClient::WorkDocsClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -145,7 +145,7 @@ WorkDocsClient::WorkDocsClient(const AWSCredentials& credentials, const Client::
 }
 
 WorkDocsClient::WorkDocsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

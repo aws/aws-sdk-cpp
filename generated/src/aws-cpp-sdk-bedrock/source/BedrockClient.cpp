@@ -205,7 +205,7 @@ BedrockClient::BedrockClient(const std::shared_ptr<AWSCredentialsProvider>& cred
           }) {}
 
 /* Legacy constructors due deprecation */
-BedrockClient::BedrockClient(const Client::ClientConfiguration& clientConfiguration)
+BedrockClient::BedrockClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<BedrockEndpointProvider>(ALLOCATION_TAG),
@@ -221,7 +221,7 @@ BedrockClient::BedrockClient(const Client::ClientConfiguration& clientConfigurat
                                              GetServiceName(), clientConfiguration.region}},
           }) {}
 
-BedrockClient::BedrockClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+BedrockClient::BedrockClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<BedrockEndpointProvider>(ALLOCATION_TAG),
@@ -240,7 +240,7 @@ BedrockClient::BedrockClient(const AWSCredentials& credentials, const Client::Cl
           }) {}
 
 BedrockClient::BedrockClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                             const Client::ClientConfiguration& clientConfiguration)
+                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<BedrockEndpointProvider>(ALLOCATION_TAG),

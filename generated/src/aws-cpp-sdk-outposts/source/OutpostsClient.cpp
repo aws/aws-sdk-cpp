@@ -113,7 +113,7 @@ OutpostsClient::OutpostsClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-OutpostsClient::OutpostsClient(const Client::ClientConfiguration& clientConfiguration)
+OutpostsClient::OutpostsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -125,7 +125,7 @@ OutpostsClient::OutpostsClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-OutpostsClient::OutpostsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+OutpostsClient::OutpostsClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -136,7 +136,7 @@ OutpostsClient::OutpostsClient(const AWSCredentials& credentials, const Client::
 }
 
 OutpostsClient::OutpostsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

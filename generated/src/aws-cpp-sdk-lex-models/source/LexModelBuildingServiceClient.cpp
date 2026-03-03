@@ -126,7 +126,7 @@ LexModelBuildingServiceClient::LexModelBuildingServiceClient(
 }
 
 /* Legacy constructors due deprecation */
-LexModelBuildingServiceClient::LexModelBuildingServiceClient(const Client::ClientConfiguration& clientConfiguration)
+LexModelBuildingServiceClient::LexModelBuildingServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -139,7 +139,7 @@ LexModelBuildingServiceClient::LexModelBuildingServiceClient(const Client::Clien
 }
 
 LexModelBuildingServiceClient::LexModelBuildingServiceClient(const AWSCredentials& credentials,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -150,7 +150,7 @@ LexModelBuildingServiceClient::LexModelBuildingServiceClient(const AWSCredential
 }
 
 LexModelBuildingServiceClient::LexModelBuildingServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

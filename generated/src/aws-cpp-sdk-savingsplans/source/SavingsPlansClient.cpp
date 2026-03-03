@@ -89,7 +89,7 @@ SavingsPlansClient::SavingsPlansClient(const std::shared_ptr<AWSCredentialsProvi
 }
 
 /* Legacy constructors due deprecation */
-SavingsPlansClient::SavingsPlansClient(const Client::ClientConfiguration& clientConfiguration)
+SavingsPlansClient::SavingsPlansClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -101,7 +101,7 @@ SavingsPlansClient::SavingsPlansClient(const Client::ClientConfiguration& client
   init(m_clientConfiguration);
 }
 
-SavingsPlansClient::SavingsPlansClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SavingsPlansClient::SavingsPlansClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -112,7 +112,7 @@ SavingsPlansClient::SavingsPlansClient(const AWSCredentials& credentials, const 
 }
 
 SavingsPlansClient::SavingsPlansClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                       const Client::ClientConfiguration& clientConfiguration)
+                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

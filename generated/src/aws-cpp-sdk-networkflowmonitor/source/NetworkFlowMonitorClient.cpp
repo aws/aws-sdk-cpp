@@ -107,7 +107,7 @@ NetworkFlowMonitorClient::NetworkFlowMonitorClient(const std::shared_ptr<AWSCred
 }
 
 /* Legacy constructors due deprecation */
-NetworkFlowMonitorClient::NetworkFlowMonitorClient(const Client::ClientConfiguration& clientConfiguration)
+NetworkFlowMonitorClient::NetworkFlowMonitorClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -120,7 +120,7 @@ NetworkFlowMonitorClient::NetworkFlowMonitorClient(const Client::ClientConfigura
 }
 
 NetworkFlowMonitorClient::NetworkFlowMonitorClient(const AWSCredentials& credentials,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -131,7 +131,7 @@ NetworkFlowMonitorClient::NetworkFlowMonitorClient(const AWSCredentials& credent
 }
 
 NetworkFlowMonitorClient::NetworkFlowMonitorClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -120,7 +120,7 @@ BCMPricingCalculatorClient::BCMPricingCalculatorClient(
 }
 
 /* Legacy constructors due deprecation */
-BCMPricingCalculatorClient::BCMPricingCalculatorClient(const Client::ClientConfiguration& clientConfiguration)
+BCMPricingCalculatorClient::BCMPricingCalculatorClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -133,7 +133,7 @@ BCMPricingCalculatorClient::BCMPricingCalculatorClient(const Client::ClientConfi
 }
 
 BCMPricingCalculatorClient::BCMPricingCalculatorClient(const AWSCredentials& credentials,
-                                                       const Client::ClientConfiguration& clientConfiguration)
+                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -144,7 +144,7 @@ BCMPricingCalculatorClient::BCMPricingCalculatorClient(const AWSCredentials& cre
 }
 
 BCMPricingCalculatorClient::BCMPricingCalculatorClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                       const Client::ClientConfiguration& clientConfiguration)
+                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

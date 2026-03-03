@@ -162,7 +162,7 @@ DirectoryServiceClient::DirectoryServiceClient(const std::shared_ptr<AWSCredenti
 }
 
 /* Legacy constructors due deprecation */
-DirectoryServiceClient::DirectoryServiceClient(const Client::ClientConfiguration& clientConfiguration)
+DirectoryServiceClient::DirectoryServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -174,7 +174,8 @@ DirectoryServiceClient::DirectoryServiceClient(const Client::ClientConfiguration
   init(m_clientConfiguration);
 }
 
-DirectoryServiceClient::DirectoryServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+DirectoryServiceClient::DirectoryServiceClient(const AWSCredentials& credentials,
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -185,7 +186,7 @@ DirectoryServiceClient::DirectoryServiceClient(const AWSCredentials& credentials
 }
 
 DirectoryServiceClient::DirectoryServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                               const Client::ClientConfiguration& clientConfiguration)
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

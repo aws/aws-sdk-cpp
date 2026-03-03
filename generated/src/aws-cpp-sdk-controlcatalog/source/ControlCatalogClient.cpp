@@ -85,7 +85,7 @@ ControlCatalogClient::ControlCatalogClient(const std::shared_ptr<AWSCredentialsP
 }
 
 /* Legacy constructors due deprecation */
-ControlCatalogClient::ControlCatalogClient(const Client::ClientConfiguration& clientConfiguration)
+ControlCatalogClient::ControlCatalogClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -97,7 +97,7 @@ ControlCatalogClient::ControlCatalogClient(const Client::ClientConfiguration& cl
   init(m_clientConfiguration);
 }
 
-ControlCatalogClient::ControlCatalogClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+ControlCatalogClient::ControlCatalogClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -108,7 +108,7 @@ ControlCatalogClient::ControlCatalogClient(const AWSCredentials& credentials, co
 }
 
 ControlCatalogClient::ControlCatalogClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           const Client::ClientConfiguration& clientConfiguration)
+                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

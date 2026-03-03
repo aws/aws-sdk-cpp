@@ -89,7 +89,7 @@ AIOpsClient::AIOpsClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
 }
 
 /* Legacy constructors due deprecation */
-AIOpsClient::AIOpsClient(const Client::ClientConfiguration& clientConfiguration)
+AIOpsClient::AIOpsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -101,7 +101,7 @@ AIOpsClient::AIOpsClient(const Client::ClientConfiguration& clientConfiguration)
   init(m_clientConfiguration);
 }
 
-AIOpsClient::AIOpsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+AIOpsClient::AIOpsClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -112,7 +112,7 @@ AIOpsClient::AIOpsClient(const AWSCredentials& credentials, const Client::Client
 }
 
 AIOpsClient::AIOpsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                         const Client::ClientConfiguration& clientConfiguration)
+                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

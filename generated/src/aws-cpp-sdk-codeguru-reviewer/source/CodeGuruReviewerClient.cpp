@@ -96,7 +96,7 @@ CodeGuruReviewerClient::CodeGuruReviewerClient(const std::shared_ptr<AWSCredenti
 }
 
 /* Legacy constructors due deprecation */
-CodeGuruReviewerClient::CodeGuruReviewerClient(const Client::ClientConfiguration& clientConfiguration)
+CodeGuruReviewerClient::CodeGuruReviewerClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -108,7 +108,8 @@ CodeGuruReviewerClient::CodeGuruReviewerClient(const Client::ClientConfiguration
   init(m_clientConfiguration);
 }
 
-CodeGuruReviewerClient::CodeGuruReviewerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+CodeGuruReviewerClient::CodeGuruReviewerClient(const AWSCredentials& credentials,
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -119,7 +120,7 @@ CodeGuruReviewerClient::CodeGuruReviewerClient(const AWSCredentials& credentials
 }
 
 CodeGuruReviewerClient::CodeGuruReviewerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                               const Client::ClientConfiguration& clientConfiguration)
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

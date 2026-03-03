@@ -102,7 +102,7 @@ SecretsManagerClient::SecretsManagerClient(const std::shared_ptr<AWSCredentialsP
 }
 
 /* Legacy constructors due deprecation */
-SecretsManagerClient::SecretsManagerClient(const Client::ClientConfiguration& clientConfiguration)
+SecretsManagerClient::SecretsManagerClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -114,7 +114,7 @@ SecretsManagerClient::SecretsManagerClient(const Client::ClientConfiguration& cl
   init(m_clientConfiguration);
 }
 
-SecretsManagerClient::SecretsManagerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SecretsManagerClient::SecretsManagerClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -125,7 +125,7 @@ SecretsManagerClient::SecretsManagerClient(const AWSCredentials& credentials, co
 }
 
 SecretsManagerClient::SecretsManagerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           const Client::ClientConfiguration& clientConfiguration)
+                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

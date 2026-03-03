@@ -123,7 +123,7 @@ MemoryDBClient::MemoryDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-MemoryDBClient::MemoryDBClient(const Client::ClientConfiguration& clientConfiguration)
+MemoryDBClient::MemoryDBClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -135,7 +135,7 @@ MemoryDBClient::MemoryDBClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-MemoryDBClient::MemoryDBClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+MemoryDBClient::MemoryDBClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -146,7 +146,7 @@ MemoryDBClient::MemoryDBClient(const AWSCredentials& credentials, const Client::
 }
 
 MemoryDBClient::MemoryDBClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

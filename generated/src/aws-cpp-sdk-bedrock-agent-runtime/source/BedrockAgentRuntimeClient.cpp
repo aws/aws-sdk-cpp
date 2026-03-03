@@ -118,7 +118,7 @@ BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const std::shared_ptr<AWSCr
           }) {}
 
 /* Legacy constructors due deprecation */
-BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const Client::ClientConfiguration& clientConfiguration)
+BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Agent Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockAgentRuntimeErrorMarshaller>(ALLOCATION_TAG),
@@ -131,7 +131,7 @@ BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const Client::ClientConfigu
           }) {}
 
 BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const AWSCredentials& credentials,
-                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Agent Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockAgentRuntimeErrorMarshaller>(ALLOCATION_TAG),
@@ -145,7 +145,7 @@ BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const AWSCredentials& crede
           }) {}
 
 BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Agent Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockAgentRuntimeErrorMarshaller>(ALLOCATION_TAG),

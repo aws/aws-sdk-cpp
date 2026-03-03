@@ -196,7 +196,7 @@ GameLiftClient::GameLiftClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-GameLiftClient::GameLiftClient(const Client::ClientConfiguration& clientConfiguration)
+GameLiftClient::GameLiftClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -208,7 +208,7 @@ GameLiftClient::GameLiftClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-GameLiftClient::GameLiftClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+GameLiftClient::GameLiftClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -219,7 +219,7 @@ GameLiftClient::GameLiftClient(const AWSCredentials& credentials, const Client::
 }
 
 GameLiftClient::GameLiftClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

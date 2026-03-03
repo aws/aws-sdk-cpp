@@ -90,7 +90,7 @@ CostOptimizationHubClient::CostOptimizationHubClient(const std::shared_ptr<AWSCr
 }
 
 /* Legacy constructors due deprecation */
-CostOptimizationHubClient::CostOptimizationHubClient(const Client::ClientConfiguration& clientConfiguration)
+CostOptimizationHubClient::CostOptimizationHubClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -103,7 +103,7 @@ CostOptimizationHubClient::CostOptimizationHubClient(const Client::ClientConfigu
 }
 
 CostOptimizationHubClient::CostOptimizationHubClient(const AWSCredentials& credentials,
-                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -114,7 +114,7 @@ CostOptimizationHubClient::CostOptimizationHubClient(const AWSCredentials& crede
 }
 
 CostOptimizationHubClient::CostOptimizationHubClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -22,7 +22,7 @@ void BedrockAgentClientConfiguration::LoadBedrockAgentSpecificConfig(const Aws::
   }
 }
 
-BedrockAgentClientConfiguration::BedrockAgentClientConfiguration(const Client::ClientConfigurationInitValues& configuration)
+BedrockAgentClientConfiguration::BedrockAgentClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
     : BaseClientConfigClass(configuration) {
   LoadBedrockAgentSpecificConfig(this->profileName);
 }
@@ -37,7 +37,7 @@ BedrockAgentClientConfiguration::BedrockAgentClientConfiguration(bool useSmartDe
   LoadBedrockAgentSpecificConfig(this->profileName);
 }
 
-BedrockAgentClientConfiguration::BedrockAgentClientConfiguration(const Client::ClientConfiguration& config)
+BedrockAgentClientConfiguration::BedrockAgentClientConfiguration(const Aws::Client::ClientConfiguration& config)
     : BaseClientConfigClass(config) {
   LoadBedrockAgentSpecificConfig(this->profileName);
 }

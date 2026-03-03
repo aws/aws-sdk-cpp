@@ -85,7 +85,7 @@ PersonalizeRuntimeClient::PersonalizeRuntimeClient(const std::shared_ptr<AWSCred
 }
 
 /* Legacy constructors due deprecation */
-PersonalizeRuntimeClient::PersonalizeRuntimeClient(const Client::ClientConfiguration& clientConfiguration)
+PersonalizeRuntimeClient::PersonalizeRuntimeClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -98,7 +98,7 @@ PersonalizeRuntimeClient::PersonalizeRuntimeClient(const Client::ClientConfigura
 }
 
 PersonalizeRuntimeClient::PersonalizeRuntimeClient(const AWSCredentials& credentials,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -109,7 +109,7 @@ PersonalizeRuntimeClient::PersonalizeRuntimeClient(const AWSCredentials& credent
 }
 
 PersonalizeRuntimeClient::PersonalizeRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

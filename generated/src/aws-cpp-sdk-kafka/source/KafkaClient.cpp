@@ -137,7 +137,7 @@ KafkaClient::KafkaClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
 }
 
 /* Legacy constructors due deprecation */
-KafkaClient::KafkaClient(const Client::ClientConfiguration& clientConfiguration)
+KafkaClient::KafkaClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -149,7 +149,7 @@ KafkaClient::KafkaClient(const Client::ClientConfiguration& clientConfiguration)
   init(m_clientConfiguration);
 }
 
-KafkaClient::KafkaClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+KafkaClient::KafkaClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -160,7 +160,7 @@ KafkaClient::KafkaClient(const AWSCredentials& credentials, const Client::Client
 }
 
 KafkaClient::KafkaClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                         const Client::ClientConfiguration& clientConfiguration)
+                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

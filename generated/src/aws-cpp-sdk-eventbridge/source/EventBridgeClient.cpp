@@ -136,7 +136,7 @@ EventBridgeClient::EventBridgeClient(const std::shared_ptr<AWSCredentialsProvide
 }
 
 /* Legacy constructors due deprecation */
-EventBridgeClient::EventBridgeClient(const Client::ClientConfiguration& clientConfiguration)
+EventBridgeClient::EventBridgeClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -148,7 +148,7 @@ EventBridgeClient::EventBridgeClient(const Client::ClientConfiguration& clientCo
   init(m_clientConfiguration);
 }
 
-EventBridgeClient::EventBridgeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+EventBridgeClient::EventBridgeClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -160,7 +160,7 @@ EventBridgeClient::EventBridgeClient(const AWSCredentials& credentials, const Cl
 }
 
 EventBridgeClient::EventBridgeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                     const Client::ClientConfiguration& clientConfiguration)
+                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
