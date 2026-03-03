@@ -278,6 +278,24 @@ class LogGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether bearer token authentication is enabled for this log group.
+   * When enabled, bearer token authentication is allowed on operations until it is
+   * explicitly disabled.</p>
+   */
+  inline bool GetBearerTokenAuthenticationEnabled() const { return m_bearerTokenAuthenticationEnabled; }
+  inline bool BearerTokenAuthenticationEnabledHasBeenSet() const { return m_bearerTokenAuthenticationEnabledHasBeenSet; }
+  inline void SetBearerTokenAuthenticationEnabled(bool value) {
+    m_bearerTokenAuthenticationEnabledHasBeenSet = true;
+    m_bearerTokenAuthenticationEnabled = value;
+  }
+  inline LogGroup& WithBearerTokenAuthenticationEnabled(bool value) {
+    SetBearerTokenAuthenticationEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_logGroupName;
 
@@ -302,6 +320,8 @@ class LogGroup {
   Aws::String m_logGroupArn;
 
   bool m_deletionProtectionEnabled{false};
+
+  bool m_bearerTokenAuthenticationEnabled{false};
   bool m_logGroupNameHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_retentionInDaysHasBeenSet = false;
@@ -314,6 +334,7 @@ class LogGroup {
   bool m_logGroupClassHasBeenSet = false;
   bool m_logGroupArnHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_bearerTokenAuthenticationEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

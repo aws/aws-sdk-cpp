@@ -18,10 +18,6 @@ namespace Model {
 SupportPlan::SupportPlan(JsonView jsonValue) { *this = jsonValue; }
 
 SupportPlan& SupportPlan::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("resoldBusiness")) {
-    m_resoldBusiness = jsonValue.GetObject("resoldBusiness");
-    m_resoldBusinessHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("resoldEnterprise")) {
     m_resoldEnterprise = jsonValue.GetObject("resoldEnterprise");
     m_resoldEnterpriseHasBeenSet = true;
@@ -30,15 +26,15 @@ SupportPlan& SupportPlan::operator=(JsonView jsonValue) {
     m_partnerLedSupport = jsonValue.GetObject("partnerLedSupport");
     m_partnerLedSupportHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resoldUnifiedOperations")) {
+    m_resoldUnifiedOperations = jsonValue.GetObject("resoldUnifiedOperations");
+    m_resoldUnifiedOperationsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue SupportPlan::Jsonize() const {
   JsonValue payload;
-
-  if (m_resoldBusinessHasBeenSet) {
-    payload.WithObject("resoldBusiness", m_resoldBusiness.Jsonize());
-  }
 
   if (m_resoldEnterpriseHasBeenSet) {
     payload.WithObject("resoldEnterprise", m_resoldEnterprise.Jsonize());
@@ -46,6 +42,10 @@ JsonValue SupportPlan::Jsonize() const {
 
   if (m_partnerLedSupportHasBeenSet) {
     payload.WithObject("partnerLedSupport", m_partnerLedSupport.Jsonize());
+  }
+
+  if (m_resoldUnifiedOperationsHasBeenSet) {
+    payload.WithObject("resoldUnifiedOperations", m_resoldUnifiedOperations.Jsonize());
   }
 
   return payload;

@@ -47,6 +47,10 @@ Aws::String UpdateAgentRuntimeRequest::SerializePayload() const {
     payload.WithObject("lifecycleConfiguration", m_lifecycleConfiguration.Jsonize());
   }
 
+  if (m_metadataConfigurationHasBeenSet) {
+    payload.WithObject("metadataConfiguration", m_metadataConfiguration.Jsonize());
+  }
+
   if (m_environmentVariablesHasBeenSet) {
     JsonValue environmentVariablesJsonMap;
     for (auto& environmentVariablesItem : m_environmentVariables) {

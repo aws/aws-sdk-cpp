@@ -370,10 +370,11 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * "cloudtrail.amazonaws.com" principal and have the following permissions:</p>
    * <ul> <li> <p>cloudtrail:GetEventDataStoreData</p> </li> <li>
    * <p>logs:CreateLogGroup</p> </li> <li> <p>logs:CreateLogStream</p> </li> <li>
-   * <p>logs:PutResourcePolicy</p> </li> <li> <p>(If source has an associated AWS KMS
-   * Key) kms:Decrypt</p> </li> <li> <p>(If source has an associated AWS KMS Key)
-   * kms:GenerateDataKey</p> </li> </ul> <p>Example IAM policy for provided import
-   * role:</p> <p> <code>[ { "Effect": "Allow", "Action": "iam:PassRole", "Resource":
+   * <p>logs:PutResourcePolicy</p> </li> <li> <p>(If source has an associated Amazon
+   * Web Services KMS Key) kms:Decrypt</p> </li> <li> <p>(If source has an associated
+   * Amazon Web Services KMS Key) kms:GenerateDataKey</p> </li> </ul> <p>Example IAM
+   * policy for provided import role:</p> <p> <code>[ { "Effect": "Allow", "Action":
+   * "iam:PassRole", "Resource":
    * "arn:aws:iam::123456789012:role/apiCallerCredentials", "Condition": {
    * "StringLike": { "iam:AssociatedResourceARN":
    * "arn:aws:logs:us-east-1:123456789012:log-group:aws/cloudtrail/f1d45bff-d0e3-4868-b5d9-2eb678aa32fb:*"
@@ -2235,7 +2236,15 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * reflects the original JSON structure where the large field was located. For
    * example, this could be <code>@ptr.$['input']['message']</code>,
    * <code>@ptr.$['AAA']['BBB']['CCC']['DDD']</code>, <code>@ptr.$['AAA']</code>, or
-   * any other path matching your log structure.</p><p><h3>See Also:</h3>   <a
+   * any other path matching your log structure.</p>  <p>The
+   * <code>GetLogObject</code> API routes requests using SDK host prefix injection.
+   * SDK versions released before April 1, 2026 route to
+   * <code>streaming-logs.<i>Region</i>.amazonaws.com</code>, which does not support
+   * VPC endpoints. SDK versions released on or after April 1, 2026 route to
+   * <code>stream-logs.<i>Region</i>.amazonaws.com</code>, which supports VPC
+   * endpoints. To set up a VPC endpoint for this API, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs">Creating
+   * a VPC endpoint for CloudWatch Logs </a>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogObject">AWS
    * API Reference</a></p>
    */
@@ -2912,11 +2921,11 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * policies to disable EMF metric creation for your entire account or specific log
    * groups.</p> <p>When a policy disables EMF metric creation for a log group, log
    * events in the EMF format are still ingested, but no CloudWatch Metrics are
-   * created from them.</p>  <p>Creating a policy disables metrics for AWS
-   * features that use EMF to create metrics, such as CloudWatch Container Insights
-   * and CloudWatch Application Signals. To prevent turning off those features by
-   * accident, we recommend that you exclude the underlying log-groups through a
-   * selection-criteria such as <code>LogGroupNamePrefix NOT IN
+   * created from them.</p>  <p>Creating a policy disables metrics for
+   * Amazon Web Services features that use EMF to create metrics, such as CloudWatch
+   * Container Insights and CloudWatch Application Signals. To prevent turning off
+   * those features by accident, we recommend that you exclude the underlying
+   * log-groups through a selection-criteria such as <code>LogGroupNamePrefix NOT IN
    * ["/aws/containerinsights", "/aws/ecs/containerinsights",
    * "/aws/application-signals/data"]</code>.</p>  <p>Each account can
    * have either one account-level metric extraction policy that applies to all log
@@ -2973,6 +2982,40 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   void PutAccountPolicyAsync(const PutAccountPolicyRequestT& request, const PutAccountPolicyResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchLogsClient::PutAccountPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Enables or disables bearer token authentication for the specified log group.
+   * When enabled on a log group, bearer token authentication is enabled on
+   * operations until it is explicitly disabled.</p> <p>For information about the
+   * parameters that are common to all actions, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
+   * Parameters</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutBearerTokenAuthentication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutBearerTokenAuthenticationOutcome PutBearerTokenAuthentication(
+      const Model::PutBearerTokenAuthenticationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutBearerTokenAuthentication that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutBearerTokenAuthenticationRequestT = Model::PutBearerTokenAuthenticationRequest>
+  Model::PutBearerTokenAuthenticationOutcomeCallable PutBearerTokenAuthenticationCallable(
+      const PutBearerTokenAuthenticationRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::PutBearerTokenAuthentication, request);
+  }
+
+  /**
+   * An Async wrapper for PutBearerTokenAuthentication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutBearerTokenAuthenticationRequestT = Model::PutBearerTokenAuthenticationRequest>
+  void PutBearerTokenAuthenticationAsync(const PutBearerTokenAuthenticationRequestT& request,
+                                         const PutBearerTokenAuthenticationResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::PutBearerTokenAuthentication, request, handler, context);
   }
 
   /**
@@ -3767,13 +3810,17 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionTimeoutException">SessionTimeoutException</a>
    * object is returned when the session times out, after it has been kept open for
    * three hours.</p> </li> </ul>  <p>The <code>StartLiveTail</code> API routes
-   * requests to <code>streaming-logs.<i>Region</i>.amazonaws.com</code> using SDK
-   * host prefix injection. VPC endpoint support is not available for this API.</p>
-   *   <p>You can end a session before it times out by closing the
-   * session stream or by closing the client that is receiving the stream. The
-   * session also ends if the established connection between the client and the
-   * server breaks.</p>  <p>For examples of using an SDK to start a Live
-   * Tail session, see <a
+   * requests using SDK host prefix injection. SDK versions released before April 1,
+   * 2026 route to <code>streaming-logs.<i>Region</i>.amazonaws.com</code>, which
+   * does not support VPC endpoints. SDK versions released on or after April 1, 2026
+   * route to <code>stream-logs.<i>Region</i>.amazonaws.com</code>, which supports
+   * VPC endpoints. To set up a VPC endpoint for this API, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs">Creating
+   * a VPC endpoint for CloudWatch Logs </a>.</p>   <p>You can end
+   * a session before it times out by closing the session stream or by closing the
+   * client that is receiving the stream. The session also ends if the established
+   * connection between the client and the server breaks.</p>  <p>For
+   * examples of using an SDK to start a Live Tail session, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/example_cloudwatch-logs_StartLiveTail_section.html">
    * Start a Live Tail session using an Amazon Web Services SDK</a>.</p><p><h3>See
    * Also:</h3>   <a

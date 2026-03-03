@@ -4091,6 +4091,31 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Queries entities in the graph store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/QueryGraph">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::QueryGraphOutcome QueryGraph(const Model::QueryGraphRequest& request) const;
+
+  /**
+   * A Callable wrapper for QueryGraph that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename QueryGraphRequestT = Model::QueryGraphRequest>
+  Model::QueryGraphOutcomeCallable QueryGraphCallable(const QueryGraphRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::QueryGraph, request);
+  }
+
+  /**
+   * An Async wrapper for QueryGraph that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename QueryGraphRequestT = Model::QueryGraphRequest>
+  void QueryGraphAsync(const QueryGraphRequestT& request, const QueryGraphResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::QueryGraph, request, handler, context);
+  }
+
+  /**
    * <p>Rejects automatically generated business-friendly metadata for your Amazon
    * DataZone assets.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/RejectPredictions">AWS

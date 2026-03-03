@@ -19,6 +19,7 @@ static const int PYTHON_3_10_HASH = HashingUtils::HashString("PYTHON_3_10");
 static const int PYTHON_3_11_HASH = HashingUtils::HashString("PYTHON_3_11");
 static const int PYTHON_3_12_HASH = HashingUtils::HashString("PYTHON_3_12");
 static const int PYTHON_3_13_HASH = HashingUtils::HashString("PYTHON_3_13");
+static const int PYTHON_3_14_HASH = HashingUtils::HashString("PYTHON_3_14");
 
 AgentManagedRuntimeType GetAgentManagedRuntimeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ AgentManagedRuntimeType GetAgentManagedRuntimeTypeForName(const Aws::String& nam
     return AgentManagedRuntimeType::PYTHON_3_12;
   } else if (hashCode == PYTHON_3_13_HASH) {
     return AgentManagedRuntimeType::PYTHON_3_13;
+  } else if (hashCode == PYTHON_3_14_HASH) {
+    return AgentManagedRuntimeType::PYTHON_3_14;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForAgentManagedRuntimeType(AgentManagedRuntimeType enumValue)
       return "PYTHON_3_12";
     case AgentManagedRuntimeType::PYTHON_3_13:
       return "PYTHON_3_13";
+    case AgentManagedRuntimeType::PYTHON_3_14:
+      return "PYTHON_3_14";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

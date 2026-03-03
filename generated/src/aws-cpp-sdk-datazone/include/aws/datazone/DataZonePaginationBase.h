@@ -39,6 +39,7 @@
 #include <aws/datazone/model/ListSubscriptionTargetsPaginationTraits.h>
 #include <aws/datazone/model/ListSubscriptionsPaginationTraits.h>
 #include <aws/datazone/model/ListTimeSeriesDataPointsPaginationTraits.h>
+#include <aws/datazone/model/QueryGraphPaginationTraits.h>
 #include <aws/datazone/model/SearchGroupProfilesPaginationTraits.h>
 #include <aws/datazone/model/SearchListingsPaginationTraits.h>
 #include <aws/datazone/model/SearchPaginationTraits.h>
@@ -432,6 +433,17 @@ class DataZonePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTimeSeriesDataPointsRequest,
                                              Pagination::ListTimeSeriesDataPointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for QueryGraph operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::QueryGraphRequest, Pagination::QueryGraphPaginationTraits<DerivedClient>>
+  QueryGraphPaginator(const Model::QueryGraphRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::QueryGraphRequest,
+                                             Pagination::QueryGraphPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                    request};
   }
 
   /**

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CedarPolicy.h>
+#include <aws/bedrock-agentcore-control/model/PolicyGenerationDetails.h>
 
 #include <utility>
 
@@ -58,9 +59,35 @@ class PolicyDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The generated policy asset information within the policy definition
+   * structure. This contains information identifying a generated policy asset from
+   * the AI-powered policy generation process within the AgentCore Policy system.
+   * Each asset contains a Cedar policy statement generated from natural language
+   * input, along with associated metadata and analysis findings to help users
+   * evaluate and select the most appropriate policy option.</p>
+   */
+  inline const PolicyGenerationDetails& GetPolicyGeneration() const { return m_policyGeneration; }
+  inline bool PolicyGenerationHasBeenSet() const { return m_policyGenerationHasBeenSet; }
+  template <typename PolicyGenerationT = PolicyGenerationDetails>
+  void SetPolicyGeneration(PolicyGenerationT&& value) {
+    m_policyGenerationHasBeenSet = true;
+    m_policyGeneration = std::forward<PolicyGenerationT>(value);
+  }
+  template <typename PolicyGenerationT = PolicyGenerationDetails>
+  PolicyDefinition& WithPolicyGeneration(PolicyGenerationT&& value) {
+    SetPolicyGeneration(std::forward<PolicyGenerationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CedarPolicy m_cedar;
+
+  PolicyGenerationDetails m_policyGeneration;
   bool m_cedarHasBeenSet = false;
+  bool m_policyGenerationHasBeenSet = false;
 };
 
 }  // namespace Model

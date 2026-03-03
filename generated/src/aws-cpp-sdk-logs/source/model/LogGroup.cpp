@@ -71,6 +71,10 @@ LogGroup& LogGroup::operator=(JsonView jsonValue) {
     m_deletionProtectionEnabled = jsonValue.GetBool("deletionProtectionEnabled");
     m_deletionProtectionEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("bearerTokenAuthenticationEnabled")) {
+    m_bearerTokenAuthenticationEnabled = jsonValue.GetBool("bearerTokenAuthenticationEnabled");
+    m_bearerTokenAuthenticationEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -129,6 +133,10 @@ JsonValue LogGroup::Jsonize() const {
 
   if (m_deletionProtectionEnabledHasBeenSet) {
     payload.WithBool("deletionProtectionEnabled", m_deletionProtectionEnabled);
+  }
+
+  if (m_bearerTokenAuthenticationEnabledHasBeenSet) {
+    payload.WithBool("bearerTokenAuthenticationEnabled", m_bearerTokenAuthenticationEnabled);
   }
 
   return payload;

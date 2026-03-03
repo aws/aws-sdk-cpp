@@ -31,6 +31,7 @@
 #include <aws/datazone/model/AddPolicyGrantRequest.h>
 #include <aws/datazone/model/AddPolicyGrantResult.h>
 #include <aws/datazone/model/AddToProjectMemberPoolPolicyGrantDetail.h>
+#include <aws/datazone/model/AdditionalAttributes.h>
 #include <aws/datazone/model/AggregationListItem.h>
 #include <aws/datazone/model/AggregationOutput.h>
 #include <aws/datazone/model/AggregationOutputItem.h>
@@ -260,6 +261,7 @@
 #include <aws/datazone/model/EdgeDirection.h>
 #include <aws/datazone/model/EnableSetting.h>
 #include <aws/datazone/model/EncryptionConfiguration.h>
+#include <aws/datazone/model/EntityPattern.h>
 #include <aws/datazone/model/EntityType.h>
 #include <aws/datazone/model/EnvironmentActionSummary.h>
 #include <aws/datazone/model/EnvironmentBlueprintConfigurationItem.h>
@@ -385,6 +387,7 @@
 #include <aws/datazone/model/GovernedEntityType.h>
 #include <aws/datazone/model/GrantedEntity.h>
 #include <aws/datazone/model/GrantedEntityInput.h>
+#include <aws/datazone/model/GraphEntityType.h>
 #include <aws/datazone/model/GreaterThanExpression.h>
 #include <aws/datazone/model/GreaterThanOrEqualToExpression.h>
 #include <aws/datazone/model/GroupDetails.h>
@@ -418,6 +421,7 @@
 #include <aws/datazone/model/LineageEventSummary.h>
 #include <aws/datazone/model/LineageImportStatus.h>
 #include <aws/datazone/model/LineageInfo.h>
+#include <aws/datazone/model/LineageNodeItem.h>
 #include <aws/datazone/model/LineageNodeReference.h>
 #include <aws/datazone/model/LineageNodeSummary.h>
 #include <aws/datazone/model/LineageNodeTypeItem.h>
@@ -498,6 +502,7 @@
 #include <aws/datazone/model/ListingSummaryItem.h>
 #include <aws/datazone/model/ManagedEndpointCredentials.h>
 #include <aws/datazone/model/ManagedPolicyType.h>
+#include <aws/datazone/model/MatchClause.h>
 #include <aws/datazone/model/MatchOffset.h>
 #include <aws/datazone/model/MatchRationaleItem.h>
 #include <aws/datazone/model/Member.h>
@@ -565,6 +570,8 @@
 #include <aws/datazone/model/PutDataExportConfigurationResult.h>
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationRequest.h>
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationResult.h>
+#include <aws/datazone/model/QueryGraphRequest.h>
+#include <aws/datazone/model/QueryGraphResult.h>
 #include <aws/datazone/model/RecommendationConfiguration.h>
 #include <aws/datazone/model/RedshiftClusterStorage.h>
 #include <aws/datazone/model/RedshiftCredentialConfiguration.h>
@@ -588,6 +595,9 @@
 #include <aws/datazone/model/RejectRuleBehavior.h>
 #include <aws/datazone/model/RejectSubscriptionRequestRequest.h>
 #include <aws/datazone/model/RejectSubscriptionRequestResult.h>
+#include <aws/datazone/model/RelationDirection.h>
+#include <aws/datazone/model/RelationPattern.h>
+#include <aws/datazone/model/RelationType.h>
 #include <aws/datazone/model/RelationalFilterConfiguration.h>
 #include <aws/datazone/model/RemoveEntityOwnerRequest.h>
 #include <aws/datazone/model/RemoveEntityOwnerResult.h>
@@ -598,6 +608,7 @@
 #include <aws/datazone/model/ResourceTag.h>
 #include <aws/datazone/model/ResourceTagParameter.h>
 #include <aws/datazone/model/ResourceTagSource.h>
+#include <aws/datazone/model/ResultItem.h>
 #include <aws/datazone/model/RevokeSubscriptionRequest.h>
 #include <aws/datazone/model/RevokeSubscriptionResult.h>
 #include <aws/datazone/model/RowFilter.h>

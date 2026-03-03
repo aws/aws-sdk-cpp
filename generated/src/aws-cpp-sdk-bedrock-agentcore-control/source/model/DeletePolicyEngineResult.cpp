@@ -57,6 +57,10 @@ DeletePolicyEngineResult& DeletePolicyEngineResult::operator=(const Aws::AmazonW
     }
     m_statusReasonsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("encryptionKeyArn")) {
+    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
