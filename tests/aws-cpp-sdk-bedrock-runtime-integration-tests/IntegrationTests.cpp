@@ -80,7 +80,7 @@ TEST_F(BedrockRuntimeTests, TestStreaming)
 
 TEST_F(BedrockRuntimeTests, TestInvokeModel)
 {
-  auto bedrockRequest = Aws::BedrockRuntime::Model::InvokeModelRequest{}.WithModelId("us.anthropic.claude-3-5-sonnet-20241022-v2:0").WithAccept("application/json") ;
+  auto bedrockRequest = Aws::BedrockRuntime::Model::InvokeModelRequest{}.WithModelId("us.anthropic.claude-3-5-haiku-20241022-v1:0").WithAccept("application/json") ;
 
   bedrockRequest.SetBody(Aws::MakeShared<Aws::StringStream>(
         "BedrockRuntimeTests::TestInvokeModel",
