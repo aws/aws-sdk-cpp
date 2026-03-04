@@ -42,10 +42,14 @@ class GameProperty {
 
   ///@{
   /**
-   * <p>The game property identifier.</p>  <p>Avoid using periods (".") in
-   * property keys if you plan to search for game sessions by properties. Property
-   * keys containing periods cannot be searched and will be filtered out from search
-   * results due to search index limitations.</p>
+   * <p>The game property identifier.</p>  <ul> <li> <p>Avoid using periods
+   * (".") in property keys if you plan to search for game sessions by properties.
+   * Property keys containing periods cannot be searched and will be filtered out
+   * from search results due to search index limitations.</p> </li> <li> <p>If you
+   * use SearchGameSessions API, there is a limit of 500 game property keys across
+   * all game sessions and all fleets per region. If the limit is exceeded, there
+   * will potentially be game session entries missing from SearchGameSessions API
+   * results.</p> </li> </ul>
    */
   inline const Aws::String& GetKey() const { return m_key; }
   inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

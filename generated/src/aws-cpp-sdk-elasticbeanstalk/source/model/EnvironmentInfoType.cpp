@@ -17,6 +17,7 @@ namespace EnvironmentInfoTypeMapper {
 
 static const int tail_HASH = HashingUtils::HashString("tail");
 static const int bundle_HASH = HashingUtils::HashString("bundle");
+static const int analyze_HASH = HashingUtils::HashString("analyze");
 
 EnvironmentInfoType GetEnvironmentInfoTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ EnvironmentInfoType GetEnvironmentInfoTypeForName(const Aws::String& name) {
     return EnvironmentInfoType::tail;
   } else if (hashCode == bundle_HASH) {
     return EnvironmentInfoType::bundle;
+  } else if (hashCode == analyze_HASH) {
+    return EnvironmentInfoType::analyze;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForEnvironmentInfoType(EnvironmentInfoType enumValue) {
       return "tail";
     case EnvironmentInfoType::bundle:
       return "bundle";
+    case EnvironmentInfoType::analyze:
+      return "analyze";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

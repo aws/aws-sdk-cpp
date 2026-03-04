@@ -146,6 +146,10 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_performFlowUiTask = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("PerformFlowUiTask"));
     m_performFlowUiTaskHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ApproveFlowShareRequests")) {
+    m_approveFlowShareRequests = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ApproveFlowShareRequests"));
+    m_approveFlowShareRequestsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("UseAgentWebSearch")) {
     m_useAgentWebSearch = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseAgentWebSearch"));
     m_useAgentWebSearchHasBeenSet = true;
@@ -881,6 +885,23 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_useNewRelicAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseNewRelicAction"));
     m_useNewRelicActionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Topic")) {
+    m_topic = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Topic"));
+    m_topicHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EditVisualWithQ")) {
+    m_editVisualWithQ = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("EditVisualWithQ"));
+    m_editVisualWithQHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BuildCalculatedFieldWithQ")) {
+    m_buildCalculatedFieldWithQ = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("BuildCalculatedFieldWithQ"));
+    m_buildCalculatedFieldWithQHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateDashboardExecutiveSummaryWithQ")) {
+    m_createDashboardExecutiveSummaryWithQ =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateDashboardExecutiveSummaryWithQ"));
+    m_createDashboardExecutiveSummaryWithQHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Space")) {
     m_space = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Space"));
     m_spaceHasBeenSet = true;
@@ -900,6 +921,10 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("SelfUpgradeUserRole")) {
     m_selfUpgradeUserRole = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SelfUpgradeUserRole"));
     m_selfUpgradeUserRoleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Extension")) {
+    m_extension = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Extension"));
+    m_extensionHasBeenSet = true;
   }
   return *this;
 }
@@ -1031,6 +1056,10 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_performFlowUiTaskHasBeenSet) {
     payload.WithString("PerformFlowUiTask", CapabilityStateMapper::GetNameForCapabilityState(m_performFlowUiTask));
+  }
+
+  if (m_approveFlowShareRequestsHasBeenSet) {
+    payload.WithString("ApproveFlowShareRequests", CapabilityStateMapper::GetNameForCapabilityState(m_approveFlowShareRequests));
   }
 
   if (m_useAgentWebSearchHasBeenSet) {
@@ -1758,6 +1787,23 @@ JsonValue Capabilities::Jsonize() const {
     payload.WithString("UseNewRelicAction", CapabilityStateMapper::GetNameForCapabilityState(m_useNewRelicAction));
   }
 
+  if (m_topicHasBeenSet) {
+    payload.WithString("Topic", CapabilityStateMapper::GetNameForCapabilityState(m_topic));
+  }
+
+  if (m_editVisualWithQHasBeenSet) {
+    payload.WithString("EditVisualWithQ", CapabilityStateMapper::GetNameForCapabilityState(m_editVisualWithQ));
+  }
+
+  if (m_buildCalculatedFieldWithQHasBeenSet) {
+    payload.WithString("BuildCalculatedFieldWithQ", CapabilityStateMapper::GetNameForCapabilityState(m_buildCalculatedFieldWithQ));
+  }
+
+  if (m_createDashboardExecutiveSummaryWithQHasBeenSet) {
+    payload.WithString("CreateDashboardExecutiveSummaryWithQ",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createDashboardExecutiveSummaryWithQ));
+  }
+
   if (m_spaceHasBeenSet) {
     payload.WithString("Space", CapabilityStateMapper::GetNameForCapabilityState(m_space));
   }
@@ -1776,6 +1822,10 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_selfUpgradeUserRoleHasBeenSet) {
     payload.WithString("SelfUpgradeUserRole", CapabilityStateMapper::GetNameForCapabilityState(m_selfUpgradeUserRole));
+  }
+
+  if (m_extensionHasBeenSet) {
+    payload.WithString("Extension", CapabilityStateMapper::GetNameForCapabilityState(m_extension));
   }
 
   return payload;

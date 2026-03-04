@@ -118,6 +118,10 @@ ContainerFleet& ContainerFleet::operator=(JsonView jsonValue) {
     }
     m_locationAttributesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PlayerGatewayMode")) {
+    m_playerGatewayMode = PlayerGatewayModeMapper::GetPlayerGatewayModeForName(jsonValue.GetString("PlayerGatewayMode"));
+    m_playerGatewayModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -226,6 +230,10 @@ JsonValue ContainerFleet::Jsonize() const {
       locationAttributesJsonList[locationAttributesIndex].AsObject(m_locationAttributes[locationAttributesIndex].Jsonize());
     }
     payload.WithArray("LocationAttributes", std::move(locationAttributesJsonList));
+  }
+
+  if (m_playerGatewayModeHasBeenSet) {
+    payload.WithString("PlayerGatewayMode", PlayerGatewayModeMapper::GetNameForPlayerGatewayMode(m_playerGatewayMode));
   }
 
   return payload;

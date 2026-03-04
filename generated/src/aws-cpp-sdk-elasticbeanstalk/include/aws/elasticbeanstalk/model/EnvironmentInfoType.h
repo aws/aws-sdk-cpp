@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ElasticBeanstalk {
 namespace Model {
-enum class EnvironmentInfoType { NOT_SET, tail, bundle };
+enum class EnvironmentInfoType { NOT_SET, tail, bundle, analyze };
 
 namespace EnvironmentInfoTypeMapper {
 AWS_ELASTICBEANSTALK_API EnvironmentInfoType GetEnvironmentInfoTypeForName(const Aws::String& name);

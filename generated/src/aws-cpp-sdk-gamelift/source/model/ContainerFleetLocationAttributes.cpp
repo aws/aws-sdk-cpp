@@ -26,6 +26,10 @@ ContainerFleetLocationAttributes& ContainerFleetLocationAttributes::operator=(Js
     m_status = ContainerFleetLocationStatusMapper::GetContainerFleetLocationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PlayerGatewayStatus")) {
+    m_playerGatewayStatus = PlayerGatewayStatusMapper::GetPlayerGatewayStatusForName(jsonValue.GetString("PlayerGatewayStatus"));
+    m_playerGatewayStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ContainerFleetLocationAttributes::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("Status", ContainerFleetLocationStatusMapper::GetNameForContainerFleetLocationStatus(m_status));
+  }
+
+  if (m_playerGatewayStatusHasBeenSet) {
+    payload.WithString("PlayerGatewayStatus", PlayerGatewayStatusMapper::GetNameForPlayerGatewayStatus(m_playerGatewayStatus));
   }
 
   return payload;

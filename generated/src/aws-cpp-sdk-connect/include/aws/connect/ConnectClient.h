@@ -549,6 +549,49 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Associates a set of email addresses with a queue to enable agents to select
+   * different "From" (system) email addresses when replying to inbound email
+   * contacts or initiating outbound email contacts. This allows agents to handle
+   * email contacts across different brands and business units within the same
+   * queue.</p> <p> <b>Important things to know</b> </p> <ul> <li> <p>You can
+   * associate up to 49 additional email addresses with a single queue, plus 1
+   * default outbound email address, for a total of 50.</p> </li> <li> <p>The email
+   * addresses must already exist in the Amazon Connect instance before they can be
+   * associated with a queue.</p> </li> <li> <p>Agents will be able to select from
+   * these associated email addresses when handling email contacts in the queue.</p>
+   * </li> <li> <p>For inbound email contacts, agents can select from email addresses
+   * associated with the queue where the contact was accepted.</p> </li> <li> <p>For
+   * outbound email contacts, agents can select from email addresses associated with
+   * their default outbound queue configured in their routing profile.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueEmailAddresses">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateQueueEmailAddressesOutcome AssociateQueueEmailAddresses(
+      const Model::AssociateQueueEmailAddressesRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateQueueEmailAddresses that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename AssociateQueueEmailAddressesRequestT = Model::AssociateQueueEmailAddressesRequest>
+  Model::AssociateQueueEmailAddressesOutcomeCallable AssociateQueueEmailAddressesCallable(
+      const AssociateQueueEmailAddressesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::AssociateQueueEmailAddresses, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateQueueEmailAddresses that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateQueueEmailAddressesRequestT = Model::AssociateQueueEmailAddressesRequest>
+  void AssociateQueueEmailAddressesAsync(const AssociateQueueEmailAddressesRequestT& request,
+                                         const AssociateQueueEmailAddressesResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::AssociateQueueEmailAddresses, request, handler, context);
+  }
+
+  /**
    * <p>Associates a set of quick connects with a queue.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects">AWS
@@ -4693,6 +4736,44 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Removes the association between a set of email addresses and a queue. After
+   * disassociation, agents will no longer be able to select these email addresses as
+   * "From" addresses when replying to inbound email contacts or initiating outbound
+   * email contacts in this queue.</p> <p> <b>Important things to know</b> </p> <ul>
+   * <li> <p>Agents will no longer see these email addresses in their "From" address
+   * selection options for this queue.</p> </li> <li> <p>The email addresses
+   * themselves are not deleted from the instance, only their availability for agent
+   * selection in this queue is removed.</p> </li> <li> <p>Changes take effect
+   * immediately and will affect the agent experience in the Contact Control Panel
+   * (CCP).</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueEmailAddresses">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateQueueEmailAddressesOutcome DisassociateQueueEmailAddresses(
+      const Model::DisassociateQueueEmailAddressesRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateQueueEmailAddresses that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DisassociateQueueEmailAddressesRequestT = Model::DisassociateQueueEmailAddressesRequest>
+  Model::DisassociateQueueEmailAddressesOutcomeCallable DisassociateQueueEmailAddressesCallable(
+      const DisassociateQueueEmailAddressesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DisassociateQueueEmailAddresses, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateQueueEmailAddresses that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DisassociateQueueEmailAddressesRequestT = Model::DisassociateQueueEmailAddressesRequest>
+  void DisassociateQueueEmailAddressesAsync(const DisassociateQueueEmailAddressesRequestT& request,
+                                            const DisassociateQueueEmailAddressesResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DisassociateQueueEmailAddresses, request, handler, context);
+  }
+
+  /**
    * <p>Disassociates a set of quick connects from a queue.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects">AWS
@@ -6602,6 +6683,45 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void ListPromptsAsync(const ListPromptsRequestT& request, const ListPromptsResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::ListPrompts, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all email addresses that are currently associated with a specific
+   * queue, providing details about which "From" email addresses agents can select
+   * when handling email contacts. This helps administrators manage agent email
+   * address options and understand the available choices for different brands and
+   * business units.</p> <p> <b>Important things to know</b> </p> <ul> <li> <p>The
+   * response includes metadata about each email address available for agent
+   * selection, including whether it's configured as the default outbound email.</p>
+   * </li> <li> <p>Agents can select from these email addresses when replying to
+   * inbound contacts or initiating outbound contacts in this queue.</p> </li> <li>
+   * <p>The list includes both explicitly associated email addresses and any default
+   * outbound email address configured for the queue.</p> </li> <li> <p>Results are
+   * paginated to handle queues with many associated email addresses (up to 50 per
+   * queue).</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueEmailAddresses">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListQueueEmailAddressesOutcome ListQueueEmailAddresses(const Model::ListQueueEmailAddressesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListQueueEmailAddresses that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListQueueEmailAddressesRequestT = Model::ListQueueEmailAddressesRequest>
+  Model::ListQueueEmailAddressesOutcomeCallable ListQueueEmailAddressesCallable(const ListQueueEmailAddressesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListQueueEmailAddresses, request);
+  }
+
+  /**
+   * An Async wrapper for ListQueueEmailAddresses that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListQueueEmailAddressesRequestT = Model::ListQueueEmailAddressesRequest>
+  void ListQueueEmailAddressesAsync(const ListQueueEmailAddressesRequestT& request,
+                                    const ListQueueEmailAddressesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListQueueEmailAddresses, request, handler, context);
   }
 
   /**

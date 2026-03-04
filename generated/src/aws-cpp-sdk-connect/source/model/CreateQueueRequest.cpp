@@ -47,6 +47,15 @@ Aws::String CreateQueueRequest::SerializePayload() const {
     payload.WithArray("QuickConnectIds", std::move(quickConnectIdsJsonList));
   }
 
+  if (m_emailAddressesConfigHasBeenSet) {
+    Aws::Utils::Array<JsonValue> emailAddressesConfigJsonList(m_emailAddressesConfig.size());
+    for (unsigned emailAddressesConfigIndex = 0; emailAddressesConfigIndex < emailAddressesConfigJsonList.GetLength();
+         ++emailAddressesConfigIndex) {
+      emailAddressesConfigJsonList[emailAddressesConfigIndex].AsObject(m_emailAddressesConfig[emailAddressesConfigIndex].Jsonize());
+    }
+    payload.WithArray("EmailAddressesConfig", std::move(emailAddressesConfigJsonList));
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

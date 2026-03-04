@@ -77,7 +77,7 @@ class GenerateEmbedUrlForAnonymousUserResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon Quick Suite
+   * <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon Quick
    * user.</p>
    */
   inline const Aws::String& GetAnonymousUserArn() const { return m_anonymousUserArn; }
