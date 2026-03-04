@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sts/STS_EXPORTS.h>
@@ -85,12 +86,15 @@ class GetWebIdentityTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_webIdentityToken;
 
   Aws::Utils::DateTime m_expiration{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_webIdentityTokenHasBeenSet = false;
   bool m_expirationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

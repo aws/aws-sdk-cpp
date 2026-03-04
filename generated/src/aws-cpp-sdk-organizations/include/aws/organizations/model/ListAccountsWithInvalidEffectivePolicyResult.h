@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/organizations/Organizations_EXPORTS.h>
@@ -127,6 +128,8 @@ class ListAccountsWithInvalidEffectivePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Account> m_accounts;
 
@@ -135,6 +138,7 @@ class ListAccountsWithInvalidEffectivePolicyResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountsHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -150,6 +151,8 @@ class DescribePublishingDestinationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_destinationId;
 
@@ -164,6 +167,7 @@ class DescribePublishingDestinationResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_destinationIdHasBeenSet = false;
   bool m_destinationTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;

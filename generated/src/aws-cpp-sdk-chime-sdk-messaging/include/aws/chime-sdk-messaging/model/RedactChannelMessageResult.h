@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -92,6 +93,8 @@ class RedactChannelMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_channelArn;
 
@@ -100,6 +103,7 @@ class RedactChannelMessageResult {
   Aws::String m_subChannelId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelArnHasBeenSet = false;
   bool m_messageIdHasBeenSet = false;
   bool m_subChannelIdHasBeenSet = false;

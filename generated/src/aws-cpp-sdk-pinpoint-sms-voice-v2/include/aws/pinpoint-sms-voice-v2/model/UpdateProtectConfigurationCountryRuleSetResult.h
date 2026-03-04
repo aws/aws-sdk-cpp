@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
@@ -118,6 +119,8 @@ class UpdateProtectConfigurationCountryRuleSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_protectConfigurationArn;
 
@@ -128,6 +131,7 @@ class UpdateProtectConfigurationCountryRuleSetResult {
   Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation> m_countryRuleSet;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_protectConfigurationArnHasBeenSet = false;
   bool m_protectConfigurationIdHasBeenSet = false;
   bool m_numberCapabilityHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 
@@ -322,6 +323,8 @@ class GetBootstrapBrokersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_bootstrapBrokerString;
 
@@ -352,6 +355,7 @@ class GetBootstrapBrokersResult {
   Aws::String m_bootstrapBrokerStringSaslIamIpv6;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bootstrapBrokerStringHasBeenSet = false;
   bool m_bootstrapBrokerStringTlsHasBeenSet = false;
   bool m_bootstrapBrokerStringSaslScramHasBeenSet = false;

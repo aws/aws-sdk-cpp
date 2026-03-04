@@ -24,6 +24,7 @@ AssociatePhoneNumbersWithVoiceConnectorResult::AssociatePhoneNumbersWithVoiceCon
 
 AssociatePhoneNumbersWithVoiceConnectorResult& AssociatePhoneNumbersWithVoiceConnectorResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("PhoneNumberErrors")) {
     Aws::Utils::Array<JsonView> phoneNumberErrorsJsonList = jsonValue.GetArray("PhoneNumberErrors");

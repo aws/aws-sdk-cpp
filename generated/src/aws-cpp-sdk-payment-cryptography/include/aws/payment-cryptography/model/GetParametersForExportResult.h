@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
@@ -132,6 +133,8 @@ class GetParametersForExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_signingKeyCertificate;
 
@@ -144,6 +147,7 @@ class GetParametersForExportResult {
   Aws::Utils::DateTime m_parametersValidUntilTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_signingKeyCertificateHasBeenSet = false;
   bool m_signingKeyCertificateChainHasBeenSet = false;
   bool m_signingKeyAlgorithmHasBeenSet = false;

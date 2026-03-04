@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -181,6 +182,8 @@ class DescribeChannelPlacementGroupSdkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -197,6 +200,7 @@ class DescribeChannelPlacementGroupSdkResult {
   ChannelPlacementGroupState m_state{ChannelPlacementGroupState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_channelsHasBeenSet = false;
   bool m_clusterIdHasBeenSet = false;

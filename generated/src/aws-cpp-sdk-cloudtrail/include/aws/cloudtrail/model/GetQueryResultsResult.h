@@ -7,6 +7,7 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/model/QueryStatistics.h>
 #include <aws/cloudtrail/model/QueryStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -135,6 +136,8 @@ class GetQueryResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   QueryStatus m_queryStatus{QueryStatus::NOT_SET};
 
@@ -147,6 +150,7 @@ class GetQueryResultsResult {
   Aws::String m_errorMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_queryStatusHasBeenSet = false;
   bool m_queryStatisticsHasBeenSet = false;
   bool m_queryResultRowsHasBeenSet = false;

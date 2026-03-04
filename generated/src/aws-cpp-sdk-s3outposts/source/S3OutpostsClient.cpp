@@ -83,7 +83,7 @@ S3OutpostsClient::S3OutpostsClient(const std::shared_ptr<AWSCredentialsProvider>
 }
 
 /* Legacy constructors due deprecation */
-S3OutpostsClient::S3OutpostsClient(const Client::ClientConfiguration& clientConfiguration)
+S3OutpostsClient::S3OutpostsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -95,7 +95,7 @@ S3OutpostsClient::S3OutpostsClient(const Client::ClientConfiguration& clientConf
   init(m_clientConfiguration);
 }
 
-S3OutpostsClient::S3OutpostsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+S3OutpostsClient::S3OutpostsClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -106,7 +106,7 @@ S3OutpostsClient::S3OutpostsClient(const AWSCredentials& credentials, const Clie
 }
 
 S3OutpostsClient::S3OutpostsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                   const Client::ClientConfiguration& clientConfiguration)
+                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/ContactMetricResult.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -104,6 +105,8 @@ class GetContactMetricsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ContactMetricResult> m_metricResults;
 
@@ -112,6 +115,7 @@ class GetContactMetricsResult {
   Aws::String m_arn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metricResultsHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;

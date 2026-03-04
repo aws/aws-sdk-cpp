@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
@@ -122,6 +123,8 @@ class GetBucketWebsiteResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RedirectAllRequestsTo m_redirectAllRequestsTo;
 
@@ -132,6 +135,7 @@ class GetBucketWebsiteResult {
   Aws::Vector<RoutingRule> m_routingRules;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_redirectAllRequestsToHasBeenSet = false;
   bool m_indexDocumentHasBeenSet = false;
   bool m_errorDocumentHasBeenSet = false;

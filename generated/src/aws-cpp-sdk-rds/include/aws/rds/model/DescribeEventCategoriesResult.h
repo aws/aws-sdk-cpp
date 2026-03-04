@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/EventCategoriesMap.h>
@@ -71,10 +72,13 @@ class DescribeEventCategoriesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<EventCategoriesMap> m_eventCategoriesMapList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventCategoriesMapListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

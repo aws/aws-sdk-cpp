@@ -114,7 +114,7 @@ ResourceExplorer2Client::ResourceExplorer2Client(const std::shared_ptr<AWSCreden
 }
 
 /* Legacy constructors due deprecation */
-ResourceExplorer2Client::ResourceExplorer2Client(const Client::ClientConfiguration& clientConfiguration)
+ResourceExplorer2Client::ResourceExplorer2Client(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -126,7 +126,8 @@ ResourceExplorer2Client::ResourceExplorer2Client(const Client::ClientConfigurati
   init(m_clientConfiguration);
 }
 
-ResourceExplorer2Client::ResourceExplorer2Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+ResourceExplorer2Client::ResourceExplorer2Client(const AWSCredentials& credentials,
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -137,7 +138,7 @@ ResourceExplorer2Client::ResourceExplorer2Client(const AWSCredentials& credentia
 }
 
 ResourceExplorer2Client::ResourceExplorer2Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                 const Client::ClientConfiguration& clientConfiguration)
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

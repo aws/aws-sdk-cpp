@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -183,6 +184,8 @@ class GetOutboundExternalLinkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_gatewayId;
 
@@ -201,6 +204,7 @@ class GetOutboundExternalLinkResult {
   LinkLogSettings m_logSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayIdHasBeenSet = false;
   bool m_linkIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

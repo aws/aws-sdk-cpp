@@ -55,5 +55,9 @@ Aws::String CreateModelInvocationJobRequest::SerializePayload() const {
     payload.WithArray("tags", std::move(tagsJsonList));
   }
 
+  if (m_modelInvocationTypeHasBeenSet) {
+    payload.WithString("modelInvocationType", ModelInvocationTypeMapper::GetNameForModelInvocationType(m_modelInvocationType));
+  }
+
   return payload.View().WriteReadable();
 }

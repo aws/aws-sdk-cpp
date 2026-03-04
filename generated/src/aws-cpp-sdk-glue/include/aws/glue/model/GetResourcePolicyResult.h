@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
@@ -109,6 +110,8 @@ class GetResourcePolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_policyInJson;
 
@@ -119,6 +122,7 @@ class GetResourcePolicyResult {
   Aws::Utils::DateTime m_updateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyInJsonHasBeenSet = false;
   bool m_policyHashHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;

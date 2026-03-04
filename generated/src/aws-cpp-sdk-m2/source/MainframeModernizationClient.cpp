@@ -121,7 +121,7 @@ MainframeModernizationClient::MainframeModernizationClient(
 }
 
 /* Legacy constructors due deprecation */
-MainframeModernizationClient::MainframeModernizationClient(const Client::ClientConfiguration& clientConfiguration)
+MainframeModernizationClient::MainframeModernizationClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -134,7 +134,7 @@ MainframeModernizationClient::MainframeModernizationClient(const Client::ClientC
 }
 
 MainframeModernizationClient::MainframeModernizationClient(const AWSCredentials& credentials,
-                                                           const Client::ClientConfiguration& clientConfiguration)
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -145,7 +145,7 @@ MainframeModernizationClient::MainframeModernizationClient(const AWSCredentials&
 }
 
 MainframeModernizationClient::MainframeModernizationClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                           const Client::ClientConfiguration& clientConfiguration)
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

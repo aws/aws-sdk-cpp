@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
@@ -216,6 +217,8 @@ class DeleteUserGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_userGroupId;
 
@@ -236,6 +239,7 @@ class DeleteUserGroupResult {
   Aws::String m_aRN;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userGroupIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_engineHasBeenSet = false;

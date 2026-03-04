@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/ReservationAggregates.h>
 #include <aws/ce/model/UtilizationByTime.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -102,6 +103,8 @@ class GetReservationUtilizationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<UtilizationByTime> m_utilizationsByTime;
 
@@ -110,6 +113,7 @@ class GetReservationUtilizationResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_utilizationsByTimeHasBeenSet = false;
   bool m_totalHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

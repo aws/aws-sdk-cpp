@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -202,6 +203,8 @@ class DetachVolumeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_deleteOnTermination{false};
 
@@ -222,6 +225,7 @@ class DetachVolumeResponse {
   Aws::Utils::DateTime m_attachTime{};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deleteOnTerminationHasBeenSet = false;
   bool m_associatedResourceHasBeenSet = false;
   bool m_instanceOwningServiceHasBeenSet = false;

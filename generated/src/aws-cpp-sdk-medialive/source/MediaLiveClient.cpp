@@ -201,7 +201,7 @@ MediaLiveClient::MediaLiveClient(const std::shared_ptr<AWSCredentialsProvider>& 
 }
 
 /* Legacy constructors due deprecation */
-MediaLiveClient::MediaLiveClient(const Client::ClientConfiguration& clientConfiguration)
+MediaLiveClient::MediaLiveClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -213,7 +213,7 @@ MediaLiveClient::MediaLiveClient(const Client::ClientConfiguration& clientConfig
   init(m_clientConfiguration);
 }
 
-MediaLiveClient::MediaLiveClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+MediaLiveClient::MediaLiveClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -224,7 +224,7 @@ MediaLiveClient::MediaLiveClient(const AWSCredentials& credentials, const Client
 }
 
 MediaLiveClient::MediaLiveClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Client::ClientConfiguration& clientConfiguration)
+                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class ExtendLicenseConsumptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_licenseConsumptionToken;
 
   Aws::String m_expiration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_licenseConsumptionTokenHasBeenSet = false;
   bool m_expirationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

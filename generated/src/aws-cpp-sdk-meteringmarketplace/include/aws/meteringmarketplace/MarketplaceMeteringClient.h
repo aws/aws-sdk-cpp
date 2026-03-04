@@ -43,17 +43,18 @@ namespace MarketplaceMetering {
  * </p> <p> <i>ResolveCustomer</i> </p> <ul> <li> <p>Resolves the registration
  * token that the buyer submits through the browser during the registration
  * process. Obtains a <code>CustomerIdentifier</code> along with the
- * <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p> </li> <li>
- * <p>Called from: SaaS application during the registration process</p> </li> <li>
- * <p>Supported product type: SaaS</p> </li> <li> <p>Vendor-metered tagging: Not
- * applicable</p> </li> </ul> <p> <b>Entitlement and metering for paid container
- * products</b> </p> <p> <i>RegisteredUsage</i> </p> <ul> <li> <p>Provides software
- * entitlement and metering. Paid container software products sold through Amazon
- * Web Services Marketplace must integrate with the Marketplace Metering Service
- * and call the <code>RegisterUsage</code> operation. Free and Bring Your Own
- * License model (BYOL) products for Amazon ECS or Amazon EKS aren't required to
- * call <code>RegisterUsage</code>. However, you can do so if you want to receive
- * usage data in your seller reports. For more information about using the
+ * <code>CustomerAWSAccountId</code>, <code>ProductCode</code>, and
+ * <code>LicenseArn</code>.</p> </li> <li> <p>Called from: SaaS application during
+ * the registration process</p> </li> <li> <p>Supported product type: SaaS</p>
+ * </li> <li> <p>Vendor-metered tagging: Not applicable</p> </li> </ul> <p>
+ * <b>Entitlement and metering for paid container products</b> </p> <p>
+ * <i>RegisteredUsage</i> </p> <ul> <li> <p>Provides software entitlement and
+ * metering. Paid container software products sold through Amazon Web Services
+ * Marketplace must integrate with the Marketplace Metering Service and call the
+ * <code>RegisterUsage</code> operation. Free and Bring Your Own License model
+ * (BYOL) products for Amazon ECS or Amazon EKS aren't required to call
+ * <code>RegisterUsage</code>. However, you can do so if you want to receive usage
+ * data in your seller reports. For more information about using the
  * <code>RegisterUsage</code> operation, see <a
  * href="https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html">Container-based
  * products</a>.</p> </li> <li> <p>Called from: Paid container software
@@ -141,26 +142,28 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
   virtual ~MarketplaceMeteringClient();
 
   /**
-   *  <p> The <code>CustomerIdentifier</code> and
-   * <code>CustomerAWSAccountID</code> are mutually exclusive parameters. You must
-   * use one or the other, but not both in the same API request. For new
-   * implementations, we recommend using the <code>CustomerAWSAccountID</code>. Your
-   * current integration will continue to work. When updating your implementation,
-   * consider migrating to <code>CustomerAWSAccountID</code> for improved
-   * integration. </p>  <p>To post metering records for customers, SaaS
-   * applications call <code>BatchMeterUsage</code>, which is used for metering SaaS
-   * flexible consumption pricing (FCP). Identical requests are idempotent and can be
-   * retried with the same records or a subset of records. Each
-   * <code>BatchMeterUsage</code> request is for only one product. If you want to
-   * meter usage for multiple products, you must make multiple
-   * <code>BatchMeterUsage</code> calls.</p> <p>Usage records should be submitted in
-   * quick succession following a recorded event. Usage records aren't accepted 6
-   * hours or more after an event.</p> <p> <code>BatchMeterUsage</code> can process
-   * up to 25 <code>UsageRecords</code> at a time, and each request must be less than
-   * 1 MB in size. Optionally, you can have multiple usage allocations for usage data
-   * that's split into buckets according to predefined tags.</p> <p>
-   * <code>BatchMeterUsage</code> returns a list of <code>UsageRecordResult</code>
-   * objects, which have each <code>UsageRecord</code>. It also returns a list of
+   *  <p>Amazon Web Services Marketplace is introducing Concurrent
+   * Agreements, enabling buyers to make multiple purchases per Amazon Web Services
+   * account. Starting June 1, 2026, new SaaS products must use
+   * <code>CustomerAWSAccountId</code> (instead of <code>CustomerIdentifier</code>),
+   * <code>LicenseArn</code> (instead of <code>ProductCode</code>) to support this
+   * feature. Existing integrations will continue to work. Review the new integration
+   * for Concurrent Agreements <a
+   * href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.</p>
+   *  <p>To post metering records for customers, SaaS applications call
+   * <code>BatchMeterUsage</code>, which is used for metering SaaS flexible
+   * consumption pricing (FCP). Identical requests are idempotent and can be retried
+   * with the same records or a subset of records. Each <code>BatchMeterUsage</code>
+   * request is for only one product. If you want to meter usage for multiple
+   * products, you must make multiple <code>BatchMeterUsage</code> calls.</p>
+   * <p>Usage records should be submitted in quick succession following a recorded
+   * event. Usage records aren't accepted 6 hours or more after an event.</p> <p>
+   * <code>BatchMeterUsage</code> can process up to 25 <code>UsageRecords</code> at a
+   * time, and each request must be less than 1 MB in size. Optionally, you can have
+   * multiple usage allocations for usage data that's split into buckets according to
+   * predefined tags.</p> <p> <code>BatchMeterUsage</code> returns a list of
+   * <code>UsageRecordResult</code> objects, which have each
+   * <code>UsageRecord</code>. It also returns a list of
    * <code>UnprocessedRecords</code>, which indicate errors on the service side that
    * should be retried.</p> <p>For Amazon Web Services Regions that support
    * <code>BatchMeterUsage</code>, see <a
@@ -340,9 +343,10 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
    * registration process. When a buyer visits your website during the registration
    * process, the buyer submits a registration token through their browser. The
    * registration token is resolved through this API to obtain a
-   * <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code>
-   * and <code>ProductCode</code>.</p>  <p>To successfully resolve the token,
-   * the API must be called from the account that was used to publish the SaaS
+   * <code>CustomerIdentifier</code> along with the
+   * <code>CustomerAWSAccountId</code>, <code>ProductCode</code>, and
+   * <code>LicenseArn</code>.</p>  <p>To successfully resolve the token, the
+   * API must be called from the account that was used to publish the SaaS
    * application. For an example of using <code>ResolveCustomer</code>, see <a
    * href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-resolvecustomer-example">
    * ResolveCustomer code example</a> in the <i>Amazon Web Services Marketplace

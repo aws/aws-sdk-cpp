@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/location/LocationService_EXPORTS.h>
@@ -87,12 +88,15 @@ class SearchPlaceIndexForPositionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SearchPlaceIndexForPositionSummary m_summary;
 
   Aws::Vector<SearchForPositionResult> m_results;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_summaryHasBeenSet = false;
   bool m_resultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

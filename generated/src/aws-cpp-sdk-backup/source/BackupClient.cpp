@@ -186,7 +186,7 @@ BackupClient::BackupClient(const std::shared_ptr<AWSCredentialsProvider>& creden
 }
 
 /* Legacy constructors due deprecation */
-BackupClient::BackupClient(const Client::ClientConfiguration& clientConfiguration)
+BackupClient::BackupClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -198,7 +198,7 @@ BackupClient::BackupClient(const Client::ClientConfiguration& clientConfiguratio
   init(m_clientConfiguration);
 }
 
-BackupClient::BackupClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+BackupClient::BackupClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -209,7 +209,7 @@ BackupClient::BackupClient(const AWSCredentials& credentials, const Client::Clie
 }
 
 BackupClient::BackupClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                           const Client::ClientConfiguration& clientConfiguration)
+                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

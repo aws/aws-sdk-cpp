@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/healthlake/model/ListFHIRDatastoresPaginationTraits.h>
 #include <aws/healthlake/model/ListFHIRExportJobsPaginationTraits.h>
@@ -26,6 +27,7 @@ class HealthLakePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFHIRDatastoresRequest,
                                     Pagination::ListFHIRDatastoresPaginationTraits<DerivedClient>>
   ListFHIRDatastoresPaginator(const Model::ListFHIRDatastoresRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFHIRDatastoresRequest,
                                              Pagination::ListFHIRDatastoresPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class HealthLakePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFHIRExportJobsRequest,
                                     Pagination::ListFHIRExportJobsPaginationTraits<DerivedClient>>
   ListFHIRExportJobsPaginator(const Model::ListFHIRExportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFHIRExportJobsRequest,
                                              Pagination::ListFHIRExportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +51,7 @@ class HealthLakePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFHIRImportJobsRequest,
                                     Pagination::ListFHIRImportJobsPaginationTraits<DerivedClient>>
   ListFHIRImportJobsPaginator(const Model::ListFHIRImportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFHIRImportJobsRequest,
                                              Pagination::ListFHIRImportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

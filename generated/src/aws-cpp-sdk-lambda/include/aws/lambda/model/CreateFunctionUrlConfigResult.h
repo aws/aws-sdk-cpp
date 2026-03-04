@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/Cors.h>
@@ -157,6 +158,8 @@ class CreateFunctionUrlConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_functionUrl;
 
@@ -171,6 +174,7 @@ class CreateFunctionUrlConfigResult {
   InvokeMode m_invokeMode{InvokeMode::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_functionUrlHasBeenSet = false;
   bool m_functionArnHasBeenSet = false;
   bool m_authTypeHasBeenSet = false;

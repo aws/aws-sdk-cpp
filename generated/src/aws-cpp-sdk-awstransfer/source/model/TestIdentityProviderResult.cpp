@@ -20,6 +20,7 @@ using namespace Aws;
 TestIdentityProviderResult::TestIdentityProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestIdentityProviderResult& TestIdentityProviderResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Response")) {
     m_response = jsonValue.GetString("Response");

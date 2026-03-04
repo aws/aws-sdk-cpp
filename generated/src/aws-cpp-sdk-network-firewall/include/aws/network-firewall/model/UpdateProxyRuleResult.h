@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
@@ -109,6 +110,8 @@ class UpdateProxyRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ProxyRule m_proxyRule;
 
@@ -117,6 +120,7 @@ class UpdateProxyRuleResult {
   Aws::String m_updateToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_proxyRuleHasBeenSet = false;
   bool m_removedConditionsHasBeenSet = false;
   bool m_updateTokenHasBeenSet = false;

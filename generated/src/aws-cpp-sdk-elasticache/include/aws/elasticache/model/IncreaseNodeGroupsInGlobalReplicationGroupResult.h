@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/GlobalReplicationGroup.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
@@ -58,10 +59,13 @@ class IncreaseNodeGroupsInGlobalReplicationGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   GlobalReplicationGroup m_globalReplicationGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_globalReplicationGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/AgentStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -111,6 +112,8 @@ class PrepareAgentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_agentId;
 
@@ -121,6 +124,7 @@ class PrepareAgentResult {
   Aws::Utils::DateTime m_preparedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentIdHasBeenSet = false;
   bool m_agentStatusHasBeenSet = false;
   bool m_agentVersionHasBeenSet = false;

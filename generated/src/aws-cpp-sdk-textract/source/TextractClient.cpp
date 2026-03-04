@@ -103,7 +103,7 @@ TextractClient::TextractClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-TextractClient::TextractClient(const Client::ClientConfiguration& clientConfiguration)
+TextractClient::TextractClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -115,7 +115,7 @@ TextractClient::TextractClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-TextractClient::TextractClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+TextractClient::TextractClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -126,7 +126,7 @@ TextractClient::TextractClient(const AWSCredentials& credentials, const Client::
 }
 
 TextractClient::TextractClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

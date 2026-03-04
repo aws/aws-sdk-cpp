@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/RouterNetworkInterface.h>
@@ -59,10 +60,13 @@ class UpdateRouterNetworkInterfaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RouterNetworkInterface m_routerNetworkInterface;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_routerNetworkInterfaceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

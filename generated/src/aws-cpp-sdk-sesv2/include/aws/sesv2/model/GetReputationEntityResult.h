@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/ReputationEntity.h>
@@ -65,10 +66,13 @@ class GetReputationEntityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReputationEntity m_reputationEntity;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reputationEntityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

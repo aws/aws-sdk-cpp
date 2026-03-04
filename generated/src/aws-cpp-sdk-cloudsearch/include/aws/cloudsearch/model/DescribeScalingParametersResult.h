@@ -7,6 +7,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
 #include <aws/cloudsearch/model/ScalingParametersStatus.h>
+#include <aws/core/http/HttpResponse.h>
 
 #include <utility>
 
@@ -63,10 +64,13 @@ class DescribeScalingParametersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ScalingParametersStatus m_scalingParameters;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_scalingParametersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

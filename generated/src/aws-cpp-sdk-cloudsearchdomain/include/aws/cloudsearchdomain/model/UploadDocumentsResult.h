@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/cloudsearchdomain/model/DocumentServiceWarning.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -119,6 +120,8 @@ class UploadDocumentsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_status;
 
@@ -129,6 +132,7 @@ class UploadDocumentsResult {
   Aws::Vector<DocumentServiceWarning> m_warnings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_addsHasBeenSet = false;
   bool m_deletesHasBeenSet = false;

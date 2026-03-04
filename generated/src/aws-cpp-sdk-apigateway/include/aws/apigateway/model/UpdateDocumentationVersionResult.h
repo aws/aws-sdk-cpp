@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -97,6 +98,8 @@ class UpdateDocumentationVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_version;
 
@@ -105,6 +108,7 @@ class UpdateDocumentationVersionResult {
   Aws::String m_description;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_versionHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

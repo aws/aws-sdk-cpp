@@ -20,6 +20,7 @@ using namespace Aws;
 DiscoverInputSchemaResult::DiscoverInputSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("InputSchema")) {
     m_inputSchema = jsonValue.GetObject("InputSchema");
@@ -29,13 +30,14 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator=(const Aws::Amazo
     Aws::Utils::Array<JsonView> parsedInputRecordsJsonList = jsonValue.GetArray("ParsedInputRecords");
     for (unsigned parsedInputRecordsIndex = 0; parsedInputRecordsIndex < parsedInputRecordsJsonList.GetLength();
          ++parsedInputRecordsIndex) {
-      Aws::Utils::Array<JsonView> parsedInputRecordJsonList = parsedInputRecordsJsonList[parsedInputRecordsIndex].AsArray();
-      Aws::Vector<Aws::String> parsedInputRecordList;
-      parsedInputRecordList.reserve((size_t)parsedInputRecordJsonList.GetLength());
-      for (unsigned parsedInputRecordIndex = 0; parsedInputRecordIndex < parsedInputRecordJsonList.GetLength(); ++parsedInputRecordIndex) {
-        parsedInputRecordList.push_back(parsedInputRecordJsonList[parsedInputRecordIndex].AsString());
+      Aws::Utils::Array<JsonView> parsedInputRecord2JsonList = parsedInputRecordsJsonList[parsedInputRecordsIndex].AsArray();
+      Aws::Vector<Aws::String> parsedInputRecord2List;
+      parsedInputRecord2List.reserve((size_t)parsedInputRecord2JsonList.GetLength());
+      for (unsigned parsedInputRecord2Index = 0; parsedInputRecord2Index < parsedInputRecord2JsonList.GetLength();
+           ++parsedInputRecord2Index) {
+        parsedInputRecord2List.push_back(parsedInputRecord2JsonList[parsedInputRecord2Index].AsString());
       }
-      m_parsedInputRecords.push_back(std::move(parsedInputRecordList));
+      m_parsedInputRecords.push_back(std::move(parsedInputRecord2List));
     }
     m_parsedInputRecordsHasBeenSet = true;
   }

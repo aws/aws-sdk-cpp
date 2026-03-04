@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
@@ -162,6 +163,8 @@ class GetInvoiceUnitResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_invoiceUnitArn;
 
@@ -178,6 +181,7 @@ class GetInvoiceUnitResult {
   Aws::Utils::DateTime m_lastModified{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_invoiceUnitArnHasBeenSet = false;
   bool m_invoiceReceiverHasBeenSet = false;
   bool m_nameHasBeenSet = false;

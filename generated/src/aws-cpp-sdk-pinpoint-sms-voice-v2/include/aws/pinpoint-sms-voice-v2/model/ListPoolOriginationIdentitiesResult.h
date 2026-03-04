@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
@@ -118,6 +119,8 @@ class ListPoolOriginationIdentitiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_poolArn;
 
@@ -128,6 +131,7 @@ class ListPoolOriginationIdentitiesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_poolArnHasBeenSet = false;
   bool m_poolIdHasBeenSet = false;
   bool m_originationIdentitiesHasBeenSet = false;

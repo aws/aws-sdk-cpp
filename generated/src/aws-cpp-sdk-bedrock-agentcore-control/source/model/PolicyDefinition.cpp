@@ -22,6 +22,10 @@ PolicyDefinition& PolicyDefinition::operator=(JsonView jsonValue) {
     m_cedar = jsonValue.GetObject("cedar");
     m_cedarHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("policyGeneration")) {
+    m_policyGeneration = jsonValue.GetObject("policyGeneration");
+    m_policyGenerationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue PolicyDefinition::Jsonize() const {
 
   if (m_cedarHasBeenSet) {
     payload.WithObject("cedar", m_cedar.Jsonize());
+  }
+
+  if (m_policyGenerationHasBeenSet) {
+    payload.WithObject("policyGeneration", m_policyGeneration.Jsonize());
   }
 
   return payload;

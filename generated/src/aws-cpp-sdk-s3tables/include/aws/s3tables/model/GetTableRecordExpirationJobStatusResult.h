@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
@@ -112,6 +113,8 @@ class GetTableRecordExpirationJobStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TableRecordExpirationJobStatus m_status{TableRecordExpirationJobStatus::NOT_SET};
 
@@ -122,6 +125,7 @@ class GetTableRecordExpirationJobStatusResult {
   TableRecordExpirationJobMetrics m_metrics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_lastRunTimestampHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;

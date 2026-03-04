@@ -113,7 +113,7 @@ PartnerCentralAccountClient::PartnerCentralAccountClient(
 }
 
 /* Legacy constructors due deprecation */
-PartnerCentralAccountClient::PartnerCentralAccountClient(const Client::ClientConfiguration& clientConfiguration)
+PartnerCentralAccountClient::PartnerCentralAccountClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -126,7 +126,7 @@ PartnerCentralAccountClient::PartnerCentralAccountClient(const Client::ClientCon
 }
 
 PartnerCentralAccountClient::PartnerCentralAccountClient(const AWSCredentials& credentials,
-                                                         const Client::ClientConfiguration& clientConfiguration)
+                                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -137,7 +137,7 @@ PartnerCentralAccountClient::PartnerCentralAccountClient(const AWSCredentials& c
 }
 
 PartnerCentralAccountClient::PartnerCentralAccountClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                         const Client::ClientConfiguration& clientConfiguration)
+                                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

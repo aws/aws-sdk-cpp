@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -343,6 +344,8 @@ class StartExportTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_exportTaskIdentifier;
 
@@ -377,6 +380,7 @@ class StartExportTaskResult {
   ExportSourceType m_sourceType{ExportSourceType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_exportTaskIdentifierHasBeenSet = false;
   bool m_sourceArnHasBeenSet = false;
   bool m_exportOnlyHasBeenSet = false;

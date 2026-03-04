@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 #include <aws/lookoutequipment/model/RetrainingSchedulerStatus.h>
@@ -90,6 +91,8 @@ class StopRetrainingSchedulerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_modelName;
 
@@ -98,6 +101,7 @@ class StopRetrainingSchedulerResult {
   RetrainingSchedulerStatus m_status{RetrainingSchedulerStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelNameHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

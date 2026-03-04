@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/CopyObjectResultDetails.h>
@@ -241,6 +242,8 @@ class CopyObjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_expiration;
 
@@ -265,6 +268,7 @@ class CopyObjectResult {
   CopyObjectResultDetails m_copyObjectResultDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_expirationHasBeenSet = false;
   bool m_copySourceVersionIdHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;

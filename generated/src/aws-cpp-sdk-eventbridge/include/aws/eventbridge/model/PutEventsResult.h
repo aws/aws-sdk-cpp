@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
@@ -84,12 +85,15 @@ class PutEventsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_failedEntryCount{0};
 
   Aws::Vector<PutEventsResultEntry> m_entries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_failedEntryCountHasBeenSet = false;
   bool m_entriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

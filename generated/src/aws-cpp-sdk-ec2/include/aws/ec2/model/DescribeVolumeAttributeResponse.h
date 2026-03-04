@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -101,6 +102,8 @@ class DescribeVolumeAttributeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AttributeBooleanValue m_autoEnableIO;
 
@@ -109,6 +112,7 @@ class DescribeVolumeAttributeResponse {
   Aws::String m_volumeId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_autoEnableIOHasBeenSet = false;
   bool m_productCodesHasBeenSet = false;
   bool m_volumeIdHasBeenSet = false;

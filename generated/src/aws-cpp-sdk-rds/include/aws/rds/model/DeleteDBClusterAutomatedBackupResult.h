@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/DBClusterAutomatedBackup.h>
 #include <aws/rds/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class DeleteDBClusterAutomatedBackupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DBClusterAutomatedBackup m_dBClusterAutomatedBackup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBClusterAutomatedBackupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/waf-regional/model/WebACL.h>
@@ -78,12 +79,15 @@ class CreateWebACLResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   WebACL m_webACL;
 
   Aws::String m_changeToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_webACLHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

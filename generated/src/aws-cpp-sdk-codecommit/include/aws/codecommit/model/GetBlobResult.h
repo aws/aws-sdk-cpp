@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -63,10 +64,13 @@ class GetBlobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_content{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

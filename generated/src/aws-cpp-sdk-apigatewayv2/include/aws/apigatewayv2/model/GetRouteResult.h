@@ -7,6 +7,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/apigatewayv2/model/AuthorizationType.h>
 #include <aws/apigatewayv2/model/ParameterConstraints.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -294,6 +295,8 @@ class GetRouteResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_apiGatewayManaged{false};
 
@@ -322,6 +325,7 @@ class GetRouteResult {
   Aws::String m_target;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_apiGatewayManagedHasBeenSet = false;
   bool m_apiKeyRequiredHasBeenSet = false;
   bool m_authorizationScopesHasBeenSet = false;

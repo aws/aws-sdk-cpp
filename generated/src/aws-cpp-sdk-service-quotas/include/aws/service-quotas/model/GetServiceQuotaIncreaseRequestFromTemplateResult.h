@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
 #include <aws/service-quotas/model/ServiceQuotaIncreaseRequestInTemplate.h>
@@ -63,10 +64,13 @@ class GetServiceQuotaIncreaseRequestFromTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ServiceQuotaIncreaseRequestInTemplate m_serviceQuotaIncreaseRequestInTemplate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serviceQuotaIncreaseRequestInTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

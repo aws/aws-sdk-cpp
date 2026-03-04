@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -134,15 +135,15 @@ class UpdateConfigurationPolicyResult {
 
   ///@{
   /**
-   * <p> An object that defines how Security Hub is configured. It includes whether
-   * Security Hub is enabled or disabled, a list of enabled security standards, a
-   * list of enabled or disabled security controls, and a list of custom parameter
-   * values for specified controls. If the request included a list of security
-   * controls that are enabled in the configuration policy, Security Hub disables all
-   * other controls (including newly released controls). If the request included a
-   * list of security controls that are disabled in the configuration policy,
-   * Security Hub enables all other controls (including newly released controls).
-   * </p>
+   * <p> An object that defines how Security Hub CSPM is configured. It includes
+   * whether Security Hub CSPM is enabled or disabled, a list of enabled security
+   * standards, a list of enabled or disabled security controls, and a list of custom
+   * parameter values for specified controls. If the request included a list of
+   * security controls that are enabled in the configuration policy, Security Hub
+   * CSPM disables all other controls (including newly released controls). If the
+   * request included a list of security controls that are disabled in the
+   * configuration policy, Security Hub CSPM enables all other controls (including
+   * newly released controls). </p>
    */
   inline const Policy& GetConfigurationPolicy() const { return m_configurationPolicy; }
   template <typename ConfigurationPolicyT = Policy>
@@ -171,6 +172,8 @@ class UpdateConfigurationPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -187,6 +190,7 @@ class UpdateConfigurationPolicyResult {
   Policy m_configurationPolicy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;

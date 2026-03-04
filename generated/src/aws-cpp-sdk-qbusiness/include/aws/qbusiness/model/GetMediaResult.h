@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
@@ -75,12 +76,15 @@ class GetMediaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_mediaBytes{};
 
   Aws::String m_mediaMimeType;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mediaBytesHasBeenSet = false;
   bool m_mediaMimeTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

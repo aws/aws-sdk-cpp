@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/workspaces-thin-client/model/ListDevicesPaginationTraits.h>
 #include <aws/workspaces-thin-client/model/ListEnvironmentsPaginationTraits.h>
@@ -25,6 +26,7 @@ class WorkSpacesThinClientPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesRequest, Pagination::ListDevicesPaginationTraits<DerivedClient>>
   ListDevicesPaginator(const Model::ListDevicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesRequest,
                                              Pagination::ListDevicesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -36,6 +38,7 @@ class WorkSpacesThinClientPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentsRequest,
                                     Pagination::ListEnvironmentsPaginationTraits<DerivedClient>>
   ListEnvironmentsPaginator(const Model::ListEnvironmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentsRequest,
                                              Pagination::ListEnvironmentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -47,6 +50,7 @@ class WorkSpacesThinClientPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSoftwareSetsRequest,
                                     Pagination::ListSoftwareSetsPaginationTraits<DerivedClient>>
   ListSoftwareSetsPaginator(const Model::ListSoftwareSetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSoftwareSetsRequest,
                                              Pagination::ListSoftwareSetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 
@@ -112,6 +113,8 @@ class GenerateAs2805KekValidationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_keyArn;
 
@@ -122,6 +125,7 @@ class GenerateAs2805KekValidationResult {
   Aws::String m_randomKeyReceive;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyArnHasBeenSet = false;
   bool m_keyCheckValueHasBeenSet = false;
   bool m_randomKeySendHasBeenSet = false;

@@ -7,6 +7,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/apigatewayv2/model/AuthorizerType.h>
 #include <aws/apigatewayv2/model/JWTConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -278,6 +279,8 @@ class UpdateAuthorizerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_authorizerCredentialsArn;
 
@@ -302,6 +305,7 @@ class UpdateAuthorizerResult {
   Aws::String m_name;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authorizerCredentialsArnHasBeenSet = false;
   bool m_authorizerIdHasBeenSet = false;
   bool m_authorizerPayloadFormatVersionHasBeenSet = false;

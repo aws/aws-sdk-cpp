@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
@@ -253,6 +254,8 @@ class PutSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_contentType;
 
@@ -277,6 +280,7 @@ class PutSessionResult {
   Aws::String m_activeContexts;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentTypeHasBeenSet = false;
   bool m_intentNameHasBeenSet = false;
   bool m_slotsHasBeenSet = false;

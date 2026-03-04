@@ -36,13 +36,13 @@ class ParameterConfiguration {
   ///@{
   /**
    * <p> Identifies whether a control parameter uses a custom user-defined value or
-   * subscribes to the default Security Hub behavior.</p> <p>When
+   * subscribes to the default Security Hub CSPM behavior.</p> <p>When
    * <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default
-   * behavior can be a specific Security Hub default value, or the default behavior
-   * can be to ignore a specific parameter. When <code>ValueType</code> is set equal
-   * to <code>DEFAULT</code>, Security Hub ignores user-provided input for the
-   * <code>Value</code> field.</p> <p>When <code>ValueType</code> is set equal to
-   * <code>CUSTOM</code>, the <code>Value</code> field can't be empty.</p>
+   * behavior can be a specific Security Hub CSPM default value, or the default
+   * behavior can be to ignore a specific parameter. When <code>ValueType</code> is
+   * set equal to <code>DEFAULT</code>, Security Hub CSPM ignores user-provided input
+   * for the <code>Value</code> field.</p> <p>When <code>ValueType</code> is set
+   * equal to <code>CUSTOM</code>, the <code>Value</code> field can't be empty.</p>
    */
   inline ParameterValueType GetValueType() const { return m_valueType; }
   inline bool ValueTypeHasBeenSet() const { return m_valueTypeHasBeenSet; }

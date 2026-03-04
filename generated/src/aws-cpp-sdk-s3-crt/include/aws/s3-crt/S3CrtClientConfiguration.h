@@ -24,7 +24,7 @@ enum class US_EAST_1_REGIONAL_ENDPOINT_OPTION {
 struct AWS_S3CRT_API S3CrtClientConfiguration : public Aws::Client::GenericClientConfiguration {
   using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
-  S3CrtClientConfiguration(const Client::ClientConfigurationInitValues& configuration = {});
+  S3CrtClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
    * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -46,7 +46,7 @@ struct AWS_S3CRT_API S3CrtClientConfiguration : public Aws::Client::GenericClien
    * Converting constructors for compatibility with a legacy code
    */
   S3CrtClientConfiguration(
-      const Client::ClientConfiguration& config,
+      const Aws::Client::ClientConfiguration& config,
       Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
       bool iUseVirtualAddressing = true,
       US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption = US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);

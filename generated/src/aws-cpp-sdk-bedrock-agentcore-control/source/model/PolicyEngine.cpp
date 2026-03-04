@@ -53,6 +53,10 @@ PolicyEngine& PolicyEngine::operator=(JsonView jsonValue) {
     }
     m_statusReasonsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("encryptionKeyArn")) {
+    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +97,10 @@ JsonValue PolicyEngine::Jsonize() const {
       statusReasonsJsonList[statusReasonsIndex].AsString(m_statusReasons[statusReasonsIndex]);
     }
     payload.WithArray("statusReasons", std::move(statusReasonsJsonList));
+  }
+
+  if (m_encryptionKeyArnHasBeenSet) {
+    payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
   }
 
   return payload;

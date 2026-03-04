@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
 #include <aws/ssm-incidents/model/TimelineEvent.h>
@@ -58,10 +59,13 @@ class GetTimelineEventResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TimelineEvent m_event;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

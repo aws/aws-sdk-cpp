@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpointStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -91,6 +92,8 @@ class DeleteAgentRuntimeEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AgentRuntimeEndpointStatus m_status{AgentRuntimeEndpointStatus::NOT_SET};
 
@@ -99,6 +102,7 @@ class DeleteAgentRuntimeEndpointResult {
   Aws::String m_endpointName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_agentRuntimeIdHasBeenSet = false;
   bool m_endpointNameHasBeenSet = false;

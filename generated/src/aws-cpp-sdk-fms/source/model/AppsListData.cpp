@@ -48,13 +48,13 @@ AppsListData& AppsListData::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("PreviousAppsList")) {
     Aws::Map<Aws::String, JsonView> previousAppsListJsonMap = jsonValue.GetObject("PreviousAppsList").GetAllObjects();
     for (auto& previousAppsListItem : previousAppsListJsonMap) {
-      Aws::Utils::Array<JsonView> appsListJsonList = previousAppsListItem.second.AsArray();
-      Aws::Vector<App> appsListList;
-      appsListList.reserve((size_t)appsListJsonList.GetLength());
-      for (unsigned appsListIndex = 0; appsListIndex < appsListJsonList.GetLength(); ++appsListIndex) {
-        appsListList.push_back(appsListJsonList[appsListIndex].AsObject());
+      Aws::Utils::Array<JsonView> appsList2JsonList = previousAppsListItem.second.AsArray();
+      Aws::Vector<App> appsList2List;
+      appsList2List.reserve((size_t)appsList2JsonList.GetLength());
+      for (unsigned appsList2Index = 0; appsList2Index < appsList2JsonList.GetLength(); ++appsList2Index) {
+        appsList2List.push_back(appsList2JsonList[appsList2Index].AsObject());
       }
-      m_previousAppsList[previousAppsListItem.first] = std::move(appsListList);
+      m_previousAppsList[previousAppsListItem.first] = std::move(appsList2List);
     }
     m_previousAppsListHasBeenSet = true;
   }

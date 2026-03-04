@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
 
@@ -102,6 +103,8 @@ class UploadArchiveResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_location;
 
@@ -110,6 +113,7 @@ class UploadArchiveResult {
   Aws::String m_archiveId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_locationHasBeenSet = false;
   bool m_checksumHasBeenSet = false;
   bool m_archiveIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
@@ -162,6 +163,8 @@ class ExecuteStatementResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Aws::Vector<Field>> m_records;
 
@@ -174,6 +177,7 @@ class ExecuteStatementResult {
   Aws::String m_formattedRecords;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recordsHasBeenSet = false;
   bool m_columnMetadataHasBeenSet = false;
   bool m_numberOfRecordsUpdatedHasBeenSet = false;

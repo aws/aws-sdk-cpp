@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/frauddetector/model/ModelTypeEnum.h>
@@ -107,6 +108,8 @@ class CreateModelVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_modelId;
 
@@ -117,6 +120,7 @@ class CreateModelVersionResult {
   Aws::String m_status;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modelIdHasBeenSet = false;
   bool m_modelTypeHasBeenSet = false;
   bool m_modelVersionNumberHasBeenSet = false;

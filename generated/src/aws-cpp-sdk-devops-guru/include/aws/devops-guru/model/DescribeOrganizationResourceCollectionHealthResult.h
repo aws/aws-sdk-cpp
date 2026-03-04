@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
@@ -187,6 +188,8 @@ class DescribeOrganizationResourceCollectionHealthResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<CloudFormationHealth> m_cloudFormation;
 
@@ -199,6 +202,7 @@ class DescribeOrganizationResourceCollectionHealthResult {
   Aws::Vector<TagHealth> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_cloudFormationHasBeenSet = false;
   bool m_serviceHasBeenSet = false;
   bool m_accountHasBeenSet = false;

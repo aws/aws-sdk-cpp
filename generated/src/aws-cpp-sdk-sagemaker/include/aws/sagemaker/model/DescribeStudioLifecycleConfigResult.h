@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -146,6 +147,8 @@ class DescribeStudioLifecycleConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_studioLifecycleConfigArn;
 
@@ -160,6 +163,7 @@ class DescribeStudioLifecycleConfigResult {
   StudioLifecycleConfigAppType m_studioLifecycleConfigAppType{StudioLifecycleConfigAppType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_studioLifecycleConfigArnHasBeenSet = false;
   bool m_studioLifecycleConfigNameHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

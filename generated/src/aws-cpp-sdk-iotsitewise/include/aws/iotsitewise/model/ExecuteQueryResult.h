@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
@@ -106,6 +107,8 @@ class ExecuteQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ColumnInfo> m_columns;
 
@@ -114,6 +117,7 @@ class ExecuteQueryResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_columnsHasBeenSet = false;
   bool m_rowsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

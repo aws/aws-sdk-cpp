@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -274,6 +275,8 @@ class GetPackageVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_packageVersionArn;
 
@@ -302,6 +305,7 @@ class GetPackageVersionResult {
   Aws::String m_recipe;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_packageVersionArnHasBeenSet = false;
   bool m_packageNameHasBeenSet = false;
   bool m_versionNameHasBeenSet = false;

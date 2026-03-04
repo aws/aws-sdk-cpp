@@ -20,6 +20,7 @@ using namespace Aws;
 CreateChallengeResult::CreateChallengeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 CreateChallengeResult& CreateChallengeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Challenge")) {
     m_challenge = jsonValue.GetObject("Challenge");

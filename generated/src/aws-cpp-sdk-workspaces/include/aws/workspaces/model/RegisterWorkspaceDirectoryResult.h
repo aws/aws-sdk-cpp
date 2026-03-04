@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/WorkspaceDirectoryState.h>
@@ -73,12 +74,15 @@ class RegisterWorkspaceDirectoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_directoryId;
 
   WorkspaceDirectoryState m_state{WorkspaceDirectoryState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_directoryIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

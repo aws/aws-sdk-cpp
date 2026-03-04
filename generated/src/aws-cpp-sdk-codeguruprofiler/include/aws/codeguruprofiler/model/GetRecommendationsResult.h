@@ -7,6 +7,7 @@
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
 #include <aws/codeguruprofiler/model/Anomaly.h>
 #include <aws/codeguruprofiler/model/Recommendation.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -151,6 +152,8 @@ class GetRecommendationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Anomaly> m_anomalies;
 
@@ -163,6 +166,7 @@ class GetRecommendationsResult {
   Aws::Vector<Recommendation> m_recommendations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_anomaliesHasBeenSet = false;
   bool m_profileEndTimeHasBeenSet = false;
   bool m_profileStartTimeHasBeenSet = false;

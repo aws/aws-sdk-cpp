@@ -79,7 +79,7 @@ EKSAuthClient::EKSAuthClient(const std::shared_ptr<AWSCredentialsProvider>& cred
 }
 
 /* Legacy constructors due deprecation */
-EKSAuthClient::EKSAuthClient(const Client::ClientConfiguration& clientConfiguration)
+EKSAuthClient::EKSAuthClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -91,7 +91,7 @@ EKSAuthClient::EKSAuthClient(const Client::ClientConfiguration& clientConfigurat
   init(m_clientConfiguration);
 }
 
-EKSAuthClient::EKSAuthClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+EKSAuthClient::EKSAuthClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -102,7 +102,7 @@ EKSAuthClient::EKSAuthClient(const AWSCredentials& credentials, const Client::Cl
 }
 
 EKSAuthClient::EKSAuthClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                             const Client::ClientConfiguration& clientConfiguration)
+                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

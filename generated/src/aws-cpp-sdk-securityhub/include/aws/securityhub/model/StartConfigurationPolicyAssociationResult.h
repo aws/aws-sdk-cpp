@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -85,8 +86,8 @@ class StartConfigurationPolicyAssociationResult {
   ///@{
   /**
    * <p> Indicates whether the association between the specified target and the
-   * configuration was directly applied by the Security Hub delegated administrator
-   * or inherited from a parent. </p>
+   * configuration was directly applied by the Security Hub CSPM delegated
+   * administrator or inherited from a parent. </p>
    */
   inline AssociationType GetAssociationType() const { return m_associationType; }
   inline void SetAssociationType(AssociationType value) {
@@ -165,6 +166,8 @@ class StartConfigurationPolicyAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_configurationPolicyId;
 
@@ -181,6 +184,7 @@ class StartConfigurationPolicyAssociationResult {
   Aws::String m_associationStatusMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationPolicyIdHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;

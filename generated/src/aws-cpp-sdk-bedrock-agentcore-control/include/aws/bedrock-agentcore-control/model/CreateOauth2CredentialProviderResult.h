@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -130,6 +131,8 @@ class CreateOauth2CredentialProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Secret m_clientSecretArn;
 
@@ -142,6 +145,7 @@ class CreateOauth2CredentialProviderResult {
   Oauth2ProviderConfigOutput m_oauth2ProviderConfigOutput;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientSecretArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_credentialProviderArnHasBeenSet = false;

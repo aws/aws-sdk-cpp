@@ -138,7 +138,7 @@ CleanRoomsMLClient::CleanRoomsMLClient(const std::shared_ptr<AWSCredentialsProvi
 }
 
 /* Legacy constructors due deprecation */
-CleanRoomsMLClient::CleanRoomsMLClient(const Client::ClientConfiguration& clientConfiguration)
+CleanRoomsMLClient::CleanRoomsMLClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -150,7 +150,7 @@ CleanRoomsMLClient::CleanRoomsMLClient(const Client::ClientConfiguration& client
   init(m_clientConfiguration);
 }
 
-CleanRoomsMLClient::CleanRoomsMLClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+CleanRoomsMLClient::CleanRoomsMLClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -161,7 +161,7 @@ CleanRoomsMLClient::CleanRoomsMLClient(const AWSCredentials& credentials, const 
 }
 
 CleanRoomsMLClient::CleanRoomsMLClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                       const Client::ClientConfiguration& clientConfiguration)
+                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

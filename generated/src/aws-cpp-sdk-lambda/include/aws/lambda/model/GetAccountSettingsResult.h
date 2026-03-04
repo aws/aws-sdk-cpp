@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/AccountLimit.h>
@@ -76,12 +77,15 @@ class GetAccountSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AccountLimit m_accountLimit;
 
   AccountUsage m_accountUsage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountLimitHasBeenSet = false;
   bool m_accountUsageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

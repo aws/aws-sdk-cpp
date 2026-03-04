@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
@@ -57,7 +58,7 @@ class ListStreamsResult {
   /**
    * <p> A pagination token that can be used in a subsequent <code>ListStreams</code>
    * request. This token is returned if the response contains more streams than can
-   * be returned in a single response based on the <code>MaxResults</code> parameter.
+   * be returned in a single response based on the <code>maxResults</code> parameter.
    * </p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
@@ -87,12 +88,15 @@ class ListStreamsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Stream> m_streams;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_streamsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

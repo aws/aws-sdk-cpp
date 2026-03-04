@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 
@@ -91,6 +92,8 @@ class GetAgentTaskResponseUrlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_agentId;
 
@@ -99,6 +102,7 @@ class GetAgentTaskResponseUrlResult {
   Aws::String m_presignedLogUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentIdHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
   bool m_presignedLogUrlHasBeenSet = false;

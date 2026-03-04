@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/redshift-serverless/model/ListCustomDomainAssociationsPaginationTraits.h>
 #include <aws/redshift-serverless/model/ListEndpointAccessPaginationTraits.h>
@@ -37,6 +38,7 @@ class RedshiftServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomDomainAssociationsRequest,
                                     Pagination::ListCustomDomainAssociationsPaginationTraits<DerivedClient>>
   ListCustomDomainAssociationsPaginator(const Model::ListCustomDomainAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomDomainAssociationsRequest,
                                              Pagination::ListCustomDomainAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +50,7 @@ class RedshiftServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEndpointAccessRequest,
                                     Pagination::ListEndpointAccessPaginationTraits<DerivedClient>>
   ListEndpointAccessPaginator(const Model::ListEndpointAccessRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEndpointAccessRequest,
                                              Pagination::ListEndpointAccessPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +62,7 @@ class RedshiftServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedWorkgroupsRequest,
                                     Pagination::ListManagedWorkgroupsPaginationTraits<DerivedClient>>
   ListManagedWorkgroupsPaginator(const Model::ListManagedWorkgroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedWorkgroupsRequest,
                                              Pagination::ListManagedWorkgroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -69,6 +73,7 @@ class RedshiftServerlessPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNamespacesRequest, Pagination::ListNamespacesPaginationTraits<DerivedClient>>
   ListNamespacesPaginator(const Model::ListNamespacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNamespacesRequest,
                                              Pagination::ListNamespacesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -80,6 +85,7 @@ class RedshiftServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPointsRequest,
                                     Pagination::ListRecoveryPointsPaginationTraits<DerivedClient>>
   ListRecoveryPointsPaginator(const Model::ListRecoveryPointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecoveryPointsRequest,
                                              Pagination::ListRecoveryPointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -91,6 +97,7 @@ class RedshiftServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReservationOfferingsRequest,
                                     Pagination::ListReservationOfferingsPaginationTraits<DerivedClient>>
   ListReservationOfferingsPaginator(const Model::ListReservationOfferingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReservationOfferingsRequest,
                                              Pagination::ListReservationOfferingsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -102,6 +109,7 @@ class RedshiftServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReservationsRequest,
                                     Pagination::ListReservationsPaginationTraits<DerivedClient>>
   ListReservationsPaginator(const Model::ListReservationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReservationsRequest,
                                              Pagination::ListReservationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -113,6 +121,7 @@ class RedshiftServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScheduledActionsRequest,
                                     Pagination::ListScheduledActionsPaginationTraits<DerivedClient>>
   ListScheduledActionsPaginator(const Model::ListScheduledActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScheduledActionsRequest,
                                              Pagination::ListScheduledActionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -124,6 +133,7 @@ class RedshiftServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSnapshotCopyConfigurationsRequest,
                                     Pagination::ListSnapshotCopyConfigurationsPaginationTraits<DerivedClient>>
   ListSnapshotCopyConfigurationsPaginator(const Model::ListSnapshotCopyConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSnapshotCopyConfigurationsRequest,
                                              Pagination::ListSnapshotCopyConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -134,6 +144,7 @@ class RedshiftServerlessPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSnapshotsRequest, Pagination::ListSnapshotsPaginationTraits<DerivedClient>>
   ListSnapshotsPaginator(const Model::ListSnapshotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSnapshotsRequest,
                                              Pagination::ListSnapshotsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -145,6 +156,7 @@ class RedshiftServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTableRestoreStatusRequest,
                                     Pagination::ListTableRestoreStatusPaginationTraits<DerivedClient>>
   ListTableRestoreStatusPaginator(const Model::ListTableRestoreStatusRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTableRestoreStatusRequest,
                                              Pagination::ListTableRestoreStatusPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -155,6 +167,7 @@ class RedshiftServerlessPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTracksRequest, Pagination::ListTracksPaginationTraits<DerivedClient>>
   ListTracksPaginator(const Model::ListTracksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTracksRequest,
                                              Pagination::ListTracksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -166,6 +179,7 @@ class RedshiftServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsageLimitsRequest,
                                     Pagination::ListUsageLimitsPaginationTraits<DerivedClient>>
   ListUsageLimitsPaginator(const Model::ListUsageLimitsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsageLimitsRequest,
                                              Pagination::ListUsageLimitsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -176,6 +190,7 @@ class RedshiftServerlessPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkgroupsRequest, Pagination::ListWorkgroupsPaginationTraits<DerivedClient>>
   ListWorkgroupsPaginator(const Model::ListWorkgroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkgroupsRequest,
                                              Pagination::ListWorkgroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

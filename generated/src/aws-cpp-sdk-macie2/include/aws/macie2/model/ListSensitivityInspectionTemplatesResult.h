@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/macie2/Macie2_EXPORTS.h>
@@ -87,12 +88,15 @@ class ListSensitivityInspectionTemplatesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<SensitivityInspectionTemplatesEntry> m_sensitivityInspectionTemplates;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_sensitivityInspectionTemplatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

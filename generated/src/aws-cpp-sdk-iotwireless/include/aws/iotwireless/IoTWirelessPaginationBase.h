@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/iotwireless/model/ListDestinationsPaginationTraits.h>
 #include <aws/iotwireless/model/ListDeviceProfilesPaginationTraits.h>
@@ -33,6 +34,7 @@ class IoTWirelessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDestinationsRequest,
                                     Pagination::ListDestinationsPaginationTraits<DerivedClient>>
   ListDestinationsPaginator(const Model::ListDestinationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDestinationsRequest,
                                              Pagination::ListDestinationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -44,6 +46,7 @@ class IoTWirelessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeviceProfilesRequest,
                                     Pagination::ListDeviceProfilesPaginationTraits<DerivedClient>>
   ListDeviceProfilesPaginator(const Model::ListDeviceProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeviceProfilesRequest,
                                              Pagination::ListDeviceProfilesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -54,6 +57,7 @@ class IoTWirelessPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFuotaTasksRequest, Pagination::ListFuotaTasksPaginationTraits<DerivedClient>>
   ListFuotaTasksPaginator(const Model::ListFuotaTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFuotaTasksRequest,
                                              Pagination::ListFuotaTasksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -65,6 +69,7 @@ class IoTWirelessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMulticastGroupsRequest,
                                     Pagination::ListMulticastGroupsPaginationTraits<DerivedClient>>
   ListMulticastGroupsPaginator(const Model::ListMulticastGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMulticastGroupsRequest,
                                              Pagination::ListMulticastGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -76,6 +81,7 @@ class IoTWirelessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMulticastGroupsByFuotaTaskRequest,
                                     Pagination::ListMulticastGroupsByFuotaTaskPaginationTraits<DerivedClient>>
   ListMulticastGroupsByFuotaTaskPaginator(const Model::ListMulticastGroupsByFuotaTaskRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMulticastGroupsByFuotaTaskRequest,
                                              Pagination::ListMulticastGroupsByFuotaTaskPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -87,6 +93,7 @@ class IoTWirelessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworkAnalyzerConfigurationsRequest,
                                     Pagination::ListNetworkAnalyzerConfigurationsPaginationTraits<DerivedClient>>
   ListNetworkAnalyzerConfigurationsPaginator(const Model::ListNetworkAnalyzerConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworkAnalyzerConfigurationsRequest,
                                              Pagination::ListNetworkAnalyzerConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -98,6 +105,7 @@ class IoTWirelessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuedMessagesRequest,
                                     Pagination::ListQueuedMessagesPaginationTraits<DerivedClient>>
   ListQueuedMessagesPaginator(const Model::ListQueuedMessagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuedMessagesRequest,
                                              Pagination::ListQueuedMessagesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -109,6 +117,7 @@ class IoTWirelessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServiceProfilesRequest,
                                     Pagination::ListServiceProfilesPaginationTraits<DerivedClient>>
   ListServiceProfilesPaginator(const Model::ListServiceProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServiceProfilesRequest,
                                              Pagination::ListServiceProfilesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -120,6 +129,7 @@ class IoTWirelessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWirelessDevicesRequest,
                                     Pagination::ListWirelessDevicesPaginationTraits<DerivedClient>>
   ListWirelessDevicesPaginator(const Model::ListWirelessDevicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWirelessDevicesRequest,
                                              Pagination::ListWirelessDevicesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -131,6 +141,7 @@ class IoTWirelessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWirelessGatewaysRequest,
                                     Pagination::ListWirelessGatewaysPaginationTraits<DerivedClient>>
   ListWirelessGatewaysPaginator(const Model::ListWirelessGatewaysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWirelessGatewaysRequest,
                                              Pagination::ListWirelessGatewaysPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

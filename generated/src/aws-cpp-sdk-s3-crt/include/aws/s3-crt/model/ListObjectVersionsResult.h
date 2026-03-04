@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
@@ -315,6 +316,8 @@ class ListObjectVersionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_isTruncated{false};
 
@@ -345,6 +348,7 @@ class ListObjectVersionsResult {
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_isTruncatedHasBeenSet = false;
   bool m_keyMarkerHasBeenSet = false;
   bool m_versionIdMarkerHasBeenSet = false;

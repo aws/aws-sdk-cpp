@@ -51,6 +51,10 @@ KeyspacesCellValue& KeyspacesCellValue::operator=(JsonView jsonValue) {
     m_doubleT = jsonValue.GetString("doubleT");
     m_doubleTHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("durationT")) {
+    m_durationT = jsonValue.GetString("durationT");
+    m_durationTHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("floatT")) {
     m_floatT = jsonValue.GetString("floatT");
     m_floatTHasBeenSet = true;
@@ -170,6 +174,10 @@ JsonValue KeyspacesCellValue::Jsonize() const {
 
   if (m_doubleTHasBeenSet) {
     payload.WithString("doubleT", m_doubleT);
+  }
+
+  if (m_durationTHasBeenSet) {
+    payload.WithString("durationT", m_durationT);
   }
 
   if (m_floatTHasBeenSet) {

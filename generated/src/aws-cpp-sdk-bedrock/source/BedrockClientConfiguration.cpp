@@ -22,7 +22,7 @@ void BedrockClientConfiguration::LoadBedrockSpecificConfig(const Aws::String& in
   }
 }
 
-BedrockClientConfiguration::BedrockClientConfiguration(const Client::ClientConfigurationInitValues& configuration)
+BedrockClientConfiguration::BedrockClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
     : BaseClientConfigClass(configuration) {
   LoadBedrockSpecificConfig(this->profileName);
 }
@@ -37,7 +37,7 @@ BedrockClientConfiguration::BedrockClientConfiguration(bool useSmartDefaults, co
   LoadBedrockSpecificConfig(this->profileName);
 }
 
-BedrockClientConfiguration::BedrockClientConfiguration(const Client::ClientConfiguration& config) : BaseClientConfigClass(config) {
+BedrockClientConfiguration::BedrockClientConfiguration(const Aws::Client::ClientConfiguration& config) : BaseClientConfigClass(config) {
   LoadBedrockSpecificConfig(this->profileName);
 }
 

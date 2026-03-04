@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/IoT_EXPORTS.h>
@@ -158,6 +159,8 @@ class DescribeScheduledAuditResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AuditFrequency m_frequency{AuditFrequency::NOT_SET};
 
@@ -172,6 +175,7 @@ class DescribeScheduledAuditResult {
   Aws::String m_scheduledAuditArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_frequencyHasBeenSet = false;
   bool m_dayOfMonthHasBeenSet = false;
   bool m_dayOfWeekHasBeenSet = false;

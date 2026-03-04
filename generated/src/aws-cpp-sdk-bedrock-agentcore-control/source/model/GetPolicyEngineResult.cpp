@@ -20,6 +20,7 @@ using namespace Aws;
 GetPolicyEngineResult::GetPolicyEngineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPolicyEngineResult& GetPolicyEngineResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("policyEngineId")) {
     m_policyEngineId = jsonValue.GetString("policyEngineId");
@@ -55,6 +56,10 @@ GetPolicyEngineResult& GetPolicyEngineResult::operator=(const Aws::AmazonWebServ
       m_statusReasons.push_back(statusReasonsJsonList[statusReasonsIndex].AsString());
     }
     m_statusReasonsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("encryptionKeyArn")) {
+    m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
+    m_encryptionKeyArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

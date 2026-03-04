@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/partnercentral-selling/model/ListEngagementByAcceptingInvitationTasksPaginationTraits.h>
 #include <aws/partnercentral-selling/model/ListEngagementFromOpportunityTasksPaginationTraits.h>
@@ -34,6 +35,7 @@ class PartnerCentralSellingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementByAcceptingInvitationTasksRequest,
                                     Pagination::ListEngagementByAcceptingInvitationTasksPaginationTraits<DerivedClient>>
   ListEngagementByAcceptingInvitationTasksPaginator(const Model::ListEngagementByAcceptingInvitationTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementByAcceptingInvitationTasksRequest,
                                              Pagination::ListEngagementByAcceptingInvitationTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -45,6 +47,7 @@ class PartnerCentralSellingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementFromOpportunityTasksRequest,
                                     Pagination::ListEngagementFromOpportunityTasksPaginationTraits<DerivedClient>>
   ListEngagementFromOpportunityTasksPaginator(const Model::ListEngagementFromOpportunityTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementFromOpportunityTasksRequest,
                                              Pagination::ListEngagementFromOpportunityTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -56,6 +59,7 @@ class PartnerCentralSellingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementInvitationsRequest,
                                     Pagination::ListEngagementInvitationsPaginationTraits<DerivedClient>>
   ListEngagementInvitationsPaginator(const Model::ListEngagementInvitationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementInvitationsRequest,
                                              Pagination::ListEngagementInvitationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -67,6 +71,7 @@ class PartnerCentralSellingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementMembersRequest,
                                     Pagination::ListEngagementMembersPaginationTraits<DerivedClient>>
   ListEngagementMembersPaginator(const Model::ListEngagementMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementMembersRequest,
                                              Pagination::ListEngagementMembersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -78,6 +83,7 @@ class PartnerCentralSellingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementResourceAssociationsRequest,
                                     Pagination::ListEngagementResourceAssociationsPaginationTraits<DerivedClient>>
   ListEngagementResourceAssociationsPaginator(const Model::ListEngagementResourceAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementResourceAssociationsRequest,
                                              Pagination::ListEngagementResourceAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -89,6 +95,7 @@ class PartnerCentralSellingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementsRequest,
                                     Pagination::ListEngagementsPaginationTraits<DerivedClient>>
   ListEngagementsPaginator(const Model::ListEngagementsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEngagementsRequest,
                                              Pagination::ListEngagementsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -100,6 +107,7 @@ class PartnerCentralSellingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpportunitiesRequest,
                                     Pagination::ListOpportunitiesPaginationTraits<DerivedClient>>
   ListOpportunitiesPaginator(const Model::ListOpportunitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpportunitiesRequest,
                                              Pagination::ListOpportunitiesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -111,6 +119,7 @@ class PartnerCentralSellingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpportunityFromEngagementTasksRequest,
                                     Pagination::ListOpportunityFromEngagementTasksPaginationTraits<DerivedClient>>
   ListOpportunityFromEngagementTasksPaginator(const Model::ListOpportunityFromEngagementTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOpportunityFromEngagementTasksRequest,
                                              Pagination::ListOpportunityFromEngagementTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -122,6 +131,7 @@ class PartnerCentralSellingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceSnapshotJobsRequest,
                                     Pagination::ListResourceSnapshotJobsPaginationTraits<DerivedClient>>
   ListResourceSnapshotJobsPaginator(const Model::ListResourceSnapshotJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceSnapshotJobsRequest,
                                              Pagination::ListResourceSnapshotJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -133,6 +143,7 @@ class PartnerCentralSellingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceSnapshotsRequest,
                                     Pagination::ListResourceSnapshotsPaginationTraits<DerivedClient>>
   ListResourceSnapshotsPaginator(const Model::ListResourceSnapshotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceSnapshotsRequest,
                                              Pagination::ListResourceSnapshotsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -143,6 +154,7 @@ class PartnerCentralSellingPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSolutionsRequest, Pagination::ListSolutionsPaginationTraits<DerivedClient>>
   ListSolutionsPaginator(const Model::ListSolutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSolutionsRequest,
                                              Pagination::ListSolutionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

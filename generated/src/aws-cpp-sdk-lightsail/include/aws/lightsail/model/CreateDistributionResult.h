@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/LightsailDistribution.h>
@@ -78,12 +79,15 @@ class CreateDistributionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LightsailDistribution m_distribution;
 
   Operation m_operation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_distributionHasBeenSet = false;
   bool m_operationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

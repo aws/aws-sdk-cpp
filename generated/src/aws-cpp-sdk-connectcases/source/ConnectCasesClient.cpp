@@ -121,7 +121,7 @@ ConnectCasesClient::ConnectCasesClient(const std::shared_ptr<AWSCredentialsProvi
 }
 
 /* Legacy constructors due deprecation */
-ConnectCasesClient::ConnectCasesClient(const Client::ClientConfiguration& clientConfiguration)
+ConnectCasesClient::ConnectCasesClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -133,7 +133,7 @@ ConnectCasesClient::ConnectCasesClient(const Client::ClientConfiguration& client
   init(m_clientConfiguration);
 }
 
-ConnectCasesClient::ConnectCasesClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+ConnectCasesClient::ConnectCasesClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -144,7 +144,7 @@ ConnectCasesClient::ConnectCasesClient(const AWSCredentials& credentials, const 
 }
 
 ConnectCasesClient::ConnectCasesClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                       const Client::ClientConfiguration& clientConfiguration)
+                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -117,6 +117,31 @@ class CreateOdbPeeringConnectionRequest : public OdbRequest {
 
   ///@{
   /**
+   * <p>The unique identifier of the VPC route table for which a route to the ODB
+   * network is automatically created during peering connection establishment.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPeerNetworkRouteTableIds() const { return m_peerNetworkRouteTableIds; }
+  inline bool PeerNetworkRouteTableIdsHasBeenSet() const { return m_peerNetworkRouteTableIdsHasBeenSet; }
+  template <typename PeerNetworkRouteTableIdsT = Aws::Vector<Aws::String>>
+  void SetPeerNetworkRouteTableIds(PeerNetworkRouteTableIdsT&& value) {
+    m_peerNetworkRouteTableIdsHasBeenSet = true;
+    m_peerNetworkRouteTableIds = std::forward<PeerNetworkRouteTableIdsT>(value);
+  }
+  template <typename PeerNetworkRouteTableIdsT = Aws::Vector<Aws::String>>
+  CreateOdbPeeringConnectionRequest& WithPeerNetworkRouteTableIds(PeerNetworkRouteTableIdsT&& value) {
+    SetPeerNetworkRouteTableIds(std::forward<PeerNetworkRouteTableIdsT>(value));
+    return *this;
+  }
+  template <typename PeerNetworkRouteTableIdsT = Aws::String>
+  CreateOdbPeeringConnectionRequest& AddPeerNetworkRouteTableIds(PeerNetworkRouteTableIdsT&& value) {
+    m_peerNetworkRouteTableIdsHasBeenSet = true;
+    m_peerNetworkRouteTableIds.emplace_back(std::forward<PeerNetworkRouteTableIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The client token for the ODB peering connection request.</p>
    * <p>Constraints:</p> <ul> <li> <p>Must be unique for each request.</p> </li>
    * </ul>
@@ -167,6 +192,8 @@ class CreateOdbPeeringConnectionRequest : public OdbRequest {
 
   Aws::Vector<Aws::String> m_peerNetworkCidrsToBeAdded;
 
+  Aws::Vector<Aws::String> m_peerNetworkRouteTableIds;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -174,6 +201,7 @@ class CreateOdbPeeringConnectionRequest : public OdbRequest {
   bool m_peerNetworkIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_peerNetworkCidrsToBeAddedHasBeenSet = false;
+  bool m_peerNetworkRouteTableIdsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };

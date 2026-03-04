@@ -33,17 +33,17 @@ RowLevelPermissionTagConfiguration& RowLevelPermissionTagConfiguration::operator
     Aws::Utils::Array<JsonView> tagRuleConfigurationsJsonList = jsonValue.GetArray("TagRuleConfigurations");
     for (unsigned tagRuleConfigurationsIndex = 0; tagRuleConfigurationsIndex < tagRuleConfigurationsJsonList.GetLength();
          ++tagRuleConfigurationsIndex) {
-      Aws::Utils::Array<JsonView> rowLevelPermissionTagRuleConfigurationJsonList =
+      Aws::Utils::Array<JsonView> rowLevelPermissionTagRuleConfiguration2JsonList =
           tagRuleConfigurationsJsonList[tagRuleConfigurationsIndex].AsArray();
-      Aws::Vector<Aws::String> rowLevelPermissionTagRuleConfigurationList;
-      rowLevelPermissionTagRuleConfigurationList.reserve((size_t)rowLevelPermissionTagRuleConfigurationJsonList.GetLength());
-      for (unsigned rowLevelPermissionTagRuleConfigurationIndex = 0;
-           rowLevelPermissionTagRuleConfigurationIndex < rowLevelPermissionTagRuleConfigurationJsonList.GetLength();
-           ++rowLevelPermissionTagRuleConfigurationIndex) {
-        rowLevelPermissionTagRuleConfigurationList.push_back(
-            rowLevelPermissionTagRuleConfigurationJsonList[rowLevelPermissionTagRuleConfigurationIndex].AsString());
+      Aws::Vector<Aws::String> rowLevelPermissionTagRuleConfiguration2List;
+      rowLevelPermissionTagRuleConfiguration2List.reserve((size_t)rowLevelPermissionTagRuleConfiguration2JsonList.GetLength());
+      for (unsigned rowLevelPermissionTagRuleConfiguration2Index = 0;
+           rowLevelPermissionTagRuleConfiguration2Index < rowLevelPermissionTagRuleConfiguration2JsonList.GetLength();
+           ++rowLevelPermissionTagRuleConfiguration2Index) {
+        rowLevelPermissionTagRuleConfiguration2List.push_back(
+            rowLevelPermissionTagRuleConfiguration2JsonList[rowLevelPermissionTagRuleConfiguration2Index].AsString());
       }
-      m_tagRuleConfigurations.push_back(std::move(rowLevelPermissionTagRuleConfigurationList));
+      m_tagRuleConfigurations.push_back(std::move(rowLevelPermissionTagRuleConfiguration2List));
     }
     m_tagRuleConfigurationsHasBeenSet = true;
   }

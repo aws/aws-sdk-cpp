@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -87,12 +88,15 @@ class DescribeClusterDbRevisionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_marker;
 
   Aws::Vector<ClusterDbRevision> m_clusterDbRevisions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_markerHasBeenSet = false;
   bool m_clusterDbRevisionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

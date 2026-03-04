@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/snowball/model/Address.h>
@@ -59,10 +60,13 @@ class DescribeAddressResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Address m_address;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_addressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

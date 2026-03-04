@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -119,6 +120,8 @@ class SearchFacesByImageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   BoundingBox m_searchedFaceBoundingBox;
 
@@ -129,6 +132,7 @@ class SearchFacesByImageResult {
   Aws::String m_faceModelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_searchedFaceBoundingBoxHasBeenSet = false;
   bool m_searchedFaceConfidenceHasBeenSet = false;
   bool m_faceMatchesHasBeenSet = false;

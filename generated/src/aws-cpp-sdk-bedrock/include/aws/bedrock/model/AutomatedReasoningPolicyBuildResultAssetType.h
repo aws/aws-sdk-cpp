@@ -16,7 +16,10 @@ enum class AutomatedReasoningPolicyBuildResultAssetType {
   QUALITY_REPORT,
   POLICY_DEFINITION,
   GENERATED_TEST_CASES,
-  POLICY_SCENARIOS
+  POLICY_SCENARIOS,
+  FIDELITY_REPORT,
+  ASSET_MANIFEST,
+  SOURCE_DOCUMENT
 };
 
 namespace AutomatedReasoningPolicyBuildResultAssetTypeMapper {

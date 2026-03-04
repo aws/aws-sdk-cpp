@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/m2/model/DataSetExportSummary.h>
@@ -127,6 +128,8 @@ class GetDataSetExportTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_kmsKeyArn;
 
@@ -139,6 +142,7 @@ class GetDataSetExportTaskResult {
   Aws::String m_taskId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/model/CloudWatchOutputConfig.h>
@@ -388,6 +389,8 @@ class GetCommandInvocationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_commandId;
 
@@ -424,6 +427,7 @@ class GetCommandInvocationResult {
   CloudWatchOutputConfig m_cloudWatchOutputConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_commandIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
   bool m_commentHasBeenSet = false;

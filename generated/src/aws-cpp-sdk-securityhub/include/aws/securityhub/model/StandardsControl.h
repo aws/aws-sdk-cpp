@@ -57,8 +57,8 @@ class StandardsControl {
   ///@{
   /**
    * <p>The current status of the security standard control. Indicates whether the
-   * control is enabled or disabled. Security Hub does not check against disabled
-   * controls.</p>
+   * control is enabled or disabled. Security Hub CSPM does not check against
+   * disabled controls.</p>
    */
   inline ControlStatus GetControlStatus() const { return m_controlStatus; }
   inline bool ControlStatusHasBeenSet() const { return m_controlStatusHasBeenSet; }
@@ -166,8 +166,8 @@ class StandardsControl {
 
   ///@{
   /**
-   * <p>A link to remediation information for the control in the Security Hub user
-   * documentation.</p>
+   * <p>A link to remediation information for the control in the Security Hub CSPM
+   * user documentation.</p>
    */
   inline const Aws::String& GetRemediationUrl() const { return m_remediationUrl; }
   inline bool RemediationUrlHasBeenSet() const { return m_remediationUrlHasBeenSet; }

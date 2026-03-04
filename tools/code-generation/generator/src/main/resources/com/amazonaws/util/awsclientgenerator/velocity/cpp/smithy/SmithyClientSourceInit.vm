@@ -178,7 +178,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 
 /* Legacy constructors due deprecation */
 #if($serviceModel.metadata.serviceId == "S3")
-${className}::${className}(const Client::ClientConfiguration& clientConfiguration,
+${className}::${className}(const Aws::Client::ClientConfiguration& clientConfiguration,
         Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
         bool useVirtualAddressing /*= true*/,
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
@@ -208,7 +208,7 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
 
 ${className}::${className}(
         const Aws::Auth::AWSCredentials& credentials,
-        const Client::ClientConfiguration& clientConfiguration,
+        const Aws::Client::ClientConfiguration& clientConfiguration,
         Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
         bool useVirtualAddressing /*= true*/,
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
@@ -238,7 +238,7 @@ ${className}::${className}(
 
 ${className}::${className}(
         const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-        const Client::ClientConfiguration& clientConfiguration,
+        const Aws::Client::ClientConfiguration& clientConfiguration,
         Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,
         bool useVirtualAddressing /*= true*/,
         Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption):
@@ -291,7 +291,7 @@ ${className}::${className}(const ${className} &rhs) :
 S3Client::S3Client(${className} &&rhs) noexcept :
     AwsSmithyClientT(std::move(rhs)) {}
 #else
-${className}::${className}(const Client::ClientConfiguration& clientConfiguration) :
+${className}::${className}(const Aws::Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
       GetServiceName(),
       "${metadata.serviceId}",
@@ -315,7 +315,7 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
 {}
 
 ${className}::${className}(const AWSCredentials& credentials,
-                           const Client::ClientConfiguration& clientConfiguration) :
+                           const Aws::Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
         "${metadata.serviceId}",
@@ -344,7 +344,7 @@ ${className}::${className}(const AWSCredentials& credentials,
 {}
 
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                           const Client::ClientConfiguration& clientConfiguration) :
+                           const Aws::Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
         GetServiceName(),
         "${metadata.serviceId}",

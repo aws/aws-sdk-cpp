@@ -34,7 +34,7 @@ struct AWS_TIMESTREAMQUERY_API TimestreamQueryClientConfiguration : public Aws::
     return *this;
   }
 
-  TimestreamQueryClientConfiguration(const Client::ClientConfigurationInitValues& configuration = {});
+  TimestreamQueryClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
    * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -55,7 +55,7 @@ struct AWS_TIMESTREAMQUERY_API TimestreamQueryClientConfiguration : public Aws::
   /**
    * Converting constructors for compatibility with a legacy code
    */
-  TimestreamQueryClientConfiguration(const Client::ClientConfiguration& config);
+  TimestreamQueryClientConfiguration(const Aws::Client::ClientConfiguration& config);
 
   /**
    * Enable endpoint discovery

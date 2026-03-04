@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/DBProxy.h>
 #include <aws/rds/model/ResponseMetadata.h>
@@ -59,10 +60,13 @@ class DeleteDBProxyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DBProxy m_dBProxy;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBProxyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

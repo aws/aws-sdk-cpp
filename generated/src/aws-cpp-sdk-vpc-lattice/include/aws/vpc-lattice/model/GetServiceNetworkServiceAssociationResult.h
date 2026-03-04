@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
@@ -297,6 +298,8 @@ class GetServiceNetworkServiceAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -329,6 +332,7 @@ class GetServiceNetworkServiceAssociationResult {
   Aws::String m_failureCode;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_arnHasBeenSet = false;

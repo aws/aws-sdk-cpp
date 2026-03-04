@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 
@@ -95,6 +96,8 @@ class CreateStorediSCSIVolumeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_volumeARN;
 
@@ -103,6 +106,7 @@ class CreateStorediSCSIVolumeResult {
   Aws::String m_targetARN;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_volumeARNHasBeenSet = false;
   bool m_volumeSizeInBytesHasBeenSet = false;
   bool m_targetARNHasBeenSet = false;

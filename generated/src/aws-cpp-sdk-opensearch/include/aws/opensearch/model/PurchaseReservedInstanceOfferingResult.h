@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
@@ -81,12 +82,15 @@ class PurchaseReservedInstanceOfferingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_reservedInstanceId;
 
   Aws::String m_reservationName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reservedInstanceIdHasBeenSet = false;
   bool m_reservationNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/DkimAttributes.h>
@@ -102,6 +103,8 @@ class CreateEmailIdentityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IdentityType m_identityType{IdentityType::NOT_SET};
 
@@ -110,6 +113,7 @@ class CreateEmailIdentityResult {
   DkimAttributes m_dkimAttributes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityTypeHasBeenSet = false;
   bool m_verifiedForSendingStatusHasBeenSet = false;
   bool m_dkimAttributesHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class AssociateTrustStoreResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_portalArn;
 
   Aws::String m_trustStoreArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_portalArnHasBeenSet = false;
   bool m_trustStoreArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

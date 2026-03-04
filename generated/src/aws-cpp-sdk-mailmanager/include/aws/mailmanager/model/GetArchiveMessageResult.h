@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/mailmanager/model/Envelope.h>
@@ -99,6 +100,8 @@ class GetArchiveMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_messageDownloadLink;
 
@@ -107,6 +110,7 @@ class GetArchiveMessageResult {
   Envelope m_envelope;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_messageDownloadLinkHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
   bool m_envelopeHasBeenSet = false;

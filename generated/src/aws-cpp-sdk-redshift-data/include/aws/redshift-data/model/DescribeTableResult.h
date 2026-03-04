@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
@@ -103,6 +104,8 @@ class DescribeTableResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_tableName;
 
@@ -111,6 +114,7 @@ class DescribeTableResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tableNameHasBeenSet = false;
   bool m_columnListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

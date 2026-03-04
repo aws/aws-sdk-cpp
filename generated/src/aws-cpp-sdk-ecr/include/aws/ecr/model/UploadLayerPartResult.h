@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecr/ECR_EXPORTS.h>
 
@@ -106,6 +107,8 @@ class UploadLayerPartResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_registryId;
 
@@ -116,6 +119,7 @@ class UploadLayerPartResult {
   long long m_lastByteReceived{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_registryIdHasBeenSet = false;
   bool m_repositoryNameHasBeenSet = false;
   bool m_uploadIdHasBeenSet = false;

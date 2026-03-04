@@ -33,12 +33,12 @@ TsvVersionOptions& TsvVersionOptions::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("schema")) {
     Aws::Utils::Array<JsonView> schemaJsonList = jsonValue.GetArray("schema");
     for (unsigned schemaIndex = 0; schemaIndex < schemaJsonList.GetLength(); ++schemaIndex) {
-      Aws::Map<Aws::String, JsonView> schemaItemJsonMap = schemaJsonList[schemaIndex].GetAllObjects();
-      Aws::Map<Aws::String, SchemaValueType> schemaItemMap;
-      for (auto& schemaItemItem : schemaItemJsonMap) {
-        schemaItemMap[schemaItemItem.first] = SchemaValueTypeMapper::GetSchemaValueTypeForName(schemaItemItem.second.AsString());
+      Aws::Map<Aws::String, JsonView> schemaItem2JsonMap = schemaJsonList[schemaIndex].GetAllObjects();
+      Aws::Map<Aws::String, SchemaValueType> schemaItem2Map;
+      for (auto& schemaItem2Item : schemaItem2JsonMap) {
+        schemaItem2Map[schemaItem2Item.first] = SchemaValueTypeMapper::GetSchemaValueTypeForName(schemaItem2Item.second.AsString());
       }
-      m_schema.push_back(std::move(schemaItemMap));
+      m_schema.push_back(std::move(schemaItem2Map));
     }
     m_schemaHasBeenSet = true;
   }

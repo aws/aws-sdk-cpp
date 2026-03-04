@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
@@ -69,10 +70,13 @@ class StartDataCollectionByAgentIdsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<AgentConfigurationStatus> m_agentsConfigurationStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentsConfigurationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

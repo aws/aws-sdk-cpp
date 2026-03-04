@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/timestream-query/model/ScheduledQueryDescription.h>
@@ -58,10 +59,13 @@ class DescribeScheduledQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ScheduledQueryDescription m_scheduledQuery;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_scheduledQueryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

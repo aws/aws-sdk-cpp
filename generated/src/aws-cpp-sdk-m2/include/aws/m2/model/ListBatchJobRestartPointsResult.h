@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
@@ -67,10 +68,13 @@ class ListBatchJobRestartPointsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<JobStep> m_batchJobSteps;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_batchJobStepsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/devops-guru/model/ProactiveInsight.h>
@@ -78,12 +79,15 @@ class DescribeInsightResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ProactiveInsight m_proactiveInsight;
 
   ReactiveInsight m_reactiveInsight;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_proactiveInsightHasBeenSet = false;
   bool m_reactiveInsightHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

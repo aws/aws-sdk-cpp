@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
@@ -124,6 +125,8 @@ class CreateGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Group m_group;
 
@@ -134,6 +137,7 @@ class CreateGroupResult {
   GroupConfiguration m_groupConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_groupHasBeenSet = false;
   bool m_resourceQueryHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

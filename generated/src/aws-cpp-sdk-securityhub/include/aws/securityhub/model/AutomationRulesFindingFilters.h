@@ -39,7 +39,7 @@ class AutomationRulesFindingFilters {
   ///@{
   /**
    * <p> The Amazon Resource Name (ARN) for a third-party product that generated a
-   * finding in Security Hub. </p> <p> Array Members: Minimum number of 1 item.
+   * finding in Security Hub CSPM. </p> <p> Array Members: Minimum number of 1 item.
    * Maximum number of 20 items. </p>
    */
   inline const Aws::Vector<StringFilter>& GetProductArn() const { return m_productArn; }
@@ -144,7 +144,7 @@ class AutomationRulesFindingFilters {
    * that classify a finding. For a list of namespaces, classifiers, and categories,
    * see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types
-   * taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p> <p> Array
+   * taxonomy for ASFF</a> in the <i>Security Hub CSPM User Guide</i>.</p> <p> Array
    * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
    */
   inline const Aws::Vector<StringFilter>& GetType() const { return m_type; }
@@ -172,7 +172,7 @@ class AutomationRulesFindingFilters {
    * <p> A timestamp that indicates when the potential security issue captured by a
    * finding was first observed by the security findings product. </p> <p>For more
    * information about the validation and formatting of timestamp fields in Security
-   * Hub, see <a
+   * Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
    */
@@ -201,7 +201,7 @@ class AutomationRulesFindingFilters {
    * <p> A timestamp that indicates when the security findings provider most recently
    * observed a change in the resource that is involved in the finding. </p> <p>For
    * more information about the validation and formatting of timestamp fields in
-   * Security Hub, see <a
+   * Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
    */
@@ -229,7 +229,7 @@ class AutomationRulesFindingFilters {
   /**
    * <p> A timestamp that indicates when this finding record was created. </p> <p>For
    * more information about the validation and formatting of timestamp fields in
-   * Security Hub, see <a
+   * Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
    */
@@ -257,7 +257,7 @@ class AutomationRulesFindingFilters {
   /**
    * <p> A timestamp that indicates when the finding record was most recently
    * updated. </p> <p>For more information about the validation and formatting of
-   * timestamp fields in Security Hub, see <a
+   * timestamp fields in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
    */
@@ -291,8 +291,8 @@ class AutomationRulesFindingFilters {
    * has low confidence because an actual exfiltration hasn't been verified. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a>
-   * in the <i>Security Hub User Guide</i>.</p> <p> Array Members: Minimum number of
-   * 1 item. Maximum number of 20 items. </p>
+   * in the <i>Security Hub CSPM User Guide</i>.</p> <p> Array Members: Minimum
+   * number of 1 item. Maximum number of 20 items. </p>
    */
   inline const Aws::Vector<NumberFilter>& GetConfidence() const { return m_confidence; }
   inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
@@ -323,8 +323,8 @@ class AutomationRulesFindingFilters {
    * <code>100</code> is reserved for the most critical resources. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a>
-   * in the <i>Security Hub User Guide</i>.</p> <p> Array Members: Minimum number of
-   * 1 item. Maximum number of 20 items. </p>
+   * in the <i>Security Hub CSPM User Guide</i>.</p> <p> Array Members: Minimum
+   * number of 1 item. Maximum number of 20 items. </p>
    */
   inline const Aws::Vector<NumberFilter>& GetCriticality() const { return m_criticality; }
   inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
@@ -425,7 +425,7 @@ class AutomationRulesFindingFilters {
   ///@{
   /**
    * <p> Provides the name of the product that generated the finding. For
-   * control-based findings, the product name is Security Hub. </p> <p> Array
+   * control-based findings, the product name is Security Hub CSPM. </p> <p> Array
    * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
    */
   inline const Aws::Vector<StringFilter>& GetProductName() const { return m_productName; }
@@ -893,7 +893,8 @@ class AutomationRulesFindingFilters {
   ///@{
   /**
    * <p> The timestamp of when the note was updated.</p> <p>For more information
-   * about the validation and formatting of timestamp fields in Security Hub, see <a
+   * about the validation and formatting of timestamp fields in Security Hub CSPM,
+   * see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    * <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
    */

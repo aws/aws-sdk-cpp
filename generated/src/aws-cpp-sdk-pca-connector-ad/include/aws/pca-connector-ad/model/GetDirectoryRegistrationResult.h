@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 #include <aws/pca-connector-ad/model/DirectoryRegistration.h>
@@ -59,10 +60,13 @@ class GetDirectoryRegistrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DirectoryRegistration m_directoryRegistration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_directoryRegistrationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

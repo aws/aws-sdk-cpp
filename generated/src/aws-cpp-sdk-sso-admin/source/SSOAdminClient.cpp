@@ -157,7 +157,7 @@ SSOAdminClient::SSOAdminClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-SSOAdminClient::SSOAdminClient(const Client::ClientConfiguration& clientConfiguration)
+SSOAdminClient::SSOAdminClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -169,7 +169,7 @@ SSOAdminClient::SSOAdminClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-SSOAdminClient::SSOAdminClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SSOAdminClient::SSOAdminClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -180,7 +180,7 @@ SSOAdminClient::SSOAdminClient(const AWSCredentials& credentials, const Client::
 }
 
 SSOAdminClient::SSOAdminClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

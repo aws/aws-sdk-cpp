@@ -30,14 +30,14 @@ MembershipDatasources& MembershipDatasources::operator=(JsonView jsonValue) {
     Aws::Map<Aws::String, JsonView> datasourcePackageIngestHistoryJsonMap =
         jsonValue.GetObject("DatasourcePackageIngestHistory").GetAllObjects();
     for (auto& datasourcePackageIngestHistoryItem : datasourcePackageIngestHistoryJsonMap) {
-      Aws::Map<Aws::String, JsonView> lastIngestStateChangeDatesJsonMap = datasourcePackageIngestHistoryItem.second.GetAllObjects();
-      Aws::Map<DatasourcePackageIngestState, TimestampForCollection> lastIngestStateChangeDatesMap;
-      for (auto& lastIngestStateChangeDatesItem : lastIngestStateChangeDatesJsonMap) {
-        lastIngestStateChangeDatesMap[DatasourcePackageIngestStateMapper::GetDatasourcePackageIngestStateForName(
-            lastIngestStateChangeDatesItem.first)] = lastIngestStateChangeDatesItem.second.AsObject();
+      Aws::Map<Aws::String, JsonView> lastIngestStateChangeDates2JsonMap = datasourcePackageIngestHistoryItem.second.GetAllObjects();
+      Aws::Map<DatasourcePackageIngestState, TimestampForCollection> lastIngestStateChangeDates2Map;
+      for (auto& lastIngestStateChangeDates2Item : lastIngestStateChangeDates2JsonMap) {
+        lastIngestStateChangeDates2Map[DatasourcePackageIngestStateMapper::GetDatasourcePackageIngestStateForName(
+            lastIngestStateChangeDates2Item.first)] = lastIngestStateChangeDates2Item.second.AsObject();
       }
       m_datasourcePackageIngestHistory[DatasourcePackageMapper::GetDatasourcePackageForName(datasourcePackageIngestHistoryItem.first)] =
-          std::move(lastIngestStateChangeDatesMap);
+          std::move(lastIngestStateChangeDates2Map);
     }
     m_datasourcePackageIngestHistoryHasBeenSet = true;
   }

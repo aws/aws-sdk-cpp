@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -223,6 +224,8 @@ class CreateEndpointAccessResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clusterIdentifier;
 
@@ -245,6 +248,7 @@ class CreateEndpointAccessResult {
   VpcEndpoint m_vpcEndpoint;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_resourceOwnerHasBeenSet = false;
   bool m_subnetGroupNameHasBeenSet = false;

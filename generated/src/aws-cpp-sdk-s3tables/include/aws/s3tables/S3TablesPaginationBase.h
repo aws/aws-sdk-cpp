@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/s3tables/model/ListNamespacesPaginationTraits.h>
 #include <aws/s3tables/model/ListTableBucketsPaginationTraits.h>
@@ -25,6 +26,7 @@ class S3TablesPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNamespacesRequest, Pagination::ListNamespacesPaginationTraits<DerivedClient>>
   ListNamespacesPaginator(const Model::ListNamespacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNamespacesRequest,
                                              Pagination::ListNamespacesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -36,6 +38,7 @@ class S3TablesPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTableBucketsRequest,
                                     Pagination::ListTableBucketsPaginationTraits<DerivedClient>>
   ListTableBucketsPaginator(const Model::ListTableBucketsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTableBucketsRequest,
                                              Pagination::ListTableBucketsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -46,6 +49,7 @@ class S3TablesPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTablesRequest, Pagination::ListTablesPaginationTraits<DerivedClient>>
   ListTablesPaginator(const Model::ListTablesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTablesRequest,
                                              Pagination::ListTablesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 
 #include <utility>
 
@@ -102,6 +103,8 @@ class DescribeAccountLimitsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_maxNumberOfAutoScalingGroups{0};
 
@@ -112,6 +115,7 @@ class DescribeAccountLimitsResult {
   int m_numberOfLaunchConfigurations{0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_maxNumberOfAutoScalingGroupsHasBeenSet = false;
   bool m_maxNumberOfLaunchConfigurationsHasBeenSet = false;
   bool m_numberOfAutoScalingGroupsHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/xray/model/TraceSegmentDestination.h>
@@ -72,12 +73,15 @@ class GetTraceSegmentDestinationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TraceSegmentDestination m_destination{TraceSegmentDestination::NOT_SET};
 
   TraceSegmentDestinationStatus m_status{TraceSegmentDestinationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_destinationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/model/DbNodeResourceStatus.h>
@@ -91,6 +92,8 @@ class StartDbNodeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dbNodeId;
 
@@ -99,6 +102,7 @@ class StartDbNodeResult {
   Aws::String m_statusReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dbNodeIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;

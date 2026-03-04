@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kafka/model/DescribeTopicPartitionsPaginationTraits.h>
 #include <aws/kafka/model/ListClientVpcConnectionsPaginationTraits.h>
@@ -37,6 +38,7 @@ class KafkaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTopicPartitionsRequest,
                                     Pagination::DescribeTopicPartitionsPaginationTraits<DerivedClient>>
   DescribeTopicPartitionsPaginator(const Model::DescribeTopicPartitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTopicPartitionsRequest,
                                              Pagination::DescribeTopicPartitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +50,7 @@ class KafkaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClientVpcConnectionsRequest,
                                     Pagination::ListClientVpcConnectionsPaginationTraits<DerivedClient>>
   ListClientVpcConnectionsPaginator(const Model::ListClientVpcConnectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClientVpcConnectionsRequest,
                                              Pagination::ListClientVpcConnectionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +62,7 @@ class KafkaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterOperationsRequest,
                                     Pagination::ListClusterOperationsPaginationTraits<DerivedClient>>
   ListClusterOperationsPaginator(const Model::ListClusterOperationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterOperationsRequest,
                                              Pagination::ListClusterOperationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -70,6 +74,7 @@ class KafkaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterOperationsV2Request,
                                     Pagination::ListClusterOperationsV2PaginationTraits<DerivedClient>>
   ListClusterOperationsV2Paginator(const Model::ListClusterOperationsV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterOperationsV2Request,
                                              Pagination::ListClusterOperationsV2PaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -80,6 +85,7 @@ class KafkaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersRequest, Pagination::ListClustersPaginationTraits<DerivedClient>>
   ListClustersPaginator(const Model::ListClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersRequest,
                                              Pagination::ListClustersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -90,6 +96,7 @@ class KafkaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersV2Request, Pagination::ListClustersV2PaginationTraits<DerivedClient>>
   ListClustersV2Paginator(const Model::ListClustersV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersV2Request,
                                              Pagination::ListClustersV2PaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -101,6 +108,7 @@ class KafkaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationRevisionsRequest,
                                     Pagination::ListConfigurationRevisionsPaginationTraits<DerivedClient>>
   ListConfigurationRevisionsPaginator(const Model::ListConfigurationRevisionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationRevisionsRequest,
                                              Pagination::ListConfigurationRevisionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -112,6 +120,7 @@ class KafkaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationsRequest,
                                     Pagination::ListConfigurationsPaginationTraits<DerivedClient>>
   ListConfigurationsPaginator(const Model::ListConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationsRequest,
                                              Pagination::ListConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -123,6 +132,7 @@ class KafkaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKafkaVersionsRequest,
                                     Pagination::ListKafkaVersionsPaginationTraits<DerivedClient>>
   ListKafkaVersionsPaginator(const Model::ListKafkaVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKafkaVersionsRequest,
                                              Pagination::ListKafkaVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -133,6 +143,7 @@ class KafkaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNodesRequest, Pagination::ListNodesPaginationTraits<DerivedClient>>
   ListNodesPaginator(const Model::ListNodesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNodesRequest, Pagination::ListNodesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -143,6 +154,7 @@ class KafkaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReplicatorsRequest,
                                     Pagination::ListReplicatorsPaginationTraits<DerivedClient>>
   ListReplicatorsPaginator(const Model::ListReplicatorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReplicatorsRequest,
                                              Pagination::ListReplicatorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -154,6 +166,7 @@ class KafkaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScramSecretsRequest,
                                     Pagination::ListScramSecretsPaginationTraits<DerivedClient>>
   ListScramSecretsPaginator(const Model::ListScramSecretsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScramSecretsRequest,
                                              Pagination::ListScramSecretsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -164,6 +177,7 @@ class KafkaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicsRequest, Pagination::ListTopicsPaginationTraits<DerivedClient>>
   ListTopicsPaginator(const Model::ListTopicsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTopicsRequest,
                                              Pagination::ListTopicsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -175,6 +189,7 @@ class KafkaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVpcConnectionsRequest,
                                     Pagination::ListVpcConnectionsPaginationTraits<DerivedClient>>
   ListVpcConnectionsPaginator(const Model::ListVpcConnectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVpcConnectionsRequest,
                                              Pagination::ListVpcConnectionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

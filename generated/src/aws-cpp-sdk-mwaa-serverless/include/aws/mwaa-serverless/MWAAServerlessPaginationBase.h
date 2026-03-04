@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/mwaa-serverless/model/ListTaskInstancesPaginationTraits.h>
 #include <aws/mwaa-serverless/model/ListWorkflowRunsPaginationTraits.h>
@@ -27,6 +28,7 @@ class MWAAServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTaskInstancesRequest,
                                     Pagination::ListTaskInstancesPaginationTraits<DerivedClient>>
   ListTaskInstancesPaginator(const Model::ListTaskInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTaskInstancesRequest,
                                              Pagination::ListTaskInstancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class MWAAServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowRunsRequest,
                                     Pagination::ListWorkflowRunsPaginationTraits<DerivedClient>>
   ListWorkflowRunsPaginator(const Model::ListWorkflowRunsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowRunsRequest,
                                              Pagination::ListWorkflowRunsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -48,6 +51,7 @@ class MWAAServerlessPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowsRequest, Pagination::ListWorkflowsPaginationTraits<DerivedClient>>
   ListWorkflowsPaginator(const Model::ListWorkflowsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowsRequest,
                                              Pagination::ListWorkflowsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -59,6 +63,7 @@ class MWAAServerlessPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowVersionsRequest,
                                     Pagination::ListWorkflowVersionsPaginationTraits<DerivedClient>>
   ListWorkflowVersionsPaginator(const Model::ListWorkflowVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowVersionsRequest,
                                              Pagination::ListWorkflowVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

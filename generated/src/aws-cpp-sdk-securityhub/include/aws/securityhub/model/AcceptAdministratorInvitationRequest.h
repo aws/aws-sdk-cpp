@@ -30,7 +30,7 @@ class AcceptAdministratorInvitationRequest : public SecurityHubRequest {
 
   ///@{
   /**
-   * <p>The account ID of the Security Hub administrator account that sent the
+   * <p>The account ID of the Security Hub CSPM administrator account that sent the
    * invitation.</p>
    */
   inline const Aws::String& GetAdministratorId() const { return m_administratorId; }
@@ -49,8 +49,8 @@ class AcceptAdministratorInvitationRequest : public SecurityHubRequest {
 
   ///@{
   /**
-   * <p>The identifier of the invitation sent from the Security Hub administrator
-   * account.</p>
+   * <p>The identifier of the invitation sent from the Security Hub CSPM
+   * administrator account.</p>
    */
   inline const Aws::String& GetInvitationId() const { return m_invitationId; }
   inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }

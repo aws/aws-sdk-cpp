@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -90,12 +91,15 @@ class GetCSVHeaderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_userPoolId;
 
   Aws::Vector<Aws::String> m_cSVHeader;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userPoolIdHasBeenSet = false;
   bool m_cSVHeaderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

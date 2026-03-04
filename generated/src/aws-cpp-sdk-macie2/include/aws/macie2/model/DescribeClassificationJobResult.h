@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -486,6 +487,8 @@ class DescribeClassificationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Aws::String> m_allowListIds;
 
@@ -530,6 +533,7 @@ class DescribeClassificationJobResult {
   UserPausedDetails m_userPausedDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_allowListIdsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_createdAtHasBeenSet = false;

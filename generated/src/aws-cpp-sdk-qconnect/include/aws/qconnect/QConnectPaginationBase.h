@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/qconnect/model/ListAIAgentVersionsPaginationTraits.h>
 #include <aws/qconnect/model/ListAIAgentsPaginationTraits.h>
@@ -43,6 +44,7 @@ class QConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIAgentsRequest, Pagination::ListAIAgentsPaginationTraits<DerivedClient>>
   ListAIAgentsPaginator(const Model::ListAIAgentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIAgentsRequest,
                                              Pagination::ListAIAgentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -54,6 +56,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIAgentVersionsRequest,
                                     Pagination::ListAIAgentVersionsPaginationTraits<DerivedClient>>
   ListAIAgentVersionsPaginator(const Model::ListAIAgentVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIAgentVersionsRequest,
                                              Pagination::ListAIAgentVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -65,6 +68,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIGuardrailsRequest,
                                     Pagination::ListAIGuardrailsPaginationTraits<DerivedClient>>
   ListAIGuardrailsPaginator(const Model::ListAIGuardrailsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIGuardrailsRequest,
                                              Pagination::ListAIGuardrailsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -76,6 +80,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIGuardrailVersionsRequest,
                                     Pagination::ListAIGuardrailVersionsPaginationTraits<DerivedClient>>
   ListAIGuardrailVersionsPaginator(const Model::ListAIGuardrailVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIGuardrailVersionsRequest,
                                              Pagination::ListAIGuardrailVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -86,6 +91,7 @@ class QConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIPromptsRequest, Pagination::ListAIPromptsPaginationTraits<DerivedClient>>
   ListAIPromptsPaginator(const Model::ListAIPromptsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIPromptsRequest,
                                              Pagination::ListAIPromptsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -97,6 +103,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIPromptVersionsRequest,
                                     Pagination::ListAIPromptVersionsPaginationTraits<DerivedClient>>
   ListAIPromptVersionsPaginator(const Model::ListAIPromptVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAIPromptVersionsRequest,
                                              Pagination::ListAIPromptVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -108,6 +115,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssistantAssociationsRequest,
                                     Pagination::ListAssistantAssociationsPaginationTraits<DerivedClient>>
   ListAssistantAssociationsPaginator(const Model::ListAssistantAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssistantAssociationsRequest,
                                              Pagination::ListAssistantAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -118,6 +126,7 @@ class QConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssistantsRequest, Pagination::ListAssistantsPaginationTraits<DerivedClient>>
   ListAssistantsPaginator(const Model::ListAssistantsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAssistantsRequest,
                                              Pagination::ListAssistantsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -129,6 +138,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContentAssociationsRequest,
                                     Pagination::ListContentAssociationsPaginationTraits<DerivedClient>>
   ListContentAssociationsPaginator(const Model::ListContentAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContentAssociationsRequest,
                                              Pagination::ListContentAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -139,6 +149,7 @@ class QConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContentsRequest, Pagination::ListContentsPaginationTraits<DerivedClient>>
   ListContentsPaginator(const Model::ListContentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContentsRequest,
                                              Pagination::ListContentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -149,6 +160,7 @@ class QConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportJobsRequest, Pagination::ListImportJobsPaginationTraits<DerivedClient>>
   ListImportJobsPaginator(const Model::ListImportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImportJobsRequest,
                                              Pagination::ListImportJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -160,6 +172,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKnowledgeBasesRequest,
                                     Pagination::ListKnowledgeBasesPaginationTraits<DerivedClient>>
   ListKnowledgeBasesPaginator(const Model::ListKnowledgeBasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKnowledgeBasesRequest,
                                              Pagination::ListKnowledgeBasesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -170,6 +183,7 @@ class QConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMessagesRequest, Pagination::ListMessagesPaginationTraits<DerivedClient>>
   ListMessagesPaginator(const Model::ListMessagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMessagesRequest,
                                              Pagination::ListMessagesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -181,6 +195,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMessageTemplatesRequest,
                                     Pagination::ListMessageTemplatesPaginationTraits<DerivedClient>>
   ListMessageTemplatesPaginator(const Model::ListMessageTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMessageTemplatesRequest,
                                              Pagination::ListMessageTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -192,6 +207,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMessageTemplateVersionsRequest,
                                     Pagination::ListMessageTemplateVersionsPaginationTraits<DerivedClient>>
   ListMessageTemplateVersionsPaginator(const Model::ListMessageTemplateVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMessageTemplateVersionsRequest,
                                              Pagination::ListMessageTemplateVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -203,6 +219,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQuickResponsesRequest,
                                     Pagination::ListQuickResponsesPaginationTraits<DerivedClient>>
   ListQuickResponsesPaginator(const Model::ListQuickResponsesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQuickResponsesRequest,
                                              Pagination::ListQuickResponsesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -213,6 +230,7 @@ class QConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSpansRequest, Pagination::ListSpansPaginationTraits<DerivedClient>>
   ListSpansPaginator(const Model::ListSpansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSpansRequest, Pagination::ListSpansPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -222,6 +240,7 @@ class QConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchContentRequest, Pagination::SearchContentPaginationTraits<DerivedClient>>
   SearchContentPaginator(const Model::SearchContentRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchContentRequest,
                                              Pagination::SearchContentPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -233,6 +252,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchMessageTemplatesRequest,
                                     Pagination::SearchMessageTemplatesPaginationTraits<DerivedClient>>
   SearchMessageTemplatesPaginator(const Model::SearchMessageTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchMessageTemplatesRequest,
                                              Pagination::SearchMessageTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -244,6 +264,7 @@ class QConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchQuickResponsesRequest,
                                     Pagination::SearchQuickResponsesPaginationTraits<DerivedClient>>
   SearchQuickResponsesPaginator(const Model::SearchQuickResponsesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchQuickResponsesRequest,
                                              Pagination::SearchQuickResponsesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -254,6 +275,7 @@ class QConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchSessionsRequest, Pagination::SearchSessionsPaginationTraits<DerivedClient>>
   SearchSessionsPaginator(const Model::SearchSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchSessionsRequest,
                                              Pagination::SearchSessionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

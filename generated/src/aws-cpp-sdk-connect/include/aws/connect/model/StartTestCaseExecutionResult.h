@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/TestCaseExecutionStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -88,6 +89,8 @@ class StartTestCaseExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_testCaseExecutionId;
 
@@ -96,6 +99,7 @@ class StartTestCaseExecutionResult {
   TestCaseExecutionStatus m_status{TestCaseExecutionStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_testCaseExecutionIdHasBeenSet = false;
   bool m_testCaseIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

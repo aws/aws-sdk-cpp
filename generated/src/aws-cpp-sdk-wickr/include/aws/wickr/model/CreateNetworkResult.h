@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
 
@@ -92,6 +93,8 @@ class CreateNetworkResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_networkId;
 
@@ -100,6 +103,7 @@ class CreateNetworkResult {
   Aws::String m_encryptionKeyArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_networkIdHasBeenSet = false;
   bool m_networkNameHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;

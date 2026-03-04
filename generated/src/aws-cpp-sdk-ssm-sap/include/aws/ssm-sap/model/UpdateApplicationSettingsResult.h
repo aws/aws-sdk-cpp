@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm-sap/SsmSap_EXPORTS.h>
@@ -81,12 +82,15 @@ class UpdateApplicationSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_message;
 
   Aws::Vector<Aws::String> m_operationIds;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_messageHasBeenSet = false;
   bool m_operationIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

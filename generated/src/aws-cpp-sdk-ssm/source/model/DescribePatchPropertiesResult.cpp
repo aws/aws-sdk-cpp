@@ -20,16 +20,17 @@ using namespace Aws;
 DescribePatchPropertiesResult::DescribePatchPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribePatchPropertiesResult& DescribePatchPropertiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Properties")) {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("Properties");
     for (unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex) {
-      Aws::Map<Aws::String, JsonView> patchPropertyEntryJsonMap = propertiesJsonList[propertiesIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> patchPropertyEntryMap;
-      for (auto& patchPropertyEntryItem : patchPropertyEntryJsonMap) {
-        patchPropertyEntryMap[patchPropertyEntryItem.first] = patchPropertyEntryItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> patchPropertyEntry2JsonMap = propertiesJsonList[propertiesIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> patchPropertyEntry2Map;
+      for (auto& patchPropertyEntry2Item : patchPropertyEntry2JsonMap) {
+        patchPropertyEntry2Map[patchPropertyEntry2Item.first] = patchPropertyEntry2Item.second.AsString();
       }
-      m_properties.push_back(std::move(patchPropertyEntryMap));
+      m_properties.push_back(std::move(patchPropertyEntry2Map));
     }
     m_propertiesHasBeenSet = true;
   }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/importexport/ImportExport_EXPORTS.h>
@@ -143,6 +144,8 @@ class CreateJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_jobId;
 
@@ -157,6 +160,7 @@ class CreateJobResult {
   Aws::Vector<Artifact> m_artifactList;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
   bool m_signatureHasBeenSet = false;

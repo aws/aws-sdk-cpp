@@ -165,6 +165,12 @@ StartStreamTranscriptionInitialResponse::StartStreamTranscriptionInitialResponse
     m_vocabularyFilterNames = vocabularyFilterNamesIter->second;
     m_vocabularyFilterNamesHasBeenSet = true;
   }
+
+  const auto& sessionResumeWindowIter = headers.find("x-amzn-transcribe-session-resume-window");
+  if (sessionResumeWindowIter != headers.end()) {
+    m_sessionResumeWindow = StringUtils::ConvertToInt32(sessionResumeWindowIter->second.c_str());
+    m_sessionResumeWindowHasBeenSet = true;
+  }
 }
 
 JsonValue StartStreamTranscriptionInitialResponse::Jsonize() const {

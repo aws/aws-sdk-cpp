@@ -20,6 +20,7 @@ using namespace Aws;
 GetSpaceResult::GetSpaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetSpaceResult& GetSpaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("spaceId")) {
     m_spaceId = jsonValue.GetString("spaceId");
@@ -92,13 +93,13 @@ GetSpaceResult& GetSpaceResult::operator=(const Aws::AmazonWebServiceResult<Json
   if (jsonValue.ValueExists("roles")) {
     Aws::Map<Aws::String, JsonView> rolesJsonMap = jsonValue.GetObject("roles").GetAllObjects();
     for (auto& rolesItem : rolesJsonMap) {
-      Aws::Utils::Array<JsonView> roleListJsonList = rolesItem.second.AsArray();
-      Aws::Vector<Role> roleListList;
-      roleListList.reserve((size_t)roleListJsonList.GetLength());
-      for (unsigned roleListIndex = 0; roleListIndex < roleListJsonList.GetLength(); ++roleListIndex) {
-        roleListList.push_back(RoleMapper::GetRoleForName(roleListJsonList[roleListIndex].AsString()));
+      Aws::Utils::Array<JsonView> roleList2JsonList = rolesItem.second.AsArray();
+      Aws::Vector<Role> roleList2List;
+      roleList2List.reserve((size_t)roleList2JsonList.GetLength());
+      for (unsigned roleList2Index = 0; roleList2Index < roleList2JsonList.GetLength(); ++roleList2Index) {
+        roleList2List.push_back(RoleMapper::GetRoleForName(roleList2JsonList[roleList2Index].AsString()));
       }
-      m_roles[rolesItem.first] = std::move(roleListList);
+      m_roles[rolesItem.first] = std::move(roleList2List);
     }
     m_rolesHasBeenSet = true;
   }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/appflow/model/FlowStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -91,6 +92,8 @@ class StartFlowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_flowArn;
 
@@ -99,6 +102,7 @@ class StartFlowResult {
   Aws::String m_executionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_flowArnHasBeenSet = false;
   bool m_flowStatusHasBeenSet = false;
   bool m_executionIdHasBeenSet = false;

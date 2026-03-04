@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/acm-pca/model/AuditReportStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -110,6 +111,8 @@ class DescribeCertificateAuthorityAuditReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AuditReportStatus m_auditReportStatus{AuditReportStatus::NOT_SET};
 
@@ -120,6 +123,7 @@ class DescribeCertificateAuthorityAuditReportResult {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_auditReportStatusHasBeenSet = false;
   bool m_s3BucketNameHasBeenSet = false;
   bool m_s3KeyHasBeenSet = false;

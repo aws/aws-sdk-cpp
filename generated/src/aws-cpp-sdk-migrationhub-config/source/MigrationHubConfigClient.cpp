@@ -86,7 +86,7 @@ MigrationHubConfigClient::MigrationHubConfigClient(const std::shared_ptr<AWSCred
 }
 
 /* Legacy constructors due deprecation */
-MigrationHubConfigClient::MigrationHubConfigClient(const Client::ClientConfiguration& clientConfiguration)
+MigrationHubConfigClient::MigrationHubConfigClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -99,7 +99,7 @@ MigrationHubConfigClient::MigrationHubConfigClient(const Client::ClientConfigura
 }
 
 MigrationHubConfigClient::MigrationHubConfigClient(const AWSCredentials& credentials,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -110,7 +110,7 @@ MigrationHubConfigClient::MigrationHubConfigClient(const AWSCredentials& credent
 }
 
 MigrationHubConfigClient::MigrationHubConfigClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

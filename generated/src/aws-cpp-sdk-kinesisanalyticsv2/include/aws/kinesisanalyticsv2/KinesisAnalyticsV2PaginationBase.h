@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationOperationsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsPaginationTraits.h>
@@ -27,6 +28,7 @@ class KinesisAnalyticsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationOperationsRequest,
                                     Pagination::ListApplicationOperationsPaginationTraits<DerivedClient>>
   ListApplicationOperationsPaginator(const Model::ListApplicationOperationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationOperationsRequest,
                                              Pagination::ListApplicationOperationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class KinesisAnalyticsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
                                     Pagination::ListApplicationsPaginationTraits<DerivedClient>>
   ListApplicationsPaginator(const Model::ListApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
                                              Pagination::ListApplicationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -49,6 +52,7 @@ class KinesisAnalyticsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationSnapshotsRequest,
                                     Pagination::ListApplicationSnapshotsPaginationTraits<DerivedClient>>
   ListApplicationSnapshotsPaginator(const Model::ListApplicationSnapshotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationSnapshotsRequest,
                                              Pagination::ListApplicationSnapshotsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class KinesisAnalyticsV2PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationVersionsRequest,
                                     Pagination::ListApplicationVersionsPaginationTraits<DerivedClient>>
   ListApplicationVersionsPaginator(const Model::ListApplicationVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationVersionsRequest,
                                              Pagination::ListApplicationVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

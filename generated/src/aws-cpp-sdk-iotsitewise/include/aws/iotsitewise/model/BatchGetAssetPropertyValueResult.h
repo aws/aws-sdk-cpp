@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
@@ -136,6 +137,8 @@ class BatchGetAssetPropertyValueResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<BatchGetAssetPropertyValueErrorEntry> m_errorEntries;
 
@@ -146,6 +149,7 @@ class BatchGetAssetPropertyValueResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_errorEntriesHasBeenSet = false;
   bool m_successEntriesHasBeenSet = false;
   bool m_skippedEntriesHasBeenSet = false;

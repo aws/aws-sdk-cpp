@@ -22,7 +22,7 @@ namespace Model {
 
 /**
  * <p>A finding from a <code>BatchUpdateFindings</code> request that Security Hub
- * was unable to update.</p><p><h3>See Also:</h3>   <a
+ * CSPM was unable to update.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindingsUnprocessedFinding">AWS
  * API Reference</a></p>
  */

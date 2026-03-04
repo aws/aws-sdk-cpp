@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/model/StoreType.h>
@@ -90,6 +91,8 @@ class PutS3AccessPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_s3AccessPointArn;
 
@@ -98,6 +101,7 @@ class PutS3AccessPolicyResult {
   StoreType m_storeType{StoreType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_s3AccessPointArnHasBeenSet = false;
   bool m_storeIdHasBeenSet = false;
   bool m_storeTypeHasBeenSet = false;

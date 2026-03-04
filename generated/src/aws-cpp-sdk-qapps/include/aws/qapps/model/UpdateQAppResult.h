@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -249,6 +250,8 @@ class UpdateQAppResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_appId;
 
@@ -275,6 +278,7 @@ class UpdateQAppResult {
   Aws::Vector<AppRequiredCapability> m_requiredCapabilities;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appIdHasBeenSet = false;
   bool m_appArnHasBeenSet = false;
   bool m_titleHasBeenSet = false;

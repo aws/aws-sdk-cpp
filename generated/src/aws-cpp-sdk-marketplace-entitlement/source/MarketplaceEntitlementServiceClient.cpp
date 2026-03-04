@@ -85,7 +85,7 @@ MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(
 }
 
 /* Legacy constructors due deprecation */
-MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const Client::ClientConfiguration& clientConfiguration)
+MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -98,7 +98,7 @@ MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const C
 }
 
 MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const AWSCredentials& credentials,
-                                                                         const Client::ClientConfiguration& clientConfiguration)
+                                                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -109,7 +109,7 @@ MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const A
 }
 
 MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                                         const Client::ClientConfiguration& clientConfiguration)
+                                                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

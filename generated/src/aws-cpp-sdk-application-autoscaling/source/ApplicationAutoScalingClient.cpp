@@ -98,7 +98,7 @@ ApplicationAutoScalingClient::ApplicationAutoScalingClient(
 }
 
 /* Legacy constructors due deprecation */
-ApplicationAutoScalingClient::ApplicationAutoScalingClient(const Client::ClientConfiguration& clientConfiguration)
+ApplicationAutoScalingClient::ApplicationAutoScalingClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -111,7 +111,7 @@ ApplicationAutoScalingClient::ApplicationAutoScalingClient(const Client::ClientC
 }
 
 ApplicationAutoScalingClient::ApplicationAutoScalingClient(const AWSCredentials& credentials,
-                                                           const Client::ClientConfiguration& clientConfiguration)
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -122,7 +122,7 @@ ApplicationAutoScalingClient::ApplicationAutoScalingClient(const AWSCredentials&
 }
 
 ApplicationAutoScalingClient::ApplicationAutoScalingClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                           const Client::ClientConfiguration& clientConfiguration)
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

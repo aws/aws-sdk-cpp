@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -88,12 +89,15 @@ class DescribeGlobalSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<Aws::String, Aws::String> m_globalSettings;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_globalSettingsHasBeenSet = false;
   bool m_lastUpdateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

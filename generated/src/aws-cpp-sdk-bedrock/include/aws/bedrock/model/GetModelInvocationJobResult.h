@@ -8,7 +8,9 @@
 #include <aws/bedrock/model/ModelInvocationJobInputDataConfig.h>
 #include <aws/bedrock/model/ModelInvocationJobOutputDataConfig.h>
 #include <aws/bedrock/model/ModelInvocationJobStatus.h>
+#include <aws/bedrock/model/ModelInvocationType.h>
 #include <aws/bedrock/model/VpcConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -322,6 +324,21 @@ class GetModelInvocationJobResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The invocation endpoint for ModelInvocationJob</p>
+   */
+  inline ModelInvocationType GetModelInvocationType() const { return m_modelInvocationType; }
+  inline void SetModelInvocationType(ModelInvocationType value) {
+    m_modelInvocationTypeHasBeenSet = true;
+    m_modelInvocationType = value;
+  }
+  inline GetModelInvocationJobResult& WithModelInvocationType(ModelInvocationType value) {
+    SetModelInvocationType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -335,6 +352,8 @@ class GetModelInvocationJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_jobArn;
 
@@ -366,7 +385,10 @@ class GetModelInvocationJobResult {
 
   Aws::Utils::DateTime m_jobExpirationTime{};
 
+  ModelInvocationType m_modelInvocationType{ModelInvocationType::NOT_SET};
+
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobArnHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;
   bool m_modelIdHasBeenSet = false;
@@ -382,6 +404,7 @@ class GetModelInvocationJobResult {
   bool m_vpcConfigHasBeenSet = false;
   bool m_timeoutDurationInHoursHasBeenSet = false;
   bool m_jobExpirationTimeHasBeenSet = false;
+  bool m_modelInvocationTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

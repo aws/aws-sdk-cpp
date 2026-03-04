@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -233,6 +234,8 @@ class DescribeContextResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_contextName;
 
@@ -257,6 +260,7 @@ class DescribeContextResult {
   Aws::String m_lineageGroupArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contextNameHasBeenSet = false;
   bool m_contextArnHasBeenSet = false;
   bool m_sourceHasBeenSet = false;

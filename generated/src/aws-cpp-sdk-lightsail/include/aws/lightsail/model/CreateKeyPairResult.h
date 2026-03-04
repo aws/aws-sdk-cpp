@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/KeyPair.h>
@@ -113,6 +114,8 @@ class CreateKeyPairResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   KeyPair m_keyPair;
 
@@ -123,6 +126,7 @@ class CreateKeyPairResult {
   Operation m_operation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyPairHasBeenSet = false;
   bool m_publicKeyBase64HasBeenSet = false;
   bool m_privateKeyBase64HasBeenSet = false;

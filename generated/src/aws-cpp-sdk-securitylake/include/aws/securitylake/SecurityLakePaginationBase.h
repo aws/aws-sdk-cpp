@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/securitylake/model/GetDataLakeSourcesPaginationTraits.h>
 #include <aws/securitylake/model/ListDataLakeExceptionsPaginationTraits.h>
@@ -27,6 +28,7 @@ class SecurityLakePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDataLakeSourcesRequest,
                                     Pagination::GetDataLakeSourcesPaginationTraits<DerivedClient>>
   GetDataLakeSourcesPaginator(const Model::GetDataLakeSourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetDataLakeSourcesRequest,
                                              Pagination::GetDataLakeSourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class SecurityLakePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataLakeExceptionsRequest,
                                     Pagination::ListDataLakeExceptionsPaginationTraits<DerivedClient>>
   ListDataLakeExceptionsPaginator(const Model::ListDataLakeExceptionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataLakeExceptionsRequest,
                                              Pagination::ListDataLakeExceptionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +51,7 @@ class SecurityLakePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLogSourcesRequest, Pagination::ListLogSourcesPaginationTraits<DerivedClient>>
   ListLogSourcesPaginator(const Model::ListLogSourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLogSourcesRequest,
                                              Pagination::ListLogSourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -59,6 +63,7 @@ class SecurityLakePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubscribersRequest,
                                     Pagination::ListSubscribersPaginationTraits<DerivedClient>>
   ListSubscribersPaginator(const Model::ListSubscribersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubscribersRequest,
                                              Pagination::ListSubscribersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};

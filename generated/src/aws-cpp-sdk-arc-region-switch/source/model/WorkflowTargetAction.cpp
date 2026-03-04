@@ -17,6 +17,7 @@ namespace WorkflowTargetActionMapper {
 
 static const int activate_HASH = HashingUtils::HashString("activate");
 static const int deactivate_HASH = HashingUtils::HashString("deactivate");
+static const int postRecovery_HASH = HashingUtils::HashString("postRecovery");
 
 WorkflowTargetAction GetWorkflowTargetActionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ WorkflowTargetAction GetWorkflowTargetActionForName(const Aws::String& name) {
     return WorkflowTargetAction::activate;
   } else if (hashCode == deactivate_HASH) {
     return WorkflowTargetAction::deactivate;
+  } else if (hashCode == postRecovery_HASH) {
+    return WorkflowTargetAction::postRecovery;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForWorkflowTargetAction(WorkflowTargetAction enumValue) {
       return "activate";
     case WorkflowTargetAction::deactivate:
       return "deactivate";
+    case WorkflowTargetAction::postRecovery:
+      return "postRecovery";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

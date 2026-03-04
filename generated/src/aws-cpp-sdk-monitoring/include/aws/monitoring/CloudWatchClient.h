@@ -87,6 +87,39 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   virtual ~CloudWatchClient();
 
   /**
+   * <p>Deletes a specific alarm mute rule.</p> <p>When you delete a mute rule, any
+   * alarms that are currently being muted by that rule are immediately unmuted. If
+   * those alarms are in an ALARM state, their configured actions will trigger.</p>
+   * <p>This operation is idempotent. If you delete a mute rule that does not exist,
+   * the operation succeeds without returning an error.</p> <p> <b>Permissions</b>
+   * </p> <p>To delete a mute rule, you need the
+   * <code>cloudwatch:DeleteAlarmMuteRule</code> permission on the alarm mute rule
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarmMuteRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAlarmMuteRuleOutcome DeleteAlarmMuteRule(const Model::DeleteAlarmMuteRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAlarmMuteRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAlarmMuteRuleRequestT = Model::DeleteAlarmMuteRuleRequest>
+  Model::DeleteAlarmMuteRuleOutcomeCallable DeleteAlarmMuteRuleCallable(const DeleteAlarmMuteRuleRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::DeleteAlarmMuteRule, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAlarmMuteRule that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteAlarmMuteRuleRequestT = Model::DeleteAlarmMuteRuleRequest>
+  void DeleteAlarmMuteRuleAsync(const DeleteAlarmMuteRuleRequestT& request, const DeleteAlarmMuteRuleResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::DeleteAlarmMuteRule, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the specified alarms. You can delete up to 100 alarms in one
    * operation. However, this total can include no more than one composite alarm. For
    * example, you could delete 99 metric alarms and one composite alarms with one
@@ -548,6 +581,41 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   }
 
   /**
+   * <p>Retrieves details for a specific alarm mute rule.</p> <p>This operation
+   * returns complete information about the mute rule, including its configuration,
+   * status, targeted alarms, and metadata.</p> <p>The returned status indicates the
+   * current state of the mute rule:</p> <ul> <li> <p> <b>SCHEDULED</b>: The mute
+   * rule is configured and will become active in the future</p> </li> <li> <p>
+   * <b>ACTIVE</b>: The mute rule is currently muting alarm actions</p> </li> <li>
+   * <p> <b>EXPIRED</b>: The mute rule has passed its expiration date and will no
+   * longer become active</p> </li> </ul> <p> <b>Permissions</b> </p> <p>To retrieve
+   * details for a mute rule, you need the <code>cloudwatch:GetAlarmMuteRule</code>
+   * permission on the alarm mute rule resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetAlarmMuteRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAlarmMuteRuleOutcome GetAlarmMuteRule(const Model::GetAlarmMuteRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAlarmMuteRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAlarmMuteRuleRequestT = Model::GetAlarmMuteRuleRequest>
+  Model::GetAlarmMuteRuleOutcomeCallable GetAlarmMuteRuleCallable(const GetAlarmMuteRuleRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::GetAlarmMuteRule, request);
+  }
+
+  /**
+   * An Async wrapper for GetAlarmMuteRule that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetAlarmMuteRuleRequestT = Model::GetAlarmMuteRuleRequest>
+  void GetAlarmMuteRuleAsync(const GetAlarmMuteRuleRequestT& request, const GetAlarmMuteRuleResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::GetAlarmMuteRule, request, handler, context);
+  }
+
+  /**
    * <p>Displays the details of the dashboard that you specify.</p> <p>To copy an
    * existing dashboard, use <code>GetDashboard</code>, and then use the data
    * returned within <code>DashboardBody</code> as the template for the new dashboard
@@ -822,6 +890,40 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   }
 
   /**
+   * <p>Lists alarm mute rules in your Amazon Web Services account and region.</p>
+   * <p>You can filter the results by alarm name to find all mute rules targeting a
+   * specific alarm, or by status to find rules that are scheduled, active, or
+   * expired.</p> <p>This operation supports pagination for accounts with many mute
+   * rules. Use the <code>MaxRecords</code> and <code>NextToken</code> parameters to
+   * retrieve results in multiple calls.</p> <p> <b>Permissions</b> </p> <p>To list
+   * mute rules, you need the <code>cloudwatch:ListAlarmMuteRules</code>
+   * permission.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListAlarmMuteRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAlarmMuteRulesOutcome ListAlarmMuteRules(const Model::ListAlarmMuteRulesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAlarmMuteRules that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAlarmMuteRulesRequestT = Model::ListAlarmMuteRulesRequest>
+  Model::ListAlarmMuteRulesOutcomeCallable ListAlarmMuteRulesCallable(const ListAlarmMuteRulesRequestT& request = {}) const {
+    return SubmitCallable(&CloudWatchClient::ListAlarmMuteRules, request);
+  }
+
+  /**
+   * An Async wrapper for ListAlarmMuteRules that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListAlarmMuteRulesRequestT = Model::ListAlarmMuteRulesRequest>
+  void ListAlarmMuteRulesAsync(const ListAlarmMuteRulesResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const ListAlarmMuteRulesRequestT& request = {}) const {
+    return SubmitAsync(&CloudWatchClient::ListAlarmMuteRules, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of the dashboards for your account. If you include
    * <code>DashboardNamePrefix</code>, only those dashboards with names starting with
    * the prefix are listed. Otherwise, all dashboards in your account are listed.
@@ -981,6 +1083,57 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates an alarm mute rule.</p> <p>Alarm mute rules automatically
+   * mute alarm actions during predefined time windows. When a mute rule is active,
+   * targeted alarms continue to evaluate metrics and transition between states, but
+   * their configured actions (such as Amazon SNS notifications or Auto Scaling
+   * actions) are muted.</p> <p>You can create mute rules with recurring schedules
+   * using <code>cron</code> expressions or one-time mute windows using
+   * <code>at</code> expressions. Each mute rule can target up to 100 specific alarms
+   * by name.</p> <p>If you specify a rule name that already exists, this operation
+   * updates the existing rule with the new configuration.</p> <p> <b>Permissions</b>
+   * </p> <p>To create or update a mute rule, you must have the
+   * <code>cloudwatch:PutAlarmMuteRule</code> permission on two types of resources:
+   * the alarm mute rule resource itself, and each alarm that the rule targets.</p>
+   * <p>For example, If you want to allow a user to create mute rules that target
+   * only specific alarms named "WebServerCPUAlarm" and "DatabaseConnectionAlarm",
+   * you would create an IAM policy with one statement granting
+   * <code>cloudwatch:PutAlarmMuteRule</code> on the alarm mute rule resource
+   * (<code>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute:*</code>), and
+   * another statement granting <code>cloudwatch:PutAlarmMuteRule</code> on the
+   * targeted alarm resources
+   * (<code>arn:aws:cloudwatch:[REGION]:123456789012:alarm:WebServerCPUAlarm</code>
+   * and
+   * <code>arn:aws:cloudwatch:[REGION]:123456789012:alarm:DatabaseConnectionAlarm</code>).</p>
+   * <p>You can also use IAM policy conditions to allow targeting alarms based on
+   * resource tags. For example, you can restrict users to create/update mute rules
+   * to only target alarms that have a specific tag key-value pair, such as
+   * <code>Team=TeamA</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAlarmMuteRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAlarmMuteRuleOutcome PutAlarmMuteRule(const Model::PutAlarmMuteRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAlarmMuteRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutAlarmMuteRuleRequestT = Model::PutAlarmMuteRuleRequest>
+  Model::PutAlarmMuteRuleOutcomeCallable PutAlarmMuteRuleCallable(const PutAlarmMuteRuleRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::PutAlarmMuteRule, request);
+  }
+
+  /**
+   * An Async wrapper for PutAlarmMuteRule that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutAlarmMuteRuleRequestT = Model::PutAlarmMuteRuleRequest>
+  void PutAlarmMuteRuleAsync(const PutAlarmMuteRuleRequestT& request, const PutAlarmMuteRuleResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::PutAlarmMuteRule, request, handler, context);
   }
 
   /**

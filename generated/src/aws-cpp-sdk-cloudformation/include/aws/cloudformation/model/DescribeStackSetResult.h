@@ -7,6 +7,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/StackSet.h>
+#include <aws/core/http/HttpResponse.h>
 
 #include <utility>
 
@@ -58,10 +59,13 @@ class DescribeStackSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   StackSet m_stackSet;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stackSetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

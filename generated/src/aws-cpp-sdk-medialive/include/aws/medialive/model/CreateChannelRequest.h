@@ -15,6 +15,7 @@
 #include <aws/medialive/model/ChannelClass.h>
 #include <aws/medialive/model/ChannelEngineVersionRequest.h>
 #include <aws/medialive/model/EncoderSettings.h>
+#include <aws/medialive/model/InferenceSettings.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <aws/medialive/model/InputSpecification.h>
 #include <aws/medialive/model/LinkedChannelSettings.h>
@@ -385,6 +386,24 @@ creating multiple resources.
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Include this setting to include Elemental Inference features in this channel.
+   */
+  inline const InferenceSettings& GetInferenceSettings() const { return m_inferenceSettings; }
+  inline bool InferenceSettingsHasBeenSet() const { return m_inferenceSettingsHasBeenSet; }
+  template <typename InferenceSettingsT = InferenceSettings>
+  void SetInferenceSettings(InferenceSettingsT&& value) {
+    m_inferenceSettingsHasBeenSet = true;
+    m_inferenceSettings = std::forward<InferenceSettingsT>(value);
+  }
+  template <typename InferenceSettingsT = InferenceSettings>
+  CreateChannelRequest& WithInferenceSettings(InferenceSettingsT&& value) {
+    SetInferenceSettings(std::forward<InferenceSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CdiInputSpecification m_cdiInputSpecification;
 
@@ -421,6 +440,8 @@ creating multiple resources.
   LinkedChannelSettings m_linkedChannelSettings;
 
   Aws::Vector<Aws::String> m_channelSecurityGroups;
+
+  InferenceSettings m_inferenceSettings;
   bool m_cdiInputSpecificationHasBeenSet = false;
   bool m_channelClassHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
@@ -439,6 +460,7 @@ creating multiple resources.
   bool m_dryRunHasBeenSet = false;
   bool m_linkedChannelSettingsHasBeenSet = false;
   bool m_channelSecurityGroupsHasBeenSet = false;
+  bool m_inferenceSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

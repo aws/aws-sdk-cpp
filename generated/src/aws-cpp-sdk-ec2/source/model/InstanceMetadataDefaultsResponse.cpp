@@ -58,6 +58,12 @@ InstanceMetadataDefaultsResponse& InstanceMetadataDefaultsResponse::operator=(co
       m_managedExceptionMessage = Aws::Utils::Xml::DecodeEscapedXmlText(managedExceptionMessageNode.GetText());
       m_managedExceptionMessageHasBeenSet = true;
     }
+    XmlNode httpTokensEnforcedNode = resultNode.FirstChild("httpTokensEnforced");
+    if (!httpTokensEnforcedNode.IsNull()) {
+      m_httpTokensEnforced = HttpTokensEnforcedStateMapper::GetHttpTokensEnforcedStateForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpTokensEnforcedNode.GetText()).c_str()));
+      m_httpTokensEnforcedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -93,6 +99,11 @@ void InstanceMetadataDefaultsResponse::OutputToStream(Aws::OStream& oStream, con
     oStream << location << index << locationValue
             << ".ManagedExceptionMessage=" << StringUtils::URLEncode(m_managedExceptionMessage.c_str()) << "&";
   }
+
+  if (m_httpTokensEnforcedHasBeenSet) {
+    oStream << location << index << locationValue << ".HttpTokensEnforced="
+            << StringUtils::URLEncode(HttpTokensEnforcedStateMapper::GetNameForHttpTokensEnforcedState(m_httpTokensEnforced)) << "&";
+  }
 }
 
 void InstanceMetadataDefaultsResponse::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -115,6 +126,10 @@ void InstanceMetadataDefaultsResponse::OutputToStream(Aws::OStream& oStream, con
   }
   if (m_managedExceptionMessageHasBeenSet) {
     oStream << location << ".ManagedExceptionMessage=" << StringUtils::URLEncode(m_managedExceptionMessage.c_str()) << "&";
+  }
+  if (m_httpTokensEnforcedHasBeenSet) {
+    oStream << location << ".HttpTokensEnforced="
+            << StringUtils::URLEncode(HttpTokensEnforcedStateMapper::GetNameForHttpTokensEnforcedState(m_httpTokensEnforced)) << "&";
   }
 }
 

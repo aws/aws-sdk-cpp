@@ -17,6 +17,8 @@
 #include <aws/monitoring/model/ActionsSuppressedBy.h>
 #include <aws/monitoring/model/AlarmContributor.h>
 #include <aws/monitoring/model/AlarmHistoryItem.h>
+#include <aws/monitoring/model/AlarmMuteRuleStatus.h>
+#include <aws/monitoring/model/AlarmMuteRuleSummary.h>
 #include <aws/monitoring/model/AlarmType.h>
 #include <aws/monitoring/model/AnomalyDetector.h>
 #include <aws/monitoring/model/AnomalyDetectorConfiguration.h>
@@ -28,6 +30,7 @@
 #include <aws/monitoring/model/DashboardInvalidInputError.h>
 #include <aws/monitoring/model/DashboardValidationMessage.h>
 #include <aws/monitoring/model/Datapoint.h>
+#include <aws/monitoring/model/DeleteAlarmMuteRuleRequest.h>
 #include <aws/monitoring/model/DeleteAlarmsRequest.h>
 #include <aws/monitoring/model/DeleteAnomalyDetectorRequest.h>
 #include <aws/monitoring/model/DeleteAnomalyDetectorResult.h>
@@ -60,6 +63,8 @@
 #include <aws/monitoring/model/Entity.h>
 #include <aws/monitoring/model/EntityMetricData.h>
 #include <aws/monitoring/model/EvaluationState.h>
+#include <aws/monitoring/model/GetAlarmMuteRuleRequest.h>
+#include <aws/monitoring/model/GetAlarmMuteRuleResult.h>
 #include <aws/monitoring/model/GetDashboardRequest.h>
 #include <aws/monitoring/model/GetDashboardResult.h>
 #include <aws/monitoring/model/GetInsightRuleReportRequest.h>
@@ -78,6 +83,8 @@
 #include <aws/monitoring/model/InsightRuleContributorDatapoint.h>
 #include <aws/monitoring/model/InsightRuleMetricDatapoint.h>
 #include <aws/monitoring/model/LabelOptions.h>
+#include <aws/monitoring/model/ListAlarmMuteRulesRequest.h>
+#include <aws/monitoring/model/ListAlarmMuteRulesResult.h>
 #include <aws/monitoring/model/ListDashboardsRequest.h>
 #include <aws/monitoring/model/ListDashboardsResult.h>
 #include <aws/monitoring/model/ListManagedInsightRulesRequest.h>
@@ -105,7 +112,9 @@
 #include <aws/monitoring/model/MetricStreamOutputFormat.h>
 #include <aws/monitoring/model/MetricStreamStatisticsConfiguration.h>
 #include <aws/monitoring/model/MetricStreamStatisticsMetric.h>
+#include <aws/monitoring/model/MuteTargets.h>
 #include <aws/monitoring/model/PartialFailure.h>
+#include <aws/monitoring/model/PutAlarmMuteRuleRequest.h>
 #include <aws/monitoring/model/PutAnomalyDetectorRequest.h>
 #include <aws/monitoring/model/PutAnomalyDetectorResult.h>
 #include <aws/monitoring/model/PutCompositeAlarmRequest.h>
@@ -123,7 +132,9 @@
 #include <aws/monitoring/model/RecentlyActive.h>
 #include <aws/monitoring/model/ResourceNotFoundException.h>
 #include <aws/monitoring/model/ResponseMetadata.h>
+#include <aws/monitoring/model/Rule.h>
 #include <aws/monitoring/model/ScanBy.h>
+#include <aws/monitoring/model/Schedule.h>
 #include <aws/monitoring/model/SetAlarmStateRequest.h>
 #include <aws/monitoring/model/SingleMetricAnomalyDetector.h>
 #include <aws/monitoring/model/StandardUnit.h>

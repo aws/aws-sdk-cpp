@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
@@ -231,6 +232,8 @@ class CreateAccessPointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clientToken;
 
@@ -253,6 +256,7 @@ class CreateAccessPointResult {
   LifeCycleState m_lifeCycleState{LifeCycleState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientTokenHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

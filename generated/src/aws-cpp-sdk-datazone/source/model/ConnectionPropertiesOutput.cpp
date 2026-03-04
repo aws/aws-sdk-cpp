@@ -58,6 +58,14 @@ ConnectionPropertiesOutput& ConnectionPropertiesOutput::operator=(JsonView jsonV
     m_mlflowProperties = jsonValue.GetObject("mlflowProperties");
     m_mlflowPropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("workflowsMwaaProperties")) {
+    m_workflowsMwaaProperties = jsonValue.GetObject("workflowsMwaaProperties");
+    m_workflowsMwaaPropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("workflowsServerlessProperties")) {
+    m_workflowsServerlessProperties = jsonValue.GetObject("workflowsServerlessProperties");
+    m_workflowsServerlessPropertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +110,14 @@ JsonValue ConnectionPropertiesOutput::Jsonize() const {
 
   if (m_mlflowPropertiesHasBeenSet) {
     payload.WithObject("mlflowProperties", m_mlflowProperties.Jsonize());
+  }
+
+  if (m_workflowsMwaaPropertiesHasBeenSet) {
+    payload.WithObject("workflowsMwaaProperties", m_workflowsMwaaProperties.Jsonize());
+  }
+
+  if (m_workflowsServerlessPropertiesHasBeenSet) {
+    payload.WithObject("workflowsServerlessProperties", m_workflowsServerlessProperties.Jsonize());
   }
 
   return payload;

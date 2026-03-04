@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
@@ -121,6 +122,8 @@ class GetLogLevelsByResourceTypesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LogLevel m_defaultLogLevel{LogLevel::NOT_SET};
 
@@ -131,6 +134,7 @@ class GetLogLevelsByResourceTypesResult {
   Aws::Vector<FuotaTaskLogOption> m_fuotaTaskLogOptions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_defaultLogLevelHasBeenSet = false;
   bool m_wirelessGatewayLogOptionsHasBeenSet = false;
   bool m_wirelessDeviceLogOptionsHasBeenSet = false;

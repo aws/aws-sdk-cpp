@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/RDS_EXPORTS.h>
@@ -158,6 +159,8 @@ class BacktrackDBClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dBClusterIdentifier;
 
@@ -172,6 +175,7 @@ class BacktrackDBClusterResult {
   Aws::String m_status;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_backtrackIdentifierHasBeenSet = false;
   bool m_backtrackToHasBeenSet = false;

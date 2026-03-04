@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeClientBrandingResult::DescribeClientBrandingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeClientBrandingResult& DescribeClientBrandingResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("DeviceTypeWindows")) {
     m_deviceTypeWindows = jsonValue.GetObject("DeviceTypeWindows");

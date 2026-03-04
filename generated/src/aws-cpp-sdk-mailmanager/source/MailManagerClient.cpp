@@ -138,7 +138,7 @@ MailManagerClient::MailManagerClient(const std::shared_ptr<AWSCredentialsProvide
 }
 
 /* Legacy constructors due deprecation */
-MailManagerClient::MailManagerClient(const Client::ClientConfiguration& clientConfiguration)
+MailManagerClient::MailManagerClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -150,7 +150,7 @@ MailManagerClient::MailManagerClient(const Client::ClientConfiguration& clientCo
   init(m_clientConfiguration);
 }
 
-MailManagerClient::MailManagerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+MailManagerClient::MailManagerClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -161,7 +161,7 @@ MailManagerClient::MailManagerClient(const AWSCredentials& credentials, const Cl
 }
 
 MailManagerClient::MailManagerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                     const Client::ClientConfiguration& clientConfiguration)
+                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

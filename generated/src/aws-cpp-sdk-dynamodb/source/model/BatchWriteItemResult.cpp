@@ -20,31 +20,34 @@ using namespace Aws;
 BatchWriteItemResult::BatchWriteItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchWriteItemResult& BatchWriteItemResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("UnprocessedItems")) {
     Aws::Map<Aws::String, JsonView> unprocessedItemsJsonMap = jsonValue.GetObject("UnprocessedItems").GetAllObjects();
     for (auto& unprocessedItemsItem : unprocessedItemsJsonMap) {
-      Aws::Utils::Array<JsonView> writeRequestsJsonList = unprocessedItemsItem.second.AsArray();
-      Aws::Vector<WriteRequest> writeRequestsList;
-      writeRequestsList.reserve((size_t)writeRequestsJsonList.GetLength());
-      for (unsigned writeRequestsIndex = 0; writeRequestsIndex < writeRequestsJsonList.GetLength(); ++writeRequestsIndex) {
-        writeRequestsList.push_back(writeRequestsJsonList[writeRequestsIndex].AsObject());
+      Aws::Utils::Array<JsonView> writeRequests2JsonList = unprocessedItemsItem.second.AsArray();
+      Aws::Vector<WriteRequest> writeRequests2List;
+      writeRequests2List.reserve((size_t)writeRequests2JsonList.GetLength());
+      for (unsigned writeRequests2Index = 0; writeRequests2Index < writeRequests2JsonList.GetLength(); ++writeRequests2Index) {
+        writeRequests2List.push_back(writeRequests2JsonList[writeRequests2Index].AsObject());
       }
-      m_unprocessedItems[unprocessedItemsItem.first] = std::move(writeRequestsList);
+      m_unprocessedItems[unprocessedItemsItem.first] = std::move(writeRequests2List);
     }
     m_unprocessedItemsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ItemCollectionMetrics")) {
     Aws::Map<Aws::String, JsonView> itemCollectionMetricsJsonMap = jsonValue.GetObject("ItemCollectionMetrics").GetAllObjects();
     for (auto& itemCollectionMetricsItem : itemCollectionMetricsJsonMap) {
-      Aws::Utils::Array<JsonView> itemCollectionMetricsMultipleJsonList = itemCollectionMetricsItem.second.AsArray();
-      Aws::Vector<ItemCollectionMetrics> itemCollectionMetricsMultipleList;
-      itemCollectionMetricsMultipleList.reserve((size_t)itemCollectionMetricsMultipleJsonList.GetLength());
-      for (unsigned itemCollectionMetricsMultipleIndex = 0;
-           itemCollectionMetricsMultipleIndex < itemCollectionMetricsMultipleJsonList.GetLength(); ++itemCollectionMetricsMultipleIndex) {
-        itemCollectionMetricsMultipleList.push_back(itemCollectionMetricsMultipleJsonList[itemCollectionMetricsMultipleIndex].AsObject());
+      Aws::Utils::Array<JsonView> itemCollectionMetricsMultiple2JsonList = itemCollectionMetricsItem.second.AsArray();
+      Aws::Vector<ItemCollectionMetrics> itemCollectionMetricsMultiple2List;
+      itemCollectionMetricsMultiple2List.reserve((size_t)itemCollectionMetricsMultiple2JsonList.GetLength());
+      for (unsigned itemCollectionMetricsMultiple2Index = 0;
+           itemCollectionMetricsMultiple2Index < itemCollectionMetricsMultiple2JsonList.GetLength();
+           ++itemCollectionMetricsMultiple2Index) {
+        itemCollectionMetricsMultiple2List.push_back(
+            itemCollectionMetricsMultiple2JsonList[itemCollectionMetricsMultiple2Index].AsObject());
       }
-      m_itemCollectionMetrics[itemCollectionMetricsItem.first] = std::move(itemCollectionMetricsMultipleList);
+      m_itemCollectionMetrics[itemCollectionMetricsItem.first] = std::move(itemCollectionMetricsMultiple2List);
     }
     m_itemCollectionMetricsHasBeenSet = true;
   }

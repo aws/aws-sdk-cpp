@@ -22,6 +22,7 @@ CreateAppVersionAppComponentResult::CreateAppVersionAppComponentResult(const Aws
 }
 
 CreateAppVersionAppComponentResult& CreateAppVersionAppComponentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("appArn")) {
     m_appArn = jsonValue.GetString("appArn");

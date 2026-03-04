@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/VaultState.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -114,6 +115,8 @@ class CreateLogicallyAirGappedBackupVaultResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_backupVaultName;
 
@@ -124,6 +127,7 @@ class CreateLogicallyAirGappedBackupVaultResult {
   VaultState m_vaultState{VaultState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_backupVaultNameHasBeenSet = false;
   bool m_backupVaultArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;

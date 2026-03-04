@@ -36,14 +36,14 @@ SsmAutomation& SsmAutomation::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("parameters")) {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
     for (auto& parametersItem : parametersJsonMap) {
-      Aws::Utils::Array<JsonView> ssmParameterValuesJsonList = parametersItem.second.AsArray();
-      Aws::Vector<Aws::String> ssmParameterValuesList;
-      ssmParameterValuesList.reserve((size_t)ssmParameterValuesJsonList.GetLength());
-      for (unsigned ssmParameterValuesIndex = 0; ssmParameterValuesIndex < ssmParameterValuesJsonList.GetLength();
-           ++ssmParameterValuesIndex) {
-        ssmParameterValuesList.push_back(ssmParameterValuesJsonList[ssmParameterValuesIndex].AsString());
+      Aws::Utils::Array<JsonView> ssmParameterValues2JsonList = parametersItem.second.AsArray();
+      Aws::Vector<Aws::String> ssmParameterValues2List;
+      ssmParameterValues2List.reserve((size_t)ssmParameterValues2JsonList.GetLength());
+      for (unsigned ssmParameterValues2Index = 0; ssmParameterValues2Index < ssmParameterValues2JsonList.GetLength();
+           ++ssmParameterValues2Index) {
+        ssmParameterValues2List.push_back(ssmParameterValues2JsonList[ssmParameterValues2Index].AsString());
       }
-      m_parameters[parametersItem.first] = std::move(ssmParameterValuesList);
+      m_parameters[parametersItem.first] = std::move(ssmParameterValues2List);
     }
     m_parametersHasBeenSet = true;
   }

@@ -22,14 +22,14 @@ Consolidation& Consolidation::operator=(JsonView jsonValue) {
     Aws::Utils::Array<JsonView> matchingAttributesListJsonList = jsonValue.GetArray("MatchingAttributesList");
     for (unsigned matchingAttributesListIndex = 0; matchingAttributesListIndex < matchingAttributesListJsonList.GetLength();
          ++matchingAttributesListIndex) {
-      Aws::Utils::Array<JsonView> matchingAttributesJsonList = matchingAttributesListJsonList[matchingAttributesListIndex].AsArray();
-      Aws::Vector<Aws::String> matchingAttributesList;
-      matchingAttributesList.reserve((size_t)matchingAttributesJsonList.GetLength());
-      for (unsigned matchingAttributesIndex = 0; matchingAttributesIndex < matchingAttributesJsonList.GetLength();
-           ++matchingAttributesIndex) {
-        matchingAttributesList.push_back(matchingAttributesJsonList[matchingAttributesIndex].AsString());
+      Aws::Utils::Array<JsonView> matchingAttributes2JsonList = matchingAttributesListJsonList[matchingAttributesListIndex].AsArray();
+      Aws::Vector<Aws::String> matchingAttributes2List;
+      matchingAttributes2List.reserve((size_t)matchingAttributes2JsonList.GetLength());
+      for (unsigned matchingAttributes2Index = 0; matchingAttributes2Index < matchingAttributes2JsonList.GetLength();
+           ++matchingAttributes2Index) {
+        matchingAttributes2List.push_back(matchingAttributes2JsonList[matchingAttributes2Index].AsString());
       }
-      m_matchingAttributesList.push_back(std::move(matchingAttributesList));
+      m_matchingAttributesList.push_back(std::move(matchingAttributes2List));
     }
     m_matchingAttributesListHasBeenSet = true;
   }

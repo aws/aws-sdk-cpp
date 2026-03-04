@@ -257,6 +257,7 @@
 #include <aws/logs/model/Processor.h>
 #include <aws/logs/model/PutAccountPolicyRequest.h>
 #include <aws/logs/model/PutAccountPolicyResult.h>
+#include <aws/logs/model/PutBearerTokenAuthenticationRequest.h>
 #include <aws/logs/model/PutDataProtectionPolicyRequest.h>
 #include <aws/logs/model/PutDataProtectionPolicyResult.h>
 #include <aws/logs/model/PutDeliveryDestinationPolicyRequest.h>

@@ -427,6 +427,23 @@ class StartStreamTranscriptionInitialResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Provides the session resume window, in minutes, that you specified in your
+   * request.</p>
+   */
+  inline int GetSessionResumeWindow() const { return m_sessionResumeWindow; }
+  inline bool SessionResumeWindowHasBeenSet() const { return m_sessionResumeWindowHasBeenSet; }
+  inline void SetSessionResumeWindow(int value) {
+    m_sessionResumeWindowHasBeenSet = true;
+    m_sessionResumeWindow = value;
+  }
+  inline StartStreamTranscriptionInitialResponse& WithSessionResumeWindow(int value) {
+    SetSessionResumeWindow(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_requestId;
 
@@ -473,6 +490,8 @@ class StartStreamTranscriptionInitialResponse {
   Aws::String m_vocabularyNames;
 
   Aws::String m_vocabularyFilterNames;
+
+  int m_sessionResumeWindow{0};
   bool m_requestIdHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
   bool m_mediaSampleRateHertzHasBeenSet = false;
@@ -496,6 +515,7 @@ class StartStreamTranscriptionInitialResponse {
   bool m_identifyMultipleLanguagesHasBeenSet = false;
   bool m_vocabularyNamesHasBeenSet = false;
   bool m_vocabularyFilterNamesHasBeenSet = false;
+  bool m_sessionResumeWindowHasBeenSet = false;
 };
 
 }  // namespace Model

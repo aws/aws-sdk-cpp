@@ -102,7 +102,7 @@ TimestreamWriteClient::TimestreamWriteClient(const std::shared_ptr<AWSCredential
 }
 
 /* Legacy constructors due deprecation */
-TimestreamWriteClient::TimestreamWriteClient(const Client::ClientConfiguration& clientConfiguration)
+TimestreamWriteClient::TimestreamWriteClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -114,7 +114,7 @@ TimestreamWriteClient::TimestreamWriteClient(const Client::ClientConfiguration& 
   init(m_clientConfiguration);
 }
 
-TimestreamWriteClient::TimestreamWriteClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+TimestreamWriteClient::TimestreamWriteClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -125,7 +125,7 @@ TimestreamWriteClient::TimestreamWriteClient(const AWSCredentials& credentials, 
 }
 
 TimestreamWriteClient::TimestreamWriteClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                             const Client::ClientConfiguration& clientConfiguration)
+                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

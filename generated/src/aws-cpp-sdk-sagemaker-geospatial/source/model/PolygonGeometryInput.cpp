@@ -21,19 +21,19 @@ PolygonGeometryInput& PolygonGeometryInput::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Coordinates")) {
     Aws::Utils::Array<JsonView> coordinatesJsonList = jsonValue.GetArray("Coordinates");
     for (unsigned coordinatesIndex = 0; coordinatesIndex < coordinatesJsonList.GetLength(); ++coordinatesIndex) {
-      Aws::Utils::Array<JsonView> linearRingJsonList = coordinatesJsonList[coordinatesIndex].AsArray();
-      Aws::Vector<Aws::Vector<double>> linearRingList;
-      linearRingList.reserve((size_t)linearRingJsonList.GetLength());
-      for (unsigned linearRingIndex = 0; linearRingIndex < linearRingJsonList.GetLength(); ++linearRingIndex) {
-        Aws::Utils::Array<JsonView> positionJsonList = linearRingJsonList[linearRingIndex].AsArray();
-        Aws::Vector<double> positionList;
-        positionList.reserve((size_t)positionJsonList.GetLength());
-        for (unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex) {
-          positionList.push_back(positionJsonList[positionIndex].AsDouble());
+      Aws::Utils::Array<JsonView> linearRing2JsonList = coordinatesJsonList[coordinatesIndex].AsArray();
+      Aws::Vector<Aws::Vector<double>> linearRing2List;
+      linearRing2List.reserve((size_t)linearRing2JsonList.GetLength());
+      for (unsigned linearRing2Index = 0; linearRing2Index < linearRing2JsonList.GetLength(); ++linearRing2Index) {
+        Aws::Utils::Array<JsonView> position3JsonList = linearRing2JsonList[linearRing2Index].AsArray();
+        Aws::Vector<double> position3List;
+        position3List.reserve((size_t)position3JsonList.GetLength());
+        for (unsigned position3Index = 0; position3Index < position3JsonList.GetLength(); ++position3Index) {
+          position3List.push_back(position3JsonList[position3Index].AsDouble());
         }
-        linearRingList.push_back(std::move(positionList));
+        linearRing2List.push_back(std::move(position3List));
       }
-      m_coordinates.push_back(std::move(linearRingList));
+      m_coordinates.push_back(std::move(linearRing2List));
     }
     m_coordinatesHasBeenSet = true;
   }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mailmanager/MailManager_EXPORTS.h>
@@ -92,6 +93,8 @@ class GetAddonSubscriptionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_addonName;
 
@@ -100,6 +103,7 @@ class GetAddonSubscriptionResult {
   Aws::Utils::DateTime m_createdTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_addonNameHasBeenSet = false;
   bool m_addonSubscriptionArnHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso/SSO_EXPORTS.h>
 #include <aws/sso/model/RoleCredentials.h>
@@ -58,10 +59,13 @@ class GetRoleCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RoleCredentials m_roleCredentials;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_roleCredentialsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -140,6 +140,12 @@ enum class ProductionVariantInstanceType {
   ml_g6e_16xlarge,
   ml_g6e_24xlarge,
   ml_g6e_48xlarge,
+  ml_g7e_2xlarge,
+  ml_g7e_4xlarge,
+  ml_g7e_8xlarge,
+  ml_g7e_12xlarge,
+  ml_g7e_24xlarge,
+  ml_g7e_48xlarge,
   ml_p4d_24xlarge,
   ml_c7g_large,
   ml_c7g_xlarge,
@@ -274,6 +280,7 @@ enum class ProductionVariantInstanceType {
   ml_c6in_24xlarge,
   ml_c6in_32xlarge,
   ml_p6_b200_48xlarge,
+  ml_p6_b300_48xlarge,
   ml_p6e_gb200_36xlarge,
   ml_p5_4xlarge
 };

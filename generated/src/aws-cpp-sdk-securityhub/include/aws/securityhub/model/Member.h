@@ -70,8 +70,8 @@ class Member {
 
   ///@{
   /**
-   * <p>The Amazon Web Services account ID of the Security Hub administrator account
-   * associated with this member account.</p>
+   * <p>The Amazon Web Services account ID of the Security Hub CSPM administrator
+   * account associated with this member account.</p>
    */
   inline const Aws::String& GetAdministratorId() const { return m_administratorId; }
   inline bool AdministratorIdHasBeenSet() const { return m_administratorIdHasBeenSet; }

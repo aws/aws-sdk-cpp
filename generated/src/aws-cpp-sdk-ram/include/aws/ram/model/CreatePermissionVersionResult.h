@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/ram/model/ResourceSharePermissionDetail.h>
@@ -77,12 +78,15 @@ class CreatePermissionVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ResourceSharePermissionDetail m_permission;
 
   Aws::String m_clientToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_permissionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/simspaceweaver/SimSpaceWeaver_EXPORTS.h>
@@ -301,6 +302,8 @@ class DescribeSimulationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -331,6 +334,7 @@ class DescribeSimulationResult {
   SimulationTargetStatus m_targetStatus{SimulationTargetStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 
@@ -92,6 +93,8 @@ class CreateDataAccessorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dataAccessorId;
 
@@ -100,6 +103,7 @@ class CreateDataAccessorResult {
   Aws::String m_dataAccessorArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataAccessorIdHasBeenSet = false;
   bool m_idcApplicationArnHasBeenSet = false;
   bool m_dataAccessorArnHasBeenSet = false;

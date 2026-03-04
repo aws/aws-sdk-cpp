@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/pinpoint-sms-voice-v2/model/PhoneNumberType.h>
@@ -181,6 +182,8 @@ class CarrierLookupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_e164PhoneNumber;
 
@@ -199,6 +202,7 @@ class CarrierLookupResult {
   PhoneNumberType m_phoneNumberType{PhoneNumberType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_e164PhoneNumberHasBeenSet = false;
   bool m_dialingCountryCodeHasBeenSet = false;
   bool m_isoCountryCodeHasBeenSet = false;

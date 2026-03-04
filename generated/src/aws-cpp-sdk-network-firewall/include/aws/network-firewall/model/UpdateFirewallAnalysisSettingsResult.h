@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
@@ -131,6 +132,8 @@ class UpdateFirewallAnalysisSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<EnabledAnalysisType> m_enabledAnalysisTypes;
 
@@ -141,6 +144,7 @@ class UpdateFirewallAnalysisSettingsResult {
   Aws::String m_updateToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_enabledAnalysisTypesHasBeenSet = false;
   bool m_firewallArnHasBeenSet = false;
   bool m_firewallNameHasBeenSet = false;

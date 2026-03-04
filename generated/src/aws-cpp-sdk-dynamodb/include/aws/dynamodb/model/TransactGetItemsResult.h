@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
@@ -100,12 +101,15 @@ class TransactGetItemsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ConsumedCapacity> m_consumedCapacity;
 
   Aws::Vector<ItemResponse> m_responses;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_consumedCapacityHasBeenSet = false;
   bool m_responsesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

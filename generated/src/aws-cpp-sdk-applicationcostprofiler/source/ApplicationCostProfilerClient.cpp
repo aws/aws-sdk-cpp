@@ -90,7 +90,7 @@ ApplicationCostProfilerClient::ApplicationCostProfilerClient(
 }
 
 /* Legacy constructors due deprecation */
-ApplicationCostProfilerClient::ApplicationCostProfilerClient(const Client::ClientConfiguration& clientConfiguration)
+ApplicationCostProfilerClient::ApplicationCostProfilerClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -103,7 +103,7 @@ ApplicationCostProfilerClient::ApplicationCostProfilerClient(const Client::Clien
 }
 
 ApplicationCostProfilerClient::ApplicationCostProfilerClient(const AWSCredentials& credentials,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -114,7 +114,7 @@ ApplicationCostProfilerClient::ApplicationCostProfilerClient(const AWSCredential
 }
 
 ApplicationCostProfilerClient::ApplicationCostProfilerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

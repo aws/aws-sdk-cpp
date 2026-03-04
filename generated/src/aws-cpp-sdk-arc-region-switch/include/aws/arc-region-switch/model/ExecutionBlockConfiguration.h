@@ -13,6 +13,8 @@
 #include <aws/arc-region-switch/model/EksResourceScalingConfiguration.h>
 #include <aws/arc-region-switch/model/ExecutionApprovalConfiguration.h>
 #include <aws/arc-region-switch/model/GlobalAuroraConfiguration.h>
+#include <aws/arc-region-switch/model/RdsCreateCrossRegionReplicaConfiguration.h>
+#include <aws/arc-region-switch/model/RdsPromoteReadReplicaConfiguration.h>
 #include <aws/arc-region-switch/model/RegionSwitchPlanConfiguration.h>
 #include <aws/arc-region-switch/model/Route53HealthCheckConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
@@ -240,6 +242,44 @@ class ExecutionBlockConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An Amazon RDS promote read replica execution block.</p>
+   */
+  inline const RdsPromoteReadReplicaConfiguration& GetRdsPromoteReadReplicaConfig() const { return m_rdsPromoteReadReplicaConfig; }
+  inline bool RdsPromoteReadReplicaConfigHasBeenSet() const { return m_rdsPromoteReadReplicaConfigHasBeenSet; }
+  template <typename RdsPromoteReadReplicaConfigT = RdsPromoteReadReplicaConfiguration>
+  void SetRdsPromoteReadReplicaConfig(RdsPromoteReadReplicaConfigT&& value) {
+    m_rdsPromoteReadReplicaConfigHasBeenSet = true;
+    m_rdsPromoteReadReplicaConfig = std::forward<RdsPromoteReadReplicaConfigT>(value);
+  }
+  template <typename RdsPromoteReadReplicaConfigT = RdsPromoteReadReplicaConfiguration>
+  ExecutionBlockConfiguration& WithRdsPromoteReadReplicaConfig(RdsPromoteReadReplicaConfigT&& value) {
+    SetRdsPromoteReadReplicaConfig(std::forward<RdsPromoteReadReplicaConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An Amazon RDS create cross-Region replica execution block.</p>
+   */
+  inline const RdsCreateCrossRegionReplicaConfiguration& GetRdsCreateCrossRegionReadReplicaConfig() const {
+    return m_rdsCreateCrossRegionReadReplicaConfig;
+  }
+  inline bool RdsCreateCrossRegionReadReplicaConfigHasBeenSet() const { return m_rdsCreateCrossRegionReadReplicaConfigHasBeenSet; }
+  template <typename RdsCreateCrossRegionReadReplicaConfigT = RdsCreateCrossRegionReplicaConfiguration>
+  void SetRdsCreateCrossRegionReadReplicaConfig(RdsCreateCrossRegionReadReplicaConfigT&& value) {
+    m_rdsCreateCrossRegionReadReplicaConfigHasBeenSet = true;
+    m_rdsCreateCrossRegionReadReplicaConfig = std::forward<RdsCreateCrossRegionReadReplicaConfigT>(value);
+  }
+  template <typename RdsCreateCrossRegionReadReplicaConfigT = RdsCreateCrossRegionReplicaConfiguration>
+  ExecutionBlockConfiguration& WithRdsCreateCrossRegionReadReplicaConfig(RdsCreateCrossRegionReadReplicaConfigT&& value) {
+    SetRdsCreateCrossRegionReadReplicaConfig(std::forward<RdsCreateCrossRegionReadReplicaConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CustomActionLambdaConfiguration m_customActionLambdaConfig;
 
@@ -262,6 +302,10 @@ class ExecutionBlockConfiguration {
   Route53HealthCheckConfiguration m_route53HealthCheckConfig;
 
   DocumentDbConfiguration m_documentDbConfig;
+
+  RdsPromoteReadReplicaConfiguration m_rdsPromoteReadReplicaConfig;
+
+  RdsCreateCrossRegionReplicaConfiguration m_rdsCreateCrossRegionReadReplicaConfig;
   bool m_customActionLambdaConfigHasBeenSet = false;
   bool m_ec2AsgCapacityIncreaseConfigHasBeenSet = false;
   bool m_executionApprovalConfigHasBeenSet = false;
@@ -273,6 +317,8 @@ class ExecutionBlockConfiguration {
   bool m_eksResourceScalingConfigHasBeenSet = false;
   bool m_route53HealthCheckConfigHasBeenSet = false;
   bool m_documentDbConfigHasBeenSet = false;
+  bool m_rdsPromoteReadReplicaConfigHasBeenSet = false;
+  bool m_rdsCreateCrossRegionReadReplicaConfigHasBeenSet = false;
 };
 
 }  // namespace Model

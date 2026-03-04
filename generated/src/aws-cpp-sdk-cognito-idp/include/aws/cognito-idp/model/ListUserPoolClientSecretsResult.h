@@ -1,0 +1,115 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
+#include <aws/cognito-idp/model/ClientSecretDescriptorType.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace CognitoIdentityProvider {
+namespace Model {
+/**
+ * <p>The response containing the list of client secret metadata. This response
+ * does not include a NextToken field as all secrets are returned in a single
+ * response.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClientSecretsResponse">AWS
+ * API Reference</a></p>
+ */
+class ListUserPoolClientSecretsResult {
+ public:
+  AWS_COGNITOIDENTITYPROVIDER_API ListUserPoolClientSecretsResult() = default;
+  AWS_COGNITOIDENTITYPROVIDER_API ListUserPoolClientSecretsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_COGNITOIDENTITYPROVIDER_API ListUserPoolClientSecretsResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A list of client secret descriptors containing the identifier and creation
+   * date for each secret. For security reasons, the response never reveals the
+   * actual secret value in ClientSecretValue.</p>
+   */
+  inline const Aws::Vector<ClientSecretDescriptorType>& GetClientSecrets() const { return m_clientSecrets; }
+  template <typename ClientSecretsT = Aws::Vector<ClientSecretDescriptorType>>
+  void SetClientSecrets(ClientSecretsT&& value) {
+    m_clientSecretsHasBeenSet = true;
+    m_clientSecrets = std::forward<ClientSecretsT>(value);
+  }
+  template <typename ClientSecretsT = Aws::Vector<ClientSecretDescriptorType>>
+  ListUserPoolClientSecretsResult& WithClientSecrets(ClientSecretsT&& value) {
+    SetClientSecrets(std::forward<ClientSecretsT>(value));
+    return *this;
+  }
+  template <typename ClientSecretsT = ClientSecretDescriptorType>
+  ListUserPoolClientSecretsResult& AddClientSecrets(ClientSecretsT&& value) {
+    m_clientSecretsHasBeenSet = true;
+    m_clientSecrets.emplace_back(std::forward<ClientSecretsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier that Amazon Cognito returned with the previous request to this
+   * operation. When you include a pagination token in your request, Amazon Cognito
+   * returns the next set of items in the list. By use of this token, you can
+   * paginate through the full list of items.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListUserPoolClientSecretsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListUserPoolClientSecretsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<ClientSecretDescriptorType> m_clientSecrets;
+
+  Aws::String m_nextToken;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_clientSecretsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

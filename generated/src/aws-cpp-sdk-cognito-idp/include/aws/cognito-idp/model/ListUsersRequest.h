@@ -88,7 +88,10 @@ class ListUsersRequest : public CognitoIdentityProviderRequest {
   ///@{
   /**
    * <p>The maximum number of users that you want Amazon Cognito to return in the
-   * response.</p>
+   * response. In some SDK contexts, this operation might return fewer items than you
+   * specify in the <code>Limit</code> parameter without having reached the end of
+   * the full list. If the response contains a <code>PaginationToken</code>, then
+   * there are more results.</p>
    */
   inline int GetLimit() const { return m_limit; }
   inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }

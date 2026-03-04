@@ -204,6 +204,25 @@ class PolicyEngine {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy
+   * engine data.</p>
+   */
+  inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+  inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
+  template <typename EncryptionKeyArnT = Aws::String>
+  void SetEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    m_encryptionKeyArnHasBeenSet = true;
+    m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value);
+  }
+  template <typename EncryptionKeyArnT = Aws::String>
+  PolicyEngine& WithEncryptionKeyArn(EncryptionKeyArnT&& value) {
+    SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_policyEngineId;
 
@@ -220,6 +239,8 @@ class PolicyEngine {
   PolicyEngineStatus m_status{PolicyEngineStatus::NOT_SET};
 
   Aws::Vector<Aws::String> m_statusReasons;
+
+  Aws::String m_encryptionKeyArn;
   bool m_policyEngineIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -228,6 +249,7 @@ class PolicyEngine {
   bool m_policyEngineArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonsHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

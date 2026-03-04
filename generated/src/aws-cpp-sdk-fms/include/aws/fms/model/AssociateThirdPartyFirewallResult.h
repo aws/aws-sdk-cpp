@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/ThirdPartyFirewallAssociationStatus.h>
@@ -67,10 +68,13 @@ class AssociateThirdPartyFirewallResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ThirdPartyFirewallAssociationStatus m_thirdPartyFirewallStatus{ThirdPartyFirewallAssociationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_thirdPartyFirewallStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

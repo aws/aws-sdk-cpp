@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/Entitlement.h>
@@ -75,12 +76,15 @@ class UpdateFlowEntitlementResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Entitlement m_entitlement;
 
   Aws::String m_flowArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_entitlementHasBeenSet = false;
   bool m_flowArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

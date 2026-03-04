@@ -8,6 +8,7 @@
 #include <aws/autoscaling/model/Instance.h>
 #include <aws/autoscaling/model/ResponseMetadata.h>
 #include <aws/autoscaling/model/WarmPoolConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -104,6 +105,8 @@ class DescribeWarmPoolResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   WarmPoolConfiguration m_warmPoolConfiguration;
 
@@ -112,6 +115,7 @@ class DescribeWarmPoolResult {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_warmPoolConfigurationHasBeenSet = false;
   bool m_instancesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

@@ -20,6 +20,7 @@ using namespace Aws;
 GetUsageResult::GetUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetUsageResult& GetUsageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("usagePlanId")) {
     m_usagePlanId = jsonValue.GetString("usagePlanId");
@@ -40,19 +41,19 @@ GetUsageResult& GetUsageResult::operator=(const Aws::AmazonWebServiceResult<Json
   if (jsonValue.ValueExists("values")) {
     Aws::Map<Aws::String, JsonView> valuesJsonMap = jsonValue.GetObject("values").GetAllObjects();
     for (auto& valuesItem : valuesJsonMap) {
-      Aws::Utils::Array<JsonView> listOfUsageJsonList = valuesItem.second.AsArray();
-      Aws::Vector<Aws::Vector<long long>> listOfUsageList;
-      listOfUsageList.reserve((size_t)listOfUsageJsonList.GetLength());
-      for (unsigned listOfUsageIndex = 0; listOfUsageIndex < listOfUsageJsonList.GetLength(); ++listOfUsageIndex) {
-        Aws::Utils::Array<JsonView> listOfLongJsonList = listOfUsageJsonList[listOfUsageIndex].AsArray();
-        Aws::Vector<long long> listOfLongList;
-        listOfLongList.reserve((size_t)listOfLongJsonList.GetLength());
-        for (unsigned listOfLongIndex = 0; listOfLongIndex < listOfLongJsonList.GetLength(); ++listOfLongIndex) {
-          listOfLongList.push_back(listOfLongJsonList[listOfLongIndex].AsInt64());
+      Aws::Utils::Array<JsonView> listOfUsage2JsonList = valuesItem.second.AsArray();
+      Aws::Vector<Aws::Vector<long long>> listOfUsage2List;
+      listOfUsage2List.reserve((size_t)listOfUsage2JsonList.GetLength());
+      for (unsigned listOfUsage2Index = 0; listOfUsage2Index < listOfUsage2JsonList.GetLength(); ++listOfUsage2Index) {
+        Aws::Utils::Array<JsonView> listOfLong3JsonList = listOfUsage2JsonList[listOfUsage2Index].AsArray();
+        Aws::Vector<long long> listOfLong3List;
+        listOfLong3List.reserve((size_t)listOfLong3JsonList.GetLength());
+        for (unsigned listOfLong3Index = 0; listOfLong3Index < listOfLong3JsonList.GetLength(); ++listOfLong3Index) {
+          listOfLong3List.push_back(listOfLong3JsonList[listOfLong3Index].AsInt64());
         }
-        listOfUsageList.push_back(std::move(listOfLongList));
+        listOfUsage2List.push_back(std::move(listOfLong3List));
       }
-      m_items[valuesItem.first] = std::move(listOfUsageList);
+      m_items[valuesItem.first] = std::move(listOfUsage2List);
     }
     m_itemsHasBeenSet = true;
   }

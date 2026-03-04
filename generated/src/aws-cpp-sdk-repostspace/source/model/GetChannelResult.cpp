@@ -20,6 +20,7 @@ using namespace Aws;
 GetChannelResult::GetChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetChannelResult& GetChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("spaceId")) {
     m_spaceId = jsonValue.GetString("spaceId");
@@ -48,13 +49,14 @@ GetChannelResult& GetChannelResult::operator=(const Aws::AmazonWebServiceResult<
   if (jsonValue.ValueExists("channelRoles")) {
     Aws::Map<Aws::String, JsonView> channelRolesJsonMap = jsonValue.GetObject("channelRoles").GetAllObjects();
     for (auto& channelRolesItem : channelRolesJsonMap) {
-      Aws::Utils::Array<JsonView> channelRoleListJsonList = channelRolesItem.second.AsArray();
-      Aws::Vector<ChannelRole> channelRoleListList;
-      channelRoleListList.reserve((size_t)channelRoleListJsonList.GetLength());
-      for (unsigned channelRoleListIndex = 0; channelRoleListIndex < channelRoleListJsonList.GetLength(); ++channelRoleListIndex) {
-        channelRoleListList.push_back(ChannelRoleMapper::GetChannelRoleForName(channelRoleListJsonList[channelRoleListIndex].AsString()));
+      Aws::Utils::Array<JsonView> channelRoleList2JsonList = channelRolesItem.second.AsArray();
+      Aws::Vector<ChannelRole> channelRoleList2List;
+      channelRoleList2List.reserve((size_t)channelRoleList2JsonList.GetLength());
+      for (unsigned channelRoleList2Index = 0; channelRoleList2Index < channelRoleList2JsonList.GetLength(); ++channelRoleList2Index) {
+        channelRoleList2List.push_back(
+            ChannelRoleMapper::GetChannelRoleForName(channelRoleList2JsonList[channelRoleList2Index].AsString()));
       }
-      m_channelRoles[channelRolesItem.first] = std::move(channelRoleListList);
+      m_channelRoles[channelRolesItem.first] = std::move(channelRoleList2List);
     }
     m_channelRolesHasBeenSet = true;
   }

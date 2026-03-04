@@ -158,7 +158,7 @@ BedrockAgentClient::BedrockAgentClient(const std::shared_ptr<AWSCredentialsProvi
           }) {}
 
 /* Legacy constructors due deprecation */
-BedrockAgentClient::BedrockAgentClient(const Client::ClientConfiguration& clientConfiguration)
+BedrockAgentClient::BedrockAgentClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Agent", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockAgentErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<BedrockAgentEndpointProvider>(ALLOCATION_TAG),
@@ -169,7 +169,7 @@ BedrockAgentClient::BedrockAgentClient(const Client::ClientConfiguration& client
                smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
           }) {}
 
-BedrockAgentClient::BedrockAgentClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+BedrockAgentClient::BedrockAgentClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Agent", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockAgentErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<BedrockAgentEndpointProvider>(ALLOCATION_TAG),
@@ -182,7 +182,7 @@ BedrockAgentClient::BedrockAgentClient(const AWSCredentials& credentials, const 
           }) {}
 
 BedrockAgentClient::BedrockAgentClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                       const Client::ClientConfiguration& clientConfiguration)
+                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Agent", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockAgentErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<BedrockAgentEndpointProvider>(ALLOCATION_TAG),

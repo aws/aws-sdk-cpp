@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
@@ -178,6 +179,8 @@ class GetJobOutputResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
 
@@ -194,6 +197,7 @@ class GetJobOutputResult {
   Aws::String m_archiveDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bodyHasBeenSet = false;
   bool m_checksumHasBeenSet = false;
   bool m_statusHasBeenSet = false;

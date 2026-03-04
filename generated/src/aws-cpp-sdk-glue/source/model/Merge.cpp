@@ -36,14 +36,14 @@ Merge& Merge::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("PrimaryKeys")) {
     Aws::Utils::Array<JsonView> primaryKeysJsonList = jsonValue.GetArray("PrimaryKeys");
     for (unsigned primaryKeysIndex = 0; primaryKeysIndex < primaryKeysJsonList.GetLength(); ++primaryKeysIndex) {
-      Aws::Utils::Array<JsonView> enclosedInStringPropertiesJsonList = primaryKeysJsonList[primaryKeysIndex].AsArray();
-      Aws::Vector<Aws::String> enclosedInStringPropertiesList;
-      enclosedInStringPropertiesList.reserve((size_t)enclosedInStringPropertiesJsonList.GetLength());
-      for (unsigned enclosedInStringPropertiesIndex = 0; enclosedInStringPropertiesIndex < enclosedInStringPropertiesJsonList.GetLength();
-           ++enclosedInStringPropertiesIndex) {
-        enclosedInStringPropertiesList.push_back(enclosedInStringPropertiesJsonList[enclosedInStringPropertiesIndex].AsString());
+      Aws::Utils::Array<JsonView> enclosedInStringProperties2JsonList = primaryKeysJsonList[primaryKeysIndex].AsArray();
+      Aws::Vector<Aws::String> enclosedInStringProperties2List;
+      enclosedInStringProperties2List.reserve((size_t)enclosedInStringProperties2JsonList.GetLength());
+      for (unsigned enclosedInStringProperties2Index = 0;
+           enclosedInStringProperties2Index < enclosedInStringProperties2JsonList.GetLength(); ++enclosedInStringProperties2Index) {
+        enclosedInStringProperties2List.push_back(enclosedInStringProperties2JsonList[enclosedInStringProperties2Index].AsString());
       }
-      m_primaryKeys.push_back(std::move(enclosedInStringPropertiesList));
+      m_primaryKeys.push_back(std::move(enclosedInStringProperties2List));
     }
     m_primaryKeysHasBeenSet = true;
   }

@@ -92,12 +92,12 @@ Integration& Integration::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("responseParameters")) {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
     for (auto& responseParametersItem : responseParametersJsonMap) {
-      Aws::Map<Aws::String, JsonView> integrationParametersJsonMap = responseParametersItem.second.GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> integrationParametersMap;
-      for (auto& integrationParametersItem : integrationParametersJsonMap) {
-        integrationParametersMap[integrationParametersItem.first] = integrationParametersItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> integrationParameters2JsonMap = responseParametersItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> integrationParameters2Map;
+      for (auto& integrationParameters2Item : integrationParameters2JsonMap) {
+        integrationParameters2Map[integrationParameters2Item.first] = integrationParameters2Item.second.AsString();
       }
-      m_responseParameters[responseParametersItem.first] = std::move(integrationParametersMap);
+      m_responseParameters[responseParametersItem.first] = std::move(integrationParameters2Map);
     }
     m_responseParametersHasBeenSet = true;
   }

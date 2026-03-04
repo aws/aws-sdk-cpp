@@ -78,6 +78,10 @@ ModelInvocationJobSummary& ModelInvocationJobSummary::operator=(JsonView jsonVal
     m_jobExpirationTime = jsonValue.GetString("jobExpirationTime");
     m_jobExpirationTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("modelInvocationType")) {
+    m_modelInvocationType = ModelInvocationTypeMapper::GetModelInvocationTypeForName(jsonValue.GetString("modelInvocationType"));
+    m_modelInvocationTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -142,6 +146,10 @@ JsonValue ModelInvocationJobSummary::Jsonize() const {
 
   if (m_jobExpirationTimeHasBeenSet) {
     payload.WithString("jobExpirationTime", m_jobExpirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_modelInvocationTypeHasBeenSet) {
+    payload.WithString("modelInvocationType", ModelInvocationTypeMapper::GetNameForModelInvocationType(m_modelInvocationType));
   }
 
   return payload;

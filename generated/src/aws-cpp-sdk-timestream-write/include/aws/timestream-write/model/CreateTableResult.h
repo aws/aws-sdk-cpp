@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 #include <aws/timestream-write/model/Table.h>
@@ -58,10 +59,13 @@ class CreateTableResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Table m_table;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tableHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

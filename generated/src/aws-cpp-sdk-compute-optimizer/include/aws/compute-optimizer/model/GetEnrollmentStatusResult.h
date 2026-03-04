@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/Status.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -126,6 +127,8 @@ class GetEnrollmentStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Status m_status{Status::NOT_SET};
 
@@ -138,6 +141,7 @@ class GetEnrollmentStatusResult {
   int m_numberOfMemberAccountsOptedIn{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_memberAccountsEnrolledHasBeenSet = false;

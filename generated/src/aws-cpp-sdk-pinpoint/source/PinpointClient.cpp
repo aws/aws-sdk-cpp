@@ -200,7 +200,7 @@ PinpointClient::PinpointClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-PinpointClient::PinpointClient(const Client::ClientConfiguration& clientConfiguration)
+PinpointClient::PinpointClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -212,7 +212,7 @@ PinpointClient::PinpointClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-PinpointClient::PinpointClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+PinpointClient::PinpointClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -223,7 +223,7 @@ PinpointClient::PinpointClient(const AWSCredentials& credentials, const Client::
 }
 
 PinpointClient::PinpointClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

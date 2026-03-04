@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pca-connector-scep/PcaConnectorScep_EXPORTS.h>
 #include <aws/pca-connector-scep/model/Connector.h>
@@ -58,10 +59,13 @@ class GetConnectorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Connector m_connector;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm-guiconnect/SSMGuiConnect_EXPORTS.h>
 #include <aws/ssm-guiconnect/model/ConnectionRecordingPreferences.h>
@@ -78,12 +79,15 @@ class UpdateConnectionRecordingPreferencesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clientToken;
 
   ConnectionRecordingPreferences m_connectionRecordingPreferences;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientTokenHasBeenSet = false;
   bool m_connectionRecordingPreferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

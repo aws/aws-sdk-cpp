@@ -21,12 +21,12 @@ AnomalyUnusual& AnomalyUnusual::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("behavior")) {
     Aws::Map<Aws::String, JsonView> behaviorJsonMap = jsonValue.GetObject("behavior").GetAllObjects();
     for (auto& behaviorItem : behaviorJsonMap) {
-      Aws::Map<Aws::String, JsonView> anomalyUnusualBehaviorFeatureJsonMap = behaviorItem.second.GetAllObjects();
-      Aws::Map<Aws::String, AnomalyObject> anomalyUnusualBehaviorFeatureMap;
-      for (auto& anomalyUnusualBehaviorFeatureItem : anomalyUnusualBehaviorFeatureJsonMap) {
-        anomalyUnusualBehaviorFeatureMap[anomalyUnusualBehaviorFeatureItem.first] = anomalyUnusualBehaviorFeatureItem.second.AsObject();
+      Aws::Map<Aws::String, JsonView> anomalyUnusualBehaviorFeature2JsonMap = behaviorItem.second.GetAllObjects();
+      Aws::Map<Aws::String, AnomalyObject> anomalyUnusualBehaviorFeature2Map;
+      for (auto& anomalyUnusualBehaviorFeature2Item : anomalyUnusualBehaviorFeature2JsonMap) {
+        anomalyUnusualBehaviorFeature2Map[anomalyUnusualBehaviorFeature2Item.first] = anomalyUnusualBehaviorFeature2Item.second.AsObject();
       }
-      m_behavior[behaviorItem.first] = std::move(anomalyUnusualBehaviorFeatureMap);
+      m_behavior[behaviorItem.first] = std::move(anomalyUnusualBehaviorFeature2Map);
     }
     m_behaviorHasBeenSet = true;
   }

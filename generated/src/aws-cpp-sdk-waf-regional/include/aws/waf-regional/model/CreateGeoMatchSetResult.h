@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/waf-regional/model/GeoMatchSet.h>
@@ -80,12 +81,15 @@ class CreateGeoMatchSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   GeoMatchSet m_geoMatchSet;
 
   Aws::String m_changeToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_geoMatchSetHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

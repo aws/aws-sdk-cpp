@@ -20,6 +20,7 @@ using namespace Aws;
 BatchGetFrameMetricDataResult::BatchGetFrameMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 BatchGetFrameMetricDataResult& BatchGetFrameMetricDataResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("endTime")) {
     m_endTime = jsonValue.GetString("endTime");
@@ -50,13 +51,13 @@ BatchGetFrameMetricDataResult& BatchGetFrameMetricDataResult::operator=(const Aw
   if (jsonValue.ValueExists("unprocessedEndTimes")) {
     Aws::Map<Aws::String, JsonView> unprocessedEndTimesJsonMap = jsonValue.GetObject("unprocessedEndTimes").GetAllObjects();
     for (auto& unprocessedEndTimesItem : unprocessedEndTimesJsonMap) {
-      Aws::Utils::Array<JsonView> listOfTimestampsJsonList = unprocessedEndTimesItem.second.AsArray();
-      Aws::Vector<TimestampStructure> listOfTimestampsList;
-      listOfTimestampsList.reserve((size_t)listOfTimestampsJsonList.GetLength());
-      for (unsigned listOfTimestampsIndex = 0; listOfTimestampsIndex < listOfTimestampsJsonList.GetLength(); ++listOfTimestampsIndex) {
-        listOfTimestampsList.push_back(listOfTimestampsJsonList[listOfTimestampsIndex].AsObject());
+      Aws::Utils::Array<JsonView> listOfTimestamps2JsonList = unprocessedEndTimesItem.second.AsArray();
+      Aws::Vector<TimestampStructure> listOfTimestamps2List;
+      listOfTimestamps2List.reserve((size_t)listOfTimestamps2JsonList.GetLength());
+      for (unsigned listOfTimestamps2Index = 0; listOfTimestamps2Index < listOfTimestamps2JsonList.GetLength(); ++listOfTimestamps2Index) {
+        listOfTimestamps2List.push_back(listOfTimestamps2JsonList[listOfTimestamps2Index].AsObject());
       }
-      m_unprocessedEndTimes[unprocessedEndTimesItem.first] = std::move(listOfTimestampsList);
+      m_unprocessedEndTimes[unprocessedEndTimesItem.first] = std::move(listOfTimestamps2List);
     }
     m_unprocessedEndTimesHasBeenSet = true;
   }

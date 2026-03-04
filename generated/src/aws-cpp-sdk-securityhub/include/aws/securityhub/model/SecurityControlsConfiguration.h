@@ -23,8 +23,9 @@ namespace Model {
 
 /**
  * <p> An object that defines which security controls are enabled in an Security
- * Hub configuration policy. The enablement status of a control is aligned across
- * all of the enabled standards in an account. </p><p><h3>See Also:</h3>   <a
+ * Hub CSPM configuration policy. The enablement status of a control is aligned
+ * across all of the enabled standards in an account. </p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/SecurityControlsConfiguration">AWS
  * API Reference</a></p>
  */
@@ -38,8 +39,8 @@ class SecurityControlsConfiguration {
   ///@{
   /**
    * <p> A list of security controls that are enabled in the configuration policy.
-   * Security Hub disables all other controls (including newly released controls)
-   * other than the listed controls. </p>
+   * Security Hub CSPM disables all other controls (including newly released
+   * controls) other than the listed controls. </p>
    */
   inline const Aws::Vector<Aws::String>& GetEnabledSecurityControlIdentifiers() const { return m_enabledSecurityControlIdentifiers; }
   inline bool EnabledSecurityControlIdentifiersHasBeenSet() const { return m_enabledSecurityControlIdentifiersHasBeenSet; }
@@ -64,7 +65,7 @@ class SecurityControlsConfiguration {
   ///@{
   /**
    * <p> A list of security controls that are disabled in the configuration policy.
-   * Security Hub enables all other controls (including newly released controls)
+   * Security Hub CSPM enables all other controls (including newly released controls)
    * other than the listed controls. </p>
    */
   inline const Aws::Vector<Aws::String>& GetDisabledSecurityControlIdentifiers() const { return m_disabledSecurityControlIdentifiers; }

@@ -7,6 +7,7 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/SentimentScore.h>
 #include <aws/comprehend/model/SentimentType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -76,12 +77,15 @@ class DetectSentimentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SentimentType m_sentiment{SentimentType::NOT_SET};
 
   SentimentScore m_sentimentScore;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sentimentHasBeenSet = false;
   bool m_sentimentScoreHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

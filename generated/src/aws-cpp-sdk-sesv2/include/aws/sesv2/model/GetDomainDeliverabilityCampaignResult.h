@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/DomainDeliverabilityCampaign.h>
@@ -66,10 +67,13 @@ class GetDomainDeliverabilityCampaignResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DomainDeliverabilityCampaign m_domainDeliverabilityCampaign;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainDeliverabilityCampaignHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

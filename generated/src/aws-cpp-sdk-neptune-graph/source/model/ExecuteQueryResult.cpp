@@ -19,6 +19,7 @@ using namespace Aws;
 ExecuteQueryResult::ExecuteQueryResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) { *this = std::move(result); }
 
 ExecuteQueryResult& ExecuteQueryResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   m_payload = result.TakeOwnershipOfPayload();
   m_payloadHasBeenSet = true;
 

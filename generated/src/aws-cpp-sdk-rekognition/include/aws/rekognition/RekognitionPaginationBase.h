@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/rekognition/model/DescribeProjectVersionsPaginationTraits.h>
 #include <aws/rekognition/model/DescribeProjectsPaginationTraits.h>
@@ -41,6 +42,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeProjectsRequest,
                                     Pagination::DescribeProjectsPaginationTraits<DerivedClient>>
   DescribeProjectsPaginator(const Model::DescribeProjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeProjectsRequest,
                                              Pagination::DescribeProjectsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -52,6 +54,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeProjectVersionsRequest,
                                     Pagination::DescribeProjectVersionsPaginationTraits<DerivedClient>>
   DescribeProjectVersionsPaginator(const Model::DescribeProjectVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeProjectVersionsRequest,
                                              Pagination::DescribeProjectVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -63,6 +66,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCelebrityRecognitionRequest,
                                     Pagination::GetCelebrityRecognitionPaginationTraits<DerivedClient>>
   GetCelebrityRecognitionPaginator(const Model::GetCelebrityRecognitionRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetCelebrityRecognitionRequest,
                                              Pagination::GetCelebrityRecognitionPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -74,6 +78,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetContentModerationRequest,
                                     Pagination::GetContentModerationPaginationTraits<DerivedClient>>
   GetContentModerationPaginator(const Model::GetContentModerationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetContentModerationRequest,
                                              Pagination::GetContentModerationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -85,6 +90,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetFaceDetectionRequest,
                                     Pagination::GetFaceDetectionPaginationTraits<DerivedClient>>
   GetFaceDetectionPaginator(const Model::GetFaceDetectionRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetFaceDetectionRequest,
                                              Pagination::GetFaceDetectionPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -95,6 +101,7 @@ class RekognitionPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetFaceSearchRequest, Pagination::GetFaceSearchPaginationTraits<DerivedClient>>
   GetFaceSearchPaginator(const Model::GetFaceSearchRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetFaceSearchRequest,
                                              Pagination::GetFaceSearchPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -106,6 +113,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLabelDetectionRequest,
                                     Pagination::GetLabelDetectionPaginationTraits<DerivedClient>>
   GetLabelDetectionPaginator(const Model::GetLabelDetectionRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetLabelDetectionRequest,
                                              Pagination::GetLabelDetectionPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -117,6 +125,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetPersonTrackingRequest,
                                     Pagination::GetPersonTrackingPaginationTraits<DerivedClient>>
   GetPersonTrackingPaginator(const Model::GetPersonTrackingRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetPersonTrackingRequest,
                                              Pagination::GetPersonTrackingPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -128,6 +137,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSegmentDetectionRequest,
                                     Pagination::GetSegmentDetectionPaginationTraits<DerivedClient>>
   GetSegmentDetectionPaginator(const Model::GetSegmentDetectionRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSegmentDetectionRequest,
                                              Pagination::GetSegmentDetectionPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -139,6 +149,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTextDetectionRequest,
                                     Pagination::GetTextDetectionPaginationTraits<DerivedClient>>
   GetTextDetectionPaginator(const Model::GetTextDetectionRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTextDetectionRequest,
                                              Pagination::GetTextDetectionPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -150,6 +161,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollectionsRequest,
                                     Pagination::ListCollectionsPaginationTraits<DerivedClient>>
   ListCollectionsPaginator(const Model::ListCollectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollectionsRequest,
                                              Pagination::ListCollectionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -161,6 +173,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetEntriesRequest,
                                     Pagination::ListDatasetEntriesPaginationTraits<DerivedClient>>
   ListDatasetEntriesPaginator(const Model::ListDatasetEntriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetEntriesRequest,
                                              Pagination::ListDatasetEntriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -172,6 +185,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetLabelsRequest,
                                     Pagination::ListDatasetLabelsPaginationTraits<DerivedClient>>
   ListDatasetLabelsPaginator(const Model::ListDatasetLabelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetLabelsRequest,
                                              Pagination::ListDatasetLabelsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -182,6 +196,7 @@ class RekognitionPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFacesRequest, Pagination::ListFacesPaginationTraits<DerivedClient>>
   ListFacesPaginator(const Model::ListFacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFacesRequest, Pagination::ListFacesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -192,6 +207,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMediaAnalysisJobsRequest,
                                     Pagination::ListMediaAnalysisJobsPaginationTraits<DerivedClient>>
   ListMediaAnalysisJobsPaginator(const Model::ListMediaAnalysisJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMediaAnalysisJobsRequest,
                                              Pagination::ListMediaAnalysisJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -203,6 +219,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectPoliciesRequest,
                                     Pagination::ListProjectPoliciesPaginationTraits<DerivedClient>>
   ListProjectPoliciesPaginator(const Model::ListProjectPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectPoliciesRequest,
                                              Pagination::ListProjectPoliciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -214,6 +231,7 @@ class RekognitionPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamProcessorsRequest,
                                     Pagination::ListStreamProcessorsPaginationTraits<DerivedClient>>
   ListStreamProcessorsPaginator(const Model::ListStreamProcessorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamProcessorsRequest,
                                              Pagination::ListStreamProcessorsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -224,6 +242,7 @@ class RekognitionPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>
   ListUsersPaginator(const Model::ListUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

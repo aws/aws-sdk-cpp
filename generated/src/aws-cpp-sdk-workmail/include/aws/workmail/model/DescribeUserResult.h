@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
@@ -474,6 +475,8 @@ class DescribeUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_userId;
 
@@ -526,6 +529,7 @@ class DescribeUserResult {
   Aws::String m_identityProviderIdentityStoreId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_emailHasBeenSet = false;

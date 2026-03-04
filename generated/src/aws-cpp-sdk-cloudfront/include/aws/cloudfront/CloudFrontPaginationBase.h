@@ -22,6 +22,7 @@
 #include <aws/cloudfront/model/ListPublicKeysPaginationTraits.h>
 #include <aws/cloudfront/model/ListStreamingDistributionsPaginationTraits.h>
 #include <aws/cloudfront/model/ListTrustStoresPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -40,6 +41,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCloudFrontOriginAccessIdentities2020_05_31Request,
                                     Pagination::ListCloudFrontOriginAccessIdentitiesPaginationTraits<DerivedClient>>
   ListCloudFrontOriginAccessIdentitiesPaginator(const Model::ListCloudFrontOriginAccessIdentities2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCloudFrontOriginAccessIdentities2020_05_31Request,
                                              Pagination::ListCloudFrontOriginAccessIdentitiesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -51,6 +53,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectionFunctions2020_05_31Request,
                                     Pagination::ListConnectionFunctionsPaginationTraits<DerivedClient>>
   ListConnectionFunctionsPaginator(const Model::ListConnectionFunctions2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectionFunctions2020_05_31Request,
                                              Pagination::ListConnectionFunctionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -62,6 +65,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectionGroups2020_05_31Request,
                                     Pagination::ListConnectionGroupsPaginationTraits<DerivedClient>>
   ListConnectionGroupsPaginator(const Model::ListConnectionGroups2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectionGroups2020_05_31Request,
                                              Pagination::ListConnectionGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -73,6 +77,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributions2020_05_31Request,
                                     Pagination::ListDistributionsPaginationTraits<DerivedClient>>
   ListDistributionsPaginator(const Model::ListDistributions2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributions2020_05_31Request,
                                              Pagination::ListDistributionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -84,6 +89,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributionsByConnectionFunction2020_05_31Request,
                                     Pagination::ListDistributionsByConnectionFunctionPaginationTraits<DerivedClient>>
   ListDistributionsByConnectionFunctionPaginator(const Model::ListDistributionsByConnectionFunction2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributionsByConnectionFunction2020_05_31Request,
                                              Pagination::ListDistributionsByConnectionFunctionPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -95,6 +101,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributionsByConnectionMode2020_05_31Request,
                                     Pagination::ListDistributionsByConnectionModePaginationTraits<DerivedClient>>
   ListDistributionsByConnectionModePaginator(const Model::ListDistributionsByConnectionMode2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributionsByConnectionMode2020_05_31Request,
                                              Pagination::ListDistributionsByConnectionModePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -106,6 +113,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributionsByTrustStore2020_05_31Request,
                                     Pagination::ListDistributionsByTrustStorePaginationTraits<DerivedClient>>
   ListDistributionsByTrustStorePaginator(const Model::ListDistributionsByTrustStore2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributionsByTrustStore2020_05_31Request,
                                              Pagination::ListDistributionsByTrustStorePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -117,6 +125,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributionTenants2020_05_31Request,
                                     Pagination::ListDistributionTenantsPaginationTraits<DerivedClient>>
   ListDistributionTenantsPaginator(const Model::ListDistributionTenants2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributionTenants2020_05_31Request,
                                              Pagination::ListDistributionTenantsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -128,6 +137,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributionTenantsByCustomization2020_05_31Request,
                                     Pagination::ListDistributionTenantsByCustomizationPaginationTraits<DerivedClient>>
   ListDistributionTenantsByCustomizationPaginator(const Model::ListDistributionTenantsByCustomization2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDistributionTenantsByCustomization2020_05_31Request,
                                              Pagination::ListDistributionTenantsByCustomizationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -139,6 +149,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainConflicts2020_05_31Request,
                                     Pagination::ListDomainConflictsPaginationTraits<DerivedClient>>
   ListDomainConflictsPaginator(const Model::ListDomainConflicts2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainConflicts2020_05_31Request,
                                              Pagination::ListDomainConflictsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -150,6 +161,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvalidations2020_05_31Request,
                                     Pagination::ListInvalidationsPaginationTraits<DerivedClient>>
   ListInvalidationsPaginator(const Model::ListInvalidations2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvalidations2020_05_31Request,
                                              Pagination::ListInvalidationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -161,6 +173,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvalidationsForDistributionTenant2020_05_31Request,
                                     Pagination::ListInvalidationsForDistributionTenantPaginationTraits<DerivedClient>>
   ListInvalidationsForDistributionTenantPaginator(const Model::ListInvalidationsForDistributionTenant2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvalidationsForDistributionTenant2020_05_31Request,
                                              Pagination::ListInvalidationsForDistributionTenantPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -172,6 +185,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeyValueStores2020_05_31Request,
                                     Pagination::ListKeyValueStoresPaginationTraits<DerivedClient>>
   ListKeyValueStoresPaginator(const Model::ListKeyValueStores2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeyValueStores2020_05_31Request,
                                              Pagination::ListKeyValueStoresPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -183,6 +197,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOriginAccessControls2020_05_31Request,
                                     Pagination::ListOriginAccessControlsPaginationTraits<DerivedClient>>
   ListOriginAccessControlsPaginator(const Model::ListOriginAccessControls2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOriginAccessControls2020_05_31Request,
                                              Pagination::ListOriginAccessControlsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -194,6 +209,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublicKeys2020_05_31Request,
                                     Pagination::ListPublicKeysPaginationTraits<DerivedClient>>
   ListPublicKeysPaginator(const Model::ListPublicKeys2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPublicKeys2020_05_31Request,
                                              Pagination::ListPublicKeysPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -205,6 +221,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamingDistributions2020_05_31Request,
                                     Pagination::ListStreamingDistributionsPaginationTraits<DerivedClient>>
   ListStreamingDistributionsPaginator(const Model::ListStreamingDistributions2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamingDistributions2020_05_31Request,
                                              Pagination::ListStreamingDistributionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -216,6 +233,7 @@ class CloudFrontPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrustStores2020_05_31Request,
                                     Pagination::ListTrustStoresPaginationTraits<DerivedClient>>
   ListTrustStoresPaginator(const Model::ListTrustStores2020_05_31Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrustStores2020_05_31Request,
                                              Pagination::ListTrustStoresPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};

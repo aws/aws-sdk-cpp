@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/memorydb/model/DescribeACLsPaginationTraits.h>
 #include <aws/memorydb/model/DescribeClustersPaginationTraits.h>
@@ -35,6 +36,7 @@ class MemoryDBPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeACLsRequest, Pagination::DescribeACLsPaginationTraits<DerivedClient>>
   DescribeACLsPaginator(const Model::DescribeACLsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeACLsRequest,
                                              Pagination::DescribeACLsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -46,6 +48,7 @@ class MemoryDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClustersRequest,
                                     Pagination::DescribeClustersPaginationTraits<DerivedClient>>
   DescribeClustersPaginator(const Model::DescribeClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeClustersRequest,
                                              Pagination::DescribeClustersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -57,6 +60,7 @@ class MemoryDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEngineVersionsRequest,
                                     Pagination::DescribeEngineVersionsPaginationTraits<DerivedClient>>
   DescribeEngineVersionsPaginator(const Model::DescribeEngineVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEngineVersionsRequest,
                                              Pagination::DescribeEngineVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -67,6 +71,7 @@ class MemoryDBPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventsRequest, Pagination::DescribeEventsPaginationTraits<DerivedClient>>
   DescribeEventsPaginator(const Model::DescribeEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEventsRequest,
                                              Pagination::DescribeEventsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -78,6 +83,7 @@ class MemoryDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMultiRegionClustersRequest,
                                     Pagination::DescribeMultiRegionClustersPaginationTraits<DerivedClient>>
   DescribeMultiRegionClustersPaginator(const Model::DescribeMultiRegionClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMultiRegionClustersRequest,
                                              Pagination::DescribeMultiRegionClustersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -89,6 +95,7 @@ class MemoryDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeParameterGroupsRequest,
                                     Pagination::DescribeParameterGroupsPaginationTraits<DerivedClient>>
   DescribeParameterGroupsPaginator(const Model::DescribeParameterGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeParameterGroupsRequest,
                                              Pagination::DescribeParameterGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -100,6 +107,7 @@ class MemoryDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeParametersRequest,
                                     Pagination::DescribeParametersPaginationTraits<DerivedClient>>
   DescribeParametersPaginator(const Model::DescribeParametersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeParametersRequest,
                                              Pagination::DescribeParametersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -111,6 +119,7 @@ class MemoryDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedNodesRequest,
                                     Pagination::DescribeReservedNodesPaginationTraits<DerivedClient>>
   DescribeReservedNodesPaginator(const Model::DescribeReservedNodesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedNodesRequest,
                                              Pagination::DescribeReservedNodesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -122,6 +131,7 @@ class MemoryDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedNodesOfferingsRequest,
                                     Pagination::DescribeReservedNodesOfferingsPaginationTraits<DerivedClient>>
   DescribeReservedNodesOfferingsPaginator(const Model::DescribeReservedNodesOfferingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReservedNodesOfferingsRequest,
                                              Pagination::DescribeReservedNodesOfferingsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -133,6 +143,7 @@ class MemoryDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServiceUpdatesRequest,
                                     Pagination::DescribeServiceUpdatesPaginationTraits<DerivedClient>>
   DescribeServiceUpdatesPaginator(const Model::DescribeServiceUpdatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeServiceUpdatesRequest,
                                              Pagination::DescribeServiceUpdatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -144,6 +155,7 @@ class MemoryDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSnapshotsRequest,
                                     Pagination::DescribeSnapshotsPaginationTraits<DerivedClient>>
   DescribeSnapshotsPaginator(const Model::DescribeSnapshotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSnapshotsRequest,
                                              Pagination::DescribeSnapshotsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -155,6 +167,7 @@ class MemoryDBPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSubnetGroupsRequest,
                                     Pagination::DescribeSubnetGroupsPaginationTraits<DerivedClient>>
   DescribeSubnetGroupsPaginator(const Model::DescribeSubnetGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSubnetGroupsRequest,
                                              Pagination::DescribeSubnetGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -165,6 +178,7 @@ class MemoryDBPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeUsersRequest, Pagination::DescribeUsersPaginationTraits<DerivedClient>>
   DescribeUsersPaginator(const Model::DescribeUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeUsersRequest,
                                              Pagination::DescribeUsersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

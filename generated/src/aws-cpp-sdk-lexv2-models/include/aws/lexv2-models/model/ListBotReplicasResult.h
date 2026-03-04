@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
@@ -99,6 +100,8 @@ class ListBotReplicasResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_botId;
 
@@ -107,6 +110,7 @@ class ListBotReplicasResult {
   Aws::Vector<BotReplicaSummary> m_botReplicaSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_botIdHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
   bool m_botReplicaSummariesHasBeenSet = false;

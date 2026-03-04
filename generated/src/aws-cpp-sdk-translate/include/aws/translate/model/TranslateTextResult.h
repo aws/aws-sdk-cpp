@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/translate/Translate_EXPORTS.h>
@@ -135,6 +136,8 @@ class TranslateTextResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_translatedText;
 
@@ -147,6 +150,7 @@ class TranslateTextResult {
   TranslationSettings m_appliedSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_translatedTextHasBeenSet = false;
   bool m_sourceLanguageCodeHasBeenSet = false;
   bool m_targetLanguageCodeHasBeenSet = false;

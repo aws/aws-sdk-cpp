@@ -20,17 +20,18 @@ using namespace Aws;
 DescribeConfigurationsResult::DescribeConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeConfigurationsResult& DescribeConfigurationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configurations")) {
     Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
     for (unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex) {
-      Aws::Map<Aws::String, JsonView> describeConfigurationsAttributeJsonMap = configurationsJsonList[configurationsIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> describeConfigurationsAttributeMap;
-      for (auto& describeConfigurationsAttributeItem : describeConfigurationsAttributeJsonMap) {
-        describeConfigurationsAttributeMap[describeConfigurationsAttributeItem.first] =
-            describeConfigurationsAttributeItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> describeConfigurationsAttribute2JsonMap = configurationsJsonList[configurationsIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> describeConfigurationsAttribute2Map;
+      for (auto& describeConfigurationsAttribute2Item : describeConfigurationsAttribute2JsonMap) {
+        describeConfigurationsAttribute2Map[describeConfigurationsAttribute2Item.first] =
+            describeConfigurationsAttribute2Item.second.AsString();
       }
-      m_configurations.push_back(std::move(describeConfigurationsAttributeMap));
+      m_configurations.push_back(std::move(describeConfigurationsAttribute2Map));
     }
     m_configurationsHasBeenSet = true;
   }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
@@ -161,6 +162,8 @@ class DescribeGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_groupId;
 
@@ -177,6 +180,7 @@ class DescribeGroupResult {
   bool m_hiddenFromGlobalAddressList{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_groupIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_emailHasBeenSet = false;

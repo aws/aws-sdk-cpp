@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
 #include <aws/codecatalyst/model/EmailAddress.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -126,6 +127,8 @@ class GetUserDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_userId;
 
@@ -138,6 +141,7 @@ class GetUserDetailsResult {
   Aws::String m_version;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userIdHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;

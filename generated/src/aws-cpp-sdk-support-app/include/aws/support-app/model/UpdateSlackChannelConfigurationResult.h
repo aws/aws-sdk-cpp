@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/support-app/SupportApp_EXPORTS.h>
 #include <aws/support-app/model/NotificationSeverityLevel.h>
@@ -180,6 +181,8 @@ class UpdateSlackChannelConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_channelId;
 
@@ -198,6 +201,7 @@ class UpdateSlackChannelConfigurationResult {
   Aws::String m_teamId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelIdHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
   bool m_channelRoleArnHasBeenSet = false;

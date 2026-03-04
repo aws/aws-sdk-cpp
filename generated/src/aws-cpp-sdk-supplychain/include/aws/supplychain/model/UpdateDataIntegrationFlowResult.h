@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/supplychain/SupplyChain_EXPORTS.h>
 #include <aws/supplychain/model/DataIntegrationFlow.h>
@@ -64,10 +65,13 @@ class UpdateDataIntegrationFlowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DataIntegrationFlow m_flow;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_flowHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

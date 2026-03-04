@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/cost-optimization-hub/model/MemberAccountDiscountVisibility.h>
@@ -93,6 +94,8 @@ class GetPreferencesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SavingsEstimationMode m_savingsEstimationMode{SavingsEstimationMode::NOT_SET};
 
@@ -101,6 +104,7 @@ class GetPreferencesResult {
   PreferredCommitment m_preferredCommitment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_savingsEstimationModeHasBeenSet = false;
   bool m_memberAccountDiscountVisibilityHasBeenSet = false;
   bool m_preferredCommitmentHasBeenSet = false;

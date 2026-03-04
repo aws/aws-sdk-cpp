@@ -102,6 +102,10 @@ ComputeResourceUpdate& ComputeResourceUpdate::operator=(JsonView jsonValue) {
     m_imageId = jsonValue.GetString("imageId");
     m_imageIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("scalingPolicy")) {
+    m_scalingPolicy = jsonValue.GetObject("scalingPolicy");
+    m_scalingPolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -194,6 +198,10 @@ JsonValue ComputeResourceUpdate::Jsonize() const {
 
   if (m_imageIdHasBeenSet) {
     payload.WithString("imageId", m_imageId);
+  }
+
+  if (m_scalingPolicyHasBeenSet) {
+    payload.WithObject("scalingPolicy", m_scalingPolicy.Jsonize());
   }
 
   return payload;

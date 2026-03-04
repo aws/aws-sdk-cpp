@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-account/PartnerCentralAccount_EXPORTS.h>
@@ -147,6 +148,8 @@ class GetVerificationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VerificationType m_verificationType{VerificationType::NOT_SET};
 
@@ -161,6 +164,7 @@ class GetVerificationResult {
   Aws::Utils::DateTime m_completedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_verificationTypeHasBeenSet = false;
   bool m_verificationStatusHasBeenSet = false;
   bool m_verificationStatusReasonHasBeenSet = false;

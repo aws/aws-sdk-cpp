@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -74,12 +75,15 @@ class StartQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_queryId;
 
   Aws::String m_eventDataStoreOwnerAccountId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_queryIdHasBeenSet = false;
   bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

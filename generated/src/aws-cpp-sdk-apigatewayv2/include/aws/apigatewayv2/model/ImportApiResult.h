@@ -8,6 +8,7 @@
 #include <aws/apigatewayv2/model/Cors.h>
 #include <aws/apigatewayv2/model/IpAddressType.h>
 #include <aws/apigatewayv2/model/ProtocolType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -360,6 +361,8 @@ class ImportApiResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_apiEndpoint;
 
@@ -396,6 +399,7 @@ class ImportApiResult {
   Aws::Vector<Aws::String> m_warnings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_apiEndpointHasBeenSet = false;
   bool m_apiGatewayManagedHasBeenSet = false;
   bool m_apiIdHasBeenSet = false;

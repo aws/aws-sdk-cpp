@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/model/ResponseMetadata.h>
 
@@ -95,6 +96,8 @@ class GetSendQuotaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   double m_max24HourSend{0.0};
 
@@ -103,6 +106,7 @@ class GetSendQuotaResult {
   double m_sentLast24Hours{0.0};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_max24HourSendHasBeenSet = false;
   bool m_maxSendRateHasBeenSet = false;
   bool m_sentLast24HoursHasBeenSet = false;

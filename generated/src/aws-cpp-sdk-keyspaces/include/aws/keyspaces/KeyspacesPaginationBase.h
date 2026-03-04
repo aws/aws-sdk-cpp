@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/keyspaces/model/ListKeyspacesPaginationTraits.h>
 #include <aws/keyspaces/model/ListTablesPaginationTraits.h>
@@ -26,6 +27,7 @@ class KeyspacesPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeyspacesRequest, Pagination::ListKeyspacesPaginationTraits<DerivedClient>>
   ListKeyspacesPaginator(const Model::ListKeyspacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListKeyspacesRequest,
                                              Pagination::ListKeyspacesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -36,6 +38,7 @@ class KeyspacesPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTablesRequest, Pagination::ListTablesPaginationTraits<DerivedClient>>
   ListTablesPaginator(const Model::ListTablesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTablesRequest,
                                              Pagination::ListTablesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -47,6 +50,7 @@ class KeyspacesPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -57,6 +61,7 @@ class KeyspacesPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTypesRequest, Pagination::ListTypesPaginationTraits<DerivedClient>>
   ListTypesPaginator(const Model::ListTypesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTypesRequest, Pagination::ListTypesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/ServerSideEncryption.h>
@@ -134,6 +135,8 @@ class CreateSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
 
@@ -146,6 +149,7 @@ class CreateSessionResult {
   SessionCredentials m_credentials;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serverSideEncryptionHasBeenSet = false;
   bool m_sSEKMSKeyIdHasBeenSet = false;
   bool m_sSEKMSEncryptionContextHasBeenSet = false;

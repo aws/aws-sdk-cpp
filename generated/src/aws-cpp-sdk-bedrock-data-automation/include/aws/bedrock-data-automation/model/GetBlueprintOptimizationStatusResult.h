@@ -7,6 +7,7 @@
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
 #include <aws/bedrock-data-automation/model/BlueprintOptimizationJobStatus.h>
 #include <aws/bedrock-data-automation/model/BlueprintOptimizationOutputConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -115,6 +116,8 @@ class GetBlueprintOptimizationStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   BlueprintOptimizationJobStatus m_status{BlueprintOptimizationJobStatus::NOT_SET};
 
@@ -125,6 +128,7 @@ class GetBlueprintOptimizationStatusResult {
   BlueprintOptimizationOutputConfiguration m_outputConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;

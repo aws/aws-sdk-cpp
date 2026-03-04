@@ -20,6 +20,7 @@ using namespace Aws;
 GetStageResult::GetStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetStageResult& GetStageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("deploymentId")) {
     m_deploymentId = jsonValue.GetString("deploymentId");

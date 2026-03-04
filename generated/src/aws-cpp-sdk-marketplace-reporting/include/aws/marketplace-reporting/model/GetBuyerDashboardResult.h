@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-reporting/MarketplaceReporting_EXPORTS.h>
@@ -103,6 +104,8 @@ class GetBuyerDashboardResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_embedUrl;
 
@@ -111,6 +114,7 @@ class GetBuyerDashboardResult {
   Aws::Vector<Aws::String> m_embeddingDomains;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_embedUrlHasBeenSet = false;
   bool m_dashboardIdentifierHasBeenSet = false;
   bool m_embeddingDomainsHasBeenSet = false;

@@ -8,6 +8,7 @@
 #include <aws/connect/model/AgentConfig.h>
 #include <aws/connect/model/SignInConfig.h>
 #include <aws/connect/model/TelephonyConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -132,6 +133,8 @@ class GetTrafficDistributionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TelephonyConfig m_telephonyConfig;
 
@@ -144,6 +147,7 @@ class GetTrafficDistributionResult {
   AgentConfig m_agentConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_telephonyConfigHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;

@@ -74,6 +74,10 @@ Aws::String ListOpportunitiesRequest::SerializePayload() const {
     payload.WithObject("CreatedDate", m_createdDate.Jsonize());
   }
 
+  if (m_targetCloseDateHasBeenSet) {
+    payload.WithObject("TargetCloseDate", m_targetCloseDate.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

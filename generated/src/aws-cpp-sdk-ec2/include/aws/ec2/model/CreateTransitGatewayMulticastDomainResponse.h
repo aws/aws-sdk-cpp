@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/TransitGatewayMulticastDomain.h>
@@ -59,10 +60,13 @@ class CreateTransitGatewayMulticastDomainResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TransitGatewayMulticastDomain m_transitGatewayMulticastDomain;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transitGatewayMulticastDomainHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

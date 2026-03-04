@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/Route53_EXPORTS.h>
@@ -161,6 +162,8 @@ class TestDNSAnswerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nameserver;
 
@@ -175,6 +178,7 @@ class TestDNSAnswerResult {
   Aws::String m_protocol;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameserverHasBeenSet = false;
   bool m_recordNameHasBeenSet = false;
   bool m_recordTypeHasBeenSet = false;

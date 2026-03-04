@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/iotdeviceadvisor/model/ListSuiteDefinitionsPaginationTraits.h>
 #include <aws/iotdeviceadvisor/model/ListSuiteRunsPaginationTraits.h>
@@ -25,6 +26,7 @@ class IoTDeviceAdvisorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSuiteDefinitionsRequest,
                                     Pagination::ListSuiteDefinitionsPaginationTraits<DerivedClient>>
   ListSuiteDefinitionsPaginator(const Model::ListSuiteDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSuiteDefinitionsRequest,
                                              Pagination::ListSuiteDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -35,6 +37,7 @@ class IoTDeviceAdvisorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSuiteRunsRequest, Pagination::ListSuiteRunsPaginationTraits<DerivedClient>>
   ListSuiteRunsPaginator(const Model::ListSuiteRunsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSuiteRunsRequest,
                                              Pagination::ListSuiteRunsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

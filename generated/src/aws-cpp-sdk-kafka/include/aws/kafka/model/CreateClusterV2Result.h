@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/kafka/model/ClusterState.h>
@@ -117,6 +118,8 @@ class CreateClusterV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clusterArn;
 
@@ -127,6 +130,7 @@ class CreateClusterV2Result {
   ClusterType m_clusterType{ClusterType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterArnHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
   bool m_stateHasBeenSet = false;

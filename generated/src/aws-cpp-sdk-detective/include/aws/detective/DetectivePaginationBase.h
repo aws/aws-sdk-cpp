@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/detective/model/ListDatasourcePackagesPaginationTraits.h>
 #include <aws/detective/model/ListGraphsPaginationTraits.h>
@@ -28,6 +29,7 @@ class DetectivePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasourcePackagesRequest,
                                     Pagination::ListDatasourcePackagesPaginationTraits<DerivedClient>>
   ListDatasourcePackagesPaginator(const Model::ListDatasourcePackagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasourcePackagesRequest,
                                              Pagination::ListDatasourcePackagesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class DetectivePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGraphsRequest, Pagination::ListGraphsPaginationTraits<DerivedClient>>
   ListGraphsPaginator(const Model::ListGraphsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGraphsRequest,
                                              Pagination::ListGraphsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -49,6 +52,7 @@ class DetectivePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvitationsRequest,
                                     Pagination::ListInvitationsPaginationTraits<DerivedClient>>
   ListInvitationsPaginator(const Model::ListInvitationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvitationsRequest,
                                              Pagination::ListInvitationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -59,6 +63,7 @@ class DetectivePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembersRequest, Pagination::ListMembersPaginationTraits<DerivedClient>>
   ListMembersPaginator(const Model::ListMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembersRequest,
                                              Pagination::ListMembersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -70,6 +75,7 @@ class DetectivePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationAdminAccountsRequest,
                                     Pagination::ListOrganizationAdminAccountsPaginationTraits<DerivedClient>>
   ListOrganizationAdminAccountsPaginator(const Model::ListOrganizationAdminAccountsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationAdminAccountsRequest,
                                              Pagination::ListOrganizationAdminAccountsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

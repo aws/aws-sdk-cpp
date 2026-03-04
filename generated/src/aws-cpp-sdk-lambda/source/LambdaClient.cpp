@@ -164,7 +164,7 @@ LambdaClient::LambdaClient(const std::shared_ptr<AWSCredentialsProvider>& creden
 }
 
 /* Legacy constructors due deprecation */
-LambdaClient::LambdaClient(const Client::ClientConfiguration& clientConfiguration)
+LambdaClient::LambdaClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -176,7 +176,7 @@ LambdaClient::LambdaClient(const Client::ClientConfiguration& clientConfiguratio
   init(m_clientConfiguration);
 }
 
-LambdaClient::LambdaClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+LambdaClient::LambdaClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -188,7 +188,7 @@ LambdaClient::LambdaClient(const AWSCredentials& credentials, const Client::Clie
 }
 
 LambdaClient::LambdaClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                           const Client::ClientConfiguration& clientConfiguration)
+                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

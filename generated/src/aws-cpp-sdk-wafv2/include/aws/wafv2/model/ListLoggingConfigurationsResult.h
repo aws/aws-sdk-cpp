@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -87,12 +88,15 @@ class ListLoggingConfigurationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<LoggingConfiguration> m_loggingConfigurations;
 
   Aws::String m_nextMarker;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_loggingConfigurationsHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

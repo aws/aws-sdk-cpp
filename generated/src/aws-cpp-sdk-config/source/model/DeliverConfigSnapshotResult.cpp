@@ -20,6 +20,7 @@ using namespace Aws;
 DeliverConfigSnapshotResult::DeliverConfigSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeliverConfigSnapshotResult& DeliverConfigSnapshotResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configSnapshotId")) {
     m_configSnapshotId = jsonValue.GetString("configSnapshotId");

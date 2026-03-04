@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 #include <aws/chime-sdk-identity/model/AppInstanceBotSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -100,6 +101,8 @@ class ListAppInstanceBotsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_appInstanceArn;
 
@@ -108,6 +111,7 @@ class ListAppInstanceBotsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appInstanceArnHasBeenSet = false;
   bool m_appInstanceBotsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

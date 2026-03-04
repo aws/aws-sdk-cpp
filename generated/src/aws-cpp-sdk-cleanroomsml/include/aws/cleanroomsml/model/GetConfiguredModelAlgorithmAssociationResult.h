@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/model/PrivacyConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -244,6 +245,8 @@ class GetConfiguredModelAlgorithmAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_createTime{};
 
@@ -266,6 +269,7 @@ class GetConfiguredModelAlgorithmAssociationResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
   bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;

@@ -9,6 +9,7 @@
 #include <aws/backup/model/RestoreJobCreator.h>
 #include <aws/backup/model/RestoreJobStatus.h>
 #include <aws/backup/model/RestoreValidationStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -442,6 +443,8 @@ class DescribeRestoreJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_accountId;
 
@@ -490,6 +493,7 @@ class DescribeRestoreJobResult {
   Aws::String m_parentJobId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountIdHasBeenSet = false;
   bool m_restoreJobIdHasBeenSet = false;
   bool m_recoveryPointArnHasBeenSet = false;

@@ -8,6 +8,7 @@
 #include <aws/codecatalyst/model/WorkflowDefinition.h>
 #include <aws/codecatalyst/model/WorkflowRunMode.h>
 #include <aws/codecatalyst/model/WorkflowStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -234,6 +235,8 @@ class GetWorkflowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_spaceName;
 
@@ -258,6 +261,7 @@ class GetWorkflowResult {
   WorkflowStatus m_status{WorkflowStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_spaceNameHasBeenSet = false;
   bool m_projectNameHasBeenSet = false;
   bool m_idHasBeenSet = false;

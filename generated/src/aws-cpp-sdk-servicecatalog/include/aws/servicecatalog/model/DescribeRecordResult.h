@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -103,6 +104,8 @@ class DescribeRecordResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RecordDetail m_recordDetail;
 
@@ -111,6 +114,7 @@ class DescribeRecordResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recordDetailHasBeenSet = false;
   bool m_recordOutputsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

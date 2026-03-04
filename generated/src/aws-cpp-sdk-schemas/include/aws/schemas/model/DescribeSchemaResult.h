@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -201,6 +202,8 @@ class DescribeSchemaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_content;
 
@@ -221,6 +224,7 @@ class DescribeSchemaResult {
   Aws::Utils::DateTime m_versionCreatedDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;

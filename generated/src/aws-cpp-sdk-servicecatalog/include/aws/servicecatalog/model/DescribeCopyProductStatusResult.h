@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/CopyProductStatus.h>
@@ -90,6 +91,8 @@ class DescribeCopyProductStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CopyProductStatus m_copyProductStatus{CopyProductStatus::NOT_SET};
 
@@ -98,6 +101,7 @@ class DescribeCopyProductStatusResult {
   Aws::String m_statusDetail;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_copyProductStatusHasBeenSet = false;
   bool m_targetProductIdHasBeenSet = false;
   bool m_statusDetailHasBeenSet = false;

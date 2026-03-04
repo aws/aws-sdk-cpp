@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/KMS_EXPORTS.h>
@@ -87,12 +88,15 @@ class GenerateRandomResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::CryptoBuffer m_plaintext{};
 
   Aws::Utils::ByteBuffer m_ciphertextForRecipient{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_plaintextHasBeenSet = false;
   bool m_ciphertextForRecipientHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

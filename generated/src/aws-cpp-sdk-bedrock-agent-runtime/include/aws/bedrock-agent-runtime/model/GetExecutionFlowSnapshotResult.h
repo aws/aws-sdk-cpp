@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -149,6 +150,8 @@ class GetExecutionFlowSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_customerEncryptionKeyArn;
 
@@ -163,6 +166,7 @@ class GetExecutionFlowSnapshotResult {
   Aws::String m_flowVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_customerEncryptionKeyArnHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;

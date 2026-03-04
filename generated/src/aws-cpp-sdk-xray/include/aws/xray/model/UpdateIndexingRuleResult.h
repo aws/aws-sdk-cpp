@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/xray/model/IndexingRule.h>
@@ -58,10 +59,13 @@ class UpdateIndexingRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IndexingRule m_indexingRule;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_indexingRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -34,7 +34,8 @@ enum class GroupByField {
   finding_info_analytic_name,
   compliance_standards,
   cloud_account_name,
-  vendor_attributes_severity
+  vendor_attributes_severity,
+  metadata_product_vendor_name
 };
 
 namespace GroupByFieldMapper {

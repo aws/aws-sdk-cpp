@@ -86,7 +86,7 @@ CloudSearchDomainClient::CloudSearchDomainClient(const std::shared_ptr<AWSCreden
 }
 
 /* Legacy constructors due deprecation */
-CloudSearchDomainClient::CloudSearchDomainClient(const Client::ClientConfiguration& clientConfiguration)
+CloudSearchDomainClient::CloudSearchDomainClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -98,7 +98,8 @@ CloudSearchDomainClient::CloudSearchDomainClient(const Client::ClientConfigurati
   init(m_clientConfiguration);
 }
 
-CloudSearchDomainClient::CloudSearchDomainClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+CloudSearchDomainClient::CloudSearchDomainClient(const AWSCredentials& credentials,
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -110,7 +111,7 @@ CloudSearchDomainClient::CloudSearchDomainClient(const AWSCredentials& credentia
 }
 
 CloudSearchDomainClient::CloudSearchDomainClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                 const Client::ClientConfiguration& clientConfiguration)
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

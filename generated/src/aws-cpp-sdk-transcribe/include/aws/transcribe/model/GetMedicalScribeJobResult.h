@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/MedicalScribeJob.h>
@@ -59,10 +60,13 @@ class GetMedicalScribeJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MedicalScribeJob m_medicalScribeJob;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_medicalScribeJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

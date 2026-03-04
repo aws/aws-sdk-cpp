@@ -20,6 +20,7 @@ using namespace Aws;
 StartChannelResult::StartChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 StartChannelResult& StartChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
@@ -127,6 +128,10 @@ StartChannelResult& StartChannelResult::operator=(const Aws::AmazonWebServiceRes
       m_channelSecurityGroups.push_back(channelSecurityGroupsJsonList[channelSecurityGroupsIndex].AsString());
     }
     m_channelSecurityGroupsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("inferenceSettings")) {
+    m_inferenceSettings = jsonValue.GetObject("inferenceSettings");
+    m_inferenceSettingsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

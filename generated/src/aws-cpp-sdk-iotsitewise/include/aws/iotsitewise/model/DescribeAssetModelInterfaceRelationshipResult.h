@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
@@ -126,6 +127,8 @@ class DescribeAssetModelInterfaceRelationshipResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_assetModelId;
 
@@ -136,6 +139,7 @@ class DescribeAssetModelInterfaceRelationshipResult {
   Aws::Vector<HierarchyMapping> m_hierarchyMappings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assetModelIdHasBeenSet = false;
   bool m_interfaceAssetModelIdHasBeenSet = false;
   bool m_propertyMappingsHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
@@ -101,6 +102,8 @@ class GetTemporaryDataLocationCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TemporaryCredentials m_credentials;
 
@@ -109,6 +112,7 @@ class GetTemporaryDataLocationCredentialsResult {
   CredentialsScope m_credentialsScope{CredentialsScope::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_accessibleDataLocationsHasBeenSet = false;
   bool m_credentialsScopeHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -181,6 +182,8 @@ class DescribeDatasetGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_datasetGroupName;
 
@@ -197,6 +200,7 @@ class DescribeDatasetGroupResult {
   Aws::Utils::DateTime m_lastModificationTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datasetGroupNameHasBeenSet = false;
   bool m_datasetGroupArnHasBeenSet = false;
   bool m_datasetArnsHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -185,6 +186,23 @@ class GetProfileObjectTypeResult {
 
   ///@{
   /**
+   * <p>An integer that determines the priority of this object type when data from
+   * multiple sources is ingested. Lower values take priority. Object types without a
+   * specified source priority default to the lowest priority.</p>
+   */
+  inline int GetSourcePriority() const { return m_sourcePriority; }
+  inline void SetSourcePriority(int value) {
+    m_sourcePriorityHasBeenSet = true;
+    m_sourcePriority = value;
+  }
+  inline GetProfileObjectTypeResult& WithSourcePriority(int value) {
+    SetSourcePriority(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of the name and ObjectType field.</p>
    */
   inline const Aws::Map<Aws::String, ObjectTypeField>& GetFields() const { return m_fields; }
@@ -300,6 +318,8 @@ class GetProfileObjectTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_objectTypeName;
 
@@ -319,6 +339,8 @@ class GetProfileObjectTypeResult {
 
   int m_maxProfileObjectCount{0};
 
+  int m_sourcePriority{0};
+
   Aws::Map<Aws::String, ObjectTypeField> m_fields;
 
   Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>> m_keys;
@@ -330,6 +352,7 @@ class GetProfileObjectTypeResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_objectTypeNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
@@ -339,6 +362,7 @@ class GetProfileObjectTypeResult {
   bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
   bool m_maxAvailableProfileObjectCountHasBeenSet = false;
   bool m_maxProfileObjectCountHasBeenSet = false;
+  bool m_sourcePriorityHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
   bool m_keysHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

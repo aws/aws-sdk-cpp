@@ -82,13 +82,13 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator=(JsonView
   if (jsonValue.ValueExists("Intersection")) {
     Aws::Utils::Array<JsonView> intersectionJsonList = jsonValue.GetArray("Intersection");
     for (unsigned intersectionIndex = 0; intersectionIndex < intersectionJsonList.GetLength(); ++intersectionIndex) {
-      Aws::Utils::Array<JsonView> highlightListJsonList = intersectionJsonList[intersectionIndex].AsArray();
-      Aws::Vector<Highlight> highlightListList;
-      highlightListList.reserve((size_t)highlightListJsonList.GetLength());
-      for (unsigned highlightListIndex = 0; highlightListIndex < highlightListJsonList.GetLength(); ++highlightListIndex) {
-        highlightListList.push_back(highlightListJsonList[highlightListIndex].AsObject());
+      Aws::Utils::Array<JsonView> highlightList2JsonList = intersectionJsonList[intersectionIndex].AsArray();
+      Aws::Vector<Highlight> highlightList2List;
+      highlightList2List.reserve((size_t)highlightList2JsonList.GetLength());
+      for (unsigned highlightList2Index = 0; highlightList2Index < highlightList2JsonList.GetLength(); ++highlightList2Index) {
+        highlightList2List.push_back(highlightList2JsonList[highlightList2Index].AsObject());
       }
-      m_intersection.push_back(std::move(highlightListList));
+      m_intersection.push_back(std::move(highlightList2List));
     }
     m_intersectionHasBeenSet = true;
   }

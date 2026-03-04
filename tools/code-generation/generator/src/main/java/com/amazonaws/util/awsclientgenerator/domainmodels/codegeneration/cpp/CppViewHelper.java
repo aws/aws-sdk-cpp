@@ -360,6 +360,10 @@ public class CppViewHelper {
         boolean includeUtilityHeader = false;
         boolean includeMemoryHeader = false;
 
+        if(shape.isResult()){ //All result types will have a GetResponseCode function
+            headers.add("<aws/core/http/HttpResponse.h>");
+        }
+
         while(!toVisit.isEmpty()) {
             Shape next = toVisit.remove();
             visited.add(next.getName());

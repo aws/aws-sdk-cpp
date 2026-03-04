@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/bedrock-runtime/model/ListAsyncInvokesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -24,6 +25,7 @@ class BedrockRuntimePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAsyncInvokesRequest,
                                     Pagination::ListAsyncInvokesPaginationTraits<DerivedClient>>
   ListAsyncInvokesPaginator(const Model::ListAsyncInvokesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAsyncInvokesRequest,
                                              Pagination::ListAsyncInvokesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

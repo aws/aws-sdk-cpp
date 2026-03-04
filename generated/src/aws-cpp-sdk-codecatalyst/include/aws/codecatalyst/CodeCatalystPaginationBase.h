@@ -15,6 +15,7 @@
 #include <aws/codecatalyst/model/ListSpacesPaginationTraits.h>
 #include <aws/codecatalyst/model/ListWorkflowRunsPaginationTraits.h>
 #include <aws/codecatalyst/model/ListWorkflowsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -33,6 +34,7 @@ class CodeCatalystPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessTokensRequest,
                                     Pagination::ListAccessTokensPaginationTraits<DerivedClient>>
   ListAccessTokensPaginator(const Model::ListAccessTokensRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccessTokensRequest,
                                              Pagination::ListAccessTokensPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -44,6 +46,7 @@ class CodeCatalystPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevEnvironmentsRequest,
                                     Pagination::ListDevEnvironmentsPaginationTraits<DerivedClient>>
   ListDevEnvironmentsPaginator(const Model::ListDevEnvironmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevEnvironmentsRequest,
                                              Pagination::ListDevEnvironmentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -55,6 +58,7 @@ class CodeCatalystPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevEnvironmentSessionsRequest,
                                     Pagination::ListDevEnvironmentSessionsPaginationTraits<DerivedClient>>
   ListDevEnvironmentSessionsPaginator(const Model::ListDevEnvironmentSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevEnvironmentSessionsRequest,
                                              Pagination::ListDevEnvironmentSessionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -65,6 +69,7 @@ class CodeCatalystPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventLogsRequest, Pagination::ListEventLogsPaginationTraits<DerivedClient>>
   ListEventLogsPaginator(const Model::ListEventLogsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventLogsRequest,
                                              Pagination::ListEventLogsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -75,6 +80,7 @@ class CodeCatalystPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest, Pagination::ListProjectsPaginationTraits<DerivedClient>>
   ListProjectsPaginator(const Model::ListProjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProjectsRequest,
                                              Pagination::ListProjectsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -86,6 +92,7 @@ class CodeCatalystPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourceRepositoriesRequest,
                                     Pagination::ListSourceRepositoriesPaginationTraits<DerivedClient>>
   ListSourceRepositoriesPaginator(const Model::ListSourceRepositoriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourceRepositoriesRequest,
                                              Pagination::ListSourceRepositoriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -97,6 +104,7 @@ class CodeCatalystPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourceRepositoryBranchesRequest,
                                     Pagination::ListSourceRepositoryBranchesPaginationTraits<DerivedClient>>
   ListSourceRepositoryBranchesPaginator(const Model::ListSourceRepositoryBranchesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourceRepositoryBranchesRequest,
                                              Pagination::ListSourceRepositoryBranchesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -107,6 +115,7 @@ class CodeCatalystPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSpacesRequest, Pagination::ListSpacesPaginationTraits<DerivedClient>>
   ListSpacesPaginator(const Model::ListSpacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSpacesRequest,
                                              Pagination::ListSpacesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -118,6 +127,7 @@ class CodeCatalystPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowRunsRequest,
                                     Pagination::ListWorkflowRunsPaginationTraits<DerivedClient>>
   ListWorkflowRunsPaginator(const Model::ListWorkflowRunsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowRunsRequest,
                                              Pagination::ListWorkflowRunsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -128,6 +138,7 @@ class CodeCatalystPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowsRequest, Pagination::ListWorkflowsPaginationTraits<DerivedClient>>
   ListWorkflowsPaginator(const Model::ListWorkflowsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWorkflowsRequest,
                                              Pagination::ListWorkflowsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

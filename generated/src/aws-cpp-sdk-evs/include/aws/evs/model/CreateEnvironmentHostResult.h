@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/evs/EVS_EXPORTS.h>
 #include <aws/evs/model/EnvironmentSummary.h>
@@ -76,12 +77,15 @@ class CreateEnvironmentHostResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EnvironmentSummary m_environmentSummary;
 
   Host m_host;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_environmentSummaryHasBeenSet = false;
   bool m_hostHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

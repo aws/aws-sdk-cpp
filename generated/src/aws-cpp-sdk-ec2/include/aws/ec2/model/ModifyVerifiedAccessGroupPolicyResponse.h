@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -91,6 +92,8 @@ class ModifyVerifiedAccessGroupPolicyResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_policyEnabled{false};
 
@@ -99,6 +102,7 @@ class ModifyVerifiedAccessGroupPolicyResponse {
   VerifiedAccessSseSpecificationResponse m_sseSpecification;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyEnabledHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;
   bool m_sseSpecificationHasBeenSet = false;

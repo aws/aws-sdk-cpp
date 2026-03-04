@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -191,6 +192,8 @@ class CheckoutBorrowLicenseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_licenseArn;
 
@@ -209,6 +212,7 @@ class CheckoutBorrowLicenseResult {
   Aws::Vector<Metadata> m_checkoutMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_licenseArnHasBeenSet = false;
   bool m_licenseConsumptionTokenHasBeenSet = false;
   bool m_entitlementsAllowedHasBeenSet = false;

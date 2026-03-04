@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -143,6 +144,8 @@ class PutEmailIdentityDkimSigningAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DkimStatus m_dkimStatus{DkimStatus::NOT_SET};
 
@@ -151,6 +154,7 @@ class PutEmailIdentityDkimSigningAttributesResult {
   Aws::String m_signingHostedZone;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dkimStatusHasBeenSet = false;
   bool m_dkimTokensHasBeenSet = false;
   bool m_signingHostedZoneHasBeenSet = false;

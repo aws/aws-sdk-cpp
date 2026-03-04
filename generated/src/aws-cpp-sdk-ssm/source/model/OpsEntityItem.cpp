@@ -25,12 +25,12 @@ OpsEntityItem& OpsEntityItem::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Content")) {
     Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("Content");
     for (unsigned contentIndex = 0; contentIndex < contentJsonList.GetLength(); ++contentIndex) {
-      Aws::Map<Aws::String, JsonView> opsEntityItemEntryJsonMap = contentJsonList[contentIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> opsEntityItemEntryMap;
-      for (auto& opsEntityItemEntryItem : opsEntityItemEntryJsonMap) {
-        opsEntityItemEntryMap[opsEntityItemEntryItem.first] = opsEntityItemEntryItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> opsEntityItemEntry2JsonMap = contentJsonList[contentIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> opsEntityItemEntry2Map;
+      for (auto& opsEntityItemEntry2Item : opsEntityItemEntry2JsonMap) {
+        opsEntityItemEntry2Map[opsEntityItemEntry2Item.first] = opsEntityItemEntry2Item.second.AsString();
       }
-      m_content.push_back(std::move(opsEntityItemEntryMap));
+      m_content.push_back(std::move(opsEntityItemEntry2Map));
     }
     m_contentHasBeenSet = true;
   }

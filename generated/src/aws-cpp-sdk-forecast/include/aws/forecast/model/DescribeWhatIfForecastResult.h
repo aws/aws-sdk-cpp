@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -262,6 +263,8 @@ class DescribeWhatIfForecastResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_whatIfForecastName;
 
@@ -286,6 +289,7 @@ class DescribeWhatIfForecastResult {
   Aws::Vector<Aws::String> m_forecastTypes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_whatIfForecastNameHasBeenSet = false;
   bool m_whatIfForecastArnHasBeenSet = false;
   bool m_whatIfAnalysisArnHasBeenSet = false;

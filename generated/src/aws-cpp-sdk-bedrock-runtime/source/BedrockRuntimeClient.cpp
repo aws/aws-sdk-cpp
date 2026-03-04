@@ -121,7 +121,7 @@ BedrockRuntimeClient::BedrockRuntimeClient(const std::shared_ptr<AWSCredentialsP
           }) {}
 
 /* Legacy constructors due deprecation */
-BedrockRuntimeClient::BedrockRuntimeClient(const Client::ClientConfiguration& clientConfiguration)
+BedrockRuntimeClient::BedrockRuntimeClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockRuntimeErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG),
@@ -137,7 +137,7 @@ BedrockRuntimeClient::BedrockRuntimeClient(const Client::ClientConfiguration& cl
                                              GetServiceName(), clientConfiguration.region}},
           }) {}
 
-BedrockRuntimeClient::BedrockRuntimeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+BedrockRuntimeClient::BedrockRuntimeClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockRuntimeErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG),
@@ -156,7 +156,7 @@ BedrockRuntimeClient::BedrockRuntimeClient(const AWSCredentials& credentials, co
           }) {}
 
 BedrockRuntimeClient::BedrockRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           const Client::ClientConfiguration& clientConfiguration)
+                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockRuntimeErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<BedrockRuntimeEndpointProvider>(ALLOCATION_TAG),

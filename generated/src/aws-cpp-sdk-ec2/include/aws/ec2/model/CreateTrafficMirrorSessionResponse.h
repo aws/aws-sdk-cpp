@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -79,12 +80,15 @@ class CreateTrafficMirrorSessionResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TrafficMirrorSession m_trafficMirrorSession;
 
   Aws::String m_clientToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trafficMirrorSessionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

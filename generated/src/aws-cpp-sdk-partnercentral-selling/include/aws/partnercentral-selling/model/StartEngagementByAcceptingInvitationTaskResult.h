@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
@@ -199,6 +200,8 @@ class StartEngagementByAcceptingInvitationTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_taskId;
 
@@ -219,6 +222,7 @@ class StartEngagementByAcceptingInvitationTaskResult {
   Aws::String m_engagementInvitationId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskIdHasBeenSet = false;
   bool m_taskArnHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;

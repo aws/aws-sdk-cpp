@@ -7,6 +7,7 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/model/ReportGroupTrendStats.h>
 #include <aws/codebuild/model/ReportWithRawData.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -83,12 +84,15 @@ class GetReportGroupTrendResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReportGroupTrendStats m_stats;
 
   Aws::Vector<ReportWithRawData> m_rawData;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statsHasBeenSet = false;
   bool m_rawDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

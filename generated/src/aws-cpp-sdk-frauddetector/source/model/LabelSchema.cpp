@@ -21,13 +21,13 @@ LabelSchema& LabelSchema::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("labelMapper")) {
     Aws::Map<Aws::String, JsonView> labelMapperJsonMap = jsonValue.GetObject("labelMapper").GetAllObjects();
     for (auto& labelMapperItem : labelMapperJsonMap) {
-      Aws::Utils::Array<JsonView> listOfStringsJsonList = labelMapperItem.second.AsArray();
-      Aws::Vector<Aws::String> listOfStringsList;
-      listOfStringsList.reserve((size_t)listOfStringsJsonList.GetLength());
-      for (unsigned listOfStringsIndex = 0; listOfStringsIndex < listOfStringsJsonList.GetLength(); ++listOfStringsIndex) {
-        listOfStringsList.push_back(listOfStringsJsonList[listOfStringsIndex].AsString());
+      Aws::Utils::Array<JsonView> listOfStrings2JsonList = labelMapperItem.second.AsArray();
+      Aws::Vector<Aws::String> listOfStrings2List;
+      listOfStrings2List.reserve((size_t)listOfStrings2JsonList.GetLength());
+      for (unsigned listOfStrings2Index = 0; listOfStrings2Index < listOfStrings2JsonList.GetLength(); ++listOfStrings2Index) {
+        listOfStrings2List.push_back(listOfStrings2JsonList[listOfStrings2Index].AsString());
       }
-      m_labelMapper[labelMapperItem.first] = std::move(listOfStringsList);
+      m_labelMapper[labelMapperItem.first] = std::move(listOfStrings2List);
     }
     m_labelMapperHasBeenSet = true;
   }

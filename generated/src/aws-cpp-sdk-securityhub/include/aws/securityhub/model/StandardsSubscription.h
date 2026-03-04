@@ -101,15 +101,15 @@ class StandardsSubscription {
   /**
    * <p>The status of your subscription to the standard. Possible values are:</p>
    * <ul> <li> <p> <code>PENDING</code> - The standard is in the process of being
-   * enabled. Or the standard is already enabled and Security Hub is adding new
+   * enabled. Or the standard is already enabled and Security Hub CSPM is adding new
    * controls to the standard.</p> </li> <li> <p> <code>READY</code> - The standard
    * is enabled.</p> </li> <li> <p> <code>INCOMPLETE</code> - The standard could not
    * be enabled completely. One or more errors (<code>StandardsStatusReason</code>)
-   * occurred when Security Hub attempted to enable the standard.</p> </li> <li> <p>
-   * <code>DELETING</code> - The standard is in the process of being disabled.</p>
-   * </li> <li> <p> <code>FAILED</code> - The standard could not be disabled. One or
-   * more errors (<code>StandardsStatusReason</code>) occurred when Security Hub
-   * attempted to disable the standard.</p> </li> </ul>
+   * occurred when Security Hub CSPM attempted to enable the standard.</p> </li> <li>
+   * <p> <code>DELETING</code> - The standard is in the process of being
+   * disabled.</p> </li> <li> <p> <code>FAILED</code> - The standard could not be
+   * disabled. One or more errors (<code>StandardsStatusReason</code>) occurred when
+   * Security Hub CSPM attempted to disable the standard.</p> </li> </ul>
    */
   inline StandardsStatus GetStandardsStatus() const { return m_standardsStatus; }
   inline bool StandardsStatusHasBeenSet() const { return m_standardsStatusHasBeenSet; }

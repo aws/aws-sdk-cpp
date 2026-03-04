@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
@@ -248,6 +249,8 @@ class ModifyDBClusterEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dBClusterEndpointIdentifier;
 
@@ -270,6 +273,7 @@ class ModifyDBClusterEndpointResult {
   Aws::String m_dBClusterEndpointArn;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBClusterEndpointIdentifierHasBeenSet = false;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_dBClusterEndpointResourceIdentifierHasBeenSet = false;

@@ -69,24 +69,6 @@ class TestHypervisorConfigurationRequest : public BackupGatewayRequest {
 
   ///@{
   /**
-   * <p>The password for the hypervisor.</p>
-   */
-  inline const Aws::String& GetPassword() const { return m_password; }
-  inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-  template <typename PasswordT = Aws::String>
-  void SetPassword(PasswordT&& value) {
-    m_passwordHasBeenSet = true;
-    m_password = std::forward<PasswordT>(value);
-  }
-  template <typename PasswordT = Aws::String>
-  TestHypervisorConfigurationRequest& WithPassword(PasswordT&& value) {
-    SetPassword(std::forward<PasswordT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The username for the hypervisor.</p>
    */
   inline const Aws::String& GetUsername() const { return m_username; }
@@ -102,18 +84,36 @@ class TestHypervisorConfigurationRequest : public BackupGatewayRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The password for the hypervisor.</p>
+   */
+  inline const Aws::String& GetPassword() const { return m_password; }
+  inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
+  template <typename PasswordT = Aws::String>
+  void SetPassword(PasswordT&& value) {
+    m_passwordHasBeenSet = true;
+    m_password = std::forward<PasswordT>(value);
+  }
+  template <typename PasswordT = Aws::String>
+  TestHypervisorConfigurationRequest& WithPassword(PasswordT&& value) {
+    SetPassword(std::forward<PasswordT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayArn;
 
   Aws::String m_host;
 
-  Aws::String m_password;
-
   Aws::String m_username;
+
+  Aws::String m_password;
   bool m_gatewayArnHasBeenSet = false;
   bool m_hostHasBeenSet = false;
-  bool m_passwordHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
 };
 
 }  // namespace Model

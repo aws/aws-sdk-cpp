@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
@@ -122,6 +123,8 @@ class CalculateRouteMatrixResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_errorCount{0};
 
@@ -132,6 +135,7 @@ class CalculateRouteMatrixResult {
   RouteMatrixBoundary m_routingBoundary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_errorCountHasBeenSet = false;
   bool m_pricingBucketHasBeenSet = false;
   bool m_routeMatrixHasBeenSet = false;

@@ -95,7 +95,7 @@ EMRServerlessClient::EMRServerlessClient(const std::shared_ptr<AWSCredentialsPro
 }
 
 /* Legacy constructors due deprecation */
-EMRServerlessClient::EMRServerlessClient(const Client::ClientConfiguration& clientConfiguration)
+EMRServerlessClient::EMRServerlessClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -107,7 +107,7 @@ EMRServerlessClient::EMRServerlessClient(const Client::ClientConfiguration& clie
   init(m_clientConfiguration);
 }
 
-EMRServerlessClient::EMRServerlessClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+EMRServerlessClient::EMRServerlessClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -118,7 +118,7 @@ EMRServerlessClient::EMRServerlessClient(const AWSCredentials& credentials, cons
 }
 
 EMRServerlessClient::EMRServerlessClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                         const Client::ClientConfiguration& clientConfiguration)
+                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

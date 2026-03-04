@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -791,6 +792,8 @@ class GetObjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
 
@@ -873,6 +876,7 @@ class GetObjectResult {
   Aws::String m_requestId;
 
   Aws::String m_expiresString;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bodyHasBeenSet = false;
   bool m_deleteMarkerHasBeenSet = false;
   bool m_acceptRangesHasBeenSet = false;

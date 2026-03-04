@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/finspace/Finspace_EXPORTS.h>
@@ -209,6 +210,8 @@ class GetKxDatabaseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_databaseName;
 
@@ -231,6 +234,7 @@ class GetKxDatabaseResult {
   int m_numFiles{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_databaseNameHasBeenSet = false;
   bool m_databaseArnHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;

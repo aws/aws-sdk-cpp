@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -396,6 +397,8 @@ class CreateInterconnectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_interconnectId;
 
@@ -436,6 +439,7 @@ class CreateInterconnectResult {
   Aws::Vector<MacSecKey> m_macSecKeys;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_interconnectIdHasBeenSet = false;
   bool m_interconnectNameHasBeenSet = false;
   bool m_interconnectStateHasBeenSet = false;

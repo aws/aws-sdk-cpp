@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -149,6 +150,8 @@ class GetQueryResultsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
 
@@ -161,6 +164,7 @@ class GetQueryResultsResult {
   Aws::String m_encryptionKey;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_queryLanguageHasBeenSet = false;
   bool m_resultsHasBeenSet = false;
   bool m_statisticsHasBeenSet = false;

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/mediaconnect/model/ListBridgesPaginationTraits.h>
 #include <aws/mediaconnect/model/ListEntitlementsPaginationTraits.h>
@@ -32,6 +33,7 @@ class MediaConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBridgesRequest, Pagination::ListBridgesPaginationTraits<DerivedClient>>
   ListBridgesPaginator(const Model::ListBridgesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBridgesRequest,
                                              Pagination::ListBridgesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -43,6 +45,7 @@ class MediaConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntitlementsRequest,
                                     Pagination::ListEntitlementsPaginationTraits<DerivedClient>>
   ListEntitlementsPaginator(const Model::ListEntitlementsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEntitlementsRequest,
                                              Pagination::ListEntitlementsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -53,6 +56,7 @@ class MediaConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlowsRequest, Pagination::ListFlowsPaginationTraits<DerivedClient>>
   ListFlowsPaginator(const Model::ListFlowsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFlowsRequest, Pagination::ListFlowsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -63,6 +67,7 @@ class MediaConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewayInstancesRequest,
                                     Pagination::ListGatewayInstancesPaginationTraits<DerivedClient>>
   ListGatewayInstancesPaginator(const Model::ListGatewayInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewayInstancesRequest,
                                              Pagination::ListGatewayInstancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -73,6 +78,7 @@ class MediaConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewaysRequest, Pagination::ListGatewaysPaginationTraits<DerivedClient>>
   ListGatewaysPaginator(const Model::ListGatewaysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewaysRequest,
                                              Pagination::ListGatewaysPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -83,6 +89,7 @@ class MediaConnectPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOfferingsRequest, Pagination::ListOfferingsPaginationTraits<DerivedClient>>
   ListOfferingsPaginator(const Model::ListOfferingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOfferingsRequest,
                                              Pagination::ListOfferingsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -94,6 +101,7 @@ class MediaConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReservationsRequest,
                                     Pagination::ListReservationsPaginationTraits<DerivedClient>>
   ListReservationsPaginator(const Model::ListReservationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReservationsRequest,
                                              Pagination::ListReservationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -105,6 +113,7 @@ class MediaConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRouterInputsRequest,
                                     Pagination::ListRouterInputsPaginationTraits<DerivedClient>>
   ListRouterInputsPaginator(const Model::ListRouterInputsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRouterInputsRequest,
                                              Pagination::ListRouterInputsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -116,6 +125,7 @@ class MediaConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRouterNetworkInterfacesRequest,
                                     Pagination::ListRouterNetworkInterfacesPaginationTraits<DerivedClient>>
   ListRouterNetworkInterfacesPaginator(const Model::ListRouterNetworkInterfacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRouterNetworkInterfacesRequest,
                                              Pagination::ListRouterNetworkInterfacesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -127,6 +137,7 @@ class MediaConnectPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRouterOutputsRequest,
                                     Pagination::ListRouterOutputsPaginationTraits<DerivedClient>>
   ListRouterOutputsPaginator(const Model::ListRouterOutputsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRouterOutputsRequest,
                                              Pagination::ListRouterOutputsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

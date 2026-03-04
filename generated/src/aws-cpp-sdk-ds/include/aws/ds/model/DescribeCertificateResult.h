@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/model/Certificate.h>
@@ -60,10 +61,13 @@ class DescribeCertificateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Certificate m_certificate;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_certificateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

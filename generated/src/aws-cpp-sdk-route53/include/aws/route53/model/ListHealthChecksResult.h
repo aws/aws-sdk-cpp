@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/Route53_EXPORTS.h>
@@ -148,6 +149,8 @@ class ListHealthChecksResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<HealthCheck> m_healthChecks;
 
@@ -160,6 +163,7 @@ class ListHealthChecksResult {
   Aws::String m_maxItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_healthChecksHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;

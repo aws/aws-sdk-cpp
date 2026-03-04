@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/payment-cryptography-data/model/VisaAmexDerivationOutputs.h>
@@ -200,6 +201,8 @@ class GenerateMacEmvPinChangeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_newPinPekArn;
 
@@ -220,6 +223,7 @@ class GenerateMacEmvPinChangeResult {
   VisaAmexDerivationOutputs m_visaAmexDerivationOutputs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_newPinPekArnHasBeenSet = false;
   bool m_secureMessagingIntegrityKeyArnHasBeenSet = false;
   bool m_secureMessagingConfidentialityKeyArnHasBeenSet = false;

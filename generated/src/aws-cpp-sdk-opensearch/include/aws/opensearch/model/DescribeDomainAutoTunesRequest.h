@@ -11,6 +11,9 @@
 #include <utility>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace OpenSearchService {
 namespace Model {
 
@@ -31,6 +34,8 @@ class DescribeDomainAutoTunesRequest : public OpenSearchServiceRequest {
   inline virtual const char* GetServiceRequestName() const override { return "DescribeDomainAutoTunes"; }
 
   AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
+
+  AWS_OPENSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
   /**

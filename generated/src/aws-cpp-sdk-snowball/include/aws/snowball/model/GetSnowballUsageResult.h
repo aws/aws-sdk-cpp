@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
 
@@ -71,12 +72,15 @@ class GetSnowballUsageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_snowballLimit{0};
 
   int m_snowballsInUse{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_snowballLimitHasBeenSet = false;
   bool m_snowballsInUseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

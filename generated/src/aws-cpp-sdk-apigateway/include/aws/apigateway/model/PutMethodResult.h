@@ -7,6 +7,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/Integration.h>
 #include <aws/apigateway/model/MethodResponse.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -292,6 +293,8 @@ class PutMethodResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_httpMethod;
 
@@ -316,6 +319,7 @@ class PutMethodResult {
   Aws::Vector<Aws::String> m_authorizationScopes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_httpMethodHasBeenSet = false;
   bool m_authorizationTypeHasBeenSet = false;
   bool m_authorizerIdHasBeenSet = false;

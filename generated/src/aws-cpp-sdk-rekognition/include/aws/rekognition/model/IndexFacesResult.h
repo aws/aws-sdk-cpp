@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -147,6 +148,8 @@ class IndexFacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<FaceRecord> m_faceRecords;
 
@@ -157,6 +160,7 @@ class IndexFacesResult {
   Aws::Vector<UnindexedFace> m_unindexedFaces;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_faceRecordsHasBeenSet = false;
   bool m_orientationCorrectionHasBeenSet = false;
   bool m_faceModelVersionHasBeenSet = false;

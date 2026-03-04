@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/ivschat/model/ListLoggingConfigurationsPaginationTraits.h>
 #include <aws/ivschat/model/ListRoomsPaginationTraits.h>
@@ -25,6 +26,7 @@ class IvschatPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLoggingConfigurationsRequest,
                                     Pagination::ListLoggingConfigurationsPaginationTraits<DerivedClient>>
   ListLoggingConfigurationsPaginator(const Model::ListLoggingConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLoggingConfigurationsRequest,
                                              Pagination::ListLoggingConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -35,6 +37,7 @@ class IvschatPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoomsRequest, Pagination::ListRoomsPaginationTraits<DerivedClient>>
   ListRoomsPaginator(const Model::ListRoomsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoomsRequest, Pagination::ListRoomsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

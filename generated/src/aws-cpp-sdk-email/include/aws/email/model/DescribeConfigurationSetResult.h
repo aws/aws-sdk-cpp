@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/model/ConfigurationSet.h>
@@ -147,6 +148,8 @@ class DescribeConfigurationSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ConfigurationSet m_configurationSet;
 
@@ -159,6 +162,7 @@ class DescribeConfigurationSetResult {
   ReputationOptions m_reputationOptions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationSetHasBeenSet = false;
   bool m_eventDestinationsHasBeenSet = false;
   bool m_trackingOptionsHasBeenSet = false;

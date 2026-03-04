@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
@@ -203,6 +204,8 @@ class GetObjectAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_deleteMarker{false};
 
@@ -223,6 +226,7 @@ class GetObjectAttributesResult {
   long long m_objectSize{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deleteMarkerHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;

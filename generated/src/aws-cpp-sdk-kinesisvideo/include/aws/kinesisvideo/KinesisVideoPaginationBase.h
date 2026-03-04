@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kinesisvideo/model/DescribeMappedResourceConfigurationPaginationTraits.h>
 #include <aws/kinesisvideo/model/ListEdgeAgentConfigurationsPaginationTraits.h>
@@ -27,6 +28,7 @@ class KinesisVideoPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMappedResourceConfigurationRequest,
                                     Pagination::DescribeMappedResourceConfigurationPaginationTraits<DerivedClient>>
   DescribeMappedResourceConfigurationPaginator(const Model::DescribeMappedResourceConfigurationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMappedResourceConfigurationRequest,
                                              Pagination::DescribeMappedResourceConfigurationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class KinesisVideoPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEdgeAgentConfigurationsRequest,
                                     Pagination::ListEdgeAgentConfigurationsPaginationTraits<DerivedClient>>
   ListEdgeAgentConfigurationsPaginator(const Model::ListEdgeAgentConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEdgeAgentConfigurationsRequest,
                                              Pagination::ListEdgeAgentConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -49,6 +52,7 @@ class KinesisVideoPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSignalingChannelsRequest,
                                     Pagination::ListSignalingChannelsPaginationTraits<DerivedClient>>
   ListSignalingChannelsPaginator(const Model::ListSignalingChannelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSignalingChannelsRequest,
                                              Pagination::ListSignalingChannelsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +63,7 @@ class KinesisVideoPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamsRequest, Pagination::ListStreamsPaginationTraits<DerivedClient>>
   ListStreamsPaginator(const Model::ListStreamsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamsRequest,
                                              Pagination::ListStreamsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

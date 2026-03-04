@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
@@ -81,12 +82,15 @@ class CheckDNSAvailabilityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_available{false};
 
   Aws::String m_fullyQualifiedCNAME;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_availableHasBeenSet = false;
   bool m_fullyQualifiedCNAMEHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

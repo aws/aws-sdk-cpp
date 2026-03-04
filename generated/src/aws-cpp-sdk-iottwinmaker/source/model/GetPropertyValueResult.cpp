@@ -20,6 +20,7 @@ using namespace Aws;
 GetPropertyValueResult::GetPropertyValueResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetPropertyValueResult& GetPropertyValueResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("propertyValues")) {
     Aws::Map<Aws::String, JsonView> propertyValuesJsonMap = jsonValue.GetObject("propertyValues").GetAllObjects();
@@ -36,19 +37,20 @@ GetPropertyValueResult& GetPropertyValueResult::operator=(const Aws::AmazonWebSe
     Aws::Utils::Array<JsonView> tabularPropertyValuesJsonList = jsonValue.GetArray("tabularPropertyValues");
     for (unsigned tabularPropertyValuesIndex = 0; tabularPropertyValuesIndex < tabularPropertyValuesJsonList.GetLength();
          ++tabularPropertyValuesIndex) {
-      Aws::Utils::Array<JsonView> tabularPropertyValueJsonList = tabularPropertyValuesJsonList[tabularPropertyValuesIndex].AsArray();
-      Aws::Vector<Aws::Map<Aws::String, DataValue>> tabularPropertyValueList;
-      tabularPropertyValueList.reserve((size_t)tabularPropertyValueJsonList.GetLength());
-      for (unsigned tabularPropertyValueIndex = 0; tabularPropertyValueIndex < tabularPropertyValueJsonList.GetLength();
-           ++tabularPropertyValueIndex) {
-        Aws::Map<Aws::String, JsonView> propertyTableValueJsonMap = tabularPropertyValueJsonList[tabularPropertyValueIndex].GetAllObjects();
-        Aws::Map<Aws::String, DataValue> propertyTableValueMap;
-        for (auto& propertyTableValueItem : propertyTableValueJsonMap) {
-          propertyTableValueMap[propertyTableValueItem.first] = propertyTableValueItem.second.AsObject();
+      Aws::Utils::Array<JsonView> tabularPropertyValue2JsonList = tabularPropertyValuesJsonList[tabularPropertyValuesIndex].AsArray();
+      Aws::Vector<Aws::Map<Aws::String, DataValue>> tabularPropertyValue2List;
+      tabularPropertyValue2List.reserve((size_t)tabularPropertyValue2JsonList.GetLength());
+      for (unsigned tabularPropertyValue2Index = 0; tabularPropertyValue2Index < tabularPropertyValue2JsonList.GetLength();
+           ++tabularPropertyValue2Index) {
+        Aws::Map<Aws::String, JsonView> propertyTableValue3JsonMap =
+            tabularPropertyValue2JsonList[tabularPropertyValue2Index].GetAllObjects();
+        Aws::Map<Aws::String, DataValue> propertyTableValue3Map;
+        for (auto& propertyTableValue3Item : propertyTableValue3JsonMap) {
+          propertyTableValue3Map[propertyTableValue3Item.first] = propertyTableValue3Item.second.AsObject();
         }
-        tabularPropertyValueList.push_back(std::move(propertyTableValueMap));
+        tabularPropertyValue2List.push_back(std::move(propertyTableValue3Map));
       }
-      m_tabularPropertyValues.push_back(std::move(tabularPropertyValueList));
+      m_tabularPropertyValues.push_back(std::move(tabularPropertyValue2List));
     }
     m_tabularPropertyValuesHasBeenSet = true;
   }

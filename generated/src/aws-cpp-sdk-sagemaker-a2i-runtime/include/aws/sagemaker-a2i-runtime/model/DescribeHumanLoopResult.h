@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
@@ -182,6 +183,8 @@ class DescribeHumanLoopResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_creationTime{};
 
@@ -200,6 +203,7 @@ class DescribeHumanLoopResult {
   HumanLoopOutput m_humanLoopOutput;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_creationTimeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_failureCodeHasBeenSet = false;

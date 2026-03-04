@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -89,6 +90,8 @@ class UpdateConsumableResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_consumableResourceName;
 
@@ -97,6 +100,7 @@ class UpdateConsumableResourceResult {
   long long m_totalQuantity{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_consumableResourceNameHasBeenSet = false;
   bool m_consumableResourceArnHasBeenSet = false;
   bool m_totalQuantityHasBeenSet = false;

@@ -8,6 +8,7 @@
 #include <aws/bcm-pricing-calculator/model/CurrencyCode.h>
 #include <aws/bcm-pricing-calculator/model/WorkloadEstimateRateType.h>
 #include <aws/bcm-pricing-calculator/model/WorkloadEstimateStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -211,6 +212,8 @@ class GetWorkloadEstimateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -233,6 +236,7 @@ class GetWorkloadEstimateResult {
   Aws::String m_failureMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

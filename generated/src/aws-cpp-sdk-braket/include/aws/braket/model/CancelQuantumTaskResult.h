@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/model/CancellationStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -73,12 +74,15 @@ class CancelQuantumTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_quantumTaskArn;
 
   CancellationStatus m_cancellationStatus{CancellationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_quantumTaskArnHasBeenSet = false;
   bool m_cancellationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

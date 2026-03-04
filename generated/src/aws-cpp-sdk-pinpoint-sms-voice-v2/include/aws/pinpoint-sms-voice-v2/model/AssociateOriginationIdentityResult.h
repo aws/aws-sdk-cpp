@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
@@ -129,6 +130,8 @@ class AssociateOriginationIdentityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_poolArn;
 
@@ -141,6 +144,7 @@ class AssociateOriginationIdentityResult {
   Aws::String m_isoCountryCode;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_poolArnHasBeenSet = false;
   bool m_poolIdHasBeenSet = false;
   bool m_originationIdentityArnHasBeenSet = false;

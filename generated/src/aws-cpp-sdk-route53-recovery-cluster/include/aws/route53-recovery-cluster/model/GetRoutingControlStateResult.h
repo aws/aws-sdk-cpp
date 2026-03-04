@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryCluster_EXPORTS.h>
 #include <aws/route53-recovery-cluster/model/RoutingControlState.h>
@@ -91,6 +92,8 @@ class GetRoutingControlStateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_routingControlArn;
 
@@ -99,6 +102,7 @@ class GetRoutingControlStateResult {
   Aws::String m_routingControlName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_routingControlArnHasBeenSet = false;
   bool m_routingControlStateHasBeenSet = false;
   bool m_routingControlNameHasBeenSet = false;

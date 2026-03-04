@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/email/SES_EXPORTS.h>
 #include <aws/email/model/ResponseMetadata.h>
 
@@ -46,8 +47,11 @@ class SetIdentityDkimEnabledResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_responseMetadataHasBeenSet = false;
 };
 

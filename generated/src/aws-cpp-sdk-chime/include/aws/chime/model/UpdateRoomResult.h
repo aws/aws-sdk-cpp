@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/chime/model/Room.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -58,10 +59,13 @@ class UpdateRoomResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Room m_room;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_roomHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

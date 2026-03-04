@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
@@ -106,6 +107,8 @@ class GetStyleDescriptorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_blob{};
 
@@ -116,6 +119,7 @@ class GetStyleDescriptorResult {
   Aws::String m_eTag;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_blobHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_cacheControlHasBeenSet = false;

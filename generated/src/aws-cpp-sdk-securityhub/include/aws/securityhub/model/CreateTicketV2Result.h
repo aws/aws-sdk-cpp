@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class CreateTicketV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_ticketId;
 
   Aws::String m_ticketSrcUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ticketIdHasBeenSet = false;
   bool m_ticketSrcUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

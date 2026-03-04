@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/model/AssumedRoleUser.h>
@@ -140,6 +141,8 @@ class AssumeRoleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Credentials m_credentials;
 
@@ -150,6 +153,7 @@ class AssumeRoleResult {
   Aws::String m_sourceIdentity;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_assumedRoleUserHasBeenSet = false;
   bool m_packedPolicySizeHasBeenSet = false;

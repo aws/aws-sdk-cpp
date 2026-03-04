@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 #include <aws/kinesisvideo/model/ChannelInfo.h>
@@ -59,10 +60,13 @@ class DescribeSignalingChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ChannelInfo m_channelInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

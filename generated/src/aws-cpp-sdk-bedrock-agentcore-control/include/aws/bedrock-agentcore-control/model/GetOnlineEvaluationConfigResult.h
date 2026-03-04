@@ -11,6 +11,7 @@
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationExecutionStatus.h>
 #include <aws/bedrock-agentcore-control/model/OutputConfig.h>
 #include <aws/bedrock-agentcore-control/model/Rule.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -296,6 +297,8 @@ class GetOnlineEvaluationConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_onlineEvaluationConfigArn;
 
@@ -326,6 +329,7 @@ class GetOnlineEvaluationConfigResult {
   Aws::String m_failureReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_onlineEvaluationConfigArnHasBeenSet = false;
   bool m_onlineEvaluationConfigIdHasBeenSet = false;
   bool m_onlineEvaluationConfigNameHasBeenSet = false;

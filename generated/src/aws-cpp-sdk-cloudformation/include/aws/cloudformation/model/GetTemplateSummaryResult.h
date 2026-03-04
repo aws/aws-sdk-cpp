@@ -10,6 +10,7 @@
 #include <aws/cloudformation/model/ResourceIdentifierSummary.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/Warnings.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -268,6 +269,8 @@ class GetTemplateSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ParameterDeclaration> m_parameters;
 
@@ -290,6 +293,7 @@ class GetTemplateSummaryResult {
   Warnings m_warnings;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_parametersHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;

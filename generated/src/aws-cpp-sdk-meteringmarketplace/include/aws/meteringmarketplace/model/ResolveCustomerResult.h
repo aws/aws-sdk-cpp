@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 
@@ -22,8 +23,9 @@ namespace MarketplaceMetering {
 namespace Model {
 /**
  * <p>The result of the <code>ResolveCustomer</code> operation. Contains the
- * <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code>
- * and <code>ProductCode</code>.</p><p><h3>See Also:</h3>   <a
+ * <code>CustomerIdentifier</code> along with the
+ * <code>CustomerAWSAccountId</code>, <code>ProductCode</code>, and
+ * <code>LicenseArn</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomerResult">AWS
  * API Reference</a></p>
  */
@@ -36,8 +38,7 @@ class ResolveCustomerResult {
   ///@{
   /**
    * <p>The <code>CustomerIdentifier</code> is used to identify an individual
-   * customer in your application. Calls to <code>BatchMeterUsage</code> require
-   * <code>CustomerIdentifiers</code> for each <code>UsageRecord</code>.</p>
+   * customer in your application.</p>
    */
   inline const Aws::String& GetCustomerIdentifier() const { return m_customerIdentifier; }
   template <typename CustomerIdentifierT = Aws::String>
@@ -75,7 +76,8 @@ class ResolveCustomerResult {
   /**
    * <p>The <code>CustomerAWSAccountId</code> provides the Amazon Web Services
    * account ID associated with the <code>CustomerIdentifier</code> for the
-   * individual customer.</p>
+   * individual customer. Calls to <code>BatchMeterUsage</code> require
+   * <code>CustomerAWSAccountId</code> for each <code>UsageRecord</code>.</p>
    */
   inline const Aws::String& GetCustomerAWSAccountId() const { return m_customerAWSAccountId; }
   template <typename CustomerAWSAccountIdT = Aws::String>
@@ -86,6 +88,28 @@ class ResolveCustomerResult {
   template <typename CustomerAWSAccountIdT = Aws::String>
   ResolveCustomerResult& WithCustomerAWSAccountId(CustomerAWSAccountIdT&& value) {
     SetCustomerAWSAccountId(std::forward<CustomerAWSAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The <code>LicenseArn</code> is a unique identifier for a specific granted
+   * license. These are typically used for software purchased through Amazon Web
+   * Services Marketplace. Calls to <code>BatchMeterUsage</code> require
+   * <code>LicenseArn</code> for each <code>UsageRecord</code>.</p>  <p>Once
+   * you receive the <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> in
+   * the response, store that for future purposes/API calls/integrations.</p>
+   */
+  inline const Aws::String& GetLicenseArn() const { return m_licenseArn; }
+  template <typename LicenseArnT = Aws::String>
+  void SetLicenseArn(LicenseArnT&& value) {
+    m_licenseArnHasBeenSet = true;
+    m_licenseArn = std::forward<LicenseArnT>(value);
+  }
+  template <typename LicenseArnT = Aws::String>
+  ResolveCustomerResult& WithLicenseArn(LicenseArnT&& value) {
+    SetLicenseArn(std::forward<LicenseArnT>(value));
     return *this;
   }
   ///@}
@@ -104,6 +128,8 @@ class ResolveCustomerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_customerIdentifier;
 
@@ -111,10 +137,14 @@ class ResolveCustomerResult {
 
   Aws::String m_customerAWSAccountId;
 
+  Aws::String m_licenseArn;
+
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_customerIdentifierHasBeenSet = false;
   bool m_productCodeHasBeenSet = false;
   bool m_customerAWSAccountIdHasBeenSet = false;
+  bool m_licenseArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

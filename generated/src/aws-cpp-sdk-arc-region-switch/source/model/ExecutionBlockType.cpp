@@ -26,6 +26,8 @@ static const int ECSServiceScaling_HASH = HashingUtils::HashString("ECSServiceSc
 static const int EKSResourceScaling_HASH = HashingUtils::HashString("EKSResourceScaling");
 static const int Route53HealthCheck_HASH = HashingUtils::HashString("Route53HealthCheck");
 static const int DocumentDb_HASH = HashingUtils::HashString("DocumentDb");
+static const int RdsPromoteReadReplica_HASH = HashingUtils::HashString("RdsPromoteReadReplica");
+static const int RdsCreateCrossRegionReplica_HASH = HashingUtils::HashString("RdsCreateCrossRegionReplica");
 
 ExecutionBlockType GetExecutionBlockTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -51,6 +53,10 @@ ExecutionBlockType GetExecutionBlockTypeForName(const Aws::String& name) {
     return ExecutionBlockType::Route53HealthCheck;
   } else if (hashCode == DocumentDb_HASH) {
     return ExecutionBlockType::DocumentDb;
+  } else if (hashCode == RdsPromoteReadReplica_HASH) {
+    return ExecutionBlockType::RdsPromoteReadReplica;
+  } else if (hashCode == RdsCreateCrossRegionReplica_HASH) {
+    return ExecutionBlockType::RdsCreateCrossRegionReplica;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -87,6 +93,10 @@ Aws::String GetNameForExecutionBlockType(ExecutionBlockType enumValue) {
       return "Route53HealthCheck";
     case ExecutionBlockType::DocumentDb:
       return "DocumentDb";
+    case ExecutionBlockType::RdsPromoteReadReplica:
+      return "RdsPromoteReadReplica";
+    case ExecutionBlockType::RdsCreateCrossRegionReplica:
+      return "RdsCreateCrossRegionReplica";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

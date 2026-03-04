@@ -142,7 +142,7 @@ ResilienceHubClient::ResilienceHubClient(const std::shared_ptr<AWSCredentialsPro
 }
 
 /* Legacy constructors due deprecation */
-ResilienceHubClient::ResilienceHubClient(const Client::ClientConfiguration& clientConfiguration)
+ResilienceHubClient::ResilienceHubClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -154,7 +154,7 @@ ResilienceHubClient::ResilienceHubClient(const Client::ClientConfiguration& clie
   init(m_clientConfiguration);
 }
 
-ResilienceHubClient::ResilienceHubClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+ResilienceHubClient::ResilienceHubClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -165,7 +165,7 @@ ResilienceHubClient::ResilienceHubClient(const AWSCredentials& credentials, cons
 }
 
 ResilienceHubClient::ResilienceHubClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                         const Client::ClientConfiguration& clientConfiguration)
+                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

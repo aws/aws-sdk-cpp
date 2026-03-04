@@ -7,6 +7,7 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/model/ContainerConfig.h>
 #include <aws/cleanroomsml/model/InferenceContainerConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -241,6 +242,8 @@ class GetConfiguredModelAlgorithmResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_createTime{};
 
@@ -263,6 +266,7 @@ class GetConfiguredModelAlgorithmResult {
   Aws::String m_kmsKeyArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
   bool m_configuredModelAlgorithmArnHasBeenSet = false;

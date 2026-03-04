@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/KMS_EXPORTS.h>
@@ -94,6 +95,8 @@ class GenerateMacResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_mac{};
 
@@ -102,6 +105,7 @@ class GenerateMacResult {
   Aws::String m_keyId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_macHasBeenSet = false;
   bool m_macAlgorithmHasBeenSet = false;
   bool m_keyIdHasBeenSet = false;

@@ -184,6 +184,25 @@ class KeyspacesCellValue {
 
   ///@{
   /**
+   * <p>A duration value with nanosecond precision, representing a period of time
+   * encoded as 32-bit months, 32-bit days, and 64-bit nanoseconds. </p>
+   */
+  inline const Aws::String& GetDurationT() const { return m_durationT; }
+  inline bool DurationTHasBeenSet() const { return m_durationTHasBeenSet; }
+  template <typename DurationTT = Aws::String>
+  void SetDurationT(DurationTT&& value) {
+    m_durationTHasBeenSet = true;
+    m_durationT = std::forward<DurationTT>(value);
+  }
+  template <typename DurationTT = Aws::String>
+  KeyspacesCellValue& WithDurationT(DurationTT&& value) {
+    SetDurationT(std::forward<DurationTT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A 32-bit single-precision floating point value. </p>
    */
   inline const Aws::String& GetFloatT() const { return m_floatT; }
@@ -480,7 +499,7 @@ class KeyspacesCellValue {
 
   ///@{
   /**
-   * <p>A variable precision integer value with arbitrary length. </p>
+   * <p>An integer value within the +/-10^38 range. </p>
    */
   inline const Aws::String& GetVarintT() const { return m_varintT; }
   inline bool VarintTHasBeenSet() const { return m_varintTHasBeenSet; }
@@ -537,6 +556,8 @@ class KeyspacesCellValue {
 
   Aws::String m_doubleT;
 
+  Aws::String m_durationT;
+
   Aws::String m_floatT;
 
   Aws::String m_inetT;
@@ -578,6 +599,7 @@ class KeyspacesCellValue {
   bool m_dateTHasBeenSet = false;
   bool m_decimalTHasBeenSet = false;
   bool m_doubleTHasBeenSet = false;
+  bool m_durationTHasBeenSet = false;
   bool m_floatTHasBeenSet = false;
   bool m_inetTHasBeenSet = false;
   bool m_intTHasBeenSet = false;

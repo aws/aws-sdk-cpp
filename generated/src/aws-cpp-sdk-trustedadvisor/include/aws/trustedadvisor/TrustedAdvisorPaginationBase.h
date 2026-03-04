@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/trustedadvisor/model/ListChecksPaginationTraits.h>
 #include <aws/trustedadvisor/model/ListOrganizationRecommendationAccountsPaginationTraits.h>
@@ -28,6 +29,7 @@ class TrustedAdvisorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChecksRequest, Pagination::ListChecksPaginationTraits<DerivedClient>>
   ListChecksPaginator(const Model::ListChecksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChecksRequest,
                                              Pagination::ListChecksPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -39,6 +41,7 @@ class TrustedAdvisorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationRecommendationAccountsRequest,
                                     Pagination::ListOrganizationRecommendationAccountsPaginationTraits<DerivedClient>>
   ListOrganizationRecommendationAccountsPaginator(const Model::ListOrganizationRecommendationAccountsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationRecommendationAccountsRequest,
                                              Pagination::ListOrganizationRecommendationAccountsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +53,7 @@ class TrustedAdvisorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationRecommendationResourcesRequest,
                                     Pagination::ListOrganizationRecommendationResourcesPaginationTraits<DerivedClient>>
   ListOrganizationRecommendationResourcesPaginator(const Model::ListOrganizationRecommendationResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationRecommendationResourcesRequest,
                                              Pagination::ListOrganizationRecommendationResourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +65,7 @@ class TrustedAdvisorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationRecommendationsRequest,
                                     Pagination::ListOrganizationRecommendationsPaginationTraits<DerivedClient>>
   ListOrganizationRecommendationsPaginator(const Model::ListOrganizationRecommendationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationRecommendationsRequest,
                                              Pagination::ListOrganizationRecommendationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +77,7 @@ class TrustedAdvisorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationResourcesRequest,
                                     Pagination::ListRecommendationResourcesPaginationTraits<DerivedClient>>
   ListRecommendationResourcesPaginator(const Model::ListRecommendationResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationResourcesRequest,
                                              Pagination::ListRecommendationResourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -83,6 +89,7 @@ class TrustedAdvisorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationsRequest,
                                     Pagination::ListRecommendationsPaginationTraits<DerivedClient>>
   ListRecommendationsPaginator(const Model::ListRecommendationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationsRequest,
                                              Pagination::ListRecommendationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

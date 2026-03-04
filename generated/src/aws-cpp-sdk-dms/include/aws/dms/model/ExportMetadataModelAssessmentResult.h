@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/model/ExportMetadataModelAssessmentResultEntry.h>
@@ -77,12 +78,15 @@ class ExportMetadataModelAssessmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ExportMetadataModelAssessmentResultEntry m_pdfReport;
 
   ExportMetadataModelAssessmentResultEntry m_csvReport;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_pdfReportHasBeenSet = false;
   bool m_csvReportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

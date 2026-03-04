@@ -97,7 +97,7 @@ MedicalImagingClient::MedicalImagingClient(const std::shared_ptr<AWSCredentialsP
 }
 
 /* Legacy constructors due deprecation */
-MedicalImagingClient::MedicalImagingClient(const Client::ClientConfiguration& clientConfiguration)
+MedicalImagingClient::MedicalImagingClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -109,7 +109,7 @@ MedicalImagingClient::MedicalImagingClient(const Client::ClientConfiguration& cl
   init(m_clientConfiguration);
 }
 
-MedicalImagingClient::MedicalImagingClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+MedicalImagingClient::MedicalImagingClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -120,7 +120,7 @@ MedicalImagingClient::MedicalImagingClient(const AWSCredentials& credentials, co
 }
 
 MedicalImagingClient::MedicalImagingClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           const Client::ClientConfiguration& clientConfiguration)
+                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

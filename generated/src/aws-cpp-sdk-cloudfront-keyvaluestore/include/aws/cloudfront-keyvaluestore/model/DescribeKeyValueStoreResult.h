@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStore_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -180,6 +181,8 @@ class DescribeKeyValueStoreResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_itemCount{0};
 
@@ -198,6 +201,7 @@ class DescribeKeyValueStoreResult {
   Aws::String m_failureReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_itemCountHasBeenSet = false;
   bool m_totalSizeInBytesHasBeenSet = false;
   bool m_kvsARNHasBeenSet = false;

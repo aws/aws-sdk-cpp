@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/AutoEnableStandards.h>
@@ -31,15 +32,15 @@ class DescribeOrganizationConfigurationResult {
 
   ///@{
   /**
-   * <p>Whether to automatically enable Security Hub in new member accounts when they
-   * join the organization.</p> <p>If set to <code>true</code>, then Security Hub is
-   * automatically enabled in new accounts. If set to <code>false</code>, then
-   * Security Hub isn't enabled in new accounts automatically. The default value is
-   * <code>false</code>.</p> <p>If the <code>ConfigurationType</code> of your
-   * organization is set to <code>CENTRAL</code>, then this field is set to
+   * <p>Whether to automatically enable Security Hub CSPM in new member accounts when
+   * they join the organization.</p> <p>If set to <code>true</code>, then Security
+   * Hub CSPM is automatically enabled in new accounts. If set to <code>false</code>,
+   * then Security Hub CSPM isn't enabled in new accounts automatically. The default
+   * value is <code>false</code>.</p> <p>If the <code>ConfigurationType</code> of
+   * your organization is set to <code>CENTRAL</code>, then this field is set to
    * <code>false</code> and can't be changed in the home Region and linked Regions.
    * However, in that case, the delegated administrator can create a configuration
-   * policy in which Security Hub is enabled and associate the policy with new
+   * policy in which Security Hub CSPM is enabled and associate the policy with new
    * organization accounts.</p>
    */
   inline bool GetAutoEnable() const { return m_autoEnable; }
@@ -56,7 +57,7 @@ class DescribeOrganizationConfigurationResult {
   ///@{
   /**
    * <p>Whether the maximum number of allowed member accounts are already associated
-   * with the Security Hub administrator account.</p>
+   * with the Security Hub CSPM administrator account.</p>
    */
   inline bool GetMemberAccountLimitReached() const { return m_memberAccountLimitReached; }
   inline void SetMemberAccountLimitReached(bool value) {
@@ -71,10 +72,10 @@ class DescribeOrganizationConfigurationResult {
 
   ///@{
   /**
-   * <p>Whether to automatically enable Security Hub <a
+   * <p>Whether to automatically enable Security Hub CSPM <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
    * standards</a> in new member accounts when they join the organization.</p> <p>If
-   * equal to <code>DEFAULT</code>, then Security Hub default standards are
+   * equal to <code>DEFAULT</code>, then Security Hub CSPM default standards are
    * automatically enabled for new member accounts. If equal to <code>NONE</code>,
    * then default standards are not automatically enabled for new member accounts.
    * The default value of this parameter is equal to <code>DEFAULT</code>.</p> <p>If
@@ -125,6 +126,8 @@ class DescribeOrganizationConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_autoEnable{false};
 
@@ -135,6 +138,7 @@ class DescribeOrganizationConfigurationResult {
   OrganizationConfiguration m_organizationConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_autoEnableHasBeenSet = false;
   bool m_memberAccountLimitReachedHasBeenSet = false;
   bool m_autoEnableStandardsHasBeenSet = false;

@@ -72,14 +72,14 @@ class GetShardIteratorRequest : public KeyspacesStreamsRequest {
   ///@{
   /**
    * <p> Determines how the shard iterator is positioned. Must be one of the
-   * following:</p> <ul> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the
+   * following: </p> <ul> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the
    * last untrimmed record in the shard, which is the oldest data record in the
    * shard.</p> </li> <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading
    * exactly from the specified sequence number.</p> </li> <li> <p>
    * <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the specified
-   * sequence number.</p> </li> <li> <p> <code>LATEST</code> - Start reading just
+   * sequence number. </p> </li> <li> <p> <code>LATEST</code> - Start reading just
    * after the most recent record in the shard, so that you always read the most
-   * recent data.</p> </li> </ul>
+   * recent data. </p> </li> </ul>
    */
   inline ShardIteratorType GetShardIteratorType() const { return m_shardIteratorType; }
   inline bool ShardIteratorTypeHasBeenSet() const { return m_shardIteratorTypeHasBeenSet; }

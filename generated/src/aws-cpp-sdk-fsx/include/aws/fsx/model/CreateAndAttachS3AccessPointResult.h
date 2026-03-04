@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/S3AccessPointAttachment.h>
@@ -58,10 +59,13 @@ class CreateAndAttachS3AccessPointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   S3AccessPointAttachment m_s3AccessPointAttachment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_s3AccessPointAttachmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

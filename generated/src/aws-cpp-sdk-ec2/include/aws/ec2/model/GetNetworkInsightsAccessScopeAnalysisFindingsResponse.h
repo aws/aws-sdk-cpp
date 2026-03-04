@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -120,6 +121,8 @@ class GetNetworkInsightsAccessScopeAnalysisFindingsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_networkInsightsAccessScopeAnalysisId;
 
@@ -130,6 +133,7 @@ class GetNetworkInsightsAccessScopeAnalysisFindingsResponse {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
   bool m_analysisStatusHasBeenSet = false;
   bool m_analysisFindingsHasBeenSet = false;

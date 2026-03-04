@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mq/MQ_EXPORTS.h>
@@ -110,6 +111,8 @@ class DescribeConfigurationRevisionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_configurationId;
 
@@ -120,6 +123,7 @@ class DescribeConfigurationRevisionResult {
   Aws::String m_description;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationIdHasBeenSet = false;
   bool m_createdHasBeenSet = false;
   bool m_dataHasBeenSet = false;

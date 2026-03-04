@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/translate/model/ParallelDataDataLocation.h>
@@ -127,6 +128,8 @@ class GetParallelDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ParallelDataProperties m_parallelDataProperties;
 
@@ -137,6 +140,7 @@ class GetParallelDataResult {
   ParallelDataDataLocation m_latestUpdateAttemptAuxiliaryDataLocation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_parallelDataPropertiesHasBeenSet = false;
   bool m_dataLocationHasBeenSet = false;
   bool m_auxiliaryDataLocationHasBeenSet = false;

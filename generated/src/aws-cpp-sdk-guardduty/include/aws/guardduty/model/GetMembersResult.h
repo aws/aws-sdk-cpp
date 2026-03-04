@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
@@ -90,12 +91,15 @@ class GetMembersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Member> m_members;
 
   Aws::Vector<UnprocessedAccount> m_unprocessedAccounts;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_membersHasBeenSet = false;
   bool m_unprocessedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

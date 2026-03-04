@@ -1,4 +1,5 @@
 #include <aws/core/auth/ProfileCredentialsProvider.h>
+#include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/FileSystemUtils.h>
@@ -7,6 +8,15 @@
 #include <fstream>
 
 using namespace Aws::Auth;
+
+static Aws::String WrapEchoStringWithSingleQuoteForUnixShell(Aws::String str)
+{
+#ifndef _WIN32
+    str.insert(0, 1, '\'');
+    str.append(1, '\'');
+#endif
+    return str;
+}
 
 class ProfileCredentialsProviderTests : public Aws::Testing::AwsCppSdkGTestSuite {
  protected:
@@ -111,10 +121,10 @@ TEST_F(ProfileCredentialsProviderTests, MissingProfileReturnsEmpty) {
   EXPECT_TRUE(credentials.IsEmpty());
 }
 
-TEST_F(ProfileCredentialsProviderTests, DISABLED_ProcessCredentials) {
+TEST_F(ProfileCredentialsProviderTests, ProcessCredentials) {
   std::ofstream config(m_configFile.c_str());
   config << "[default]\n";
-  config << "credential_process = echo '{\"Version\": 1, \"AccessKeyId\": \"ProcessKey\", \"SecretAccessKey\": \"ProcessSecret\"}'\n";
+  config << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"ProcessKey\", \"SecretAccessKey\": \"ProcessSecret\"}") << "\n";
   config.close();
 
   ProfileCredentialsProvider provider;

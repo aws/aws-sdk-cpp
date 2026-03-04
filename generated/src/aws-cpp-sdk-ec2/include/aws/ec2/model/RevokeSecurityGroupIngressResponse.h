@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/IpPermission.h>
@@ -107,6 +108,8 @@ class RevokeSecurityGroupIngressResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_return{false};
 
@@ -115,6 +118,7 @@ class RevokeSecurityGroupIngressResponse {
   Aws::Vector<RevokedSecurityGroupRule> m_revokedSecurityGroupRules;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_returnHasBeenSet = false;
   bool m_unknownIpPermissionsHasBeenSet = false;
   bool m_revokedSecurityGroupRulesHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/ConnectionMode.h>
@@ -170,6 +171,8 @@ class CreateOutboundConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DomainInformationContainer m_localDomainInfo;
 
@@ -186,6 +189,7 @@ class CreateOutboundConnectionResult {
   ConnectionProperties m_connectionProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_localDomainInfoHasBeenSet = false;
   bool m_remoteDomainInfoHasBeenSet = false;
   bool m_connectionAliasHasBeenSet = false;

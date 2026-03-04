@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/simspaceweaver/SimSpaceWeaver_EXPORTS.h>
 
@@ -91,6 +92,8 @@ class StartAppResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_domain;
 
@@ -99,6 +102,7 @@ class StartAppResult {
   Aws::String m_simulation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_simulationHasBeenSet = false;

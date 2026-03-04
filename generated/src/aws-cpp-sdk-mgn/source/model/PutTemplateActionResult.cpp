@@ -20,6 +20,7 @@ using namespace Aws;
 PutTemplateActionResult::PutTemplateActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutTemplateActionResult& PutTemplateActionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("actionID")) {
     m_actionID = jsonValue.GetString("actionID");
@@ -56,14 +57,14 @@ PutTemplateActionResult& PutTemplateActionResult::operator=(const Aws::AmazonWeb
   if (jsonValue.ValueExists("parameters")) {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
     for (auto& parametersItem : parametersJsonMap) {
-      Aws::Utils::Array<JsonView> ssmParameterStoreParametersJsonList = parametersItem.second.AsArray();
-      Aws::Vector<SsmParameterStoreParameter> ssmParameterStoreParametersList;
-      ssmParameterStoreParametersList.reserve((size_t)ssmParameterStoreParametersJsonList.GetLength());
-      for (unsigned ssmParameterStoreParametersIndex = 0;
-           ssmParameterStoreParametersIndex < ssmParameterStoreParametersJsonList.GetLength(); ++ssmParameterStoreParametersIndex) {
-        ssmParameterStoreParametersList.push_back(ssmParameterStoreParametersJsonList[ssmParameterStoreParametersIndex].AsObject());
+      Aws::Utils::Array<JsonView> ssmParameterStoreParameters2JsonList = parametersItem.second.AsArray();
+      Aws::Vector<SsmParameterStoreParameter> ssmParameterStoreParameters2List;
+      ssmParameterStoreParameters2List.reserve((size_t)ssmParameterStoreParameters2JsonList.GetLength());
+      for (unsigned ssmParameterStoreParameters2Index = 0;
+           ssmParameterStoreParameters2Index < ssmParameterStoreParameters2JsonList.GetLength(); ++ssmParameterStoreParameters2Index) {
+        ssmParameterStoreParameters2List.push_back(ssmParameterStoreParameters2JsonList[ssmParameterStoreParameters2Index].AsObject());
       }
-      m_parameters[parametersItem.first] = std::move(ssmParameterStoreParametersList);
+      m_parameters[parametersItem.first] = std::move(ssmParameterStoreParameters2List);
     }
     m_parametersHasBeenSet = true;
   }

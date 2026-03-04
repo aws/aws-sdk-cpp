@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -98,6 +99,8 @@ class UpdateBasePathMappingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_basePath;
 
@@ -106,6 +109,7 @@ class UpdateBasePathMappingResult {
   Aws::String m_stage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_basePathHasBeenSet = false;
   bool m_restApiIdHasBeenSet = false;
   bool m_stageHasBeenSet = false;

@@ -36,6 +36,7 @@
 #include <aws/batch/model/ComputeEnvironmentOrder.h>
 #include <aws/batch/model/ComputeResource.h>
 #include <aws/batch/model/ComputeResourceUpdate.h>
+#include <aws/batch/model/ComputeScalingPolicy.h>
 #include <aws/batch/model/ConsumableResourceProperties.h>
 #include <aws/batch/model/ConsumableResourceRequirement.h>
 #include <aws/batch/model/ConsumableResourceSummary.h>

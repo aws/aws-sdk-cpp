@@ -21,13 +21,13 @@ EdgeOverride& EdgeOverride::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("EdgeSets")) {
     Aws::Utils::Array<JsonView> edgeSetsJsonList = jsonValue.GetArray("EdgeSets");
     for (unsigned edgeSetsIndex = 0; edgeSetsIndex < edgeSetsJsonList.GetLength(); ++edgeSetsIndex) {
-      Aws::Utils::Array<JsonView> edgeSetJsonList = edgeSetsJsonList[edgeSetsIndex].AsArray();
-      Aws::Vector<Aws::String> edgeSetList;
-      edgeSetList.reserve((size_t)edgeSetJsonList.GetLength());
-      for (unsigned edgeSetIndex = 0; edgeSetIndex < edgeSetJsonList.GetLength(); ++edgeSetIndex) {
-        edgeSetList.push_back(edgeSetJsonList[edgeSetIndex].AsString());
+      Aws::Utils::Array<JsonView> edgeSet2JsonList = edgeSetsJsonList[edgeSetsIndex].AsArray();
+      Aws::Vector<Aws::String> edgeSet2List;
+      edgeSet2List.reserve((size_t)edgeSet2JsonList.GetLength());
+      for (unsigned edgeSet2Index = 0; edgeSet2Index < edgeSet2JsonList.GetLength(); ++edgeSet2Index) {
+        edgeSet2List.push_back(edgeSet2JsonList[edgeSet2Index].AsString());
       }
-      m_edgeSets.push_back(std::move(edgeSetList));
+      m_edgeSets.push_back(std::move(edgeSet2List));
     }
     m_edgeSetsHasBeenSet = true;
   }

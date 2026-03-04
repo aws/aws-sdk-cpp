@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/BucketVersioningStatus.h>
@@ -75,12 +76,15 @@ class GetBucketVersioningResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   BucketVersioningStatus m_status{BucketVersioningStatus::NOT_SET};
 
   MFADeleteStatus m_mFADelete{MFADeleteStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_mFADeleteHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

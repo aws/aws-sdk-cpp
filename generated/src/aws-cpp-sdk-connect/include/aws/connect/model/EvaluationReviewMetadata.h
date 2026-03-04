@@ -55,36 +55,36 @@ class EvaluationReviewMetadata {
 
   ///@{
   /**
-   * <p>The timestamp when the evaluation review was created.</p>
+   * <p>The timestamp when the evaluation review was requested.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
-  inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-  template <typename CreatedTimeT = Aws::Utils::DateTime>
-  void SetCreatedTime(CreatedTimeT&& value) {
-    m_createdTimeHasBeenSet = true;
-    m_createdTime = std::forward<CreatedTimeT>(value);
+  inline const Aws::Utils::DateTime& GetRequestedTime() const { return m_requestedTime; }
+  inline bool RequestedTimeHasBeenSet() const { return m_requestedTimeHasBeenSet; }
+  template <typename RequestedTimeT = Aws::Utils::DateTime>
+  void SetRequestedTime(RequestedTimeT&& value) {
+    m_requestedTimeHasBeenSet = true;
+    m_requestedTime = std::forward<RequestedTimeT>(value);
   }
-  template <typename CreatedTimeT = Aws::Utils::DateTime>
-  EvaluationReviewMetadata& WithCreatedTime(CreatedTimeT&& value) {
-    SetCreatedTime(std::forward<CreatedTimeT>(value));
+  template <typename RequestedTimeT = Aws::Utils::DateTime>
+  EvaluationReviewMetadata& WithRequestedTime(RequestedTimeT&& value) {
+    SetRequestedTime(std::forward<RequestedTimeT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The user who created the evaluation review.</p>
+   * <p>The user who requested the evaluation review.</p>
    */
-  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-  template <typename CreatedByT = Aws::String>
-  void SetCreatedBy(CreatedByT&& value) {
-    m_createdByHasBeenSet = true;
-    m_createdBy = std::forward<CreatedByT>(value);
+  inline const Aws::String& GetRequestedBy() const { return m_requestedBy; }
+  inline bool RequestedByHasBeenSet() const { return m_requestedByHasBeenSet; }
+  template <typename RequestedByT = Aws::String>
+  void SetRequestedBy(RequestedByT&& value) {
+    m_requestedByHasBeenSet = true;
+    m_requestedBy = std::forward<RequestedByT>(value);
   }
-  template <typename CreatedByT = Aws::String>
-  EvaluationReviewMetadata& WithCreatedBy(CreatedByT&& value) {
-    SetCreatedBy(std::forward<CreatedByT>(value));
+  template <typename RequestedByT = Aws::String>
+  EvaluationReviewMetadata& WithRequestedBy(RequestedByT&& value) {
+    SetRequestedBy(std::forward<RequestedByT>(value));
     return *this;
   }
   ///@}
@@ -115,14 +115,14 @@ class EvaluationReviewMetadata {
  private:
   Aws::String m_reviewId;
 
-  Aws::Utils::DateTime m_createdTime{};
+  Aws::Utils::DateTime m_requestedTime{};
 
-  Aws::String m_createdBy;
+  Aws::String m_requestedBy;
 
   Aws::Vector<EvaluationReviewRequestComment> m_reviewRequestComments;
   bool m_reviewIdHasBeenSet = false;
-  bool m_createdTimeHasBeenSet = false;
-  bool m_createdByHasBeenSet = false;
+  bool m_requestedTimeHasBeenSet = false;
+  bool m_requestedByHasBeenSet = false;
   bool m_reviewRequestCommentsHasBeenSet = false;
 };
 

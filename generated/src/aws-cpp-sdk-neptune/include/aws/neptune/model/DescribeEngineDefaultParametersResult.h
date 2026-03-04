@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/model/EngineDefaults.h>
 #include <aws/neptune/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class DescribeEngineDefaultParametersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EngineDefaults m_engineDefaults;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_engineDefaultsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

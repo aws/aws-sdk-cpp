@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
@@ -151,6 +152,8 @@ class ListRecommendationSummariesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   double m_estimatedTotalDedupedSavings{0.0};
 
@@ -165,6 +168,7 @@ class ListRecommendationSummariesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_estimatedTotalDedupedSavingsHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
   bool m_groupByHasBeenSet = false;

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/pcs/model/ListClustersPaginationTraits.h>
 #include <aws/pcs/model/ListComputeNodeGroupsPaginationTraits.h>
@@ -25,6 +26,7 @@ class PCSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersRequest, Pagination::ListClustersPaginationTraits<DerivedClient>>
   ListClustersPaginator(const Model::ListClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersRequest,
                                              Pagination::ListClustersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -36,6 +38,7 @@ class PCSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComputeNodeGroupsRequest,
                                     Pagination::ListComputeNodeGroupsPaginationTraits<DerivedClient>>
   ListComputeNodeGroupsPaginator(const Model::ListComputeNodeGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComputeNodeGroupsRequest,
                                              Pagination::ListComputeNodeGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -46,6 +49,7 @@ class PCSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuesRequest, Pagination::ListQueuesPaginationTraits<DerivedClient>>
   ListQueuesPaginator(const Model::ListQueuesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuesRequest,
                                              Pagination::ListQueuesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 
@@ -92,6 +93,8 @@ class CreateWorkspaceApiKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_keyName;
 
@@ -100,6 +103,7 @@ class CreateWorkspaceApiKeyResult {
   Aws::String m_workspaceId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyNameHasBeenSet = false;
   bool m_keyHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;

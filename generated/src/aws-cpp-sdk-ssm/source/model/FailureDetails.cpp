@@ -29,14 +29,14 @@ FailureDetails& FailureDetails::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Details")) {
     Aws::Map<Aws::String, JsonView> detailsJsonMap = jsonValue.GetObject("Details").GetAllObjects();
     for (auto& detailsItem : detailsJsonMap) {
-      Aws::Utils::Array<JsonView> automationParameterValueListJsonList = detailsItem.second.AsArray();
-      Aws::Vector<Aws::String> automationParameterValueListList;
-      automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
-      for (unsigned automationParameterValueListIndex = 0;
-           automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex) {
-        automationParameterValueListList.push_back(automationParameterValueListJsonList[automationParameterValueListIndex].AsString());
+      Aws::Utils::Array<JsonView> automationParameterValueList2JsonList = detailsItem.second.AsArray();
+      Aws::Vector<Aws::String> automationParameterValueList2List;
+      automationParameterValueList2List.reserve((size_t)automationParameterValueList2JsonList.GetLength());
+      for (unsigned automationParameterValueList2Index = 0;
+           automationParameterValueList2Index < automationParameterValueList2JsonList.GetLength(); ++automationParameterValueList2Index) {
+        automationParameterValueList2List.push_back(automationParameterValueList2JsonList[automationParameterValueList2Index].AsString());
       }
-      m_details[detailsItem.first] = std::move(automationParameterValueListList);
+      m_details[detailsItem.first] = std::move(automationParameterValueList2List);
     }
     m_detailsHasBeenSet = true;
   }

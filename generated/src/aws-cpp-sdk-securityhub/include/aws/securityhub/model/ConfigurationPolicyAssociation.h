@@ -20,10 +20,10 @@ namespace SecurityHub {
 namespace Model {
 
 /**
- * <p> Provides details about the association between an Security Hub configuration
- * and a target account, organizational unit, or the root. An association can exist
- * between a target and a configuration policy, or between a target and
- * self-managed behavior. </p><p><h3>See Also:</h3>   <a
+ * <p> Provides details about the association between an Security Hub CSPM
+ * configuration and a target account, organizational unit, or the root. An
+ * association can exist between a target and a configuration policy, or between a
+ * target and self-managed behavior. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConfigurationPolicyAssociation">AWS
  * API Reference</a></p>
  */

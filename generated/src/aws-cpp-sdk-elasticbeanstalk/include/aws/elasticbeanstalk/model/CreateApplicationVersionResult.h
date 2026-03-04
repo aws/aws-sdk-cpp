@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/ApplicationVersionDescription.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
@@ -65,10 +66,13 @@ class CreateApplicationVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ApplicationVersionDescription m_applicationVersion;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationVersionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

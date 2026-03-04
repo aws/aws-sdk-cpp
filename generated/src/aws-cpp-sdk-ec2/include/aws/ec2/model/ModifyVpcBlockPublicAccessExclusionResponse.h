@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/VpcBlockPublicAccessExclusion.h>
@@ -59,10 +60,13 @@ class ModifyVpcBlockPublicAccessExclusionResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VpcBlockPublicAccessExclusion m_vpcBlockPublicAccessExclusion;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vpcBlockPublicAccessExclusionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

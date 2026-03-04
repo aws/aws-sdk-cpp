@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/keyspacesstreams/model/GetStreamPaginationTraits.h>
 #include <aws/keyspacesstreams/model/ListStreamsPaginationTraits.h>
@@ -24,6 +25,7 @@ class KeyspacesStreamsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetStreamRequest, Pagination::GetStreamPaginationTraits<DerivedClient>>
   GetStreamPaginator(const Model::GetStreamRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetStreamRequest, Pagination::GetStreamPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -33,6 +35,7 @@ class KeyspacesStreamsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamsRequest, Pagination::ListStreamsPaginationTraits<DerivedClient>>
   ListStreamsPaginator(const Model::ListStreamsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStreamsRequest,
                                              Pagination::ListStreamsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

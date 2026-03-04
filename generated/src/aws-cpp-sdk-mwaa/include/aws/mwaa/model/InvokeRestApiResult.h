@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mwaa/MWAA_EXPORTS.h>
@@ -74,12 +75,15 @@ class InvokeRestApiResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_restApiStatusCode{0};
 
   Aws::Utils::Document m_restApiResponse;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_restApiStatusCodeHasBeenSet = false;
   bool m_restApiResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

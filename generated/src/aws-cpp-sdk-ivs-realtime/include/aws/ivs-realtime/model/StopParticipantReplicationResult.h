@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 
@@ -159,6 +160,8 @@ class StopParticipantReplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_accessControlAllowOrigin;
 
@@ -175,6 +178,7 @@ class StopParticipantReplicationResult {
   Aws::String m_xFrameOptions;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessControlAllowOriginHasBeenSet = false;
   bool m_accessControlExposeHeadersHasBeenSet = false;
   bool m_cacheControlHasBeenSet = false;

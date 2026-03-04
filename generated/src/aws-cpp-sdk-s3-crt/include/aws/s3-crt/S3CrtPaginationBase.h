@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/s3-crt/model/ListBucketsPaginationTraits.h>
 #include <aws/s3-crt/model/ListDirectoryBucketsPaginationTraits.h>
@@ -26,6 +27,7 @@ class S3CrtPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBucketsRequest, Pagination::ListBucketsPaginationTraits<DerivedClient>>
   ListBucketsPaginator(const Model::ListBucketsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBucketsRequest,
                                              Pagination::ListBucketsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -37,6 +39,7 @@ class S3CrtPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDirectoryBucketsRequest,
                                     Pagination::ListDirectoryBucketsPaginationTraits<DerivedClient>>
   ListDirectoryBucketsPaginator(const Model::ListDirectoryBucketsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDirectoryBucketsRequest,
                                              Pagination::ListDirectoryBucketsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -47,6 +50,7 @@ class S3CrtPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectsV2Request, Pagination::ListObjectsV2PaginationTraits<DerivedClient>>
   ListObjectsV2Paginator(const Model::ListObjectsV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListObjectsV2Request,
                                              Pagination::ListObjectsV2PaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -57,6 +61,7 @@ class S3CrtPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPartsRequest, Pagination::ListPartsPaginationTraits<DerivedClient>>
   ListPartsPaginator(const Model::ListPartsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPartsRequest, Pagination::ListPartsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

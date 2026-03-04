@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
@@ -116,6 +117,8 @@ class UpdateSessionDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_sessionArn;
 
@@ -126,6 +129,7 @@ class UpdateSessionDataResult {
   Aws::Vector<RuntimeSessionData> m_data;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sessionArnHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;

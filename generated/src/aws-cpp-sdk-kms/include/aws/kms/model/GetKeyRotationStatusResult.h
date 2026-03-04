@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/KMS_EXPORTS.h>
@@ -128,6 +129,8 @@ class GetKeyRotationStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_keyRotationEnabled{false};
 
@@ -140,6 +143,7 @@ class GetKeyRotationStatusResult {
   Aws::Utils::DateTime m_onDemandRotationStartDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyRotationEnabledHasBeenSet = false;
   bool m_keyIdHasBeenSet = false;
   bool m_rotationPeriodInDaysHasBeenSet = false;

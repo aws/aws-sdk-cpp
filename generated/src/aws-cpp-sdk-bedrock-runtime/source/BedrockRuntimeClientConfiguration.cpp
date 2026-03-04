@@ -22,7 +22,7 @@ void BedrockRuntimeClientConfiguration::LoadBedrockRuntimeSpecificConfig(const A
   }
 }
 
-BedrockRuntimeClientConfiguration::BedrockRuntimeClientConfiguration(const Client::ClientConfigurationInitValues& configuration)
+BedrockRuntimeClientConfiguration::BedrockRuntimeClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
     : BaseClientConfigClass(configuration) {
   LoadBedrockRuntimeSpecificConfig(this->profileName);
 }
@@ -37,7 +37,7 @@ BedrockRuntimeClientConfiguration::BedrockRuntimeClientConfiguration(bool useSma
   LoadBedrockRuntimeSpecificConfig(this->profileName);
 }
 
-BedrockRuntimeClientConfiguration::BedrockRuntimeClientConfiguration(const Client::ClientConfiguration& config)
+BedrockRuntimeClientConfiguration::BedrockRuntimeClientConfiguration(const Aws::Client::ClientConfiguration& config)
     : BaseClientConfigClass(config) {
   LoadBedrockRuntimeSpecificConfig(this->profileName);
 }

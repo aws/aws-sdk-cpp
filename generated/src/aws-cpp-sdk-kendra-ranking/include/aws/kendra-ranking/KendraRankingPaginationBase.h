@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/kendra-ranking/model/ListRescoreExecutionPlansPaginationTraits.h>
 
@@ -24,6 +25,7 @@ class KendraRankingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRescoreExecutionPlansRequest,
                                     Pagination::ListRescoreExecutionPlansPaginationTraits<DerivedClient>>
   ListRescoreExecutionPlansPaginator(const Model::ListRescoreExecutionPlansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRescoreExecutionPlansRequest,
                                              Pagination::ListRescoreExecutionPlansPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

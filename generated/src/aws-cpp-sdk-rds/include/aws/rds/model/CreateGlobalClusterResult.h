@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/GlobalCluster.h>
 #include <aws/rds/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class CreateGlobalClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   GlobalCluster m_globalCluster;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_globalClusterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

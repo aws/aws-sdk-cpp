@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
@@ -112,6 +113,8 @@ class ListImageScanFindingAggregationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_requestId;
 
@@ -120,6 +123,7 @@ class ListImageScanFindingAggregationsResult {
   Aws::Vector<ImageScanFindingAggregation> m_responses;
 
   Aws::String m_nextToken;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_aggregationTypeHasBeenSet = false;
   bool m_responsesHasBeenSet = false;

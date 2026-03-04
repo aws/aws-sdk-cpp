@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mwaa-serverless/MWAAServerless_EXPORTS.h>
@@ -93,6 +94,8 @@ class StartWorkflowRunResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_runId;
 
@@ -101,6 +104,7 @@ class StartWorkflowRunResult {
   Aws::Utils::DateTime m_startedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_runIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;

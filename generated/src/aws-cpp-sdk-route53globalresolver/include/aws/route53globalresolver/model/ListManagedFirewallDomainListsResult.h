@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
@@ -86,12 +87,15 @@ class ListManagedFirewallDomainListsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ManagedFirewallDomainListsItem> m_managedFirewallDomainLists;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_managedFirewallDomainListsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

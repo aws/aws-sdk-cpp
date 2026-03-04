@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/iottwinmaker/model/State.h>
@@ -107,6 +108,8 @@ class UpdateComponentTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_workspaceId;
 
@@ -117,6 +120,7 @@ class UpdateComponentTypeResult {
   State m_state{State::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_workspaceIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_componentTypeIdHasBeenSet = false;

@@ -50,19 +50,19 @@ class GetFindingHistoryRequest : public SecurityHubRequest {
   /**
    * <p>A timestamp that indicates the start time of the requested finding
    * history.</p> <p>If you provide values for both <code>StartTime</code> and
-   * <code>EndTime</code>, Security Hub returns finding history for the specified
-   * time period. If you provide a value for <code>StartTime</code> but not for
-   * <code>EndTime</code>, Security Hub returns finding history from the
+   * <code>EndTime</code>, Security Hub CSPM returns finding history for the
+   * specified time period. If you provide a value for <code>StartTime</code> but not
+   * for <code>EndTime</code>, Security Hub CSPM returns finding history from the
    * <code>StartTime</code> to the time at which the API is called. If you provide a
    * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
-   * returns finding history from the <a
+   * CSPM returns finding history from the <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
    * timestamp of the finding to the <code>EndTime</code>. If you provide neither
-   * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
-   * history from the <code>CreatedAt</code> timestamp of the finding to the time at
-   * which the API is called. In all of these scenarios, the response is limited to
-   * 100 results.</p> <p>For more information about the validation and formatting of
-   * timestamp fields in Security Hub, see <a
+   * <code>StartTime</code> nor <code>EndTime</code>, Security Hub CSPM returns
+   * finding history from the <code>CreatedAt</code> timestamp of the finding to the
+   * time at which the API is called. In all of these scenarios, the response is
+   * limited to 100 results.</p> <p>For more information about the validation and
+   * formatting of timestamp fields in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
@@ -83,19 +83,19 @@ class GetFindingHistoryRequest : public SecurityHubRequest {
   /**
    * <p> An ISO 8601-formatted timestamp that indicates the end time of the requested
    * finding history.</p> <p>If you provide values for both <code>StartTime</code>
-   * and <code>EndTime</code>, Security Hub returns finding history for the specified
-   * time period. If you provide a value for <code>StartTime</code> but not for
-   * <code>EndTime</code>, Security Hub returns finding history from the
+   * and <code>EndTime</code>, Security Hub CSPM returns finding history for the
+   * specified time period. If you provide a value for <code>StartTime</code> but not
+   * for <code>EndTime</code>, Security Hub CSPM returns finding history from the
    * <code>StartTime</code> to the time at which the API is called. If you provide a
    * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
-   * returns finding history from the <a
+   * CSPM returns finding history from the <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
    * timestamp of the finding to the <code>EndTime</code>. If you provide neither
-   * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
-   * history from the <code>CreatedAt</code> timestamp of the finding to the time at
-   * which the API is called. In all of these scenarios, the response is limited to
-   * 100 results.</p> <p>For more information about the validation and formatting of
-   * timestamp fields in Security Hub, see <a
+   * <code>StartTime</code> nor <code>EndTime</code>, Security Hub CSPM returns
+   * finding history from the <code>CreatedAt</code> timestamp of the finding to the
+   * time at which the API is called. In all of these scenarios, the response is
+   * limited to 100 results.</p> <p>For more information about the validation and
+   * formatting of timestamp fields in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
@@ -117,7 +117,7 @@ class GetFindingHistoryRequest : public SecurityHubRequest {
    * <p> A token for pagination purposes. Provide <code>NULL</code> as the initial
    * value. In subsequent requests, provide the token included in the response to get
    * up to an additional 100 results of finding history. If you don’t provide
-   * <code>NextToken</code>, Security Hub returns up to 100 results of finding
+   * <code>NextToken</code>, Security Hub CSPM returns up to 100 results of finding
    * history for each request. </p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
@@ -137,7 +137,7 @@ class GetFindingHistoryRequest : public SecurityHubRequest {
   ///@{
   /**
    * <p> The maximum number of results to be returned. If you don’t provide it,
-   * Security Hub returns up to 100 results of finding history. </p>
+   * Security Hub CSPM returns up to 100 results of finding history. </p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

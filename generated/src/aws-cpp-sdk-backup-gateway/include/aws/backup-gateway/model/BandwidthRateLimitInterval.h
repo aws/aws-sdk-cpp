@@ -39,8 +39,7 @@ class BandwidthRateLimitInterval {
   /**
    * <p>The average upload rate limit component of the bandwidth rate limit interval,
    * in bits per second. This field does not appear in the response if the upload
-   * rate limit is not set.</p>  <p>For Backup Gateway, the minimum value is
-   * <code>(Value)</code>.</p>
+   * rate limit is not set.</p>
    */
   inline long long GetAverageUploadRateLimitInBitsPerSec() const { return m_averageUploadRateLimitInBitsPerSec; }
   inline bool AverageUploadRateLimitInBitsPerSecHasBeenSet() const { return m_averageUploadRateLimitInBitsPerSecHasBeenSet; }
@@ -50,6 +49,75 @@ class BandwidthRateLimitInterval {
   }
   inline BandwidthRateLimitInterval& WithAverageUploadRateLimitInBitsPerSec(long long value) {
     SetAverageUploadRateLimitInBitsPerSec(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The hour of the day to start the bandwidth rate limit interval.</p>
+   */
+  inline int GetStartHourOfDay() const { return m_startHourOfDay; }
+  inline bool StartHourOfDayHasBeenSet() const { return m_startHourOfDayHasBeenSet; }
+  inline void SetStartHourOfDay(int value) {
+    m_startHourOfDayHasBeenSet = true;
+    m_startHourOfDay = value;
+  }
+  inline BandwidthRateLimitInterval& WithStartHourOfDay(int value) {
+    SetStartHourOfDay(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The hour of the day to end the bandwidth rate limit interval.</p>
+   */
+  inline int GetEndHourOfDay() const { return m_endHourOfDay; }
+  inline bool EndHourOfDayHasBeenSet() const { return m_endHourOfDayHasBeenSet; }
+  inline void SetEndHourOfDay(int value) {
+    m_endHourOfDayHasBeenSet = true;
+    m_endHourOfDay = value;
+  }
+  inline BandwidthRateLimitInterval& WithEndHourOfDay(int value) {
+    SetEndHourOfDay(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The minute of the hour to start the bandwidth rate limit interval. The
+   * interval begins at the start of that minute. To begin an interval exactly at the
+   * start of the hour, use the value <code>0</code>.</p>
+   */
+  inline int GetStartMinuteOfHour() const { return m_startMinuteOfHour; }
+  inline bool StartMinuteOfHourHasBeenSet() const { return m_startMinuteOfHourHasBeenSet; }
+  inline void SetStartMinuteOfHour(int value) {
+    m_startMinuteOfHourHasBeenSet = true;
+    m_startMinuteOfHour = value;
+  }
+  inline BandwidthRateLimitInterval& WithStartMinuteOfHour(int value) {
+    SetStartMinuteOfHour(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The minute of the hour to end the bandwidth rate limit interval.</p>
+   *  <p>The bandwidth rate limit interval ends at the end of the minute.
+   * To end an interval at the end of an hour, use the value <code>59</code>.</p>
+   *
+   */
+  inline int GetEndMinuteOfHour() const { return m_endMinuteOfHour; }
+  inline bool EndMinuteOfHourHasBeenSet() const { return m_endMinuteOfHourHasBeenSet; }
+  inline void SetEndMinuteOfHour(int value) {
+    m_endMinuteOfHourHasBeenSet = true;
+    m_endMinuteOfHour = value;
+  }
+  inline BandwidthRateLimitInterval& WithEndMinuteOfHour(int value) {
+    SetEndMinuteOfHour(value);
     return *this;
   }
   ///@}
@@ -78,93 +146,24 @@ class BandwidthRateLimitInterval {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The hour of the day to end the bandwidth rate limit interval.</p>
-   */
-  inline int GetEndHourOfDay() const { return m_endHourOfDay; }
-  inline bool EndHourOfDayHasBeenSet() const { return m_endHourOfDayHasBeenSet; }
-  inline void SetEndHourOfDay(int value) {
-    m_endHourOfDayHasBeenSet = true;
-    m_endHourOfDay = value;
-  }
-  inline BandwidthRateLimitInterval& WithEndHourOfDay(int value) {
-    SetEndHourOfDay(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The minute of the hour to end the bandwidth rate limit interval.</p>
-   *  <p>The bandwidth rate limit interval ends at the end of the minute.
-   * To end an interval at the end of an hour, use the value <code>59</code>.</p>
-   *
-   */
-  inline int GetEndMinuteOfHour() const { return m_endMinuteOfHour; }
-  inline bool EndMinuteOfHourHasBeenSet() const { return m_endMinuteOfHourHasBeenSet; }
-  inline void SetEndMinuteOfHour(int value) {
-    m_endMinuteOfHourHasBeenSet = true;
-    m_endMinuteOfHour = value;
-  }
-  inline BandwidthRateLimitInterval& WithEndMinuteOfHour(int value) {
-    SetEndMinuteOfHour(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The hour of the day to start the bandwidth rate limit interval.</p>
-   */
-  inline int GetStartHourOfDay() const { return m_startHourOfDay; }
-  inline bool StartHourOfDayHasBeenSet() const { return m_startHourOfDayHasBeenSet; }
-  inline void SetStartHourOfDay(int value) {
-    m_startHourOfDayHasBeenSet = true;
-    m_startHourOfDay = value;
-  }
-  inline BandwidthRateLimitInterval& WithStartHourOfDay(int value) {
-    SetStartHourOfDay(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The minute of the hour to start the bandwidth rate limit interval. The
-   * interval begins at the start of that minute. To begin an interval exactly at the
-   * start of the hour, use the value <code>0</code>.</p>
-   */
-  inline int GetStartMinuteOfHour() const { return m_startMinuteOfHour; }
-  inline bool StartMinuteOfHourHasBeenSet() const { return m_startMinuteOfHourHasBeenSet; }
-  inline void SetStartMinuteOfHour(int value) {
-    m_startMinuteOfHourHasBeenSet = true;
-    m_startMinuteOfHour = value;
-  }
-  inline BandwidthRateLimitInterval& WithStartMinuteOfHour(int value) {
-    SetStartMinuteOfHour(value);
-    return *this;
-  }
-  ///@}
  private:
   long long m_averageUploadRateLimitInBitsPerSec{0};
 
-  Aws::Vector<int> m_daysOfWeek;
+  int m_startHourOfDay{0};
 
   int m_endHourOfDay{0};
 
+  int m_startMinuteOfHour{0};
+
   int m_endMinuteOfHour{0};
 
-  int m_startHourOfDay{0};
-
-  int m_startMinuteOfHour{0};
+  Aws::Vector<int> m_daysOfWeek;
   bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
-  bool m_daysOfWeekHasBeenSet = false;
-  bool m_endHourOfDayHasBeenSet = false;
-  bool m_endMinuteOfHourHasBeenSet = false;
   bool m_startHourOfDayHasBeenSet = false;
+  bool m_endHourOfDayHasBeenSet = false;
   bool m_startMinuteOfHourHasBeenSet = false;
+  bool m_endMinuteOfHourHasBeenSet = false;
+  bool m_daysOfWeekHasBeenSet = false;
 };
 
 }  // namespace Model

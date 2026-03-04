@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -103,6 +104,8 @@ class ListMedicalScribeJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MedicalScribeJobStatus m_status{MedicalScribeJobStatus::NOT_SET};
 
@@ -111,6 +114,7 @@ class ListMedicalScribeJobsResult {
   Aws::Vector<MedicalScribeJobSummary> m_medicalScribeJobSummaries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_medicalScribeJobSummariesHasBeenSet = false;

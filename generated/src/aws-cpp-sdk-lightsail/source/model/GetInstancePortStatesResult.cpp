@@ -20,6 +20,7 @@ using namespace Aws;
 GetInstancePortStatesResult::GetInstancePortStatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetInstancePortStatesResult& GetInstancePortStatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("portStates")) {
     Aws::Utils::Array<JsonView> portStatesJsonList = jsonValue.GetArray("portStates");

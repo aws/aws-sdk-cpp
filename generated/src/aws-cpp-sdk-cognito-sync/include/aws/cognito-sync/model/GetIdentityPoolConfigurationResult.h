@@ -7,6 +7,7 @@
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 #include <aws/cognito-sync/model/CognitoStreams.h>
 #include <aws/cognito-sync/model/PushSync.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -100,6 +101,8 @@ class GetIdentityPoolConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_identityPoolId;
 
@@ -108,6 +111,7 @@ class GetIdentityPoolConfigurationResult {
   CognitoStreams m_cognitoStreams;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityPoolIdHasBeenSet = false;
   bool m_pushSyncHasBeenSet = false;
   bool m_cognitoStreamsHasBeenSet = false;

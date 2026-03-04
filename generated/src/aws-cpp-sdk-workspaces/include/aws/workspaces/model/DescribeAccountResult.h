@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/DedicatedTenancyAccountType.h>
@@ -110,6 +111,8 @@ class DescribeAccountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DedicatedTenancySupportResultEnum m_dedicatedTenancySupport{DedicatedTenancySupportResultEnum::NOT_SET};
 
@@ -120,6 +123,7 @@ class DescribeAccountResult {
   Aws::String m_message;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dedicatedTenancySupportHasBeenSet = false;
   bool m_dedicatedTenancyManagementCidrRangeHasBeenSet = false;
   bool m_dedicatedTenancyAccountTypeHasBeenSet = false;

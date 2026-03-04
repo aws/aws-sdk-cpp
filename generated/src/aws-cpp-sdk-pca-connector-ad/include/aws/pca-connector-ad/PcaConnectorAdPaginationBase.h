@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/pca-connector-ad/model/ListConnectorsPaginationTraits.h>
 #include <aws/pca-connector-ad/model/ListDirectoryRegistrationsPaginationTraits.h>
@@ -27,6 +28,7 @@ class PcaConnectorAdPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest, Pagination::ListConnectorsPaginationTraits<DerivedClient>>
   ListConnectorsPaginator(const Model::ListConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConnectorsRequest,
                                              Pagination::ListConnectorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -38,6 +40,7 @@ class PcaConnectorAdPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDirectoryRegistrationsRequest,
                                     Pagination::ListDirectoryRegistrationsPaginationTraits<DerivedClient>>
   ListDirectoryRegistrationsPaginator(const Model::ListDirectoryRegistrationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDirectoryRegistrationsRequest,
                                              Pagination::ListDirectoryRegistrationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -49,6 +52,7 @@ class PcaConnectorAdPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServicePrincipalNamesRequest,
                                     Pagination::ListServicePrincipalNamesPaginationTraits<DerivedClient>>
   ListServicePrincipalNamesPaginator(const Model::ListServicePrincipalNamesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServicePrincipalNamesRequest,
                                              Pagination::ListServicePrincipalNamesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class PcaConnectorAdPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplateGroupAccessControlEntriesRequest,
                                     Pagination::ListTemplateGroupAccessControlEntriesPaginationTraits<DerivedClient>>
   ListTemplateGroupAccessControlEntriesPaginator(const Model::ListTemplateGroupAccessControlEntriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplateGroupAccessControlEntriesRequest,
                                              Pagination::ListTemplateGroupAccessControlEntriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -70,6 +75,7 @@ class PcaConnectorAdPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplatesRequest, Pagination::ListTemplatesPaginationTraits<DerivedClient>>
   ListTemplatesPaginator(const Model::ListTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTemplatesRequest,
                                              Pagination::ListTemplatesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

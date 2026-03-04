@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/CidrCollection.h>
@@ -75,12 +76,15 @@ class CreateCidrCollectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CidrCollection m_collection;
 
   Aws::String m_location;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_collectionHasBeenSet = false;
   bool m_locationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

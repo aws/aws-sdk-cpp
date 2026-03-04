@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
@@ -128,6 +129,8 @@ class BatchDeleteUniqueIdResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DeleteUniqueIdStatus m_status{DeleteUniqueIdStatus::NOT_SET};
 
@@ -138,6 +141,7 @@ class BatchDeleteUniqueIdResult {
   Aws::Vector<Aws::String> m_disconnectedUniqueIds;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_deletedHasBeenSet = false;

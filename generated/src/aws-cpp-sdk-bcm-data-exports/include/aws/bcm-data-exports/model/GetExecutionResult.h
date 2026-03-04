@@ -7,6 +7,7 @@
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
 #include <aws/bcm-data-exports/model/ExecutionStatus.h>
 #include <aws/bcm-data-exports/model/Export.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -96,6 +97,8 @@ class GetExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_executionId;
 
@@ -104,6 +107,7 @@ class GetExecutionResult {
   Export m_export;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_executionIdHasBeenSet = false;
   bool m_executionStatusHasBeenSet = false;
   bool m_exportHasBeenSet = false;

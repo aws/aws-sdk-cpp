@@ -21,6 +21,7 @@ GetHostedConfigurationVersionResult::GetHostedConfigurationVersionResult(Aws::Am
 }
 
 GetHostedConfigurationVersionResult& GetHostedConfigurationVersionResult::operator=(Aws::AmazonWebServiceResult<ResponseStream>&& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   m_content = result.TakeOwnershipOfPayload();
   m_contentHasBeenSet = true;
 

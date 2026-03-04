@@ -22,6 +22,7 @@ DescribeConfigurationRevisionResult::DescribeConfigurationRevisionResult(const A
 }
 
 DescribeConfigurationRevisionResult& DescribeConfigurationRevisionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("configurationId")) {
     m_configurationId = jsonValue.GetString("configurationId");

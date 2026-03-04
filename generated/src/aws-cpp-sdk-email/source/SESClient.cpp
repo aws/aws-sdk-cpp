@@ -147,7 +147,7 @@ SESClient::SESClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
 }
 
 /* Legacy constructors due deprecation */
-SESClient::SESClient(const Client::ClientConfiguration& clientConfiguration)
+SESClient::SESClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -159,7 +159,7 @@ SESClient::SESClient(const Client::ClientConfiguration& clientConfiguration)
   init(m_clientConfiguration);
 }
 
-SESClient::SESClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SESClient::SESClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -170,7 +170,7 @@ SESClient::SESClient(const AWSCredentials& credentials, const Client::ClientConf
 }
 
 SESClient::SESClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                     const Client::ClientConfiguration& clientConfiguration)
+                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

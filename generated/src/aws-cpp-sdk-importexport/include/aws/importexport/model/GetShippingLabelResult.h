@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/importexport/ImportExport_EXPORTS.h>
 #include <aws/importexport/model/ResponseMetadata.h>
@@ -71,12 +72,15 @@ class GetShippingLabelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_shippingLabelURL;
 
   Aws::String m_warning;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_shippingLabelURLHasBeenSet = false;
   bool m_warningHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
