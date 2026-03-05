@@ -48,10 +48,23 @@ ${macro.spaces}{
 ${macro.spaces}}
 #end##foreach
 #else## not (list || map || structure)
+#if($listShape.sparse)
+${macro.spaces}const Aws::Vector<Aws::Crt::Optional<$CppViewHelper.computeCppType($macro.listMemberShape)>>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.listItemVarName}.size());
+#foreach($arrayItem in $testValidateParamVal)
+#if($arrayItem.isNull())
+${macro.spaces}EXPECT_FALSE(${macro.listItemVarName}.at(${foreach.index}).has_value());
+#else
+${macro.spaces}EXPECT_TRUE(${macro.listItemVarName}.at(${foreach.index}).has_value());
+${macro.spaces}EXPECT_EQ(#ValidateSingleParameterMacro($macro.listMemberShape, $arrayItem), *${macro.listItemVarName}.at(${foreach.index}));
+#end
+#end
+#else
 ${macro.spaces}const Aws::Vector<$CppViewHelper.computeCppType($macro.listMemberShape)>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter};
 ${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.listItemVarName}.size());
 #foreach($arrayItem in $testValidateParamVal)
 ${macro.spaces}EXPECT_EQ(#ValidateSingleParameterMacro($macro.listMemberShape, $arrayItem), ${macro.listItemVarName}.at(${foreach.index}));
 #end
+#end##sparse
 #end##(list || map || structure)
 #end##macro ValidateListMacro

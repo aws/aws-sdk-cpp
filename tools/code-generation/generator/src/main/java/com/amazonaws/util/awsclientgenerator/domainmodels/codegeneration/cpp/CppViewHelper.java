@@ -225,12 +225,18 @@ public class CppViewHelper {
 
         else if(shape.isList()) {
             String type = computeCppTypeInternal(shape.getListMember().getShape(), typeMapping);
+            if (shape.isSparse()) {
+                return String.format("Aws::Vector<Aws::Crt::Optional<%s>>", type);
+            }
             return String.format("Aws::Vector<%s>", type);
         }
 
         else if(shape.isMap()) {
             String key = computeCppTypeInternal(shape.getMapKey().getShape(), typeMapping);
             String value = computeCppTypeInternal(shape.getMapValue().getShape(), typeMapping);
+            if (shape.isSparse()) {
+                return String.format("Aws::Map<%s, Aws::Crt::Optional<%s>>", key, value);
+            }
             return String.format("Aws::Map<%s, %s>", key, value);
         }
 
@@ -386,6 +392,9 @@ public class CppViewHelper {
                     // and if compile-time member object info required
                     headers.add(formatModelIncludeName(projectName, shapeInList));
                 }
+            }
+            if (next.isSparse()) {
+                headers.add("<aws/crt/Optional.h>");
             }
             if(!next.isPrimitive()) {
                 if (next.isException() && !next.isModeledException()) {

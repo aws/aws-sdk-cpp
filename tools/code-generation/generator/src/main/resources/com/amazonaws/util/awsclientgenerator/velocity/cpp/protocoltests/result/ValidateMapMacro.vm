@@ -39,6 +39,19 @@ ${macro.spaces}}
 #break
 #end
 ###----- the map value is not nested structure or document
+#if($mapShape.sparse)
+${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($mapShape.mapKey.shape), Aws::Crt::Optional<$CppViewHelper.computeCppType($mapShape.mapValue.shape)>>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
+#foreach($mapItem in $testValidateParamVal.fields())
+${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.find("$mapItem.key") != ${macro.mapVarName}.end());
+#if($mapItem.value.isNull())
+${macro.spaces}EXPECT_FALSE(${macro.mapVarName}.at("$mapItem.key").has_value());
+#else
+${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.at("$mapItem.key").has_value());
+${macro.spaces}EXPECT_EQ(#ValidateSingleParameterMacro($mapShape.mapValue.shape, $mapItem.value), *${macro.mapVarName}.at("$mapItem.key"));
+#end
+#end
+#else
 ${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($mapShape.mapKey.shape), $CppViewHelper.computeCppType($mapShape.mapValue.shape)>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
 ${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
 #foreach($mapItem in $testValidateParamVal.fields())
@@ -48,4 +61,5 @@ ${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.find("$mapItem.key") != ${macro.m
 #set($macro.var = $macro.mapItemVarName)
 #ValidateSingleVariableMacro($macro.spaces, $mapShape.mapValue.shape, $mapItem.value, $macro.parentVarName, $macro.getter, $macro.var)
 #end
+#end##sparse
 #end##macro ValidateMapMacro
