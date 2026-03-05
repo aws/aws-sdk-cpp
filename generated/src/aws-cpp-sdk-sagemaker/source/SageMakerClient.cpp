@@ -178,7 +178,7 @@ SageMakerClient::SageMakerClient(const std::shared_ptr<AWSCredentialsProvider>& 
 }
 
 /* Legacy constructors due deprecation */
-SageMakerClient::SageMakerClient(const Client::ClientConfiguration& clientConfiguration)
+SageMakerClient::SageMakerClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -190,7 +190,7 @@ SageMakerClient::SageMakerClient(const Client::ClientConfiguration& clientConfig
   init(m_clientConfiguration);
 }
 
-SageMakerClient::SageMakerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SageMakerClient::SageMakerClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -201,7 +201,7 @@ SageMakerClient::SageMakerClient(const AWSCredentials& credentials, const Client
 }
 
 SageMakerClient::SageMakerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Client::ClientConfiguration& clientConfiguration)
+                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

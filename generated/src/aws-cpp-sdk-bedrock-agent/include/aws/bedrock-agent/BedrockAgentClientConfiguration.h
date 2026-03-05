@@ -13,7 +13,7 @@ namespace BedrockAgent {
 struct AWS_BEDROCKAGENT_API BedrockAgentClientConfiguration : public Aws::Client::GenericClientConfiguration {
   using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
-  BedrockAgentClientConfiguration(const Client::ClientConfigurationInitValues& configuration = {});
+  BedrockAgentClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
    * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -34,7 +34,7 @@ struct AWS_BEDROCKAGENT_API BedrockAgentClientConfiguration : public Aws::Client
   /**
    * Converting constructors for compatibility with a legacy code
    */
-  BedrockAgentClientConfiguration(const Client::ClientConfiguration& config);
+  BedrockAgentClientConfiguration(const Aws::Client::ClientConfiguration& config);
 
  private:
   void LoadBedrockAgentSpecificConfig(const Aws::String& profileName);

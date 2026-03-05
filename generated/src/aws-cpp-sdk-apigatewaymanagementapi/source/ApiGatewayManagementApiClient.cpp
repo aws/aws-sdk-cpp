@@ -88,7 +88,7 @@ ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(
 }
 
 /* Legacy constructors due deprecation */
-ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const Client::ClientConfiguration& clientConfiguration)
+ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -101,7 +101,7 @@ ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const Client::Clien
 }
 
 ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const AWSCredentials& credentials,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -113,7 +113,7 @@ ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const AWSCredential
 }
 
 ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -72,6 +72,9 @@
 #include <aws/es/model/DeleteVpcEndpointRequest.h>
 #include <aws/es/model/DeleteVpcEndpointResult.h>
 #include <aws/es/model/DeploymentStatus.h>
+#include <aws/es/model/DeploymentStrategy.h>
+#include <aws/es/model/DeploymentStrategyOptions.h>
+#include <aws/es/model/DeploymentStrategyOptionsStatus.h>
 #include <aws/es/model/DescribeDomainAutoTunesRequest.h>
 #include <aws/es/model/DescribeDomainAutoTunesResult.h>
 #include <aws/es/model/DescribeDomainChangeProgressRequest.h>

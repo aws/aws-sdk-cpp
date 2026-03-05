@@ -142,7 +142,7 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
           }) {}
 
 /* Legacy constructors due deprecation */
-DynamoDBClient::DynamoDBClient(const Client::ClientConfiguration& clientConfiguration)
+DynamoDBClient::DynamoDBClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "DynamoDB", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
@@ -153,7 +153,7 @@ DynamoDBClient::DynamoDBClient(const Client::ClientConfiguration& clientConfigur
                smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
           }) {}
 
-DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "DynamoDB", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
@@ -166,7 +166,7 @@ DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials, const Client::
           }) {}
 
 DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "DynamoDB", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),

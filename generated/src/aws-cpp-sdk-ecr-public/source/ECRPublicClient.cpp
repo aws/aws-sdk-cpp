@@ -101,7 +101,7 @@ ECRPublicClient::ECRPublicClient(const std::shared_ptr<AWSCredentialsProvider>& 
 }
 
 /* Legacy constructors due deprecation */
-ECRPublicClient::ECRPublicClient(const Client::ClientConfiguration& clientConfiguration)
+ECRPublicClient::ECRPublicClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -113,7 +113,7 @@ ECRPublicClient::ECRPublicClient(const Client::ClientConfiguration& clientConfig
   init(m_clientConfiguration);
 }
 
-ECRPublicClient::ECRPublicClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+ECRPublicClient::ECRPublicClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -124,7 +124,7 @@ ECRPublicClient::ECRPublicClient(const AWSCredentials& credentials, const Client
 }
 
 ECRPublicClient::ECRPublicClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Client::ClientConfiguration& clientConfiguration)
+                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

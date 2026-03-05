@@ -2036,20 +2036,20 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <b>This API works with the following fleet types:</b> EC2, Anywhere,
-   * Container</p> <p>Retrieves core fleet-wide properties for fleets in an Amazon
-   * Web Services Region. Properties include the computing hardware and deployment
-   * configuration for instances in the fleet.</p> <p>You can use this operation in
-   * the following ways: </p> <ul> <li> <p>To get attributes for specific fleets,
-   * provide a list of fleet IDs or fleet ARNs.</p> </li> <li> <p>To get attributes
-   * for all fleets, do not provide a fleet identifier.</p> </li> </ul> <p>When
-   * requesting attributes for multiple fleets, use the pagination parameters to
-   * retrieve results as a set of sequential pages. </p> <p>If successful, a
-   * <code>FleetAttributes</code> object is returned for each fleet requested, unless
-   * the fleet identifier is not found. </p>  <p>Some API operations limit the
-   * number of fleet IDs that allowed in one request. If a request exceeds this
-   * limit, the request fails and the error message contains the maximum allowed
-   * number.</p>  <p> <b>Learn more</b> </p> <p> <a
+   * <p> <b>This API works with the following fleet types:</b> EC2, Anywhere</p>
+   * <p>Retrieves core fleet-wide properties for fleets in an Amazon Web Services
+   * Region. Properties include the computing hardware and deployment configuration
+   * for instances in the fleet.</p> <p>You can use this operation in the following
+   * ways: </p> <ul> <li> <p>To get attributes for specific fleets, provide a list of
+   * fleet IDs or fleet ARNs.</p> </li> <li> <p>To get attributes for all fleets, do
+   * not provide a fleet identifier.</p> </li> </ul> <p>When requesting attributes
+   * for multiple fleets, use the pagination parameters to retrieve results as a set
+   * of sequential pages. </p> <p>If successful, a <code>FleetAttributes</code>
+   * object is returned for each fleet requested, unless the fleet identifier is not
+   * found. </p>  <p>Some API operations limit the number of fleet IDs that
+   * allowed in one request. If a request exceeds this limit, the request fails and
+   * the error message contains the maximum allowed number.</p>  <p> <b>Learn
+   * more</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
    * up Amazon GameLift Servers fleets</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
@@ -2595,7 +2595,11 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
    * Amazon Simple Notification Service (SNS) topic to receive notifications from
    * FlexMatch or queues. Continuously polling with
    * <code>DescribeGameSessionPlacement</code> should only be used for games in
-   * development with low game session usage. </p><p><h3>See Also:</h3>   <a
+   * development with low game session usage. For a reference implementation of
+   * event-based game session placement tracking, see <a
+   * href="https://github.com/amazon-gamelift/amazon-gamelift-toolkit/tree/main/event-based-session-placement">
+   * Event-based game session placement guidance</a> in the Amazon GameLift
+   * Toolkit.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">AWS
    * API Reference</a></p>
    */
@@ -2713,11 +2717,11 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p> <b>This API works with the following fleet types:</b> EC2</p> <p>Retrieves
-   * information about the EC2 instances in an Amazon GameLift Servers managed fleet,
-   * including instance ID, connection data, and status. You can use this operation
-   * with a multi-location fleet to get location-specific instance information. As an
-   * alternative, use the operations <a
+   * <p> <b>This API works with the following fleet types:</b>EC2, Container</p>
+   * <p>Retrieves information about the EC2 instances in an Amazon GameLift Servers
+   * managed fleet, including instance ID, connection data, and status. You can use
+   * this operation with a multi-location fleet to get location-specific instance
+   * information. As an alternative, use the operations <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute</a>
    * and <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute</a>
@@ -3281,6 +3285,54 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
   void GetInstanceAccessAsync(const GetInstanceAccessRequestT& request, const GetInstanceAccessResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GameLiftClient::GetInstanceAccess, request, handler, context);
+  }
+
+  /**
+   * <p> <b>This API works with the following fleet types:</b> EC2 (server SDK 5.x or
+   * later), Container</p> <p>Retrieves connection details for game clients to
+   * connect to game sessions. </p> <p> <b>Player gateway benefits:</b> DDoS
+   * protection with negligible impact to latency. </p> <p>To enable player gateway
+   * on your fleet, set <code>PlayerGatewayMode</code> to <code>ENABLED</code> or
+   * <code>REQUIRED</code> when calling <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html">CreateFleet</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.</p>
+   * <p> <b>How to use:</b> After creating a game session and adding players, call
+   * this operation with the game session ID and player IDs. When player gateway is
+   * enabled, the response includes connection endpoints and player gateway tokens
+   * that your game clients can use to connect to the game session through player
+   * gateway. To learn more about player gateway integration, see <a
+   * href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/ddos-protection-intro.html">DDoS
+   * protection with Amazon GameLift Servers player gateway</a>.</p> <p>When player
+   * gateway is disabled or in locations where player gateway is not supported, this
+   * operation returns game server connection information without player gateway
+   * tokens, so that your game clients directly connect to the game server
+   * endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetPlayerConnectionDetails">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPlayerConnectionDetailsOutcome GetPlayerConnectionDetails(
+      const Model::GetPlayerConnectionDetailsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPlayerConnectionDetails that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetPlayerConnectionDetailsRequestT = Model::GetPlayerConnectionDetailsRequest>
+  Model::GetPlayerConnectionDetailsOutcomeCallable GetPlayerConnectionDetailsCallable(
+      const GetPlayerConnectionDetailsRequestT& request) const {
+    return SubmitCallable(&GameLiftClient::GetPlayerConnectionDetails, request);
+  }
+
+  /**
+   * An Async wrapper for GetPlayerConnectionDetails that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPlayerConnectionDetailsRequestT = Model::GetPlayerConnectionDetailsRequest>
+  void GetPlayerConnectionDetailsAsync(const GetPlayerConnectionDetailsRequestT& request,
+                                       const GetPlayerConnectionDetailsResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GameLiftClient::GetPlayerConnectionDetails, request, handler, context);
   }
 
   /**
@@ -4082,24 +4134,28 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
    * "novice"</code>. All game property values are searched as strings.</p> <p> For
    * examples of searching game sessions, see the ones below, and also see <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-search">Search
-   * game sessions by game property</a>. </p>  <p>Avoid using periods (".") in
-   * property keys if you plan to search for game sessions by properties. Property
-   * keys containing periods cannot be searched and will be filtered out from search
-   * results due to search index limitations.</p>  </li> <li> <p>
-   * <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game
-   * session.</p> </li> <li> <p> <b>creationTimeMillis</b> -- Value indicating when a
-   * game session was created. It is expressed in Unix time as milliseconds.</p>
-   * </li> <li> <p> <b>playerSessionCount</b> -- Number of players currently
-   * connected to a game session. This value changes rapidly as players join the
-   * session or drop out.</p> </li> <li> <p> <b>hasAvailablePlayerSessions</b> --
-   * Boolean value indicating whether a game session has reached its maximum number
-   * of players. It is highly recommended that all search requests include this
-   * filter attribute to optimize search performance and return only sessions that
-   * players can join. </p> </li> </ul>  <p>Returned values for
-   * <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
-   * change quickly as players join sessions and others drop out. Results should be
-   * considered a snapshot in time. Be sure to refresh search results often, and
-   * handle sessions that fill up before a player can join. </p>  <p> <a
+   * game sessions by game property</a>. </p>  <ul> <li> <p>Avoid using periods
+   * (".") in property keys if you plan to search for game sessions by properties.
+   * Property keys containing periods cannot be searched and will be filtered out
+   * from search results due to search index limitations.</p> </li> <li> <p>If you
+   * use SearchGameSessions API, there is a limit of 500 game property keys across
+   * all game sessions and all fleets per region. If the limit is exceeded, there
+   * will potentially be game session entries missing from SearchGameSessions API
+   * results.</p> </li> </ul>  </li> <li> <p> <b>maximumSessions</b> --
+   * Maximum number of player sessions allowed for a game session.</p> </li> <li> <p>
+   * <b>creationTimeMillis</b> -- Value indicating when a game session was created.
+   * It is expressed in Unix time as milliseconds.</p> </li> <li> <p>
+   * <b>playerSessionCount</b> -- Number of players currently connected to a game
+   * session. This value changes rapidly as players join the session or drop out.</p>
+   * </li> <li> <p> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating
+   * whether a game session has reached its maximum number of players. It is highly
+   * recommended that all search requests include this filter attribute to optimize
+   * search performance and return only sessions that players can join. </p> </li>
+   * </ul>  <p>Returned values for <code>playerSessionCount</code> and
+   * <code>hasAvailablePlayerSessions</code> change quickly as players join sessions
+   * and others drop out. Results should be considered a snapshot in time. Be sure to
+   * refresh search results often, and handle sessions that fill up before a player
+   * can join. </p>  <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS

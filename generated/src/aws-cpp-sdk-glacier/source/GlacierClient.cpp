@@ -112,7 +112,7 @@ GlacierClient::GlacierClient(const std::shared_ptr<AWSCredentialsProvider>& cred
 }
 
 /* Legacy constructors due deprecation */
-GlacierClient::GlacierClient(const Client::ClientConfiguration& clientConfiguration)
+GlacierClient::GlacierClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -124,7 +124,7 @@ GlacierClient::GlacierClient(const Client::ClientConfiguration& clientConfigurat
   init(m_clientConfiguration);
 }
 
-GlacierClient::GlacierClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+GlacierClient::GlacierClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -136,7 +136,7 @@ GlacierClient::GlacierClient(const AWSCredentials& credentials, const Client::Cl
 }
 
 GlacierClient::GlacierClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                             const Client::ClientConfiguration& clientConfiguration)
+                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

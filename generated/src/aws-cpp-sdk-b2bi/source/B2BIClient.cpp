@@ -106,7 +106,7 @@ B2BIClient::B2BIClient(const std::shared_ptr<AWSCredentialsProvider>& credential
 }
 
 /* Legacy constructors due deprecation */
-B2BIClient::B2BIClient(const Client::ClientConfiguration& clientConfiguration)
+B2BIClient::B2BIClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -118,7 +118,7 @@ B2BIClient::B2BIClient(const Client::ClientConfiguration& clientConfiguration)
   init(m_clientConfiguration);
 }
 
-B2BIClient::B2BIClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+B2BIClient::B2BIClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -129,7 +129,7 @@ B2BIClient::B2BIClient(const AWSCredentials& credentials, const Client::ClientCo
 }
 
 B2BIClient::B2BIClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                       const Client::ClientConfiguration& clientConfiguration)
+                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -83,7 +83,7 @@ KinesisVideoMediaClient::KinesisVideoMediaClient(const std::shared_ptr<AWSCreden
 }
 
 /* Legacy constructors due deprecation */
-KinesisVideoMediaClient::KinesisVideoMediaClient(const Client::ClientConfiguration& clientConfiguration)
+KinesisVideoMediaClient::KinesisVideoMediaClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -95,7 +95,8 @@ KinesisVideoMediaClient::KinesisVideoMediaClient(const Client::ClientConfigurati
   init(m_clientConfiguration);
 }
 
-KinesisVideoMediaClient::KinesisVideoMediaClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+KinesisVideoMediaClient::KinesisVideoMediaClient(const AWSCredentials& credentials,
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -106,7 +107,7 @@ KinesisVideoMediaClient::KinesisVideoMediaClient(const AWSCredentials& credentia
 }
 
 KinesisVideoMediaClient::KinesisVideoMediaClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                 const Client::ClientConfiguration& clientConfiguration)
+                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -34,7 +34,7 @@ struct AWS_DYNAMODB_API DynamoDBClientConfiguration : public Aws::Client::Generi
     return *this;
   }
 
-  DynamoDBClientConfiguration(const Client::ClientConfigurationInitValues& configuration = {});
+  DynamoDBClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
    * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -55,7 +55,7 @@ struct AWS_DYNAMODB_API DynamoDBClientConfiguration : public Aws::Client::Generi
   /**
    * Converting constructors for compatibility with a legacy code
    */
-  DynamoDBClientConfiguration(const Client::ClientConfiguration& config);
+  DynamoDBClientConfiguration(const Aws::Client::ClientConfiguration& config);
 
   /**
    * Enable endpoint discovery

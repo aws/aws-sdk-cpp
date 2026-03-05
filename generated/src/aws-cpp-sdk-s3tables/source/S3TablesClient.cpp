@@ -127,7 +127,7 @@ S3TablesClient::S3TablesClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-S3TablesClient::S3TablesClient(const Client::ClientConfiguration& clientConfiguration)
+S3TablesClient::S3TablesClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -139,7 +139,7 @@ S3TablesClient::S3TablesClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-S3TablesClient::S3TablesClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+S3TablesClient::S3TablesClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -150,7 +150,7 @@ S3TablesClient::S3TablesClient(const AWSCredentials& credentials, const Client::
 }
 
 S3TablesClient::S3TablesClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

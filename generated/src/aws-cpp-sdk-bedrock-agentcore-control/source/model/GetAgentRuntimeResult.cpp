@@ -97,6 +97,10 @@ GetAgentRuntimeResult& GetAgentRuntimeResult::operator=(const Aws::AmazonWebServ
     m_requestHeaderConfiguration = jsonValue.GetObject("requestHeaderConfiguration");
     m_requestHeaderConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metadataConfiguration")) {
+    m_metadataConfiguration = jsonValue.GetObject("metadataConfiguration");
+    m_metadataConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

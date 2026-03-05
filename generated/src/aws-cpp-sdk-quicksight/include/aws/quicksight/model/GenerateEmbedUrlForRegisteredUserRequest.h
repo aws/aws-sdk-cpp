@@ -87,9 +87,9 @@ class GenerateEmbedUrlForRegisteredUserRequest : public QuickSightRequest {
   ///@{
   /**
    * <p>The experience that you want to embed. For registered users, you can embed
-   * Quick Suite dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q
-   * search bar, the Amazon Quick Sight Generative Q&amp;A experience, or the entire
-   * Amazon Quick Sight console.</p>
+   * Quick dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q search
+   * bar, the Amazon Quick Sight Generative Q&amp;A experience, or the entire Amazon
+   * Quick Sight console.</p>
    */
   inline const RegisteredUserEmbeddingExperienceConfiguration& GetExperienceConfiguration() const { return m_experienceConfiguration; }
   inline bool ExperienceConfigurationHasBeenSet() const { return m_experienceConfigurationHasBeenSet; }

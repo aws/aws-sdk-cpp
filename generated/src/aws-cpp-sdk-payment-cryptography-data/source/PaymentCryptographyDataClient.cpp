@@ -98,7 +98,7 @@ PaymentCryptographyDataClient::PaymentCryptographyDataClient(
 }
 
 /* Legacy constructors due deprecation */
-PaymentCryptographyDataClient::PaymentCryptographyDataClient(const Client::ClientConfiguration& clientConfiguration)
+PaymentCryptographyDataClient::PaymentCryptographyDataClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -111,7 +111,7 @@ PaymentCryptographyDataClient::PaymentCryptographyDataClient(const Client::Clien
 }
 
 PaymentCryptographyDataClient::PaymentCryptographyDataClient(const AWSCredentials& credentials,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -122,7 +122,7 @@ PaymentCryptographyDataClient::PaymentCryptographyDataClient(const AWSCredential
 }
 
 PaymentCryptographyDataClient::PaymentCryptographyDataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

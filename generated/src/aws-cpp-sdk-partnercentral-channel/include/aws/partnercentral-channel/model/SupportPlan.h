@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/partnercentral-channel/PartnerCentralChannel_EXPORTS.h>
 #include <aws/partnercentral-channel/model/PartnerLedSupport.h>
-#include <aws/partnercentral-channel/model/ResoldBusiness.h>
 #include <aws/partnercentral-channel/model/ResoldEnterprise.h>
+#include <aws/partnercentral-channel/model/ResoldUnifiedOperations.h>
 
 #include <utility>
 
@@ -33,24 +33,6 @@ class SupportPlan {
   AWS_PARTNERCENTRALCHANNEL_API SupportPlan(Aws::Utils::Json::JsonView jsonValue);
   AWS_PARTNERCENTRALCHANNEL_API SupportPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_PARTNERCENTRALCHANNEL_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-  ///@{
-  /**
-   * <p>Configuration for resold business support plans.</p>
-   */
-  inline const ResoldBusiness& GetResoldBusiness() const { return m_resoldBusiness; }
-  inline bool ResoldBusinessHasBeenSet() const { return m_resoldBusinessHasBeenSet; }
-  template <typename ResoldBusinessT = ResoldBusiness>
-  void SetResoldBusiness(ResoldBusinessT&& value) {
-    m_resoldBusinessHasBeenSet = true;
-    m_resoldBusiness = std::forward<ResoldBusinessT>(value);
-  }
-  template <typename ResoldBusinessT = ResoldBusiness>
-  SupportPlan& WithResoldBusiness(ResoldBusinessT&& value) {
-    SetResoldBusiness(std::forward<ResoldBusinessT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -87,15 +69,33 @@ class SupportPlan {
     return *this;
   }
   ///@}
- private:
-  ResoldBusiness m_resoldBusiness;
 
+  ///@{
+  /**
+   * <p>Configuration for resold unified operations support plans.</p>
+   */
+  inline const ResoldUnifiedOperations& GetResoldUnifiedOperations() const { return m_resoldUnifiedOperations; }
+  inline bool ResoldUnifiedOperationsHasBeenSet() const { return m_resoldUnifiedOperationsHasBeenSet; }
+  template <typename ResoldUnifiedOperationsT = ResoldUnifiedOperations>
+  void SetResoldUnifiedOperations(ResoldUnifiedOperationsT&& value) {
+    m_resoldUnifiedOperationsHasBeenSet = true;
+    m_resoldUnifiedOperations = std::forward<ResoldUnifiedOperationsT>(value);
+  }
+  template <typename ResoldUnifiedOperationsT = ResoldUnifiedOperations>
+  SupportPlan& WithResoldUnifiedOperations(ResoldUnifiedOperationsT&& value) {
+    SetResoldUnifiedOperations(std::forward<ResoldUnifiedOperationsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   ResoldEnterprise m_resoldEnterprise;
 
   PartnerLedSupport m_partnerLedSupport;
-  bool m_resoldBusinessHasBeenSet = false;
+
+  ResoldUnifiedOperations m_resoldUnifiedOperations;
   bool m_resoldEnterpriseHasBeenSet = false;
   bool m_partnerLedSupportHasBeenSet = false;
+  bool m_resoldUnifiedOperationsHasBeenSet = false;
 };
 
 }  // namespace Model

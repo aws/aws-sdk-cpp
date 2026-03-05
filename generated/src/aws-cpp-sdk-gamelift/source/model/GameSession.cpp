@@ -98,6 +98,10 @@ GameSession& GameSession::operator=(JsonView jsonValue) {
     m_location = jsonValue.GetString("Location");
     m_locationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PlayerGatewayStatus")) {
+    m_playerGatewayStatus = PlayerGatewayStatusMapper::GetPlayerGatewayStatusForName(jsonValue.GetString("PlayerGatewayStatus"));
+    m_playerGatewayStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -183,6 +187,10 @@ JsonValue GameSession::Jsonize() const {
 
   if (m_locationHasBeenSet) {
     payload.WithString("Location", m_location);
+  }
+
+  if (m_playerGatewayStatusHasBeenSet) {
+    payload.WithString("PlayerGatewayStatus", PlayerGatewayStatusMapper::GetNameForPlayerGatewayStatus(m_playerGatewayStatus));
   }
 
   return payload;

@@ -30,7 +30,7 @@ class DescribeSelfUpgradeConfigurationRequest : public QuickSightRequest {
 
   ///@{
   /**
-   * <p>The ID of the Amazon Web Services account that contains the Quick Suite
+   * <p>The ID of the Amazon Web Services account that contains the Quick
    * self-upgrade configuration.</p>
    */
   inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
@@ -49,8 +49,8 @@ class DescribeSelfUpgradeConfigurationRequest : public QuickSightRequest {
 
   ///@{
   /**
-   * <p>The Quick Suite namespace that you want to describe the Quick Suite
-   * self-upgrade configuration for.</p>
+   * <p>The Quick namespace that you want to describe the Quick self-upgrade
+   * configuration for.</p>
    */
   inline const Aws::String& GetNamespace() const { return m_namespace; }
   inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }

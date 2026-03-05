@@ -106,6 +106,10 @@ DomainConfig& DomainConfig::operator=(JsonView jsonValue) {
     m_aIMLOptions = jsonValue.GetObject("AIMLOptions");
     m_aIMLOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DeploymentStrategyOptions")) {
+    m_deploymentStrategyOptions = jsonValue.GetObject("DeploymentStrategyOptions");
+    m_deploymentStrategyOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -199,6 +203,10 @@ JsonValue DomainConfig::Jsonize() const {
 
   if (m_aIMLOptionsHasBeenSet) {
     payload.WithObject("AIMLOptions", m_aIMLOptions.Jsonize());
+  }
+
+  if (m_deploymentStrategyOptionsHasBeenSet) {
+    payload.WithObject("DeploymentStrategyOptions", m_deploymentStrategyOptions.Jsonize());
   }
 
   return payload;

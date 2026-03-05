@@ -170,7 +170,7 @@ BedrockAgentCoreControlClient::BedrockAgentCoreControlClient(
 }
 
 /* Legacy constructors due deprecation */
-BedrockAgentCoreControlClient::BedrockAgentCoreControlClient(const Client::ClientConfiguration& clientConfiguration)
+BedrockAgentCoreControlClient::BedrockAgentCoreControlClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -183,7 +183,7 @@ BedrockAgentCoreControlClient::BedrockAgentCoreControlClient(const Client::Clien
 }
 
 BedrockAgentCoreControlClient::BedrockAgentCoreControlClient(const AWSCredentials& credentials,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -194,7 +194,7 @@ BedrockAgentCoreControlClient::BedrockAgentCoreControlClient(const AWSCredential
 }
 
 BedrockAgentCoreControlClient::BedrockAgentCoreControlClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -3162,7 +3162,7 @@ UpdatePolicyOutcome BedrockAgentCoreControlClient::UpdatePolicy(const UpdatePoli
         endpointResolutionOutcome.GetResult().AddPathSegments("/policies/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyId());
         return UpdatePolicyOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3198,7 +3198,7 @@ UpdatePolicyEngineOutcome BedrockAgentCoreControlClient::UpdatePolicyEngine(cons
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy-engines/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyEngineId());
         return UpdatePolicyEngineOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

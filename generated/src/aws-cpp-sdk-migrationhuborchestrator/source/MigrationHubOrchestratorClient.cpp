@@ -115,7 +115,7 @@ MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(
 }
 
 /* Legacy constructors due deprecation */
-MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const Client::ClientConfiguration& clientConfiguration)
+MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -128,7 +128,7 @@ MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const Client::Cli
 }
 
 MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const AWSCredentials& credentials,
-                                                               const Client::ClientConfiguration& clientConfiguration)
+                                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -139,7 +139,7 @@ MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const AWSCredenti
 }
 
 MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                               const Client::ClientConfiguration& clientConfiguration)
+                                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -144,7 +144,7 @@ KendraClient::KendraClient(const std::shared_ptr<AWSCredentialsProvider>& creden
 }
 
 /* Legacy constructors due deprecation */
-KendraClient::KendraClient(const Client::ClientConfiguration& clientConfiguration)
+KendraClient::KendraClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -156,7 +156,7 @@ KendraClient::KendraClient(const Client::ClientConfiguration& clientConfiguratio
   init(m_clientConfiguration);
 }
 
-KendraClient::KendraClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+KendraClient::KendraClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -167,7 +167,7 @@ KendraClient::KendraClient(const AWSCredentials& credentials, const Client::Clie
 }
 
 KendraClient::KendraClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                           const Client::ClientConfiguration& clientConfiguration)
+                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

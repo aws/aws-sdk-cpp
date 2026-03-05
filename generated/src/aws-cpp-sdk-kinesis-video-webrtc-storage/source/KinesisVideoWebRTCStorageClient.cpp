@@ -86,7 +86,7 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(
 }
 
 /* Legacy constructors due deprecation */
-KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const Client::ClientConfiguration& clientConfiguration)
+KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -99,7 +99,7 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const Client::C
 }
 
 KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const AWSCredentials& credentials,
-                                                                 const Client::ClientConfiguration& clientConfiguration)
+                                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -110,7 +110,7 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const AWSCreden
 }
 
 KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                                 const Client::ClientConfiguration& clientConfiguration)
+                                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

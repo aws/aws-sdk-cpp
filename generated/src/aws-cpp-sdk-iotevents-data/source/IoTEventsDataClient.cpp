@@ -91,7 +91,7 @@ IoTEventsDataClient::IoTEventsDataClient(const std::shared_ptr<AWSCredentialsPro
 }
 
 /* Legacy constructors due deprecation */
-IoTEventsDataClient::IoTEventsDataClient(const Client::ClientConfiguration& clientConfiguration)
+IoTEventsDataClient::IoTEventsDataClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -103,7 +103,7 @@ IoTEventsDataClient::IoTEventsDataClient(const Client::ClientConfiguration& clie
   init(m_clientConfiguration);
 }
 
-IoTEventsDataClient::IoTEventsDataClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+IoTEventsDataClient::IoTEventsDataClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -114,7 +114,7 @@ IoTEventsDataClient::IoTEventsDataClient(const AWSCredentials& credentials, cons
 }
 
 IoTEventsDataClient::IoTEventsDataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                         const Client::ClientConfiguration& clientConfiguration)
+                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

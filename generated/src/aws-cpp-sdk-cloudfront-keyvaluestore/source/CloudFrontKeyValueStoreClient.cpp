@@ -91,7 +91,7 @@ CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(
 }
 
 /* Legacy constructors due deprecation */
-CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const Client::ClientConfiguration& clientConfiguration)
+CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -104,7 +104,7 @@ CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const Client::Clien
 }
 
 CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const AWSCredentials& credentials,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -116,7 +116,7 @@ CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const AWSCredential
 }
 
 CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

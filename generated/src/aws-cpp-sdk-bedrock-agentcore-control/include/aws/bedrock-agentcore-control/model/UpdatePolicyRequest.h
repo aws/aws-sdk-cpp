@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/PolicyDefinition.h>
 #include <aws/bedrock-agentcore-control/model/PolicyValidationMode.h>
+#include <aws/bedrock-agentcore-control/model/UpdatedDescription.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -73,14 +74,14 @@ class UpdatePolicyRequest : public BedrockAgentCoreControlRequest {
    * <p>The new human-readable description for the policy. This optional field allows
    * updating the policy's documentation while keeping the same policy logic.</p>
    */
-  inline const Aws::String& GetDescription() const { return m_description; }
+  inline const UpdatedDescription& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
+  template <typename DescriptionT = UpdatedDescription>
   void SetDescription(DescriptionT&& value) {
     m_descriptionHasBeenSet = true;
     m_description = std::forward<DescriptionT>(value);
   }
-  template <typename DescriptionT = Aws::String>
+  template <typename DescriptionT = UpdatedDescription>
   UpdatePolicyRequest& WithDescription(DescriptionT&& value) {
     SetDescription(std::forward<DescriptionT>(value));
     return *this;
@@ -133,7 +134,7 @@ class UpdatePolicyRequest : public BedrockAgentCoreControlRequest {
 
   Aws::String m_policyId;
 
-  Aws::String m_description;
+  UpdatedDescription m_description;
 
   PolicyDefinition m_definition;
 

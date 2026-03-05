@@ -225,6 +225,7 @@ class ListScheduledQueriesRequest;
 class ListSourcesForS3TableIntegrationRequest;
 class ListTagsForResourceRequest;
 class PutAccountPolicyRequest;
+class PutBearerTokenAuthenticationRequest;
 class PutDataProtectionPolicyRequest;
 class PutDeliveryDestinationRequest;
 class PutDeliveryDestinationPolicyRequest;
@@ -333,6 +334,7 @@ typedef Aws::Utils::Outcome<ListScheduledQueriesResult, CloudWatchLogsError> Lis
 typedef Aws::Utils::Outcome<ListSourcesForS3TableIntegrationResult, CloudWatchLogsError> ListSourcesForS3TableIntegrationOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchLogsError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutAccountPolicyResult, CloudWatchLogsError> PutAccountPolicyOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutBearerTokenAuthenticationOutcome;
 typedef Aws::Utils::Outcome<PutDataProtectionPolicyResult, CloudWatchLogsError> PutDataProtectionPolicyOutcome;
 typedef Aws::Utils::Outcome<PutDeliveryDestinationResult, CloudWatchLogsError> PutDeliveryDestinationOutcome;
 typedef Aws::Utils::Outcome<PutDeliveryDestinationPolicyResult, CloudWatchLogsError> PutDeliveryDestinationPolicyOutcome;
@@ -440,6 +442,7 @@ typedef std::future<ListScheduledQueriesOutcome> ListScheduledQueriesOutcomeCall
 typedef std::future<ListSourcesForS3TableIntegrationOutcome> ListSourcesForS3TableIntegrationOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutAccountPolicyOutcome> PutAccountPolicyOutcomeCallable;
+typedef std::future<PutBearerTokenAuthenticationOutcome> PutBearerTokenAuthenticationOutcomeCallable;
 typedef std::future<PutDataProtectionPolicyOutcome> PutDataProtectionPolicyOutcomeCallable;
 typedef std::future<PutDeliveryDestinationOutcome> PutDeliveryDestinationOutcomeCallable;
 typedef std::future<PutDeliveryDestinationPolicyOutcome> PutDeliveryDestinationPolicyOutcomeCallable;
@@ -712,6 +715,10 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsFor
 typedef std::function<void(const CloudWatchLogsClient*, const Model::PutAccountPolicyRequest&, const Model::PutAccountPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutAccountPolicyResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::PutBearerTokenAuthenticationRequest&,
+                           const Model::PutBearerTokenAuthenticationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutBearerTokenAuthenticationResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDataProtectionPolicyRequest&,
                            const Model::PutDataProtectionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutDataProtectionPolicyResponseReceivedHandler;

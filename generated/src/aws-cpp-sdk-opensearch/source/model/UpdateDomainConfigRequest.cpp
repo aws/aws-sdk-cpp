@@ -104,5 +104,9 @@ Aws::String UpdateDomainConfigRequest::SerializePayload() const {
     payload.WithObject("AIMLOptions", m_aIMLOptions.Jsonize());
   }
 
+  if (m_deploymentStrategyOptionsHasBeenSet) {
+    payload.WithObject("DeploymentStrategyOptions", m_deploymentStrategyOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

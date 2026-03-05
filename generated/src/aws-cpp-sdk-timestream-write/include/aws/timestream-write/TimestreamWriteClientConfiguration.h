@@ -34,7 +34,7 @@ struct AWS_TIMESTREAMWRITE_API TimestreamWriteClientConfiguration : public Aws::
     return *this;
   }
 
-  TimestreamWriteClientConfiguration(const Client::ClientConfigurationInitValues& configuration = {});
+  TimestreamWriteClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
    * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -55,7 +55,7 @@ struct AWS_TIMESTREAMWRITE_API TimestreamWriteClientConfiguration : public Aws::
   /**
    * Converting constructors for compatibility with a legacy code
    */
-  TimestreamWriteClientConfiguration(const Client::ClientConfiguration& config);
+  TimestreamWriteClientConfiguration(const Aws::Client::ClientConfiguration& config);
 
   /**
    * Enable endpoint discovery

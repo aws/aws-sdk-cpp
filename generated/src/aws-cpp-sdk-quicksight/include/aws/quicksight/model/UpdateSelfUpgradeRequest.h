@@ -50,7 +50,7 @@ class UpdateSelfUpgradeRequest : public QuickSightRequest {
 
   ///@{
   /**
-   * <p>The Quick Suite namespace for the self-upgrade request.</p>
+   * <p>The Quick namespace for the self-upgrade request.</p>
    */
   inline const Aws::String& GetNamespace() const { return m_namespace; }
   inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }

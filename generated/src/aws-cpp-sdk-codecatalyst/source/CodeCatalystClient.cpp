@@ -93,7 +93,7 @@ CodeCatalystClient::CodeCatalystClient(const Aws::Auth::BearerTokenAuthSignerPro
 
 /* Legacy constructors due deprecation */
 CodeCatalystClient::CodeCatalystClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
-                                       const Client::ClientConfiguration& clientConfiguration)
+                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration, Aws::MakeShared<Aws::Auth::BearerTokenAuthSignerProvider>(ALLOCATION_TAG, bearerTokenProvider),
                 Aws::MakeShared<CodeCatalystErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),

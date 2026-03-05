@@ -80,5 +80,9 @@ Aws::String UpdateElasticsearchDomainConfigRequest::SerializePayload() const {
     payload.WithBool("DryRun", m_dryRun);
   }
 
+  if (m_deploymentStrategyOptionsHasBeenSet) {
+    payload.WithObject("DeploymentStrategyOptions", m_deploymentStrategyOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

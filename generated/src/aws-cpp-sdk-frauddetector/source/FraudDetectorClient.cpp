@@ -152,7 +152,7 @@ FraudDetectorClient::FraudDetectorClient(const std::shared_ptr<AWSCredentialsPro
 }
 
 /* Legacy constructors due deprecation */
-FraudDetectorClient::FraudDetectorClient(const Client::ClientConfiguration& clientConfiguration)
+FraudDetectorClient::FraudDetectorClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -164,7 +164,7 @@ FraudDetectorClient::FraudDetectorClient(const Client::ClientConfiguration& clie
   init(m_clientConfiguration);
 }
 
-FraudDetectorClient::FraudDetectorClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+FraudDetectorClient::FraudDetectorClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -175,7 +175,7 @@ FraudDetectorClient::FraudDetectorClient(const AWSCredentials& credentials, cons
 }
 
 FraudDetectorClient::FraudDetectorClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                         const Client::ClientConfiguration& clientConfiguration)
+                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

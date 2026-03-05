@@ -13,7 +13,7 @@ namespace Bedrock {
 struct AWS_BEDROCK_API BedrockClientConfiguration : public Aws::Client::GenericClientConfiguration {
   using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
-  BedrockClientConfiguration(const Client::ClientConfigurationInitValues& configuration = {});
+  BedrockClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
    * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -34,7 +34,7 @@ struct AWS_BEDROCK_API BedrockClientConfiguration : public Aws::Client::GenericC
   /**
    * Converting constructors for compatibility with a legacy code
    */
-  BedrockClientConfiguration(const Client::ClientConfiguration& config);
+  BedrockClientConfiguration(const Aws::Client::ClientConfiguration& config);
 
  private:
   void LoadBedrockSpecificConfig(const Aws::String& profileName);

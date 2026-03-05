@@ -22,7 +22,8 @@ void BedrockAgentRuntimeClientConfiguration::LoadBedrockAgentRuntimeSpecificConf
   }
 }
 
-BedrockAgentRuntimeClientConfiguration::BedrockAgentRuntimeClientConfiguration(const Client::ClientConfigurationInitValues& configuration)
+BedrockAgentRuntimeClientConfiguration::BedrockAgentRuntimeClientConfiguration(
+    const Aws::Client::ClientConfigurationInitValues& configuration)
     : BaseClientConfigClass(configuration) {
   LoadBedrockAgentRuntimeSpecificConfig(this->profileName);
 }
@@ -38,7 +39,7 @@ BedrockAgentRuntimeClientConfiguration::BedrockAgentRuntimeClientConfiguration(b
   LoadBedrockAgentRuntimeSpecificConfig(this->profileName);
 }
 
-BedrockAgentRuntimeClientConfiguration::BedrockAgentRuntimeClientConfiguration(const Client::ClientConfiguration& config)
+BedrockAgentRuntimeClientConfiguration::BedrockAgentRuntimeClientConfiguration(const Aws::Client::ClientConfiguration& config)
     : BaseClientConfigClass(config) {
   LoadBedrockAgentRuntimeSpecificConfig(this->profileName);
 }

@@ -51,7 +51,7 @@ void S3CrtClientConfiguration::LoadS3CrtSpecificConfig(const Aws::String& inputP
   }
 }
 
-S3CrtClientConfiguration::S3CrtClientConfiguration(const Client::ClientConfigurationInitValues& configuration)
+S3CrtClientConfiguration::S3CrtClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
     : BaseClientConfigClass(configuration) {
   LoadS3CrtSpecificConfig(this->profileName);
 }
@@ -66,7 +66,7 @@ S3CrtClientConfiguration::S3CrtClientConfiguration(bool useSmartDefaults, const 
   LoadS3CrtSpecificConfig(this->profileName);
 }
 
-S3CrtClientConfiguration::S3CrtClientConfiguration(const Client::ClientConfiguration& config,
+S3CrtClientConfiguration::S3CrtClientConfiguration(const Aws::Client::ClientConfiguration& config,
                                                    Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy,
                                                    bool iUseVirtualAddressing,
                                                    US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption)

@@ -130,6 +130,14 @@ Aws::String CreateFleetRequest::SerializePayload() const {
                        InstanceRoleCredentialsProviderMapper::GetNameForInstanceRoleCredentialsProvider(m_instanceRoleCredentialsProvider));
   }
 
+  if (m_playerGatewayModeHasBeenSet) {
+    payload.WithString("PlayerGatewayMode", PlayerGatewayModeMapper::GetNameForPlayerGatewayMode(m_playerGatewayMode));
+  }
+
+  if (m_playerGatewayConfigurationHasBeenSet) {
+    payload.WithObject("PlayerGatewayConfiguration", m_playerGatewayConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

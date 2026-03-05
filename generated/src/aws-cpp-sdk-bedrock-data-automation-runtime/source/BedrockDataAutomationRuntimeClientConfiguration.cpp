@@ -23,7 +23,7 @@ void BedrockDataAutomationRuntimeClientConfiguration::LoadBedrockDataAutomationR
 }
 
 BedrockDataAutomationRuntimeClientConfiguration::BedrockDataAutomationRuntimeClientConfiguration(
-    const Client::ClientConfigurationInitValues& configuration)
+    const Aws::Client::ClientConfigurationInitValues& configuration)
     : BaseClientConfigClass(configuration) {
   LoadBedrockDataAutomationRuntimeSpecificConfig(this->profileName);
 }
@@ -41,7 +41,8 @@ BedrockDataAutomationRuntimeClientConfiguration::BedrockDataAutomationRuntimeCli
   LoadBedrockDataAutomationRuntimeSpecificConfig(this->profileName);
 }
 
-BedrockDataAutomationRuntimeClientConfiguration::BedrockDataAutomationRuntimeClientConfiguration(const Client::ClientConfiguration& config)
+BedrockDataAutomationRuntimeClientConfiguration::BedrockDataAutomationRuntimeClientConfiguration(
+    const Aws::Client::ClientConfiguration& config)
     : BaseClientConfigClass(config) {
   LoadBedrockDataAutomationRuntimeSpecificConfig(this->profileName);
 }

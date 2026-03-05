@@ -70,7 +70,7 @@ class GenerateEmbedUrlForAnonymousUserRequest : public QuickSightRequest {
   ///@{
   /**
    * <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs
-   * to. If you are not using an Amazon Quick Suite custom namespace, set this to
+   * to. If you are not using an Amazon Quick custom namespace, set this to
    * <code>default</code>.</p>
    */
   inline const Aws::String& GetNamespace() const { return m_namespace; }
@@ -109,7 +109,7 @@ class GenerateEmbedUrlForAnonymousUserRequest : public QuickSightRequest {
    * access.</p> </li> </ul> <p>Besides, these are not the tags used for the Amazon
    * Web Services resource tagging feature. For more information, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-   * Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick Suite User
+   * Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick User
    * Guide</i>.</p>
    */
   inline const Aws::Vector<SessionTag>& GetSessionTags() const { return m_sessionTags; }

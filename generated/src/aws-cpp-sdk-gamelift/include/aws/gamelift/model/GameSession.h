@@ -11,6 +11,7 @@
 #include <aws/gamelift/model/GameProperty.h>
 #include <aws/gamelift/model/GameSessionStatus.h>
 #include <aws/gamelift/model/GameSessionStatusReason.h>
+#include <aws/gamelift/model/PlayerGatewayStatus.h>
 #include <aws/gamelift/model/PlayerSessionCreationPolicy.h>
 
 #include <utility>
@@ -238,11 +239,14 @@ class GameSession {
   ///@{
   /**
    * <p>A set of key-value pairs that can store custom data in a game session. For
-   * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
-   * <p>Avoid using periods (".") in property keys if you plan to search for game
-   * sessions by properties. Property keys containing periods cannot be searched and
-   * will be filtered out from search results due to search index limitations.</p>
-   *
+   * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>  <ul>
+   * <li> <p>Avoid using periods (".") in property keys if you plan to search for
+   * game sessions by properties. Property keys containing periods cannot be searched
+   * and will be filtered out from search results due to search index
+   * limitations.</p> </li> <li> <p>If you use SearchGameSessions API, there is a
+   * limit of 500 game property keys across all game sessions and all fleets per
+   * region. If the limit is exceeded, there will potentially be game session entries
+   * missing from SearchGameSessions API results.</p> </li> </ul>
    */
   inline const Aws::Vector<GameProperty>& GetGameProperties() const { return m_gameProperties; }
   inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
@@ -430,6 +434,30 @@ class GameSession {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether player gateway is available for use for this game session.
+   * Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>,
+   * player gateway might not be available in a specific location. For more
+   * information about locations where player gateway is supported, see <a
+   * href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon
+   * GameLift Servers service locations</a>.</p> <p>Possible values include:</p> <ul>
+   * <li> <p> <code>ENABLED</code> -- Player gateway is available for routing player
+   * connections for this game session.</p> </li> <li> <p> <code>DISABLED</code> --
+   * Player gateway is not available for this game session.</p> </li> </ul>
+   */
+  inline PlayerGatewayStatus GetPlayerGatewayStatus() const { return m_playerGatewayStatus; }
+  inline bool PlayerGatewayStatusHasBeenSet() const { return m_playerGatewayStatusHasBeenSet; }
+  inline void SetPlayerGatewayStatus(PlayerGatewayStatus value) {
+    m_playerGatewayStatusHasBeenSet = true;
+    m_playerGatewayStatus = value;
+  }
+  inline GameSession& WithPlayerGatewayStatus(PlayerGatewayStatus value) {
+    SetPlayerGatewayStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gameSessionId;
 
@@ -468,6 +496,8 @@ class GameSession {
   Aws::String m_matchmakerData;
 
   Aws::String m_location;
+
+  PlayerGatewayStatus m_playerGatewayStatus{PlayerGatewayStatus::NOT_SET};
   bool m_gameSessionIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;
@@ -487,6 +517,7 @@ class GameSession {
   bool m_gameSessionDataHasBeenSet = false;
   bool m_matchmakerDataHasBeenSet = false;
   bool m_locationHasBeenSet = false;
+  bool m_playerGatewayStatusHasBeenSet = false;
 };
 
 }  // namespace Model

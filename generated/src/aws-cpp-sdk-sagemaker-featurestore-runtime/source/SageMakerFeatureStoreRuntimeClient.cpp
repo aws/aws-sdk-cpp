@@ -88,7 +88,7 @@ SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(
 }
 
 /* Legacy constructors due deprecation */
-SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const Client::ClientConfiguration& clientConfiguration)
+SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -101,7 +101,7 @@ SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const Cli
 }
 
 SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const AWSCredentials& credentials,
-                                                                       const Client::ClientConfiguration& clientConfiguration)
+                                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -112,7 +112,7 @@ SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const AWS
 }
 
 SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                                       const Client::ClientConfiguration& clientConfiguration)
+                                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

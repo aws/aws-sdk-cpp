@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/EmailAddressConfig.h>
 #include <aws/connect/model/OutboundCallerConfig.h>
 #include <aws/connect/model/OutboundEmailConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -185,6 +186,32 @@ class CreateQueueRequest : public ConnectRequest {
 
   ///@{
   /**
+   * <p>Configuration list containing the email addresses to associate with the queue
+   * during creation. Each configuration specifies an email address ID that agents
+   * can select when handling email contacts in this queue.</p>
+   */
+  inline const Aws::Vector<EmailAddressConfig>& GetEmailAddressesConfig() const { return m_emailAddressesConfig; }
+  inline bool EmailAddressesConfigHasBeenSet() const { return m_emailAddressesConfigHasBeenSet; }
+  template <typename EmailAddressesConfigT = Aws::Vector<EmailAddressConfig>>
+  void SetEmailAddressesConfig(EmailAddressesConfigT&& value) {
+    m_emailAddressesConfigHasBeenSet = true;
+    m_emailAddressesConfig = std::forward<EmailAddressesConfigT>(value);
+  }
+  template <typename EmailAddressesConfigT = Aws::Vector<EmailAddressConfig>>
+  CreateQueueRequest& WithEmailAddressesConfig(EmailAddressesConfigT&& value) {
+    SetEmailAddressesConfig(std::forward<EmailAddressesConfigT>(value));
+    return *this;
+  }
+  template <typename EmailAddressesConfigT = EmailAddressConfig>
+  CreateQueueRequest& AddEmailAddressesConfig(EmailAddressesConfigT&& value) {
+    m_emailAddressesConfigHasBeenSet = true;
+    m_emailAddressesConfig.emplace_back(std::forward<EmailAddressesConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags used to organize, track, or control access for this resource. For
    * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
    */
@@ -224,6 +251,8 @@ class CreateQueueRequest : public ConnectRequest {
 
   Aws::Vector<Aws::String> m_quickConnectIds;
 
+  Aws::Vector<EmailAddressConfig> m_emailAddressesConfig;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_instanceIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -233,6 +262,7 @@ class CreateQueueRequest : public ConnectRequest {
   bool m_hoursOfOperationIdHasBeenSet = false;
   bool m_maxContactsHasBeenSet = false;
   bool m_quickConnectIdsHasBeenSet = false;
+  bool m_emailAddressesConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

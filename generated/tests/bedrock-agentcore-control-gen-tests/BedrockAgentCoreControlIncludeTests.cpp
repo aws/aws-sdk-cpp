@@ -309,6 +309,7 @@
 #include <aws/bedrock-agentcore-control/model/PolicyEngineStatus.h>
 #include <aws/bedrock-agentcore-control/model/PolicyGeneration.h>
 #include <aws/bedrock-agentcore-control/model/PolicyGenerationAsset.h>
+#include <aws/bedrock-agentcore-control/model/PolicyGenerationDetails.h>
 #include <aws/bedrock-agentcore-control/model/PolicyGenerationStatus.h>
 #include <aws/bedrock-agentcore-control/model/PolicyStatus.h>
 #include <aws/bedrock-agentcore-control/model/PolicyValidationMode.h>
@@ -323,6 +324,7 @@
 #include <aws/bedrock-agentcore-control/model/ResourceType.h>
 #include <aws/bedrock-agentcore-control/model/RestApiMethod.h>
 #include <aws/bedrock-agentcore-control/model/Rule.h>
+#include <aws/bedrock-agentcore-control/model/RuntimeMetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/S3Configuration.h>
 #include <aws/bedrock-agentcore-control/model/S3Location.h>
 #include <aws/bedrock-agentcore-control/model/SalesforceOauth2ProviderConfigInput.h>
@@ -394,6 +396,7 @@
 #include <aws/bedrock-agentcore-control/model/UpdatePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateWorkloadIdentityRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateWorkloadIdentityResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdatedDescription.h>
 #include <aws/bedrock-agentcore-control/model/UserPreferenceConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/UserPreferenceExtractionOverride.h>
 #include <aws/bedrock-agentcore-control/model/UserPreferenceMemoryStrategyInput.h>

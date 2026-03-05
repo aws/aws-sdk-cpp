@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/UpdatedDescription.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -50,14 +51,14 @@ class UpdatePolicyEngineRequest : public BedrockAgentCoreControlRequest {
   /**
    * <p>The new description for the policy engine.</p>
    */
-  inline const Aws::String& GetDescription() const { return m_description; }
+  inline const UpdatedDescription& GetDescription() const { return m_description; }
   inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
+  template <typename DescriptionT = UpdatedDescription>
   void SetDescription(DescriptionT&& value) {
     m_descriptionHasBeenSet = true;
     m_description = std::forward<DescriptionT>(value);
   }
-  template <typename DescriptionT = Aws::String>
+  template <typename DescriptionT = UpdatedDescription>
   UpdatePolicyEngineRequest& WithDescription(DescriptionT&& value) {
     SetDescription(std::forward<DescriptionT>(value));
     return *this;
@@ -66,7 +67,7 @@ class UpdatePolicyEngineRequest : public BedrockAgentCoreControlRequest {
  private:
   Aws::String m_policyEngineId;
 
-  Aws::String m_description;
+  UpdatedDescription m_description;
   bool m_policyEngineIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };

@@ -104,7 +104,7 @@ PcaConnectorAdClient::PcaConnectorAdClient(const std::shared_ptr<AWSCredentialsP
 }
 
 /* Legacy constructors due deprecation */
-PcaConnectorAdClient::PcaConnectorAdClient(const Client::ClientConfiguration& clientConfiguration)
+PcaConnectorAdClient::PcaConnectorAdClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -116,7 +116,7 @@ PcaConnectorAdClient::PcaConnectorAdClient(const Client::ClientConfiguration& cl
   init(m_clientConfiguration);
 }
 
-PcaConnectorAdClient::PcaConnectorAdClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+PcaConnectorAdClient::PcaConnectorAdClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -127,7 +127,7 @@ PcaConnectorAdClient::PcaConnectorAdClient(const AWSCredentials& credentials, co
 }
 
 PcaConnectorAdClient::PcaConnectorAdClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           const Client::ClientConfiguration& clientConfiguration)
+                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

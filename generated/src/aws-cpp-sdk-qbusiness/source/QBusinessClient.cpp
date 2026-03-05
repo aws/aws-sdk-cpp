@@ -164,7 +164,7 @@ QBusinessClient::QBusinessClient(const std::shared_ptr<AWSCredentialsProvider>& 
 }
 
 /* Legacy constructors due deprecation */
-QBusinessClient::QBusinessClient(const Client::ClientConfiguration& clientConfiguration)
+QBusinessClient::QBusinessClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -176,7 +176,7 @@ QBusinessClient::QBusinessClient(const Client::ClientConfiguration& clientConfig
   init(m_clientConfiguration);
 }
 
-QBusinessClient::QBusinessClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+QBusinessClient::QBusinessClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -188,7 +188,7 @@ QBusinessClient::QBusinessClient(const AWSCredentials& credentials, const Client
 }
 
 QBusinessClient::QBusinessClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Client::ClientConfiguration& clientConfiguration)
+                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

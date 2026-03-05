@@ -93,7 +93,7 @@ ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(
 }
 
 /* Legacy constructors due deprecation */
-ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const Client::ClientConfiguration& clientConfiguration)
+ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -106,7 +106,7 @@ ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const Client::Cli
 }
 
 ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const AWSCredentials& credentials,
-                                                               const Client::ClientConfiguration& clientConfiguration)
+                                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -117,7 +117,7 @@ ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const AWSCredenti
 }
 
 ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                               const Client::ClientConfiguration& clientConfiguration)
+                                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

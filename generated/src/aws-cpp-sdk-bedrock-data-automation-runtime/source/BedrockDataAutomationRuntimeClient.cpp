@@ -94,7 +94,7 @@ BedrockDataAutomationRuntimeClient::BedrockDataAutomationRuntimeClient(
           }) {}
 
 /* Legacy constructors due deprecation */
-BedrockDataAutomationRuntimeClient::BedrockDataAutomationRuntimeClient(const Client::ClientConfiguration& clientConfiguration)
+BedrockDataAutomationRuntimeClient::BedrockDataAutomationRuntimeClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Data Automation Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockDataAutomationRuntimeErrorMarshaller>(ALLOCATION_TAG),
@@ -107,7 +107,7 @@ BedrockDataAutomationRuntimeClient::BedrockDataAutomationRuntimeClient(const Cli
           }) {}
 
 BedrockDataAutomationRuntimeClient::BedrockDataAutomationRuntimeClient(const AWSCredentials& credentials,
-                                                                       const Client::ClientConfiguration& clientConfiguration)
+                                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Data Automation Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockDataAutomationRuntimeErrorMarshaller>(ALLOCATION_TAG),
@@ -121,7 +121,7 @@ BedrockDataAutomationRuntimeClient::BedrockDataAutomationRuntimeClient(const AWS
           }) {}
 
 BedrockDataAutomationRuntimeClient::BedrockDataAutomationRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                                       const Client::ClientConfiguration& clientConfiguration)
+                                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Data Automation Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockDataAutomationRuntimeErrorMarshaller>(ALLOCATION_TAG),

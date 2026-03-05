@@ -27,5 +27,17 @@ Aws::String CreatePolicyEngineRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_encryptionKeyArnHasBeenSet) {
+    payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }

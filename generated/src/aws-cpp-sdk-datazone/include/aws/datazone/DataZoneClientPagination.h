@@ -38,6 +38,7 @@
 #include <aws/datazone/model/ListSubscriptionTargetsPaginationTraits.h>
 #include <aws/datazone/model/ListSubscriptionsPaginationTraits.h>
 #include <aws/datazone/model/ListTimeSeriesDataPointsPaginationTraits.h>
+#include <aws/datazone/model/QueryGraphPaginationTraits.h>
 #include <aws/datazone/model/SearchGroupProfilesPaginationTraits.h>
 #include <aws/datazone/model/SearchListingsPaginationTraits.h>
 #include <aws/datazone/model/SearchPaginationTraits.h>
@@ -126,6 +127,8 @@ using ListSubscriptionTargetsPaginator =
 using ListTimeSeriesDataPointsPaginator =
     Aws::Utils::Pagination::Paginator<DataZoneClient, Model::ListTimeSeriesDataPointsRequest,
                                       Pagination::ListTimeSeriesDataPointsPaginationTraits<DataZoneClient>>;
+using QueryGraphPaginator =
+    Aws::Utils::Pagination::Paginator<DataZoneClient, Model::QueryGraphRequest, Pagination::QueryGraphPaginationTraits<DataZoneClient>>;
 using SearchPaginator =
     Aws::Utils::Pagination::Paginator<DataZoneClient, Model::SearchRequest, Pagination::SearchPaginationTraits<DataZoneClient>>;
 using SearchGroupProfilesPaginator = Aws::Utils::Pagination::Paginator<DataZoneClient, Model::SearchGroupProfilesRequest,

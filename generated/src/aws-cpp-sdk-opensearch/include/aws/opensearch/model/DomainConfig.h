@@ -14,6 +14,7 @@
 #include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <aws/opensearch/model/ClusterConfigStatus.h>
 #include <aws/opensearch/model/CognitoOptionsStatus.h>
+#include <aws/opensearch/model/DeploymentStrategyOptionsStatus.h>
 #include <aws/opensearch/model/DomainEndpointOptionsStatus.h>
 #include <aws/opensearch/model/EBSOptionsStatus.h>
 #include <aws/opensearch/model/EncryptionAtRestOptionsStatus.h>
@@ -449,6 +450,24 @@ class DomainConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
+   */
+  inline const DeploymentStrategyOptionsStatus& GetDeploymentStrategyOptions() const { return m_deploymentStrategyOptions; }
+  inline bool DeploymentStrategyOptionsHasBeenSet() const { return m_deploymentStrategyOptionsHasBeenSet; }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOptionsStatus>
+  void SetDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    m_deploymentStrategyOptionsHasBeenSet = true;
+    m_deploymentStrategyOptions = std::forward<DeploymentStrategyOptionsT>(value);
+  }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOptionsStatus>
+  DomainConfig& WithDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    SetDeploymentStrategyOptions(std::forward<DeploymentStrategyOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   VersionStatus m_engineVersion;
 
@@ -491,6 +510,8 @@ class DomainConfig {
   Aws::Vector<ModifyingProperties> m_modifyingProperties;
 
   AIMLOptionsStatus m_aIMLOptions;
+
+  DeploymentStrategyOptionsStatus m_deploymentStrategyOptions;
   bool m_engineVersionHasBeenSet = false;
   bool m_clusterConfigHasBeenSet = false;
   bool m_eBSOptionsHasBeenSet = false;
@@ -512,6 +533,7 @@ class DomainConfig {
   bool m_softwareUpdateOptionsHasBeenSet = false;
   bool m_modifyingPropertiesHasBeenSet = false;
   bool m_aIMLOptionsHasBeenSet = false;
+  bool m_deploymentStrategyOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

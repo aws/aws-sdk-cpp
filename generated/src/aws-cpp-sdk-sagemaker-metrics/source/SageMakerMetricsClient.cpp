@@ -84,7 +84,7 @@ SageMakerMetricsClient::SageMakerMetricsClient(const std::shared_ptr<AWSCredenti
 }
 
 /* Legacy constructors due deprecation */
-SageMakerMetricsClient::SageMakerMetricsClient(const Client::ClientConfiguration& clientConfiguration)
+SageMakerMetricsClient::SageMakerMetricsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -96,7 +96,8 @@ SageMakerMetricsClient::SageMakerMetricsClient(const Client::ClientConfiguration
   init(m_clientConfiguration);
 }
 
-SageMakerMetricsClient::SageMakerMetricsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SageMakerMetricsClient::SageMakerMetricsClient(const AWSCredentials& credentials,
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -107,7 +108,7 @@ SageMakerMetricsClient::SageMakerMetricsClient(const AWSCredentials& credentials
 }
 
 SageMakerMetricsClient::SageMakerMetricsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                               const Client::ClientConfiguration& clientConfiguration)
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

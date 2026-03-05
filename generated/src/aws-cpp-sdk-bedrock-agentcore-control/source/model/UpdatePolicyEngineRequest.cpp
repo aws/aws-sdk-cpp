@@ -16,7 +16,7 @@ Aws::String UpdatePolicyEngineRequest::SerializePayload() const {
   JsonValue payload;
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
+    payload.WithObject("description", m_description.Jsonize());
   }
 
   return payload.View().WriteReadable();

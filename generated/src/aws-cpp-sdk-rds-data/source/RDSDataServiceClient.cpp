@@ -84,7 +84,7 @@ RDSDataServiceClient::RDSDataServiceClient(const std::shared_ptr<AWSCredentialsP
 }
 
 /* Legacy constructors due deprecation */
-RDSDataServiceClient::RDSDataServiceClient(const Client::ClientConfiguration& clientConfiguration)
+RDSDataServiceClient::RDSDataServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -96,7 +96,7 @@ RDSDataServiceClient::RDSDataServiceClient(const Client::ClientConfiguration& cl
   init(m_clientConfiguration);
 }
 
-RDSDataServiceClient::RDSDataServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+RDSDataServiceClient::RDSDataServiceClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -107,7 +107,7 @@ RDSDataServiceClient::RDSDataServiceClient(const AWSCredentials& credentials, co
 }
 
 RDSDataServiceClient::RDSDataServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           const Client::ClientConfiguration& clientConfiguration)
+                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -105,7 +105,7 @@ RTBFabricClient::RTBFabricClient(const std::shared_ptr<AWSCredentialsProvider>& 
 }
 
 /* Legacy constructors due deprecation */
-RTBFabricClient::RTBFabricClient(const Client::ClientConfiguration& clientConfiguration)
+RTBFabricClient::RTBFabricClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -117,7 +117,7 @@ RTBFabricClient::RTBFabricClient(const Client::ClientConfiguration& clientConfig
   init(m_clientConfiguration);
 }
 
-RTBFabricClient::RTBFabricClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+RTBFabricClient::RTBFabricClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -128,7 +128,7 @@ RTBFabricClient::RTBFabricClient(const AWSCredentials& credentials, const Client
 }
 
 RTBFabricClient::RTBFabricClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Client::ClientConfiguration& clientConfiguration)
+                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
