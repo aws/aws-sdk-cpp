@@ -153,6 +153,23 @@ JsonValue& JsonValue::WithString(const Aws::String& key, const Aws::String& valu
     return WithString(key.c_str(), value);
 }
 
+JsonValue& JsonValue::WithNull(const char* key)
+{
+    if (!m_value)
+    {
+        m_value = cJSON_AS4CPP_CreateObject();
+    }
+
+    const auto val = cJSON_AS4CPP_CreateNull();
+    AddOrReplace(m_value, key, val);
+    return *this;
+}
+
+JsonValue& JsonValue::WithNull(const Aws::String& key)
+{
+    return WithNull(key.c_str());
+}
+
 JsonValue& JsonValue::AsString(const Aws::String& value)
 {
     Destroy();

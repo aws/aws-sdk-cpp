@@ -42,7 +42,11 @@
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
   ${spaces}  ss << "${locationName}" << item.first;
+#if($member.shape.sparse)
+  ${spaces}  if(item.second.has_value()) { headers.emplace(ss.str(), item.second.value()); }
+#else
   ${spaces}  headers.emplace(ss.str(), item.second);
+#end
   ${spaces}  ss.str("");
   ${spaces}}
 #elseif($member.shape.list)
