@@ -38,6 +38,7 @@
 #include <aws/mpa/model/ListSessionsRequest.h>
 #include <aws/mpa/model/ListTagsForResourceRequest.h>
 #include <aws/mpa/model/StartActiveApprovalTeamDeletionRequest.h>
+#include <aws/mpa/model/StartApprovalTeamBaselineRequest.h>
 #include <aws/mpa/model/TagResourceRequest.h>
 #include <aws/mpa/model/UntagResourceRequest.h>
 #include <aws/mpa/model/UpdateApprovalTeamRequest.h>
@@ -792,6 +793,43 @@ StartActiveApprovalTeamDeletionOutcome MPAClient::StartActiveApprovalTeamDeletio
         ss.str("?Delete");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         return StartActiveApprovalTeamDeletionOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartApprovalTeamBaselineOutcome MPAClient::StartApprovalTeamBaseline(const StartApprovalTeamBaselineRequest& request) const {
+  AWS_OPERATION_GUARD(StartApprovalTeamBaseline);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartApprovalTeamBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartApprovalTeamBaseline", "Required field: Arn, is not set");
+    return StartApprovalTeamBaselineOutcome(
+        Aws::Client::AWSError<MPAErrors>(MPAErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartApprovalTeamBaseline, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartApprovalTeamBaseline, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartApprovalTeamBaseline",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartApprovalTeamBaselineOutcome>(
+      [&]() -> StartApprovalTeamBaselineOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartApprovalTeamBaseline, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/approval-teams/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/baseline");
+        return StartApprovalTeamBaselineOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

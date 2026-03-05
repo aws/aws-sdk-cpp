@@ -234,6 +234,7 @@
 #include <aws/ec2/model/CancelSpotInstanceRequestsResponse.h>
 #include <aws/ec2/model/CancelledSpotInstanceRequest.h>
 #include <aws/ec2/model/CapacityAllocation.h>
+#include <aws/ec2/model/CapacityAllocationMetadataEntry.h>
 #include <aws/ec2/model/CapacityBlock.h>
 #include <aws/ec2/model/CapacityBlockExtension.h>
 #include <aws/ec2/model/CapacityBlockExtensionOffering.h>

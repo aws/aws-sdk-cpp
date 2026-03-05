@@ -30,6 +30,8 @@ static const int DPU_HASH = HashingUtils::HashString("DPU");
 static const int ElastiCacheProcessingUnit_HASH = HashingUtils::HashString("ElastiCacheProcessingUnit");
 static const int DCU_Hr_HASH = HashingUtils::HashString("DCU-Hr");
 static const int NCU_hr_HASH = HashingUtils::HashString("NCU-hr");
+static const int OCU_hours_HASH = HashingUtils::HashString("OCU-hours");
+static const int Jobs_HASH = HashingUtils::HashString("Jobs");
 
 SavingsPlanRateUnit GetSavingsPlanRateUnitForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -63,6 +65,10 @@ SavingsPlanRateUnit GetSavingsPlanRateUnitForName(const Aws::String& name) {
     return SavingsPlanRateUnit::DCU_Hr;
   } else if (hashCode == NCU_hr_HASH) {
     return SavingsPlanRateUnit::NCU_hr;
+  } else if (hashCode == OCU_hours_HASH) {
+    return SavingsPlanRateUnit::OCU_hours;
+  } else if (hashCode == Jobs_HASH) {
+    return SavingsPlanRateUnit::Jobs;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -107,6 +113,10 @@ Aws::String GetNameForSavingsPlanRateUnit(SavingsPlanRateUnit enumValue) {
       return "DCU-Hr";
     case SavingsPlanRateUnit::NCU_hr:
       return "NCU-hr";
+    case SavingsPlanRateUnit::OCU_hours:
+      return "OCU-hours";
+    case SavingsPlanRateUnit::Jobs:
+      return "Jobs";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -38,6 +38,18 @@ GetApprovalTeamResponseApprover& GetApprovalTeamResponseApprover::operator=(Json
     m_primaryIdentityStatus = IdentityStatusMapper::GetIdentityStatusForName(jsonValue.GetString("PrimaryIdentityStatus"));
     m_primaryIdentityStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LastActivity")) {
+    m_lastActivity = ApproverLastActivityMapper::GetApproverLastActivityForName(jsonValue.GetString("LastActivity"));
+    m_lastActivityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastActivityTime")) {
+    m_lastActivityTime = jsonValue.GetString("LastActivityTime");
+    m_lastActivityTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PendingBaselineSessionArn")) {
+    m_pendingBaselineSessionArn = jsonValue.GetString("PendingBaselineSessionArn");
+    m_pendingBaselineSessionArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("MfaMethods")) {
     Aws::Utils::Array<JsonView> mfaMethodsJsonList = jsonValue.GetArray("MfaMethods");
     for (unsigned mfaMethodsIndex = 0; mfaMethodsIndex < mfaMethodsJsonList.GetLength(); ++mfaMethodsIndex) {
@@ -69,6 +81,18 @@ JsonValue GetApprovalTeamResponseApprover::Jsonize() const {
 
   if (m_primaryIdentityStatusHasBeenSet) {
     payload.WithString("PrimaryIdentityStatus", IdentityStatusMapper::GetNameForIdentityStatus(m_primaryIdentityStatus));
+  }
+
+  if (m_lastActivityHasBeenSet) {
+    payload.WithString("LastActivity", ApproverLastActivityMapper::GetNameForApproverLastActivity(m_lastActivity));
+  }
+
+  if (m_lastActivityTimeHasBeenSet) {
+    payload.WithString("LastActivityTime", m_lastActivityTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_pendingBaselineSessionArnHasBeenSet) {
+    payload.WithString("PendingBaselineSessionArn", m_pendingBaselineSessionArn);
   }
 
   if (m_mfaMethodsHasBeenSet) {

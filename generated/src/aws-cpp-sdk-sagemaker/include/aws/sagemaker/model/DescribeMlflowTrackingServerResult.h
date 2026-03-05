@@ -299,6 +299,40 @@ class DescribeMlflowTrackingServerResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for
+   * artifact storage.</p>
+   */
+  inline const Aws::String& GetS3BucketOwnerAccountId() const { return m_s3BucketOwnerAccountId; }
+  template <typename S3BucketOwnerAccountIdT = Aws::String>
+  void SetS3BucketOwnerAccountId(S3BucketOwnerAccountIdT&& value) {
+    m_s3BucketOwnerAccountIdHasBeenSet = true;
+    m_s3BucketOwnerAccountId = std::forward<S3BucketOwnerAccountIdT>(value);
+  }
+  template <typename S3BucketOwnerAccountIdT = Aws::String>
+  DescribeMlflowTrackingServerResult& WithS3BucketOwnerAccountId(S3BucketOwnerAccountIdT&& value) {
+    SetS3BucketOwnerAccountId(std::forward<S3BucketOwnerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether Amazon S3 Bucket Ownership checks are enabled whenever the tracking
+   * server interacts with Amazon Amazon S3.</p>
+   */
+  inline bool GetS3BucketOwnerVerification() const { return m_s3BucketOwnerVerification; }
+  inline void SetS3BucketOwnerVerification(bool value) {
+    m_s3BucketOwnerVerificationHasBeenSet = true;
+    m_s3BucketOwnerVerification = value;
+  }
+  inline DescribeMlflowTrackingServerResult& WithS3BucketOwnerVerification(bool value) {
+    SetS3BucketOwnerVerification(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -347,6 +381,10 @@ class DescribeMlflowTrackingServerResult {
 
   UserContext m_lastModifiedBy;
 
+  Aws::String m_s3BucketOwnerAccountId;
+
+  bool m_s3BucketOwnerVerification{false};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trackingServerArnHasBeenSet = false;
@@ -365,6 +403,8 @@ class DescribeMlflowTrackingServerResult {
   bool m_createdByHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;
+  bool m_s3BucketOwnerAccountIdHasBeenSet = false;
+  bool m_s3BucketOwnerVerificationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -40,6 +40,7 @@
 #include <aws/mpa/model/ListSessionsResult.h>
 #include <aws/mpa/model/ListTagsForResourceResult.h>
 #include <aws/mpa/model/StartActiveApprovalTeamDeletionResult.h>
+#include <aws/mpa/model/StartApprovalTeamBaselineResult.h>
 #include <aws/mpa/model/TagResourceResult.h>
 #include <aws/mpa/model/UntagResourceResult.h>
 #include <aws/mpa/model/UpdateApprovalTeamResult.h>
@@ -94,6 +95,7 @@ class ListResourcePoliciesRequest;
 class ListSessionsRequest;
 class ListTagsForResourceRequest;
 class StartActiveApprovalTeamDeletionRequest;
+class StartApprovalTeamBaselineRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateApprovalTeamRequest;
@@ -118,6 +120,7 @@ typedef Aws::Utils::Outcome<ListResourcePoliciesResult, MPAError> ListResourcePo
 typedef Aws::Utils::Outcome<ListSessionsResult, MPAError> ListSessionsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, MPAError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<StartActiveApprovalTeamDeletionResult, MPAError> StartActiveApprovalTeamDeletionOutcome;
+typedef Aws::Utils::Outcome<StartApprovalTeamBaselineResult, MPAError> StartApprovalTeamBaselineOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, MPAError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, MPAError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateApprovalTeamResult, MPAError> UpdateApprovalTeamOutcome;
@@ -142,6 +145,7 @@ typedef std::future<ListResourcePoliciesOutcome> ListResourcePoliciesOutcomeCall
 typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<StartActiveApprovalTeamDeletionOutcome> StartActiveApprovalTeamDeletionOutcomeCallable;
+typedef std::future<StartApprovalTeamBaselineOutcome> StartApprovalTeamBaselineOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateApprovalTeamOutcome> UpdateApprovalTeamOutcomeCallable;
@@ -207,6 +211,9 @@ typedef std::function<void(const MPAClient*, const Model::StartActiveApprovalTea
                            const Model::StartActiveApprovalTeamDeletionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartActiveApprovalTeamDeletionResponseReceivedHandler;
+typedef std::function<void(const MPAClient*, const Model::StartApprovalTeamBaselineRequest&, const Model::StartApprovalTeamBaselineOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartApprovalTeamBaselineResponseReceivedHandler;
 typedef std::function<void(const MPAClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

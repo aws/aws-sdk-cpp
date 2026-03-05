@@ -202,6 +202,43 @@ class CreateMlflowTrackingServerRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for
+   * artifact storage. Defaults to caller's account ID if not provided.</p>
+   */
+  inline const Aws::String& GetS3BucketOwnerAccountId() const { return m_s3BucketOwnerAccountId; }
+  inline bool S3BucketOwnerAccountIdHasBeenSet() const { return m_s3BucketOwnerAccountIdHasBeenSet; }
+  template <typename S3BucketOwnerAccountIdT = Aws::String>
+  void SetS3BucketOwnerAccountId(S3BucketOwnerAccountIdT&& value) {
+    m_s3BucketOwnerAccountIdHasBeenSet = true;
+    m_s3BucketOwnerAccountId = std::forward<S3BucketOwnerAccountIdT>(value);
+  }
+  template <typename S3BucketOwnerAccountIdT = Aws::String>
+  CreateMlflowTrackingServerRequest& WithS3BucketOwnerAccountId(S3BucketOwnerAccountIdT&& value) {
+    SetS3BucketOwnerAccountId(std::forward<S3BucketOwnerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Enable Amazon S3 Ownership checks when interacting with Amazon S3 buckets
+   * from a SageMaker Managed MLflow Tracking Server. Defaults to <code>True</code>
+   * if not provided. </p>
+   */
+  inline bool GetS3BucketOwnerVerification() const { return m_s3BucketOwnerVerification; }
+  inline bool S3BucketOwnerVerificationHasBeenSet() const { return m_s3BucketOwnerVerificationHasBeenSet; }
+  inline void SetS3BucketOwnerVerification(bool value) {
+    m_s3BucketOwnerVerificationHasBeenSet = true;
+    m_s3BucketOwnerVerification = value;
+  }
+  inline CreateMlflowTrackingServerRequest& WithS3BucketOwnerVerification(bool value) {
+    SetS3BucketOwnerVerification(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_trackingServerName;
 
@@ -218,6 +255,10 @@ class CreateMlflowTrackingServerRequest : public SageMakerRequest {
   Aws::String m_weeklyMaintenanceWindowStart;
 
   Aws::Vector<Tag> m_tags;
+
+  Aws::String m_s3BucketOwnerAccountId;
+
+  bool m_s3BucketOwnerVerification{false};
   bool m_trackingServerNameHasBeenSet = false;
   bool m_artifactStoreUriHasBeenSet = false;
   bool m_trackingServerSizeHasBeenSet = false;
@@ -226,6 +267,8 @@ class CreateMlflowTrackingServerRequest : public SageMakerRequest {
   bool m_automaticModelRegistrationHasBeenSet = false;
   bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_s3BucketOwnerAccountIdHasBeenSet = false;
+  bool m_s3BucketOwnerVerificationHasBeenSet = false;
 };
 
 }  // namespace Model
