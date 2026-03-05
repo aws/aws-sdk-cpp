@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/MatchedPlayerSession.h>
+#include <aws/gamelift/model/PlayerGatewayStatus.h>
 
 #include <utility>
 
@@ -142,6 +143,30 @@ class GameSessionConnectionInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The current status of player gateway for the game session. Note, even if a
+   * fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway
+   * might not be available in a specific location. For more information about
+   * locations where player gateway is supported, see <a
+   * href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">supported
+   * locations</a>.</p> <p>Possible values include:</p> <ul> <li> <p>
+   * <code>ENABLED</code> -- Player gateway is available for this game session.</p>
+   * </li> <li> <p> <code>DISABLED</code> -- Player gateway is not available for this
+   * game session.</p> </li> </ul>
+   */
+  inline PlayerGatewayStatus GetPlayerGatewayStatus() const { return m_playerGatewayStatus; }
+  inline bool PlayerGatewayStatusHasBeenSet() const { return m_playerGatewayStatusHasBeenSet; }
+  inline void SetPlayerGatewayStatus(PlayerGatewayStatus value) {
+    m_playerGatewayStatusHasBeenSet = true;
+    m_playerGatewayStatus = value;
+  }
+  inline GameSessionConnectionInfo& WithPlayerGatewayStatus(PlayerGatewayStatus value) {
+    SetPlayerGatewayStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gameSessionArn;
 
@@ -152,11 +177,14 @@ class GameSessionConnectionInfo {
   int m_port{0};
 
   Aws::Vector<MatchedPlayerSession> m_matchedPlayerSessions;
+
+  PlayerGatewayStatus m_playerGatewayStatus{PlayerGatewayStatus::NOT_SET};
   bool m_gameSessionArnHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
   bool m_dnsNameHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_matchedPlayerSessionsHasBeenSet = false;
+  bool m_playerGatewayStatusHasBeenSet = false;
 };
 
 }  // namespace Model

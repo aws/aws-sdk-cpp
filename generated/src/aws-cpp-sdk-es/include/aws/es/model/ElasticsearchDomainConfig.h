@@ -12,6 +12,7 @@
 #include <aws/es/model/AutoTuneOptionsStatus.h>
 #include <aws/es/model/ChangeProgressDetails.h>
 #include <aws/es/model/CognitoOptionsStatus.h>
+#include <aws/es/model/DeploymentStrategyOptionsStatus.h>
 #include <aws/es/model/DomainEndpointOptionsStatus.h>
 #include <aws/es/model/EBSOptionsStatus.h>
 #include <aws/es/model/ElasticsearchClusterConfigStatus.h>
@@ -353,6 +354,24 @@ class ElasticsearchDomainConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies <code>DeploymentStrategyOptions</code> for the domain. </p>
+   */
+  inline const DeploymentStrategyOptionsStatus& GetDeploymentStrategyOptions() const { return m_deploymentStrategyOptions; }
+  inline bool DeploymentStrategyOptionsHasBeenSet() const { return m_deploymentStrategyOptionsHasBeenSet; }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOptionsStatus>
+  void SetDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    m_deploymentStrategyOptionsHasBeenSet = true;
+    m_deploymentStrategyOptions = std::forward<DeploymentStrategyOptionsT>(value);
+  }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOptionsStatus>
+  ElasticsearchDomainConfig& WithDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    SetDeploymentStrategyOptions(std::forward<DeploymentStrategyOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ElasticsearchVersionStatus m_elasticsearchVersion;
 
@@ -385,6 +404,8 @@ class ElasticsearchDomainConfig {
   ChangeProgressDetails m_changeProgressDetails;
 
   Aws::Vector<ModifyingProperties> m_modifyingProperties;
+
+  DeploymentStrategyOptionsStatus m_deploymentStrategyOptions;
   bool m_elasticsearchVersionHasBeenSet = false;
   bool m_elasticsearchClusterConfigHasBeenSet = false;
   bool m_eBSOptionsHasBeenSet = false;
@@ -401,6 +422,7 @@ class ElasticsearchDomainConfig {
   bool m_autoTuneOptionsHasBeenSet = false;
   bool m_changeProgressDetailsHasBeenSet = false;
   bool m_modifyingPropertiesHasBeenSet = false;
+  bool m_deploymentStrategyOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -111,6 +111,9 @@
 #include <aws/opensearch/model/DeleteVpcEndpointRequest.h>
 #include <aws/opensearch/model/DeleteVpcEndpointResult.h>
 #include <aws/opensearch/model/DeploymentStatus.h>
+#include <aws/opensearch/model/DeploymentStrategy.h>
+#include <aws/opensearch/model/DeploymentStrategyOptions.h>
+#include <aws/opensearch/model/DeploymentStrategyOptionsStatus.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesRequest.h>
 #include <aws/opensearch/model/DescribeDomainAutoTunesResult.h>
 #include <aws/opensearch/model/DescribeDomainChangeProgressRequest.h>

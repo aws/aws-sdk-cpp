@@ -20,7 +20,7 @@ namespace QuickSight {
 namespace Model {
 
 /**
- * <p>The self-upgrade configuration for the Quick Suite account.</p><p><h3>See
+ * <p>The self-upgrade configuration for the Quick account.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SelfUpgradeConfiguration">AWS
  * API Reference</a></p>
@@ -34,9 +34,9 @@ class SelfUpgradeConfiguration {
 
   ///@{
   /**
-   * <p>Status set for the self-upgrade configuration for the Quick Suite account. It
-   * can contain the following values:</p> <ul> <li> <p> <code>AUTO_APPROVAL</code>:
-   * All the self-upgrade requests will be auto approved.</p> </li> <li> <p>
+   * <p>Status set for the self-upgrade configuration for the Quick account. It can
+   * contain the following values:</p> <ul> <li> <p> <code>AUTO_APPROVAL</code>: All
+   * the self-upgrade requests will be auto approved.</p> </li> <li> <p>
    * <code>ADMIN_APPROVAL</code>: All the self-upgrade requests will require admin
    * approval.</p> </li> </ul>
    */

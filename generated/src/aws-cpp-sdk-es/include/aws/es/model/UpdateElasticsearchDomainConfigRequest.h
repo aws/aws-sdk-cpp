@@ -11,6 +11,7 @@
 #include <aws/es/model/AdvancedSecurityOptionsInput.h>
 #include <aws/es/model/AutoTuneOptions.h>
 #include <aws/es/model/CognitoOptions.h>
+#include <aws/es/model/DeploymentStrategyOptions.h>
 #include <aws/es/model/DomainEndpointOptions.h>
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/ElasticsearchClusterConfig.h>
@@ -342,6 +343,24 @@ class UpdateElasticsearchDomainConfigRequest : public ElasticsearchServiceReques
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the deployment strategy options.</p>
+   */
+  inline const DeploymentStrategyOptions& GetDeploymentStrategyOptions() const { return m_deploymentStrategyOptions; }
+  inline bool DeploymentStrategyOptionsHasBeenSet() const { return m_deploymentStrategyOptionsHasBeenSet; }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOptions>
+  void SetDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    m_deploymentStrategyOptionsHasBeenSet = true;
+    m_deploymentStrategyOptions = std::forward<DeploymentStrategyOptionsT>(value);
+  }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOptions>
+  UpdateElasticsearchDomainConfigRequest& WithDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    SetDeploymentStrategyOptions(std::forward<DeploymentStrategyOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
@@ -372,6 +391,8 @@ class UpdateElasticsearchDomainConfigRequest : public ElasticsearchServiceReques
   AutoTuneOptions m_autoTuneOptions;
 
   bool m_dryRun{false};
+
+  DeploymentStrategyOptions m_deploymentStrategyOptions;
   bool m_domainNameHasBeenSet = false;
   bool m_elasticsearchClusterConfigHasBeenSet = false;
   bool m_eBSOptionsHasBeenSet = false;
@@ -387,6 +408,7 @@ class UpdateElasticsearchDomainConfigRequest : public ElasticsearchServiceReques
   bool m_encryptionAtRestOptionsHasBeenSet = false;
   bool m_autoTuneOptionsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
+  bool m_deploymentStrategyOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

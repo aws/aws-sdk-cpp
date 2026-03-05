@@ -42,8 +42,8 @@ class AccountInfo {
   /**
    * <p>The account name that you provided for the Amazon Quick Sight subscription in
    * your Amazon Web Services account. You create this name when you sign up for
-   * Quick Suite. It's unique over all of Amazon Web Services, and it appears only
-   * when users sign in.</p>
+   * Quick. It's unique over all of Amazon Web Services, and it appears only when
+   * users sign in.</p>
    */
   inline const Aws::String& GetAccountName() const { return m_accountName; }
   inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }

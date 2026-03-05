@@ -31,7 +31,7 @@ class DescribeSelfUpgradeConfigurationResult {
 
   ///@{
   /**
-   * <p>The self-upgrade configuration for the Quick Suite account.</p>
+   * <p>The self-upgrade configuration for the Quick account.</p>
    */
   inline const SelfUpgradeConfiguration& GetSelfUpgradeConfiguration() const { return m_selfUpgradeConfiguration; }
   template <typename SelfUpgradeConfigurationT = SelfUpgradeConfiguration>

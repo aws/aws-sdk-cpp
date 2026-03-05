@@ -243,10 +243,14 @@ class UpdateMatchmakingConfigurationRequest : public GameLiftRequest {
    * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. This information
    * is added to the new <code>GameSession</code> object that is created for a
    * successful match. This parameter is not used if <code>FlexMatchMode</code> is
-   * set to <code>STANDALONE</code>.</p>  <p>Avoid using periods (".") in
-   * property keys if you plan to search for game sessions by properties. Property
-   * keys containing periods cannot be searched and will be filtered out from search
-   * results due to search index limitations.</p>
+   * set to <code>STANDALONE</code>.</p>  <ul> <li> <p>Avoid using periods
+   * (".") in property keys if you plan to search for game sessions by properties.
+   * Property keys containing periods cannot be searched and will be filtered out
+   * from search results due to search index limitations.</p> </li> <li> <p>If you
+   * use SearchGameSessions API, there is a limit of 500 game property keys across
+   * all game sessions and all fleets per region. If the limit is exceeded, there
+   * will potentially be game session entries missing from SearchGameSessions API
+   * results.</p> </li> </ul>
    */
   inline const Aws::Vector<GameProperty>& GetGameProperties() const { return m_gameProperties; }
   inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }

@@ -26,6 +26,10 @@ LocationState& LocationState::operator=(JsonView jsonValue) {
     m_status = FleetStatusMapper::GetFleetStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PlayerGatewayStatus")) {
+    m_playerGatewayStatus = PlayerGatewayStatusMapper::GetPlayerGatewayStatusForName(jsonValue.GetString("PlayerGatewayStatus"));
+    m_playerGatewayStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue LocationState::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("Status", FleetStatusMapper::GetNameForFleetStatus(m_status));
+  }
+
+  if (m_playerGatewayStatusHasBeenSet) {
+    payload.WithString("PlayerGatewayStatus", PlayerGatewayStatusMapper::GetNameForPlayerGatewayStatus(m_playerGatewayStatus));
   }
 
   return payload;

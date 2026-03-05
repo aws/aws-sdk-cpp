@@ -514,6 +514,22 @@ class Capabilities {
 
   ///@{
   /**
+   * <p>The ability to review and approve sharing requests of Flows.</p>
+   */
+  inline CapabilityState GetApproveFlowShareRequests() const { return m_approveFlowShareRequests; }
+  inline bool ApproveFlowShareRequestsHasBeenSet() const { return m_approveFlowShareRequestsHasBeenSet; }
+  inline void SetApproveFlowShareRequests(CapabilityState value) {
+    m_approveFlowShareRequestsHasBeenSet = true;
+    m_approveFlowShareRequests = value;
+  }
+  inline Capabilities& WithApproveFlowShareRequests(CapabilityState value) {
+    SetApproveFlowShareRequests(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ability to use internet to enhance results in Chat Agents, Flows, and
    * Quick Research. Web search queries will be processed securely in an Amazon Web
    * Services region <code>us-east-1</code>.</p>
@@ -3323,6 +3339,70 @@ class Capabilities {
 
   ///@{
   /**
+   * <p>The ability to perform Topic-related actions.</p>
+   */
+  inline CapabilityState GetTopic() const { return m_topic; }
+  inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
+  inline void SetTopic(CapabilityState value) {
+    m_topicHasBeenSet = true;
+    m_topic = value;
+  }
+  inline Capabilities& WithTopic(CapabilityState value) {
+    SetTopic(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to Edit Visual with AI</p>
+   */
+  inline CapabilityState GetEditVisualWithQ() const { return m_editVisualWithQ; }
+  inline bool EditVisualWithQHasBeenSet() const { return m_editVisualWithQHasBeenSet; }
+  inline void SetEditVisualWithQ(CapabilityState value) {
+    m_editVisualWithQHasBeenSet = true;
+    m_editVisualWithQ = value;
+  }
+  inline Capabilities& WithEditVisualWithQ(CapabilityState value) {
+    SetEditVisualWithQ(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to Build Calculation with AI</p>
+   */
+  inline CapabilityState GetBuildCalculatedFieldWithQ() const { return m_buildCalculatedFieldWithQ; }
+  inline bool BuildCalculatedFieldWithQHasBeenSet() const { return m_buildCalculatedFieldWithQHasBeenSet; }
+  inline void SetBuildCalculatedFieldWithQ(CapabilityState value) {
+    m_buildCalculatedFieldWithQHasBeenSet = true;
+    m_buildCalculatedFieldWithQ = value;
+  }
+  inline Capabilities& WithBuildCalculatedFieldWithQ(CapabilityState value) {
+    SetBuildCalculatedFieldWithQ(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to Create Executive Summary</p>
+   */
+  inline CapabilityState GetCreateDashboardExecutiveSummaryWithQ() const { return m_createDashboardExecutiveSummaryWithQ; }
+  inline bool CreateDashboardExecutiveSummaryWithQHasBeenSet() const { return m_createDashboardExecutiveSummaryWithQHasBeenSet; }
+  inline void SetCreateDashboardExecutiveSummaryWithQ(CapabilityState value) {
+    m_createDashboardExecutiveSummaryWithQHasBeenSet = true;
+    m_createDashboardExecutiveSummaryWithQ = value;
+  }
+  inline Capabilities& WithCreateDashboardExecutiveSummaryWithQ(CapabilityState value) {
+    SetCreateDashboardExecutiveSummaryWithQ(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ability to perform space-related actions.</p>
    */
   inline CapabilityState GetSpace() const { return m_space; }
@@ -3400,6 +3480,22 @@ class Capabilities {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ability to perform Extension-related actions.</p>
+   */
+  inline CapabilityState GetExtension() const { return m_extension; }
+  inline bool ExtensionHasBeenSet() const { return m_extensionHasBeenSet; }
+  inline void SetExtension(CapabilityState value) {
+    m_extensionHasBeenSet = true;
+    m_extension = value;
+  }
+  inline Capabilities& WithExtension(CapabilityState value) {
+    SetExtension(value);
+    return *this;
+  }
+  ///@}
  private:
   CapabilityState m_exportToCsv{CapabilityState::NOT_SET};
 
@@ -3460,6 +3556,8 @@ class Capabilities {
   CapabilityState m_useBedrockModels{CapabilityState::NOT_SET};
 
   CapabilityState m_performFlowUiTask{CapabilityState::NOT_SET};
+
+  CapabilityState m_approveFlowShareRequests{CapabilityState::NOT_SET};
 
   CapabilityState m_useAgentWebSearch{CapabilityState::NOT_SET};
 
@@ -3811,6 +3909,14 @@ class Capabilities {
 
   CapabilityState m_useNewRelicAction{CapabilityState::NOT_SET};
 
+  CapabilityState m_topic{CapabilityState::NOT_SET};
+
+  CapabilityState m_editVisualWithQ{CapabilityState::NOT_SET};
+
+  CapabilityState m_buildCalculatedFieldWithQ{CapabilityState::NOT_SET};
+
+  CapabilityState m_createDashboardExecutiveSummaryWithQ{CapabilityState::NOT_SET};
+
   CapabilityState m_space{CapabilityState::NOT_SET};
 
   CapabilityState m_chatAgent{CapabilityState::NOT_SET};
@@ -3820,6 +3926,8 @@ class Capabilities {
   CapabilityState m_research{CapabilityState::NOT_SET};
 
   CapabilityState m_selfUpgradeUserRole{CapabilityState::NOT_SET};
+
+  CapabilityState m_extension{CapabilityState::NOT_SET};
   bool m_exportToCsvHasBeenSet = false;
   bool m_exportToExcelHasBeenSet = false;
   bool m_exportToPdfHasBeenSet = false;
@@ -3850,6 +3958,7 @@ class Capabilities {
   bool m_publishWithoutApprovalHasBeenSet = false;
   bool m_useBedrockModelsHasBeenSet = false;
   bool m_performFlowUiTaskHasBeenSet = false;
+  bool m_approveFlowShareRequestsHasBeenSet = false;
   bool m_useAgentWebSearchHasBeenSet = false;
   bool m_knowledgeBaseHasBeenSet = false;
   bool m_actionHasBeenSet = false;
@@ -4025,11 +4134,16 @@ class Capabilities {
   bool m_createAndUpdateNewRelicActionHasBeenSet = false;
   bool m_shareNewRelicActionHasBeenSet = false;
   bool m_useNewRelicActionHasBeenSet = false;
+  bool m_topicHasBeenSet = false;
+  bool m_editVisualWithQHasBeenSet = false;
+  bool m_buildCalculatedFieldWithQHasBeenSet = false;
+  bool m_createDashboardExecutiveSummaryWithQHasBeenSet = false;
   bool m_spaceHasBeenSet = false;
   bool m_chatAgentHasBeenSet = false;
   bool m_createChatAgentsHasBeenSet = false;
   bool m_researchHasBeenSet = false;
   bool m_selfUpgradeUserRoleHasBeenSet = false;
+  bool m_extensionHasBeenSet = false;
 };
 
 }  // namespace Model

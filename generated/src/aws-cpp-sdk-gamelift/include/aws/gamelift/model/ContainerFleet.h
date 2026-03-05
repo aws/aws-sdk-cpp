@@ -16,6 +16,7 @@
 #include <aws/gamelift/model/GameSessionCreationLimitPolicy.h>
 #include <aws/gamelift/model/IpPermission.h>
 #include <aws/gamelift/model/LogConfiguration.h>
+#include <aws/gamelift/model/PlayerGatewayMode.h>
 #include <aws/gamelift/model/ProtectionPolicy.h>
 
 #include <utility>
@@ -505,6 +506,27 @@ class ContainerFleet {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether player gateway is enabled for this container fleet. Player
+   * gateway provides benefits such as DDoS protection with negligible impact to
+   * latency.</p> <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients
+   * can use player gateway to connect with the game server. If
+   * <code>DISABLED</code>, game clients cannot use player gateway. Instead, they
+   * have to directly connect to the game server.</p>
+   */
+  inline PlayerGatewayMode GetPlayerGatewayMode() const { return m_playerGatewayMode; }
+  inline bool PlayerGatewayModeHasBeenSet() const { return m_playerGatewayModeHasBeenSet; }
+  inline void SetPlayerGatewayMode(PlayerGatewayMode value) {
+    m_playerGatewayModeHasBeenSet = true;
+    m_playerGatewayMode = value;
+  }
+  inline ContainerFleet& WithPlayerGatewayMode(PlayerGatewayMode value) {
+    SetPlayerGatewayMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fleetId;
 
@@ -549,6 +571,8 @@ class ContainerFleet {
   LogConfiguration m_logConfiguration;
 
   Aws::Vector<ContainerFleetLocationAttributes> m_locationAttributes;
+
+  PlayerGatewayMode m_playerGatewayMode{PlayerGatewayMode::NOT_SET};
   bool m_fleetIdHasBeenSet = false;
   bool m_fleetArnHasBeenSet = false;
   bool m_fleetRoleArnHasBeenSet = false;
@@ -571,6 +595,7 @@ class ContainerFleet {
   bool m_deploymentDetailsHasBeenSet = false;
   bool m_logConfigurationHasBeenSet = false;
   bool m_locationAttributesHasBeenSet = false;
+  bool m_playerGatewayModeHasBeenSet = false;
 };
 
 }  // namespace Model

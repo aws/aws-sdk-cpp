@@ -133,10 +133,14 @@ class UpdateGameSessionRequest : public GameLiftRequest {
    * new properties and modifies existing properties. There is no way to delete
    * properties. For an example, see <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
-   * the value of a game property</a>. </p>  <p>Avoid using periods (".") in
-   * property keys if you plan to search for game sessions by properties. Property
-   * keys containing periods cannot be searched and will be filtered out from search
-   * results due to search index limitations.</p>
+   * the value of a game property</a>. </p>  <ul> <li> <p>Avoid using periods
+   * (".") in property keys if you plan to search for game sessions by properties.
+   * Property keys containing periods cannot be searched and will be filtered out
+   * from search results due to search index limitations.</p> </li> <li> <p>If you
+   * use SearchGameSessions API, there is a limit of 500 game property keys across
+   * all game sessions and all fleets per region. If the limit is exceeded, there
+   * will potentially be game session entries missing from SearchGameSessions API
+   * results.</p> </li> </ul>
    */
   inline const Aws::Vector<GameProperty>& GetGameProperties() const { return m_gameProperties; }
   inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
