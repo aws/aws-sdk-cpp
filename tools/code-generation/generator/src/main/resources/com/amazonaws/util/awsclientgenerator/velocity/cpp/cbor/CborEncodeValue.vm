@@ -3,21 +3,39 @@ encoder.WriteText(Aws::Crt::ByteCursorFromCString(${shapeMember.name}Mapper::Get
 #elseif($shapeMember.list)
 encoder.WriteArrayStart(${value}.size());
 for(const auto& item_${recursionDepth} : ${value}) {
-#set($shapeMember = $shapeMember.listMember.shape)
+#if($currentShape.sparse)
+    if (!item_${recursionDepth}.has_value()) { encoder.WriteNull(); } else {
+    const auto& sparseItem_${recursionDepth} = *item_${recursionDepth};
+#set($value = "sparseItem_${recursionDepth}")
+#else
 #set($value = "item_${recursionDepth}")
+#end
+#set($shapeMember = $shapeMember.listMember.shape)
 #set($recursionDepth = $recursionDepth + 1)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
 #set($recursionDepth = $recursionDepth - 1)
+#if($currentShape.sparse)
+    } // end has_value
+#end
 }
 #elseif($shapeMember.map)
 encoder.WriteMapStart(${value}.size());
 for(const auto& item_${recursionDepth} : ${value}) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_${recursionDepth}.first.c_str()));
-#set($shapeMember = $shapeMember.mapValue.shape)
+#if($member.shape.sparse)
+    if (!item_${recursionDepth}.second.has_value()) { encoder.WriteNull(); } else {
+    const auto& sparseVal_${recursionDepth} = *item_${recursionDepth}.second;
+#set($value = "sparseVal_${recursionDepth}")
+#else
 #set($value = "item_${recursionDepth}.second")
+#end
+#set($shapeMember = $shapeMember.mapValue.shape)
 #set($recursionDepth = $recursionDepth + 1)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
 #set($recursionDepth = $recursionDepth - 1)
+#if($member.shape.sparse)
+    } // end has_value
+#end
 }
 #elseif($shapeMember.blob)
 encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(${value}.GetUnderlyingData())));

@@ -23,6 +23,23 @@
 #set($macro.listItemVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testValidateParam.key)})}Item")
 #end
 #if($macro.listMemberShape.list || $macro.listMemberShape.map || $macro.listMemberShape.structure)
+#if($listShape.sparse && $macro.listMemberShape.structure)
+${macro.spaces}const Aws::Vector<Aws::Crt::Optional<$CppViewHelper.computeCppType($macro.listMemberShape)>>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.listItemVarName}.size());
+#foreach($arrayItem in $testValidateParamVal)
+${macro.spaces}{
+#if($arrayItem.isNull())
+  ${macro.spaces}EXPECT_FALSE(${macro.listItemVarName}.at(${foreach.index}).has_value());
+#else
+  ${macro.spaces}EXPECT_TRUE(${macro.listItemVarName}.at(${foreach.index}).has_value());
+  ${macro.spaces}const ${macro.listMemberShape.name}& ${macro.listItemVarName}Ref = *${macro.listItemVarName}.at(${foreach.index});
+#foreach($innerParam in $arrayItem.fields())
+#ValidateParamsMacro("${macro.spaces}  " "${macro.listItemVarName}Ref" $macro.listMemberShape $innerParam)
+#end
+#end
+${macro.spaces}}
+#end
+#else
 ${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${dstObject}.${macro.fieldGetter}.size());
 #foreach($arrayItem in $testValidateParamVal)
 ${macro.spaces}{
@@ -47,6 +64,7 @@ ${macro.spaces}{
 #end##list
 ${macro.spaces}}
 #end##foreach
+#end
 #else## not (list || map || structure)
 #if($listShape.sparse)
 ${macro.spaces}const Aws::Vector<Aws::Crt::Optional<$CppViewHelper.computeCppType($macro.listMemberShape)>>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter};

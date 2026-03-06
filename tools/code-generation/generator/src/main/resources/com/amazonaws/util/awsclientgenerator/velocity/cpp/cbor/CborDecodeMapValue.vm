@@ -1,6 +1,14 @@
 auto key_${recursionDepth} = decoder->PopNextTextVal();
 if (key_${recursionDepth}.has_value()) {
     Aws::String keyStr_${recursionDepth} = Aws::String(reinterpret_cast<const char*>(key_${recursionDepth}.value().ptr), key_${recursionDepth}.value().len);
+#if($member.shape.sparse)
+    {
+    auto nullPeek_${recursionDepth} = decoder->PeekType();
+    if (nullPeek_${recursionDepth}.has_value() && nullPeek_${recursionDepth}.value() == Aws::Crt::Cbor::CborType::Null) {
+        decoder->ConsumeNextSingleElement();
+        ${value}[keyStr_${recursionDepth}];
+    } else {
+#end
 #if($shapeMember.enum)
     auto ${containerVar} = decoder->PopNextTextVal();
     if (${containerVar}.has_value()) {
@@ -213,5 +221,9 @@ if(peekType_${recursionDepth}){
         }
     }
 }
+#end
+#if($member.shape.sparse)
+    } // end else (non-null sparse value)
+    }
 #end
 }

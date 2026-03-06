@@ -25,6 +25,24 @@ ${macro.spaces}EXPECT_STREQ(R"j(${mapItem.value})j", ${macro.mapVarName}.at("$ma
 #break
 #end
 #if($mapShape.mapValue.shape.structure)
+#if($mapShape.sparse)
+${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($mapShape.mapKey.shape), Aws::Crt::Optional<$CppViewHelper.computeCppType($mapShape.mapValue.shape)>>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
+#foreach($mapItem in $testValidateParamVal.fields())
+${macro.spaces}{
+  ${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.find("$mapItem.key") != ${macro.mapVarName}.end());
+#if($mapItem.value.isNull())
+  ${macro.spaces}EXPECT_FALSE(${macro.mapVarName}.at("$mapItem.key").has_value());
+#else
+  ${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.at("$mapItem.key").has_value());
+  ${macro.spaces}const $CppViewHelper.computeCppType($mapShape.mapValue.shape)& $macro.mapItemVarName = *${macro.mapVarName}.at("$mapItem.key");
+#foreach($innerParam in $mapItem.value.fields())
+#ValidateParamsMacro("${macro.spaces}  " $macro.mapItemVarName $mapShape.mapValue.shape $innerParam)
+#end
+#end
+${macro.spaces}}
+#end
+#else
 ${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($mapShape.mapKey.shape), $CppViewHelper.computeCppType($mapShape.mapValue.shape)>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
 ${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
 #foreach($mapItem in $testValidateParamVal.fields())
@@ -35,6 +53,7 @@ ${macro.spaces}{
 #ValidateParamsMacro("${macro.spaces}  " $macro.mapItemVarName $mapShape.mapValue.shape $innerParam)
 #end
 ${macro.spaces}}
+#end
 #end
 #break
 #end
