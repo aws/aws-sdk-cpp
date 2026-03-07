@@ -57,6 +57,9 @@
 #include <aws/bedrock-agentcore-control/model/ConsolidationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ContainerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Content.h>
+#include <aws/bedrock-agentcore-control/model/ContentConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ContentLevel.h>
+#include <aws/bedrock-agentcore-control/model/ContentType.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeEndpointResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateAgentRuntimeRequest.h>
@@ -219,6 +222,7 @@
 #include <aws/bedrock-agentcore-control/model/InvocationConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/InvocationConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/KeyType.h>
+#include <aws/bedrock-agentcore-control/model/KinesisResource.h>
 #include <aws/bedrock-agentcore-control/model/KmsConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LambdaInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
@@ -351,6 +355,8 @@
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationRequest.h>
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationResult.h>
 #include <aws/bedrock-agentcore-control/model/StrategyConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/StreamDeliveryResource.h>
+#include <aws/bedrock-agentcore-control/model/StreamDeliveryResources.h>
 #include <aws/bedrock-agentcore-control/model/SummaryConsolidationOverride.h>
 #include <aws/bedrock-agentcore-control/model/SummaryMemoryStrategyInput.h>
 #include <aws/bedrock-agentcore-control/model/SummaryOverrideConfigurationInput.h>

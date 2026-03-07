@@ -38,6 +38,10 @@ GetFarmResult& GetFarmResult::operator=(const Aws::AmazonWebServiceResult<JsonVa
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("costScaleFactor")) {
+    m_costScaleFactor = jsonValue.GetDouble("costScaleFactor");
+    m_costScaleFactorHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;

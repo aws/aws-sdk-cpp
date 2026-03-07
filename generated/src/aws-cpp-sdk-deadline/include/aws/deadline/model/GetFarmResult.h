@@ -102,6 +102,21 @@ class GetFarmResult {
 
   ///@{
   /**
+   * <p>The cost scale factor applied on the farm.</p>
+   */
+  inline double GetCostScaleFactor() const { return m_costScaleFactor; }
+  inline void SetCostScaleFactor(double value) {
+    m_costScaleFactorHasBeenSet = true;
+    m_costScaleFactor = value;
+  }
+  inline GetFarmResult& WithCostScaleFactor(double value) {
+    SetCostScaleFactor(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the resource was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -193,6 +208,8 @@ class GetFarmResult {
 
   Aws::String m_kmsKeyArn;
 
+  double m_costScaleFactor{0.0};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_createdBy;
@@ -207,6 +224,7 @@ class GetFarmResult {
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
+  bool m_costScaleFactorHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;

@@ -28,6 +28,10 @@ Aws::String CreateFarmRequest::SerializePayload() const {
     payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
+  if (m_costScaleFactorHasBeenSet) {
+    payload.WithDouble("costScaleFactor", m_costScaleFactor);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

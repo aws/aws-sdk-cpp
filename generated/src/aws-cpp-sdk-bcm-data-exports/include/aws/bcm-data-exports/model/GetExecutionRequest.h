@@ -32,24 +32,6 @@ class GetExecutionRequest : public BCMDataExportsRequest {
 
   ///@{
   /**
-   * <p>The ID for this specific execution.</p>
-   */
-  inline const Aws::String& GetExecutionId() const { return m_executionId; }
-  inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-  template <typename ExecutionIdT = Aws::String>
-  void SetExecutionId(ExecutionIdT&& value) {
-    m_executionIdHasBeenSet = true;
-    m_executionId = std::forward<ExecutionIdT>(value);
-  }
-  template <typename ExecutionIdT = Aws::String>
-  GetExecutionRequest& WithExecutionId(ExecutionIdT&& value) {
-    SetExecutionId(std::forward<ExecutionIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon Resource Name (ARN) of the Export object that generated this
    * specific execution.</p>
    */
@@ -66,12 +48,30 @@ class GetExecutionRequest : public BCMDataExportsRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_executionId;
 
+  ///@{
+  /**
+   * <p>The ID for this specific execution.</p>
+   */
+  inline const Aws::String& GetExecutionId() const { return m_executionId; }
+  inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
+  template <typename ExecutionIdT = Aws::String>
+  void SetExecutionId(ExecutionIdT&& value) {
+    m_executionIdHasBeenSet = true;
+    m_executionId = std::forward<ExecutionIdT>(value);
+  }
+  template <typename ExecutionIdT = Aws::String>
+  GetExecutionRequest& WithExecutionId(ExecutionIdT&& value) {
+    SetExecutionId(std::forward<ExecutionIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_exportArn;
-  bool m_executionIdHasBeenSet = false;
+
+  Aws::String m_executionId;
   bool m_exportArnHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
 };
 
 }  // namespace Model

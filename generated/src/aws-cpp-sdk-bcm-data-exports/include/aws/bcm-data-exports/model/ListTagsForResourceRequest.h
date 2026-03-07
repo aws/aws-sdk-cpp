@@ -32,6 +32,24 @@ class ListTagsForResourceRequest : public BCMDataExportsRequest {
 
   ///@{
   /**
+   * <p>The unique identifier for the resource.</p>
+   */
+  inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+  inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+  template <typename ResourceArnT = Aws::String>
+  void SetResourceArn(ResourceArnT&& value) {
+    m_resourceArnHasBeenSet = true;
+    m_resourceArn = std::forward<ResourceArnT>(value);
+  }
+  template <typename ResourceArnT = Aws::String>
+  ListTagsForResourceRequest& WithResourceArn(ResourceArnT&& value) {
+    SetResourceArn(std::forward<ResourceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of objects that are returned for the request.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
@@ -63,33 +81,15 @@ class ListTagsForResourceRequest : public BCMDataExportsRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier for the resource.</p>
-   */
-  inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
-  inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-  template <typename ResourceArnT = Aws::String>
-  void SetResourceArn(ResourceArnT&& value) {
-    m_resourceArnHasBeenSet = true;
-    m_resourceArn = std::forward<ResourceArnT>(value);
-  }
-  template <typename ResourceArnT = Aws::String>
-  ListTagsForResourceRequest& WithResourceArn(ResourceArnT&& value) {
-    SetResourceArn(std::forward<ResourceArnT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_resourceArn;
+
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-
-  Aws::String m_resourceArn;
+  bool m_resourceArnHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_resourceArnHasBeenSet = false;
 };
 
 }  // namespace Model

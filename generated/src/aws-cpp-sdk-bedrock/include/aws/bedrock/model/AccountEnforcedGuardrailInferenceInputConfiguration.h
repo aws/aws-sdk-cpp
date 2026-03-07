@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/InputTags.h>
+#include <aws/bedrock/model/ModelEnforcement.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -84,15 +85,37 @@ class AccountEnforcedGuardrailInferenceInputConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Model-specific information for the enforced guardrail configuration. If not
+   * present, the configuration is enforced on all models</p>
+   */
+  inline const ModelEnforcement& GetModelEnforcement() const { return m_modelEnforcement; }
+  inline bool ModelEnforcementHasBeenSet() const { return m_modelEnforcementHasBeenSet; }
+  template <typename ModelEnforcementT = ModelEnforcement>
+  void SetModelEnforcement(ModelEnforcementT&& value) {
+    m_modelEnforcementHasBeenSet = true;
+    m_modelEnforcement = std::forward<ModelEnforcementT>(value);
+  }
+  template <typename ModelEnforcementT = ModelEnforcement>
+  AccountEnforcedGuardrailInferenceInputConfiguration& WithModelEnforcement(ModelEnforcementT&& value) {
+    SetModelEnforcement(std::forward<ModelEnforcementT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_guardrailIdentifier;
 
   Aws::String m_guardrailVersion;
 
   InputTags m_inputTags{InputTags::NOT_SET};
+
+  ModelEnforcement m_modelEnforcement;
   bool m_guardrailIdentifierHasBeenSet = false;
   bool m_guardrailVersionHasBeenSet = false;
   bool m_inputTagsHasBeenSet = false;
+  bool m_modelEnforcementHasBeenSet = false;
 };
 
 }  // namespace Model

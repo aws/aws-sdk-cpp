@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String ListTagsForResourceRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
+  }
+
   if (m_maxResultsHasBeenSet) {
     payload.WithInteger("MaxResults", m_maxResults);
   }
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("NextToken", m_nextToken);
-  }
-
-  if (m_resourceArnHasBeenSet) {
-    payload.WithString("ResourceArn", m_resourceArn);
   }
 
   return payload.View().WriteReadable();

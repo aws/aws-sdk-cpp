@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String UpdateExportRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_exportHasBeenSet) {
-    payload.WithObject("Export", m_export.Jsonize());
-  }
-
   if (m_exportArnHasBeenSet) {
     payload.WithString("ExportArn", m_exportArn);
+  }
+
+  if (m_exportHasBeenSet) {
+    payload.WithObject("Export", m_export.Jsonize());
   }
 
   return payload.View().WriteReadable();

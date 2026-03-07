@@ -32,46 +32,6 @@ class GetTableResult {
 
   ///@{
   /**
-   * <p>The table description.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  GetTableResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The schema of the table.</p>
-   */
-  inline const Aws::Vector<Column>& GetSchema() const { return m_schema; }
-  template <typename SchemaT = Aws::Vector<Column>>
-  void SetSchema(SchemaT&& value) {
-    m_schemaHasBeenSet = true;
-    m_schema = std::forward<SchemaT>(value);
-  }
-  template <typename SchemaT = Aws::Vector<Column>>
-  GetTableResult& WithSchema(SchemaT&& value) {
-    SetSchema(std::forward<SchemaT>(value));
-    return *this;
-  }
-  template <typename SchemaT = Column>
-  GetTableResult& AddSchema(SchemaT&& value) {
-    m_schemaHasBeenSet = true;
-    m_schema.emplace_back(std::forward<SchemaT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the table.</p>
    */
   inline const Aws::String& GetTableName() const { return m_tableName; }
@@ -83,6 +43,23 @@ class GetTableResult {
   template <typename TableNameT = Aws::String>
   GetTableResult& WithTableName(TableNameT&& value) {
     SetTableName(std::forward<TableNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The table description.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  GetTableResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -114,6 +91,29 @@ class GetTableResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The schema of the table.</p>
+   */
+  inline const Aws::Vector<Column>& GetSchema() const { return m_schema; }
+  template <typename SchemaT = Aws::Vector<Column>>
+  void SetSchema(SchemaT&& value) {
+    m_schemaHasBeenSet = true;
+    m_schema = std::forward<SchemaT>(value);
+  }
+  template <typename SchemaT = Aws::Vector<Column>>
+  GetTableResult& WithSchema(SchemaT&& value) {
+    SetSchema(std::forward<SchemaT>(value));
+    return *this;
+  }
+  template <typename SchemaT = Column>
+  GetTableResult& AddSchema(SchemaT&& value) {
+    m_schemaHasBeenSet = true;
+    m_schema.emplace_back(std::forward<SchemaT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -130,20 +130,20 @@ class GetTableResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::String m_description;
-
-  Aws::Vector<Column> m_schema;
-
   Aws::String m_tableName;
+
+  Aws::String m_description;
 
   Aws::Map<Aws::String, Aws::String> m_tableProperties;
 
+  Aws::Vector<Column> m_schema;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_descriptionHasBeenSet = false;
-  bool m_schemaHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tablePropertiesHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

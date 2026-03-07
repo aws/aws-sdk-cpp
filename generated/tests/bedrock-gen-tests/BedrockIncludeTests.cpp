@@ -419,6 +419,7 @@
 #include <aws/bedrock/model/ModelCustomizationJobStatus.h>
 #include <aws/bedrock/model/ModelCustomizationJobSummary.h>
 #include <aws/bedrock/model/ModelDataSource.h>
+#include <aws/bedrock/model/ModelEnforcement.h>
 #include <aws/bedrock/model/ModelImportJobStatus.h>
 #include <aws/bedrock/model/ModelImportJobSummary.h>
 #include <aws/bedrock/model/ModelInvocationJobInputDataConfig.h>

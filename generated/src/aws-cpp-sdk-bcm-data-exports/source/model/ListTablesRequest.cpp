@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String ListTablesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
-  }
-
   if (m_nextTokenHasBeenSet) {
     payload.WithString("NextToken", m_nextToken);
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();

@@ -22,20 +22,13 @@ GetTableResult::GetTableResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 GetTableResult& GetTableResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("Description")) {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Schema")) {
-    Aws::Utils::Array<JsonView> schemaJsonList = jsonValue.GetArray("Schema");
-    for (unsigned schemaIndex = 0; schemaIndex < schemaJsonList.GetLength(); ++schemaIndex) {
-      m_schema.push_back(schemaJsonList[schemaIndex].AsObject());
-    }
-    m_schemaHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("TableName")) {
     m_tableName = jsonValue.GetString("TableName");
     m_tableNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Description")) {
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("TableProperties")) {
     Aws::Map<Aws::String, JsonView> tablePropertiesJsonMap = jsonValue.GetObject("TableProperties").GetAllObjects();
@@ -43,6 +36,13 @@ GetTableResult& GetTableResult::operator=(const Aws::AmazonWebServiceResult<Json
       m_tableProperties[tablePropertiesItem.first] = tablePropertiesItem.second.AsString();
     }
     m_tablePropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Schema")) {
+    Aws::Utils::Array<JsonView> schemaJsonList = jsonValue.GetArray("Schema");
+    for (unsigned schemaIndex = 0; schemaIndex < schemaJsonList.GetLength(); ++schemaIndex) {
+      m_schema.push_back(schemaJsonList[schemaIndex].AsObject());
+    }
+    m_schemaHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

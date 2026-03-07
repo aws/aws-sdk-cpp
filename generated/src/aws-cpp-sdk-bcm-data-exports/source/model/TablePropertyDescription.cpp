@@ -18,14 +18,6 @@ namespace Model {
 TablePropertyDescription::TablePropertyDescription(JsonView jsonValue) { *this = jsonValue; }
 
 TablePropertyDescription& TablePropertyDescription::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("DefaultValue")) {
-    m_defaultValue = jsonValue.GetString("DefaultValue");
-    m_defaultValueHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Description")) {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
@@ -37,19 +29,19 @@ TablePropertyDescription& TablePropertyDescription::operator=(JsonView jsonValue
     }
     m_validValuesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DefaultValue")) {
+    m_defaultValue = jsonValue.GetString("DefaultValue");
+    m_defaultValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Description")) {
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue TablePropertyDescription::Jsonize() const {
   JsonValue payload;
-
-  if (m_defaultValueHasBeenSet) {
-    payload.WithString("DefaultValue", m_defaultValue);
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
-  }
 
   if (m_nameHasBeenSet) {
     payload.WithString("Name", m_name);
@@ -61,6 +53,14 @@ JsonValue TablePropertyDescription::Jsonize() const {
       validValuesJsonList[validValuesIndex].AsString(m_validValues[validValuesIndex]);
     }
     payload.WithArray("ValidValues", std::move(validValuesJsonList));
+  }
+
+  if (m_defaultValueHasBeenSet) {
+    payload.WithString("DefaultValue", m_defaultValue);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
   return payload;

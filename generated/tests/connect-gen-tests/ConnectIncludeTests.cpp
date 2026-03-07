@@ -135,6 +135,7 @@
 #include <aws/connect/model/CaseSlaConfiguration.h>
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/ChatContactMetrics.h>
+#include <aws/connect/model/ChatEntryPointParameters.h>
 #include <aws/connect/model/ChatEvent.h>
 #include <aws/connect/model/ChatEventType.h>
 #include <aws/connect/model/ChatMessage.h>

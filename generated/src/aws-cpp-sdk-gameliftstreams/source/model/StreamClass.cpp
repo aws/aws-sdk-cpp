@@ -28,6 +28,10 @@ static const int gen6n_ultra_HASH = HashingUtils::HashString("gen6n_ultra");
 static const int gen6n_ultra_win2022_HASH = HashingUtils::HashString("gen6n_ultra_win2022");
 static const int gen6n_pro_HASH = HashingUtils::HashString("gen6n_pro");
 static const int gen6n_pro_win2022_HASH = HashingUtils::HashString("gen6n_pro_win2022");
+static const int gen6n_small_win2022_HASH = HashingUtils::HashString("gen6n_small_win2022");
+static const int gen6n_medium_win2022_HASH = HashingUtils::HashString("gen6n_medium_win2022");
+static const int gen6e_pro_HASH = HashingUtils::HashString("gen6e_pro");
+static const int gen6e_pro_win2022_HASH = HashingUtils::HashString("gen6e_pro_win2022");
 
 StreamClass GetStreamClassForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +61,14 @@ StreamClass GetStreamClassForName(const Aws::String& name) {
     return StreamClass::gen6n_pro;
   } else if (hashCode == gen6n_pro_win2022_HASH) {
     return StreamClass::gen6n_pro_win2022;
+  } else if (hashCode == gen6n_small_win2022_HASH) {
+    return StreamClass::gen6n_small_win2022;
+  } else if (hashCode == gen6n_medium_win2022_HASH) {
+    return StreamClass::gen6n_medium_win2022;
+  } else if (hashCode == gen6e_pro_HASH) {
+    return StreamClass::gen6e_pro;
+  } else if (hashCode == gen6e_pro_win2022_HASH) {
+    return StreamClass::gen6e_pro_win2022;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +109,14 @@ Aws::String GetNameForStreamClass(StreamClass enumValue) {
       return "gen6n_pro";
     case StreamClass::gen6n_pro_win2022:
       return "gen6n_pro_win2022";
+    case StreamClass::gen6n_small_win2022:
+      return "gen6n_small_win2022";
+    case StreamClass::gen6n_medium_win2022:
+      return "gen6n_medium_win2022";
+    case StreamClass::gen6e_pro:
+      return "gen6e_pro";
+    case StreamClass::gen6e_pro_win2022:
+      return "gen6e_pro_win2022";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -18,13 +18,13 @@ namespace Model {
 Table::Table(JsonView jsonValue) { *this = jsonValue; }
 
 Table& Table::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Description")) {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("TableName")) {
     m_tableName = jsonValue.GetString("TableName");
     m_tableNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Description")) {
+    m_description = jsonValue.GetString("Description");
+    m_descriptionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("TableProperties")) {
     Aws::Utils::Array<JsonView> tablePropertiesJsonList = jsonValue.GetArray("TableProperties");
@@ -39,12 +39,12 @@ Table& Table::operator=(JsonView jsonValue) {
 JsonValue Table::Jsonize() const {
   JsonValue payload;
 
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
-  }
-
   if (m_tableNameHasBeenSet) {
     payload.WithString("TableName", m_tableName);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
   if (m_tablePropertiesHasBeenSet) {
