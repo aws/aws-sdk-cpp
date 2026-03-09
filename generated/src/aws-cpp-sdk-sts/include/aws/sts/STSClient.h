@@ -4,18 +4,21 @@
  */
 
 #pragma once
-#include <aws/core/AmazonSerializableWebServiceRequest.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/sts/STSErrorMarshaller.h>
 #include <aws/sts/STSPaginationBase.h>
 #include <aws/sts/STSServiceClientModel.h>
-#include <aws/sts/STSWaiter.h>
 #include <aws/sts/STS_EXPORTS.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/NoAuthScheme.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 namespace Aws {
 namespace STS {
+AWS_STS_API extern const char SERVICE_NAME[];
 /**
  * <fullname>Security Token Service</fullname> <p>Security Token Service (STS)
  * enables you to request temporary, limited-privilege credentials for users. This
@@ -24,14 +27,17 @@ namespace STS {
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
  * Security Credentials</a>.</p>
  */
-class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient,
-                              public Aws::Client::ClientWithAsyncTemplateMethods<STSClient>,
-                              public STSPaginationBase<STSClient>,
-                              public STSWaiter<STSClient> {
+class AWS_STS_API STSClient
+    : Aws::Client::ClientWithAsyncTemplateMethods<STSClient>,
+      public smithy::client::AwsSmithyClientT<Aws::STS::SERVICE_NAME, Aws::STS::STSClientConfiguration, smithy::AuthSchemeResolverBase<>,
+                                              Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::NoAuthScheme>, STSEndpointProviderBase,
+                                              smithy::client::XmlOutcomeSerializer, smithy::client::XmlOutcome,
+                                              Aws::Client::STSErrorMarshaller>,
+      public STSPaginationBase<STSClient> {
  public:
-  typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
+  inline const char* GetServiceClientName() const override { return "STS"; }
 
   typedef STSClientConfiguration ClientConfigurationType;
   typedef STSEndpointProvider EndpointProviderType;
@@ -84,7 +90,8 @@ class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient,
   /**
    * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
    */
-  Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+  virtual Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert,
+                                                   const char* region) const;
 
   /**
    * <p>Returns a set of temporary security credentials that you can use to access
@@ -918,14 +925,6 @@ class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient,
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<STSClient>;
-  void init(const STSClientConfiguration& clientConfiguration);
-
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, STSError> InvokeOperationOutcome;
-
-  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
-
-  STSClientConfiguration m_clientConfiguration;
-  std::shared_ptr<STSEndpointProviderBase> m_endpointProvider;
 };
 
 }  // namespace STS
