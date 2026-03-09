@@ -878,7 +878,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
                                 .enumValues(ImmutableList.of())
                                 .build();
                         serviceModel.getShapes().put(requestShape.getName(), requestShape);
-                        operation.addRequest(ShapeMember.builder().shape(requestShape).build());
+                        operation.addPhonyRequest(ShapeMember.builder().shape(requestShape).build());
                     }
                     operation.setRequestlessDefault(true);
                     requestlessOperations.add(operation.getName());

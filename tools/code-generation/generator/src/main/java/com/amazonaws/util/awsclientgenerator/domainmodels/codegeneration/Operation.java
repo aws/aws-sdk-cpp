@@ -16,6 +16,7 @@ public class Operation {
     private String name;
     private Http http;
     private ShapeMember request;
+    private boolean phonyRequest;
     private ShapeMember result;
     private List<Error> errors;
     private String documentation;
@@ -89,11 +90,16 @@ public class Operation {
     private boolean requestlessDefault = false;
 
     public boolean hasRequest() {
-        return this.request != null;
+        return this.request != null && !this.phonyRequest;
     }
 
     public void addRequest(final ShapeMember request) {
         this.request = request;
+    }
+
+    public void addPhonyRequest(final ShapeMember request) {
+        this.request = request;
+        this.phonyRequest = true;
     }
 
     public boolean hasSigV4Auth() { return auth != null && auth.contains("aws.auth#sigv4"); }
