@@ -50,7 +50,7 @@ class ThrottlingException {
 
   ///@{
   /**
-   * <p>The code for the AWS service that owns the quota.</p>
+   * <p>The code for the Amazon Web Services service that owns the quota.</p>
    */
   inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
   inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
@@ -68,7 +68,8 @@ class ThrottlingException {
 
   ///@{
   /**
-   * <p>The quota code recognized by the AWS Service Quotas service.</p>
+   * <p>The quota code recognized by the Amazon Web Services Service Quotas
+   * service.</p>
    */
   inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
   inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }

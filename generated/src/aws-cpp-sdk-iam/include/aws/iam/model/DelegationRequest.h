@@ -155,7 +155,7 @@ class DelegationRequest {
    * <p>If the <code>PermissionPolicy</code> includes role creation permissions, this
    * element will include the list of permissions boundary policies associated with
    * the role creation. See <a
-   * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
    * boundaries for IAM entities</a> for more details about IAM permission
    * boundaries. </p>
    */
@@ -216,9 +216,9 @@ class DelegationRequest {
   ///@{
   /**
    * <p>The state of this delegation request.</p> <p>See the <a
-   * href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
    * the Request Lifecycle</a> for an explanation of how these states are
-   * transitioned.</p>
+   * transitioned. </p>
    */
   inline StateType GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
@@ -235,7 +235,7 @@ class DelegationRequest {
   ///@{
   /**
    * <p>The expiry time of this delegation request</p> <p>See the <a
-   * href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
    * the Request Lifecycle</a> for details on the life time of a delegation request
    * at each state.</p>
    */

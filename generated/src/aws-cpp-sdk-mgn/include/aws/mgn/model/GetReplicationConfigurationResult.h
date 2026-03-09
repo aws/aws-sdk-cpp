@@ -327,6 +327,21 @@ class GetReplicationConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Replication Configuration store snapshot on local zone.</p>
+   */
+  inline bool GetStoreSnapshotOnLocalZone() const { return m_storeSnapshotOnLocalZone; }
+  inline void SetStoreSnapshotOnLocalZone(bool value) {
+    m_storeSnapshotOnLocalZoneHasBeenSet = true;
+    m_storeSnapshotOnLocalZone = value;
+  }
+  inline GetReplicationConfigurationResult& WithStoreSnapshotOnLocalZone(bool value) {
+    SetStoreSnapshotOnLocalZone(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -378,6 +393,8 @@ class GetReplicationConfigurationResult {
 
   InternetProtocol m_internetProtocol{InternetProtocol::NOT_SET};
 
+  bool m_storeSnapshotOnLocalZone{false};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceServerIDHasBeenSet = false;
@@ -397,6 +414,7 @@ class GetReplicationConfigurationResult {
   bool m_stagingAreaTagsHasBeenSet = false;
   bool m_useFipsEndpointHasBeenSet = false;
   bool m_internetProtocolHasBeenSet = false;
+  bool m_storeSnapshotOnLocalZoneHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

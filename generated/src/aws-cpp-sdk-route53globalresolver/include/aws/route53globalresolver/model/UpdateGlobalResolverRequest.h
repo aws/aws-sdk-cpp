@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53globalresolver/Route53GlobalResolverRequest.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
+#include <aws/route53globalresolver/model/GlobalResolverIpAddressType.h>
 
 #include <utility>
 
@@ -66,8 +67,8 @@ class UpdateGlobalResolverRequest : public Route53GlobalResolverRequest {
 
   ///@{
   /**
-   * <p>The AWS Regions in which the users' Global Resolver query resolution logs
-   * will be propagated.</p>
+   * <p>The Amazon Web Services Regions in which the users' Global Resolver query
+   * resolution logs will be propagated.</p>
    */
   inline const Aws::String& GetObservabilityRegion() const { return m_observabilityRegion; }
   inline bool ObservabilityRegionHasBeenSet() const { return m_observabilityRegionHasBeenSet; }
@@ -100,6 +101,23 @@ class UpdateGlobalResolverRequest : public Route53GlobalResolverRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IP address type for the Global Resolver. Valid values are IPV4 or
+   * DUAL_STACK for both IPv4 and IPv6 support.</p>
+   */
+  inline GlobalResolverIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(GlobalResolverIpAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline UpdateGlobalResolverRequest& WithIpAddressType(GlobalResolverIpAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_globalResolverId;
 
@@ -108,10 +126,13 @@ class UpdateGlobalResolverRequest : public Route53GlobalResolverRequest {
   Aws::String m_observabilityRegion;
 
   Aws::String m_description;
+
+  GlobalResolverIpAddressType m_ipAddressType{GlobalResolverIpAddressType::NOT_SET};
   bool m_globalResolverIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_observabilityRegionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
 };
 
 }  // namespace Model

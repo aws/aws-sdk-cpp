@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53globalresolver/Route53GlobalResolverRequest.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
+#include <aws/route53globalresolver/model/GlobalResolverIpAddressType.h>
 
 #include <utility>
 
@@ -72,6 +73,23 @@ class CreateGlobalResolverRequest : public Route53GlobalResolverRequest {
 
   ///@{
   /**
+   * <p>The IP address type for the Route 53 Global Resolver. Valid values are IPV4
+   * (default) or DUAL_STACK for both IPv4 and IPv6 support.</p>
+   */
+  inline GlobalResolverIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(GlobalResolverIpAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline CreateGlobalResolverRequest& WithIpAddressType(GlobalResolverIpAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A descriptive name for the Route 53 Global Resolver instance. Maximum length
    * of 64 characters.</p>
    */
@@ -91,8 +109,8 @@ class CreateGlobalResolverRequest : public Route53GlobalResolverRequest {
 
   ///@{
   /**
-   * <p>The AWS region where query resolution logs and metrics will be aggregated and
-   * delivered. If not specified, logging is not enabled.</p>
+   * <p>The Amazon Web Services Region where query resolution logs and metrics will
+   * be aggregated and delivered. If not specified, logging is not enabled.</p>
    */
   inline const Aws::String& GetObservabilityRegion() const { return m_observabilityRegion; }
   inline bool ObservabilityRegionHasBeenSet() const { return m_observabilityRegionHasBeenSet; }
@@ -110,9 +128,9 @@ class CreateGlobalResolverRequest : public Route53GlobalResolverRequest {
 
   ///@{
   /**
-   * <p>List of AWS regions where the Route 53 Global Resolver will operate. The
-   * resolver will be distributed across these regions to provide global availability
-   * and low-latency DNS resolution.</p>
+   * <p>List of Amazon Web Services Regions where the Route 53 Global Resolver will
+   * operate. The resolver will be distributed across these Regions to provide global
+   * availability and low-latency DNS resolution.</p>
    */
   inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
   inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
@@ -163,6 +181,8 @@ class CreateGlobalResolverRequest : public Route53GlobalResolverRequest {
 
   Aws::String m_description;
 
+  GlobalResolverIpAddressType m_ipAddressType{GlobalResolverIpAddressType::NOT_SET};
+
   Aws::String m_name;
 
   Aws::String m_observabilityRegion;
@@ -172,6 +192,7 @@ class CreateGlobalResolverRequest : public Route53GlobalResolverRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_clientTokenHasBeenSet = true;
   bool m_descriptionHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_observabilityRegionHasBeenSet = false;
   bool m_regionsHasBeenSet = false;

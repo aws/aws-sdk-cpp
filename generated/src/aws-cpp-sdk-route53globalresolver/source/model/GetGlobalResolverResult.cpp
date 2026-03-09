@@ -76,6 +76,17 @@ GetGlobalResolverResult& GetGlobalResolverResult::operator=(const Aws::AmazonWeb
     }
     m_ipv4AddressesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ipv6Addresses")) {
+    Aws::Utils::Array<JsonView> ipv6AddressesJsonList = jsonValue.GetArray("ipv6Addresses");
+    for (unsigned ipv6AddressesIndex = 0; ipv6AddressesIndex < ipv6AddressesJsonList.GetLength(); ++ipv6AddressesIndex) {
+      m_ipv6Addresses.push_back(ipv6AddressesJsonList[ipv6AddressesIndex].AsString());
+    }
+    m_ipv6AddressesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ipAddressType")) {
+    m_ipAddressType = GlobalResolverIpAddressTypeMapper::GetGlobalResolverIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

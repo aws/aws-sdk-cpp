@@ -184,8 +184,8 @@ class UpdateFirewallRuleRequest : public Route53GlobalResolverRequest {
 
   ///@{
   /**
-   * <p>The type of the DNS Firewall Advanced rule. Valid values are DGA and
-   * DNS_TUNNELING.</p>
+   * <p>The type of the DNS Firewall Advanced rule. Valid values are DGA,
+   * DNS_TUNNELING, and DICTIONARY_DGA.</p>
    */
   inline DnsAdvancedProtection GetDnsAdvancedProtection() const { return m_dnsAdvancedProtection; }
   inline bool DnsAdvancedProtectionHasBeenSet() const { return m_dnsAdvancedProtectionHasBeenSet; }

@@ -96,5 +96,9 @@ Aws::String UpdateReplicationConfigurationTemplateRequest::SerializePayload() co
     payload.WithString("internetProtocol", InternetProtocolMapper::GetNameForInternetProtocol(m_internetProtocol));
   }
 
+  if (m_storeSnapshotOnLocalZoneHasBeenSet) {
+    payload.WithBool("storeSnapshotOnLocalZone", m_storeSnapshotOnLocalZone);
+  }
+
   return payload.View().WriteReadable();
 }

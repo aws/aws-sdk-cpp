@@ -319,6 +319,23 @@ class CreateReplicationConfigurationTemplateRequest : public MgnRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Request to store snapshot on local zone during Replication Settings template
+   * creation.</p>
+   */
+  inline bool GetStoreSnapshotOnLocalZone() const { return m_storeSnapshotOnLocalZone; }
+  inline bool StoreSnapshotOnLocalZoneHasBeenSet() const { return m_storeSnapshotOnLocalZoneHasBeenSet; }
+  inline void SetStoreSnapshotOnLocalZone(bool value) {
+    m_storeSnapshotOnLocalZoneHasBeenSet = true;
+    m_storeSnapshotOnLocalZone = value;
+  }
+  inline CreateReplicationConfigurationTemplateRequest& WithStoreSnapshotOnLocalZone(bool value) {
+    SetStoreSnapshotOnLocalZone(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stagingAreaSubnetId;
 
@@ -350,6 +367,8 @@ class CreateReplicationConfigurationTemplateRequest : public MgnRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   InternetProtocol m_internetProtocol{InternetProtocol::NOT_SET};
+
+  bool m_storeSnapshotOnLocalZone{false};
   bool m_stagingAreaSubnetIdHasBeenSet = false;
   bool m_associateDefaultSecurityGroupHasBeenSet = false;
   bool m_replicationServersSecurityGroupsIDsHasBeenSet = false;
@@ -365,6 +384,7 @@ class CreateReplicationConfigurationTemplateRequest : public MgnRequest {
   bool m_useFipsEndpointHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_internetProtocolHasBeenSet = false;
+  bool m_storeSnapshotOnLocalZoneHasBeenSet = false;
 };
 
 }  // namespace Model
