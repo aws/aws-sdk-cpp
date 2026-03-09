@@ -118,9 +118,7 @@ Schedule& Schedule::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
                   }
                 }
                 m_timezoneHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -235,9 +233,7 @@ Schedule& Schedule::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
                 }
               }
               m_timezoneHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

@@ -33,9 +33,7 @@ Rule& Rule::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decode
               if (initialKeyStr == "Schedule") {
                 m_schedule = Schedule(decoder);
                 m_scheduleHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -65,9 +63,7 @@ Rule& Rule::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decode
             if (initialKeyStr == "Schedule") {
               m_schedule = Schedule(decoder);
               m_scheduleHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

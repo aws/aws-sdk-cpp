@@ -58,9 +58,7 @@ LabelOptions& LabelOptions::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cbor
                   }
                 }
                 m_timezoneHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -115,9 +113,7 @@ LabelOptions& LabelOptions::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cbor
                 }
               }
               m_timezoneHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

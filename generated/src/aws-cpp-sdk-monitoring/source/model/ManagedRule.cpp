@@ -117,9 +117,7 @@ ManagedRule& ManagedRule::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                   }
                 }
                 m_tagsHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -233,9 +231,7 @@ ManagedRule& ManagedRule::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                 }
               }
               m_tagsHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

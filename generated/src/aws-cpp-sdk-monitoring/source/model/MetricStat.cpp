@@ -90,9 +90,7 @@ MetricStat& MetricStat::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDeco
                       Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
                 }
                 m_unitHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -179,9 +177,7 @@ MetricStat& MetricStat::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDeco
                     Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
               }
               m_unitHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

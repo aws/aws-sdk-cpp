@@ -139,9 +139,7 @@ MetricStreamFilter& MetricStreamFilter::operator=(const std::shared_ptr<Aws::Crt
                   }
                 }
                 m_metricNamesHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -277,9 +275,7 @@ MetricStreamFilter& MetricStreamFilter::operator=(const std::shared_ptr<Aws::Crt
                 }
               }
               m_metricNamesHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }
