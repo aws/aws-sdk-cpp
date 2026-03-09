@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -235,6 +236,8 @@ class StartSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_description;
 
@@ -259,6 +262,7 @@ class StartSnapshotResult {
   SSEType m_sseType{SSEType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_descriptionHasBeenSet = false;
   bool m_snapshotIdHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;

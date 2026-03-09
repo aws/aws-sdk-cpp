@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/CapacityOptionType.h>
+#include <aws/ecs/model/CapacityReservationRequest.h>
 #include <aws/ecs/model/InstanceRequirementsRequest.h>
 #include <aws/ecs/model/ManagedInstancesMonitoringOptions.h>
 #include <aws/ecs/model/ManagedInstancesNetworkConfiguration.h>
@@ -129,14 +130,18 @@ class InstanceLaunchTemplate {
   ///@{
   /**
    * <p>The capacity option type. This determines whether Amazon ECS launches
-   * On-Demand or Spot Instances for your managed instance capacity provider.</p>
-   * <p>Valid values are:</p> <ul> <li> <p> <code>ON_DEMAND</code> - Launches
-   * standard On-Demand Instances. On-Demand Instances provide predictable pricing
-   * and availability.</p> </li> <li> <p> <code>SPOT</code> - Launches Spot Instances
-   * that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be
-   * interrupted by Amazon EC2 with a two-minute notification when the capacity is
-   * needed back.</p> </li> </ul> <p>The default is On-Demand</p> <p>For more
-   * information about Amazon EC2 capacity options, see <a
+   * On-Demand, Spot or Capacity Reservation Instances for your managed instance
+   * capacity provider.</p> <p>Valid values are:</p> <ul> <li> <p>
+   * <code>ON_DEMAND</code> - Launches standard On-Demand Instances. On-Demand
+   * Instances provide predictable pricing and availability.</p> </li> <li> <p>
+   * <code>SPOT</code> - Launches Spot Instances that use spare Amazon EC2 capacity
+   * at reduced cost. Spot Instances can be interrupted by Amazon EC2 with a
+   * two-minute notification when the capacity is needed back.</p> </li> <li> <p>
+   * <code>RESERVED</code> - Launches Instances using Amazon EC2 Capacity
+   * Reservations. Capacity Reservations allow you to reserve compute capacity for
+   * Amazon EC2 instances in a specific Availability Zone.</p> </li> </ul> <p>The
+   * default is On-Demand</p> <p>For more information about Amazon EC2 capacity
+   * options, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance
    * purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
    */
@@ -193,6 +198,27 @@ class InstanceLaunchTemplate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Capacity reservation specifications. You can specify:</p> <ul> <li>
+   * <p>Capacity reservation preference</p> </li> <li> <p>Reservation resource group
+   * to be used for targeted capacity reservations</p> </li> </ul> <p>Amazon ECS will
+   * launch instances according to the specified criteria.</p>
+   */
+  inline const CapacityReservationRequest& GetCapacityReservations() const { return m_capacityReservations; }
+  inline bool CapacityReservationsHasBeenSet() const { return m_capacityReservationsHasBeenSet; }
+  template <typename CapacityReservationsT = CapacityReservationRequest>
+  void SetCapacityReservations(CapacityReservationsT&& value) {
+    m_capacityReservationsHasBeenSet = true;
+    m_capacityReservations = std::forward<CapacityReservationsT>(value);
+  }
+  template <typename CapacityReservationsT = CapacityReservationRequest>
+  InstanceLaunchTemplate& WithCapacityReservations(CapacityReservationsT&& value) {
+    SetCapacityReservations(std::forward<CapacityReservationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ec2InstanceProfileArn;
 
@@ -207,6 +233,8 @@ class InstanceLaunchTemplate {
   InstanceRequirementsRequest m_instanceRequirements;
 
   bool m_fipsEnabled{false};
+
+  CapacityReservationRequest m_capacityReservations;
   bool m_ec2InstanceProfileArnHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
@@ -214,6 +242,7 @@ class InstanceLaunchTemplate {
   bool m_capacityOptionTypeHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
   bool m_fipsEnabledHasBeenSet = false;
+  bool m_capacityReservationsHasBeenSet = false;
 };
 
 }  // namespace Model

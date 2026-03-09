@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/IntegrationStatus.h>
@@ -90,6 +91,8 @@ class CreateCodeSecurityIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_integrationArn;
 
@@ -98,6 +101,7 @@ class CreateCodeSecurityIntegrationResult {
   Aws::String m_authorizationUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_integrationArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_authorizationUrlHasBeenSet = false;

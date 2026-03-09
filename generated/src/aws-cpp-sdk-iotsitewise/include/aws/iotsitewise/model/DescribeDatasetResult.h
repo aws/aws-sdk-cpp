@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
@@ -202,6 +203,8 @@ class DescribeDatasetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_datasetId;
 
@@ -222,6 +225,7 @@ class DescribeDatasetResult {
   Aws::String m_datasetVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datasetIdHasBeenSet = false;
   bool m_datasetArnHasBeenSet = false;
   bool m_datasetNameHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/model/Credentials.h>
@@ -94,6 +95,8 @@ class GetDelegatedAccessTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Credentials m_credentials;
 
@@ -102,6 +105,7 @@ class GetDelegatedAccessTokenResult {
   Aws::String m_assumedPrincipal;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_packedPolicySizeHasBeenSet = false;
   bool m_assumedPrincipalHasBeenSet = false;

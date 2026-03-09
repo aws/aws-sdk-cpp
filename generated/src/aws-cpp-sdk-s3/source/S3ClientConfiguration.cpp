@@ -49,7 +49,7 @@ void S3ClientConfiguration::LoadS3SpecificConfig(const Aws::String& inputProfile
   }
 }
 
-S3ClientConfiguration::S3ClientConfiguration(const Client::ClientConfigurationInitValues& configuration)
+S3ClientConfiguration::S3ClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
     : BaseClientConfigClass(configuration) {
   LoadS3SpecificConfig(this->profileName);
 }
@@ -64,7 +64,7 @@ S3ClientConfiguration::S3ClientConfiguration(bool useSmartDefaults, const char* 
   LoadS3SpecificConfig(this->profileName);
 }
 
-S3ClientConfiguration::S3ClientConfiguration(const Client::ClientConfiguration& config,
+S3ClientConfiguration::S3ClientConfiguration(const Aws::Client::ClientConfiguration& config,
                                              Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy,
                                              bool iUseVirtualAddressing,
                                              US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption)

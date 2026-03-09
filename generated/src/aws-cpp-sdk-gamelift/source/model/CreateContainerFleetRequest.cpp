@@ -94,6 +94,10 @@ Aws::String CreateContainerFleetRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_playerGatewayModeHasBeenSet) {
+    payload.WithString("PlayerGatewayMode", PlayerGatewayModeMapper::GetNameForPlayerGatewayMode(m_playerGatewayMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

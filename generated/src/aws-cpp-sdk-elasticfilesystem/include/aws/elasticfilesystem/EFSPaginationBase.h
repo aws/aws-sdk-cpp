@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/elasticfilesystem/model/DescribeAccessPointsPaginationTraits.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsPaginationTraits.h>
@@ -28,6 +29,7 @@ class EFSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAccessPointsRequest,
                                     Pagination::DescribeAccessPointsPaginationTraits<DerivedClient>>
   DescribeAccessPointsPaginator(const Model::DescribeAccessPointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAccessPointsRequest,
                                              Pagination::DescribeAccessPointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -39,6 +41,7 @@ class EFSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFileSystemsRequest,
                                     Pagination::DescribeFileSystemsPaginationTraits<DerivedClient>>
   DescribeFileSystemsPaginator(const Model::DescribeFileSystemsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFileSystemsRequest,
                                              Pagination::DescribeFileSystemsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +53,7 @@ class EFSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMountTargetsRequest,
                                     Pagination::DescribeMountTargetsPaginationTraits<DerivedClient>>
   DescribeMountTargetsPaginator(const Model::DescribeMountTargetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMountTargetsRequest,
                                              Pagination::DescribeMountTargetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +65,7 @@ class EFSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReplicationConfigurationsRequest,
                                     Pagination::DescribeReplicationConfigurationsPaginationTraits<DerivedClient>>
   DescribeReplicationConfigurationsPaginator(const Model::DescribeReplicationConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReplicationConfigurationsRequest,
                                              Pagination::DescribeReplicationConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +77,7 @@ class EFSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

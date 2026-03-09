@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
@@ -106,6 +107,8 @@ class GetSampledRequestsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<SampledHTTPRequest> m_sampledRequests;
 
@@ -114,6 +117,7 @@ class GetSampledRequestsResult {
   TimeWindow m_timeWindow;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sampledRequestsHasBeenSet = false;
   bool m_populationSizeHasBeenSet = false;
   bool m_timeWindowHasBeenSet = false;

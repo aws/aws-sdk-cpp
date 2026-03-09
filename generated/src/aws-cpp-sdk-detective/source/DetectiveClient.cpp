@@ -107,7 +107,7 @@ DetectiveClient::DetectiveClient(const std::shared_ptr<AWSCredentialsProvider>& 
 }
 
 /* Legacy constructors due deprecation */
-DetectiveClient::DetectiveClient(const Client::ClientConfiguration& clientConfiguration)
+DetectiveClient::DetectiveClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -119,7 +119,7 @@ DetectiveClient::DetectiveClient(const Client::ClientConfiguration& clientConfig
   init(m_clientConfiguration);
 }
 
-DetectiveClient::DetectiveClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+DetectiveClient::DetectiveClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -130,7 +130,7 @@ DetectiveClient::DetectiveClient(const AWSCredentials& credentials, const Client
 }
 
 DetectiveClient::DetectiveClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Client::ClientConfiguration& clientConfiguration)
+                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -33,14 +33,14 @@ ArcRoutingControlConfiguration& ArcRoutingControlConfiguration::operator=(JsonVi
   if (jsonValue.ValueExists("regionAndRoutingControls")) {
     Aws::Map<Aws::String, JsonView> regionAndRoutingControlsJsonMap = jsonValue.GetObject("regionAndRoutingControls").GetAllObjects();
     for (auto& regionAndRoutingControlsItem : regionAndRoutingControlsJsonMap) {
-      Aws::Utils::Array<JsonView> arcRoutingControlStatesJsonList = regionAndRoutingControlsItem.second.AsArray();
-      Aws::Vector<ArcRoutingControlState> arcRoutingControlStatesList;
-      arcRoutingControlStatesList.reserve((size_t)arcRoutingControlStatesJsonList.GetLength());
-      for (unsigned arcRoutingControlStatesIndex = 0; arcRoutingControlStatesIndex < arcRoutingControlStatesJsonList.GetLength();
-           ++arcRoutingControlStatesIndex) {
-        arcRoutingControlStatesList.push_back(arcRoutingControlStatesJsonList[arcRoutingControlStatesIndex].AsObject());
+      Aws::Utils::Array<JsonView> arcRoutingControlStates2JsonList = regionAndRoutingControlsItem.second.AsArray();
+      Aws::Vector<ArcRoutingControlState> arcRoutingControlStates2List;
+      arcRoutingControlStates2List.reserve((size_t)arcRoutingControlStates2JsonList.GetLength());
+      for (unsigned arcRoutingControlStates2Index = 0; arcRoutingControlStates2Index < arcRoutingControlStates2JsonList.GetLength();
+           ++arcRoutingControlStates2Index) {
+        arcRoutingControlStates2List.push_back(arcRoutingControlStates2JsonList[arcRoutingControlStates2Index].AsObject());
       }
-      m_regionAndRoutingControls[regionAndRoutingControlsItem.first] = std::move(arcRoutingControlStatesList);
+      m_regionAndRoutingControls[regionAndRoutingControlsItem.first] = std::move(arcRoutingControlStates2List);
     }
     m_regionAndRoutingControlsHasBeenSet = true;
   }

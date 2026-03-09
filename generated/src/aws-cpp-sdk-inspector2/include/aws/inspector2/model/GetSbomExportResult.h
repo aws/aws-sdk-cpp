@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/Destination.h>
@@ -160,6 +161,8 @@ class GetSbomExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_reportId;
 
@@ -176,6 +179,7 @@ class GetSbomExportResult {
   ResourceFilterCriteria m_filterCriteria;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reportIdHasBeenSet = false;
   bool m_formatHasBeenSet = false;
   bool m_statusHasBeenSet = false;

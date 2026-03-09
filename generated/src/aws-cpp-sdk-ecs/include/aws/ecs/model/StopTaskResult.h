@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/Task.h>
@@ -21,6 +22,11 @@ class JsonValue;
 }  // namespace Utils
 namespace ECS {
 namespace Model {
+/**
+ * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTaskResponse">AWS
+ * API Reference</a></p>
+ */
 class StopTaskResult {
  public:
   AWS_ECS_API StopTaskResult() = default;
@@ -58,10 +64,13 @@ class StopTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Task m_task;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -34,8 +34,8 @@ class StringConfigurationOptions {
 
   ///@{
   /**
-   * <p> The Security Hub default value for a control parameter that is a string.
-   * </p>
+   * <p> The Security Hub CSPM default value for a control parameter that is a
+   * string. </p>
    */
   inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
   inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
@@ -53,8 +53,8 @@ class StringConfigurationOptions {
 
   ///@{
   /**
-   * <p> An RE2 regular expression that Security Hub uses to validate a user-provided
-   * control parameter string. </p>
+   * <p> An RE2 regular expression that Security Hub CSPM uses to validate a
+   * user-provided control parameter string. </p>
    */
   inline const Aws::String& GetRe2Expression() const { return m_re2Expression; }
   inline bool Re2ExpressionHasBeenSet() const { return m_re2ExpressionHasBeenSet; }

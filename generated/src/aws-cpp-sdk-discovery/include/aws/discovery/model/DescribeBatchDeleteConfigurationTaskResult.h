@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 #include <aws/discovery/model/BatchDeleteConfigurationTask.h>
@@ -61,10 +62,13 @@ class DescribeBatchDeleteConfigurationTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   BatchDeleteConfigurationTask m_task;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

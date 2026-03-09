@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/CacheSecurityGroup.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
@@ -57,10 +58,13 @@ class RevokeCacheSecurityGroupIngressResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CacheSecurityGroup m_cacheSecurityGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_cacheSecurityGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

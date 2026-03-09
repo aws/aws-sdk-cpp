@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
@@ -188,6 +189,8 @@ class DescribeLakeFormationIdentityCenterConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_catalogId;
 
@@ -204,6 +207,7 @@ class DescribeLakeFormationIdentityCenterConfigurationResult {
   Aws::String m_resourceShare;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_catalogIdHasBeenSet = false;
   bool m_instanceArnHasBeenSet = false;
   bool m_applicationArnHasBeenSet = false;

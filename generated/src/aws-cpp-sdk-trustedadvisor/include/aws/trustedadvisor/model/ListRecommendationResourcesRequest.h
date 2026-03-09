@@ -8,6 +8,7 @@
 #include <aws/trustedadvisor/TrustedAdvisorRequest.h>
 #include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
 #include <aws/trustedadvisor/model/ExclusionStatus.h>
+#include <aws/trustedadvisor/model/RecommendationLanguage.h>
 #include <aws/trustedadvisor/model/ResourceStatus.h>
 
 #include <utility>
@@ -37,16 +38,19 @@ class ListRecommendationResourcesRequest : public TrustedAdvisorRequest {
 
   ///@{
   /**
-   * <p>The exclusion status of the resource</p>
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results. </p>
    */
-  inline ExclusionStatus GetExclusionStatus() const { return m_exclusionStatus; }
-  inline bool ExclusionStatusHasBeenSet() const { return m_exclusionStatusHasBeenSet; }
-  inline void SetExclusionStatus(ExclusionStatus value) {
-    m_exclusionStatusHasBeenSet = true;
-    m_exclusionStatus = value;
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
   }
-  inline ListRecommendationResourcesRequest& WithExclusionStatus(ExclusionStatus value) {
-    SetExclusionStatus(value);
+  template <typename NextTokenT = Aws::String>
+  ListRecommendationResourcesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
     return *this;
   }
   ///@}
@@ -69,37 +73,32 @@ class ListRecommendationResourcesRequest : public TrustedAdvisorRequest {
 
   ///@{
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results. </p>
+   * <p>The status of the resource</p>
    */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
+  inline ResourceStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(ResourceStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename NextTokenT = Aws::String>
-  ListRecommendationResourcesRequest& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
+  inline ListRecommendationResourcesRequest& WithStatus(ResourceStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The Recommendation identifier</p>
+   * <p>The exclusion status of the resource</p>
    */
-  inline const Aws::String& GetRecommendationIdentifier() const { return m_recommendationIdentifier; }
-  inline bool RecommendationIdentifierHasBeenSet() const { return m_recommendationIdentifierHasBeenSet; }
-  template <typename RecommendationIdentifierT = Aws::String>
-  void SetRecommendationIdentifier(RecommendationIdentifierT&& value) {
-    m_recommendationIdentifierHasBeenSet = true;
-    m_recommendationIdentifier = std::forward<RecommendationIdentifierT>(value);
+  inline ExclusionStatus GetExclusionStatus() const { return m_exclusionStatus; }
+  inline bool ExclusionStatusHasBeenSet() const { return m_exclusionStatusHasBeenSet; }
+  inline void SetExclusionStatus(ExclusionStatus value) {
+    m_exclusionStatusHasBeenSet = true;
+    m_exclusionStatus = value;
   }
-  template <typename RecommendationIdentifierT = Aws::String>
-  ListRecommendationResourcesRequest& WithRecommendationIdentifier(RecommendationIdentifierT&& value) {
-    SetRecommendationIdentifier(std::forward<RecommendationIdentifierT>(value));
+  inline ListRecommendationResourcesRequest& WithExclusionStatus(ExclusionStatus value) {
+    SetExclusionStatus(value);
     return *this;
   }
   ///@}
@@ -124,37 +123,59 @@ class ListRecommendationResourcesRequest : public TrustedAdvisorRequest {
 
   ///@{
   /**
-   * <p>The status of the resource</p>
+   * <p>The Recommendation identifier</p>
    */
-  inline ResourceStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(ResourceStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
+  inline const Aws::String& GetRecommendationIdentifier() const { return m_recommendationIdentifier; }
+  inline bool RecommendationIdentifierHasBeenSet() const { return m_recommendationIdentifierHasBeenSet; }
+  template <typename RecommendationIdentifierT = Aws::String>
+  void SetRecommendationIdentifier(RecommendationIdentifierT&& value) {
+    m_recommendationIdentifierHasBeenSet = true;
+    m_recommendationIdentifier = std::forward<RecommendationIdentifierT>(value);
   }
-  inline ListRecommendationResourcesRequest& WithStatus(ResourceStatus value) {
-    SetStatus(value);
+  template <typename RecommendationIdentifierT = Aws::String>
+  ListRecommendationResourcesRequest& WithRecommendationIdentifier(RecommendationIdentifierT&& value) {
+    SetRecommendationIdentifier(std::forward<RecommendationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ISO 639-1 code for the language that you want your recommendations to
+   * appear in.</p>
+   */
+  inline RecommendationLanguage GetLanguage() const { return m_language; }
+  inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
+  inline void SetLanguage(RecommendationLanguage value) {
+    m_languageHasBeenSet = true;
+    m_language = value;
+  }
+  inline ListRecommendationResourcesRequest& WithLanguage(RecommendationLanguage value) {
+    SetLanguage(value);
     return *this;
   }
   ///@}
  private:
-  ExclusionStatus m_exclusionStatus{ExclusionStatus::NOT_SET};
+  Aws::String m_nextToken;
 
   int m_maxResults{0};
 
-  Aws::String m_nextToken;
+  ResourceStatus m_status{ResourceStatus::NOT_SET};
 
-  Aws::String m_recommendationIdentifier;
+  ExclusionStatus m_exclusionStatus{ExclusionStatus::NOT_SET};
 
   Aws::String m_regionCode;
 
-  ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_exclusionStatusHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
+  Aws::String m_recommendationIdentifier;
+
+  RecommendationLanguage m_language{RecommendationLanguage::NOT_SET};
   bool m_nextTokenHasBeenSet = false;
-  bool m_recommendationIdentifierHasBeenSet = false;
-  bool m_regionCodeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_exclusionStatusHasBeenSet = false;
+  bool m_regionCodeHasBeenSet = false;
+  bool m_recommendationIdentifierHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
 };
 
 }  // namespace Model

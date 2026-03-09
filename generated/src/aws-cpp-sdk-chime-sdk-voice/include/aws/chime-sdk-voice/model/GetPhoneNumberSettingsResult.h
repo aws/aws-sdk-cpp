@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -75,12 +76,15 @@ class GetPhoneNumberSettingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_callingName;
 
   Aws::Utils::DateTime m_callingNameUpdatedTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_callingNameHasBeenSet = false;
   bool m_callingNameUpdatedTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

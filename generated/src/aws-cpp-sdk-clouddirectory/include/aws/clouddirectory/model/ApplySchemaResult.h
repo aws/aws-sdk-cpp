@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -77,12 +78,15 @@ class ApplySchemaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_appliedSchemaArn;
 
   Aws::String m_directoryArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appliedSchemaArnHasBeenSet = false;
   bool m_directoryArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

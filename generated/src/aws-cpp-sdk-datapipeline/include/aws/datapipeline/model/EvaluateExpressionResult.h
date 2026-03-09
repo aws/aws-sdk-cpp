@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 
@@ -62,10 +63,13 @@ class EvaluateExpressionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_evaluatedExpression;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_evaluatedExpressionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
@@ -81,12 +82,15 @@ class StartOutpostDecommissionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DecommissionRequestStatus m_status{DecommissionRequestStatus::NOT_SET};
 
   Aws::Vector<BlockingResourceType> m_blockingResourceTypes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_blockingResourceTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

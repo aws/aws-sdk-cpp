@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
@@ -370,6 +371,8 @@ class DescribeReservationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -410,6 +413,7 @@ class DescribeReservationResult {
   double m_usagePrice{0.0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_countHasBeenSet = false;
   bool m_currencyCodeHasBeenSet = false;

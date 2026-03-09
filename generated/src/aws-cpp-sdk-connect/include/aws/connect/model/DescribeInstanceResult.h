@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/Instance.h>
 #include <aws/connect/model/ReplicationConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -83,12 +84,15 @@ class DescribeInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Instance m_instance;
 
   ReplicationConfiguration m_replicationConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_instanceHasBeenSet = false;
   bool m_replicationConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

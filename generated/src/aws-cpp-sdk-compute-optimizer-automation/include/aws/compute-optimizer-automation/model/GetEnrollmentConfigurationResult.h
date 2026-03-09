@@ -7,6 +7,7 @@
 #include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
 #include <aws/compute-optimizer-automation/model/EnrollmentStatus.h>
 #include <aws/compute-optimizer-automation/model/OrganizationRuleMode.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -110,6 +111,8 @@ class GetEnrollmentConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EnrollmentStatus m_status{EnrollmentStatus::NOT_SET};
 
@@ -120,6 +123,7 @@ class GetEnrollmentConfigurationResult {
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_organizationRuleModeHasBeenSet = false;

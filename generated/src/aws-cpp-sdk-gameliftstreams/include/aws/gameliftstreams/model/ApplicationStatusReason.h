@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GameLiftStreams {
 namespace Model {
-enum class ApplicationStatusReason { NOT_SET, internalError, accessDenied };
+enum class ApplicationStatusReason { NOT_SET, internalError, accessDenied, sourceModified };
 
 namespace ApplicationStatusReasonMapper {
 AWS_GAMELIFTSTREAMS_API ApplicationStatusReason GetApplicationStatusReasonForName(const Aws::String& name);

@@ -7,6 +7,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/model/AnalysisSchemeStatus.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -72,10 +73,13 @@ class DescribeAnalysisSchemesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<AnalysisSchemeStatus> m_analysisSchemes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_analysisSchemesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

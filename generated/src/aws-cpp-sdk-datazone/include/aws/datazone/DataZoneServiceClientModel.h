@@ -154,6 +154,7 @@
 #include <aws/datazone/model/PostTimeSeriesDataPointsResult.h>
 #include <aws/datazone/model/PutDataExportConfigurationResult.h>
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationResult.h>
+#include <aws/datazone/model/QueryGraphResult.h>
 #include <aws/datazone/model/RejectPredictionsResult.h>
 #include <aws/datazone/model/RejectSubscriptionRequestResult.h>
 #include <aws/datazone/model/RemoveEntityOwnerResult.h>
@@ -362,6 +363,7 @@ class PostLineageEventRequest;
 class PostTimeSeriesDataPointsRequest;
 class PutDataExportConfigurationRequest;
 class PutEnvironmentBlueprintConfigurationRequest;
+class QueryGraphRequest;
 class RejectPredictionsRequest;
 class RejectSubscriptionRequestRequest;
 class RemoveEntityOwnerRequest;
@@ -540,6 +542,7 @@ typedef Aws::Utils::Outcome<PostLineageEventResult, DataZoneError> PostLineageEv
 typedef Aws::Utils::Outcome<PostTimeSeriesDataPointsResult, DataZoneError> PostTimeSeriesDataPointsOutcome;
 typedef Aws::Utils::Outcome<PutDataExportConfigurationResult, DataZoneError> PutDataExportConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutEnvironmentBlueprintConfigurationResult, DataZoneError> PutEnvironmentBlueprintConfigurationOutcome;
+typedef Aws::Utils::Outcome<QueryGraphResult, DataZoneError> QueryGraphOutcome;
 typedef Aws::Utils::Outcome<RejectPredictionsResult, DataZoneError> RejectPredictionsOutcome;
 typedef Aws::Utils::Outcome<RejectSubscriptionRequestResult, DataZoneError> RejectSubscriptionRequestOutcome;
 typedef Aws::Utils::Outcome<RemoveEntityOwnerResult, DataZoneError> RemoveEntityOwnerOutcome;
@@ -718,6 +721,7 @@ typedef std::future<PostLineageEventOutcome> PostLineageEventOutcomeCallable;
 typedef std::future<PostTimeSeriesDataPointsOutcome> PostTimeSeriesDataPointsOutcomeCallable;
 typedef std::future<PutDataExportConfigurationOutcome> PutDataExportConfigurationOutcomeCallable;
 typedef std::future<PutEnvironmentBlueprintConfigurationOutcome> PutEnvironmentBlueprintConfigurationOutcomeCallable;
+typedef std::future<QueryGraphOutcome> QueryGraphOutcomeCallable;
 typedef std::future<RejectPredictionsOutcome> RejectPredictionsOutcomeCallable;
 typedef std::future<RejectSubscriptionRequestOutcome> RejectSubscriptionRequestOutcomeCallable;
 typedef std::future<RemoveEntityOwnerOutcome> RemoveEntityOwnerOutcomeCallable;
@@ -1185,6 +1189,9 @@ typedef std::function<void(const DataZoneClient*, const Model::PutEnvironmentBlu
                            const Model::PutEnvironmentBlueprintConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutEnvironmentBlueprintConfigurationResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::QueryGraphRequest&, const Model::QueryGraphOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    QueryGraphResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::RejectPredictionsRequest&, const Model::RejectPredictionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RejectPredictionsResponseReceivedHandler;

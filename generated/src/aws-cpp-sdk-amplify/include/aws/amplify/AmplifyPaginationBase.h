@@ -9,6 +9,7 @@
 #include <aws/amplify/model/ListBranchesPaginationTraits.h>
 #include <aws/amplify/model/ListDomainAssociationsPaginationTraits.h>
 #include <aws/amplify/model/ListJobsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -26,6 +27,7 @@ class AmplifyPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppsRequest, Pagination::ListAppsPaginationTraits<DerivedClient>>
   ListAppsPaginator(const Model::ListAppsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppsRequest, Pagination::ListAppsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -35,6 +37,7 @@ class AmplifyPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBranchesRequest, Pagination::ListBranchesPaginationTraits<DerivedClient>>
   ListBranchesPaginator(const Model::ListBranchesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBranchesRequest,
                                              Pagination::ListBranchesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -46,6 +49,7 @@ class AmplifyPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainAssociationsRequest,
                                     Pagination::ListDomainAssociationsPaginationTraits<DerivedClient>>
   ListDomainAssociationsPaginator(const Model::ListDomainAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainAssociationsRequest,
                                              Pagination::ListDomainAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -56,6 +60,7 @@ class AmplifyPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
   ListJobsPaginator(const Model::ListJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

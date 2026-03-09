@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/AllocationType.h>
+#include <aws/ec2/model/CapacityAllocationMetadataEntry.h>
 
 #include <utility>
 
@@ -68,12 +70,40 @@ class CapacityAllocation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Additional metadata associated with the capacity allocation. Each entry
+   * contains a key-value pair providing context about the allocation.</p>
+   */
+  inline const Aws::Vector<CapacityAllocationMetadataEntry>& GetAllocationMetadata() const { return m_allocationMetadata; }
+  inline bool AllocationMetadataHasBeenSet() const { return m_allocationMetadataHasBeenSet; }
+  template <typename AllocationMetadataT = Aws::Vector<CapacityAllocationMetadataEntry>>
+  void SetAllocationMetadata(AllocationMetadataT&& value) {
+    m_allocationMetadataHasBeenSet = true;
+    m_allocationMetadata = std::forward<AllocationMetadataT>(value);
+  }
+  template <typename AllocationMetadataT = Aws::Vector<CapacityAllocationMetadataEntry>>
+  CapacityAllocation& WithAllocationMetadata(AllocationMetadataT&& value) {
+    SetAllocationMetadata(std::forward<AllocationMetadataT>(value));
+    return *this;
+  }
+  template <typename AllocationMetadataT = CapacityAllocationMetadataEntry>
+  CapacityAllocation& AddAllocationMetadata(AllocationMetadataT&& value) {
+    m_allocationMetadataHasBeenSet = true;
+    m_allocationMetadata.emplace_back(std::forward<AllocationMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AllocationType m_allocationType{AllocationType::NOT_SET};
 
   int m_count{0};
+
+  Aws::Vector<CapacityAllocationMetadataEntry> m_allocationMetadata;
   bool m_allocationTypeHasBeenSet = false;
   bool m_countHasBeenSet = false;
+  bool m_allocationMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

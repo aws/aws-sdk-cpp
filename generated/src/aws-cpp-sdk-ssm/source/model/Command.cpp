@@ -41,14 +41,14 @@ Command& Command::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Parameters")) {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for (auto& parametersItem : parametersJsonMap) {
-      Aws::Utils::Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
-      Aws::Vector<Aws::String> parameterValueListList;
-      parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
-      for (unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength();
-           ++parameterValueListIndex) {
-        parameterValueListList.push_back(parameterValueListJsonList[parameterValueListIndex].AsString());
+      Aws::Utils::Array<JsonView> parameterValueList2JsonList = parametersItem.second.AsArray();
+      Aws::Vector<Aws::String> parameterValueList2List;
+      parameterValueList2List.reserve((size_t)parameterValueList2JsonList.GetLength());
+      for (unsigned parameterValueList2Index = 0; parameterValueList2Index < parameterValueList2JsonList.GetLength();
+           ++parameterValueList2Index) {
+        parameterValueList2List.push_back(parameterValueList2JsonList[parameterValueList2Index].AsString());
       }
-      m_parameters[parametersItem.first] = std::move(parameterValueListList);
+      m_parameters[parametersItem.first] = std::move(parameterValueList2List);
     }
     m_parametersHasBeenSet = true;
   }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 
@@ -91,6 +92,8 @@ class CreateSegmentEstimateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_domainName;
 
@@ -99,6 +102,7 @@ class CreateSegmentEstimateResult {
   int m_statusCode{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainNameHasBeenSet = false;
   bool m_estimateIdHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;

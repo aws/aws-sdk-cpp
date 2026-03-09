@@ -8,6 +8,7 @@
 #include <aws/ce/model/DimensionValuesWithAttributes.h>
 #include <aws/ce/model/GroupDefinition.h>
 #include <aws/ce/model/ResultByTime.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -135,6 +136,8 @@ class GetCostAndUsageWithResourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextPageToken;
 
@@ -145,6 +148,7 @@ class GetCostAndUsageWithResourcesResult {
   Aws::Vector<DimensionValuesWithAttributes> m_dimensionValueAttributes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_groupDefinitionsHasBeenSet = false;
   bool m_resultsByTimeHasBeenSet = false;

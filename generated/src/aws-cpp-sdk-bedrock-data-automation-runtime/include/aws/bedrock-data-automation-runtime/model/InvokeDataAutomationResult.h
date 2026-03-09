@@ -8,6 +8,7 @@
 #include <aws/bedrock-data-automation-runtime/model/OutputConfiguration.h>
 #include <aws/bedrock-data-automation-runtime/model/OutputSegment.h>
 #include <aws/bedrock-data-automation-runtime/model/SemanticModality.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -105,6 +106,8 @@ class InvokeDataAutomationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   OutputConfiguration m_outputConfiguration;
 
@@ -113,6 +116,7 @@ class InvokeDataAutomationResult {
   Aws::Vector<OutputSegment> m_outputSegments;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_outputConfigurationHasBeenSet = false;
   bool m_semanticModalityHasBeenSet = false;
   bool m_outputSegmentsHasBeenSet = false;

@@ -34,11 +34,10 @@ class TaskManagedEBSVolumeTerminationPolicy {
   ///@{
   /**
    * <p>Indicates whether the volume should be deleted on when the task stops. If a
-   * value of <code>true</code> is specified, &#x2028;Amazon ECS deletes the Amazon
-   * EBS volume on your behalf when the task goes into the <code>STOPPED</code>
-   * state. If no value is specified, the &#x2028;default value is <code>true</code>
-   * is used. When set to <code>false</code>, Amazon ECS leaves the volume in your
-   * &#x2028;account.</p>
+   * value of <code>true</code> is specified, Amazon ECS deletes the Amazon EBS
+   * volume on your behalf when the task goes into the <code>STOPPED</code> state. If
+   * no value is specified, the default value is <code>true</code> is used. When set
+   * to <code>false</code>, Amazon ECS leaves the volume in your account.</p>
    */
   inline bool GetDeleteOnTermination() const { return m_deleteOnTermination; }
   inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }

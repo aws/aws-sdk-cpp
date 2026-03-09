@@ -24,6 +24,7 @@ GetEnvironmentBlueprintConfigurationResult::GetEnvironmentBlueprintConfiguration
 
 GetEnvironmentBlueprintConfigurationResult& GetEnvironmentBlueprintConfigurationResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
@@ -55,12 +56,12 @@ GetEnvironmentBlueprintConfigurationResult& GetEnvironmentBlueprintConfiguration
   if (jsonValue.ValueExists("regionalParameters")) {
     Aws::Map<Aws::String, JsonView> regionalParametersJsonMap = jsonValue.GetObject("regionalParameters").GetAllObjects();
     for (auto& regionalParametersItem : regionalParametersJsonMap) {
-      Aws::Map<Aws::String, JsonView> regionalParameterJsonMap = regionalParametersItem.second.GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> regionalParameterMap;
-      for (auto& regionalParameterItem : regionalParameterJsonMap) {
-        regionalParameterMap[regionalParameterItem.first] = regionalParameterItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> regionalParameter2JsonMap = regionalParametersItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> regionalParameter2Map;
+      for (auto& regionalParameter2Item : regionalParameter2JsonMap) {
+        regionalParameter2Map[regionalParameter2Item.first] = regionalParameter2Item.second.AsString();
       }
-      m_regionalParameters[regionalParametersItem.first] = std::move(regionalParameterMap);
+      m_regionalParameters[regionalParametersItem.first] = std::move(regionalParameter2Map);
     }
     m_regionalParametersHasBeenSet = true;
   }

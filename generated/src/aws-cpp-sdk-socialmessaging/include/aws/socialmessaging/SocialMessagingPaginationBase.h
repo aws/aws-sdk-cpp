@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/socialmessaging/model/ListLinkedWhatsAppBusinessAccountsPaginationTraits.h>
 #include <aws/socialmessaging/model/ListWhatsAppMessageTemplatesPaginationTraits.h>
@@ -26,6 +27,7 @@ class SocialMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinkedWhatsAppBusinessAccountsRequest,
                                     Pagination::ListLinkedWhatsAppBusinessAccountsPaginationTraits<DerivedClient>>
   ListLinkedWhatsAppBusinessAccountsPaginator(const Model::ListLinkedWhatsAppBusinessAccountsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLinkedWhatsAppBusinessAccountsRequest,
                                              Pagination::ListLinkedWhatsAppBusinessAccountsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class SocialMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWhatsAppMessageTemplatesRequest,
                                     Pagination::ListWhatsAppMessageTemplatesPaginationTraits<DerivedClient>>
   ListWhatsAppMessageTemplatesPaginator(const Model::ListWhatsAppMessageTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWhatsAppMessageTemplatesRequest,
                                              Pagination::ListWhatsAppMessageTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +51,7 @@ class SocialMessagingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWhatsAppTemplateLibraryRequest,
                                     Pagination::ListWhatsAppTemplateLibraryPaginationTraits<DerivedClient>>
   ListWhatsAppTemplateLibraryPaginator(const Model::ListWhatsAppTemplateLibraryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWhatsAppTemplateLibraryRequest,
                                              Pagination::ListWhatsAppTemplateLibraryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/ThingTypeMetadata.h>
@@ -136,6 +137,8 @@ class DescribeThingTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_thingTypeName;
 
@@ -148,6 +151,7 @@ class DescribeThingTypeResult {
   ThingTypeMetadata m_thingTypeMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_thingTypeNameHasBeenSet = false;
   bool m_thingTypeIdHasBeenSet = false;
   bool m_thingTypeArnHasBeenSet = false;

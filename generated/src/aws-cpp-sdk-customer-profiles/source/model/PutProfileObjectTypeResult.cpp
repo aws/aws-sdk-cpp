@@ -20,6 +20,7 @@ using namespace Aws;
 PutProfileObjectTypeResult::PutProfileObjectTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 PutProfileObjectTypeResult& PutProfileObjectTypeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ObjectTypeName")) {
     m_objectTypeName = jsonValue.GetString("ObjectTypeName");
@@ -57,6 +58,10 @@ PutProfileObjectTypeResult& PutProfileObjectTypeResult::operator=(const Aws::Ama
     m_maxAvailableProfileObjectCount = jsonValue.GetInteger("MaxAvailableProfileObjectCount");
     m_maxAvailableProfileObjectCountHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SourcePriority")) {
+    m_sourcePriority = jsonValue.GetInteger("SourcePriority");
+    m_sourcePriorityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Fields")) {
     Aws::Map<Aws::String, JsonView> fieldsJsonMap = jsonValue.GetObject("Fields").GetAllObjects();
     for (auto& fieldsItem : fieldsJsonMap) {
@@ -67,13 +72,14 @@ PutProfileObjectTypeResult& PutProfileObjectTypeResult::operator=(const Aws::Ama
   if (jsonValue.ValueExists("Keys")) {
     Aws::Map<Aws::String, JsonView> keysJsonMap = jsonValue.GetObject("Keys").GetAllObjects();
     for (auto& keysItem : keysJsonMap) {
-      Aws::Utils::Array<JsonView> objectTypeKeyListJsonList = keysItem.second.AsArray();
-      Aws::Vector<ObjectTypeKey> objectTypeKeyListList;
-      objectTypeKeyListList.reserve((size_t)objectTypeKeyListJsonList.GetLength());
-      for (unsigned objectTypeKeyListIndex = 0; objectTypeKeyListIndex < objectTypeKeyListJsonList.GetLength(); ++objectTypeKeyListIndex) {
-        objectTypeKeyListList.push_back(objectTypeKeyListJsonList[objectTypeKeyListIndex].AsObject());
+      Aws::Utils::Array<JsonView> objectTypeKeyList2JsonList = keysItem.second.AsArray();
+      Aws::Vector<ObjectTypeKey> objectTypeKeyList2List;
+      objectTypeKeyList2List.reserve((size_t)objectTypeKeyList2JsonList.GetLength());
+      for (unsigned objectTypeKeyList2Index = 0; objectTypeKeyList2Index < objectTypeKeyList2JsonList.GetLength();
+           ++objectTypeKeyList2Index) {
+        objectTypeKeyList2List.push_back(objectTypeKeyList2JsonList[objectTypeKeyList2Index].AsObject());
       }
-      m_keys[keysItem.first] = std::move(objectTypeKeyListList);
+      m_keys[keysItem.first] = std::move(objectTypeKeyList2List);
     }
     m_keysHasBeenSet = true;
   }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -87,12 +88,15 @@ class GetDiskSnapshotsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<DiskSnapshot> m_diskSnapshots;
 
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_diskSnapshotsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

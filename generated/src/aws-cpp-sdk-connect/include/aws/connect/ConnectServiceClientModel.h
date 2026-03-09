@@ -191,6 +191,7 @@
 #include <aws/connect/model/ListPhoneNumbersV2Result.h>
 #include <aws/connect/model/ListPredefinedAttributesResult.h>
 #include <aws/connect/model/ListPromptsResult.h>
+#include <aws/connect/model/ListQueueEmailAddressesResult.h>
 #include <aws/connect/model/ListQueueQuickConnectsResult.h>
 #include <aws/connect/model/ListQueuesResult.h>
 #include <aws/connect/model/ListQuickConnectsResult.h>
@@ -360,6 +361,7 @@ class AssociateInstanceStorageConfigRequest;
 class AssociateLambdaFunctionRequest;
 class AssociateLexBotRequest;
 class AssociatePhoneNumberContactFlowRequest;
+class AssociateQueueEmailAddressesRequest;
 class AssociateQueueQuickConnectsRequest;
 class AssociateRoutingProfileQueuesRequest;
 class AssociateSecurityKeyRequest;
@@ -495,6 +497,7 @@ class DisassociateInstanceStorageConfigRequest;
 class DisassociateLambdaFunctionRequest;
 class DisassociateLexBotRequest;
 class DisassociatePhoneNumberContactFlowRequest;
+class DisassociateQueueEmailAddressesRequest;
 class DisassociateQueueQuickConnectsRequest;
 class DisassociateRoutingProfileQueuesRequest;
 class DisassociateSecurityKeyRequest;
@@ -557,6 +560,7 @@ class ListPhoneNumbersRequest;
 class ListPhoneNumbersV2Request;
 class ListPredefinedAttributesRequest;
 class ListPromptsRequest;
+class ListQueueEmailAddressesRequest;
 class ListQueueQuickConnectsRequest;
 class ListQueuesRequest;
 class ListQuickConnectsRequest;
@@ -727,6 +731,7 @@ typedef Aws::Utils::Outcome<AssociateInstanceStorageConfigResult, ConnectError> 
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateLambdaFunctionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateLexBotOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociatePhoneNumberContactFlowOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateQueueEmailAddressesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateQueueQuickConnectsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> AssociateRoutingProfileQueuesOutcome;
 typedef Aws::Utils::Outcome<AssociateSecurityKeyResult, ConnectError> AssociateSecurityKeyOutcome;
@@ -862,6 +867,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateInstanceSto
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateLambdaFunctionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateLexBotOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociatePhoneNumberContactFlowOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateQueueEmailAddressesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateQueueQuickConnectsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateRoutingProfileQueuesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateSecurityKeyOutcome;
@@ -924,6 +930,7 @@ typedef Aws::Utils::Outcome<ListPhoneNumbersResult, ConnectError> ListPhoneNumbe
 typedef Aws::Utils::Outcome<ListPhoneNumbersV2Result, ConnectError> ListPhoneNumbersV2Outcome;
 typedef Aws::Utils::Outcome<ListPredefinedAttributesResult, ConnectError> ListPredefinedAttributesOutcome;
 typedef Aws::Utils::Outcome<ListPromptsResult, ConnectError> ListPromptsOutcome;
+typedef Aws::Utils::Outcome<ListQueueEmailAddressesResult, ConnectError> ListQueueEmailAddressesOutcome;
 typedef Aws::Utils::Outcome<ListQueueQuickConnectsResult, ConnectError> ListQueueQuickConnectsOutcome;
 typedef Aws::Utils::Outcome<ListQueuesResult, ConnectError> ListQueuesOutcome;
 typedef Aws::Utils::Outcome<ListQuickConnectsResult, ConnectError> ListQuickConnectsOutcome;
@@ -1094,6 +1101,7 @@ typedef std::future<AssociateInstanceStorageConfigOutcome> AssociateInstanceStor
 typedef std::future<AssociateLambdaFunctionOutcome> AssociateLambdaFunctionOutcomeCallable;
 typedef std::future<AssociateLexBotOutcome> AssociateLexBotOutcomeCallable;
 typedef std::future<AssociatePhoneNumberContactFlowOutcome> AssociatePhoneNumberContactFlowOutcomeCallable;
+typedef std::future<AssociateQueueEmailAddressesOutcome> AssociateQueueEmailAddressesOutcomeCallable;
 typedef std::future<AssociateQueueQuickConnectsOutcome> AssociateQueueQuickConnectsOutcomeCallable;
 typedef std::future<AssociateRoutingProfileQueuesOutcome> AssociateRoutingProfileQueuesOutcomeCallable;
 typedef std::future<AssociateSecurityKeyOutcome> AssociateSecurityKeyOutcomeCallable;
@@ -1229,6 +1237,7 @@ typedef std::future<DisassociateInstanceStorageConfigOutcome> DisassociateInstan
 typedef std::future<DisassociateLambdaFunctionOutcome> DisassociateLambdaFunctionOutcomeCallable;
 typedef std::future<DisassociateLexBotOutcome> DisassociateLexBotOutcomeCallable;
 typedef std::future<DisassociatePhoneNumberContactFlowOutcome> DisassociatePhoneNumberContactFlowOutcomeCallable;
+typedef std::future<DisassociateQueueEmailAddressesOutcome> DisassociateQueueEmailAddressesOutcomeCallable;
 typedef std::future<DisassociateQueueQuickConnectsOutcome> DisassociateQueueQuickConnectsOutcomeCallable;
 typedef std::future<DisassociateRoutingProfileQueuesOutcome> DisassociateRoutingProfileQueuesOutcomeCallable;
 typedef std::future<DisassociateSecurityKeyOutcome> DisassociateSecurityKeyOutcomeCallable;
@@ -1291,6 +1300,7 @@ typedef std::future<ListPhoneNumbersOutcome> ListPhoneNumbersOutcomeCallable;
 typedef std::future<ListPhoneNumbersV2Outcome> ListPhoneNumbersV2OutcomeCallable;
 typedef std::future<ListPredefinedAttributesOutcome> ListPredefinedAttributesOutcomeCallable;
 typedef std::future<ListPromptsOutcome> ListPromptsOutcomeCallable;
+typedef std::future<ListQueueEmailAddressesOutcome> ListQueueEmailAddressesOutcomeCallable;
 typedef std::future<ListQueueQuickConnectsOutcome> ListQueueQuickConnectsOutcomeCallable;
 typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
 typedef std::future<ListQuickConnectsOutcome> ListQuickConnectsOutcomeCallable;
@@ -1492,6 +1502,10 @@ typedef std::function<void(const ConnectClient*, const Model::AssociatePhoneNumb
                            const Model::AssociatePhoneNumberContactFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociatePhoneNumberContactFlowResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::AssociateQueueEmailAddressesRequest&,
+                           const Model::AssociateQueueEmailAddressesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateQueueEmailAddressesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::AssociateQueueQuickConnectsRequest&,
                            const Model::AssociateQueueQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateQueueQuickConnectsResponseReceivedHandler;
@@ -1926,6 +1940,10 @@ typedef std::function<void(const ConnectClient*, const Model::DisassociatePhoneN
                            const Model::DisassociatePhoneNumberContactFlowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociatePhoneNumberContactFlowResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DisassociateQueueEmailAddressesRequest&,
+                           const Model::DisassociateQueueEmailAddressesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateQueueEmailAddressesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DisassociateQueueQuickConnectsRequest&,
                            const Model::DisassociateQueueQuickConnectsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -2123,6 +2141,9 @@ typedef std::function<void(const ConnectClient*, const Model::ListPredefinedAttr
 typedef std::function<void(const ConnectClient*, const Model::ListPromptsRequest&, const Model::ListPromptsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPromptsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListQueueEmailAddressesRequest&, const Model::ListQueueEmailAddressesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListQueueEmailAddressesResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListQueueQuickConnectsRequest&, const Model::ListQueueQuickConnectsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListQueueQuickConnectsResponseReceivedHandler;

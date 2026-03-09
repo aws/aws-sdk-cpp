@@ -7,6 +7,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/cloudformation/model/OrganizationStatus.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 
 #include <utility>
 
@@ -57,10 +58,13 @@ class DescribeOrganizationsAccessResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   OrganizationStatus m_status{OrganizationStatus::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -73,8 +73,8 @@ class ListStreamsRequest : public KeyspacesStreamsRequest {
   ///@{
   /**
    * <p> The maximum number of streams to return in a single <code>ListStreams</code>
-   * request. Default value is 100. The minimum value is 1 and the maximum value is
-   * 100. </p>
+   * request. The default value is 100. The minimum value is 1 and the maximum value
+   * is 100. </p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

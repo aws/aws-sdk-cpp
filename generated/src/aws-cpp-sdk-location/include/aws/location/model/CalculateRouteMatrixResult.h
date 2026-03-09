@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/location/LocationService_EXPORTS.h>
@@ -145,6 +146,8 @@ class CalculateRouteMatrixResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Aws::Vector<RouteMatrixEntry>> m_routeMatrix;
 
@@ -155,6 +158,7 @@ class CalculateRouteMatrixResult {
   CalculateRouteMatrixSummary m_summary;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_routeMatrixHasBeenSet = false;
   bool m_snappedDeparturePositionsHasBeenSet = false;
   bool m_snappedDestinationPositionsHasBeenSet = false;

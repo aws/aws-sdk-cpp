@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/greengrass/Greengrass_EXPORTS.h>
@@ -82,12 +83,15 @@ class GetConnectivityInfoResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ConnectivityInfo> m_connectivityInfo;
 
   Aws::String m_message;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectivityInfoHasBeenSet = false;
   bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -8,6 +8,7 @@
 #include <aws/codeartifact/model/PackageGroupAllowedRepositoryUpdateType.h>
 #include <aws/codeartifact/model/PackageGroupDescription.h>
 #include <aws/codeartifact/model/PackageGroupOriginRestrictionType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -93,6 +94,8 @@ class UpdatePackageGroupOriginConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   PackageGroupDescription m_packageGroup;
 
@@ -100,6 +103,7 @@ class UpdatePackageGroupOriginConfigurationResult {
       m_allowedRepositoryUpdates;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_packageGroupHasBeenSet = false;
   bool m_allowedRepositoryUpdatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

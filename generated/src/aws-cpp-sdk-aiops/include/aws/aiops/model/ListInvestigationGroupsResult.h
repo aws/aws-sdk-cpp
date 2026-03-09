@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/aiops/AIOps_EXPORTS.h>
 #include <aws/aiops/model/ListInvestigationGroupsModel.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -84,12 +85,15 @@ class ListInvestigationGroupsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ListInvestigationGroupsModel> m_investigationGroups;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_investigationGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

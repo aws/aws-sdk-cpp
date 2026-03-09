@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/mediatailor/model/GetChannelSchedulePaginationTraits.h>
 #include <aws/mediatailor/model/ListAlertsPaginationTraits.h>
@@ -31,6 +32,7 @@ class MediaTailorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetChannelScheduleRequest,
                                     Pagination::GetChannelSchedulePaginationTraits<DerivedClient>>
   GetChannelSchedulePaginator(const Model::GetChannelScheduleRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetChannelScheduleRequest,
                                              Pagination::GetChannelSchedulePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -41,6 +43,7 @@ class MediaTailorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAlertsRequest, Pagination::ListAlertsPaginationTraits<DerivedClient>>
   ListAlertsPaginator(const Model::ListAlertsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAlertsRequest,
                                              Pagination::ListAlertsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -51,6 +54,7 @@ class MediaTailorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest, Pagination::ListChannelsPaginationTraits<DerivedClient>>
   ListChannelsPaginator(const Model::ListChannelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest,
                                              Pagination::ListChannelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -62,6 +66,7 @@ class MediaTailorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLiveSourcesRequest,
                                     Pagination::ListLiveSourcesPaginationTraits<DerivedClient>>
   ListLiveSourcesPaginator(const Model::ListLiveSourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLiveSourcesRequest,
                                              Pagination::ListLiveSourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -73,6 +78,7 @@ class MediaTailorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPlaybackConfigurationsRequest,
                                     Pagination::ListPlaybackConfigurationsPaginationTraits<DerivedClient>>
   ListPlaybackConfigurationsPaginator(const Model::ListPlaybackConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPlaybackConfigurationsRequest,
                                              Pagination::ListPlaybackConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -84,6 +90,7 @@ class MediaTailorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrefetchSchedulesRequest,
                                     Pagination::ListPrefetchSchedulesPaginationTraits<DerivedClient>>
   ListPrefetchSchedulesPaginator(const Model::ListPrefetchSchedulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPrefetchSchedulesRequest,
                                              Pagination::ListPrefetchSchedulesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -95,6 +102,7 @@ class MediaTailorPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourceLocationsRequest,
                                     Pagination::ListSourceLocationsPaginationTraits<DerivedClient>>
   ListSourceLocationsPaginator(const Model::ListSourceLocationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSourceLocationsRequest,
                                              Pagination::ListSourceLocationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -105,6 +113,7 @@ class MediaTailorPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVodSourcesRequest, Pagination::ListVodSourcesPaginationTraits<DerivedClient>>
   ListVodSourcesPaginator(const Model::ListVodSourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVodSourcesRequest,
                                              Pagination::ListVodSourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

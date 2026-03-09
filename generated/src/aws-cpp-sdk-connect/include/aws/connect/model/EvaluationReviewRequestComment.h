@@ -53,7 +53,7 @@ class EvaluationReviewRequestComment {
 
   ///@{
   /**
-   * <p>The timestamp when the review request comment was created.</p>
+   * <p>The timestamp when the evaluation review request comment was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
   inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
@@ -71,7 +71,7 @@ class EvaluationReviewRequestComment {
 
   ///@{
   /**
-   * <p>The user who created the review request comment.</p>
+   * <p>The user who created the evaluation review request comment.</p>
    */
   inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
   inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -130,6 +131,8 @@ class UpdateApiKeyCredentialProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Secret m_apiKeySecretArn;
 
@@ -142,6 +145,7 @@ class UpdateApiKeyCredentialProviderResult {
   Aws::Utils::DateTime m_lastUpdatedTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_apiKeySecretArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_credentialProviderArnHasBeenSet = false;

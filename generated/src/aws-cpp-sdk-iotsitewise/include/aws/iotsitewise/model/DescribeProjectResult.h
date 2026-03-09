@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
@@ -164,6 +165,8 @@ class DescribeProjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_projectId;
 
@@ -180,6 +183,7 @@ class DescribeProjectResult {
   Aws::Utils::DateTime m_projectLastUpdateDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_projectIdHasBeenSet = false;
   bool m_projectArnHasBeenSet = false;
   bool m_projectNameHasBeenSet = false;

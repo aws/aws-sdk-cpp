@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/budgets/model/BudgetPerformanceHistory.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -78,12 +79,15 @@ class DescribeBudgetPerformanceHistoryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   BudgetPerformanceHistory m_budgetPerformanceHistory;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_budgetPerformanceHistoryHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

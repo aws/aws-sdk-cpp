@@ -22,6 +22,7 @@ GetSensitiveDataOccurrencesResult::GetSensitiveDataOccurrencesResult(const Aws::
 }
 
 GetSensitiveDataOccurrencesResult& GetSensitiveDataOccurrencesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("error")) {
     m_error = jsonValue.GetString("error");
@@ -30,14 +31,14 @@ GetSensitiveDataOccurrencesResult& GetSensitiveDataOccurrencesResult::operator=(
   if (jsonValue.ValueExists("sensitiveDataOccurrences")) {
     Aws::Map<Aws::String, JsonView> sensitiveDataOccurrencesJsonMap = jsonValue.GetObject("sensitiveDataOccurrences").GetAllObjects();
     for (auto& sensitiveDataOccurrencesItem : sensitiveDataOccurrencesJsonMap) {
-      Aws::Utils::Array<JsonView> __listOfDetectedDataDetailsJsonList = sensitiveDataOccurrencesItem.second.AsArray();
-      Aws::Vector<DetectedDataDetails> __listOfDetectedDataDetailsList;
-      __listOfDetectedDataDetailsList.reserve((size_t)__listOfDetectedDataDetailsJsonList.GetLength());
-      for (unsigned __listOfDetectedDataDetailsIndex = 0;
-           __listOfDetectedDataDetailsIndex < __listOfDetectedDataDetailsJsonList.GetLength(); ++__listOfDetectedDataDetailsIndex) {
-        __listOfDetectedDataDetailsList.push_back(__listOfDetectedDataDetailsJsonList[__listOfDetectedDataDetailsIndex].AsObject());
+      Aws::Utils::Array<JsonView> __listOfDetectedDataDetails2JsonList = sensitiveDataOccurrencesItem.second.AsArray();
+      Aws::Vector<DetectedDataDetails> __listOfDetectedDataDetails2List;
+      __listOfDetectedDataDetails2List.reserve((size_t)__listOfDetectedDataDetails2JsonList.GetLength());
+      for (unsigned __listOfDetectedDataDetails2Index = 0;
+           __listOfDetectedDataDetails2Index < __listOfDetectedDataDetails2JsonList.GetLength(); ++__listOfDetectedDataDetails2Index) {
+        __listOfDetectedDataDetails2List.push_back(__listOfDetectedDataDetails2JsonList[__listOfDetectedDataDetails2Index].AsObject());
       }
-      m_sensitiveDataOccurrences[sensitiveDataOccurrencesItem.first] = std::move(__listOfDetectedDataDetailsList);
+      m_sensitiveDataOccurrences[sensitiveDataOccurrencesItem.first] = std::move(__listOfDetectedDataDetails2List);
     }
     m_sensitiveDataOccurrencesHasBeenSet = true;
   }

@@ -56,9 +56,9 @@ class FindingHistoryRecord {
 
   ///@{
   /**
-   * <p> A timestamp that indicates when Security Hub processed the updated finding
-   * record.</p> <p>For more information about the validation and formatting of
-   * timestamp fields in Security Hub, see <a
+   * <p> A timestamp that indicates when Security Hub CSPM processed the updated
+   * finding record.</p> <p>For more information about the validation and formatting
+   * of timestamp fields in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
@@ -99,7 +99,8 @@ class FindingHistoryRecord {
    * integrated Amazon Web Services service or third-party partner integration may
    * call <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
-   * <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a
+   * <code>BatchImportFindings</code> </a>, or an Security Hub CSPM customer may call
+   * <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
    * <code>BatchUpdateFindings</code> </a>. </p>
    */

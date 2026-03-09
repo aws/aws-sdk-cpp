@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/ResponseMetadata.h>
 #include <aws/redshift/model/TableRestoreStatus.h>
@@ -57,10 +58,13 @@ class RestoreTableFromClusterSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TableRestoreStatus m_tableRestoreStatus;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tableRestoreStatusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

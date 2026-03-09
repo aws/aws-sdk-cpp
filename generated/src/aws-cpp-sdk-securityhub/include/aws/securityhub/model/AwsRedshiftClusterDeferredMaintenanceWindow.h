@@ -36,7 +36,7 @@ class AwsRedshiftClusterDeferredMaintenanceWindow {
   /**
    * <p>The end of the time window for which maintenance was deferred.</p> <p>For
    * more information about the validation and formatting of timestamp fields in
-   * Security Hub, see <a
+   * Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetDeferMaintenanceEndTime() const { return m_deferMaintenanceEndTime; }
@@ -75,7 +75,7 @@ class AwsRedshiftClusterDeferredMaintenanceWindow {
   /**
    * <p>The start of the time window for which maintenance was deferred.</p> <p>For
    * more information about the validation and formatting of timestamp fields in
-   * Security Hub, see <a
+   * Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetDeferMaintenanceStartTime() const { return m_deferMaintenanceStartTime; }

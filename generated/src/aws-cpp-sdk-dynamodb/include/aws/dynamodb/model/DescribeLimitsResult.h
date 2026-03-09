@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
@@ -112,6 +113,8 @@ class DescribeLimitsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   long long m_accountMaxReadCapacityUnits{0};
 
@@ -122,6 +125,7 @@ class DescribeLimitsResult {
   long long m_tableMaxWriteCapacityUnits{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountMaxReadCapacityUnitsHasBeenSet = false;
   bool m_accountMaxWriteCapacityUnitsHasBeenSet = false;
   bool m_tableMaxReadCapacityUnitsHasBeenSet = false;

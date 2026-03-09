@@ -21,13 +21,13 @@ ProviderComponentSchema& ProviderComponentSchema::operator=(JsonView jsonValue) 
   if (jsonValue.ValueExists("schemas")) {
     Aws::Utils::Array<JsonView> schemasJsonList = jsonValue.GetArray("schemas");
     for (unsigned schemasIndex = 0; schemasIndex < schemasJsonList.GetLength(); ++schemasIndex) {
-      Aws::Utils::Array<JsonView> schemaListJsonList = schemasJsonList[schemasIndex].AsArray();
-      Aws::Vector<Aws::String> schemaListList;
-      schemaListList.reserve((size_t)schemaListJsonList.GetLength());
-      for (unsigned schemaListIndex = 0; schemaListIndex < schemaListJsonList.GetLength(); ++schemaListIndex) {
-        schemaListList.push_back(schemaListJsonList[schemaListIndex].AsString());
+      Aws::Utils::Array<JsonView> schemaList2JsonList = schemasJsonList[schemasIndex].AsArray();
+      Aws::Vector<Aws::String> schemaList2List;
+      schemaList2List.reserve((size_t)schemaList2JsonList.GetLength());
+      for (unsigned schemaList2Index = 0; schemaList2Index < schemaList2JsonList.GetLength(); ++schemaList2Index) {
+        schemaList2List.push_back(schemaList2JsonList[schemaList2Index].AsString());
       }
-      m_schemas.push_back(std::move(schemaListList));
+      m_schemas.push_back(std::move(schemaList2List));
     }
     m_schemasHasBeenSet = true;
   }

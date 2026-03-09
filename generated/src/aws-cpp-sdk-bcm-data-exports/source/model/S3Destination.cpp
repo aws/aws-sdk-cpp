@@ -22,10 +22,6 @@ S3Destination& S3Destination::operator=(JsonView jsonValue) {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
     m_s3BucketHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("S3OutputConfigurations")) {
-    m_s3OutputConfigurations = jsonValue.GetObject("S3OutputConfigurations");
-    m_s3OutputConfigurationsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("S3Prefix")) {
     m_s3Prefix = jsonValue.GetString("S3Prefix");
     m_s3PrefixHasBeenSet = true;
@@ -33,6 +29,10 @@ S3Destination& S3Destination::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("S3Region")) {
     m_s3Region = jsonValue.GetString("S3Region");
     m_s3RegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("S3OutputConfigurations")) {
+    m_s3OutputConfigurations = jsonValue.GetObject("S3OutputConfigurations");
+    m_s3OutputConfigurationsHasBeenSet = true;
   }
   return *this;
 }
@@ -44,16 +44,16 @@ JsonValue S3Destination::Jsonize() const {
     payload.WithString("S3Bucket", m_s3Bucket);
   }
 
-  if (m_s3OutputConfigurationsHasBeenSet) {
-    payload.WithObject("S3OutputConfigurations", m_s3OutputConfigurations.Jsonize());
-  }
-
   if (m_s3PrefixHasBeenSet) {
     payload.WithString("S3Prefix", m_s3Prefix);
   }
 
   if (m_s3RegionHasBeenSet) {
     payload.WithString("S3Region", m_s3Region);
+  }
+
+  if (m_s3OutputConfigurationsHasBeenSet) {
+    payload.WithObject("S3OutputConfigurations", m_s3OutputConfigurations.Jsonize());
   }
 
   return payload;

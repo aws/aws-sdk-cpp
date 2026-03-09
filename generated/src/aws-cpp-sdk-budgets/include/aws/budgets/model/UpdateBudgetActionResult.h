@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/budgets/model/Action.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -105,6 +106,8 @@ class UpdateBudgetActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_accountId;
 
@@ -115,6 +118,7 @@ class UpdateBudgetActionResult {
   Action m_newAction;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountIdHasBeenSet = false;
   bool m_budgetNameHasBeenSet = false;
   bool m_oldActionHasBeenSet = false;

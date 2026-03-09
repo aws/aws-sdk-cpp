@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -140,6 +141,8 @@ class BatchGetItemResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>> m_responses;
 
@@ -148,6 +151,7 @@ class BatchGetItemResult {
   Aws::Vector<ConsumedCapacity> m_consumedCapacity;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_responsesHasBeenSet = false;
   bool m_unprocessedKeysHasBeenSet = false;
   bool m_consumedCapacityHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
@@ -100,6 +101,8 @@ class GetAssociatedResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Resource m_resource;
 
@@ -108,6 +111,7 @@ class GetAssociatedResourceResult {
   ApplicationTagResult m_applicationTagResult;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
   bool m_applicationTagResultHasBeenSet = false;

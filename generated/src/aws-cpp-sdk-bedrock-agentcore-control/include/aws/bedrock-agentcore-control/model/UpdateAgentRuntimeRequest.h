@@ -12,6 +12,7 @@
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/RuntimeMetadataConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -200,6 +201,25 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The updated configuration for microVM Metadata Service (MMDS) settings for
+   * the AgentCore Runtime.</p>
+   */
+  inline const RuntimeMetadataConfiguration& GetMetadataConfiguration() const { return m_metadataConfiguration; }
+  inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
+  template <typename MetadataConfigurationT = RuntimeMetadataConfiguration>
+  void SetMetadataConfiguration(MetadataConfigurationT&& value) {
+    m_metadataConfigurationHasBeenSet = true;
+    m_metadataConfiguration = std::forward<MetadataConfigurationT>(value);
+  }
+  template <typename MetadataConfigurationT = RuntimeMetadataConfiguration>
+  UpdateAgentRuntimeRequest& WithMetadataConfiguration(MetadataConfigurationT&& value) {
+    SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Updated environment variables to set in the AgentCore Runtime
    * environment.</p>
    */
@@ -259,6 +279,8 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   LifecycleConfiguration m_lifecycleConfiguration;
 
+  RuntimeMetadataConfiguration m_metadataConfiguration;
+
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -271,6 +293,7 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   bool m_requestHeaderConfigurationHasBeenSet = false;
   bool m_protocolConfigurationHasBeenSet = false;
   bool m_lifecycleConfigurationHasBeenSet = false;
+  bool m_metadataConfigurationHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
@@ -87,12 +88,15 @@ class GetUtterancesViewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_botName;
 
   Aws::Vector<UtteranceList> m_utterances;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_botNameHasBeenSet = false;
   bool m_utterancesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

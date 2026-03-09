@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
@@ -90,12 +91,15 @@ class UpdateKeyRegistrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<FailedKeyRegistrationEntry> m_failedKeyRegistration;
 
   Aws::Vector<SuccessfulKeyRegistrationEntry> m_successfulKeyRegistration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_failedKeyRegistrationHasBeenSet = false;
   bool m_successfulKeyRegistrationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

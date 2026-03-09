@@ -7,6 +7,7 @@
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/codeartifact/model/AssetSummary.h>
 #include <aws/codeartifact/model/PackageFormat.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -179,6 +180,8 @@ class ListPackageVersionAssetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   PackageFormat m_format{PackageFormat::NOT_SET};
 
@@ -195,6 +198,7 @@ class ListPackageVersionAssetsResult {
   Aws::Vector<AssetSummary> m_assets;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_formatHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
   bool m_packageHasBeenSet = false;

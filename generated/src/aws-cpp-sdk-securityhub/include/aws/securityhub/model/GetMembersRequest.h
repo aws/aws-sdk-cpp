@@ -31,8 +31,8 @@ class GetMembersRequest : public SecurityHubRequest {
 
   ///@{
   /**
-   * <p>The list of account IDs for the Security Hub member accounts to return the
-   * details for. </p>
+   * <p>The list of account IDs for the Security Hub CSPM member accounts to return
+   * the details for. </p>
    */
   inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
   inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }

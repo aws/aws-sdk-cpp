@@ -7,6 +7,7 @@
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/cloudsearch/model/ResponseMetadata.h>
 #include <aws/cloudsearch/model/SuggesterStatus.h>
+#include <aws/core/http/HttpResponse.h>
 
 #include <utility>
 
@@ -62,10 +63,13 @@ class DefineSuggesterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SuggesterStatus m_suggester;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_suggesterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

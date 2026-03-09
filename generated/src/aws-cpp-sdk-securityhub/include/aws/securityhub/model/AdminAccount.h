@@ -21,8 +21,8 @@ namespace SecurityHub {
 namespace Model {
 
 /**
- * <p>Represents a Security Hub administrator account designated by an organization
- * management account.</p><p><h3>See Also:</h3>   <a
+ * <p>Represents a Security Hub CSPM administrator account designated by an
+ * organization management account.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AdminAccount">AWS
  * API Reference</a></p>
  */
@@ -35,8 +35,8 @@ class AdminAccount {
 
   ///@{
   /**
-   * <p>The Amazon Web Services account identifier of the Security Hub administrator
-   * account.</p>
+   * <p>The Amazon Web Services account identifier of the Security Hub CSPM
+   * administrator account.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -54,8 +54,9 @@ class AdminAccount {
 
   ///@{
   /**
-   * <p>The current status of the Security Hub administrator account. Indicates
-   * whether the account is currently enabled as a Security Hub administrator.</p>
+   * <p>The current status of the Security Hub CSPM administrator account. Indicates
+   * whether the account is currently enabled as a Security Hub CSPM
+   * administrator.</p>
    */
   inline AdminStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

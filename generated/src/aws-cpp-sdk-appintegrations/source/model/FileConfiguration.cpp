@@ -28,13 +28,13 @@ FileConfiguration& FileConfiguration::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("Filters")) {
     Aws::Map<Aws::String, JsonView> filtersJsonMap = jsonValue.GetObject("Filters").GetAllObjects();
     for (auto& filtersItem : filtersJsonMap) {
-      Aws::Utils::Array<JsonView> fieldsListJsonList = filtersItem.second.AsArray();
-      Aws::Vector<Aws::String> fieldsListList;
-      fieldsListList.reserve((size_t)fieldsListJsonList.GetLength());
-      for (unsigned fieldsListIndex = 0; fieldsListIndex < fieldsListJsonList.GetLength(); ++fieldsListIndex) {
-        fieldsListList.push_back(fieldsListJsonList[fieldsListIndex].AsString());
+      Aws::Utils::Array<JsonView> fieldsList2JsonList = filtersItem.second.AsArray();
+      Aws::Vector<Aws::String> fieldsList2List;
+      fieldsList2List.reserve((size_t)fieldsList2JsonList.GetLength());
+      for (unsigned fieldsList2Index = 0; fieldsList2Index < fieldsList2JsonList.GetLength(); ++fieldsList2Index) {
+        fieldsList2List.push_back(fieldsList2JsonList[fieldsList2Index].AsString());
       }
-      m_filters[filtersItem.first] = std::move(fieldsListList);
+      m_filters[filtersItem.first] = std::move(fieldsList2List);
     }
     m_filtersHasBeenSet = true;
   }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 
@@ -58,10 +59,13 @@ class GetSignedBluinsightsUrlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_signedBiUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_signedBiUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

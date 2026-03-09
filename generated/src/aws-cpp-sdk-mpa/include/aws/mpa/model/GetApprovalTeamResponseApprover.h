@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mpa/MPA_EXPORTS.h>
+#include <aws/mpa/model/ApproverLastActivity.h>
 #include <aws/mpa/model/IdentityStatus.h>
 #include <aws/mpa/model/MfaMethod.h>
 
@@ -128,6 +129,59 @@ class GetApprovalTeamResponseApprover {
 
   ///@{
   /**
+   * <p>Last Activity performed by the approver.</p>
+   */
+  inline ApproverLastActivity GetLastActivity() const { return m_lastActivity; }
+  inline bool LastActivityHasBeenSet() const { return m_lastActivityHasBeenSet; }
+  inline void SetLastActivity(ApproverLastActivity value) {
+    m_lastActivityHasBeenSet = true;
+    m_lastActivity = value;
+  }
+  inline GetApprovalTeamResponseApprover& WithLastActivity(ApproverLastActivity value) {
+    SetLastActivity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Timestamp when the approver last responded to an operation or invitation
+   * request.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastActivityTime() const { return m_lastActivityTime; }
+  inline bool LastActivityTimeHasBeenSet() const { return m_lastActivityTimeHasBeenSet; }
+  template <typename LastActivityTimeT = Aws::Utils::DateTime>
+  void SetLastActivityTime(LastActivityTimeT&& value) {
+    m_lastActivityTimeHasBeenSet = true;
+    m_lastActivityTime = std::forward<LastActivityTimeT>(value);
+  }
+  template <typename LastActivityTimeT = Aws::Utils::DateTime>
+  GetApprovalTeamResponseApprover& WithLastActivityTime(LastActivityTimeT&& value) {
+    SetLastActivityTime(std::forward<LastActivityTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Amazon Resource Name (ARN) for the pending baseline session.</p>
+   */
+  inline const Aws::String& GetPendingBaselineSessionArn() const { return m_pendingBaselineSessionArn; }
+  inline bool PendingBaselineSessionArnHasBeenSet() const { return m_pendingBaselineSessionArnHasBeenSet; }
+  template <typename PendingBaselineSessionArnT = Aws::String>
+  void SetPendingBaselineSessionArn(PendingBaselineSessionArnT&& value) {
+    m_pendingBaselineSessionArnHasBeenSet = true;
+    m_pendingBaselineSessionArn = std::forward<PendingBaselineSessionArnT>(value);
+  }
+  template <typename PendingBaselineSessionArnT = Aws::String>
+  GetApprovalTeamResponseApprover& WithPendingBaselineSessionArn(PendingBaselineSessionArnT&& value) {
+    SetPendingBaselineSessionArn(std::forward<PendingBaselineSessionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Multi-factor authentication configuration for the approver</p>
    */
   inline const Aws::Vector<MfaMethod>& GetMfaMethods() const { return m_mfaMethods; }
@@ -160,12 +214,21 @@ class GetApprovalTeamResponseApprover {
 
   IdentityStatus m_primaryIdentityStatus{IdentityStatus::NOT_SET};
 
+  ApproverLastActivity m_lastActivity{ApproverLastActivity::NOT_SET};
+
+  Aws::Utils::DateTime m_lastActivityTime{};
+
+  Aws::String m_pendingBaselineSessionArn;
+
   Aws::Vector<MfaMethod> m_mfaMethods;
   bool m_approverIdHasBeenSet = false;
   bool m_responseTimeHasBeenSet = false;
   bool m_primaryIdentityIdHasBeenSet = false;
   bool m_primaryIdentitySourceArnHasBeenSet = false;
   bool m_primaryIdentityStatusHasBeenSet = false;
+  bool m_lastActivityHasBeenSet = false;
+  bool m_lastActivityTimeHasBeenSet = false;
+  bool m_pendingBaselineSessionArnHasBeenSet = false;
   bool m_mfaMethodsHasBeenSet = false;
 };
 

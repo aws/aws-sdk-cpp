@@ -36,7 +36,7 @@ class DateFilter {
   /**
    * <p>A timestamp that provides the start date for the date filter.</p> <p>For more
    * information about the validation and formatting of timestamp fields in Security
-   * Hub, see <a
+   * Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetStart() const { return m_start; }
@@ -57,7 +57,7 @@ class DateFilter {
   /**
    * <p>A timestamp that provides the end date for the date filter.</p> <p>For more
    * information about the validation and formatting of timestamp fields in Security
-   * Hub, see <a
+   * Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetEnd() const { return m_end; }

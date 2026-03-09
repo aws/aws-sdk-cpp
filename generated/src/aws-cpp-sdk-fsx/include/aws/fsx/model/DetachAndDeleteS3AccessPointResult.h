@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/S3AccessPointAttachmentLifecycle.h>
@@ -73,12 +74,15 @@ class DetachAndDeleteS3AccessPointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   S3AccessPointAttachmentLifecycle m_lifecycle{S3AccessPointAttachmentLifecycle::NOT_SET};
 
   Aws::String m_name;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lifecycleHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
@@ -89,12 +90,15 @@ class BatchGetCollectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<CollectionDetail> m_collectionDetails;
 
   Aws::Vector<CollectionErrorDetail> m_collectionErrorDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_collectionDetailsHasBeenSet = false;
   bool m_collectionErrorDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

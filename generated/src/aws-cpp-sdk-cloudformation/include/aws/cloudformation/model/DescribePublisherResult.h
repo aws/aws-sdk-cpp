@@ -8,6 +8,7 @@
 #include <aws/cloudformation/model/IdentityProvider.h>
 #include <aws/cloudformation/model/PublisherStatus.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -109,6 +110,8 @@ class DescribePublisherResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_publisherId;
 
@@ -119,6 +122,7 @@ class DescribePublisherResult {
   Aws::String m_publisherProfile;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_publisherIdHasBeenSet = false;
   bool m_publisherStatusHasBeenSet = false;
   bool m_identityProviderHasBeenSet = false;

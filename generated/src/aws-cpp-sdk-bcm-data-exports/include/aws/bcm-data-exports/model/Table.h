@@ -35,24 +35,6 @@ class Table {
 
   ///@{
   /**
-   * <p>The description for the table.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  Table& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the table.</p>
    */
   inline const Aws::String& GetTableName() const { return m_tableName; }
@@ -65,6 +47,24 @@ class Table {
   template <typename TableNameT = Aws::String>
   Table& WithTableName(TableNameT&& value) {
     SetTableName(std::forward<TableNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description for the table.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  Table& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
     return *this;
   }
   ///@}
@@ -93,13 +93,13 @@ class Table {
   }
   ///@}
  private:
-  Aws::String m_description;
-
   Aws::String m_tableName;
 
+  Aws::String m_description;
+
   Aws::Vector<TablePropertyDescription> m_tableProperties;
-  bool m_descriptionHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tablePropertiesHasBeenSet = false;
 };
 

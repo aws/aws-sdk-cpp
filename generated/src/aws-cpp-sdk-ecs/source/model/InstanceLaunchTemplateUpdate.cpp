@@ -38,6 +38,10 @@ InstanceLaunchTemplateUpdate& InstanceLaunchTemplateUpdate::operator=(JsonView j
     m_instanceRequirements = jsonValue.GetObject("instanceRequirements");
     m_instanceRequirementsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("capacityReservations")) {
+    m_capacityReservations = jsonValue.GetObject("capacityReservations");
+    m_capacityReservationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue InstanceLaunchTemplateUpdate::Jsonize() const {
 
   if (m_instanceRequirementsHasBeenSet) {
     payload.WithObject("instanceRequirements", m_instanceRequirements.Jsonize());
+  }
+
+  if (m_capacityReservationsHasBeenSet) {
+    payload.WithObject("capacityReservations", m_capacityReservations.Jsonize());
   }
 
   return payload;

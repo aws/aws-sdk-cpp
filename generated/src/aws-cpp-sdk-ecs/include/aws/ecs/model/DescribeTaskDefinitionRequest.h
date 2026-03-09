@@ -17,6 +17,9 @@ namespace ECS {
 namespace Model {
 
 /**
+ * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinitionRequest">AWS
+ * API Reference</a></p>
  */
 class DescribeTaskDefinitionRequest : public ECSRequest {
  public:

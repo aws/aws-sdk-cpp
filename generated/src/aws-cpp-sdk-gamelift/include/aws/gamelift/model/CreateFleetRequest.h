@@ -16,6 +16,8 @@
 #include <aws/gamelift/model/InstanceRoleCredentialsProvider.h>
 #include <aws/gamelift/model/IpPermission.h>
 #include <aws/gamelift/model/LocationConfiguration.h>
+#include <aws/gamelift/model/PlayerGatewayConfiguration.h>
+#include <aws/gamelift/model/PlayerGatewayMode.h>
 #include <aws/gamelift/model/ProtectionPolicy.h>
 #include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
 #include <aws/gamelift/model/RuntimeConfiguration.h>
@@ -589,6 +591,65 @@ class CreateFleetRequest : public GameLiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configures player gateway for your fleet. Player gateway provides benefits
+   * such as DDoS protection by rate limiting and validating traﬃc before it reaches
+   * game servers, hiding game server IP addresses from players, and providing
+   * updated endpoints when relay endpoints become unhealthy. Note, player gateway is
+   * only available for fleets using server SDK 5.x or later game server builds.</p>
+   * <p> <b>How it works:</b> When enabled, game clients connect to relay endpoints
+   * instead of to your game servers. Player gateway validates player gateway tokens
+   * and routes traffic to the appropriate game server. Your game backend calls <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a>
+   * to retrieve relay endpoints and player gateway tokens for your game clients. To
+   * learn more about this topic, see <a
+   * href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/ddos-protection-intro.html">DDoS
+   * protection with Amazon GameLift Servers player gateway</a>.</p> <p>Possible
+   * values include:</p> <ul> <li> <p> <code>DISABLED</code> (default) -- Game
+   * clients connect to the game server endpoint. Use this when you do not intend to
+   * integrate your game with player gateway.</p> </li> <li> <p> <code>ENABLED</code>
+   * -- Player gateway is available in fleet locations where it is supported. Your
+   * game backend can call <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a>
+   * to obtain a player gateway token and endpoints for game clients.</p> </li> <li>
+   * <p> <code>REQUIRED</code> -- Player gateway is available in fleet locations
+   * where it is supported, and the fleet can only use locations that support this
+   * feature. Attempting to add a remote location to your fleet which does not
+   * support player gateway will result in an
+   * <code>InvalidRequestException</code>.</p> </li> </ul>
+   */
+  inline PlayerGatewayMode GetPlayerGatewayMode() const { return m_playerGatewayMode; }
+  inline bool PlayerGatewayModeHasBeenSet() const { return m_playerGatewayModeHasBeenSet; }
+  inline void SetPlayerGatewayMode(PlayerGatewayMode value) {
+    m_playerGatewayModeHasBeenSet = true;
+    m_playerGatewayMode = value;
+  }
+  inline CreateFleetRequest& WithPlayerGatewayMode(PlayerGatewayMode value) {
+    SetPlayerGatewayMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for player gateway. Use this to specify advanced
+   * options for how player gateway handles connections.</p>
+   */
+  inline const PlayerGatewayConfiguration& GetPlayerGatewayConfiguration() const { return m_playerGatewayConfiguration; }
+  inline bool PlayerGatewayConfigurationHasBeenSet() const { return m_playerGatewayConfigurationHasBeenSet; }
+  template <typename PlayerGatewayConfigurationT = PlayerGatewayConfiguration>
+  void SetPlayerGatewayConfiguration(PlayerGatewayConfigurationT&& value) {
+    m_playerGatewayConfigurationHasBeenSet = true;
+    m_playerGatewayConfiguration = std::forward<PlayerGatewayConfigurationT>(value);
+  }
+  template <typename PlayerGatewayConfigurationT = PlayerGatewayConfiguration>
+  CreateFleetRequest& WithPlayerGatewayConfiguration(PlayerGatewayConfigurationT&& value) {
+    SetPlayerGatewayConfiguration(std::forward<PlayerGatewayConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -635,6 +696,10 @@ class CreateFleetRequest : public GameLiftRequest {
   AnywhereConfiguration m_anywhereConfiguration;
 
   InstanceRoleCredentialsProvider m_instanceRoleCredentialsProvider{InstanceRoleCredentialsProvider::NOT_SET};
+
+  PlayerGatewayMode m_playerGatewayMode{PlayerGatewayMode::NOT_SET};
+
+  PlayerGatewayConfiguration m_playerGatewayConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_buildIdHasBeenSet = false;
@@ -658,6 +723,8 @@ class CreateFleetRequest : public GameLiftRequest {
   bool m_computeTypeHasBeenSet = false;
   bool m_anywhereConfigurationHasBeenSet = false;
   bool m_instanceRoleCredentialsProviderHasBeenSet = false;
+  bool m_playerGatewayModeHasBeenSet = false;
+  bool m_playerGatewayConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

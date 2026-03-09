@@ -20,6 +20,7 @@ using namespace Aws;
 GetFarmResult::GetFarmResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetFarmResult& GetFarmResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("farmId")) {
     m_farmId = jsonValue.GetString("farmId");
@@ -36,6 +37,10 @@ GetFarmResult& GetFarmResult::operator=(const Aws::AmazonWebServiceResult<JsonVa
   if (jsonValue.ValueExists("kmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("costScaleFactor")) {
+    m_costScaleFactor = jsonValue.GetDouble("costScaleFactor");
+    m_costScaleFactorHasBeenSet = true;
   }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");

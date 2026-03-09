@@ -71,6 +71,7 @@
 #include <aws/connect/model/AssociateLambdaFunctionRequest.h>
 #include <aws/connect/model/AssociateLexBotRequest.h>
 #include <aws/connect/model/AssociatePhoneNumberContactFlowRequest.h>
+#include <aws/connect/model/AssociateQueueEmailAddressesRequest.h>
 #include <aws/connect/model/AssociateQueueQuickConnectsRequest.h>
 #include <aws/connect/model/AssociateRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/AssociateSecurityKeyRequest.h>
@@ -134,6 +135,7 @@
 #include <aws/connect/model/CaseSlaConfiguration.h>
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/ChatContactMetrics.h>
+#include <aws/connect/model/ChatEntryPointParameters.h>
 #include <aws/connect/model/ChatEvent.h>
 #include <aws/connect/model/ChatEventType.h>
 #include <aws/connect/model/ChatMessage.h>
@@ -443,6 +445,7 @@
 #include <aws/connect/model/DisassociateLambdaFunctionRequest.h>
 #include <aws/connect/model/DisassociateLexBotRequest.h>
 #include <aws/connect/model/DisassociatePhoneNumberContactFlowRequest.h>
+#include <aws/connect/model/DisassociateQueueEmailAddressesRequest.h>
 #include <aws/connect/model/DisassociateQueueQuickConnectsRequest.h>
 #include <aws/connect/model/DisassociateRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/DisassociateSecurityKeyRequest.h>
@@ -461,10 +464,12 @@
 #include <aws/connect/model/DownloadUrlMetadata.h>
 #include <aws/connect/model/EffectiveHoursOfOperations.h>
 #include <aws/connect/model/EffectiveOverrideHours.h>
+#include <aws/connect/model/EmailAddressConfig.h>
 #include <aws/connect/model/EmailAddressInfo.h>
 #include <aws/connect/model/EmailAddressMetadata.h>
 #include <aws/connect/model/EmailAddressSearchCriteria.h>
 #include <aws/connect/model/EmailAddressSearchFilter.h>
+#include <aws/connect/model/EmailAddressSummary.h>
 #include <aws/connect/model/EmailAttachment.h>
 #include <aws/connect/model/EmailHeaderType.h>
 #include <aws/connect/model/EmailMessageReference.h>
@@ -760,6 +765,8 @@
 #include <aws/connect/model/ListPredefinedAttributesResult.h>
 #include <aws/connect/model/ListPromptsRequest.h>
 #include <aws/connect/model/ListPromptsResult.h>
+#include <aws/connect/model/ListQueueEmailAddressesRequest.h>
+#include <aws/connect/model/ListQueueEmailAddressesResult.h>
 #include <aws/connect/model/ListQueueQuickConnectsRequest.h>
 #include <aws/connect/model/ListQueueQuickConnectsResult.h>
 #include <aws/connect/model/ListQueuesRequest.h>

@@ -160,6 +160,7 @@
 #include <aws/datazone/model/PostTimeSeriesDataPointsRequest.h>
 #include <aws/datazone/model/PutDataExportConfigurationRequest.h>
 #include <aws/datazone/model/PutEnvironmentBlueprintConfigurationRequest.h>
+#include <aws/datazone/model/QueryGraphRequest.h>
 #include <aws/datazone/model/RejectPredictionsRequest.h>
 #include <aws/datazone/model/RejectSubscriptionRequestRequest.h>
 #include <aws/datazone/model/RemoveEntityOwnerRequest.h>
@@ -254,7 +255,7 @@ DataZoneClient::DataZoneClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-DataZoneClient::DataZoneClient(const Client::ClientConfiguration& clientConfiguration)
+DataZoneClient::DataZoneClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -266,7 +267,7 @@ DataZoneClient::DataZoneClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-DataZoneClient::DataZoneClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+DataZoneClient::DataZoneClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -278,7 +279,7 @@ DataZoneClient::DataZoneClient(const AWSCredentials& credentials, const Client::
 }
 
 DataZoneClient::DataZoneClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -6264,6 +6265,43 @@ PutEnvironmentBlueprintConfigurationOutcome DataZoneClient::PutEnvironmentBluepr
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentBlueprintIdentifier());
         return PutEnvironmentBlueprintConfigurationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+QueryGraphOutcome DataZoneClient::QueryGraph(const QueryGraphRequest& request) const {
+  AWS_OPERATION_GUARD(QueryGraph);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, QueryGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("QueryGraph", "Required field: DomainIdentifier, is not set");
+    return QueryGraphOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                   "Missing required field [DomainIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, QueryGraph, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, QueryGraph, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".QueryGraph",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<QueryGraphOutcome>(
+      [&]() -> QueryGraphOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, QueryGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/graph/query");
+        return QueryGraphOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

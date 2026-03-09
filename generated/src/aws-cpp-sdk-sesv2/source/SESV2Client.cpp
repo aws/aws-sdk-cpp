@@ -189,7 +189,7 @@ SESV2Client::SESV2Client(const std::shared_ptr<AWSCredentialsProvider>& credenti
 }
 
 /* Legacy constructors due deprecation */
-SESV2Client::SESV2Client(const Client::ClientConfiguration& clientConfiguration)
+SESV2Client::SESV2Client(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -201,7 +201,7 @@ SESV2Client::SESV2Client(const Client::ClientConfiguration& clientConfiguration)
   init(m_clientConfiguration);
 }
 
-SESV2Client::SESV2Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SESV2Client::SESV2Client(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -213,7 +213,7 @@ SESV2Client::SESV2Client(const AWSCredentials& credentials, const Client::Client
 }
 
 SESV2Client::SESV2Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                         const Client::ClientConfiguration& clientConfiguration)
+                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

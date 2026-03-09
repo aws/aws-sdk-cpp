@@ -11,6 +11,7 @@
 #include <aws/apigateway/model/MutualTlsAuthentication.h>
 #include <aws/apigateway/model/RoutingMode.h>
 #include <aws/apigateway/model/SecurityPolicy.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -482,6 +483,8 @@ class UpdateDomainNameResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_domainName;
 
@@ -530,6 +533,7 @@ class UpdateDomainNameResult {
   RoutingMode m_routingMode{RoutingMode::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainNameHasBeenSet = false;
   bool m_domainNameIdHasBeenSet = false;
   bool m_domainNameArnHasBeenSet = false;

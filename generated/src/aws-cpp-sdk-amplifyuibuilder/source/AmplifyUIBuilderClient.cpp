@@ -110,7 +110,7 @@ AmplifyUIBuilderClient::AmplifyUIBuilderClient(const std::shared_ptr<AWSCredenti
 }
 
 /* Legacy constructors due deprecation */
-AmplifyUIBuilderClient::AmplifyUIBuilderClient(const Client::ClientConfiguration& clientConfiguration)
+AmplifyUIBuilderClient::AmplifyUIBuilderClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -122,7 +122,8 @@ AmplifyUIBuilderClient::AmplifyUIBuilderClient(const Client::ClientConfiguration
   init(m_clientConfiguration);
 }
 
-AmplifyUIBuilderClient::AmplifyUIBuilderClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+AmplifyUIBuilderClient::AmplifyUIBuilderClient(const AWSCredentials& credentials,
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -133,7 +134,7 @@ AmplifyUIBuilderClient::AmplifyUIBuilderClient(const AWSCredentials& credentials
 }
 
 AmplifyUIBuilderClient::AmplifyUIBuilderClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                               const Client::ClientConfiguration& clientConfiguration)
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

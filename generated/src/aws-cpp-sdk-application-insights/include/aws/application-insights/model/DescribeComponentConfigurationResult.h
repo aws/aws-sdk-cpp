@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/application-insights/model/Tier.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -92,6 +93,8 @@ class DescribeComponentConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_monitor{false};
 
@@ -100,6 +103,7 @@ class DescribeComponentConfigurationResult {
   Aws::String m_componentConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_monitorHasBeenSet = false;
   bool m_tierHasBeenSet = false;
   bool m_componentConfigurationHasBeenSet = false;

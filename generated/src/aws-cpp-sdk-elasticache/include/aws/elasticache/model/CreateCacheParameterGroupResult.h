@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/CacheParameterGroup.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class CreateCacheParameterGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CacheParameterGroup m_cacheParameterGroup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_cacheParameterGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -94,7 +94,7 @@ TaxSettingsClient::TaxSettingsClient(const std::shared_ptr<AWSCredentialsProvide
 }
 
 /* Legacy constructors due deprecation */
-TaxSettingsClient::TaxSettingsClient(const Client::ClientConfiguration& clientConfiguration)
+TaxSettingsClient::TaxSettingsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -106,7 +106,7 @@ TaxSettingsClient::TaxSettingsClient(const Client::ClientConfiguration& clientCo
   init(m_clientConfiguration);
 }
 
-TaxSettingsClient::TaxSettingsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+TaxSettingsClient::TaxSettingsClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -117,7 +117,7 @@ TaxSettingsClient::TaxSettingsClient(const AWSCredentials& credentials, const Cl
 }
 
 TaxSettingsClient::TaxSettingsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                     const Client::ClientConfiguration& clientConfiguration)
+                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

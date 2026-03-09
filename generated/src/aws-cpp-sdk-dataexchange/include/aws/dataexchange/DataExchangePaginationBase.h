@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/dataexchange/model/ListDataGrantsPaginationTraits.h>
 #include <aws/dataexchange/model/ListDataSetRevisionsPaginationTraits.h>
@@ -29,6 +30,7 @@ class DataExchangePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataGrantsRequest, Pagination::ListDataGrantsPaginationTraits<DerivedClient>>
   ListDataGrantsPaginator(const Model::ListDataGrantsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataGrantsRequest,
                                              Pagination::ListDataGrantsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -40,6 +42,7 @@ class DataExchangePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSetRevisionsRequest,
                                     Pagination::ListDataSetRevisionsPaginationTraits<DerivedClient>>
   ListDataSetRevisionsPaginator(const Model::ListDataSetRevisionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSetRevisionsRequest,
                                              Pagination::ListDataSetRevisionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +53,7 @@ class DataExchangePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSetsRequest, Pagination::ListDataSetsPaginationTraits<DerivedClient>>
   ListDataSetsPaginator(const Model::ListDataSetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSetsRequest,
                                              Pagination::ListDataSetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -61,6 +65,7 @@ class DataExchangePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventActionsRequest,
                                     Pagination::ListEventActionsPaginationTraits<DerivedClient>>
   ListEventActionsPaginator(const Model::ListEventActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEventActionsRequest,
                                              Pagination::ListEventActionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -71,6 +76,7 @@ class DataExchangePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>
   ListJobsPaginator(const Model::ListJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobsRequest, Pagination::ListJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -81,6 +87,7 @@ class DataExchangePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReceivedDataGrantsRequest,
                                     Pagination::ListReceivedDataGrantsPaginationTraits<DerivedClient>>
   ListReceivedDataGrantsPaginator(const Model::ListReceivedDataGrantsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReceivedDataGrantsRequest,
                                              Pagination::ListReceivedDataGrantsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -92,6 +99,7 @@ class DataExchangePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRevisionAssetsRequest,
                                     Pagination::ListRevisionAssetsPaginationTraits<DerivedClient>>
   ListRevisionAssetsPaginator(const Model::ListRevisionAssetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRevisionAssetsRequest,
                                              Pagination::ListRevisionAssetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

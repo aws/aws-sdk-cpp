@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/connectcases/model/FieldValue.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -125,6 +126,8 @@ class GetCaseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<FieldValue> m_fields;
 
@@ -135,6 +138,7 @@ class GetCaseResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fieldsHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

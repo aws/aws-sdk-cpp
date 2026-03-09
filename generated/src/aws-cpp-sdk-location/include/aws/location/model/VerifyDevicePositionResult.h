@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/LocationService_EXPORTS.h>
@@ -131,6 +132,8 @@ class VerifyDevicePositionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   InferredState m_inferredState;
 
@@ -143,6 +146,7 @@ class VerifyDevicePositionResult {
   DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_inferredStateHasBeenSet = false;
   bool m_deviceIdHasBeenSet = false;
   bool m_sampleTimeHasBeenSet = false;

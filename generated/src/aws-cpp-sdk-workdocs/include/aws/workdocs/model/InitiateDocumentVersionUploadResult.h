@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/workdocs/model/DocumentMetadata.h>
@@ -76,12 +77,15 @@ class InitiateDocumentVersionUploadResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DocumentMetadata m_metadata;
 
   UploadMetadata m_uploadMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metadataHasBeenSet = false;
   bool m_uploadMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

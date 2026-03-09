@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/RequestCharged.h>
@@ -94,6 +95,8 @@ class DeleteObjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_deleteMarker{false};
 
@@ -102,6 +105,7 @@ class DeleteObjectResult {
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deleteMarkerHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
   bool m_requestChargedHasBeenSet = false;

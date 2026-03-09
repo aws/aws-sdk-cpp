@@ -8,6 +8,7 @@
 #include <aws/bedrock/model/AutomatedReasoningPolicyBuildDocumentContentType.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyBuildWorkflowStatus.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyBuildWorkflowType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -196,6 +197,8 @@ class GetAutomatedReasoningPolicyBuildWorkflowResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_policyArn;
 
@@ -216,6 +219,7 @@ class GetAutomatedReasoningPolicyBuildWorkflowResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyArnHasBeenSet = false;
   bool m_buildWorkflowIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/panorama/Panorama_EXPORTS.h>
@@ -208,6 +209,8 @@ class DescribePackageVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_isLatestPatch{false};
 
@@ -230,6 +233,7 @@ class DescribePackageVersionResult {
   Aws::String m_statusDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_isLatestPatchHasBeenSet = false;
   bool m_ownerAccountHasBeenSet = false;
   bool m_packageArnHasBeenSet = false;

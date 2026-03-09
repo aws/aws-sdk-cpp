@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -31,7 +32,7 @@ class GetMembersResult {
 
   ///@{
   /**
-   * <p>The list of details about the Security Hub member accounts.</p>
+   * <p>The list of details about the Security Hub CSPM member accounts.</p>
    */
   inline const Aws::Vector<Member>& GetMembers() const { return m_members; }
   template <typename MembersT = Aws::Vector<Member>>
@@ -90,12 +91,15 @@ class GetMembersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Member> m_members;
 
   Aws::Vector<Result> m_unprocessedAccounts;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_membersHasBeenSet = false;
   bool m_unprocessedAccountsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

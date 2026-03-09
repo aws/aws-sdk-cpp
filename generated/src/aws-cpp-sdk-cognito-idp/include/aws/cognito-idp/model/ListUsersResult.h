@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/UserType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -35,7 +36,11 @@ class ListUsersResult {
 
   ///@{
   /**
-   * <p>An array of user pool users who match your query, and their attributes.</p>
+   * <p>An array of user pool users who match your query, and their attributes.
+   * Between different requests, you might observe variations in the sequence that
+   * users in this response object are sorted into. The sort order of users isn't
+   * guaranteed to follow a single pattern, but the paginated list from a single
+   * chain of requests won't return duplicates.</p>
    */
   inline const Aws::Vector<UserType>& GetUsers() const { return m_users; }
   template <typename UsersT = Aws::Vector<UserType>>
@@ -90,12 +95,15 @@ class ListUsersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<UserType> m_users;
 
   Aws::String m_paginationToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_usersHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

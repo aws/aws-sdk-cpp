@@ -13,6 +13,7 @@
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/TypeTestsStatus.h>
 #include <aws/cloudformation/model/Visibility.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -609,6 +610,8 @@ class DescribeTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -665,6 +668,7 @@ class DescribeTypeResult {
   bool m_autoUpdate{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_typeNameHasBeenSet = false;

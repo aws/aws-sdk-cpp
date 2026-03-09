@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -94,6 +95,8 @@ class AssociateVpcCidrBlockResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VpcIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
 
@@ -102,6 +105,7 @@ class AssociateVpcCidrBlockResponse {
   Aws::String m_vpcId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipv6CidrBlockAssociationHasBeenSet = false;
   bool m_cidrBlockAssociationHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;

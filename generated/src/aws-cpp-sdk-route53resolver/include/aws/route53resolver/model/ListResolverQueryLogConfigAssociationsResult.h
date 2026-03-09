@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
@@ -129,6 +130,8 @@ class ListResolverQueryLogConfigAssociationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -139,6 +142,7 @@ class ListResolverQueryLogConfigAssociationsResult {
   Aws::Vector<ResolverQueryLogConfigAssociation> m_resolverQueryLogConfigAssociations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_totalCountHasBeenSet = false;
   bool m_totalFilteredCountHasBeenSet = false;

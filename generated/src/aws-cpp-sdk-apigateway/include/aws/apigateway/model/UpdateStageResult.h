@@ -10,6 +10,7 @@
 #include <aws/apigateway/model/CacheClusterStatus.h>
 #include <aws/apigateway/model/CanarySettings.h>
 #include <aws/apigateway/model/MethodSetting.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -366,6 +367,8 @@ class UpdateStageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_deploymentId;
 
@@ -402,6 +405,7 @@ class UpdateStageResult {
   Aws::Utils::DateTime m_lastUpdatedDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deploymentIdHasBeenSet = false;
   bool m_clientCertificateIdHasBeenSet = false;
   bool m_stageNameHasBeenSet = false;

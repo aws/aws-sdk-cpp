@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/MemoryRecordOutput.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -91,12 +92,15 @@ class BatchCreateMemoryRecordsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<MemoryRecordOutput> m_successfulRecords;
 
   Aws::Vector<MemoryRecordOutput> m_failedRecords;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulRecordsHasBeenSet = false;
   bool m_failedRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

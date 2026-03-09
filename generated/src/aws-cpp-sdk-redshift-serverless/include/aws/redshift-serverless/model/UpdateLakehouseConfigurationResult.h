@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 
@@ -114,6 +115,8 @@ class UpdateLakehouseConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_catalogArn;
 
@@ -124,6 +127,7 @@ class UpdateLakehouseConfigurationResult {
   Aws::String m_namespaceName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_catalogArnHasBeenSet = false;
   bool m_lakehouseIdcApplicationArnHasBeenSet = false;
   bool m_lakehouseRegistrationStatusHasBeenSet = false;

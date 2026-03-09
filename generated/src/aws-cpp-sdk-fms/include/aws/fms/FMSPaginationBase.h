@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/fms/model/ListAdminAccountsForOrganizationPaginationTraits.h>
 #include <aws/fms/model/ListAdminsManagingAccountPaginationTraits.h>
@@ -31,6 +32,7 @@ class FMSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAdminAccountsForOrganizationRequest,
                                     Pagination::ListAdminAccountsForOrganizationPaginationTraits<DerivedClient>>
   ListAdminAccountsForOrganizationPaginator(const Model::ListAdminAccountsForOrganizationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAdminAccountsForOrganizationRequest,
                                              Pagination::ListAdminAccountsForOrganizationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -42,6 +44,7 @@ class FMSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAdminsManagingAccountRequest,
                                     Pagination::ListAdminsManagingAccountPaginationTraits<DerivedClient>>
   ListAdminsManagingAccountPaginator(const Model::ListAdminsManagingAccountRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAdminsManagingAccountRequest,
                                              Pagination::ListAdminsManagingAccountPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -52,6 +55,7 @@ class FMSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppsListsRequest, Pagination::ListAppsListsPaginationTraits<DerivedClient>>
   ListAppsListsPaginator(const Model::ListAppsListsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppsListsRequest,
                                              Pagination::ListAppsListsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -63,6 +67,7 @@ class FMSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComplianceStatusRequest,
                                     Pagination::ListComplianceStatusPaginationTraits<DerivedClient>>
   ListComplianceStatusPaginator(const Model::ListComplianceStatusRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComplianceStatusRequest,
                                              Pagination::ListComplianceStatusPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -74,6 +79,7 @@ class FMSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemberAccountsRequest,
                                     Pagination::ListMemberAccountsPaginationTraits<DerivedClient>>
   ListMemberAccountsPaginator(const Model::ListMemberAccountsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemberAccountsRequest,
                                              Pagination::ListMemberAccountsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -84,6 +90,7 @@ class FMSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPoliciesRequest, Pagination::ListPoliciesPaginationTraits<DerivedClient>>
   ListPoliciesPaginator(const Model::ListPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPoliciesRequest,
                                              Pagination::ListPoliciesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -95,6 +102,7 @@ class FMSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtocolsListsRequest,
                                     Pagination::ListProtocolsListsPaginationTraits<DerivedClient>>
   ListProtocolsListsPaginator(const Model::ListProtocolsListsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProtocolsListsRequest,
                                              Pagination::ListProtocolsListsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -106,6 +114,7 @@ class FMSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThirdPartyFirewallFirewallPoliciesRequest,
                                     Pagination::ListThirdPartyFirewallFirewallPoliciesPaginationTraits<DerivedClient>>
   ListThirdPartyFirewallFirewallPoliciesPaginator(const Model::ListThirdPartyFirewallFirewallPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThirdPartyFirewallFirewallPoliciesRequest,
                                              Pagination::ListThirdPartyFirewallFirewallPoliciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

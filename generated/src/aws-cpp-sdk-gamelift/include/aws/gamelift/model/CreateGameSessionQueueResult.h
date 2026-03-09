@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/GameSessionQueue.h>
@@ -58,10 +59,13 @@ class CreateGameSessionQueueResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   GameSessionQueue m_gameSessionQueue;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gameSessionQueueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

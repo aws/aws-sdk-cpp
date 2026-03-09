@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepository_EXPORTS.h>
 #include <aws/serverlessrepo/model/Status.h>
@@ -170,6 +171,8 @@ AWS
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_applicationId;
 
@@ -186,6 +189,7 @@ AWS
   Aws::String m_templateUrl;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_expirationTimeHasBeenSet = false;

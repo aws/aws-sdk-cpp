@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/polly/model/Lexicon.h>
@@ -78,12 +79,15 @@ class GetLexiconResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Lexicon m_lexicon;
 
   LexiconAttributes m_lexiconAttributes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lexiconHasBeenSet = false;
   bool m_lexiconAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

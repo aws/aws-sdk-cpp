@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/rolesanywhere/model/ListCrlsPaginationTraits.h>
 #include <aws/rolesanywhere/model/ListProfilesPaginationTraits.h>
@@ -26,6 +27,7 @@ class RolesAnywherePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCrlsRequest, Pagination::ListCrlsPaginationTraits<DerivedClient>>
   ListCrlsPaginator(const Model::ListCrlsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCrlsRequest, Pagination::ListCrlsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -35,6 +37,7 @@ class RolesAnywherePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProfilesRequest, Pagination::ListProfilesPaginationTraits<DerivedClient>>
   ListProfilesPaginator(const Model::ListProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProfilesRequest,
                                              Pagination::ListProfilesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -45,6 +48,7 @@ class RolesAnywherePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubjectsRequest, Pagination::ListSubjectsPaginationTraits<DerivedClient>>
   ListSubjectsPaginator(const Model::ListSubjectsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubjectsRequest,
                                              Pagination::ListSubjectsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -56,6 +60,7 @@ class RolesAnywherePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrustAnchorsRequest,
                                     Pagination::ListTrustAnchorsPaginationTraits<DerivedClient>>
   ListTrustAnchorsPaginator(const Model::ListTrustAnchorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrustAnchorsRequest,
                                              Pagination::ListTrustAnchorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

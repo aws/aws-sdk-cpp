@@ -23,5 +23,9 @@ Aws::String UpdateFarmRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_costScaleFactorHasBeenSet) {
+    payload.WithDouble("costScaleFactor", m_costScaleFactor);
+  }
+
   return payload.View().WriteReadable();
 }

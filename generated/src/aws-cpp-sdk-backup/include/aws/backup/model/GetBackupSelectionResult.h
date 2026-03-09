@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/BackupSelection.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -133,6 +134,8 @@ class GetBackupSelectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   BackupSelection m_backupSelection;
 
@@ -145,6 +148,7 @@ class GetBackupSelectionResult {
   Aws::String m_creatorRequestId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_backupSelectionHasBeenSet = false;
   bool m_selectionIdHasBeenSet = false;
   bool m_backupPlanIdHasBeenSet = false;

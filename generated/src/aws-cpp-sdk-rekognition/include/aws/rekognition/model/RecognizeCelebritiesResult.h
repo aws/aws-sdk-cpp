@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -125,6 +126,8 @@ class RecognizeCelebritiesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Celebrity> m_celebrityFaces;
 
@@ -133,6 +136,7 @@ class RecognizeCelebritiesResult {
   OrientationCorrection m_orientationCorrection{OrientationCorrection::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_celebrityFacesHasBeenSet = false;
   bool m_unrecognizedFacesHasBeenSet = false;
   bool m_orientationCorrectionHasBeenSet = false;

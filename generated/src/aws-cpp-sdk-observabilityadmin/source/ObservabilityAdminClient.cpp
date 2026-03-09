@@ -122,7 +122,7 @@ ObservabilityAdminClient::ObservabilityAdminClient(const std::shared_ptr<AWSCred
 }
 
 /* Legacy constructors due deprecation */
-ObservabilityAdminClient::ObservabilityAdminClient(const Client::ClientConfiguration& clientConfiguration)
+ObservabilityAdminClient::ObservabilityAdminClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -135,7 +135,7 @@ ObservabilityAdminClient::ObservabilityAdminClient(const Client::ClientConfigura
 }
 
 ObservabilityAdminClient::ObservabilityAdminClient(const AWSCredentials& credentials,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -146,7 +146,7 @@ ObservabilityAdminClient::ObservabilityAdminClient(const AWSCredentials& credent
 }
 
 ObservabilityAdminClient::ObservabilityAdminClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

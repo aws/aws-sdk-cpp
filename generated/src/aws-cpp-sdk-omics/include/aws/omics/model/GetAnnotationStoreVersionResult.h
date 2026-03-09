@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -268,6 +269,8 @@ class GetAnnotationStoreVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_storeId;
 
@@ -296,6 +299,7 @@ class GetAnnotationStoreVersionResult {
   long long m_versionSizeBytes{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_storeIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;

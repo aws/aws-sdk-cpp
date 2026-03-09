@@ -83,7 +83,7 @@ PricingClient::PricingClient(const std::shared_ptr<AWSCredentialsProvider>& cred
 }
 
 /* Legacy constructors due deprecation */
-PricingClient::PricingClient(const Client::ClientConfiguration& clientConfiguration)
+PricingClient::PricingClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -95,7 +95,7 @@ PricingClient::PricingClient(const Client::ClientConfiguration& clientConfigurat
   init(m_clientConfiguration);
 }
 
-PricingClient::PricingClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+PricingClient::PricingClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -106,7 +106,7 @@ PricingClient::PricingClient(const AWSCredentials& credentials, const Client::Cl
 }
 
 PricingClient::PricingClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                             const Client::ClientConfiguration& clientConfiguration)
+                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

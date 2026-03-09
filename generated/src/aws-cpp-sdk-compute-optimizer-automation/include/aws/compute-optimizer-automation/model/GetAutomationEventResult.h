@@ -9,6 +9,7 @@
 #include <aws/compute-optimizer-automation/model/EventStatus.h>
 #include <aws/compute-optimizer-automation/model/EventType.h>
 #include <aws/compute-optimizer-automation/model/ResourceType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -294,6 +295,8 @@ class GetAutomationEventResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_eventId;
 
@@ -326,6 +329,7 @@ class GetAutomationEventResult {
   EstimatedMonthlySavings m_estimatedMonthlySavings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventIdHasBeenSet = false;
   bool m_eventDescriptionHasBeenSet = false;
   bool m_eventTypeHasBeenSet = false;

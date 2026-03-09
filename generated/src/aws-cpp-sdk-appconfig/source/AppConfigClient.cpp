@@ -123,7 +123,7 @@ AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& 
 }
 
 /* Legacy constructors due deprecation */
-AppConfigClient::AppConfigClient(const Client::ClientConfiguration& clientConfiguration)
+AppConfigClient::AppConfigClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -135,7 +135,7 @@ AppConfigClient::AppConfigClient(const Client::ClientConfiguration& clientConfig
   init(m_clientConfiguration);
 }
 
-AppConfigClient::AppConfigClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+AppConfigClient::AppConfigClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -147,7 +147,7 @@ AppConfigClient::AppConfigClient(const AWSCredentials& credentials, const Client
 }
 
 AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Client::ClientConfiguration& clientConfiguration)
+                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

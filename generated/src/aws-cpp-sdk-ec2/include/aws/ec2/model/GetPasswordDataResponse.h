@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -94,6 +95,8 @@ class GetPasswordDataResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_instanceId;
 
@@ -102,6 +105,7 @@ class GetPasswordDataResponse {
   Aws::String m_passwordData;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_instanceIdHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
   bool m_passwordDataHasBeenSet = false;

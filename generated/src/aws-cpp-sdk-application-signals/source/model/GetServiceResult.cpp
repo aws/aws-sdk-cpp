@@ -20,6 +20,7 @@ using namespace Aws;
 GetServiceResult::GetServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetServiceResult& GetServiceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Service")) {
     m_service = jsonValue.GetObject("Service");
@@ -37,12 +38,12 @@ GetServiceResult& GetServiceResult::operator=(const Aws::AmazonWebServiceResult<
     Aws::Utils::Array<JsonView> logGroupReferencesJsonList = jsonValue.GetArray("LogGroupReferences");
     for (unsigned logGroupReferencesIndex = 0; logGroupReferencesIndex < logGroupReferencesJsonList.GetLength();
          ++logGroupReferencesIndex) {
-      Aws::Map<Aws::String, JsonView> attributesJsonMap = logGroupReferencesJsonList[logGroupReferencesIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> attributesMap;
-      for (auto& attributesItem : attributesJsonMap) {
-        attributesMap[attributesItem.first] = attributesItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> attributes2JsonMap = logGroupReferencesJsonList[logGroupReferencesIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> attributes2Map;
+      for (auto& attributes2Item : attributes2JsonMap) {
+        attributes2Map[attributes2Item.first] = attributes2Item.second.AsString();
       }
-      m_logGroupReferences.push_back(std::move(attributesMap));
+      m_logGroupReferences.push_back(std::move(attributes2Map));
     }
     m_logGroupReferencesHasBeenSet = true;
   }

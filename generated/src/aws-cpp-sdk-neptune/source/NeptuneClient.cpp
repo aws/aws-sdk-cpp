@@ -148,7 +148,7 @@ NeptuneClient::NeptuneClient(const std::shared_ptr<AWSCredentialsProvider>& cred
 }
 
 /* Legacy constructors due deprecation */
-NeptuneClient::NeptuneClient(const Client::ClientConfiguration& clientConfiguration)
+NeptuneClient::NeptuneClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -160,7 +160,7 @@ NeptuneClient::NeptuneClient(const Client::ClientConfiguration& clientConfigurat
   init(m_clientConfiguration);
 }
 
-NeptuneClient::NeptuneClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+NeptuneClient::NeptuneClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -171,7 +171,7 @@ NeptuneClient::NeptuneClient(const AWSCredentials& credentials, const Client::Cl
 }
 
 NeptuneClient::NeptuneClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                             const Client::ClientConfiguration& clientConfiguration)
+                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iam/IAM_EXPORTS.h>
@@ -102,6 +103,8 @@ class ListDelegationRequestsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<DelegationRequest> m_delegationRequests;
 
@@ -110,6 +113,7 @@ class ListDelegationRequestsResult {
   bool m_isTruncated{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_delegationRequestsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
   bool m_isTruncatedHasBeenSet = false;

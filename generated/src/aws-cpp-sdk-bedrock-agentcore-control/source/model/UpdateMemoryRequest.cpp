@@ -35,5 +35,9 @@ Aws::String UpdateMemoryRequest::SerializePayload() const {
     payload.WithObject("memoryStrategies", m_memoryStrategies.Jsonize());
   }
 
+  if (m_streamDeliveryResourcesHasBeenSet) {
+    payload.WithObject("streamDeliveryResources", m_streamDeliveryResources.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

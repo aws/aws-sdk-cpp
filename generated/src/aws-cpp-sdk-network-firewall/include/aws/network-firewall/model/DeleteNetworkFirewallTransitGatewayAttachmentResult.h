@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/TransitGatewayAttachmentStatus.h>
@@ -86,12 +87,15 @@ class DeleteNetworkFirewallTransitGatewayAttachmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_transitGatewayAttachmentId;
 
   TransitGatewayAttachmentStatus m_transitGatewayAttachmentStatus{TransitGatewayAttachmentStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transitGatewayAttachmentIdHasBeenSet = false;
   bool m_transitGatewayAttachmentStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

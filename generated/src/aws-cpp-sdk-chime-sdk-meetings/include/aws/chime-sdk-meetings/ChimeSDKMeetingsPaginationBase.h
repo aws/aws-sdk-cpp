@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/chime-sdk-meetings/model/ListAttendeesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -23,6 +24,7 @@ class ChimeSDKMeetingsPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttendeesRequest, Pagination::ListAttendeesPaginationTraits<DerivedClient>>
   ListAttendeesPaginator(const Model::ListAttendeesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttendeesRequest,
                                              Pagination::ListAttendeesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

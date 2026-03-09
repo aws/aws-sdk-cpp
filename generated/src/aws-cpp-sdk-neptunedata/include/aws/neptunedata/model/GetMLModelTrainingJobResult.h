@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/neptunedata/Neptunedata_EXPORTS.h>
@@ -151,6 +152,8 @@ class GetMLModelTrainingJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_status;
 
@@ -165,6 +168,7 @@ class GetMLModelTrainingJobResult {
   Aws::Vector<MlConfigDefinition> m_mlModels;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_processingJobHasBeenSet = false;

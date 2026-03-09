@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/LocationService_EXPORTS.h>
@@ -116,6 +117,8 @@ class CreateKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_key;
 
@@ -126,6 +129,7 @@ class CreateKeyResult {
   Aws::Utils::DateTime m_createTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyHasBeenSet = false;
   bool m_keyArnHasBeenSet = false;
   bool m_keyNameHasBeenSet = false;

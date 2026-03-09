@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securitylake/SecurityLake_EXPORTS.h>
@@ -106,6 +107,8 @@ class GetDataLakeSourcesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dataLakeArn;
 
@@ -114,6 +117,7 @@ class GetDataLakeSourcesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataLakeArnHasBeenSet = false;
   bool m_dataLakeSourcesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

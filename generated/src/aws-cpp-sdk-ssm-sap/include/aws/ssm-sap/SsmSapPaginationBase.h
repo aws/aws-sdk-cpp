@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/ssm-sap/model/ListApplicationsPaginationTraits.h>
 #include <aws/ssm-sap/model/ListComponentsPaginationTraits.h>
@@ -32,6 +33,7 @@ class SsmSapPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
                                     Pagination::ListApplicationsPaginationTraits<DerivedClient>>
   ListApplicationsPaginator(const Model::ListApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationsRequest,
                                              Pagination::ListApplicationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -42,6 +44,7 @@ class SsmSapPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentsRequest, Pagination::ListComponentsPaginationTraits<DerivedClient>>
   ListComponentsPaginator(const Model::ListComponentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentsRequest,
                                              Pagination::ListComponentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -53,6 +56,7 @@ class SsmSapPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationCheckDefinitionsRequest,
                                     Pagination::ListConfigurationCheckDefinitionsPaginationTraits<DerivedClient>>
   ListConfigurationCheckDefinitionsPaginator(const Model::ListConfigurationCheckDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationCheckDefinitionsRequest,
                                              Pagination::ListConfigurationCheckDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -64,6 +68,7 @@ class SsmSapPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationCheckOperationsRequest,
                                     Pagination::ListConfigurationCheckOperationsPaginationTraits<DerivedClient>>
   ListConfigurationCheckOperationsPaginator(const Model::ListConfigurationCheckOperationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationCheckOperationsRequest,
                                              Pagination::ListConfigurationCheckOperationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -74,6 +79,7 @@ class SsmSapPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatabasesRequest, Pagination::ListDatabasesPaginationTraits<DerivedClient>>
   ListDatabasesPaginator(const Model::ListDatabasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatabasesRequest,
                                              Pagination::ListDatabasesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -85,6 +91,7 @@ class SsmSapPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOperationEventsRequest,
                                     Pagination::ListOperationEventsPaginationTraits<DerivedClient>>
   ListOperationEventsPaginator(const Model::ListOperationEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOperationEventsRequest,
                                              Pagination::ListOperationEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -95,6 +102,7 @@ class SsmSapPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOperationsRequest, Pagination::ListOperationsPaginationTraits<DerivedClient>>
   ListOperationsPaginator(const Model::ListOperationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOperationsRequest,
                                              Pagination::ListOperationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -106,6 +114,7 @@ class SsmSapPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubCheckResultsRequest,
                                     Pagination::ListSubCheckResultsPaginationTraits<DerivedClient>>
   ListSubCheckResultsPaginator(const Model::ListSubCheckResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubCheckResultsRequest,
                                              Pagination::ListSubCheckResultsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -117,6 +126,7 @@ class SsmSapPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubCheckRuleResultsRequest,
                                     Pagination::ListSubCheckRuleResultsPaginationTraits<DerivedClient>>
   ListSubCheckRuleResultsPaginator(const Model::ListSubCheckRuleResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSubCheckRuleResultsRequest,
                                              Pagination::ListSubCheckRuleResultsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

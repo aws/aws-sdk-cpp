@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayTaskCreate.h>
@@ -110,6 +111,8 @@ class GetWirelessGatewayTaskDefinitionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_autoCreateTasks{false};
 
@@ -120,6 +123,7 @@ class GetWirelessGatewayTaskDefinitionResult {
   Aws::String m_arn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_autoCreateTasksHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_updateHasBeenSet = false;

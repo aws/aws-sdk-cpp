@@ -14,7 +14,7 @@ namespace S3Control {
 struct AWS_S3CONTROL_API S3ControlClientConfiguration : public Aws::Client::GenericClientConfiguration {
   using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
-  S3ControlClientConfiguration(const Client::ClientConfigurationInitValues& configuration = {});
+  S3ControlClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
    * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -35,7 +35,7 @@ struct AWS_S3CONTROL_API S3ControlClientConfiguration : public Aws::Client::Gene
   /**
    * Converting constructors for compatibility with a legacy code
    */
-  S3ControlClientConfiguration(const Client::ClientConfiguration& config);
+  S3ControlClientConfiguration(const Aws::Client::ClientConfiguration& config);
   bool useArnRegion = false;
   Client::AWSAuthV4Signer::PayloadSigningPolicy payloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent;
 

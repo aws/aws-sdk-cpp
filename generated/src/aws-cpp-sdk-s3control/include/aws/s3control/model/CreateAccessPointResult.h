@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3control/S3Control_EXPORTS.h>
 
@@ -94,6 +95,8 @@ class CreateAccessPointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_accessPointArn;
 
@@ -102,6 +105,7 @@ class CreateAccessPointResult {
   Aws::String m_requestId;
 
   Aws::String m_hostId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessPointArnHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

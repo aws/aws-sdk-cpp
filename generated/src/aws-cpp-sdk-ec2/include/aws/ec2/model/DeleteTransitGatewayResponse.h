@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/TransitGateway.h>
@@ -58,10 +59,13 @@ class DeleteTransitGatewayResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TransitGateway m_transitGateway;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transitGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

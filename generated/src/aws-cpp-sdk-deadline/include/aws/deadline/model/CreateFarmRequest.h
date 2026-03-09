@@ -111,6 +111,22 @@ class CreateFarmRequest : public DeadlineRequest {
 
   ///@{
   /**
+   * <p>The cost scale factor to apply on the farm.</p>
+   */
+  inline double GetCostScaleFactor() const { return m_costScaleFactor; }
+  inline bool CostScaleFactorHasBeenSet() const { return m_costScaleFactorHasBeenSet; }
+  inline void SetCostScaleFactor(double value) {
+    m_costScaleFactorHasBeenSet = true;
+    m_costScaleFactor = value;
+  }
+  inline CreateFarmRequest& WithCostScaleFactor(double value) {
+    SetCostScaleFactor(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags to add to your farm. Each tag consists of a tag key and a tag value.
    * Tag keys and values are both required, but tag values can be empty strings.</p>
    */
@@ -142,11 +158,14 @@ class CreateFarmRequest : public DeadlineRequest {
 
   Aws::String m_kmsKeyArn;
 
+  double m_costScaleFactor{0.0};
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_clientTokenHasBeenSet = true;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
+  bool m_costScaleFactorHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

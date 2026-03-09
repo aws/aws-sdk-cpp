@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -205,6 +206,8 @@ class DescribeManagedRuleGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_versionName;
 
@@ -221,6 +224,7 @@ class DescribeManagedRuleGroupResult {
   Aws::Vector<LabelSummary> m_consumedLabels;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_versionNameHasBeenSet = false;
   bool m_snsTopicArnHasBeenSet = false;
   bool m_capacityHasBeenSet = false;

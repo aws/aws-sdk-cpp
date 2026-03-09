@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/directory-service-data/model/ListGroupMembersPaginationTraits.h>
 #include <aws/directory-service-data/model/ListGroupsForMemberPaginationTraits.h>
@@ -29,6 +30,7 @@ class DirectoryServiceDataPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupMembersRequest,
                                     Pagination::ListGroupMembersPaginationTraits<DerivedClient>>
   ListGroupMembersPaginator(const Model::ListGroupMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupMembersRequest,
                                              Pagination::ListGroupMembersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -39,6 +41,7 @@ class DirectoryServiceDataPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsRequest, Pagination::ListGroupsPaginationTraits<DerivedClient>>
   ListGroupsPaginator(const Model::ListGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsRequest,
                                              Pagination::ListGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -50,6 +53,7 @@ class DirectoryServiceDataPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsForMemberRequest,
                                     Pagination::ListGroupsForMemberPaginationTraits<DerivedClient>>
   ListGroupsForMemberPaginator(const Model::ListGroupsForMemberRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsForMemberRequest,
                                              Pagination::ListGroupsForMemberPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class DirectoryServiceDataPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>
   ListUsersPaginator(const Model::ListUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -69,6 +74,7 @@ class DirectoryServiceDataPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchGroupsRequest, Pagination::SearchGroupsPaginationTraits<DerivedClient>>
   SearchGroupsPaginator(const Model::SearchGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchGroupsRequest,
                                              Pagination::SearchGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -79,6 +85,7 @@ class DirectoryServiceDataPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchUsersRequest, Pagination::SearchUsersPaginationTraits<DerivedClient>>
   SearchUsersPaginator(const Model::SearchUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchUsersRequest,
                                              Pagination::SearchUsersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

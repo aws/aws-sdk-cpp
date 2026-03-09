@@ -73,24 +73,6 @@ class AccountRecommendationLifecycleSummary {
 
   ///@{
   /**
-   * <p>When the Recommendation was last updated</p>
-   */
-  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-  inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
-    m_lastUpdatedAtHasBeenSet = true;
-    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
-  }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  AccountRecommendationLifecycleSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) {
-    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The lifecycle stage from AWS Trusted Advisor Priority</p>
    */
   inline RecommendationLifecycleStage GetLifecycleStage() const { return m_lifecycleStage; }
@@ -101,40 +83,6 @@ class AccountRecommendationLifecycleSummary {
   }
   inline AccountRecommendationLifecycleSummary& WithLifecycleStage(RecommendationLifecycleStage value) {
     SetLifecycleStage(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Reason for the lifecycle stage change</p>
-   */
-  inline const Aws::String& GetUpdateReason() const { return m_updateReason; }
-  inline bool UpdateReasonHasBeenSet() const { return m_updateReasonHasBeenSet; }
-  template <typename UpdateReasonT = Aws::String>
-  void SetUpdateReason(UpdateReasonT&& value) {
-    m_updateReasonHasBeenSet = true;
-    m_updateReason = std::forward<UpdateReasonT>(value);
-  }
-  template <typename UpdateReasonT = Aws::String>
-  AccountRecommendationLifecycleSummary& WithUpdateReason(UpdateReasonT&& value) {
-    SetUpdateReason(std::forward<UpdateReasonT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Reason code for the lifecycle state change</p>
-   */
-  inline UpdateRecommendationLifecycleStageReasonCode GetUpdateReasonCode() const { return m_updateReasonCode; }
-  inline bool UpdateReasonCodeHasBeenSet() const { return m_updateReasonCodeHasBeenSet; }
-  inline void SetUpdateReasonCode(UpdateRecommendationLifecycleStageReasonCode value) {
-    m_updateReasonCodeHasBeenSet = true;
-    m_updateReasonCode = value;
-  }
-  inline AccountRecommendationLifecycleSummary& WithUpdateReasonCode(UpdateRecommendationLifecycleStageReasonCode value) {
-    SetUpdateReasonCode(value);
     return *this;
   }
   ///@}
@@ -180,30 +128,82 @@ class AccountRecommendationLifecycleSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Reason for the lifecycle stage change</p>
+   */
+  inline const Aws::String& GetUpdateReason() const { return m_updateReason; }
+  inline bool UpdateReasonHasBeenSet() const { return m_updateReasonHasBeenSet; }
+  template <typename UpdateReasonT = Aws::String>
+  void SetUpdateReason(UpdateReasonT&& value) {
+    m_updateReasonHasBeenSet = true;
+    m_updateReason = std::forward<UpdateReasonT>(value);
+  }
+  template <typename UpdateReasonT = Aws::String>
+  AccountRecommendationLifecycleSummary& WithUpdateReason(UpdateReasonT&& value) {
+    SetUpdateReason(std::forward<UpdateReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Reason code for the lifecycle state change</p>
+   */
+  inline UpdateRecommendationLifecycleStageReasonCode GetUpdateReasonCode() const { return m_updateReasonCode; }
+  inline bool UpdateReasonCodeHasBeenSet() const { return m_updateReasonCodeHasBeenSet; }
+  inline void SetUpdateReasonCode(UpdateRecommendationLifecycleStageReasonCode value) {
+    m_updateReasonCodeHasBeenSet = true;
+    m_updateReasonCode = value;
+  }
+  inline AccountRecommendationLifecycleSummary& WithUpdateReasonCode(UpdateRecommendationLifecycleStageReasonCode value) {
+    SetUpdateReasonCode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>When the Recommendation was last updated</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+  inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
+    m_lastUpdatedAtHasBeenSet = true;
+    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  AccountRecommendationLifecycleSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) {
+    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountId;
 
   Aws::String m_accountRecommendationArn;
 
-  Aws::Utils::DateTime m_lastUpdatedAt{};
-
   RecommendationLifecycleStage m_lifecycleStage{RecommendationLifecycleStage::NOT_SET};
+
+  Aws::String m_updatedOnBehalfOf;
+
+  Aws::String m_updatedOnBehalfOfJobTitle;
 
   Aws::String m_updateReason;
 
   UpdateRecommendationLifecycleStageReasonCode m_updateReasonCode{UpdateRecommendationLifecycleStageReasonCode::NOT_SET};
 
-  Aws::String m_updatedOnBehalfOf;
-
-  Aws::String m_updatedOnBehalfOfJobTitle;
+  Aws::Utils::DateTime m_lastUpdatedAt{};
   bool m_accountIdHasBeenSet = false;
   bool m_accountRecommendationArnHasBeenSet = false;
-  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_lifecycleStageHasBeenSet = false;
-  bool m_updateReasonHasBeenSet = false;
-  bool m_updateReasonCodeHasBeenSet = false;
   bool m_updatedOnBehalfOfHasBeenSet = false;
   bool m_updatedOnBehalfOfJobTitleHasBeenSet = false;
+  bool m_updateReasonHasBeenSet = false;
+  bool m_updateReasonCodeHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
 };
 
 }  // namespace Model

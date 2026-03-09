@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/healthlake/model/ExportJobProperties.h>
@@ -58,10 +59,13 @@ class DescribeFHIRExportJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ExportJobProperties m_exportJobProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_exportJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -12,7 +12,9 @@
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/RuntimeMetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -346,6 +348,24 @@ class GetAgentRuntimeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Configuration for microVM Metadata Service (MMDS) settings for the AgentCore
+   * Runtime.</p>
+   */
+  inline const RuntimeMetadataConfiguration& GetMetadataConfiguration() const { return m_metadataConfiguration; }
+  template <typename MetadataConfigurationT = RuntimeMetadataConfiguration>
+  void SetMetadataConfiguration(MetadataConfigurationT&& value) {
+    m_metadataConfigurationHasBeenSet = true;
+    m_metadataConfiguration = std::forward<MetadataConfigurationT>(value);
+  }
+  template <typename MetadataConfigurationT = RuntimeMetadataConfiguration>
+  GetAgentRuntimeResult& WithMetadataConfiguration(MetadataConfigurationT&& value) {
+    SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -359,6 +379,8 @@ class GetAgentRuntimeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_agentRuntimeArn;
 
@@ -396,7 +418,10 @@ class GetAgentRuntimeResult {
 
   RequestHeaderConfiguration m_requestHeaderConfiguration;
 
+  RuntimeMetadataConfiguration m_metadataConfiguration;
+
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentRuntimeArnHasBeenSet = false;
   bool m_agentRuntimeNameHasBeenSet = false;
   bool m_agentRuntimeIdHasBeenSet = false;
@@ -415,6 +440,7 @@ class GetAgentRuntimeResult {
   bool m_environmentVariablesHasBeenSet = false;
   bool m_authorizerConfigurationHasBeenSet = false;
   bool m_requestHeaderConfigurationHasBeenSet = false;
+  bool m_metadataConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

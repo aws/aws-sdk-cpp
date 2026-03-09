@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
@@ -91,12 +92,15 @@ class DescribeReservedInstanceOfferingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<ReservedInstanceOffering> m_reservedInstanceOfferings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_reservedInstanceOfferingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

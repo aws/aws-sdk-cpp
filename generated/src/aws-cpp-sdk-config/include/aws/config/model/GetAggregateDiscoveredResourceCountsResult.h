@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/GroupedResourceCount.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -118,6 +119,8 @@ class GetAggregateDiscoveredResourceCountsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   long long m_totalDiscoveredResources{0};
 
@@ -128,6 +131,7 @@ class GetAggregateDiscoveredResourceCountsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_totalDiscoveredResourcesHasBeenSet = false;
   bool m_groupByKeyHasBeenSet = false;
   bool m_groupedResourceCountsHasBeenSet = false;

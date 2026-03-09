@@ -42,6 +42,10 @@ GameSessionConnectionInfo& GameSessionConnectionInfo::operator=(JsonView jsonVal
     }
     m_matchedPlayerSessionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PlayerGatewayStatus")) {
+    m_playerGatewayStatus = PlayerGatewayStatusMapper::GetPlayerGatewayStatusForName(jsonValue.GetString("PlayerGatewayStatus"));
+    m_playerGatewayStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -71,6 +75,10 @@ JsonValue GameSessionConnectionInfo::Jsonize() const {
       matchedPlayerSessionsJsonList[matchedPlayerSessionsIndex].AsObject(m_matchedPlayerSessions[matchedPlayerSessionsIndex].Jsonize());
     }
     payload.WithArray("MatchedPlayerSessions", std::move(matchedPlayerSessionsJsonList));
+  }
+
+  if (m_playerGatewayStatusHasBeenSet) {
+    payload.WithString("PlayerGatewayStatus", PlayerGatewayStatusMapper::GetNameForPlayerGatewayStatus(m_playerGatewayStatus));
   }
 
   return payload;

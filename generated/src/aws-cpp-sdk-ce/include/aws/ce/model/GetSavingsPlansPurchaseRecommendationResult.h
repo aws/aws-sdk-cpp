@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/SavingsPlansPurchaseRecommendation.h>
 #include <aws/ce/model/SavingsPlansPurchaseRecommendationMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -99,6 +100,8 @@ class GetSavingsPlansPurchaseRecommendationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SavingsPlansPurchaseRecommendationMetadata m_metadata;
 
@@ -107,6 +110,7 @@ class GetSavingsPlansPurchaseRecommendationResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metadataHasBeenSet = false;
   bool m_savingsPlansPurchaseRecommendationHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

@@ -141,6 +141,26 @@ class StartPlanExecutionRequest : public ARCRegionswitchRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The execution identifier of the recovery execution that ran in the opposite
+   * region post-recovery is ran in. Required when starting a post-recovery
+   * execution.</p>
+   */
+  inline const Aws::String& GetRecoveryExecutionId() const { return m_recoveryExecutionId; }
+  inline bool RecoveryExecutionIdHasBeenSet() const { return m_recoveryExecutionIdHasBeenSet; }
+  template <typename RecoveryExecutionIdT = Aws::String>
+  void SetRecoveryExecutionId(RecoveryExecutionIdT&& value) {
+    m_recoveryExecutionIdHasBeenSet = true;
+    m_recoveryExecutionId = std::forward<RecoveryExecutionIdT>(value);
+  }
+  template <typename RecoveryExecutionIdT = Aws::String>
+  StartPlanExecutionRequest& WithRecoveryExecutionId(RecoveryExecutionIdT&& value) {
+    SetRecoveryExecutionId(std::forward<RecoveryExecutionIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_planArn;
 
@@ -153,12 +173,15 @@ class StartPlanExecutionRequest : public ARCRegionswitchRequest {
   Aws::String m_comment;
 
   Aws::String m_latestVersion;
+
+  Aws::String m_recoveryExecutionId;
   bool m_planArnHasBeenSet = false;
   bool m_targetRegionHasBeenSet = false;
   bool m_actionHasBeenSet = false;
   bool m_modeHasBeenSet = false;
   bool m_commentHasBeenSet = false;
   bool m_latestVersionHasBeenSet = false;
+  bool m_recoveryExecutionIdHasBeenSet = false;
 };
 
 }  // namespace Model

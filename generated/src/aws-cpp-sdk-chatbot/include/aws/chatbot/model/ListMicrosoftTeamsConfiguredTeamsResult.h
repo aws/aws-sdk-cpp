@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chatbot/Chatbot_EXPORTS.h>
 #include <aws/chatbot/model/ConfiguredTeam.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -86,12 +87,15 @@ class ListMicrosoftTeamsConfiguredTeamsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ConfiguredTeam> m_configuredTeams;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configuredTeamsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

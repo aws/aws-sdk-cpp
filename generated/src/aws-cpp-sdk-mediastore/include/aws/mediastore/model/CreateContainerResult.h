@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediastore/MediaStore_EXPORTS.h>
 #include <aws/mediastore/model/Container.h>
@@ -69,10 +70,13 @@ class CreateContainerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Container m_container;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_containerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

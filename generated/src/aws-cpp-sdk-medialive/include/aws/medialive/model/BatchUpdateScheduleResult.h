@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/BatchScheduleActionCreateResult.h>
@@ -82,12 +83,15 @@ class BatchUpdateScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   BatchScheduleActionCreateResult m_creates;
 
   BatchScheduleActionDeleteResult m_deletes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createsHasBeenSet = false;
   bool m_deletesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

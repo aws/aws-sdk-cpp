@@ -105,7 +105,7 @@ CognitoIdentityClient::CognitoIdentityClient(const std::shared_ptr<AWSCredential
 }
 
 /* Legacy constructors due deprecation */
-CognitoIdentityClient::CognitoIdentityClient(const Client::ClientConfiguration& clientConfiguration)
+CognitoIdentityClient::CognitoIdentityClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -117,7 +117,7 @@ CognitoIdentityClient::CognitoIdentityClient(const Client::ClientConfiguration& 
   init(m_clientConfiguration);
 }
 
-CognitoIdentityClient::CognitoIdentityClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+CognitoIdentityClient::CognitoIdentityClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -128,7 +128,7 @@ CognitoIdentityClient::CognitoIdentityClient(const AWSCredentials& credentials, 
 }
 
 CognitoIdentityClient::CognitoIdentityClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                             const Client::ClientConfiguration& clientConfiguration)
+                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

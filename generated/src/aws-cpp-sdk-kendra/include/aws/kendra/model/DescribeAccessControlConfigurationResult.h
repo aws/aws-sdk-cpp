@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -147,6 +148,8 @@ class DescribeAccessControlConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_name;
 
@@ -159,6 +162,7 @@ class DescribeAccessControlConfigurationResult {
   Aws::Vector<HierarchicalPrincipal> m_hierarchicalAccessControlList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;

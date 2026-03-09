@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class RegisterConnectorV2Result {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_connectorArn;
 
   Aws::String m_connectorId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectorArnHasBeenSet = false;
   bool m_connectorIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

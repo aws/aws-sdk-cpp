@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
@@ -106,6 +107,8 @@ class PrepareQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_queryString;
 
@@ -114,6 +117,7 @@ class PrepareQueryResult {
   Aws::Vector<ParameterMapping> m_parameters;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_queryStringHasBeenSet = false;
   bool m_columnsHasBeenSet = false;
   bool m_parametersHasBeenSet = false;

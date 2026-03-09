@@ -38,6 +38,12 @@ Aws::String ModifyInstanceMetadataDefaultsRequest::SerializePayload() const {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
+  if (m_httpTokensEnforcedHasBeenSet) {
+    ss << "HttpTokensEnforced="
+       << StringUtils::URLEncode(DefaultHttpTokensEnforcedStateMapper::GetNameForDefaultHttpTokensEnforcedState(m_httpTokensEnforced))
+       << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

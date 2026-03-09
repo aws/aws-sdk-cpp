@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
 #include <aws/elasticache/model/ServerlessCache.h>
@@ -58,10 +59,13 @@ class ModifyServerlessCacheResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ServerlessCache m_serverlessCache;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serverlessCacheHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -22,6 +22,7 @@ ListEdgeAgentConfigurationsResult::ListEdgeAgentConfigurationsResult(const Aws::
 }
 
 ListEdgeAgentConfigurationsResult& ListEdgeAgentConfigurationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("EdgeConfigs")) {
     Aws::Utils::Array<JsonView> edgeConfigsJsonList = jsonValue.GetArray("EdgeConfigs");

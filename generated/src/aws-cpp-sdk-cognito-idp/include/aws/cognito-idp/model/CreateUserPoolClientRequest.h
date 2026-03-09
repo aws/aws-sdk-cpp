@@ -100,6 +100,25 @@ class CreateUserPoolClientRequest : public CognitoIdentityProviderRequest {
 
   ///@{
   /**
+   * <p>A custom client secret that you want to use for the app client. You cannot
+   * specify both GenerateSecret as true and provide a ClientSecret value.</p>
+   */
+  inline const Aws::String& GetClientSecret() const { return m_clientSecret; }
+  inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
+  template <typename ClientSecretT = Aws::String>
+  void SetClientSecret(ClientSecretT&& value) {
+    m_clientSecretHasBeenSet = true;
+    m_clientSecret = std::forward<ClientSecretT>(value);
+  }
+  template <typename ClientSecretT = Aws::String>
+  CreateUserPoolClientRequest& WithClientSecret(ClientSecretT&& value) {
+    SetClientSecret(std::forward<ClientSecretT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The refresh token time limit. After this limit expires, your user can't use
    * their refresh token. To specify the time unit for
    * <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
@@ -381,9 +400,11 @@ class CreateUserPoolClientRequest : public CognitoIdentityProviderRequest {
    * in the list of <code>CallbackURLs</code> that you provide in this parameter.</p>
    * </li> <li> <p>Not include a fragment component.</p> </li> </ul> <p>See <a
    * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
-   * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
-   * http://localhost for testing purposes only.</p> <p>App callback URLs such as
-   * myapp://example are also supported.</p>
+   * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for callback
+   * URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and
+   * <code>http://[::1]</code>. These callback URLs are for testing purposes only.
+   * You can specify custom TCP ports for your callback URLs.</p> <p>App callback
+   * URLs such as <code>myapp://example</code> are also supported.</p>
    */
   inline const Aws::Vector<Aws::String>& GetCallbackURLs() const { return m_callbackURLs; }
   inline bool CallbackURLsHasBeenSet() const { return m_callbackURLsHasBeenSet; }
@@ -691,6 +712,8 @@ class CreateUserPoolClientRequest : public CognitoIdentityProviderRequest {
 
   bool m_generateSecret{false};
 
+  Aws::String m_clientSecret;
+
   int m_refreshTokenValidity{0};
 
   int m_accessTokenValidity{0};
@@ -733,6 +756,7 @@ class CreateUserPoolClientRequest : public CognitoIdentityProviderRequest {
   bool m_userPoolIdHasBeenSet = false;
   bool m_clientNameHasBeenSet = false;
   bool m_generateSecretHasBeenSet = false;
+  bool m_clientSecretHasBeenSet = false;
   bool m_refreshTokenValidityHasBeenSet = false;
   bool m_accessTokenValidityHasBeenSet = false;
   bool m_idTokenValidityHasBeenSet = false;

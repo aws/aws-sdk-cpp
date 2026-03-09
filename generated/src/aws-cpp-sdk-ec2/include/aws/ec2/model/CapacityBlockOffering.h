@@ -265,6 +265,24 @@ class CapacityBlockOffering {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of zone where the Capacity Block offering is available.</p>
+   */
+  inline const Aws::String& GetZoneType() const { return m_zoneType; }
+  inline bool ZoneTypeHasBeenSet() const { return m_zoneTypeHasBeenSet; }
+  template <typename ZoneTypeT = Aws::String>
+  void SetZoneType(ZoneTypeT&& value) {
+    m_zoneTypeHasBeenSet = true;
+    m_zoneType = std::forward<ZoneTypeT>(value);
+  }
+  template <typename ZoneTypeT = Aws::String>
+  CapacityBlockOffering& WithZoneType(ZoneTypeT&& value) {
+    SetZoneType(std::forward<ZoneTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_capacityBlockOfferingId;
 
@@ -291,6 +309,8 @@ class CapacityBlockOffering {
   int m_ultraserverCount{0};
 
   int m_capacityBlockDurationMinutes{0};
+
+  Aws::String m_zoneType;
   bool m_capacityBlockOfferingIdHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
@@ -304,6 +324,7 @@ class CapacityBlockOffering {
   bool m_ultraserverTypeHasBeenSet = false;
   bool m_ultraserverCountHasBeenSet = false;
   bool m_capacityBlockDurationMinutesHasBeenSet = false;
+  bool m_zoneTypeHasBeenSet = false;
 };
 
 }  // namespace Model

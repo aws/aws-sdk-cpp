@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -32,7 +33,7 @@ class DescribeActionTargetsResult {
   /**
    * <p>A list of <code>ActionTarget</code> objects. Each object includes the
    * <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of
-   * a custom action target available in Security Hub.</p>
+   * a custom action target available in Security Hub CSPM.</p>
    */
   inline const Aws::Vector<ActionTarget>& GetActionTargets() const { return m_actionTargets; }
   template <typename ActionTargetsT = Aws::Vector<ActionTarget>>
@@ -84,12 +85,15 @@ class DescribeActionTargetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ActionTarget> m_actionTargets;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_actionTargetsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

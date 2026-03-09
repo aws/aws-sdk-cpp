@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -99,6 +100,8 @@ class ImportSshPublicKeyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_serverId;
 
@@ -107,6 +110,7 @@ class ImportSshPublicKeyResult {
   Aws::String m_userName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_serverIdHasBeenSet = false;
   bool m_sshPublicKeyIdHasBeenSet = false;
   bool m_userNameHasBeenSet = false;

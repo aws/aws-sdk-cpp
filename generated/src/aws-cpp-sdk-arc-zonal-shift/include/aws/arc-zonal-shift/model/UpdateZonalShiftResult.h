@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/arc-zonal-shift/model/ZonalShiftStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -187,6 +188,8 @@ class UpdateZonalShiftResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_zonalShiftId;
 
@@ -203,6 +206,7 @@ class UpdateZonalShiftResult {
   Aws::String m_comment;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_zonalShiftIdHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
   bool m_awayFromHasBeenSet = false;

@@ -31,8 +31,8 @@ class IntegerConfigurationOptions {
 
   ///@{
   /**
-   * <p> The Security Hub default value for a control parameter that is an integer.
-   * </p>
+   * <p> The Security Hub CSPM default value for a control parameter that is an
+   * integer. </p>
    */
   inline int GetDefaultValue() const { return m_defaultValue; }
   inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }

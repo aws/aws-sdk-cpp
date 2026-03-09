@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -32,7 +33,7 @@ class ListOrganizationAdminAccountsResult {
 
   ///@{
   /**
-   * <p>The list of Security Hub administrator accounts.</p>
+   * <p>The list of Security Hub CSPM administrator accounts.</p>
    */
   inline const Aws::Vector<AdminAccount>& GetAdminAccounts() const { return m_adminAccounts; }
   template <typename AdminAccountsT = Aws::Vector<AdminAccount>>
@@ -73,7 +74,7 @@ class ListOrganizationAdminAccountsResult {
   ///@{
   /**
    * <p>The feature where the delegated administrator account is listed. Defaults to
-   * Security Hub CSPM if not specified.</p>
+   * Security Hub CSPM CSPM if not specified.</p>
    */
   inline SecurityHubFeature GetFeature() const { return m_feature; }
   inline void SetFeature(SecurityHubFeature value) {
@@ -100,6 +101,8 @@ class ListOrganizationAdminAccountsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<AdminAccount> m_adminAccounts;
 
@@ -108,6 +111,7 @@ class ListOrganizationAdminAccountsResult {
   SecurityHubFeature m_feature{SecurityHubFeature::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_adminAccountsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_featureHasBeenSet = false;

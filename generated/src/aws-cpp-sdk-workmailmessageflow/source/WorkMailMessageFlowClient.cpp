@@ -84,7 +84,7 @@ WorkMailMessageFlowClient::WorkMailMessageFlowClient(const std::shared_ptr<AWSCr
 }
 
 /* Legacy constructors due deprecation */
-WorkMailMessageFlowClient::WorkMailMessageFlowClient(const Client::ClientConfiguration& clientConfiguration)
+WorkMailMessageFlowClient::WorkMailMessageFlowClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -97,7 +97,7 @@ WorkMailMessageFlowClient::WorkMailMessageFlowClient(const Client::ClientConfigu
 }
 
 WorkMailMessageFlowClient::WorkMailMessageFlowClient(const AWSCredentials& credentials,
-                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -108,7 +108,7 @@ WorkMailMessageFlowClient::WorkMailMessageFlowClient(const AWSCredentials& crede
 }
 
 WorkMailMessageFlowClient::WorkMailMessageFlowClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                     const Client::ClientConfiguration& clientConfiguration)
+                                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/Cluster.h>
@@ -21,6 +22,11 @@ class JsonValue;
 }  // namespace Utils
 namespace ECS {
 namespace Model {
+/**
+ * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateClusterResponse">AWS
+ * API Reference</a></p>
+ */
 class CreateClusterResult {
  public:
   AWS_ECS_API CreateClusterResult() = default;
@@ -58,10 +64,13 @@ class CreateClusterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Cluster m_cluster;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clusterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

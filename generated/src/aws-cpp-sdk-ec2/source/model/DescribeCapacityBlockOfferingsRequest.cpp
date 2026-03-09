@@ -53,6 +53,10 @@ Aws::String DescribeCapacityBlockOfferingsRequest::SerializePayload() const {
     ss << "UltraserverCount=" << m_ultraserverCount << "&";
   }
 
+  if (m_allAvailabilityZonesHasBeenSet) {
+    ss << "AllAvailabilityZones=" << std::boolalpha << m_allAvailabilityZones << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

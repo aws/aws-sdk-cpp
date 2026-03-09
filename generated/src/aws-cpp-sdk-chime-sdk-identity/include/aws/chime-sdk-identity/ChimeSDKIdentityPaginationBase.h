@@ -10,6 +10,7 @@
 #include <aws/chime-sdk-identity/model/ListAppInstanceUserEndpointsPaginationTraits.h>
 #include <aws/chime-sdk-identity/model/ListAppInstanceUsersPaginationTraits.h>
 #include <aws/chime-sdk-identity/model/ListAppInstancesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -28,6 +29,7 @@ class ChimeSDKIdentityPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppInstanceAdminsRequest,
                                     Pagination::ListAppInstanceAdminsPaginationTraits<DerivedClient>>
   ListAppInstanceAdminsPaginator(const Model::ListAppInstanceAdminsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppInstanceAdminsRequest,
                                              Pagination::ListAppInstanceAdminsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -39,6 +41,7 @@ class ChimeSDKIdentityPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppInstanceBotsRequest,
                                     Pagination::ListAppInstanceBotsPaginationTraits<DerivedClient>>
   ListAppInstanceBotsPaginator(const Model::ListAppInstanceBotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppInstanceBotsRequest,
                                              Pagination::ListAppInstanceBotsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +53,7 @@ class ChimeSDKIdentityPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppInstancesRequest,
                                     Pagination::ListAppInstancesPaginationTraits<DerivedClient>>
   ListAppInstancesPaginator(const Model::ListAppInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppInstancesRequest,
                                              Pagination::ListAppInstancesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -61,6 +65,7 @@ class ChimeSDKIdentityPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppInstanceUserEndpointsRequest,
                                     Pagination::ListAppInstanceUserEndpointsPaginationTraits<DerivedClient>>
   ListAppInstanceUserEndpointsPaginator(const Model::ListAppInstanceUserEndpointsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppInstanceUserEndpointsRequest,
                                              Pagination::ListAppInstanceUserEndpointsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +77,7 @@ class ChimeSDKIdentityPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppInstanceUsersRequest,
                                     Pagination::ListAppInstanceUsersPaginationTraits<DerivedClient>>
   ListAppInstanceUsersPaginator(const Model::ListAppInstanceUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppInstanceUsersRequest,
                                              Pagination::ListAppInstanceUsersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

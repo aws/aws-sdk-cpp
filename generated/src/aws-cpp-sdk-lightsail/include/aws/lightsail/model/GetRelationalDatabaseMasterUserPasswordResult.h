@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -77,12 +78,15 @@ class GetRelationalDatabaseMasterUserPasswordResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_masterUserPassword;
 
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_masterUserPasswordHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -17,6 +17,7 @@ namespace ApplicationStatusReasonMapper {
 
 static const int internalError_HASH = HashingUtils::HashString("internalError");
 static const int accessDenied_HASH = HashingUtils::HashString("accessDenied");
+static const int sourceModified_HASH = HashingUtils::HashString("sourceModified");
 
 ApplicationStatusReason GetApplicationStatusReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ApplicationStatusReason GetApplicationStatusReasonForName(const Aws::String& nam
     return ApplicationStatusReason::internalError;
   } else if (hashCode == accessDenied_HASH) {
     return ApplicationStatusReason::accessDenied;
+  } else if (hashCode == sourceModified_HASH) {
+    return ApplicationStatusReason::sourceModified;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForApplicationStatusReason(ApplicationStatusReason enumValue)
       return "internalError";
     case ApplicationStatusReason::accessDenied:
       return "accessDenied";
+    case ApplicationStatusReason::sourceModified:
+      return "sourceModified";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

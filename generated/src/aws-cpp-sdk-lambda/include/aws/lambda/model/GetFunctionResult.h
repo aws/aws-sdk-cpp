@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
@@ -142,6 +143,8 @@ class GetFunctionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   FunctionConfiguration m_configuration;
 
@@ -154,6 +157,7 @@ class GetFunctionResult {
   Concurrency m_concurrency;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationHasBeenSet = false;
   bool m_codeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

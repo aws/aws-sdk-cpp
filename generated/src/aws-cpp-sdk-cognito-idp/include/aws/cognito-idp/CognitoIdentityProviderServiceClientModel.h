@@ -20,6 +20,7 @@
 
 /* Service model headers required in CognitoIdentityProviderClient header */
 #include <aws/cognito-idp/model/AddCustomAttributesResult.h>
+#include <aws/cognito-idp/model/AddUserPoolClientSecretResult.h>
 #include <aws/cognito-idp/model/AdminConfirmSignUpResult.h>
 #include <aws/cognito-idp/model/AdminCreateUserResult.h>
 #include <aws/cognito-idp/model/AdminDeleteUserAttributesResult.h>
@@ -59,6 +60,7 @@
 #include <aws/cognito-idp/model/CreateUserPoolDomainResult.h>
 #include <aws/cognito-idp/model/CreateUserPoolResult.h>
 #include <aws/cognito-idp/model/DeleteUserAttributesResult.h>
+#include <aws/cognito-idp/model/DeleteUserPoolClientSecretResult.h>
 #include <aws/cognito-idp/model/DeleteUserPoolDomainResult.h>
 #include <aws/cognito-idp/model/DeleteWebAuthnCredentialResult.h>
 #include <aws/cognito-idp/model/DescribeIdentityProviderResult.h>
@@ -93,6 +95,7 @@
 #include <aws/cognito-idp/model/ListTagsForResourceResult.h>
 #include <aws/cognito-idp/model/ListTermsResult.h>
 #include <aws/cognito-idp/model/ListUserImportJobsResult.h>
+#include <aws/cognito-idp/model/ListUserPoolClientSecretsResult.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsResult.h>
 #include <aws/cognito-idp/model/ListUserPoolsResult.h>
 #include <aws/cognito-idp/model/ListUsersInGroupResult.h>
@@ -162,6 +165,7 @@ using CognitoIdentityProviderEndpointProvider = Aws::CognitoIdentityProvider::En
 namespace Model {
 /* Service model forward declarations required in CognitoIdentityProviderClient header */
 class AddCustomAttributesRequest;
+class AddUserPoolClientSecretRequest;
 class AdminAddUserToGroupRequest;
 class AdminConfirmSignUpRequest;
 class AdminCreateUserRequest;
@@ -212,6 +216,7 @@ class DeleteUserRequest;
 class DeleteUserAttributesRequest;
 class DeleteUserPoolRequest;
 class DeleteUserPoolClientRequest;
+class DeleteUserPoolClientSecretRequest;
 class DeleteUserPoolDomainRequest;
 class DeleteWebAuthnCredentialRequest;
 class DescribeIdentityProviderRequest;
@@ -247,6 +252,7 @@ class ListResourceServersRequest;
 class ListTagsForResourceRequest;
 class ListTermsRequest;
 class ListUserImportJobsRequest;
+class ListUserPoolClientSecretsRequest;
 class ListUserPoolClientsRequest;
 class ListUserPoolsRequest;
 class ListUsersRequest;
@@ -284,6 +290,7 @@ class VerifyUserAttributeRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<AddCustomAttributesResult, CognitoIdentityProviderError> AddCustomAttributesOutcome;
+typedef Aws::Utils::Outcome<AddUserPoolClientSecretResult, CognitoIdentityProviderError> AddUserPoolClientSecretOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> AdminAddUserToGroupOutcome;
 typedef Aws::Utils::Outcome<AdminConfirmSignUpResult, CognitoIdentityProviderError> AdminConfirmSignUpOutcome;
 typedef Aws::Utils::Outcome<AdminCreateUserResult, CognitoIdentityProviderError> AdminCreateUserOutcome;
@@ -334,6 +341,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteU
 typedef Aws::Utils::Outcome<DeleteUserAttributesResult, CognitoIdentityProviderError> DeleteUserAttributesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteUserPoolOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteUserPoolClientOutcome;
+typedef Aws::Utils::Outcome<DeleteUserPoolClientSecretResult, CognitoIdentityProviderError> DeleteUserPoolClientSecretOutcome;
 typedef Aws::Utils::Outcome<DeleteUserPoolDomainResult, CognitoIdentityProviderError> DeleteUserPoolDomainOutcome;
 typedef Aws::Utils::Outcome<DeleteWebAuthnCredentialResult, CognitoIdentityProviderError> DeleteWebAuthnCredentialOutcome;
 typedef Aws::Utils::Outcome<DescribeIdentityProviderResult, CognitoIdentityProviderError> DescribeIdentityProviderOutcome;
@@ -370,6 +378,7 @@ typedef Aws::Utils::Outcome<ListResourceServersResult, CognitoIdentityProviderEr
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, CognitoIdentityProviderError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListTermsResult, CognitoIdentityProviderError> ListTermsOutcome;
 typedef Aws::Utils::Outcome<ListUserImportJobsResult, CognitoIdentityProviderError> ListUserImportJobsOutcome;
+typedef Aws::Utils::Outcome<ListUserPoolClientSecretsResult, CognitoIdentityProviderError> ListUserPoolClientSecretsOutcome;
 typedef Aws::Utils::Outcome<ListUserPoolClientsResult, CognitoIdentityProviderError> ListUserPoolClientsOutcome;
 typedef Aws::Utils::Outcome<ListUserPoolsResult, CognitoIdentityProviderError> ListUserPoolsOutcome;
 typedef Aws::Utils::Outcome<ListUsersResult, CognitoIdentityProviderError> ListUsersOutcome;
@@ -407,6 +416,7 @@ typedef Aws::Utils::Outcome<VerifyUserAttributeResult, CognitoIdentityProviderEr
 
 /* Service model Outcome callable definitions */
 typedef std::future<AddCustomAttributesOutcome> AddCustomAttributesOutcomeCallable;
+typedef std::future<AddUserPoolClientSecretOutcome> AddUserPoolClientSecretOutcomeCallable;
 typedef std::future<AdminAddUserToGroupOutcome> AdminAddUserToGroupOutcomeCallable;
 typedef std::future<AdminConfirmSignUpOutcome> AdminConfirmSignUpOutcomeCallable;
 typedef std::future<AdminCreateUserOutcome> AdminCreateUserOutcomeCallable;
@@ -457,6 +467,7 @@ typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
 typedef std::future<DeleteUserAttributesOutcome> DeleteUserAttributesOutcomeCallable;
 typedef std::future<DeleteUserPoolOutcome> DeleteUserPoolOutcomeCallable;
 typedef std::future<DeleteUserPoolClientOutcome> DeleteUserPoolClientOutcomeCallable;
+typedef std::future<DeleteUserPoolClientSecretOutcome> DeleteUserPoolClientSecretOutcomeCallable;
 typedef std::future<DeleteUserPoolDomainOutcome> DeleteUserPoolDomainOutcomeCallable;
 typedef std::future<DeleteWebAuthnCredentialOutcome> DeleteWebAuthnCredentialOutcomeCallable;
 typedef std::future<DescribeIdentityProviderOutcome> DescribeIdentityProviderOutcomeCallable;
@@ -492,6 +503,7 @@ typedef std::future<ListResourceServersOutcome> ListResourceServersOutcomeCallab
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListTermsOutcome> ListTermsOutcomeCallable;
 typedef std::future<ListUserImportJobsOutcome> ListUserImportJobsOutcomeCallable;
+typedef std::future<ListUserPoolClientSecretsOutcome> ListUserPoolClientSecretsOutcomeCallable;
 typedef std::future<ListUserPoolClientsOutcome> ListUserPoolClientsOutcomeCallable;
 typedef std::future<ListUserPoolsOutcome> ListUserPoolsOutcomeCallable;
 typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
@@ -534,6 +546,9 @@ class CognitoIdentityProviderClient;
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AddCustomAttributesRequest&,
                            const Model::AddCustomAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AddCustomAttributesResponseReceivedHandler;
+typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AddUserPoolClientSecretRequest&,
+                           const Model::AddUserPoolClientSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AddUserPoolClientSecretResponseReceivedHandler;
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminAddUserToGroupRequest&,
                            const Model::AdminAddUserToGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AdminAddUserToGroupResponseReceivedHandler;
@@ -686,6 +701,9 @@ typedef std::function<void(const CognitoIdentityProviderClient*, const Model::De
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserPoolClientRequest&,
                            const Model::DeleteUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteUserPoolClientResponseReceivedHandler;
+typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserPoolClientSecretRequest&,
+                           const Model::DeleteUserPoolClientSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteUserPoolClientSecretResponseReceivedHandler;
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserPoolDomainRequest&,
                            const Model::DeleteUserPoolDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteUserPoolDomainResponseReceivedHandler;
@@ -795,6 +813,9 @@ typedef std::function<void(const CognitoIdentityProviderClient*, const Model::Li
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUserImportJobsRequest&,
                            const Model::ListUserImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListUserImportJobsResponseReceivedHandler;
+typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUserPoolClientSecretsRequest&,
+                           const Model::ListUserPoolClientSecretsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListUserPoolClientSecretsResponseReceivedHandler;
 typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUserPoolClientsRequest&,
                            const Model::ListUserPoolClientsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListUserPoolClientsResponseReceivedHandler;

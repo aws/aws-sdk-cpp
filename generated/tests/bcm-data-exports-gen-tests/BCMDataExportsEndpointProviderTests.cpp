@@ -74,21 +74,27 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<BCMDataExportsEndpointProviderEndpointTestCase>> BCMDataExportsEndpointProviderTests::TEST_CASES;
-const size_t BCMDataExportsEndpointProviderTests::TEST_CASES_SZ = 11;
+const size_t BCMDataExportsEndpointProviderTests::TEST_CASES_SZ = 9;
 
 Aws::Vector<BCMDataExportsEndpointProviderEndpointTestCase> BCMDataExportsEndpointProviderTests::getTestCase() {
 
   Aws::Vector<BCMDataExportsEndpointProviderEndpointTestCase> test_cases = {
   /*TEST CASE 0*/
-  {"For region aws-global with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "aws-global")}, // params
+  {"For custom endpoint with region not set and fips disabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com")}, // params
     {}, // tags
-    {{/*epUrl*/"https://bcm-data-exports.us-east-1.api.aws",
+    {{/*epUrl*/"https://example.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 1*/
+  {"For custom endpoint with fips enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 2*/
   {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1")}, // params
     {}, // tags
@@ -97,7 +103,7 @@ Aws::Vector<BCMDataExportsEndpointProviderEndpointTestCase> BCMDataExportsEndpoi
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 2*/
+  /*TEST CASE 3*/
   {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1")}, // params
     {}, // tags
@@ -106,67 +112,43 @@ Aws::Vector<BCMDataExportsEndpointProviderEndpointTestCase> BCMDataExportsEndpoi
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 3*/
-  {"For region cn-north-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://bcm-data-exports-fips.cn-north-1.api.amazonwebservices.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
   /*TEST CASE 4*/
-  {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1")}, // params
+  {"For region cn-northwest-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-northwest-1")}, // params
     {}, // tags
-    {{/*epUrl*/"https://bcm-data-exports.cn-north-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://bcm-data-exports-fips.cn-northwest-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 5*/
-  {"For region us-gov-east-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1")}, // params
+  {"For region cn-northwest-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-northwest-1")}, // params
     {}, // tags
-    {{/*epUrl*/"https://bcm-data-exports-fips.us-gov-east-1.api.aws",
+    {{/*epUrl*/"https://bcm-data-exports.cn-northwest-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 6*/
-  {"For region us-gov-east-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1")}, // params
+  {"For region us-gov-west-1 with FIPS enabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1")}, // params
     {}, // tags
-    {{/*epUrl*/"https://bcm-data-exports.us-gov-east-1.api.aws",
+    {{/*epUrl*/"https://bcm-data-exports-fips.us-gov-west-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 7*/
-  {"For custom endpoint with region set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
+  {"For region us-gov-west-1 with FIPS disabled and DualStack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1")}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
+    {{/*epUrl*/"https://bcm-data-exports.us-gov-west-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 8*/
-  {"For custom endpoint with region not set and fips disabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 9*/
-  {"For custom endpoint with fips enabled and dualstack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 10*/
   {"Missing region", // documentation
     {}, // params
     {}, // tags

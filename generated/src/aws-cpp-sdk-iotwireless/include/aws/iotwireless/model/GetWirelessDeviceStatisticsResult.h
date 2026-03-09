@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/LoRaWANDeviceMetadata.h>
@@ -111,6 +112,8 @@ class GetWirelessDeviceStatisticsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_wirelessDeviceId;
 
@@ -121,6 +124,7 @@ class GetWirelessDeviceStatisticsResult {
   SidewalkDeviceMetadata m_sidewalk;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_wirelessDeviceIdHasBeenSet = false;
   bool m_lastUplinkReceivedAtHasBeenSet = false;
   bool m_loRaWANHasBeenSet = false;

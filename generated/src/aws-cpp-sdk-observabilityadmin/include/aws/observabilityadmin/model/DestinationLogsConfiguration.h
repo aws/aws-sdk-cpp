@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
+#include <aws/observabilityadmin/model/LogGroupNameConfiguration.h>
 #include <aws/observabilityadmin/model/LogsBackupConfiguration.h>
 #include <aws/observabilityadmin/model/LogsEncryptionConfiguration.h>
 
@@ -69,12 +70,36 @@ class DestinationLogsConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration that specifies a naming pattern for destination log groups
+   * created during centralization. The pattern supports static text and dynamic
+   * variables that are replaced with source attributes when log groups are
+   * created.</p>
+   */
+  inline const LogGroupNameConfiguration& GetLogGroupNameConfiguration() const { return m_logGroupNameConfiguration; }
+  inline bool LogGroupNameConfigurationHasBeenSet() const { return m_logGroupNameConfigurationHasBeenSet; }
+  template <typename LogGroupNameConfigurationT = LogGroupNameConfiguration>
+  void SetLogGroupNameConfiguration(LogGroupNameConfigurationT&& value) {
+    m_logGroupNameConfigurationHasBeenSet = true;
+    m_logGroupNameConfiguration = std::forward<LogGroupNameConfigurationT>(value);
+  }
+  template <typename LogGroupNameConfigurationT = LogGroupNameConfiguration>
+  DestinationLogsConfiguration& WithLogGroupNameConfiguration(LogGroupNameConfigurationT&& value) {
+    SetLogGroupNameConfiguration(std::forward<LogGroupNameConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LogsEncryptionConfiguration m_logsEncryptionConfiguration;
 
   LogsBackupConfiguration m_backupConfiguration;
+
+  LogGroupNameConfiguration m_logGroupNameConfiguration;
   bool m_logsEncryptionConfigurationHasBeenSet = false;
   bool m_backupConfigurationHasBeenSet = false;
+  bool m_logGroupNameConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

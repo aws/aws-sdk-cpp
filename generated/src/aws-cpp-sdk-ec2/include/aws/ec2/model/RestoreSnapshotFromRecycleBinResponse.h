@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -226,6 +227,8 @@ class RestoreSnapshotFromRecycleBinResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_snapshotId;
 
@@ -250,6 +253,7 @@ class RestoreSnapshotFromRecycleBinResponse {
   SSEType m_sseType{SSEType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_snapshotIdHasBeenSet = false;
   bool m_outpostArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

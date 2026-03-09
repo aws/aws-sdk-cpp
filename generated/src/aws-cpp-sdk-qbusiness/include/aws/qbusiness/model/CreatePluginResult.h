@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/model/PluginBuildStatus.h>
@@ -90,6 +91,8 @@ class CreatePluginResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_pluginId;
 
@@ -98,6 +101,7 @@ class CreatePluginResult {
   PluginBuildStatus m_buildStatus{PluginBuildStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_pluginIdHasBeenSet = false;
   bool m_pluginArnHasBeenSet = false;
   bool m_buildStatusHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/Ec2ConfigurationState.h>
@@ -78,12 +79,15 @@ class GetConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EcrConfigurationState m_ecrConfiguration;
 
   Ec2ConfigurationState m_ec2Configuration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ecrConfigurationHasBeenSet = false;
   bool m_ec2ConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

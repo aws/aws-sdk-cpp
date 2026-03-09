@@ -9,6 +9,7 @@
 #include <aws/backupsearch/model/ListSearchJobResultsPaginationTraits.h>
 #include <aws/backupsearch/model/ListSearchJobsPaginationTraits.h>
 #include <aws/backupsearch/model/ListSearchResultExportJobsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -27,6 +28,7 @@ class BackupSearchPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSearchJobBackupsRequest,
                                     Pagination::ListSearchJobBackupsPaginationTraits<DerivedClient>>
   ListSearchJobBackupsPaginator(const Model::ListSearchJobBackupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSearchJobBackupsRequest,
                                              Pagination::ListSearchJobBackupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class BackupSearchPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSearchJobResultsRequest,
                                     Pagination::ListSearchJobResultsPaginationTraits<DerivedClient>>
   ListSearchJobResultsPaginator(const Model::ListSearchJobResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSearchJobResultsRequest,
                                              Pagination::ListSearchJobResultsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -48,6 +51,7 @@ class BackupSearchPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSearchJobsRequest, Pagination::ListSearchJobsPaginationTraits<DerivedClient>>
   ListSearchJobsPaginator(const Model::ListSearchJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSearchJobsRequest,
                                              Pagination::ListSearchJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -59,6 +63,7 @@ class BackupSearchPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSearchResultExportJobsRequest,
                                     Pagination::ListSearchResultExportJobsPaginationTraits<DerivedClient>>
   ListSearchResultExportJobsPaginator(const Model::ListSearchResultExportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSearchResultExportJobsRequest,
                                              Pagination::ListSearchResultExportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

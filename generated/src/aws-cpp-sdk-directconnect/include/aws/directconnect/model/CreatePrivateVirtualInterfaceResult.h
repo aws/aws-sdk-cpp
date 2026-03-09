@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
@@ -559,6 +560,8 @@ class CreatePrivateVirtualInterfaceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_ownerAccount;
 
@@ -615,6 +618,7 @@ class CreatePrivateVirtualInterfaceResult {
   bool m_siteLinkEnabled{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ownerAccountHasBeenSet = false;
   bool m_virtualInterfaceIdHasBeenSet = false;
   bool m_locationHasBeenSet = false;

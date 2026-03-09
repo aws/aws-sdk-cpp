@@ -19,7 +19,7 @@ void S3ControlClientConfiguration::LoadS3ControlSpecificConfig(const Aws::String
   }
 }
 
-S3ControlClientConfiguration::S3ControlClientConfiguration(const Client::ClientConfigurationInitValues& configuration)
+S3ControlClientConfiguration::S3ControlClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
     : BaseClientConfigClass(configuration) {
   LoadS3ControlSpecificConfig(this->profileName);
 }
@@ -34,7 +34,7 @@ S3ControlClientConfiguration::S3ControlClientConfiguration(bool useSmartDefaults
   LoadS3ControlSpecificConfig(this->profileName);
 }
 
-S3ControlClientConfiguration::S3ControlClientConfiguration(const Client::ClientConfiguration& config) : BaseClientConfigClass(config) {
+S3ControlClientConfiguration::S3ControlClientConfiguration(const Aws::Client::ClientConfiguration& config) : BaseClientConfigClass(config) {
   LoadS3ControlSpecificConfig(this->profileName);
 }
 

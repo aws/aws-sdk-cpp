@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyTestCase.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -77,12 +78,15 @@ class GetAutomatedReasoningPolicyTestCaseResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_policyArn;
 
   AutomatedReasoningPolicyTestCase m_testCase;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyArnHasBeenSet = false;
   bool m_testCaseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

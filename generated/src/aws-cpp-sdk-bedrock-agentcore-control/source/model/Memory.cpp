@@ -69,6 +69,10 @@ Memory& Memory::operator=(JsonView jsonValue) {
     }
     m_strategiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("streamDeliveryResources")) {
+    m_streamDeliveryResources = jsonValue.GetObject("streamDeliveryResources");
+    m_streamDeliveryResourcesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -125,6 +129,10 @@ JsonValue Memory::Jsonize() const {
       strategiesJsonList[strategiesIndex].AsObject(m_strategies[strategiesIndex].Jsonize());
     }
     payload.WithArray("strategies", std::move(strategiesJsonList));
+  }
+
+  if (m_streamDeliveryResourcesHasBeenSet) {
+    payload.WithObject("streamDeliveryResources", m_streamDeliveryResources.Jsonize());
   }
 
   return payload;

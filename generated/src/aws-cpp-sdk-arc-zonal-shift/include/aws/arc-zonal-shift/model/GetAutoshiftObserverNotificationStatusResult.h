@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/arc-zonal-shift/model/AutoshiftObserverNotificationStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -62,10 +63,13 @@ class GetAutoshiftObserverNotificationStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AutoshiftObserverNotificationStatus m_status{AutoshiftObserverNotificationStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

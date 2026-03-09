@@ -142,5 +142,11 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
     ss.str("");
   }
 
+  if (m_sessionResumeWindowHasBeenSet) {
+    ss << m_sessionResumeWindow;
+    headers.emplace("x-amzn-transcribe-session-resume-window", ss.str());
+    ss.str("");
+  }
+
   return headers;
 }

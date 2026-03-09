@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iam/IAM_EXPORTS.h>
@@ -83,12 +84,15 @@ class EnableOrganizationsRootCredentialsManagementResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_organizationId;
 
   Aws::Vector<FeatureType> m_enabledFeatures;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_organizationIdHasBeenSet = false;
   bool m_enabledFeaturesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

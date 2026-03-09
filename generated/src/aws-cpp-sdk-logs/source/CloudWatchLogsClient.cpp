@@ -98,6 +98,7 @@
 #include <aws/logs/model/ListSourcesForS3TableIntegrationRequest.h>
 #include <aws/logs/model/ListTagsForResourceRequest.h>
 #include <aws/logs/model/PutAccountPolicyRequest.h>
+#include <aws/logs/model/PutBearerTokenAuthenticationRequest.h>
 #include <aws/logs/model/PutDataProtectionPolicyRequest.h>
 #include <aws/logs/model/PutDeliveryDestinationPolicyRequest.h>
 #include <aws/logs/model/PutDeliveryDestinationRequest.h>
@@ -184,7 +185,7 @@ CloudWatchLogsClient::CloudWatchLogsClient(const std::shared_ptr<AWSCredentialsP
 }
 
 /* Legacy constructors due deprecation */
-CloudWatchLogsClient::CloudWatchLogsClient(const Client::ClientConfiguration& clientConfiguration)
+CloudWatchLogsClient::CloudWatchLogsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -196,7 +197,7 @@ CloudWatchLogsClient::CloudWatchLogsClient(const Client::ClientConfiguration& cl
   init(m_clientConfiguration);
 }
 
-CloudWatchLogsClient::CloudWatchLogsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+CloudWatchLogsClient::CloudWatchLogsClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -207,7 +208,7 @@ CloudWatchLogsClient::CloudWatchLogsClient(const AWSCredentials& credentials, co
 }
 
 CloudWatchLogsClient::CloudWatchLogsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           const Client::ClientConfiguration& clientConfiguration)
+                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -2491,6 +2492,36 @@ PutAccountPolicyOutcome CloudWatchLogsClient::PutAccountPolicy(const PutAccountP
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAccountPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return PutAccountPolicyOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutBearerTokenAuthenticationOutcome CloudWatchLogsClient::PutBearerTokenAuthentication(
+    const PutBearerTokenAuthenticationRequest& request) const {
+  AWS_OPERATION_GUARD(PutBearerTokenAuthentication);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBearerTokenAuthentication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutBearerTokenAuthentication, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutBearerTokenAuthentication, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutBearerTokenAuthentication",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutBearerTokenAuthenticationOutcome>(
+      [&]() -> PutBearerTokenAuthenticationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutBearerTokenAuthentication, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return PutBearerTokenAuthenticationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

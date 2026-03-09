@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 
@@ -55,10 +56,13 @@ class GetInvitationsCountResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_invitationsCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_invitationsCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

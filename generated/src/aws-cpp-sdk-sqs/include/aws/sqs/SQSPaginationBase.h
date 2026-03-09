@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/sqs/model/ListDeadLetterSourceQueuesPaginationTraits.h>
 #include <aws/sqs/model/ListQueuesPaginationTraits.h>
@@ -25,6 +26,7 @@ class SQSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeadLetterSourceQueuesRequest,
                                     Pagination::ListDeadLetterSourceQueuesPaginationTraits<DerivedClient>>
   ListDeadLetterSourceQueuesPaginator(const Model::ListDeadLetterSourceQueuesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDeadLetterSourceQueuesRequest,
                                              Pagination::ListDeadLetterSourceQueuesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -35,6 +37,7 @@ class SQSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuesRequest, Pagination::ListQueuesPaginationTraits<DerivedClient>>
   ListQueuesPaginator(const Model::ListQueuesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueuesRequest,
                                              Pagination::ListQueuesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};

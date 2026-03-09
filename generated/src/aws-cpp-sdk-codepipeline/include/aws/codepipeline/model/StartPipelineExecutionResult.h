@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -64,10 +65,13 @@ class StartPipelineExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_pipelineExecutionId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_pipelineExecutionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

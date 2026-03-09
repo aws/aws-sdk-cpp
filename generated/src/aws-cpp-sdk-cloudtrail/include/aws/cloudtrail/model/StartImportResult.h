@@ -7,6 +7,7 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/model/ImportSource.h>
 #include <aws/cloudtrail/model/ImportStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -190,6 +191,8 @@ class StartImportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_importId;
 
@@ -208,6 +211,7 @@ class StartImportResult {
   Aws::Utils::DateTime m_updatedTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_importIdHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
   bool m_importSourceHasBeenSet = false;

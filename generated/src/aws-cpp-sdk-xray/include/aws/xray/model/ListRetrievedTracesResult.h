@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/xray/XRay_EXPORTS.h>
@@ -115,6 +116,8 @@ class ListRetrievedTracesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RetrievalStatus m_retrievalStatus{RetrievalStatus::NOT_SET};
 
@@ -125,6 +128,7 @@ class ListRetrievedTracesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_retrievalStatusHasBeenSet = false;
   bool m_traceFormatHasBeenSet = false;
   bool m_tracesHasBeenSet = false;

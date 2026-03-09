@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/m2/model/DataSetImportSummary.h>
@@ -92,6 +93,8 @@ class GetDataSetImportTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DataSetTaskLifecycle m_status{DataSetTaskLifecycle::NOT_SET};
 
@@ -100,6 +103,7 @@ class GetDataSetImportTaskResult {
   Aws::String m_taskId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;

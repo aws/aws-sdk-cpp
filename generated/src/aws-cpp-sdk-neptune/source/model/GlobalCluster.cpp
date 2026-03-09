@@ -53,6 +53,11 @@ GlobalCluster& GlobalCluster::operator=(const XmlNode& xmlNode) {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
     }
+    XmlNode databaseNameNode = resultNode.FirstChild("DatabaseName");
+    if (!databaseNameNode.IsNull()) {
+      m_databaseName = Aws::Utils::Xml::DecodeEscapedXmlText(databaseNameNode.GetText());
+      m_databaseNameHasBeenSet = true;
+    }
     XmlNode storageEncryptedNode = resultNode.FirstChild("StorageEncrypted");
     if (!storageEncryptedNode.IsNull()) {
       m_storageEncrypted = StringUtils::ConvertToBool(
@@ -80,6 +85,17 @@ GlobalCluster& GlobalCluster::operator=(const XmlNode& xmlNode) {
     if (!failoverStateNode.IsNull()) {
       m_failoverState = failoverStateNode;
       m_failoverStateHasBeenSet = true;
+    }
+    XmlNode tagListNode = resultNode.FirstChild("TagList");
+    if (!tagListNode.IsNull()) {
+      XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
+      while (!tagListMember.IsNull()) {
+        m_tagList.push_back(tagListMember);
+        tagListMember = tagListMember.NextNode("Tag");
+      }
+
+      m_tagListHasBeenSet = true;
     }
   }
 
@@ -113,6 +129,10 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location, 
     oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
 
+  if (m_databaseNameHasBeenSet) {
+    oStream << location << index << locationValue << ".DatabaseName=" << StringUtils::URLEncode(m_databaseName.c_str()) << "&";
+  }
+
   if (m_storageEncryptedHasBeenSet) {
     oStream << location << index << locationValue << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
@@ -136,6 +156,15 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location, 
     failoverStateLocationAndMemberSs << location << index << locationValue << ".FailoverState";
     m_failoverState.OutputToStream(oStream, failoverStateLocationAndMemberSs.str().c_str());
   }
+
+  if (m_tagListHasBeenSet) {
+    unsigned tagListIdx = 1;
+    for (auto& item : m_tagList) {
+      Aws::StringStream tagListSs;
+      tagListSs << location << index << locationValue << ".TagList.Tag." << tagListIdx++;
+      item.OutputToStream(oStream, tagListSs.str().c_str());
+    }
+  }
 }
 
 void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -157,6 +186,9 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) 
   if (m_engineVersionHasBeenSet) {
     oStream << location << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
+  if (m_databaseNameHasBeenSet) {
+    oStream << location << ".DatabaseName=" << StringUtils::URLEncode(m_databaseName.c_str()) << "&";
+  }
   if (m_storageEncryptedHasBeenSet) {
     oStream << location << ".StorageEncrypted=" << std::boolalpha << m_storageEncrypted << "&";
   }
@@ -175,6 +207,14 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) 
     Aws::String failoverStateLocationAndMember(location);
     failoverStateLocationAndMember += ".FailoverState";
     m_failoverState.OutputToStream(oStream, failoverStateLocationAndMember.c_str());
+  }
+  if (m_tagListHasBeenSet) {
+    unsigned tagListIdx = 1;
+    for (auto& item : m_tagList) {
+      Aws::StringStream tagListSs;
+      tagListSs << location << ".TagList.Tag." << tagListIdx++;
+      item.OutputToStream(oStream, tagListSs.str().c_str());
+    }
   }
 }
 

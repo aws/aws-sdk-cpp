@@ -150,7 +150,7 @@ Route53ResolverClient::Route53ResolverClient(const std::shared_ptr<AWSCredential
 }
 
 /* Legacy constructors due deprecation */
-Route53ResolverClient::Route53ResolverClient(const Client::ClientConfiguration& clientConfiguration)
+Route53ResolverClient::Route53ResolverClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -162,7 +162,7 @@ Route53ResolverClient::Route53ResolverClient(const Client::ClientConfiguration& 
   init(m_clientConfiguration);
 }
 
-Route53ResolverClient::Route53ResolverClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+Route53ResolverClient::Route53ResolverClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -173,7 +173,7 @@ Route53ResolverClient::Route53ResolverClient(const AWSCredentials& credentials, 
 }
 
 Route53ResolverClient::Route53ResolverClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                             const Client::ClientConfiguration& clientConfiguration)
+                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

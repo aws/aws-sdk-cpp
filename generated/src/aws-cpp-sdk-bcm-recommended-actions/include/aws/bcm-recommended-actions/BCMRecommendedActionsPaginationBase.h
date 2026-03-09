@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/bcm-recommended-actions/model/ListRecommendedActionsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -24,6 +25,7 @@ class BCMRecommendedActionsPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendedActionsRequest,
                                     Pagination::ListRecommendedActionsPaginationTraits<DerivedClient>>
   ListRecommendedActionsPaginator(const Model::ListRecommendedActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendedActionsRequest,
                                              Pagination::ListRecommendedActionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

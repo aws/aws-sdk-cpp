@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fms/FMS_EXPORTS.h>
@@ -83,12 +84,15 @@ class BatchAssociateResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_resourceSetIdentifier;
 
   Aws::Vector<FailedItem> m_failedItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceSetIdentifierHasBeenSet = false;
   bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

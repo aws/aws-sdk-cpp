@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
@@ -86,12 +87,15 @@ class GeocodeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_pricingBucket;
 
   Aws::Vector<GeocodeResultItem> m_resultItems;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_pricingBucketHasBeenSet = false;
   bool m_resultItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

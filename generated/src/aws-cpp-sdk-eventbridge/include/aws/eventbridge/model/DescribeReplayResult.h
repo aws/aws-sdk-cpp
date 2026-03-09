@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
@@ -247,6 +248,8 @@ class DescribeReplayResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_replayName;
 
@@ -273,6 +276,7 @@ class DescribeReplayResult {
   Aws::Utils::DateTime m_replayEndTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replayNameHasBeenSet = false;
   bool m_replayArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

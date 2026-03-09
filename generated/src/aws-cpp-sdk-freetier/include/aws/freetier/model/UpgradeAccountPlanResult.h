@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/freetier/FreeTier_EXPORTS.h>
 #include <aws/freetier/model/AccountPlanStatus.h>
@@ -90,6 +91,8 @@ class UpgradeAccountPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_accountId;
 
@@ -98,6 +101,7 @@ class UpgradeAccountPlanResult {
   AccountPlanStatus m_accountPlanStatus{AccountPlanStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountIdHasBeenSet = false;
   bool m_accountPlanTypeHasBeenSet = false;
   bool m_accountPlanStatusHasBeenSet = false;

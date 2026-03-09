@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -74,12 +75,15 @@ class CreateQuickConnectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_quickConnectARN;
 
   Aws::String m_quickConnectId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_quickConnectARNHasBeenSet = false;
   bool m_quickConnectIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

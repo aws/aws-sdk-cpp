@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/ComparisonMetricValue.h>
 #include <aws/ce/model/CostAndUsageComparison.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -111,6 +112,8 @@ class GetCostAndUsageComparisonsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<CostAndUsageComparison> m_costAndUsageComparisons;
 
@@ -119,6 +122,7 @@ class GetCostAndUsageComparisonsResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_costAndUsageComparisonsHasBeenSet = false;
   bool m_totalCostAndUsageHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;

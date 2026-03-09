@@ -21,8 +21,8 @@ namespace SecurityHub {
 namespace Model {
 
 /**
- * <p> An object that contains the details of an Security Hub configuration policy
- * that’s returned in a <code>ListConfigurationPolicies</code> request.
+ * <p> An object that contains the details of an Security Hub CSPM configuration
+ * policy that’s returned in a <code>ListConfigurationPolicies</code> request.
  * </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ConfigurationPolicySummary">AWS
  * API Reference</a></p>

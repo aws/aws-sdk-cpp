@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
@@ -133,6 +134,8 @@ class CreateVocabularyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_vocabularyName;
 
@@ -145,6 +148,7 @@ class CreateVocabularyResult {
   Aws::String m_failureReason;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vocabularyNameHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
   bool m_vocabularyStateHasBeenSet = false;

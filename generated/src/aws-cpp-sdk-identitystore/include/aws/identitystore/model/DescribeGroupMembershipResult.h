@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
@@ -177,6 +178,8 @@ class DescribeGroupMembershipResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_identityStoreId;
 
@@ -195,6 +198,7 @@ class DescribeGroupMembershipResult {
   Aws::String m_updatedBy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_membershipIdHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;

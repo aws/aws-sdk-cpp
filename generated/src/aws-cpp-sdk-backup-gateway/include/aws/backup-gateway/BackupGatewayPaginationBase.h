@@ -8,6 +8,7 @@
 #include <aws/backup-gateway/model/ListGatewaysPaginationTraits.h>
 #include <aws/backup-gateway/model/ListHypervisorsPaginationTraits.h>
 #include <aws/backup-gateway/model/ListVirtualMachinesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -25,6 +26,7 @@ class BackupGatewayPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewaysRequest, Pagination::ListGatewaysPaginationTraits<DerivedClient>>
   ListGatewaysPaginator(const Model::ListGatewaysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewaysRequest,
                                              Pagination::ListGatewaysPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -36,6 +38,7 @@ class BackupGatewayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHypervisorsRequest,
                                     Pagination::ListHypervisorsPaginationTraits<DerivedClient>>
   ListHypervisorsPaginator(const Model::ListHypervisorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHypervisorsRequest,
                                              Pagination::ListHypervisorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -47,6 +50,7 @@ class BackupGatewayPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualMachinesRequest,
                                     Pagination::ListVirtualMachinesPaginationTraits<DerivedClient>>
   ListVirtualMachinesPaginator(const Model::ListVirtualMachinesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualMachinesRequest,
                                              Pagination::ListVirtualMachinesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

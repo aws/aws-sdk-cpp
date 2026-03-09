@@ -12,6 +12,7 @@
 #include <aws/amplifyuibuilder/model/ListComponentsPaginationTraits.h>
 #include <aws/amplifyuibuilder/model/ListFormsPaginationTraits.h>
 #include <aws/amplifyuibuilder/model/ListThemesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -30,6 +31,7 @@ class AmplifyUIBuilderPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ExportComponentsRequest,
                                     Pagination::ExportComponentsPaginationTraits<DerivedClient>>
   ExportComponentsPaginator(const Model::ExportComponentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ExportComponentsRequest,
                                              Pagination::ExportComponentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -40,6 +42,7 @@ class AmplifyUIBuilderPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ExportFormsRequest, Pagination::ExportFormsPaginationTraits<DerivedClient>>
   ExportFormsPaginator(const Model::ExportFormsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ExportFormsRequest,
                                              Pagination::ExportFormsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -50,6 +53,7 @@ class AmplifyUIBuilderPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ExportThemesRequest, Pagination::ExportThemesPaginationTraits<DerivedClient>>
   ExportThemesPaginator(const Model::ExportThemesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ExportThemesRequest,
                                              Pagination::ExportThemesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -61,6 +65,7 @@ class AmplifyUIBuilderPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodegenJobsRequest,
                                     Pagination::ListCodegenJobsPaginationTraits<DerivedClient>>
   ListCodegenJobsPaginator(const Model::ListCodegenJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCodegenJobsRequest,
                                              Pagination::ListCodegenJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -71,6 +76,7 @@ class AmplifyUIBuilderPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentsRequest, Pagination::ListComponentsPaginationTraits<DerivedClient>>
   ListComponentsPaginator(const Model::ListComponentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComponentsRequest,
                                              Pagination::ListComponentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -81,6 +87,7 @@ class AmplifyUIBuilderPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFormsRequest, Pagination::ListFormsPaginationTraits<DerivedClient>>
   ListFormsPaginator(const Model::ListFormsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFormsRequest, Pagination::ListFormsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -90,6 +97,7 @@ class AmplifyUIBuilderPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThemesRequest, Pagination::ListThemesPaginationTraits<DerivedClient>>
   ListThemesPaginator(const Model::ListThemesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListThemesRequest,
                                              Pagination::ListThemesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
 #include <aws/wickr/model/SecurityGroup.h>
@@ -59,10 +60,13 @@ class CreateSecurityGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SecurityGroup m_securityGroup;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_securityGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
 #include <aws/codecatalyst/model/DevEnvironmentAccessDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -124,6 +125,8 @@ class StartDevEnvironmentSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DevEnvironmentAccessDetails m_accessDetails;
 
@@ -136,6 +139,7 @@ class StartDevEnvironmentSessionResult {
   Aws::String m_id;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accessDetailsHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
   bool m_spaceNameHasBeenSet = false;

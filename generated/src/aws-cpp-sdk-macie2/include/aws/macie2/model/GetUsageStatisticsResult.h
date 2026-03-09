@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/macie2/Macie2_EXPORTS.h>
@@ -103,6 +104,8 @@ class GetUsageStatisticsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
@@ -111,6 +114,7 @@ class GetUsageStatisticsResult {
   TimeRange m_timeRange{TimeRange::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_recordsHasBeenSet = false;
   bool m_timeRangeHasBeenSet = false;

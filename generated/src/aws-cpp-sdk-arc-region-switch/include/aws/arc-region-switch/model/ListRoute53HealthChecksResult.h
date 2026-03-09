@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/arc-region-switch/model/Route53HealthCheck.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -86,12 +87,15 @@ class ListRoute53HealthChecksResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Route53HealthCheck> m_healthChecks;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_healthChecksHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

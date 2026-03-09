@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/DeleteFleetErrorItem.h>
@@ -89,12 +90,15 @@ class DeleteFleetsResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<DeleteFleetSuccessItem> m_successfulFleetDeletions;
 
   Aws::Vector<DeleteFleetErrorItem> m_unsuccessfulFleetDeletions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulFleetDeletionsHasBeenSet = false;
   bool m_unsuccessfulFleetDeletionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

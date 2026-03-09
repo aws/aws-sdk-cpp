@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/payment-cryptography-data/model/PinData.h>
@@ -156,6 +157,8 @@ class GeneratePinDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_generationKeyArn;
 
@@ -170,6 +173,7 @@ class GeneratePinDataResult {
   PinData m_pinData;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_generationKeyArnHasBeenSet = false;
   bool m_generationKeyCheckValueHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;

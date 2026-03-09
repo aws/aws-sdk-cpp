@@ -7,6 +7,7 @@
 
 #include <aws/cloud9/model/DescribeEnvironmentMembershipsPaginationTraits.h>
 #include <aws/cloud9/model/ListEnvironmentsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -25,6 +26,7 @@ class Cloud9PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEnvironmentMembershipsRequest,
                                     Pagination::DescribeEnvironmentMembershipsPaginationTraits<DerivedClient>>
   DescribeEnvironmentMembershipsPaginator(const Model::DescribeEnvironmentMembershipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEnvironmentMembershipsRequest,
                                              Pagination::DescribeEnvironmentMembershipsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -36,6 +38,7 @@ class Cloud9PaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentsRequest,
                                     Pagination::ListEnvironmentsPaginationTraits<DerivedClient>>
   ListEnvironmentsPaginator(const Model::ListEnvironmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnvironmentsRequest,
                                              Pagination::ListEnvironmentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

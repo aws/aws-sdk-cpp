@@ -35,6 +35,14 @@ Aws::String UpdateMlflowTrackingServerRequest::SerializePayload() const {
     payload.WithString("WeeklyMaintenanceWindowStart", m_weeklyMaintenanceWindowStart);
   }
 
+  if (m_s3BucketOwnerAccountIdHasBeenSet) {
+    payload.WithString("S3BucketOwnerAccountId", m_s3BucketOwnerAccountId);
+  }
+
+  if (m_s3BucketOwnerVerificationHasBeenSet) {
+    payload.WithBool("S3BucketOwnerVerification", m_s3BucketOwnerVerification);
+  }
+
   return payload.View().WriteReadable();
 }
 

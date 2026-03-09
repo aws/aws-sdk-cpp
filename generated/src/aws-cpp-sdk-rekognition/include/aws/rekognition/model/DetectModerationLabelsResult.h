@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -146,6 +147,8 @@ class DetectModerationLabelsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ModerationLabel> m_moderationLabels;
 
@@ -158,6 +161,7 @@ class DetectModerationLabelsResult {
   Aws::Vector<ContentType> m_contentTypes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_moderationLabelsHasBeenSet = false;
   bool m_moderationModelVersionHasBeenSet = false;
   bool m_humanLoopActivationOutputHasBeenSet = false;

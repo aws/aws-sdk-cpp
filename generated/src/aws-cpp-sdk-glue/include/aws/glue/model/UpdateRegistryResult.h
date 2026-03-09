@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class UpdateRegistryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_registryName;
 
   Aws::String m_registryArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_registryNameHasBeenSet = false;
   bool m_registryArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

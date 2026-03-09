@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/apprunner/model/VpcIngressConnection.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -59,10 +60,13 @@ class DeleteVpcIngressConnectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VpcIngressConnection m_vpcIngressConnection;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_vpcIngressConnectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

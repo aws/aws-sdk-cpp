@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
@@ -100,6 +101,8 @@ class SearchImageSetsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ImageSetsMetadataSummary> m_imageSetsMetadataSummaries;
 
@@ -108,6 +111,7 @@ class SearchImageSetsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_imageSetsMetadataSummariesHasBeenSet = false;
   bool m_sortHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

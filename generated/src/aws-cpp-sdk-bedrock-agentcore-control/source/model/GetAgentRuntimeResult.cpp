@@ -20,6 +20,7 @@ using namespace Aws;
 GetAgentRuntimeResult::GetAgentRuntimeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetAgentRuntimeResult& GetAgentRuntimeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("agentRuntimeArn")) {
     m_agentRuntimeArn = jsonValue.GetString("agentRuntimeArn");
@@ -95,6 +96,10 @@ GetAgentRuntimeResult& GetAgentRuntimeResult::operator=(const Aws::AmazonWebServ
   if (jsonValue.ValueExists("requestHeaderConfiguration")) {
     m_requestHeaderConfiguration = jsonValue.GetObject("requestHeaderConfiguration");
     m_requestHeaderConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("metadataConfiguration")) {
+    m_metadataConfiguration = jsonValue.GetObject("metadataConfiguration");
+    m_metadataConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/connectparticipant/model/GetTranscriptPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -23,6 +24,7 @@ class ConnectParticipantPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTranscriptRequest, Pagination::GetTranscriptPaginationTraits<DerivedClient>>
   GetTranscriptPaginator(const Model::GetTranscriptRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTranscriptRequest,
                                              Pagination::GetTranscriptPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

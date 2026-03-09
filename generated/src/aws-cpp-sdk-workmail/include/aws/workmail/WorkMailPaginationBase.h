@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/workmail/model/ListAliasesPaginationTraits.h>
 #include <aws/workmail/model/ListAvailabilityConfigurationsPaginationTraits.h>
@@ -37,6 +38,7 @@ class WorkMailPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAliasesRequest, Pagination::ListAliasesPaginationTraits<DerivedClient>>
   ListAliasesPaginator(const Model::ListAliasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAliasesRequest,
                                              Pagination::ListAliasesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -48,6 +50,7 @@ class WorkMailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAvailabilityConfigurationsRequest,
                                     Pagination::ListAvailabilityConfigurationsPaginationTraits<DerivedClient>>
   ListAvailabilityConfigurationsPaginator(const Model::ListAvailabilityConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAvailabilityConfigurationsRequest,
                                              Pagination::ListAvailabilityConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +62,7 @@ class WorkMailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupMembersRequest,
                                     Pagination::ListGroupMembersPaginationTraits<DerivedClient>>
   ListGroupMembersPaginator(const Model::ListGroupMembersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupMembersRequest,
                                              Pagination::ListGroupMembersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -69,6 +73,7 @@ class WorkMailPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsRequest, Pagination::ListGroupsPaginationTraits<DerivedClient>>
   ListGroupsPaginator(const Model::ListGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsRequest,
                                              Pagination::ListGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -80,6 +85,7 @@ class WorkMailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsForEntityRequest,
                                     Pagination::ListGroupsForEntityPaginationTraits<DerivedClient>>
   ListGroupsForEntityPaginator(const Model::ListGroupsForEntityRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGroupsForEntityRequest,
                                              Pagination::ListGroupsForEntityPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -91,6 +97,7 @@ class WorkMailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImpersonationRolesRequest,
                                     Pagination::ListImpersonationRolesPaginationTraits<DerivedClient>>
   ListImpersonationRolesPaginator(const Model::ListImpersonationRolesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImpersonationRolesRequest,
                                              Pagination::ListImpersonationRolesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -102,6 +109,7 @@ class WorkMailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMailboxExportJobsRequest,
                                     Pagination::ListMailboxExportJobsPaginationTraits<DerivedClient>>
   ListMailboxExportJobsPaginator(const Model::ListMailboxExportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMailboxExportJobsRequest,
                                              Pagination::ListMailboxExportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -113,6 +121,7 @@ class WorkMailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMailboxPermissionsRequest,
                                     Pagination::ListMailboxPermissionsPaginationTraits<DerivedClient>>
   ListMailboxPermissionsPaginator(const Model::ListMailboxPermissionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMailboxPermissionsRequest,
                                              Pagination::ListMailboxPermissionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -124,6 +133,7 @@ class WorkMailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMailDomainsRequest,
                                     Pagination::ListMailDomainsPaginationTraits<DerivedClient>>
   ListMailDomainsPaginator(const Model::ListMailDomainsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMailDomainsRequest,
                                              Pagination::ListMailDomainsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -135,6 +145,7 @@ class WorkMailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMobileDeviceAccessOverridesRequest,
                                     Pagination::ListMobileDeviceAccessOverridesPaginationTraits<DerivedClient>>
   ListMobileDeviceAccessOverridesPaginator(const Model::ListMobileDeviceAccessOverridesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMobileDeviceAccessOverridesRequest,
                                              Pagination::ListMobileDeviceAccessOverridesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -146,6 +157,7 @@ class WorkMailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationsRequest,
                                     Pagination::ListOrganizationsPaginationTraits<DerivedClient>>
   ListOrganizationsPaginator(const Model::ListOrganizationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOrganizationsRequest,
                                              Pagination::ListOrganizationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -157,6 +169,7 @@ class WorkMailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPersonalAccessTokensRequest,
                                     Pagination::ListPersonalAccessTokensPaginationTraits<DerivedClient>>
   ListPersonalAccessTokensPaginator(const Model::ListPersonalAccessTokensRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPersonalAccessTokensRequest,
                                              Pagination::ListPersonalAccessTokensPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -168,6 +181,7 @@ class WorkMailPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceDelegatesRequest,
                                     Pagination::ListResourceDelegatesPaginationTraits<DerivedClient>>
   ListResourceDelegatesPaginator(const Model::ListResourceDelegatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceDelegatesRequest,
                                              Pagination::ListResourceDelegatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -178,6 +192,7 @@ class WorkMailPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesRequest, Pagination::ListResourcesPaginationTraits<DerivedClient>>
   ListResourcesPaginator(const Model::ListResourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesRequest,
                                              Pagination::ListResourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -188,6 +203,7 @@ class WorkMailPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>
   ListUsersPaginator(const Model::ListUsersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListUsersRequest, Pagination::ListUsersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

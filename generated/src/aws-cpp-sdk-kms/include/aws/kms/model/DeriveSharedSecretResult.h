@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/KMS_EXPORTS.h>
@@ -142,6 +143,8 @@ class DeriveSharedSecretResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_keyId;
 
@@ -154,6 +157,7 @@ class DeriveSharedSecretResult {
   OriginType m_keyOrigin{OriginType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyIdHasBeenSet = false;
   bool m_sharedSecretHasBeenSet = false;
   bool m_ciphertextForRecipientHasBeenSet = false;

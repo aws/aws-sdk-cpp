@@ -7,6 +7,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderEndpointProvider.h>
 #include <aws/cognito-idp/CognitoIdentityProviderErrorMarshaller.h>
 #include <aws/cognito-idp/model/AddCustomAttributesRequest.h>
+#include <aws/cognito-idp/model/AddUserPoolClientSecretRequest.h>
 #include <aws/cognito-idp/model/AdminAddUserToGroupRequest.h>
 #include <aws/cognito-idp/model/AdminConfirmSignUpRequest.h>
 #include <aws/cognito-idp/model/AdminCreateUserRequest.h>
@@ -55,6 +56,7 @@
 #include <aws/cognito-idp/model/DeleteTermsRequest.h>
 #include <aws/cognito-idp/model/DeleteUserAttributesRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolClientRequest.h>
+#include <aws/cognito-idp/model/DeleteUserPoolClientSecretRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolDomainRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolRequest.h>
 #include <aws/cognito-idp/model/DeleteUserRequest.h>
@@ -92,6 +94,7 @@
 #include <aws/cognito-idp/model/ListTagsForResourceRequest.h>
 #include <aws/cognito-idp/model/ListTermsRequest.h>
 #include <aws/cognito-idp/model/ListUserImportJobsRequest.h>
+#include <aws/cognito-idp/model/ListUserPoolClientSecretsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolsRequest.h>
 #include <aws/cognito-idp/model/ListUsersInGroupRequest.h>
@@ -203,7 +206,7 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(
 }
 
 /* Legacy constructors due deprecation */
-CognitoIdentityProviderClient::CognitoIdentityProviderClient(const Client::ClientConfiguration& clientConfiguration)
+CognitoIdentityProviderClient::CognitoIdentityProviderClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -216,7 +219,7 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(const Client::Clien
 }
 
 CognitoIdentityProviderClient::CognitoIdentityProviderClient(const AWSCredentials& credentials,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -227,7 +230,7 @@ CognitoIdentityProviderClient::CognitoIdentityProviderClient(const AWSCredential
 }
 
 CognitoIdentityProviderClient::CognitoIdentityProviderClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                             const Client::ClientConfiguration& clientConfiguration)
+                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -286,6 +289,35 @@ AddCustomAttributesOutcome CognitoIdentityProviderClient::AddCustomAttributes(co
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddCustomAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return AddCustomAttributesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+AddUserPoolClientSecretOutcome CognitoIdentityProviderClient::AddUserPoolClientSecret(const AddUserPoolClientSecretRequest& request) const {
+  AWS_OPERATION_GUARD(AddUserPoolClientSecret);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddUserPoolClientSecret, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AddUserPoolClientSecret, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AddUserPoolClientSecret, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AddUserPoolClientSecret",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AddUserPoolClientSecretOutcome>(
+      [&]() -> AddUserPoolClientSecretOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddUserPoolClientSecret, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return AddUserPoolClientSecretOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1754,6 +1786,36 @@ DeleteUserPoolClientOutcome CognitoIdentityProviderClient::DeleteUserPoolClient(
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteUserPoolClientSecretOutcome CognitoIdentityProviderClient::DeleteUserPoolClientSecret(
+    const DeleteUserPoolClientSecretRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteUserPoolClientSecret);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUserPoolClientSecret, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteUserPoolClientSecret, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteUserPoolClientSecret, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteUserPoolClientSecret",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteUserPoolClientSecretOutcome>(
+      [&]() -> DeleteUserPoolClientSecretOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteUserPoolClientSecret, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return DeleteUserPoolClientSecretOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteUserPoolDomainOutcome CognitoIdentityProviderClient::DeleteUserPoolDomain(const DeleteUserPoolDomainRequest& request) const {
   AWS_OPERATION_GUARD(DeleteUserPoolDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUserPoolDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2771,6 +2833,36 @@ ListUserImportJobsOutcome CognitoIdentityProviderClient::ListUserImportJobs(cons
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUserImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return ListUserImportJobsOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListUserPoolClientSecretsOutcome CognitoIdentityProviderClient::ListUserPoolClientSecrets(
+    const ListUserPoolClientSecretsRequest& request) const {
+  AWS_OPERATION_GUARD(ListUserPoolClientSecrets);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUserPoolClientSecrets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListUserPoolClientSecrets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListUserPoolClientSecrets, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListUserPoolClientSecrets",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListUserPoolClientSecretsOutcome>(
+      [&]() -> ListUserPoolClientSecretsOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUserPoolClientSecrets, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return ListUserPoolClientSecretsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

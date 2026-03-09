@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/CompositeModelProperty.h>
@@ -150,6 +151,8 @@ class DescribeAssetPropertyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_assetId;
 
@@ -164,6 +167,7 @@ class DescribeAssetPropertyResult {
   CompositeModelProperty m_compositeModel;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assetIdHasBeenSet = false;
   bool m_assetExternalIdHasBeenSet = false;
   bool m_assetNameHasBeenSet = false;

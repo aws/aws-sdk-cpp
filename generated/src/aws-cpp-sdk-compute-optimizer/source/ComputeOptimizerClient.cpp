@@ -110,7 +110,7 @@ ComputeOptimizerClient::ComputeOptimizerClient(const std::shared_ptr<AWSCredenti
 }
 
 /* Legacy constructors due deprecation */
-ComputeOptimizerClient::ComputeOptimizerClient(const Client::ClientConfiguration& clientConfiguration)
+ComputeOptimizerClient::ComputeOptimizerClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -122,7 +122,8 @@ ComputeOptimizerClient::ComputeOptimizerClient(const Client::ClientConfiguration
   init(m_clientConfiguration);
 }
 
-ComputeOptimizerClient::ComputeOptimizerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+ComputeOptimizerClient::ComputeOptimizerClient(const AWSCredentials& credentials,
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -133,7 +134,7 @@ ComputeOptimizerClient::ComputeOptimizerClient(const AWSCredentials& credentials
 }
 
 ComputeOptimizerClient::ComputeOptimizerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                               const Client::ClientConfiguration& clientConfiguration)
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

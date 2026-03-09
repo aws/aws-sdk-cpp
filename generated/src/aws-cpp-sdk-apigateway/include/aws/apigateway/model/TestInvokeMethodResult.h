@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -158,6 +159,8 @@ class TestInvokeMethodResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_status{0};
 
@@ -172,6 +175,7 @@ class TestInvokeMethodResult {
   long long m_latency{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
   bool m_headersHasBeenSet = false;

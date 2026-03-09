@@ -7,6 +7,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/PerformanceConfigLatency.h>
 #include <aws/bedrock-runtime/model/ServiceTierType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
@@ -106,6 +107,8 @@ class InvokeModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
 
@@ -116,6 +119,7 @@ class InvokeModelResult {
   ServiceTierType m_serviceTier{ServiceTierType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_bodyHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
   bool m_performanceConfigLatencyHasBeenSet = false;

@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String PutBandwidthRateLimitScheduleRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_gatewayArnHasBeenSet) {
+    payload.WithString("GatewayArn", m_gatewayArn);
+  }
+
   if (m_bandwidthRateLimitIntervalsHasBeenSet) {
     Aws::Utils::Array<JsonValue> bandwidthRateLimitIntervalsJsonList(m_bandwidthRateLimitIntervals.size());
     for (unsigned bandwidthRateLimitIntervalsIndex = 0; bandwidthRateLimitIntervalsIndex < bandwidthRateLimitIntervalsJsonList.GetLength();
@@ -23,10 +27,6 @@ Aws::String PutBandwidthRateLimitScheduleRequest::SerializePayload() const {
           m_bandwidthRateLimitIntervals[bandwidthRateLimitIntervalsIndex].Jsonize());
     }
     payload.WithArray("BandwidthRateLimitIntervals", std::move(bandwidthRateLimitIntervalsJsonList));
-  }
-
-  if (m_gatewayArnHasBeenSet) {
-    payload.WithString("GatewayArn", m_gatewayArn);
   }
 
   return payload.View().WriteReadable();

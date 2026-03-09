@@ -26,7 +26,9 @@ enum class SavingsPlanRateUnit {
   DPU,
   ElastiCacheProcessingUnit,
   DCU_Hr,
-  NCU_hr
+  NCU_hr,
+  OCU_hours,
+  Jobs
 };
 
 namespace SavingsPlanRateUnitMapper {

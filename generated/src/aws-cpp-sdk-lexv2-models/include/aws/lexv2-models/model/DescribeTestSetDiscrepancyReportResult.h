@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -203,6 +204,8 @@ class DescribeTestSetDiscrepancyReportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_testSetDiscrepancyReportId;
 
@@ -223,6 +226,7 @@ class DescribeTestSetDiscrepancyReportResult {
   Aws::Vector<Aws::String> m_failureReasons;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_testSetDiscrepancyReportIdHasBeenSet = false;
   bool m_testSetIdHasBeenSet = false;
   bool m_creationDateTimeHasBeenSet = false;

@@ -86,6 +86,10 @@ ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator=(JsonView jsonVal
     }
     m_modifyingPropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DeploymentStrategyOptions")) {
+    m_deploymentStrategyOptions = jsonValue.GetObject("DeploymentStrategyOptions");
+    m_deploymentStrategyOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -159,6 +163,10 @@ JsonValue ElasticsearchDomainConfig::Jsonize() const {
       modifyingPropertiesJsonList[modifyingPropertiesIndex].AsObject(m_modifyingProperties[modifyingPropertiesIndex].Jsonize());
     }
     payload.WithArray("ModifyingProperties", std::move(modifyingPropertiesJsonList));
+  }
+
+  if (m_deploymentStrategyOptionsHasBeenSet) {
+    payload.WithObject("DeploymentStrategyOptions", m_deploymentStrategyOptions.Jsonize());
   }
 
   return payload;

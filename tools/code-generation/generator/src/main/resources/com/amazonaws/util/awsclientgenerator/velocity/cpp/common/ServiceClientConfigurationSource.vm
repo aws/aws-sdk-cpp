@@ -153,7 +153,7 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
 #end
 }
 
-${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const Client::ClientConfigurationInitValues &configuration)
+${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const Aws::Client::ClientConfigurationInitValues &configuration)
 : BaseClientConfigClass(configuration)#if($metadata.hasEndpointDiscoveryTrait), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)#end${nl}{
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }
@@ -171,7 +171,7 @@ ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}Clien
 #set($classNamePrefix = $metadata.classNamePrefix)
 #set($clsPrefixWSpace = $classNamePrefix.replaceAll(".", " "))
 #set($earlyClose = $serviceModel.metadata.serviceId != "S3")
-${classNamePrefix}ClientConfiguration::${classNamePrefix}ClientConfiguration(const Client::ClientConfiguration& config#if($earlyClose))#else,
+${classNamePrefix}ClientConfiguration::${classNamePrefix}ClientConfiguration(const Aws::Client::ClientConfiguration& config#if($earlyClose))#else,
 #end
 #if($serviceModel.metadata.serviceId == "S3")
 ${clsPrefixWSpace}                     ${clsPrefixWSpace}Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy,

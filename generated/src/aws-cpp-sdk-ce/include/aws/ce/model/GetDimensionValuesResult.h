@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/DimensionValuesWithAttributes.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -170,6 +171,8 @@ class GetDimensionValuesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<DimensionValuesWithAttributes> m_dimensionValues;
 
@@ -180,6 +183,7 @@ class GetDimensionValuesResult {
   Aws::String m_nextPageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dimensionValuesHasBeenSet = false;
   bool m_returnSizeHasBeenSet = false;
   bool m_totalSizeHasBeenSet = false;

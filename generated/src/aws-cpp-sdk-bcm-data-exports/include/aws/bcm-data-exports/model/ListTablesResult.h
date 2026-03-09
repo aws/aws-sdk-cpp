@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
 #include <aws/bcm-data-exports/model/Table.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -27,23 +28,6 @@ class ListTablesResult {
   AWS_BCMDATAEXPORTS_API ListTablesResult() = default;
   AWS_BCMDATAEXPORTS_API ListTablesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_BCMDATAEXPORTS_API ListTablesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-  ///@{
-  /**
-   * <p>The token to retrieve the next set of results.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListTablesResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -69,6 +53,23 @@ class ListTablesResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The token to retrieve the next set of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListTablesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -82,14 +83,17 @@ class ListTablesResult {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_nextToken;
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
+ private:
   Aws::Vector<Table> m_tables;
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
-  bool m_nextTokenHasBeenSet = false;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tablesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

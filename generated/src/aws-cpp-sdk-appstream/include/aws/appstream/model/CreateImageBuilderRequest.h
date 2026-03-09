@@ -452,6 +452,26 @@ class CreateImageBuilderRequest : public AppStreamRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and
+   * enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+   * <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are
+   * running the agent version or managed image update released on or after January
+   * 16, 2024 to support IMDSv2 enforcement.</p>
+   */
+  inline bool GetDisableIMDSV1() const { return m_disableIMDSV1; }
+  inline bool DisableIMDSV1HasBeenSet() const { return m_disableIMDSV1HasBeenSet; }
+  inline void SetDisableIMDSV1(bool value) {
+    m_disableIMDSV1HasBeenSet = true;
+    m_disableIMDSV1 = value;
+  }
+  inline CreateImageBuilderRequest& WithDisableIMDSV1(bool value) {
+    SetDisableIMDSV1(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -484,6 +504,8 @@ class CreateImageBuilderRequest : public AppStreamRequest {
   Aws::Vector<Aws::String> m_softwaresToInstall;
 
   Aws::Vector<Aws::String> m_softwaresToUninstall;
+
+  bool m_disableIMDSV1{false};
   bool m_nameHasBeenSet = false;
   bool m_imageNameHasBeenSet = false;
   bool m_imageArnHasBeenSet = false;
@@ -500,6 +522,7 @@ class CreateImageBuilderRequest : public AppStreamRequest {
   bool m_rootVolumeConfigHasBeenSet = false;
   bool m_softwaresToInstallHasBeenSet = false;
   bool m_softwaresToUninstallHasBeenSet = false;
+  bool m_disableIMDSV1HasBeenSet = false;
 };
 
 }  // namespace Model

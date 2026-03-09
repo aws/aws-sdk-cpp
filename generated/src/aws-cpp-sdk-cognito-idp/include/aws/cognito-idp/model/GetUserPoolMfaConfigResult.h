@@ -10,6 +10,7 @@
 #include <aws/cognito-idp/model/SoftwareTokenMfaConfigType.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
 #include <aws/cognito-idp/model/WebAuthnConfigurationType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -148,6 +149,8 @@ class GetUserPoolMfaConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SmsMfaConfigType m_smsMfaConfiguration;
 
@@ -160,6 +163,7 @@ class GetUserPoolMfaConfigResult {
   WebAuthnConfigurationType m_webAuthnConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_smsMfaConfigurationHasBeenSet = false;
   bool m_softwareTokenMfaConfigurationHasBeenSet = false;
   bool m_emailMfaConfigurationHasBeenSet = false;

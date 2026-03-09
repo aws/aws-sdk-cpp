@@ -217,6 +217,7 @@
 #include <aws/gamelift/model/GameServerHealthCheck.h>
 #include <aws/gamelift/model/GameServerInstance.h>
 #include <aws/gamelift/model/GameServerInstanceStatus.h>
+#include <aws/gamelift/model/GameServerIpProtocolSupported.h>
 #include <aws/gamelift/model/GameServerProtectionPolicy.h>
 #include <aws/gamelift/model/GameServerUtilizationStatus.h>
 #include <aws/gamelift/model/GameSession.h>
@@ -237,6 +238,8 @@
 #include <aws/gamelift/model/GetGameSessionLogUrlResult.h>
 #include <aws/gamelift/model/GetInstanceAccessRequest.h>
 #include <aws/gamelift/model/GetInstanceAccessResult.h>
+#include <aws/gamelift/model/GetPlayerConnectionDetailsRequest.h>
+#include <aws/gamelift/model/GetPlayerConnectionDetailsResult.h>
 #include <aws/gamelift/model/Instance.h>
 #include <aws/gamelift/model/InstanceAccess.h>
 #include <aws/gamelift/model/InstanceCredentials.h>
@@ -294,6 +297,11 @@
 #include <aws/gamelift/model/PlacedPlayerSession.h>
 #include <aws/gamelift/model/PlacementFallbackStrategy.h>
 #include <aws/gamelift/model/Player.h>
+#include <aws/gamelift/model/PlayerConnectionDetail.h>
+#include <aws/gamelift/model/PlayerConnectionEndpoint.h>
+#include <aws/gamelift/model/PlayerGatewayConfiguration.h>
+#include <aws/gamelift/model/PlayerGatewayMode.h>
+#include <aws/gamelift/model/PlayerGatewayStatus.h>
 #include <aws/gamelift/model/PlayerLatency.h>
 #include <aws/gamelift/model/PlayerLatencyPolicy.h>
 #include <aws/gamelift/model/PlayerSession.h>

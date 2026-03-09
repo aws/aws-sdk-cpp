@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/codeartifact/model/ResourcePolicy.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -59,10 +60,13 @@ class GetRepositoryPermissionsPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ResourcePolicy m_policy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

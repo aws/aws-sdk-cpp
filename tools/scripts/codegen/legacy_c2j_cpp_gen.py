@@ -83,6 +83,7 @@ class LegacyC2jCppGen(object):
         self.raw_generator_arguments = args["raw_generator_arguments"]
         self.output_location = args["output_location"]
         self.disable_virtual_operations = args.get("disable_virtual_operations", False)
+        self.disable_smithy_generation = args.get("disable_smithy_generation", False)
 
     def generate(self, executor: ProcessPoolExecutor, max_workers: int, args: dict) -> int:
         """
@@ -163,6 +164,8 @@ class LegacyC2jCppGen(object):
             kwargs["language-binding"] = "cpp"  # Always cpp by default in the current code gen
         if not self.disable_virtual_operations:
             kwargs["enable-virtual-operations"] = ""  # Historically always set by default in this project
+        if self.disable_smithy_generation:
+            kwargs["disable-smithy-generation"] = ""  # Disables smithy-based generation in c2j generator
 
         if tmp_dir:
             output_filename = f"{tmp_dir}/{model_files.c2j_model.replace('.normal.json', '.zip')}"

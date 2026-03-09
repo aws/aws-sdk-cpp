@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
@@ -189,6 +190,8 @@ class GetDataSetDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_blocksize{0};
 
@@ -209,6 +212,7 @@ class GetDataSetDetailsResult {
   int m_recordLength{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_blocksizeHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_dataSetNameHasBeenSet = false;

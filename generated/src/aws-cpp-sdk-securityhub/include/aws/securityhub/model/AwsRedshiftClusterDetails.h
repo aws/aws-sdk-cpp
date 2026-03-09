@@ -126,7 +126,7 @@ class AwsRedshiftClusterDetails {
   ///@{
   /**
    * <p>Indicates when the cluster was created.</p> <p>For more information about the
-   * validation and formatting of timestamp fields in Security Hub, see <a
+   * validation and formatting of timestamp fields in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetClusterCreateTime() const { return m_clusterCreateTime; }
@@ -493,7 +493,7 @@ class AwsRedshiftClusterDetails {
    * <p>Indicates when the next snapshot is expected to be taken. The cluster must
    * have a valid snapshot schedule and have backups enabled.</p> <p>For more
    * information about the validation and formatting of timestamp fields in Security
-   * Hub, see <a
+   * Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetExpectedNextSnapshotScheduleTime() const { return m_expectedNextSnapshotScheduleTime; }
@@ -653,7 +653,7 @@ class AwsRedshiftClusterDetails {
   /**
    * <p>Indicates the start of the next maintenance window.</p> <p>For more
    * information about the validation and formatting of timestamp fields in Security
-   * Hub, see <a
+   * Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetNextMaintenanceWindowStartTime() const { return m_nextMaintenanceWindowStartTime; }

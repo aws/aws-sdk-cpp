@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/connectcampaignsv2/model/InstanceCommunicationLimitsConfig.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -63,10 +64,13 @@ class GetInstanceCommunicationLimitsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   InstanceCommunicationLimitsConfig m_communicationLimitsConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_communicationLimitsConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

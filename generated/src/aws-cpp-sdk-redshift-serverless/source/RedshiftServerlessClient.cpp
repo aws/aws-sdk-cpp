@@ -147,7 +147,7 @@ RedshiftServerlessClient::RedshiftServerlessClient(const std::shared_ptr<AWSCred
 }
 
 /* Legacy constructors due deprecation */
-RedshiftServerlessClient::RedshiftServerlessClient(const Client::ClientConfiguration& clientConfiguration)
+RedshiftServerlessClient::RedshiftServerlessClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -160,7 +160,7 @@ RedshiftServerlessClient::RedshiftServerlessClient(const Client::ClientConfigura
 }
 
 RedshiftServerlessClient::RedshiftServerlessClient(const AWSCredentials& credentials,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -171,7 +171,7 @@ RedshiftServerlessClient::RedshiftServerlessClient(const AWSCredentials& credent
 }
 
 RedshiftServerlessClient::RedshiftServerlessClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                   const Client::ClientConfiguration& clientConfiguration)
+                                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

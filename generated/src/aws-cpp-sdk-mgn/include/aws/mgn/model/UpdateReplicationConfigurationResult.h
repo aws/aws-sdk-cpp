@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -339,6 +340,8 @@ class UpdateReplicationConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_sourceServerID;
 
@@ -376,6 +379,7 @@ class UpdateReplicationConfigurationResult {
   InternetProtocol m_internetProtocol{InternetProtocol::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sourceServerIDHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_stagingAreaSubnetIdHasBeenSet = false;

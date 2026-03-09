@@ -7,6 +7,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/BatchGetRepositoriesError.h>
 #include <aws/codecommit/model/RepositoryMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -120,6 +121,8 @@ class BatchGetRepositoriesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<RepositoryMetadata> m_repositories;
 
@@ -128,6 +131,7 @@ class BatchGetRepositoriesResult {
   Aws::Vector<BatchGetRepositoriesError> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_repositoriesHasBeenSet = false;
   bool m_repositoriesNotFoundHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

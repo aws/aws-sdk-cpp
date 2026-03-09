@@ -591,6 +591,35 @@ class AWS_MPA_API MPAClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Starts a baseline session for specified approvers on an <code>ACTIVE</code>
+   * approval team.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/StartApprovalTeamBaseline">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartApprovalTeamBaselineOutcome StartApprovalTeamBaseline(const Model::StartApprovalTeamBaselineRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartApprovalTeamBaseline that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartApprovalTeamBaselineRequestT = Model::StartApprovalTeamBaselineRequest>
+  Model::StartApprovalTeamBaselineOutcomeCallable StartApprovalTeamBaselineCallable(
+      const StartApprovalTeamBaselineRequestT& request) const {
+    return SubmitCallable(&MPAClient::StartApprovalTeamBaseline, request);
+  }
+
+  /**
+   * An Async wrapper for StartApprovalTeamBaseline that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartApprovalTeamBaselineRequestT = Model::StartApprovalTeamBaselineRequest>
+  void StartApprovalTeamBaselineAsync(const StartApprovalTeamBaselineRequestT& request,
+                                      const StartApprovalTeamBaselineResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MPAClient::StartApprovalTeamBaseline, request, handler, context);
+  }
+
+  /**
    * <p>Creates or updates a resource tag. Each tag is a label consisting of a
    * user-defined key and value. Tags can help you manage, identify, organize, search
    * for, and filter resources.</p><p><h3>See Also:</h3>   <a

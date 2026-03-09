@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/UserImportJobType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -94,12 +95,15 @@ class ListUserImportJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<UserImportJobType> m_userImportJobs;
 
   Aws::String m_paginationToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_userImportJobsHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

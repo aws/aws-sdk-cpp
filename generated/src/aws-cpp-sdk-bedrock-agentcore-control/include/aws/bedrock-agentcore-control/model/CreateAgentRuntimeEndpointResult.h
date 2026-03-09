@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeEndpointStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -160,6 +161,8 @@ class CreateAgentRuntimeEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_targetVersion;
 
@@ -176,6 +179,7 @@ class CreateAgentRuntimeEndpointResult {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_targetVersionHasBeenSet = false;
   bool m_agentRuntimeEndpointArnHasBeenSet = false;
   bool m_agentRuntimeArnHasBeenSet = false;

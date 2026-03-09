@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
@@ -123,6 +124,8 @@ class ListAppVersionAppComponentsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_appArn;
 
@@ -133,6 +136,7 @@ class ListAppVersionAppComponentsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appArnHasBeenSet = false;
   bool m_appComponentsHasBeenSet = false;
   bool m_appVersionHasBeenSet = false;

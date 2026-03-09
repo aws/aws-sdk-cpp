@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
@@ -82,12 +83,15 @@ class GetSolutionMetricsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_solutionVersionArn;
 
   Aws::Map<Aws::String, double> m_metrics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_solutionVersionArnHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

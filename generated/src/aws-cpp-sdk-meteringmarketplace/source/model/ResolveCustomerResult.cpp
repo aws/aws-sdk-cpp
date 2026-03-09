@@ -20,6 +20,7 @@ using namespace Aws;
 ResolveCustomerResult::ResolveCustomerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ResolveCustomerResult& ResolveCustomerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("CustomerIdentifier")) {
     m_customerIdentifier = jsonValue.GetString("CustomerIdentifier");
@@ -32,6 +33,10 @@ ResolveCustomerResult& ResolveCustomerResult::operator=(const Aws::AmazonWebServ
   if (jsonValue.ValueExists("CustomerAWSAccountId")) {
     m_customerAWSAccountId = jsonValue.GetString("CustomerAWSAccountId");
     m_customerAWSAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LicenseArn")) {
+    m_licenseArn = jsonValue.GetString("LicenseArn");
+    m_licenseArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

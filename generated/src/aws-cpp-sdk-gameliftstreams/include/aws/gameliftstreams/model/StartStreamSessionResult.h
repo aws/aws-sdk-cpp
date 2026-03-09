@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -175,11 +176,9 @@ class StartStreamSessionResult {
    * running.</p> </li> <li> <p> <code>connectionTimeout</code>: The stream session
    * was terminated because the client failed to connect within the connection
    * timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p> </li>
-   * <li> <p> <code>idleTimeout</code>: The stream session was terminated because it
-   * exceeded the idle timeout period of 60 minutes with no user input activity.</p>
-   * </li> <li> <p> <code>maxSessionLengthTimeout</code>: The stream session was
-   * terminated because it exceeded the maximum session length timeout period
-   * specified by <code>SessionLengthSeconds</code>.</p> </li> <li> <p>
+   * <li> <p> <code>maxSessionLengthTimeout</code>: The stream session was terminated
+   * because it exceeded the maximum session length timeout period specified by
+   * <code>SessionLengthSeconds</code>.</p> </li> <li> <p>
    * <code>reconnectionTimeout</code>: The stream session was terminated because the
    * client failed to reconnect within the reconnection timeout period specified by
    * <code>ConnectionTimeoutSeconds</code> after losing connection.</p> </li> </ul>
@@ -519,6 +518,8 @@ class StartStreamSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -563,6 +564,7 @@ class StartStreamSessionResult {
   ExportFilesMetadata m_exportFilesMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_streamGroupIdHasBeenSet = false;

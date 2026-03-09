@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/iotsecuretunneling/model/ListTunnelsPaginationTraits.h>
 
@@ -23,6 +24,7 @@ class IoTSecureTunnelingPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTunnelsRequest, Pagination::ListTunnelsPaginationTraits<DerivedClient>>
   ListTunnelsPaginator(const Model::ListTunnelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTunnelsRequest,
                                              Pagination::ListTunnelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

@@ -25,12 +25,12 @@ DataQuery& DataQuery::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("TableConfigurations")) {
     Aws::Map<Aws::String, JsonView> tableConfigurationsJsonMap = jsonValue.GetObject("TableConfigurations").GetAllObjects();
     for (auto& tableConfigurationsItem : tableConfigurationsJsonMap) {
-      Aws::Map<Aws::String, JsonView> tablePropertiesJsonMap = tableConfigurationsItem.second.GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> tablePropertiesMap;
-      for (auto& tablePropertiesItem : tablePropertiesJsonMap) {
-        tablePropertiesMap[tablePropertiesItem.first] = tablePropertiesItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> tableProperties2JsonMap = tableConfigurationsItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> tableProperties2Map;
+      for (auto& tableProperties2Item : tableProperties2JsonMap) {
+        tableProperties2Map[tableProperties2Item.first] = tableProperties2Item.second.AsString();
       }
-      m_tableConfigurations[tableConfigurationsItem.first] = std::move(tablePropertiesMap);
+      m_tableConfigurations[tableConfigurationsItem.first] = std::move(tableProperties2Map);
     }
     m_tableConfigurationsHasBeenSet = true;
   }

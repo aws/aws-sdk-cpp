@@ -163,7 +163,7 @@ ComprehendClient::ComprehendClient(const std::shared_ptr<AWSCredentialsProvider>
 }
 
 /* Legacy constructors due deprecation */
-ComprehendClient::ComprehendClient(const Client::ClientConfiguration& clientConfiguration)
+ComprehendClient::ComprehendClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -175,7 +175,7 @@ ComprehendClient::ComprehendClient(const Client::ClientConfiguration& clientConf
   init(m_clientConfiguration);
 }
 
-ComprehendClient::ComprehendClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+ComprehendClient::ComprehendClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -186,7 +186,7 @@ ComprehendClient::ComprehendClient(const AWSCredentials& credentials, const Clie
 }
 
 ComprehendClient::ComprehendClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                   const Client::ClientConfiguration& clientConfiguration)
+                                   const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

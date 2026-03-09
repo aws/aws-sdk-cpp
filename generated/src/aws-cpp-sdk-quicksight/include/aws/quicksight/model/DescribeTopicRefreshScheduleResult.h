@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/TopicRefreshSchedule.h>
@@ -126,6 +127,8 @@ class DescribeTopicRefreshScheduleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_topicId;
 
@@ -138,6 +141,7 @@ class DescribeTopicRefreshScheduleResult {
   int m_status{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_topicIdHasBeenSet = false;
   bool m_topicArnHasBeenSet = false;
   bool m_datasetArnHasBeenSet = false;

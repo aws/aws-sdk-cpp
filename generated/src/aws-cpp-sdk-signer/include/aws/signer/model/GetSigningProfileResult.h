@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/signer/Signer_EXPORTS.h>
@@ -294,6 +295,8 @@ class GetSigningProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_profileName;
 
@@ -324,6 +327,7 @@ class GetSigningProfileResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_profileNameHasBeenSet = false;
   bool m_profileVersionHasBeenSet = false;
   bool m_profileVersionArnHasBeenSet = false;

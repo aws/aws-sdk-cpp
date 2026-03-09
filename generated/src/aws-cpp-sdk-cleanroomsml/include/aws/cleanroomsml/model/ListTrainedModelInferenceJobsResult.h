@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/cleanroomsml/model/TrainedModelInferenceJobSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -83,12 +84,15 @@ class ListTrainedModelInferenceJobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_nextToken;
 
   Aws::Vector<TrainedModelInferenceJobSummary> m_trainedModelInferenceJobs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
   bool m_trainedModelInferenceJobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

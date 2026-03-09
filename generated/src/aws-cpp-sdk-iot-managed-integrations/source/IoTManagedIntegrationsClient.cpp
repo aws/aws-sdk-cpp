@@ -167,7 +167,7 @@ IoTManagedIntegrationsClient::IoTManagedIntegrationsClient(
 }
 
 /* Legacy constructors due deprecation */
-IoTManagedIntegrationsClient::IoTManagedIntegrationsClient(const Client::ClientConfiguration& clientConfiguration)
+IoTManagedIntegrationsClient::IoTManagedIntegrationsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -180,7 +180,7 @@ IoTManagedIntegrationsClient::IoTManagedIntegrationsClient(const Client::ClientC
 }
 
 IoTManagedIntegrationsClient::IoTManagedIntegrationsClient(const AWSCredentials& credentials,
-                                                           const Client::ClientConfiguration& clientConfiguration)
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -191,7 +191,7 @@ IoTManagedIntegrationsClient::IoTManagedIntegrationsClient(const AWSCredentials&
 }
 
 IoTManagedIntegrationsClient::IoTManagedIntegrationsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                           const Client::ClientConfiguration& clientConfiguration)
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

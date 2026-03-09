@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/Glue_EXPORTS.h>
@@ -89,12 +90,15 @@ class GetDataflowGraphResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<CodeGenNode> m_dagNodes;
 
   Aws::Vector<CodeGenEdge> m_dagEdges;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dagNodesHasBeenSet = false;
   bool m_dagEdgesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -95,7 +95,7 @@ IvschatClient::IvschatClient(const std::shared_ptr<AWSCredentialsProvider>& cred
 }
 
 /* Legacy constructors due deprecation */
-IvschatClient::IvschatClient(const Client::ClientConfiguration& clientConfiguration)
+IvschatClient::IvschatClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -107,7 +107,7 @@ IvschatClient::IvschatClient(const Client::ClientConfiguration& clientConfigurat
   init(m_clientConfiguration);
 }
 
-IvschatClient::IvschatClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+IvschatClient::IvschatClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -118,7 +118,7 @@ IvschatClient::IvschatClient(const AWSCredentials& credentials, const Client::Cl
 }
 
 IvschatClient::IvschatClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                             const Client::ClientConfiguration& clientConfiguration)
+                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

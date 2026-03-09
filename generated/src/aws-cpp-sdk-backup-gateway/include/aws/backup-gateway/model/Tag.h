@@ -21,8 +21,9 @@ namespace Model {
 
 /**
  * <p>A key-value pair you can use to manage, filter, and search for your
- * resources. Allowed characters include UTF-8 letters, numbers, spaces, and the
- * following characters: + - = . _ : /.</p><p><h3>See Also:</h3>   <a
+ * resources. Allowed characters include UTF-8 letters, numbers, and the following
+ * characters: + - = . _ : /. Spaces are not allowed in tag values.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/Tag">AWS
  * API Reference</a></p>
  */

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/ResponseMetadata.h>
@@ -124,6 +125,8 @@ class ModifyCurrentDBClusterCapacityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dBClusterIdentifier;
 
@@ -136,6 +139,7 @@ class ModifyCurrentDBClusterCapacityResult {
   Aws::String m_timeoutAction;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_pendingCapacityHasBeenSet = false;
   bool m_currentCapacityHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -371,6 +372,8 @@ class GetLicenseConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_licenseConfigurationId;
 
@@ -409,6 +412,7 @@ class GetLicenseConfigurationResult {
   long long m_licenseExpiry{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_licenseConfigurationIdHasBeenSet = false;
   bool m_licenseConfigurationArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

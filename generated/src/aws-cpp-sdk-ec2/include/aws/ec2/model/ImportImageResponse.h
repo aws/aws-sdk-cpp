@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -334,6 +335,8 @@ class ImportImageResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_architecture;
 
@@ -368,6 +371,7 @@ class ImportImageResponse {
   Aws::String m_usageOperation;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_architectureHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_encryptedHasBeenSet = false;

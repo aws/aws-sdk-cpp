@@ -26,8 +26,8 @@ namespace Model {
  * <p> Contains information about network endpoints involved in an Amazon GuardDuty
  * Extended Threat Detection attack sequence. GuardDuty generates an attack
  * sequence finding when multiple events align to a potentially suspicious
- * activity. To receive GuardDuty attack sequence findings in Security Hub, you
- * must have GuardDuty enabled. For more information, see <a
+ * activity. To receive GuardDuty attack sequence findings in Security Hub CSPM,
+ * you must have GuardDuty enabled. For more information, see <a
  * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty
  * Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>. </p>
  * <p>This field can provide information about the network endpoints associated

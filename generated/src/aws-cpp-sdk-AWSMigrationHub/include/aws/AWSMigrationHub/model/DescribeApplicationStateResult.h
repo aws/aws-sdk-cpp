@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/AWSMigrationHub/MigrationHub_EXPORTS.h>
 #include <aws/AWSMigrationHub/model/ApplicationStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -74,12 +75,15 @@ class DescribeApplicationStateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ApplicationStatus m_applicationStatus{ApplicationStatus::NOT_SET};
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationStatusHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

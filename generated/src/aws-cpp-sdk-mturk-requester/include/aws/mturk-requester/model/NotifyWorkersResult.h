@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
@@ -66,10 +67,13 @@ class NotifyWorkersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<NotifyWorkersFailureStatus> m_notifyWorkersFailureStatuses;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_notifyWorkersFailureStatusesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

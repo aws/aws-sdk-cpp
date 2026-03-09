@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/SFN_EXPORTS.h>
@@ -94,6 +95,8 @@ class UpdateStateMachineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_updateDate{};
 
@@ -102,6 +105,7 @@ class UpdateStateMachineResult {
   Aws::String m_stateMachineVersionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_updateDateHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
   bool m_stateMachineVersionArnHasBeenSet = false;

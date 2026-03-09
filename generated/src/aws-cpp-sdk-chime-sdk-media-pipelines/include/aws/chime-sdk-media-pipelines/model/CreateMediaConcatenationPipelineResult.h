@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/chime-sdk-media-pipelines/model/MediaConcatenationPipeline.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -62,10 +63,13 @@ class CreateMediaConcatenationPipelineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MediaConcatenationPipeline m_mediaConcatenationPipeline;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mediaConcatenationPipelineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

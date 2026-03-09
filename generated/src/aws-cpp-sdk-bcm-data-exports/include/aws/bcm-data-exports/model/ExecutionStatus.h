@@ -35,60 +35,6 @@ class ExecutionStatus {
 
   ///@{
   /**
-   * <p>The time when the execution was completed.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCompletedAt() const { return m_completedAt; }
-  inline bool CompletedAtHasBeenSet() const { return m_completedAtHasBeenSet; }
-  template <typename CompletedAtT = Aws::Utils::DateTime>
-  void SetCompletedAt(CompletedAtT&& value) {
-    m_completedAtHasBeenSet = true;
-    m_completedAt = std::forward<CompletedAtT>(value);
-  }
-  template <typename CompletedAtT = Aws::Utils::DateTime>
-  ExecutionStatus& WithCompletedAt(CompletedAtT&& value) {
-    SetCompletedAt(std::forward<CompletedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The time when the execution was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  ExecutionStatus& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The time when the execution was last updated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-  inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
-    m_lastUpdatedAtHasBeenSet = true;
-    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
-  }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  ExecutionStatus& WithLastUpdatedAt(LastUpdatedAtT&& value) {
-    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The code for the status of the execution.</p>
    */
   inline ExecutionStatusCode GetStatusCode() const { return m_statusCode; }
@@ -118,21 +64,75 @@ class ExecutionStatus {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The time when the execution was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  ExecutionStatus& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time when the execution was completed.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCompletedAt() const { return m_completedAt; }
+  inline bool CompletedAtHasBeenSet() const { return m_completedAtHasBeenSet; }
+  template <typename CompletedAtT = Aws::Utils::DateTime>
+  void SetCompletedAt(CompletedAtT&& value) {
+    m_completedAtHasBeenSet = true;
+    m_completedAt = std::forward<CompletedAtT>(value);
+  }
+  template <typename CompletedAtT = Aws::Utils::DateTime>
+  ExecutionStatus& WithCompletedAt(CompletedAtT&& value) {
+    SetCompletedAt(std::forward<CompletedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time when the execution was last updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+  inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
+    m_lastUpdatedAtHasBeenSet = true;
+    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  ExecutionStatus& WithLastUpdatedAt(LastUpdatedAtT&& value) {
+    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Utils::DateTime m_completedAt{};
-
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::Utils::DateTime m_lastUpdatedAt{};
-
   ExecutionStatusCode m_statusCode{ExecutionStatusCode::NOT_SET};
 
   ExecutionStatusReason m_statusReason{ExecutionStatusReason::NOT_SET};
-  bool m_completedAtHasBeenSet = false;
-  bool m_createdAtHasBeenSet = false;
-  bool m_lastUpdatedAtHasBeenSet = false;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_completedAt{};
+
+  Aws::Utils::DateTime m_lastUpdatedAt{};
   bool m_statusCodeHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_completedAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
 };
 
 }  // namespace Model

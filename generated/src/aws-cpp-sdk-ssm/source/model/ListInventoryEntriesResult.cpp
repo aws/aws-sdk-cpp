@@ -20,6 +20,7 @@ using namespace Aws;
 ListInventoryEntriesResult::ListInventoryEntriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListInventoryEntriesResult& ListInventoryEntriesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TypeName")) {
     m_typeName = jsonValue.GetString("TypeName");
@@ -40,12 +41,12 @@ ListInventoryEntriesResult& ListInventoryEntriesResult::operator=(const Aws::Ama
   if (jsonValue.ValueExists("Entries")) {
     Aws::Utils::Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
     for (unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex) {
-      Aws::Map<Aws::String, JsonView> inventoryItemEntryJsonMap = entriesJsonList[entriesIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> inventoryItemEntryMap;
-      for (auto& inventoryItemEntryItem : inventoryItemEntryJsonMap) {
-        inventoryItemEntryMap[inventoryItemEntryItem.first] = inventoryItemEntryItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> inventoryItemEntry2JsonMap = entriesJsonList[entriesIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> inventoryItemEntry2Map;
+      for (auto& inventoryItemEntry2Item : inventoryItemEntry2JsonMap) {
+        inventoryItemEntry2Map[inventoryItemEntry2Item.first] = inventoryItemEntry2Item.second.AsString();
       }
-      m_entries.push_back(std::move(inventoryItemEntryMap));
+      m_entries.push_back(std::move(inventoryItemEntry2Map));
     }
     m_entriesHasBeenSet = true;
   }

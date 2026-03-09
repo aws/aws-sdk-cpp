@@ -14,7 +14,7 @@ struct AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeClientCo
     : public Aws::Client::GenericClientConfiguration {
   using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
-  BedrockDataAutomationRuntimeClientConfiguration(const Client::ClientConfigurationInitValues& configuration = {});
+  BedrockDataAutomationRuntimeClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
    * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -36,7 +36,7 @@ struct AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeClientCo
   /**
    * Converting constructors for compatibility with a legacy code
    */
-  BedrockDataAutomationRuntimeClientConfiguration(const Client::ClientConfiguration& config);
+  BedrockDataAutomationRuntimeClientConfiguration(const Aws::Client::ClientConfiguration& config);
 
  private:
   void LoadBedrockDataAutomationRuntimeSpecificConfig(const Aws::String& profileName);

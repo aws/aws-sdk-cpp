@@ -13,6 +13,7 @@
 #include <aws/appmesh/model/ListVirtualNodesPaginationTraits.h>
 #include <aws/appmesh/model/ListVirtualRoutersPaginationTraits.h>
 #include <aws/appmesh/model/ListVirtualServicesPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -31,6 +32,7 @@ class AppMeshPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewayRoutesRequest,
                                     Pagination::ListGatewayRoutesPaginationTraits<DerivedClient>>
   ListGatewayRoutesPaginator(const Model::ListGatewayRoutesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewayRoutesRequest,
                                              Pagination::ListGatewayRoutesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -41,6 +43,7 @@ class AppMeshPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMeshesRequest, Pagination::ListMeshesPaginationTraits<DerivedClient>>
   ListMeshesPaginator(const Model::ListMeshesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMeshesRequest,
                                              Pagination::ListMeshesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -51,6 +54,7 @@ class AppMeshPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoutesRequest, Pagination::ListRoutesPaginationTraits<DerivedClient>>
   ListRoutesPaginator(const Model::ListRoutesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoutesRequest,
                                              Pagination::ListRoutesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -62,6 +66,7 @@ class AppMeshPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -73,6 +78,7 @@ class AppMeshPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualGatewaysRequest,
                                     Pagination::ListVirtualGatewaysPaginationTraits<DerivedClient>>
   ListVirtualGatewaysPaginator(const Model::ListVirtualGatewaysRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualGatewaysRequest,
                                              Pagination::ListVirtualGatewaysPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -84,6 +90,7 @@ class AppMeshPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualNodesRequest,
                                     Pagination::ListVirtualNodesPaginationTraits<DerivedClient>>
   ListVirtualNodesPaginator(const Model::ListVirtualNodesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualNodesRequest,
                                              Pagination::ListVirtualNodesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -95,6 +102,7 @@ class AppMeshPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualRoutersRequest,
                                     Pagination::ListVirtualRoutersPaginationTraits<DerivedClient>>
   ListVirtualRoutersPaginator(const Model::ListVirtualRoutersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualRoutersRequest,
                                              Pagination::ListVirtualRoutersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -106,6 +114,7 @@ class AppMeshPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualServicesRequest,
                                     Pagination::ListVirtualServicesPaginationTraits<DerivedClient>>
   ListVirtualServicesPaginator(const Model::ListVirtualServicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVirtualServicesRequest,
                                              Pagination::ListVirtualServicesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

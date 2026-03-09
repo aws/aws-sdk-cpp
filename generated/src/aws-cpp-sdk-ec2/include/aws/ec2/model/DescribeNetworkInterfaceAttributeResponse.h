@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -160,6 +161,8 @@ class DescribeNetworkInterfaceAttributeResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   NetworkInterfaceAttachment m_attachment;
 
@@ -174,6 +177,7 @@ class DescribeNetworkInterfaceAttributeResponse {
   bool m_associatePublicIpAddress{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_attachmentHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_groupsHasBeenSet = false;

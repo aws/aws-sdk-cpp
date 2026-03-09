@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/TrafficPolicyInstance.h>
@@ -65,10 +66,13 @@ class GetTrafficPolicyInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TrafficPolicyInstance m_trafficPolicyInstance;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trafficPolicyInstanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

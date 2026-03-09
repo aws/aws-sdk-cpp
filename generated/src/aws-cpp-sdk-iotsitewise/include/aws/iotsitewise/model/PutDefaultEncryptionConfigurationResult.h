@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/ConfigurationStatus.h>
@@ -95,6 +96,8 @@ class PutDefaultEncryptionConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
 
@@ -103,6 +106,7 @@ class PutDefaultEncryptionConfigurationResult {
   ConfigurationStatus m_configurationStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_encryptionTypeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
   bool m_configurationStatusHasBeenSet = false;

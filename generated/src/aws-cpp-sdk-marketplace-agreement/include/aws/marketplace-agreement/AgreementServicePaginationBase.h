@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/marketplace-agreement/model/GetAgreementTermsPaginationTraits.h>
 #include <aws/marketplace-agreement/model/SearchAgreementsPaginationTraits.h>
@@ -25,6 +26,7 @@ class AgreementServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAgreementTermsRequest,
                                     Pagination::GetAgreementTermsPaginationTraits<DerivedClient>>
   GetAgreementTermsPaginator(const Model::GetAgreementTermsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAgreementTermsRequest,
                                              Pagination::GetAgreementTermsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -36,6 +38,7 @@ class AgreementServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchAgreementsRequest,
                                     Pagination::SearchAgreementsPaginationTraits<DerivedClient>>
   SearchAgreementsPaginator(const Model::SearchAgreementsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchAgreementsRequest,
                                              Pagination::SearchAgreementsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

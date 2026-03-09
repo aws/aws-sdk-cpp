@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/observabilityadmin/model/Encryption.h>
@@ -142,6 +143,8 @@ class GetS3TableIntegrationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -156,6 +159,7 @@ class GetS3TableIntegrationResult {
   long long m_createdTimeStamp{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/FileModeTypeEnum.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -147,6 +148,8 @@ class GetFileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_commitId;
 
@@ -161,6 +164,7 @@ class GetFileResult {
   Aws::Utils::ByteBuffer m_fileContent{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_commitIdHasBeenSet = false;
   bool m_blobIdHasBeenSet = false;
   bool m_filePathHasBeenSet = false;

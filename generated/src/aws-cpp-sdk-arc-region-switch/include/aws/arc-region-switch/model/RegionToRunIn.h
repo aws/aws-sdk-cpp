@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ARCRegionswitch {
 namespace Model {
-enum class RegionToRunIn { NOT_SET, activatingRegion, deactivatingRegion };
+enum class RegionToRunIn { NOT_SET, activatingRegion, deactivatingRegion, activeRegion, inactiveRegion };
 
 namespace RegionToRunInMapper {
 AWS_ARCREGIONSWITCH_API RegionToRunIn GetRegionToRunInForName(const Aws::String& name);

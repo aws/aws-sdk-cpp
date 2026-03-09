@@ -186,7 +186,7 @@ IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvide
 }
 
 /* Legacy constructors due deprecation */
-IoTWirelessClient::IoTWirelessClient(const Client::ClientConfiguration& clientConfiguration)
+IoTWirelessClient::IoTWirelessClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -198,7 +198,7 @@ IoTWirelessClient::IoTWirelessClient(const Client::ClientConfiguration& clientCo
   init(m_clientConfiguration);
 }
 
-IoTWirelessClient::IoTWirelessClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+IoTWirelessClient::IoTWirelessClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -210,7 +210,7 @@ IoTWirelessClient::IoTWirelessClient(const AWSCredentials& credentials, const Cl
 }
 
 IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                     const Client::ClientConfiguration& clientConfiguration)
+                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

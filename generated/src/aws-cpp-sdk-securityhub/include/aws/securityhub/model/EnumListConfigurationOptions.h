@@ -35,8 +35,8 @@ class EnumListConfigurationOptions {
 
   ///@{
   /**
-   * <p> The Security Hub default value for a control parameter that is a list of
-   * enums. </p>
+   * <p> The Security Hub CSPM default value for a control parameter that is a list
+   * of enums. </p>
    */
   inline const Aws::Vector<Aws::String>& GetDefaultValue() const { return m_defaultValue; }
   inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }

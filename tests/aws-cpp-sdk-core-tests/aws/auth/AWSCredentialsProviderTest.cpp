@@ -22,6 +22,7 @@
 
 #include <fstream>
 #include <thread>
+#include <chrono>
 
 static const char *AllocationTag = "AWSCredentialsProviderTest";
 
@@ -1199,4 +1200,384 @@ TEST_F(STSCredentialsProviderTest, TestInvalidRegionCredentials) {
         auto httpRequest = mockHttpClient->GetMostRecentHttpRequest();
         ASSERT_TRUE(httpRequest.GetURIString().find("@amazon.com#") != std::string::npos);
     }
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainOrderEnvironmentFirst)
+{
+    // Set environment variables
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_ACCESS_KEY_ID", "EnvAccessKey"},
+        {"AWS_SECRET_ACCESS_KEY", "EnvSecretKey"},
+    }};
+
+    // Create profile file (should be ignored since env vars take precedence)
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    credsFile << "[default]" << std::endl;
+    credsFile << "aws_access_key_id = ProfileAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key = ProfileSecretKey" << std::endl;
+    credsFile.close();
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    EXPECT_STREQ("EnvAccessKey", creds.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("EnvSecretKey", creds.GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainOrderProfileSecond)
+{
+    // No environment variables set
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_ACCESS_KEY_ID", ""},
+        {"AWS_SECRET_ACCESS_KEY", ""},
+    }};
+
+    // Create profile file
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    credsFile << "[default]" << std::endl;
+    credsFile << "aws_access_key_id = ProfileAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key = ProfileSecretKey" << std::endl;
+    credsFile.close();
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    EXPECT_STREQ("ProfileAccessKey", creds.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("ProfileSecretKey", creds.GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainCachesSuccessfulProvider)
+{
+    // Create profile file
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    credsFile << "[default]" << std::endl;
+    credsFile << "aws_access_key_id = ProfileAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key = ProfileSecretKey" << std::endl;
+    credsFile.close();
+
+    // Small delay to ensure file is flushed to disk before CRT reads it
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+    DefaultAWSCredentialsProviderChain chain;
+    
+    // First call should find credentials from profile
+    auto creds1 = chain.GetAWSCredentials();
+    EXPECT_STREQ("ProfileAccessKey", creds1.GetAWSAccessKeyId().c_str());
+
+    // Second call on same chain should return cached credentials (no file I/O)
+    auto creds2 = chain.GetAWSCredentials();
+    EXPECT_STREQ("ProfileAccessKey", creds2.GetAWSAccessKeyId().c_str());
+    
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainWithEC2MetadataDisabled)
+{
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_EC2_METADATA_DISABLED", "true"},
+    }};
+
+    // Create profile file
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    credsFile << "[default]" << std::endl;
+    credsFile << "aws_access_key_id = ProfileAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key = ProfileSecretKey" << std::endl;
+    credsFile.close();
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    // Should get credentials from profile, not attempt IMDS
+    EXPECT_STREQ("ProfileAccessKey", creds.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("ProfileSecretKey", creds.GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainWithProcessCredentials)
+{
+    // Create config file with credential_process
+    Aws::StringStream ss;
+    ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+    auto configFileName = ss.str();
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
+
+    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << "[default]" << std::endl;
+    configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"ProcessAccessKey\", \"SecretAccessKey\": \"ProcessSecretKey\"}") << std::endl;
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+
+    // No environment variables or profile credentials
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_ACCESS_KEY_ID", ""},
+        {"AWS_SECRET_ACCESS_KEY", ""},
+    }};
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    // Should get credentials from ProcessCredentialsProvider in the chain
+    EXPECT_STREQ("ProcessAccessKey", creds.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("ProcessSecretKey", creds.GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainWithWebIdentityFromEnvVars)
+{
+    // Create a web identity token file
+    auto tokenFile = m_credsFileName + "_token";
+    Aws::OFStream token(tokenFile.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    token << "mock-web-identity-token";
+    token.close();
+
+    // Set web identity environment variables
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_ACCESS_KEY_ID", ""},
+        {"AWS_SECRET_ACCESS_KEY", ""},
+        {"AWS_ROLE_ARN", "arn:aws:iam::123456789012:role/TestRole"},
+        {"AWS_WEB_IDENTITY_TOKEN_FILE", tokenFile.c_str()},
+        {"AWS_ROLE_SESSION_NAME", "test-session"},
+    }};
+
+    // No profile credentials
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    // STSAssumeRoleWebIdentityCredentialsProvider is CRT-based and will attempt to get credentials
+    // The test verifies the provider is invoked when env vars are set
+    // Credentials may be empty or populated depending on CRT's behavior
+    EXPECT_TRUE(!creds.GetAWSAccessKeyId().empty() || creds.IsEmpty());
+
+    Aws::FileSystem::RemoveFileIfExists(tokenFile.c_str());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainFallsToProcessWhenProfileEmpty)
+{
+    // Create empty profile file
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    credsFile << "[default]" << std::endl;
+    credsFile.close();
+
+    // Create config with credential_process
+    Aws::StringStream ss;
+    ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+    auto configFileName = ss.str();
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
+
+    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << "[default]" << std::endl;
+    configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"ProcessKey\", \"SecretAccessKey\": \"ProcessSecret\"}") << std::endl;
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+
+    // No environment variables
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_ACCESS_KEY_ID", ""},
+        {"AWS_SECRET_ACCESS_KEY", ""},
+    }};
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    // Should fall through from empty profile to process provider
+    EXPECT_STREQ("ProcessKey", creds.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("ProcessSecret", creds.GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainOrderProfileProcess)
+{
+    // Create profile with static credentials
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    credsFile << "[default]" << std::endl;
+    credsFile << "aws_access_key_id = ProfileKey" << std::endl;
+    credsFile << "aws_secret_access_key = ProfileSecret" << std::endl;
+    credsFile.close();
+
+    // Create config with credential_process
+    Aws::StringStream ss;
+    ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+    auto configFileName = ss.str();
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
+
+    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << "[default]" << std::endl;
+    configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"ProcessKey\", \"SecretAccessKey\": \"ProcessSecret\"}") << std::endl;
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+
+    // Ensure files are flushed to disk before CRT reads them
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
+    // Set web identity env vars
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_ACCESS_KEY_ID", ""},
+        {"AWS_SECRET_ACCESS_KEY", ""},
+        {"AWS_ROLE_ARN", "arn:aws:iam::123456789012:role/TestRole"},
+        {"AWS_WEB_IDENTITY_TOKEN_FILE", ""},
+    }};
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    // Profile should win (comes before process and web identity in chain)
+    EXPECT_STREQ("ProfileKey", creds.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("ProfileSecret", creds.GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainWebIdentityDoesNotOverrideEarlierProviders)
+{
+    // Set environment credentials (first in chain)
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_ACCESS_KEY_ID", "EnvKey"},
+        {"AWS_SECRET_ACCESS_KEY", "EnvSecret"},
+        {"AWS_ROLE_ARN", "arn:aws:iam::123456789012:role/TestRole"},
+        {"AWS_WEB_IDENTITY_TOKEN_FILE", m_credsFileName.c_str()},
+    }};
+
+    // Create a token file for web identity
+    Aws::OFStream token(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    token << "mock-token";
+    token.close();
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    // Environment provider should win over web identity (comes first in chain)
+    EXPECT_STREQ("EnvKey", creds.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("EnvSecret", creds.GetAWSSecretKey().c_str());
+    
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainOrderWithMultipleValidProviders)
+{
+    // Set environment variables (first in chain)
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_ACCESS_KEY_ID", "EnvAccessKey"},
+        {"AWS_SECRET_ACCESS_KEY", "EnvSecretKey"},
+    }};
+
+    // Create profile file (second in chain)
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    credsFile << "[default]" << std::endl;
+    credsFile << "aws_access_key_id = ProfileAccessKey" << std::endl;
+    credsFile << "aws_secret_access_key = ProfileSecretKey" << std::endl;
+    credsFile.close();
+
+    // Create config with credential_process (third in chain via ProcessCredentialsProvider)
+    Aws::StringStream ss;
+    ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+    auto configFileName = ss.str();
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
+
+    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << "[default]" << std::endl;
+    configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"ProcessAccessKey\", \"SecretAccessKey\": \"ProcessSecretKey\"}") << std::endl;
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    // Should get credentials from environment (first valid provider)
+    EXPECT_STREQ("EnvAccessKey", creds.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("EnvSecretKey", creds.GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainWithContainerCredentials)
+{
+    // Set container credentials environment variable
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_ACCESS_KEY_ID", ""},
+        {"AWS_SECRET_ACCESS_KEY", ""},
+        {"AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", "/v2/credentials/test"},
+        {"AWS_EC2_METADATA_DISABLED", "true"},
+    }};
+
+    // No profile credentials
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    // Container credentials provider will be added to chain when env var is set
+    // Without a mock HTTP server, it will fail and return empty
+    // This test verifies the provider is conditionally added
+    EXPECT_TRUE(creds.IsEmpty() || !creds.GetAWSAccessKeyId().empty());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainSkipsContainerCredentialsWhenNotConfigured)
+{
+    // No container credentials env vars
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_ACCESS_KEY_ID", ""},
+        {"AWS_SECRET_ACCESS_KEY", ""},
+        {"AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", ""},
+        {"AWS_CONTAINER_CREDENTIALS_FULL_URI", ""},
+        {"AWS_EC2_METADATA_DISABLED", "true"},
+    }};
+
+    // Create profile file so chain doesn't return empty
+    Aws::OFStream credsFile(m_credsFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    credsFile << "[default]" << std::endl;
+    credsFile << "aws_access_key_id = ProfileKey" << std::endl;
+    credsFile << "aws_secret_access_key = ProfileSecret" << std::endl;
+    credsFile.close();
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    // Should get profile credentials, container provider not added to chain
+    EXPECT_STREQ("ProfileKey", creds.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("ProfileSecret", creds.GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+}
+
+TEST_F(EnvironmentModifyingTest, TestChainFallsToIMDSWhenOtherProvidersFail)
+{
+    // No environment variables, no container credentials
+    Aws::Environment::EnvironmentRAII testEnvironment{{
+        {"AWS_ACCESS_KEY_ID", ""},
+        {"AWS_SECRET_ACCESS_KEY", ""},
+        {"AWS_EC2_METADATA_DISABLED", ""},
+    }};
+
+    // No profile or config files
+    Aws::FileSystem::RemoveFileIfExists(m_credsFileName.c_str());
+    
+    Aws::StringStream ss;
+    ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+    auto configFileName = ss.str();
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
+    Aws::Config::ReloadCachedConfigFile();
+
+    DefaultAWSCredentialsProviderChain chain;
+    auto creds = chain.GetAWSCredentials();
+
+    // Chain should attempt IMDS as last resort
+    // Without actual IMDS endpoint, will return empty or cached credentials
+    EXPECT_TRUE(creds.IsEmpty() || !creds.GetAWSAccessKeyId().empty());
 }

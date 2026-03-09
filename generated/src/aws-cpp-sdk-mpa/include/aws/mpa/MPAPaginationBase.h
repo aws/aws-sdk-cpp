@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/mpa/model/ListApprovalTeamsPaginationTraits.h>
 #include <aws/mpa/model/ListIdentitySourcesPaginationTraits.h>
@@ -29,6 +30,7 @@ class MPAPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApprovalTeamsRequest,
                                     Pagination::ListApprovalTeamsPaginationTraits<DerivedClient>>
   ListApprovalTeamsPaginator(const Model::ListApprovalTeamsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApprovalTeamsRequest,
                                              Pagination::ListApprovalTeamsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -40,6 +42,7 @@ class MPAPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentitySourcesRequest,
                                     Pagination::ListIdentitySourcesPaginationTraits<DerivedClient>>
   ListIdentitySourcesPaginator(const Model::ListIdentitySourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentitySourcesRequest,
                                              Pagination::ListIdentitySourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -50,6 +53,7 @@ class MPAPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPoliciesRequest, Pagination::ListPoliciesPaginationTraits<DerivedClient>>
   ListPoliciesPaginator(const Model::ListPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPoliciesRequest,
                                              Pagination::ListPoliciesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -61,6 +65,7 @@ class MPAPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyVersionsRequest,
                                     Pagination::ListPolicyVersionsPaginationTraits<DerivedClient>>
   ListPolicyVersionsPaginator(const Model::ListPolicyVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPolicyVersionsRequest,
                                              Pagination::ListPolicyVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +77,7 @@ class MPAPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcePoliciesRequest,
                                     Pagination::ListResourcePoliciesPaginationTraits<DerivedClient>>
   ListResourcePoliciesPaginator(const Model::ListResourcePoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcePoliciesRequest,
                                              Pagination::ListResourcePoliciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -82,6 +88,7 @@ class MPAPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest, Pagination::ListSessionsPaginationTraits<DerivedClient>>
   ListSessionsPaginator(const Model::ListSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest,
                                              Pagination::ListSessionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

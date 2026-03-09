@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
@@ -117,6 +118,8 @@ class ModifyCapacityReservationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_lastModifiedTime{};
 
@@ -127,6 +130,7 @@ class ModifyCapacityReservationResult {
   Aws::Vector<ZonalCapacityReservationState> m_capacityReservationState;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lastModifiedTimeHasBeenSet = false;
   bool m_decreaseRequestsRemainingHasBeenSet = false;
   bool m_minimumLoadBalancerCapacityHasBeenSet = false;

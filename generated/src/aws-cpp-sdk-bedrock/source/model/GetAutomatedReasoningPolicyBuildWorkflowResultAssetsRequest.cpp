@@ -24,4 +24,10 @@ void GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest::AddQueryString
     uri.AddQueryStringParameter("assetType", ss.str());
     ss.str("");
   }
+
+  if (m_assetIdHasBeenSet) {
+    ss << m_assetId;
+    uri.AddQueryStringParameter("assetId", ss.str());
+    ss.str("");
+  }
 }

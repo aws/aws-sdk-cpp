@@ -106,6 +106,10 @@ ImageBuilder& ImageBuilder::operator=(JsonView jsonValue) {
         LatestAppstreamAgentVersionMapper::GetLatestAppstreamAgentVersionForName(jsonValue.GetString("LatestAppstreamAgentVersion"));
     m_latestAppstreamAgentVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DisableIMDSV1")) {
+    m_disableIMDSV1 = jsonValue.GetBool("DisableIMDSV1");
+    m_disableIMDSV1HasBeenSet = true;
+  }
   return *this;
 }
 
@@ -200,6 +204,10 @@ JsonValue ImageBuilder::Jsonize() const {
   if (m_latestAppstreamAgentVersionHasBeenSet) {
     payload.WithString("LatestAppstreamAgentVersion",
                        LatestAppstreamAgentVersionMapper::GetNameForLatestAppstreamAgentVersion(m_latestAppstreamAgentVersion));
+  }
+
+  if (m_disableIMDSV1HasBeenSet) {
+    payload.WithBool("DisableIMDSV1", m_disableIMDSV1);
   }
 
   return payload;

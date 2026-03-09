@@ -8,6 +8,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/ModelInvocationJobInputDataConfig.h>
 #include <aws/bedrock/model/ModelInvocationJobOutputDataConfig.h>
+#include <aws/bedrock/model/ModelInvocationType.h>
 #include <aws/bedrock/model/Tag.h>
 #include <aws/bedrock/model/VpcConfig.h>
 #include <aws/core/utils/UUID.h>
@@ -215,6 +216,22 @@ class CreateModelInvocationJobRequest : public BedrockRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The invocation endpoint for ModelInvocationJob</p>
+   */
+  inline ModelInvocationType GetModelInvocationType() const { return m_modelInvocationType; }
+  inline bool ModelInvocationTypeHasBeenSet() const { return m_modelInvocationTypeHasBeenSet; }
+  inline void SetModelInvocationType(ModelInvocationType value) {
+    m_modelInvocationTypeHasBeenSet = true;
+    m_modelInvocationType = value;
+  }
+  inline CreateModelInvocationJobRequest& WithModelInvocationType(ModelInvocationType value) {
+    SetModelInvocationType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_jobName;
 
@@ -233,6 +250,8 @@ class CreateModelInvocationJobRequest : public BedrockRequest {
   int m_timeoutDurationInHours{0};
 
   Aws::Vector<Tag> m_tags;
+
+  ModelInvocationType m_modelInvocationType{ModelInvocationType::NOT_SET};
   bool m_jobNameHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
@@ -242,6 +261,7 @@ class CreateModelInvocationJobRequest : public BedrockRequest {
   bool m_vpcConfigHasBeenSet = false;
   bool m_timeoutDurationInHoursHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_modelInvocationTypeHasBeenSet = false;
 };
 
 }  // namespace Model

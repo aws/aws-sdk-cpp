@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
@@ -226,6 +227,8 @@ class DescribeQuerySuggestionsConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Mode m_mode{Mode::NOT_SET};
 
@@ -248,6 +251,7 @@ class DescribeQuerySuggestionsConfigResult {
   AttributeSuggestionsDescribeConfig m_attributeSuggestionsConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_modeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_queryLogLookBackWindowInDaysHasBeenSet = false;

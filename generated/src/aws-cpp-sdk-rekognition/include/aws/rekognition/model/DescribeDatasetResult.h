@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/DatasetDescription.h>
@@ -58,10 +59,13 @@ class DescribeDatasetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DatasetDescription m_datasetDescription;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datasetDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

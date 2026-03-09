@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -119,6 +120,8 @@ class GetTraceSummariesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<TraceSummary> m_traceSummaries;
 
@@ -129,6 +132,7 @@ class GetTraceSummariesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_traceSummariesHasBeenSet = false;
   bool m_approximateTimeHasBeenSet = false;
   bool m_tracesProcessedCountHasBeenSet = false;

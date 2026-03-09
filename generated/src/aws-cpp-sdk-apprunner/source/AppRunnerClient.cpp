@@ -115,7 +115,7 @@ AppRunnerClient::AppRunnerClient(const std::shared_ptr<AWSCredentialsProvider>& 
 }
 
 /* Legacy constructors due deprecation */
-AppRunnerClient::AppRunnerClient(const Client::ClientConfiguration& clientConfiguration)
+AppRunnerClient::AppRunnerClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -127,7 +127,7 @@ AppRunnerClient::AppRunnerClient(const Client::ClientConfiguration& clientConfig
   init(m_clientConfiguration);
 }
 
-AppRunnerClient::AppRunnerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+AppRunnerClient::AppRunnerClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -138,7 +138,7 @@ AppRunnerClient::AppRunnerClient(const AWSCredentials& credentials, const Client
 }
 
 AppRunnerClient::AppRunnerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Client::ClientConfiguration& clientConfiguration)
+                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

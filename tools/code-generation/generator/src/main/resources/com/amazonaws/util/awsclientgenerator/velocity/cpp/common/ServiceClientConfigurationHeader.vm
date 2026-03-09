@@ -104,7 +104,7 @@ namespace ${rootNamespace}
             }
 
 #end
-            ${metadata.classNamePrefix}ClientConfiguration(const Client::ClientConfigurationInitValues &configuration = {});
+            ${metadata.classNamePrefix}ClientConfiguration(const Aws::Client::ClientConfigurationInitValues &configuration = {});
 
             /**
             * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -128,7 +128,7 @@ namespace ${rootNamespace}
 #set($classNamePrefix = $metadata.classNamePrefix)
 #set($clsPrefixWSpace = $classNamePrefix.replaceAll(".", " "))
 #set($earlyClose = $serviceModel.metadata.serviceId != "S3")
-            ${classNamePrefix}ClientConfiguration(const Client::ClientConfiguration& config#if($earlyClose));#else,
+            ${classNamePrefix}ClientConfiguration(const Aws::Client::ClientConfiguration& config#if($earlyClose));#else,
 #end
 #if($serviceModel.metadata.serviceId == "S3")
             ${clsPrefixWSpace}                    Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,

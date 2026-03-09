@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/voice-id/model/Domain.h>
@@ -58,10 +59,13 @@ class DescribeDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Domain m_domain;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

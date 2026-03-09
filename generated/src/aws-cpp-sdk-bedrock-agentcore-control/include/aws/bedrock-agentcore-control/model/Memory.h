@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/MemoryStatus.h>
 #include <aws/bedrock-agentcore-control/model/MemoryStrategy.h>
+#include <aws/bedrock-agentcore-control/model/StreamDeliveryResources.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -252,6 +253,24 @@ class Memory {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for streaming memory record data to external resources.</p>
+   */
+  inline const StreamDeliveryResources& GetStreamDeliveryResources() const { return m_streamDeliveryResources; }
+  inline bool StreamDeliveryResourcesHasBeenSet() const { return m_streamDeliveryResourcesHasBeenSet; }
+  template <typename StreamDeliveryResourcesT = StreamDeliveryResources>
+  void SetStreamDeliveryResources(StreamDeliveryResourcesT&& value) {
+    m_streamDeliveryResourcesHasBeenSet = true;
+    m_streamDeliveryResources = std::forward<StreamDeliveryResourcesT>(value);
+  }
+  template <typename StreamDeliveryResourcesT = StreamDeliveryResources>
+  Memory& WithStreamDeliveryResources(StreamDeliveryResourcesT&& value) {
+    SetStreamDeliveryResources(std::forward<StreamDeliveryResourcesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -276,6 +295,8 @@ class Memory {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::Vector<MemoryStrategy> m_strategies;
+
+  StreamDeliveryResources m_streamDeliveryResources;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -288,6 +309,7 @@ class Memory {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_strategiesHasBeenSet = false;
+  bool m_streamDeliveryResourcesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/model/Channel.h>
@@ -76,12 +77,15 @@ class CreateChannelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Channel m_channel;
 
   StreamKey m_streamKey;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelHasBeenSet = false;
   bool m_streamKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

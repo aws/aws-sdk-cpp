@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -214,6 +215,8 @@ class DescribeTrialResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_trialName;
 
@@ -236,6 +239,7 @@ class DescribeTrialResult {
   MetadataProperties m_metadataProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trialNameHasBeenSet = false;
   bool m_trialArnHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;

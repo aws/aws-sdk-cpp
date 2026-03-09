@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
@@ -165,6 +166,8 @@ class GetWorkspaceInstanceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<WorkspaceInstanceError> m_workspaceInstanceErrors;
 
@@ -179,6 +182,7 @@ class GetWorkspaceInstanceResult {
   BillingConfiguration m_billingConfiguration;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_workspaceInstanceErrorsHasBeenSet = false;
   bool m_eC2InstanceErrorsHasBeenSet = false;
   bool m_provisionStateHasBeenSet = false;

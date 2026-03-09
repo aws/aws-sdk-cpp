@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/connect-contact-lens/model/ListRealtimeContactAnalysisSegmentsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -24,6 +25,7 @@ class ConnectContactLensPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRealtimeContactAnalysisSegmentsRequest,
                                     Pagination::ListRealtimeContactAnalysisSegmentsPaginationTraits<DerivedClient>>
   ListRealtimeContactAnalysisSegmentsPaginator(const Model::ListRealtimeContactAnalysisSegmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRealtimeContactAnalysisSegmentsRequest,
                                              Pagination::ListRealtimeContactAnalysisSegmentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

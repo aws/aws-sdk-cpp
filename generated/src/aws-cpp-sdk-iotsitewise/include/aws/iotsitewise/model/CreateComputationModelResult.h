@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/model/ComputationModelStatus.h>
@@ -97,6 +98,8 @@ class CreateComputationModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_computationModelId;
 
@@ -105,6 +108,7 @@ class CreateComputationModelResult {
   ComputationModelStatus m_computationModelStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_computationModelIdHasBeenSet = false;
   bool m_computationModelArnHasBeenSet = false;
   bool m_computationModelStatusHasBeenSet = false;

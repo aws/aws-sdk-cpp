@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/CredentialProviderVendorType.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -183,6 +184,8 @@ class UpdateOauth2CredentialProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Secret m_clientSecretArn;
 
@@ -201,6 +204,7 @@ class UpdateOauth2CredentialProviderResult {
   Aws::Utils::DateTime m_lastUpdatedTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientSecretArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_credentialProviderVendorHasBeenSet = false;

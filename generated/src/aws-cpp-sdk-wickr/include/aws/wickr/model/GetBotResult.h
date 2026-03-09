@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
 
@@ -204,6 +205,8 @@ class GetBotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_botId;
 
@@ -226,6 +229,7 @@ class GetBotResult {
   Aws::String m_lastLogin;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_botIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_usernameHasBeenSet = false;

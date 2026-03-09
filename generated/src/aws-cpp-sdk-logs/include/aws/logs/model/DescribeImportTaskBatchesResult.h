@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
@@ -117,6 +118,8 @@ class DescribeImportTaskBatchesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_importSourceArn;
 
@@ -127,6 +130,7 @@ class DescribeImportTaskBatchesResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_importSourceArnHasBeenSet = false;
   bool m_importIdHasBeenSet = false;
   bool m_importBatchesHasBeenSet = false;

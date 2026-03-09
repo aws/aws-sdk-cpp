@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefits_EXPORTS.h>
 
@@ -92,6 +93,8 @@ class CreateBenefitApplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -100,6 +103,7 @@ class CreateBenefitApplicationResult {
   Aws::String m_revision;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_revisionHasBeenSet = false;

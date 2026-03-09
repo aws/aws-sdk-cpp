@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -76,12 +77,15 @@ class PutConfiguredAudienceModelPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_configuredAudienceModelPolicy;
 
   Aws::String m_policyHash;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configuredAudienceModelPolicyHasBeenSet = false;
   bool m_policyHashHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

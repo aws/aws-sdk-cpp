@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -84,12 +85,15 @@ class DescribeFleetDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   FleetDeployment m_fleetDeployment;
 
   Aws::Map<Aws::String, LocationalDeployment> m_locationalDeployments;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fleetDeploymentHasBeenSet = false;
   bool m_locationalDeploymentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -15,7 +15,7 @@
 namespace Aws {
 namespace ECS {
 /**
- * <fullname>Amazon Elastic Container Service</fullname> <p>Amazon Elastic
+ * <p><fullname>Amazon Elastic Container Service</fullname> <p>Amazon Elastic
  * Container Service (Amazon ECS) is a highly scalable, fast, container management
  * service. It makes it easy to run, stop, and manage Docker containers. You can
  * host your cluster on a serverless infrastructure that's managed by Amazon ECS by
@@ -29,7 +29,7 @@ namespace ECS {
  * resource needs, isolation policies, and availability requirements. With Amazon
  * ECS, you don't need to operate your own cluster management and configuration
  * management systems. You also don't need to worry about scaling your management
- * infrastructure. </p>
+ * infrastructure. </p></p>
  */
 class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>,
@@ -1083,9 +1083,9 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>This action is only used by the Amazon ECS agent, and it is not
+   * <p> <p>This action is only used by the Amazon ECS agent, and it is not
    * intended for use outside of the agent.</p>  <p>Returns an endpoint for
-   * the Amazon ECS agent to poll for updates.</p><p><h3>See Also:</h3>   <a
+   * the Amazon ECS agent to poll for updates.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint">AWS
    * API Reference</a></p>
    */
@@ -1644,10 +1644,10 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>This action is only used by the Amazon ECS agent, and it is not
+   * <p> <p>This action is only used by the Amazon ECS agent, and it is not
    * intended for use outside of the agent.</p>  <p>Registers an EC2 instance
    * into the specified cluster. This instance becomes available to place containers
-   * on.</p><p><h3>See Also:</h3>   <a
+   * on.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance">AWS
    * API Reference</a></p>
    */
@@ -1907,9 +1907,9 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>This action is only used by the Amazon ECS agent, and it is not
+   * <p> <p>This action is only used by the Amazon ECS agent, and it is not
    * intended for use outside of the agent.</p>  <p>Sent to acknowledge that
-   * an attachment changed states.</p><p><h3>See Also:</h3>   <a
+   * an attachment changed states.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges">AWS
    * API Reference</a></p>
    */
@@ -1938,9 +1938,9 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>This action is only used by the Amazon ECS agent, and it is not
+   * <p> <p>This action is only used by the Amazon ECS agent, and it is not
    * intended for use outside of the agent.</p>  <p>Sent to acknowledge that a
-   * container changed states.</p><p><h3>See Also:</h3>   <a
+   * container changed states.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange">AWS
    * API Reference</a></p>
    */
@@ -1969,9 +1969,9 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   *  <p>This action is only used by the Amazon ECS agent, and it is not
+   * <p> <p>This action is only used by the Amazon ECS agent, and it is not
    * intended for use outside of the agent.</p>  <p>Sent to acknowledge that a
-   * task changed states.</p><p><h3>See Also:</h3>   <a
+   * task changed states.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange">AWS
    * API Reference</a></p>
    */

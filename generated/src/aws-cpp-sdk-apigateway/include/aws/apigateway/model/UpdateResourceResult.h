@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/Method.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -138,6 +139,8 @@ class UpdateResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -150,6 +153,7 @@ class UpdateResourceResult {
   Aws::Map<Aws::String, Method> m_resourceMethods;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_parentIdHasBeenSet = false;
   bool m_pathPartHasBeenSet = false;

@@ -12,6 +12,7 @@
 #include <aws/es/model/AutoTuneOptionsOutput.h>
 #include <aws/es/model/ChangeProgressDetails.h>
 #include <aws/es/model/CognitoOptions.h>
+#include <aws/es/model/DeploymentStrategyOptions.h>
 #include <aws/es/model/DomainEndpointOptions.h>
 #include <aws/es/model/DomainProcessingStatusType.h>
 #include <aws/es/model/EBSOptions.h>
@@ -573,6 +574,25 @@ class ElasticsearchDomainStatus {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The current status of the Elasticsearch domain's deployment strategy
+   * options.</p>
+   */
+  inline const DeploymentStrategyOptions& GetDeploymentStrategyOptions() const { return m_deploymentStrategyOptions; }
+  inline bool DeploymentStrategyOptionsHasBeenSet() const { return m_deploymentStrategyOptionsHasBeenSet; }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOptions>
+  void SetDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    m_deploymentStrategyOptionsHasBeenSet = true;
+    m_deploymentStrategyOptions = std::forward<DeploymentStrategyOptionsT>(value);
+  }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOptions>
+  ElasticsearchDomainStatus& WithDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    SetDeploymentStrategyOptions(std::forward<DeploymentStrategyOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainId;
 
@@ -627,6 +647,8 @@ class ElasticsearchDomainStatus {
   DomainProcessingStatusType m_domainProcessingStatus{DomainProcessingStatusType::NOT_SET};
 
   Aws::Vector<ModifyingProperties> m_modifyingProperties;
+
+  DeploymentStrategyOptions m_deploymentStrategyOptions;
   bool m_domainIdHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
@@ -654,6 +676,7 @@ class ElasticsearchDomainStatus {
   bool m_changeProgressDetailsHasBeenSet = false;
   bool m_domainProcessingStatusHasBeenSet = false;
   bool m_modifyingPropertiesHasBeenSet = false;
+  bool m_deploymentStrategyOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

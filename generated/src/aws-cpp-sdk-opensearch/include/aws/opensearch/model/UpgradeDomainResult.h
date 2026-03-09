@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
@@ -155,6 +156,8 @@ class UpgradeDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_upgradeId;
 
@@ -169,6 +172,7 @@ class UpgradeDomainResult {
   ChangeProgressDetails m_changeProgressDetails;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_upgradeIdHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_targetVersionHasBeenSet = false;

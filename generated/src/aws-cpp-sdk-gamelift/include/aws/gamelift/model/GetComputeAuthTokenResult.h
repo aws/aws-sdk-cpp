@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
@@ -152,6 +153,8 @@ class GetComputeAuthTokenResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_fleetId;
 
@@ -166,6 +169,7 @@ class GetComputeAuthTokenResult {
   Aws::Utils::DateTime m_expirationTimestamp{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fleetIdHasBeenSet = false;
   bool m_fleetArnHasBeenSet = false;
   bool m_computeNameHasBeenSet = false;

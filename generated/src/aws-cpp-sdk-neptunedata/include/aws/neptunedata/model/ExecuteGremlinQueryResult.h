@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptunedata/Neptunedata_EXPORTS.h>
@@ -95,6 +96,8 @@ class ExecuteGremlinQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_requestId;
 
@@ -103,6 +106,7 @@ class ExecuteGremlinQueryResult {
   Aws::Utils::Document m_result;
 
   Aws::Utils::Document m_meta;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_resultHasBeenSet = false;

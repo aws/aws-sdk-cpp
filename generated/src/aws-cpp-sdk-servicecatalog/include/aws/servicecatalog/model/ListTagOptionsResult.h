@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -83,12 +84,15 @@ class ListTagOptionsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<TagOptionDetail> m_tagOptionDetails;
 
   Aws::String m_pageToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tagOptionDetailsHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

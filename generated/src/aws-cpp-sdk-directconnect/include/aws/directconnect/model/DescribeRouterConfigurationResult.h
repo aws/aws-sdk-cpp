@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/RouterType.h>
@@ -110,6 +111,8 @@ class DescribeRouterConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_customerRouterConfig;
 
@@ -120,6 +123,7 @@ class DescribeRouterConfigurationResult {
   Aws::String m_virtualInterfaceName;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_customerRouterConfigHasBeenSet = false;
   bool m_routerHasBeenSet = false;
   bool m_virtualInterfaceIdHasBeenSet = false;

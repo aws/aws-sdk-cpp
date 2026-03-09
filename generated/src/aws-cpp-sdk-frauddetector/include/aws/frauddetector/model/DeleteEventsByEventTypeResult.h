@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
@@ -74,12 +75,15 @@ class DeleteEventsByEventTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_eventTypeName;
 
   Aws::String m_eventsDeletionStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventTypeNameHasBeenSet = false;
   bool m_eventsDeletionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

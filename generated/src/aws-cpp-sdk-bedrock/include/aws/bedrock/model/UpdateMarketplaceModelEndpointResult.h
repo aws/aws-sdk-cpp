@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/MarketplaceModelEndpoint.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -58,10 +59,13 @@ class UpdateMarketplaceModelEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MarketplaceModelEndpoint m_marketplaceModelEndpoint;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_marketplaceModelEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class TestCaseEntryPointType { NOT_SET, VOICE_CALL };
+enum class TestCaseEntryPointType { NOT_SET, VOICE_CALL, CHAT };
 
 namespace TestCaseEntryPointTypeMapper {
 AWS_CONNECT_API TestCaseEntryPointType GetTestCaseEntryPointTypeForName(const Aws::String& name);

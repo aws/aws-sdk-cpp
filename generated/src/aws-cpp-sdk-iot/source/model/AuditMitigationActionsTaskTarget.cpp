@@ -33,14 +33,14 @@ AuditMitigationActionsTaskTarget& AuditMitigationActionsTaskTarget::operator=(Js
     Aws::Map<Aws::String, JsonView> auditCheckToReasonCodeFilterJsonMap =
         jsonValue.GetObject("auditCheckToReasonCodeFilter").GetAllObjects();
     for (auto& auditCheckToReasonCodeFilterItem : auditCheckToReasonCodeFilterJsonMap) {
-      Aws::Utils::Array<JsonView> reasonForNonComplianceCodesJsonList = auditCheckToReasonCodeFilterItem.second.AsArray();
-      Aws::Vector<Aws::String> reasonForNonComplianceCodesList;
-      reasonForNonComplianceCodesList.reserve((size_t)reasonForNonComplianceCodesJsonList.GetLength());
-      for (unsigned reasonForNonComplianceCodesIndex = 0;
-           reasonForNonComplianceCodesIndex < reasonForNonComplianceCodesJsonList.GetLength(); ++reasonForNonComplianceCodesIndex) {
-        reasonForNonComplianceCodesList.push_back(reasonForNonComplianceCodesJsonList[reasonForNonComplianceCodesIndex].AsString());
+      Aws::Utils::Array<JsonView> reasonForNonComplianceCodes2JsonList = auditCheckToReasonCodeFilterItem.second.AsArray();
+      Aws::Vector<Aws::String> reasonForNonComplianceCodes2List;
+      reasonForNonComplianceCodes2List.reserve((size_t)reasonForNonComplianceCodes2JsonList.GetLength());
+      for (unsigned reasonForNonComplianceCodes2Index = 0;
+           reasonForNonComplianceCodes2Index < reasonForNonComplianceCodes2JsonList.GetLength(); ++reasonForNonComplianceCodes2Index) {
+        reasonForNonComplianceCodes2List.push_back(reasonForNonComplianceCodes2JsonList[reasonForNonComplianceCodes2Index].AsString());
       }
-      m_auditCheckToReasonCodeFilter[auditCheckToReasonCodeFilterItem.first] = std::move(reasonForNonComplianceCodesList);
+      m_auditCheckToReasonCodeFilter[auditCheckToReasonCodeFilterItem.first] = std::move(reasonForNonComplianceCodes2List);
     }
     m_auditCheckToReasonCodeFilterHasBeenSet = true;
   }

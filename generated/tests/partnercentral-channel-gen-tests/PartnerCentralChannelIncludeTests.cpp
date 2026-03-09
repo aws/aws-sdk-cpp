@@ -74,8 +74,8 @@
 #include <aws/partnercentral-channel/model/RelationshipDetail.h>
 #include <aws/partnercentral-channel/model/RelationshipSummary.h>
 #include <aws/partnercentral-channel/model/ResaleAccountModel.h>
-#include <aws/partnercentral-channel/model/ResoldBusiness.h>
 #include <aws/partnercentral-channel/model/ResoldEnterprise.h>
+#include <aws/partnercentral-channel/model/ResoldUnifiedOperations.h>
 #include <aws/partnercentral-channel/model/ResourceNotFoundException.h>
 #include <aws/partnercentral-channel/model/RevokeServicePeriodHandshakeDetail.h>
 #include <aws/partnercentral-channel/model/RevokeServicePeriodPayload.h>

@@ -9,6 +9,7 @@
 #include <aws/cloudtrail/model/BillingMode.h>
 #include <aws/cloudtrail/model/EventDataStoreStatus.h>
 #include <aws/cloudtrail/model/Tag.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -274,6 +275,8 @@ class CreateEventDataStoreResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_eventDataStoreArn;
 
@@ -302,6 +305,7 @@ class CreateEventDataStoreResult {
   BillingMode m_billingMode{BillingMode::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_eventDataStoreArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 
@@ -76,7 +77,7 @@ class GenerateEmbedUrlForAnonymousUserResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon Quick Suite
+   * <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon Quick
    * user.</p>
    */
   inline const Aws::String& GetAnonymousUserArn() const { return m_anonymousUserArn; }
@@ -91,6 +92,8 @@ class GenerateEmbedUrlForAnonymousUserResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_embedUrl;
 
@@ -99,6 +102,7 @@ class GenerateEmbedUrlForAnonymousUserResult {
   Aws::String m_requestId;
 
   Aws::String m_anonymousUserArn;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_embedUrlHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

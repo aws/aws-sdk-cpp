@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/DBInstanceAutomatedBackup.h>
 #include <aws/rds/model/ResponseMetadata.h>
@@ -57,10 +58,13 @@ class StartDBInstanceAutomatedBackupsReplicationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DBInstanceAutomatedBackup m_dBInstanceAutomatedBackup;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dBInstanceAutomatedBackupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

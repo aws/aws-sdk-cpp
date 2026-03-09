@@ -34,42 +34,6 @@ class TablePropertyDescription {
 
   ///@{
   /**
-   * <p>The default value for the table.</p>
-   */
-  inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
-  inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-  template <typename DefaultValueT = Aws::String>
-  void SetDefaultValue(DefaultValueT&& value) {
-    m_defaultValueHasBeenSet = true;
-    m_defaultValue = std::forward<DefaultValueT>(value);
-  }
-  template <typename DefaultValueT = Aws::String>
-  TablePropertyDescription& WithDefaultValue(DefaultValueT&& value) {
-    SetDefaultValue(std::forward<DefaultValueT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description for the table.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  TablePropertyDescription& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the table.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -109,18 +73,54 @@ class TablePropertyDescription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The default value for the table.</p>
+   */
+  inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
+  inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+  template <typename DefaultValueT = Aws::String>
+  void SetDefaultValue(DefaultValueT&& value) {
+    m_defaultValueHasBeenSet = true;
+    m_defaultValue = std::forward<DefaultValueT>(value);
+  }
+  template <typename DefaultValueT = Aws::String>
+  TablePropertyDescription& WithDefaultValue(DefaultValueT&& value) {
+    SetDefaultValue(std::forward<DefaultValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description for the table.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  TablePropertyDescription& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_defaultValue;
-
-  Aws::String m_description;
-
   Aws::String m_name;
 
   Aws::Vector<Aws::String> m_validValues;
-  bool m_defaultValueHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
+
+  Aws::String m_defaultValue;
+
+  Aws::String m_description;
   bool m_nameHasBeenSet = false;
   bool m_validValuesHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
 };
 
 }  // namespace Model

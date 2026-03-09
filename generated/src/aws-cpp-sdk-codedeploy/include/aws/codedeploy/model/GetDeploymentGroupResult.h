@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/DeploymentGroupInfo.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -64,10 +65,13 @@ class GetDeploymentGroupResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DeploymentGroupInfo m_deploymentGroupInfo;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_deploymentGroupInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

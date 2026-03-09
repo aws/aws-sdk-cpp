@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 
@@ -112,6 +113,8 @@ class CreatePolicyVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_policyArn;
 
@@ -122,6 +125,7 @@ class CreatePolicyVersionResult {
   bool m_isDefaultVersion{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyArnHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;
   bool m_policyVersionIdHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/translate/model/TerminologyDataLocation.h>
@@ -105,6 +106,8 @@ class GetTerminologyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TerminologyProperties m_terminologyProperties;
 
@@ -113,6 +116,7 @@ class GetTerminologyResult {
   TerminologyDataLocation m_auxiliaryDataLocation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_terminologyPropertiesHasBeenSet = false;
   bool m_terminologyDataLocationHasBeenSet = false;
   bool m_auxiliaryDataLocationHasBeenSet = false;

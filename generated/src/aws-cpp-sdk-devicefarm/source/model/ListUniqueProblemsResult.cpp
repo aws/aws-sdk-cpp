@@ -20,17 +20,18 @@ using namespace Aws;
 ListUniqueProblemsResult::ListUniqueProblemsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListUniqueProblemsResult& ListUniqueProblemsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("uniqueProblems")) {
     Aws::Map<Aws::String, JsonView> uniqueProblemsJsonMap = jsonValue.GetObject("uniqueProblems").GetAllObjects();
     for (auto& uniqueProblemsItem : uniqueProblemsJsonMap) {
-      Aws::Utils::Array<JsonView> uniqueProblemsJsonList = uniqueProblemsItem.second.AsArray();
-      Aws::Vector<UniqueProblem> uniqueProblemsList;
-      uniqueProblemsList.reserve((size_t)uniqueProblemsJsonList.GetLength());
-      for (unsigned uniqueProblemsIndex = 0; uniqueProblemsIndex < uniqueProblemsJsonList.GetLength(); ++uniqueProblemsIndex) {
-        uniqueProblemsList.push_back(uniqueProblemsJsonList[uniqueProblemsIndex].AsObject());
+      Aws::Utils::Array<JsonView> uniqueProblems2JsonList = uniqueProblemsItem.second.AsArray();
+      Aws::Vector<UniqueProblem> uniqueProblems2List;
+      uniqueProblems2List.reserve((size_t)uniqueProblems2JsonList.GetLength());
+      for (unsigned uniqueProblems2Index = 0; uniqueProblems2Index < uniqueProblems2JsonList.GetLength(); ++uniqueProblems2Index) {
+        uniqueProblems2List.push_back(uniqueProblems2JsonList[uniqueProblems2Index].AsObject());
       }
-      m_uniqueProblems[ExecutionResultMapper::GetExecutionResultForName(uniqueProblemsItem.first)] = std::move(uniqueProblemsList);
+      m_uniqueProblems[ExecutionResultMapper::GetExecutionResultForName(uniqueProblemsItem.first)] = std::move(uniqueProblems2List);
     }
     m_uniqueProblemsHasBeenSet = true;
   }

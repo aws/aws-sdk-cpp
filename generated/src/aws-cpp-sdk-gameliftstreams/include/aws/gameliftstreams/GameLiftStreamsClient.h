@@ -815,20 +815,19 @@ class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJso
    * from a stream session. If no client connects before the timeout, Amazon GameLift
    * Streams terminates the stream session. This value is specified by
    * <code>ConnectionTimeoutSeconds</code> in the <code>StartStreamSession</code>
-   * parameters.</p> </li> <li> <p> <b>Idle timeout</b>: A stream session will be
-   * terminated if no user input has been received for 60 minutes.</p> </li> <li> <p>
-   * <b>Maximum session length</b>: A stream session will be terminated after this
-   * amount of time has elapsed since it started, regardless of any existing client
-   * connections. This value is specified by <code>SessionLengthSeconds</code> in the
-   * <code>StartStreamSession</code> parameters.</p> </li> </ul> <p>To start a new
-   * stream session, specify a stream group ID and application ID, along with the
-   * transport protocol and signal request to use with the stream session.</p> <p>For
-   * stream groups that have multiple locations, provide a set of locations ordered
-   * by priority using a <code>Locations</code> parameter. Amazon GameLift Streams
-   * will start a single stream session in the next available location. An
-   * application must be finished replicating to a remote location before the remote
-   * location can host a stream.</p> <p>To reconnect to a stream session after a
-   * client disconnects or loses connection, use <a
+   * parameters.</p> </li> <li> <p> <b>Maximum session length</b>: A stream session
+   * will be terminated after this amount of time has elapsed since it started,
+   * regardless of any existing client connections. This value is specified by
+   * <code>SessionLengthSeconds</code> in the <code>StartStreamSession</code>
+   * parameters.</p> </li> </ul> <p>To start a new stream session, specify a stream
+   * group ID and application ID, along with the transport protocol and signal
+   * request to use with the stream session.</p> <p>For stream groups that have
+   * multiple locations, provide a set of locations ordered by priority using a
+   * <code>Locations</code> parameter. Amazon GameLift Streams will start a single
+   * stream session in the next available location. An application must be finished
+   * replicating to a remote location before the remote location can host a
+   * stream.</p> <p>To reconnect to a stream session after a client disconnects or
+   * loses connection, use <a
    * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_CreateStreamSessionConnection.html">CreateStreamSessionConnection</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/StartStreamSession">AWS

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/secretsmanager/model/BatchGetSecretValuePaginationTraits.h>
 #include <aws/secretsmanager/model/ListSecretVersionIdsPaginationTraits.h>
@@ -26,6 +27,7 @@ class SecretsManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::BatchGetSecretValueRequest,
                                     Pagination::BatchGetSecretValuePaginationTraits<DerivedClient>>
   BatchGetSecretValuePaginator(const Model::BatchGetSecretValueRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::BatchGetSecretValueRequest,
                                              Pagination::BatchGetSecretValuePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -36,6 +38,7 @@ class SecretsManagerPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecretsRequest, Pagination::ListSecretsPaginationTraits<DerivedClient>>
   ListSecretsPaginator(const Model::ListSecretsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecretsRequest,
                                              Pagination::ListSecretsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -47,6 +50,7 @@ class SecretsManagerPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecretVersionIdsRequest,
                                     Pagination::ListSecretVersionIdsPaginationTraits<DerivedClient>>
   ListSecretVersionIdsPaginator(const Model::ListSecretVersionIdsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSecretVersionIdsRequest,
                                              Pagination::ListSecretVersionIdsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/voice-id/model/Fraudster.h>
@@ -56,10 +57,13 @@ class AssociateFraudsterResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Fraudster m_fraudster;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_fraudsterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

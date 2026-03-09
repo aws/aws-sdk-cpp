@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/Route53_EXPORTS.h>
@@ -110,6 +111,8 @@ class GetHostedZoneResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   HostedZone m_hostedZone;
 
@@ -118,6 +121,7 @@ class GetHostedZoneResult {
   Aws::Vector<VPC> m_vPCs;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hostedZoneHasBeenSet = false;
   bool m_delegationSetHasBeenSet = false;
   bool m_vPCsHasBeenSet = false;

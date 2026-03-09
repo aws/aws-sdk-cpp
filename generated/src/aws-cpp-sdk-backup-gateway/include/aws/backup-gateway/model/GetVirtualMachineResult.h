@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/backup-gateway/model/VirtualMachineDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -59,10 +60,13 @@ class GetVirtualMachineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   VirtualMachineDetails m_virtualMachine;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_virtualMachineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

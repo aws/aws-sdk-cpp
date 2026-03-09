@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
 #include <aws/elasticache/model/Snapshot.h>
@@ -56,10 +57,13 @@ class DeleteSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Snapshot m_snapshot;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_snapshotHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

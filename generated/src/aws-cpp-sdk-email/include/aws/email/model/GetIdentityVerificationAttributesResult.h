@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/email/SES_EXPORTS.h>
@@ -74,10 +75,13 @@ class GetIdentityVerificationAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<Aws::String, IdentityVerificationAttributes> m_verificationAttributes;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_verificationAttributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

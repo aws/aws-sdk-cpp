@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/voice-id/model/ListDomainsPaginationTraits.h>
 #include <aws/voice-id/model/ListFraudsterRegistrationJobsPaginationTraits.h>
@@ -28,6 +29,7 @@ class VoiceIDPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainsRequest, Pagination::ListDomainsPaginationTraits<DerivedClient>>
   ListDomainsPaginator(const Model::ListDomainsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDomainsRequest,
                                              Pagination::ListDomainsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -39,6 +41,7 @@ class VoiceIDPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFraudsterRegistrationJobsRequest,
                                     Pagination::ListFraudsterRegistrationJobsPaginationTraits<DerivedClient>>
   ListFraudsterRegistrationJobsPaginator(const Model::ListFraudsterRegistrationJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFraudsterRegistrationJobsRequest,
                                              Pagination::ListFraudsterRegistrationJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -49,6 +52,7 @@ class VoiceIDPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFraudstersRequest, Pagination::ListFraudstersPaginationTraits<DerivedClient>>
   ListFraudstersPaginator(const Model::ListFraudstersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFraudstersRequest,
                                              Pagination::ListFraudstersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -60,6 +64,7 @@ class VoiceIDPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSpeakerEnrollmentJobsRequest,
                                     Pagination::ListSpeakerEnrollmentJobsPaginationTraits<DerivedClient>>
   ListSpeakerEnrollmentJobsPaginator(const Model::ListSpeakerEnrollmentJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSpeakerEnrollmentJobsRequest,
                                              Pagination::ListSpeakerEnrollmentJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -70,6 +75,7 @@ class VoiceIDPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSpeakersRequest, Pagination::ListSpeakersPaginationTraits<DerivedClient>>
   ListSpeakersPaginator(const Model::ListSpeakersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSpeakersRequest,
                                              Pagination::ListSpeakersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -80,6 +86,7 @@ class VoiceIDPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWatchlistsRequest, Pagination::ListWatchlistsPaginationTraits<DerivedClient>>
   ListWatchlistsPaginator(const Model::ListWatchlistsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListWatchlistsRequest,
                                              Pagination::ListWatchlistsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

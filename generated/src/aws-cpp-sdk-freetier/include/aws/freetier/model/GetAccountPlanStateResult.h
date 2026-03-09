@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/freetier/FreeTier_EXPORTS.h>
@@ -125,6 +126,8 @@ class GetAccountPlanStateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_accountId;
 
@@ -137,6 +140,7 @@ class GetAccountPlanStateResult {
   Aws::Utils::DateTime m_accountPlanExpirationDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountIdHasBeenSet = false;
   bool m_accountPlanTypeHasBeenSet = false;
   bool m_accountPlanStatusHasBeenSet = false;

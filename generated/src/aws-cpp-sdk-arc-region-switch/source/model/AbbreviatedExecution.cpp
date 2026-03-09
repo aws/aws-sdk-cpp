@@ -62,6 +62,10 @@ AbbreviatedExecution& AbbreviatedExecution::operator=(JsonView jsonValue) {
     m_executionRegion = jsonValue.GetString("executionRegion");
     m_executionRegionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("recoveryExecutionId")) {
+    m_recoveryExecutionId = jsonValue.GetString("recoveryExecutionId");
+    m_recoveryExecutionIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("actualRecoveryTime")) {
     m_actualRecoveryTime = jsonValue.GetString("actualRecoveryTime");
     m_actualRecoveryTimeHasBeenSet = true;
@@ -114,6 +118,10 @@ JsonValue AbbreviatedExecution::Jsonize() const {
 
   if (m_executionRegionHasBeenSet) {
     payload.WithString("executionRegion", m_executionRegion);
+  }
+
+  if (m_recoveryExecutionIdHasBeenSet) {
+    payload.WithString("recoveryExecutionId", m_recoveryExecutionId);
   }
 
   if (m_actualRecoveryTimeHasBeenSet) {

@@ -13,7 +13,7 @@ namespace BedrockRuntime {
 struct AWS_BEDROCKRUNTIME_API BedrockRuntimeClientConfiguration : public Aws::Client::GenericClientConfiguration {
   using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
-  BedrockRuntimeClientConfiguration(const Client::ClientConfigurationInitValues& configuration = {});
+  BedrockRuntimeClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
    * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -34,7 +34,7 @@ struct AWS_BEDROCKRUNTIME_API BedrockRuntimeClientConfiguration : public Aws::Cl
   /**
    * Converting constructors for compatibility with a legacy code
    */
-  BedrockRuntimeClientConfiguration(const Client::ClientConfiguration& config);
+  BedrockRuntimeClientConfiguration(const Aws::Client::ClientConfiguration& config);
 
  private:
   void LoadBedrockRuntimeSpecificConfig(const Aws::String& profileName);

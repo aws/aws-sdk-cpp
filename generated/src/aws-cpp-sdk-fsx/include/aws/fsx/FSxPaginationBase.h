@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/fsx/model/DescribeBackupsPaginationTraits.h>
 #include <aws/fsx/model/DescribeDataRepositoryAssociationsPaginationTraits.h>
@@ -34,6 +35,7 @@ class FSxPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBackupsRequest,
                                     Pagination::DescribeBackupsPaginationTraits<DerivedClient>>
   DescribeBackupsPaginator(const Model::DescribeBackupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBackupsRequest,
                                              Pagination::DescribeBackupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -45,6 +47,7 @@ class FSxPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDataRepositoryAssociationsRequest,
                                     Pagination::DescribeDataRepositoryAssociationsPaginationTraits<DerivedClient>>
   DescribeDataRepositoryAssociationsPaginator(const Model::DescribeDataRepositoryAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDataRepositoryAssociationsRequest,
                                              Pagination::DescribeDataRepositoryAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -56,6 +59,7 @@ class FSxPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDataRepositoryTasksRequest,
                                     Pagination::DescribeDataRepositoryTasksPaginationTraits<DerivedClient>>
   DescribeDataRepositoryTasksPaginator(const Model::DescribeDataRepositoryTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDataRepositoryTasksRequest,
                                              Pagination::DescribeDataRepositoryTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -67,6 +71,7 @@ class FSxPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFileCachesRequest,
                                     Pagination::DescribeFileCachesPaginationTraits<DerivedClient>>
   DescribeFileCachesPaginator(const Model::DescribeFileCachesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFileCachesRequest,
                                              Pagination::DescribeFileCachesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -78,6 +83,7 @@ class FSxPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFileSystemAliasesRequest,
                                     Pagination::DescribeFileSystemAliasesPaginationTraits<DerivedClient>>
   DescribeFileSystemAliasesPaginator(const Model::DescribeFileSystemAliasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFileSystemAliasesRequest,
                                              Pagination::DescribeFileSystemAliasesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -89,6 +95,7 @@ class FSxPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFileSystemsRequest,
                                     Pagination::DescribeFileSystemsPaginationTraits<DerivedClient>>
   DescribeFileSystemsPaginator(const Model::DescribeFileSystemsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFileSystemsRequest,
                                              Pagination::DescribeFileSystemsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -100,6 +107,7 @@ class FSxPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeS3AccessPointAttachmentsRequest,
                                     Pagination::DescribeS3AccessPointAttachmentsPaginationTraits<DerivedClient>>
   DescribeS3AccessPointAttachmentsPaginator(const Model::DescribeS3AccessPointAttachmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeS3AccessPointAttachmentsRequest,
                                              Pagination::DescribeS3AccessPointAttachmentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -111,6 +119,7 @@ class FSxPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSnapshotsRequest,
                                     Pagination::DescribeSnapshotsPaginationTraits<DerivedClient>>
   DescribeSnapshotsPaginator(const Model::DescribeSnapshotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeSnapshotsRequest,
                                              Pagination::DescribeSnapshotsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -122,6 +131,7 @@ class FSxPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeStorageVirtualMachinesRequest,
                                     Pagination::DescribeStorageVirtualMachinesPaginationTraits<DerivedClient>>
   DescribeStorageVirtualMachinesPaginator(const Model::DescribeStorageVirtualMachinesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeStorageVirtualMachinesRequest,
                                              Pagination::DescribeStorageVirtualMachinesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -133,6 +143,7 @@ class FSxPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVolumesRequest,
                                     Pagination::DescribeVolumesPaginationTraits<DerivedClient>>
   DescribeVolumesPaginator(const Model::DescribeVolumesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeVolumesRequest,
                                              Pagination::DescribeVolumesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -144,6 +155,7 @@ class FSxPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/route53domains/model/DomainTransferability.h>
@@ -83,12 +84,15 @@ class CheckDomainTransferabilityResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DomainTransferability m_transferability;
 
   Aws::String m_message;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transferabilityHasBeenSet = false;
   bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

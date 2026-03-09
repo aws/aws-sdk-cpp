@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -289,6 +290,8 @@ class DescribeProjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_createDate{};
 
@@ -319,6 +322,7 @@ class DescribeProjectResult {
   Aws::Utils::DateTime m_openDate{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createDateHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_datasetNameHasBeenSet = false;

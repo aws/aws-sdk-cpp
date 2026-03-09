@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 
@@ -116,6 +117,8 @@ class VerifyPinDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_verificationKeyArn;
 
@@ -126,6 +129,7 @@ class VerifyPinDataResult {
   Aws::String m_encryptionKeyCheckValue;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_verificationKeyArnHasBeenSet = false;
   bool m_verificationKeyCheckValueHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;

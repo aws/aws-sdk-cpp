@@ -118,7 +118,7 @@ NotificationsClient::NotificationsClient(const std::shared_ptr<AWSCredentialsPro
 }
 
 /* Legacy constructors due deprecation */
-NotificationsClient::NotificationsClient(const Client::ClientConfiguration& clientConfiguration)
+NotificationsClient::NotificationsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -130,7 +130,7 @@ NotificationsClient::NotificationsClient(const Client::ClientConfiguration& clie
   init(m_clientConfiguration);
 }
 
-NotificationsClient::NotificationsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+NotificationsClient::NotificationsClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -141,7 +141,7 @@ NotificationsClient::NotificationsClient(const AWSCredentials& credentials, cons
 }
 
 NotificationsClient::NotificationsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                         const Client::ClientConfiguration& clientConfiguration)
+                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

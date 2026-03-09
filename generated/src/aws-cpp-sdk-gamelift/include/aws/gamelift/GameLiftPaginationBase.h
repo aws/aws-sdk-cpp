@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/gamelift/model/DescribeFleetAttributesPaginationTraits.h>
 #include <aws/gamelift/model/DescribeFleetCapacityPaginationTraits.h>
@@ -50,6 +51,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetAttributesRequest,
                                     Pagination::DescribeFleetAttributesPaginationTraits<DerivedClient>>
   DescribeFleetAttributesPaginator(const Model::DescribeFleetAttributesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetAttributesRequest,
                                              Pagination::DescribeFleetAttributesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -61,6 +63,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetCapacityRequest,
                                     Pagination::DescribeFleetCapacityPaginationTraits<DerivedClient>>
   DescribeFleetCapacityPaginator(const Model::DescribeFleetCapacityRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetCapacityRequest,
                                              Pagination::DescribeFleetCapacityPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -72,6 +75,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetEventsRequest,
                                     Pagination::DescribeFleetEventsPaginationTraits<DerivedClient>>
   DescribeFleetEventsPaginator(const Model::DescribeFleetEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetEventsRequest,
                                              Pagination::DescribeFleetEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -83,6 +87,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetLocationAttributesRequest,
                                     Pagination::DescribeFleetLocationAttributesPaginationTraits<DerivedClient>>
   DescribeFleetLocationAttributesPaginator(const Model::DescribeFleetLocationAttributesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetLocationAttributesRequest,
                                              Pagination::DescribeFleetLocationAttributesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -94,6 +99,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetUtilizationRequest,
                                     Pagination::DescribeFleetUtilizationPaginationTraits<DerivedClient>>
   DescribeFleetUtilizationPaginator(const Model::DescribeFleetUtilizationRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeFleetUtilizationRequest,
                                              Pagination::DescribeFleetUtilizationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -105,6 +111,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGameServerInstancesRequest,
                                     Pagination::DescribeGameServerInstancesPaginationTraits<DerivedClient>>
   DescribeGameServerInstancesPaginator(const Model::DescribeGameServerInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGameServerInstancesRequest,
                                              Pagination::DescribeGameServerInstancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -116,6 +123,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGameSessionDetailsRequest,
                                     Pagination::DescribeGameSessionDetailsPaginationTraits<DerivedClient>>
   DescribeGameSessionDetailsPaginator(const Model::DescribeGameSessionDetailsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGameSessionDetailsRequest,
                                              Pagination::DescribeGameSessionDetailsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -127,6 +135,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGameSessionQueuesRequest,
                                     Pagination::DescribeGameSessionQueuesPaginationTraits<DerivedClient>>
   DescribeGameSessionQueuesPaginator(const Model::DescribeGameSessionQueuesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGameSessionQueuesRequest,
                                              Pagination::DescribeGameSessionQueuesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -138,6 +147,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGameSessionsRequest,
                                     Pagination::DescribeGameSessionsPaginationTraits<DerivedClient>>
   DescribeGameSessionsPaginator(const Model::DescribeGameSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeGameSessionsRequest,
                                              Pagination::DescribeGameSessionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -149,6 +159,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstancesRequest,
                                     Pagination::DescribeInstancesPaginationTraits<DerivedClient>>
   DescribeInstancesPaginator(const Model::DescribeInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstancesRequest,
                                              Pagination::DescribeInstancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -160,6 +171,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMatchmakingConfigurationsRequest,
                                     Pagination::DescribeMatchmakingConfigurationsPaginationTraits<DerivedClient>>
   DescribeMatchmakingConfigurationsPaginator(const Model::DescribeMatchmakingConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMatchmakingConfigurationsRequest,
                                              Pagination::DescribeMatchmakingConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -171,6 +183,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMatchmakingRuleSetsRequest,
                                     Pagination::DescribeMatchmakingRuleSetsPaginationTraits<DerivedClient>>
   DescribeMatchmakingRuleSetsPaginator(const Model::DescribeMatchmakingRuleSetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMatchmakingRuleSetsRequest,
                                              Pagination::DescribeMatchmakingRuleSetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -182,6 +195,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePlayerSessionsRequest,
                                     Pagination::DescribePlayerSessionsPaginationTraits<DerivedClient>>
   DescribePlayerSessionsPaginator(const Model::DescribePlayerSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePlayerSessionsRequest,
                                              Pagination::DescribePlayerSessionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -193,6 +207,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeScalingPoliciesRequest,
                                     Pagination::DescribeScalingPoliciesPaginationTraits<DerivedClient>>
   DescribeScalingPoliciesPaginator(const Model::DescribeScalingPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeScalingPoliciesRequest,
                                              Pagination::DescribeScalingPoliciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -203,6 +218,7 @@ class GameLiftPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAliasesRequest, Pagination::ListAliasesPaginationTraits<DerivedClient>>
   ListAliasesPaginator(const Model::ListAliasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAliasesRequest,
                                              Pagination::ListAliasesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -213,6 +229,7 @@ class GameLiftPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuildsRequest, Pagination::ListBuildsPaginationTraits<DerivedClient>>
   ListBuildsPaginator(const Model::ListBuildsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBuildsRequest,
                                              Pagination::ListBuildsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -223,6 +240,7 @@ class GameLiftPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComputeRequest, Pagination::ListComputePaginationTraits<DerivedClient>>
   ListComputePaginator(const Model::ListComputeRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListComputeRequest,
                                              Pagination::ListComputePaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -234,6 +252,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContainerFleetsRequest,
                                     Pagination::ListContainerFleetsPaginationTraits<DerivedClient>>
   ListContainerFleetsPaginator(const Model::ListContainerFleetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContainerFleetsRequest,
                                              Pagination::ListContainerFleetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -245,6 +264,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContainerGroupDefinitionsRequest,
                                     Pagination::ListContainerGroupDefinitionsPaginationTraits<DerivedClient>>
   ListContainerGroupDefinitionsPaginator(const Model::ListContainerGroupDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContainerGroupDefinitionsRequest,
                                              Pagination::ListContainerGroupDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -256,6 +276,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContainerGroupDefinitionVersionsRequest,
                                     Pagination::ListContainerGroupDefinitionVersionsPaginationTraits<DerivedClient>>
   ListContainerGroupDefinitionVersionsPaginator(const Model::ListContainerGroupDefinitionVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContainerGroupDefinitionVersionsRequest,
                                              Pagination::ListContainerGroupDefinitionVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -267,6 +288,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetDeploymentsRequest,
                                     Pagination::ListFleetDeploymentsPaginationTraits<DerivedClient>>
   ListFleetDeploymentsPaginator(const Model::ListFleetDeploymentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetDeploymentsRequest,
                                              Pagination::ListFleetDeploymentsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -277,6 +299,7 @@ class GameLiftPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetsRequest, Pagination::ListFleetsPaginationTraits<DerivedClient>>
   ListFleetsPaginator(const Model::ListFleetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFleetsRequest,
                                              Pagination::ListFleetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -288,6 +311,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGameServerGroupsRequest,
                                     Pagination::ListGameServerGroupsPaginationTraits<DerivedClient>>
   ListGameServerGroupsPaginator(const Model::ListGameServerGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGameServerGroupsRequest,
                                              Pagination::ListGameServerGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -299,6 +323,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGameServersRequest,
                                     Pagination::ListGameServersPaginationTraits<DerivedClient>>
   ListGameServersPaginator(const Model::ListGameServersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGameServersRequest,
                                              Pagination::ListGameServersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -309,6 +334,7 @@ class GameLiftPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLocationsRequest, Pagination::ListLocationsPaginationTraits<DerivedClient>>
   ListLocationsPaginator(const Model::ListLocationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLocationsRequest,
                                              Pagination::ListLocationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -319,6 +345,7 @@ class GameLiftPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScriptsRequest, Pagination::ListScriptsPaginationTraits<DerivedClient>>
   ListScriptsPaginator(const Model::ListScriptsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScriptsRequest,
                                              Pagination::ListScriptsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -330,6 +357,7 @@ class GameLiftPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchGameSessionsRequest,
                                     Pagination::SearchGameSessionsPaginationTraits<DerivedClient>>
   SearchGameSessionsPaginator(const Model::SearchGameSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchGameSessionsRequest,
                                              Pagination::SearchGameSessionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

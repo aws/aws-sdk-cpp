@@ -31,6 +31,7 @@ static const int MALICIOUS_PROCESS_HASH = HashingUtils::HashString("MALICIOUS_PR
 static const int CRYPTOMINING_IP_HASH = HashingUtils::HashString("CRYPTOMINING_IP");
 static const int CRYPTOMINING_DOMAIN_HASH = HashingUtils::HashString("CRYPTOMINING_DOMAIN");
 static const int CRYPTOMINING_PROCESS_HASH = HashingUtils::HashString("CRYPTOMINING_PROCESS");
+static const int MALICIOUS_FILE_HASH = HashingUtils::HashString("MALICIOUS_FILE");
 
 IndicatorType GetIndicatorTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +67,8 @@ IndicatorType GetIndicatorTypeForName(const Aws::String& name) {
     return IndicatorType::CRYPTOMINING_DOMAIN;
   } else if (hashCode == CRYPTOMINING_PROCESS_HASH) {
     return IndicatorType::CRYPTOMINING_PROCESS;
+  } else if (hashCode == MALICIOUS_FILE_HASH) {
+    return IndicatorType::MALICIOUS_FILE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +115,8 @@ Aws::String GetNameForIndicatorType(IndicatorType enumValue) {
       return "CRYPTOMINING_DOMAIN";
     case IndicatorType::CRYPTOMINING_PROCESS:
       return "CRYPTOMINING_PROCESS";
+    case IndicatorType::MALICIOUS_FILE:
+      return "MALICIOUS_FILE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

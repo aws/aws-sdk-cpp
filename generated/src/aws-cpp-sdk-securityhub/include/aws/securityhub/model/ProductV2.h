@@ -170,6 +170,25 @@ class ProductV2 {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The identifier for the AWS Marketplace product associated with this
+   * integration.</p>
+   */
+  inline const Aws::String& GetMarketplaceProductId() const { return m_marketplaceProductId; }
+  inline bool MarketplaceProductIdHasBeenSet() const { return m_marketplaceProductIdHasBeenSet; }
+  template <typename MarketplaceProductIdT = Aws::String>
+  void SetMarketplaceProductId(MarketplaceProductIdT&& value) {
+    m_marketplaceProductIdHasBeenSet = true;
+    m_marketplaceProductId = std::forward<MarketplaceProductIdT>(value);
+  }
+  template <typename MarketplaceProductIdT = Aws::String>
+  ProductV2& WithMarketplaceProductId(MarketplaceProductIdT&& value) {
+    SetMarketplaceProductId(std::forward<MarketplaceProductIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_productV2Name;
 
@@ -184,6 +203,8 @@ class ProductV2 {
   Aws::String m_marketplaceUrl;
 
   Aws::String m_activationUrl;
+
+  Aws::String m_marketplaceProductId;
   bool m_productV2NameHasBeenSet = false;
   bool m_companyNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -191,6 +212,7 @@ class ProductV2 {
   bool m_integrationV2TypesHasBeenSet = false;
   bool m_marketplaceUrlHasBeenSet = false;
   bool m_activationUrlHasBeenSet = false;
+  bool m_marketplaceProductIdHasBeenSet = false;
 };
 
 }  // namespace Model

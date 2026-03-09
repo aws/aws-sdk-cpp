@@ -60,7 +60,8 @@ class AwsCertificateManagerCertificateDetails {
   ///@{
   /**
    * <p>Indicates when the certificate was requested.</p> <p>For more information
-   * about the validation and formatting of timestamp fields in Security Hub, see <a
+   * about the validation and formatting of timestamp fields in Security Hub CSPM,
+   * see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
@@ -181,7 +182,7 @@ class AwsCertificateManagerCertificateDetails {
   /**
    * <p>Indicates when the certificate was imported. Provided if the certificate type
    * is <code>IMPORTED</code>.</p> <p>For more information about the validation and
-   * formatting of timestamp fields in Security Hub, see <a
+   * formatting of timestamp fields in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetImportedAt() const { return m_importedAt; }
@@ -227,7 +228,7 @@ class AwsCertificateManagerCertificateDetails {
   /**
    * <p>Indicates when the certificate was issued. Provided if the certificate type
    * is <code>AMAZON_ISSUED</code>.</p> <p>For more information about the validation
-   * and formatting of timestamp fields in Security Hub, see <a
+   * and formatting of timestamp fields in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetIssuedAt() const { return m_issuedAt; }
@@ -312,7 +313,7 @@ class AwsCertificateManagerCertificateDetails {
   /**
    * <p>The time after which the certificate becomes invalid.</p> <p>For more
    * information about the validation and formatting of timestamp fields in Security
-   * Hub, see <a
+   * Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetNotAfter() const { return m_notAfter; }
@@ -333,7 +334,7 @@ class AwsCertificateManagerCertificateDetails {
   /**
    * <p>The time before which the certificate is not valid.</p> <p>For more
    * information about the validation and formatting of timestamp fields in Security
-   * Hub, see <a
+   * Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::String& GetNotBefore() const { return m_notBefore; }

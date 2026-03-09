@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -280,6 +281,8 @@ class GetMissionProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_missionProfileId;
 
@@ -308,6 +311,7 @@ class GetMissionProfileResult {
   Aws::String m_streamsKmsRole;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_missionProfileIdHasBeenSet = false;
   bool m_missionProfileArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

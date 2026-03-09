@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/codeguru-reviewer/model/CodeReview.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -58,10 +59,13 @@ class DescribeCodeReviewResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CodeReview m_codeReview;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_codeReviewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

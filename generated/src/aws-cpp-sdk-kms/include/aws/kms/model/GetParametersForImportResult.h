@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -119,6 +120,8 @@ class GetParametersForImportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_keyId;
 
@@ -129,6 +132,7 @@ class GetParametersForImportResult {
   Aws::Utils::DateTime m_parametersValidTo{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyIdHasBeenSet = false;
   bool m_importTokenHasBeenSet = false;
   bool m_publicKeyHasBeenSet = false;

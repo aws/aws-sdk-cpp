@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
 #include <aws/neptune-graph/model/QueryState.h>
@@ -120,6 +121,8 @@ class GetQueryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_id;
 
@@ -132,6 +135,7 @@ class GetQueryResult {
   QueryState m_state{QueryState::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
   bool m_queryStringHasBeenSet = false;
   bool m_waitedHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/events/model/RuleState.h>
@@ -218,6 +219,8 @@ class DescribeRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_name;
 
@@ -240,6 +243,7 @@ class DescribeRuleResult {
   Aws::String m_createdBy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_eventPatternHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/elasticloadbalancingv2/model/IpAddressType.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
@@ -56,10 +57,13 @@ class SetIpAddressTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ipAddressTypeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

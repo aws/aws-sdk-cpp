@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -127,6 +128,8 @@ class DescribeCollectionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   long long m_faceCount{0};
 
@@ -139,6 +142,7 @@ class DescribeCollectionResult {
   long long m_userCount{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_faceCountHasBeenSet = false;
   bool m_faceModelVersionHasBeenSet = false;
   bool m_collectionARNHasBeenSet = false;

@@ -15,6 +15,7 @@
 #include <aws/chime-sdk-voice/model/ListVoiceProfileDomainsPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/ListVoiceProfilesPaginationTraits.h>
 #include <aws/chime-sdk-voice/model/SearchAvailablePhoneNumbersPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -33,6 +34,7 @@ class ChimeSDKVoicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPhoneNumberOrdersRequest,
                                     Pagination::ListPhoneNumberOrdersPaginationTraits<DerivedClient>>
   ListPhoneNumberOrdersPaginator(const Model::ListPhoneNumberOrdersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPhoneNumberOrdersRequest,
                                              Pagination::ListPhoneNumberOrdersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -44,6 +46,7 @@ class ChimeSDKVoicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPhoneNumbersRequest,
                                     Pagination::ListPhoneNumbersPaginationTraits<DerivedClient>>
   ListPhoneNumbersPaginator(const Model::ListPhoneNumbersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPhoneNumbersRequest,
                                              Pagination::ListPhoneNumbersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -55,6 +58,7 @@ class ChimeSDKVoicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProxySessionsRequest,
                                     Pagination::ListProxySessionsPaginationTraits<DerivedClient>>
   ListProxySessionsPaginator(const Model::ListProxySessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProxySessionsRequest,
                                              Pagination::ListProxySessionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -66,6 +70,7 @@ class ChimeSDKVoicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSipMediaApplicationsRequest,
                                     Pagination::ListSipMediaApplicationsPaginationTraits<DerivedClient>>
   ListSipMediaApplicationsPaginator(const Model::ListSipMediaApplicationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSipMediaApplicationsRequest,
                                              Pagination::ListSipMediaApplicationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -76,6 +81,7 @@ class ChimeSDKVoicePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSipRulesRequest, Pagination::ListSipRulesPaginationTraits<DerivedClient>>
   ListSipRulesPaginator(const Model::ListSipRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSipRulesRequest,
                                              Pagination::ListSipRulesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -87,6 +93,7 @@ class ChimeSDKVoicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVoiceConnectorGroupsRequest,
                                     Pagination::ListVoiceConnectorGroupsPaginationTraits<DerivedClient>>
   ListVoiceConnectorGroupsPaginator(const Model::ListVoiceConnectorGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVoiceConnectorGroupsRequest,
                                              Pagination::ListVoiceConnectorGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -98,6 +105,7 @@ class ChimeSDKVoicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVoiceConnectorsRequest,
                                     Pagination::ListVoiceConnectorsPaginationTraits<DerivedClient>>
   ListVoiceConnectorsPaginator(const Model::ListVoiceConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVoiceConnectorsRequest,
                                              Pagination::ListVoiceConnectorsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -109,6 +117,7 @@ class ChimeSDKVoicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVoiceProfileDomainsRequest,
                                     Pagination::ListVoiceProfileDomainsPaginationTraits<DerivedClient>>
   ListVoiceProfileDomainsPaginator(const Model::ListVoiceProfileDomainsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVoiceProfileDomainsRequest,
                                              Pagination::ListVoiceProfileDomainsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -120,6 +129,7 @@ class ChimeSDKVoicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVoiceProfilesRequest,
                                     Pagination::ListVoiceProfilesPaginationTraits<DerivedClient>>
   ListVoiceProfilesPaginator(const Model::ListVoiceProfilesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVoiceProfilesRequest,
                                              Pagination::ListVoiceProfilesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -131,6 +141,7 @@ class ChimeSDKVoicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchAvailablePhoneNumbersRequest,
                                     Pagination::SearchAvailablePhoneNumbersPaginationTraits<DerivedClient>>
   SearchAvailablePhoneNumbersPaginator(const Model::SearchAvailablePhoneNumbersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchAvailablePhoneNumbersRequest,
                                              Pagination::SearchAvailablePhoneNumbersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

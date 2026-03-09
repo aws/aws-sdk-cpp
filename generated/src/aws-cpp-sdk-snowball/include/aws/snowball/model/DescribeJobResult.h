@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
@@ -84,12 +85,15 @@ class DescribeJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   JobMetadata m_jobMetadata;
 
   Aws::Vector<JobMetadata> m_subJobMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobMetadataHasBeenSet = false;
   bool m_subJobMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

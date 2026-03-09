@@ -182,7 +182,7 @@ SecurityHubClient::SecurityHubClient(const std::shared_ptr<AWSCredentialsProvide
 }
 
 /* Legacy constructors due deprecation */
-SecurityHubClient::SecurityHubClient(const Client::ClientConfiguration& clientConfiguration)
+SecurityHubClient::SecurityHubClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -194,7 +194,7 @@ SecurityHubClient::SecurityHubClient(const Client::ClientConfiguration& clientCo
   init(m_clientConfiguration);
 }
 
-SecurityHubClient::SecurityHubClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SecurityHubClient::SecurityHubClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -205,7 +205,7 @@ SecurityHubClient::SecurityHubClient(const AWSCredentials& credentials, const Cl
 }
 
 SecurityHubClient::SecurityHubClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                     const Client::ClientConfiguration& clientConfiguration)
+                                     const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

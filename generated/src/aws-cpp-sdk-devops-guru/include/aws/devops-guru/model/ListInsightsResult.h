@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
@@ -107,6 +108,8 @@ class ListInsightsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<ProactiveInsightSummary> m_proactiveInsights;
 
@@ -115,6 +118,7 @@ class ListInsightsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_proactiveInsightsHasBeenSet = false;
   bool m_reactiveInsightsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

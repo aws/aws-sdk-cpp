@@ -32,7 +32,7 @@ class EnableSecurityHubRequest : public SecurityHubRequest {
 
   ///@{
   /**
-   * <p>The tags to add to the hub resource when you enable Security Hub.</p>
+   * <p>The tags to add to the hub resource when you enable Security Hub CSPM.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -56,8 +56,8 @@ class EnableSecurityHubRequest : public SecurityHubRequest {
 
   ///@{
   /**
-   * <p>Whether to enable the security standards that Security Hub has designated as
-   * automatically enabled. If you don't provide a value for
+   * <p>Whether to enable the security standards that Security Hub CSPM has
+   * designated as automatically enabled. If you don't provide a value for
    * <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not
    * enable the automatically enabled standards, set
    * <code>EnableDefaultStandards</code> to <code>false</code>.</p>
@@ -76,17 +76,17 @@ class EnableSecurityHubRequest : public SecurityHubRequest {
 
   ///@{
   /**
-   * <p>This field, used when enabling Security Hub, specifies whether the calling
-   * account has consolidated control findings turned on. If the value for this field
-   * is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding
-   * for a control check even when the check applies to multiple enabled
-   * standards.</p> <p>If the value for this field is set to
-   * <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a
-   * control check when the check applies to multiple enabled standards.</p> <p>The
+   * <p>This field, used when enabling Security Hub CSPM, specifies whether the
+   * calling account has consolidated control findings turned on. If the value for
+   * this field is set to <code>SECURITY_CONTROL</code>, Security Hub CSPM generates
+   * a single finding for a control check even when the check applies to multiple
+   * enabled standards.</p> <p>If the value for this field is set to
+   * <code>STANDARD_CONTROL</code>, Security Hub CSPM generates separate findings for
+   * a control check when the check applies to multiple enabled standards.</p> <p>The
    * value for this field in a member account matches the value in the administrator
    * account. For accounts that aren't part of an organization, the default value of
-   * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
-   * after February 23, 2023.</p>
+   * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub CSPM on
+   * or after February 23, 2023.</p>
    */
   inline ControlFindingGenerator GetControlFindingGenerator() const { return m_controlFindingGenerator; }
   inline bool ControlFindingGeneratorHasBeenSet() const { return m_controlFindingGeneratorHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/FleetStatus.h>
+#include <aws/gamelift/model/PlayerGatewayStatus.h>
 
 #include <utility>
 
@@ -81,12 +82,39 @@ class LocationState {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The current status of player gateway in this location for this fleet. Note,
+   * even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player
+   * gateway might not be available in a specific location. For more information
+   * about locations where player gateway is supported, see <a
+   * href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon
+   * GameLift Servers service locations</a>.</p> <p>Possible values include:</p> <ul>
+   * <li> <p> <code>ENABLED</code> -- Player gateway is available for this fleet
+   * location.</p> </li> <li> <p> <code>DISABLED</code> -- Player gateway is not
+   * available for this fleet location.</p> </li> </ul>
+   */
+  inline PlayerGatewayStatus GetPlayerGatewayStatus() const { return m_playerGatewayStatus; }
+  inline bool PlayerGatewayStatusHasBeenSet() const { return m_playerGatewayStatusHasBeenSet; }
+  inline void SetPlayerGatewayStatus(PlayerGatewayStatus value) {
+    m_playerGatewayStatusHasBeenSet = true;
+    m_playerGatewayStatus = value;
+  }
+  inline LocationState& WithPlayerGatewayStatus(PlayerGatewayStatus value) {
+    SetPlayerGatewayStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_location;
 
   FleetStatus m_status{FleetStatus::NOT_SET};
+
+  PlayerGatewayStatus m_playerGatewayStatus{PlayerGatewayStatus::NOT_SET};
   bool m_locationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_playerGatewayStatusHasBeenSet = false;
 };
 
 }  // namespace Model

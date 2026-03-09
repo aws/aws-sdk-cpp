@@ -7,6 +7,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/PipelineDeclaration.h>
 #include <aws/codepipeline/model/PipelineMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -84,12 +85,15 @@ class GetPipelineResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   PipelineDeclaration m_pipeline;
 
   PipelineMetadata m_metadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_pipelineHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

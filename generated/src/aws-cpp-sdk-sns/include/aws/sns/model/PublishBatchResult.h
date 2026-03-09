@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/model/BatchResultErrorEntry.h>
@@ -89,12 +90,15 @@ class PublishBatchResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<PublishBatchResultEntry> m_successful;
 
   Aws::Vector<BatchResultErrorEntry> m_failed;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulHasBeenSet = false;
   bool m_failedHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -93,7 +93,7 @@ ManagedBlockchainQueryClient::ManagedBlockchainQueryClient(
 }
 
 /* Legacy constructors due deprecation */
-ManagedBlockchainQueryClient::ManagedBlockchainQueryClient(const Client::ClientConfiguration& clientConfiguration)
+ManagedBlockchainQueryClient::ManagedBlockchainQueryClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -106,7 +106,7 @@ ManagedBlockchainQueryClient::ManagedBlockchainQueryClient(const Client::ClientC
 }
 
 ManagedBlockchainQueryClient::ManagedBlockchainQueryClient(const AWSCredentials& credentials,
-                                                           const Client::ClientConfiguration& clientConfiguration)
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -117,7 +117,7 @@ ManagedBlockchainQueryClient::ManagedBlockchainQueryClient(const AWSCredentials&
 }
 
 ManagedBlockchainQueryClient::ManagedBlockchainQueryClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                           const Client::ClientConfiguration& clientConfiguration)
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

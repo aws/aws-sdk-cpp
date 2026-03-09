@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/textract/Textract_EXPORTS.h>
 
@@ -75,12 +76,15 @@ class CreateAdapterVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_adapterId;
 
   Aws::String m_adapterVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_adapterIdHasBeenSet = false;
   bool m_adapterVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

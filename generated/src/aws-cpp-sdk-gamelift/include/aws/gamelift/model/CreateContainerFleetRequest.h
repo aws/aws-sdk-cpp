@@ -14,6 +14,7 @@
 #include <aws/gamelift/model/IpPermission.h>
 #include <aws/gamelift/model/LocationConfiguration.h>
 #include <aws/gamelift/model/LogConfiguration.h>
+#include <aws/gamelift/model/PlayerGatewayMode.h>
 #include <aws/gamelift/model/ProtectionPolicy.h>
 #include <aws/gamelift/model/Tag.h>
 
@@ -440,6 +441,45 @@ class CreateContainerFleetRequest : public GameLiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configures player gateway for your fleet. Player gateway provides benefits
+   * such as DDoS protection by rate limiting and validating traﬃc before it reaches
+   * game servers, hiding game server IP addresses from players, and providing
+   * updated endpoints when relay endpoints become unhealthy.</p> <p> <b>How it
+   * works:</b> When enabled, game clients connect to relay endpoints instead of to
+   * your game servers. Player gateway validates player gateway tokens and routes
+   * traffic to the appropriate game server. Your game backend calls <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a>
+   * to retrieve relay endpoints and player gateway tokens for your game clients. To
+   * learn more about this topic, see <a
+   * href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/ddos-protection-intro.html">DDoS
+   * protection with Amazon GameLift Servers player gateway</a>.</p> <p>Possible
+   * values include:</p> <ul> <li> <p> <code>DISABLED</code> (default) -- Game
+   * clients connect to the game server endpoint. Use this when you do not intend to
+   * integrate your game with player gateway.</p> </li> <li> <p> <code>ENABLED</code>
+   * -- Player gateway is available in fleet locations where it is supported. Your
+   * game backend can call <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a>
+   * to obtain a player gateway token and endpoints for game clients.</p> </li> <li>
+   * <p> <code>REQUIRED</code> -- Player gateway is available in fleet locations
+   * where it is supported, and the fleet can only use locations that support this
+   * feature. Attempting to add a remote location to your fleet which does not
+   * support player gateway will result in an
+   * <code>InvalidRequestException</code>.</p> </li> </ul>
+   */
+  inline PlayerGatewayMode GetPlayerGatewayMode() const { return m_playerGatewayMode; }
+  inline bool PlayerGatewayModeHasBeenSet() const { return m_playerGatewayModeHasBeenSet; }
+  inline void SetPlayerGatewayMode(PlayerGatewayMode value) {
+    m_playerGatewayModeHasBeenSet = true;
+    m_playerGatewayMode = value;
+  }
+  inline CreateContainerFleetRequest& WithPlayerGatewayMode(PlayerGatewayMode value) {
+    SetPlayerGatewayMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fleetRoleArn;
 
@@ -470,6 +510,8 @@ class CreateContainerFleetRequest : public GameLiftRequest {
   LogConfiguration m_logConfiguration;
 
   Aws::Vector<Tag> m_tags;
+
+  PlayerGatewayMode m_playerGatewayMode{PlayerGatewayMode::NOT_SET};
   bool m_fleetRoleArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_gameServerContainerGroupDefinitionNameHasBeenSet = false;
@@ -485,6 +527,7 @@ class CreateContainerFleetRequest : public GameLiftRequest {
   bool m_gameSessionCreationLimitPolicyHasBeenSet = false;
   bool m_logConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_playerGatewayModeHasBeenSet = false;
 };
 
 }  // namespace Model

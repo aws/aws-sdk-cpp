@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
 #include <aws/bcm-data-exports/model/ResourceTag.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -27,23 +28,6 @@ class ListTagsForResourceResult {
   AWS_BCMDATAEXPORTS_API ListTagsForResourceResult() = default;
   AWS_BCMDATAEXPORTS_API ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_BCMDATAEXPORTS_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-  ///@{
-  /**
-   * <p>The token to retrieve the next set of results.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListTagsForResourceResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -70,6 +54,23 @@ class ListTagsForResourceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The token to retrieve the next set of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListTagsForResourceResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -83,14 +84,17 @@ class ListTagsForResourceResult {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_nextToken;
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
+ private:
   Aws::Vector<ResourceTag> m_resourceTags;
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
-  bool m_nextTokenHasBeenSet = false;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceTagsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

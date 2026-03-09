@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -294,6 +295,8 @@ class GetMonitorResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_monitorName;
 
@@ -322,6 +325,7 @@ class GetMonitorResult {
   HealthEventsConfig m_healthEventsConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_monitorNameHasBeenSet = false;
   bool m_monitorArnHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;

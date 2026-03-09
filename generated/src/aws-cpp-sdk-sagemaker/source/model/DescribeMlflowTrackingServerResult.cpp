@@ -22,6 +22,7 @@ DescribeMlflowTrackingServerResult::DescribeMlflowTrackingServerResult(const Aws
 }
 
 DescribeMlflowTrackingServerResult& DescribeMlflowTrackingServerResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("TrackingServerArn")) {
     m_trackingServerArn = jsonValue.GetString("TrackingServerArn");
@@ -87,6 +88,14 @@ DescribeMlflowTrackingServerResult& DescribeMlflowTrackingServerResult::operator
   if (jsonValue.ValueExists("LastModifiedBy")) {
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
     m_lastModifiedByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("S3BucketOwnerAccountId")) {
+    m_s3BucketOwnerAccountId = jsonValue.GetString("S3BucketOwnerAccountId");
+    m_s3BucketOwnerAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("S3BucketOwnerVerification")) {
+    m_s3BucketOwnerVerification = jsonValue.GetBool("S3BucketOwnerVerification");
+    m_s3BucketOwnerVerificationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

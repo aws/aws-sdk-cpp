@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptions_EXPORTS.h>
 #include <aws/license-manager-linux-subscriptions/model/SubscriptionProviderSource.h>
@@ -147,6 +148,8 @@ class GetRegisteredSubscriptionProviderResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_lastSuccessfulDataRetrievalTime;
 
@@ -161,6 +164,7 @@ class GetRegisteredSubscriptionProviderResult {
   Aws::String m_subscriptionProviderStatusMessage;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_lastSuccessfulDataRetrievalTimeHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
   bool m_subscriptionProviderArnHasBeenSet = false;

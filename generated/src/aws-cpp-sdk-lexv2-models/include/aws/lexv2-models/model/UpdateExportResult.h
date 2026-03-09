@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
@@ -146,6 +147,8 @@ class UpdateExportResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_exportId;
 
@@ -160,6 +163,7 @@ class UpdateExportResult {
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_exportIdHasBeenSet = false;
   bool m_resourceSpecificationHasBeenSet = false;
   bool m_fileFormatHasBeenSet = false;

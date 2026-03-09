@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/networkmanager/model/TransitGatewayConnectPeerAssociation.h>
@@ -62,10 +63,13 @@ class DisassociateTransitGatewayConnectPeerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TransitGatewayConnectPeerAssociation m_transitGatewayConnectPeerAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transitGatewayConnectPeerAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

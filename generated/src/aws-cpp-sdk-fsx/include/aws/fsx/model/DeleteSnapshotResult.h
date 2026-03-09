@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/fsx/model/SnapshotLifecycle.h>
@@ -74,12 +75,15 @@ class DeleteSnapshotResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_snapshotId;
 
   SnapshotLifecycle m_lifecycle{SnapshotLifecycle::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_snapshotIdHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

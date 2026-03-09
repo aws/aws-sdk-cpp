@@ -133,6 +133,14 @@ FleetAttributes& FleetAttributes::operator=(JsonView jsonValue) {
         jsonValue.GetString("InstanceRoleCredentialsProvider"));
     m_instanceRoleCredentialsProviderHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PlayerGatewayMode")) {
+    m_playerGatewayMode = PlayerGatewayModeMapper::GetPlayerGatewayModeForName(jsonValue.GetString("PlayerGatewayMode"));
+    m_playerGatewayModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PlayerGatewayConfiguration")) {
+    m_playerGatewayConfiguration = jsonValue.GetObject("PlayerGatewayConfiguration");
+    m_playerGatewayConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -255,6 +263,14 @@ JsonValue FleetAttributes::Jsonize() const {
   if (m_instanceRoleCredentialsProviderHasBeenSet) {
     payload.WithString("InstanceRoleCredentialsProvider",
                        InstanceRoleCredentialsProviderMapper::GetNameForInstanceRoleCredentialsProvider(m_instanceRoleCredentialsProvider));
+  }
+
+  if (m_playerGatewayModeHasBeenSet) {
+    payload.WithString("PlayerGatewayMode", PlayerGatewayModeMapper::GetNameForPlayerGatewayMode(m_playerGatewayMode));
+  }
+
+  if (m_playerGatewayConfigurationHasBeenSet) {
+    payload.WithObject("PlayerGatewayConfiguration", m_playerGatewayConfiguration.Jsonize());
   }
 
   return payload;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sts/STS_EXPORTS.h>
 #include <aws/sts/model/Credentials.h>
@@ -89,12 +90,15 @@ class AssumeRootResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Credentials m_credentials;
 
   Aws::String m_sourceIdentity;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_credentialsHasBeenSet = false;
   bool m_sourceIdentityHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/voice-id/model/AuthenticationResult.h>
@@ -154,6 +155,8 @@ class EvaluateSessionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AuthenticationResult m_authenticationResult;
 
@@ -168,6 +171,7 @@ class EvaluateSessionResult {
   StreamingStatus m_streamingStatus{StreamingStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authenticationResultHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_fraudDetectionResultHasBeenSet = false;

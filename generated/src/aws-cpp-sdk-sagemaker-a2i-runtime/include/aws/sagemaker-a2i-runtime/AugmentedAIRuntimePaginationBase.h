@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/sagemaker-a2i-runtime/model/ListHumanLoopsPaginationTraits.h>
 
@@ -23,6 +24,7 @@ class AugmentedAIRuntimePaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHumanLoopsRequest, Pagination::ListHumanLoopsPaginationTraits<DerivedClient>>
   ListHumanLoopsPaginator(const Model::ListHumanLoopsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHumanLoopsRequest,
                                              Pagination::ListHumanLoopsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/outposts/model/Address.h>
@@ -74,12 +75,15 @@ class UpdateSiteAddressResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AddressType m_addressType{AddressType::NOT_SET};
 
   Address m_address;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_addressTypeHasBeenSet = false;
   bool m_addressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

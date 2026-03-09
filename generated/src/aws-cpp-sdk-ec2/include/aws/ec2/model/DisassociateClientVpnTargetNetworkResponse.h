@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/AssociationStatus.h>
@@ -77,12 +78,15 @@ class DisassociateClientVpnTargetNetworkResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_associationId;
 
   AssociationStatus m_status;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_associationIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

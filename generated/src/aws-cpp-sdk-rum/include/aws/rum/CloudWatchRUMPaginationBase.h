@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/rum/model/BatchGetRumMetricDefinitionsPaginationTraits.h>
 #include <aws/rum/model/GetAppMonitorDataPaginationTraits.h>
@@ -27,6 +28,7 @@ class CloudWatchRUMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::BatchGetRumMetricDefinitionsRequest,
                                     Pagination::BatchGetRumMetricDefinitionsPaginationTraits<DerivedClient>>
   BatchGetRumMetricDefinitionsPaginator(const Model::BatchGetRumMetricDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::BatchGetRumMetricDefinitionsRequest,
                                              Pagination::BatchGetRumMetricDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class CloudWatchRUMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAppMonitorDataRequest,
                                     Pagination::GetAppMonitorDataPaginationTraits<DerivedClient>>
   GetAppMonitorDataPaginator(const Model::GetAppMonitorDataRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetAppMonitorDataRequest,
                                              Pagination::GetAppMonitorDataPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -49,6 +52,7 @@ class CloudWatchRUMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppMonitorsRequest,
                                     Pagination::ListAppMonitorsPaginationTraits<DerivedClient>>
   ListAppMonitorsPaginator(const Model::ListAppMonitorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppMonitorsRequest,
                                              Pagination::ListAppMonitorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -60,6 +64,7 @@ class CloudWatchRUMPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRumMetricsDestinationsRequest,
                                     Pagination::ListRumMetricsDestinationsPaginationTraits<DerivedClient>>
   ListRumMetricsDestinationsPaginator(const Model::ListRumMetricsDestinationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRumMetricsDestinationsRequest,
                                              Pagination::ListRumMetricsDestinationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

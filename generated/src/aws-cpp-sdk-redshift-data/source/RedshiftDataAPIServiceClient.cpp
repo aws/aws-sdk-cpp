@@ -95,7 +95,7 @@ RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(
 }
 
 /* Legacy constructors due deprecation */
-RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(const Client::ClientConfiguration& clientConfiguration)
+RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -108,7 +108,7 @@ RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(const Client::ClientC
 }
 
 RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(const AWSCredentials& credentials,
-                                                           const Client::ClientConfiguration& clientConfiguration)
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -119,7 +119,7 @@ RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(const AWSCredentials&
 }
 
 RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                           const Client::ClientConfiguration& clientConfiguration)
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

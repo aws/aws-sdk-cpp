@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
@@ -148,6 +149,8 @@ class GetMessageInsightsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_messageId;
 
@@ -160,6 +163,7 @@ class GetMessageInsightsResult {
   Aws::Vector<EmailInsights> m_insights;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_messageIdHasBeenSet = false;
   bool m_fromEmailAddressHasBeenSet = false;
   bool m_subjectHasBeenSet = false;

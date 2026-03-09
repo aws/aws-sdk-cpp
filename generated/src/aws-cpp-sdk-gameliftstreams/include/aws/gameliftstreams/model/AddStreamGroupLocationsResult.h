@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
@@ -98,12 +99,15 @@ class AddStreamGroupLocationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_identifier;
 
   Aws::Vector<LocationState> m_locations;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identifierHasBeenSet = false;
   bool m_locationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

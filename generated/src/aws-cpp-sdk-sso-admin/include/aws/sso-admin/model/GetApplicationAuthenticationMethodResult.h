@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/model/AuthenticationMethod.h>
@@ -60,10 +61,13 @@ class GetApplicationAuthenticationMethodResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AuthenticationMethod m_authenticationMethod;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authenticationMethodHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

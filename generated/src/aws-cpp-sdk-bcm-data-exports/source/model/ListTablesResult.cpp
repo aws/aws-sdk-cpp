@@ -20,17 +20,18 @@ using namespace Aws;
 ListTablesResult::ListTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListTablesResult& ListTablesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("NextToken")) {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Tables")) {
     Aws::Utils::Array<JsonView> tablesJsonList = jsonValue.GetArray("Tables");
     for (unsigned tablesIndex = 0; tablesIndex < tablesJsonList.GetLength(); ++tablesIndex) {
       m_tables.push_back(tablesJsonList[tablesIndex].AsObject());
     }
     m_tablesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NextToken")) {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

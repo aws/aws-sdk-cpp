@@ -8,6 +8,7 @@
 #include <aws/comprehendmedical/model/Characters.h>
 #include <aws/comprehendmedical/model/SNOMEDCTDetails.h>
 #include <aws/comprehendmedical/model/SNOMEDCTEntity.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -143,6 +144,8 @@ class InferSNOMEDCTResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<SNOMEDCTEntity> m_entities;
 
@@ -155,6 +158,7 @@ class InferSNOMEDCTResult {
   Characters m_characters;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_entitiesHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;
   bool m_modelVersionHasBeenSet = false;

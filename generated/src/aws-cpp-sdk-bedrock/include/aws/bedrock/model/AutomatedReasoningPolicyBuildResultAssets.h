@@ -6,10 +6,13 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyBuildLog.h>
+#include <aws/bedrock/model/AutomatedReasoningPolicyBuildResultAssetManifest.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyDefinition.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyDefinitionQualityReport.h>
+#include <aws/bedrock/model/AutomatedReasoningPolicyFidelityReport.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyGeneratedTestCases.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyScenarios.h>
+#include <aws/bedrock/model/AutomatedReasoningPolicySourceDocument.h>
 
 #include <utility>
 
@@ -132,6 +135,67 @@ class AutomatedReasoningPolicyBuildResultAssets {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A manifest listing all available artifacts produced by the build workflow.
+   * This provides a catalog of all assets that can be retrieved, including their
+   * types, names, and identifiers.</p>
+   */
+  inline const AutomatedReasoningPolicyBuildResultAssetManifest& GetAssetManifest() const { return m_assetManifest; }
+  inline bool AssetManifestHasBeenSet() const { return m_assetManifestHasBeenSet; }
+  template <typename AssetManifestT = AutomatedReasoningPolicyBuildResultAssetManifest>
+  void SetAssetManifest(AssetManifestT&& value) {
+    m_assetManifestHasBeenSet = true;
+    m_assetManifest = std::forward<AssetManifestT>(value);
+  }
+  template <typename AssetManifestT = AutomatedReasoningPolicyBuildResultAssetManifest>
+  AutomatedReasoningPolicyBuildResultAssets& WithAssetManifest(AssetManifestT&& value) {
+    SetAssetManifest(std::forward<AssetManifestT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A source document that was used as input during the build workflow. This
+   * allows you to retrieve the original documents that were processed to generate
+   * the policy.</p>
+   */
+  inline const AutomatedReasoningPolicySourceDocument& GetDocument() const { return m_document; }
+  inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
+  template <typename DocumentT = AutomatedReasoningPolicySourceDocument>
+  void SetDocument(DocumentT&& value) {
+    m_documentHasBeenSet = true;
+    m_document = std::forward<DocumentT>(value);
+  }
+  template <typename DocumentT = AutomatedReasoningPolicySourceDocument>
+  AutomatedReasoningPolicyBuildResultAssets& WithDocument(DocumentT&& value) {
+    SetDocument(std::forward<DocumentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A comprehensive fidelity report that measures how accurately the generated
+   * policy represents the source documents. The report includes coverage and
+   * accuracy scores, along with detailed grounding information for rules and
+   * variables.</p>
+   */
+  inline const AutomatedReasoningPolicyFidelityReport& GetFidelityReport() const { return m_fidelityReport; }
+  inline bool FidelityReportHasBeenSet() const { return m_fidelityReportHasBeenSet; }
+  template <typename FidelityReportT = AutomatedReasoningPolicyFidelityReport>
+  void SetFidelityReport(FidelityReportT&& value) {
+    m_fidelityReportHasBeenSet = true;
+    m_fidelityReport = std::forward<FidelityReportT>(value);
+  }
+  template <typename FidelityReportT = AutomatedReasoningPolicyFidelityReport>
+  AutomatedReasoningPolicyBuildResultAssets& WithFidelityReport(FidelityReportT&& value) {
+    SetFidelityReport(std::forward<FidelityReportT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AutomatedReasoningPolicyDefinition m_policyDefinition;
 
@@ -142,11 +206,20 @@ class AutomatedReasoningPolicyBuildResultAssets {
   AutomatedReasoningPolicyGeneratedTestCases m_generatedTestCases;
 
   AutomatedReasoningPolicyScenarios m_policyScenarios;
+
+  AutomatedReasoningPolicyBuildResultAssetManifest m_assetManifest;
+
+  AutomatedReasoningPolicySourceDocument m_document;
+
+  AutomatedReasoningPolicyFidelityReport m_fidelityReport;
   bool m_policyDefinitionHasBeenSet = false;
   bool m_qualityReportHasBeenSet = false;
   bool m_buildLogHasBeenSet = false;
   bool m_generatedTestCasesHasBeenSet = false;
   bool m_policyScenariosHasBeenSet = false;
+  bool m_assetManifestHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
+  bool m_fidelityReportHasBeenSet = false;
 };
 
 }  // namespace Model

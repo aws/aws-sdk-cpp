@@ -130,7 +130,7 @@ OpenSearchServerlessClient::OpenSearchServerlessClient(
 }
 
 /* Legacy constructors due deprecation */
-OpenSearchServerlessClient::OpenSearchServerlessClient(const Client::ClientConfiguration& clientConfiguration)
+OpenSearchServerlessClient::OpenSearchServerlessClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -143,7 +143,7 @@ OpenSearchServerlessClient::OpenSearchServerlessClient(const Client::ClientConfi
 }
 
 OpenSearchServerlessClient::OpenSearchServerlessClient(const AWSCredentials& credentials,
-                                                       const Client::ClientConfiguration& clientConfiguration)
+                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -154,7 +154,7 @@ OpenSearchServerlessClient::OpenSearchServerlessClient(const AWSCredentials& cre
 }
 
 OpenSearchServerlessClient::OpenSearchServerlessClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                       const Client::ClientConfiguration& clientConfiguration)
+                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

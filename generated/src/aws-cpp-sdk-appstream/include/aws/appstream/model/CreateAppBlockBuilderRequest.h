@@ -249,6 +249,23 @@ class CreateAppBlockBuilderRequest : public AppStreamRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and
+   * enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+   */
+  inline bool GetDisableIMDSV1() const { return m_disableIMDSV1; }
+  inline bool DisableIMDSV1HasBeenSet() const { return m_disableIMDSV1HasBeenSet; }
+  inline void SetDisableIMDSV1(bool value) {
+    m_disableIMDSV1HasBeenSet = true;
+    m_disableIMDSV1 = value;
+  }
+  inline CreateAppBlockBuilderRequest& WithDisableIMDSV1(bool value) {
+    SetDisableIMDSV1(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -269,6 +286,8 @@ class CreateAppBlockBuilderRequest : public AppStreamRequest {
   Aws::String m_iamRoleArn;
 
   Aws::Vector<AccessEndpoint> m_accessEndpoints;
+
+  bool m_disableIMDSV1{false};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
@@ -279,6 +298,7 @@ class CreateAppBlockBuilderRequest : public AppStreamRequest {
   bool m_enableDefaultInternetAccessHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
   bool m_accessEndpointsHasBeenSet = false;
+  bool m_disableIMDSV1HasBeenSet = false;
 };
 
 }  // namespace Model

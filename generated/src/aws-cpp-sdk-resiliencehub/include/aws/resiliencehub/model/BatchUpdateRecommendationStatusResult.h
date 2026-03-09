@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
@@ -114,6 +115,8 @@ class BatchUpdateRecommendationStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_appArn;
 
@@ -122,6 +125,7 @@ class BatchUpdateRecommendationStatusResult {
   Aws::Vector<BatchUpdateRecommendationStatusSuccessfulEntry> m_successfulEntries;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_appArnHasBeenSet = false;
   bool m_failedEntriesHasBeenSet = false;
   bool m_successfulEntriesHasBeenSet = false;

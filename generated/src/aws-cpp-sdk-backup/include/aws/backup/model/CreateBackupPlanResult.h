@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/model/AdvancedBackupSetting.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -141,6 +142,8 @@ class CreateBackupPlanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_backupPlanId;
 
@@ -153,6 +156,7 @@ class CreateBackupPlanResult {
   Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_backupPlanIdHasBeenSet = false;
   bool m_backupPlanArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;

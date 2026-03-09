@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/SentimentDetectionJobProperties.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -59,10 +60,13 @@ class DescribeSentimentDetectionJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SentimentDetectionJobProperties m_sentimentDetectionJobProperties;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_sentimentDetectionJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

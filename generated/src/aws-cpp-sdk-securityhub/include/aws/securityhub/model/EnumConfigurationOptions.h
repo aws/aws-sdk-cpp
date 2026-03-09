@@ -35,7 +35,8 @@ class EnumConfigurationOptions {
 
   ///@{
   /**
-   * <p> The Security Hub default value for a control parameter that is an enum. </p>
+   * <p> The Security Hub CSPM default value for a control parameter that is an enum.
+   * </p>
    */
   inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
   inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }

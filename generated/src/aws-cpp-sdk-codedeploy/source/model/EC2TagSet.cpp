@@ -21,13 +21,13 @@ EC2TagSet& EC2TagSet::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("ec2TagSetList")) {
     Aws::Utils::Array<JsonView> ec2TagSetListJsonList = jsonValue.GetArray("ec2TagSetList");
     for (unsigned ec2TagSetListIndex = 0; ec2TagSetListIndex < ec2TagSetListJsonList.GetLength(); ++ec2TagSetListIndex) {
-      Aws::Utils::Array<JsonView> eC2TagFilterListJsonList = ec2TagSetListJsonList[ec2TagSetListIndex].AsArray();
-      Aws::Vector<EC2TagFilter> eC2TagFilterListList;
-      eC2TagFilterListList.reserve((size_t)eC2TagFilterListJsonList.GetLength());
-      for (unsigned eC2TagFilterListIndex = 0; eC2TagFilterListIndex < eC2TagFilterListJsonList.GetLength(); ++eC2TagFilterListIndex) {
-        eC2TagFilterListList.push_back(eC2TagFilterListJsonList[eC2TagFilterListIndex].AsObject());
+      Aws::Utils::Array<JsonView> eC2TagFilterList2JsonList = ec2TagSetListJsonList[ec2TagSetListIndex].AsArray();
+      Aws::Vector<EC2TagFilter> eC2TagFilterList2List;
+      eC2TagFilterList2List.reserve((size_t)eC2TagFilterList2JsonList.GetLength());
+      for (unsigned eC2TagFilterList2Index = 0; eC2TagFilterList2Index < eC2TagFilterList2JsonList.GetLength(); ++eC2TagFilterList2Index) {
+        eC2TagFilterList2List.push_back(eC2TagFilterList2JsonList[eC2TagFilterList2Index].AsObject());
       }
-      m_ec2TagSetList.push_back(std::move(eC2TagFilterListList));
+      m_ec2TagSetList.push_back(std::move(eC2TagFilterList2List));
     }
     m_ec2TagSetListHasBeenSet = true;
   }

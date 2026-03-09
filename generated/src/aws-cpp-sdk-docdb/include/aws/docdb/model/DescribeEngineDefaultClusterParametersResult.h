@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 #include <aws/docdb/model/EngineDefaults.h>
 #include <aws/docdb/model/ResponseMetadata.h>
@@ -57,10 +58,13 @@ class DescribeEngineDefaultClusterParametersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   EngineDefaults m_engineDefaults;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_engineDefaultsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

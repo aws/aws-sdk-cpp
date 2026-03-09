@@ -149,7 +149,7 @@ TransferClient::TransferClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 }
 
 /* Legacy constructors due deprecation */
-TransferClient::TransferClient(const Client::ClientConfiguration& clientConfiguration)
+TransferClient::TransferClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -161,7 +161,7 @@ TransferClient::TransferClient(const Client::ClientConfiguration& clientConfigur
   init(m_clientConfiguration);
 }
 
-TransferClient::TransferClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+TransferClient::TransferClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -172,7 +172,7 @@ TransferClient::TransferClient(const AWSCredentials& credentials, const Client::
 }
 
 TransferClient::TransferClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                               const Client::ClientConfiguration& clientConfiguration)
+                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

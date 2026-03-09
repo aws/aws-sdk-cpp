@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ARCRegionswitch {
 namespace Model {
-enum class WorkflowTargetAction { NOT_SET, activate, deactivate };
+enum class WorkflowTargetAction { NOT_SET, activate, deactivate, postRecovery };
 
 namespace WorkflowTargetActionMapper {
 AWS_ARCREGIONSWITCH_API WorkflowTargetAction GetWorkflowTargetActionForName(const Aws::String& name);

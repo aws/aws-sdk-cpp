@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/EgressOnlyInternetGateway.h>
@@ -77,12 +78,15 @@ class CreateEgressOnlyInternetGatewayResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_clientToken;
 
   EgressOnlyInternetGateway m_egressOnlyInternetGateway;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientTokenHasBeenSet = false;
   bool m_egressOnlyInternetGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

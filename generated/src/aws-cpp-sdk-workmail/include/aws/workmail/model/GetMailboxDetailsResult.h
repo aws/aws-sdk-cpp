@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
 
@@ -70,12 +71,15 @@ class GetMailboxDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_mailboxQuota{0};
 
   double m_mailboxSize{0.0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mailboxQuotaHasBeenSet = false;
   bool m_mailboxSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

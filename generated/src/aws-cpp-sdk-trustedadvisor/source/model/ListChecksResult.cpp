@@ -20,17 +20,18 @@ using namespace Aws;
 ListChecksResult::ListChecksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListChecksResult& ListChecksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("checkSummaries")) {
     Aws::Utils::Array<JsonView> checkSummariesJsonList = jsonValue.GetArray("checkSummaries");
     for (unsigned checkSummariesIndex = 0; checkSummariesIndex < checkSummariesJsonList.GetLength(); ++checkSummariesIndex) {
       m_checkSummaries.push_back(checkSummariesJsonList[checkSummariesIndex].AsObject());
     }
     m_checkSummariesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

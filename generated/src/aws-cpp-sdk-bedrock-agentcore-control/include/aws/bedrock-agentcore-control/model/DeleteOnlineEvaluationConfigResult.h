@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationConfigStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -93,6 +94,8 @@ class DeleteOnlineEvaluationConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_onlineEvaluationConfigArn;
 
@@ -101,6 +104,7 @@ class DeleteOnlineEvaluationConfigResult {
   OnlineEvaluationConfigStatus m_status{OnlineEvaluationConfigStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_onlineEvaluationConfigArnHasBeenSet = false;
   bool m_onlineEvaluationConfigIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

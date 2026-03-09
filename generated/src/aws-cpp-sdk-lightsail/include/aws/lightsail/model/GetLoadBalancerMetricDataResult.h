@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
@@ -81,12 +82,15 @@ class GetLoadBalancerMetricDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LoadBalancerMetricName m_metricName{LoadBalancerMetricName::NOT_SET};
 
   Aws::Vector<MetricDatapoint> m_metricData;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_metricNameHasBeenSet = false;
   bool m_metricDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

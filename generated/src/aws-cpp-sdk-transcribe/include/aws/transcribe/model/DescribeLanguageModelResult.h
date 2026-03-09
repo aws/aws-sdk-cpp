@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/LanguageModel.h>
@@ -64,10 +65,13 @@ class DescribeLanguageModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   LanguageModel m_languageModel;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_languageModelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

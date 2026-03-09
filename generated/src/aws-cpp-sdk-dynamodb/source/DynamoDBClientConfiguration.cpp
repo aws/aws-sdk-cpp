@@ -45,7 +45,7 @@ void DynamoDBClientConfiguration::LoadDynamoDBSpecificConfig(const Aws::String& 
   };
 }
 
-DynamoDBClientConfiguration::DynamoDBClientConfiguration(const Client::ClientConfigurationInitValues& configuration)
+DynamoDBClientConfiguration::DynamoDBClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
     : BaseClientConfigClass(configuration), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadDynamoDBSpecificConfig(this->profileName);
 }
@@ -61,7 +61,7 @@ DynamoDBClientConfiguration::DynamoDBClientConfiguration(bool useSmartDefaults, 
   LoadDynamoDBSpecificConfig(this->profileName);
 }
 
-DynamoDBClientConfiguration::DynamoDBClientConfiguration(const Client::ClientConfiguration& config)
+DynamoDBClientConfiguration::DynamoDBClientConfiguration(const Aws::Client::ClientConfiguration& config)
     : BaseClientConfigClass(config), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadDynamoDBSpecificConfig(this->profileName);
 }

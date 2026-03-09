@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/pinpoint-sms-voice-v2/model/KeywordAction.h>
@@ -124,6 +125,8 @@ class DeleteKeywordResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_originationIdentityArn;
 
@@ -136,6 +139,7 @@ class DeleteKeywordResult {
   KeywordAction m_keywordAction{KeywordAction::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_originationIdentityArnHasBeenSet = false;
   bool m_originationIdentityHasBeenSet = false;
   bool m_keywordHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/ResourceSet.h>
@@ -75,12 +76,15 @@ class GetResourceSetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ResourceSet m_resourceSet;
 
   Aws::String m_resourceSetArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceSetHasBeenSet = false;
   bool m_resourceSetArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

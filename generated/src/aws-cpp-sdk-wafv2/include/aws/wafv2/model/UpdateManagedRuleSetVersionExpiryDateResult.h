@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
@@ -102,6 +103,8 @@ class UpdateManagedRuleSetVersionExpiryDateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_expiringVersion;
 
@@ -110,6 +113,7 @@ class UpdateManagedRuleSetVersionExpiryDateResult {
   Aws::String m_nextLockToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_expiringVersionHasBeenSet = false;
   bool m_expiryTimestampHasBeenSet = false;
   bool m_nextLockTokenHasBeenSet = false;

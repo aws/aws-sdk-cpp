@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/sns/SNS_EXPORTS.h>
 #include <aws/sns/model/ResponseMetadata.h>
 
@@ -64,10 +65,13 @@ class CheckIfPhoneNumberIsOptedOutResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_isOptedOut{false};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_isOptedOutHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

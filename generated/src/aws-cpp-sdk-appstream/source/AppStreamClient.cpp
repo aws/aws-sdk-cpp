@@ -166,7 +166,7 @@ AppStreamClient::AppStreamClient(const std::shared_ptr<AWSCredentialsProvider>& 
 }
 
 /* Legacy constructors due deprecation */
-AppStreamClient::AppStreamClient(const Client::ClientConfiguration& clientConfiguration)
+AppStreamClient::AppStreamClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -178,7 +178,7 @@ AppStreamClient::AppStreamClient(const Client::ClientConfiguration& clientConfig
   init(m_clientConfiguration);
 }
 
-AppStreamClient::AppStreamClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+AppStreamClient::AppStreamClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -189,7 +189,7 @@ AppStreamClient::AppStreamClient(const AWSCredentials& credentials, const Client
 }
 
 AppStreamClient::AppStreamClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Client::ClientConfiguration& clientConfiguration)
+                                 const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

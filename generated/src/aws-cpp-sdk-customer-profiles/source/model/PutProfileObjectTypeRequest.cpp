@@ -43,6 +43,10 @@ Aws::String PutProfileObjectTypeRequest::SerializePayload() const {
     payload.WithInteger("MaxProfileObjectCount", m_maxProfileObjectCount);
   }
 
+  if (m_sourcePriorityHasBeenSet) {
+    payload.WithInteger("SourcePriority", m_sourcePriority);
+  }
+
   if (m_fieldsHasBeenSet) {
     JsonValue fieldsJsonMap;
     for (auto& fieldsItem : m_fields) {

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/model/ChangeInfo.h>
@@ -137,6 +138,8 @@ class CreateHostedZoneResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   HostedZone m_hostedZone;
 
@@ -149,6 +152,7 @@ class CreateHostedZoneResult {
   Aws::String m_location;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hostedZoneHasBeenSet = false;
   bool m_changeInfoHasBeenSet = false;
   bool m_delegationSetHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/supplychain/SupplyChain_EXPORTS.h>
 #include <aws/supplychain/model/DataLakeDataset.h>
@@ -63,10 +64,13 @@ class GetDataLakeDatasetResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DataLakeDataset m_dataset;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_datasetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

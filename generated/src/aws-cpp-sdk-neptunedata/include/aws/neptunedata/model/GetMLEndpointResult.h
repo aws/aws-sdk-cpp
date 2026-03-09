@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptunedata/Neptunedata_EXPORTS.h>
 #include <aws/neptunedata/model/MlConfigDefinition.h>
@@ -110,6 +111,8 @@ class GetMLEndpointResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_status;
 
@@ -120,6 +123,7 @@ class GetMLEndpointResult {
   MlConfigDefinition m_endpointConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_endpointHasBeenSet = false;

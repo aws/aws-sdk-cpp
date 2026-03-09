@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/model/AttackDetail.h>
@@ -58,10 +59,13 @@ class DescribeAttackResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AttackDetail m_attack;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_attackHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

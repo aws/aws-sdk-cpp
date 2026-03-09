@@ -105,7 +105,7 @@ BedrockDataAutomationClient::BedrockDataAutomationClient(
           }) {}
 
 /* Legacy constructors due deprecation */
-BedrockDataAutomationClient::BedrockDataAutomationClient(const Client::ClientConfiguration& clientConfiguration)
+BedrockDataAutomationClient::BedrockDataAutomationClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Data Automation", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockDataAutomationErrorMarshaller>(ALLOCATION_TAG),
@@ -118,7 +118,7 @@ BedrockDataAutomationClient::BedrockDataAutomationClient(const Client::ClientCon
           }) {}
 
 BedrockDataAutomationClient::BedrockDataAutomationClient(const AWSCredentials& credentials,
-                                                         const Client::ClientConfiguration& clientConfiguration)
+                                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Data Automation", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockDataAutomationErrorMarshaller>(ALLOCATION_TAG),
@@ -132,7 +132,7 @@ BedrockDataAutomationClient::BedrockDataAutomationClient(const AWSCredentials& c
           }) {}
 
 BedrockDataAutomationClient::BedrockDataAutomationClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                         const Client::ClientConfiguration& clientConfiguration)
+                                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Data Automation", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockDataAutomationErrorMarshaller>(ALLOCATION_TAG),

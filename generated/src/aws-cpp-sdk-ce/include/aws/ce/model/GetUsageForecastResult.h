@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/model/ForecastResult.h>
 #include <aws/ce/model/MetricValue.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -85,12 +86,15 @@ class GetUsageForecastResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   MetricValue m_total;
 
   Aws::Vector<ForecastResult> m_forecastResultsByTime;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_totalHasBeenSet = false;
   bool m_forecastResultsByTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

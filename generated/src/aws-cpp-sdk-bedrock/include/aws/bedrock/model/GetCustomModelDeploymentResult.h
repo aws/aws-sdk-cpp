@@ -7,6 +7,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/CustomModelDeploymentStatus.h>
 #include <aws/bedrock/model/CustomModelDeploymentUpdateDetails.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -201,6 +202,8 @@ class GetCustomModelDeploymentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_customModelDeploymentArn;
 
@@ -221,6 +224,7 @@ class GetCustomModelDeploymentResult {
   Aws::Utils::DateTime m_lastUpdatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_customModelDeploymentArnHasBeenSet = false;
   bool m_modelDeploymentNameHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;

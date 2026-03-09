@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
 #include <aws/wickr/model/ErrorDetail.h>
@@ -58,9 +59,30 @@ class ValidationError {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A message describing the validation error error that occurred.</p>
+   */
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  ValidationError& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<ErrorDetail> m_reasons;
+
+  Aws::String m_message;
   bool m_reasonsHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/ecs/model/ListAccountSettingsPaginationTraits.h>
 #include <aws/ecs/model/ListAttributesPaginationTraits.h>
@@ -32,6 +33,7 @@ class ECSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccountSettingsRequest,
                                     Pagination::ListAccountSettingsPaginationTraits<DerivedClient>>
   ListAccountSettingsPaginator(const Model::ListAccountSettingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAccountSettingsRequest,
                                              Pagination::ListAccountSettingsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -42,6 +44,7 @@ class ECSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttributesRequest, Pagination::ListAttributesPaginationTraits<DerivedClient>>
   ListAttributesPaginator(const Model::ListAttributesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttributesRequest,
                                              Pagination::ListAttributesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -52,6 +55,7 @@ class ECSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersRequest, Pagination::ListClustersPaginationTraits<DerivedClient>>
   ListClustersPaginator(const Model::ListClustersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClustersRequest,
                                              Pagination::ListClustersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -63,6 +67,7 @@ class ECSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContainerInstancesRequest,
                                     Pagination::ListContainerInstancesPaginationTraits<DerivedClient>>
   ListContainerInstancesPaginator(const Model::ListContainerInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContainerInstancesRequest,
                                              Pagination::ListContainerInstancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -73,6 +78,7 @@ class ECSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServicesRequest, Pagination::ListServicesPaginationTraits<DerivedClient>>
   ListServicesPaginator(const Model::ListServicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServicesRequest,
                                              Pagination::ListServicesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -84,6 +90,7 @@ class ECSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServicesByNamespaceRequest,
                                     Pagination::ListServicesByNamespacePaginationTraits<DerivedClient>>
   ListServicesByNamespacePaginator(const Model::ListServicesByNamespaceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListServicesByNamespaceRequest,
                                              Pagination::ListServicesByNamespacePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -95,6 +102,7 @@ class ECSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTaskDefinitionFamiliesRequest,
                                     Pagination::ListTaskDefinitionFamiliesPaginationTraits<DerivedClient>>
   ListTaskDefinitionFamiliesPaginator(const Model::ListTaskDefinitionFamiliesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTaskDefinitionFamiliesRequest,
                                              Pagination::ListTaskDefinitionFamiliesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -106,6 +114,7 @@ class ECSPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTaskDefinitionsRequest,
                                     Pagination::ListTaskDefinitionsPaginationTraits<DerivedClient>>
   ListTaskDefinitionsPaginator(const Model::ListTaskDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTaskDefinitionsRequest,
                                              Pagination::ListTaskDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -116,6 +125,7 @@ class ECSPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DerivedClient>>
   ListTasksPaginator(const Model::ListTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

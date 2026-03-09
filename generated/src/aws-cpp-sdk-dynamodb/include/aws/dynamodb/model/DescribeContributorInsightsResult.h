@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -178,6 +179,8 @@ class DescribeContributorInsightsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_tableName;
 
@@ -194,6 +197,7 @@ class DescribeContributorInsightsResult {
   ContributorInsightsMode m_contributorInsightsMode{ContributorInsightsMode::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tableNameHasBeenSet = false;
   bool m_indexNameHasBeenSet = false;
   bool m_contributorInsightsRuleListHasBeenSet = false;

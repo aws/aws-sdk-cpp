@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/ResourceQuotas.h>
 #include <aws/elasticbeanstalk/model/ResponseMetadata.h>
@@ -60,10 +61,13 @@ class DescribeAccountAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ResourceQuotas m_resourceQuotas;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceQuotasHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

@@ -27,6 +27,10 @@ Aws::String CreateUserPoolClientRequest::SerializePayload() const {
     payload.WithBool("GenerateSecret", m_generateSecret);
   }
 
+  if (m_clientSecretHasBeenSet) {
+    payload.WithString("ClientSecret", m_clientSecret);
+  }
+
   if (m_refreshTokenValidityHasBeenSet) {
     payload.WithInteger("RefreshTokenValidity", m_refreshTokenValidity);
   }

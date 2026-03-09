@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
 #include <aws/servicecatalog-appregistry/model/SyncAction.h>
@@ -91,6 +92,8 @@ class SyncResourceResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_applicationArn;
 
@@ -99,6 +102,7 @@ class SyncResourceResult {
   SyncAction m_actionTaken{SyncAction::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationArnHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
   bool m_actionTakenHasBeenSet = false;

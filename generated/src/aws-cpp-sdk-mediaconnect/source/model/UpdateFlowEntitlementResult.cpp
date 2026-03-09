@@ -20,6 +20,7 @@ using namespace Aws;
 UpdateFlowEntitlementResult::UpdateFlowEntitlementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 UpdateFlowEntitlementResult& UpdateFlowEntitlementResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("entitlement")) {
     m_entitlement = jsonValue.GetObject("entitlement");

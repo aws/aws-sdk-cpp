@@ -98,7 +98,7 @@ OSISClient::OSISClient(const std::shared_ptr<AWSCredentialsProvider>& credential
 }
 
 /* Legacy constructors due deprecation */
-OSISClient::OSISClient(const Client::ClientConfiguration& clientConfiguration)
+OSISClient::OSISClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -110,7 +110,7 @@ OSISClient::OSISClient(const Client::ClientConfiguration& clientConfiguration)
   init(m_clientConfiguration);
 }
 
-OSISClient::OSISClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+OSISClient::OSISClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -121,7 +121,7 @@ OSISClient::OSISClient(const AWSCredentials& credentials, const Client::ClientCo
 }
 
 OSISClient::OSISClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                       const Client::ClientConfiguration& clientConfiguration)
+                       const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

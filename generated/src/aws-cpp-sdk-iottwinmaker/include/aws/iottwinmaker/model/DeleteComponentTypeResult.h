@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/iottwinmaker/model/State.h>
@@ -56,10 +57,13 @@ class DeleteComponentTypeResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   State m_state{State::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

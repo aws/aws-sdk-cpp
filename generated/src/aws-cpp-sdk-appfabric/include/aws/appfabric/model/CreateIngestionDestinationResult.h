@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appfabric/AppFabric_EXPORTS.h>
 #include <aws/appfabric/model/IngestionDestination.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -58,10 +59,13 @@ class CreateIngestionDestinationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   IngestionDestination m_ingestionDestination;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ingestionDestinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

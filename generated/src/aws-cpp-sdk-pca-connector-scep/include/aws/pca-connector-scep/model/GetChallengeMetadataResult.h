@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pca-connector-scep/PcaConnectorScep_EXPORTS.h>
 #include <aws/pca-connector-scep/model/ChallengeMetadata.h>
@@ -58,10 +59,13 @@ class GetChallengeMetadataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ChallengeMetadata m_challengeMetadata;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_challengeMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

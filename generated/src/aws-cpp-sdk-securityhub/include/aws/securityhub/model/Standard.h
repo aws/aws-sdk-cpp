@@ -89,11 +89,12 @@ class Standard {
 
   ///@{
   /**
-   * <p>Whether the standard is enabled by default. When Security Hub is enabled from
-   * the console, if a standard is enabled by default, the check box for that
-   * standard is selected by default.</p> <p>When Security Hub is enabled using the
-   * <code>EnableSecurityHub</code> API operation, the standard is enabled by default
-   * unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
+   * <p>Whether the standard is enabled by default. When Security Hub CSPM is enabled
+   * from the console, if a standard is enabled by default, the check box for that
+   * standard is selected by default.</p> <p>When Security Hub CSPM is enabled using
+   * the <code>EnableSecurityHub</code> API operation, the standard is enabled by
+   * default unless <code>EnableDefaultStandards</code> is set to
+   * <code>false</code>.</p>
    */
   inline bool GetEnabledByDefault() const { return m_enabledByDefault; }
   inline bool EnabledByDefaultHasBeenSet() const { return m_enabledByDefaultHasBeenSet; }

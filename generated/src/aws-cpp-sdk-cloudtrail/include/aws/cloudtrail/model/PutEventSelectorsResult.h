@@ -7,6 +7,7 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/model/AdvancedEventSelector.h>
 #include <aws/cloudtrail/model/EventSelector.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -108,6 +109,8 @@ class PutEventSelectorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_trailARN;
 
@@ -116,6 +119,7 @@ class PutEventSelectorsResult {
   Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_trailARNHasBeenSet = false;
   bool m_eventSelectorsHasBeenSet = false;
   bool m_advancedEventSelectorsHasBeenSet = false;

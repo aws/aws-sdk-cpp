@@ -7,6 +7,7 @@
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/cloudsearchdomain/model/SuggestModel.h>
 #include <aws/cloudsearchdomain/model/SuggestStatus.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -84,12 +85,15 @@ class SuggestResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SuggestStatus m_status;
 
   SuggestModel m_suggest;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_suggestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

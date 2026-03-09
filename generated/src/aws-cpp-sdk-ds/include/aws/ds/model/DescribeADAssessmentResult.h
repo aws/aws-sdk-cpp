@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
@@ -86,12 +87,15 @@ class DescribeADAssessmentResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Assessment m_assessment;
 
   Aws::Vector<AssessmentReport> m_assessmentReports;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_assessmentHasBeenSet = false;
   bool m_assessmentReportsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

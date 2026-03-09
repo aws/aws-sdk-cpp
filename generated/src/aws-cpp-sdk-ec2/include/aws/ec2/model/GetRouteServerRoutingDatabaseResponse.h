@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
@@ -99,6 +100,8 @@ class GetRouteServerRoutingDatabaseResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_areRoutesPersisted{false};
 
@@ -107,6 +110,7 @@ class GetRouteServerRoutingDatabaseResponse {
   Aws::String m_nextToken;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_areRoutesPersistedHasBeenSet = false;
   bool m_routesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

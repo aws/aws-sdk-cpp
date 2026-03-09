@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
@@ -243,6 +244,8 @@ class GetPluginResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_applicationId;
 
@@ -269,6 +272,7 @@ class GetPluginResult {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_pluginIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;

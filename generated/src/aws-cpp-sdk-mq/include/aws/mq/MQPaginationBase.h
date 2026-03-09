@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/mq/model/ListBrokersPaginationTraits.h>
 
@@ -23,6 +24,7 @@ class MQPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBrokersRequest, Pagination::ListBrokersPaginationTraits<DerivedClient>>
   ListBrokersPaginator(const Model::ListBrokersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBrokersRequest,
                                              Pagination::ListBrokersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};

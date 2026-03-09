@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -258,6 +259,8 @@ class DescribeNodeFromTemplateJobResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_createdTime{};
 
@@ -284,6 +287,7 @@ class DescribeNodeFromTemplateJobResult {
   TemplateType m_templateType{TemplateType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_createdTimeHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
   bool m_jobTagsHasBeenSet = false;

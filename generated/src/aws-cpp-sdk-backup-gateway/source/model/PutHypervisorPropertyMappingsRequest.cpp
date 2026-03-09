@@ -19,10 +19,6 @@ Aws::String PutHypervisorPropertyMappingsRequest::SerializePayload() const {
     payload.WithString("HypervisorArn", m_hypervisorArn);
   }
 
-  if (m_iamRoleArnHasBeenSet) {
-    payload.WithString("IamRoleArn", m_iamRoleArn);
-  }
-
   if (m_vmwareToAwsTagMappingsHasBeenSet) {
     Aws::Utils::Array<JsonValue> vmwareToAwsTagMappingsJsonList(m_vmwareToAwsTagMappings.size());
     for (unsigned vmwareToAwsTagMappingsIndex = 0; vmwareToAwsTagMappingsIndex < vmwareToAwsTagMappingsJsonList.GetLength();
@@ -30,6 +26,10 @@ Aws::String PutHypervisorPropertyMappingsRequest::SerializePayload() const {
       vmwareToAwsTagMappingsJsonList[vmwareToAwsTagMappingsIndex].AsObject(m_vmwareToAwsTagMappings[vmwareToAwsTagMappingsIndex].Jsonize());
     }
     payload.WithArray("VmwareToAwsTagMappings", std::move(vmwareToAwsTagMappingsJsonList));
+  }
+
+  if (m_iamRoleArnHasBeenSet) {
+    payload.WithString("IamRoleArn", m_iamRoleArn);
   }
 
   return payload.View().WriteReadable();

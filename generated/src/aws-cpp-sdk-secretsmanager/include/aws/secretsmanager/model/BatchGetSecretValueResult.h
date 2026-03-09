@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
@@ -111,6 +112,8 @@ class BatchGetSecretValueResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<SecretValueEntry> m_secretValues;
 
@@ -119,6 +122,7 @@ class BatchGetSecretValueResult {
   Aws::Vector<APIErrorType> m_errors;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_secretValuesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_errorsHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
@@ -95,6 +96,8 @@ class BatchImportFindingsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   int m_failedCount{0};
 
@@ -103,6 +106,7 @@ class BatchImportFindingsResult {
   Aws::Vector<ImportFindingsError> m_failedFindings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_failedCountHasBeenSet = false;
   bool m_successCountHasBeenSet = false;
   bool m_failedFindingsHasBeenSet = false;

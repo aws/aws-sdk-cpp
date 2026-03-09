@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -282,6 +283,8 @@ class GetIndexResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_applicationId;
 
@@ -310,6 +313,7 @@ class GetIndexResult {
   IndexStatistics m_indexStatistics;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationIdHasBeenSet = false;
   bool m_indexIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/schemas/model/ListDiscoverersPaginationTraits.h>
 #include <aws/schemas/model/ListRegistriesPaginationTraits.h>
@@ -28,6 +29,7 @@ class SchemasPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDiscoverersRequest,
                                     Pagination::ListDiscoverersPaginationTraits<DerivedClient>>
   ListDiscoverersPaginator(const Model::ListDiscoverersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDiscoverersRequest,
                                              Pagination::ListDiscoverersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -38,6 +40,7 @@ class SchemasPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegistriesRequest, Pagination::ListRegistriesPaginationTraits<DerivedClient>>
   ListRegistriesPaginator(const Model::ListRegistriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRegistriesRequest,
                                              Pagination::ListRegistriesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -48,6 +51,7 @@ class SchemasPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchemasRequest, Pagination::ListSchemasPaginationTraits<DerivedClient>>
   ListSchemasPaginator(const Model::ListSchemasRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchemasRequest,
                                              Pagination::ListSchemasPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -59,6 +63,7 @@ class SchemasPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchemaVersionsRequest,
                                     Pagination::ListSchemaVersionsPaginationTraits<DerivedClient>>
   ListSchemaVersionsPaginator(const Model::ListSchemaVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSchemaVersionsRequest,
                                              Pagination::ListSchemaVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -69,6 +74,7 @@ class SchemasPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchSchemasRequest, Pagination::SearchSchemasPaginationTraits<DerivedClient>>
   SearchSchemasPaginator(const Model::SearchSchemasRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::SearchSchemasRequest,
                                              Pagination::SearchSchemasPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

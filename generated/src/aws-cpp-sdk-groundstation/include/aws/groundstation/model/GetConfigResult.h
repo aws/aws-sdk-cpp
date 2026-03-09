@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
@@ -154,6 +155,8 @@ class GetConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_configId;
 
@@ -168,6 +171,7 @@ class GetConfigResult {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configIdHasBeenSet = false;
   bool m_configArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;

@@ -80,8 +80,8 @@ class ListStandardsControlAssociationsRequest : public SecurityHubRequest {
    * include a <code>NextToken</code> parameter that you can use in a subsequent API
    * call to get the next 25 associations. This repeats until all associations for
    * the specified control are returned. The number of results is limited by the
-   * number of supported Security Hub standards that you've enabled in the calling
-   * account. </p>
+   * number of supported Security Hub CSPM standards that you've enabled in the
+   * calling account. </p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

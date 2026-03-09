@@ -87,7 +87,7 @@ SageMakerRuntimeClient::SageMakerRuntimeClient(const std::shared_ptr<AWSCredenti
 }
 
 /* Legacy constructors due deprecation */
-SageMakerRuntimeClient::SageMakerRuntimeClient(const Client::ClientConfiguration& clientConfiguration)
+SageMakerRuntimeClient::SageMakerRuntimeClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
@@ -99,7 +99,8 @@ SageMakerRuntimeClient::SageMakerRuntimeClient(const Client::ClientConfiguration
   init(m_clientConfiguration);
 }
 
-SageMakerRuntimeClient::SageMakerRuntimeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+SageMakerRuntimeClient::SageMakerRuntimeClient(const AWSCredentials& credentials,
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
@@ -111,7 +112,7 @@ SageMakerRuntimeClient::SageMakerRuntimeClient(const AWSCredentials& credentials
 }
 
 SageMakerRuntimeClient::SageMakerRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                               const Client::ClientConfiguration& clientConfiguration)
+                                               const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                                       Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

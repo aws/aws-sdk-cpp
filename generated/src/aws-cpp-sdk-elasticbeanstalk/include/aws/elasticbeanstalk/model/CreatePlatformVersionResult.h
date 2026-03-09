@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/Builder.h>
 #include <aws/elasticbeanstalk/model/PlatformSummary.h>
@@ -76,12 +77,15 @@ class CreatePlatformVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   PlatformSummary m_platformSummary;
 
   Builder m_builder;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_platformSummaryHasBeenSet = false;
   bool m_builderHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

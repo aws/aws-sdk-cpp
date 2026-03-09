@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/route53-recovery-cluster/model/ListRoutingControlsPaginationTraits.h>
 
@@ -24,6 +25,7 @@ class Route53RecoveryClusterPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoutingControlsRequest,
                                     Pagination::ListRoutingControlsPaginationTraits<DerivedClient>>
   ListRoutingControlsPaginator(const Model::ListRoutingControlsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRoutingControlsRequest,
                                              Pagination::ListRoutingControlsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

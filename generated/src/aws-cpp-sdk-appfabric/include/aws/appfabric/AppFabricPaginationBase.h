@@ -9,6 +9,7 @@
 #include <aws/appfabric/model/ListAppBundlesPaginationTraits.h>
 #include <aws/appfabric/model/ListIngestionDestinationsPaginationTraits.h>
 #include <aws/appfabric/model/ListIngestionsPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -27,6 +28,7 @@ class AppFabricPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppAuthorizationsRequest,
                                     Pagination::ListAppAuthorizationsPaginationTraits<DerivedClient>>
   ListAppAuthorizationsPaginator(const Model::ListAppAuthorizationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppAuthorizationsRequest,
                                              Pagination::ListAppAuthorizationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -37,6 +39,7 @@ class AppFabricPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppBundlesRequest, Pagination::ListAppBundlesPaginationTraits<DerivedClient>>
   ListAppBundlesPaginator(const Model::ListAppBundlesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAppBundlesRequest,
                                              Pagination::ListAppBundlesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
@@ -48,6 +51,7 @@ class AppFabricPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionDestinationsRequest,
                                     Pagination::ListIngestionDestinationsPaginationTraits<DerivedClient>>
   ListIngestionDestinationsPaginator(const Model::ListIngestionDestinationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionDestinationsRequest,
                                              Pagination::ListIngestionDestinationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -58,6 +62,7 @@ class AppFabricPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionsRequest, Pagination::ListIngestionsPaginationTraits<DerivedClient>>
   ListIngestionsPaginator(const Model::ListIngestionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionsRequest,
                                              Pagination::ListIngestionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

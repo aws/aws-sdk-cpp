@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 
@@ -95,6 +96,8 @@ class GetChannelPolicyResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_channelGroupName;
 
@@ -103,6 +106,7 @@ class GetChannelPolicyResult {
   Aws::String m_policy;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
   bool m_policyHasBeenSet = false;

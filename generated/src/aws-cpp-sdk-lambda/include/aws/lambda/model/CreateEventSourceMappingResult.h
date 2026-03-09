@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -706,6 +707,8 @@ class CreateEventSourceMappingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_uUID;
 
@@ -774,6 +777,7 @@ class CreateEventSourceMappingResult {
   ProvisionedPollerConfig m_provisionedPollerConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_uUIDHasBeenSet = false;
   bool m_startingPositionHasBeenSet = false;
   bool m_startingPositionTimestampHasBeenSet = false;

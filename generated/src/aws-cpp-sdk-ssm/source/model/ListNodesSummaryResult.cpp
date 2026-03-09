@@ -20,16 +20,17 @@ using namespace Aws;
 ListNodesSummaryResult::ListNodesSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListNodesSummaryResult& ListNodesSummaryResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Summary")) {
     Aws::Utils::Array<JsonView> summaryJsonList = jsonValue.GetArray("Summary");
     for (unsigned summaryIndex = 0; summaryIndex < summaryJsonList.GetLength(); ++summaryIndex) {
-      Aws::Map<Aws::String, JsonView> nodeSummaryJsonMap = summaryJsonList[summaryIndex].GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> nodeSummaryMap;
-      for (auto& nodeSummaryItem : nodeSummaryJsonMap) {
-        nodeSummaryMap[nodeSummaryItem.first] = nodeSummaryItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> nodeSummary2JsonMap = summaryJsonList[summaryIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> nodeSummary2Map;
+      for (auto& nodeSummary2Item : nodeSummary2JsonMap) {
+        nodeSummary2Map[nodeSummary2Item.first] = nodeSummary2Item.second.AsString();
       }
-      m_summary.push_back(std::move(nodeSummaryMap));
+      m_summary.push_back(std::move(nodeSummary2Map));
     }
     m_summaryHasBeenSet = true;
   }

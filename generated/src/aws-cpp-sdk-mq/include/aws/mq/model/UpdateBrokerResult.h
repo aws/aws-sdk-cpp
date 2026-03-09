@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mq/MQ_EXPORTS.h>
@@ -300,6 +301,8 @@ class UpdateBrokerResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AuthenticationStrategy m_authenticationStrategy{AuthenticationStrategy::NOT_SET};
 
@@ -330,6 +333,7 @@ class UpdateBrokerResult {
   DataReplicationMode m_pendingDataReplicationMode{DataReplicationMode::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_authenticationStrategyHasBeenSet = false;
   bool m_autoMinorVersionUpgradeHasBeenSet = false;
   bool m_brokerIdHasBeenSet = false;

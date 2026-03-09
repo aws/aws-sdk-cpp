@@ -67,5 +67,9 @@ Aws::String CreateResourceShareRequest::SerializePayload() const {
     payload.WithArray("sources", std::move(sourcesJsonList));
   }
 
+  if (m_resourceShareConfigurationHasBeenSet) {
+    payload.WithObject("resourceShareConfiguration", m_resourceShareConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

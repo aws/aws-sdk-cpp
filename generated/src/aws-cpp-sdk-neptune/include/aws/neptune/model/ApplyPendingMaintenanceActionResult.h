@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 #include <aws/neptune/model/ResourcePendingMaintenanceActions.h>
 #include <aws/neptune/model/ResponseMetadata.h>
@@ -58,10 +59,13 @@ class ApplyPendingMaintenanceActionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ResourcePendingMaintenanceActions m_resourcePendingMaintenanceActions;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourcePendingMaintenanceActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

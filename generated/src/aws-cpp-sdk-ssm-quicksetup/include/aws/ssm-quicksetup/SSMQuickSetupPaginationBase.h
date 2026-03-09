@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/ssm-quicksetup/model/ListConfigurationManagersPaginationTraits.h>
 #include <aws/ssm-quicksetup/model/ListConfigurationsPaginationTraits.h>
@@ -25,6 +26,7 @@ class SSMQuickSetupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationManagersRequest,
                                     Pagination::ListConfigurationManagersPaginationTraits<DerivedClient>>
   ListConfigurationManagersPaginator(const Model::ListConfigurationManagersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationManagersRequest,
                                              Pagination::ListConfigurationManagersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -36,6 +38,7 @@ class SSMQuickSetupPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationsRequest,
                                     Pagination::ListConfigurationsPaginationTraits<DerivedClient>>
   ListConfigurationsPaginator(const Model::ListConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationsRequest,
                                              Pagination::ListConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

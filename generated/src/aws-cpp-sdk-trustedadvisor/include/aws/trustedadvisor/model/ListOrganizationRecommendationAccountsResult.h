@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
@@ -29,6 +30,24 @@ class ListOrganizationRecommendationAccountsResult {
       const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_TRUSTEDADVISOR_API ListOrganizationRecommendationAccountsResult& operator=(
       const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListOrganizationRecommendationAccountsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -59,24 +78,6 @@ class ListOrganizationRecommendationAccountsResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results. </p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListOrganizationRecommendationAccountsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -90,14 +91,17 @@ class ListOrganizationRecommendationAccountsResult {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<AccountRecommendationLifecycleSummary> m_accountRecommendationLifecycleSummaries;
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
+ private:
   Aws::String m_nextToken;
 
+  Aws::Vector<AccountRecommendationLifecycleSummary> m_accountRecommendationLifecycleSummaries;
+
   Aws::String m_requestId;
-  bool m_accountRecommendationLifecycleSummariesHasBeenSet = false;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nextTokenHasBeenSet = false;
+  bool m_accountRecommendationLifecycleSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

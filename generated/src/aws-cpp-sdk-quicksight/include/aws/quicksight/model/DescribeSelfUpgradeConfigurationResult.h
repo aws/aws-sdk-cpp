@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/SelfUpgradeConfiguration.h>
@@ -30,7 +31,7 @@ class DescribeSelfUpgradeConfigurationResult {
 
   ///@{
   /**
-   * <p>The self-upgrade configuration for the Quick Suite account.</p>
+   * <p>The self-upgrade configuration for the Quick account.</p>
    */
   inline const SelfUpgradeConfiguration& GetSelfUpgradeConfiguration() const { return m_selfUpgradeConfiguration; }
   template <typename SelfUpgradeConfigurationT = SelfUpgradeConfiguration>
@@ -74,12 +75,15 @@ class DescribeSelfUpgradeConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   SelfUpgradeConfiguration m_selfUpgradeConfiguration;
 
   Aws::String m_requestId;
 
   int m_status{0};
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_selfUpgradeConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;

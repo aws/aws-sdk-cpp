@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
@@ -115,6 +116,8 @@ class BatchGetRecordResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<BatchGetRecordResultDetail> m_records;
 
@@ -123,6 +126,7 @@ class BatchGetRecordResult {
   Aws::Vector<BatchGetRecordIdentifier> m_unprocessedIdentifiers;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_recordsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_unprocessedIdentifiersHasBeenSet = false;

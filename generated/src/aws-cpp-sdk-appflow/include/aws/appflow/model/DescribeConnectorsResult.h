@@ -8,6 +8,7 @@
 #include <aws/appflow/model/ConnectorConfiguration.h>
 #include <aws/appflow/model/ConnectorDetail.h>
 #include <aws/appflow/model/ConnectorType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -107,6 +108,8 @@ class DescribeConnectorsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Map<ConnectorType, ConnectorConfiguration> m_connectorConfigurations;
 
@@ -115,6 +118,7 @@ class DescribeConnectorsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_connectorConfigurationsHasBeenSet = false;
   bool m_connectorsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

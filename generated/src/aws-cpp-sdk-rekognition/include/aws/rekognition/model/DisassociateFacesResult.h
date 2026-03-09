@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
@@ -112,6 +113,8 @@ class DisassociateFacesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<DisassociatedFace> m_disassociatedFaces;
 
@@ -120,6 +123,7 @@ class DisassociateFacesResult {
   UserStatus m_userStatus{UserStatus::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_disassociatedFacesHasBeenSet = false;
   bool m_unsuccessfulFaceDisassociationsHasBeenSet = false;
   bool m_userStatusHasBeenSet = false;

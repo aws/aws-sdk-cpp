@@ -31,8 +31,8 @@ class DisableOrganizationAdminAccountRequest : public SecurityHubRequest {
 
   ///@{
   /**
-   * <p>The Amazon Web Services account identifier of the Security Hub administrator
-   * account.</p>
+   * <p>The Amazon Web Services account identifier of the Security Hub CSPM
+   * administrator account.</p>
    */
   inline const Aws::String& GetAdminAccountId() const { return m_adminAccountId; }
   inline bool AdminAccountIdHasBeenSet() const { return m_adminAccountIdHasBeenSet; }
@@ -51,7 +51,7 @@ class DisableOrganizationAdminAccountRequest : public SecurityHubRequest {
   ///@{
   /**
    * <p>The feature for which the delegated admin account is disabled. Defaults to
-   * Security Hub if not specified.</p>
+   * Security Hub CSPM if not specified.</p>
    */
   inline SecurityHubFeature GetFeature() const { return m_feature; }
   inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }

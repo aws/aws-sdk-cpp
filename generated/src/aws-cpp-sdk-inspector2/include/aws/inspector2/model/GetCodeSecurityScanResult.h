@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
@@ -178,6 +179,8 @@ class GetCodeSecurityScanResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_scanId;
 
@@ -196,6 +199,7 @@ class GetCodeSecurityScanResult {
   Aws::String m_lastCommitId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_scanIdHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;

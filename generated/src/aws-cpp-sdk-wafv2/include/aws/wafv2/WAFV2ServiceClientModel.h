@@ -50,6 +50,7 @@
 #include <aws/wafv2/model/GetRuleGroupRequest.h>
 #include <aws/wafv2/model/GetRuleGroupResult.h>
 #include <aws/wafv2/model/GetSampledRequestsResult.h>
+#include <aws/wafv2/model/GetTopPathStatisticsByTrafficResult.h>
 #include <aws/wafv2/model/GetWebACLForResourceResult.h>
 #include <aws/wafv2/model/GetWebACLRequest.h>
 #include <aws/wafv2/model/GetWebACLResult.h>
@@ -138,6 +139,7 @@ class GetRateBasedStatementManagedKeysRequest;
 class GetRegexPatternSetRequest;
 class GetRuleGroupRequest;
 class GetSampledRequestsRequest;
+class GetTopPathStatisticsByTrafficRequest;
 class GetWebACLRequest;
 class GetWebACLForResourceRequest;
 class ListAPIKeysRequest;
@@ -195,6 +197,7 @@ typedef Aws::Utils::Outcome<GetRateBasedStatementManagedKeysResult, WAFV2Error> 
 typedef Aws::Utils::Outcome<GetRegexPatternSetResult, WAFV2Error> GetRegexPatternSetOutcome;
 typedef Aws::Utils::Outcome<GetRuleGroupResult, WAFV2Error> GetRuleGroupOutcome;
 typedef Aws::Utils::Outcome<GetSampledRequestsResult, WAFV2Error> GetSampledRequestsOutcome;
+typedef Aws::Utils::Outcome<GetTopPathStatisticsByTrafficResult, WAFV2Error> GetTopPathStatisticsByTrafficOutcome;
 typedef Aws::Utils::Outcome<GetWebACLResult, WAFV2Error> GetWebACLOutcome;
 typedef Aws::Utils::Outcome<GetWebACLForResourceResult, WAFV2Error> GetWebACLForResourceOutcome;
 typedef Aws::Utils::Outcome<ListAPIKeysResult, WAFV2Error> ListAPIKeysOutcome;
@@ -252,6 +255,7 @@ typedef std::future<GetRateBasedStatementManagedKeysOutcome> GetRateBasedStateme
 typedef std::future<GetRegexPatternSetOutcome> GetRegexPatternSetOutcomeCallable;
 typedef std::future<GetRuleGroupOutcome> GetRuleGroupOutcomeCallable;
 typedef std::future<GetSampledRequestsOutcome> GetSampledRequestsOutcomeCallable;
+typedef std::future<GetTopPathStatisticsByTrafficOutcome> GetTopPathStatisticsByTrafficOutcomeCallable;
 typedef std::future<GetWebACLOutcome> GetWebACLOutcomeCallable;
 typedef std::future<GetWebACLForResourceOutcome> GetWebACLForResourceOutcomeCallable;
 typedef std::future<ListAPIKeysOutcome> ListAPIKeysOutcomeCallable;
@@ -375,6 +379,10 @@ typedef std::function<void(const WAFV2Client*, const Model::GetRuleGroupRequest&
 typedef std::function<void(const WAFV2Client*, const Model::GetSampledRequestsRequest&, const Model::GetSampledRequestsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSampledRequestsResponseReceivedHandler;
+typedef std::function<void(const WAFV2Client*, const Model::GetTopPathStatisticsByTrafficRequest&,
+                           const Model::GetTopPathStatisticsByTrafficOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTopPathStatisticsByTrafficResponseReceivedHandler;
 typedef std::function<void(const WAFV2Client*, const Model::GetWebACLRequest&, const Model::GetWebACLOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetWebACLResponseReceivedHandler;

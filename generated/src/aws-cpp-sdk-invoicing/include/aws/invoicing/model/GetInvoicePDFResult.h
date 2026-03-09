@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
 #include <aws/invoicing/model/InvoicePDF.h>
@@ -59,10 +60,13 @@ class GetInvoicePDFResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   InvoicePDF m_invoicePDF;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_invoicePDFHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

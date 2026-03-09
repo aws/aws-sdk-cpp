@@ -13,7 +13,7 @@ namespace BedrockDataAutomation {
 struct AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClientConfiguration : public Aws::Client::GenericClientConfiguration {
   using BaseClientConfigClass = Aws::Client::GenericClientConfiguration;
 
-  BedrockDataAutomationClientConfiguration(const Client::ClientConfigurationInitValues& configuration = {});
+  BedrockDataAutomationClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
    * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -34,7 +34,7 @@ struct AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClientConfiguration : 
   /**
    * Converting constructors for compatibility with a legacy code
    */
-  BedrockDataAutomationClientConfiguration(const Client::ClientConfiguration& config);
+  BedrockDataAutomationClientConfiguration(const Aws::Client::ClientConfiguration& config);
 
  private:
   void LoadBedrockDataAutomationSpecificConfig(const Aws::String& profileName);

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/sqs/model/ResponseMetadata.h>
@@ -162,6 +163,8 @@ class SendMessageResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_mD5OfMessageBody;
 
@@ -176,6 +179,7 @@ class SendMessageResult {
   Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mD5OfMessageBodyHasBeenSet = false;
   bool m_mD5OfMessageAttributesHasBeenSet = false;
   bool m_mD5OfMessageSystemAttributesHasBeenSet = false;

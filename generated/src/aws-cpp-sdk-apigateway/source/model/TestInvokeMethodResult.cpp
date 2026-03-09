@@ -20,6 +20,7 @@ using namespace Aws;
 TestInvokeMethodResult::TestInvokeMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 TestInvokeMethodResult& TestInvokeMethodResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetInteger("status");
@@ -39,13 +40,13 @@ TestInvokeMethodResult& TestInvokeMethodResult::operator=(const Aws::AmazonWebSe
   if (jsonValue.ValueExists("multiValueHeaders")) {
     Aws::Map<Aws::String, JsonView> multiValueHeadersJsonMap = jsonValue.GetObject("multiValueHeaders").GetAllObjects();
     for (auto& multiValueHeadersItem : multiValueHeadersJsonMap) {
-      Aws::Utils::Array<JsonView> listOfStringJsonList = multiValueHeadersItem.second.AsArray();
-      Aws::Vector<Aws::String> listOfStringList;
-      listOfStringList.reserve((size_t)listOfStringJsonList.GetLength());
-      for (unsigned listOfStringIndex = 0; listOfStringIndex < listOfStringJsonList.GetLength(); ++listOfStringIndex) {
-        listOfStringList.push_back(listOfStringJsonList[listOfStringIndex].AsString());
+      Aws::Utils::Array<JsonView> listOfString2JsonList = multiValueHeadersItem.second.AsArray();
+      Aws::Vector<Aws::String> listOfString2List;
+      listOfString2List.reserve((size_t)listOfString2JsonList.GetLength());
+      for (unsigned listOfString2Index = 0; listOfString2Index < listOfString2JsonList.GetLength(); ++listOfString2Index) {
+        listOfString2List.push_back(listOfString2JsonList[listOfString2Index].AsString());
       }
-      m_multiValueHeaders[multiValueHeadersItem.first] = std::move(listOfStringList);
+      m_multiValueHeaders[multiValueHeadersItem.first] = std::move(listOfString2List);
     }
     m_multiValueHeadersHasBeenSet = true;
   }

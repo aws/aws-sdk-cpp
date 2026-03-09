@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
@@ -85,12 +86,15 @@ class DescribeDBInstancesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_marker;
 
   Aws::Vector<DBInstance> m_dBInstances;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_markerHasBeenSet = false;
   bool m_dBInstancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

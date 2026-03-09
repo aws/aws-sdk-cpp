@@ -20,6 +20,7 @@ using namespace Aws;
 DeleteChannelResult::DeleteChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DeleteChannelResult& DeleteChannelResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
@@ -127,6 +128,10 @@ DeleteChannelResult& DeleteChannelResult::operator=(const Aws::AmazonWebServiceR
       m_channelSecurityGroups.push_back(channelSecurityGroupsJsonList[channelSecurityGroupsIndex].AsString());
     }
     m_channelSecurityGroupsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("inferenceSettings")) {
+    m_inferenceSettings = jsonValue.GetObject("inferenceSettings");
+    m_inferenceSettingsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

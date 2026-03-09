@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/personalize/model/DatasetSchema.h>
@@ -58,10 +59,13 @@ class DescribeSchemaResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DatasetSchema m_schema;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_schemaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

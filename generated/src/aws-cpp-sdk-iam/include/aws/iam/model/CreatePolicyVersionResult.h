@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/PolicyVersion.h>
 #include <aws/iam/model/ResponseMetadata.h>
@@ -65,10 +66,13 @@ class CreatePolicyVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   PolicyVersion m_policyVersion;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyVersionHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

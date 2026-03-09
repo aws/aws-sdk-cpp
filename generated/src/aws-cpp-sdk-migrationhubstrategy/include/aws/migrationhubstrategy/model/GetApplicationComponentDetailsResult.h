@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
@@ -126,6 +127,8 @@ class GetApplicationComponentDetailsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ApplicationComponentDetail m_applicationComponentDetail;
 
@@ -136,6 +139,7 @@ class GetApplicationComponentDetailsResult {
   bool m_moreApplicationResource{false};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_applicationComponentDetailHasBeenSet = false;
   bool m_associatedApplicationsHasBeenSet = false;
   bool m_associatedServerIdsHasBeenSet = false;

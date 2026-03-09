@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
@@ -321,6 +322,8 @@ class DescribeImageVersionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_baseImage;
 
@@ -355,6 +358,7 @@ class DescribeImageVersionResult {
   Aws::String m_releaseNotes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_baseImageHasBeenSet = false;
   bool m_containerImageHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

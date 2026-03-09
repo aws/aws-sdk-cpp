@@ -7,6 +7,7 @@
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
 #include <aws/bcm-data-exports/model/ExecutionStatus.h>
 #include <aws/bcm-data-exports/model/Export.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -47,23 +48,6 @@ class GetExecutionResult {
 
   ///@{
   /**
-   * <p>The status of this specific execution.</p>
-   */
-  inline const ExecutionStatus& GetExecutionStatus() const { return m_executionStatus; }
-  template <typename ExecutionStatusT = ExecutionStatus>
-  void SetExecutionStatus(ExecutionStatusT&& value) {
-    m_executionStatusHasBeenSet = true;
-    m_executionStatus = std::forward<ExecutionStatusT>(value);
-  }
-  template <typename ExecutionStatusT = ExecutionStatus>
-  GetExecutionResult& WithExecutionStatus(ExecutionStatusT&& value) {
-    SetExecutionStatus(std::forward<ExecutionStatusT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The export data for this specific execution. This export data is a snapshot
    * from when the execution was generated. The data could be different from the
    * current export data if the export was updated since the execution was
@@ -83,6 +67,23 @@ class GetExecutionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The status of this specific execution.</p>
+   */
+  inline const ExecutionStatus& GetExecutionStatus() const { return m_executionStatus; }
+  template <typename ExecutionStatusT = ExecutionStatus>
+  void SetExecutionStatus(ExecutionStatusT&& value) {
+    m_executionStatusHasBeenSet = true;
+    m_executionStatus = std::forward<ExecutionStatusT>(value);
+  }
+  template <typename ExecutionStatusT = ExecutionStatus>
+  GetExecutionResult& WithExecutionStatus(ExecutionStatusT&& value) {
+    SetExecutionStatus(std::forward<ExecutionStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -96,17 +97,20 @@ class GetExecutionResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_executionId;
 
-  ExecutionStatus m_executionStatus;
-
   Export m_export;
 
+  ExecutionStatus m_executionStatus;
+
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_executionIdHasBeenSet = false;
-  bool m_executionStatusHasBeenSet = false;
   bool m_exportHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -92,5 +92,9 @@ Aws::String CreateElasticsearchDomainRequest::SerializePayload() const {
     payload.WithArray("TagList", std::move(tagListJsonList));
   }
 
+  if (m_deploymentStrategyOptionsHasBeenSet) {
+    payload.WithObject("DeploymentStrategyOptions", m_deploymentStrategyOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

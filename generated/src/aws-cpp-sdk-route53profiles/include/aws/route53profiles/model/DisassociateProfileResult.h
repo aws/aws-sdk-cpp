@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53profiles/Route53Profiles_EXPORTS.h>
 #include <aws/route53profiles/model/ProfileAssociation.h>
@@ -58,10 +59,13 @@ class DisassociateProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ProfileAssociation m_profileAssociation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_profileAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

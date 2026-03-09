@@ -21,25 +21,25 @@ MultiPolygonGeometryInput& MultiPolygonGeometryInput::operator=(JsonView jsonVal
   if (jsonValue.ValueExists("Coordinates")) {
     Aws::Utils::Array<JsonView> coordinatesJsonList = jsonValue.GetArray("Coordinates");
     for (unsigned coordinatesIndex = 0; coordinatesIndex < coordinatesJsonList.GetLength(); ++coordinatesIndex) {
-      Aws::Utils::Array<JsonView> linearRingsJsonList = coordinatesJsonList[coordinatesIndex].AsArray();
-      Aws::Vector<Aws::Vector<Aws::Vector<double>>> linearRingsList;
-      linearRingsList.reserve((size_t)linearRingsJsonList.GetLength());
-      for (unsigned linearRingsIndex = 0; linearRingsIndex < linearRingsJsonList.GetLength(); ++linearRingsIndex) {
-        Aws::Utils::Array<JsonView> linearRingJsonList = linearRingsJsonList[linearRingsIndex].AsArray();
-        Aws::Vector<Aws::Vector<double>> linearRingList;
-        linearRingList.reserve((size_t)linearRingJsonList.GetLength());
-        for (unsigned linearRingIndex = 0; linearRingIndex < linearRingJsonList.GetLength(); ++linearRingIndex) {
-          Aws::Utils::Array<JsonView> positionJsonList = linearRingJsonList[linearRingIndex].AsArray();
-          Aws::Vector<double> positionList;
-          positionList.reserve((size_t)positionJsonList.GetLength());
-          for (unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex) {
-            positionList.push_back(positionJsonList[positionIndex].AsDouble());
+      Aws::Utils::Array<JsonView> linearRings2JsonList = coordinatesJsonList[coordinatesIndex].AsArray();
+      Aws::Vector<Aws::Vector<Aws::Vector<double>>> linearRings2List;
+      linearRings2List.reserve((size_t)linearRings2JsonList.GetLength());
+      for (unsigned linearRings2Index = 0; linearRings2Index < linearRings2JsonList.GetLength(); ++linearRings2Index) {
+        Aws::Utils::Array<JsonView> linearRing3JsonList = linearRings2JsonList[linearRings2Index].AsArray();
+        Aws::Vector<Aws::Vector<double>> linearRing3List;
+        linearRing3List.reserve((size_t)linearRing3JsonList.GetLength());
+        for (unsigned linearRing3Index = 0; linearRing3Index < linearRing3JsonList.GetLength(); ++linearRing3Index) {
+          Aws::Utils::Array<JsonView> position4JsonList = linearRing3JsonList[linearRing3Index].AsArray();
+          Aws::Vector<double> position4List;
+          position4List.reserve((size_t)position4JsonList.GetLength());
+          for (unsigned position4Index = 0; position4Index < position4JsonList.GetLength(); ++position4Index) {
+            position4List.push_back(position4JsonList[position4Index].AsDouble());
           }
-          linearRingList.push_back(std::move(positionList));
+          linearRing3List.push_back(std::move(position4List));
         }
-        linearRingsList.push_back(std::move(linearRingList));
+        linearRings2List.push_back(std::move(linearRing3List));
       }
-      m_coordinates.push_back(std::move(linearRingsList));
+      m_coordinates.push_back(std::move(linearRings2List));
     }
     m_coordinatesHasBeenSet = true;
   }

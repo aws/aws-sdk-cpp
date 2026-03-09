@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
@@ -106,6 +107,8 @@ class GetThingConnectivityDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_thingName;
 
@@ -116,6 +119,7 @@ class GetThingConnectivityDataResult {
   DisconnectReasonValue m_disconnectReason{DisconnectReasonValue::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_thingNameHasBeenSet = false;
   bool m_connectedHasBeenSet = false;
   bool m_timestampHasBeenSet = false;

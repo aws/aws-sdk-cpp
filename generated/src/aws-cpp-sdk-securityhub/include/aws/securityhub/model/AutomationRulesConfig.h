@@ -58,8 +58,8 @@ class AutomationRulesConfig {
   ///@{
   /**
    * <p> Whether the rule is active after it is created. If this parameter is equal
-   * to <code>ENABLED</code>, Security Hub starts applying the rule to findings and
-   * finding updates after the rule is created. </p>
+   * to <code>ENABLED</code>, Security Hub CSPM starts applying the rule to findings
+   * and finding updates after the rule is created. </p>
    */
   inline RuleStatus GetRuleStatus() const { return m_ruleStatus; }
   inline bool RuleStatusHasBeenSet() const { return m_ruleStatusHasBeenSet; }
@@ -76,8 +76,8 @@ class AutomationRulesConfig {
   ///@{
   /**
    * <p> An integer ranging from 1 to 1000 that represents the order in which the
-   * rule action is applied to findings. Security Hub applies rules with lower values
-   * for this parameter first. </p>
+   * rule action is applied to findings. Security Hub CSPM applies rules with lower
+   * values for this parameter first. </p>
    */
   inline int GetRuleOrder() const { return m_ruleOrder; }
   inline bool RuleOrderHasBeenSet() const { return m_ruleOrderHasBeenSet; }
@@ -132,9 +132,9 @@ class AutomationRulesConfig {
    * <p>Specifies whether a rule is the last to be applied with respect to a finding
    * that matches the rule criteria. This is useful when a finding matches the
    * criteria for multiple rules, and each rule has different actions. If a rule is
-   * terminal, Security Hub applies the rule action to a finding that matches the
-   * rule criteria and doesn't evaluate other rules for the finding. By default, a
-   * rule isn't terminal. </p>
+   * terminal, Security Hub CSPM applies the rule action to a finding that matches
+   * the rule criteria and doesn't evaluate other rules for the finding. By default,
+   * a rule isn't terminal. </p>
    */
   inline bool GetIsTerminal() const { return m_isTerminal; }
   inline bool IsTerminalHasBeenSet() const { return m_isTerminalHasBeenSet; }
@@ -153,9 +153,9 @@ class AutomationRulesConfig {
    * <p> A set of <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon
    * Web Services Security Finding Format</a> finding field attributes and
-   * corresponding expected values that Security Hub uses to filter findings. If a
-   * rule is enabled and a finding matches the conditions specified in this
-   * parameter, Security Hub applies the rule action to the finding. </p>
+   * corresponding expected values that Security Hub CSPM uses to filter findings. If
+   * a rule is enabled and a finding matches the conditions specified in this
+   * parameter, Security Hub CSPM applies the rule action to the finding. </p>
    */
   inline const AutomationRulesFindingFilters& GetCriteria() const { return m_criteria; }
   inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
@@ -200,7 +200,7 @@ class AutomationRulesConfig {
   /**
    * <p> A timestamp that indicates when the rule was created. </p> <p>For more
    * information about the validation and formatting of timestamp fields in Security
-   * Hub, see <a
+   * Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -221,7 +221,7 @@ class AutomationRulesConfig {
   /**
    * <p> A timestamp that indicates when the rule was most recently updated. </p>
    * <p>For more information about the validation and formatting of timestamp fields
-   * in Security Hub, see <a
+   * in Security Hub CSPM, see <a
    * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }

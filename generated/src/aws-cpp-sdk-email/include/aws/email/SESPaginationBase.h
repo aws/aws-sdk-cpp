@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/email/model/ListCustomVerificationEmailTemplatesPaginationTraits.h>
 #include <aws/email/model/ListIdentitiesPaginationTraits.h>
@@ -25,6 +26,7 @@ class SESPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomVerificationEmailTemplatesRequest,
                                     Pagination::ListCustomVerificationEmailTemplatesPaginationTraits<DerivedClient>>
   ListCustomVerificationEmailTemplatesPaginator(const Model::ListCustomVerificationEmailTemplatesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomVerificationEmailTemplatesRequest,
                                              Pagination::ListCustomVerificationEmailTemplatesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -35,6 +37,7 @@ class SESPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentitiesRequest, Pagination::ListIdentitiesPaginationTraits<DerivedClient>>
   ListIdentitiesPaginator(const Model::ListIdentitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIdentitiesRequest,
                                              Pagination::ListIdentitiesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};

@@ -31,8 +31,8 @@ class DoubleConfigurationOptions {
 
   ///@{
   /**
-   * <p> The Security Hub default value for a control parameter that is a double.
-   * </p>
+   * <p> The Security Hub CSPM default value for a control parameter that is a
+   * double. </p>
    */
   inline double GetDefaultValue() const { return m_defaultValue; }
   inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }

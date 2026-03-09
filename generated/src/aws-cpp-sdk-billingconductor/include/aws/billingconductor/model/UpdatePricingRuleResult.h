@@ -8,6 +8,7 @@
 #include <aws/billingconductor/model/PricingRuleScope.h>
 #include <aws/billingconductor/model/PricingRuleType.h>
 #include <aws/billingconductor/model/UpdateTieringInput.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -270,6 +271,8 @@ class UpdatePricingRuleResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -298,6 +301,7 @@ class UpdatePricingRuleResult {
   Aws::String m_operation;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

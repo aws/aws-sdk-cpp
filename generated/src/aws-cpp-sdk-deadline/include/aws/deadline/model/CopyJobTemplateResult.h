@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/deadline/model/JobTemplateType.h>
@@ -57,10 +58,13 @@ class CopyJobTemplateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   JobTemplateType m_templateType{JobTemplateType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_templateTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

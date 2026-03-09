@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/machinelearning/model/DescribeBatchPredictionsPaginationTraits.h>
 #include <aws/machinelearning/model/DescribeDataSourcesPaginationTraits.h>
@@ -27,6 +28,7 @@ class MachineLearningPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBatchPredictionsRequest,
                                     Pagination::DescribeBatchPredictionsPaginationTraits<DerivedClient>>
   DescribeBatchPredictionsPaginator(const Model::DescribeBatchPredictionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeBatchPredictionsRequest,
                                              Pagination::DescribeBatchPredictionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -38,6 +40,7 @@ class MachineLearningPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDataSourcesRequest,
                                     Pagination::DescribeDataSourcesPaginationTraits<DerivedClient>>
   DescribeDataSourcesPaginator(const Model::DescribeDataSourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDataSourcesRequest,
                                              Pagination::DescribeDataSourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -49,6 +52,7 @@ class MachineLearningPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEvaluationsRequest,
                                     Pagination::DescribeEvaluationsPaginationTraits<DerivedClient>>
   DescribeEvaluationsPaginator(const Model::DescribeEvaluationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeEvaluationsRequest,
                                              Pagination::DescribeEvaluationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -60,6 +64,7 @@ class MachineLearningPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMLModelsRequest,
                                     Pagination::DescribeMLModelsPaginationTraits<DerivedClient>>
   DescribeMLModelsPaginator(const Model::DescribeMLModelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMLModelsRequest,
                                              Pagination::DescribeMLModelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

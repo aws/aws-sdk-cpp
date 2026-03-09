@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/datasync/model/ListAgentsPaginationTraits.h>
 #include <aws/datasync/model/ListLocationsPaginationTraits.h>
@@ -27,6 +28,7 @@ class DataSyncPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentsRequest, Pagination::ListAgentsPaginationTraits<DerivedClient>>
   ListAgentsPaginator(const Model::ListAgentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAgentsRequest,
                                              Pagination::ListAgentsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -37,6 +39,7 @@ class DataSyncPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLocationsRequest, Pagination::ListLocationsPaginationTraits<DerivedClient>>
   ListLocationsPaginator(const Model::ListLocationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLocationsRequest,
                                              Pagination::ListLocationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
@@ -48,6 +51,7 @@ class DataSyncPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                     Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>
   ListTagsForResourcePaginator(const Model::ListTagsForResourceRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagsForResourceRequest,
                                              Pagination::ListTagsForResourcePaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -59,6 +63,7 @@ class DataSyncPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTaskExecutionsRequest,
                                     Pagination::ListTaskExecutionsPaginationTraits<DerivedClient>>
   ListTaskExecutionsPaginator(const Model::ListTaskExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTaskExecutionsRequest,
                                              Pagination::ListTaskExecutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -69,6 +74,7 @@ class DataSyncPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DerivedClient>>
   ListTasksPaginator(const Model::ListTasksRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTasksRequest, Pagination::ListTasksPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }

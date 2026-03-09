@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/Firewall.h>
@@ -72,12 +73,15 @@ class DeleteFirewallResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Firewall m_firewall;
 
   FirewallStatus m_firewallStatus;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_firewallHasBeenSet = false;
   bool m_firewallStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

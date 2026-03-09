@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -68,10 +69,13 @@ class GetDefaultScraperConfigurationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_configuration{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_configurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

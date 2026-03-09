@@ -1063,6 +1063,41 @@ class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves aggregated statistics about the top URI paths accessed by bot
+   * traffic for a specified web ACL and time window. You can use this operation to
+   * analyze which paths on your web application receive the most bot traffic and
+   * identify the specific bots accessing those paths. The operation supports
+   * filtering by bot category, organization, or name, and allows you to drill down
+   * into specific path prefixes to view detailed URI-level statistics.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetTopPathStatisticsByTraffic">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTopPathStatisticsByTrafficOutcome GetTopPathStatisticsByTraffic(
+      const Model::GetTopPathStatisticsByTrafficRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTopPathStatisticsByTraffic that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetTopPathStatisticsByTrafficRequestT = Model::GetTopPathStatisticsByTrafficRequest>
+  Model::GetTopPathStatisticsByTrafficOutcomeCallable GetTopPathStatisticsByTrafficCallable(
+      const GetTopPathStatisticsByTrafficRequestT& request) const {
+    return SubmitCallable(&WAFV2Client::GetTopPathStatisticsByTraffic, request);
+  }
+
+  /**
+   * An Async wrapper for GetTopPathStatisticsByTraffic that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTopPathStatisticsByTrafficRequestT = Model::GetTopPathStatisticsByTrafficRequest>
+  void GetTopPathStatisticsByTrafficAsync(const GetTopPathStatisticsByTrafficRequestT& request,
+                                          const GetTopPathStatisticsByTrafficResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WAFV2Client::GetTopPathStatisticsByTraffic, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the specified <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACL">AWS API
    * Reference</a></p>

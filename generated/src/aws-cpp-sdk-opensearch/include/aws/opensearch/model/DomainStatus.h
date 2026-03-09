@@ -14,6 +14,7 @@
 #include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <aws/opensearch/model/ClusterConfig.h>
 #include <aws/opensearch/model/CognitoOptions.h>
+#include <aws/opensearch/model/DeploymentStrategyOptions.h>
 #include <aws/opensearch/model/DomainEndpointOptions.h>
 #include <aws/opensearch/model/DomainProcessingStatusType.h>
 #include <aws/opensearch/model/EBSOptions.h>
@@ -705,6 +706,24 @@ class DomainStatus {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The current status of the domain's deployment strategy options.</p>
+   */
+  inline const DeploymentStrategyOptions& GetDeploymentStrategyOptions() const { return m_deploymentStrategyOptions; }
+  inline bool DeploymentStrategyOptionsHasBeenSet() const { return m_deploymentStrategyOptionsHasBeenSet; }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOptions>
+  void SetDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    m_deploymentStrategyOptionsHasBeenSet = true;
+    m_deploymentStrategyOptions = std::forward<DeploymentStrategyOptionsT>(value);
+  }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOptions>
+  DomainStatus& WithDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    SetDeploymentStrategyOptions(std::forward<DeploymentStrategyOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainId;
 
@@ -773,6 +792,8 @@ class DomainStatus {
   Aws::Vector<ModifyingProperties> m_modifyingProperties;
 
   AIMLOptionsOutput m_aIMLOptions;
+
+  DeploymentStrategyOptions m_deploymentStrategyOptions;
   bool m_domainIdHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
@@ -807,6 +828,7 @@ class DomainStatus {
   bool m_domainProcessingStatusHasBeenSet = false;
   bool m_modifyingPropertiesHasBeenSet = false;
   bool m_aIMLOptionsHasBeenSet = false;
+  bool m_deploymentStrategyOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

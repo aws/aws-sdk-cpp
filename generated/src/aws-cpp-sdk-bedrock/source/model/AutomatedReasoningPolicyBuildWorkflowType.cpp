@@ -18,6 +18,7 @@ namespace AutomatedReasoningPolicyBuildWorkflowTypeMapper {
 static const int INGEST_CONTENT_HASH = HashingUtils::HashString("INGEST_CONTENT");
 static const int REFINE_POLICY_HASH = HashingUtils::HashString("REFINE_POLICY");
 static const int IMPORT_POLICY_HASH = HashingUtils::HashString("IMPORT_POLICY");
+static const int GENERATE_FIDELITY_REPORT_HASH = HashingUtils::HashString("GENERATE_FIDELITY_REPORT");
 
 AutomatedReasoningPolicyBuildWorkflowType GetAutomatedReasoningPolicyBuildWorkflowTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ AutomatedReasoningPolicyBuildWorkflowType GetAutomatedReasoningPolicyBuildWorkfl
     return AutomatedReasoningPolicyBuildWorkflowType::REFINE_POLICY;
   } else if (hashCode == IMPORT_POLICY_HASH) {
     return AutomatedReasoningPolicyBuildWorkflowType::IMPORT_POLICY;
+  } else if (hashCode == GENERATE_FIDELITY_REPORT_HASH) {
+    return AutomatedReasoningPolicyBuildWorkflowType::GENERATE_FIDELITY_REPORT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForAutomatedReasoningPolicyBuildWorkflowType(AutomatedReasoni
       return "REFINE_POLICY";
     case AutomatedReasoningPolicyBuildWorkflowType::IMPORT_POLICY:
       return "IMPORT_POLICY";
+    case AutomatedReasoningPolicyBuildWorkflowType::GENERATE_FIDELITY_REPORT:
+      return "GENERATE_FIDELITY_REPORT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

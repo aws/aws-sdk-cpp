@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/ECS_EXPORTS.h>
@@ -23,6 +24,11 @@ class JsonValue;
 }  // namespace Utils
 namespace ECS {
 namespace Model {
+/**
+ * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTaskResponse">AWS
+ * API Reference</a></p>
+ */
 class RunTaskResult {
  public:
   AWS_ECS_API RunTaskResult() = default;
@@ -96,12 +102,15 @@ class RunTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Task> m_tasks;
 
   Aws::Vector<Failure> m_failures;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tasksHasBeenSet = false;
   bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

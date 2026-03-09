@@ -21,6 +21,7 @@
 #include <aws/mpa/model/ApprovalTeamRequestApprover.h>
 #include <aws/mpa/model/ApprovalTeamStatus.h>
 #include <aws/mpa/model/ApprovalTeamStatusCode.h>
+#include <aws/mpa/model/ApproverLastActivity.h>
 #include <aws/mpa/model/CancelSessionRequest.h>
 #include <aws/mpa/model/CancelSessionResult.h>
 #include <aws/mpa/model/CreateApprovalTeamRequest.h>
@@ -90,6 +91,8 @@
 #include <aws/mpa/model/SessionStatusCode.h>
 #include <aws/mpa/model/StartActiveApprovalTeamDeletionRequest.h>
 #include <aws/mpa/model/StartActiveApprovalTeamDeletionResult.h>
+#include <aws/mpa/model/StartApprovalTeamBaselineRequest.h>
+#include <aws/mpa/model/StartApprovalTeamBaselineResult.h>
 #include <aws/mpa/model/TagResourceRequest.h>
 #include <aws/mpa/model/TagResourceResult.h>
 #include <aws/mpa/model/TooManyTagsException.h>

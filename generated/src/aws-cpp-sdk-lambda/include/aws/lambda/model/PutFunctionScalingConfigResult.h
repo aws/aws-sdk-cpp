@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/model/State.h>
@@ -57,10 +58,13 @@ class PutFunctionScalingConfigResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   State m_functionState{State::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_functionStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

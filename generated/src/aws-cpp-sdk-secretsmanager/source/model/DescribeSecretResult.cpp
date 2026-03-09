@@ -20,6 +20,7 @@ using namespace Aws;
 DescribeSecretResult::DescribeSecretResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 DescribeSecretResult& DescribeSecretResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("ARN")) {
     m_aRN = jsonValue.GetString("ARN");
@@ -95,14 +96,14 @@ DescribeSecretResult& DescribeSecretResult::operator=(const Aws::AmazonWebServic
   if (jsonValue.ValueExists("VersionIdsToStages")) {
     Aws::Map<Aws::String, JsonView> versionIdsToStagesJsonMap = jsonValue.GetObject("VersionIdsToStages").GetAllObjects();
     for (auto& versionIdsToStagesItem : versionIdsToStagesJsonMap) {
-      Aws::Utils::Array<JsonView> secretVersionStagesTypeJsonList = versionIdsToStagesItem.second.AsArray();
-      Aws::Vector<Aws::String> secretVersionStagesTypeList;
-      secretVersionStagesTypeList.reserve((size_t)secretVersionStagesTypeJsonList.GetLength());
-      for (unsigned secretVersionStagesTypeIndex = 0; secretVersionStagesTypeIndex < secretVersionStagesTypeJsonList.GetLength();
-           ++secretVersionStagesTypeIndex) {
-        secretVersionStagesTypeList.push_back(secretVersionStagesTypeJsonList[secretVersionStagesTypeIndex].AsString());
+      Aws::Utils::Array<JsonView> secretVersionStagesType2JsonList = versionIdsToStagesItem.second.AsArray();
+      Aws::Vector<Aws::String> secretVersionStagesType2List;
+      secretVersionStagesType2List.reserve((size_t)secretVersionStagesType2JsonList.GetLength());
+      for (unsigned secretVersionStagesType2Index = 0; secretVersionStagesType2Index < secretVersionStagesType2JsonList.GetLength();
+           ++secretVersionStagesType2Index) {
+        secretVersionStagesType2List.push_back(secretVersionStagesType2JsonList[secretVersionStagesType2Index].AsString());
       }
-      m_versionIdsToStages[versionIdsToStagesItem.first] = std::move(secretVersionStagesTypeList);
+      m_versionIdsToStages[versionIdsToStagesItem.first] = std::move(secretVersionStagesType2List);
     }
     m_versionIdsToStagesHasBeenSet = true;
   }

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/transcribe/model/ListCallAnalyticsCategoriesPaginationTraits.h>
 #include <aws/transcribe/model/ListCallAnalyticsJobsPaginationTraits.h>
@@ -32,6 +33,7 @@ class TranscribeServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCallAnalyticsCategoriesRequest,
                                     Pagination::ListCallAnalyticsCategoriesPaginationTraits<DerivedClient>>
   ListCallAnalyticsCategoriesPaginator(const Model::ListCallAnalyticsCategoriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCallAnalyticsCategoriesRequest,
                                              Pagination::ListCallAnalyticsCategoriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -43,6 +45,7 @@ class TranscribeServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCallAnalyticsJobsRequest,
                                     Pagination::ListCallAnalyticsJobsPaginationTraits<DerivedClient>>
   ListCallAnalyticsJobsPaginator(const Model::ListCallAnalyticsJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCallAnalyticsJobsRequest,
                                              Pagination::ListCallAnalyticsJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -54,6 +57,7 @@ class TranscribeServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLanguageModelsRequest,
                                     Pagination::ListLanguageModelsPaginationTraits<DerivedClient>>
   ListLanguageModelsPaginator(const Model::ListLanguageModelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLanguageModelsRequest,
                                              Pagination::ListLanguageModelsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -65,6 +69,7 @@ class TranscribeServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMedicalScribeJobsRequest,
                                     Pagination::ListMedicalScribeJobsPaginationTraits<DerivedClient>>
   ListMedicalScribeJobsPaginator(const Model::ListMedicalScribeJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMedicalScribeJobsRequest,
                                              Pagination::ListMedicalScribeJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -76,6 +81,7 @@ class TranscribeServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMedicalTranscriptionJobsRequest,
                                     Pagination::ListMedicalTranscriptionJobsPaginationTraits<DerivedClient>>
   ListMedicalTranscriptionJobsPaginator(const Model::ListMedicalTranscriptionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMedicalTranscriptionJobsRequest,
                                              Pagination::ListMedicalTranscriptionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -87,6 +93,7 @@ class TranscribeServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMedicalVocabulariesRequest,
                                     Pagination::ListMedicalVocabulariesPaginationTraits<DerivedClient>>
   ListMedicalVocabulariesPaginator(const Model::ListMedicalVocabulariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMedicalVocabulariesRequest,
                                              Pagination::ListMedicalVocabulariesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -98,6 +105,7 @@ class TranscribeServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTranscriptionJobsRequest,
                                     Pagination::ListTranscriptionJobsPaginationTraits<DerivedClient>>
   ListTranscriptionJobsPaginator(const Model::ListTranscriptionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTranscriptionJobsRequest,
                                              Pagination::ListTranscriptionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -109,6 +117,7 @@ class TranscribeServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVocabulariesRequest,
                                     Pagination::ListVocabulariesPaginationTraits<DerivedClient>>
   ListVocabulariesPaginator(const Model::ListVocabulariesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVocabulariesRequest,
                                              Pagination::ListVocabulariesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -120,6 +129,7 @@ class TranscribeServicePaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVocabularyFiltersRequest,
                                     Pagination::ListVocabularyFiltersPaginationTraits<DerivedClient>>
   ListVocabularyFiltersPaginator(const Model::ListVocabularyFiltersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListVocabularyFiltersRequest,
                                              Pagination::ListVocabularyFiltersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

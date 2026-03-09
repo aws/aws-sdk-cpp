@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -471,6 +472,8 @@ class GetMLModelResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_mLModelId;
 
@@ -515,6 +518,7 @@ class GetMLModelResult {
   Aws::String m_schema;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mLModelIdHasBeenSet = false;
   bool m_trainingDataSourceIdHasBeenSet = false;
   bool m_createdByIamUserHasBeenSet = false;

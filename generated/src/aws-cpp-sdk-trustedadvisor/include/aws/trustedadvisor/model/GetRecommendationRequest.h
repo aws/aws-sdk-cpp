@@ -7,10 +7,14 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/trustedadvisor/TrustedAdvisorRequest.h>
 #include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
+#include <aws/trustedadvisor/model/RecommendationLanguage.h>
 
 #include <utility>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace TrustedAdvisor {
 namespace Model {
 
@@ -27,6 +31,8 @@ class GetRecommendationRequest : public TrustedAdvisorRequest {
   inline virtual const char* GetServiceRequestName() const override { return "GetRecommendation"; }
 
   AWS_TRUSTEDADVISOR_API Aws::String SerializePayload() const override;
+
+  AWS_TRUSTEDADVISOR_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
   /**
@@ -45,9 +51,29 @@ class GetRecommendationRequest : public TrustedAdvisorRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ISO 639-1 code for the language that you want your recommendations to
+   * appear in.</p>
+   */
+  inline RecommendationLanguage GetLanguage() const { return m_language; }
+  inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
+  inline void SetLanguage(RecommendationLanguage value) {
+    m_languageHasBeenSet = true;
+    m_language = value;
+  }
+  inline GetRecommendationRequest& WithLanguage(RecommendationLanguage value) {
+    SetLanguage(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_recommendationIdentifier;
+
+  RecommendationLanguage m_language{RecommendationLanguage::NOT_SET};
   bool m_recommendationIdentifierHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -20,6 +20,7 @@ using namespace Aws;
 ListMetricsResult::ListMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ListMetricsResult& ListMetricsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
@@ -28,13 +29,13 @@ ListMetricsResult& ListMetricsResult::operator=(const Aws::AmazonWebServiceResul
   if (jsonValue.ValueExists("rows")) {
     Aws::Utils::Array<JsonView> rowsJsonList = jsonValue.GetArray("rows");
     for (unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex) {
-      Aws::Utils::Array<JsonView> rowJsonList = rowsJsonList[rowsIndex].AsArray();
-      Aws::Vector<Aws::String> rowList;
-      rowList.reserve((size_t)rowJsonList.GetLength());
-      for (unsigned rowIndex = 0; rowIndex < rowJsonList.GetLength(); ++rowIndex) {
-        rowList.push_back(rowJsonList[rowIndex].AsString());
+      Aws::Utils::Array<JsonView> row2JsonList = rowsJsonList[rowsIndex].AsArray();
+      Aws::Vector<Aws::String> row2List;
+      row2List.reserve((size_t)row2JsonList.GetLength());
+      for (unsigned row2Index = 0; row2Index < row2JsonList.GetLength(); ++row2Index) {
+        row2List.push_back(row2JsonList[row2Index].AsString());
       }
-      m_rows.push_back(std::move(rowList));
+      m_rows.push_back(std::move(row2List));
     }
     m_rowsHasBeenSet = true;
   }

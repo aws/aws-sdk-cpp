@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datapipeline/DataPipeline_EXPORTS.h>
 #include <aws/datapipeline/model/TaskObject.h>
@@ -67,10 +68,13 @@ class PollForTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   TaskObject m_taskObject;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_taskObjectHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

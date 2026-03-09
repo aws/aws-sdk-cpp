@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/wafv2/model/RateBasedStatementManagedKeysIPSet.h>
@@ -75,12 +76,15 @@ class GetRateBasedStatementManagedKeysResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   RateBasedStatementManagedKeysIPSet m_managedKeysIPV4;
 
   RateBasedStatementManagedKeysIPSet m_managedKeysIPV6;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_managedKeysIPV4HasBeenSet = false;
   bool m_managedKeysIPV6HasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -87,15 +87,34 @@ class UpdateFarmRequest : public DeadlineRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The cost scale factor of the farm to update.</p>
+   */
+  inline double GetCostScaleFactor() const { return m_costScaleFactor; }
+  inline bool CostScaleFactorHasBeenSet() const { return m_costScaleFactorHasBeenSet; }
+  inline void SetCostScaleFactor(double value) {
+    m_costScaleFactorHasBeenSet = true;
+    m_costScaleFactor = value;
+  }
+  inline UpdateFarmRequest& WithCostScaleFactor(double value) {
+    SetCostScaleFactor(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_farmId;
 
   Aws::String m_displayName;
 
   Aws::String m_description;
+
+  double m_costScaleFactor{0.0};
   bool m_farmIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_costScaleFactorHasBeenSet = false;
 };
 
 }  // namespace Model

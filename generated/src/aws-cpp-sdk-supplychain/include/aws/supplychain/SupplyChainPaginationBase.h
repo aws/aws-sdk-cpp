@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/supplychain/model/ListDataIntegrationEventsPaginationTraits.h>
 #include <aws/supplychain/model/ListDataIntegrationFlowExecutionsPaginationTraits.h>
@@ -29,6 +30,7 @@ class SupplyChainPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIntegrationEventsRequest,
                                     Pagination::ListDataIntegrationEventsPaginationTraits<DerivedClient>>
   ListDataIntegrationEventsPaginator(const Model::ListDataIntegrationEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIntegrationEventsRequest,
                                              Pagination::ListDataIntegrationEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -40,6 +42,7 @@ class SupplyChainPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIntegrationFlowExecutionsRequest,
                                     Pagination::ListDataIntegrationFlowExecutionsPaginationTraits<DerivedClient>>
   ListDataIntegrationFlowExecutionsPaginator(const Model::ListDataIntegrationFlowExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIntegrationFlowExecutionsRequest,
                                              Pagination::ListDataIntegrationFlowExecutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -51,6 +54,7 @@ class SupplyChainPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIntegrationFlowsRequest,
                                     Pagination::ListDataIntegrationFlowsPaginationTraits<DerivedClient>>
   ListDataIntegrationFlowsPaginator(const Model::ListDataIntegrationFlowsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIntegrationFlowsRequest,
                                              Pagination::ListDataIntegrationFlowsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -62,6 +66,7 @@ class SupplyChainPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataLakeDatasetsRequest,
                                     Pagination::ListDataLakeDatasetsPaginationTraits<DerivedClient>>
   ListDataLakeDatasetsPaginator(const Model::ListDataLakeDatasetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataLakeDatasetsRequest,
                                              Pagination::ListDataLakeDatasetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -73,6 +78,7 @@ class SupplyChainPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataLakeNamespacesRequest,
                                     Pagination::ListDataLakeNamespacesPaginationTraits<DerivedClient>>
   ListDataLakeNamespacesPaginator(const Model::ListDataLakeNamespacesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataLakeNamespacesRequest,
                                              Pagination::ListDataLakeNamespacesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -83,6 +89,7 @@ class SupplyChainPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInstancesRequest, Pagination::ListInstancesPaginationTraits<DerivedClient>>
   ListInstancesPaginator(const Model::ListInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInstancesRequest,
                                              Pagination::ListInstancesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};

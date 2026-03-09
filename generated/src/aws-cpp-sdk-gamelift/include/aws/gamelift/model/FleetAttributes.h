@@ -17,6 +17,8 @@
 #include <aws/gamelift/model/FleetType.h>
 #include <aws/gamelift/model/InstanceRoleCredentialsProvider.h>
 #include <aws/gamelift/model/OperatingSystem.h>
+#include <aws/gamelift/model/PlayerGatewayConfiguration.h>
+#include <aws/gamelift/model/PlayerGatewayMode.h>
 #include <aws/gamelift/model/ProtectionPolicy.h>
 #include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
 
@@ -621,6 +623,45 @@ class FleetAttributes {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether player gateway is enabled for this fleet. Player gateway
+   * provides benefits such as DDoS protection with negligible impact to latency.</p>
+   * <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients can use player
+   * gateway to connect with the game server. If <code>DISABLED</code>, game clients
+   * cannot use player gateway. Instead, they have to directly connect to the game
+   * server.</p>
+   */
+  inline PlayerGatewayMode GetPlayerGatewayMode() const { return m_playerGatewayMode; }
+  inline bool PlayerGatewayModeHasBeenSet() const { return m_playerGatewayModeHasBeenSet; }
+  inline void SetPlayerGatewayMode(PlayerGatewayMode value) {
+    m_playerGatewayModeHasBeenSet = true;
+    m_playerGatewayMode = value;
+  }
+  inline FleetAttributes& WithPlayerGatewayMode(PlayerGatewayMode value) {
+    SetPlayerGatewayMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for player gateway on this fleet.</p>
+   */
+  inline const PlayerGatewayConfiguration& GetPlayerGatewayConfiguration() const { return m_playerGatewayConfiguration; }
+  inline bool PlayerGatewayConfigurationHasBeenSet() const { return m_playerGatewayConfigurationHasBeenSet; }
+  template <typename PlayerGatewayConfigurationT = PlayerGatewayConfiguration>
+  void SetPlayerGatewayConfiguration(PlayerGatewayConfigurationT&& value) {
+    m_playerGatewayConfigurationHasBeenSet = true;
+    m_playerGatewayConfiguration = std::forward<PlayerGatewayConfigurationT>(value);
+  }
+  template <typename PlayerGatewayConfigurationT = PlayerGatewayConfiguration>
+  FleetAttributes& WithPlayerGatewayConfiguration(PlayerGatewayConfigurationT&& value) {
+    SetPlayerGatewayConfiguration(std::forward<PlayerGatewayConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fleetId;
 
@@ -673,6 +714,10 @@ class FleetAttributes {
   AnywhereConfiguration m_anywhereConfiguration;
 
   InstanceRoleCredentialsProvider m_instanceRoleCredentialsProvider{InstanceRoleCredentialsProvider::NOT_SET};
+
+  PlayerGatewayMode m_playerGatewayMode{PlayerGatewayMode::NOT_SET};
+
+  PlayerGatewayConfiguration m_playerGatewayConfiguration;
   bool m_fleetIdHasBeenSet = false;
   bool m_fleetArnHasBeenSet = false;
   bool m_fleetTypeHasBeenSet = false;
@@ -699,6 +744,8 @@ class FleetAttributes {
   bool m_computeTypeHasBeenSet = false;
   bool m_anywhereConfigurationHasBeenSet = false;
   bool m_instanceRoleCredentialsProviderHasBeenSet = false;
+  bool m_playerGatewayModeHasBeenSet = false;
+  bool m_playerGatewayConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

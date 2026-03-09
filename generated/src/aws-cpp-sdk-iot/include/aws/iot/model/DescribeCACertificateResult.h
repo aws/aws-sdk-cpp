@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/CACertificateDescription.h>
@@ -82,12 +83,15 @@ class DescribeCACertificateResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   CACertificateDescription m_certificateDescription;
 
   RegistrationConfig m_registrationConfig;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_certificateDescriptionHasBeenSet = false;
   bool m_registrationConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

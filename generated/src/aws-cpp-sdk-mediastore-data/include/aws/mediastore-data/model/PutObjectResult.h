@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
 #include <aws/mediastore-data/model/StorageClass.h>
@@ -91,6 +92,8 @@ class PutObjectResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_contentSHA256;
 
@@ -99,6 +102,7 @@ class PutObjectResult {
   StorageClass m_storageClass{StorageClass::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_contentSHA256HasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_storageClassHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/model/ResponseMetadata.h>
@@ -94,6 +95,8 @@ class GetHumanReadableSummaryResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_summaryContent;
 
@@ -102,6 +105,7 @@ class GetHumanReadableSummaryResult {
   SummaryStateType m_summaryState{SummaryStateType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_summaryContentHasBeenSet = false;
   bool m_localeHasBeenSet = false;
   bool m_summaryStateHasBeenSet = false;

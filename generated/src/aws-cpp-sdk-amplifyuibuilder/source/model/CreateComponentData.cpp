@@ -54,12 +54,12 @@ CreateComponentData& CreateComponentData::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("overrides")) {
     Aws::Map<Aws::String, JsonView> overridesJsonMap = jsonValue.GetObject("overrides").GetAllObjects();
     for (auto& overridesItem : overridesJsonMap) {
-      Aws::Map<Aws::String, JsonView> componentOverridesValueJsonMap = overridesItem.second.GetAllObjects();
-      Aws::Map<Aws::String, Aws::String> componentOverridesValueMap;
-      for (auto& componentOverridesValueItem : componentOverridesValueJsonMap) {
-        componentOverridesValueMap[componentOverridesValueItem.first] = componentOverridesValueItem.second.AsString();
+      Aws::Map<Aws::String, JsonView> componentOverridesValue2JsonMap = overridesItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> componentOverridesValue2Map;
+      for (auto& componentOverridesValue2Item : componentOverridesValue2JsonMap) {
+        componentOverridesValue2Map[componentOverridesValue2Item.first] = componentOverridesValue2Item.second.AsString();
       }
-      m_overrides[overridesItem.first] = std::move(componentOverridesValueMap);
+      m_overrides[overridesItem.first] = std::move(componentOverridesValue2Map);
     }
     m_overridesHasBeenSet = true;
   }

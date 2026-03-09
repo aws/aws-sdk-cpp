@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -93,12 +94,15 @@ class DescribeHsmConfigurationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_marker;
 
   Aws::Vector<HsmConfiguration> m_hsmConfigurations;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_markerHasBeenSet = false;
   bool m_hsmConfigurationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;

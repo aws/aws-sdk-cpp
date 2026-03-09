@@ -20,17 +20,18 @@ using namespace Aws;
 ExecuteStatementResult::ExecuteStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 ExecuteStatementResult& ExecuteStatementResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("records")) {
     Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
     for (unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex) {
-      Aws::Utils::Array<JsonView> fieldListJsonList = recordsJsonList[recordsIndex].AsArray();
-      Aws::Vector<Field> fieldListList;
-      fieldListList.reserve((size_t)fieldListJsonList.GetLength());
-      for (unsigned fieldListIndex = 0; fieldListIndex < fieldListJsonList.GetLength(); ++fieldListIndex) {
-        fieldListList.push_back(fieldListJsonList[fieldListIndex].AsObject());
+      Aws::Utils::Array<JsonView> fieldList2JsonList = recordsJsonList[recordsIndex].AsArray();
+      Aws::Vector<Field> fieldList2List;
+      fieldList2List.reserve((size_t)fieldList2JsonList.GetLength());
+      for (unsigned fieldList2Index = 0; fieldList2Index < fieldList2JsonList.GetLength(); ++fieldList2Index) {
+        fieldList2List.push_back(fieldList2JsonList[fieldList2Index].AsObject());
       }
-      m_records.push_back(std::move(fieldListList));
+      m_records.push_back(std::move(fieldList2List));
     }
     m_recordsHasBeenSet = true;
   }

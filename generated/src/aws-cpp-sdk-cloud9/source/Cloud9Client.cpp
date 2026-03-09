@@ -91,7 +91,7 @@ Cloud9Client::Cloud9Client(const std::shared_ptr<AWSCredentialsProvider>& creden
 }
 
 /* Legacy constructors due deprecation */
-Cloud9Client::Cloud9Client(const Client::ClientConfiguration& clientConfiguration)
+Cloud9Client::Cloud9Client(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -103,7 +103,7 @@ Cloud9Client::Cloud9Client(const Client::ClientConfiguration& clientConfiguratio
   init(m_clientConfiguration);
 }
 
-Cloud9Client::Cloud9Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+Cloud9Client::Cloud9Client(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -114,7 +114,7 @@ Cloud9Client::Cloud9Client(const AWSCredentials& credentials, const Client::Clie
 }
 
 Cloud9Client::Cloud9Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                           const Client::ClientConfiguration& clientConfiguration)
+                           const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

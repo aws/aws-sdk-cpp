@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
@@ -91,6 +92,8 @@ class CreateDomainResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_domainArn;
 
@@ -99,6 +102,7 @@ class CreateDomainResult {
   Aws::String m_url;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_domainArnHasBeenSet = false;
   bool m_domainIdHasBeenSet = false;
   bool m_urlHasBeenSet = false;

@@ -25,13 +25,13 @@ Hit& Hit::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("fields")) {
     Aws::Map<Aws::String, JsonView> fieldsJsonMap = jsonValue.GetObject("fields").GetAllObjects();
     for (auto& fieldsItem : fieldsJsonMap) {
-      Aws::Utils::Array<JsonView> fieldValueJsonList = fieldsItem.second.AsArray();
-      Aws::Vector<Aws::String> fieldValueList;
-      fieldValueList.reserve((size_t)fieldValueJsonList.GetLength());
-      for (unsigned fieldValueIndex = 0; fieldValueIndex < fieldValueJsonList.GetLength(); ++fieldValueIndex) {
-        fieldValueList.push_back(fieldValueJsonList[fieldValueIndex].AsString());
+      Aws::Utils::Array<JsonView> fieldValue2JsonList = fieldsItem.second.AsArray();
+      Aws::Vector<Aws::String> fieldValue2List;
+      fieldValue2List.reserve((size_t)fieldValue2JsonList.GetLength());
+      for (unsigned fieldValue2Index = 0; fieldValue2Index < fieldValue2JsonList.GetLength(); ++fieldValue2Index) {
+        fieldValue2List.push_back(fieldValue2JsonList[fieldValue2Index].AsString());
       }
-      m_fields[fieldsItem.first] = std::move(fieldValueList);
+      m_fields[fieldsItem.first] = std::move(fieldValue2List);
     }
     m_fieldsHasBeenSet = true;
   }

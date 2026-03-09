@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/codecommit/model/ConflictMetadata.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -153,6 +154,8 @@ class GetMergeConflictsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   bool m_mergeable{false};
 
@@ -167,6 +170,7 @@ class GetMergeConflictsResult {
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_mergeableHasBeenSet = false;
   bool m_destinationCommitIdHasBeenSet = false;
   bool m_sourceCommitIdHasBeenSet = false;

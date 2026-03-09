@@ -20,6 +20,7 @@ using namespace Aws;
 GetExtensionResult::GetExtensionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 GetExtensionResult& GetExtensionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
@@ -44,13 +45,13 @@ GetExtensionResult& GetExtensionResult::operator=(const Aws::AmazonWebServiceRes
   if (jsonValue.ValueExists("Actions")) {
     Aws::Map<Aws::String, JsonView> actionsJsonMap = jsonValue.GetObject("Actions").GetAllObjects();
     for (auto& actionsItem : actionsJsonMap) {
-      Aws::Utils::Array<JsonView> actionListJsonList = actionsItem.second.AsArray();
-      Aws::Vector<Action> actionListList;
-      actionListList.reserve((size_t)actionListJsonList.GetLength());
-      for (unsigned actionListIndex = 0; actionListIndex < actionListJsonList.GetLength(); ++actionListIndex) {
-        actionListList.push_back(actionListJsonList[actionListIndex].AsObject());
+      Aws::Utils::Array<JsonView> actionList2JsonList = actionsItem.second.AsArray();
+      Aws::Vector<Action> actionList2List;
+      actionList2List.reserve((size_t)actionList2JsonList.GetLength());
+      for (unsigned actionList2Index = 0; actionList2Index < actionList2JsonList.GetLength(); ++actionList2Index) {
+        actionList2List.push_back(actionList2JsonList[actionList2Index].AsObject());
       }
-      m_actions[ActionPointMapper::GetActionPointForName(actionsItem.first)] = std::move(actionListList);
+      m_actions[ActionPointMapper::GetActionPointForName(actionsItem.first)] = std::move(actionList2List);
     }
     m_actionsHasBeenSet = true;
   }

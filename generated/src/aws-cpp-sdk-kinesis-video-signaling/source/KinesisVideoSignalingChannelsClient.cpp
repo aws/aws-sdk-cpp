@@ -86,7 +86,7 @@ KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(
 }
 
 /* Legacy constructors due deprecation */
-KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const Client::ClientConfiguration& clientConfiguration)
+KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -99,7 +99,7 @@ KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const C
 }
 
 KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const AWSCredentials& credentials,
-                                                                         const Client::ClientConfiguration& clientConfiguration)
+                                                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -110,7 +110,7 @@ KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const A
 }
 
 KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                                         const Client::ClientConfiguration& clientConfiguration)
+                                                                         const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

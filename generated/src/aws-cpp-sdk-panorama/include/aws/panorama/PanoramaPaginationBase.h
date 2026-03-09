@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/panorama/model/ListApplicationInstanceDependenciesPaginationTraits.h>
 #include <aws/panorama/model/ListApplicationInstanceNodeInstancesPaginationTraits.h>
@@ -32,6 +33,7 @@ class PanoramaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationInstanceDependenciesRequest,
                                     Pagination::ListApplicationInstanceDependenciesPaginationTraits<DerivedClient>>
   ListApplicationInstanceDependenciesPaginator(const Model::ListApplicationInstanceDependenciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationInstanceDependenciesRequest,
                                              Pagination::ListApplicationInstanceDependenciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -43,6 +45,7 @@ class PanoramaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationInstanceNodeInstancesRequest,
                                     Pagination::ListApplicationInstanceNodeInstancesPaginationTraits<DerivedClient>>
   ListApplicationInstanceNodeInstancesPaginator(const Model::ListApplicationInstanceNodeInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationInstanceNodeInstancesRequest,
                                              Pagination::ListApplicationInstanceNodeInstancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -54,6 +57,7 @@ class PanoramaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationInstancesRequest,
                                     Pagination::ListApplicationInstancesPaginationTraits<DerivedClient>>
   ListApplicationInstancesPaginator(const Model::ListApplicationInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationInstancesRequest,
                                              Pagination::ListApplicationInstancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -64,6 +68,7 @@ class PanoramaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesRequest, Pagination::ListDevicesPaginationTraits<DerivedClient>>
   ListDevicesPaginator(const Model::ListDevicesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesRequest,
                                              Pagination::ListDevicesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
@@ -75,6 +80,7 @@ class PanoramaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesJobsRequest,
                                     Pagination::ListDevicesJobsPaginationTraits<DerivedClient>>
   ListDevicesJobsPaginator(const Model::ListDevicesJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDevicesJobsRequest,
                                              Pagination::ListDevicesJobsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -86,6 +92,7 @@ class PanoramaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNodeFromTemplateJobsRequest,
                                     Pagination::ListNodeFromTemplateJobsPaginationTraits<DerivedClient>>
   ListNodeFromTemplateJobsPaginator(const Model::ListNodeFromTemplateJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNodeFromTemplateJobsRequest,
                                              Pagination::ListNodeFromTemplateJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -96,6 +103,7 @@ class PanoramaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNodesRequest, Pagination::ListNodesPaginationTraits<DerivedClient>>
   ListNodesPaginator(const Model::ListNodesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNodesRequest, Pagination::ListNodesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
@@ -106,6 +114,7 @@ class PanoramaPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPackageImportJobsRequest,
                                     Pagination::ListPackageImportJobsPaginationTraits<DerivedClient>>
   ListPackageImportJobsPaginator(const Model::ListPackageImportJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPackageImportJobsRequest,
                                              Pagination::ListPackageImportJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -116,6 +125,7 @@ class PanoramaPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPackagesRequest, Pagination::ListPackagesPaginationTraits<DerivedClient>>
   ListPackagesPaginator(const Model::ListPackagesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPackagesRequest,
                                              Pagination::ListPackagesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};

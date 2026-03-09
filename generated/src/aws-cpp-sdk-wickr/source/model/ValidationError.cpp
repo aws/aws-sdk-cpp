@@ -25,6 +25,10 @@ ValidationError& ValidationError::operator=(JsonView jsonValue) {
     }
     m_reasonsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("message")) {
+    m_message = jsonValue.GetString("message");
+    m_messageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +41,10 @@ JsonValue ValidationError::Jsonize() const {
       reasonsJsonList[reasonsIndex].AsObject(m_reasons[reasonsIndex].Jsonize());
     }
     payload.WithArray("reasons", std::move(reasonsJsonList));
+  }
+
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;

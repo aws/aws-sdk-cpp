@@ -28,13 +28,13 @@ CreateCisTargets& CreateCisTargets::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("targetResourceTags")) {
     Aws::Map<Aws::String, JsonView> targetResourceTagsJsonMap = jsonValue.GetObject("targetResourceTags").GetAllObjects();
     for (auto& targetResourceTagsItem : targetResourceTagsJsonMap) {
-      Aws::Utils::Array<JsonView> tagValueListJsonList = targetResourceTagsItem.second.AsArray();
-      Aws::Vector<Aws::String> tagValueListList;
-      tagValueListList.reserve((size_t)tagValueListJsonList.GetLength());
-      for (unsigned tagValueListIndex = 0; tagValueListIndex < tagValueListJsonList.GetLength(); ++tagValueListIndex) {
-        tagValueListList.push_back(tagValueListJsonList[tagValueListIndex].AsString());
+      Aws::Utils::Array<JsonView> tagValueList2JsonList = targetResourceTagsItem.second.AsArray();
+      Aws::Vector<Aws::String> tagValueList2List;
+      tagValueList2List.reserve((size_t)tagValueList2JsonList.GetLength());
+      for (unsigned tagValueList2Index = 0; tagValueList2Index < tagValueList2JsonList.GetLength(); ++tagValueList2Index) {
+        tagValueList2List.push_back(tagValueList2JsonList[tagValueList2Index].AsString());
       }
-      m_targetResourceTags[targetResourceTagsItem.first] = std::move(tagValueListList);
+      m_targetResourceTags[targetResourceTagsItem.first] = std::move(tagValueList2List);
     }
     m_targetResourceTagsHasBeenSet = true;
   }

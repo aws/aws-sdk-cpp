@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
@@ -85,12 +86,15 @@ class DescribeProvisionedProductResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ProvisionedProductDetail m_provisionedProductDetail;
 
   Aws::Vector<CloudWatchDashboard> m_cloudWatchDashboards;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_provisionedProductDetailHasBeenSet = false;
   bool m_cloudWatchDashboardsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

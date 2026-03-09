@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/memorydb/model/ReservedNode.h>
@@ -59,10 +60,13 @@ class PurchaseReservedNodesOfferingResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   ReservedNode m_reservedNode;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_reservedNodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

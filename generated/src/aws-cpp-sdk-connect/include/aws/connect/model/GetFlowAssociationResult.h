@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/FlowAssociationResourceType.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -90,6 +91,8 @@ class GetFlowAssociationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_resourceId;
 
@@ -98,6 +101,7 @@ class GetFlowAssociationResult {
   FlowAssociationResourceType m_resourceType{FlowAssociationResourceType::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resourceIdHasBeenSet = false;
   bool m_flowIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;

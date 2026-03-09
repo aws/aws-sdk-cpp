@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -14,6 +15,7 @@
 #include <aws/medialive/model/ChannelEngineVersionResponse.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/medialive/model/DescribeAnywhereSettings.h>
+#include <aws/medialive/model/DescribeInferenceSettings.h>
 #include <aws/medialive/model/DescribeLinkedChannelSettings.h>
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -470,6 +472,23 @@ one destination per
   ///@}
 
   ///@{
+  /**
+   * Include this setting to include Elemental Inference features in this channel.
+   */
+  inline const DescribeInferenceSettings& GetInferenceSettings() const { return m_inferenceSettings; }
+  template <typename InferenceSettingsT = DescribeInferenceSettings>
+  void SetInferenceSettings(InferenceSettingsT&& value) {
+    m_inferenceSettingsHasBeenSet = true;
+    m_inferenceSettings = std::forward<InferenceSettingsT>(value);
+  }
+  template <typename InferenceSettingsT = DescribeInferenceSettings>
+  RestartChannelPipelinesResult& WithInferenceSettings(InferenceSettingsT&& value) {
+    SetInferenceSettings(std::forward<InferenceSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -483,6 +502,8 @@ one destination per
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -530,7 +551,10 @@ one destination per
 
   Aws::Vector<Aws::String> m_channelSecurityGroups;
 
+  DescribeInferenceSettings m_inferenceSettings;
+
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_cdiInputSpecificationHasBeenSet = false;
   bool m_channelClassHasBeenSet = false;
@@ -554,6 +578,7 @@ one destination per
   bool m_channelEngineVersionHasBeenSet = false;
   bool m_linkedChannelSettingsHasBeenSet = false;
   bool m_channelSecurityGroupsHasBeenSet = false;
+  bool m_inferenceSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

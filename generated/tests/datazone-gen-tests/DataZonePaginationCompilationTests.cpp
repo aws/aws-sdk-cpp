@@ -27,6 +27,7 @@
 #include <aws/datazone/model/ListMetadataGenerationRunsPaginationTraits.h>
 #include <aws/datazone/model/ListSubscriptionRequestsPaginationTraits.h>
 #include <aws/datazone/model/ListDataProductRevisionsPaginationTraits.h>
+#include <aws/datazone/model/QueryGraphPaginationTraits.h>
 #include <aws/datazone/model/ListLineageEventsPaginationTraits.h>
 #include <aws/datazone/model/ListJobRunsPaginationTraits.h>
 #include <aws/datazone/model/ListEnvironmentsPaginationTraits.h>

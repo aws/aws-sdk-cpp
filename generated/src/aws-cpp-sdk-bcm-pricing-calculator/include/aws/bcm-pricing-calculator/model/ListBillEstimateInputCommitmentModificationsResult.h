@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
 #include <aws/bcm-pricing-calculator/model/BillEstimateInputCommitmentModificationSummary.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -85,12 +86,15 @@ class ListBillEstimateInputCommitmentModificationsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<BillEstimateInputCommitmentModificationSummary> m_items;
 
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_itemsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

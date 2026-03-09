@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/textract/Textract_EXPORTS.h>
@@ -99,6 +100,8 @@ class AnalyzeIDResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<IdentityDocument> m_identityDocuments;
 
@@ -107,6 +110,7 @@ class AnalyzeIDResult {
   Aws::String m_analyzeIDModelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_identityDocumentsHasBeenSet = false;
   bool m_documentMetadataHasBeenSet = false;
   bool m_analyzeIDModelVersionHasBeenSet = false;

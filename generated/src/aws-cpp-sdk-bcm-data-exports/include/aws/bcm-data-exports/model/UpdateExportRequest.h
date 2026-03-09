@@ -33,24 +33,6 @@ class UpdateExportRequest : public BCMDataExportsRequest {
 
   ///@{
   /**
-   * <p>The name and query details for the export.</p>
-   */
-  inline const Export& GetExport() const { return m_export; }
-  inline bool ExportHasBeenSet() const { return m_exportHasBeenSet; }
-  template <typename ExportT = Export>
-  void SetExport(ExportT&& value) {
-    m_exportHasBeenSet = true;
-    m_export = std::forward<ExportT>(value);
-  }
-  template <typename ExportT = Export>
-  UpdateExportRequest& WithExport(ExportT&& value) {
-    SetExport(std::forward<ExportT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon Resource Name (ARN) for this export.</p>
    */
   inline const Aws::String& GetExportArn() const { return m_exportArn; }
@@ -66,12 +48,30 @@ class UpdateExportRequest : public BCMDataExportsRequest {
     return *this;
   }
   ///@}
- private:
-  Export m_export;
 
+  ///@{
+  /**
+   * <p>The name and query details for the export.</p>
+   */
+  inline const Export& GetExport() const { return m_export; }
+  inline bool ExportHasBeenSet() const { return m_exportHasBeenSet; }
+  template <typename ExportT = Export>
+  void SetExport(ExportT&& value) {
+    m_exportHasBeenSet = true;
+    m_export = std::forward<ExportT>(value);
+  }
+  template <typename ExportT = Export>
+  UpdateExportRequest& WithExport(ExportT&& value) {
+    SetExport(std::forward<ExportT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_exportArn;
-  bool m_exportHasBeenSet = false;
+
+  Export m_export;
   bool m_exportArnHasBeenSet = false;
+  bool m_exportHasBeenSet = false;
 };
 
 }  // namespace Model

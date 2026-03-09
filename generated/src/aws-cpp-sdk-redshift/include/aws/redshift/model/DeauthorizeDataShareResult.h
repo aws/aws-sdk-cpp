@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
@@ -151,6 +152,8 @@ class DeauthorizeDataShareResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dataShareArn;
 
@@ -165,6 +168,7 @@ class DeauthorizeDataShareResult {
   DataShareType m_dataShareType{DataShareType::NOT_SET};
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataShareArnHasBeenSet = false;
   bool m_producerArnHasBeenSet = false;
   bool m_allowPubliclyAccessibleConsumersHasBeenSet = false;

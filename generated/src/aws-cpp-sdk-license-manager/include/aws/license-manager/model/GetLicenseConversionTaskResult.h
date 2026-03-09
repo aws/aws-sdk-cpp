@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
@@ -195,6 +196,8 @@ class GetLicenseConversionTaskResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_licenseConversionTaskId;
 
@@ -215,6 +218,7 @@ class GetLicenseConversionTaskResult {
   Aws::Utils::DateTime m_endTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_licenseConversionTaskIdHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
   bool m_sourceLicenseContextHasBeenSet = false;

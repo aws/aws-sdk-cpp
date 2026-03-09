@@ -4,6 +4,7 @@
  */
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentials.h>
+#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
 #include <aws/core/auth/SSOCredentialsProvider.h>
@@ -477,7 +478,7 @@ TEST_F(DynamoDBUnitTest, ShouldUseAccountIDEndpointFromCredentialsFile)
   DynamoDBClientConfiguration configuration;
   configuration.region = "us-east-1";
 
-  auto credsProvider = Aws::MakeShared<ProfileCredentialsProvider>(LOG_TAG);
+  auto credsProvider = Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(LOG_TAG);
 
   const auto accountIdClient = Aws::MakeShared<DynamoDBClient>(LOG_TAG, std::move(credsProvider), nullptr, configuration);
 

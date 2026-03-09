@@ -100,6 +100,7 @@
 #include <aws/gamelift/model/GetComputeAuthTokenResult.h>
 #include <aws/gamelift/model/GetGameSessionLogUrlResult.h>
 #include <aws/gamelift/model/GetInstanceAccessResult.h>
+#include <aws/gamelift/model/GetPlayerConnectionDetailsResult.h>
 #include <aws/gamelift/model/ListAliasesRequest.h>
 #include <aws/gamelift/model/ListAliasesResult.h>
 #include <aws/gamelift/model/ListBuildsRequest.h>
@@ -261,6 +262,7 @@ class GetComputeAccessRequest;
 class GetComputeAuthTokenRequest;
 class GetGameSessionLogUrlRequest;
 class GetInstanceAccessRequest;
+class GetPlayerConnectionDetailsRequest;
 class ListAliasesRequest;
 class ListBuildsRequest;
 class ListComputeRequest;
@@ -382,6 +384,7 @@ typedef Aws::Utils::Outcome<GetComputeAccessResult, GameLiftError> GetComputeAcc
 typedef Aws::Utils::Outcome<GetComputeAuthTokenResult, GameLiftError> GetComputeAuthTokenOutcome;
 typedef Aws::Utils::Outcome<GetGameSessionLogUrlResult, GameLiftError> GetGameSessionLogUrlOutcome;
 typedef Aws::Utils::Outcome<GetInstanceAccessResult, GameLiftError> GetInstanceAccessOutcome;
+typedef Aws::Utils::Outcome<GetPlayerConnectionDetailsResult, GameLiftError> GetPlayerConnectionDetailsOutcome;
 typedef Aws::Utils::Outcome<ListAliasesResult, GameLiftError> ListAliasesOutcome;
 typedef Aws::Utils::Outcome<ListBuildsResult, GameLiftError> ListBuildsOutcome;
 typedef Aws::Utils::Outcome<ListComputeResult, GameLiftError> ListComputeOutcome;
@@ -503,6 +506,7 @@ typedef std::future<GetComputeAccessOutcome> GetComputeAccessOutcomeCallable;
 typedef std::future<GetComputeAuthTokenOutcome> GetComputeAuthTokenOutcomeCallable;
 typedef std::future<GetGameSessionLogUrlOutcome> GetGameSessionLogUrlOutcomeCallable;
 typedef std::future<GetInstanceAccessOutcome> GetInstanceAccessOutcomeCallable;
+typedef std::future<GetPlayerConnectionDetailsOutcome> GetPlayerConnectionDetailsOutcomeCallable;
 typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
 typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
 typedef std::future<ListComputeOutcome> ListComputeOutcomeCallable;
@@ -786,6 +790,9 @@ typedef std::function<void(const GameLiftClient*, const Model::GetGameSessionLog
 typedef std::function<void(const GameLiftClient*, const Model::GetInstanceAccessRequest&, const Model::GetInstanceAccessOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetInstanceAccessResponseReceivedHandler;
+typedef std::function<void(const GameLiftClient*, const Model::GetPlayerConnectionDetailsRequest&,
+                           const Model::GetPlayerConnectionDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPlayerConnectionDetailsResponseReceivedHandler;
 typedef std::function<void(const GameLiftClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAliasesResponseReceivedHandler;

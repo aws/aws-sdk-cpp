@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -300,6 +301,8 @@ class GetEngineStatusResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_status;
 
@@ -328,6 +331,7 @@ class GetEngineStatusResult {
   Aws::Map<Aws::String, Aws::String> m_settings;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_statusHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_dbEngineVersionHasBeenSet = false;

@@ -18,6 +18,7 @@
 #include <aws/autoscaling/model/DescribeTagsPaginationTraits.h>
 #include <aws/autoscaling/model/DescribeTrafficSourcesPaginationTraits.h>
 #include <aws/autoscaling/model/DescribeWarmPoolPaginationTraits.h>
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 
 #include <memory>
@@ -36,6 +37,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAutoScalingGroupsRequest,
                                     Pagination::DescribeAutoScalingGroupsPaginationTraits<DerivedClient>>
   DescribeAutoScalingGroupsPaginator(const Model::DescribeAutoScalingGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAutoScalingGroupsRequest,
                                              Pagination::DescribeAutoScalingGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -47,6 +49,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAutoScalingInstancesRequest,
                                     Pagination::DescribeAutoScalingInstancesPaginationTraits<DerivedClient>>
   DescribeAutoScalingInstancesPaginator(const Model::DescribeAutoScalingInstancesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeAutoScalingInstancesRequest,
                                              Pagination::DescribeAutoScalingInstancesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -58,6 +61,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceRefreshesRequest,
                                     Pagination::DescribeInstanceRefreshesPaginationTraits<DerivedClient>>
   DescribeInstanceRefreshesPaginator(const Model::DescribeInstanceRefreshesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeInstanceRefreshesRequest,
                                              Pagination::DescribeInstanceRefreshesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -69,6 +73,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLaunchConfigurationsRequest,
                                     Pagination::DescribeLaunchConfigurationsPaginationTraits<DerivedClient>>
   DescribeLaunchConfigurationsPaginator(const Model::DescribeLaunchConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLaunchConfigurationsRequest,
                                              Pagination::DescribeLaunchConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -80,6 +85,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLoadBalancersRequest,
                                     Pagination::DescribeLoadBalancersPaginationTraits<DerivedClient>>
   DescribeLoadBalancersPaginator(const Model::DescribeLoadBalancersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLoadBalancersRequest,
                                              Pagination::DescribeLoadBalancersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -91,6 +97,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLoadBalancerTargetGroupsRequest,
                                     Pagination::DescribeLoadBalancerTargetGroupsPaginationTraits<DerivedClient>>
   DescribeLoadBalancerTargetGroupsPaginator(const Model::DescribeLoadBalancerTargetGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeLoadBalancerTargetGroupsRequest,
                                              Pagination::DescribeLoadBalancerTargetGroupsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -102,6 +109,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNotificationConfigurationsRequest,
                                     Pagination::DescribeNotificationConfigurationsPaginationTraits<DerivedClient>>
   DescribeNotificationConfigurationsPaginator(const Model::DescribeNotificationConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNotificationConfigurationsRequest,
                                              Pagination::DescribeNotificationConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -113,6 +121,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePoliciesRequest,
                                     Pagination::DescribePoliciesPaginationTraits<DerivedClient>>
   DescribePoliciesPaginator(const Model::DescribePoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePoliciesRequest,
                                              Pagination::DescribePoliciesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
@@ -124,6 +133,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeScalingActivitiesRequest,
                                     Pagination::DescribeScalingActivitiesPaginationTraits<DerivedClient>>
   DescribeScalingActivitiesPaginator(const Model::DescribeScalingActivitiesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeScalingActivitiesRequest,
                                              Pagination::DescribeScalingActivitiesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -135,6 +145,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeScheduledActionsRequest,
                                     Pagination::DescribeScheduledActionsPaginationTraits<DerivedClient>>
   DescribeScheduledActionsPaginator(const Model::DescribeScheduledActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeScheduledActionsRequest,
                                              Pagination::DescribeScheduledActionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -145,6 +156,7 @@ class AutoScalingPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTagsRequest, Pagination::DescribeTagsPaginationTraits<DerivedClient>>
   DescribeTagsPaginator(const Model::DescribeTagsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTagsRequest,
                                              Pagination::DescribeTagsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -156,6 +168,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrafficSourcesRequest,
                                     Pagination::DescribeTrafficSourcesPaginationTraits<DerivedClient>>
   DescribeTrafficSourcesPaginator(const Model::DescribeTrafficSourcesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrafficSourcesRequest,
                                              Pagination::DescribeTrafficSourcesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -167,6 +180,7 @@ class AutoScalingPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeWarmPoolRequest,
                                     Pagination::DescribeWarmPoolPaginationTraits<DerivedClient>>
   DescribeWarmPoolPaginator(const Model::DescribeWarmPoolRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeWarmPoolRequest,
                                              Pagination::DescribeWarmPoolPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};

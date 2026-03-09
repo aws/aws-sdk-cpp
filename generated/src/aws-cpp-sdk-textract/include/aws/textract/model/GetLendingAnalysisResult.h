@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/textract/Textract_EXPORTS.h>
@@ -176,6 +177,8 @@ class GetLendingAnalysisResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   DocumentMetadata m_documentMetadata;
 
@@ -192,6 +195,7 @@ class GetLendingAnalysisResult {
   Aws::String m_analyzeLendingModelVersion;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_documentMetadataHasBeenSet = false;
   bool m_jobStatusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

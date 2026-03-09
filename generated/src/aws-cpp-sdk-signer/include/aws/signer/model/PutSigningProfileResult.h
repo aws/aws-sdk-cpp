@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/signer/Signer_EXPORTS.h>
 
@@ -91,6 +92,8 @@ class PutSigningProfileResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -99,6 +102,7 @@ class PutSigningProfileResult {
   Aws::String m_profileVersionArn;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_profileVersionHasBeenSet = false;
   bool m_profileVersionArnHasBeenSet = false;

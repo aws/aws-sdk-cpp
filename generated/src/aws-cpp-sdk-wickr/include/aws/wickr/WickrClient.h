@@ -735,6 +735,33 @@ class AWS_WICKR_API WickrClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the OpenTDF integration configuration for a Wickr
+   * network.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wickr-2024-02-01/GetOpentdfConfig">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetOpentdfConfigOutcome GetOpentdfConfig(const Model::GetOpentdfConfigRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetOpentdfConfig that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetOpentdfConfigRequestT = Model::GetOpentdfConfigRequest>
+  Model::GetOpentdfConfigOutcomeCallable GetOpentdfConfigCallable(const GetOpentdfConfigRequestT& request) const {
+    return SubmitCallable(&WickrClient::GetOpentdfConfig, request);
+  }
+
+  /**
+   * An Async wrapper for GetOpentdfConfig that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetOpentdfConfigRequestT = Model::GetOpentdfConfigRequest>
+  void GetOpentdfConfigAsync(const GetOpentdfConfigRequestT& request, const GetOpentdfConfigResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WickrClient::GetOpentdfConfig, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves detailed information about a specific security group in a Wickr
    * network, including its settings, member counts, and configuration.</p><p><h3>See
    * Also:</h3>   <a
@@ -1088,6 +1115,34 @@ class AWS_WICKR_API WickrClient : public Aws::Client::AWSJsonClient,
                                    const RegisterOidcConfigTestResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&WickrClient::RegisterOidcConfigTest, request, handler, context);
+  }
+
+  /**
+   * <p>Registers and saves OpenTDF configuration for a Wickr network, enabling
+   * attribute-based access control for Wickr through an OpenTDF
+   * provider.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wickr-2024-02-01/RegisterOpentdfConfig">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RegisterOpentdfConfigOutcome RegisterOpentdfConfig(const Model::RegisterOpentdfConfigRequest& request) const;
+
+  /**
+   * A Callable wrapper for RegisterOpentdfConfig that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RegisterOpentdfConfigRequestT = Model::RegisterOpentdfConfigRequest>
+  Model::RegisterOpentdfConfigOutcomeCallable RegisterOpentdfConfigCallable(const RegisterOpentdfConfigRequestT& request) const {
+    return SubmitCallable(&WickrClient::RegisterOpentdfConfig, request);
+  }
+
+  /**
+   * An Async wrapper for RegisterOpentdfConfig that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RegisterOpentdfConfigRequestT = Model::RegisterOpentdfConfigRequest>
+  void RegisterOpentdfConfigAsync(const RegisterOpentdfConfigRequestT& request, const RegisterOpentdfConfigResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WickrClient::RegisterOpentdfConfig, request, handler, context);
   }
 
   /**

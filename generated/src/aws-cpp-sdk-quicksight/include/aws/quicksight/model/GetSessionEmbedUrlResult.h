@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 
@@ -29,9 +30,9 @@ class GetSessionEmbedUrlResult {
   ///@{
   /**
    * <p>A single-use URL that you can put into your server-side web page to embed
-   * your Quick Suite session. This URL is valid for 5 minutes. The API operation
-   * provides the URL with an <code>auth_code</code> value that enables one (and only
-   * one) sign-on to a user session that is valid for 10 hours. </p>
+   * your Quick session. This URL is valid for 5 minutes. The API operation provides
+   * the URL with an <code>auth_code</code> value that enables one (and only one)
+   * sign-on to a user session that is valid for 10 hours. </p>
    */
   inline const Aws::String& GetEmbedUrl() const { return m_embedUrl; }
   template <typename EmbedUrlT = Aws::String>
@@ -75,12 +76,15 @@ class GetSessionEmbedUrlResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_embedUrl;
 
   int m_status{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_embedUrlHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

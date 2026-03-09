@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/AsnAssociation.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -58,10 +59,13 @@ class AssociateIpamByoasnResponse {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   AsnAssociation m_asnAssociation;
 
   ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_asnAssociationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };

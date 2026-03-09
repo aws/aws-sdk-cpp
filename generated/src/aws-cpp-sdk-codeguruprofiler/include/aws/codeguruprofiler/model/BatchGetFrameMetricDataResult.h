@@ -8,6 +8,7 @@
 #include <aws/codeguruprofiler/model/AggregationPeriod.h>
 #include <aws/codeguruprofiler/model/FrameMetricDatum.h>
 #include <aws/codeguruprofiler/model/TimestampStructure.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -185,6 +186,8 @@ class BatchGetFrameMetricDataResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::DateTime m_endTime{};
 
@@ -199,6 +202,7 @@ class BatchGetFrameMetricDataResult {
   Aws::Map<Aws::String, Aws::Vector<TimestampStructure>> m_unprocessedEndTimes;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_endTimeHasBeenSet = false;
   bool m_endTimesHasBeenSet = false;
   bool m_frameMetricDataHasBeenSet = false;

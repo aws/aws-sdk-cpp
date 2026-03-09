@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/cloudhsmv2/model/Backup.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -56,10 +57,13 @@ class ModifyBackupAttributesResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Backup m_backup;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_backupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

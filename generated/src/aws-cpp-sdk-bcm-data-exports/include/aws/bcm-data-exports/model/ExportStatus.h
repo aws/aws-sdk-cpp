@@ -35,60 +35,6 @@ class ExportStatus {
 
   ///@{
   /**
-   * <p>The timestamp of when the export was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  ExportStatus& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of when the export was last generated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetLastRefreshedAt() const { return m_lastRefreshedAt; }
-  inline bool LastRefreshedAtHasBeenSet() const { return m_lastRefreshedAtHasBeenSet; }
-  template <typename LastRefreshedAtT = Aws::Utils::DateTime>
-  void SetLastRefreshedAt(LastRefreshedAtT&& value) {
-    m_lastRefreshedAtHasBeenSet = true;
-    m_lastRefreshedAt = std::forward<LastRefreshedAtT>(value);
-  }
-  template <typename LastRefreshedAtT = Aws::Utils::DateTime>
-  ExportStatus& WithLastRefreshedAt(LastRefreshedAtT&& value) {
-    SetLastRefreshedAt(std::forward<LastRefreshedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The timestamp of when the export was updated.</p>
-   */
-  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
-  inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
-    m_lastUpdatedAtHasBeenSet = true;
-    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
-  }
-  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
-  ExportStatus& WithLastUpdatedAt(LastUpdatedAtT&& value) {
-    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The status code for the request.</p>
    */
   inline ExportStatusCode GetStatusCode() const { return m_statusCode; }
@@ -118,21 +64,75 @@ class ExportStatus {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the export was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  ExportStatus& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the export was updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+  inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
+    m_lastUpdatedAtHasBeenSet = true;
+    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  ExportStatus& WithLastUpdatedAt(LastUpdatedAtT&& value) {
+    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the export was last generated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastRefreshedAt() const { return m_lastRefreshedAt; }
+  inline bool LastRefreshedAtHasBeenSet() const { return m_lastRefreshedAtHasBeenSet; }
+  template <typename LastRefreshedAtT = Aws::Utils::DateTime>
+  void SetLastRefreshedAt(LastRefreshedAtT&& value) {
+    m_lastRefreshedAtHasBeenSet = true;
+    m_lastRefreshedAt = std::forward<LastRefreshedAtT>(value);
+  }
+  template <typename LastRefreshedAtT = Aws::Utils::DateTime>
+  ExportStatus& WithLastRefreshedAt(LastRefreshedAtT&& value) {
+    SetLastRefreshedAt(std::forward<LastRefreshedAtT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  Aws::Utils::DateTime m_lastRefreshedAt{};
-
-  Aws::Utils::DateTime m_lastUpdatedAt{};
-
   ExportStatusCode m_statusCode{ExportStatusCode::NOT_SET};
 
   ExecutionStatusReason m_statusReason{ExecutionStatusReason::NOT_SET};
-  bool m_createdAtHasBeenSet = false;
-  bool m_lastRefreshedAtHasBeenSet = false;
-  bool m_lastUpdatedAtHasBeenSet = false;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_lastUpdatedAt{};
+
+  Aws::Utils::DateTime m_lastRefreshedAt{};
   bool m_statusCodeHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_lastRefreshedAtHasBeenSet = false;
 };
 
 }  // namespace Model

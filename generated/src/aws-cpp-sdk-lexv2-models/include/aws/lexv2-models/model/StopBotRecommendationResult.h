@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/BotRecommendationStatus.h>
@@ -130,6 +131,8 @@ class StopBotRecommendationResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_botId;
 
@@ -142,6 +145,7 @@ class StopBotRecommendationResult {
   Aws::String m_botRecommendationId;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_botIdHasBeenSet = false;
   bool m_botVersionHasBeenSet = false;
   bool m_localeIdHasBeenSet = false;

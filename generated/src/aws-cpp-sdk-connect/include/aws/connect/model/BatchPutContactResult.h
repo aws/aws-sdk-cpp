@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/FailedRequest.h>
 #include <aws/connect/model/SuccessfulRequest.h>
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -89,12 +90,15 @@ class BatchPutContactResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<SuccessfulRequest> m_successfulRequestList;
 
   Aws::Vector<FailedRequest> m_failedRequestList;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_successfulRequestListHasBeenSet = false;
   bool m_failedRequestListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

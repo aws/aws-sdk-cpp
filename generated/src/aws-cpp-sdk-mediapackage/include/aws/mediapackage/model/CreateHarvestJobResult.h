@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/mediapackage/model/S3Destination.h>
@@ -207,6 +208,8 @@ include an explanation of why the HarvestJob failed.
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_arn;
 
@@ -227,6 +230,7 @@ include an explanation of why the HarvestJob failed.
   Status m_status{Status::NOT_SET};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
   bool m_channelIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;

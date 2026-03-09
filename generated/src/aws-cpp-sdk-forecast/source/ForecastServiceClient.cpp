@@ -145,7 +145,7 @@ ForecastServiceClient::ForecastServiceClient(const std::shared_ptr<AWSCredential
 }
 
 /* Legacy constructors due deprecation */
-ForecastServiceClient::ForecastServiceClient(const Client::ClientConfiguration& clientConfiguration)
+ForecastServiceClient::ForecastServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(
                     ALLOCATION_TAG,
@@ -157,7 +157,7 @@ ForecastServiceClient::ForecastServiceClient(const Client::ClientConfiguration& 
   init(m_clientConfiguration);
 }
 
-ForecastServiceClient::ForecastServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
+ForecastServiceClient::ForecastServiceClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                                  SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -168,7 +168,7 @@ ForecastServiceClient::ForecastServiceClient(const AWSCredentials& credentials, 
 }
 
 ForecastServiceClient::ForecastServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                             const Client::ClientConfiguration& clientConfiguration)
+                                             const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
                 Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),

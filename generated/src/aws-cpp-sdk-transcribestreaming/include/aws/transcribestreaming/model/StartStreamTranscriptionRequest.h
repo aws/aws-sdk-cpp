@@ -413,12 +413,15 @@ class StartStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
    * <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>,
    * <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>,
    * <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>,
-   * <code>SSN</code>, or <code>ALL</code>.</p> <p>Note that if you include
-   * <code>PiiEntityTypes</code> in your request, you must also include
-   * <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-   * <p>If you include <code>ContentRedactionType</code> or
-   * <code>ContentIdentificationType</code> in your request, but do not include
-   * <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
+   * <code>SSN</code>, <code>AGE</code>, <code>DATE_TIME</code>,
+   * <code>LICENSE_PLATE</code>, <code>PASSPORT_NUMBER</code>, <code>PASSWORD</code>,
+   * <code>USERNAME</code>, <code>VEHICLE_IDENTIFICATION_NUMBER</code>, or
+   * <code>ALL</code>.</p> <p>Note that if you include <code>PiiEntityTypes</code> in
+   * your request, you must also include <code>ContentIdentificationType</code> or
+   * <code>ContentRedactionType</code>.</p> <p>If you include
+   * <code>ContentRedactionType</code> or <code>ContentIdentificationType</code> in
+   * your request, but do not include <code>PiiEntityTypes</code>, all PII is
+   * redacted or identified.</p>
    */
   inline const Aws::String& GetPiiEntityTypes() const { return m_piiEntityTypes; }
   inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
@@ -618,6 +621,27 @@ class StartStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specify the time window, in minutes, during which your transcription session
+   * can be resumed, measured from the stream start time. This optional parameter
+   * accepts integer values from 1 to 300 (5 hours).</p> <p> For example, if your
+   * stream starts at 1 PM and you specify a <code>SessionResumeWindow</code> of 30
+   * minutes, you can reconnect to the session as many times as you want until 1:30
+   * PM. </p>
+   */
+  inline int GetSessionResumeWindow() const { return m_sessionResumeWindow; }
+  inline bool SessionResumeWindowHasBeenSet() const { return m_sessionResumeWindowHasBeenSet; }
+  inline void SetSessionResumeWindow(int value) {
+    m_sessionResumeWindowHasBeenSet = true;
+    m_sessionResumeWindow = value;
+  }
+  inline StartStreamTranscriptionRequest& WithSessionResumeWindow(int value) {
+    SetSessionResumeWindow(value);
+    return *this;
+  }
+  ///@}
  private:
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
 
@@ -664,6 +688,8 @@ class StartStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
   Aws::String m_vocabularyNames;
 
   Aws::String m_vocabularyFilterNames;
+
+  int m_sessionResumeWindow{0};
   StartStreamTranscriptionHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
@@ -690,6 +716,7 @@ class StartStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
   bool m_identifyMultipleLanguagesHasBeenSet = false;
   bool m_vocabularyNamesHasBeenSet = false;
   bool m_vocabularyFilterNamesHasBeenSet = false;
+  bool m_sessionResumeWindowHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/lookoutequipment/model/ListDataIngestionJobsPaginationTraits.h>
 #include <aws/lookoutequipment/model/ListDatasetsPaginationTraits.h>
@@ -34,6 +35,7 @@ class LookoutEquipmentPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIngestionJobsRequest,
                                     Pagination::ListDataIngestionJobsPaginationTraits<DerivedClient>>
   ListDataIngestionJobsPaginator(const Model::ListDataIngestionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataIngestionJobsRequest,
                                              Pagination::ListDataIngestionJobsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -44,6 +46,7 @@ class LookoutEquipmentPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest, Pagination::ListDatasetsPaginationTraits<DerivedClient>>
   ListDatasetsPaginator(const Model::ListDatasetsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDatasetsRequest,
                                              Pagination::ListDatasetsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
@@ -55,6 +58,7 @@ class LookoutEquipmentPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceEventsRequest,
                                     Pagination::ListInferenceEventsPaginationTraits<DerivedClient>>
   ListInferenceEventsPaginator(const Model::ListInferenceEventsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceEventsRequest,
                                              Pagination::ListInferenceEventsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -66,6 +70,7 @@ class LookoutEquipmentPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceExecutionsRequest,
                                     Pagination::ListInferenceExecutionsPaginationTraits<DerivedClient>>
   ListInferenceExecutionsPaginator(const Model::ListInferenceExecutionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceExecutionsRequest,
                                              Pagination::ListInferenceExecutionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -77,6 +82,7 @@ class LookoutEquipmentPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceSchedulersRequest,
                                     Pagination::ListInferenceSchedulersPaginationTraits<DerivedClient>>
   ListInferenceSchedulersPaginator(const Model::ListInferenceSchedulersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInferenceSchedulersRequest,
                                              Pagination::ListInferenceSchedulersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -88,6 +94,7 @@ class LookoutEquipmentPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLabelGroupsRequest,
                                     Pagination::ListLabelGroupsPaginationTraits<DerivedClient>>
   ListLabelGroupsPaginator(const Model::ListLabelGroupsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLabelGroupsRequest,
                                              Pagination::ListLabelGroupsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
@@ -98,6 +105,7 @@ class LookoutEquipmentPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLabelsRequest, Pagination::ListLabelsPaginationTraits<DerivedClient>>
   ListLabelsPaginator(const Model::ListLabelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLabelsRequest,
                                              Pagination::ListLabelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -108,6 +116,7 @@ class LookoutEquipmentPaginationBase {
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListModelsRequest, Pagination::ListModelsPaginationTraits<DerivedClient>>
   ListModelsPaginator(const Model::ListModelsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListModelsRequest,
                                              Pagination::ListModelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
@@ -119,6 +128,7 @@ class LookoutEquipmentPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListModelVersionsRequest,
                                     Pagination::ListModelVersionsPaginationTraits<DerivedClient>>
   ListModelVersionsPaginator(const Model::ListModelVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListModelVersionsRequest,
                                              Pagination::ListModelVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -130,6 +140,7 @@ class LookoutEquipmentPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRetrainingSchedulersRequest,
                                     Pagination::ListRetrainingSchedulersPaginationTraits<DerivedClient>>
   ListRetrainingSchedulersPaginator(const Model::ListRetrainingSchedulersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRetrainingSchedulersRequest,
                                              Pagination::ListRetrainingSchedulersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
@@ -141,6 +152,7 @@ class LookoutEquipmentPaginationBase {
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSensorStatisticsRequest,
                                     Pagination::ListSensorStatisticsPaginationTraits<DerivedClient>>
   ListSensorStatisticsPaginator(const Model::ListSensorStatisticsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSensorStatisticsRequest,
                                              Pagination::ListSensorStatisticsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -174,6 +175,8 @@ class RecognizeTextResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<Message> m_messages;
 
@@ -188,6 +191,7 @@ class RecognizeTextResult {
   RecognizedBotMember m_recognizedBotMember;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_messagesHasBeenSet = false;
   bool m_sessionStateHasBeenSet = false;
   bool m_interpretationsHasBeenSet = false;

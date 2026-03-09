@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
@@ -95,6 +96,8 @@ class SearchTasksResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Vector<TaskSearchSummary> m_tasks;
 
@@ -103,6 +106,7 @@ class SearchTasksResult {
   int m_totalResults{0};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_tasksHasBeenSet = false;
   bool m_nextItemOffsetHasBeenSet = false;
   bool m_totalResultsHasBeenSet = false;

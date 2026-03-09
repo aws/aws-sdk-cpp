@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
@@ -115,6 +116,8 @@ class GetCredentialsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_dbPassword;
 
@@ -125,6 +128,7 @@ class GetCredentialsResult {
   Aws::Utils::DateTime m_nextRefreshTime{};
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dbPasswordHasBeenSet = false;
   bool m_dbUserHasBeenSet = false;
   bool m_expirationHasBeenSet = false;
