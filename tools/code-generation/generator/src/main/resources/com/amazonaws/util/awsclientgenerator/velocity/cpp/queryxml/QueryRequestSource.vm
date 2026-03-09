@@ -23,9 +23,9 @@ using namespace Aws::Http;
 Aws::String ${typeInfo.className}::SerializePayload() const
 {
   Aws::StringStream ss;
-  ss << "Action=${CppViewHelper.computeOperationNameFromInputOutputShape($typeInfo.className)}";
+  ss << "Action=${CppViewHelper.computeOperationNameFromInputOutputShape($typeInfo.className)}&";
 #if($metadata.projectName.contains("protocol"))
-  ss << "&Version=${metadata.apiVersion}";
+  ss << "Version=${metadata.apiVersion}&";
 #end
 #foreach($member in $shape.members.entrySet())
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($member.key))
@@ -44,7 +44,6 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   {
 #set($spaces = "  ")
 #end
-${spaces}ss << "&";
 #if($member.value.shape.list)
 #serializeRequestQueryListElement($spaces, $member.value, $member.key, $memberVarName)
 #elseif($member.value.shape.map)
@@ -59,13 +58,15 @@ ${spaces}ss << "&";
 #end
 #end
 #if(!$metadata.projectName.contains("protocol"))
-  ss << "&Version=${metadata.apiVersion}";
-#end
-  Aws::String result = ss.str();
-  if (!result.empty() && result.back() == '&') {
-    result.pop_back();
+  ss << "Version=${metadata.apiVersion}";
+  return ss.str();
+#else
+  Aws::String payloadStr = ss.str();
+  if (!payloadStr.empty() && payloadStr.back() == '&') {
+    payloadStr.pop_back();
   }
-  return result;
+  return payloadStr;
+#end
 }
 
 #if($shape.hasQueryStringMembers())
