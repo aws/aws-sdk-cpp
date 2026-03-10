@@ -31,11 +31,15 @@ public class CppShapeInformation {
    private final String requestContentType;
 
    public CppShapeInformation(final Shape shape, final ServiceModel serviceModel) {
+       this(shape, serviceModel, CppViewHelper.computeCppType(shape));
+   }
+
+   public CppShapeInformation(final Shape shape, final ServiceModel serviceModel, final String cppType) {
        this.shape = shape;
        this.serviceModel = serviceModel;
        className = shape.getName();
        exportValue = CppViewHelper.computeExportValue(serviceModel.getMetadata().getClassNamePrefix());
-       cppType = CppViewHelper.computeCppType(shape);
+       this.cppType = cppType;
        headerIncludes = CppViewHelper.computeHeaderIncludes(serviceModel.getMetadata().getProjectName(), shape);
        sourceIncludes = CppViewHelper.computeSourceIncludes(serviceModel.getMetadata().getProjectName(), shape);
        sourceIncludes.removeAll(headerIncludes);

@@ -111,6 +111,24 @@
 #set($mapMember = $member.value.shape)
 #set($keyType = $CppViewHelper.computeCppType($mapMember.mapKey.shape))
 #set($valueType = $CppViewHelper.computeCppType($mapMember.mapValue.shape))
+#if($mapMember.sparse)
+#set($optionalValueType = "Aws::Crt::Optional<${valueType}>")
+#if(!$mapMember.mapKey.shape.primitive && !$mapMember.mapKey.shape.enum && !$mapMember.mapValue.shape.primitive && !$mapMember.mapValue.shape.enum)
+#set($keyTemplType = "${memberKeyWithFirstLetterCapitalized}KeyT")
+#set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}ValueT")
+    template<typename ${keyTemplType} = $keyType, typename ${valueTemplType} = $optionalValueType>
+    ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyTemplType}&& key, ${valueTemplType}&& value) {
+      ${setHasBeenSet}${memberVariableName}.emplace(std::forward<${keyTemplType}>(key), std::forward<${valueTemplType}>(value)); return *this;
+    }
+#else
+    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) {
+      ${setHasBeenSet}${memberVariableName}.emplace(key, value); return *this;
+    }
+#end
+    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${optionalValueType} value) {
+      ${setHasBeenSet}${memberVariableName}.emplace(key, value); return *this;
+    }
+#else
 #if(!$mapMember.mapKey.shape.primitive && !$mapMember.mapKey.shape.enum && !$mapMember.mapValue.shape.primitive && !$mapMember.mapValue.shape.enum)
 #set($keyTemplType = "${memberKeyWithFirstLetterCapitalized}KeyT")
 #set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}ValueT")
@@ -124,15 +142,28 @@
     }
 #end
 #end
+#end
 #if($member.value.shape.list)
 #set($listMember = $member.value.shape)
 #set($valueType = $CppViewHelper.computeCppType($listMember.listMember.shape))
+#if($listMember.sparse)
+#set($optionalValueType = "Aws::Crt::Optional<${valueType}>")
 #if(!$listMember.listMember.shape.primitive && !$listMember.listMember.shape.enum)
 #set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}T")
     template<typename ${valueTemplType} = $valueType>
     ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueTemplType}&& value) { ${setHasBeenSet}${memberVariableName}.emplace_back(std::forward<${valueTemplType}>(value)); return *this; }
 #else
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueType} value)$adderWithCopy
+#end
+    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${optionalValueType} value)$adderWithCopy
+#else
+#if(!$listMember.listMember.shape.primitive && !$listMember.listMember.shape.enum)
+#set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}T")
+    template<typename ${valueTemplType} = $valueType>
+    ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueTemplType}&& value) { ${setHasBeenSet}${memberVariableName}.emplace_back(std::forward<${valueTemplType}>(value)); return *this; }
+#else
+    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueType} value)$adderWithCopy
+#end
 #end
 #end
     ///@}
