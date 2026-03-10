@@ -153,8 +153,8 @@ class AssociateHostedZoneResult {
 
   ///@{
   /**
-   * <p>Aggregate status for all the AWS Regions in which the Route 53 Global
-   * Resolver exists.</p>
+   * <p>Aggregate status for all the Amazon Web Services Regions in which the Route
+   * 53 Global Resolver exists.</p>
    */
   inline HostedZoneAssociationStatus GetStatus() const { return m_status; }
   inline void SetStatus(HostedZoneAssociationStatus value) {

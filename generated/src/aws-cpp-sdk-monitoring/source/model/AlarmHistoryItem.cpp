@@ -279,9 +279,7 @@ AlarmHistoryItem& AlarmHistoryItem::operator=(const std::shared_ptr<Aws::Crt::Cb
                   }
                 }
                 m_alarmContributorAttributesHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -557,9 +555,7 @@ AlarmHistoryItem& AlarmHistoryItem::operator=(const std::shared_ptr<Aws::Crt::Cb
                 }
               }
               m_alarmContributorAttributesHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

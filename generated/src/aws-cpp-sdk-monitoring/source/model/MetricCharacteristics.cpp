@@ -36,9 +36,7 @@ MetricCharacteristics& MetricCharacteristics::operator=(const std::shared_ptr<Aw
                   m_periodicSpikes = val.value();
                 }
                 m_periodicSpikesHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -71,9 +69,7 @@ MetricCharacteristics& MetricCharacteristics::operator=(const std::shared_ptr<Aw
                 m_periodicSpikes = val.value();
               }
               m_periodicSpikesHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

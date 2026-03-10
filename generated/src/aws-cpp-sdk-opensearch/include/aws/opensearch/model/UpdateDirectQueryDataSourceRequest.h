@@ -111,6 +111,27 @@ class UpdateDirectQueryDataSourceRequest : public OpenSearchServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> An optional IAM access policy document that defines the updated permissions
+   * for accessing the direct query data source. The policy document must be in valid
+   * JSON format and follow IAM policy syntax. If not specified, the existing access
+   * policy if present remains unchanged. </p>
+   */
+  inline const Aws::String& GetDataSourceAccessPolicy() const { return m_dataSourceAccessPolicy; }
+  inline bool DataSourceAccessPolicyHasBeenSet() const { return m_dataSourceAccessPolicyHasBeenSet; }
+  template <typename DataSourceAccessPolicyT = Aws::String>
+  void SetDataSourceAccessPolicy(DataSourceAccessPolicyT&& value) {
+    m_dataSourceAccessPolicyHasBeenSet = true;
+    m_dataSourceAccessPolicy = std::forward<DataSourceAccessPolicyT>(value);
+  }
+  template <typename DataSourceAccessPolicyT = Aws::String>
+  UpdateDirectQueryDataSourceRequest& WithDataSourceAccessPolicy(DataSourceAccessPolicyT&& value) {
+    SetDataSourceAccessPolicy(std::forward<DataSourceAccessPolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dataSourceName;
 
@@ -119,10 +140,13 @@ class UpdateDirectQueryDataSourceRequest : public OpenSearchServiceRequest {
   Aws::String m_description;
 
   Aws::Vector<Aws::String> m_openSearchArns;
+
+  Aws::String m_dataSourceAccessPolicy;
   bool m_dataSourceNameHasBeenSet = false;
   bool m_dataSourceTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_openSearchArnsHasBeenSet = false;
+  bool m_dataSourceAccessPolicyHasBeenSet = false;
 };
 
 }  // namespace Model

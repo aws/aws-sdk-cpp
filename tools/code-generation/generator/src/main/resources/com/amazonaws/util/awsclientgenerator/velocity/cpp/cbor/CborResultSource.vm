@@ -33,11 +33,13 @@ using namespace Aws;
   ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebServiceResult<${typeInfo.CborType}>& result)
     {
     m_HttpResponseCode = result.GetResponseCode();
-    const auto& cborValue = result.GetPayload();
-    const auto decoder = cborValue.GetDecoder();
 
     #set($useRequiredField = true)
+    #if($shape.hasPayloadMembers())
+    const auto& cborValue = result.GetPayload();
+    const auto decoder = cborValue.GetDecoder();
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/ModelClassMembersDeserializeCborInit.vm")
+    #end
 
 
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ResultClassHeadersDeserialize.vm")

@@ -65,12 +65,34 @@ class DataSource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the IAM role to be used for cross account/region data source
+   * association.</p>
+   */
+  inline const Aws::String& GetIamRoleForDataSourceArn() const { return m_iamRoleForDataSourceArn; }
+  inline bool IamRoleForDataSourceArnHasBeenSet() const { return m_iamRoleForDataSourceArnHasBeenSet; }
+  template <typename IamRoleForDataSourceArnT = Aws::String>
+  void SetIamRoleForDataSourceArn(IamRoleForDataSourceArnT&& value) {
+    m_iamRoleForDataSourceArnHasBeenSet = true;
+    m_iamRoleForDataSourceArn = std::forward<IamRoleForDataSourceArnT>(value);
+  }
+  template <typename IamRoleForDataSourceArnT = Aws::String>
+  DataSource& WithIamRoleForDataSourceArn(IamRoleForDataSourceArnT&& value) {
+    SetIamRoleForDataSourceArn(std::forward<IamRoleForDataSourceArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dataSourceArn;
 
   Aws::String m_dataSourceDescription;
+
+  Aws::String m_iamRoleForDataSourceArn;
   bool m_dataSourceArnHasBeenSet = false;
   bool m_dataSourceDescriptionHasBeenSet = false;
+  bool m_iamRoleForDataSourceArnHasBeenSet = false;
 };
 
 }  // namespace Model

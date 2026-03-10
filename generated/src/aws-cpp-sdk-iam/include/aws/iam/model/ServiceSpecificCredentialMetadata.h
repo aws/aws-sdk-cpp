@@ -91,9 +91,9 @@ class ServiceSpecificCredentialMetadata {
 
   ///@{
   /**
-   * <p>For Bedrock API keys, this is the public portion of the credential that
-   * includes the IAM user name and a suffix containing version and creation
-   * information.</p>
+   * <p>For Bedrock API keys and CloudWatch Logs API keys, this is the public portion
+   * of the credential that includes the IAM user name and a suffix containing
+   * version and creation information.</p>
    */
   inline const Aws::String& GetServiceCredentialAlias() const { return m_serviceCredentialAlias; }
   inline bool ServiceCredentialAliasHasBeenSet() const { return m_serviceCredentialAliasHasBeenSet; }
@@ -131,8 +131,8 @@ class ServiceSpecificCredentialMetadata {
   ///@{
   /**
    * <p>The date and time when the service specific credential expires. This field is
-   * only present for Bedrock API keys that were created with an expiration
-   * period.</p>
+   * only present for Bedrock API keys and CloudWatch Logs API keys that were created
+   * with an expiration period.</p>
    */
   inline const Aws::Utils::DateTime& GetExpirationDate() const { return m_expirationDate; }
   inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }

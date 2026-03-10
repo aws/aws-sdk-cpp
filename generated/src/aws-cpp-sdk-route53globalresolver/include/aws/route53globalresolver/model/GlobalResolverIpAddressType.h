@@ -10,13 +10,13 @@
 namespace Aws {
 namespace Route53GlobalResolver {
 namespace Model {
-enum class DnsAdvancedProtection { NOT_SET, DGA, DNS_TUNNELING, DICTIONARY_DGA };
+enum class GlobalResolverIpAddressType { NOT_SET, IPV4, DUAL_STACK };
 
-namespace DnsAdvancedProtectionMapper {
-AWS_ROUTE53GLOBALRESOLVER_API DnsAdvancedProtection GetDnsAdvancedProtectionForName(const Aws::String& name);
+namespace GlobalResolverIpAddressTypeMapper {
+AWS_ROUTE53GLOBALRESOLVER_API GlobalResolverIpAddressType GetGlobalResolverIpAddressTypeForName(const Aws::String& name);
 
-AWS_ROUTE53GLOBALRESOLVER_API Aws::String GetNameForDnsAdvancedProtection(DnsAdvancedProtection value);
-}  // namespace DnsAdvancedProtectionMapper
+AWS_ROUTE53GLOBALRESOLVER_API Aws::String GetNameForGlobalResolverIpAddressType(GlobalResolverIpAddressType value);
+}  // namespace GlobalResolverIpAddressTypeMapper
 }  // namespace Model
 }  // namespace Route53GlobalResolver
 }  // namespace Aws

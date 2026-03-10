@@ -35,6 +35,10 @@ Aws::String AddDirectQueryDataSourceRequest::SerializePayload() const {
     payload.WithArray("OpenSearchArns", std::move(openSearchArnsJsonList));
   }
 
+  if (m_dataSourceAccessPolicyHasBeenSet) {
+    payload.WithString("DataSourceAccessPolicy", m_dataSourceAccessPolicy);
+  }
+
   if (m_tagListHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
     for (unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex) {

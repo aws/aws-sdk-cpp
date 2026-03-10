@@ -87,9 +87,7 @@ AnomalyDetectorConfiguration& AnomalyDetectorConfiguration::operator=(const std:
                   }
                 }
                 m_metricTimezoneHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -173,9 +171,7 @@ AnomalyDetectorConfiguration& AnomalyDetectorConfiguration::operator=(const std:
                 }
               }
               m_metricTimezoneHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

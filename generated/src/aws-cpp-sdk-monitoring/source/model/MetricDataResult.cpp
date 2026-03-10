@@ -226,9 +226,7 @@ MetricDataResult& MetricDataResult::operator=(const std::shared_ptr<Aws::Crt::Cb
                   }
                 }
                 m_messagesHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -451,9 +449,7 @@ MetricDataResult& MetricDataResult::operator=(const std::shared_ptr<Aws::Crt::Cb
                 }
               }
               m_messagesHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

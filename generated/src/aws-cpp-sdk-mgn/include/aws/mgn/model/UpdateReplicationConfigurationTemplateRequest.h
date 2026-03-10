@@ -323,6 +323,23 @@ class UpdateReplicationConfigurationTemplateRequest : public MgnRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Update replication configuration template store snapshot on local zone
+   * request.</p>
+   */
+  inline bool GetStoreSnapshotOnLocalZone() const { return m_storeSnapshotOnLocalZone; }
+  inline bool StoreSnapshotOnLocalZoneHasBeenSet() const { return m_storeSnapshotOnLocalZoneHasBeenSet; }
+  inline void SetStoreSnapshotOnLocalZone(bool value) {
+    m_storeSnapshotOnLocalZoneHasBeenSet = true;
+    m_storeSnapshotOnLocalZone = value;
+  }
+  inline UpdateReplicationConfigurationTemplateRequest& WithStoreSnapshotOnLocalZone(bool value) {
+    SetStoreSnapshotOnLocalZone(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_replicationConfigurationTemplateID;
 
@@ -356,6 +373,8 @@ class UpdateReplicationConfigurationTemplateRequest : public MgnRequest {
   bool m_useFipsEndpoint{false};
 
   InternetProtocol m_internetProtocol{InternetProtocol::NOT_SET};
+
+  bool m_storeSnapshotOnLocalZone{false};
   bool m_replicationConfigurationTemplateIDHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_stagingAreaSubnetIdHasBeenSet = false;
@@ -372,6 +391,7 @@ class UpdateReplicationConfigurationTemplateRequest : public MgnRequest {
   bool m_stagingAreaTagsHasBeenSet = false;
   bool m_useFipsEndpointHasBeenSet = false;
   bool m_internetProtocolHasBeenSet = false;
+  bool m_storeSnapshotOnLocalZoneHasBeenSet = false;
 };
 
 }  // namespace Model

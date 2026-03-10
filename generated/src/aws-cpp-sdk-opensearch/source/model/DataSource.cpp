@@ -26,6 +26,10 @@ DataSource& DataSource::operator=(JsonView jsonValue) {
     m_dataSourceDescription = jsonValue.GetString("dataSourceDescription");
     m_dataSourceDescriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("iamRoleForDataSourceArn")) {
+    m_iamRoleForDataSourceArn = jsonValue.GetString("iamRoleForDataSourceArn");
+    m_iamRoleForDataSourceArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue DataSource::Jsonize() const {
 
   if (m_dataSourceDescriptionHasBeenSet) {
     payload.WithString("dataSourceDescription", m_dataSourceDescription);
+  }
+
+  if (m_iamRoleForDataSourceArnHasBeenSet) {
+    payload.WithString("iamRoleForDataSourceArn", m_iamRoleForDataSourceArn);
   }
 
   return payload;

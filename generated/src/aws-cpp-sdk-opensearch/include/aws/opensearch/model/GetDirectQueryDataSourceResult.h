@@ -110,6 +110,25 @@ class GetDirectQueryDataSourceResult {
 
   ///@{
   /**
+   * <p> The IAM access policy document that defines the permissions for accessing
+   * the direct query data source. Returns the current policy configuration in JSON
+   * format, or null if no custom policy is configured. </p>
+   */
+  inline const Aws::String& GetDataSourceAccessPolicy() const { return m_dataSourceAccessPolicy; }
+  template <typename DataSourceAccessPolicyT = Aws::String>
+  void SetDataSourceAccessPolicy(DataSourceAccessPolicyT&& value) {
+    m_dataSourceAccessPolicyHasBeenSet = true;
+    m_dataSourceAccessPolicy = std::forward<DataSourceAccessPolicyT>(value);
+  }
+  template <typename DataSourceAccessPolicyT = Aws::String>
+  GetDirectQueryDataSourceResult& WithDataSourceAccessPolicy(DataSourceAccessPolicyT&& value) {
+    SetDataSourceAccessPolicy(std::forward<DataSourceAccessPolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The unique, system-generated identifier that represents the data source.
    * </p>
    */
@@ -151,6 +170,8 @@ class GetDirectQueryDataSourceResult {
 
   Aws::Vector<Aws::String> m_openSearchArns;
 
+  Aws::String m_dataSourceAccessPolicy;
+
   Aws::String m_dataSourceArn;
 
   Aws::String m_requestId;
@@ -159,6 +180,7 @@ class GetDirectQueryDataSourceResult {
   bool m_dataSourceTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_openSearchArnsHasBeenSet = false;
+  bool m_dataSourceAccessPolicyHasBeenSet = false;
   bool m_dataSourceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

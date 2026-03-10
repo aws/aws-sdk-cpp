@@ -114,6 +114,26 @@ class AddDirectQueryDataSourceRequest : public OpenSearchServiceRequest {
   ///@}
 
   ///@{
+  /**
+   * <p> An optional IAM access policy document that defines the permissions for
+   * accessing the data source. The policy document must be in valid JSON format and
+   * follow IAM policy syntax.</p>
+   */
+  inline const Aws::String& GetDataSourceAccessPolicy() const { return m_dataSourceAccessPolicy; }
+  inline bool DataSourceAccessPolicyHasBeenSet() const { return m_dataSourceAccessPolicyHasBeenSet; }
+  template <typename DataSourceAccessPolicyT = Aws::String>
+  void SetDataSourceAccessPolicy(DataSourceAccessPolicyT&& value) {
+    m_dataSourceAccessPolicyHasBeenSet = true;
+    m_dataSourceAccessPolicy = std::forward<DataSourceAccessPolicyT>(value);
+  }
+  template <typename DataSourceAccessPolicyT = Aws::String>
+  AddDirectQueryDataSourceRequest& WithDataSourceAccessPolicy(DataSourceAccessPolicyT&& value) {
+    SetDataSourceAccessPolicy(std::forward<DataSourceAccessPolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
   inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
@@ -143,11 +163,14 @@ class AddDirectQueryDataSourceRequest : public OpenSearchServiceRequest {
 
   Aws::Vector<Aws::String> m_openSearchArns;
 
+  Aws::String m_dataSourceAccessPolicy;
+
   Aws::Vector<Tag> m_tagList;
   bool m_dataSourceNameHasBeenSet = false;
   bool m_dataSourceTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_openSearchArnsHasBeenSet = false;
+  bool m_dataSourceAccessPolicyHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

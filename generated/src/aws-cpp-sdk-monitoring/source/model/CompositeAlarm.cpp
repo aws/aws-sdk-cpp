@@ -644,9 +644,7 @@ CompositeAlarm& CompositeAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::
                   }
                 }
                 m_actionsSuppressorExtensionPeriodHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -1286,9 +1284,7 @@ CompositeAlarm& CompositeAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::
                 }
               }
               m_actionsSuppressorExtensionPeriodHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

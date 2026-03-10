@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
 #include <aws/route53globalresolver/model/CRResourceStatus.h>
+#include <aws/route53globalresolver/model/GlobalResolverIpAddressType.h>
 
 #include <utility>
 
@@ -103,8 +104,8 @@ class GetGlobalResolverResult {
 
   ///@{
   /**
-   * <p>The AWS Regions in which the users' Global Resolver query resolution logs
-   * will be propagated.</p>
+   * <p>The Amazon Web Services Regions in which the users' Global Resolver query
+   * resolution logs will be propagated.</p>
    */
   inline const Aws::String& GetObservabilityRegion() const { return m_observabilityRegion; }
   template <typename ObservabilityRegionT = Aws::String>
@@ -155,7 +156,7 @@ class GetGlobalResolverResult {
 
   ///@{
   /**
-   * <p>The AWS Regions in which the Global Resolver operate.</p>
+   * <p>The Amazon Web Services Regions in which the Global Resolver operate.</p>
    */
   inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
   template <typename RegionsT = Aws::Vector<Aws::String>>
@@ -250,6 +251,45 @@ class GetGlobalResolverResult {
   ///@}
 
   ///@{
+  /**
+   * <p>List of anycast IPv6 addresses associated with the Global Resolver instance.
+   * This field is only populated when ipAddressType is DUAL_STACK.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const { return m_ipv6Addresses; }
+  template <typename Ipv6AddressesT = Aws::Vector<Aws::String>>
+  void SetIpv6Addresses(Ipv6AddressesT&& value) {
+    m_ipv6AddressesHasBeenSet = true;
+    m_ipv6Addresses = std::forward<Ipv6AddressesT>(value);
+  }
+  template <typename Ipv6AddressesT = Aws::Vector<Aws::String>>
+  GetGlobalResolverResult& WithIpv6Addresses(Ipv6AddressesT&& value) {
+    SetIpv6Addresses(std::forward<Ipv6AddressesT>(value));
+    return *this;
+  }
+  template <typename Ipv6AddressesT = Aws::String>
+  GetGlobalResolverResult& AddIpv6Addresses(Ipv6AddressesT&& value) {
+    m_ipv6AddressesHasBeenSet = true;
+    m_ipv6Addresses.emplace_back(std::forward<Ipv6AddressesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The IP address type configured for the Global Resolver.</p>
+   */
+  inline GlobalResolverIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline void SetIpAddressType(GlobalResolverIpAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline GetGlobalResolverResult& WithIpAddressType(GlobalResolverIpAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -290,6 +330,10 @@ class GetGlobalResolverResult {
 
   Aws::Vector<Aws::String> m_ipv4Addresses;
 
+  Aws::Vector<Aws::String> m_ipv6Addresses;
+
+  GlobalResolverIpAddressType m_ipAddressType{GlobalResolverIpAddressType::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -304,6 +348,8 @@ class GetGlobalResolverResult {
   bool m_updatedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_ipv4AddressesHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

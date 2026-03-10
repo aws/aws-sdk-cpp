@@ -201,9 +201,7 @@ AlarmContributor& AlarmContributor::operator=(const std::shared_ptr<Aws::Crt::Cb
                   }
                 }
                 m_stateTransitionedTimestampHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -401,9 +399,7 @@ AlarmContributor& AlarmContributor::operator=(const std::shared_ptr<Aws::Crt::Cb
                 }
               }
               m_stateTransitionedTimestampHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

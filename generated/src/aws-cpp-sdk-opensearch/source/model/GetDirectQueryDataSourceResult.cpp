@@ -41,6 +41,10 @@ GetDirectQueryDataSourceResult& GetDirectQueryDataSourceResult::operator=(const 
     }
     m_openSearchArnsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DataSourceAccessPolicy")) {
+    m_dataSourceAccessPolicy = jsonValue.GetString("DataSourceAccessPolicy");
+    m_dataSourceAccessPolicyHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DataSourceArn")) {
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");
     m_dataSourceArnHasBeenSet = true;

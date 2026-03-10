@@ -43,7 +43,7 @@
 
     Aws::String ${typeInfo.className}::SerializePayload() const
     {
-    #if($shape.hasMembers())
+    #if($operation.hasRequest())
         Aws::Crt::Cbor::CborEncoder encoder;
         
         // Calculate map size

@@ -93,6 +93,7 @@
 #include <aws/route53globalresolver/model/GetHostedZoneAssociationResult.h>
 #include <aws/route53globalresolver/model/GetManagedFirewallDomainListRequest.h>
 #include <aws/route53globalresolver/model/GetManagedFirewallDomainListResult.h>
+#include <aws/route53globalresolver/model/GlobalResolverIpAddressType.h>
 #include <aws/route53globalresolver/model/GlobalResolversItem.h>
 #include <aws/route53globalresolver/model/HostedZoneAssociationStatus.h>
 #include <aws/route53globalresolver/model/HostedZoneAssociationSummary.h>

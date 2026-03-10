@@ -177,9 +177,7 @@ SingleMetricAnomalyDetector& SingleMetricAnomalyDetector::operator=(const std::s
                   }
                 }
                 m_statHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -353,9 +351,7 @@ SingleMetricAnomalyDetector& SingleMetricAnomalyDetector::operator=(const std::s
                 }
               }
               m_statHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

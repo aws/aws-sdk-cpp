@@ -108,6 +108,10 @@ GetReplicationConfigurationResult& GetReplicationConfigurationResult::operator=(
     m_internetProtocol = InternetProtocolMapper::GetInternetProtocolForName(jsonValue.GetString("internetProtocol"));
     m_internetProtocolHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("storeSnapshotOnLocalZone")) {
+    m_storeSnapshotOnLocalZone = jsonValue.GetBool("storeSnapshotOnLocalZone");
+    m_storeSnapshotOnLocalZoneHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

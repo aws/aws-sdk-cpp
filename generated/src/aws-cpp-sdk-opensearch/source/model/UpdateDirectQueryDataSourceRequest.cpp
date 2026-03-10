@@ -31,5 +31,9 @@ Aws::String UpdateDirectQueryDataSourceRequest::SerializePayload() const {
     payload.WithArray("OpenSearchArns", std::move(openSearchArnsJsonList));
   }
 
+  if (m_dataSourceAccessPolicyHasBeenSet) {
+    payload.WithString("DataSourceAccessPolicy", m_dataSourceAccessPolicy);
+  }
+
   return payload.View().WriteReadable();
 }

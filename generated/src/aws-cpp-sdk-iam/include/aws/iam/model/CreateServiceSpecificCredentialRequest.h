@@ -79,8 +79,8 @@ class CreateServiceSpecificCredentialRequest : public IAMRequest {
   ///@{
   /**
    * <p>The number of days until the service specific credential expires. This field
-   * is only valid for Bedrock API keys and must be a positive integer. When not
-   * specified, the credential will not expire.</p>
+   * is only valid for Bedrock and CloudWatch Logs API keys and must be a positive
+   * integer. When not specified, the credential will not expire.</p>
    */
   inline int GetCredentialAgeDays() const { return m_credentialAgeDays; }
   inline bool CredentialAgeDaysHasBeenSet() const { return m_credentialAgeDaysHasBeenSet; }

@@ -109,9 +109,7 @@ MuteTargets& MuteTargets::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                   }
                 }
                 m_alarmNamesHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -217,9 +215,7 @@ MuteTargets& MuteTargets::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                 }
               }
               m_alarmNamesHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

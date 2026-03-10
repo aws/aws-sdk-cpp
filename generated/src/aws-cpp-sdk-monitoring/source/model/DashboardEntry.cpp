@@ -129,9 +129,7 @@ DashboardEntry& DashboardEntry::operator=(const std::shared_ptr<Aws::Crt::Cbor::
                   }
                 }
                 m_sizeHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -257,9 +255,7 @@ DashboardEntry& DashboardEntry::operator=(const std::shared_ptr<Aws::Crt::Cbor::
                 }
               }
               m_sizeHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

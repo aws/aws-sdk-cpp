@@ -220,9 +220,7 @@ MetricDatum& MetricDatum::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                   }
                 }
                 m_storageResolutionHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -439,9 +437,7 @@ MetricDatum& MetricDatum::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDe
                 }
               }
               m_storageResolutionHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }
