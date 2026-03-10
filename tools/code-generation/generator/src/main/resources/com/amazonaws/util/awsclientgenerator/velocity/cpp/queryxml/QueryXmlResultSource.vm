@@ -34,19 +34,10 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebSer
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-#if($metadata.findFirstSupportedProtocol() == "query")
-  // For query protocol, the root element is OperationNameResponse
-  Aws::String expectedRootName = "${CppViewHelper.computeOperationNameFromInputOutputShape($typeInfo.className)}Response";
-  if (!rootNode.IsNull() && (rootNode.GetName() != expectedRootName))
-  {
-    resultNode = rootNode.FirstChild(expectedRootName);
-  }
-#else
   if (!rootNode.IsNull() && (rootNode.GetName() != "${typeInfo.shape.name}"))
   {
     resultNode = rootNode.FirstChild("${typeInfo.shape.name}");
   }
-#end
 
   if(!resultNode.IsNull())
   {
