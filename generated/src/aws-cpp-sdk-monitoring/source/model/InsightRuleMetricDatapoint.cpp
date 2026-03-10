@@ -107,9 +107,7 @@ InsightRuleMetricDatapoint& InsightRuleMetricDatapoint::operator=(const std::sha
                   m_maximum = val.value();
                 }
                 m_maximumHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -213,9 +211,7 @@ InsightRuleMetricDatapoint& InsightRuleMetricDatapoint::operator=(const std::sha
                 m_maximum = val.value();
               }
               m_maximumHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

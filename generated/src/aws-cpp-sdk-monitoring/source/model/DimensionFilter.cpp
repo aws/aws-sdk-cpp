@@ -88,9 +88,7 @@ DimensionFilter& DimensionFilter::operator=(const std::shared_ptr<Aws::Crt::Cbor
                   }
                 }
                 m_valueHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -175,9 +173,7 @@ DimensionFilter& DimensionFilter::operator=(const std::shared_ptr<Aws::Crt::Cbor
                 }
               }
               m_valueHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

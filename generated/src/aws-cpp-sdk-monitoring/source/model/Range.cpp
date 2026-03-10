@@ -74,9 +74,7 @@ Range& Range::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& deco
                   }
                 }
                 m_endTimeHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -147,9 +145,7 @@ Range& Range::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& deco
                 }
               }
               m_endTimeHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

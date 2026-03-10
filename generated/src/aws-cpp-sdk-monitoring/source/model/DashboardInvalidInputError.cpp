@@ -87,9 +87,7 @@ DashboardInvalidInputError& DashboardInvalidInputError::operator=(const std::sha
                   }
                 }
                 m_dashboardValidationMessagesHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -173,9 +171,7 @@ DashboardInvalidInputError& DashboardInvalidInputError::operator=(const std::sha
                 }
               }
               m_dashboardValidationMessagesHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

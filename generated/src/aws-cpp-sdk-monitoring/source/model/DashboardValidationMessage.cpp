@@ -88,9 +88,7 @@ DashboardValidationMessage& DashboardValidationMessage::operator=(const std::sha
                   }
                 }
                 m_messageHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -175,9 +173,7 @@ DashboardValidationMessage& DashboardValidationMessage::operator=(const std::sha
                 }
               }
               m_messageHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

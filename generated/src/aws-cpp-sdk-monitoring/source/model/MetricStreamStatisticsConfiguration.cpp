@@ -142,9 +142,7 @@ MetricStreamStatisticsConfiguration& MetricStreamStatisticsConfiguration::operat
                   }
                 }
                 m_additionalStatisticsHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -279,9 +277,7 @@ MetricStreamStatisticsConfiguration& MetricStreamStatisticsConfiguration::operat
                 }
               }
               m_additionalStatisticsHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

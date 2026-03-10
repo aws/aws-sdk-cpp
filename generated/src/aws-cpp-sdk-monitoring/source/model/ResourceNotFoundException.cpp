@@ -88,9 +88,7 @@ ResourceNotFoundException& ResourceNotFoundException::operator=(const std::share
                   }
                 }
                 m_resourceIdHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -175,9 +173,7 @@ ResourceNotFoundException& ResourceNotFoundException::operator=(const std::share
                 }
               }
               m_resourceIdHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

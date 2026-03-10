@@ -204,9 +204,7 @@ Entity& Entity::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& de
                   }
                 }
                 m_attributesHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -407,9 +405,7 @@ Entity& Entity::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& de
                 }
               }
               m_attributesHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

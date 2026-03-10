@@ -57,9 +57,7 @@ AnomalyDetector& AnomalyDetector::operator=(const std::shared_ptr<Aws::Crt::Cbor
               else if (initialKeyStr == "MetricMathAnomalyDetector") {
                 m_metricMathAnomalyDetector = MetricMathAnomalyDetector(decoder);
                 m_metricMathAnomalyDetectorHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -113,9 +111,7 @@ AnomalyDetector& AnomalyDetector::operator=(const std::shared_ptr<Aws::Crt::Cbor
             else if (initialKeyStr == "MetricMathAnomalyDetector") {
               m_metricMathAnomalyDetector = MetricMathAnomalyDetector(decoder);
               m_metricMathAnomalyDetectorHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }
