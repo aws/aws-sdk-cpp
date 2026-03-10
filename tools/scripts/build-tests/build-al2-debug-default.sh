@@ -27,3 +27,11 @@ fi
 cmake "${CMAKE_ARGS[@]}"
 ninja-build -j $(grep -c ^processor /proc/cpuinfo)
 ninja-build install
+
+# Clean up temp build files, however leave built integration tests as they have no install target
+rm -rf "${PREFIX_DIR}/al2-build/AWSSDK/"
+rm -rf "${PREFIX_DIR}/al2-build/CMakeFiles/"
+rm -rf "${PREFIX_DIR}/al2-build/crt/"
+find "${PREFIX_DIR}/al2-build/generated/" -mindepth 1 -maxdepth 1 ! -name "smoke-tests" -exec rm -rf {} +
+rm -rf "${PREFIX_DIR}/al2-build/lib/"
+rm -rf "${PREFIX_DIR}/al2-build/src/"
