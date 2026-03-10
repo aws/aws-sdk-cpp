@@ -15,6 +15,7 @@ from codegen.protocol_tests_gen import ProtocolTestsGen
 from codegen.smoke_tests_gen import SmokeTestsGen
 from codegen.smithy_cpp_gen import SmithyCppGen
 from codegen.format_util import format_directories
+from codegen.install_test_gen import InstallTestGen
 
 
 def parse_arguments() -> dict:
@@ -66,6 +67,9 @@ def parse_arguments() -> dict:
                         action="store_true")
     parser.add_argument("--generate_protocol_tests",
                         help="Run protocol tests generation",
+                        action="store_true")
+    parser.add_argument("--generate_install_tests",
+                        help="Run install test generation",
                         action="store_true")
 
     args = vars(parser.parse_args())
@@ -126,6 +130,7 @@ def parse_arguments() -> dict:
     arg_map["disable_smithy_generation"] = args.get("disable_smithy_generation", False)
     arg_map["generate_smoke_tests"] = args.get("generate_smoke_tests", None)
     arg_map["generate_protocol_tests"] = args.get("generate_protocol_tests", None)
+    arg_map["generate_install_tests"] = args.get("generate_install_tests", None)
     if arg_map["debug"]:
         print("args=", arg_map)
     return arg_map
@@ -183,6 +188,13 @@ def main():
         existing_dirs = [d for d in client_dirs if os.path.exists(d)]
         if existing_dirs:
             format_directories(existing_dirs)
+
+    # Generate install tests
+    if args["generate_install_tests"] and clients_to_build:
+        install_test_gen = InstallTestGen(args["debug"])
+        if install_test_gen.generate(clients_to_build) != 0:
+            print("Error: Failed to generate install test")
+            return -1
 
     return 0
 
