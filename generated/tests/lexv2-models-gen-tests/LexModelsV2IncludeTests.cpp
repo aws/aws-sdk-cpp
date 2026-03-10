@@ -25,6 +25,7 @@
 #include <aws/lexv2-models/model/AggregatedUtterancesSortBy.h>
 #include <aws/lexv2-models/model/AggregatedUtterancesSummary.h>
 #include <aws/lexv2-models/model/AllowedInputTypes.h>
+#include <aws/lexv2-models/model/AnalysisScope.h>
 #include <aws/lexv2-models/model/AnalyticsBinByName.h>
 #include <aws/lexv2-models/model/AnalyticsBinBySpecification.h>
 #include <aws/lexv2-models/model/AnalyticsBinKey.h>
@@ -105,6 +106,9 @@
 #include <aws/lexv2-models/model/BotAliasStatus.h>
 #include <aws/lexv2-models/model/BotAliasSummary.h>
 #include <aws/lexv2-models/model/BotAliasTestExecutionTarget.h>
+#include <aws/lexv2-models/model/BotAnalyzerHistorySummary.h>
+#include <aws/lexv2-models/model/BotAnalyzerRecommendation.h>
+#include <aws/lexv2-models/model/BotAnalyzerStatus.h>
 #include <aws/lexv2-models/model/BotExportSpecification.h>
 #include <aws/lexv2-models/model/BotFilter.h>
 #include <aws/lexv2-models/model/BotFilterName.h>
@@ -207,6 +211,8 @@
 #include <aws/lexv2-models/model/DefaultConditionalBranch.h>
 #include <aws/lexv2-models/model/DeleteBotAliasRequest.h>
 #include <aws/lexv2-models/model/DeleteBotAliasResult.h>
+#include <aws/lexv2-models/model/DeleteBotAnalyzerRecommendationRequest.h>
+#include <aws/lexv2-models/model/DeleteBotAnalyzerRecommendationResult.h>
 #include <aws/lexv2-models/model/DeleteBotLocaleRequest.h>
 #include <aws/lexv2-models/model/DeleteBotLocaleResult.h>
 #include <aws/lexv2-models/model/DeleteBotReplicaRequest.h>
@@ -233,6 +239,8 @@
 #include <aws/lexv2-models/model/DeleteUtterancesResult.h>
 #include <aws/lexv2-models/model/DescribeBotAliasRequest.h>
 #include <aws/lexv2-models/model/DescribeBotAliasResult.h>
+#include <aws/lexv2-models/model/DescribeBotAnalyzerRecommendationRequest.h>
+#include <aws/lexv2-models/model/DescribeBotAnalyzerRecommendationResult.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleRequest.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleResult.h>
 #include <aws/lexv2-models/model/DescribeBotRecommendationRequest.h>
@@ -337,6 +345,7 @@
 #include <aws/lexv2-models/model/IntentStatistics.h>
 #include <aws/lexv2-models/model/IntentSummary.h>
 #include <aws/lexv2-models/model/InvokedIntentSample.h>
+#include <aws/lexv2-models/model/IssueLocation.h>
 #include <aws/lexv2-models/model/KendraConfiguration.h>
 #include <aws/lexv2-models/model/LambdaCodeHook.h>
 #include <aws/lexv2-models/model/LexTranscriptFilter.h>
@@ -346,6 +355,8 @@
 #include <aws/lexv2-models/model/ListBotAliasReplicasResult.h>
 #include <aws/lexv2-models/model/ListBotAliasesRequest.h>
 #include <aws/lexv2-models/model/ListBotAliasesResult.h>
+#include <aws/lexv2-models/model/ListBotAnalyzerHistoryRequest.h>
+#include <aws/lexv2-models/model/ListBotAnalyzerHistoryResult.h>
 #include <aws/lexv2-models/model/ListBotLocalesRequest.h>
 #include <aws/lexv2-models/model/ListBotLocalesResult.h>
 #include <aws/lexv2-models/model/ListBotRecommendationsRequest.h>
@@ -421,6 +432,7 @@
 #include <aws/lexv2-models/model/PostDialogCodeHookInvocationSpecification.h>
 #include <aws/lexv2-models/model/PostFulfillmentStatusSpecification.h>
 #include <aws/lexv2-models/model/Principal.h>
+#include <aws/lexv2-models/model/Priority.h>
 #include <aws/lexv2-models/model/PromptAttempt.h>
 #include <aws/lexv2-models/model/PromptAttemptSpecification.h>
 #include <aws/lexv2-models/model/PromptSpecification.h>
@@ -486,6 +498,8 @@
 #include <aws/lexv2-models/model/SpeechModelConfig.h>
 #include <aws/lexv2-models/model/SpeechModelPreference.h>
 #include <aws/lexv2-models/model/SpeechRecognitionSettings.h>
+#include <aws/lexv2-models/model/StartBotAnalyzerRequest.h>
+#include <aws/lexv2-models/model/StartBotAnalyzerResult.h>
 #include <aws/lexv2-models/model/StartBotRecommendationRequest.h>
 #include <aws/lexv2-models/model/StartBotRecommendationResult.h>
 #include <aws/lexv2-models/model/StartBotResourceGenerationRequest.h>
@@ -497,6 +511,8 @@
 #include <aws/lexv2-models/model/StartTestSetGenerationRequest.h>
 #include <aws/lexv2-models/model/StartTestSetGenerationResult.h>
 #include <aws/lexv2-models/model/StillWaitingResponseSpecification.h>
+#include <aws/lexv2-models/model/StopBotAnalyzerRequest.h>
+#include <aws/lexv2-models/model/StopBotAnalyzerResult.h>
 #include <aws/lexv2-models/model/StopBotRecommendationRequest.h>
 #include <aws/lexv2-models/model/StopBotRecommendationResult.h>
 #include <aws/lexv2-models/model/SubSlotSetting.h>

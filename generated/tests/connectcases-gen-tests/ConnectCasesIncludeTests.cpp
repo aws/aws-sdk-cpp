@@ -38,6 +38,7 @@
 #include <aws/connectcases/model/CommentBodyTextType.h>
 #include <aws/connectcases/model/CommentContent.h>
 #include <aws/connectcases/model/CommentFilter.h>
+#include <aws/connectcases/model/CompoundCondition.h>
 #include <aws/connectcases/model/ConnectCaseContent.h>
 #include <aws/connectcases/model/ConnectCaseFilter.h>
 #include <aws/connectcases/model/ConnectCaseInputContent.h>

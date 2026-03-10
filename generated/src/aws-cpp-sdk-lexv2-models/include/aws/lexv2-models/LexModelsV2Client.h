@@ -639,6 +639,40 @@ class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Permanently deletes the recommendations and analysis results for a specific
+   * bot analysis request. This operation is provided for GDPR compliance and cannot
+   * be undone.</p> <p>After deletion, the analysis results cannot be retrieved. The
+   * analysis request ID will still appear in the history list, but attempting to
+   * describe the recommendations will return a
+   * <code>ResourceNotFoundException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotAnalyzerRecommendation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteBotAnalyzerRecommendationOutcome DeleteBotAnalyzerRecommendation(
+      const Model::DeleteBotAnalyzerRecommendationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteBotAnalyzerRecommendation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteBotAnalyzerRecommendationRequestT = Model::DeleteBotAnalyzerRecommendationRequest>
+  Model::DeleteBotAnalyzerRecommendationOutcomeCallable DeleteBotAnalyzerRecommendationCallable(
+      const DeleteBotAnalyzerRecommendationRequestT& request) const {
+    return SubmitCallable(&LexModelsV2Client::DeleteBotAnalyzerRecommendation, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteBotAnalyzerRecommendation that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteBotAnalyzerRecommendationRequestT = Model::DeleteBotAnalyzerRecommendationRequest>
+  void DeleteBotAnalyzerRecommendationAsync(const DeleteBotAnalyzerRecommendationRequestT& request,
+                                            const DeleteBotAnalyzerRecommendationResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LexModelsV2Client::DeleteBotAnalyzerRecommendation, request, handler, context);
+  }
+
+  /**
    * <p>Removes a locale from a bot.</p> <p>When you delete a locale, all intents,
    * slots, and slot types defined for the locale are also deleted.</p><p><h3>See
    * Also:</h3>   <a
@@ -1051,6 +1085,39 @@ class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient,
   void DescribeBotAliasAsync(const DescribeBotAliasRequestT& request, const DescribeBotAliasResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LexModelsV2Client::DescribeBotAlias, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the analysis results and recommendations for bot optimization. The
+   * analysis must be in <code>Available</code> status before recommendations can be
+   * retrieved.</p> <p>Recommendations are returned with pagination support. Each
+   * recommendation includes the issue location, priority level, detailed
+   * description, and proposed fix.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotAnalyzerRecommendation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeBotAnalyzerRecommendationOutcome DescribeBotAnalyzerRecommendation(
+      const Model::DescribeBotAnalyzerRecommendationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeBotAnalyzerRecommendation that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DescribeBotAnalyzerRecommendationRequestT = Model::DescribeBotAnalyzerRecommendationRequest>
+  Model::DescribeBotAnalyzerRecommendationOutcomeCallable DescribeBotAnalyzerRecommendationCallable(
+      const DescribeBotAnalyzerRecommendationRequestT& request) const {
+    return SubmitCallable(&LexModelsV2Client::DescribeBotAnalyzerRecommendation, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeBotAnalyzerRecommendation that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeBotAnalyzerRecommendationRequestT = Model::DescribeBotAnalyzerRecommendationRequest>
+  void DescribeBotAnalyzerRecommendationAsync(const DescribeBotAnalyzerRecommendationRequestT& request,
+                                              const DescribeBotAnalyzerRecommendationResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LexModelsV2Client::DescribeBotAnalyzerRecommendation, request, handler, context);
   }
 
   /**
@@ -1637,6 +1704,36 @@ class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient,
   void ListBotAliasesAsync(const ListBotAliasesRequestT& request, const ListBotAliasesResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LexModelsV2Client::ListBotAliases, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of historical bot analysis executions for a specific bot.
+   * You can filter the results by locale and bot version.</p> <p>The history
+   * includes all analysis executions regardless of their status, allowing you to
+   * track past analyses and their outcomes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAnalyzerHistory">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBotAnalyzerHistoryOutcome ListBotAnalyzerHistory(const Model::ListBotAnalyzerHistoryRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListBotAnalyzerHistory that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListBotAnalyzerHistoryRequestT = Model::ListBotAnalyzerHistoryRequest>
+  Model::ListBotAnalyzerHistoryOutcomeCallable ListBotAnalyzerHistoryCallable(const ListBotAnalyzerHistoryRequestT& request) const {
+    return SubmitCallable(&LexModelsV2Client::ListBotAnalyzerHistory, request);
+  }
+
+  /**
+   * An Async wrapper for ListBotAnalyzerHistory that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListBotAnalyzerHistoryRequestT = Model::ListBotAnalyzerHistoryRequest>
+  void ListBotAnalyzerHistoryAsync(const ListBotAnalyzerHistoryRequestT& request,
+                                   const ListBotAnalyzerHistoryResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LexModelsV2Client::ListBotAnalyzerHistory, request, handler, context);
   }
 
   /**
@@ -2552,6 +2649,36 @@ class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Initiates an asynchronous analysis of your bot configuration using AI-powered
+   * analysis to identify potential issues and recommend improvements based on AWS
+   * best practices.</p> <p>The analysis examines your bot's configuration, including
+   * intents, utterances, slots, and conversation flows, to provide actionable
+   * recommendations for optimization.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotAnalyzer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartBotAnalyzerOutcome StartBotAnalyzer(const Model::StartBotAnalyzerRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartBotAnalyzer that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartBotAnalyzerRequestT = Model::StartBotAnalyzerRequest>
+  Model::StartBotAnalyzerOutcomeCallable StartBotAnalyzerCallable(const StartBotAnalyzerRequestT& request) const {
+    return SubmitCallable(&LexModelsV2Client::StartBotAnalyzer, request);
+  }
+
+  /**
+   * An Async wrapper for StartBotAnalyzer that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartBotAnalyzerRequestT = Model::StartBotAnalyzerRequest>
+  void StartBotAnalyzerAsync(const StartBotAnalyzerRequestT& request, const StartBotAnalyzerResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LexModelsV2Client::StartBotAnalyzer, request, handler, context);
+  }
+
+  /**
    * <p>Use this to provide your transcript data, and to start the bot recommendation
    * process.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotRecommendation">AWS
@@ -2691,6 +2818,33 @@ class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient,
                                    const StartTestSetGenerationResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LexModelsV2Client::StartTestSetGeneration, request, handler, context);
+  }
+
+  /**
+   * <p>Cancels an ongoing bot analysis execution. Once stopped, the analysis cannot
+   * be resumed and no recommendations will be generated.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StopBotAnalyzer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopBotAnalyzerOutcome StopBotAnalyzer(const Model::StopBotAnalyzerRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopBotAnalyzer that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StopBotAnalyzerRequestT = Model::StopBotAnalyzerRequest>
+  Model::StopBotAnalyzerOutcomeCallable StopBotAnalyzerCallable(const StopBotAnalyzerRequestT& request) const {
+    return SubmitCallable(&LexModelsV2Client::StopBotAnalyzer, request);
+  }
+
+  /**
+   * An Async wrapper for StopBotAnalyzer that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StopBotAnalyzerRequestT = Model::StopBotAnalyzerRequest>
+  void StopBotAnalyzerAsync(const StopBotAnalyzerRequestT& request, const StopBotAnalyzerResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LexModelsV2Client::StopBotAnalyzer, request, handler, context);
   }
 
   /**

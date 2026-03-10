@@ -11,6 +11,7 @@
 #include <aws/lexv2-models/model/ListIntentStageMetricsPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBuiltInIntentsPaginationTraits.h>
 #include <aws/lexv2-models/model/ListCustomVocabularyItemsPaginationTraits.h>
+#include <aws/lexv2-models/model/DescribeBotAnalyzerRecommendationPaginationTraits.h>
 #include <aws/lexv2-models/model/ListUtteranceMetricsPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotResourceGenerationsPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotAliasesPaginationTraits.h>
@@ -24,6 +25,7 @@
 #include <aws/lexv2-models/model/ListBotVersionsPaginationTraits.h>
 #include <aws/lexv2-models/model/ListSessionAnalyticsDataPaginationTraits.h>
 #include <aws/lexv2-models/model/ListTestExecutionResultItemsPaginationTraits.h>
+#include <aws/lexv2-models/model/ListBotAnalyzerHistoryPaginationTraits.h>
 #include <aws/lexv2-models/model/ListAggregatedUtterancesPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotRecommendationsPaginationTraits.h>
 #include <aws/lexv2-models/model/ListIntentMetricsPaginationTraits.h>

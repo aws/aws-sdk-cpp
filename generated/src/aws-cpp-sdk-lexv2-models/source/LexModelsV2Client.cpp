@@ -38,6 +38,7 @@
 #include <aws/lexv2-models/model/CreateTestSetDiscrepancyReportRequest.h>
 #include <aws/lexv2-models/model/CreateUploadUrlRequest.h>
 #include <aws/lexv2-models/model/DeleteBotAliasRequest.h>
+#include <aws/lexv2-models/model/DeleteBotAnalyzerRecommendationRequest.h>
 #include <aws/lexv2-models/model/DeleteBotLocaleRequest.h>
 #include <aws/lexv2-models/model/DeleteBotReplicaRequest.h>
 #include <aws/lexv2-models/model/DeleteBotRequest.h>
@@ -53,6 +54,7 @@
 #include <aws/lexv2-models/model/DeleteTestSetRequest.h>
 #include <aws/lexv2-models/model/DeleteUtterancesRequest.h>
 #include <aws/lexv2-models/model/DescribeBotAliasRequest.h>
+#include <aws/lexv2-models/model/DescribeBotAnalyzerRecommendationRequest.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleRequest.h>
 #include <aws/lexv2-models/model/DescribeBotRecommendationRequest.h>
 #include <aws/lexv2-models/model/DescribeBotReplicaRequest.h>
@@ -75,6 +77,7 @@
 #include <aws/lexv2-models/model/ListAggregatedUtterancesRequest.h>
 #include <aws/lexv2-models/model/ListBotAliasReplicasRequest.h>
 #include <aws/lexv2-models/model/ListBotAliasesRequest.h>
+#include <aws/lexv2-models/model/ListBotAnalyzerHistoryRequest.h>
 #include <aws/lexv2-models/model/ListBotLocalesRequest.h>
 #include <aws/lexv2-models/model/ListBotRecommendationsRequest.h>
 #include <aws/lexv2-models/model/ListBotReplicasRequest.h>
@@ -104,11 +107,13 @@
 #include <aws/lexv2-models/model/ListUtteranceAnalyticsDataRequest.h>
 #include <aws/lexv2-models/model/ListUtteranceMetricsRequest.h>
 #include <aws/lexv2-models/model/SearchAssociatedTranscriptsRequest.h>
+#include <aws/lexv2-models/model/StartBotAnalyzerRequest.h>
 #include <aws/lexv2-models/model/StartBotRecommendationRequest.h>
 #include <aws/lexv2-models/model/StartBotResourceGenerationRequest.h>
 #include <aws/lexv2-models/model/StartImportRequest.h>
 #include <aws/lexv2-models/model/StartTestExecutionRequest.h>
 #include <aws/lexv2-models/model/StartTestSetGenerationRequest.h>
+#include <aws/lexv2-models/model/StopBotAnalyzerRequest.h>
 #include <aws/lexv2-models/model/StopBotRecommendationRequest.h>
 #include <aws/lexv2-models/model/TagResourceRequest.h>
 #include <aws/lexv2-models/model/UntagResourceRequest.h>
@@ -1040,6 +1045,50 @@ DeleteBotAliasOutcome LexModelsV2Client::DeleteBotAlias(const DeleteBotAliasRequ
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteBotAnalyzerRecommendationOutcome LexModelsV2Client::DeleteBotAnalyzerRecommendation(
+    const DeleteBotAnalyzerRecommendationRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteBotAnalyzerRecommendation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBotAnalyzerRecommendation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteBotAnalyzerRecommendation", "Required field: BotId, is not set");
+    return DeleteBotAnalyzerRecommendationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(
+        LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotAnalyzerRequestIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteBotAnalyzerRecommendation", "Required field: BotAnalyzerRequestId, is not set");
+    return DeleteBotAnalyzerRecommendationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(
+        LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAnalyzerRequestId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBotAnalyzerRecommendation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteBotAnalyzerRecommendation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteBotAnalyzerRecommendation",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteBotAnalyzerRecommendationOutcome>(
+      [&]() -> DeleteBotAnalyzerRecommendationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBotAnalyzerRecommendation, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/botanalyzer/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAnalyzerRequestId());
+        return DeleteBotAnalyzerRecommendationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteBotLocaleOutcome LexModelsV2Client::DeleteBotLocale(const DeleteBotLocaleRequest& request) const {
   AWS_OPERATION_GUARD(DeleteBotLocale);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBotLocale, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1703,6 +1752,50 @@ DescribeBotAliasOutcome LexModelsV2Client::DescribeBotAlias(const DescribeBotAli
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAliasId());
         return DescribeBotAliasOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeBotAnalyzerRecommendationOutcome LexModelsV2Client::DescribeBotAnalyzerRecommendation(
+    const DescribeBotAnalyzerRecommendationRequest& request) const {
+  AWS_OPERATION_GUARD(DescribeBotAnalyzerRecommendation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBotAnalyzerRecommendation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeBotAnalyzerRecommendation", "Required field: BotId, is not set");
+    return DescribeBotAnalyzerRecommendationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(
+        LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotAnalyzerRequestIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeBotAnalyzerRecommendation", "Required field: BotAnalyzerRequestId, is not set");
+    return DescribeBotAnalyzerRecommendationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(
+        LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAnalyzerRequestId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeBotAnalyzerRecommendation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeBotAnalyzerRecommendation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeBotAnalyzerRecommendation",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeBotAnalyzerRecommendationOutcome>(
+      [&]() -> DescribeBotAnalyzerRecommendationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBotAnalyzerRecommendation, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/botanalyzer/describe/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAnalyzerRequestId());
+        return DescribeBotAnalyzerRecommendationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2643,6 +2736,43 @@ ListBotAliasesOutcome LexModelsV2Client::ListBotAliases(const ListBotAliasesRequ
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/botaliases/");
         return ListBotAliasesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListBotAnalyzerHistoryOutcome LexModelsV2Client::ListBotAnalyzerHistory(const ListBotAnalyzerHistoryRequest& request) const {
+  AWS_OPERATION_GUARD(ListBotAnalyzerHistory);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBotAnalyzerHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListBotAnalyzerHistory", "Required field: BotId, is not set");
+    return ListBotAnalyzerHistoryOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [BotId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBotAnalyzerHistory, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListBotAnalyzerHistory, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBotAnalyzerHistory",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListBotAnalyzerHistoryOutcome>(
+      [&]() -> ListBotAnalyzerHistoryOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBotAnalyzerHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/botanalyzer/history/");
+        return ListBotAnalyzerHistoryOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -3835,6 +3965,43 @@ SearchAssociatedTranscriptsOutcome LexModelsV2Client::SearchAssociatedTranscript
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+StartBotAnalyzerOutcome LexModelsV2Client::StartBotAnalyzer(const StartBotAnalyzerRequest& request) const {
+  AWS_OPERATION_GUARD(StartBotAnalyzer);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartBotAnalyzer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartBotAnalyzer", "Required field: BotId, is not set");
+    return StartBotAnalyzerOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [BotId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartBotAnalyzer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartBotAnalyzer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartBotAnalyzer",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartBotAnalyzerOutcome>(
+      [&]() -> StartBotAnalyzerOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartBotAnalyzer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/botanalyzer/");
+        return StartBotAnalyzerOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 StartBotRecommendationOutcome LexModelsV2Client::StartBotRecommendation(const StartBotRecommendationRequest& request) const {
   AWS_OPERATION_GUARD(StartBotRecommendation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartBotRecommendation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -4027,6 +4194,50 @@ StartTestSetGenerationOutcome LexModelsV2Client::StartTestSetGeneration(const St
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/testsetgenerations");
         return StartTestSetGenerationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StopBotAnalyzerOutcome LexModelsV2Client::StopBotAnalyzer(const StopBotAnalyzerRequest& request) const {
+  AWS_OPERATION_GUARD(StopBotAnalyzer);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopBotAnalyzer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopBotAnalyzer", "Required field: BotId, is not set");
+    return StopBotAnalyzerOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [BotId]", false));
+  }
+  if (!request.BotAnalyzerRequestIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopBotAnalyzer", "Required field: BotAnalyzerRequestId, is not set");
+    return StopBotAnalyzerOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [BotAnalyzerRequestId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StopBotAnalyzer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StopBotAnalyzer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StopBotAnalyzer",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StopBotAnalyzerOutcome>(
+      [&]() -> StopBotAnalyzerOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopBotAnalyzer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/botanalyzer/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotAnalyzerRequestId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/stop/");
+        return StopBotAnalyzerOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

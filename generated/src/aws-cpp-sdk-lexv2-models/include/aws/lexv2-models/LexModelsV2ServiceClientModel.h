@@ -39,6 +39,7 @@
 #include <aws/lexv2-models/model/CreateUploadUrlRequest.h>
 #include <aws/lexv2-models/model/CreateUploadUrlResult.h>
 #include <aws/lexv2-models/model/DeleteBotAliasResult.h>
+#include <aws/lexv2-models/model/DeleteBotAnalyzerRecommendationResult.h>
 #include <aws/lexv2-models/model/DeleteBotLocaleResult.h>
 #include <aws/lexv2-models/model/DeleteBotReplicaResult.h>
 #include <aws/lexv2-models/model/DeleteBotResult.h>
@@ -50,6 +51,7 @@
 #include <aws/lexv2-models/model/DeleteResourcePolicyStatementResult.h>
 #include <aws/lexv2-models/model/DeleteUtterancesResult.h>
 #include <aws/lexv2-models/model/DescribeBotAliasResult.h>
+#include <aws/lexv2-models/model/DescribeBotAnalyzerRecommendationResult.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleResult.h>
 #include <aws/lexv2-models/model/DescribeBotRecommendationResult.h>
 #include <aws/lexv2-models/model/DescribeBotReplicaResult.h>
@@ -72,6 +74,7 @@
 #include <aws/lexv2-models/model/ListAggregatedUtterancesResult.h>
 #include <aws/lexv2-models/model/ListBotAliasReplicasResult.h>
 #include <aws/lexv2-models/model/ListBotAliasesResult.h>
+#include <aws/lexv2-models/model/ListBotAnalyzerHistoryResult.h>
 #include <aws/lexv2-models/model/ListBotLocalesResult.h>
 #include <aws/lexv2-models/model/ListBotRecommendationsResult.h>
 #include <aws/lexv2-models/model/ListBotReplicasResult.h>
@@ -106,11 +109,13 @@
 #include <aws/lexv2-models/model/ListUtteranceAnalyticsDataResult.h>
 #include <aws/lexv2-models/model/ListUtteranceMetricsResult.h>
 #include <aws/lexv2-models/model/SearchAssociatedTranscriptsResult.h>
+#include <aws/lexv2-models/model/StartBotAnalyzerResult.h>
 #include <aws/lexv2-models/model/StartBotRecommendationResult.h>
 #include <aws/lexv2-models/model/StartBotResourceGenerationResult.h>
 #include <aws/lexv2-models/model/StartImportResult.h>
 #include <aws/lexv2-models/model/StartTestExecutionResult.h>
 #include <aws/lexv2-models/model/StartTestSetGenerationResult.h>
+#include <aws/lexv2-models/model/StopBotAnalyzerResult.h>
 #include <aws/lexv2-models/model/StopBotRecommendationResult.h>
 #include <aws/lexv2-models/model/TagResourceResult.h>
 #include <aws/lexv2-models/model/UntagResourceResult.h>
@@ -176,6 +181,7 @@ class CreateTestSetDiscrepancyReportRequest;
 class CreateUploadUrlRequest;
 class DeleteBotRequest;
 class DeleteBotAliasRequest;
+class DeleteBotAnalyzerRecommendationRequest;
 class DeleteBotLocaleRequest;
 class DeleteBotReplicaRequest;
 class DeleteBotVersionRequest;
@@ -191,6 +197,7 @@ class DeleteTestSetRequest;
 class DeleteUtterancesRequest;
 class DescribeBotRequest;
 class DescribeBotAliasRequest;
+class DescribeBotAnalyzerRecommendationRequest;
 class DescribeBotLocaleRequest;
 class DescribeBotRecommendationRequest;
 class DescribeBotReplicaRequest;
@@ -212,6 +219,7 @@ class GetTestExecutionArtifactsUrlRequest;
 class ListAggregatedUtterancesRequest;
 class ListBotAliasReplicasRequest;
 class ListBotAliasesRequest;
+class ListBotAnalyzerHistoryRequest;
 class ListBotLocalesRequest;
 class ListBotRecommendationsRequest;
 class ListBotReplicasRequest;
@@ -241,11 +249,13 @@ class ListTestSetsRequest;
 class ListUtteranceAnalyticsDataRequest;
 class ListUtteranceMetricsRequest;
 class SearchAssociatedTranscriptsRequest;
+class StartBotAnalyzerRequest;
 class StartBotRecommendationRequest;
 class StartBotResourceGenerationRequest;
 class StartImportRequest;
 class StartTestExecutionRequest;
 class StartTestSetGenerationRequest;
+class StopBotAnalyzerRequest;
 class StopBotRecommendationRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
@@ -281,6 +291,7 @@ typedef Aws::Utils::Outcome<CreateTestSetDiscrepancyReportResult, LexModelsV2Err
 typedef Aws::Utils::Outcome<CreateUploadUrlResult, LexModelsV2Error> CreateUploadUrlOutcome;
 typedef Aws::Utils::Outcome<DeleteBotResult, LexModelsV2Error> DeleteBotOutcome;
 typedef Aws::Utils::Outcome<DeleteBotAliasResult, LexModelsV2Error> DeleteBotAliasOutcome;
+typedef Aws::Utils::Outcome<DeleteBotAnalyzerRecommendationResult, LexModelsV2Error> DeleteBotAnalyzerRecommendationOutcome;
 typedef Aws::Utils::Outcome<DeleteBotLocaleResult, LexModelsV2Error> DeleteBotLocaleOutcome;
 typedef Aws::Utils::Outcome<DeleteBotReplicaResult, LexModelsV2Error> DeleteBotReplicaOutcome;
 typedef Aws::Utils::Outcome<DeleteBotVersionResult, LexModelsV2Error> DeleteBotVersionOutcome;
@@ -296,6 +307,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteTestSetOutcom
 typedef Aws::Utils::Outcome<DeleteUtterancesResult, LexModelsV2Error> DeleteUtterancesOutcome;
 typedef Aws::Utils::Outcome<DescribeBotResult, LexModelsV2Error> DescribeBotOutcome;
 typedef Aws::Utils::Outcome<DescribeBotAliasResult, LexModelsV2Error> DescribeBotAliasOutcome;
+typedef Aws::Utils::Outcome<DescribeBotAnalyzerRecommendationResult, LexModelsV2Error> DescribeBotAnalyzerRecommendationOutcome;
 typedef Aws::Utils::Outcome<DescribeBotLocaleResult, LexModelsV2Error> DescribeBotLocaleOutcome;
 typedef Aws::Utils::Outcome<DescribeBotRecommendationResult, LexModelsV2Error> DescribeBotRecommendationOutcome;
 typedef Aws::Utils::Outcome<DescribeBotReplicaResult, LexModelsV2Error> DescribeBotReplicaOutcome;
@@ -317,6 +329,7 @@ typedef Aws::Utils::Outcome<GetTestExecutionArtifactsUrlResult, LexModelsV2Error
 typedef Aws::Utils::Outcome<ListAggregatedUtterancesResult, LexModelsV2Error> ListAggregatedUtterancesOutcome;
 typedef Aws::Utils::Outcome<ListBotAliasReplicasResult, LexModelsV2Error> ListBotAliasReplicasOutcome;
 typedef Aws::Utils::Outcome<ListBotAliasesResult, LexModelsV2Error> ListBotAliasesOutcome;
+typedef Aws::Utils::Outcome<ListBotAnalyzerHistoryResult, LexModelsV2Error> ListBotAnalyzerHistoryOutcome;
 typedef Aws::Utils::Outcome<ListBotLocalesResult, LexModelsV2Error> ListBotLocalesOutcome;
 typedef Aws::Utils::Outcome<ListBotRecommendationsResult, LexModelsV2Error> ListBotRecommendationsOutcome;
 typedef Aws::Utils::Outcome<ListBotReplicasResult, LexModelsV2Error> ListBotReplicasOutcome;
@@ -346,11 +359,13 @@ typedef Aws::Utils::Outcome<ListTestSetsResult, LexModelsV2Error> ListTestSetsOu
 typedef Aws::Utils::Outcome<ListUtteranceAnalyticsDataResult, LexModelsV2Error> ListUtteranceAnalyticsDataOutcome;
 typedef Aws::Utils::Outcome<ListUtteranceMetricsResult, LexModelsV2Error> ListUtteranceMetricsOutcome;
 typedef Aws::Utils::Outcome<SearchAssociatedTranscriptsResult, LexModelsV2Error> SearchAssociatedTranscriptsOutcome;
+typedef Aws::Utils::Outcome<StartBotAnalyzerResult, LexModelsV2Error> StartBotAnalyzerOutcome;
 typedef Aws::Utils::Outcome<StartBotRecommendationResult, LexModelsV2Error> StartBotRecommendationOutcome;
 typedef Aws::Utils::Outcome<StartBotResourceGenerationResult, LexModelsV2Error> StartBotResourceGenerationOutcome;
 typedef Aws::Utils::Outcome<StartImportResult, LexModelsV2Error> StartImportOutcome;
 typedef Aws::Utils::Outcome<StartTestExecutionResult, LexModelsV2Error> StartTestExecutionOutcome;
 typedef Aws::Utils::Outcome<StartTestSetGenerationResult, LexModelsV2Error> StartTestSetGenerationOutcome;
+typedef Aws::Utils::Outcome<StopBotAnalyzerResult, LexModelsV2Error> StopBotAnalyzerOutcome;
 typedef Aws::Utils::Outcome<StopBotRecommendationResult, LexModelsV2Error> StopBotRecommendationOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, LexModelsV2Error> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, LexModelsV2Error> UntagResourceOutcome;
@@ -386,6 +401,7 @@ typedef std::future<CreateTestSetDiscrepancyReportOutcome> CreateTestSetDiscrepa
 typedef std::future<CreateUploadUrlOutcome> CreateUploadUrlOutcomeCallable;
 typedef std::future<DeleteBotOutcome> DeleteBotOutcomeCallable;
 typedef std::future<DeleteBotAliasOutcome> DeleteBotAliasOutcomeCallable;
+typedef std::future<DeleteBotAnalyzerRecommendationOutcome> DeleteBotAnalyzerRecommendationOutcomeCallable;
 typedef std::future<DeleteBotLocaleOutcome> DeleteBotLocaleOutcomeCallable;
 typedef std::future<DeleteBotReplicaOutcome> DeleteBotReplicaOutcomeCallable;
 typedef std::future<DeleteBotVersionOutcome> DeleteBotVersionOutcomeCallable;
@@ -401,6 +417,7 @@ typedef std::future<DeleteTestSetOutcome> DeleteTestSetOutcomeCallable;
 typedef std::future<DeleteUtterancesOutcome> DeleteUtterancesOutcomeCallable;
 typedef std::future<DescribeBotOutcome> DescribeBotOutcomeCallable;
 typedef std::future<DescribeBotAliasOutcome> DescribeBotAliasOutcomeCallable;
+typedef std::future<DescribeBotAnalyzerRecommendationOutcome> DescribeBotAnalyzerRecommendationOutcomeCallable;
 typedef std::future<DescribeBotLocaleOutcome> DescribeBotLocaleOutcomeCallable;
 typedef std::future<DescribeBotRecommendationOutcome> DescribeBotRecommendationOutcomeCallable;
 typedef std::future<DescribeBotReplicaOutcome> DescribeBotReplicaOutcomeCallable;
@@ -422,6 +439,7 @@ typedef std::future<GetTestExecutionArtifactsUrlOutcome> GetTestExecutionArtifac
 typedef std::future<ListAggregatedUtterancesOutcome> ListAggregatedUtterancesOutcomeCallable;
 typedef std::future<ListBotAliasReplicasOutcome> ListBotAliasReplicasOutcomeCallable;
 typedef std::future<ListBotAliasesOutcome> ListBotAliasesOutcomeCallable;
+typedef std::future<ListBotAnalyzerHistoryOutcome> ListBotAnalyzerHistoryOutcomeCallable;
 typedef std::future<ListBotLocalesOutcome> ListBotLocalesOutcomeCallable;
 typedef std::future<ListBotRecommendationsOutcome> ListBotRecommendationsOutcomeCallable;
 typedef std::future<ListBotReplicasOutcome> ListBotReplicasOutcomeCallable;
@@ -451,11 +469,13 @@ typedef std::future<ListTestSetsOutcome> ListTestSetsOutcomeCallable;
 typedef std::future<ListUtteranceAnalyticsDataOutcome> ListUtteranceAnalyticsDataOutcomeCallable;
 typedef std::future<ListUtteranceMetricsOutcome> ListUtteranceMetricsOutcomeCallable;
 typedef std::future<SearchAssociatedTranscriptsOutcome> SearchAssociatedTranscriptsOutcomeCallable;
+typedef std::future<StartBotAnalyzerOutcome> StartBotAnalyzerOutcomeCallable;
 typedef std::future<StartBotRecommendationOutcome> StartBotRecommendationOutcomeCallable;
 typedef std::future<StartBotResourceGenerationOutcome> StartBotResourceGenerationOutcomeCallable;
 typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
 typedef std::future<StartTestExecutionOutcome> StartTestExecutionOutcomeCallable;
 typedef std::future<StartTestSetGenerationOutcome> StartTestSetGenerationOutcomeCallable;
+typedef std::future<StopBotAnalyzerOutcome> StopBotAnalyzerOutcomeCallable;
 typedef std::future<StopBotRecommendationOutcome> StopBotRecommendationOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -537,6 +557,10 @@ typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotReque
 typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotAliasRequest&, const Model::DeleteBotAliasOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteBotAliasResponseReceivedHandler;
+typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotAnalyzerRecommendationRequest&,
+                           const Model::DeleteBotAnalyzerRecommendationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteBotAnalyzerRecommendationResponseReceivedHandler;
 typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotLocaleRequest&, const Model::DeleteBotLocaleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteBotLocaleResponseReceivedHandler;
@@ -583,6 +607,10 @@ typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotReq
 typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotAliasRequest&, const Model::DescribeBotAliasOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeBotAliasResponseReceivedHandler;
+typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotAnalyzerRecommendationRequest&,
+                           const Model::DescribeBotAnalyzerRecommendationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeBotAnalyzerRecommendationResponseReceivedHandler;
 typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotLocaleRequest&, const Model::DescribeBotLocaleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeBotLocaleResponseReceivedHandler;
@@ -650,6 +678,9 @@ typedef std::function<void(const LexModelsV2Client*, const Model::ListBotAliasRe
 typedef std::function<void(const LexModelsV2Client*, const Model::ListBotAliasesRequest&, const Model::ListBotAliasesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListBotAliasesResponseReceivedHandler;
+typedef std::function<void(const LexModelsV2Client*, const Model::ListBotAnalyzerHistoryRequest&,
+                           const Model::ListBotAnalyzerHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListBotAnalyzerHistoryResponseReceivedHandler;
 typedef std::function<void(const LexModelsV2Client*, const Model::ListBotLocalesRequest&, const Model::ListBotLocalesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListBotLocalesResponseReceivedHandler;
@@ -738,6 +769,9 @@ typedef std::function<void(const LexModelsV2Client*, const Model::ListUtteranceM
 typedef std::function<void(const LexModelsV2Client*, const Model::SearchAssociatedTranscriptsRequest&,
                            const Model::SearchAssociatedTranscriptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchAssociatedTranscriptsResponseReceivedHandler;
+typedef std::function<void(const LexModelsV2Client*, const Model::StartBotAnalyzerRequest&, const Model::StartBotAnalyzerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartBotAnalyzerResponseReceivedHandler;
 typedef std::function<void(const LexModelsV2Client*, const Model::StartBotRecommendationRequest&,
                            const Model::StartBotRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartBotRecommendationResponseReceivedHandler;
@@ -753,6 +787,9 @@ typedef std::function<void(const LexModelsV2Client*, const Model::StartTestExecu
 typedef std::function<void(const LexModelsV2Client*, const Model::StartTestSetGenerationRequest&,
                            const Model::StartTestSetGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartTestSetGenerationResponseReceivedHandler;
+typedef std::function<void(const LexModelsV2Client*, const Model::StopBotAnalyzerRequest&, const Model::StopBotAnalyzerOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopBotAnalyzerResponseReceivedHandler;
 typedef std::function<void(const LexModelsV2Client*, const Model::StopBotRecommendationRequest&, const Model::StopBotRecommendationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopBotRecommendationResponseReceivedHandler;

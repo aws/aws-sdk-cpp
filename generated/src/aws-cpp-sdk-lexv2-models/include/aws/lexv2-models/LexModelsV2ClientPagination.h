@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/lexv2-models/LexModelsV2Client.h>
+#include <aws/lexv2-models/model/DescribeBotAnalyzerRecommendationPaginationTraits.h>
 #include <aws/lexv2-models/model/ListAggregatedUtterancesPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotAliasReplicasPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotAliasesPaginationTraits.h>
+#include <aws/lexv2-models/model/ListBotAnalyzerHistoryPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotLocalesPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotRecommendationsPaginationTraits.h>
 #include <aws/lexv2-models/model/ListBotResourceGenerationsPaginationTraits.h>
@@ -38,6 +40,9 @@
 namespace Aws {
 namespace LexModelsV2 {
 
+using DescribeBotAnalyzerRecommendationPaginator =
+    Aws::Utils::Pagination::Paginator<LexModelsV2Client, Model::DescribeBotAnalyzerRecommendationRequest,
+                                      Pagination::DescribeBotAnalyzerRecommendationPaginationTraits<LexModelsV2Client>>;
 using ListAggregatedUtterancesPaginator =
     Aws::Utils::Pagination::Paginator<LexModelsV2Client, Model::ListAggregatedUtterancesRequest,
                                       Pagination::ListAggregatedUtterancesPaginationTraits<LexModelsV2Client>>;
@@ -46,6 +51,9 @@ using ListBotAliasesPaginator = Aws::Utils::Pagination::Paginator<LexModelsV2Cli
 using ListBotAliasReplicasPaginator =
     Aws::Utils::Pagination::Paginator<LexModelsV2Client, Model::ListBotAliasReplicasRequest,
                                       Pagination::ListBotAliasReplicasPaginationTraits<LexModelsV2Client>>;
+using ListBotAnalyzerHistoryPaginator =
+    Aws::Utils::Pagination::Paginator<LexModelsV2Client, Model::ListBotAnalyzerHistoryRequest,
+                                      Pagination::ListBotAnalyzerHistoryPaginationTraits<LexModelsV2Client>>;
 using ListBotLocalesPaginator = Aws::Utils::Pagination::Paginator<LexModelsV2Client, Model::ListBotLocalesRequest,
                                                                   Pagination::ListBotLocalesPaginationTraits<LexModelsV2Client>>;
 using ListBotRecommendationsPaginator =
