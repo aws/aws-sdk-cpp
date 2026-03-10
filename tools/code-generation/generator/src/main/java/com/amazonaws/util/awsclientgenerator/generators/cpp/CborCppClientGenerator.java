@@ -133,9 +133,6 @@ public class CborCppClientGenerator extends CppClientGenerator {
                 Map<String, String> cborSpecificHeaders = new HashMap<>();
                 cborSpecificHeaders.put("Aws::Http::ACCEPT_HEADER", "Aws::CBOR_CONTENT_TYPE");
                 cborSpecificHeaders.put("Aws::Http::SMITHY_PROTOCOL_HEADER", "Aws::RPC_V2_CBOR");
-                if(shape.hasMembers()){
-                    cborSpecificHeaders.put("Aws::Http::CONTENT_TYPE_HEADER", "Aws::CBOR_CONTENT_TYPE");
-                }
                 context.put("requestSpecificHeaders", cborSpecificHeaders);
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborRequestSource.vm", StandardCharsets.UTF_8.name());
             }

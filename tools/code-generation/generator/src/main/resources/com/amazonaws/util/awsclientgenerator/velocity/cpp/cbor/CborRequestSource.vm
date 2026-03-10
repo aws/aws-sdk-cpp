@@ -80,6 +80,9 @@
         #foreach($headerEntry in $requestSpecificHeaders.entrySet())
             headers.emplace(${headerEntry.key}, ${headerEntry.value});
         #end
+        #if($operation.hasRequest())
+            headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+        #end
         #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassHeaderMembersSource.vm")
         return headers;
     }
