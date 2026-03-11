@@ -120,6 +120,7 @@ public class CppProtocolTestGenerator implements ClientGenerator {
         } else {
             context.put("CppViewHelper", CppViewHelper.class);
         }
+        context.put("CppRequestViewHelper", CppViewHelper.class);
         return context;
     }
 

@@ -88,7 +88,9 @@ public abstract class CppClientGenerator implements ClientGenerator {
         addEventStreamInitialResponse(serviceModel);
         addRequestIdToResults(serviceModel);
         List<SdkFileEntry> fileList = new ArrayList<>();
-        final Map<String, CppShapeInformation> shapeInformationCache = buildShapeInformationCache(serviceModel);
+        final Map<String, CppShapeInformation> shapeInformationCache = serviceModel.getShapes().values().stream()
+            .map(shape -> Pair.of(shape.getName(), new CppShapeInformation(shape, serviceModel)))
+            .collect(Collectors.toMap(Pair::getKey, Pair::getValue));
         fileList.addAll(generateModelHeaderFiles(serviceModel, shapeInformationCache));
         fileList.addAll(generateModelSourceFiles(serviceModel, shapeInformationCache));
         fileList.add(generateClientHeaderFile(serviceModel));
@@ -254,16 +256,6 @@ public abstract class CppClientGenerator implements ClientGenerator {
         }
     }
 
-    protected Map<String, CppShapeInformation> buildShapeInformationCache(final ServiceModel serviceModel) {
-        return serviceModel.getShapes().values().stream()
-            .map(shape -> Pair.of(shape.getName(), new CppShapeInformation(shape, serviceModel)))
-            .collect(Collectors.toMap(Pair::getKey, Pair::getValue));
-    }
-
-    protected Class<?> getViewHelperClass() {
-        return CppViewHelper.class;
-    }
-
     protected final VelocityContext createContext(final ServiceModel serviceModel) {
         VelocityContext context = new VelocityContext();
         context.put("nl", System.lineSeparator());
@@ -334,7 +326,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         }
         context.put("shape", shape);
         context.put("typeInfo", shapeInformationCache.get(shape.getName()));
-        context.put("CppViewHelper", getViewHelperClass());
+        context.put("CppViewHelper", CppViewHelper.class);
 
         String fileName = String.format("include/aws/%s/model/%s.h", serviceModel.getMetadata().getProjectName(),
                 shapeEntry.getKey());

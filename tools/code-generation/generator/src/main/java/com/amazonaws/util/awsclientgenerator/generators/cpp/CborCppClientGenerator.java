@@ -13,7 +13,6 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMe
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppCborViewHelper;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
-import org.apache.commons.lang3.tuple.Pair;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
@@ -29,18 +28,6 @@ public class CborCppClientGenerator extends CppClientGenerator {
 
     public CborCppClientGenerator() throws Exception {
         super();
-    }
-
-    @Override
-    protected Map<String, CppShapeInformation> buildShapeInformationCache(final ServiceModel serviceModel) {
-        return serviceModel.getShapes().values().stream()
-            .map(shape -> Pair.of(shape.getName(), new CppShapeInformation(shape, serviceModel, CppCborViewHelper.computeCppType(shape))))
-            .collect(Collectors.toMap(Pair::getKey, Pair::getValue));
-    }
-
-    @Override
-    protected Class<?> getViewHelperClass() {
-        return CppCborViewHelper.class;
     }
 
     @Override
@@ -91,7 +78,7 @@ public class CborCppClientGenerator extends CppClientGenerator {
             }
 
             context.put("shape", shape);
-            context.put("typeInfo", new CppShapeInformation(shape, serviceModel, CppCborViewHelper.computeCppType(shape)));
+            context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
             context.put("CppViewHelper", CppCborViewHelper.class);
 
             String fileName = String.format("include/aws/%s/model/%s.h", serviceModel.getMetadata().getProjectName(),
@@ -162,7 +149,7 @@ public class CborCppClientGenerator extends CppClientGenerator {
             }
 
             context.put("shape", shape);
-            context.put("typeInfo", new CppShapeInformation(shape, serviceModel, CppCborViewHelper.computeCppType(shape)));
+            context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
             context.put("CppViewHelper", CppCborViewHelper.class);
 
             String fileName = String.format("source/model/%s.cpp", shapeEntry.getKey());

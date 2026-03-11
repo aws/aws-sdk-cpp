@@ -35,7 +35,9 @@ ${macro.spaces}}
 #set($macro.fieldAdder = "Add${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
 #foreach($arrayItem in $testInputParam.value)
 #if($arrayItem == "null")
-${macro.spaces}${dstObject}.${macro.fieldAdder}(Aws::Crt::Optional<$CppViewHelper.computeCppType($macro.listMemberShape)>{});
+${macro.spaces}${dstObject}.${macro.fieldAdder}(Aws::Crt::Optional<$CppRequestViewHelper.computeCppType($macro.listMemberShape)>{});
+#elseif($macro.listMemberShape.list || $macro.listMemberShape.map)
+${macro.spaces}${dstObject}.${macro.fieldAdder}($CppRequestViewHelper.computeCppType($macro.listMemberShape)#SerializeSingleParameterMacro($macro.listMemberShape, $arrayItem));
 #else
 ${macro.spaces}${dstObject}.${macro.fieldAdder}(#SerializeSingleParameterMacro($macro.listMemberShape, $arrayItem));
 #end
