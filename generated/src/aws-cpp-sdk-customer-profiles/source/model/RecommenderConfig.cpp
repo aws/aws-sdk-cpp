@@ -26,6 +26,10 @@ RecommenderConfig& RecommenderConfig::operator=(JsonView jsonValue) {
     m_trainingFrequency = jsonValue.GetInteger("TrainingFrequency");
     m_trainingFrequencyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("InferenceConfig")) {
+    m_inferenceConfig = jsonValue.GetObject("InferenceConfig");
+    m_inferenceConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue RecommenderConfig::Jsonize() const {
 
   if (m_trainingFrequencyHasBeenSet) {
     payload.WithInteger("TrainingFrequency", m_trainingFrequency);
+  }
+
+  if (m_inferenceConfigHasBeenSet) {
+    payload.WithObject("InferenceConfig", m_inferenceConfig.Jsonize());
   }
 
   return payload;

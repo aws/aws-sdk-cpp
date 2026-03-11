@@ -12,6 +12,7 @@
 #include <aws/customer-profiles/model/ListEventStreamsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListEventTriggersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListObjectTypeAttributesPaginationTraits.h>
+#include <aws/customer-profiles/model/ListRecommenderFiltersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommendersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesPaginationTraits.h>
@@ -36,6 +37,9 @@ using ListEventTriggersPaginator = Aws::Utils::Pagination::Paginator<CustomerPro
 using ListObjectTypeAttributesPaginator =
     Aws::Utils::Pagination::Paginator<CustomerProfilesClient, Model::ListObjectTypeAttributesRequest,
                                       Pagination::ListObjectTypeAttributesPaginationTraits<CustomerProfilesClient>>;
+using ListRecommenderFiltersPaginator =
+    Aws::Utils::Pagination::Paginator<CustomerProfilesClient, Model::ListRecommenderFiltersRequest,
+                                      Pagination::ListRecommenderFiltersPaginationTraits<CustomerProfilesClient>>;
 using ListRecommenderRecipesPaginator =
     Aws::Utils::Pagination::Paginator<CustomerProfilesClient, Model::ListRecommenderRecipesRequest,
                                       Pagination::ListRecommenderRecipesPaginationTraits<CustomerProfilesClient>>;

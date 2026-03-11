@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EKS {
 namespace Model {
-enum class ProvisionedControlPlaneTier { NOT_SET, standard, tier_xl, tier_2xl, tier_4xl };
+enum class ProvisionedControlPlaneTier { NOT_SET, standard, tier_xl, tier_2xl, tier_4xl, tier_8xl };
 
 namespace ProvisionedControlPlaneTierMapper {
 AWS_EKS_API ProvisionedControlPlaneTier GetProvisionedControlPlaneTierForName(const Aws::String& name);

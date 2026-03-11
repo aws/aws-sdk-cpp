@@ -105,6 +105,7 @@
 #include <aws/connectcampaigns/ConnectCampaignsClient.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2Client.h>
 #include <aws/connectcases/ConnectCasesClient.h>
+#include <aws/connecthealth/ConnectHealthClient.h>
 #include <aws/connectparticipant/ConnectParticipantClient.h>
 #include <aws/controlcatalog/ControlCatalogClient.h>
 #include <aws/controltower/ControlTowerClient.h>
@@ -147,6 +148,7 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancingClient.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2Client.h>
 #include <aws/elasticmapreduce/EMRClient.h>
+#include <aws/elementalinference/ElementalInferenceClient.h>
 #include <aws/email/SESClient.h>
 #include <aws/emr-containers/EMRContainersClient.h>
 #include <aws/emr-serverless/EMRServerlessClient.h>
@@ -367,8 +369,10 @@
 #include <aws/servicediscovery/ServiceDiscoveryClient.h>
 #include <aws/sesv2/SESV2Client.h>
 #include <aws/shield/ShieldClient.h>
+#include <aws/signer-data/SignerDataClient.h>
 #include <aws/signer/SignerClient.h>
 #include <aws/signin/SigninClient.h>
+#include <aws/simpledbv2/SimpleDBv2Client.h>
 #include <aws/simspaceweaver/SimSpaceWeaverClient.h>
 #include <aws/sms-voice/PinpointSMSVoiceClient.h>
 #include <aws/snow-device-management/SnowDeviceManagementClient.h>

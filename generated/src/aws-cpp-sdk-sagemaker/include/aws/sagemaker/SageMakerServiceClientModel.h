@@ -179,6 +179,7 @@
 #include <aws/sagemaker/model/DescribeStudioLifecycleConfigResult.h>
 #include <aws/sagemaker/model/DescribeSubscribedWorkteamResult.h>
 #include <aws/sagemaker/model/DescribeTrainingJobResult.h>
+#include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryResult.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanResult.h>
 #include <aws/sagemaker/model/DescribeTransformJobResult.h>
 #include <aws/sagemaker/model/DescribeTrialComponentResult.h>
@@ -192,6 +193,7 @@
 #include <aws/sagemaker/model/DisassociateTrialComponentResult.h>
 #include <aws/sagemaker/model/EnableSagemakerServicecatalogPortfolioRequest.h>
 #include <aws/sagemaker/model/EnableSagemakerServicecatalogPortfolioResult.h>
+#include <aws/sagemaker/model/ExtendTrainingPlanResult.h>
 #include <aws/sagemaker/model/GetDeviceFleetReportResult.h>
 #include <aws/sagemaker/model/GetLineageGroupPolicyResult.h>
 #include <aws/sagemaker/model/GetModelPackageGroupPolicyResult.h>
@@ -643,6 +645,7 @@ class DescribeStudioLifecycleConfigRequest;
 class DescribeSubscribedWorkteamRequest;
 class DescribeTrainingJobRequest;
 class DescribeTrainingPlanRequest;
+class DescribeTrainingPlanExtensionHistoryRequest;
 class DescribeTransformJobRequest;
 class DescribeTrialRequest;
 class DescribeTrialComponentRequest;
@@ -653,6 +656,7 @@ class DetachClusterNodeVolumeRequest;
 class DisableSagemakerServicecatalogPortfolioRequest;
 class DisassociateTrialComponentRequest;
 class EnableSagemakerServicecatalogPortfolioRequest;
+class ExtendTrainingPlanRequest;
 class GetDeviceFleetReportRequest;
 class GetLineageGroupPolicyRequest;
 class GetModelPackageGroupPolicyRequest;
@@ -1025,6 +1029,7 @@ typedef Aws::Utils::Outcome<DescribeStudioLifecycleConfigResult, SageMakerError>
 typedef Aws::Utils::Outcome<DescribeSubscribedWorkteamResult, SageMakerError> DescribeSubscribedWorkteamOutcome;
 typedef Aws::Utils::Outcome<DescribeTrainingJobResult, SageMakerError> DescribeTrainingJobOutcome;
 typedef Aws::Utils::Outcome<DescribeTrainingPlanResult, SageMakerError> DescribeTrainingPlanOutcome;
+typedef Aws::Utils::Outcome<DescribeTrainingPlanExtensionHistoryResult, SageMakerError> DescribeTrainingPlanExtensionHistoryOutcome;
 typedef Aws::Utils::Outcome<DescribeTransformJobResult, SageMakerError> DescribeTransformJobOutcome;
 typedef Aws::Utils::Outcome<DescribeTrialResult, SageMakerError> DescribeTrialOutcome;
 typedef Aws::Utils::Outcome<DescribeTrialComponentResult, SageMakerError> DescribeTrialComponentOutcome;
@@ -1035,6 +1040,7 @@ typedef Aws::Utils::Outcome<DetachClusterNodeVolumeResult, SageMakerError> Detac
 typedef Aws::Utils::Outcome<DisableSagemakerServicecatalogPortfolioResult, SageMakerError> DisableSagemakerServicecatalogPortfolioOutcome;
 typedef Aws::Utils::Outcome<DisassociateTrialComponentResult, SageMakerError> DisassociateTrialComponentOutcome;
 typedef Aws::Utils::Outcome<EnableSagemakerServicecatalogPortfolioResult, SageMakerError> EnableSagemakerServicecatalogPortfolioOutcome;
+typedef Aws::Utils::Outcome<ExtendTrainingPlanResult, SageMakerError> ExtendTrainingPlanOutcome;
 typedef Aws::Utils::Outcome<GetDeviceFleetReportResult, SageMakerError> GetDeviceFleetReportOutcome;
 typedef Aws::Utils::Outcome<GetLineageGroupPolicyResult, SageMakerError> GetLineageGroupPolicyOutcome;
 typedef Aws::Utils::Outcome<GetModelPackageGroupPolicyResult, SageMakerError> GetModelPackageGroupPolicyOutcome;
@@ -1409,6 +1415,7 @@ typedef std::future<DescribeStudioLifecycleConfigOutcome> DescribeStudioLifecycl
 typedef std::future<DescribeSubscribedWorkteamOutcome> DescribeSubscribedWorkteamOutcomeCallable;
 typedef std::future<DescribeTrainingJobOutcome> DescribeTrainingJobOutcomeCallable;
 typedef std::future<DescribeTrainingPlanOutcome> DescribeTrainingPlanOutcomeCallable;
+typedef std::future<DescribeTrainingPlanExtensionHistoryOutcome> DescribeTrainingPlanExtensionHistoryOutcomeCallable;
 typedef std::future<DescribeTransformJobOutcome> DescribeTransformJobOutcomeCallable;
 typedef std::future<DescribeTrialOutcome> DescribeTrialOutcomeCallable;
 typedef std::future<DescribeTrialComponentOutcome> DescribeTrialComponentOutcomeCallable;
@@ -1419,6 +1426,7 @@ typedef std::future<DetachClusterNodeVolumeOutcome> DetachClusterNodeVolumeOutco
 typedef std::future<DisableSagemakerServicecatalogPortfolioOutcome> DisableSagemakerServicecatalogPortfolioOutcomeCallable;
 typedef std::future<DisassociateTrialComponentOutcome> DisassociateTrialComponentOutcomeCallable;
 typedef std::future<EnableSagemakerServicecatalogPortfolioOutcome> EnableSagemakerServicecatalogPortfolioOutcomeCallable;
+typedef std::future<ExtendTrainingPlanOutcome> ExtendTrainingPlanOutcomeCallable;
 typedef std::future<GetDeviceFleetReportOutcome> GetDeviceFleetReportOutcomeCallable;
 typedef std::future<GetLineageGroupPolicyOutcome> GetLineageGroupPolicyOutcomeCallable;
 typedef std::future<GetModelPackageGroupPolicyOutcome> GetModelPackageGroupPolicyOutcomeCallable;
@@ -2225,6 +2233,10 @@ typedef std::function<void(const SageMakerClient*, const Model::DescribeTraining
 typedef std::function<void(const SageMakerClient*, const Model::DescribeTrainingPlanRequest&, const Model::DescribeTrainingPlanOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeTrainingPlanResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DescribeTrainingPlanExtensionHistoryRequest&,
+                           const Model::DescribeTrainingPlanExtensionHistoryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeTrainingPlanExtensionHistoryResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::DescribeTransformJobRequest&, const Model::DescribeTransformJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeTransformJobResponseReceivedHandler;
@@ -2257,6 +2269,9 @@ typedef std::function<void(const SageMakerClient*, const Model::EnableSagemakerS
                            const Model::EnableSagemakerServicecatalogPortfolioOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     EnableSagemakerServicecatalogPortfolioResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::ExtendTrainingPlanRequest&, const Model::ExtendTrainingPlanOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ExtendTrainingPlanResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::GetDeviceFleetReportRequest&, const Model::GetDeviceFleetReportOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDeviceFleetReportResponseReceivedHandler;

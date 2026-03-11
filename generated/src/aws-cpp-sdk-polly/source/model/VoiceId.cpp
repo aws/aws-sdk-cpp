@@ -115,6 +115,12 @@ static const int Jitka_HASH = HashingUtils::HashString("Jitka");
 static const int Sabrina_HASH = HashingUtils::HashString("Sabrina");
 static const int Jasmine_HASH = HashingUtils::HashString("Jasmine");
 static const int Jihye_HASH = HashingUtils::HashString("Jihye");
+static const int Ambre_HASH = HashingUtils::HashString("Ambre");
+static const int Beatrice_HASH = HashingUtils::HashString("Beatrice");
+static const int Florian_HASH = HashingUtils::HashString("Florian");
+static const int Lennart_HASH = HashingUtils::HashString("Lennart");
+static const int Lorenzo_HASH = HashingUtils::HashString("Lorenzo");
+static const int Tiffany_HASH = HashingUtils::HashString("Tiffany");
 
 VoiceId GetVoiceIdForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -318,6 +324,18 @@ VoiceId GetVoiceIdForName(const Aws::String& name) {
     return VoiceId::Jasmine;
   } else if (hashCode == Jihye_HASH) {
     return VoiceId::Jihye;
+  } else if (hashCode == Ambre_HASH) {
+    return VoiceId::Ambre;
+  } else if (hashCode == Beatrice_HASH) {
+    return VoiceId::Beatrice;
+  } else if (hashCode == Florian_HASH) {
+    return VoiceId::Florian;
+  } else if (hashCode == Lennart_HASH) {
+    return VoiceId::Lennart;
+  } else if (hashCode == Lorenzo_HASH) {
+    return VoiceId::Lorenzo;
+  } else if (hashCode == Tiffany_HASH) {
+    return VoiceId::Tiffany;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -532,6 +550,18 @@ Aws::String GetNameForVoiceId(VoiceId enumValue) {
       return "Jasmine";
     case VoiceId::Jihye:
       return "Jihye";
+    case VoiceId::Ambre:
+      return "Ambre";
+    case VoiceId::Beatrice:
+      return "Beatrice";
+    case VoiceId::Florian:
+      return "Florian";
+    case VoiceId::Lennart:
+      return "Lennart";
+    case VoiceId::Lorenzo:
+      return "Lorenzo";
+    case VoiceId::Tiffany:
+      return "Tiffany";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

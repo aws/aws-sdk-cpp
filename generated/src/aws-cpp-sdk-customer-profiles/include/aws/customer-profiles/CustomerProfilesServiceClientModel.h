@@ -29,6 +29,7 @@
 #include <aws/customer-profiles/model/CreateEventTriggerResult.h>
 #include <aws/customer-profiles/model/CreateIntegrationWorkflowResult.h>
 #include <aws/customer-profiles/model/CreateProfileResult.h>
+#include <aws/customer-profiles/model/CreateRecommenderFilterResult.h>
 #include <aws/customer-profiles/model/CreateRecommenderResult.h>
 #include <aws/customer-profiles/model/CreateSegmentDefinitionResult.h>
 #include <aws/customer-profiles/model/CreateSegmentEstimateResult.h>
@@ -45,6 +46,7 @@
 #include <aws/customer-profiles/model/DeleteProfileObjectResult.h>
 #include <aws/customer-profiles/model/DeleteProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/DeleteProfileResult.h>
+#include <aws/customer-profiles/model/DeleteRecommenderFilterResult.h>
 #include <aws/customer-profiles/model/DeleteRecommenderResult.h>
 #include <aws/customer-profiles/model/DeleteSegmentDefinitionResult.h>
 #include <aws/customer-profiles/model/DeleteWorkflowResult.h>
@@ -65,6 +67,7 @@
 #include <aws/customer-profiles/model/GetProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateResult.h>
 #include <aws/customer-profiles/model/GetProfileRecommendationsResult.h>
+#include <aws/customer-profiles/model/GetRecommenderFilterResult.h>
 #include <aws/customer-profiles/model/GetRecommenderResult.h>
 #include <aws/customer-profiles/model/GetSegmentDefinitionResult.h>
 #include <aws/customer-profiles/model/GetSegmentEstimateResult.h>
@@ -94,6 +97,7 @@
 #include <aws/customer-profiles/model/ListProfileObjectTypeTemplatesResult.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypesResult.h>
 #include <aws/customer-profiles/model/ListProfileObjectsResult.h>
+#include <aws/customer-profiles/model/ListRecommenderFiltersResult.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesRequest.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesResult.h>
 #include <aws/customer-profiles/model/ListRecommendersResult.h>
@@ -164,6 +168,7 @@ class CreateEventTriggerRequest;
 class CreateIntegrationWorkflowRequest;
 class CreateProfileRequest;
 class CreateRecommenderRequest;
+class CreateRecommenderFilterRequest;
 class CreateSegmentDefinitionRequest;
 class CreateSegmentEstimateRequest;
 class CreateSegmentSnapshotRequest;
@@ -180,6 +185,7 @@ class DeleteProfileKeyRequest;
 class DeleteProfileObjectRequest;
 class DeleteProfileObjectTypeRequest;
 class DeleteRecommenderRequest;
+class DeleteRecommenderFilterRequest;
 class DeleteSegmentDefinitionRequest;
 class DeleteWorkflowRequest;
 class DetectProfileObjectTypeRequest;
@@ -200,6 +206,7 @@ class GetProfileObjectTypeRequest;
 class GetProfileObjectTypeTemplateRequest;
 class GetProfileRecommendationsRequest;
 class GetRecommenderRequest;
+class GetRecommenderFilterRequest;
 class GetSegmentDefinitionRequest;
 class GetSegmentEstimateRequest;
 class GetSegmentMembershipRequest;
@@ -226,6 +233,7 @@ class ListProfileHistoryRecordsRequest;
 class ListProfileObjectTypeTemplatesRequest;
 class ListProfileObjectTypesRequest;
 class ListProfileObjectsRequest;
+class ListRecommenderFiltersRequest;
 class ListRecommenderRecipesRequest;
 class ListRecommendersRequest;
 class ListRuleBasedMatchesRequest;
@@ -266,6 +274,7 @@ typedef Aws::Utils::Outcome<CreateEventTriggerResult, CustomerProfilesError> Cre
 typedef Aws::Utils::Outcome<CreateIntegrationWorkflowResult, CustomerProfilesError> CreateIntegrationWorkflowOutcome;
 typedef Aws::Utils::Outcome<CreateProfileResult, CustomerProfilesError> CreateProfileOutcome;
 typedef Aws::Utils::Outcome<CreateRecommenderResult, CustomerProfilesError> CreateRecommenderOutcome;
+typedef Aws::Utils::Outcome<CreateRecommenderFilterResult, CustomerProfilesError> CreateRecommenderFilterOutcome;
 typedef Aws::Utils::Outcome<CreateSegmentDefinitionResult, CustomerProfilesError> CreateSegmentDefinitionOutcome;
 typedef Aws::Utils::Outcome<CreateSegmentEstimateResult, CustomerProfilesError> CreateSegmentEstimateOutcome;
 typedef Aws::Utils::Outcome<CreateSegmentSnapshotResult, CustomerProfilesError> CreateSegmentSnapshotOutcome;
@@ -282,6 +291,7 @@ typedef Aws::Utils::Outcome<DeleteProfileKeyResult, CustomerProfilesError> Delet
 typedef Aws::Utils::Outcome<DeleteProfileObjectResult, CustomerProfilesError> DeleteProfileObjectOutcome;
 typedef Aws::Utils::Outcome<DeleteProfileObjectTypeResult, CustomerProfilesError> DeleteProfileObjectTypeOutcome;
 typedef Aws::Utils::Outcome<DeleteRecommenderResult, CustomerProfilesError> DeleteRecommenderOutcome;
+typedef Aws::Utils::Outcome<DeleteRecommenderFilterResult, CustomerProfilesError> DeleteRecommenderFilterOutcome;
 typedef Aws::Utils::Outcome<DeleteSegmentDefinitionResult, CustomerProfilesError> DeleteSegmentDefinitionOutcome;
 typedef Aws::Utils::Outcome<DeleteWorkflowResult, CustomerProfilesError> DeleteWorkflowOutcome;
 typedef Aws::Utils::Outcome<DetectProfileObjectTypeResult, CustomerProfilesError> DetectProfileObjectTypeOutcome;
@@ -302,6 +312,7 @@ typedef Aws::Utils::Outcome<GetProfileObjectTypeResult, CustomerProfilesError> G
 typedef Aws::Utils::Outcome<GetProfileObjectTypeTemplateResult, CustomerProfilesError> GetProfileObjectTypeTemplateOutcome;
 typedef Aws::Utils::Outcome<GetProfileRecommendationsResult, CustomerProfilesError> GetProfileRecommendationsOutcome;
 typedef Aws::Utils::Outcome<GetRecommenderResult, CustomerProfilesError> GetRecommenderOutcome;
+typedef Aws::Utils::Outcome<GetRecommenderFilterResult, CustomerProfilesError> GetRecommenderFilterOutcome;
 typedef Aws::Utils::Outcome<GetSegmentDefinitionResult, CustomerProfilesError> GetSegmentDefinitionOutcome;
 typedef Aws::Utils::Outcome<GetSegmentEstimateResult, CustomerProfilesError> GetSegmentEstimateOutcome;
 typedef Aws::Utils::Outcome<GetSegmentMembershipResult, CustomerProfilesError> GetSegmentMembershipOutcome;
@@ -328,6 +339,7 @@ typedef Aws::Utils::Outcome<ListProfileHistoryRecordsResult, CustomerProfilesErr
 typedef Aws::Utils::Outcome<ListProfileObjectTypeTemplatesResult, CustomerProfilesError> ListProfileObjectTypeTemplatesOutcome;
 typedef Aws::Utils::Outcome<ListProfileObjectTypesResult, CustomerProfilesError> ListProfileObjectTypesOutcome;
 typedef Aws::Utils::Outcome<ListProfileObjectsResult, CustomerProfilesError> ListProfileObjectsOutcome;
+typedef Aws::Utils::Outcome<ListRecommenderFiltersResult, CustomerProfilesError> ListRecommenderFiltersOutcome;
 typedef Aws::Utils::Outcome<ListRecommenderRecipesResult, CustomerProfilesError> ListRecommenderRecipesOutcome;
 typedef Aws::Utils::Outcome<ListRecommendersResult, CustomerProfilesError> ListRecommendersOutcome;
 typedef Aws::Utils::Outcome<ListRuleBasedMatchesResult, CustomerProfilesError> ListRuleBasedMatchesOutcome;
@@ -367,6 +379,7 @@ typedef std::future<CreateEventTriggerOutcome> CreateEventTriggerOutcomeCallable
 typedef std::future<CreateIntegrationWorkflowOutcome> CreateIntegrationWorkflowOutcomeCallable;
 typedef std::future<CreateProfileOutcome> CreateProfileOutcomeCallable;
 typedef std::future<CreateRecommenderOutcome> CreateRecommenderOutcomeCallable;
+typedef std::future<CreateRecommenderFilterOutcome> CreateRecommenderFilterOutcomeCallable;
 typedef std::future<CreateSegmentDefinitionOutcome> CreateSegmentDefinitionOutcomeCallable;
 typedef std::future<CreateSegmentEstimateOutcome> CreateSegmentEstimateOutcomeCallable;
 typedef std::future<CreateSegmentSnapshotOutcome> CreateSegmentSnapshotOutcomeCallable;
@@ -383,6 +396,7 @@ typedef std::future<DeleteProfileKeyOutcome> DeleteProfileKeyOutcomeCallable;
 typedef std::future<DeleteProfileObjectOutcome> DeleteProfileObjectOutcomeCallable;
 typedef std::future<DeleteProfileObjectTypeOutcome> DeleteProfileObjectTypeOutcomeCallable;
 typedef std::future<DeleteRecommenderOutcome> DeleteRecommenderOutcomeCallable;
+typedef std::future<DeleteRecommenderFilterOutcome> DeleteRecommenderFilterOutcomeCallable;
 typedef std::future<DeleteSegmentDefinitionOutcome> DeleteSegmentDefinitionOutcomeCallable;
 typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
 typedef std::future<DetectProfileObjectTypeOutcome> DetectProfileObjectTypeOutcomeCallable;
@@ -403,6 +417,7 @@ typedef std::future<GetProfileObjectTypeOutcome> GetProfileObjectTypeOutcomeCall
 typedef std::future<GetProfileObjectTypeTemplateOutcome> GetProfileObjectTypeTemplateOutcomeCallable;
 typedef std::future<GetProfileRecommendationsOutcome> GetProfileRecommendationsOutcomeCallable;
 typedef std::future<GetRecommenderOutcome> GetRecommenderOutcomeCallable;
+typedef std::future<GetRecommenderFilterOutcome> GetRecommenderFilterOutcomeCallable;
 typedef std::future<GetSegmentDefinitionOutcome> GetSegmentDefinitionOutcomeCallable;
 typedef std::future<GetSegmentEstimateOutcome> GetSegmentEstimateOutcomeCallable;
 typedef std::future<GetSegmentMembershipOutcome> GetSegmentMembershipOutcomeCallable;
@@ -429,6 +444,7 @@ typedef std::future<ListProfileHistoryRecordsOutcome> ListProfileHistoryRecordsO
 typedef std::future<ListProfileObjectTypeTemplatesOutcome> ListProfileObjectTypeTemplatesOutcomeCallable;
 typedef std::future<ListProfileObjectTypesOutcome> ListProfileObjectTypesOutcomeCallable;
 typedef std::future<ListProfileObjectsOutcome> ListProfileObjectsOutcomeCallable;
+typedef std::future<ListRecommenderFiltersOutcome> ListRecommenderFiltersOutcomeCallable;
 typedef std::future<ListRecommenderRecipesOutcome> ListRecommenderRecipesOutcomeCallable;
 typedef std::future<ListRecommendersOutcome> ListRecommendersOutcomeCallable;
 typedef std::future<ListRuleBasedMatchesOutcome> ListRuleBasedMatchesOutcomeCallable;
@@ -495,6 +511,9 @@ typedef std::function<void(const CustomerProfilesClient*, const Model::CreatePro
 typedef std::function<void(const CustomerProfilesClient*, const Model::CreateRecommenderRequest&, const Model::CreateRecommenderOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateRecommenderResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::CreateRecommenderFilterRequest&,
+                           const Model::CreateRecommenderFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateRecommenderFilterResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::CreateSegmentDefinitionRequest&,
                            const Model::CreateSegmentDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateSegmentDefinitionResponseReceivedHandler;
@@ -544,6 +563,9 @@ typedef std::function<void(const CustomerProfilesClient*, const Model::DeletePro
 typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteRecommenderRequest&, const Model::DeleteRecommenderOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRecommenderResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteRecommenderFilterRequest&,
+                           const Model::DeleteRecommenderFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteRecommenderFilterResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteSegmentDefinitionRequest&,
                            const Model::DeleteSegmentDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteSegmentDefinitionResponseReceivedHandler;
@@ -608,6 +630,9 @@ typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfil
 typedef std::function<void(const CustomerProfilesClient*, const Model::GetRecommenderRequest&, const Model::GetRecommenderOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRecommenderResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::GetRecommenderFilterRequest&,
+                           const Model::GetRecommenderFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetRecommenderFilterResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::GetSegmentDefinitionRequest&,
                            const Model::GetSegmentDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSegmentDefinitionResponseReceivedHandler;
@@ -690,6 +715,9 @@ typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfi
 typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectsRequest&, const Model::ListProfileObjectsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListProfileObjectsResponseReceivedHandler;
+typedef std::function<void(const CustomerProfilesClient*, const Model::ListRecommenderFiltersRequest&,
+                           const Model::ListRecommenderFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRecommenderFiltersResponseReceivedHandler;
 typedef std::function<void(const CustomerProfilesClient*, const Model::ListRecommenderRecipesRequest&,
                            const Model::ListRecommenderRecipesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRecommenderRecipesResponseReceivedHandler;

@@ -32,6 +32,14 @@ SearchTrainingPlanOfferingsResult& SearchTrainingPlanOfferingsResult::operator=(
     }
     m_trainingPlanOfferingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TrainingPlanExtensionOfferings")) {
+    Aws::Utils::Array<JsonView> trainingPlanExtensionOfferingsJsonList = jsonValue.GetArray("TrainingPlanExtensionOfferings");
+    for (unsigned trainingPlanExtensionOfferingsIndex = 0;
+         trainingPlanExtensionOfferingsIndex < trainingPlanExtensionOfferingsJsonList.GetLength(); ++trainingPlanExtensionOfferingsIndex) {
+      m_trainingPlanExtensionOfferings.push_back(trainingPlanExtensionOfferingsJsonList[trainingPlanExtensionOfferingsIndex].AsObject());
+    }
+    m_trainingPlanExtensionOfferingsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

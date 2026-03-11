@@ -58,6 +58,14 @@ ReservedCapacityOffering& ReservedCapacityOffering::operator=(JsonView jsonValue
     m_endTime = jsonValue.GetDouble("EndTime");
     m_endTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ExtensionStartTime")) {
+    m_extensionStartTime = jsonValue.GetDouble("ExtensionStartTime");
+    m_extensionStartTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExtensionEndTime")) {
+    m_extensionEndTime = jsonValue.GetDouble("ExtensionEndTime");
+    m_extensionEndTimeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +110,14 @@ JsonValue ReservedCapacityOffering::Jsonize() const {
 
   if (m_endTimeHasBeenSet) {
     payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if (m_extensionStartTimeHasBeenSet) {
+    payload.WithDouble("ExtensionStartTime", m_extensionStartTime.SecondsWithMSPrecision());
+  }
+
+  if (m_extensionEndTimeHasBeenSet) {
+    payload.WithDouble("ExtensionEndTime", m_extensionEndTime.SecondsWithMSPrecision());
   }
 
   return payload;

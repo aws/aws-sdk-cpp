@@ -52,6 +52,10 @@ Aws::String SearchTrainingPlanOfferingsRequest::SerializePayload() const {
     payload.WithArray("TargetResources", std::move(targetResourcesJsonList));
   }
 
+  if (m_trainingPlanArnHasBeenSet) {
+    payload.WithString("TrainingPlanArn", m_trainingPlanArn);
+  }
+
   return payload.View().WriteReadable();
 }
 

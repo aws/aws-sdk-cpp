@@ -10,7 +10,15 @@
 namespace Aws {
 namespace CustomerProfiles {
 namespace Model {
-enum class RecommenderRecipeName { NOT_SET, recommended_for_you, similar_items, frequently_paired_items, popular_items, trending_now };
+enum class RecommenderRecipeName {
+  NOT_SET,
+  recommended_for_you,
+  similar_items,
+  frequently_paired_items,
+  popular_items,
+  trending_now,
+  personalized_ranking
+};
 
 namespace RecommenderRecipeNameMapper {
 AWS_CUSTOMERPROFILES_API RecommenderRecipeName GetRecommenderRecipeNameForName(const Aws::String& name);

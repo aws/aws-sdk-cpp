@@ -26,6 +26,10 @@ EventParameters& EventParameters::operator=(JsonView jsonValue) {
     m_eventValueThreshold = jsonValue.GetDouble("EventValueThreshold");
     m_eventValueThresholdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EventWeight")) {
+    m_eventWeight = jsonValue.GetDouble("EventWeight");
+    m_eventWeightHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue EventParameters::Jsonize() const {
 
   if (m_eventValueThresholdHasBeenSet) {
     payload.WithDouble("EventValueThreshold", m_eventValueThreshold);
+  }
+
+  if (m_eventWeightHasBeenSet) {
+    payload.WithDouble("EventWeight", m_eventWeight);
   }
 
   return payload;

@@ -10,6 +10,7 @@
 #include <aws/customer-profiles/CustomerProfilesPaginationBase.h>
 #include <aws/customer-profiles/model/ListDomainLayoutsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListRecommendersPaginationTraits.h>
+#include <aws/customer-profiles/model/ListRecommenderFiltersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListEventTriggersPaginationTraits.h>
 #include <aws/customer-profiles/model/ListSegmentDefinitionsPaginationTraits.h>
 #include <aws/customer-profiles/model/ListDomainObjectTypesPaginationTraits.h>

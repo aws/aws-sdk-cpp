@@ -30,6 +30,7 @@
 #include <aws/customer-profiles/model/CreateEventTriggerRequest.h>
 #include <aws/customer-profiles/model/CreateIntegrationWorkflowRequest.h>
 #include <aws/customer-profiles/model/CreateProfileRequest.h>
+#include <aws/customer-profiles/model/CreateRecommenderFilterRequest.h>
 #include <aws/customer-profiles/model/CreateRecommenderRequest.h>
 #include <aws/customer-profiles/model/CreateSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/CreateSegmentEstimateRequest.h>
@@ -46,6 +47,7 @@
 #include <aws/customer-profiles/model/DeleteProfileObjectRequest.h>
 #include <aws/customer-profiles/model/DeleteProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/DeleteProfileRequest.h>
+#include <aws/customer-profiles/model/DeleteRecommenderFilterRequest.h>
 #include <aws/customer-profiles/model/DeleteRecommenderRequest.h>
 #include <aws/customer-profiles/model/DeleteSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/DeleteWorkflowRequest.h>
@@ -66,6 +68,7 @@
 #include <aws/customer-profiles/model/GetProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateRequest.h>
 #include <aws/customer-profiles/model/GetProfileRecommendationsRequest.h>
+#include <aws/customer-profiles/model/GetRecommenderFilterRequest.h>
 #include <aws/customer-profiles/model/GetRecommenderRequest.h>
 #include <aws/customer-profiles/model/GetSegmentDefinitionRequest.h>
 #include <aws/customer-profiles/model/GetSegmentEstimateRequest.h>
@@ -93,6 +96,7 @@
 #include <aws/customer-profiles/model/ListProfileObjectTypeTemplatesRequest.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypesRequest.h>
 #include <aws/customer-profiles/model/ListProfileObjectsRequest.h>
+#include <aws/customer-profiles/model/ListRecommenderFiltersRequest.h>
 #include <aws/customer-profiles/model/ListRecommenderRecipesRequest.h>
 #include <aws/customer-profiles/model/ListRecommendersRequest.h>
 #include <aws/customer-profiles/model/ListRuleBasedMatchesRequest.h>
@@ -677,6 +681,49 @@ CreateRecommenderOutcome CustomerProfilesClient::CreateRecommender(const CreateR
         endpointResolutionOutcome.GetResult().AddPathSegments("/recommenders/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
         return CreateRecommenderOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateRecommenderFilterOutcome CustomerProfilesClient::CreateRecommenderFilter(const CreateRecommenderFilterRequest& request) const {
+  AWS_OPERATION_GUARD(CreateRecommenderFilter);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRecommenderFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateRecommenderFilter", "Required field: DomainName, is not set");
+    return CreateRecommenderFilterOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderFilterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateRecommenderFilter", "Required field: RecommenderFilterName, is not set");
+    return CreateRecommenderFilterOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderFilterName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateRecommenderFilter, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateRecommenderFilter, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateRecommenderFilter",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateRecommenderFilterOutcome>(
+      [&]() -> CreateRecommenderFilterOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRecommenderFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommender-filters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderFilterName());
+        return CreateRecommenderFilterOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -1324,6 +1371,49 @@ DeleteRecommenderOutcome CustomerProfilesClient::DeleteRecommender(const DeleteR
         endpointResolutionOutcome.GetResult().AddPathSegments("/recommenders/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
         return DeleteRecommenderOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteRecommenderFilterOutcome CustomerProfilesClient::DeleteRecommenderFilter(const DeleteRecommenderFilterRequest& request) const {
+  AWS_OPERATION_GUARD(DeleteRecommenderFilter);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRecommenderFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteRecommenderFilter", "Required field: DomainName, is not set");
+    return DeleteRecommenderFilterOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderFilterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteRecommenderFilter", "Required field: RecommenderFilterName, is not set");
+    return DeleteRecommenderFilterOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderFilterName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteRecommenderFilter, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteRecommenderFilter, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteRecommenderFilter",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteRecommenderFilterOutcome>(
+      [&]() -> DeleteRecommenderFilterOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRecommenderFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommender-filters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderFilterName());
+        return DeleteRecommenderFilterOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -2173,6 +2263,49 @@ GetRecommenderOutcome CustomerProfilesClient::GetRecommender(const GetRecommende
         endpointResolutionOutcome.GetResult().AddPathSegments("/recommenders/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
         return GetRecommenderOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetRecommenderFilterOutcome CustomerProfilesClient::GetRecommenderFilter(const GetRecommenderFilterRequest& request) const {
+  AWS_OPERATION_GUARD(GetRecommenderFilter);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecommenderFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRecommenderFilter", "Required field: DomainName, is not set");
+    return GetRecommenderFilterOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.RecommenderFilterNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRecommenderFilter", "Required field: RecommenderFilterName, is not set");
+    return GetRecommenderFilterOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderFilterName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetRecommenderFilter, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetRecommenderFilter, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetRecommenderFilter",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetRecommenderFilterOutcome>(
+      [&]() -> GetRecommenderFilterOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRecommenderFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommender-filters/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderFilterName());
+        return GetRecommenderFilterOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -3214,6 +3347,43 @@ ListProfileObjectsOutcome CustomerProfilesClient::ListProfileObjects(const ListP
         endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/objects");
         return ListProfileObjectsOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListRecommenderFiltersOutcome CustomerProfilesClient::ListRecommenderFilters(const ListRecommenderFiltersRequest& request) const {
+  AWS_OPERATION_GUARD(ListRecommenderFilters);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecommenderFilters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListRecommenderFilters", "Required field: DomainName, is not set");
+    return ListRecommenderFiltersOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(
+        CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListRecommenderFilters, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListRecommenderFilters, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListRecommenderFilters",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListRecommenderFiltersOutcome>(
+      [&]() -> ListRecommenderFiltersOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRecommenderFilters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/recommender-filters");
+        return ListRecommenderFiltersOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

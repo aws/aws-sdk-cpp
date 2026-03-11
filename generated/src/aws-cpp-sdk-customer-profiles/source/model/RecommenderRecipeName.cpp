@@ -20,6 +20,7 @@ static const int similar_items_HASH = HashingUtils::HashString("similar-items");
 static const int frequently_paired_items_HASH = HashingUtils::HashString("frequently-paired-items");
 static const int popular_items_HASH = HashingUtils::HashString("popular-items");
 static const int trending_now_HASH = HashingUtils::HashString("trending-now");
+static const int personalized_ranking_HASH = HashingUtils::HashString("personalized-ranking");
 
 RecommenderRecipeName GetRecommenderRecipeNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ RecommenderRecipeName GetRecommenderRecipeNameForName(const Aws::String& name) {
     return RecommenderRecipeName::popular_items;
   } else if (hashCode == trending_now_HASH) {
     return RecommenderRecipeName::trending_now;
+  } else if (hashCode == personalized_ranking_HASH) {
+    return RecommenderRecipeName::personalized_ranking;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForRecommenderRecipeName(RecommenderRecipeName enumValue) {
       return "popular-items";
     case RecommenderRecipeName::trending_now:
       return "trending-now";
+    case RecommenderRecipeName::personalized_ranking:
+      return "personalized-ranking";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

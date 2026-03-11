@@ -191,6 +191,26 @@ class SearchTrainingPlanOfferingsRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN); of an existing training plan to search for
+   * extension offerings. When specified, the API returns extension offerings that
+   * can be used to extend the specified training plan.</p>
+   */
+  inline const Aws::String& GetTrainingPlanArn() const { return m_trainingPlanArn; }
+  inline bool TrainingPlanArnHasBeenSet() const { return m_trainingPlanArnHasBeenSet; }
+  template <typename TrainingPlanArnT = Aws::String>
+  void SetTrainingPlanArn(TrainingPlanArnT&& value) {
+    m_trainingPlanArnHasBeenSet = true;
+    m_trainingPlanArn = std::forward<TrainingPlanArnT>(value);
+  }
+  template <typename TrainingPlanArnT = Aws::String>
+  SearchTrainingPlanOfferingsRequest& WithTrainingPlanArn(TrainingPlanArnT&& value) {
+    SetTrainingPlanArn(std::forward<TrainingPlanArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ReservedCapacityInstanceType m_instanceType{ReservedCapacityInstanceType::NOT_SET};
 
@@ -207,6 +227,8 @@ class SearchTrainingPlanOfferingsRequest : public SageMakerRequest {
   long long m_durationHours{0};
 
   Aws::Vector<SageMakerResourceName> m_targetResources;
+
+  Aws::String m_trainingPlanArn;
   bool m_instanceTypeHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;
   bool m_ultraServerTypeHasBeenSet = false;
@@ -215,6 +237,7 @@ class SearchTrainingPlanOfferingsRequest : public SageMakerRequest {
   bool m_endTimeBeforeHasBeenSet = false;
   bool m_durationHoursHasBeenSet = false;
   bool m_targetResourcesHasBeenSet = false;
+  bool m_trainingPlanArnHasBeenSet = false;
 };
 
 }  // namespace Model

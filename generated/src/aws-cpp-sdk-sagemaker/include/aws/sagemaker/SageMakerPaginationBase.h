@@ -8,6 +8,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/sagemaker/model/CreateHubContentPresignedUrlsPaginationTraits.h>
+#include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryPaginationTraits.h>
 #include <aws/sagemaker/model/ListActionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAlgorithmsPaginationTraits.h>
 #include <aws/sagemaker/model/ListAliasesPaginationTraits.h>
@@ -112,6 +113,18 @@ class SageMakerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::CreateHubContentPresignedUrlsRequest,
                                              Pagination::CreateHubContentPresignedUrlsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeTrainingPlanExtensionHistory operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrainingPlanExtensionHistoryRequest,
+                                    Pagination::DescribeTrainingPlanExtensionHistoryPaginationTraits<DerivedClient>>
+  DescribeTrainingPlanExtensionHistoryPaginator(const Model::DescribeTrainingPlanExtensionHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeTrainingPlanExtensionHistoryRequest,
+                                             Pagination::DescribeTrainingPlanExtensionHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

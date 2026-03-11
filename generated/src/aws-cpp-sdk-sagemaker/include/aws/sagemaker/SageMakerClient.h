@@ -6386,6 +6386,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the extension history for a specified training plan. The response
+   * includes details about each extension, such as the offering ID, start and end
+   * dates, status, payment status, and cost information.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlanExtensionHistory">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTrainingPlanExtensionHistoryOutcome DescribeTrainingPlanExtensionHistory(
+      const Model::DescribeTrainingPlanExtensionHistoryRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeTrainingPlanExtensionHistory that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DescribeTrainingPlanExtensionHistoryRequestT = Model::DescribeTrainingPlanExtensionHistoryRequest>
+  Model::DescribeTrainingPlanExtensionHistoryOutcomeCallable DescribeTrainingPlanExtensionHistoryCallable(
+      const DescribeTrainingPlanExtensionHistoryRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeTrainingPlanExtensionHistory, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTrainingPlanExtensionHistory that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DescribeTrainingPlanExtensionHistoryRequestT = Model::DescribeTrainingPlanExtensionHistoryRequest>
+  void DescribeTrainingPlanExtensionHistoryAsync(const DescribeTrainingPlanExtensionHistoryRequestT& request,
+                                                 const DescribeTrainingPlanExtensionHistoryResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeTrainingPlanExtensionHistory, request, handler, context);
+  }
+
+  /**
    * <p>Returns information about a transform job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">AWS
    * API Reference</a></p>
@@ -6678,6 +6710,40 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                                    const EnableSagemakerServicecatalogPortfolioRequestT& request = {}) const {
     return SubmitAsync(&SageMakerClient::EnableSagemakerServicecatalogPortfolio, request, handler, context);
+  }
+
+  /**
+   * <p>Extends an existing training plan by purchasing an extension offering. This
+   * allows you to add additional compute capacity time to your training plan without
+   * creating a new plan or reconfiguring your workloads.</p> <p>To find available
+   * extension offerings, use the <code> <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchTrainingPlanOfferings.html">SearchTrainingPlanOfferings</a>
+   * </code> API with the <code>TrainingPlanArn</code> parameter.</p> <p>To view the
+   * history of extensions for a training plan, use the <code> <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingPlanExtensionHistory.html">DescribeTrainingPlanExtensionHistory</a>
+   * </code> API.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ExtendTrainingPlan">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ExtendTrainingPlanOutcome ExtendTrainingPlan(const Model::ExtendTrainingPlanRequest& request) const;
+
+  /**
+   * A Callable wrapper for ExtendTrainingPlan that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ExtendTrainingPlanRequestT = Model::ExtendTrainingPlanRequest>
+  Model::ExtendTrainingPlanOutcomeCallable ExtendTrainingPlanCallable(const ExtendTrainingPlanRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::ExtendTrainingPlan, request);
+  }
+
+  /**
+   * An Async wrapper for ExtendTrainingPlan that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ExtendTrainingPlanRequestT = Model::ExtendTrainingPlanRequest>
+  void ExtendTrainingPlanAsync(const ExtendTrainingPlanRequestT& request, const ExtendTrainingPlanResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::ExtendTrainingPlan, request, handler, context);
   }
 
   /**

@@ -647,6 +647,8 @@
 #include <aws/sagemaker/model/DescribeSubscribedWorkteamResult.h>
 #include <aws/sagemaker/model/DescribeTrainingJobRequest.h>
 #include <aws/sagemaker/model/DescribeTrainingJobResult.h>
+#include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryRequest.h>
+#include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryResult.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanRequest.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanResult.h>
 #include <aws/sagemaker/model/DescribeTransformJobRequest.h>
@@ -748,6 +750,8 @@
 #include <aws/sagemaker/model/ExperimentSummary.h>
 #include <aws/sagemaker/model/Explainability.h>
 #include <aws/sagemaker/model/ExplainerConfig.h>
+#include <aws/sagemaker/model/ExtendTrainingPlanRequest.h>
+#include <aws/sagemaker/model/ExtendTrainingPlanResult.h>
 #include <aws/sagemaker/model/FSxLustreConfig.h>
 #include <aws/sagemaker/model/FSxLustreFileSystem.h>
 #include <aws/sagemaker/model/FSxLustreFileSystemConfig.h>
@@ -1618,6 +1622,8 @@
 #include <aws/sagemaker/model/TrainingJobStatusCounters.h>
 #include <aws/sagemaker/model/TrainingJobStepMetadata.h>
 #include <aws/sagemaker/model/TrainingJobSummary.h>
+#include <aws/sagemaker/model/TrainingPlanExtension.h>
+#include <aws/sagemaker/model/TrainingPlanExtensionOffering.h>
 #include <aws/sagemaker/model/TrainingPlanFilter.h>
 #include <aws/sagemaker/model/TrainingPlanFilterName.h>
 #include <aws/sagemaker/model/TrainingPlanOffering.h>
