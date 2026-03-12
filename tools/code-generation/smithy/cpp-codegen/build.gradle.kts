@@ -43,6 +43,7 @@ tasks.register("generate-smithy-build") {
         val filteredServices: String = project.findProperty("servicesFilter")?.toString() ?: ""
         val filteredServiceList = filteredServices.split(",").map { it.trim() }.filter { it.isNotEmpty() }
         val c2jMapStr: String = project.findProperty("c2jMap")?.toString() ?: ""
+        val namespaceMappings: String = project.findProperty("namespaceMappings")?.toString() ?: ""
 
         fileTree(models).filter { it.isFile }.files.forEach eachFile@{ file ->
             val model = Model.assembler()
@@ -62,6 +63,7 @@ tasks.register("generate-smithy-build") {
                 .withMember("plugins", Node.objectNode()
                     .withMember("smithy-cpp-codegen", Node.objectNodeBuilder()
                         .withMember("c2jMap", Node.from(c2jMapStr))
+                        .withMember("namespaceMappings", Node.from(namespaceMappings))
                         .build()))
                 .build()
             
@@ -76,6 +78,7 @@ tasks.register("generate-smithy-build") {
                     .withMember("plugins", Node.objectNode()
                         .withMember("smithy-cpp-codegen", Node.objectNodeBuilder()
                             .withMember("c2jMap", Node.from(c2jMapStr))
+                            .withMember("namespaceMappings", Node.from(namespaceMappings))
                             .build()))
                     .build()
                 projectionsBuilder.withMember("$c2jName.mock", mockProjectionContents)
@@ -90,6 +93,7 @@ tasks.register("generate-smithy-build") {
                     .withMember("plugins", Node.objectNode()
                         .withMember("smithy-cpp-codegen", Node.objectNodeBuilder()
                             .withMember("c2jMap", Node.from(c2jMapStr))
+                            .withMember("namespaceMappings", Node.from(namespaceMappings))
                             .build()))
                     .build()
                 projectionsBuilder.withMember("s3-crt.2006-03-01", s3CrtProjectionContents)

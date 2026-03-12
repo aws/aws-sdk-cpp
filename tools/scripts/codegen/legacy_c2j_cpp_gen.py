@@ -7,6 +7,7 @@
 This is a wrapper on top of legacy CPP client generator written in java from c2j models
 """
 import io
+import json
 import os
 import re
 import shutil
@@ -147,6 +148,8 @@ class LegacyC2jCppGen(object):
 
         if len(failures):
             return -1
+
+        self._create_smithy_namespace_mapping(self.c2j_models)
 
         print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults and partitions
         
@@ -359,3 +362,18 @@ class LegacyC2jCppGen(object):
         output_zip_file = self.run_generator_once(f"core/{component_name}", run_command, output_filename)
 
         return self.extract_zip(output_zip_file, f"core/{component_name}", output_dir, None)
+
+    def _create_smithy_namespace_mapping(self, c2j_models: dict):
+        mapping = {}
+        for service, model_files in c2j_models.items():
+            full_model_file_path = f"{self.path_to_api_definitions}/{model_files.c2j_model}"
+            with open(full_model_file_path, 'r') as f:
+                model = json.load(f)
+            abbreviation = model.get("metadata", {}).get("serviceAbbreviation")
+            if abbreviation:
+                mapping[service] = abbreviation
+        output_path = f"{self.path_to_api_definitions}/../smithy/mapping/smithy-namespace-mapping.json"
+        tmp_path = output_path + ".tmp"
+        with open(tmp_path, 'w') as f:
+            json.dump(mapping, f, indent=2)
+        os.replace(tmp_path, output_path)
