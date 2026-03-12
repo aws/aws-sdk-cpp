@@ -11,7 +11,6 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Service
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppCborViewHelper;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestSuite;
@@ -115,12 +114,7 @@ public class CppProtocolTestGenerator implements ClientGenerator {
         context.put("testModel", testModel);
         context.put("input.encoding", StandardCharsets.UTF_8.name());
         context.put("output.encoding", StandardCharsets.UTF_8.name());
-        if(serviceModel.getMetadata().getProtocol().equals("smithy-rpc-v2-cbor")){
-            context.put("CppViewHelper", CppCborViewHelper.class);
-        } else {
-            context.put("CppViewHelper", CppViewHelper.class);
-        }
-        context.put("CppRequestViewHelper", CppViewHelper.class);
+        context.put("CppViewHelper", CppViewHelper.class);
         return context;
     }
 

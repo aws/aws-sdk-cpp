@@ -33,9 +33,9 @@ ${macro.spaces}}
 #set($macro.fieldAdder = "Add${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
 #foreach($mapItem in $testInputParam.value.fields())
 #if($mapItem.value == "null")
-${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", Aws::Crt::Optional<$CppRequestViewHelper.computeCppType($mapShape.mapValue.shape)>{});
+${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", Aws::Crt::Optional<$CppViewHelper.computeCppType($mapShape.mapValue.shape)>{});
 #elseif($mapShape.mapValue.shape.list || $mapShape.mapValue.shape.map)
-${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", $CppRequestViewHelper.computeCppType($mapShape.mapValue.shape)#SerializeSingleParameterMacro($mapShape.mapValue.shape, $mapItem.value));
+${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", $CppViewHelper.computeCppType($mapShape.mapValue.shape)#SerializeSingleParameterMacro($mapShape.mapValue.shape, $mapItem.value));
 #else
 ${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", #SerializeSingleParameterMacro($mapShape.mapValue.shape, $mapItem.value));
 #end

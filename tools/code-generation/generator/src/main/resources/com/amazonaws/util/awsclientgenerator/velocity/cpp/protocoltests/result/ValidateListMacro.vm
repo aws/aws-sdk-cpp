@@ -24,7 +24,7 @@
 #end
 #if($macro.listMemberShape.list || $macro.listMemberShape.map || $macro.listMemberShape.structure)
 #if($listShape.sparse && $macro.listMemberShape.structure)
-${macro.spaces}const Aws::Vector<Aws::Crt::Optional<$CppViewHelper.computeCppType($macro.listMemberShape)>>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}const Aws::Vector<Aws::Crt::Optional<$CppViewHelper.computeResultCppType($macro.listMemberShape, $serviceModel.metadata.protocol)>>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter};
 ${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.listItemVarName}.size());
 #foreach($arrayItem in $testValidateParamVal)
 ${macro.spaces}{
@@ -44,13 +44,13 @@ ${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${dstObject}.${macro.f
 #foreach($arrayItem in $testValidateParamVal)
 ${macro.spaces}{
 #if($macro.listMemberShape.list)
-  ${macro.spaces}const Aws::Vector<$CppViewHelper.computeCppType($macro.listMemberShape.listMember.shape)>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter}.at(${foreach.index});
+  ${macro.spaces}const Aws::Vector<$CppViewHelper.computeResultCppType($macro.listMemberShape.listMember.shape, $serviceModel.metadata.protocol)>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter}.at(${foreach.index});
   ${macro.spaces}EXPECT_EQ(${arrayItem.size()}U, ${macro.listItemVarName}.size());
 #foreach($innerListEl in $arrayItem)
   ${macro.spaces}EXPECT_EQ(#ValidateSingleParameterMacro($macro.listMemberShape.listMember.shape, $innerListEl), ${macro.listItemVarName}.at(${foreach.index}));
 #end
 #elseif($macro.listMemberShape.map)
-  ${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($macro.listMemberShape.mapKey.shape), $CppViewHelper.computeCppType($macro.listMemberShape.mapValue.shape)>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter}.at(${foreach.index});
+  ${macro.spaces}const Aws::Map<$CppViewHelper.computeResultCppType($macro.listMemberShape.mapKey.shape, $serviceModel.metadata.protocol), $CppViewHelper.computeResultCppType($macro.listMemberShape.mapValue.shape, $serviceModel.metadata.protocol)>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter}.at(${foreach.index});
   ${macro.spaces}EXPECT_EQ(${arrayItem.size()}U, ${macro.listItemVarName}.size());
 #foreach($innerMapEl in $arrayItem.fields())
   ${macro.spaces}EXPECT_TRUE(${macro.listItemVarName}.find("$innerMapEl.key") != ${macro.listItemVarName}.end());
@@ -67,7 +67,7 @@ ${macro.spaces}}
 #end
 #else## not (list || map || structure)
 #if($listShape.sparse)
-${macro.spaces}const Aws::Vector<Aws::Crt::Optional<$CppViewHelper.computeCppType($macro.listMemberShape)>>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}const Aws::Vector<Aws::Crt::Optional<$CppViewHelper.computeResultCppType($macro.listMemberShape, $serviceModel.metadata.protocol)>>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter};
 ${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.listItemVarName}.size());
 #foreach($arrayItem in $testValidateParamVal)
 #if($arrayItem.isNull())
@@ -78,7 +78,7 @@ ${macro.spaces}EXPECT_EQ(#ValidateSingleParameterMacro($macro.listMemberShape, $
 #end
 #end
 #else
-${macro.spaces}const Aws::Vector<$CppViewHelper.computeCppType($macro.listMemberShape)>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}const Aws::Vector<$CppViewHelper.computeResultCppType($macro.listMemberShape, $serviceModel.metadata.protocol)>& $macro.listItemVarName = ${dstObject}.${macro.fieldGetter};
 ${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.listItemVarName}.size());
 #foreach($arrayItem in $testValidateParamVal)
 ${macro.spaces}EXPECT_EQ(#ValidateSingleParameterMacro($macro.listMemberShape, $arrayItem), ${macro.listItemVarName}.at(${foreach.index}));
