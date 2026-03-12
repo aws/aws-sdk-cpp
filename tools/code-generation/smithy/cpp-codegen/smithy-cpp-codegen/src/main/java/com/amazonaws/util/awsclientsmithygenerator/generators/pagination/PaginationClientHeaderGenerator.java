@@ -16,8 +16,8 @@ import java.util.Map;
 
 public class PaginationClientHeaderGenerator extends BaseHeaderGenerator<OperationData<PaginatedTrait>> {
     
-    public PaginationClientHeaderGenerator(ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps, Map<String, String> serviceMap) {
-        super(service, paginatedOps, serviceMap);
+    public PaginationClientHeaderGenerator(ServiceShape service, List<OperationData<PaginatedTrait>> paginatedOps, Map<String, String> serviceMap, Map<String, String> namespaceMap) {
+        super(service, paginatedOps, serviceMap, namespaceMap);
     }
     
     @Override

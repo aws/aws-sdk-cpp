@@ -5,22 +5,24 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.model.shapes.ServiceShape;
-import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
-import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
+
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public abstract class BaseHeaderGenerator<T> {
     protected final ServiceShape service;
     protected final List<T> operations;
     protected final Map<String, String> serviceMap;
     protected final String smithyServiceName;
+    protected final Map<String, String> namespaceMap;
 
-    public BaseHeaderGenerator(ServiceShape service, List<T> operations, Map<String, String> serviceMap) {
+    public BaseHeaderGenerator(ServiceShape service, List<T> operations, Map<String, String> serviceMap, Map<String, String> namespaceMap) {
         this.service = service;
         this.operations = operations;
         this.serviceMap = serviceMap;
         this.smithyServiceName = ServiceNameUtil.getSmithyServiceName(service, serviceMap);
+        this.namespaceMap = namespaceMap;
     }
 
     protected abstract void writeSpecificIncludes(CppWriter writer, String serviceName, String smithyServiceName);
@@ -47,12 +49,12 @@ public abstract class BaseHeaderGenerator<T> {
 
     private void writeNamespaceOpen(CppWriter writer, String serviceName) {
         writer.writeNamespaceOpen("Aws");
-        writer.writeNamespaceOpen(serviceName);
+        writer.writeNamespaceOpen(Optional.ofNullable(namespaceMap.get(smithyServiceName)).orElse(serviceName));
         writer.write("");
     }
 
     private void writeNamespaceClose(CppWriter writer, String serviceName) {
-        writer.writeNamespaceClose(serviceName);
+        writer.writeNamespaceClose(Optional.ofNullable(namespaceMap.get(smithyServiceName)).orElse(serviceName));
         writer.writeNamespaceClose("Aws");
     }
 }
