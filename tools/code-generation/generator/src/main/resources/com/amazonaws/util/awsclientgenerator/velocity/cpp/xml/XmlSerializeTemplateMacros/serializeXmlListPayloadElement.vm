@@ -29,6 +29,15 @@
 ## if list is flattened than the name of repeated XML element is ShapeMember name in parent name OR explicitly set by parent's locationName
 #set($macro.listMemberSerializationName = ${CppViewHelper.ifNotNullOrEmpty($member.locationName, $serializationName)})
 #end
+#if($member.shape.sparse)
+  ${spaces}  if(!${macro.listItemVarName}.has_value()) {
+  ${spaces}    XmlNode ${lowerCaseVarName}NilNode = ${macro.listMemberParentNode}.CreateChildElement("${macro.listMemberSerializationName}");
+  ${spaces}    ${lowerCaseVarName}NilNode.SetAttributeValue("xsi:nil", "true");
+  ${spaces}  } else {
+#serializeXmlSinglePayloadElement($macro.listSpaces, $macro.listMemberSerializationName, $lowerCaseVarName, $member.shape.listMember, "(*${macro.listItemVarName})", $macro.listMemberParentNode)
+  ${spaces}  }
+#else
 #serializeXmlSinglePayloadElement($macro.listSpaces, $macro.listMemberSerializationName, $lowerCaseVarName, $member.shape.listMember, $macro.listItemVarName, $macro.listMemberParentNode)
+#end
   ${spaces}}
 #end##macro serializeXmlListPayloadElement

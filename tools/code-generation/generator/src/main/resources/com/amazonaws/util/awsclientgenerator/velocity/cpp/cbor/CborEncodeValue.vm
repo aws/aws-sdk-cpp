@@ -3,21 +3,43 @@ encoder.WriteText(Aws::Crt::ByteCursorFromCString(${shapeMember.name}Mapper::Get
 #elseif($shapeMember.list)
 encoder.WriteArrayStart(${value}.size());
 for(const auto& item_${recursionDepth} : ${value}) {
+#if($shapeMember.sparse)
+    if (!item_${recursionDepth}.has_value()) { encoder.WriteNull(); } else {
+    const auto& sparseItem_${recursionDepth} = *item_${recursionDepth};
+#set($value = "sparseItem_${recursionDepth}")
 #set($shapeMember = $shapeMember.listMember.shape)
-#set($value = "item_${recursionDepth}")
 #set($recursionDepth = $recursionDepth + 1)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
 #set($recursionDepth = $recursionDepth - 1)
+    }
+#else
+#set($value = "item_${recursionDepth}")
+#set($shapeMember = $shapeMember.listMember.shape)
+#set($recursionDepth = $recursionDepth + 1)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
+#set($recursionDepth = $recursionDepth - 1)
+#end
 }
 #elseif($shapeMember.map)
 encoder.WriteMapStart(${value}.size());
 for(const auto& item_${recursionDepth} : ${value}) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_${recursionDepth}.first.c_str()));
+#if($shapeMember.sparse)
+    if (!item_${recursionDepth}.second.has_value()) { encoder.WriteNull(); } else {
+    const auto& sparseVal_${recursionDepth} = *item_${recursionDepth}.second;
+#set($value = "sparseVal_${recursionDepth}")
 #set($shapeMember = $shapeMember.mapValue.shape)
-#set($value = "item_${recursionDepth}.second")
 #set($recursionDepth = $recursionDepth + 1)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
 #set($recursionDepth = $recursionDepth - 1)
+    }
+#else
+#set($value = "item_${recursionDepth}.second")
+#set($shapeMember = $shapeMember.mapValue.shape)
+#set($recursionDepth = $recursionDepth + 1)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
+#set($recursionDepth = $recursionDepth - 1)
+#end
 }
 #elseif($shapeMember.blob)
 encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(${value}.GetUnderlyingData())));

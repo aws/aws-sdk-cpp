@@ -26,6 +26,7 @@ import java.util.stream.Collectors;
 
 public class CppViewHelper {
     private static final Map<String, String> CORAL_TYPE_TO_CPP_TYPE_MAPPING = new HashMap<>();
+    private static final Map<String, String> CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING = new HashMap<>();
     private static final Map<String, String> CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING = new HashMap<>();
     private static final Map<String, String> CORAL_TYPE_TO_XML_CONVERSION_MAPPING = new HashMap<>();
     private static final Map<String, String> CORAL_TYPE_TO_DEFAULT_VALUES = new HashMap<>();
@@ -55,6 +56,22 @@ public class CppViewHelper {
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("sensitive_float", "double");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("sensitive_double", "double");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("sensitive_timestamp", "Aws::Utils::DateTime");
+
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("long", "long long");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("integer", "int64_t");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("string", "Aws::String");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("timestamp", "Aws::Utils::DateTime");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("boolean", "bool");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("sensitive_boolean", "bool");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("double", "double");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("float", "double");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("blob", "Aws::Utils::ByteBuffer");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("sensitive_blob", "Aws::Utils::CryptoBuffer");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("sensitive_long", "long long");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("sensitive_integer", "int64_t");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("sensitive_float", "double");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("sensitive_double", "double");
+        CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING.put("sensitive_timestamp", "Aws::Utils::DateTime");
 
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("long", "Int64");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("integer", "Integer");
@@ -225,12 +242,14 @@ public class CppViewHelper {
 
         else if(shape.isList()) {
             String type = computeCppTypeInternal(shape.getListMember().getShape(), typeMapping);
+            type = shape.isSparse() ? String.format("Aws::Crt::Optional<%s>", type) : type;
             return String.format("Aws::Vector<%s>", type);
         }
 
         else if(shape.isMap()) {
             String key = computeCppTypeInternal(shape.getMapKey().getShape(), typeMapping);
             String value = computeCppTypeInternal(shape.getMapValue().getShape(), typeMapping);
+            value = shape.isSparse() ? String.format("Aws::Crt::Optional<%s>", value) : value;
             return String.format("Aws::Map<%s, %s>", key, value);
         }
 
@@ -241,6 +260,16 @@ public class CppViewHelper {
 
     public static String computeCppType(Shape shape) {
         return computeCppTypeInternal(shape, CORAL_TYPE_TO_CPP_TYPE_MAPPING);
+    }
+
+    public static String computeCborCppType(Shape shape) {
+        return computeCppTypeInternal(shape, CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING);
+    }
+
+    public static String computeResultCppType(Shape shape, String protocol) {
+        return "smithy-rpc-v2-cbor".equals(protocol)
+                ? computeCppTypeInternal(shape, CORAL_TYPE_TO_CBOR_CPP_TYPE_MAPPING)
+                : computeCppTypeInternal(shape, CORAL_TYPE_TO_CPP_TYPE_MAPPING);
     }
 
     public static boolean isStreamingPayloadMember(Shape parent, String member) {
@@ -273,6 +302,22 @@ public class CppViewHelper {
             }
         }
         return computeCppType(childShape);
+    }
+
+    public static String computeCborCppType(Shape parent, String member) {
+        if (!parent.getMembers().containsKey(member)) {
+            throw new RuntimeException("Parent shape " + parent.getName() +
+                    " does not contain member key " + member);
+        }
+        ShapeMember shapeMember = parent.getMembers().get(member);
+        Shape childShape = shapeMember.getShape();
+
+        if (parent.getPayload() != null && parent.getPayload().equals(member) && parent.isResult()) {
+            if (shapeMember.isStreaming() || childShape.isBlob() || childShape.isString()) {
+                return "Aws::Utils::Stream::ResponseStream";
+            }
+        }
+        return computeCborCppType(childShape);
     }
 
     public static String computeJsonCppType(Shape shape) {
@@ -386,6 +431,9 @@ public class CppViewHelper {
                     // and if compile-time member object info required
                     headers.add(formatModelIncludeName(projectName, shapeInList));
                 }
+            }
+            if (next.isSparse()) {
+                headers.add("<aws/crt/Optional.h>");
             }
             if(!next.isPrimitive()) {
                 if (next.isException() && !next.isModeledException()) {
