@@ -45,6 +45,7 @@
 #include <aws/s3-crt/model/BucketLocationConstraint.h>
 #include <aws/s3-crt/model/BucketLoggingStatus.h>
 #include <aws/s3-crt/model/BucketLogsPermission.h>
+#include <aws/s3-crt/model/BucketNamespace.h>
 #include <aws/s3-crt/model/BucketType.h>
 #include <aws/s3-crt/model/BucketVersioningStatus.h>
 #include <aws/s3-crt/model/CORSConfiguration.h>

@@ -19,7 +19,8 @@ enum class UpstreamRegistry {
   docker_hub,
   github_container_registry,
   azure_container_registry,
-  gitlab_container_registry
+  gitlab_container_registry,
+  chainguard
 };
 
 namespace UpstreamRegistryMapper {

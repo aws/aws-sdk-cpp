@@ -47,11 +47,15 @@ class CreateSessionRequest : public S3Request {
   ///@{
   /**
    * <p>Specifies the mode of the session that will be created, either
-   * <code>ReadWrite</code> or <code>ReadOnly</code>. By default, a
-   * <code>ReadWrite</code> session is created. A <code>ReadWrite</code> session is
-   * capable of executing all the Zonal endpoint API operations on a directory
-   * bucket. A <code>ReadOnly</code> session is constrained to execute the following
-   * Zonal endpoint API operations: <code>GetObject</code>, <code>HeadObject</code>,
+   * <code>ReadWrite</code> or <code>ReadOnly</code>. If no session mode is
+   * specified, the default behavior attempts to create a session with the maximum
+   * allowable privilege. It will first attempt to create a <code>ReadWrite</code>
+   * session, and if that is not allowed by permissions, it will attempt to create a
+   * <code>ReadOnly</code> session. If neither session type is allowed, the request
+   * will return an Access Denied error. A <code>ReadWrite</code> session is capable
+   * of executing all the Zonal endpoint API operations on a directory bucket. A
+   * <code>ReadOnly</code> session is constrained to execute the following Zonal
+   * endpoint API operations: <code>GetObject</code>, <code>HeadObject</code>,
    * <code>ListObjectsV2</code>, <code>GetObjectAttributes</code>,
    * <code>ListParts</code>, and <code>ListMultipartUploads</code>.</p>
    */

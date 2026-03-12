@@ -272,7 +272,8 @@ class DescribeLocationSmbResult {
   /**
    * <p>Describes configuration information for a customer-managed secret, such as a
    * <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to
-   * access a specific storage location, with a customer-managed KMS key.</p>
+   * access a specific storage location, with a customer-managed Identity and Access
+   * Management (IAM) role that provides access to the secret.</p>
    */
   inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
   template <typename CustomSecretConfigT = CustomSecretConfig>

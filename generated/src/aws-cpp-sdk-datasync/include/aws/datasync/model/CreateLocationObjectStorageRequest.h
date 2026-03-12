@@ -269,12 +269,14 @@ class CreateLocationObjectStorageRequest : public DataSyncRequest {
    * request, you provide only the KMS key ARN. DataSync uses this KMS key together
    * with the value you specify for the <code>SecretKey</code> parameter to create a
    * DataSync-managed secret to store the location access credentials.</p> <p>Make
-   * sure that DataSync has permission to access the KMS key that you specify.</p>
-   *  <p>You can use either <code>CmkSecretConfig</code> (with
-   * <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without
-   * <code>SecretKey</code>) to provide credentials for a
-   * <code>CreateLocationObjectStorage</code> request. Do not provide both parameters
-   * for the same request.</p>
+   * sure that DataSync has permission to access the KMS key that you specify. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#service-secret-custom-key">
+   * Using a service-managed secret encrypted with a custom KMS key</a>.</p>
+   * <p>You can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>)
+   * or <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide
+   * credentials for a <code>CreateLocationObjectStorage</code> request. Do not
+   * provide both parameters for the same request.</p>
    */
   inline const CmkSecretConfig& GetCmkSecretConfig() const { return m_cmkSecretConfig; }
   inline bool CmkSecretConfigHasBeenSet() const { return m_cmkSecretConfigHasBeenSet; }
@@ -295,8 +297,11 @@ class CreateLocationObjectStorageRequest : public DataSyncRequest {
    * <p>Specifies configuration information for a customer-managed Secrets Manager
    * secret where the secret key for a specific object storage location is stored in
    * plain text, in Secrets Manager. This configuration includes the secret ARN, and
-   * the ARN for an IAM role that provides access to the secret.</p>  <p>You
-   * can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or
+   * the ARN for an IAM role that provides access to the secret. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#custom-secret-custom-key">
+   * Using a secret that you manage</a>.</p>  <p>You can use either
+   * <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or
    * <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide
    * credentials for a <code>CreateLocationObjectStorage</code> request. Do not
    * provide both parameters for the same request.</p>

@@ -34,6 +34,18 @@ FsxProtocolSmb& FsxProtocolSmb::operator=(JsonView jsonValue) {
     m_user = jsonValue.GetString("User");
     m_userHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedSecretConfig")) {
+    m_managedSecretConfig = jsonValue.GetObject("ManagedSecretConfig");
+    m_managedSecretConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CmkSecretConfig")) {
+    m_cmkSecretConfig = jsonValue.GetObject("CmkSecretConfig");
+    m_cmkSecretConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CustomSecretConfig")) {
+    m_customSecretConfig = jsonValue.GetObject("CustomSecretConfig");
+    m_customSecretConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +66,18 @@ JsonValue FsxProtocolSmb::Jsonize() const {
 
   if (m_userHasBeenSet) {
     payload.WithString("User", m_user);
+  }
+
+  if (m_managedSecretConfigHasBeenSet) {
+    payload.WithObject("ManagedSecretConfig", m_managedSecretConfig.Jsonize());
+  }
+
+  if (m_cmkSecretConfigHasBeenSet) {
+    payload.WithObject("CmkSecretConfig", m_cmkSecretConfig.Jsonize());
+  }
+
+  if (m_customSecretConfigHasBeenSet) {
+    payload.WithObject("CustomSecretConfig", m_customSecretConfig.Jsonize());
   }
 
   return payload;

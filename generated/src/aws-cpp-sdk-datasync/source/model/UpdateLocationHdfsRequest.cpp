@@ -76,6 +76,14 @@ Aws::String UpdateLocationHdfsRequest::SerializePayload() const {
     payload.WithArray("AgentArns", std::move(agentArnsJsonList));
   }
 
+  if (m_cmkSecretConfigHasBeenSet) {
+    payload.WithObject("CmkSecretConfig", m_cmkSecretConfig.Jsonize());
+  }
+
+  if (m_customSecretConfigHasBeenSet) {
+    payload.WithObject("CustomSecretConfig", m_customSecretConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

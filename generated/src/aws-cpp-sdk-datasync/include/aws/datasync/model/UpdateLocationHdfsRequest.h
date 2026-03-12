@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datasync/DataSyncRequest.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
+#include <aws/datasync/model/CmkSecretConfig.h>
+#include <aws/datasync/model/CustomSecretConfig.h>
 #include <aws/datasync/model/HdfsAuthenticationType.h>
 #include <aws/datasync/model/HdfsNameNode.h>
 #include <aws/datasync/model/QopConfiguration.h>
@@ -288,6 +290,47 @@ class UpdateLocationHdfsRequest : public DataSyncRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies configuration information for a DataSync-managed secret, such as a
+   * <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a
+   * specific transfer location, and a customer-managed KMS key.</p>
+   */
+  inline const CmkSecretConfig& GetCmkSecretConfig() const { return m_cmkSecretConfig; }
+  inline bool CmkSecretConfigHasBeenSet() const { return m_cmkSecretConfigHasBeenSet; }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  void SetCmkSecretConfig(CmkSecretConfigT&& value) {
+    m_cmkSecretConfigHasBeenSet = true;
+    m_cmkSecretConfig = std::forward<CmkSecretConfigT>(value);
+  }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  UpdateLocationHdfsRequest& WithCmkSecretConfig(CmkSecretConfigT&& value) {
+    SetCmkSecretConfig(std::forward<CmkSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies configuration information for a customer-managed secret, such as a
+   * <code>KerberosKeytab</code> or set of credentials that DataSync uses to access a
+   * specific transfer location, and a customer-managed Identity and Access
+   * Management (IAM) role that provides access to the secret.</p>
+   */
+  inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
+  inline bool CustomSecretConfigHasBeenSet() const { return m_customSecretConfigHasBeenSet; }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  void SetCustomSecretConfig(CustomSecretConfigT&& value) {
+    m_customSecretConfigHasBeenSet = true;
+    m_customSecretConfig = std::forward<CustomSecretConfigT>(value);
+  }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  UpdateLocationHdfsRequest& WithCustomSecretConfig(CustomSecretConfigT&& value) {
+    SetCustomSecretConfig(std::forward<CustomSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_locationArn;
 
@@ -314,6 +357,10 @@ class UpdateLocationHdfsRequest : public DataSyncRequest {
   Aws::Utils::ByteBuffer m_kerberosKrb5Conf{};
 
   Aws::Vector<Aws::String> m_agentArns;
+
+  CmkSecretConfig m_cmkSecretConfig;
+
+  CustomSecretConfig m_customSecretConfig;
   bool m_locationArnHasBeenSet = false;
   bool m_subdirectoryHasBeenSet = false;
   bool m_nameNodesHasBeenSet = false;
@@ -327,6 +374,8 @@ class UpdateLocationHdfsRequest : public DataSyncRequest {
   bool m_kerberosKeytabHasBeenSet = false;
   bool m_kerberosKrb5ConfHasBeenSet = false;
   bool m_agentArnsHasBeenSet = false;
+  bool m_cmkSecretConfigHasBeenSet = false;
+  bool m_customSecretConfigHasBeenSet = false;
 };
 
 }  // namespace Model
