@@ -60,14 +60,14 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
                 // Generate CRTP pagination (always, even if empty)
                 featureParser.generateClientHeader(
                     serviceName + "PaginationBase.h",
-                    writer -> new PaginationBaseGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap()).render(writer)
+                    writer -> new PaginationBaseGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap(), featureParser.getNamespaceMap()).render(writer)
                 );
                 
                 if (!paginatedOps.isEmpty()) {
                     // Generate client pagination header
                     featureParser.generateClientHeader(
                         serviceName + "ClientPagination.h",
-                        writer -> new PaginationClientHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap()).render(writer)
+                        writer -> new PaginationClientHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap(), featureParser.getNamespaceMap()).render(writer)
                     );
                     
                     // Generate pagination traits headers
@@ -75,7 +75,8 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
                         featureParser.getContext(), 
                         featureParser.getService(), 
                         featureParser.getOperations(), 
-                        featureParser.getSmithyServiceName()
+                        featureParser.getSmithyServiceName(),
+                        featureParser.getNamespaceMap()
                     );
                     traitsGenerator.write();
                 }
