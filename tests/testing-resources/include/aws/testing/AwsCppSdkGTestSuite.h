@@ -13,7 +13,7 @@
 
 #include <aws/core/Aws.h>
 
-#if defined(_WIN32)
+#if defined(_WIN32) && !defined(__clang__)
 // disable "warning C4702: unreachable code" from GTEST_SKIP on newer MSVS
 #pragma warning(disable: 4702)
 #endif
