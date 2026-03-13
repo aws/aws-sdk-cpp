@@ -335,7 +335,7 @@ static void CALLBACK WinHttpSyncLogCallback(HINTERNET hInternet,
     };
 
     bool found = false;
-    int i;
+    size_t i;
     for (i = 0; i < sizeof(KNOWN_STATUSES) / sizeof(KNOWN_STATUSES[0]) && !found; i++)
     {
         if (dwInternetStatus == KNOWN_STATUSES[i].status)
@@ -402,8 +402,8 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
     Base(),
     m_usingProxy(!config.proxyHost.empty()),
     m_verifySSL(config.verifySSL),
-    m_version(config.version),
-    m_useAnonymousAuth(config.winHTTPOptions.useAnonymousAuth)
+    m_useAnonymousAuth(config.winHTTPOptions.useAnonymousAuth),
+    m_version(config.version)
 {
     m_enableHttpClientTrace = config.enableHttpClientTrace;
 
