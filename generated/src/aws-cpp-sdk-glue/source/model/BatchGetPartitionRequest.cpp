@@ -35,6 +35,14 @@ Aws::String BatchGetPartitionRequest::SerializePayload() const {
     payload.WithArray("PartitionsToGet", std::move(partitionsToGetJsonList));
   }
 
+  if (m_auditContextHasBeenSet) {
+    payload.WithObject("AuditContext", m_auditContext.Jsonize());
+  }
+
+  if (m_querySessionContextHasBeenSet) {
+    payload.WithObject("QuerySessionContext", m_querySessionContext.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

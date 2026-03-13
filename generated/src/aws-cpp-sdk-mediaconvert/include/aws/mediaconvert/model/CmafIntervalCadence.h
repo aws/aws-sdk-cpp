@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class CmafIntervalCadence { NOT_SET, FOLLOW_IFRAME, FOLLOW_CUSTOM };
+enum class CmafIntervalCadence { NOT_SET, FOLLOW_IFRAME, FOLLOW_CUSTOM, FOLLOW_SEGMENTATION };
 
 namespace CmafIntervalCadenceMapper {
 AWS_MEDIACONVERT_API CmafIntervalCadence GetCmafIntervalCadenceForName(const Aws::String& name);

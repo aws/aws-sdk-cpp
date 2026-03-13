@@ -21,6 +21,7 @@ static const int matroska_HASH = HashingUtils::HashString("matroska");
 static const int webm_HASH = HashingUtils::HashString("webm");
 static const int mxf_HASH = HashingUtils::HashString("mxf");
 static const int wave_HASH = HashingUtils::HashString("wave");
+static const int avi_HASH = HashingUtils::HashString("avi");
 
 Format GetFormatForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ Format GetFormatForName(const Aws::String& name) {
     return Format::mxf;
   } else if (hashCode == wave_HASH) {
     return Format::wave;
+  } else if (hashCode == avi_HASH) {
+    return Format::avi;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForFormat(Format enumValue) {
       return "mxf";
     case Format::wave:
       return "wave";
+    case Format::avi:
+      return "avi";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

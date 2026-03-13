@@ -33,11 +33,12 @@ static const int MPEG1_HASH = HashingUtils::HashString("MPEG1");
 static const int MP4V_HASH = HashingUtils::HashString("MP4V");
 static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
 static const int PRORES_HASH = HashingUtils::HashString("PRORES");
+static const int QTRLE_HASH = HashingUtils::HashString("QTRLE");
 static const int THEORA_HASH = HashingUtils::HashString("THEORA");
+static const int UNCOMPRESSED_HASH = HashingUtils::HashString("UNCOMPRESSED");
 static const int VFW_HASH = HashingUtils::HashString("VFW");
 static const int VP8_HASH = HashingUtils::HashString("VP8");
 static const int VP9_HASH = HashingUtils::HashString("VP9");
-static const int QTRLE_HASH = HashingUtils::HashString("QTRLE");
 static const int C608_HASH = HashingUtils::HashString("C608");
 static const int C708_HASH = HashingUtils::HashString("C708");
 static const int WEBVTT_HASH = HashingUtils::HashString("WEBVTT");
@@ -80,16 +81,18 @@ Codec GetCodecForName(const Aws::String& name) {
     return Codec::MPEG2;
   } else if (hashCode == PRORES_HASH) {
     return Codec::PRORES;
+  } else if (hashCode == QTRLE_HASH) {
+    return Codec::QTRLE;
   } else if (hashCode == THEORA_HASH) {
     return Codec::THEORA;
+  } else if (hashCode == UNCOMPRESSED_HASH) {
+    return Codec::UNCOMPRESSED;
   } else if (hashCode == VFW_HASH) {
     return Codec::VFW;
   } else if (hashCode == VP8_HASH) {
     return Codec::VP8;
   } else if (hashCode == VP9_HASH) {
     return Codec::VP9;
-  } else if (hashCode == QTRLE_HASH) {
-    return Codec::QTRLE;
   } else if (hashCode == C608_HASH) {
     return Codec::C608;
   } else if (hashCode == C708_HASH) {
@@ -146,16 +149,18 @@ Aws::String GetNameForCodec(Codec enumValue) {
       return "MPEG2";
     case Codec::PRORES:
       return "PRORES";
+    case Codec::QTRLE:
+      return "QTRLE";
     case Codec::THEORA:
       return "THEORA";
+    case Codec::UNCOMPRESSED:
+      return "UNCOMPRESSED";
     case Codec::VFW:
       return "VFW";
     case Codec::VP8:
       return "VP8";
     case Codec::VP9:
       return "VP9";
-    case Codec::QTRLE:
-      return "QTRLE";
     case Codec::C608:
       return "C608";
     case Codec::C708:

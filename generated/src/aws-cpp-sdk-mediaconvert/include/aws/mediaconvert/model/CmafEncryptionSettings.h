@@ -9,6 +9,7 @@
 #include <aws/mediaconvert/model/CmafEncryptionType.h>
 #include <aws/mediaconvert/model/CmafInitializationVectorInManifest.h>
 #include <aws/mediaconvert/model/CmafKeyProviderType.h>
+#include <aws/mediaconvert/model/HlsClearLead.h>
 #include <aws/mediaconvert/model/SpekeKeyProviderCmaf.h>
 #include <aws/mediaconvert/model/StaticKeyProvider.h>
 
@@ -35,6 +36,34 @@ class CmafEncryptionSettings {
   AWS_MEDIACONVERT_API CmafEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONVERT_API CmafEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * Enable Clear Lead DRM to reduce video startup latency by leaving the first
+   * segment unencrypted while DRM license retrieval occurs in parallel. This
+   * optimization allows immediate playback startup while maintaining content
+   * protection for the remainder of the stream. When enabled, the first output
+   * segment remains fully unencrypted, and encryption begins at the start of the
+   * second segment. The HLS manifest will omit #EXT-X-KEY tags during the clear
+   * segment and insert the first #EXT-X-KEY immediately before the first encrypted
+   * fragment. This feature is supported exclusively for CMAF HLS (fMP4) outputs and
+   * is compatible with all existing key provider integrations (SPEKE v1, SPEKE v2,
+   * and Static Key encryption). Supported codecs: H.264 and H.265 video codecs, and
+   * AAC audio codec. Choose Enabled to activate Clear Lead DRM optimization. Choose
+   * Disabled to use standard encryption where all segments are encrypted from the
+   * beginning.
+   */
+  inline HlsClearLead GetClearLead() const { return m_clearLead; }
+  inline bool ClearLeadHasBeenSet() const { return m_clearLeadHasBeenSet; }
+  inline void SetClearLead(HlsClearLead value) {
+    m_clearLeadHasBeenSet = true;
+    m_clearLead = value;
+  }
+  inline CmafEncryptionSettings& WithClearLead(HlsClearLead value) {
+    SetClearLead(value);
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -146,6 +175,8 @@ class CmafEncryptionSettings {
   }
   ///@}
  private:
+  HlsClearLead m_clearLead{HlsClearLead::NOT_SET};
+
   Aws::String m_constantInitializationVector;
 
   CmafEncryptionType m_encryptionMethod{CmafEncryptionType::NOT_SET};
@@ -157,6 +188,7 @@ class CmafEncryptionSettings {
   StaticKeyProvider m_staticKeyProvider;
 
   CmafKeyProviderType m_type{CmafKeyProviderType::NOT_SET};
+  bool m_clearLeadHasBeenSet = false;
   bool m_constantInitializationVectorHasBeenSet = false;
   bool m_encryptionMethodHasBeenSet = false;
   bool m_initializationVectorInManifestHasBeenSet = false;

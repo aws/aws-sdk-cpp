@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class AudioCodec { NOT_SET, AAC, MP2, MP3, WAV, AIFF, AC3, EAC3, EAC3_ATMOS, VORBIS, OPUS, PASSTHROUGH, FLAC };
+enum class AudioCodec { NOT_SET, AAC, MP2, MP3, WAV, AIFF, AC3, AC4, EAC3, EAC3_ATMOS, VORBIS, OPUS, PASSTHROUGH, FLAC };
 
 namespace AudioCodecMapper {
 AWS_MEDIACONVERT_API AudioCodec GetAudioCodecForName(const Aws::String& name);

@@ -29,11 +29,13 @@
 #include <aws/mgn/model/CreateConnectorResult.h>
 #include <aws/mgn/model/CreateLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/CreateLaunchConfigurationTemplateResult.h>
+#include <aws/mgn/model/CreateNetworkMigrationDefinitionResult.h>
 #include <aws/mgn/model/CreateReplicationConfigurationTemplateResult.h>
 #include <aws/mgn/model/CreateWaveResult.h>
 #include <aws/mgn/model/DeleteApplicationResult.h>
 #include <aws/mgn/model/DeleteJobResult.h>
 #include <aws/mgn/model/DeleteLaunchConfigurationTemplateResult.h>
+#include <aws/mgn/model/DeleteNetworkMigrationDefinitionResult.h>
 #include <aws/mgn/model/DeleteReplicationConfigurationTemplateResult.h>
 #include <aws/mgn/model/DeleteSourceServerResult.h>
 #include <aws/mgn/model/DeleteWaveResult.h>
@@ -53,6 +55,8 @@
 #include <aws/mgn/model/DisconnectFromServiceResult.h>
 #include <aws/mgn/model/FinalizeCutoverResult.h>
 #include <aws/mgn/model/GetLaunchConfigurationResult.h>
+#include <aws/mgn/model/GetNetworkMigrationDefinitionResult.h>
+#include <aws/mgn/model/GetNetworkMigrationMapperSegmentConstructResult.h>
 #include <aws/mgn/model/GetReplicationConfigurationResult.h>
 #include <aws/mgn/model/InitializeServiceRequest.h>
 #include <aws/mgn/model/InitializeServiceResult.h>
@@ -64,10 +68,25 @@
 #include <aws/mgn/model/ListExportsRequest.h>
 #include <aws/mgn/model/ListExportsResult.h>
 #include <aws/mgn/model/ListImportErrorsResult.h>
+#include <aws/mgn/model/ListImportFileEnrichmentsRequest.h>
+#include <aws/mgn/model/ListImportFileEnrichmentsResult.h>
 #include <aws/mgn/model/ListImportsRequest.h>
 #include <aws/mgn/model/ListImportsResult.h>
 #include <aws/mgn/model/ListManagedAccountsRequest.h>
 #include <aws/mgn/model/ListManagedAccountsResult.h>
+#include <aws/mgn/model/ListNetworkMigrationAnalysesResult.h>
+#include <aws/mgn/model/ListNetworkMigrationAnalysisResultsResult.h>
+#include <aws/mgn/model/ListNetworkMigrationCodeGenerationSegmentsResult.h>
+#include <aws/mgn/model/ListNetworkMigrationCodeGenerationsResult.h>
+#include <aws/mgn/model/ListNetworkMigrationDefinitionsRequest.h>
+#include <aws/mgn/model/ListNetworkMigrationDefinitionsResult.h>
+#include <aws/mgn/model/ListNetworkMigrationDeployedStacksResult.h>
+#include <aws/mgn/model/ListNetworkMigrationDeploymentsResult.h>
+#include <aws/mgn/model/ListNetworkMigrationExecutionsResult.h>
+#include <aws/mgn/model/ListNetworkMigrationMapperSegmentConstructsResult.h>
+#include <aws/mgn/model/ListNetworkMigrationMapperSegmentsResult.h>
+#include <aws/mgn/model/ListNetworkMigrationMappingUpdatesResult.h>
+#include <aws/mgn/model/ListNetworkMigrationMappingsResult.h>
 #include <aws/mgn/model/ListSourceServerActionsResult.h>
 #include <aws/mgn/model/ListTagsForResourceResult.h>
 #include <aws/mgn/model/ListTemplateActionsResult.h>
@@ -83,7 +102,13 @@
 #include <aws/mgn/model/RetryDataReplicationResult.h>
 #include <aws/mgn/model/StartCutoverResult.h>
 #include <aws/mgn/model/StartExportResult.h>
+#include <aws/mgn/model/StartImportFileEnrichmentResult.h>
 #include <aws/mgn/model/StartImportResult.h>
+#include <aws/mgn/model/StartNetworkMigrationAnalysisResult.h>
+#include <aws/mgn/model/StartNetworkMigrationCodeGenerationResult.h>
+#include <aws/mgn/model/StartNetworkMigrationDeploymentResult.h>
+#include <aws/mgn/model/StartNetworkMigrationMappingResult.h>
+#include <aws/mgn/model/StartNetworkMigrationMappingUpdateResult.h>
 #include <aws/mgn/model/StartReplicationResult.h>
 #include <aws/mgn/model/StartTestResult.h>
 #include <aws/mgn/model/StopReplicationResult.h>
@@ -94,6 +119,8 @@
 #include <aws/mgn/model/UpdateConnectorResult.h>
 #include <aws/mgn/model/UpdateLaunchConfigurationResult.h>
 #include <aws/mgn/model/UpdateLaunchConfigurationTemplateResult.h>
+#include <aws/mgn/model/UpdateNetworkMigrationDefinitionResult.h>
+#include <aws/mgn/model/UpdateNetworkMigrationMapperSegmentResult.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationResult.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationTemplateResult.h>
 #include <aws/mgn/model/UpdateSourceServerReplicationTypeResult.h>
@@ -140,12 +167,14 @@ class ChangeServerLifeCycleStateRequest;
 class CreateApplicationRequest;
 class CreateConnectorRequest;
 class CreateLaunchConfigurationTemplateRequest;
+class CreateNetworkMigrationDefinitionRequest;
 class CreateReplicationConfigurationTemplateRequest;
 class CreateWaveRequest;
 class DeleteApplicationRequest;
 class DeleteConnectorRequest;
 class DeleteJobRequest;
 class DeleteLaunchConfigurationTemplateRequest;
+class DeleteNetworkMigrationDefinitionRequest;
 class DeleteReplicationConfigurationTemplateRequest;
 class DeleteSourceServerRequest;
 class DeleteVcenterClientRequest;
@@ -161,6 +190,8 @@ class DisassociateSourceServersRequest;
 class DisconnectFromServiceRequest;
 class FinalizeCutoverRequest;
 class GetLaunchConfigurationRequest;
+class GetNetworkMigrationDefinitionRequest;
+class GetNetworkMigrationMapperSegmentConstructRequest;
 class GetReplicationConfigurationRequest;
 class InitializeServiceRequest;
 class ListApplicationsRequest;
@@ -168,8 +199,21 @@ class ListConnectorsRequest;
 class ListExportErrorsRequest;
 class ListExportsRequest;
 class ListImportErrorsRequest;
+class ListImportFileEnrichmentsRequest;
 class ListImportsRequest;
 class ListManagedAccountsRequest;
+class ListNetworkMigrationAnalysesRequest;
+class ListNetworkMigrationAnalysisResultsRequest;
+class ListNetworkMigrationCodeGenerationSegmentsRequest;
+class ListNetworkMigrationCodeGenerationsRequest;
+class ListNetworkMigrationDefinitionsRequest;
+class ListNetworkMigrationDeployedStacksRequest;
+class ListNetworkMigrationDeploymentsRequest;
+class ListNetworkMigrationExecutionsRequest;
+class ListNetworkMigrationMapperSegmentConstructsRequest;
+class ListNetworkMigrationMapperSegmentsRequest;
+class ListNetworkMigrationMappingUpdatesRequest;
+class ListNetworkMigrationMappingsRequest;
 class ListSourceServerActionsRequest;
 class ListTagsForResourceRequest;
 class ListTemplateActionsRequest;
@@ -185,6 +229,12 @@ class RetryDataReplicationRequest;
 class StartCutoverRequest;
 class StartExportRequest;
 class StartImportRequest;
+class StartImportFileEnrichmentRequest;
+class StartNetworkMigrationAnalysisRequest;
+class StartNetworkMigrationCodeGenerationRequest;
+class StartNetworkMigrationDeploymentRequest;
+class StartNetworkMigrationMappingRequest;
+class StartNetworkMigrationMappingUpdateRequest;
 class StartReplicationRequest;
 class StartTestRequest;
 class StopReplicationRequest;
@@ -197,6 +247,8 @@ class UpdateApplicationRequest;
 class UpdateConnectorRequest;
 class UpdateLaunchConfigurationRequest;
 class UpdateLaunchConfigurationTemplateRequest;
+class UpdateNetworkMigrationDefinitionRequest;
+class UpdateNetworkMigrationMapperSegmentRequest;
 class UpdateReplicationConfigurationRequest;
 class UpdateReplicationConfigurationTemplateRequest;
 class UpdateSourceServerRequest;
@@ -213,12 +265,14 @@ typedef Aws::Utils::Outcome<ChangeServerLifeCycleStateResult, MgnError> ChangeSe
 typedef Aws::Utils::Outcome<CreateApplicationResult, MgnError> CreateApplicationOutcome;
 typedef Aws::Utils::Outcome<CreateConnectorResult, MgnError> CreateConnectorOutcome;
 typedef Aws::Utils::Outcome<CreateLaunchConfigurationTemplateResult, MgnError> CreateLaunchConfigurationTemplateOutcome;
+typedef Aws::Utils::Outcome<CreateNetworkMigrationDefinitionResult, MgnError> CreateNetworkMigrationDefinitionOutcome;
 typedef Aws::Utils::Outcome<CreateReplicationConfigurationTemplateResult, MgnError> CreateReplicationConfigurationTemplateOutcome;
 typedef Aws::Utils::Outcome<CreateWaveResult, MgnError> CreateWaveOutcome;
 typedef Aws::Utils::Outcome<DeleteApplicationResult, MgnError> DeleteApplicationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, MgnError> DeleteConnectorOutcome;
 typedef Aws::Utils::Outcome<DeleteJobResult, MgnError> DeleteJobOutcome;
 typedef Aws::Utils::Outcome<DeleteLaunchConfigurationTemplateResult, MgnError> DeleteLaunchConfigurationTemplateOutcome;
+typedef Aws::Utils::Outcome<DeleteNetworkMigrationDefinitionResult, MgnError> DeleteNetworkMigrationDefinitionOutcome;
 typedef Aws::Utils::Outcome<DeleteReplicationConfigurationTemplateResult, MgnError> DeleteReplicationConfigurationTemplateOutcome;
 typedef Aws::Utils::Outcome<DeleteSourceServerResult, MgnError> DeleteSourceServerOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, MgnError> DeleteVcenterClientOutcome;
@@ -234,6 +288,8 @@ typedef Aws::Utils::Outcome<DisassociateSourceServersResult, MgnError> Disassoci
 typedef Aws::Utils::Outcome<DisconnectFromServiceResult, MgnError> DisconnectFromServiceOutcome;
 typedef Aws::Utils::Outcome<FinalizeCutoverResult, MgnError> FinalizeCutoverOutcome;
 typedef Aws::Utils::Outcome<GetLaunchConfigurationResult, MgnError> GetLaunchConfigurationOutcome;
+typedef Aws::Utils::Outcome<GetNetworkMigrationDefinitionResult, MgnError> GetNetworkMigrationDefinitionOutcome;
+typedef Aws::Utils::Outcome<GetNetworkMigrationMapperSegmentConstructResult, MgnError> GetNetworkMigrationMapperSegmentConstructOutcome;
 typedef Aws::Utils::Outcome<GetReplicationConfigurationResult, MgnError> GetReplicationConfigurationOutcome;
 typedef Aws::Utils::Outcome<InitializeServiceResult, MgnError> InitializeServiceOutcome;
 typedef Aws::Utils::Outcome<ListApplicationsResult, MgnError> ListApplicationsOutcome;
@@ -241,8 +297,21 @@ typedef Aws::Utils::Outcome<ListConnectorsResult, MgnError> ListConnectorsOutcom
 typedef Aws::Utils::Outcome<ListExportErrorsResult, MgnError> ListExportErrorsOutcome;
 typedef Aws::Utils::Outcome<ListExportsResult, MgnError> ListExportsOutcome;
 typedef Aws::Utils::Outcome<ListImportErrorsResult, MgnError> ListImportErrorsOutcome;
+typedef Aws::Utils::Outcome<ListImportFileEnrichmentsResult, MgnError> ListImportFileEnrichmentsOutcome;
 typedef Aws::Utils::Outcome<ListImportsResult, MgnError> ListImportsOutcome;
 typedef Aws::Utils::Outcome<ListManagedAccountsResult, MgnError> ListManagedAccountsOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationAnalysesResult, MgnError> ListNetworkMigrationAnalysesOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationAnalysisResultsResult, MgnError> ListNetworkMigrationAnalysisResultsOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationCodeGenerationSegmentsResult, MgnError> ListNetworkMigrationCodeGenerationSegmentsOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationCodeGenerationsResult, MgnError> ListNetworkMigrationCodeGenerationsOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationDefinitionsResult, MgnError> ListNetworkMigrationDefinitionsOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationDeployedStacksResult, MgnError> ListNetworkMigrationDeployedStacksOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationDeploymentsResult, MgnError> ListNetworkMigrationDeploymentsOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationExecutionsResult, MgnError> ListNetworkMigrationExecutionsOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationMapperSegmentConstructsResult, MgnError> ListNetworkMigrationMapperSegmentConstructsOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationMapperSegmentsResult, MgnError> ListNetworkMigrationMapperSegmentsOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationMappingUpdatesResult, MgnError> ListNetworkMigrationMappingUpdatesOutcome;
+typedef Aws::Utils::Outcome<ListNetworkMigrationMappingsResult, MgnError> ListNetworkMigrationMappingsOutcome;
 typedef Aws::Utils::Outcome<ListSourceServerActionsResult, MgnError> ListSourceServerActionsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, MgnError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListTemplateActionsResult, MgnError> ListTemplateActionsOutcome;
@@ -258,6 +327,12 @@ typedef Aws::Utils::Outcome<RetryDataReplicationResult, MgnError> RetryDataRepli
 typedef Aws::Utils::Outcome<StartCutoverResult, MgnError> StartCutoverOutcome;
 typedef Aws::Utils::Outcome<StartExportResult, MgnError> StartExportOutcome;
 typedef Aws::Utils::Outcome<StartImportResult, MgnError> StartImportOutcome;
+typedef Aws::Utils::Outcome<StartImportFileEnrichmentResult, MgnError> StartImportFileEnrichmentOutcome;
+typedef Aws::Utils::Outcome<StartNetworkMigrationAnalysisResult, MgnError> StartNetworkMigrationAnalysisOutcome;
+typedef Aws::Utils::Outcome<StartNetworkMigrationCodeGenerationResult, MgnError> StartNetworkMigrationCodeGenerationOutcome;
+typedef Aws::Utils::Outcome<StartNetworkMigrationDeploymentResult, MgnError> StartNetworkMigrationDeploymentOutcome;
+typedef Aws::Utils::Outcome<StartNetworkMigrationMappingResult, MgnError> StartNetworkMigrationMappingOutcome;
+typedef Aws::Utils::Outcome<StartNetworkMigrationMappingUpdateResult, MgnError> StartNetworkMigrationMappingUpdateOutcome;
 typedef Aws::Utils::Outcome<StartReplicationResult, MgnError> StartReplicationOutcome;
 typedef Aws::Utils::Outcome<StartTestResult, MgnError> StartTestOutcome;
 typedef Aws::Utils::Outcome<StopReplicationResult, MgnError> StopReplicationOutcome;
@@ -270,6 +345,8 @@ typedef Aws::Utils::Outcome<UpdateApplicationResult, MgnError> UpdateApplication
 typedef Aws::Utils::Outcome<UpdateConnectorResult, MgnError> UpdateConnectorOutcome;
 typedef Aws::Utils::Outcome<UpdateLaunchConfigurationResult, MgnError> UpdateLaunchConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateLaunchConfigurationTemplateResult, MgnError> UpdateLaunchConfigurationTemplateOutcome;
+typedef Aws::Utils::Outcome<UpdateNetworkMigrationDefinitionResult, MgnError> UpdateNetworkMigrationDefinitionOutcome;
+typedef Aws::Utils::Outcome<UpdateNetworkMigrationMapperSegmentResult, MgnError> UpdateNetworkMigrationMapperSegmentOutcome;
 typedef Aws::Utils::Outcome<UpdateReplicationConfigurationResult, MgnError> UpdateReplicationConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateReplicationConfigurationTemplateResult, MgnError> UpdateReplicationConfigurationTemplateOutcome;
 typedef Aws::Utils::Outcome<UpdateSourceServerResult, MgnError> UpdateSourceServerOutcome;
@@ -286,12 +363,14 @@ typedef std::future<ChangeServerLifeCycleStateOutcome> ChangeServerLifeCycleStat
 typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
 typedef std::future<CreateConnectorOutcome> CreateConnectorOutcomeCallable;
 typedef std::future<CreateLaunchConfigurationTemplateOutcome> CreateLaunchConfigurationTemplateOutcomeCallable;
+typedef std::future<CreateNetworkMigrationDefinitionOutcome> CreateNetworkMigrationDefinitionOutcomeCallable;
 typedef std::future<CreateReplicationConfigurationTemplateOutcome> CreateReplicationConfigurationTemplateOutcomeCallable;
 typedef std::future<CreateWaveOutcome> CreateWaveOutcomeCallable;
 typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
 typedef std::future<DeleteConnectorOutcome> DeleteConnectorOutcomeCallable;
 typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
 typedef std::future<DeleteLaunchConfigurationTemplateOutcome> DeleteLaunchConfigurationTemplateOutcomeCallable;
+typedef std::future<DeleteNetworkMigrationDefinitionOutcome> DeleteNetworkMigrationDefinitionOutcomeCallable;
 typedef std::future<DeleteReplicationConfigurationTemplateOutcome> DeleteReplicationConfigurationTemplateOutcomeCallable;
 typedef std::future<DeleteSourceServerOutcome> DeleteSourceServerOutcomeCallable;
 typedef std::future<DeleteVcenterClientOutcome> DeleteVcenterClientOutcomeCallable;
@@ -307,6 +386,8 @@ typedef std::future<DisassociateSourceServersOutcome> DisassociateSourceServersO
 typedef std::future<DisconnectFromServiceOutcome> DisconnectFromServiceOutcomeCallable;
 typedef std::future<FinalizeCutoverOutcome> FinalizeCutoverOutcomeCallable;
 typedef std::future<GetLaunchConfigurationOutcome> GetLaunchConfigurationOutcomeCallable;
+typedef std::future<GetNetworkMigrationDefinitionOutcome> GetNetworkMigrationDefinitionOutcomeCallable;
+typedef std::future<GetNetworkMigrationMapperSegmentConstructOutcome> GetNetworkMigrationMapperSegmentConstructOutcomeCallable;
 typedef std::future<GetReplicationConfigurationOutcome> GetReplicationConfigurationOutcomeCallable;
 typedef std::future<InitializeServiceOutcome> InitializeServiceOutcomeCallable;
 typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
@@ -314,8 +395,21 @@ typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
 typedef std::future<ListExportErrorsOutcome> ListExportErrorsOutcomeCallable;
 typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
 typedef std::future<ListImportErrorsOutcome> ListImportErrorsOutcomeCallable;
+typedef std::future<ListImportFileEnrichmentsOutcome> ListImportFileEnrichmentsOutcomeCallable;
 typedef std::future<ListImportsOutcome> ListImportsOutcomeCallable;
 typedef std::future<ListManagedAccountsOutcome> ListManagedAccountsOutcomeCallable;
+typedef std::future<ListNetworkMigrationAnalysesOutcome> ListNetworkMigrationAnalysesOutcomeCallable;
+typedef std::future<ListNetworkMigrationAnalysisResultsOutcome> ListNetworkMigrationAnalysisResultsOutcomeCallable;
+typedef std::future<ListNetworkMigrationCodeGenerationSegmentsOutcome> ListNetworkMigrationCodeGenerationSegmentsOutcomeCallable;
+typedef std::future<ListNetworkMigrationCodeGenerationsOutcome> ListNetworkMigrationCodeGenerationsOutcomeCallable;
+typedef std::future<ListNetworkMigrationDefinitionsOutcome> ListNetworkMigrationDefinitionsOutcomeCallable;
+typedef std::future<ListNetworkMigrationDeployedStacksOutcome> ListNetworkMigrationDeployedStacksOutcomeCallable;
+typedef std::future<ListNetworkMigrationDeploymentsOutcome> ListNetworkMigrationDeploymentsOutcomeCallable;
+typedef std::future<ListNetworkMigrationExecutionsOutcome> ListNetworkMigrationExecutionsOutcomeCallable;
+typedef std::future<ListNetworkMigrationMapperSegmentConstructsOutcome> ListNetworkMigrationMapperSegmentConstructsOutcomeCallable;
+typedef std::future<ListNetworkMigrationMapperSegmentsOutcome> ListNetworkMigrationMapperSegmentsOutcomeCallable;
+typedef std::future<ListNetworkMigrationMappingUpdatesOutcome> ListNetworkMigrationMappingUpdatesOutcomeCallable;
+typedef std::future<ListNetworkMigrationMappingsOutcome> ListNetworkMigrationMappingsOutcomeCallable;
 typedef std::future<ListSourceServerActionsOutcome> ListSourceServerActionsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListTemplateActionsOutcome> ListTemplateActionsOutcomeCallable;
@@ -331,6 +425,12 @@ typedef std::future<RetryDataReplicationOutcome> RetryDataReplicationOutcomeCall
 typedef std::future<StartCutoverOutcome> StartCutoverOutcomeCallable;
 typedef std::future<StartExportOutcome> StartExportOutcomeCallable;
 typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
+typedef std::future<StartImportFileEnrichmentOutcome> StartImportFileEnrichmentOutcomeCallable;
+typedef std::future<StartNetworkMigrationAnalysisOutcome> StartNetworkMigrationAnalysisOutcomeCallable;
+typedef std::future<StartNetworkMigrationCodeGenerationOutcome> StartNetworkMigrationCodeGenerationOutcomeCallable;
+typedef std::future<StartNetworkMigrationDeploymentOutcome> StartNetworkMigrationDeploymentOutcomeCallable;
+typedef std::future<StartNetworkMigrationMappingOutcome> StartNetworkMigrationMappingOutcomeCallable;
+typedef std::future<StartNetworkMigrationMappingUpdateOutcome> StartNetworkMigrationMappingUpdateOutcomeCallable;
 typedef std::future<StartReplicationOutcome> StartReplicationOutcomeCallable;
 typedef std::future<StartTestOutcome> StartTestOutcomeCallable;
 typedef std::future<StopReplicationOutcome> StopReplicationOutcomeCallable;
@@ -343,6 +443,8 @@ typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
 typedef std::future<UpdateConnectorOutcome> UpdateConnectorOutcomeCallable;
 typedef std::future<UpdateLaunchConfigurationOutcome> UpdateLaunchConfigurationOutcomeCallable;
 typedef std::future<UpdateLaunchConfigurationTemplateOutcome> UpdateLaunchConfigurationTemplateOutcomeCallable;
+typedef std::future<UpdateNetworkMigrationDefinitionOutcome> UpdateNetworkMigrationDefinitionOutcomeCallable;
+typedef std::future<UpdateNetworkMigrationMapperSegmentOutcome> UpdateNetworkMigrationMapperSegmentOutcomeCallable;
 typedef std::future<UpdateReplicationConfigurationOutcome> UpdateReplicationConfigurationOutcomeCallable;
 typedef std::future<UpdateReplicationConfigurationTemplateOutcome> UpdateReplicationConfigurationTemplateOutcomeCallable;
 typedef std::future<UpdateSourceServerOutcome> UpdateSourceServerOutcomeCallable;
@@ -379,6 +481,10 @@ typedef std::function<void(const MgnClient*, const Model::CreateLaunchConfigurat
                            const Model::CreateLaunchConfigurationTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateLaunchConfigurationTemplateResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::CreateNetworkMigrationDefinitionRequest&,
+                           const Model::CreateNetworkMigrationDefinitionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateNetworkMigrationDefinitionResponseReceivedHandler;
 typedef std::function<void(const MgnClient*, const Model::CreateReplicationConfigurationTemplateRequest&,
                            const Model::CreateReplicationConfigurationTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -399,6 +505,10 @@ typedef std::function<void(const MgnClient*, const Model::DeleteLaunchConfigurat
                            const Model::DeleteLaunchConfigurationTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteLaunchConfigurationTemplateResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::DeleteNetworkMigrationDefinitionRequest&,
+                           const Model::DeleteNetworkMigrationDefinitionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteNetworkMigrationDefinitionResponseReceivedHandler;
 typedef std::function<void(const MgnClient*, const Model::DeleteReplicationConfigurationTemplateRequest&,
                            const Model::DeleteReplicationConfigurationTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -447,6 +557,14 @@ typedef std::function<void(const MgnClient*, const Model::FinalizeCutoverRequest
 typedef std::function<void(const MgnClient*, const Model::GetLaunchConfigurationRequest&, const Model::GetLaunchConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLaunchConfigurationResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::GetNetworkMigrationDefinitionRequest&,
+                           const Model::GetNetworkMigrationDefinitionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetNetworkMigrationDefinitionResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::GetNetworkMigrationMapperSegmentConstructRequest&,
+                           const Model::GetNetworkMigrationMapperSegmentConstructOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetNetworkMigrationMapperSegmentConstructResponseReceivedHandler;
 typedef std::function<void(const MgnClient*, const Model::GetReplicationConfigurationRequest&,
                            const Model::GetReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetReplicationConfigurationResponseReceivedHandler;
@@ -468,12 +586,63 @@ typedef std::function<void(const MgnClient*, const Model::ListExportsRequest&, c
 typedef std::function<void(const MgnClient*, const Model::ListImportErrorsRequest&, const Model::ListImportErrorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListImportErrorsResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListImportFileEnrichmentsRequest&, const Model::ListImportFileEnrichmentsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListImportFileEnrichmentsResponseReceivedHandler;
 typedef std::function<void(const MgnClient*, const Model::ListImportsRequest&, const Model::ListImportsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListImportsResponseReceivedHandler;
 typedef std::function<void(const MgnClient*, const Model::ListManagedAccountsRequest&, const Model::ListManagedAccountsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListManagedAccountsResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationAnalysesRequest&,
+                           const Model::ListNetworkMigrationAnalysesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationAnalysesResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationAnalysisResultsRequest&,
+                           const Model::ListNetworkMigrationAnalysisResultsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationAnalysisResultsResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationCodeGenerationSegmentsRequest&,
+                           const Model::ListNetworkMigrationCodeGenerationSegmentsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationCodeGenerationSegmentsResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationCodeGenerationsRequest&,
+                           const Model::ListNetworkMigrationCodeGenerationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationCodeGenerationsResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationDefinitionsRequest&,
+                           const Model::ListNetworkMigrationDefinitionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationDefinitionsResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationDeployedStacksRequest&,
+                           const Model::ListNetworkMigrationDeployedStacksOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationDeployedStacksResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationDeploymentsRequest&,
+                           const Model::ListNetworkMigrationDeploymentsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationDeploymentsResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationExecutionsRequest&,
+                           const Model::ListNetworkMigrationExecutionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationExecutionsResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationMapperSegmentConstructsRequest&,
+                           const Model::ListNetworkMigrationMapperSegmentConstructsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationMapperSegmentConstructsResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationMapperSegmentsRequest&,
+                           const Model::ListNetworkMigrationMapperSegmentsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationMapperSegmentsResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationMappingUpdatesRequest&,
+                           const Model::ListNetworkMigrationMappingUpdatesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationMappingUpdatesResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::ListNetworkMigrationMappingsRequest&,
+                           const Model::ListNetworkMigrationMappingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkMigrationMappingsResponseReceivedHandler;
 typedef std::function<void(const MgnClient*, const Model::ListSourceServerActionsRequest&, const Model::ListSourceServerActionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSourceServerActionsResponseReceivedHandler;
@@ -519,6 +688,29 @@ typedef std::function<void(const MgnClient*, const Model::StartExportRequest&, c
 typedef std::function<void(const MgnClient*, const Model::StartImportRequest&, const Model::StartImportOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartImportResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::StartImportFileEnrichmentRequest&, const Model::StartImportFileEnrichmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartImportFileEnrichmentResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::StartNetworkMigrationAnalysisRequest&,
+                           const Model::StartNetworkMigrationAnalysisOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartNetworkMigrationAnalysisResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::StartNetworkMigrationCodeGenerationRequest&,
+                           const Model::StartNetworkMigrationCodeGenerationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartNetworkMigrationCodeGenerationResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::StartNetworkMigrationDeploymentRequest&,
+                           const Model::StartNetworkMigrationDeploymentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartNetworkMigrationDeploymentResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::StartNetworkMigrationMappingRequest&,
+                           const Model::StartNetworkMigrationMappingOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartNetworkMigrationMappingResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::StartNetworkMigrationMappingUpdateRequest&,
+                           const Model::StartNetworkMigrationMappingUpdateOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartNetworkMigrationMappingUpdateResponseReceivedHandler;
 typedef std::function<void(const MgnClient*, const Model::StartReplicationRequest&, const Model::StartReplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartReplicationResponseReceivedHandler;
@@ -556,6 +748,14 @@ typedef std::function<void(const MgnClient*, const Model::UpdateLaunchConfigurat
                            const Model::UpdateLaunchConfigurationTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateLaunchConfigurationTemplateResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::UpdateNetworkMigrationDefinitionRequest&,
+                           const Model::UpdateNetworkMigrationDefinitionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateNetworkMigrationDefinitionResponseReceivedHandler;
+typedef std::function<void(const MgnClient*, const Model::UpdateNetworkMigrationMapperSegmentRequest&,
+                           const Model::UpdateNetworkMigrationMapperSegmentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateNetworkMigrationMapperSegmentResponseReceivedHandler;
 typedef std::function<void(const MgnClient*, const Model::UpdateReplicationConfigurationRequest&,
                            const Model::UpdateReplicationConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

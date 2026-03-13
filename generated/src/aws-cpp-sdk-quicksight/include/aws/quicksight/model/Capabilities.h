@@ -3496,6 +3496,26 @@ class Capabilities {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, delete and view shared folders (both
+   * restricted and unrestricted), ability to add any asset to shared folders, and
+   * ability to share the folders.</p> <p> <b>Note:</b> This does <i>not</i> prevent
+   * inheriting access to assets that others share with them through folder
+   * membership.</p>
+   */
+  inline CapabilityState GetManageSharedFolders() const { return m_manageSharedFolders; }
+  inline bool ManageSharedFoldersHasBeenSet() const { return m_manageSharedFoldersHasBeenSet; }
+  inline void SetManageSharedFolders(CapabilityState value) {
+    m_manageSharedFoldersHasBeenSet = true;
+    m_manageSharedFolders = value;
+  }
+  inline Capabilities& WithManageSharedFolders(CapabilityState value) {
+    SetManageSharedFolders(value);
+    return *this;
+  }
+  ///@}
  private:
   CapabilityState m_exportToCsv{CapabilityState::NOT_SET};
 
@@ -3928,6 +3948,8 @@ class Capabilities {
   CapabilityState m_selfUpgradeUserRole{CapabilityState::NOT_SET};
 
   CapabilityState m_extension{CapabilityState::NOT_SET};
+
+  CapabilityState m_manageSharedFolders{CapabilityState::NOT_SET};
   bool m_exportToCsvHasBeenSet = false;
   bool m_exportToExcelHasBeenSet = false;
   bool m_exportToPdfHasBeenSet = false;
@@ -4144,6 +4166,7 @@ class Capabilities {
   bool m_researchHasBeenSet = false;
   bool m_selfUpgradeUserRoleHasBeenSet = false;
   bool m_extensionHasBeenSet = false;
+  bool m_manageSharedFoldersHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -17,6 +17,7 @@ namespace CmafIntervalCadenceMapper {
 
 static const int FOLLOW_IFRAME_HASH = HashingUtils::HashString("FOLLOW_IFRAME");
 static const int FOLLOW_CUSTOM_HASH = HashingUtils::HashString("FOLLOW_CUSTOM");
+static const int FOLLOW_SEGMENTATION_HASH = HashingUtils::HashString("FOLLOW_SEGMENTATION");
 
 CmafIntervalCadence GetCmafIntervalCadenceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ CmafIntervalCadence GetCmafIntervalCadenceForName(const Aws::String& name) {
     return CmafIntervalCadence::FOLLOW_IFRAME;
   } else if (hashCode == FOLLOW_CUSTOM_HASH) {
     return CmafIntervalCadence::FOLLOW_CUSTOM;
+  } else if (hashCode == FOLLOW_SEGMENTATION_HASH) {
+    return CmafIntervalCadence::FOLLOW_SEGMENTATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForCmafIntervalCadence(CmafIntervalCadence enumValue) {
       return "FOLLOW_IFRAME";
     case CmafIntervalCadence::FOLLOW_CUSTOM:
       return "FOLLOW_CUSTOM";
+    case CmafIntervalCadence::FOLLOW_SEGMENTATION:
+      return "FOLLOW_SEGMENTATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

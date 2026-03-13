@@ -18,6 +18,10 @@ namespace Model {
 CmafEncryptionSettings::CmafEncryptionSettings(JsonView jsonValue) { *this = jsonValue; }
 
 CmafEncryptionSettings& CmafEncryptionSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clearLead")) {
+    m_clearLead = HlsClearLeadMapper::GetHlsClearLeadForName(jsonValue.GetString("clearLead"));
+    m_clearLeadHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("constantInitializationVector")) {
     m_constantInitializationVector = jsonValue.GetString("constantInitializationVector");
     m_constantInitializationVectorHasBeenSet = true;
@@ -48,6 +52,10 @@ CmafEncryptionSettings& CmafEncryptionSettings::operator=(JsonView jsonValue) {
 
 JsonValue CmafEncryptionSettings::Jsonize() const {
   JsonValue payload;
+
+  if (m_clearLeadHasBeenSet) {
+    payload.WithString("clearLead", HlsClearLeadMapper::GetNameForHlsClearLead(m_clearLead));
+  }
 
   if (m_constantInitializationVectorHasBeenSet) {
     payload.WithString("constantInitializationVector", m_constantInitializationVector);

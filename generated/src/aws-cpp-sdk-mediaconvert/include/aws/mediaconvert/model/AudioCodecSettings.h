@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/AacSettings.h>
 #include <aws/mediaconvert/model/Ac3Settings.h>
+#include <aws/mediaconvert/model/Ac4Settings.h>
 #include <aws/mediaconvert/model/AiffSettings.h>
 #include <aws/mediaconvert/model/AudioCodec.h>
 #include <aws/mediaconvert/model/Eac3AtmosSettings.h>
@@ -79,6 +80,24 @@ class AudioCodecSettings {
   template <typename Ac3SettingsT = Ac3Settings>
   AudioCodecSettings& WithAc3Settings(Ac3SettingsT&& value) {
     SetAc3Settings(std::forward<Ac3SettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Required when you set Codec to the value AC4.
+   */
+  inline const Ac4Settings& GetAc4Settings() const { return m_ac4Settings; }
+  inline bool Ac4SettingsHasBeenSet() const { return m_ac4SettingsHasBeenSet; }
+  template <typename Ac4SettingsT = Ac4Settings>
+  void SetAc4Settings(Ac4SettingsT&& value) {
+    m_ac4SettingsHasBeenSet = true;
+    m_ac4Settings = std::forward<Ac4SettingsT>(value);
+  }
+  template <typename Ac4SettingsT = Ac4Settings>
+  AudioCodecSettings& WithAc4Settings(Ac4SettingsT&& value) {
+    SetAc4Settings(std::forward<Ac4SettingsT>(value));
     return *this;
   }
   ///@}
@@ -278,6 +297,8 @@ class AudioCodecSettings {
 
   Ac3Settings m_ac3Settings;
 
+  Ac4Settings m_ac4Settings;
+
   AiffSettings m_aiffSettings;
 
   AudioCodec m_codec{AudioCodec::NOT_SET};
@@ -299,6 +320,7 @@ class AudioCodecSettings {
   WavSettings m_wavSettings;
   bool m_aacSettingsHasBeenSet = false;
   bool m_ac3SettingsHasBeenSet = false;
+  bool m_ac4SettingsHasBeenSet = false;
   bool m_aiffSettingsHasBeenSet = false;
   bool m_codecHasBeenSet = false;
   bool m_eac3AtmosSettingsHasBeenSet = false;

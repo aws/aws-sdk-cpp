@@ -34,6 +34,10 @@ LocationConfiguration& LocationConfiguration::operator=(JsonView jsonValue) {
     m_maximumCapacity = jsonValue.GetInteger("MaximumCapacity");
     m_maximumCapacityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VpcTransitConfiguration")) {
+    m_vpcTransitConfiguration = jsonValue.GetObject("VpcTransitConfiguration");
+    m_vpcTransitConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue LocationConfiguration::Jsonize() const {
 
   if (m_maximumCapacityHasBeenSet) {
     payload.WithInteger("MaximumCapacity", m_maximumCapacity);
+  }
+
+  if (m_vpcTransitConfigurationHasBeenSet) {
+    payload.WithObject("VpcTransitConfiguration", m_vpcTransitConfiguration.Jsonize());
   }
 
   return payload;

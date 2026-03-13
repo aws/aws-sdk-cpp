@@ -17,6 +17,7 @@ namespace DashIsoIntervalCadenceMapper {
 
 static const int FOLLOW_IFRAME_HASH = HashingUtils::HashString("FOLLOW_IFRAME");
 static const int FOLLOW_CUSTOM_HASH = HashingUtils::HashString("FOLLOW_CUSTOM");
+static const int FOLLOW_SEGMENTATION_HASH = HashingUtils::HashString("FOLLOW_SEGMENTATION");
 
 DashIsoIntervalCadence GetDashIsoIntervalCadenceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ DashIsoIntervalCadence GetDashIsoIntervalCadenceForName(const Aws::String& name)
     return DashIsoIntervalCadence::FOLLOW_IFRAME;
   } else if (hashCode == FOLLOW_CUSTOM_HASH) {
     return DashIsoIntervalCadence::FOLLOW_CUSTOM;
+  } else if (hashCode == FOLLOW_SEGMENTATION_HASH) {
+    return DashIsoIntervalCadence::FOLLOW_SEGMENTATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForDashIsoIntervalCadence(DashIsoIntervalCadence enumValue) {
       return "FOLLOW_IFRAME";
     case DashIsoIntervalCadence::FOLLOW_CUSTOM:
       return "FOLLOW_CUSTOM";
+    case DashIsoIntervalCadence::FOLLOW_SEGMENTATION:
+      return "FOLLOW_SEGMENTATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

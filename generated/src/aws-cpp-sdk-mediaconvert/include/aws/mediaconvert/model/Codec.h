@@ -30,11 +30,12 @@ enum class Codec {
   MP4V,
   MPEG2,
   PRORES,
+  QTRLE,
   THEORA,
+  UNCOMPRESSED,
   VFW,
   VP8,
   VP9,
-  QTRLE,
   C608,
   C708,
   WEBVTT

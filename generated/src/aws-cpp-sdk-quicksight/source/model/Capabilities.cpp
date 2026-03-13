@@ -926,6 +926,10 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_extension = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Extension"));
     m_extensionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManageSharedFolders")) {
+    m_manageSharedFolders = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ManageSharedFolders"));
+    m_manageSharedFoldersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -1826,6 +1830,10 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_extensionHasBeenSet) {
     payload.WithString("Extension", CapabilityStateMapper::GetNameForCapabilityState(m_extension));
+  }
+
+  if (m_manageSharedFoldersHasBeenSet) {
+    payload.WithString("ManageSharedFolders", CapabilityStateMapper::GetNameForCapabilityState(m_manageSharedFolders));
   }
 
   return payload;

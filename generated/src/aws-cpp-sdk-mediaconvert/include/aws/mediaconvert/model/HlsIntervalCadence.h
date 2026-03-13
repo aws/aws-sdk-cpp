@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class HlsIntervalCadence { NOT_SET, FOLLOW_IFRAME, FOLLOW_CUSTOM };
+enum class HlsIntervalCadence { NOT_SET, FOLLOW_IFRAME, FOLLOW_CUSTOM, FOLLOW_SEGMENTATION };
 
 namespace HlsIntervalCadenceMapper {
 AWS_MEDIACONVERT_API HlsIntervalCadence GetHlsIntervalCadenceForName(const Aws::String& name);
