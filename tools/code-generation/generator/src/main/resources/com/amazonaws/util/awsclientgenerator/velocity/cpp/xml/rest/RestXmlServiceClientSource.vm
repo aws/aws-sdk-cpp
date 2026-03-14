@@ -83,6 +83,7 @@ Aws::String ${className}::ConvertRequestToPresignedUrl(const AmazonSerializableW
 }
 
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceInvokeOperationSource.vm")
 #end
 #if($serviceNamespace == "S3Crt")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtSpecificOperations.vm")
