@@ -1,0 +1,26 @@
+#if($metadata.protocol == "ec2" || $metadata.protocol == "json" || $metadata.protocol == "query" || $metadata.protocol == "smithy-rpc-v2-cbor")
+    #set($emitGenericOperation = true)
+    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+
+    return ${operation.name}Outcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_${operation.http.method})};
+#elseif($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
+    #set($emitGenericOperation = true)
+    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+
+    auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+        (void)endpointResolutionOutcome;
+        #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestPathSegments.vm")
+    };
+
+    #if($serviceModel.metadata.namespace == "S3" || $serviceModel.metadata.namespace == "S3Crt")
+        #if(($serviceModel.metadata.namespace == "S3" || ($serviceModel.metadata.namespace == "S3Crt" && !$operation.s3CrtEnabled)) && $operation.shouldUsePropertyBag)
+            return ${operation.name}Outcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_${operation.http.method})};
+        #else
+            return ${operation.name}Outcome{InvokeServiceOperation(request, uriResolver, "", Aws::Http::HttpMethod::HTTP_${operation.http.method})};
+        #end
+    #else
+        return ${operation.name}Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_${operation.http.method})};
+    #end
+#end
+
+#set($emitGenericOperation = false)

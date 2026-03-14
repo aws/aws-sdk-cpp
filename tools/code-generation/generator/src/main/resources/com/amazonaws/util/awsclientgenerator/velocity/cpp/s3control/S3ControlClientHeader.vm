@@ -97,6 +97,8 @@ namespace ${metadata.namespace}
         bool m_enableHostPrefixInjection = false;
         Aws::String m_configScheme;
 #end##-#if(!$serviceModel.endpointRules)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceInvokeOperationHeader.vm")
+
 #if($serviceModel.endpointRules)
         ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
 #end

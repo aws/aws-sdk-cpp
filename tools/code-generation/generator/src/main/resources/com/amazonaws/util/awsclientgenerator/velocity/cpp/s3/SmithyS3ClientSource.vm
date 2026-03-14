@@ -345,4 +345,6 @@ bool ${className}::MultipartUploadSupported() const
 {
     return true;
 }
+
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceInvokeOperationSource.vm")
 #end

@@ -24,6 +24,9 @@ namespace Aws
         public:
             typedef AWSClient BASECLASS;
 
+            typedef OutcomeType OUTCOME;
+            typedef ResponseType RESPONSE;
+
             AWSProtocolClient(const Aws::Client::ClientConfiguration& configuration,
                 const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
                 const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller)
