@@ -53,6 +53,7 @@ const char* ${className}::GetServiceName() {return SERVICE_NAME;}
 const char* ${className}::GetAllocationTag() {return ALLOCATION_TAG;}
 
 #parseOverrideOrDefault( "ServiceClientSourceInit_template" "com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceInvokeOperationSource.vm")
 #end
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/JsonServiceOperationsSource.vm")

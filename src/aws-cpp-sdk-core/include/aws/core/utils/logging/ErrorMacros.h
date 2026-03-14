@@ -22,6 +22,16 @@ do { \
   } \
 } while (0)
 
+#define AWS_OPERATION_CHECK_PTR_DYNAMIC(PTR, OPERATION, ERROR_TYPE, ERROR) \
+do { \
+  if (PTR == nullptr) \
+  { \
+    AWS_LOGSTREAM_FATAL(OPERATION, "Unexpected nullptr: " #PTR); \
+    return Aws::Client::AWSError<ERROR_TYPE>(ERROR, #ERROR, "Unexpected nullptr: " #PTR, false); \
+  } \
+} while (0)
+
+
 #define AWS_CHECK(LOG_TAG, CONDITION, ERROR_MESSAGE, RETURN) \
 do { \
   if (!(CONDITION)) \
@@ -49,6 +59,15 @@ do { \
   } \
 } while (0)
 
+#define AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(OUTCOME, OPERATION, ERROR_TYPE, ERROR, ERROR_MESSAGE) \
+do { \
+  if (!OUTCOME.IsSuccess()) \
+  { \
+    AWS_LOGSTREAM_ERROR(OPERATION, ERROR_MESSAGE); \
+    return Aws::Client::AWSError<ERROR_TYPE>(ERROR, #ERROR, ERROR_MESSAGE, false); \
+  } \
+} while (0)
+
 #define AWS_OPERATION_CHECK_PARAMETER_PRESENT(REQUEST, FIELD, OPERATION, CLIENT_NAMESPACE) \
 do { \
   if (!REQUEST##.##FIELD##HasBeenSet()) \
@@ -62,6 +81,14 @@ do { \
 if(!m_isInitialized) \
 { \
   AWS_LOGSTREAM_ERROR(#OPERATION, "Unable to call " #OPERATION ": client is not initialized (or already terminated)"); \
+  return Aws::Client::AWSError<CoreErrors>(CoreErrors::NOT_INITIALIZED, "NOT_INITIALIZED", "Client is not initialized or already terminated", false); \
+} \
+Aws::Utils::RAIICounter raiiGuard(this->m_operationsProcessed, &this->m_shutdownSignal)
+
+#define AWS_OPERATION_GUARD_DYNAMIC(OPERATION) \
+if(!m_isInitialized) \
+{ \
+  AWS_LOGSTREAM_ERROR(OPERATION, "Unable to call " << OPERATION << ": client is not initialized (or already terminated)"); \
   return Aws::Client::AWSError<CoreErrors>(CoreErrors::NOT_INITIALIZED, "NOT_INITIALIZED", "Client is not initialized or already terminated", false); \
 } \
 Aws::Utils::RAIICounter raiiGuard(this->m_operationsProcessed, &this->m_shutdownSignal)
