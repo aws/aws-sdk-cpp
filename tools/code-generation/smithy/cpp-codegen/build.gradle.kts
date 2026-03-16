@@ -42,7 +42,7 @@ tasks.register("generate-smithy-build") {
         val models = project.file("../api-descriptions")
         val filteredServices: String = project.findProperty("servicesFilter")?.toString() ?: ""
         val filteredServiceList = filteredServices.split(",").map { it.trim() }.filter { it.isNotEmpty() }
-        val c2jMapStr: String = project.findProperty("c2jMap")?.toString() ?: ""
+        val c2jMapStr: String = project.findProperty("c2jMap")?.toString() ?: "{}"
         val namespaceMappings: String = project.findProperty("namespaceMappings")?.toString() ?: ""
 
         fileTree(models).filter { it.isFile }.files.forEach eachFile@{ file ->
@@ -61,7 +61,11 @@ tasks.register("generate-smithy-build") {
             val projectionContents = Node.objectNodeBuilder()
                 .withMember("imports", Node.fromStrings("${models.absolutePath}${File.separator}${file.name}"))
                 .withMember("plugins", Node.objectNode()
-                    .withMember("smithy-cpp-codegen", Node.objectNodeBuilder()
+                    .withMember("smithy-cpp-codegen-paginators", Node.objectNodeBuilder()
+                        .withMember("c2jMap", Node.from(c2jMapStr))
+                        .withMember("namespaceMappings", Node.from(namespaceMappings))
+                        .build())
+                    .withMember("smithy-cpp-codegen-waiters", Node.objectNodeBuilder()
                         .withMember("c2jMap", Node.from(c2jMapStr))
                         .withMember("namespaceMappings", Node.from(namespaceMappings))
                         .build()))
@@ -76,10 +80,14 @@ tasks.register("generate-smithy-build") {
             if (filteredServiceList.isEmpty() || c2jName in filteredServiceList) {
                 val mockProjectionContents = Node.objectNodeBuilder()
                     .withMember("plugins", Node.objectNode()
-                        .withMember("smithy-cpp-codegen", Node.objectNodeBuilder()
+                        .withMember("smithy-cpp-codegen-paginators", Node.objectNodeBuilder()
                             .withMember("c2jMap", Node.from(c2jMapStr))
                             .withMember("namespaceMappings", Node.from(namespaceMappings))
-                            .build()))
+                            .build())
+                    .withMember("smithy-cpp-codegen-waiters", Node.objectNodeBuilder()
+                        .withMember("c2jMap", Node.from(c2jMapStr))
+                        .withMember("namespaceMappings", Node.from(namespaceMappings))
+                        .build()))
                     .build()
                 projectionsBuilder.withMember("$c2jName.mock", mockProjectionContents)
             }
@@ -91,7 +99,11 @@ tasks.register("generate-smithy-build") {
                 val s3CrtProjectionContents = Node.objectNodeBuilder()
                     .withMember("imports", Node.fromStrings(s3ModelFile.absolutePath))
                     .withMember("plugins", Node.objectNode()
-                        .withMember("smithy-cpp-codegen", Node.objectNodeBuilder()
+                        .withMember("smithy-cpp-codegen-paginators", Node.objectNodeBuilder()
+                            .withMember("c2jMap", Node.from(c2jMapStr))
+                            .withMember("namespaceMappings", Node.from(namespaceMappings))
+                            .build())
+                        .withMember("smithy-cpp-codegen-waiters", Node.objectNodeBuilder()
                             .withMember("c2jMap", Node.from(c2jMapStr))
                             .withMember("namespaceMappings", Node.from(namespaceMappings))
                             .build()))

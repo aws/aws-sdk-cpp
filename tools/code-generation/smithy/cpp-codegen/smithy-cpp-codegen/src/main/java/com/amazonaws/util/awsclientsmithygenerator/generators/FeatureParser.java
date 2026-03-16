@@ -7,7 +7,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.model.node.Node;
 import software.amazon.smithy.model.node.ObjectNode;
-import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 
 import java.util.*;

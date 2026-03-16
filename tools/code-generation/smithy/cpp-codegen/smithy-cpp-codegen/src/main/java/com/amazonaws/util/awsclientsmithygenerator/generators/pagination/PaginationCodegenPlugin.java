@@ -28,7 +28,7 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
 
     @Override
     public String getName() {
-        return "smithy-cpp-codegen";
+        return "smithy-cpp-codegen-paginators";
     }
 
     @Override
