@@ -38,7 +38,7 @@ class SmithyCppGen(object):
             target_dir = os.path.abspath("generated/src")
             self._copy_cpp_codegen_contents(
                 os.path.abspath("tools/code-generation/smithy/cpp-codegen"),
-                "smithy-cpp-codegen",
+                ["smithy-cpp-codegen-paginators", "smithy-cpp-codegen-waiters"],
                 target_dir
             )
             return 0
@@ -75,7 +75,7 @@ class SmithyCppGen(object):
             print(f"Command failed: {e.returncode}\nError: {e.stderr}")
             return False
 
-    def _copy_cpp_codegen_contents(self, top_level_dir: str, plugin_name: str, target_dir: str):
+    def _copy_cpp_codegen_contents(self, top_level_dir: str, plugin_names: List[str], target_dir: str):
         # Walk output directory to find generated code
         output_dir = os.path.join(top_level_dir, "output")
         # TODO: Verify if this check is still needed after Smithy generator always creates output
@@ -85,7 +85,9 @@ class SmithyCppGen(object):
             return
             
         for root, dirs, files in os.walk(output_dir):
-            if plugin_name in dirs:
+            for plugin_name in plugin_names:
+                if plugin_name not in dirs:
+                    continue
                 source_dir = os.path.join(root, plugin_name)
                 
                 # Extract service name from the projection directory

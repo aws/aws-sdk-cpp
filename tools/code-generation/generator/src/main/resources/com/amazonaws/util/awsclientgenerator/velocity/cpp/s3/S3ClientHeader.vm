@@ -24,6 +24,7 @@
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
 #if(!$serviceModel.disableSmithyGeneration)
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}PaginationBase.h>
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}Waiter.h>
 #end
 #if($serviceNamespace == "S3Crt")
 \#include <aws/$metadata.projectName/S3ExpressIdentityProvider.h>
@@ -98,7 +99,7 @@ namespace ${rootNamespace}
 #set($finalClass = "")
 #end
 #if(!$serviceModel.disableSmithyGeneration)
-    class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>, public ${metadata.classNamePrefix}PaginationBase<${className}>
+    class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>, public ${metadata.classNamePrefix}PaginationBase<${className}>, public ${metadata.classNamePrefix}Waiter<${className}>
 #else
     class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>
 #end
