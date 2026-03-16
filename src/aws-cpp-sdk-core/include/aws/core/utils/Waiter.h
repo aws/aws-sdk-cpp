@@ -27,10 +27,15 @@ using WaiterError = Aws::Client::AWSError<WaiterErrors>;
 template <typename OutcomeT>
 using WaiterOutcome = Outcome<OutcomeT, WaiterError>;
 
+template <typename OutcomeT>
 struct Acceptor {
   WaiterState state;
   MatcherType matcher;
   ExpectedValue expected;
+  std::function<bool(const OutcomeT&, const ExpectedValue&)> pathMatcher;
+
+  Acceptor(WaiterState s, MatcherType m, ExpectedValue e, std::function<bool(const OutcomeT&, const ExpectedValue&)> pm = [](const OutcomeT&, const ExpectedValue&) { return false; })
+      : state(s), matcher(m), expected(std::move(e)), pathMatcher(std::move(pm)) {}
 };
 
 template <typename OutcomeT>
@@ -38,47 +43,46 @@ using PathMatcher = std::function<bool(const OutcomeT&, const ExpectedValue&)>;
 
 template <typename RequestT, typename OutcomeT>
 class Waiter {
-  bool Matches(const Acceptor& acceptor, const OutcomeT& outcome) {
+  bool Matches(const Acceptor<OutcomeT>& acceptor, const OutcomeT& outcome) {
     switch (acceptor.matcher) {
       case MatcherType::STATUS: {
         int status = GetStatusCode(outcome);
-        return status == acceptor.expected.get<int>();
+        return status == acceptor.expected.template get<int>();
       }
       case MatcherType::ERROR: {
-        if (acceptor.expected.holds_alternative<bool>()) {
-          bool expectError = acceptor.expected.get<bool>();
+        if (acceptor.expected.template holds_alternative<bool>()) {
+          bool expectError = acceptor.expected.template get<bool>();
           return outcome.IsSuccess() != expectError;
         }
         if (!outcome.IsSuccess()) {
           auto errorCode = outcome.GetError().GetExceptionName();
-          return errorCode == acceptor.expected.get<Aws::String>();
+          return errorCode == acceptor.expected.template get<Aws::String>();
         }
         return false;
       }
       case MatcherType::PATH:
       case MatcherType::PATH_ALL:
       case MatcherType::PATH_ANY:
-        return m_pathMatcher(outcome, acceptor.expected);
+        return acceptor.pathMatcher ? acceptor.pathMatcher(outcome, acceptor.expected) : false;
     }
     return false;
   }
 
  public:
-  Waiter(int delay, int maxAttempts, std::vector<Acceptor> acceptors, std::function<OutcomeT(const RequestT&)> op,
-         const Aws::String& waiterName = "Waiter", PathMatcher<OutcomeT> pathMatcher = [](const OutcomeT&, const ExpectedValue&) { return false; })
+  Waiter(int delay, int maxAttempts, std::vector<Acceptor<OutcomeT>> acceptors, std::function<OutcomeT(const RequestT&)> op,
+         const Aws::String& waiterName = "Waiter")
       : m_delay(delay),
         m_maxAttempts(maxAttempts),
         m_acceptors(std::move(acceptors)),
         m_operation(std::move(op)),
-        m_name(waiterName),
-        m_pathMatcher(std::move(pathMatcher)) {}
+        m_name(waiterName) {}
 
   WaiterOutcome<OutcomeT> Wait(const RequestT& request) {
     for (int attempt = 0; attempt < m_maxAttempts; ++attempt) {
       auto outcome = m_operation(request);
 
       auto matched = std::find_if(m_acceptors.begin(), m_acceptors.end(),
-                             [this, &outcome](const Acceptor& acceptor) -> bool { return Matches(acceptor, outcome); });
+                             [this, &outcome](const Acceptor<OutcomeT>& acceptor) -> bool { return Matches(acceptor, outcome); });
       if (matched != m_acceptors.end()) {
         return WaiterOutcome<OutcomeT>(outcome);
       }
@@ -94,10 +98,9 @@ class Waiter {
 private:
   int m_delay;
   int m_maxAttempts;
-  std::vector<Acceptor> m_acceptors;
+  std::vector<Acceptor<OutcomeT>> m_acceptors;
   std::function<OutcomeT(const RequestT&)> m_operation;
   Aws::String m_name;
-  PathMatcher<OutcomeT> m_pathMatcher;
   /**
    * Returns the HTTP status code from the result or error.
    * Result objects use GetHttpResponseCode(), errors use GetResponseCode().
