@@ -106,6 +106,32 @@ class InstanceLaunchTemplateUpdate {
 
   ///@{
   /**
+   * <p>Determines whether tags are propagated to the instance metadata service
+   * (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity
+   * provider. When enabled, all tags associated with the instance are available
+   * through the instance metadata service. When disabled, tags are not propagated to
+   * IMDS.</p> <p>Disable this setting if your tags contain characters that are not
+   * compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match
+   * the pattern <code>[0-9a-zA-Z\-_+=,.@:]{1,255}</code>.</p> <p>The default value
+   * is <code>true</code>.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+   * with instance tags in instance metadata</a> in the <i>Amazon EC2 User
+   * Guide</i>.</p>
+   */
+  inline bool GetInstanceMetadataTagsPropagation() const { return m_instanceMetadataTagsPropagation; }
+  inline bool InstanceMetadataTagsPropagationHasBeenSet() const { return m_instanceMetadataTagsPropagationHasBeenSet; }
+  inline void SetInstanceMetadataTagsPropagation(bool value) {
+    m_instanceMetadataTagsPropagationHasBeenSet = true;
+    m_instanceMetadataTagsPropagation = value;
+  }
+  inline InstanceLaunchTemplateUpdate& WithInstanceMetadataTagsPropagation(bool value) {
+    SetInstanceMetadataTagsPropagation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>CloudWatch provides two categories of monitoring: basic monitoring and
    * detailed monitoring. By default, your managed instance is configured for basic
    * monitoring. You can optionally enable detailed monitoring to help you more
@@ -174,6 +200,8 @@ class InstanceLaunchTemplateUpdate {
 
   ManagedInstancesStorageConfiguration m_storageConfiguration;
 
+  bool m_instanceMetadataTagsPropagation{false};
+
   ManagedInstancesMonitoringOptions m_monitoring{ManagedInstancesMonitoringOptions::NOT_SET};
 
   InstanceRequirementsRequest m_instanceRequirements;
@@ -182,6 +210,7 @@ class InstanceLaunchTemplateUpdate {
   bool m_ec2InstanceProfileArnHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
+  bool m_instanceMetadataTagsPropagationHasBeenSet = false;
   bool m_monitoringHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
   bool m_capacityReservationsHasBeenSet = false;

@@ -36,11 +36,15 @@
 #include <aws/bedrock-agentcore/model/CodeInterpreterSessionStatus.h>
 #include <aws/bedrock-agentcore/model/CodeInterpreterSessionSummary.h>
 #include <aws/bedrock-agentcore/model/CodeInterpreterStreamOutput.h>
+#include <aws/bedrock-agentcore/model/CommandExecutionStatus.h>
 #include <aws/bedrock-agentcore/model/CompleteResourceTokenAuthRequest.h>
 #include <aws/bedrock-agentcore/model/CompleteResourceTokenAuthResult.h>
 #include <aws/bedrock-agentcore/model/Content.h>
 #include <aws/bedrock-agentcore/model/ContentBlock.h>
 #include <aws/bedrock-agentcore/model/ContentBlockType.h>
+#include <aws/bedrock-agentcore/model/ContentDeltaEvent.h>
+#include <aws/bedrock-agentcore/model/ContentStartEvent.h>
+#include <aws/bedrock-agentcore/model/ContentStopEvent.h>
 #include <aws/bedrock-agentcore/model/Context.h>
 #include <aws/bedrock-agentcore/model/Conversational.h>
 #include <aws/bedrock-agentcore/model/CreateEventRequest.h>
@@ -84,6 +88,11 @@
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenRequest.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenResult.h>
 #include <aws/bedrock-agentcore/model/InputContentBlock.h>
+#include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandHandler.h>
+#include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandInitialResponse.h>
+#include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandRequest.h>
+#include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandRequestBody.h>
+#include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandStreamOutput.h>
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore/model/InvokeCodeInterpreterHandler.h>
@@ -127,6 +136,7 @@
 #include <aws/bedrock-agentcore/model/ResourceContent.h>
 #include <aws/bedrock-agentcore/model/ResourceContentType.h>
 #include <aws/bedrock-agentcore/model/ResourceLocation.h>
+#include <aws/bedrock-agentcore/model/ResponseChunk.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/RightExpression.h>

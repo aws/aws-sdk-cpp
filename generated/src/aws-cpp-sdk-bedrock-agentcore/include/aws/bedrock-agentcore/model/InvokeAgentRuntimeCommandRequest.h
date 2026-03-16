@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
-#include <aws/core/utils/Array.h>
+#include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandHandler.h>
+#include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandRequestBody.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -20,26 +22,78 @@ namespace BedrockAgentCore {
 namespace Model {
 
 /**
+ * <p>Request for InvokeAgentRuntimeCommand operation</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeAgentRuntimeCommandRequest">AWS
+ * API Reference</a></p>
  */
-class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
+class InvokeAgentRuntimeCommandRequest : public BedrockAgentCoreRequest {
  public:
-  AWS_BEDROCKAGENTCORE_API InvokeAgentRuntimeRequest() = default;
+  AWS_BEDROCKAGENTCORE_API InvokeAgentRuntimeCommandRequest() = default;
 
   // Service request name is the Operation name which will send this request out,
   // each operation should has unique request name, so that we can get operation's name from this request.
   // Note: this is not true for response, multiple operations may have the same response name,
   // so we can not get operation's name from response.
-  inline virtual const char* GetServiceRequestName() const override { return "InvokeAgentRuntime"; }
+  inline virtual const char* GetServiceRequestName() const override { return "InvokeAgentRuntimeCommand"; }
+
+  inline virtual bool HasEventStreamResponse() const override { return true; }
+  AWS_BEDROCKAGENTCORE_API Aws::String SerializePayload() const override;
 
   AWS_BEDROCKAGENTCORE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   AWS_BEDROCKAGENTCORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+  /**
+   * Underlying Event Stream Decoder.
+   */
+  inline Aws::Utils::Event::EventStreamDecoder& GetEventStreamDecoder() { return m_decoder; }
+
+  /**
+   * Underlying Event Stream Handler which is used to define callback functions.
+   */
+  inline InvokeAgentRuntimeCommandHandler& GetEventStreamHandler() { return m_handler; }
+
+  /**
+   * Underlying Event Stream Handler which is used to define callback functions.
+   */
+  inline void SetEventStreamHandler(const InvokeAgentRuntimeCommandHandler& value) {
+    m_handler = value;
+    m_decoder.ResetEventStreamHandler(&m_handler);
+  }
+
+  /**
+   * Underlying Event Stream Handler which is used to define callback functions.
+   */
+  inline InvokeAgentRuntimeCommandRequest& WithEventStreamHandler(const InvokeAgentRuntimeCommandHandler& value) {
+    SetEventStreamHandler(value);
+    return *this;
+  }
+
   ///@{
   /**
-   * <p>The desired MIME type for the response from the agent runtime. This tells the
-   * agent runtime what format to use for the response data. Common values include
+   * <p>The MIME type of the input data in the request payload. This tells the agent
+   * runtime how to interpret the payload data. Common values include
    * application/json for JSON data.</p>
+   */
+  inline const Aws::String& GetContentType() const { return m_contentType; }
+  inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+  template <typename ContentTypeT = Aws::String>
+  void SetContentType(ContentTypeT&& value) {
+    m_contentTypeHasBeenSet = true;
+    m_contentType = std::forward<ContentTypeT>(value);
+  }
+  template <typename ContentTypeT = Aws::String>
+  InvokeAgentRuntimeCommandRequest& WithContentType(ContentTypeT&& value) {
+    SetContentType(std::forward<ContentTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The desired MIME type for the response from the agent runtime command. This
+   * tells the agent runtime what format to use for the response data. Common values
+   * include application/json for JSON data.</p>
    */
   inline const Aws::String& GetAccept() const { return m_accept; }
   inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
@@ -49,7 +103,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
     m_accept = std::forward<AcceptT>(value);
   }
   template <typename AcceptT = Aws::String>
-  InvokeAgentRuntimeRequest& WithAccept(AcceptT&& value) {
+  InvokeAgentRuntimeCommandRequest& WithAccept(AcceptT&& value) {
     SetAccept(std::forward<AcceptT>(value));
     return *this;
   }
@@ -57,25 +111,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The identifier of the MCP session.</p>
-   */
-  inline const Aws::String& GetMcpSessionId() const { return m_mcpSessionId; }
-  inline bool McpSessionIdHasBeenSet() const { return m_mcpSessionIdHasBeenSet; }
-  template <typename McpSessionIdT = Aws::String>
-  void SetMcpSessionId(McpSessionIdT&& value) {
-    m_mcpSessionIdHasBeenSet = true;
-    m_mcpSessionId = std::forward<McpSessionIdT>(value);
-  }
-  template <typename McpSessionIdT = Aws::String>
-  InvokeAgentRuntimeRequest& WithMcpSessionId(McpSessionIdT&& value) {
-    SetMcpSessionId(std::forward<McpSessionIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the runtime session.</p>
+   * <p>Runtime session identifier</p>
    */
   inline const Aws::String& GetRuntimeSessionId() const { return m_runtimeSessionId; }
   inline bool RuntimeSessionIdHasBeenSet() const { return m_runtimeSessionIdHasBeenSet; }
@@ -85,44 +121,8 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
     m_runtimeSessionId = std::forward<RuntimeSessionIdT>(value);
   }
   template <typename RuntimeSessionIdT = Aws::String>
-  InvokeAgentRuntimeRequest& WithRuntimeSessionId(RuntimeSessionIdT&& value) {
+  InvokeAgentRuntimeCommandRequest& WithRuntimeSessionId(RuntimeSessionIdT&& value) {
     SetRuntimeSessionId(std::forward<RuntimeSessionIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The version of the MCP protocol being used.</p>
-   */
-  inline const Aws::String& GetMcpProtocolVersion() const { return m_mcpProtocolVersion; }
-  inline bool McpProtocolVersionHasBeenSet() const { return m_mcpProtocolVersionHasBeenSet; }
-  template <typename McpProtocolVersionT = Aws::String>
-  void SetMcpProtocolVersion(McpProtocolVersionT&& value) {
-    m_mcpProtocolVersionHasBeenSet = true;
-    m_mcpProtocolVersion = std::forward<McpProtocolVersionT>(value);
-  }
-  template <typename McpProtocolVersionT = Aws::String>
-  InvokeAgentRuntimeRequest& WithMcpProtocolVersion(McpProtocolVersionT&& value) {
-    SetMcpProtocolVersion(std::forward<McpProtocolVersionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The identifier of the runtime user.</p>
-   */
-  inline const Aws::String& GetRuntimeUserId() const { return m_runtimeUserId; }
-  inline bool RuntimeUserIdHasBeenSet() const { return m_runtimeUserIdHasBeenSet; }
-  template <typename RuntimeUserIdT = Aws::String>
-  void SetRuntimeUserId(RuntimeUserIdT&& value) {
-    m_runtimeUserIdHasBeenSet = true;
-    m_runtimeUserId = std::forward<RuntimeUserIdT>(value);
-  }
-  template <typename RuntimeUserIdT = Aws::String>
-  InvokeAgentRuntimeRequest& WithRuntimeUserId(RuntimeUserIdT&& value) {
-    SetRuntimeUserId(std::forward<RuntimeUserIdT>(value));
     return *this;
   }
   ///@}
@@ -139,7 +139,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
     m_traceId = std::forward<TraceIdT>(value);
   }
   template <typename TraceIdT = Aws::String>
-  InvokeAgentRuntimeRequest& WithTraceId(TraceIdT&& value) {
+  InvokeAgentRuntimeCommandRequest& WithTraceId(TraceIdT&& value) {
     SetTraceId(std::forward<TraceIdT>(value));
     return *this;
   }
@@ -157,7 +157,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
     m_traceParent = std::forward<TraceParentT>(value);
   }
   template <typename TraceParentT = Aws::String>
-  InvokeAgentRuntimeRequest& WithTraceParent(TraceParentT&& value) {
+  InvokeAgentRuntimeCommandRequest& WithTraceParent(TraceParentT&& value) {
     SetTraceParent(std::forward<TraceParentT>(value));
     return *this;
   }
@@ -175,7 +175,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
     m_traceState = std::forward<TraceStateT>(value);
   }
   template <typename TraceStateT = Aws::String>
-  InvokeAgentRuntimeRequest& WithTraceState(TraceStateT&& value) {
+  InvokeAgentRuntimeCommandRequest& WithTraceState(TraceStateT&& value) {
     SetTraceState(std::forward<TraceStateT>(value));
     return *this;
   }
@@ -193,7 +193,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
     m_baggage = std::forward<BaggageT>(value);
   }
   template <typename BaggageT = Aws::String>
-  InvokeAgentRuntimeRequest& WithBaggage(BaggageT&& value) {
+  InvokeAgentRuntimeCommandRequest& WithBaggage(BaggageT&& value) {
     SetBaggage(std::forward<BaggageT>(value));
     return *this;
   }
@@ -201,9 +201,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The identifier of the agent runtime to invoke. You can specify either the
-   * full Amazon Web Services Resource Name (ARN) or the agent ID. If you use the
-   * agent ID, you must also provide the <code>accountId</code> query parameter.</p>
+   * <p>ARN of the agent runtime</p>
    */
   inline const Aws::String& GetAgentRuntimeArn() const { return m_agentRuntimeArn; }
   inline bool AgentRuntimeArnHasBeenSet() const { return m_agentRuntimeArnHasBeenSet; }
@@ -213,7 +211,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
     m_agentRuntimeArn = std::forward<AgentRuntimeArnT>(value);
   }
   template <typename AgentRuntimeArnT = Aws::String>
-  InvokeAgentRuntimeRequest& WithAgentRuntimeArn(AgentRuntimeArnT&& value) {
+  InvokeAgentRuntimeCommandRequest& WithAgentRuntimeArn(AgentRuntimeArnT&& value) {
     SetAgentRuntimeArn(std::forward<AgentRuntimeArnT>(value));
     return *this;
   }
@@ -221,9 +219,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The qualifier to use for the agent runtime. This is an endpoint name that
-   * points to a specific version. If not specified, Amazon Bedrock AgentCore uses
-   * the default endpoint of the agent runtime.</p>
+   * <p>Version or alias qualifier</p>
    */
   inline const Aws::String& GetQualifier() const { return m_qualifier; }
   inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
@@ -233,7 +229,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
     m_qualifier = std::forward<QualifierT>(value);
   }
   template <typename QualifierT = Aws::String>
-  InvokeAgentRuntimeRequest& WithQualifier(QualifierT&& value) {
+  InvokeAgentRuntimeCommandRequest& WithQualifier(QualifierT&& value) {
     SetQualifier(std::forward<QualifierT>(value));
     return *this;
   }
@@ -241,9 +237,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
 
   ///@{
   /**
-   * <p>The identifier of the Amazon Web Services account for the agent runtime
-   * resource. This parameter is required when you specify an agent ID instead of the
-   * full ARN for <code>agentRuntimeArn</code>.</p>
+   * <p>Account ID (12 digits)</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -253,21 +247,35 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
     m_accountId = std::forward<AccountIdT>(value);
   }
   template <typename AccountIdT = Aws::String>
-  InvokeAgentRuntimeRequest& WithAccountId(AccountIdT&& value) {
+  InvokeAgentRuntimeCommandRequest& WithAccountId(AccountIdT&& value) {
     SetAccountId(std::forward<AccountIdT>(value));
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Request body containing command and timeout</p>
+   */
+  inline const InvokeAgentRuntimeCommandRequestBody& GetRequestBody() const { return m_requestBody; }
+  inline bool RequestBodyHasBeenSet() const { return m_requestBodyHasBeenSet; }
+  template <typename RequestBodyT = InvokeAgentRuntimeCommandRequestBody>
+  void SetRequestBody(RequestBodyT&& value) {
+    m_requestBodyHasBeenSet = true;
+    m_requestBody = std::forward<RequestBodyT>(value);
+  }
+  template <typename RequestBodyT = InvokeAgentRuntimeCommandRequestBody>
+  InvokeAgentRuntimeCommandRequest& WithRequestBody(RequestBodyT&& value) {
+    SetRequestBody(std::forward<RequestBodyT>(value));
+    return *this;
+  }
+  ///@}
  private:
+  Aws::String m_contentType;
+
   Aws::String m_accept;
 
-  Aws::String m_mcpSessionId;
-
   Aws::String m_runtimeSessionId{Aws::Utils::UUID::PseudoRandomUUID()};
-
-  Aws::String m_mcpProtocolVersion;
-
-  Aws::String m_runtimeUserId;
 
   Aws::String m_traceId;
 
@@ -283,11 +291,13 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
 
   Aws::String m_accountId;
 
+  InvokeAgentRuntimeCommandRequestBody m_requestBody;
+  InvokeAgentRuntimeCommandHandler m_handler;
+  Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_contentTypeHasBeenSet = false;
   bool m_acceptHasBeenSet = false;
-  bool m_mcpSessionIdHasBeenSet = false;
   bool m_runtimeSessionIdHasBeenSet = true;
-  bool m_mcpProtocolVersionHasBeenSet = false;
-  bool m_runtimeUserIdHasBeenSet = false;
   bool m_traceIdHasBeenSet = false;
   bool m_traceParentHasBeenSet = false;
   bool m_traceStateHasBeenSet = false;
@@ -295,6 +305,7 @@ class InvokeAgentRuntimeRequest : public StreamingBedrockAgentCoreRequest {
   bool m_agentRuntimeArnHasBeenSet = false;
   bool m_qualifierHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
+  bool m_requestBodyHasBeenSet = false;
 };
 
 }  // namespace Model

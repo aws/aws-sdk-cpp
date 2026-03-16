@@ -38,6 +38,10 @@ InstanceLaunchTemplate& InstanceLaunchTemplate::operator=(JsonView jsonValue) {
     m_capacityOptionType = CapacityOptionTypeMapper::GetCapacityOptionTypeForName(jsonValue.GetString("capacityOptionType"));
     m_capacityOptionTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("instanceMetadataTagsPropagation")) {
+    m_instanceMetadataTagsPropagation = jsonValue.GetBool("instanceMetadataTagsPropagation");
+    m_instanceMetadataTagsPropagationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("instanceRequirements")) {
     m_instanceRequirements = jsonValue.GetObject("instanceRequirements");
     m_instanceRequirementsHasBeenSet = true;
@@ -74,6 +78,10 @@ JsonValue InstanceLaunchTemplate::Jsonize() const {
 
   if (m_capacityOptionTypeHasBeenSet) {
     payload.WithString("capacityOptionType", CapacityOptionTypeMapper::GetNameForCapacityOptionType(m_capacityOptionType));
+  }
+
+  if (m_instanceMetadataTagsPropagationHasBeenSet) {
+    payload.WithBool("instanceMetadataTagsPropagation", m_instanceMetadataTagsPropagation);
   }
 
   if (m_instanceRequirementsHasBeenSet) {

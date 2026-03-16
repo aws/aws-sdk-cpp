@@ -107,6 +107,7 @@ class GetWorkloadAccessTokenRequest;
 class GetWorkloadAccessTokenForJWTRequest;
 class GetWorkloadAccessTokenForUserIdRequest;
 class InvokeAgentRuntimeRequest;
+class InvokeAgentRuntimeCommandRequest;
 class InvokeCodeInterpreterRequest;
 class ListActorsRequest;
 class ListBrowserSessionsRequest;
@@ -146,6 +147,7 @@ typedef Aws::Utils::Outcome<GetWorkloadAccessTokenResult, BedrockAgentCoreError>
 typedef Aws::Utils::Outcome<GetWorkloadAccessTokenForJWTResult, BedrockAgentCoreError> GetWorkloadAccessTokenForJWTOutcome;
 typedef Aws::Utils::Outcome<GetWorkloadAccessTokenForUserIdResult, BedrockAgentCoreError> GetWorkloadAccessTokenForUserIdOutcome;
 typedef Aws::Utils::Outcome<InvokeAgentRuntimeResult, BedrockAgentCoreError> InvokeAgentRuntimeOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentCoreError> InvokeAgentRuntimeCommandOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentCoreError> InvokeCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<ListActorsResult, BedrockAgentCoreError> ListActorsOutcome;
 typedef Aws::Utils::Outcome<ListBrowserSessionsResult, BedrockAgentCoreError> ListBrowserSessionsOutcome;
@@ -185,6 +187,7 @@ typedef std::future<GetWorkloadAccessTokenOutcome> GetWorkloadAccessTokenOutcome
 typedef std::future<GetWorkloadAccessTokenForJWTOutcome> GetWorkloadAccessTokenForJWTOutcomeCallable;
 typedef std::future<GetWorkloadAccessTokenForUserIdOutcome> GetWorkloadAccessTokenForUserIdOutcomeCallable;
 typedef std::future<InvokeAgentRuntimeOutcome> InvokeAgentRuntimeOutcomeCallable;
+typedef std::future<InvokeAgentRuntimeCommandOutcome> InvokeAgentRuntimeCommandOutcomeCallable;
 typedef std::future<InvokeCodeInterpreterOutcome> InvokeCodeInterpreterOutcomeCallable;
 typedef std::future<ListActorsOutcome> ListActorsOutcomeCallable;
 typedef std::future<ListBrowserSessionsOutcome> ListBrowserSessionsOutcomeCallable;
@@ -267,6 +270,9 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetWorklo
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeAgentRuntimeRequest&, Model::InvokeAgentRuntimeOutcome,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InvokeAgentRuntimeResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeAgentRuntimeCommandRequest&,
+                           const Model::InvokeAgentRuntimeCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    InvokeAgentRuntimeCommandResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeCodeInterpreterRequest&,
                            const Model::InvokeCodeInterpreterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InvokeCodeInterpreterResponseReceivedHandler;

@@ -159,6 +159,32 @@ class InstanceLaunchTemplate {
 
   ///@{
   /**
+   * <p>Determines whether tags are propagated to the instance metadata service
+   * (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity
+   * provider. When enabled, all tags associated with the instance are available
+   * through the instance metadata service. When disabled, tags are not propagated to
+   * IMDS.</p> <p>Disable this setting if your tags contain characters that are not
+   * compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match
+   * the pattern <code>[0-9a-zA-Z\-_+=,.@:]{1,255}</code>.</p> <p>The default value
+   * is <code>true</code>.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+   * with instance tags in instance metadata</a> in the <i>Amazon EC2 User
+   * Guide</i>.</p>
+   */
+  inline bool GetInstanceMetadataTagsPropagation() const { return m_instanceMetadataTagsPropagation; }
+  inline bool InstanceMetadataTagsPropagationHasBeenSet() const { return m_instanceMetadataTagsPropagationHasBeenSet; }
+  inline void SetInstanceMetadataTagsPropagation(bool value) {
+    m_instanceMetadataTagsPropagationHasBeenSet = true;
+    m_instanceMetadataTagsPropagation = value;
+  }
+  inline InstanceLaunchTemplate& WithInstanceMetadataTagsPropagation(bool value) {
+    SetInstanceMetadataTagsPropagation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The instance requirements. You can specify:</p> <ul> <li> <p>The instance
    * types</p> </li> <li> <p>Instance requirements such as vCPU count, memory,
    * network performance, and accelerator specifications</p> </li> </ul> <p>Amazon
@@ -230,6 +256,8 @@ class InstanceLaunchTemplate {
 
   CapacityOptionType m_capacityOptionType{CapacityOptionType::NOT_SET};
 
+  bool m_instanceMetadataTagsPropagation{false};
+
   InstanceRequirementsRequest m_instanceRequirements;
 
   bool m_fipsEnabled{false};
@@ -240,6 +268,7 @@ class InstanceLaunchTemplate {
   bool m_storageConfigurationHasBeenSet = false;
   bool m_monitoringHasBeenSet = false;
   bool m_capacityOptionTypeHasBeenSet = false;
+  bool m_instanceMetadataTagsPropagationHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
   bool m_fipsEnabledHasBeenSet = false;
   bool m_capacityReservationsHasBeenSet = false;

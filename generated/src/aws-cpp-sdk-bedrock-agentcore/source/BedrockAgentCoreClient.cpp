@@ -24,6 +24,7 @@
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenForJWTRequest.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenForUserIdRequest.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenRequest.h>
+#include <aws/bedrock-agentcore/model/InvokeAgentRuntimeCommandRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore/model/ListActorsRequest.h>
@@ -898,6 +899,55 @@ InvokeAgentRuntimeOutcome BedrockAgentCoreClient::InvokeAgentRuntime(const Invok
         endpointResolutionOutcome.GetResult().AddPathSegments("/invocations");
         return InvokeAgentRuntimeOutcome(
             MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+InvokeAgentRuntimeCommandOutcome BedrockAgentCoreClient::InvokeAgentRuntimeCommand(InvokeAgentRuntimeCommandRequest& request) const {
+  AWS_OPERATION_GUARD(InvokeAgentRuntimeCommand);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeAgentRuntimeCommand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AgentRuntimeArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("InvokeAgentRuntimeCommand", "Required field: AgentRuntimeArn, is not set");
+    return InvokeAgentRuntimeCommandOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentRuntimeArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, InvokeAgentRuntimeCommand, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, InvokeAgentRuntimeCommand, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".InvokeAgentRuntimeCommand",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<InvokeAgentRuntimeCommandOutcome>(
+      [&]() -> InvokeAgentRuntimeCommandOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InvokeAgentRuntimeCommand, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/runtimes/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentRuntimeArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/commands");
+        request.SetResponseStreamFactory([&] {
+          request.GetEventStreamDecoder().Reset();
+          return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder());
+        });
+        if (!request.GetHeadersReceivedEventHandler()) {
+          request.SetHeadersReceivedEventHandler([&request](const Http::HttpRequest*, Http::HttpResponse* response) {
+            AWS_CHECK_PTR("InvokeAgentRuntimeCommand", response);
+            if (const auto initialResponseHandler = request.GetEventStreamHandler().GetInitialResponseCallbackEx()) {
+              initialResponseHandler({response->GetHeaders()}, Utils::Event::InitialResponseType::ON_RESPONSE);
+            }
+          });
+        }
+        return InvokeAgentRuntimeCommandOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
