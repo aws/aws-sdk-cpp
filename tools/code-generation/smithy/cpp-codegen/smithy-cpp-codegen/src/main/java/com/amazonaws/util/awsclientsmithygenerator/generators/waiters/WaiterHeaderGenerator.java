@@ -33,6 +33,16 @@ public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationDa
         this.model = model;
     }
 
+    /**
+     * This is a map of error types that are not present in the smithy models but are present in the C2J models.
+     * We map them to the error codes and rely on a STATUS matcher instead
+     */
+
+    private static final Map<String, Integer> C2J_LOST_ERRORS = new HashMap<>();
+    static {
+        C2J_LOST_ERRORS.put("NotFound", 404); //S3
+    }
+
     @Override
     protected void writeSpecificIncludes(CppWriter writer, String serviceName, String smithyServiceName) {
         String classPrefix = ServiceNameUtil.getServiceNameUpperCamel(service);
@@ -143,11 +153,20 @@ public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationDa
             writer.write("});");
         } else if (matcher instanceof Matcher.ErrorTypeMember) {
             String errorType = ((Matcher.ErrorTypeMember) matcher).getValue();
-            writer.write("acceptors.push_back({");
-            writer.write("    $L,", state);
-            writer.write("    Aws::Utils::MatcherType::ERROR,");
-            writer.write("    Aws::String(\"$L\")", errorType);
-            writer.write("});");
+            if(!C2J_LOST_ERRORS.containsKey(errorType)) {
+                writer.write("acceptors.push_back({");
+                writer.write("    $L,", state);
+                writer.write("    Aws::Utils::MatcherType::ERROR,");
+                writer.write("    Aws::String(\"$L\")", errorType);
+                writer.write("});");
+            } else {
+                int statusCode = C2J_LOST_ERRORS.get(errorType);
+                writer.write("acceptors.push_back({");
+                writer.write("    $L,", state);
+                writer.write("    Aws::Utils::MatcherType::STATUS,");
+                writer.write("    $L", statusCode);
+                writer.write("});");
+            }
         } else if (matcher instanceof Matcher.OutputMember) {
             writePathAcceptor(writer, ((Matcher.OutputMember) matcher).getValue(),
                     state, outcomeType, data);
