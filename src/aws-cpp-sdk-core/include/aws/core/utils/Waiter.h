@@ -84,7 +84,15 @@ class Waiter {
       auto matched = std::find_if(m_acceptors.begin(), m_acceptors.end(),
                              [this, &outcome](const Acceptor<OutcomeT>& acceptor) -> bool { return Matches(acceptor, outcome); });
       if (matched != m_acceptors.end()) {
-        return WaiterOutcome<OutcomeT>(outcome);
+        switch (matched->state) {
+          case WaiterState::SUCCESS:
+            return WaiterOutcome<OutcomeT>(outcome);
+          case WaiterState::FAILURE:
+            return WaiterOutcome<OutcomeT>(WaiterError(WaiterErrors::INVALID_ACTION, "",
+                "Waiter matched a failure acceptor", false /*retryable*/));
+          case WaiterState::RETRY:
+            break; // continue polling
+        }
       }
 
       if (attempt < m_maxAttempts - 1) {
