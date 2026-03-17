@@ -41,16 +41,15 @@ public class WaiterCodegenPlugin implements SmithyBuildPlugin {
                 })
                 .collect(Collectors.toList());
             
-            if (!waiterOps.isEmpty()) {
-                FeatureParser<WaiterOperationData> parser = new FeatureParser<>(context, processedService, waiterOps, "Waiter");
-                parser.run(featureParser -> {
-                    String serviceName = ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService());
-                    featureParser.generateClientHeader(
-                        serviceName + "Waiter.h",
-                        writer -> new WaiterHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap(), model, featureParser.getNamespaceMap()).render(writer)
-                    );
-                });
-            }
+            // Always generate ServiceWaiter.h, even if empty (matches pagination pattern)
+            FeatureParser<WaiterOperationData> parser = new FeatureParser<>(context, processedService, waiterOps, "Waiter");
+            parser.run(featureParser -> {
+                String serviceName = ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService());
+                featureParser.generateClientHeader(
+                    serviceName + "Waiter.h",
+                    writer -> new WaiterHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap(), model, featureParser.getNamespaceMap()).render(writer)
+                );
+            });
         }
     }
 }
