@@ -47,7 +47,7 @@ public class WaiterCodegenPlugin implements SmithyBuildPlugin {
                     String serviceName = ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService());
                     featureParser.generateClientHeader(
                         serviceName + "Waiter.h",
-                        writer -> new WaiterHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap(), model).render(writer)
+                        writer -> new WaiterHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap(), model, featureParser.getNamespaceMap()).render(writer)
                     );
                 });
             }

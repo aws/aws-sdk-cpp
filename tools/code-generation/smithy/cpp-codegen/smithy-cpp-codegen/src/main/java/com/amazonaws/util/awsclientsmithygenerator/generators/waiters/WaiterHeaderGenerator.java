@@ -28,8 +28,8 @@ public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationDa
     private final Map<PathMatcher, WaiterJmesPathCppCodeGenerator.WaiterJmesPathResult> generatedCode = new HashMap<>();
 
     public WaiterHeaderGenerator(ServiceShape service, List<WaiterOperationData> waiterOps,
-                                 Map<String, String> serviceMap, Model model) {
-        super(service, waiterOps, serviceMap);
+                                 Map<String, String> serviceMap, Model model,  Map<String, String> namespaceMap) {
+        super(service, waiterOps, serviceMap, namespaceMap);
         this.model = model;
     }
 
