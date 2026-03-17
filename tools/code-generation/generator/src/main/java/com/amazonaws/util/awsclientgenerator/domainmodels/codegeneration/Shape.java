@@ -63,6 +63,7 @@ public class Shape {
     private boolean overrideStreaming = false;
     private boolean requestCompressionRequired=false;
     private boolean requestCompressionRequiredGzip=false;
+    private boolean sparse=false;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());
