@@ -1,12 +1,42 @@
-#if($metadata.protocol == "ec2" || $metadata.protocol == "json" || $metadata.protocol == "query" || $metadata.protocol == "smithy-rpc-v2-cbor")
-    #set($emitGenericOperation = true)
-    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#set($emitGenericOperation = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#set($emitGenericOperation = false)
 
+#if($serviceModel.metadata.serviceId == "EC2")
+#set($presignSpelling = "PresignedUrl")
+#set($shouldGenerateUrl = "request.SourceRegionHasBeenSet()")
+#else
+#set($presignSpelling = "PreSignedUrl")
+#set($shouldGenerateUrl = "request.SourceRegionHasBeenSet() && !request.${presignSpelling}HasBeenSet()")
+#end
+
+##
+## Handle presigned URL generation if the operation requires it
+##
+
+#if($operation.hasPreSignedUrl)
+    if (${shouldGenerateUrl}) {
+        ${operation.request.shape.name} newRequest = request;
+        Aws::Endpoint::EndpointParameters endpointParameters;
+#if($operation.staticContextParams)
+#foreach($staticParamPair in $operation.staticContextParams.entrySet())
+        parameters.emplace_back(Aws::String("${staticParamPair.key}"), ${staticParamPair.value.get("value").getValue()});
+#end
+#end
+        endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", request.GetSourceRegion()));
+        ResolveEndpointOutcome presignedEndpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
+        AWS_OPERATION_CHECK_SUCCESS(presignedEndpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, presignedEndpointResolutionOutcome.GetError().GetMessage());
+        newRequest.Set${presignSpelling}(GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
+                                                Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
+                                                {{ "DestinationRegion", m_region }}, 3600));
+
+        return ${operation.name}Outcome{InvokeServiceOperation(newRequest, Aws::Http::HttpMethod::HTTP_${operation.http.method})};
+    }
+#end
+
+#if($metadata.protocol == "ec2" || $metadata.protocol == "json" || $metadata.protocol == "query" || $metadata.protocol == "smithy-rpc-v2-cbor")
     return ${operation.name}Outcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_${operation.http.method})};
 #elseif($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
-    #set($emitGenericOperation = true)
-    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
-
     auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
         (void)endpointResolutionOutcome;
         #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestPathSegments.vm")
@@ -22,5 +52,3 @@
         return ${operation.name}Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_${operation.http.method})};
     #end
 #end
-
-#set($emitGenericOperation = false)

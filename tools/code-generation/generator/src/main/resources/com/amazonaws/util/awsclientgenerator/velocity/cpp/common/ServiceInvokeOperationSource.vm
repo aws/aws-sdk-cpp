@@ -1,4 +1,4 @@
-${className}::InvokeOutcome ${className}::InvokeServiceOperation(
+${className}::InvokeOperationOutcome ${className}::InvokeServiceOperation(
     const AmazonWebServiceRequest& request,
 #if($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
     const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
@@ -38,8 +38,8 @@ ${className}::InvokeOutcome ${className}::InvokeServiceOperation(
     }
 #end
 
-  return TracingUtils::MakeCallWithTiming<InvokeOutcome>(
-      [&]() -> InvokeOutcome {
+  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+      [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
             TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
@@ -58,7 +58,7 @@ ${className}::InvokeOutcome ${className}::InvokeServiceOperation(
         resolveUri(endpointResolutionOutcome);
 #end
 
-        return MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER);
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
