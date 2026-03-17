@@ -11,6 +11,7 @@
 #include <aws/glue/model/AllowFullTableExternalDataAccessEnum.h>
 #include <aws/glue/model/CatalogProperties.h>
 #include <aws/glue/model/FederatedCatalog.h>
+#include <aws/glue/model/OverwriteChildResourcePermissionsWithDefaultEnum.h>
 #include <aws/glue/model/PrincipalPermissions.h>
 #include <aws/glue/model/TargetRedshiftCatalog.h>
 
@@ -209,6 +210,29 @@ class CatalogInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Overwrites existing Amazon Web Services Lake Formation permissions with
+   * <code>CatalogInput$CreateTableDefaultPermissions</code> and
+   * <code>CatalogInput$CreateDatabaseDefaultPermissions</code> for all child
+   * resources. </p>
+   */
+  inline OverwriteChildResourcePermissionsWithDefaultEnum GetOverwriteChildResourcePermissionsWithDefault() const {
+    return m_overwriteChildResourcePermissionsWithDefault;
+  }
+  inline bool OverwriteChildResourcePermissionsWithDefaultHasBeenSet() const {
+    return m_overwriteChildResourcePermissionsWithDefaultHasBeenSet;
+  }
+  inline void SetOverwriteChildResourcePermissionsWithDefault(OverwriteChildResourcePermissionsWithDefaultEnum value) {
+    m_overwriteChildResourcePermissionsWithDefaultHasBeenSet = true;
+    m_overwriteChildResourcePermissionsWithDefault = value;
+  }
+  inline CatalogInput& WithOverwriteChildResourcePermissionsWithDefault(OverwriteChildResourcePermissionsWithDefaultEnum value) {
+    SetOverwriteChildResourcePermissionsWithDefault(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_description;
 
@@ -225,6 +249,9 @@ class CatalogInput {
   Aws::Vector<PrincipalPermissions> m_createDatabaseDefaultPermissions;
 
   AllowFullTableExternalDataAccessEnum m_allowFullTableExternalDataAccess{AllowFullTableExternalDataAccessEnum::NOT_SET};
+
+  OverwriteChildResourcePermissionsWithDefaultEnum m_overwriteChildResourcePermissionsWithDefault{
+      OverwriteChildResourcePermissionsWithDefaultEnum::NOT_SET};
   bool m_descriptionHasBeenSet = false;
   bool m_federatedCatalogHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
@@ -233,6 +260,7 @@ class CatalogInput {
   bool m_createTableDefaultPermissionsHasBeenSet = false;
   bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
   bool m_allowFullTableExternalDataAccessHasBeenSet = false;
+  bool m_overwriteChildResourcePermissionsWithDefaultHasBeenSet = false;
 };
 
 }  // namespace Model

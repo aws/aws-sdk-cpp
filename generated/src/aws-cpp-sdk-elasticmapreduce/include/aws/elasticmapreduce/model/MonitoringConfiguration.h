@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/CloudWatchLogConfiguration.h>
+#include <aws/elasticmapreduce/model/S3LoggingConfiguration.h>
 
 #include <utility>
 
@@ -20,8 +21,8 @@ namespace EMR {
 namespace Model {
 
 /**
- * <p>Contains CloudWatch log configuration metadata and settings.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Contains CloudWatch log configuration and S3 logging configuration metadata
+ * and settings.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/MonitoringConfiguration">AWS
  * API Reference</a></p>
  */
@@ -50,9 +51,32 @@ class MonitoringConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>S3 logging configuration that controls how different types of logs (system
+   * logs, application logs, and persistent UI logs) are uploaded to S3. Each log
+   * type can be configured with a specific upload policy.</p>
+   */
+  inline const S3LoggingConfiguration& GetS3LoggingConfiguration() const { return m_s3LoggingConfiguration; }
+  inline bool S3LoggingConfigurationHasBeenSet() const { return m_s3LoggingConfigurationHasBeenSet; }
+  template <typename S3LoggingConfigurationT = S3LoggingConfiguration>
+  void SetS3LoggingConfiguration(S3LoggingConfigurationT&& value) {
+    m_s3LoggingConfigurationHasBeenSet = true;
+    m_s3LoggingConfiguration = std::forward<S3LoggingConfigurationT>(value);
+  }
+  template <typename S3LoggingConfigurationT = S3LoggingConfiguration>
+  MonitoringConfiguration& WithS3LoggingConfiguration(S3LoggingConfigurationT&& value) {
+    SetS3LoggingConfiguration(std::forward<S3LoggingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CloudWatchLogConfiguration m_cloudWatchLogConfiguration;
+
+  S3LoggingConfiguration m_s3LoggingConfiguration;
   bool m_cloudWatchLogConfigurationHasBeenSet = false;
+  bool m_s3LoggingConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

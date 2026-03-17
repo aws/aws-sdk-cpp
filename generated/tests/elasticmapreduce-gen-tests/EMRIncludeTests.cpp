@@ -173,6 +173,8 @@
 #include <aws/elasticmapreduce/model/ListStudiosResult.h>
 #include <aws/elasticmapreduce/model/ListSupportedInstanceTypesRequest.h>
 #include <aws/elasticmapreduce/model/ListSupportedInstanceTypesResult.h>
+#include <aws/elasticmapreduce/model/LogType.h>
+#include <aws/elasticmapreduce/model/LogUploadPolicyValue.h>
 #include <aws/elasticmapreduce/model/ManagedScalingPolicy.h>
 #include <aws/elasticmapreduce/model/MarketType.h>
 #include <aws/elasticmapreduce/model/MetricDimension.h>
@@ -225,6 +227,7 @@
 #include <aws/elasticmapreduce/model/RepoUpgradeOnBoot.h>
 #include <aws/elasticmapreduce/model/RunJobFlowRequest.h>
 #include <aws/elasticmapreduce/model/RunJobFlowResult.h>
+#include <aws/elasticmapreduce/model/S3LoggingConfiguration.h>
 #include <aws/elasticmapreduce/model/S3MonitoringConfiguration.h>
 #include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
 #include <aws/elasticmapreduce/model/ScalingAction.h>

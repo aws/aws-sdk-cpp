@@ -38,12 +38,13 @@ MemoryStrategy& MemoryStrategy::operator=(JsonView jsonValue) {
     m_type = MemoryStrategyTypeMapper::GetMemoryStrategyTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("namespaces")) {
-    Aws::Utils::Array<JsonView> namespacesJsonList = jsonValue.GetArray("namespaces");
-    for (unsigned namespacesIndex = 0; namespacesIndex < namespacesJsonList.GetLength(); ++namespacesIndex) {
-      m_namespaces.push_back(namespacesJsonList[namespacesIndex].AsString());
+  if (jsonValue.ValueExists("namespaceTemplates")) {
+    Aws::Utils::Array<JsonView> namespaceTemplatesJsonList = jsonValue.GetArray("namespaceTemplates");
+    for (unsigned namespaceTemplatesIndex = 0; namespaceTemplatesIndex < namespaceTemplatesJsonList.GetLength();
+         ++namespaceTemplatesIndex) {
+      m_namespaceTemplates.push_back(namespaceTemplatesJsonList[namespaceTemplatesIndex].AsString());
     }
-    m_namespacesHasBeenSet = true;
+    m_namespaceTemplatesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
@@ -83,12 +84,13 @@ JsonValue MemoryStrategy::Jsonize() const {
     payload.WithString("type", MemoryStrategyTypeMapper::GetNameForMemoryStrategyType(m_type));
   }
 
-  if (m_namespacesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> namespacesJsonList(m_namespaces.size());
-    for (unsigned namespacesIndex = 0; namespacesIndex < namespacesJsonList.GetLength(); ++namespacesIndex) {
-      namespacesJsonList[namespacesIndex].AsString(m_namespaces[namespacesIndex]);
+  if (m_namespaceTemplatesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> namespaceTemplatesJsonList(m_namespaceTemplates.size());
+    for (unsigned namespaceTemplatesIndex = 0; namespaceTemplatesIndex < namespaceTemplatesJsonList.GetLength();
+         ++namespaceTemplatesIndex) {
+      namespaceTemplatesJsonList[namespaceTemplatesIndex].AsString(m_namespaceTemplates[namespaceTemplatesIndex]);
     }
-    payload.WithArray("namespaces", std::move(namespacesJsonList));
+    payload.WithArray("namespaceTemplates", std::move(namespaceTemplatesJsonList));
   }
 
   if (m_createdAtHasBeenSet) {

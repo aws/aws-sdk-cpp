@@ -70,24 +70,24 @@ class SummaryMemoryStrategyInput {
 
   ///@{
   /**
-   * <p>The namespaces associated with the summary memory strategy.</p>
+   * <p>The namespaceTemplates associated with the summary memory strategy.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetNamespaces() const { return m_namespaces; }
-  inline bool NamespacesHasBeenSet() const { return m_namespacesHasBeenSet; }
-  template <typename NamespacesT = Aws::Vector<Aws::String>>
-  void SetNamespaces(NamespacesT&& value) {
-    m_namespacesHasBeenSet = true;
-    m_namespaces = std::forward<NamespacesT>(value);
+  inline const Aws::Vector<Aws::String>& GetNamespaceTemplates() const { return m_namespaceTemplates; }
+  inline bool NamespaceTemplatesHasBeenSet() const { return m_namespaceTemplatesHasBeenSet; }
+  template <typename NamespaceTemplatesT = Aws::Vector<Aws::String>>
+  void SetNamespaceTemplates(NamespaceTemplatesT&& value) {
+    m_namespaceTemplatesHasBeenSet = true;
+    m_namespaceTemplates = std::forward<NamespaceTemplatesT>(value);
   }
-  template <typename NamespacesT = Aws::Vector<Aws::String>>
-  SummaryMemoryStrategyInput& WithNamespaces(NamespacesT&& value) {
-    SetNamespaces(std::forward<NamespacesT>(value));
+  template <typename NamespaceTemplatesT = Aws::Vector<Aws::String>>
+  SummaryMemoryStrategyInput& WithNamespaceTemplates(NamespaceTemplatesT&& value) {
+    SetNamespaceTemplates(std::forward<NamespaceTemplatesT>(value));
     return *this;
   }
-  template <typename NamespacesT = Aws::String>
-  SummaryMemoryStrategyInput& AddNamespaces(NamespacesT&& value) {
-    m_namespacesHasBeenSet = true;
-    m_namespaces.emplace_back(std::forward<NamespacesT>(value));
+  template <typename NamespaceTemplatesT = Aws::String>
+  SummaryMemoryStrategyInput& AddNamespaceTemplates(NamespaceTemplatesT&& value) {
+    m_namespaceTemplatesHasBeenSet = true;
+    m_namespaceTemplates.emplace_back(std::forward<NamespaceTemplatesT>(value));
     return *this;
   }
   ///@}
@@ -96,10 +96,10 @@ class SummaryMemoryStrategyInput {
 
   Aws::String m_description;
 
-  Aws::Vector<Aws::String> m_namespaces;
+  Aws::Vector<Aws::String> m_namespaceTemplates;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
-  bool m_namespacesHasBeenSet = false;
+  bool m_namespaceTemplatesHasBeenSet = false;
 };
 
 }  // namespace Model

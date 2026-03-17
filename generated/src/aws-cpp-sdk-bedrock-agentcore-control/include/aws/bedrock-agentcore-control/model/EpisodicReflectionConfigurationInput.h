@@ -34,31 +34,31 @@ class EpisodicReflectionConfigurationInput {
 
   ///@{
   /**
-   * <p>The namespaces over which to create reflections. Can be less nested than
-   * episode namespaces.</p>
+   * <p>The namespaceTemplates over which to create reflections. Can be less nested
+   * than episode namespaces.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetNamespaces() const { return m_namespaces; }
-  inline bool NamespacesHasBeenSet() const { return m_namespacesHasBeenSet; }
-  template <typename NamespacesT = Aws::Vector<Aws::String>>
-  void SetNamespaces(NamespacesT&& value) {
-    m_namespacesHasBeenSet = true;
-    m_namespaces = std::forward<NamespacesT>(value);
+  inline const Aws::Vector<Aws::String>& GetNamespaceTemplates() const { return m_namespaceTemplates; }
+  inline bool NamespaceTemplatesHasBeenSet() const { return m_namespaceTemplatesHasBeenSet; }
+  template <typename NamespaceTemplatesT = Aws::Vector<Aws::String>>
+  void SetNamespaceTemplates(NamespaceTemplatesT&& value) {
+    m_namespaceTemplatesHasBeenSet = true;
+    m_namespaceTemplates = std::forward<NamespaceTemplatesT>(value);
   }
-  template <typename NamespacesT = Aws::Vector<Aws::String>>
-  EpisodicReflectionConfigurationInput& WithNamespaces(NamespacesT&& value) {
-    SetNamespaces(std::forward<NamespacesT>(value));
+  template <typename NamespaceTemplatesT = Aws::Vector<Aws::String>>
+  EpisodicReflectionConfigurationInput& WithNamespaceTemplates(NamespaceTemplatesT&& value) {
+    SetNamespaceTemplates(std::forward<NamespaceTemplatesT>(value));
     return *this;
   }
-  template <typename NamespacesT = Aws::String>
-  EpisodicReflectionConfigurationInput& AddNamespaces(NamespacesT&& value) {
-    m_namespacesHasBeenSet = true;
-    m_namespaces.emplace_back(std::forward<NamespacesT>(value));
+  template <typename NamespaceTemplatesT = Aws::String>
+  EpisodicReflectionConfigurationInput& AddNamespaceTemplates(NamespaceTemplatesT&& value) {
+    m_namespaceTemplatesHasBeenSet = true;
+    m_namespaceTemplates.emplace_back(std::forward<NamespaceTemplatesT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Vector<Aws::String> m_namespaces;
-  bool m_namespacesHasBeenSet = false;
+  Aws::Vector<Aws::String> m_namespaceTemplates;
+  bool m_namespaceTemplatesHasBeenSet = false;
 };
 
 }  // namespace Model
