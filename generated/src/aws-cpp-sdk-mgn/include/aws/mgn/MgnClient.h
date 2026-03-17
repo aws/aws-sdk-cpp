@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mgn/MgnPaginationBase.h>
 #include <aws/mgn/MgnServiceClientModel.h>
+#include <aws/mgn/MgnWaiter.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace mgn {
  */
 class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<MgnClient>,
-                              public MgnPaginationBase<MgnClient> {
+                              public MgnPaginationBase<MgnClient>,
+                              public MgnWaiter<MgnClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

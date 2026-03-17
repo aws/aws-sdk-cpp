@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/storagegateway/StorageGatewayPaginationBase.h>
 #include <aws/storagegateway/StorageGatewayServiceClientModel.h>
+#include <aws/storagegateway/StorageGatewayWaiter.h>
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 
 namespace Aws {
@@ -66,7 +67,8 @@ namespace StorageGateway {
  */
 class AWS_STORAGEGATEWAY_API StorageGatewayClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<StorageGatewayClient>,
-                                                    public StorageGatewayPaginationBase<StorageGatewayClient> {
+                                                    public StorageGatewayPaginationBase<StorageGatewayClient>,
+                                                    public StorageGatewayWaiter<StorageGatewayClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

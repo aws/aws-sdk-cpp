@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotevents/IoTEventsPaginationBase.h>
 #include <aws/iotevents/IoTEventsServiceClientModel.h>
+#include <aws/iotevents/IoTEventsWaiter.h>
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace IoTEvents {
  */
 class AWS_IOTEVENTS_API IoTEventsClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsClient>,
-                                          public IoTEventsPaginationBase<IoTEventsClient> {
+                                          public IoTEventsPaginationBase<IoTEventsClient>,
+                                          public IoTEventsWaiter<IoTEventsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

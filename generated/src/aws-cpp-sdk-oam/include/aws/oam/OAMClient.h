@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/oam/OAMPaginationBase.h>
 #include <aws/oam/OAMServiceClientModel.h>
+#include <aws/oam/OAMWaiter.h>
 #include <aws/oam/OAM_EXPORTS.h>
 
 namespace Aws {
@@ -40,7 +41,8 @@ namespace OAM {
  */
 class AWS_OAM_API OAMClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<OAMClient>,
-                              public OAMPaginationBase<OAMClient> {
+                              public OAMPaginationBase<OAMClient>,
+                              public OAMWaiter<OAMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

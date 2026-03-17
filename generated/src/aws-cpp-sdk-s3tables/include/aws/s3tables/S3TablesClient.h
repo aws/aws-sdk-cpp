@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/s3tables/S3TablesPaginationBase.h>
 #include <aws/s3tables/S3TablesServiceClientModel.h>
+#include <aws/s3tables/S3TablesWaiter.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 
 namespace Aws {
@@ -34,7 +35,8 @@ namespace S3Tables {
  */
 class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<S3TablesClient>,
-                                        public S3TablesPaginationBase<S3TablesClient> {
+                                        public S3TablesPaginationBase<S3TablesClient>,
+                                        public S3TablesWaiter<S3TablesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

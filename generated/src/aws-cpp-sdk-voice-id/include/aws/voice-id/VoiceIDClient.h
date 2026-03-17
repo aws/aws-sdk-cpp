@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/voice-id/VoiceIDPaginationBase.h>
 #include <aws/voice-id/VoiceIDServiceClientModel.h>
+#include <aws/voice-id/VoiceIDWaiter.h>
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace VoiceID {
  */
 class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<VoiceIDClient>,
-                                      public VoiceIDPaginationBase<VoiceIDClient> {
+                                      public VoiceIDPaginationBase<VoiceIDClient>,
+                                      public VoiceIDWaiter<VoiceIDClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

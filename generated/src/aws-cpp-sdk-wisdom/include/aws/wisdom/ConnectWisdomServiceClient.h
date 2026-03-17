@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wisdom/ConnectWisdomServicePaginationBase.h>
 #include <aws/wisdom/ConnectWisdomServiceServiceClientModel.h>
+#include <aws/wisdom/ConnectWisdomServiceWaiter.h>
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace ConnectWisdomService {
 class AWS_CONNECTWISDOMSERVICE_API ConnectWisdomServiceClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ConnectWisdomServiceClient>,
-      public ConnectWisdomServicePaginationBase<ConnectWisdomServiceClient> {
+      public ConnectWisdomServicePaginationBase<ConnectWisdomServiceClient>,
+      public ConnectWisdomServiceWaiter<ConnectWisdomServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsMLPaginationBase.h>
 #include <aws/cleanroomsml/CleanRoomsMLServiceClientModel.h>
+#include <aws/cleanroomsml/CleanRoomsMLWaiter.h>
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -32,7 +33,8 @@ namespace CleanRoomsML {
  */
 class AWS_CLEANROOMSML_API CleanRoomsMLClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsMLClient>,
-                                                public CleanRoomsMLPaginationBase<CleanRoomsMLClient> {
+                                                public CleanRoomsMLPaginationBase<CleanRoomsMLClient>,
+                                                public CleanRoomsMLWaiter<CleanRoomsMLClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

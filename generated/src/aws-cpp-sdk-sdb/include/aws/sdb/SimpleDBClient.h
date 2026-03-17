@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sdb/SimpleDBPaginationBase.h>
 #include <aws/sdb/SimpleDBServiceClientModel.h>
+#include <aws/sdb/SimpleDBWaiter.h>
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 
 namespace Aws {
@@ -33,7 +34,8 @@ namespace SimpleDB {
  */
 class AWS_SIMPLEDB_API SimpleDBClient : public Aws::Client::AWSXMLClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBClient>,
-                                        public SimpleDBPaginationBase<SimpleDBClient> {
+                                        public SimpleDBPaginationBase<SimpleDBClient>,
+                                        public SimpleDBWaiter<SimpleDBClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

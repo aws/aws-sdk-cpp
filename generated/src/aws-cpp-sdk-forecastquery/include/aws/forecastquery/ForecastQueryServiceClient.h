@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/forecastquery/ForecastQueryServicePaginationBase.h>
 #include <aws/forecastquery/ForecastQueryServiceServiceClientModel.h>
+#include <aws/forecastquery/ForecastQueryServiceWaiter.h>
 #include <aws/forecastquery/ForecastQueryService_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace ForecastQueryService {
 class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ForecastQueryServiceClient>,
-      public ForecastQueryServicePaginationBase<ForecastQueryServiceClient> {
+      public ForecastQueryServicePaginationBase<ForecastQueryServiceClient>,
+      public ForecastQueryServiceWaiter<ForecastQueryServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

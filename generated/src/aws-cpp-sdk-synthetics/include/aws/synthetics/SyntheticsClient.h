@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/synthetics/SyntheticsPaginationBase.h>
 #include <aws/synthetics/SyntheticsServiceClientModel.h>
+#include <aws/synthetics/SyntheticsWaiter.h>
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 
 namespace Aws {
@@ -33,7 +34,8 @@ namespace Synthetics {
  */
 class AWS_SYNTHETICS_API SyntheticsClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient>,
-                                            public SyntheticsPaginationBase<SyntheticsClient> {
+                                            public SyntheticsPaginationBase<SyntheticsClient>,
+                                            public SyntheticsWaiter<SyntheticsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

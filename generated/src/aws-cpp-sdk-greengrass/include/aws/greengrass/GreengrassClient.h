@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/greengrass/GreengrassPaginationBase.h>
 #include <aws/greengrass/GreengrassServiceClientModel.h>
+#include <aws/greengrass/GreengrassWaiter.h>
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace Greengrass {
  */
 class AWS_GREENGRASS_API GreengrassClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<GreengrassClient>,
-                                            public GreengrassPaginationBase<GreengrassClient> {
+                                            public GreengrassPaginationBase<GreengrassClient>,
+                                            public GreengrassWaiter<GreengrassClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

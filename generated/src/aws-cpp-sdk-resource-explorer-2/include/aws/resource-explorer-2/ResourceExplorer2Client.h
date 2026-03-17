@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-explorer-2/ResourceExplorer2PaginationBase.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ServiceClientModel.h>
+#include <aws/resource-explorer-2/ResourceExplorer2Waiter.h>
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 
 namespace Aws {
@@ -47,7 +48,8 @@ namespace ResourceExplorer2 {
  */
 class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Client : public Aws::Client::AWSJsonClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<ResourceExplorer2Client>,
-                                                          public ResourceExplorer2PaginationBase<ResourceExplorer2Client> {
+                                                          public ResourceExplorer2PaginationBase<ResourceExplorer2Client>,
+                                                          public ResourceExplorer2Waiter<ResourceExplorer2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

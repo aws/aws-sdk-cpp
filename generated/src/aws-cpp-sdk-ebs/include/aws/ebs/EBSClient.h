@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ebs/EBSPaginationBase.h>
 #include <aws/ebs/EBSServiceClientModel.h>
+#include <aws/ebs/EBSWaiter.h>
 #include <aws/ebs/EBS_EXPORTS.h>
 
 namespace Aws {
@@ -43,7 +44,8 @@ namespace EBS {
  */
 class AWS_EBS_API EBSClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<EBSClient>,
-                              public EBSPaginationBase<EBSClient> {
+                              public EBSPaginationBase<EBSClient>,
+                              public EBSWaiter<EBSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

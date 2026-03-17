@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-agreement/AgreementServicePaginationBase.h>
 #include <aws/marketplace-agreement/AgreementServiceServiceClientModel.h>
+#include <aws/marketplace-agreement/AgreementServiceWaiter.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 
 namespace Aws {
@@ -32,7 +33,8 @@ namespace AgreementService {
  */
 class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<AgreementServiceClient>,
-                                                        public AgreementServicePaginationBase<AgreementServiceClient> {
+                                                        public AgreementServicePaginationBase<AgreementServiceClient>,
+                                                        public AgreementServiceWaiter<AgreementServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

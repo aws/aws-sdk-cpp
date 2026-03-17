@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/artifact/ArtifactPaginationBase.h>
 #include <aws/artifact/ArtifactServiceClientModel.h>
+#include <aws/artifact/ArtifactWaiter.h>
 #include <aws/artifact/Artifact_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -20,7 +21,8 @@ namespace Artifact {
  */
 class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<ArtifactClient>,
-                                        public ArtifactPaginationBase<ArtifactClient> {
+                                        public ArtifactPaginationBase<ArtifactClient>,
+                                        public ArtifactWaiter<ArtifactClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

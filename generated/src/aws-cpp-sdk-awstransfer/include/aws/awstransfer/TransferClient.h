@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/awstransfer/TransferPaginationBase.h>
 #include <aws/awstransfer/TransferServiceClientModel.h>
+#include <aws/awstransfer/TransferWaiter.h>
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -30,7 +31,8 @@ namespace Transfer {
  */
 class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>,
-                                        public TransferPaginationBase<TransferClient> {
+                                        public TransferPaginationBase<TransferClient>,
+                                        public TransferWaiter<TransferClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/ec2/EC2PaginationBase.h>
 #include <aws/ec2/EC2ServiceClientModel.h>
+#include <aws/ec2/EC2Waiter.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace EC2 {
  */
 class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<EC2Client>,
-                              public EC2PaginationBase<EC2Client> {
+                              public EC2PaginationBase<EC2Client>,
+                              public EC2Waiter<EC2Client> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

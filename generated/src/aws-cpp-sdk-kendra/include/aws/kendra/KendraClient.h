@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kendra/KendraPaginationBase.h>
 #include <aws/kendra/KendraServiceClientModel.h>
+#include <aws/kendra/KendraWaiter.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace kendra {
  */
 class AWS_KENDRA_API KendraClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<KendraClient>,
-                                    public KendraPaginationBase<KendraClient> {
+                                    public KendraPaginationBase<KendraClient>,
+                                    public KendraWaiter<KendraClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

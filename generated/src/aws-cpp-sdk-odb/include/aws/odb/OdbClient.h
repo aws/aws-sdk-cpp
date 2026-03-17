@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/odb/OdbPaginationBase.h>
 #include <aws/odb/OdbServiceClientModel.h>
+#include <aws/odb/OdbWaiter.h>
 #include <aws/odb/Odb_EXPORTS.h>
 
 namespace Aws {
@@ -43,7 +44,8 @@ namespace odb {
  */
 class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<OdbClient>,
-                              public OdbPaginationBase<OdbClient> {
+                              public OdbPaginationBase<OdbClient>,
+                              public OdbWaiter<OdbClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

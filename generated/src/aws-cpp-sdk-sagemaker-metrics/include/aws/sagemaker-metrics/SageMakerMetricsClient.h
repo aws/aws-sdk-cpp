@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-metrics/SageMakerMetricsPaginationBase.h>
 #include <aws/sagemaker-metrics/SageMakerMetricsServiceClientModel.h>
+#include <aws/sagemaker-metrics/SageMakerMetricsWaiter.h>
 #include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace SageMakerMetrics {
  */
 class AWS_SAGEMAKERMETRICS_API SageMakerMetricsClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerMetricsClient>,
-                                                        public SageMakerMetricsPaginationBase<SageMakerMetricsClient> {
+                                                        public SageMakerMetricsPaginationBase<SageMakerMetricsClient>,
+                                                        public SageMakerMetricsWaiter<SageMakerMetricsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

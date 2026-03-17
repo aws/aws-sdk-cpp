@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/schemas/SchemasPaginationBase.h>
 #include <aws/schemas/SchemasServiceClientModel.h>
+#include <aws/schemas/SchemasWaiter.h>
 #include <aws/schemas/Schemas_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace Schemas {
  */
 class AWS_SCHEMAS_API SchemasClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<SchemasClient>,
-                                      public SchemasPaginationBase<SchemasClient> {
+                                      public SchemasPaginationBase<SchemasClient>,
+                                      public SchemasWaiter<SchemasClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

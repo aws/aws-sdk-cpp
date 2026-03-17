@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/route53/Route53PaginationBase.h>
 #include <aws/route53/Route53ServiceClientModel.h>
+#include <aws/route53/Route53Waiter.h>
 #include <aws/route53/Route53_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace Route53 {
  */
 class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>,
-                                      public Route53PaginationBase<Route53Client> {
+                                      public Route53PaginationBase<Route53Client>,
+                                      public Route53Waiter<Route53Client> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sso/SSOPaginationBase.h>
 #include <aws/sso/SSOServiceClientModel.h>
+#include <aws/sso/SSOWaiter.h>
 #include <aws/sso/SSO_EXPORTS.h>
 
 namespace Aws {
@@ -35,7 +36,8 @@ namespace SSO {
  */
 class AWS_SSO_API SSOClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<SSOClient>,
-                              public SSOPaginationBase<SSOClient> {
+                              public SSOPaginationBase<SSOClient>,
+                              public SSOWaiter<SSOClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

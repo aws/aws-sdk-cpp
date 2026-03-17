@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bcm-dashboards/BCMDashboardsPaginationBase.h>
 #include <aws/bcm-dashboards/BCMDashboardsServiceClientModel.h>
+#include <aws/bcm-dashboards/BCMDashboardsWaiter.h>
 #include <aws/bcm-dashboards/BCMDashboards_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -28,7 +29,8 @@ namespace BCMDashboards {
  */
 class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<BCMDashboardsClient>,
-                                                  public BCMDashboardsPaginationBase<BCMDashboardsClient> {
+                                                  public BCMDashboardsPaginationBase<BCMDashboardsClient>,
+                                                  public BCMDashboardsWaiter<BCMDashboardsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

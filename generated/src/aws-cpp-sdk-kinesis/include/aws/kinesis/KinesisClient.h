@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis/KinesisPaginationBase.h>
 #include <aws/kinesis/KinesisServiceClientModel.h>
+#include <aws/kinesis/KinesisWaiter.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace Kinesis {
  */
 class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient>,
-                                      public KinesisPaginationBase<KinesisClient> {
+                                      public KinesisPaginationBase<KinesisClient>,
+                                      public KinesisWaiter<KinesisClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

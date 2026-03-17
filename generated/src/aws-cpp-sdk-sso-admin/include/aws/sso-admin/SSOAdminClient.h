@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sso-admin/SSOAdminPaginationBase.h>
 #include <aws/sso-admin/SSOAdminServiceClientModel.h>
+#include <aws/sso-admin/SSOAdminWaiter.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 
 namespace Aws {
@@ -43,7 +44,8 @@ namespace SSOAdmin {
  */
 class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<SSOAdminClient>,
-                                        public SSOAdminPaginationBase<SSOAdminClient> {
+                                        public SSOAdminPaginationBase<SSOAdminClient>,
+                                        public SSOAdminWaiter<SSOAdminClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

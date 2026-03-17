@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/aiops/AIOpsPaginationBase.h>
 #include <aws/aiops/AIOpsServiceClientModel.h>
+#include <aws/aiops/AIOpsWaiter.h>
 #include <aws/aiops/AIOps_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -25,7 +26,8 @@ namespace AIOps {
  */
 class AWS_AIOPS_API AIOpsClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<AIOpsClient>,
-                                  public AIOpsPaginationBase<AIOpsClient> {
+                                  public AIOpsPaginationBase<AIOpsClient>,
+                                  public AIOpsWaiter<AIOpsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

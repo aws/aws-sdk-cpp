@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sts/STSPaginationBase.h>
 #include <aws/sts/STSServiceClientModel.h>
+#include <aws/sts/STSWaiter.h>
 #include <aws/sts/STS_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace STS {
  */
 class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<STSClient>,
-                              public STSPaginationBase<STSClient> {
+                              public STSPaginationBase<STSClient>,
+                              public STSWaiter<STSClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

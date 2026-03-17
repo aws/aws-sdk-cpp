@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mturk-requester/MTurkPaginationBase.h>
 #include <aws/mturk-requester/MTurkServiceClientModel.h>
+#include <aws/mturk-requester/MTurkWaiter.h>
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace MTurk {
  */
 class AWS_MTURK_API MTurkClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<MTurkClient>,
-                                  public MTurkPaginationBase<MTurkClient> {
+                                  public MTurkPaginationBase<MTurkClient>,
+                                  public MTurkWaiter<MTurkClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecr-public/ECRPublicPaginationBase.h>
 #include <aws/ecr-public/ECRPublicServiceClientModel.h>
+#include <aws/ecr-public/ECRPublicWaiter.h>
 #include <aws/ecr-public/ECRPublic_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace ECRPublic {
  */
 class AWS_ECRPUBLIC_API ECRPublicClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient>,
-                                          public ECRPublicPaginationBase<ECRPublicClient> {
+                                          public ECRPublicPaginationBase<ECRPublicClient>,
+                                          public ECRPublicWaiter<ECRPublicClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

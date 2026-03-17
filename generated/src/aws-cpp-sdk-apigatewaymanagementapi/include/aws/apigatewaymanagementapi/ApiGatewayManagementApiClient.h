@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiPaginationBase.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiServiceClientModel.h>
+#include <aws/apigatewaymanagementapi/ApiGatewayManagementApiWaiter.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApi_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -25,7 +26,8 @@ namespace ApiGatewayManagementApi {
 class AWS_APIGATEWAYMANAGEMENTAPI_API ApiGatewayManagementApiClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayManagementApiClient>,
-      public ApiGatewayManagementApiPaginationBase<ApiGatewayManagementApiClient> {
+      public ApiGatewayManagementApiPaginationBase<ApiGatewayManagementApiClient>,
+      public ApiGatewayManagementApiWaiter<ApiGatewayManagementApiClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

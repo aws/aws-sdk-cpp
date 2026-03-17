@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsPaginationBase.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsServiceClientModel.h>
+#include <aws/verifiedpermissions/VerifiedPermissionsWaiter.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 
 namespace Aws {
@@ -66,7 +67,8 @@ namespace VerifiedPermissions {
  */
 class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : public Aws::Client::AWSJsonClient,
                                                               public Aws::Client::ClientWithAsyncTemplateMethods<VerifiedPermissionsClient>,
-                                                              public VerifiedPermissionsPaginationBase<VerifiedPermissionsClient> {
+                                                              public VerifiedPermissionsPaginationBase<VerifiedPermissionsClient>,
+                                                              public VerifiedPermissionsWaiter<VerifiedPermissionsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

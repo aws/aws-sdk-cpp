@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudsearch/CloudSearchPaginationBase.h>
 #include <aws/cloudsearch/CloudSearchServiceClientModel.h>
+#include <aws/cloudsearch/CloudSearchWaiter.h>
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
@@ -30,7 +31,8 @@ namespace CloudSearch {
  */
 class AWS_CLOUDSEARCH_API CloudSearchClient : public Aws::Client::AWSXMLClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchClient>,
-                                              public CloudSearchPaginationBase<CloudSearchClient> {
+                                              public CloudSearchPaginationBase<CloudSearchClient>,
+                                              public CloudSearchWaiter<CloudSearchClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

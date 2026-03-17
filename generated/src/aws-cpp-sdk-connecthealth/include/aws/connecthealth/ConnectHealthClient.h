@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connecthealth/ConnectHealthPaginationBase.h>
 #include <aws/connecthealth/ConnectHealthServiceClientModel.h>
+#include <aws/connecthealth/ConnectHealthWaiter.h>
 #include <aws/connecthealth/ConnectHealth_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -19,7 +20,8 @@ namespace ConnectHealth {
  */
 class AWS_CONNECTHEALTH_API ConnectHealthClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<ConnectHealthClient>,
-                                                  public ConnectHealthPaginationBase<ConnectHealthClient> {
+                                                  public ConnectHealthPaginationBase<ConnectHealthClient>,
+                                                  public ConnectHealthWaiter<ConnectHealthClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

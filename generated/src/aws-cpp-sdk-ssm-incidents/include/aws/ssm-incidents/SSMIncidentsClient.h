@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm-incidents/SSMIncidentsPaginationBase.h>
 #include <aws/ssm-incidents/SSMIncidentsServiceClientModel.h>
+#include <aws/ssm-incidents/SSMIncidentsWaiter.h>
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace SSMIncidents {
  */
 class AWS_SSMINCIDENTS_API SSMIncidentsClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<SSMIncidentsClient>,
-                                                public SSMIncidentsPaginationBase<SSMIncidentsClient> {
+                                                public SSMIncidentsPaginationBase<SSMIncidentsClient>,
+                                                public SSMIncidentsWaiter<SSMIncidentsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

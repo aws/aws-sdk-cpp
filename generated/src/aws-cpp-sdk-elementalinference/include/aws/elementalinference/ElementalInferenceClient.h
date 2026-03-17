@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elementalinference/ElementalInferencePaginationBase.h>
 #include <aws/elementalinference/ElementalInferenceServiceClientModel.h>
+#include <aws/elementalinference/ElementalInferenceWaiter.h>
 #include <aws/elementalinference/ElementalInference_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace ElementalInference {
  */
 class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<ElementalInferenceClient>,
-                                                            public ElementalInferencePaginationBase<ElementalInferenceClient> {
+                                                            public ElementalInferencePaginationBase<ElementalInferenceClient>,
+                                                            public ElementalInferenceWaiter<ElementalInferenceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

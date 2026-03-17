@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/ConnectPaginationBase.h>
 #include <aws/connect/ConnectServiceClientModel.h>
+#include <aws/connect/ConnectWaiter.h>
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -37,7 +38,8 @@ namespace Connect {
  */
 class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>,
-                                      public ConnectPaginationBase<ConnectClient> {
+                                      public ConnectPaginationBase<ConnectClient>,
+                                      public ConnectWaiter<ConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

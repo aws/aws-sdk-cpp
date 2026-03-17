@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsPaginationBase.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActionsServiceClientModel.h>
+#include <aws/bcm-recommended-actions/BCMRecommendedActionsWaiter.h>
 #include <aws/bcm-recommended-actions/BCMRecommendedActions_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -24,7 +25,8 @@ namespace BCMRecommendedActions {
 class AWS_BCMRECOMMENDEDACTIONS_API BCMRecommendedActionsClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<BCMRecommendedActionsClient>,
-      public BCMRecommendedActionsPaginationBase<BCMRecommendedActionsClient> {
+      public BCMRecommendedActionsPaginationBase<BCMRecommendedActionsClient>,
+      public BCMRecommendedActionsWaiter<BCMRecommendedActionsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

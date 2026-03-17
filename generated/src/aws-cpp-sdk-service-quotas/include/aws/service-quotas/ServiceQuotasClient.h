@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/service-quotas/ServiceQuotasPaginationBase.h>
 #include <aws/service-quotas/ServiceQuotasServiceClientModel.h>
+#include <aws/service-quotas/ServiceQuotasWaiter.h>
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace ServiceQuotas {
  */
 class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>,
-                                                  public ServiceQuotasPaginationBase<ServiceQuotasClient> {
+                                                  public ServiceQuotasPaginationBase<ServiceQuotasClient>,
+                                                  public ServiceQuotasWaiter<ServiceQuotasClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

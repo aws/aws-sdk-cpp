@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codestar-notifications/CodeStarNotificationsPaginationBase.h>
 #include <aws/codestar-notifications/CodeStarNotificationsServiceClientModel.h>
+#include <aws/codestar-notifications/CodeStarNotificationsWaiter.h>
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -47,7 +48,8 @@ namespace CodeStarNotifications {
 class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarNotificationsClient>,
-      public CodeStarNotificationsPaginationBase<CodeStarNotificationsClient> {
+      public CodeStarNotificationsPaginationBase<CodeStarNotificationsClient>,
+      public CodeStarNotificationsWaiter<CodeStarNotificationsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

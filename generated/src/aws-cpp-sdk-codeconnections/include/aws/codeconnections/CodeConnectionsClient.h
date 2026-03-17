@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeconnections/CodeConnectionsPaginationBase.h>
 #include <aws/codeconnections/CodeConnectionsServiceClientModel.h>
+#include <aws/codeconnections/CodeConnectionsWaiter.h>
 #include <aws/codeconnections/CodeConnections_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -58,7 +59,8 @@ namespace CodeConnections {
  */
 class AWS_CODECONNECTIONS_API CodeConnectionsClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<CodeConnectionsClient>,
-                                                      public CodeConnectionsPaginationBase<CodeConnectionsClient> {
+                                                      public CodeConnectionsPaginationBase<CodeConnectionsClient>,
+                                                      public CodeConnectionsWaiter<CodeConnectionsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

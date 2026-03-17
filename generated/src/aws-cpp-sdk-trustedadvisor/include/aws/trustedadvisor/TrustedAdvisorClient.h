@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/trustedadvisor/TrustedAdvisorPaginationBase.h>
 #include <aws/trustedadvisor/TrustedAdvisorServiceClientModel.h>
+#include <aws/trustedadvisor/TrustedAdvisorWaiter.h>
 #include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace TrustedAdvisor {
  */
 class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<TrustedAdvisorClient>,
-                                                    public TrustedAdvisorPaginationBase<TrustedAdvisorClient> {
+                                                    public TrustedAdvisorPaginationBase<TrustedAdvisorClient>,
+                                                    public TrustedAdvisorWaiter<TrustedAdvisorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

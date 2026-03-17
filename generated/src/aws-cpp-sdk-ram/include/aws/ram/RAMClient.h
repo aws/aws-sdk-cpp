@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ram/RAMPaginationBase.h>
 #include <aws/ram/RAMServiceClientModel.h>
+#include <aws/ram/RAMWaiter.h>
 #include <aws/ram/RAM_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace RAM {
  */
 class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<RAMClient>,
-                              public RAMPaginationBase<RAMClient> {
+                              public RAMPaginationBase<RAMClient>,
+                              public RAMWaiter<RAMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

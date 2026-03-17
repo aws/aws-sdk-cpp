@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorPaginationBase.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculatorServiceClientModel.h>
+#include <aws/bcm-pricing-calculator/BCMPricingCalculatorWaiter.h>
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -25,7 +26,8 @@ namespace BCMPricingCalculator {
 class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient>,
-      public BCMPricingCalculatorPaginationBase<BCMPricingCalculatorClient> {
+      public BCMPricingCalculatorPaginationBase<BCMPricingCalculatorClient>,
+      public BCMPricingCalculatorWaiter<BCMPricingCalculatorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotthingsgraph/IoTThingsGraphPaginationBase.h>
 #include <aws/iotthingsgraph/IoTThingsGraphServiceClientModel.h>
+#include <aws/iotthingsgraph/IoTThingsGraphWaiter.h>
 #include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace IoTThingsGraph {
  */
 class AWS_IOTTHINGSGRAPH_API IoTThingsGraphClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<IoTThingsGraphClient>,
-                                                    public IoTThingsGraphPaginationBase<IoTThingsGraphClient> {
+                                                    public IoTThingsGraphPaginationBase<IoTThingsGraphClient>,
+                                                    public IoTThingsGraphWaiter<IoTThingsGraphClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

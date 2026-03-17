@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appflow/AppflowPaginationBase.h>
 #include <aws/appflow/AppflowServiceClientModel.h>
+#include <aws/appflow/AppflowWaiter.h>
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -45,7 +46,8 @@ namespace Appflow {
  */
 class AWS_APPFLOW_API AppflowClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<AppflowClient>,
-                                      public AppflowPaginationBase<AppflowClient> {
+                                      public AppflowPaginationBase<AppflowClient>,
+                                      public AppflowWaiter<AppflowClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-groups/ResourceGroupsPaginationBase.h>
 #include <aws/resource-groups/ResourceGroupsServiceClientModel.h>
+#include <aws/resource-groups/ResourceGroupsWaiter.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 
 namespace Aws {
@@ -43,7 +44,8 @@ namespace ResourceGroups {
  */
 class AWS_RESOURCEGROUPS_API ResourceGroupsClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsClient>,
-                                                    public ResourceGroupsPaginationBase<ResourceGroupsClient> {
+                                                    public ResourceGroupsPaginationBase<ResourceGroupsClient>,
+                                                    public ResourceGroupsWaiter<ResourceGroupsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

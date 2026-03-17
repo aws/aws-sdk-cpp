@@ -19,6 +19,7 @@
 #include <aws/s3-crt/S3CrtIdentityProviderAdapter.h>
 #include <aws/s3-crt/S3CrtPaginationBase.h>
 #include <aws/s3-crt/S3CrtServiceClientModel.h>
+#include <aws/s3-crt/S3CrtWaiter.h>
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/s3-crt/S3ExpressIdentityProvider.h>
 #include <aws/s3/s3_client.h>
@@ -51,7 +52,8 @@ class S3ExpressIdentityProvider;
  */
 class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>,
-                                  public S3CrtPaginationBase<S3CrtClient> {
+                                  public S3CrtPaginationBase<S3CrtClient>,
+                                  public S3CrtWaiter<S3CrtClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

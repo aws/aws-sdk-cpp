@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/nova-act/NovaActPaginationBase.h>
 #include <aws/nova-act/NovaActServiceClientModel.h>
+#include <aws/nova-act/NovaActWaiter.h>
 #include <aws/nova-act/NovaAct_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace NovaAct {
  */
 class AWS_NOVAACT_API NovaActClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<NovaActClient>,
-                                      public NovaActPaginationBase<NovaActClient> {
+                                      public NovaActPaginationBase<NovaActClient>,
+                                      public NovaActWaiter<NovaActClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

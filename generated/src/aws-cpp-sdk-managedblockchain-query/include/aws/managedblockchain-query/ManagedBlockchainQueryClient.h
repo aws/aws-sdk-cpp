@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQueryPaginationBase.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQueryServiceClientModel.h>
+#include <aws/managedblockchain-query/ManagedBlockchainQueryWaiter.h>
 #include <aws/managedblockchain-query/ManagedBlockchainQuery_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace ManagedBlockchainQuery {
 class AWS_MANAGEDBLOCKCHAINQUERY_API ManagedBlockchainQueryClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ManagedBlockchainQueryClient>,
-      public ManagedBlockchainQueryPaginationBase<ManagedBlockchainQueryClient> {
+      public ManagedBlockchainQueryPaginationBase<ManagedBlockchainQueryClient>,
+      public ManagedBlockchainQueryWaiter<ManagedBlockchainQueryClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

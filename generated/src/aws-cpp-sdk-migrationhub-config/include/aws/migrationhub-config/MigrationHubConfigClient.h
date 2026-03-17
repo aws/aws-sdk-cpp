@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhub-config/MigrationHubConfigPaginationBase.h>
 #include <aws/migrationhub-config/MigrationHubConfigServiceClientModel.h>
+#include <aws/migrationhub-config/MigrationHubConfigWaiter.h>
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace MigrationHubConfig {
  */
 class AWS_MIGRATIONHUBCONFIG_API MigrationHubConfigClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubConfigClient>,
-                                                            public MigrationHubConfigPaginationBase<MigrationHubConfigClient> {
+                                                            public MigrationHubConfigPaginationBase<MigrationHubConfigClient>,
+                                                            public MigrationHubConfigWaiter<MigrationHubConfigClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

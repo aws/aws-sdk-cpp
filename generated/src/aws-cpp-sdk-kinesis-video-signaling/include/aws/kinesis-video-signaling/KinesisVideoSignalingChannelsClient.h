@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsPaginationBase.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsServiceClientModel.h>
+#include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsWaiter.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace KinesisVideoSignalingChannels {
 class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoSignalingChannelsClient>,
-      public KinesisVideoSignalingChannelsPaginationBase<KinesisVideoSignalingChannelsClient> {
+      public KinesisVideoSignalingChannelsPaginationBase<KinesisVideoSignalingChannelsClient>,
+      public KinesisVideoSignalingChannelsWaiter<KinesisVideoSignalingChannelsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

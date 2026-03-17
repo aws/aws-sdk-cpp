@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/quicksight/QuickSightPaginationBase.h>
 #include <aws/quicksight/QuickSightServiceClientModel.h>
+#include <aws/quicksight/QuickSightWaiter.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace QuickSight {
  */
 class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<QuickSightClient>,
-                                            public QuickSightPaginationBase<QuickSightClient> {
+                                            public QuickSightPaginationBase<QuickSightClient>,
+                                            public QuickSightWaiter<QuickSightClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

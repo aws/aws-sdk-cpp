@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wafv2/WAFV2PaginationBase.h>
 #include <aws/wafv2/WAFV2ServiceClientModel.h>
+#include <aws/wafv2/WAFV2Waiter.h>
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 
 namespace Aws {
@@ -56,7 +57,8 @@ namespace WAFV2 {
  */
 class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<WAFV2Client>,
-                                  public WAFV2PaginationBase<WAFV2Client> {
+                                  public WAFV2PaginationBase<WAFV2Client>,
+                                  public WAFV2Waiter<WAFV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

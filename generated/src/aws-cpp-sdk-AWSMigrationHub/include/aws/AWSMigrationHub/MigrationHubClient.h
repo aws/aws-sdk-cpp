@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/AWSMigrationHub/MigrationHubPaginationBase.h>
 #include <aws/AWSMigrationHub/MigrationHubServiceClientModel.h>
+#include <aws/AWSMigrationHub/MigrationHubWaiter.h>
 #include <aws/AWSMigrationHub/MigrationHub_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -24,7 +25,8 @@ namespace MigrationHub {
  */
 class AWS_MIGRATIONHUB_API MigrationHubClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubClient>,
-                                                public MigrationHubPaginationBase<MigrationHubClient> {
+                                                public MigrationHubPaginationBase<MigrationHubClient>,
+                                                public MigrationHubWaiter<MigrationHubClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

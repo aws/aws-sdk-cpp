@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lex/LexRuntimeServicePaginationBase.h>
 #include <aws/lex/LexRuntimeServiceServiceClientModel.h>
+#include <aws/lex/LexRuntimeServiceWaiter.h>
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace LexRuntimeService {
  */
 class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceClient : public Aws::Client::AWSJsonClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeServiceClient>,
-                                                          public LexRuntimeServicePaginationBase<LexRuntimeServiceClient> {
+                                                          public LexRuntimeServicePaginationBase<LexRuntimeServiceClient>,
+                                                          public LexRuntimeServiceWaiter<LexRuntimeServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

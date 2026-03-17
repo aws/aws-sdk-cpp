@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/account/AccountPaginationBase.h>
 #include <aws/account/AccountServiceClientModel.h>
+#include <aws/account/AccountWaiter.h>
 #include <aws/account/Account_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -19,7 +20,8 @@ namespace Account {
  */
 class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<AccountClient>,
-                                      public AccountPaginationBase<AccountClient> {
+                                      public AccountPaginationBase<AccountClient>,
+                                      public AccountWaiter<AccountClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

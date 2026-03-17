@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-data/IoTDataPlanePaginationBase.h>
 #include <aws/iot-data/IoTDataPlaneServiceClientModel.h>
+#include <aws/iot-data/IoTDataPlaneWaiter.h>
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace IoTDataPlane {
  */
 class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>,
-                                                public IoTDataPlanePaginationBase<IoTDataPlaneClient> {
+                                                public IoTDataPlanePaginationBase<IoTDataPlaneClient>,
+                                                public IoTDataPlaneWaiter<IoTDataPlaneClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

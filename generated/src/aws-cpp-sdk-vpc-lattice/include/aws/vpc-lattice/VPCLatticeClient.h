@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/vpc-lattice/VPCLatticePaginationBase.h>
 #include <aws/vpc-lattice/VPCLatticeServiceClientModel.h>
+#include <aws/vpc-lattice/VPCLatticeWaiter.h>
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace VPCLattice {
  */
 class AWS_VPCLATTICE_API VPCLatticeClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<VPCLatticeClient>,
-                                            public VPCLatticePaginationBase<VPCLatticeClient> {
+                                            public VPCLatticePaginationBase<VPCLatticeClient>,
+                                            public VPCLatticeWaiter<VPCLatticeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

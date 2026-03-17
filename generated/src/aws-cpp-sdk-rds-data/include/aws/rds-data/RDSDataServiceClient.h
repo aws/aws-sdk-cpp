@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rds-data/RDSDataServicePaginationBase.h>
 #include <aws/rds-data/RDSDataServiceServiceClientModel.h>
+#include <aws/rds-data/RDSDataServiceWaiter.h>
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace RDSDataService {
  */
 class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<RDSDataServiceClient>,
-                                                    public RDSDataServicePaginationBase<RDSDataServiceClient> {
+                                                    public RDSDataServicePaginationBase<RDSDataServiceClient>,
+                                                    public RDSDataServiceWaiter<RDSDataServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

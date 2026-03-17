@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/redshift-data/RedshiftDataAPIServicePaginationBase.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceServiceClientModel.h>
+#include <aws/redshift-data/RedshiftDataAPIServiceWaiter.h>
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace RedshiftDataAPIService {
 class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftDataAPIServiceClient>,
-      public RedshiftDataAPIServicePaginationBase<RedshiftDataAPIServiceClient> {
+      public RedshiftDataAPIServicePaginationBase<RedshiftDataAPIServiceClient>,
+      public RedshiftDataAPIServiceWaiter<RedshiftDataAPIServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

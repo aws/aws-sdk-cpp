@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker/SageMakerPaginationBase.h>
 #include <aws/sagemaker/SageMakerServiceClientModel.h>
+#include <aws/sagemaker/SageMakerWaiter.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace SageMaker {
  */
 class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerClient>,
-                                          public SageMakerPaginationBase<SageMakerClient> {
+                                          public SageMakerPaginationBase<SageMakerClient>,
+                                          public SageMakerWaiter<SageMakerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

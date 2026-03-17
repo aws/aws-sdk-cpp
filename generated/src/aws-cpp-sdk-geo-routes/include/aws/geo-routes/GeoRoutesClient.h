@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/geo-routes/GeoRoutesPaginationBase.h>
 #include <aws/geo-routes/GeoRoutesServiceClientModel.h>
+#include <aws/geo-routes/GeoRoutesWaiter.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace GeoRoutes {
  */
 class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>,
-                                          public GeoRoutesPaginationBase<GeoRoutesClient> {
+                                          public GeoRoutesPaginationBase<GeoRoutesClient>,
+                                          public GeoRoutesWaiter<GeoRoutesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

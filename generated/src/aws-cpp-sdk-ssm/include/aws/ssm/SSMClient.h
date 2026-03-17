@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm/SSMPaginationBase.h>
 #include <aws/ssm/SSMServiceClientModel.h>
+#include <aws/ssm/SSMWaiter.h>
 #include <aws/ssm/SSM_EXPORTS.h>
 
 namespace Aws {
@@ -44,7 +45,8 @@ namespace SSM {
  */
 class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>,
-                              public SSMPaginationBase<SSMClient> {
+                              public SSMPaginationBase<SSMClient>,
+                              public SSMWaiter<SSMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

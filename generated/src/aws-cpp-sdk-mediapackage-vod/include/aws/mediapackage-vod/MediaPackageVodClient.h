@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediapackage-vod/MediaPackageVodPaginationBase.h>
 #include <aws/mediapackage-vod/MediaPackageVodServiceClientModel.h>
+#include <aws/mediapackage-vod/MediaPackageVodWaiter.h>
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace MediaPackageVod {
  */
 class AWS_MEDIAPACKAGEVOD_API MediaPackageVodClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageVodClient>,
-                                                      public MediaPackageVodPaginationBase<MediaPackageVodClient> {
+                                                      public MediaPackageVodPaginationBase<MediaPackageVodClient>,
+                                                      public MediaPackageVodWaiter<MediaPackageVodClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

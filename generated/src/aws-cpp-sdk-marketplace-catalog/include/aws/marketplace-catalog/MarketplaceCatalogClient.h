@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogPaginationBase.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogServiceClientModel.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogWaiter.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace MarketplaceCatalog {
  */
 class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>,
-                                                            public MarketplaceCatalogPaginationBase<MarketplaceCatalogClient> {
+                                                            public MarketplaceCatalogPaginationBase<MarketplaceCatalogClient>,
+                                                            public MarketplaceCatalogWaiter<MarketplaceCatalogClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediaconnect/MediaConnectPaginationBase.h>
 #include <aws/mediaconnect/MediaConnectServiceClientModel.h>
+#include <aws/mediaconnect/MediaConnectWaiter.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 
 namespace Aws {
@@ -35,7 +36,8 @@ namespace MediaConnect {
  */
 class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<MediaConnectClient>,
-                                                public MediaConnectPaginationBase<MediaConnectClient> {
+                                                public MediaConnectPaginationBase<MediaConnectClient>,
+                                                public MediaConnectWaiter<MediaConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

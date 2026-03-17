@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubPaginationBase.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubServiceClientModel.h>
+#include <aws/cost-optimization-hub/CostOptimizationHubWaiter.h>
 #include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace CostOptimizationHub {
  */
 class AWS_COSTOPTIMIZATIONHUB_API CostOptimizationHubClient : public Aws::Client::AWSJsonClient,
                                                               public Aws::Client::ClientWithAsyncTemplateMethods<CostOptimizationHubClient>,
-                                                              public CostOptimizationHubPaginationBase<CostOptimizationHubClient> {
+                                                              public CostOptimizationHubPaginationBase<CostOptimizationHubClient>,
+                                                              public CostOptimizationHubWaiter<CostOptimizationHubClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

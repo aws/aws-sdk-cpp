@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterPaginationBase.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterServiceClientModel.h>
+#include <aws/route53-recovery-cluster/Route53RecoveryClusterWaiter.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryCluster_EXPORTS.h>
 
 namespace Aws {
@@ -62,7 +63,8 @@ namespace Route53RecoveryCluster {
 class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryClusterClient>,
-      public Route53RecoveryClusterPaginationBase<Route53RecoveryClusterClient> {
+      public Route53RecoveryClusterPaginationBase<Route53RecoveryClusterClient>,
+      public Route53RecoveryClusterWaiter<Route53RecoveryClusterClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/networkmonitor/NetworkMonitorPaginationBase.h>
 #include <aws/networkmonitor/NetworkMonitorServiceClientModel.h>
+#include <aws/networkmonitor/NetworkMonitorWaiter.h>
 #include <aws/networkmonitor/NetworkMonitor_EXPORTS.h>
 
 namespace Aws {
@@ -35,7 +36,8 @@ namespace NetworkMonitor {
  */
 class AWS_NETWORKMONITOR_API NetworkMonitorClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<NetworkMonitorClient>,
-                                                    public NetworkMonitorPaginationBase<NetworkMonitorClient> {
+                                                    public NetworkMonitorPaginationBase<NetworkMonitorClient>,
+                                                    public NetworkMonitorWaiter<NetworkMonitorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -12,6 +12,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/s3/S3PaginationBase.h>
 #include <aws/s3/S3ServiceClientModel.h>
+#include <aws/s3/S3Waiter.h>
 #include <aws/s3/S3_EXPORTS.h>
 
 // TODO: temporary fix for naming conflicts on Windows.
@@ -39,7 +40,8 @@ static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
  */
 class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
                             public Aws::Client::ClientWithAsyncTemplateMethods<S3Client>,
-                            public S3PaginationBase<S3Client> {
+                            public S3PaginationBase<S3Client>,
+                            public S3Waiter<S3Client> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

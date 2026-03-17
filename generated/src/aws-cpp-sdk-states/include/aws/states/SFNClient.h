@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/states/SFNPaginationBase.h>
 #include <aws/states/SFNServiceClientModel.h>
+#include <aws/states/SFNWaiter.h>
 #include <aws/states/SFN_EXPORTS.h>
 
 namespace Aws {
@@ -34,7 +35,8 @@ namespace SFN {
  */
 class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>,
-                              public SFNPaginationBase<SFNClient> {
+                              public SFNPaginationBase<SFNClient>,
+                              public SFNWaiter<SFNClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

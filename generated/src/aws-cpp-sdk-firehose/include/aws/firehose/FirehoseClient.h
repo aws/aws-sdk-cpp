@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/firehose/FirehosePaginationBase.h>
 #include <aws/firehose/FirehoseServiceClientModel.h>
+#include <aws/firehose/FirehoseWaiter.h>
 #include <aws/firehose/Firehose_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace Firehose {
  */
 class AWS_FIREHOSE_API FirehoseClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<FirehoseClient>,
-                                        public FirehosePaginationBase<FirehoseClient> {
+                                        public FirehosePaginationBase<FirehoseClient>,
+                                        public FirehoseWaiter<FirehoseClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

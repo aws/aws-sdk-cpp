@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlPaginationBase.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlServiceClientModel.h>
+#include <aws/bedrock-agentcore-control/BedrockAgentCoreControlWaiter.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -22,7 +23,8 @@ namespace BedrockAgentCoreControl {
 class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreControlClient>,
-      public BedrockAgentCoreControlPaginationBase<BedrockAgentCoreControlClient> {
+      public BedrockAgentCoreControlPaginationBase<BedrockAgentCoreControlClient>,
+      public BedrockAgentCoreControlWaiter<BedrockAgentCoreControlClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

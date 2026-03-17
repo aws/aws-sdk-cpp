@@ -1,0 +1,62 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/acm/ACMClient.h>
+#include <aws/acm/model/CertificateStatus.h>
+#include <aws/acm/model/DescribeCertificateRequest.h>
+#include <aws/acm/model/DescribeCertificateResult.h>
+#include <aws/core/utils/Waiter.h>
+
+#include <algorithm>
+
+namespace Aws {
+namespace ACM {
+
+template <typename DerivedClient = ACMClient>
+class ACMWaiter {
+ public:
+  Aws::Utils::WaiterOutcome<Model::DescribeCertificateOutcome> WaitUntilCertificateValidated(
+      const Model::DescribeCertificateRequest& request) {
+    std::vector<Aws::Utils::Acceptor<Model::DescribeCertificateOutcome>> acceptors;
+    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("SUCCESS"),
+                         [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+                           if (!outcome.IsSuccess()) return false;
+                           const auto& result = outcome.GetResult();
+                           return std::all_of(result.GetCertificate().GetDomainValidationOptions().begin(),
+                                              result.GetCertificate().GetDomainValidationOptions().end(),
+                                              [&](const Model::DomainValidation& item) {
+                                                return item.GetValidationStatus() == expected.get<Aws::String>();
+                                              });
+                         }});
+    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("PENDING_VALIDATION"),
+                         [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+                           if (!outcome.IsSuccess()) return false;
+                           const auto& result = outcome.GetResult();
+                           return std::any_of(result.GetCertificate().GetDomainValidationOptions().begin(),
+                                              result.GetCertificate().GetDomainValidationOptions().end(),
+                                              [&](const Model::DomainValidation& item) {
+                                                return item.GetValidationStatus() == expected.get<Aws::String>();
+                                              });
+                         }});
+    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
+                         [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+                           if (!outcome.IsSuccess()) return false;
+                           const auto& result = outcome.GetResult();
+                           return Model::CertificateStatusMapper::GetNameForCertificateStatus(result.GetCertificate().GetStatus()) ==
+                                  expected.get<Aws::String>();
+                         }});
+    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::ERROR, Aws::String("ResourceNotFoundException")});
+
+    auto operation = [this](const Model::DescribeCertificateRequest& req) {
+      return static_cast<DerivedClient*>(this)->DescribeCertificate(req);
+    };
+    Aws::Utils::Waiter<Model::DescribeCertificateRequest, Model::DescribeCertificateOutcome> waiter(60, 2, acceptors, operation,
+                                                                                                    "WaitUntilCertificateValidated");
+    return waiter.Wait(request);
+  }
+};
+}  // namespace ACM
+}  // namespace Aws

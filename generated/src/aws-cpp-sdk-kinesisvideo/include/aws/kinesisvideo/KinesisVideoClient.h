@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisvideo/KinesisVideoPaginationBase.h>
 #include <aws/kinesisvideo/KinesisVideoServiceClientModel.h>
+#include <aws/kinesisvideo/KinesisVideoWaiter.h>
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace KinesisVideo {
  */
 class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>,
-                                                public KinesisVideoPaginationBase<KinesisVideoClient> {
+                                                public KinesisVideoPaginationBase<KinesisVideoClient>,
+                                                public KinesisVideoWaiter<KinesisVideoClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

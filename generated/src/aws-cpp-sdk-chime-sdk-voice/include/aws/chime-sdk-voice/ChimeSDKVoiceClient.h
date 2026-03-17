@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-voice/ChimeSDKVoicePaginationBase.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceServiceClientModel.h>
+#include <aws/chime-sdk-voice/ChimeSDKVoiceWaiter.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -23,7 +24,8 @@ namespace ChimeSDKVoice {
  */
 class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKVoiceClient>,
-                                                  public ChimeSDKVoicePaginationBase<ChimeSDKVoiceClient> {
+                                                  public ChimeSDKVoicePaginationBase<ChimeSDKVoiceClient>,
+                                                  public ChimeSDKVoiceWaiter<ChimeSDKVoiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

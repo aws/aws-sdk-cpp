@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/invoicing/InvoicingPaginationBase.h>
 #include <aws/invoicing/InvoicingServiceClientModel.h>
+#include <aws/invoicing/InvoicingWaiter.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
 
 namespace Aws {
@@ -64,7 +65,8 @@ namespace Invoicing {
  */
 class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<InvoicingClient>,
-                                          public InvoicingPaginationBase<InvoicingClient> {
+                                          public InvoicingPaginationBase<InvoicingClient>,
+                                          public InvoicingWaiter<InvoicingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

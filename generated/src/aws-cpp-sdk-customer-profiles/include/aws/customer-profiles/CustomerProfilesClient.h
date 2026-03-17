@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/customer-profiles/CustomerProfilesPaginationBase.h>
 #include <aws/customer-profiles/CustomerProfilesServiceClientModel.h>
+#include <aws/customer-profiles/CustomerProfilesWaiter.h>
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 
 namespace Aws {
@@ -31,7 +32,8 @@ namespace CustomerProfiles {
  */
 class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<CustomerProfilesClient>,
-                                                        public CustomerProfilesPaginationBase<CustomerProfilesClient> {
+                                                        public CustomerProfilesPaginationBase<CustomerProfilesClient>,
+                                                        public CustomerProfilesWaiter<CustomerProfilesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

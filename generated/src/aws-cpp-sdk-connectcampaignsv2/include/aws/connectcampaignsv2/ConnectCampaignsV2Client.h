@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2PaginationBase.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2ServiceClientModel.h>
+#include <aws/connectcampaignsv2/ConnectCampaignsV2Waiter.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -19,7 +20,8 @@ namespace ConnectCampaignsV2 {
  */
 class AWS_CONNECTCAMPAIGNSV2_API ConnectCampaignsV2Client : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsV2Client>,
-                                                            public ConnectCampaignsV2PaginationBase<ConnectCampaignsV2Client> {
+                                                            public ConnectCampaignsV2PaginationBase<ConnectCampaignsV2Client>,
+                                                            public ConnectCampaignsV2Waiter<ConnectCampaignsV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

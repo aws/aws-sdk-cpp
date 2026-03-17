@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rum/CloudWatchRUMPaginationBase.h>
 #include <aws/rum/CloudWatchRUMServiceClientModel.h>
+#include <aws/rum/CloudWatchRUMWaiter.h>
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace CloudWatchRUM {
  */
 class AWS_CLOUDWATCHRUM_API CloudWatchRUMClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchRUMClient>,
-                                                  public CloudWatchRUMPaginationBase<CloudWatchRUMClient> {
+                                                  public CloudWatchRUMPaginationBase<CloudWatchRUMClient>,
+                                                  public CloudWatchRUMWaiter<CloudWatchRUMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

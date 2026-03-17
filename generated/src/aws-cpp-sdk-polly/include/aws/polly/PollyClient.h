@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/polly/PollyPaginationBase.h>
 #include <aws/polly/PollyServiceClientModel.h>
+#include <aws/polly/PollyWaiter.h>
 #include <aws/polly/Polly_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace Polly {
  */
 class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<PollyClient>,
-                                  public PollyPaginationBase<PollyClient> {
+                                  public PollyPaginationBase<PollyClient>,
+                                  public PollyWaiter<PollyClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/omics/OmicsPaginationBase.h>
 #include <aws/omics/OmicsServiceClientModel.h>
+#include <aws/omics/OmicsWaiter.h>
 #include <aws/omics/Omics_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace Omics {
  */
 class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>,
-                                  public OmicsPaginationBase<OmicsClient> {
+                                  public OmicsPaginationBase<OmicsClient>,
+                                  public OmicsWaiter<OmicsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

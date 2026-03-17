@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/deadline/DeadlinePaginationBase.h>
 #include <aws/deadline/DeadlineServiceClientModel.h>
+#include <aws/deadline/DeadlineWaiter.h>
 #include <aws/deadline/Deadline_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace deadline {
  */
 class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<DeadlineClient>,
-                                        public DeadlinePaginationBase<DeadlineClient> {
+                                        public DeadlinePaginationBase<DeadlineClient>,
+                                        public DeadlineWaiter<DeadlineClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

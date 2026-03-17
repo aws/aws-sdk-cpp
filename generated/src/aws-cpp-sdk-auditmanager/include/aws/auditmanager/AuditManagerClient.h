@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/auditmanager/AuditManagerPaginationBase.h>
 #include <aws/auditmanager/AuditManagerServiceClientModel.h>
+#include <aws/auditmanager/AuditManagerWaiter.h>
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -43,7 +44,8 @@ namespace AuditManager {
  */
 class AWS_AUDITMANAGER_API AuditManagerClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<AuditManagerClient>,
-                                                public AuditManagerPaginationBase<AuditManagerClient> {
+                                                public AuditManagerPaginationBase<AuditManagerClient>,
+                                                public AuditManagerWaiter<AuditManagerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

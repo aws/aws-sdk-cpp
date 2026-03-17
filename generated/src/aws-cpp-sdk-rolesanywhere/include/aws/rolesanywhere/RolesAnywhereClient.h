@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rolesanywhere/RolesAnywherePaginationBase.h>
 #include <aws/rolesanywhere/RolesAnywhereServiceClientModel.h>
+#include <aws/rolesanywhere/RolesAnywhereWaiter.h>
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 
 namespace Aws {
@@ -34,7 +35,8 @@ namespace RolesAnywhere {
  */
 class AWS_ROLESANYWHERE_API RolesAnywhereClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<RolesAnywhereClient>,
-                                                  public RolesAnywherePaginationBase<RolesAnywhereClient> {
+                                                  public RolesAnywherePaginationBase<RolesAnywhereClient>,
+                                                  public RolesAnywhereWaiter<RolesAnywhereClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

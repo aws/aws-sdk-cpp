@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/neptune-graph/NeptuneGraphPaginationBase.h>
 #include <aws/neptune-graph/NeptuneGraphServiceClientModel.h>
+#include <aws/neptune-graph/NeptuneGraphWaiter.h>
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace NeptuneGraph {
  */
 class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<NeptuneGraphClient>,
-                                                public NeptuneGraphPaginationBase<NeptuneGraphClient> {
+                                                public NeptuneGraphPaginationBase<NeptuneGraphClient>,
+                                                public NeptuneGraphWaiter<NeptuneGraphClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

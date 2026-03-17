@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pi/PIPaginationBase.h>
 #include <aws/pi/PIServiceClientModel.h>
+#include <aws/pi/PIWaiter.h>
 #include <aws/pi/PI_EXPORTS.h>
 
 namespace Aws {
@@ -41,7 +42,8 @@ namespace PI {
  */
 class AWS_PI_API PIClient : public Aws::Client::AWSJsonClient,
                             public Aws::Client::ClientWithAsyncTemplateMethods<PIClient>,
-                            public PIPaginationBase<PIClient> {
+                            public PIPaginationBase<PIClient>,
+                            public PIWaiter<PIClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

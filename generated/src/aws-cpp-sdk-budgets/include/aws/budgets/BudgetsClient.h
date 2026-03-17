@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/budgets/BudgetsPaginationBase.h>
 #include <aws/budgets/BudgetsServiceClientModel.h>
+#include <aws/budgets/BudgetsWaiter.h>
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -44,7 +45,8 @@ namespace Budgets {
  */
 class AWS_BUDGETS_API BudgetsClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<BudgetsClient>,
-                                      public BudgetsPaginationBase<BudgetsClient> {
+                                      public BudgetsPaginationBase<BudgetsClient>,
+                                      public BudgetsWaiter<BudgetsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerPaginationBase.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerServiceClientModel.h>
+#include <aws/sagemaker-edge/SagemakerEdgeManagerWaiter.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace SagemakerEdgeManager {
 class AWS_SAGEMAKEREDGEMANAGER_API SagemakerEdgeManagerClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<SagemakerEdgeManagerClient>,
-      public SagemakerEdgeManagerPaginationBase<SagemakerEdgeManagerClient> {
+      public SagemakerEdgeManagerPaginationBase<SagemakerEdgeManagerClient>,
+      public SagemakerEdgeManagerWaiter<SagemakerEdgeManagerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/controltower/ControlTowerPaginationBase.h>
 #include <aws/controltower/ControlTowerServiceClientModel.h>
+#include <aws/controltower/ControlTowerWaiter.h>
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -213,7 +214,8 @@ namespace ControlTower {
  */
 class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<ControlTowerClient>,
-                                                public ControlTowerPaginationBase<ControlTowerClient> {
+                                                public ControlTowerPaginationBase<ControlTowerClient>,
+                                                public ControlTowerWaiter<ControlTowerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

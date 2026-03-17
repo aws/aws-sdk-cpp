@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fis/FISPaginationBase.h>
 #include <aws/fis/FISServiceClientModel.h>
+#include <aws/fis/FISWaiter.h>
 #include <aws/fis/FIS_EXPORTS.h>
 
 namespace Aws {
@@ -23,7 +24,8 @@ namespace FIS {
  */
 class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<FISClient>,
-                              public FISPaginationBase<FISClient> {
+                              public FISPaginationBase<FISClient>,
+                              public FISWaiter<FISClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

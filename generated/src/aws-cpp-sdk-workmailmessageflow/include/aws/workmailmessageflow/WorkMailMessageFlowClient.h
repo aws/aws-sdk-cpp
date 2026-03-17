@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowPaginationBase.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowServiceClientModel.h>
+#include <aws/workmailmessageflow/WorkMailMessageFlowWaiter.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlow_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace WorkMailMessageFlow {
  */
 class AWS_WORKMAILMESSAGEFLOW_API WorkMailMessageFlowClient : public Aws::Client::AWSJsonClient,
                                                               public Aws::Client::ClientWithAsyncTemplateMethods<WorkMailMessageFlowClient>,
-                                                              public WorkMailMessageFlowPaginationBase<WorkMailMessageFlowClient> {
+                                                              public WorkMailMessageFlowPaginationBase<WorkMailMessageFlowClient>,
+                                                              public WorkMailMessageFlowWaiter<WorkMailMessageFlowClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

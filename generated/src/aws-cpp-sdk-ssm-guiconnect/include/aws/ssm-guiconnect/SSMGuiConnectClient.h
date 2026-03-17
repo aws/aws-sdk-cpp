@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm-guiconnect/SSMGuiConnectPaginationBase.h>
 #include <aws/ssm-guiconnect/SSMGuiConnectServiceClientModel.h>
+#include <aws/ssm-guiconnect/SSMGuiConnectWaiter.h>
 #include <aws/ssm-guiconnect/SSMGuiConnect_EXPORTS.h>
 
 namespace Aws {
@@ -36,7 +37,8 @@ namespace SSMGuiConnect {
  */
 class AWS_SSMGUICONNECT_API SSMGuiConnectClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<SSMGuiConnectClient>,
-                                                  public SSMGuiConnectPaginationBase<SSMGuiConnectClient> {
+                                                  public SSMGuiConnectPaginationBase<SSMGuiConnectClient>,
+                                                  public SSMGuiConnectWaiter<SSMGuiConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

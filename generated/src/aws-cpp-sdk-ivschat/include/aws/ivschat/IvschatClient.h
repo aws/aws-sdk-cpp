@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ivschat/IvschatPaginationBase.h>
 #include <aws/ivschat/IvschatServiceClientModel.h>
+#include <aws/ivschat/IvschatWaiter.h>
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 
 namespace Aws {
@@ -90,7 +91,8 @@ namespace ivschat {
  */
 class AWS_IVSCHAT_API IvschatClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<IvschatClient>,
-                                      public IvschatPaginationBase<IvschatClient> {
+                                      public IvschatPaginationBase<IvschatClient>,
+                                      public IvschatWaiter<IvschatClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

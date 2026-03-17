@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workmail/WorkMailPaginationBase.h>
 #include <aws/workmail/WorkMailServiceClientModel.h>
+#include <aws/workmail/WorkMailWaiter.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
 
 namespace Aws {
@@ -37,7 +38,8 @@ namespace WorkMail {
  */
 class AWS_WORKMAIL_API WorkMailClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<WorkMailClient>,
-                                        public WorkMailPaginationBase<WorkMailClient> {
+                                        public WorkMailPaginationBase<WorkMailClient>,
+                                        public WorkMailWaiter<WorkMailClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

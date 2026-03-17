@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ivs/IVSPaginationBase.h>
 #include <aws/ivs/IVSServiceClientModel.h>
+#include <aws/ivs/IVSWaiter.h>
 #include <aws/ivs/IVS_EXPORTS.h>
 
 namespace Aws {
@@ -96,7 +97,8 @@ namespace IVS {
  */
 class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<IVSClient>,
-                              public IVSPaginationBase<IVSClient> {
+                              public IVSPaginationBase<IVSClient>,
+                              public IVSWaiter<IVSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

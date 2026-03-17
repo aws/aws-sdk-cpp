@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/xray/XRayPaginationBase.h>
 #include <aws/xray/XRayServiceClientModel.h>
+#include <aws/xray/XRayWaiter.h>
 #include <aws/xray/XRay_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace XRay {
  */
 class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient,
                                 public Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>,
-                                public XRayPaginationBase<XRayClient> {
+                                public XRayPaginationBase<XRayClient>,
+                                public XRayWaiter<XRayClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
