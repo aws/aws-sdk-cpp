@@ -6,7 +6,7 @@
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
-using namespace Aws; // TODO: remove this test comment for clang-tidy CI validation
+using namespace Aws;
 
 std::shared_ptr<Aws::IOStream> AmazonSerializableWebServiceRequest::GetBody() const
 {
