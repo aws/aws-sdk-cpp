@@ -1,0 +1,57 @@
+name: clang-tidy-check
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: clang-tidy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tidy-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-tidy cmake libcurl4-openssl-dev libssl-dev
+
+      - name: Configure CMake
+        run: |
+          cmake -B build \
+            -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+            -DBUILD_ONLY="s3" \
+            -DENABLE_TESTING=OFF
+
+      - name: Get changed files
+        id: changed
+        env:
+          BASE_BRANCH: "${{ github.event.pull_request.base.ref }}"
+          HEAD_BRANCH: "${{ github.event.pull_request.head.ref }}"
+        run: |
+          git fetch origin "$BASE_BRANCH"
+          git fetch origin "$HEAD_BRANCH"
+          git diff --name-only --diff-filter=d origin/$BASE_BRANCH...origin/$HEAD_BRANCH \
+            | grep -E '\.(cpp|cc|cxx|c|h|hh|hpp)$' \
+            | grep -v '^generated/' > changed_files.txt || true
+          echo "count=$(wc -l < changed_files.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+
+      - name: Run clang-tidy
+        if: steps.changed.outputs.count != '0'
+        run: |
+          echo "Running clang-tidy on changed files:"
+          cat changed_files.txt
+          xargs -a changed_files.txt clang-tidy -p build --warnings-as-errors='performance-*'
