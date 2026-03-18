@@ -125,7 +125,7 @@ public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationDa
 
             writer.write("using OutcomeT = $L;", outcomeType);
             writer.write("using RequestT = $L;", requestType);
-            writer.write("std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;");
+            writer.write("Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;");
 
             for (Acceptor acceptor : data.getWaiter().getAcceptors()) {
                 writeAcceptor(writer, acceptor, waiterTag, data);

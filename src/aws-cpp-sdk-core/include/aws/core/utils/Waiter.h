@@ -108,7 +108,7 @@ class Waiter {
  public:
   using AcceptorPtr = Aws::UniquePtr<Acceptor<OutcomeT>>;
 
-  Waiter(int delay, int maxAttempts, std::vector<AcceptorPtr> acceptors, std::function<OutcomeT(const RequestT&)> op,
+  Waiter(int delay, int maxAttempts, Aws::Vector<AcceptorPtr> acceptors, std::function<OutcomeT(const RequestT&)> op,
          const Aws::String& waiterName = "Waiter")
       : m_delay(delay),
         m_maxAttempts(maxAttempts),
@@ -150,7 +150,7 @@ class Waiter {
 private:
   int m_delay;
   int m_maxAttempts;
-  std::vector<AcceptorPtr> m_acceptors;
+  Aws::Vector<AcceptorPtr> m_acceptors;
   std::function<OutcomeT(const RequestT&)> m_operation;
   Aws::String m_name;
 
