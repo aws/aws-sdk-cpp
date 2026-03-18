@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/RetryStrategy.h>
-
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
+#include <aws/core/client/RetryStrategy.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/local/Random.h>
 
 using namespace Aws::Utils::Threading;
 
@@ -19,19 +19,11 @@ namespace Aws
         static const int RETRY_COST = 5;
         static const int TIMEOUT_RETRY_COST = 10;
 
-        StandardRetryStrategy::StandardRetryStrategy(long maxAttempts) :
-            m_retryQuotaContainer(Aws::MakeShared<DefaultRetryQuotaContainer>("StandardRetryStrategy")),
-            m_maxAttempts(maxAttempts)
-        {
-          srand((unsigned int)time(NULL));
-        }
+        StandardRetryStrategy::StandardRetryStrategy(long maxAttempts)
+            : m_retryQuotaContainer(Aws::MakeShared<DefaultRetryQuotaContainer>("StandardRetryStrategy")), m_maxAttempts(maxAttempts) {}
 
-        StandardRetryStrategy::StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts) :
-            m_retryQuotaContainer(retryQuotaContainer),
-            m_maxAttempts(maxAttempts)
-        {
-          srand((unsigned int)time(NULL));
-        }
+        StandardRetryStrategy::StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts)
+            : m_retryQuotaContainer(retryQuotaContainer), m_maxAttempts(maxAttempts) {}
 
         void StandardRetryStrategy::RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome)
         {
@@ -64,7 +56,7 @@ namespace Aws
         {
             AWS_UNREFERENCED_PARAM(error);
             // Maximum left shift factor is capped by ceil(log2(max_delay)), to avoid wrap-around and overflow into negative values:
-            return (std::min)(rand() % 1000 * (1 << (std::min)(attemptedRetries, 15L)), 20000);
+            return std::min(static_cast<int>(Aws::Utils::GetRandomValue() % 1000) * (1 << std::min(attemptedRetries, 15L)), 20000);
         }
 
         DefaultRetryQuotaContainer::DefaultRetryQuotaContainer() : m_retryQuota(INITIAL_RETRY_TOKENS)

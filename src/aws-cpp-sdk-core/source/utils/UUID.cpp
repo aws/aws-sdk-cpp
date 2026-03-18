@@ -3,16 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/SecureRandom.h>
-#include <iomanip>
-#include <random>
-#include <chrono>
-#include <thread>
-#include <mutex>
+#include <aws/core/utils/local/Random.h>
 
 namespace Aws
 {
@@ -91,33 +87,12 @@ namespace Aws
             return Aws::Utils::UUID(randomBytes);
         }
 
-#ifdef UINT64_MAX
-        using MTEngine = std::mt19937_64;
-        using RandGenType = uint64_t;
-#else
-        using MTEngine = std::mt19937;
-        using RandGenType = unsigned int;
-#endif
-
-        static size_t GetCurrentThreadRandomSeed()
-        {
-            static size_t processRandomSeed = std::random_device{}();
-            static MTEngine threadRandomSeedGen(processRandomSeed);
-            // Threads can be re-used (esp. on OS X), generate a true random per-thread random seed
-            static std::mutex threadRandomSeedGenMtx;
-            std::unique_lock<std::mutex> lock(threadRandomSeedGenMtx);
-            return static_cast<size_t>(std::hash<std::thread::id>{}(std::this_thread::get_id()) ^ threadRandomSeedGen());
-        }
-
         Aws::Utils::UUID UUID::PseudoRandomUUID()
         {
-            static const thread_local size_t threadSeed = GetCurrentThreadRandomSeed();
-            static thread_local MTEngine gen(threadSeed);
-
             unsigned char randomBytes[UUID_BINARY_SIZE] = {0};
 
-            for (size_t i = 0; i < UUID_BINARY_SIZE / sizeof(RandGenType); i++) {
-                reinterpret_cast<RandGenType*>(randomBytes)[i] = gen();
+            for (size_t i = 0; i < UUID_BINARY_SIZE / sizeof(decltype(Aws::Utils::GetRandomValue())); i++) {
+              reinterpret_cast<decltype(Aws::Utils::GetRandomValue())*>(randomBytes)[i] = GetRandomValue();
             }
 
             //Set version bits to 0100
