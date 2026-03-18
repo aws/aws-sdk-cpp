@@ -117,6 +117,7 @@ class Waiter {
         m_name(waiterName) {}
 
   WaiterOutcome<OutcomeT> Wait(const RequestT& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::WAITER);
     for (int attempt = 0; attempt < m_maxAttempts; ++attempt) {
       auto outcome = m_operation(request);
 
