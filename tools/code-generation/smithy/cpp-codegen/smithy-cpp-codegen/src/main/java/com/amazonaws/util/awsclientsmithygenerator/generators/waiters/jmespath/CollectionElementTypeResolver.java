@@ -13,6 +13,8 @@ import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.Shape;
 
+import java.util.Optional;
+
 /**
  * Resolves the C++ element type for a collection referenced by a JMESPath expression.
  * Returns "auto" when the model is unavailable or the type cannot be determined.
@@ -38,85 +40,76 @@ public class CollectionElementTypeResolver {
     public static String resolveFromShape(JmespathExpression expr, Shape current, Model model,
                                           String smithyServiceName) {
         if (model == null || current == null) return "auto";
-        Shape element = findFirstListElement(expr, current, model);
-        if (element == null || !element.isStructureShape()) return "auto";
-        String shapeName = element.getId().getName();
-        // EC2 renames *Result shapes to *Response
-        if ("ec2".equals(smithyServiceName) && shapeName.endsWith("Result")) {
-            shapeName = shapeName.substring(0, shapeName.length() - 6) + "Response";
-        }
-        return "Model::" + shapeName;
+        return findFirstListElement(expr, current, model)
+                .filter(Shape::isStructureShape)
+                .map(element -> {
+                    String shapeName = element.getId().getName();
+                    if ("ec2".equals(smithyServiceName) && shapeName.endsWith("Result")) {
+                        shapeName = shapeName.substring(0, shapeName.length() - 6) + "Response";
+                    }
+                    return "Model::" + shapeName;
+                })
+                .orElse("auto");
     }
 
     /**
      * Finds the element shape of the first list encountered when walking the projection's
      * collection path (the left side of the projection).
      */
-    private static Shape findFirstListElement(JmespathExpression expr, Shape current, Model model) {
-        if (current == null) return null;
-
+    private static Optional<Shape> findFirstListElement(JmespathExpression expr, Shape current, Model model) {
         if (expr instanceof ProjectionExpression) {
             return findFirstListInPath(((ProjectionExpression) expr).getLeft(), current, model);
         } else if (expr instanceof FlattenExpression) {
             return findFirstListElement(((FlattenExpression) expr).getExpression(), current, model);
         } else if (expr instanceof Subexpression) {
             Subexpression sub = (Subexpression) expr;
-            Shape afterLeft = walkFields(sub.getLeft(), current, model);
-            return afterLeft != null ? findFirstListElement(sub.getRight(), afterLeft, model) : null;
+            return walkFields(sub.getLeft(), current, model)
+                    .flatMap(afterLeft -> findFirstListElement(sub.getRight(), afterLeft, model));
         }
-        return null;
+        return Optional.empty();
     }
 
     /**
      * Walks the left side of a projection to find the first list shape and return its element.
      * Stops at the first list encountered (the collection being iterated).
      */
-    private static Shape findFirstListInPath(JmespathExpression expr, Shape current, Model model) {
-        if (current == null) return null;
-
+    private static Optional<Shape> findFirstListInPath(JmespathExpression expr, Shape current, Model model) {
         if (expr instanceof FieldExpression) {
-            Shape target = resolveMemberTarget(current, ((FieldExpression) expr).getName(), model);
-            if (target != null && target.isListShape()) {
-                return model.expectShape(target.asListShape().get().getMember().getTarget());
-            }
-            return null;
+            return resolveMemberTarget(current, ((FieldExpression) expr).getName(), model)
+                    .filter(Shape::isListShape)
+                    .map(target -> model.expectShape(target.asListShape().get().getMember().getTarget()));
         } else if (expr instanceof Subexpression) {
-            // Walk fields until we hit a list
             Subexpression sub = (Subexpression) expr;
-            Shape afterLeft = walkFields(sub.getLeft(), current, model);
-            if (afterLeft != null && afterLeft.isListShape()) {
-                return model.expectShape(afterLeft.asListShape().get().getMember().getTarget());
+            Optional<Shape> afterLeft = walkFields(sub.getLeft(), current, model);
+            if (afterLeft.filter(Shape::isListShape).isPresent()) {
+                return afterLeft.map(s -> model.expectShape(s.asListShape().get().getMember().getTarget()));
             }
-            return findFirstListInPath(sub.getRight(), afterLeft, model);
+            return afterLeft.flatMap(s -> findFirstListInPath(sub.getRight(), s, model));
         } else if (expr instanceof FlattenExpression) {
             return findFirstListInPath(((FlattenExpression) expr).getExpression(), current, model);
         } else if (expr instanceof ProjectionExpression) {
-            // Nested projection in the left side — find the first list
             return findFirstListInPath(((ProjectionExpression) expr).getLeft(), current, model);
         }
-        return null;
+        return Optional.empty();
     }
 
     /**
      * Walks field/subexpression nodes to resolve the shape, without unwrapping lists.
      */
-    private static Shape walkFields(JmespathExpression expr, Shape current, Model model) {
-        if (current == null) return null;
-
+    private static Optional<Shape> walkFields(JmespathExpression expr, Shape current, Model model) {
         if (expr instanceof FieldExpression) {
             return resolveMemberTarget(current, ((FieldExpression) expr).getName(), model);
         } else if (expr instanceof Subexpression) {
-            Shape left = walkFields(((Subexpression) expr).getLeft(), current, model);
-            return walkFields(((Subexpression) expr).getRight(), left, model);
+            return walkFields(((Subexpression) expr).getLeft(), current, model)
+                    .flatMap(left -> walkFields(((Subexpression) expr).getRight(), left, model));
         }
-        return current;
+        return Optional.of(current);
     }
 
-    private static Shape resolveMemberTarget(Shape structShape, String memberName, Model model) {
-        if (!structShape.isStructureShape()) return null;
+    private static Optional<Shape> resolveMemberTarget(Shape structShape, String memberName, Model model) {
+        if (!structShape.isStructureShape()) return Optional.empty();
         return structShape.asStructureShape().get()
                 .getMember(memberName)
-                .flatMap(member -> model.getShape(member.getTarget()))
-                .orElse(null);
+                .flatMap(member -> model.getShape(member.getTarget()));
     }
 }
