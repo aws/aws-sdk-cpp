@@ -28,7 +28,7 @@ class HealthLakeWaiter {
       const Model::DescribeFHIRDatastoreRequest& request) {
     using OutcomeT = Model::DescribeFHIRDatastoreOutcome;
     using RequestT = Model::DescribeFHIRDatastoreRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRDatastoreActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -63,7 +63,7 @@ class HealthLakeWaiter {
       const Model::DescribeFHIRDatastoreRequest& request) {
     using OutcomeT = Model::DescribeFHIRDatastoreOutcome;
     using RequestT = Model::DescribeFHIRDatastoreRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRDatastoreDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
         [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -82,7 +82,7 @@ class HealthLakeWaiter {
       const Model::DescribeFHIRExportJobRequest& request) {
     using OutcomeT = Model::DescribeFHIRExportJobOutcome;
     using RequestT = Model::DescribeFHIRExportJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRExportJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -128,7 +128,7 @@ class HealthLakeWaiter {
       const Model::DescribeFHIRImportJobRequest& request) {
     using OutcomeT = Model::DescribeFHIRImportJobOutcome;
     using RequestT = Model::DescribeFHIRImportJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRImportJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

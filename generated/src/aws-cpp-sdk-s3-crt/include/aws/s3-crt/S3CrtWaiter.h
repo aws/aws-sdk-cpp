@@ -23,7 +23,7 @@ class S3CrtWaiter {
   Aws::Utils::WaiterOutcome<Model::HeadBucketOutcome> WaitUntilBucketExists(const Model::HeadBucketRequest& request) {
     using OutcomeT = Model::HeadBucketOutcome;
     using RequestT = Model::HeadBucketRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("BucketExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(
@@ -37,7 +37,7 @@ class S3CrtWaiter {
   Aws::Utils::WaiterOutcome<Model::HeadBucketOutcome> WaitUntilBucketNotExists(const Model::HeadBucketRequest& request) {
     using OutcomeT = Model::HeadBucketOutcome;
     using RequestT = Model::HeadBucketRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::StatusAcceptor<OutcomeT>>("BucketNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS, 404));
 
@@ -49,7 +49,7 @@ class S3CrtWaiter {
   Aws::Utils::WaiterOutcome<Model::HeadObjectOutcome> WaitUntilObjectExists(const Model::HeadObjectRequest& request) {
     using OutcomeT = Model::HeadObjectOutcome;
     using RequestT = Model::HeadObjectRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ObjectExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(
@@ -63,7 +63,7 @@ class S3CrtWaiter {
   Aws::Utils::WaiterOutcome<Model::HeadObjectOutcome> WaitUntilObjectNotExists(const Model::HeadObjectRequest& request) {
     using OutcomeT = Model::HeadObjectOutcome;
     using RequestT = Model::HeadObjectRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::StatusAcceptor<OutcomeT>>("ObjectNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS, 404));
 

@@ -29,7 +29,7 @@ class MachineLearningWaiter {
       const Model::DescribeBatchPredictionsRequest& request) {
     using OutcomeT = Model::DescribeBatchPredictionsOutcome;
     using RequestT = Model::DescribeBatchPredictionsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BatchPredictionAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -58,7 +58,7 @@ class MachineLearningWaiter {
       const Model::DescribeDataSourcesRequest& request) {
     using OutcomeT = Model::DescribeDataSourcesOutcome;
     using RequestT = Model::DescribeDataSourcesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DataSourceAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -87,7 +87,7 @@ class MachineLearningWaiter {
       const Model::DescribeEvaluationsRequest& request) {
     using OutcomeT = Model::DescribeEvaluationsOutcome;
     using RequestT = Model::DescribeEvaluationsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EvaluationAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -115,7 +115,7 @@ class MachineLearningWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeMLModelsOutcome> WaitUntilMLModelAvailable(const Model::DescribeMLModelsRequest& request) {
     using OutcomeT = Model::DescribeMLModelsOutcome;
     using RequestT = Model::DescribeMLModelsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MLModelAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

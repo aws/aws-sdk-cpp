@@ -22,7 +22,7 @@ class DirectoryServiceWaiter {
       const Model::DescribeHybridADUpdateRequest& request) {
     using OutcomeT = Model::DescribeHybridADUpdateOutcome;
     using RequestT = Model::DescribeHybridADUpdateRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "HybridADUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Updated"),
         [](const Model::DescribeHybridADUpdateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

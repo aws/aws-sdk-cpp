@@ -23,7 +23,7 @@ class ECSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeServicesOutcome> WaitUntilServicesInactive(const Model::DescribeServicesRequest& request) {
     using OutcomeT = Model::DescribeServicesOutcome;
     using RequestT = Model::DescribeServicesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicesInactiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("MISSING"),
         [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -49,7 +49,7 @@ class ECSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeServicesOutcome> WaitUntilServicesStable(const Model::DescribeServicesRequest& request) {
     using OutcomeT = Model::DescribeServicesOutcome;
     using RequestT = Model::DescribeServicesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicesStableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("MISSING"),
         [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -92,7 +92,7 @@ class ECSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeTasksOutcome> WaitUntilTasksRunning(const Model::DescribeTasksRequest& request) {
     using OutcomeT = Model::DescribeTasksOutcome;
     using RequestT = Model::DescribeTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TasksRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("STOPPED"),
         [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -126,7 +126,7 @@ class ECSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeTasksOutcome> WaitUntilTasksStopped(const Model::DescribeTasksRequest& request) {
     using OutcomeT = Model::DescribeTasksOutcome;
     using RequestT = Model::DescribeTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TasksStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STOPPED"),
         [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

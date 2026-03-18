@@ -22,7 +22,7 @@ class AutoScalingWaiter {
       const Model::DescribeAutoScalingGroupsRequest& request) {
     using OutcomeT = Model::DescribeAutoScalingGroupsOutcome;
     using RequestT = Model::DescribeAutoScalingGroupsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GroupExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -47,7 +47,7 @@ class AutoScalingWaiter {
       const Model::DescribeAutoScalingGroupsRequest& request) {
     using OutcomeT = Model::DescribeAutoScalingGroupsOutcome;
     using RequestT = Model::DescribeAutoScalingGroupsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GroupInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, false,
         [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -82,7 +82,7 @@ class AutoScalingWaiter {
       const Model::DescribeAutoScalingGroupsRequest& request) {
     using OutcomeT = Model::DescribeAutoScalingGroupsOutcome;
     using RequestT = Model::DescribeAutoScalingGroupsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GroupNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false,
         [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

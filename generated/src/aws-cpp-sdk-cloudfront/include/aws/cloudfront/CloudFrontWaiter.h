@@ -28,7 +28,7 @@ class CloudFrontWaiter {
       const Model::GetDistribution2020_05_31Request& request) {
     using OutcomeT = Model::GetDistribution2020_05_31Outcome;
     using RequestT = Model::GetDistribution2020_05_31Request;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DistributionDeployedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Deployed"),
         [](const Model::GetDistribution2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -46,7 +46,7 @@ class CloudFrontWaiter {
       const Model::GetInvalidation2020_05_31Request& request) {
     using OutcomeT = Model::GetInvalidation2020_05_31Outcome;
     using RequestT = Model::GetInvalidation2020_05_31Request;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InvalidationCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
         [](const Model::GetInvalidationForDistributionTenant2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -64,7 +64,7 @@ class CloudFrontWaiter {
   WaitUntilInvalidationForDistributionTenantCompleted(const Model::GetInvalidationForDistributionTenant2020_05_31Request& request) {
     using OutcomeT = Model::GetInvalidationForDistributionTenant2020_05_31Outcome;
     using RequestT = Model::GetInvalidationForDistributionTenant2020_05_31Request;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InvalidationForDistributionTenantCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
         [](const Model::GetInvalidationForDistributionTenant2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -85,7 +85,7 @@ class CloudFrontWaiter {
       const Model::GetStreamingDistribution2020_05_31Request& request) {
     using OutcomeT = Model::GetStreamingDistribution2020_05_31Outcome;
     using RequestT = Model::GetStreamingDistribution2020_05_31Request;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamingDistributionDeployedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Deployed"),
         [](const Model::GetStreamingDistribution2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) {

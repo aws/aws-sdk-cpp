@@ -29,7 +29,7 @@ class MediaConnectWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeFlowOutcome> WaitUntilFlowActive(const Model::DescribeFlowRequest& request) {
     using OutcomeT = Model::DescribeFlowOutcome;
     using RequestT = Model::DescribeFlowRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -78,7 +78,7 @@ class MediaConnectWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeFlowOutcome> WaitUntilFlowDeleted(const Model::DescribeFlowRequest& request) {
     using OutcomeT = Model::DescribeFlowOutcome;
     using RequestT = Model::DescribeFlowRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("FlowDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("NotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -108,7 +108,7 @@ class MediaConnectWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeFlowOutcome> WaitUntilFlowStandby(const Model::DescribeFlowRequest& request) {
     using OutcomeT = Model::DescribeFlowOutcome;
     using RequestT = Model::DescribeFlowRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowStandbyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STANDBY"),
         [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -143,7 +143,7 @@ class MediaConnectWaiter {
   Aws::Utils::WaiterOutcome<Model::GetRouterInputOutcome> WaitUntilInputStandby(const Model::GetRouterInputRequest& request) {
     using OutcomeT = Model::GetRouterInputOutcome;
     using RequestT = Model::GetRouterInputRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputStandbyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STANDBY"),
         [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -181,7 +181,7 @@ class MediaConnectWaiter {
   Aws::Utils::WaiterOutcome<Model::GetRouterInputOutcome> WaitUntilInputDeleted(const Model::GetRouterInputRequest& request) {
     using OutcomeT = Model::GetRouterInputOutcome;
     using RequestT = Model::GetRouterInputRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
         [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -213,7 +213,7 @@ class MediaConnectWaiter {
   Aws::Utils::WaiterOutcome<Model::GetRouterInputOutcome> WaitUntilInputActive(const Model::GetRouterInputRequest& request) {
     using OutcomeT = Model::GetRouterInputOutcome;
     using RequestT = Model::GetRouterInputRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -267,7 +267,7 @@ class MediaConnectWaiter {
   Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputUnrouted(const Model::GetRouterOutputRequest& request) {
     using OutcomeT = Model::GetRouterOutputOutcome;
     using RequestT = Model::GetRouterOutputRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputUnroutedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UNROUTED"),
         [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -297,7 +297,7 @@ class MediaConnectWaiter {
   Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputDeleted(const Model::GetRouterOutputRequest& request) {
     using OutcomeT = Model::GetRouterOutputOutcome;
     using RequestT = Model::GetRouterOutputRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
         [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -329,7 +329,7 @@ class MediaConnectWaiter {
   Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputActive(const Model::GetRouterOutputRequest& request) {
     using OutcomeT = Model::GetRouterOutputOutcome;
     using RequestT = Model::GetRouterOutputRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -383,7 +383,7 @@ class MediaConnectWaiter {
   Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputStandby(const Model::GetRouterOutputRequest& request) {
     using OutcomeT = Model::GetRouterOutputOutcome;
     using RequestT = Model::GetRouterOutputRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputStandbyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STANDBY"),
         [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -421,7 +421,7 @@ class MediaConnectWaiter {
   Aws::Utils::WaiterOutcome<Model::GetRouterOutputOutcome> WaitUntilOutputRouted(const Model::GetRouterOutputRequest& request) {
     using OutcomeT = Model::GetRouterOutputOutcome;
     using RequestT = Model::GetRouterOutputRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputRoutedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ROUTED"),
         [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

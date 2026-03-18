@@ -22,7 +22,7 @@ class Mediapackagev2Waiter {
   Aws::Utils::WaiterOutcome<Model::GetHarvestJobOutcome> WaitUntilHarvestJobFinished(const Model::GetHarvestJobRequest& request) {
     using OutcomeT = Model::GetHarvestJobOutcome;
     using RequestT = Model::GetHarvestJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "HarvestJobFinishedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::GetHarvestJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

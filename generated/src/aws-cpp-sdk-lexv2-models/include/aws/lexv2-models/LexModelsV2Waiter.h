@@ -36,7 +36,7 @@ class LexModelsV2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeBotOutcome> WaitUntilBotAvailable(const Model::DescribeBotRequest& request) {
     using OutcomeT = Model::DescribeBotOutcome;
     using RequestT = Model::DescribeBotRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BotAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Available"),
         [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -74,7 +74,7 @@ class LexModelsV2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeBotAliasOutcome> WaitUntilBotAliasAvailable(const Model::DescribeBotAliasRequest& request) {
     using OutcomeT = Model::DescribeBotAliasOutcome;
     using RequestT = Model::DescribeBotAliasRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BotAliasAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Available"),
         [](const Model::DescribeBotAliasOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -105,7 +105,7 @@ class LexModelsV2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeBotLocaleOutcome> WaitUntilBotLocaleBuilt(const Model::DescribeBotLocaleRequest& request) {
     using OutcomeT = Model::DescribeBotLocaleOutcome;
     using RequestT = Model::DescribeBotLocaleRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BotLocaleBuiltWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Built"),
         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -143,7 +143,7 @@ class LexModelsV2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeBotLocaleOutcome> WaitUntilBotLocaleCreated(const Model::DescribeBotLocaleRequest& request) {
     using OutcomeT = Model::DescribeBotLocaleOutcome;
     using RequestT = Model::DescribeBotLocaleRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BotLocaleCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Built"),
         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -189,7 +189,7 @@ class LexModelsV2Waiter {
       const Model::DescribeBotLocaleRequest& request) {
     using OutcomeT = Model::DescribeBotLocaleOutcome;
     using RequestT = Model::DescribeBotLocaleRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BotLocaleExpressTestingAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Built"),
         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -235,7 +235,7 @@ class LexModelsV2Waiter {
       const Model::DescribeBotVersionRequest& request) {
     using OutcomeT = Model::DescribeBotVersionOutcome;
     using RequestT = Model::DescribeBotVersionRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BotVersionAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Available"),
         [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -268,7 +268,7 @@ class LexModelsV2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeExportOutcome> WaitUntilBotExportCompleted(const Model::DescribeExportRequest& request) {
     using OutcomeT = Model::DescribeExportOutcome;
     using RequestT = Model::DescribeExportRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BotExportCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
         [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -299,7 +299,7 @@ class LexModelsV2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeImportOutcome> WaitUntilBotImportCompleted(const Model::DescribeImportRequest& request) {
     using OutcomeT = Model::DescribeImportOutcome;
     using RequestT = Model::DescribeImportRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BotImportCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
         [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

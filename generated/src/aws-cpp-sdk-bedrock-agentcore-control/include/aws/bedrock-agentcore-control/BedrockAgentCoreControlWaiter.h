@@ -31,7 +31,7 @@ class BedrockAgentCoreControlWaiter {
   Aws::Utils::WaiterOutcome<Model::GetMemoryOutcome> WaitUntilMemoryCreated(const Model::GetMemoryRequest& request) {
     using OutcomeT = Model::GetMemoryOutcome;
     using RequestT = Model::GetMemoryRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MemoryCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
         [](const Model::GetMemoryOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -62,7 +62,7 @@ class BedrockAgentCoreControlWaiter {
   Aws::Utils::WaiterOutcome<Model::GetPolicyOutcome> WaitUntilPolicyActive(const Model::GetPolicyRequest& request) {
     using OutcomeT = Model::GetPolicyOutcome;
     using RequestT = Model::GetPolicyRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PolicyActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetPolicyEngineOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -100,7 +100,7 @@ class BedrockAgentCoreControlWaiter {
   Aws::Utils::WaiterOutcome<Model::GetPolicyOutcome> WaitUntilPolicyDeleted(const Model::GetPolicyRequest& request) {
     using OutcomeT = Model::GetPolicyOutcome;
     using RequestT = Model::GetPolicyRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("PolicyDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -126,7 +126,7 @@ class BedrockAgentCoreControlWaiter {
   Aws::Utils::WaiterOutcome<Model::GetPolicyEngineOutcome> WaitUntilPolicyEngineActive(const Model::GetPolicyEngineRequest& request) {
     using OutcomeT = Model::GetPolicyEngineOutcome;
     using RequestT = Model::GetPolicyEngineRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PolicyEngineActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetPolicyEngineOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -164,7 +164,7 @@ class BedrockAgentCoreControlWaiter {
   Aws::Utils::WaiterOutcome<Model::GetPolicyEngineOutcome> WaitUntilPolicyEngineDeleted(const Model::GetPolicyEngineRequest& request) {
     using OutcomeT = Model::GetPolicyEngineOutcome;
     using RequestT = Model::GetPolicyEngineRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "PolicyEngineDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -191,7 +191,7 @@ class BedrockAgentCoreControlWaiter {
       const Model::GetPolicyGenerationRequest& request) {
     using OutcomeT = Model::GetPolicyGenerationOutcome;
     using RequestT = Model::GetPolicyGenerationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PolicyGenerationCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("GENERATED"),
         [](const Model::GetPolicyGenerationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

@@ -23,7 +23,7 @@ class B2BIWaiter {
       const Model::GetTransformerJobRequest& request) {
     using OutcomeT = Model::GetTransformerJobOutcome;
     using RequestT = Model::GetTransformerJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TransformerJobSucceededWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("succeeded"),
         [](const Model::GetTransformerJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

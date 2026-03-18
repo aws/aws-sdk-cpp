@@ -33,7 +33,7 @@ class CloudFormationWaiter {
       const Model::DescribeChangeSetRequest& request) {
     using OutcomeT = Model::DescribeChangeSetOutcome;
     using RequestT = Model::DescribeChangeSetRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChangeSetCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
         [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -60,7 +60,7 @@ class CloudFormationWaiter {
       const Model::DescribeStackRefactorRequest& request) {
     using OutcomeT = Model::DescribeStackRefactorOutcome;
     using RequestT = Model::DescribeStackRefactorRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRefactorCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
         [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -87,7 +87,7 @@ class CloudFormationWaiter {
       const Model::DescribeStackRefactorRequest& request) {
     using OutcomeT = Model::DescribeStackRefactorOutcome;
     using RequestT = Model::DescribeStackRefactorRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRefactorExecuteCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("EXECUTE_COMPLETE"),
         [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -123,7 +123,7 @@ class CloudFormationWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeStacksOutcome> WaitUntilStackCreateComplete(const Model::DescribeStacksRequest& request) {
     using OutcomeT = Model::DescribeStacksOutcome;
     using RequestT = Model::DescribeStacksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
         [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -261,7 +261,7 @@ class CloudFormationWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeStacksOutcome> WaitUntilStackDeleteComplete(const Model::DescribeStacksRequest& request) {
     using OutcomeT = Model::DescribeStacksOutcome;
     using RequestT = Model::DescribeStacksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackDeleteCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETE_COMPLETE"),
         [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -345,7 +345,7 @@ class CloudFormationWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeStacksOutcome> WaitUntilStackExists(const Model::DescribeStacksRequest& request) {
     using OutcomeT = Model::DescribeStacksOutcome;
     using RequestT = Model::DescribeStacksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("StackExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("StackExistsWaiter", Aws::Utils::WaiterState::RETRY,
@@ -359,7 +359,7 @@ class CloudFormationWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeStacksOutcome> WaitUntilStackImportComplete(const Model::DescribeStacksRequest& request) {
     using OutcomeT = Model::DescribeStacksOutcome;
     using RequestT = Model::DescribeStacksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackImportCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("IMPORT_COMPLETE"),
         [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -425,7 +425,7 @@ class CloudFormationWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeStacksOutcome> WaitUntilStackRollbackComplete(const Model::DescribeStacksRequest& request) {
     using OutcomeT = Model::DescribeStacksOutcome;
     using RequestT = Model::DescribeStacksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRollbackCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_ROLLBACK_COMPLETE"),
         [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -473,7 +473,7 @@ class CloudFormationWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeStacksOutcome> WaitUntilStackUpdateComplete(const Model::DescribeStacksRequest& request) {
     using OutcomeT = Model::DescribeStacksOutcome;
     using RequestT = Model::DescribeStacksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackUpdateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_COMPLETE"),
         [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -522,7 +522,7 @@ class CloudFormationWaiter {
       const Model::DescribeTypeRegistrationRequest& request) {
     using OutcomeT = Model::DescribeTypeRegistrationOutcome;
     using RequestT = Model::DescribeTypeRegistrationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TypeRegistrationCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETE"),
         [](const Model::DescribeTypeRegistrationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

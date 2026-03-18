@@ -28,7 +28,7 @@ class GameLiftStreamsWaiter {
   Aws::Utils::WaiterOutcome<Model::GetApplicationOutcome> WaitUntilApplicationReady(const Model::GetApplicationRequest& request) {
     using OutcomeT = Model::GetApplicationOutcome;
     using RequestT = Model::GetApplicationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ApplicationReadyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("READY"),
         [](const Model::GetApplicationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -52,7 +52,7 @@ class GameLiftStreamsWaiter {
   Aws::Utils::WaiterOutcome<Model::GetApplicationOutcome> WaitUntilApplicationDeleted(const Model::GetApplicationRequest& request) {
     using OutcomeT = Model::GetApplicationOutcome;
     using RequestT = Model::GetApplicationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "ApplicationDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
 
@@ -64,7 +64,7 @@ class GameLiftStreamsWaiter {
   Aws::Utils::WaiterOutcome<Model::GetStreamGroupOutcome> WaitUntilStreamGroupActive(const Model::GetStreamGroupRequest& request) {
     using OutcomeT = Model::GetStreamGroupOutcome;
     using RequestT = Model::GetStreamGroupRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamGroupActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -102,7 +102,7 @@ class GameLiftStreamsWaiter {
   Aws::Utils::WaiterOutcome<Model::GetStreamGroupOutcome> WaitUntilStreamGroupDeleted(const Model::GetStreamGroupRequest& request) {
     using OutcomeT = Model::GetStreamGroupOutcome;
     using RequestT = Model::GetStreamGroupRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "StreamGroupDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
 
@@ -114,7 +114,7 @@ class GameLiftStreamsWaiter {
   Aws::Utils::WaiterOutcome<Model::GetStreamSessionOutcome> WaitUntilStreamSessionActive(const Model::GetStreamSessionRequest& request) {
     using OutcomeT = Model::GetStreamSessionOutcome;
     using RequestT = Model::GetStreamSessionRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamSessionActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

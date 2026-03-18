@@ -21,7 +21,7 @@ class GlacierWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeVaultOutcome> WaitUntilVaultExists(const Model::DescribeVaultRequest& request) {
     using OutcomeT = Model::DescribeVaultOutcome;
     using RequestT = Model::DescribeVaultRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("VaultExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("VaultExistsWaiter", Aws::Utils::WaiterState::RETRY,
@@ -35,7 +35,7 @@ class GlacierWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeVaultOutcome> WaitUntilVaultNotExists(const Model::DescribeVaultRequest& request) {
     using OutcomeT = Model::DescribeVaultOutcome;
     using RequestT = Model::DescribeVaultRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("VaultNotExistsWaiter", Aws::Utils::WaiterState::RETRY, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("VaultNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS,

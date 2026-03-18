@@ -27,7 +27,7 @@ class ACMPCAWaiter {
       const Model::DescribeCertificateAuthorityAuditReportRequest& request) {
     using OutcomeT = Model::DescribeCertificateAuthorityAuditReportOutcome;
     using RequestT = Model::DescribeCertificateAuthorityAuditReportRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AuditReportCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCESS"),
         [](const Model::DescribeCertificateAuthorityAuditReportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -55,7 +55,7 @@ class ACMPCAWaiter {
   Aws::Utils::WaiterOutcome<Model::GetCertificateOutcome> WaitUntilCertificateIssued(const Model::GetCertificateRequest& request) {
     using OutcomeT = Model::GetCertificateOutcome;
     using RequestT = Model::GetCertificateRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("CertificateIssuedWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("CertificateIssuedWaiter", Aws::Utils::WaiterState::RETRY,
@@ -72,7 +72,7 @@ class ACMPCAWaiter {
       const Model::GetCertificateAuthorityCsrRequest& request) {
     using OutcomeT = Model::GetCertificateAuthorityCsrOutcome;
     using RequestT = Model::GetCertificateAuthorityCsrRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("CertificateAuthorityCSRCreatedWaiter",
                                                                                 Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(

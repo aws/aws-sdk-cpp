@@ -22,7 +22,7 @@ class CloudControlApiWaiter {
       const Model::GetResourceRequestStatusRequest& request) {
     using OutcomeT = Model::GetResourceRequestStatusOutcome;
     using RequestT = Model::GetResourceRequestStatusRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResourceRequestSuccessWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCESS"),
         [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

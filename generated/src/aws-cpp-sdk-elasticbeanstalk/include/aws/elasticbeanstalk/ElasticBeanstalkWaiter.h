@@ -23,7 +23,7 @@ class ElasticBeanstalkWaiter {
       const Model::DescribeEnvironmentsRequest& request) {
     using OutcomeT = Model::DescribeEnvironmentsOutcome;
     using RequestT = Model::DescribeEnvironmentsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Ready"),
         [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -54,7 +54,7 @@ class ElasticBeanstalkWaiter {
       const Model::DescribeEnvironmentsRequest& request) {
     using OutcomeT = Model::DescribeEnvironmentsOutcome;
     using RequestT = Model::DescribeEnvironmentsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentTerminatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Terminated"),
         [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -85,7 +85,7 @@ class ElasticBeanstalkWaiter {
       const Model::DescribeEnvironmentsRequest& request) {
     using OutcomeT = Model::DescribeEnvironmentsOutcome;
     using RequestT = Model::DescribeEnvironmentsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Ready"),
         [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

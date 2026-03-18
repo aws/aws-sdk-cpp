@@ -40,7 +40,7 @@ class SageMakerWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeEndpointOutcome> WaitUntilEndpointDeleted(const Model::DescribeEndpointRequest& request) {
     using OutcomeT = Model::DescribeEndpointOutcome;
     using RequestT = Model::DescribeEndpointRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("EndpointDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ValidationException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -59,7 +59,7 @@ class SageMakerWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeEndpointOutcome> WaitUntilEndpointInService(const Model::DescribeEndpointRequest& request) {
     using OutcomeT = Model::DescribeEndpointOutcome;
     using RequestT = Model::DescribeEndpointRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EndpointInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
         [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -85,7 +85,7 @@ class SageMakerWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeImageOutcome> WaitUntilImageCreated(const Model::DescribeImageRequest& request) {
     using OutcomeT = Model::DescribeImageOutcome;
     using RequestT = Model::DescribeImageRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
         [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -111,7 +111,7 @@ class SageMakerWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeImageOutcome> WaitUntilImageDeleted(const Model::DescribeImageRequest& request) {
     using OutcomeT = Model::DescribeImageOutcome;
     using RequestT = Model::DescribeImageRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ImageDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -132,7 +132,7 @@ class SageMakerWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeImageOutcome> WaitUntilImageUpdated(const Model::DescribeImageRequest& request) {
     using OutcomeT = Model::DescribeImageOutcome;
     using RequestT = Model::DescribeImageRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
         [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -159,7 +159,7 @@ class SageMakerWaiter {
       const Model::DescribeImageVersionRequest& request) {
     using OutcomeT = Model::DescribeImageVersionOutcome;
     using RequestT = Model::DescribeImageVersionRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageVersionCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
         [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -188,7 +188,7 @@ class SageMakerWaiter {
       const Model::DescribeImageVersionRequest& request) {
     using OutcomeT = Model::DescribeImageVersionOutcome;
     using RequestT = Model::DescribeImageVersionRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "ImageVersionDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -211,7 +211,7 @@ class SageMakerWaiter {
       const Model::DescribeNotebookInstanceRequest& request) {
     using OutcomeT = Model::DescribeNotebookInstanceOutcome;
     using RequestT = Model::DescribeNotebookInstanceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "NotebookInstanceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ValidationException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -232,7 +232,7 @@ class SageMakerWaiter {
       const Model::DescribeNotebookInstanceRequest& request) {
     using OutcomeT = Model::DescribeNotebookInstanceOutcome;
     using RequestT = Model::DescribeNotebookInstanceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NotebookInstanceInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
         [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -259,7 +259,7 @@ class SageMakerWaiter {
       const Model::DescribeNotebookInstanceRequest& request) {
     using OutcomeT = Model::DescribeNotebookInstanceOutcome;
     using RequestT = Model::DescribeNotebookInstanceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NotebookInstanceStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Stopped"),
         [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -286,7 +286,7 @@ class SageMakerWaiter {
       const Model::DescribeProcessingJobRequest& request) {
     using OutcomeT = Model::DescribeProcessingJobOutcome;
     using RequestT = Model::DescribeProcessingJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ProcessingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
         [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -323,7 +323,7 @@ class SageMakerWaiter {
       const Model::DescribeTrainingJobRequest& request) {
     using OutcomeT = Model::DescribeTrainingJobOutcome;
     using RequestT = Model::DescribeTrainingJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TrainingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
         [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -357,7 +357,7 @@ class SageMakerWaiter {
       const Model::DescribeTransformJobRequest& request) {
     using OutcomeT = Model::DescribeTransformJobOutcome;
     using RequestT = Model::DescribeTransformJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TransformJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
         [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

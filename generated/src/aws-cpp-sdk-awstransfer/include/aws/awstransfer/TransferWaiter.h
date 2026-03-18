@@ -22,7 +22,7 @@ class TransferWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeServerOutcome> WaitUntilServerOffline(const Model::DescribeServerRequest& request) {
     using OutcomeT = Model::DescribeServerOutcome;
     using RequestT = Model::DescribeServerRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServerOfflineWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("OFFLINE"),
         [](const Model::DescribeServerOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -46,7 +46,7 @@ class TransferWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeServerOutcome> WaitUntilServerOnline(const Model::DescribeServerRequest& request) {
     using OutcomeT = Model::DescribeServerOutcome;
     using RequestT = Model::DescribeServerRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServerOnlineWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ONLINE"),
         [](const Model::DescribeServerOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

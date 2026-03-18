@@ -23,7 +23,7 @@ class ACMWaiter {
       const Model::DescribeCertificateRequest& request) {
     using OutcomeT = Model::DescribeCertificateOutcome;
     using RequestT = Model::DescribeCertificateRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CertificateValidatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCESS"),
         [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

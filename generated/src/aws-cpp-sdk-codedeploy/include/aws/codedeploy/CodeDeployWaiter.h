@@ -22,7 +22,7 @@ class CodeDeployWaiter {
   Aws::Utils::WaiterOutcome<Model::GetDeploymentOutcome> WaitUntilDeploymentSuccessful(const Model::GetDeploymentRequest& request) {
     using OutcomeT = Model::GetDeploymentOutcome;
     using RequestT = Model::GetDeploymentRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DeploymentSuccessfulWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Succeeded"),
         [](const Model::GetDeploymentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

@@ -26,7 +26,7 @@ class CodeGuruReviewerWaiter {
       const Model::DescribeCodeReviewRequest& request) {
     using OutcomeT = Model::DescribeCodeReviewOutcome;
     using RequestT = Model::DescribeCodeReviewRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CodeReviewCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
         [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -58,7 +58,7 @@ class CodeGuruReviewerWaiter {
       const Model::DescribeRepositoryAssociationRequest& request) {
     using OutcomeT = Model::DescribeRepositoryAssociationOutcome;
     using RequestT = Model::DescribeRepositoryAssociationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RepositoryAssociationSucceededWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Associated"),
         [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

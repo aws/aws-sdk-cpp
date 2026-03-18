@@ -24,7 +24,7 @@ class RepostspaceWaiter {
   Aws::Utils::WaiterOutcome<Model::GetChannelOutcome> WaitUntilChannelCreated(const Model::GetChannelRequest& request) {
     using OutcomeT = Model::GetChannelOutcome;
     using RequestT = Model::GetChannelRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
         [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -55,7 +55,7 @@ class RepostspaceWaiter {
   Aws::Utils::WaiterOutcome<Model::GetChannelOutcome> WaitUntilChannelDeleted(const Model::GetChannelRequest& request) {
     using OutcomeT = Model::GetChannelOutcome;
     using RequestT = Model::GetChannelRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ChannelDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -88,7 +88,7 @@ class RepostspaceWaiter {
   Aws::Utils::WaiterOutcome<Model::GetSpaceOutcome> WaitUntilSpaceCreated(const Model::GetSpaceRequest& request) {
     using OutcomeT = Model::GetSpaceOutcome;
     using RequestT = Model::GetSpaceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpaceCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
         [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -119,7 +119,7 @@ class RepostspaceWaiter {
   Aws::Utils::WaiterOutcome<Model::GetSpaceOutcome> WaitUntilSpaceDeleted(const Model::GetSpaceRequest& request) {
     using OutcomeT = Model::GetSpaceOutcome;
     using RequestT = Model::GetSpaceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("SpaceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(

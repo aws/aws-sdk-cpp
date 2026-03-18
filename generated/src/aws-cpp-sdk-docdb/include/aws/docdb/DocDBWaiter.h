@@ -22,7 +22,7 @@ class DocDBWaiter {
       const Model::DescribeDBInstancesRequest& request) {
     using OutcomeT = Model::DescribeDBInstancesOutcome;
     using RequestT = Model::DescribeDBInstancesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -81,7 +81,7 @@ class DocDBWaiter {
       const Model::DescribeDBInstancesRequest& request) {
     using OutcomeT = Model::DescribeDBInstancesOutcome;
     using RequestT = Model::DescribeDBInstancesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

@@ -26,7 +26,7 @@ class ARCRegionswitchWaiter {
       const Model::GetPlanEvaluationStatusRequest& request) {
     using OutcomeT = Model::GetPlanEvaluationStatusOutcome;
     using RequestT = Model::GetPlanEvaluationStatusRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PlanEvaluationStatusPassedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("passed"),
         [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -57,7 +57,7 @@ class ARCRegionswitchWaiter {
   Aws::Utils::WaiterOutcome<Model::GetPlanExecutionOutcome> WaitUntilPlanExecutionCompleted(const Model::GetPlanExecutionRequest& request) {
     using OutcomeT = Model::GetPlanExecutionOutcome;
     using RequestT = Model::GetPlanExecutionRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PlanExecutionCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
         [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

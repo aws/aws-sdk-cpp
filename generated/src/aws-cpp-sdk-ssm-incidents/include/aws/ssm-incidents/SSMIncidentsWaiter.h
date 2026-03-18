@@ -22,7 +22,7 @@ class SSMIncidentsWaiter {
       const Model::GetReplicationSetRequest& request) {
     using OutcomeT = Model::GetReplicationSetOutcome;
     using RequestT = Model::GetReplicationSetRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -61,7 +61,7 @@ class SSMIncidentsWaiter {
       const Model::GetReplicationSetRequest& request) {
     using OutcomeT = Model::GetReplicationSetOutcome;
     using RequestT = Model::GetReplicationSetRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "WaitForReplicationSetDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(

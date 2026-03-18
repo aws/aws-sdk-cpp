@@ -89,7 +89,7 @@ class EC2Waiter {
       const Model::DescribeBundleTasksRequest& request) {
     using OutcomeT = Model::DescribeBundleTasksOutcome;
     using RequestT = Model::DescribeBundleTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BundleTaskCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("complete"),
         [](const Model::DescribeBundleTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -118,7 +118,7 @@ class EC2Waiter {
       const Model::DescribeConversionTasksRequest& request) {
     using OutcomeT = Model::DescribeConversionTasksOutcome;
     using RequestT = Model::DescribeConversionTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ConversionTaskCancelledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("cancelled"),
         [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -139,7 +139,7 @@ class EC2Waiter {
       const Model::DescribeConversionTasksRequest& request) {
     using OutcomeT = Model::DescribeConversionTasksOutcome;
     using RequestT = Model::DescribeConversionTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ConversionTaskCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
         [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -180,7 +180,7 @@ class EC2Waiter {
       const Model::DescribeConversionTasksRequest& request) {
     using OutcomeT = Model::DescribeConversionTasksOutcome;
     using RequestT = Model::DescribeConversionTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ConversionTaskDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
         [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -201,7 +201,7 @@ class EC2Waiter {
       const Model::DescribeCustomerGatewaysRequest& request) {
     using OutcomeT = Model::DescribeCustomerGatewaysOutcome;
     using RequestT = Model::DescribeCustomerGatewaysRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CustomerGatewayAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeCustomerGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -236,7 +236,7 @@ class EC2Waiter {
       const Model::DescribeExportTasksRequest& request) {
     using OutcomeT = Model::DescribeExportTasksOutcome;
     using RequestT = Model::DescribeExportTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportTaskCancelledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("cancelled"),
         [](const Model::DescribeExportTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -256,7 +256,7 @@ class EC2Waiter {
       const Model::DescribeExportTasksRequest& request) {
     using OutcomeT = Model::DescribeExportTasksOutcome;
     using RequestT = Model::DescribeExportTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportTaskCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
         [](const Model::DescribeExportTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -275,7 +275,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeImagesOutcome> WaitUntilImageAvailable(const Model::DescribeImagesRequest& request) {
     using OutcomeT = Model::DescribeImagesOutcome;
     using RequestT = Model::DescribeImagesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeImagesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -303,7 +303,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeImagesOutcome> WaitUntilImageExists(const Model::DescribeImagesRequest& request) {
     using OutcomeT = Model::DescribeImagesOutcome;
     using RequestT = Model::DescribeImagesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeImagesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -323,7 +323,7 @@ class EC2Waiter {
       const Model::DescribeImageUsageReportsRequest& request) {
     using OutcomeT = Model::DescribeImageUsageReportsOutcome;
     using RequestT = Model::DescribeImageUsageReportsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageUsageReportAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeImageUsageReportsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -350,7 +350,7 @@ class EC2Waiter {
       const Model::DescribeImportSnapshotTasksRequest& request) {
     using OutcomeT = Model::DescribeImportSnapshotTasksOutcome;
     using RequestT = Model::DescribeImportSnapshotTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SnapshotImportedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
         [](const Model::DescribeImportSnapshotTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -380,7 +380,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeInstancesOutcome> WaitUntilInstanceExists(const Model::DescribeInstancesRequest& request) {
     using OutcomeT = Model::DescribeInstancesOutcome;
     using RequestT = Model::DescribeInstancesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -399,7 +399,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeInstancesOutcome> WaitUntilInstanceRunning(const Model::DescribeInstancesRequest& request) {
     using OutcomeT = Model::DescribeInstancesOutcome;
     using RequestT = Model::DescribeInstancesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("running"),
         [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -455,7 +455,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeInstancesOutcome> WaitUntilInstanceStopped(const Model::DescribeInstancesRequest& request) {
     using OutcomeT = Model::DescribeInstancesOutcome;
     using RequestT = Model::DescribeInstancesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("stopped"),
         [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -498,7 +498,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeInstancesOutcome> WaitUntilInstanceTerminated(const Model::DescribeInstancesRequest& request) {
     using OutcomeT = Model::DescribeInstancesOutcome;
     using RequestT = Model::DescribeInstancesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceTerminatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("terminated"),
         [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -542,7 +542,7 @@ class EC2Waiter {
       const Model::DescribeInstanceStatusRequest& request) {
     using OutcomeT = Model::DescribeInstanceStatusOutcome;
     using RequestT = Model::DescribeInstanceStatusRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceStatusOkWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ok"),
         [](const Model::DescribeInstanceStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -566,7 +566,7 @@ class EC2Waiter {
       const Model::DescribeInstanceStatusRequest& request) {
     using OutcomeT = Model::DescribeInstanceStatusOutcome;
     using RequestT = Model::DescribeInstanceStatusRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SystemStatusOkWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ok"),
         [](const Model::DescribeInstanceStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -588,7 +588,7 @@ class EC2Waiter {
       const Model::DescribeInternetGatewaysRequest& request) {
     using OutcomeT = Model::DescribeInternetGatewaysOutcome;
     using RequestT = Model::DescribeInternetGatewaysRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InternetGatewayExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeInternetGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -607,7 +607,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeKeyPairsOutcome> WaitUntilKeyPairExists(const Model::DescribeKeyPairsRequest& request) {
     using OutcomeT = Model::DescribeKeyPairsOutcome;
     using RequestT = Model::DescribeKeyPairsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "KeyPairExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeKeyPairsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -627,7 +627,7 @@ class EC2Waiter {
       const Model::DescribeNatGatewaysRequest& request) {
     using OutcomeT = Model::DescribeNatGatewaysOutcome;
     using RequestT = Model::DescribeNatGatewaysRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NatGatewayAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -676,7 +676,7 @@ class EC2Waiter {
       const Model::DescribeNatGatewaysRequest& request) {
     using OutcomeT = Model::DescribeNatGatewaysOutcome;
     using RequestT = Model::DescribeNatGatewaysRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NatGatewayDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
         [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -698,7 +698,7 @@ class EC2Waiter {
       const Model::DescribeNetworkInterfacesRequest& request) {
     using OutcomeT = Model::DescribeNetworkInterfacesOutcome;
     using RequestT = Model::DescribeNetworkInterfacesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NetworkInterfaceAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeNetworkInterfacesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -722,7 +722,7 @@ class EC2Waiter {
       const Model::DescribeSecondaryNetworksRequest& request) {
     using OutcomeT = Model::DescribeSecondaryNetworksOutcome;
     using RequestT = Model::DescribeSecondaryNetworksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondaryNetworkCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("create-complete"),
         [](const Model::DescribeSecondaryNetworksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -755,7 +755,7 @@ class EC2Waiter {
       const Model::DescribeSecondaryNetworksRequest& request) {
     using OutcomeT = Model::DescribeSecondaryNetworksOutcome;
     using RequestT = Model::DescribeSecondaryNetworksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondaryNetworkDeleteCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("delete-complete"),
         [](const Model::DescribeSecondaryNetworksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -786,7 +786,7 @@ class EC2Waiter {
       const Model::DescribeSecondarySubnetsRequest& request) {
     using OutcomeT = Model::DescribeSecondarySubnetsOutcome;
     using RequestT = Model::DescribeSecondarySubnetsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondarySubnetCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("create-complete"),
         [](const Model::DescribeSecondarySubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -819,7 +819,7 @@ class EC2Waiter {
       const Model::DescribeSecondarySubnetsRequest& request) {
     using OutcomeT = Model::DescribeSecondarySubnetsOutcome;
     using RequestT = Model::DescribeSecondarySubnetsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondarySubnetDeleteCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("delete-complete"),
         [](const Model::DescribeSecondarySubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -850,7 +850,7 @@ class EC2Waiter {
       const Model::DescribeSecurityGroupsRequest& request) {
     using OutcomeT = Model::DescribeSecurityGroupsOutcome;
     using RequestT = Model::DescribeSecurityGroupsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecurityGroupExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeSecurityGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -870,7 +870,7 @@ class EC2Waiter {
       const Model::DescribeSecurityGroupVpcAssociationsRequest& request) {
     using OutcomeT = Model::DescribeSecurityGroupVpcAssociationsOutcome;
     using RequestT = Model::DescribeSecurityGroupVpcAssociationsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecurityGroupVpcAssociationAssociatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("associated"),
         [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -915,7 +915,7 @@ class EC2Waiter {
       const Model::DescribeSecurityGroupVpcAssociationsRequest& request) {
     using OutcomeT = Model::DescribeSecurityGroupVpcAssociationsOutcome;
     using RequestT = Model::DescribeSecurityGroupVpcAssociationsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecurityGroupVpcAssociationDisassociatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("disassociated"),
         [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -966,7 +966,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeSnapshotsOutcome> WaitUntilSnapshotCompleted(const Model::DescribeSnapshotsRequest& request) {
     using OutcomeT = Model::DescribeSnapshotsOutcome;
     using RequestT = Model::DescribeSnapshotsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SnapshotCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
         [](const Model::DescribeSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -995,7 +995,7 @@ class EC2Waiter {
       const Model::DescribeSpotInstanceRequestsRequest& request) {
     using OutcomeT = Model::DescribeSpotInstanceRequestsOutcome;
     using RequestT = Model::DescribeSpotInstanceRequestsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpotInstanceRequestFulfilledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("fulfilled"),
         [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -1062,7 +1062,7 @@ class EC2Waiter {
       const Model::DescribeStoreImageTasksRequest& request) {
     using OutcomeT = Model::DescribeStoreImageTasksOutcome;
     using RequestT = Model::DescribeStoreImageTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StoreImageTaskCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
         [](const Model::DescribeStoreImageTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -1099,7 +1099,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeSubnetsOutcome> WaitUntilSubnetAvailable(const Model::DescribeSubnetsRequest& request) {
     using OutcomeT = Model::DescribeSubnetsOutcome;
     using RequestT = Model::DescribeSubnetsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SubnetAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeSubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -1118,7 +1118,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeVolumesOutcome> WaitUntilVolumeAvailable(const Model::DescribeVolumesRequest& request) {
     using OutcomeT = Model::DescribeVolumesOutcome;
     using RequestT = Model::DescribeVolumesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VolumeAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -1146,7 +1146,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeVolumesOutcome> WaitUntilVolumeDeleted(const Model::DescribeVolumesRequest& request) {
     using OutcomeT = Model::DescribeVolumesOutcome;
     using RequestT = Model::DescribeVolumesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VolumeDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
         [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -1167,7 +1167,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeVolumesOutcome> WaitUntilVolumeInUse(const Model::DescribeVolumesRequest& request) {
     using OutcomeT = Model::DescribeVolumesOutcome;
     using RequestT = Model::DescribeVolumesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VolumeInUseWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("in-use"),
         [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -1196,7 +1196,7 @@ class EC2Waiter {
       const Model::DescribeVpcPeeringConnectionsRequest& request) {
     using OutcomeT = Model::DescribeVpcPeeringConnectionsOutcome;
     using RequestT = Model::DescribeVpcPeeringConnectionsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VpcPeeringConnectionDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
         [](const Model::DescribeVpcPeeringConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -1220,7 +1220,7 @@ class EC2Waiter {
       const Model::DescribeVpcPeeringConnectionsRequest& request) {
     using OutcomeT = Model::DescribeVpcPeeringConnectionsOutcome;
     using RequestT = Model::DescribeVpcPeeringConnectionsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("VpcPeeringConnectionExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
@@ -1234,7 +1234,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeVpcsOutcome> WaitUntilVpcAvailable(const Model::DescribeVpcsRequest& request) {
     using OutcomeT = Model::DescribeVpcsOutcome;
     using RequestT = Model::DescribeVpcsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VpcAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeVpcsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -1253,7 +1253,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::DescribeVpcsOutcome> WaitUntilVpcExists(const Model::DescribeVpcsRequest& request) {
     using OutcomeT = Model::DescribeVpcsOutcome;
     using RequestT = Model::DescribeVpcsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("VpcExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("VpcExistsWaiter", Aws::Utils::WaiterState::RETRY,
@@ -1268,7 +1268,7 @@ class EC2Waiter {
       const Model::DescribeVpnConnectionsRequest& request) {
     using OutcomeT = Model::DescribeVpnConnectionsOutcome;
     using RequestT = Model::DescribeVpnConnectionsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VpnConnectionAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -1306,7 +1306,7 @@ class EC2Waiter {
       const Model::DescribeVpnConnectionsRequest& request) {
     using OutcomeT = Model::DescribeVpnConnectionsOutcome;
     using RequestT = Model::DescribeVpnConnectionsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VpnConnectionDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
         [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -1334,7 +1334,7 @@ class EC2Waiter {
   Aws::Utils::WaiterOutcome<Model::GetPasswordDataOutcome> WaitUntilPasswordDataAvailable(const Model::GetPasswordDataRequest& request) {
     using OutcomeT = Model::GetPasswordDataOutcome;
     using RequestT = Model::GetPasswordDataRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PasswordDataAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::GetPasswordDataOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

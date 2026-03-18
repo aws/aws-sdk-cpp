@@ -31,7 +31,7 @@ class EKSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeAddonOutcome> WaitUntilAddonActive(const Model::DescribeAddonRequest& request) {
     using OutcomeT = Model::DescribeAddonOutcome;
     using RequestT = Model::DescribeAddonRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AddonActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
         [](const Model::DescribeAddonOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -62,7 +62,7 @@ class EKSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeAddonOutcome> WaitUntilAddonDeleted(const Model::DescribeAddonRequest& request) {
     using OutcomeT = Model::DescribeAddonOutcome;
     using RequestT = Model::DescribeAddonRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AddonDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
         [](const Model::DescribeAddonOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -81,7 +81,7 @@ class EKSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeClusterOutcome> WaitUntilClusterActive(const Model::DescribeClusterRequest& request) {
     using OutcomeT = Model::DescribeClusterOutcome;
     using RequestT = Model::DescribeClusterRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETING"),
         [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -112,7 +112,7 @@ class EKSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeClusterOutcome> WaitUntilClusterDeleted(const Model::DescribeClusterRequest& request) {
     using OutcomeT = Model::DescribeClusterOutcome;
     using RequestT = Model::DescribeClusterRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ACTIVE"),
         [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -146,7 +146,7 @@ class EKSWaiter {
       const Model::DescribeFargateProfileRequest& request) {
     using OutcomeT = Model::DescribeFargateProfileOutcome;
     using RequestT = Model::DescribeFargateProfileRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FargateProfileActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
         [](const Model::DescribeFargateProfileOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -173,7 +173,7 @@ class EKSWaiter {
       const Model::DescribeFargateProfileRequest& request) {
     using OutcomeT = Model::DescribeFargateProfileOutcome;
     using RequestT = Model::DescribeFargateProfileRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FargateProfileDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
         [](const Model::DescribeFargateProfileOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -193,7 +193,7 @@ class EKSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeNodegroupOutcome> WaitUntilNodegroupActive(const Model::DescribeNodegroupRequest& request) {
     using OutcomeT = Model::DescribeNodegroupOutcome;
     using RequestT = Model::DescribeNodegroupRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NodegroupActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
         [](const Model::DescribeNodegroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -217,7 +217,7 @@ class EKSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeNodegroupOutcome> WaitUntilNodegroupDeleted(const Model::DescribeNodegroupRequest& request) {
     using OutcomeT = Model::DescribeNodegroupOutcome;
     using RequestT = Model::DescribeNodegroupRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NodegroupDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
         [](const Model::DescribeNodegroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

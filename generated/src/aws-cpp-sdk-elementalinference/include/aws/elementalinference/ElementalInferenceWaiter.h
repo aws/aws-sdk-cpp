@@ -22,7 +22,7 @@ class ElementalInferenceWaiter {
   Aws::Utils::WaiterOutcome<Model::GetFeedOutcome> WaitUntilFeedDeleted(const Model::GetFeedRequest& request) {
     using OutcomeT = Model::GetFeedOutcome;
     using RequestT = Model::GetFeedRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("FeedDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(

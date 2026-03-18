@@ -23,7 +23,7 @@ class SESWaiter {
       const Model::GetIdentityVerificationAttributesRequest& request) {
     using OutcomeT = Model::GetIdentityVerificationAttributesOutcome;
     using RequestT = Model::GetIdentityVerificationAttributesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "IdentityExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Success"),
         [](const Model::GetIdentityVerificationAttributesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

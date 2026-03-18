@@ -23,7 +23,7 @@ class RedshiftWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeClustersOutcome> WaitUntilClusterAvailable(const Model::DescribeClustersRequest& request) {
     using OutcomeT = Model::DescribeClustersOutcome;
     using RequestT = Model::DescribeClustersRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -51,7 +51,7 @@ class RedshiftWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeClustersOutcome> WaitUntilClusterDeleted(const Model::DescribeClustersRequest& request) {
     using OutcomeT = Model::DescribeClustersOutcome;
     using RequestT = Model::DescribeClustersRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ClusterDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ClusterNotFound")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -79,7 +79,7 @@ class RedshiftWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeClustersOutcome> WaitUntilClusterRestored(const Model::DescribeClustersRequest& request) {
     using OutcomeT = Model::DescribeClustersOutcome;
     using RequestT = Model::DescribeClustersRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterRestoredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
         [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -107,7 +107,7 @@ class RedshiftWaiter {
       const Model::DescribeClusterSnapshotsRequest& request) {
     using OutcomeT = Model::DescribeClusterSnapshotsOutcome;
     using RequestT = Model::DescribeClusterSnapshotsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SnapshotAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

@@ -23,7 +23,7 @@ class SignerWaiter {
       const Model::DescribeSigningJobRequest& request) {
     using OutcomeT = Model::DescribeSigningJobOutcome;
     using RequestT = Model::DescribeSigningJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SuccessfulSigningJobWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Succeeded"),
         [](const Model::DescribeSigningJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

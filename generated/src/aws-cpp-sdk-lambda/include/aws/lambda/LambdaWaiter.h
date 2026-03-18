@@ -25,7 +25,7 @@ class LambdaWaiter {
   Aws::Utils::WaiterOutcome<Model::GetFunctionOutcome> WaitUntilFunctionActiveV2(const Model::GetFunctionRequest& request) {
     using OutcomeT = Model::GetFunctionOutcome;
     using RequestT = Model::GetFunctionRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionActiveV2Waiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Active"),
         [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -56,7 +56,7 @@ class LambdaWaiter {
   Aws::Utils::WaiterOutcome<Model::GetFunctionOutcome> WaitUntilFunctionExists(const Model::GetFunctionRequest& request) {
     using OutcomeT = Model::GetFunctionOutcome;
     using RequestT = Model::GetFunctionRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("FunctionExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("FunctionExistsWaiter", Aws::Utils::WaiterState::RETRY,
@@ -70,7 +70,7 @@ class LambdaWaiter {
   Aws::Utils::WaiterOutcome<Model::GetFunctionOutcome> WaitUntilFunctionUpdatedV2(const Model::GetFunctionRequest& request) {
     using OutcomeT = Model::GetFunctionOutcome;
     using RequestT = Model::GetFunctionRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionUpdatedV2Waiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Successful"),
         [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -105,7 +105,7 @@ class LambdaWaiter {
       const Model::GetFunctionConfigurationRequest& request) {
     using OutcomeT = Model::GetFunctionConfigurationOutcome;
     using RequestT = Model::GetFunctionConfigurationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Active"),
         [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -137,7 +137,7 @@ class LambdaWaiter {
       const Model::GetFunctionConfigurationRequest& request) {
     using OutcomeT = Model::GetFunctionConfigurationOutcome;
     using RequestT = Model::GetFunctionConfigurationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Successful"),
         [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -169,7 +169,7 @@ class LambdaWaiter {
       const Model::GetFunctionConfigurationRequest& request) {
     using OutcomeT = Model::GetFunctionConfigurationOutcome;
     using RequestT = Model::GetFunctionConfigurationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PublishedVersionActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Active"),
         [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

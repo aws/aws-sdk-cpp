@@ -22,7 +22,7 @@ class KinesisWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeStreamOutcome> WaitUntilStreamExists(const Model::DescribeStreamRequest& request) {
     using OutcomeT = Model::DescribeStreamOutcome;
     using RequestT = Model::DescribeStreamRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::DescribeStreamOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -40,7 +40,7 @@ class KinesisWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeStreamOutcome> WaitUntilStreamNotExists(const Model::DescribeStreamRequest& request) {
     using OutcomeT = Model::DescribeStreamOutcome;
     using RequestT = Model::DescribeStreamRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("StreamNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
 

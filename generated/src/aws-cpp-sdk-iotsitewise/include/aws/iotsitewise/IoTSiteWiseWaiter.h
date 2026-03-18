@@ -28,7 +28,7 @@ class IoTSiteWiseWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeAssetOutcome> WaitUntilAssetActive(const Model::DescribeAssetRequest& request) {
     using OutcomeT = Model::DescribeAssetOutcome;
     using RequestT = Model::DescribeAssetRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AssetActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::DescribeAssetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -52,7 +52,7 @@ class IoTSiteWiseWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeAssetOutcome> WaitUntilAssetNotExists(const Model::DescribeAssetRequest& request) {
     using OutcomeT = Model::DescribeAssetOutcome;
     using RequestT = Model::DescribeAssetRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("AssetNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
 
@@ -64,7 +64,7 @@ class IoTSiteWiseWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeAssetModelOutcome> WaitUntilAssetModelActive(const Model::DescribeAssetModelRequest& request) {
     using OutcomeT = Model::DescribeAssetModelOutcome;
     using RequestT = Model::DescribeAssetModelRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AssetModelActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::DescribeAssetModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -91,7 +91,7 @@ class IoTSiteWiseWaiter {
       const Model::DescribeAssetModelRequest& request) {
     using OutcomeT = Model::DescribeAssetModelOutcome;
     using RequestT = Model::DescribeAssetModelRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "AssetModelNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
 
@@ -103,7 +103,7 @@ class IoTSiteWiseWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribePortalOutcome> WaitUntilPortalActive(const Model::DescribePortalRequest& request) {
     using OutcomeT = Model::DescribePortalOutcome;
     using RequestT = Model::DescribePortalRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PortalActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::DescribePortalOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -120,7 +120,7 @@ class IoTSiteWiseWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribePortalOutcome> WaitUntilPortalNotExists(const Model::DescribePortalRequest& request) {
     using OutcomeT = Model::DescribePortalOutcome;
     using RequestT = Model::DescribePortalRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("PortalNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
 

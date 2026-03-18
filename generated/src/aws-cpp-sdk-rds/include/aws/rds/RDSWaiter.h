@@ -29,7 +29,7 @@ class RDSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeDBClustersOutcome> WaitUntilDBClusterAvailable(const Model::DescribeDBClustersRequest& request) {
     using OutcomeT = Model::DescribeDBClustersOutcome;
     using RequestT = Model::DescribeDBClustersRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -87,7 +87,7 @@ class RDSWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeDBClustersOutcome> WaitUntilDBClusterDeleted(const Model::DescribeDBClustersRequest& request) {
     using OutcomeT = Model::DescribeDBClustersOutcome;
     using RequestT = Model::DescribeDBClustersRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -139,7 +139,7 @@ class RDSWaiter {
       const Model::DescribeDBClusterSnapshotsRequest& request) {
     using OutcomeT = Model::DescribeDBClusterSnapshotsOutcome;
     using RequestT = Model::DescribeDBClusterSnapshotsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -198,7 +198,7 @@ class RDSWaiter {
       const Model::DescribeDBClusterSnapshotsRequest& request) {
     using OutcomeT = Model::DescribeDBClusterSnapshotsOutcome;
     using RequestT = Model::DescribeDBClusterSnapshotsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -250,7 +250,7 @@ class RDSWaiter {
       const Model::DescribeDBInstancesRequest& request) {
     using OutcomeT = Model::DescribeDBInstancesOutcome;
     using RequestT = Model::DescribeDBInstancesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -309,7 +309,7 @@ class RDSWaiter {
       const Model::DescribeDBInstancesRequest& request) {
     using OutcomeT = Model::DescribeDBInstancesOutcome;
     using RequestT = Model::DescribeDBInstancesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -361,7 +361,7 @@ class RDSWaiter {
       const Model::DescribeDBSnapshotsRequest& request) {
     using OutcomeT = Model::DescribeDBSnapshotsOutcome;
     using RequestT = Model::DescribeDBSnapshotsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -420,7 +420,7 @@ class RDSWaiter {
       const Model::DescribeDBSnapshotsRequest& request) {
     using OutcomeT = Model::DescribeDBSnapshotsOutcome;
     using RequestT = Model::DescribeDBSnapshotsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -472,7 +472,7 @@ class RDSWaiter {
       const Model::DescribeTenantDatabasesRequest& request) {
     using OutcomeT = Model::DescribeTenantDatabasesOutcome;
     using RequestT = Model::DescribeTenantDatabasesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TenantDatabaseAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -515,7 +515,7 @@ class RDSWaiter {
       const Model::DescribeTenantDatabasesRequest& request) {
     using OutcomeT = Model::DescribeTenantDatabasesOutcome;
     using RequestT = Model::DescribeTenantDatabasesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TenantDatabaseDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

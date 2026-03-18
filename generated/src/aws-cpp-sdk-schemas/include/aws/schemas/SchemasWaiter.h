@@ -23,7 +23,7 @@ class SchemasWaiter {
       const Model::DescribeCodeBindingRequest& request) {
     using OutcomeT = Model::DescribeCodeBindingOutcome;
     using RequestT = Model::DescribeCodeBindingRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CodeBindingExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
         [](const Model::DescribeCodeBindingOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

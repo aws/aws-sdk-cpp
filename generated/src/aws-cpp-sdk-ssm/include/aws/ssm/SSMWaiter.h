@@ -23,7 +23,7 @@ class SSMWaiter {
       const Model::GetCommandInvocationRequest& request) {
     using OutcomeT = Model::GetCommandInvocationOutcome;
     using RequestT = Model::GetCommandInvocationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CommandExecutedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Pending"),
         [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

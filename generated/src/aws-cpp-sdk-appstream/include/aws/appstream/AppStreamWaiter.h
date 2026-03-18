@@ -22,7 +22,7 @@ class AppStreamWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeFleetsOutcome> WaitUntilFleetStarted(const Model::DescribeFleetsRequest& request) {
     using OutcomeT = Model::DescribeFleetsOutcome;
     using RequestT = Model::DescribeFleetsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FleetStartedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("RUNNING"),
         [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -59,7 +59,7 @@ class AppStreamWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeFleetsOutcome> WaitUntilFleetStopped(const Model::DescribeFleetsRequest& request) {
     using OutcomeT = Model::DescribeFleetsOutcome;
     using RequestT = Model::DescribeFleetsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FleetStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STOPPED"),
         [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

@@ -24,7 +24,7 @@ class ElastiCacheWaiter {
       const Model::DescribeCacheClustersRequest& request) {
     using OutcomeT = Model::DescribeCacheClustersOutcome;
     using RequestT = Model::DescribeCacheClustersRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -75,7 +75,7 @@ class ElastiCacheWaiter {
       const Model::DescribeCacheClustersRequest& request) {
     using OutcomeT = Model::DescribeCacheClustersOutcome;
     using RequestT = Model::DescribeCacheClustersRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
         [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -144,7 +144,7 @@ class ElastiCacheWaiter {
       const Model::DescribeReplicationGroupsRequest& request) {
     using OutcomeT = Model::DescribeReplicationGroupsOutcome;
     using RequestT = Model::DescribeReplicationGroupsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationGroupAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeReplicationGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -171,7 +171,7 @@ class ElastiCacheWaiter {
       const Model::DescribeReplicationGroupsRequest& request) {
     using OutcomeT = Model::DescribeReplicationGroupsOutcome;
     using RequestT = Model::DescribeReplicationGroupsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationGroupDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
         [](const Model::DescribeReplicationGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

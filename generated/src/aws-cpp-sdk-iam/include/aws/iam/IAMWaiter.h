@@ -28,7 +28,7 @@ class IAMWaiter {
       const Model::GetInstanceProfileRequest& request) {
     using OutcomeT = Model::GetInstanceProfileOutcome;
     using RequestT = Model::GetInstanceProfileRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("InstanceProfileExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
@@ -42,7 +42,7 @@ class IAMWaiter {
   Aws::Utils::WaiterOutcome<Model::GetPolicyOutcome> WaitUntilPolicyExists(const Model::GetPolicyRequest& request) {
     using OutcomeT = Model::GetPolicyOutcome;
     using RequestT = Model::GetPolicyRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("PolicyExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("PolicyExistsWaiter", Aws::Utils::WaiterState::RETRY,
@@ -56,7 +56,7 @@ class IAMWaiter {
   Aws::Utils::WaiterOutcome<Model::GetRoleOutcome> WaitUntilRoleExists(const Model::GetRoleRequest& request) {
     using OutcomeT = Model::GetRoleOutcome;
     using RequestT = Model::GetRoleRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("RoleExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("RoleExistsWaiter", Aws::Utils::WaiterState::RETRY,
@@ -70,7 +70,7 @@ class IAMWaiter {
   Aws::Utils::WaiterOutcome<Model::GetUserOutcome> WaitUntilUserExists(const Model::GetUserRequest& request) {
     using OutcomeT = Model::GetUserOutcome;
     using RequestT = Model::GetUserRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("UserExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("UserExistsWaiter", Aws::Utils::WaiterState::RETRY,

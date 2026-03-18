@@ -22,7 +22,7 @@ class DSQLWaiter {
   Aws::Utils::WaiterOutcome<Model::GetClusterOutcome> WaitUntilClusterActive(const Model::GetClusterRequest& request) {
     using OutcomeT = Model::GetClusterOutcome;
     using RequestT = Model::GetClusterRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -39,7 +39,7 @@ class DSQLWaiter {
   Aws::Utils::WaiterOutcome<Model::GetClusterOutcome> WaitUntilClusterNotExists(const Model::GetClusterRequest& request) {
     using OutcomeT = Model::GetClusterOutcome;
     using RequestT = Model::GetClusterRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ClusterNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
 

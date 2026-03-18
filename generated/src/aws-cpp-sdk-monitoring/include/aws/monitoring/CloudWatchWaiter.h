@@ -23,7 +23,7 @@ class CloudWatchWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeAlarmsOutcome> WaitUntilAlarmExists(const Model::DescribeAlarmsRequest& request) {
     using OutcomeT = Model::DescribeAlarmsOutcome;
     using RequestT = Model::DescribeAlarmsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AlarmExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeAlarmsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -40,7 +40,7 @@ class CloudWatchWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeAlarmsOutcome> WaitUntilCompositeAlarmExists(const Model::DescribeAlarmsRequest& request) {
     using OutcomeT = Model::DescribeAlarmsOutcome;
     using RequestT = Model::DescribeAlarmsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CompositeAlarmExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
         [](const Model::DescribeAlarmsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -57,7 +57,7 @@ class CloudWatchWaiter {
   Aws::Utils::WaiterOutcome<Model::GetAlarmMuteRuleOutcome> WaitUntilAlarmMuteRuleExists(const Model::GetAlarmMuteRuleRequest& request) {
     using OutcomeT = Model::GetAlarmMuteRuleOutcome;
     using RequestT = Model::GetAlarmMuteRuleRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(
         Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("AlarmMuteRuleExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("AlarmMuteRuleExistsWaiter", Aws::Utils::WaiterState::RETRY,

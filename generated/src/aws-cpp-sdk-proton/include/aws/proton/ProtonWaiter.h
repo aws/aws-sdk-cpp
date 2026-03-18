@@ -31,7 +31,7 @@ class ProtonWaiter {
   Aws::Utils::WaiterOutcome<Model::GetComponentOutcome> WaitUntilComponentDeployed(const Model::GetComponentRequest& request) {
     using OutcomeT = Model::GetComponentOutcome;
     using RequestT = Model::GetComponentRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ComponentDeployedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),
         [](const Model::GetComponentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -55,7 +55,7 @@ class ProtonWaiter {
   Aws::Utils::WaiterOutcome<Model::GetComponentOutcome> WaitUntilComponentDeleted(const Model::GetComponentRequest& request) {
     using OutcomeT = Model::GetComponentOutcome;
     using RequestT = Model::GetComponentRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ComponentDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -74,7 +74,7 @@ class ProtonWaiter {
   Aws::Utils::WaiterOutcome<Model::GetEnvironmentOutcome> WaitUntilEnvironmentDeployed(const Model::GetEnvironmentRequest& request) {
     using OutcomeT = Model::GetEnvironmentOutcome;
     using RequestT = Model::GetEnvironmentRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentDeployedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),
         [](const Model::GetEnvironmentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -99,7 +99,7 @@ class ProtonWaiter {
       const Model::GetEnvironmentTemplateVersionRequest& request) {
     using OutcomeT = Model::GetEnvironmentTemplateVersionOutcome;
     using RequestT = Model::GetEnvironmentTemplateVersionRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentTemplateVersionRegisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DRAFT"),
         [](const Model::GetEnvironmentTemplateVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -130,7 +130,7 @@ class ProtonWaiter {
   Aws::Utils::WaiterOutcome<Model::GetServiceOutcome> WaitUntilServiceCreated(const Model::GetServiceRequest& request) {
     using OutcomeT = Model::GetServiceOutcome;
     using RequestT = Model::GetServiceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -168,7 +168,7 @@ class ProtonWaiter {
   Aws::Utils::WaiterOutcome<Model::GetServiceOutcome> WaitUntilServiceUpdated(const Model::GetServiceRequest& request) {
     using OutcomeT = Model::GetServiceOutcome;
     using RequestT = Model::GetServiceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -213,7 +213,7 @@ class ProtonWaiter {
   Aws::Utils::WaiterOutcome<Model::GetServiceOutcome> WaitUntilServiceDeleted(const Model::GetServiceRequest& request) {
     using OutcomeT = Model::GetServiceOutcome;
     using RequestT = Model::GetServiceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ServiceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -232,7 +232,7 @@ class ProtonWaiter {
   Aws::Utils::WaiterOutcome<Model::GetServiceOutcome> WaitUntilServicePipelineDeployed(const Model::GetServiceRequest& request) {
     using OutcomeT = Model::GetServiceOutcome;
     using RequestT = Model::GetServiceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicePipelineDeployedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -257,7 +257,7 @@ class ProtonWaiter {
       const Model::GetServiceInstanceRequest& request) {
     using OutcomeT = Model::GetServiceInstanceOutcome;
     using RequestT = Model::GetServiceInstanceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceInstanceDeployedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),
         [](const Model::GetServiceInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -282,7 +282,7 @@ class ProtonWaiter {
       const Model::GetServiceTemplateVersionRequest& request) {
     using OutcomeT = Model::GetServiceTemplateVersionOutcome;
     using RequestT = Model::GetServiceTemplateVersionRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceTemplateVersionRegisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DRAFT"),
         [](const Model::GetServiceTemplateVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

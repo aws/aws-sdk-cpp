@@ -22,7 +22,7 @@ class ElasticLoadBalancingWaiter {
       const Model::DescribeInstanceHealthRequest& request) {
     using OutcomeT = Model::DescribeInstanceHealthOutcome;
     using RequestT = Model::DescribeInstanceHealthRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnyInstanceInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
         [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -41,7 +41,7 @@ class ElasticLoadBalancingWaiter {
       const Model::DescribeInstanceHealthRequest& request) {
     using OutcomeT = Model::DescribeInstanceHealthOutcome;
     using RequestT = Model::DescribeInstanceHealthRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceDeregisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("OutOfService"),
         [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -62,7 +62,7 @@ class ElasticLoadBalancingWaiter {
       const Model::DescribeInstanceHealthRequest& request) {
     using OutcomeT = Model::DescribeInstanceHealthOutcome;
     using RequestT = Model::DescribeInstanceHealthRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
         [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

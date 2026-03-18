@@ -22,7 +22,7 @@ class SimpleDBv2Waiter {
   Aws::Utils::WaiterOutcome<Model::GetExportOutcome> WaitUntilExportSucceeded(const Model::GetExportRequest& request) {
     using OutcomeT = Model::GetExportOutcome;
     using RequestT = Model::GetExportRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportSucceededWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),
         [](const Model::GetExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

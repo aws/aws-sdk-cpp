@@ -26,7 +26,7 @@ class ECRWaiter {
       const Model::DescribeImageScanFindingsRequest& request) {
     using OutcomeT = Model::DescribeImageScanFindingsOutcome;
     using RequestT = Model::DescribeImageScanFindingsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageScanCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETE"),
         [](const Model::DescribeImageScanFindingsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -51,7 +51,7 @@ class ECRWaiter {
       const Model::GetLifecyclePolicyPreviewRequest& request) {
     using OutcomeT = Model::GetLifecyclePolicyPreviewOutcome;
     using RequestT = Model::GetLifecyclePolicyPreviewRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LifecyclePolicyPreviewCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETE"),
         [](const Model::GetLifecyclePolicyPreviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

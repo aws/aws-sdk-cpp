@@ -27,7 +27,7 @@ class PrometheusServiceWaiter {
       const Model::DescribeAnomalyDetectorRequest& request) {
     using OutcomeT = Model::DescribeAnomalyDetectorOutcome;
     using RequestT = Model::DescribeAnomalyDetectorRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnomalyDetectorActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::DescribeAnomalyDetectorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -62,7 +62,7 @@ class PrometheusServiceWaiter {
       const Model::DescribeAnomalyDetectorRequest& request) {
     using OutcomeT = Model::DescribeAnomalyDetectorOutcome;
     using RequestT = Model::DescribeAnomalyDetectorRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "AnomalyDetectorDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -82,7 +82,7 @@ class PrometheusServiceWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeScraperOutcome> WaitUntilScraperActive(const Model::DescribeScraperRequest& request) {
     using OutcomeT = Model::DescribeScraperOutcome;
     using RequestT = Model::DescribeScraperRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ScraperActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::DescribeScraperOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -106,7 +106,7 @@ class PrometheusServiceWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeScraperOutcome> WaitUntilScraperDeleted(const Model::DescribeScraperRequest& request) {
     using OutcomeT = Model::DescribeScraperOutcome;
     using RequestT = Model::DescribeScraperRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ScraperDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -125,7 +125,7 @@ class PrometheusServiceWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeWorkspaceOutcome> WaitUntilWorkspaceActive(const Model::DescribeWorkspaceRequest& request) {
     using OutcomeT = Model::DescribeWorkspaceOutcome;
     using RequestT = Model::DescribeWorkspaceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkspaceActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -156,7 +156,7 @@ class PrometheusServiceWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeWorkspaceOutcome> WaitUntilWorkspaceDeleted(const Model::DescribeWorkspaceRequest& request) {
     using OutcomeT = Model::DescribeWorkspaceOutcome;
     using RequestT = Model::DescribeWorkspaceRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("WorkspaceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(

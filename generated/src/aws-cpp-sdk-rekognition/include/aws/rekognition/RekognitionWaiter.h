@@ -23,7 +23,7 @@ class RekognitionWaiter {
       const Model::DescribeProjectVersionsRequest& request) {
     using OutcomeT = Model::DescribeProjectVersionsOutcome;
     using RequestT = Model::DescribeProjectVersionsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ProjectVersionRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("RUNNING"),
         [](const Model::DescribeProjectVersionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -56,7 +56,7 @@ class RekognitionWaiter {
       const Model::DescribeProjectVersionsRequest& request) {
     using OutcomeT = Model::DescribeProjectVersionsOutcome;
     using RequestT = Model::DescribeProjectVersionsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ProjectVersionTrainingCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("TRAINING_COMPLETED"),
         [](const Model::DescribeProjectVersionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

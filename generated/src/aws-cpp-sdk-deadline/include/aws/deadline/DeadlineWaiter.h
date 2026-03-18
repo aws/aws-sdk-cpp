@@ -38,7 +38,7 @@ class DeadlineWaiter {
   Aws::Utils::WaiterOutcome<Model::GetFleetOutcome> WaitUntilFleetActive(const Model::GetFleetRequest& request) {
     using OutcomeT = Model::GetFleetOutcome;
     using RequestT = Model::GetFleetRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FleetActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetFleetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -69,7 +69,7 @@ class DeadlineWaiter {
   Aws::Utils::WaiterOutcome<Model::GetJobOutcome> WaitUntilJobCreateComplete(const Model::GetJobRequest& request) {
     using OutcomeT = Model::GetJobOutcome;
     using RequestT = Model::GetJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "JobCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -121,7 +121,7 @@ class DeadlineWaiter {
   Aws::Utils::WaiterOutcome<Model::GetJobOutcome> WaitUntilJobComplete(const Model::GetJobRequest& request) {
     using OutcomeT = Model::GetJobOutcome;
     using RequestT = Model::GetJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "JobCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),
         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -173,7 +173,7 @@ class DeadlineWaiter {
   Aws::Utils::WaiterOutcome<Model::GetJobOutcome> WaitUntilJobSucceeded(const Model::GetJobRequest& request) {
     using OutcomeT = Model::GetJobOutcome;
     using RequestT = Model::GetJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "JobSucceededWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),
         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -226,7 +226,7 @@ class DeadlineWaiter {
       const Model::GetLicenseEndpointRequest& request) {
     using OutcomeT = Model::GetLicenseEndpointOutcome;
     using RequestT = Model::GetLicenseEndpointRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LicenseEndpointValidWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("READY"),
         [](const Model::GetLicenseEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -251,7 +251,7 @@ class DeadlineWaiter {
       const Model::GetLicenseEndpointRequest& request) {
     using OutcomeT = Model::GetLicenseEndpointOutcome;
     using RequestT = Model::GetLicenseEndpointRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "LicenseEndpointDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -270,7 +270,7 @@ class DeadlineWaiter {
   Aws::Utils::WaiterOutcome<Model::GetQueueOutcome> WaitUntilQueueSchedulingBlocked(const Model::GetQueueRequest& request) {
     using OutcomeT = Model::GetQueueOutcome;
     using RequestT = Model::GetQueueRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "QueueSchedulingBlockedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SCHEDULING_BLOCKED"),
         [](const Model::GetQueueOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -287,7 +287,7 @@ class DeadlineWaiter {
   Aws::Utils::WaiterOutcome<Model::GetQueueOutcome> WaitUntilQueueScheduling(const Model::GetQueueRequest& request) {
     using OutcomeT = Model::GetQueueOutcome;
     using RequestT = Model::GetQueueRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "QueueSchedulingWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SCHEDULING"),
         [](const Model::GetQueueOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -305,7 +305,7 @@ class DeadlineWaiter {
       const Model::GetQueueFleetAssociationRequest& request) {
     using OutcomeT = Model::GetQueueFleetAssociationOutcome;
     using RequestT = Model::GetQueueFleetAssociationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "QueueFleetAssociationStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STOPPED"),
         [](const Model::GetQueueLimitAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -324,7 +324,7 @@ class DeadlineWaiter {
       const Model::GetQueueLimitAssociationRequest& request) {
     using OutcomeT = Model::GetQueueLimitAssociationOutcome;
     using RequestT = Model::GetQueueLimitAssociationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "QueueLimitAssociationStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STOPPED"),
         [](const Model::GetQueueLimitAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

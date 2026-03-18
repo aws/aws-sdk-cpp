@@ -39,7 +39,7 @@ class TranscribeServiceWaiter {
       const Model::DescribeLanguageModelRequest& request) {
     using OutcomeT = Model::DescribeLanguageModelOutcome;
     using RequestT = Model::DescribeLanguageModelRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LanguageModelCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::DescribeLanguageModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -64,7 +64,7 @@ class TranscribeServiceWaiter {
       const Model::GetCallAnalyticsJobRequest& request) {
     using OutcomeT = Model::GetCallAnalyticsJobOutcome;
     using RequestT = Model::GetCallAnalyticsJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CallAnalyticsJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::GetCallAnalyticsJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -91,7 +91,7 @@ class TranscribeServiceWaiter {
       const Model::GetMedicalScribeJobRequest& request) {
     using OutcomeT = Model::GetMedicalScribeJobOutcome;
     using RequestT = Model::GetMedicalScribeJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MedicalScribeJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::GetMedicalScribeJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -118,7 +118,7 @@ class TranscribeServiceWaiter {
       const Model::GetMedicalTranscriptionJobRequest& request) {
     using OutcomeT = Model::GetMedicalTranscriptionJobOutcome;
     using RequestT = Model::GetMedicalTranscriptionJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MedicalTranscriptionJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::GetMedicalTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -145,7 +145,7 @@ class TranscribeServiceWaiter {
       const Model::GetMedicalVocabularyRequest& request) {
     using OutcomeT = Model::GetMedicalVocabularyOutcome;
     using RequestT = Model::GetMedicalVocabularyRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MedicalVocabularyReadyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("READY"),
         [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -170,7 +170,7 @@ class TranscribeServiceWaiter {
       const Model::GetTranscriptionJobRequest& request) {
     using OutcomeT = Model::GetTranscriptionJobOutcome;
     using RequestT = Model::GetTranscriptionJobRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TranscriptionJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::GetTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -196,7 +196,7 @@ class TranscribeServiceWaiter {
   Aws::Utils::WaiterOutcome<Model::GetVocabularyOutcome> WaitUntilVocabularyReady(const Model::GetVocabularyRequest& request) {
     using OutcomeT = Model::GetVocabularyOutcome;
     using RequestT = Model::GetVocabularyRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VocabularyReadyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("READY"),
         [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

@@ -25,7 +25,7 @@ class EMRWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeClusterOutcome> WaitUntilClusterRunning(const Model::DescribeClusterRequest& request) {
     using OutcomeT = Model::DescribeClusterOutcome;
     using RequestT = Model::DescribeClusterRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("RUNNING"),
         [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -75,7 +75,7 @@ class EMRWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeClusterOutcome> WaitUntilClusterTerminated(const Model::DescribeClusterRequest& request) {
     using OutcomeT = Model::DescribeClusterOutcome;
     using RequestT = Model::DescribeClusterRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterTerminatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("TERMINATED"),
         [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -101,7 +101,7 @@ class EMRWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeStepOutcome> WaitUntilStepComplete(const Model::DescribeStepRequest& request) {
     using OutcomeT = Model::DescribeStepOutcome;
     using RequestT = Model::DescribeStepRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StepCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::DescribeStepOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

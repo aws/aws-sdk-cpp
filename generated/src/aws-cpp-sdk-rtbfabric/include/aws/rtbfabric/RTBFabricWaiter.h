@@ -33,7 +33,7 @@ class RTBFabricWaiter {
       const Model::GetInboundExternalLinkRequest& request) {
     using OutcomeT = Model::GetInboundExternalLinkOutcome;
     using RequestT = Model::GetInboundExternalLinkRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -78,7 +78,7 @@ class RTBFabricWaiter {
   Aws::Utils::WaiterOutcome<Model::GetLinkOutcome> WaitUntilLinkAccepted(const Model::GetLinkRequest& request) {
     using OutcomeT = Model::GetLinkOutcome;
     using RequestT = Model::GetLinkRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LinkAcceptedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACCEPTED"),
         [](const Model::GetLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -116,7 +116,7 @@ class RTBFabricWaiter {
   Aws::Utils::WaiterOutcome<Model::GetLinkOutcome> WaitUntilLinkActive(const Model::GetLinkRequest& request) {
     using OutcomeT = Model::GetLinkOutcome;
     using RequestT = Model::GetLinkRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LinkActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -155,7 +155,7 @@ class RTBFabricWaiter {
       const Model::GetOutboundExternalLinkRequest& request) {
     using OutcomeT = Model::GetOutboundExternalLinkOutcome;
     using RequestT = Model::GetOutboundExternalLinkRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -201,7 +201,7 @@ class RTBFabricWaiter {
       const Model::GetRequesterGatewayRequest& request) {
     using OutcomeT = Model::GetRequesterGatewayOutcome;
     using RequestT = Model::GetRequesterGatewayRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RequesterGatewayActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -233,7 +233,7 @@ class RTBFabricWaiter {
       const Model::GetRequesterGatewayRequest& request) {
     using OutcomeT = Model::GetRequesterGatewayOutcome;
     using RequestT = Model::GetRequesterGatewayRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RequesterGatewayDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
         [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -258,7 +258,7 @@ class RTBFabricWaiter {
       const Model::GetResponderGatewayRequest& request) {
     using OutcomeT = Model::GetResponderGatewayOutcome;
     using RequestT = Model::GetResponderGatewayRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResponderGatewayActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -290,7 +290,7 @@ class RTBFabricWaiter {
       const Model::GetResponderGatewayRequest& request) {
     using OutcomeT = Model::GetResponderGatewayOutcome;
     using RequestT = Model::GetResponderGatewayRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResponderGatewayDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
         [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

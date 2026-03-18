@@ -35,7 +35,7 @@ class DynamoDBWaiter {
       const Model::DescribeContributorInsightsRequest& request) {
     using OutcomeT = Model::DescribeContributorInsightsOutcome;
     using RequestT = Model::DescribeContributorInsightsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ContributorInsightsEnabledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ENABLED"),
         [](const Model::DescribeContributorInsightsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -61,7 +61,7 @@ class DynamoDBWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeExportOutcome> WaitUntilExportCompleted(const Model::DescribeExportRequest& request) {
     using OutcomeT = Model::DescribeExportOutcome;
     using RequestT = Model::DescribeExportRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -87,7 +87,7 @@ class DynamoDBWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeImportOutcome> WaitUntilImportCompleted(const Model::DescribeImportRequest& request) {
     using OutcomeT = Model::DescribeImportOutcome;
     using RequestT = Model::DescribeImportRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImportCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -122,7 +122,7 @@ class DynamoDBWaiter {
       const Model::DescribeKinesisStreamingDestinationRequest& request) {
     using OutcomeT = Model::DescribeKinesisStreamingDestinationOutcome;
     using RequestT = Model::DescribeKinesisStreamingDestinationRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "KinesisStreamingDestinationActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::DescribeKinesisStreamingDestinationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -154,7 +154,7 @@ class DynamoDBWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeTableOutcome> WaitUntilTableExists(const Model::DescribeTableRequest& request) {
     using OutcomeT = Model::DescribeTableOutcome;
     using RequestT = Model::DescribeTableRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TableExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
         [](const Model::DescribeTableOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -173,7 +173,7 @@ class DynamoDBWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeTableOutcome> WaitUntilTableNotExists(const Model::DescribeTableRequest& request) {
     using OutcomeT = Model::DescribeTableOutcome;
     using RequestT = Model::DescribeTableRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("TableNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
 

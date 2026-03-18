@@ -23,7 +23,7 @@ class Macie2Waiter {
       const Model::GetSensitiveDataOccurrencesRequest& request) {
     using OutcomeT = Model::GetSensitiveDataOccurrencesOutcome;
     using RequestT = Model::GetSensitiveDataOccurrencesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FindingRevealedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCESS"),
         [](const Model::GetSensitiveDataOccurrencesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

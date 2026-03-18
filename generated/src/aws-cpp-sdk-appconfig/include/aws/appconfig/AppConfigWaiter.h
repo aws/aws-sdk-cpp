@@ -25,7 +25,7 @@ class AppConfigWaiter {
   Aws::Utils::WaiterOutcome<Model::GetDeploymentOutcome> WaitUntilDeploymentComplete(const Model::GetDeploymentRequest& request) {
     using OutcomeT = Model::GetDeploymentOutcome;
     using RequestT = Model::GetDeploymentRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DeploymentCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETE"),
         [](const Model::GetDeploymentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -57,7 +57,7 @@ class AppConfigWaiter {
       const Model::GetEnvironmentRequest& request) {
     using OutcomeT = Model::GetEnvironmentOutcome;
     using RequestT = Model::GetEnvironmentRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentReadyForDeploymentWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ReadyForDeployment"),
         [](const Model::GetEnvironmentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {

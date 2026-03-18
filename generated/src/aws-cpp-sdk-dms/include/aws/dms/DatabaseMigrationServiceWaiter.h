@@ -28,7 +28,7 @@ class DatabaseMigrationServiceWaiter {
       const Model::DescribeConnectionsRequest& request) {
     using OutcomeT = Model::DescribeConnectionsOutcome;
     using RequestT = Model::DescribeConnectionsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TestConnectionSucceedsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("successful"),
         [](const Model::DescribeConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -54,7 +54,7 @@ class DatabaseMigrationServiceWaiter {
   Aws::Utils::WaiterOutcome<Model::DescribeEndpointsOutcome> WaitUntilEndpointDeleted(const Model::DescribeEndpointsRequest& request) {
     using OutcomeT = Model::DescribeEndpointsOutcome;
     using RequestT = Model::DescribeEndpointsRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("EndpointDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundFault")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -83,7 +83,7 @@ class DatabaseMigrationServiceWaiter {
       const Model::DescribeReplicationInstancesRequest& request) {
     using OutcomeT = Model::DescribeReplicationInstancesOutcome;
     using RequestT = Model::DescribeReplicationInstancesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationInstanceAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
         [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -139,7 +139,7 @@ class DatabaseMigrationServiceWaiter {
       const Model::DescribeReplicationInstancesRequest& request) {
     using OutcomeT = Model::DescribeReplicationInstancesOutcome;
     using RequestT = Model::DescribeReplicationInstancesRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("available"),
         [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -161,7 +161,7 @@ class DatabaseMigrationServiceWaiter {
       const Model::DescribeReplicationTasksRequest& request) {
     using OutcomeT = Model::DescribeReplicationTasksOutcome;
     using RequestT = Model::DescribeReplicationTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ready"),
         [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -214,7 +214,7 @@ class DatabaseMigrationServiceWaiter {
       const Model::DescribeReplicationTasksRequest& request) {
     using OutcomeT = Model::DescribeReplicationTasksOutcome;
     using RequestT = Model::DescribeReplicationTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskReadyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ready"),
         [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -297,7 +297,7 @@ class DatabaseMigrationServiceWaiter {
       const Model::DescribeReplicationTasksRequest& request) {
     using OutcomeT = Model::DescribeReplicationTasksOutcome;
     using RequestT = Model::DescribeReplicationTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("running"),
         [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
@@ -380,7 +380,7 @@ class DatabaseMigrationServiceWaiter {
       const Model::DescribeReplicationTasksRequest& request) {
     using OutcomeT = Model::DescribeReplicationTasksOutcome;
     using RequestT = Model::DescribeReplicationTasksRequest;
-    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("stopped"),
         [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
