@@ -133,6 +133,10 @@ class Waiter {
           case WaiterState::RETRY:
             break; // continue polling
         }
+      } else if (!outcome.IsSuccess()) {
+        // No acceptor matched and an error was encountered: transition to failure
+        return WaiterOutcome<OutcomeT>(WaiterError(WaiterErrors::INVALID_ACTION, "",
+            "No acceptor matched and an error was encountered", false /*retryable*/));
       }
 
       if (attempt < m_maxAttempts - 1) {
