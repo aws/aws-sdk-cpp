@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/BandwidthWeightingType.h>
+#include <aws/ec2/model/DefaultConnectionTrackingConfiguration.h>
 #include <aws/ec2/model/EfaInfo.h>
 #include <aws/ec2/model/EnaSupport.h>
 #include <aws/ec2/model/FlexibleEnaQueuesSupport.h>
@@ -307,6 +308,26 @@ class NetworkInfo {
 
   ///@{
   /**
+   * <p>Indicates conntrack information for the instance type</p>
+   */
+  inline const DefaultConnectionTrackingConfiguration& GetConnectionTrackingConfiguration() const {
+    return m_connectionTrackingConfiguration;
+  }
+  inline bool ConnectionTrackingConfigurationHasBeenSet() const { return m_connectionTrackingConfigurationHasBeenSet; }
+  template <typename ConnectionTrackingConfigurationT = DefaultConnectionTrackingConfiguration>
+  void SetConnectionTrackingConfiguration(ConnectionTrackingConfigurationT&& value) {
+    m_connectionTrackingConfigurationHasBeenSet = true;
+    m_connectionTrackingConfiguration = std::forward<ConnectionTrackingConfigurationT>(value);
+  }
+  template <typename ConnectionTrackingConfigurationT = DefaultConnectionTrackingConfiguration>
+  NetworkInfo& WithConnectionTrackingConfiguration(ConnectionTrackingConfigurationT&& value) {
+    SetConnectionTrackingConfiguration(std::forward<ConnectionTrackingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether secondary interface attachments from secondary network are
    * supported.</p>
    */
@@ -384,6 +405,8 @@ class NetworkInfo {
 
   FlexibleEnaQueuesSupport m_flexibleEnaQueuesSupport{FlexibleEnaQueuesSupport::NOT_SET};
 
+  DefaultConnectionTrackingConfiguration m_connectionTrackingConfiguration;
+
   bool m_secondaryNetworkSupported{false};
 
   int m_maximumSecondaryNetworkInterfaces{0};
@@ -404,6 +427,7 @@ class NetworkInfo {
   bool m_enaSrdSupportedHasBeenSet = false;
   bool m_bandwidthWeightingsHasBeenSet = false;
   bool m_flexibleEnaQueuesSupportHasBeenSet = false;
+  bool m_connectionTrackingConfigurationHasBeenSet = false;
   bool m_secondaryNetworkSupportedHasBeenSet = false;
   bool m_maximumSecondaryNetworkInterfacesHasBeenSet = false;
   bool m_ipv4AddressesPerSecondaryInterfaceHasBeenSet = false;

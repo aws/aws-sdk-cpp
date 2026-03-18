@@ -573,6 +573,7 @@
 #include <aws/ec2/model/DataResponse.h>
 #include <aws/ec2/model/DatafeedSubscriptionState.h>
 #include <aws/ec2/model/DeclarativePoliciesReport.h>
+#include <aws/ec2/model/DefaultConnectionTrackingConfiguration.h>
 #include <aws/ec2/model/DefaultHttpTokensEnforcedState.h>
 #include <aws/ec2/model/DefaultInstanceMetadataEndpointState.h>
 #include <aws/ec2/model/DefaultInstanceMetadataTagsState.h>
