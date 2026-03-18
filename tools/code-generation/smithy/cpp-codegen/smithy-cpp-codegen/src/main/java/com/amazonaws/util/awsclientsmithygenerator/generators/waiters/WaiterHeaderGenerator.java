@@ -14,7 +14,6 @@ import software.amazon.smithy.waiters.Acceptor;
 import software.amazon.smithy.waiters.AcceptorState;
 import software.amazon.smithy.waiters.Matcher;
 import software.amazon.smithy.waiters.PathMatcher;
-import software.amazon.smithy.waiters.PathComparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,6 +47,7 @@ public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationDa
         String classPrefix = ServiceNameUtil.getServiceNameUpperCamel(service);
         writer.writeInclude("aws/" + smithyServiceName + "/" + classPrefix + "Client.h");
         writer.writeInclude("aws/core/utils/Waiter.h");
+        writer.writeInclude("aws/core/utils/memory/AWSMemory.h");
         writer.writeInclude("algorithm");
 
         for (WaiterOperationData data : operations) {
@@ -115,91 +115,85 @@ public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationDa
         String opName = data.getOperation().getId().getName();
         String methodName = ShapeUtil.getOperationMethodName(opName, smithyServiceName);
         String waiterFuncName = "WaitUntil" + ServiceNameUtil.capitalize(data.getWaiterName());
+        String waiterTag = ServiceNameUtil.capitalize(data.getWaiterName()) + "Waiter";
         String outcomeType = "Model::" + methodName + "Outcome";
+        String requestType = "Model::" + methodName + "Request";
 
         writer.write("");
         writer.openBlock("Aws::Utils::WaiterOutcome<" + outcomeType + "> " + waiterFuncName +
                 "(const Model::" + methodName + "Request& request) {", "}", () -> {
 
-            writer.write("std::vector<Aws::Utils::Acceptor<" + outcomeType + ">> acceptors;");
+            writer.write("using OutcomeT = $L;", outcomeType);
+            writer.write("using RequestT = $L;", requestType);
+            writer.write("std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;");
 
             for (Acceptor acceptor : data.getWaiter().getAcceptors()) {
-                writeAcceptor(writer, acceptor, outcomeType, data);
+                writeAcceptor(writer, acceptor, waiterTag, data);
             }
 
             int delay = data.getWaiter().getMinDelay();
             int maxAttempts = data.getWaiter().getMaxDelay() / delay;
 
             writer.write("");
-            writer.write("auto operation = [this](const Model::$LRequest& req) { return static_cast<DerivedClient*>(this)->$L(req); };",
-                    methodName, methodName);
-            writer.write("Aws::Utils::Waiter<Model::$LRequest, $L> waiter(", methodName, outcomeType);
-            writer.write("    $L, $L, acceptors, operation, \"$L\");", delay, maxAttempts, waiterFuncName);
+            writer.write("auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->$L(req); };",
+                    methodName);
+            writer.write("Aws::Utils::Waiter<RequestT, OutcomeT> waiter(");
+            writer.write("    $L, $L, std::move(acceptors), operation, \"$L\");",
+                    delay, maxAttempts, waiterFuncName);
             writer.write("return waiter.Wait(request);");
         });
     }
 
-    private void writeAcceptor(CppWriter writer, Acceptor acceptor, String outcomeType,
+    private void writeAcceptor(CppWriter writer, Acceptor acceptor, String waiterTag,
                                WaiterOperationData data) {
         String state = waiterStateToEnum(acceptor.getState());
         Matcher<?> matcher = acceptor.getMatcher();
 
         if (matcher instanceof Matcher.SuccessMember) {
             boolean expectSuccess = ((Matcher.SuccessMember) matcher).getValue();
-            writer.write("acceptors.push_back({");
-            writer.write("    $L,", state);
-            writer.write("    Aws::Utils::MatcherType::ERROR,");
-            writer.write("    $L", expectSuccess ? "false" : "true");
-            writer.write("});");
+            writer.write("acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(\"$L\", $L, $L));",
+                    waiterTag, state, expectSuccess ? "false" : "true");
         } else if (matcher instanceof Matcher.ErrorTypeMember) {
             String errorType = ((Matcher.ErrorTypeMember) matcher).getValue();
-            if(!C2J_LOST_ERRORS.containsKey(errorType)) {
-                writer.write("acceptors.push_back({");
-                writer.write("    $L,", state);
-                writer.write("    Aws::Utils::MatcherType::ERROR,");
-                writer.write("    Aws::String(\"$L\")", errorType);
-                writer.write("});");
+            if (!C2J_LOST_ERRORS.containsKey(errorType)) {
+                writer.write("acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(\"$L\", $L, Aws::String(\"$L\")));",
+                        waiterTag, state, errorType);
             } else {
                 int statusCode = C2J_LOST_ERRORS.get(errorType);
-                writer.write("acceptors.push_back({");
-                writer.write("    $L,", state);
-                writer.write("    Aws::Utils::MatcherType::STATUS,");
-                writer.write("    $L", statusCode);
-                writer.write("});");
+                writer.write("acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::StatusAcceptor<OutcomeT>>(\"$L\", $L, $L));",
+                        waiterTag, state, statusCode);
             }
         } else if (matcher instanceof Matcher.OutputMember) {
             writePathAcceptor(writer, ((Matcher.OutputMember) matcher).getValue(),
-                    state, outcomeType, data);
+                    state, waiterTag, data);
         } else if (matcher instanceof Matcher.InputOutputMember) {
             writePathAcceptor(writer, ((Matcher.InputOutputMember) matcher).getValue(),
-                    state, outcomeType, data);
+                    state, waiterTag, data);
         } else {
             throw new UnsupportedOperationException("Unsupported matcher type: " + matcher.getClass().getSimpleName());
         }
     }
 
     private void writePathAcceptor(CppWriter writer, PathMatcher pathMatcher,
-                                   String state, String outcomeType, WaiterOperationData data) {
+                                   String state, String waiterTag, WaiterOperationData data) {
         String expected = pathMatcher.getExpected();
-        PathComparator comparator = pathMatcher.getComparator();
 
-        writer.write("acceptors.push_back({");
-        writer.write("    $L,", state);
-        writer.write("    Aws::Utils::MatcherType::PATH,");
-
+        String expectedExpr;
         if ("true".equals(expected) || "false".equals(expected)) {
-            writer.write("    $L,", expected);
+            expectedExpr = expected;
         } else {
             try {
                 Integer.parseInt(expected);
-                writer.write("    $L,", expected);
+                expectedExpr = expected;
             } catch (NumberFormatException e) {
-                writer.write("    Aws::String(\"$L\"),", expected);
+                expectedExpr = "Aws::String(\"" + expected + "\")";
             }
         }
 
+        writer.write("acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(\"$L\", $L, $L,",
+                waiterTag, state, expectedExpr);
         writer.write(generatedCode.get(pathMatcher).getCode());
-        writer.write("});");
+        writer.write("));");
     }
 
     private static String waiterStateToEnum(AcceptorState state) {
