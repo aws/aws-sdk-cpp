@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/model/DescribeEndpointRequest.h>
 #include <aws/sagemaker/model/DescribeEndpointResult.h>
@@ -37,326 +38,355 @@ template <typename DerivedClient = SageMakerClient>
 class SageMakerWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeEndpointOutcome> WaitUntilEndpointDeleted(const Model::DescribeEndpointRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeEndpointOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, Aws::String("ValidationException")});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::EndpointStatusMapper::GetNameForEndpointStatus(result.GetEndpointStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeEndpointOutcome;
+    using RequestT = Model::DescribeEndpointRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("EndpointDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
+                                                                                Aws::String("ValidationException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "EndpointDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::EndpointStatusMapper::GetNameForEndpointStatus(result.GetEndpointStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeEndpointRequest& req) { return static_cast<DerivedClient*>(this)->DescribeEndpoint(req); };
-    Aws::Utils::Waiter<Model::DescribeEndpointRequest, Model::DescribeEndpointOutcome> waiter(30, 60, acceptors, operation,
-                                                                                              "WaitUntilEndpointDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 60, std::move(acceptors), operation, "WaitUntilEndpointDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeEndpointOutcome> WaitUntilEndpointInService(const Model::DescribeEndpointRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeEndpointOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("InService"),
-                         [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::EndpointStatusMapper::GetNameForEndpointStatus(result.GetEndpointStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::EndpointStatusMapper::GetNameForEndpointStatus(result.GetEndpointStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::ERROR, Aws::String("ValidationException")});
+    using OutcomeT = Model::DescribeEndpointOutcome;
+    using RequestT = Model::DescribeEndpointRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "EndpointInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
+        [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::EndpointStatusMapper::GetNameForEndpointStatus(result.GetEndpointStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "EndpointInServiceWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::EndpointStatusMapper::GetNameForEndpointStatus(result.GetEndpointStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("EndpointInServiceWaiter", Aws::Utils::WaiterState::FAILURE,
+                                                                                Aws::String("ValidationException")));
 
-    auto operation = [this](const Model::DescribeEndpointRequest& req) { return static_cast<DerivedClient*>(this)->DescribeEndpoint(req); };
-    Aws::Utils::Waiter<Model::DescribeEndpointRequest, Model::DescribeEndpointOutcome> waiter(30, 120, acceptors, operation,
-                                                                                              "WaitUntilEndpointInService");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 120, std::move(acceptors), operation, "WaitUntilEndpointInService");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeImageOutcome> WaitUntilImageCreated(const Model::DescribeImageRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeImageOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("CREATED"),
-                         [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_FAILED"),
-                         [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::ERROR, Aws::String("ValidationException")});
+    using OutcomeT = Model::DescribeImageOutcome;
+    using RequestT = Model::DescribeImageRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ImageCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
+        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ImageCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
+        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ImageCreatedWaiter", Aws::Utils::WaiterState::FAILURE,
+                                                                                Aws::String("ValidationException")));
 
-    auto operation = [this](const Model::DescribeImageRequest& req) { return static_cast<DerivedClient*>(this)->DescribeImage(req); };
-    Aws::Utils::Waiter<Model::DescribeImageRequest, Model::DescribeImageOutcome> waiter(60, 60, acceptors, operation,
-                                                                                        "WaitUntilImageCreated");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeImage(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(60, 60, std::move(acceptors), operation, "WaitUntilImageCreated");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeImageOutcome> WaitUntilImageDeleted(const Model::DescribeImageRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeImageOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, Aws::String("ResourceNotFoundException")});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("DELETE_FAILED"),
-                         [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::ERROR, Aws::String("ValidationException")});
+    using OutcomeT = Model::DescribeImageOutcome;
+    using RequestT = Model::DescribeImageRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ImageDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
+                                                                                Aws::String("ResourceNotFoundException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ImageDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
+        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ImageDeletedWaiter", Aws::Utils::WaiterState::FAILURE,
+                                                                                Aws::String("ValidationException")));
 
-    auto operation = [this](const Model::DescribeImageRequest& req) { return static_cast<DerivedClient*>(this)->DescribeImage(req); };
-    Aws::Utils::Waiter<Model::DescribeImageRequest, Model::DescribeImageOutcome> waiter(60, 60, acceptors, operation,
-                                                                                        "WaitUntilImageDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeImage(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(60, 60, std::move(acceptors), operation, "WaitUntilImageDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeImageOutcome> WaitUntilImageUpdated(const Model::DescribeImageRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeImageOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("CREATED"),
-                         [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("UPDATE_FAILED"),
-                         [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::ERROR, Aws::String("ValidationException")});
+    using OutcomeT = Model::DescribeImageOutcome;
+    using RequestT = Model::DescribeImageRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ImageUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
+        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ImageUpdatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_FAILED"),
+        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ImageUpdatedWaiter", Aws::Utils::WaiterState::FAILURE,
+                                                                                Aws::String("ValidationException")));
 
-    auto operation = [this](const Model::DescribeImageRequest& req) { return static_cast<DerivedClient*>(this)->DescribeImage(req); };
-    Aws::Utils::Waiter<Model::DescribeImageRequest, Model::DescribeImageOutcome> waiter(60, 60, acceptors, operation,
-                                                                                        "WaitUntilImageUpdated");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeImage(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(60, 60, std::move(acceptors), operation, "WaitUntilImageUpdated");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeImageVersionOutcome> WaitUntilImageVersionCreated(
       const Model::DescribeImageVersionRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeImageVersionOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("CREATED"),
-                         [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ImageVersionStatusMapper::GetNameForImageVersionStatus(result.GetImageVersionStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_FAILED"),
-                         [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ImageVersionStatusMapper::GetNameForImageVersionStatus(result.GetImageVersionStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::ERROR, Aws::String("ValidationException")});
+    using OutcomeT = Model::DescribeImageVersionOutcome;
+    using RequestT = Model::DescribeImageVersionRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ImageVersionCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
+        [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ImageVersionStatusMapper::GetNameForImageVersionStatus(result.GetImageVersionStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ImageVersionCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
+        [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ImageVersionStatusMapper::GetNameForImageVersionStatus(result.GetImageVersionStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "ImageVersionCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ValidationException")));
 
-    auto operation = [this](const Model::DescribeImageVersionRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeImageVersion(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeImageVersionRequest, Model::DescribeImageVersionOutcome> waiter(60, 60, acceptors, operation,
-                                                                                                      "WaitUntilImageVersionCreated");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeImageVersion(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(60, 60, std::move(acceptors), operation, "WaitUntilImageVersionCreated");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeImageVersionOutcome> WaitUntilImageVersionDeleted(
       const Model::DescribeImageVersionRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeImageVersionOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, Aws::String("ResourceNotFoundException")});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("DELETE_FAILED"),
-                         [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ImageVersionStatusMapper::GetNameForImageVersionStatus(result.GetImageVersionStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::ERROR, Aws::String("ValidationException")});
+    using OutcomeT = Model::DescribeImageVersionOutcome;
+    using RequestT = Model::DescribeImageVersionRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "ImageVersionDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ImageVersionDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
+        [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ImageVersionStatusMapper::GetNameForImageVersionStatus(result.GetImageVersionStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "ImageVersionDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ValidationException")));
 
-    auto operation = [this](const Model::DescribeImageVersionRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeImageVersion(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeImageVersionRequest, Model::DescribeImageVersionOutcome> waiter(60, 60, acceptors, operation,
-                                                                                                      "WaitUntilImageVersionDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeImageVersion(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(60, 60, std::move(acceptors), operation, "WaitUntilImageVersionDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeNotebookInstanceOutcome> WaitUntilNotebookInstanceDeleted(
       const Model::DescribeNotebookInstanceRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeNotebookInstanceOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, Aws::String("ValidationException")});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(
-                                      result.GetNotebookInstanceStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeNotebookInstanceOutcome;
+    using RequestT = Model::DescribeNotebookInstanceRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "NotebookInstanceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ValidationException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "NotebookInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(result.GetNotebookInstanceStatus()) ==
+                 expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeNotebookInstanceRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeNotebookInstance(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeNotebookInstanceRequest, Model::DescribeNotebookInstanceOutcome> waiter(
-        30, 60, acceptors, operation, "WaitUntilNotebookInstanceDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeNotebookInstance(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 60, std::move(acceptors), operation, "WaitUntilNotebookInstanceDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeNotebookInstanceOutcome> WaitUntilNotebookInstanceInService(
       const Model::DescribeNotebookInstanceRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeNotebookInstanceOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("InService"),
-                         [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(
-                                      result.GetNotebookInstanceStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(
-                                      result.GetNotebookInstanceStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeNotebookInstanceOutcome;
+    using RequestT = Model::DescribeNotebookInstanceRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "NotebookInstanceInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
+        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(result.GetNotebookInstanceStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "NotebookInstanceInServiceWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(result.GetNotebookInstanceStatus()) ==
+                 expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeNotebookInstanceRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeNotebookInstance(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeNotebookInstanceRequest, Model::DescribeNotebookInstanceOutcome> waiter(
-        30, 60, acceptors, operation, "WaitUntilNotebookInstanceInService");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeNotebookInstance(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 60, std::move(acceptors), operation, "WaitUntilNotebookInstanceInService");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeNotebookInstanceOutcome> WaitUntilNotebookInstanceStopped(
       const Model::DescribeNotebookInstanceRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeNotebookInstanceOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Stopped"),
-                         [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(
-                                      result.GetNotebookInstanceStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(
-                                      result.GetNotebookInstanceStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeNotebookInstanceOutcome;
+    using RequestT = Model::DescribeNotebookInstanceRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "NotebookInstanceStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Stopped"),
+        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(result.GetNotebookInstanceStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "NotebookInstanceStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(result.GetNotebookInstanceStatus()) ==
+                 expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeNotebookInstanceRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeNotebookInstance(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeNotebookInstanceRequest, Model::DescribeNotebookInstanceOutcome> waiter(
-        30, 60, acceptors, operation, "WaitUntilNotebookInstanceStopped");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeNotebookInstance(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 60, std::move(acceptors), operation, "WaitUntilNotebookInstanceStopped");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeProcessingJobOutcome> WaitUntilProcessingJobCompletedOrStopped(
       const Model::DescribeProcessingJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeProcessingJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Completed"),
-                         [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ProcessingJobStatusMapper::GetNameForProcessingJobStatus(result.GetProcessingJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Stopped"),
-                         [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ProcessingJobStatusMapper::GetNameForProcessingJobStatus(result.GetProcessingJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ProcessingJobStatusMapper::GetNameForProcessingJobStatus(result.GetProcessingJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::ERROR, Aws::String("ValidationException")});
+    using OutcomeT = Model::DescribeProcessingJobOutcome;
+    using RequestT = Model::DescribeProcessingJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ProcessingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
+        [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ProcessingJobStatusMapper::GetNameForProcessingJobStatus(result.GetProcessingJobStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ProcessingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Stopped"),
+        [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ProcessingJobStatusMapper::GetNameForProcessingJobStatus(result.GetProcessingJobStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ProcessingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ProcessingJobStatusMapper::GetNameForProcessingJobStatus(result.GetProcessingJobStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "ProcessingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ValidationException")));
 
-    auto operation = [this](const Model::DescribeProcessingJobRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeProcessingJob(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeProcessingJobRequest, Model::DescribeProcessingJobOutcome> waiter(
-        60, 60, acceptors, operation, "WaitUntilProcessingJobCompletedOrStopped");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeProcessingJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(60, 60, std::move(acceptors), operation, "WaitUntilProcessingJobCompletedOrStopped");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeTrainingJobOutcome> WaitUntilTrainingJobCompletedOrStopped(
       const Model::DescribeTrainingJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeTrainingJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Completed"),
-                         [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TrainingJobStatusMapper::GetNameForTrainingJobStatus(result.GetTrainingJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Stopped"),
-                         [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TrainingJobStatusMapper::GetNameForTrainingJobStatus(result.GetTrainingJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TrainingJobStatusMapper::GetNameForTrainingJobStatus(result.GetTrainingJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::ERROR, Aws::String("ValidationException")});
+    using OutcomeT = Model::DescribeTrainingJobOutcome;
+    using RequestT = Model::DescribeTrainingJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "TrainingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
+        [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TrainingJobStatusMapper::GetNameForTrainingJobStatus(result.GetTrainingJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "TrainingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Stopped"),
+        [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TrainingJobStatusMapper::GetNameForTrainingJobStatus(result.GetTrainingJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "TrainingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TrainingJobStatusMapper::GetNameForTrainingJobStatus(result.GetTrainingJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "TrainingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ValidationException")));
 
-    auto operation = [this](const Model::DescribeTrainingJobRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeTrainingJob(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeTrainingJobRequest, Model::DescribeTrainingJobOutcome> waiter(
-        120, 180, acceptors, operation, "WaitUntilTrainingJobCompletedOrStopped");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeTrainingJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(120, 180, std::move(acceptors), operation, "WaitUntilTrainingJobCompletedOrStopped");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeTransformJobOutcome> WaitUntilTransformJobCompletedOrStopped(
       const Model::DescribeTransformJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeTransformJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Completed"),
-                         [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TransformJobStatusMapper::GetNameForTransformJobStatus(result.GetTransformJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Stopped"),
-                         [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TransformJobStatusMapper::GetNameForTransformJobStatus(result.GetTransformJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TransformJobStatusMapper::GetNameForTransformJobStatus(result.GetTransformJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::ERROR, Aws::String("ValidationException")});
+    using OutcomeT = Model::DescribeTransformJobOutcome;
+    using RequestT = Model::DescribeTransformJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "TransformJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
+        [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TransformJobStatusMapper::GetNameForTransformJobStatus(result.GetTransformJobStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "TransformJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Stopped"),
+        [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TransformJobStatusMapper::GetNameForTransformJobStatus(result.GetTransformJobStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "TransformJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TransformJobStatusMapper::GetNameForTransformJobStatus(result.GetTransformJobStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "TransformJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ValidationException")));
 
-    auto operation = [this](const Model::DescribeTransformJobRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeTransformJob(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeTransformJobRequest, Model::DescribeTransformJobOutcome> waiter(
-        60, 60, acceptors, operation, "WaitUntilTransformJobCompletedOrStopped");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeTransformJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(60, 60, std::move(acceptors), operation, "WaitUntilTransformJobCompletedOrStopped");
     return waiter.Wait(request);
   }
 };

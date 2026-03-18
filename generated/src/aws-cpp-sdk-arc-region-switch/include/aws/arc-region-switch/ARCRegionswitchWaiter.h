@@ -12,6 +12,7 @@
 #include <aws/arc-region-switch/model/GetPlanExecutionRequest.h>
 #include <aws/arc-region-switch/model/GetPlanExecutionResult.h>
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 #include <algorithm>
 
@@ -23,78 +24,78 @@ class ARCRegionswitchWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::GetPlanEvaluationStatusOutcome> WaitUntilPlanEvaluationStatusPassed(
       const Model::GetPlanEvaluationStatusRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetPlanEvaluationStatusOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("passed"),
-                         [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::EvaluationStatusMapper::GetNameForEvaluationStatus(result.GetEvaluationState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("actionRequired"),
-                         [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::EvaluationStatusMapper::GetNameForEvaluationStatus(result.GetEvaluationState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("pendingEvaluation"),
-                         [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::EvaluationStatusMapper::GetNameForEvaluationStatus(result.GetEvaluationState()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetPlanEvaluationStatusOutcome;
+    using RequestT = Model::GetPlanEvaluationStatusRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "PlanEvaluationStatusPassedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("passed"),
+        [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::EvaluationStatusMapper::GetNameForEvaluationStatus(result.GetEvaluationState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "PlanEvaluationStatusPassedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("actionRequired"),
+        [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::EvaluationStatusMapper::GetNameForEvaluationStatus(result.GetEvaluationState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "PlanEvaluationStatusPassedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("pendingEvaluation"),
+        [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::EvaluationStatusMapper::GetNameForEvaluationStatus(result.GetEvaluationState()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetPlanEvaluationStatusRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetPlanEvaluationStatus(req);
-    };
-    Aws::Utils::Waiter<Model::GetPlanEvaluationStatusRequest, Model::GetPlanEvaluationStatusOutcome> waiter(
-        30, 4, acceptors, operation, "WaitUntilPlanEvaluationStatusPassed");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetPlanEvaluationStatus(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilPlanEvaluationStatusPassed");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetPlanExecutionOutcome> WaitUntilPlanExecutionCompleted(const Model::GetPlanExecutionRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetPlanExecutionOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("completed"),
-                         [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("completedWithExceptions"),
-                         [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("failed"),
-                         [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("canceled"),
-                         [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("planExecutionTimedOut"),
-                         [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetPlanExecutionOutcome;
+    using RequestT = Model::GetPlanExecutionRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "PlanExecutionCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
+        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "PlanExecutionCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completedWithExceptions"),
+        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "PlanExecutionCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
+        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "PlanExecutionCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("canceled"),
+        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "PlanExecutionCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("planExecutionTimedOut"),
+        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetPlanExecutionRequest& req) { return static_cast<DerivedClient*>(this)->GetPlanExecution(req); };
-    Aws::Utils::Waiter<Model::GetPlanExecutionRequest, Model::GetPlanExecutionOutcome> waiter(30, 4, acceptors, operation,
-                                                                                              "WaitUntilPlanExecutionCompleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetPlanExecution(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilPlanExecutionCompleted");
     return waiter.Wait(request);
   }
 };

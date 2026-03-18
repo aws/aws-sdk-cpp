@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/docdb/DocDBClient.h>
 #include <aws/docdb/model/DescribeDBInstancesRequest.h>
 #include <aws/docdb/model/DescribeDBInstancesResult.h>
@@ -19,114 +20,113 @@ class DocDBWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeDBInstancesOutcome> WaitUntilDBInstanceAvailable(
       const Model::DescribeDBInstancesRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeDBInstancesOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("available"),
-                         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::all_of(
-                               result.GetDBInstances().begin(), result.GetDBInstances().end(),
-                               [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("deleted"),
-                         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::any_of(
-                               result.GetDBInstances().begin(), result.GetDBInstances().end(),
-                               [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("deleting"),
-                         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::any_of(
-                               result.GetDBInstances().begin(), result.GetDBInstances().end(),
-                               [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("failed"),
-                         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::any_of(
-                               result.GetDBInstances().begin(), result.GetDBInstances().end(),
-                               [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("incompatible-restore"),
-                         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::any_of(
-                               result.GetDBInstances().begin(), result.GetDBInstances().end(),
-                               [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("incompatible-parameters"),
-                         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::any_of(
-                               result.GetDBInstances().begin(), result.GetDBInstances().end(),
-                               [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
-                         }});
+    using OutcomeT = Model::DescribeDBInstancesOutcome;
+    using RequestT = Model::DescribeDBInstancesRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::all_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
+                             [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
+                             [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
+                             [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
+                             [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-restore"),
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
+                             [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-parameters"),
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
+                             [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
+        }));
 
-    auto operation = [this](const Model::DescribeDBInstancesRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeDBInstances(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeDBInstancesRequest, Model::DescribeDBInstancesOutcome> waiter(30, 4, acceptors, operation,
-                                                                                                    "WaitUntilDBInstanceAvailable");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeDBInstances(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilDBInstanceAvailable");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeDBInstancesOutcome> WaitUntilDBInstanceDeleted(
       const Model::DescribeDBInstancesRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeDBInstancesOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("deleted"),
-                         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::all_of(
-                               result.GetDBInstances().begin(), result.GetDBInstances().end(),
-                               [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, Aws::String("DBInstanceNotFound")});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("creating"),
-                         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::any_of(
-                               result.GetDBInstances().begin(), result.GetDBInstances().end(),
-                               [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("modifying"),
-                         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::any_of(
-                               result.GetDBInstances().begin(), result.GetDBInstances().end(),
-                               [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("rebooting"),
-                         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::any_of(
-                               result.GetDBInstances().begin(), result.GetDBInstances().end(),
-                               [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("resetting-master-credentials"),
-                         [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::any_of(
-                               result.GetDBInstances().begin(), result.GetDBInstances().end(),
-                               [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
-                         }});
+    using OutcomeT = Model::DescribeDBInstancesOutcome;
+    using RequestT = Model::DescribeDBInstancesRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::all_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
+                             [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("DBInstanceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
+                                                                                Aws::String("DBInstanceNotFound")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("creating"),
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
+                             [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("modifying"),
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
+                             [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("rebooting"),
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
+                             [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("resetting-master-credentials"),
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
+                             [&](const Model::DBInstance& item) { return item.GetDBInstanceStatus() == expected.get<Aws::String>(); });
+        }));
 
-    auto operation = [this](const Model::DescribeDBInstancesRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeDBInstances(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeDBInstancesRequest, Model::DescribeDBInstancesOutcome> waiter(30, 4, acceptors, operation,
-                                                                                                    "WaitUntilDBInstanceDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeDBInstances(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 4, std::move(acceptors), operation, "WaitUntilDBInstanceDeleted");
     return waiter.Wait(request);
   }
 };

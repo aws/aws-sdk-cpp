@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/groundstation/GroundStationClient.h>
 #include <aws/groundstation/model/ContactStatus.h>
 #include <aws/groundstation/model/DescribeContactRequest.h>
@@ -19,25 +20,26 @@ template <typename DerivedClient = GroundStationClient>
 class GroundStationWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeContactOutcome> WaitUntilContactScheduled(const Model::DescribeContactRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeContactOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED_TO_SCHEDULE"),
-                         [](const Model::DescribeContactOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ContactStatusMapper::GetNameForContactStatus(result.GetContactStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("SCHEDULED"),
-                         [](const Model::DescribeContactOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ContactStatusMapper::GetNameForContactStatus(result.GetContactStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeContactOutcome;
+    using RequestT = Model::DescribeContactRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ContactScheduledWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED_TO_SCHEDULE"),
+        [](const Model::DescribeContactOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ContactStatusMapper::GetNameForContactStatus(result.GetContactStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ContactScheduledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SCHEDULED"),
+        [](const Model::DescribeContactOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ContactStatusMapper::GetNameForContactStatus(result.GetContactStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeContactRequest& req) { return static_cast<DerivedClient*>(this)->DescribeContact(req); };
-    Aws::Utils::Waiter<Model::DescribeContactRequest, Model::DescribeContactOutcome> waiter(5, 180, acceptors, operation,
-                                                                                            "WaitUntilContactScheduled");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeContact(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 180, std::move(acceptors), operation, "WaitUntilContactScheduled");
     return waiter.Wait(request);
   }
 };

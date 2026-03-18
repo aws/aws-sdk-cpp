@@ -8,6 +8,7 @@
 #include <aws/cloudcontrol/model/GetResourceRequestStatusRequest.h>
 #include <aws/cloudcontrol/model/GetResourceRequestStatusResult.h>
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 #include <algorithm>
 
@@ -19,31 +20,33 @@ class CloudControlApiWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::GetResourceRequestStatusOutcome> WaitUntilResourceRequestSuccess(
       const Model::GetResourceRequestStatusRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetResourceRequestStatusOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("SUCCESS"),
-                         [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return result.GetProgressEvent().GetOperationStatus() == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return result.GetProgressEvent().GetOperationStatus() == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CANCEL_COMPLETE"),
-                         [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return result.GetProgressEvent().GetOperationStatus() == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetResourceRequestStatusOutcome;
+    using RequestT = Model::GetResourceRequestStatusRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ResourceRequestSuccessWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCESS"),
+        [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return result.GetProgressEvent().GetOperationStatus() == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ResourceRequestSuccessWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return result.GetProgressEvent().GetOperationStatus() == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ResourceRequestSuccessWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCEL_COMPLETE"),
+        [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return result.GetProgressEvent().GetOperationStatus() == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetResourceRequestStatusRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetResourceRequestStatus(req);
-    };
-    Aws::Utils::Waiter<Model::GetResourceRequestStatusRequest, Model::GetResourceRequestStatusOutcome> waiter(
-        5, 24, acceptors, operation, "WaitUntilResourceRequestSuccess");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetResourceRequestStatus(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilResourceRequestSuccess");
     return waiter.Wait(request);
   }
 };

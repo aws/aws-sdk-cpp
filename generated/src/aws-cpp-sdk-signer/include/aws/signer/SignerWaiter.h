@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/signer/SignerClient.h>
 #include <aws/signer/model/DescribeSigningJobRequest.h>
 #include <aws/signer/model/DescribeSigningJobResult.h>
@@ -20,26 +21,28 @@ class SignerWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeSigningJobOutcome> WaitUntilSuccessfulSigningJob(
       const Model::DescribeSigningJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeSigningJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Succeeded"),
-                         [](const Model::DescribeSigningJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SigningStatusMapper::GetNameForSigningStatus(result.GetStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeSigningJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SigningStatusMapper::GetNameForSigningStatus(result.GetStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::ERROR, Aws::String("ResourceNotFoundException")});
+    using OutcomeT = Model::DescribeSigningJobOutcome;
+    using RequestT = Model::DescribeSigningJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SuccessfulSigningJobWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Succeeded"),
+        [](const Model::DescribeSigningJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SigningStatusMapper::GetNameForSigningStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SuccessfulSigningJobWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeSigningJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SigningStatusMapper::GetNameForSigningStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SuccessfulSigningJobWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ResourceNotFoundException")));
 
-    auto operation = [this](const Model::DescribeSigningJobRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeSigningJob(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeSigningJobRequest, Model::DescribeSigningJobOutcome> waiter(20, 6, acceptors, operation,
-                                                                                                  "WaitUntilSuccessfulSigningJob");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeSigningJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(20, 6, std::move(acceptors), operation, "WaitUntilSuccessfulSigningJob");
     return waiter.Wait(request);
   }
 };

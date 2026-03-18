@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/iam/IAMClient.h>
 #include <aws/iam/model/GetInstanceProfileRequest.h>
 #include <aws/iam/model/GetInstanceProfileResult.h>
@@ -25,45 +26,58 @@ class IAMWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::GetInstanceProfileOutcome> WaitUntilInstanceProfileExists(
       const Model::GetInstanceProfileRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetInstanceProfileOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, false});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("NoSuchEntityException")});
+    using OutcomeT = Model::GetInstanceProfileOutcome;
+    using RequestT = Model::GetInstanceProfileRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(
+        Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("InstanceProfileExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "InstanceProfileExistsWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("NoSuchEntityException")));
 
-    auto operation = [this](const Model::GetInstanceProfileRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetInstanceProfile(req);
-    };
-    Aws::Utils::Waiter<Model::GetInstanceProfileRequest, Model::GetInstanceProfileOutcome> waiter(1, 120, acceptors, operation,
-                                                                                                  "WaitUntilInstanceProfileExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetInstanceProfile(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(1, 120, std::move(acceptors), operation, "WaitUntilInstanceProfileExists");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetPolicyOutcome> WaitUntilPolicyExists(const Model::GetPolicyRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetPolicyOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, false});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("NoSuchEntity")});
+    using OutcomeT = Model::GetPolicyOutcome;
+    using RequestT = Model::GetPolicyRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(
+        Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("PolicyExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("PolicyExistsWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("NoSuchEntity")));
 
-    auto operation = [this](const Model::GetPolicyRequest& req) { return static_cast<DerivedClient*>(this)->GetPolicy(req); };
-    Aws::Utils::Waiter<Model::GetPolicyRequest, Model::GetPolicyOutcome> waiter(1, 120, acceptors, operation, "WaitUntilPolicyExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetPolicy(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(1, 120, std::move(acceptors), operation, "WaitUntilPolicyExists");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetRoleOutcome> WaitUntilRoleExists(const Model::GetRoleRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetRoleOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, false});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("NoSuchEntity")});
+    using OutcomeT = Model::GetRoleOutcome;
+    using RequestT = Model::GetRoleRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(
+        Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("RoleExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("RoleExistsWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("NoSuchEntity")));
 
-    auto operation = [this](const Model::GetRoleRequest& req) { return static_cast<DerivedClient*>(this)->GetRole(req); };
-    Aws::Utils::Waiter<Model::GetRoleRequest, Model::GetRoleOutcome> waiter(1, 120, acceptors, operation, "WaitUntilRoleExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRole(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(1, 120, std::move(acceptors), operation, "WaitUntilRoleExists");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetUserOutcome> WaitUntilUserExists(const Model::GetUserRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetUserOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, false});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("NoSuchEntity")});
+    using OutcomeT = Model::GetUserOutcome;
+    using RequestT = Model::GetUserRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(
+        Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("UserExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("UserExistsWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("NoSuchEntity")));
 
-    auto operation = [this](const Model::GetUserRequest& req) { return static_cast<DerivedClient*>(this)->GetUser(req); };
-    Aws::Utils::Waiter<Model::GetUserRequest, Model::GetUserOutcome> waiter(1, 120, acceptors, operation, "WaitUntilUserExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetUser(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(1, 120, std::move(acceptors), operation, "WaitUntilUserExists");
     return waiter.Wait(request);
   }
 };

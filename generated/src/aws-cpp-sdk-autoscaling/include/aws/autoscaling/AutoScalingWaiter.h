@@ -8,6 +8,7 @@
 #include <aws/autoscaling/model/DescribeAutoScalingGroupsRequest.h>
 #include <aws/autoscaling/model/DescribeAutoScalingGroupsResult.h>
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 #include <algorithm>
 
@@ -19,85 +20,86 @@ class AutoScalingWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeAutoScalingGroupsOutcome> WaitUntilGroupExists(
       const Model::DescribeAutoScalingGroupsRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeAutoScalingGroupsOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, true,
-                         [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return (result.GetAutoScalingGroups().size() > 0) == expected.get<bool>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, false,
-                         [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return (result.GetAutoScalingGroups().size() > 0) == expected.get<bool>();
-                         }});
+    using OutcomeT = Model::DescribeAutoScalingGroupsOutcome;
+    using RequestT = Model::DescribeAutoScalingGroupsRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "GroupExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
+        [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return (result.GetAutoScalingGroups().size() > 0) == expected.get<bool>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "GroupExistsWaiter", Aws::Utils::WaiterState::RETRY, false,
+        [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return (result.GetAutoScalingGroups().size() > 0) == expected.get<bool>();
+        }));
 
-    auto operation = [this](const Model::DescribeAutoScalingGroupsRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeAutoScalingGroups(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeAutoScalingGroupsRequest, Model::DescribeAutoScalingGroupsOutcome> waiter(5, 24, acceptors, operation,
-                                                                                                                "WaitUntilGroupExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeAutoScalingGroups(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilGroupExists");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeAutoScalingGroupsOutcome> WaitUntilGroupInService(
       const Model::DescribeAutoScalingGroupsRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeAutoScalingGroupsOutcome>> acceptors;
-    acceptors.push_back(
-        {Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, false,
-         [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-           if (!outcome.IsSuccess()) return false;
-           const auto& result = outcome.GetResult();
-           return std::any_of(result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(),
-                              [](const Model::AutoScalingGroup& item) {
-                                return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const auto& inner) {
-                                           return (inner.GetLifecycleState() == "InService");
-                                         }) >= item.GetMinSize());
-                              }) == expected.get<bool>();
-         }});
-    acceptors.push_back(
-        {Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, true,
-         [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-           if (!outcome.IsSuccess()) return false;
-           const auto& result = outcome.GetResult();
-           return std::any_of(result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(),
-                              [](const Model::AutoScalingGroup& item) {
-                                return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const auto& inner) {
-                                           return (inner.GetLifecycleState() == "InService");
-                                         }) >= item.GetMinSize());
-                              }) == expected.get<bool>();
-         }});
+    using OutcomeT = Model::DescribeAutoScalingGroupsOutcome;
+    using RequestT = Model::DescribeAutoScalingGroupsRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "GroupInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, false,
+        [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(),
+                             [](const Model::AutoScalingGroup& item) {
+                               return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const auto& inner) {
+                                          return (inner.GetLifecycleState() == "InService");
+                                        }) >= item.GetMinSize());
+                             }) == expected.get<bool>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "GroupInServiceWaiter", Aws::Utils::WaiterState::RETRY, true,
+        [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(),
+                             [](const Model::AutoScalingGroup& item) {
+                               return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const auto& inner) {
+                                          return (inner.GetLifecycleState() == "InService");
+                                        }) >= item.GetMinSize());
+                             }) == expected.get<bool>();
+        }));
 
-    auto operation = [this](const Model::DescribeAutoScalingGroupsRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeAutoScalingGroups(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeAutoScalingGroupsRequest, Model::DescribeAutoScalingGroupsOutcome> waiter(15, 8, acceptors, operation,
-                                                                                                                "WaitUntilGroupInService");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeAutoScalingGroups(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(15, 8, std::move(acceptors), operation, "WaitUntilGroupInService");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeAutoScalingGroupsOutcome> WaitUntilGroupNotExists(
       const Model::DescribeAutoScalingGroupsRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeAutoScalingGroupsOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, false,
-                         [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return (result.GetAutoScalingGroups().size() > 0) == expected.get<bool>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, true,
-                         [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return (result.GetAutoScalingGroups().size() > 0) == expected.get<bool>();
-                         }});
+    using OutcomeT = Model::DescribeAutoScalingGroupsOutcome;
+    using RequestT = Model::DescribeAutoScalingGroupsRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "GroupNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false,
+        [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return (result.GetAutoScalingGroups().size() > 0) == expected.get<bool>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "GroupNotExistsWaiter", Aws::Utils::WaiterState::RETRY, true,
+        [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return (result.GetAutoScalingGroups().size() > 0) == expected.get<bool>();
+        }));
 
-    auto operation = [this](const Model::DescribeAutoScalingGroupsRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeAutoScalingGroups(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeAutoScalingGroupsRequest, Model::DescribeAutoScalingGroupsOutcome> waiter(15, 8, acceptors, operation,
-                                                                                                                "WaitUntilGroupNotExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeAutoScalingGroups(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(15, 8, std::move(acceptors), operation, "WaitUntilGroupNotExists");
     return waiter.Wait(request);
   }
 };

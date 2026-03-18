@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkClient.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeEnvironmentsResult.h>
@@ -20,97 +21,94 @@ class ElasticBeanstalkWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeEnvironmentsOutcome> WaitUntilEnvironmentExists(
       const Model::DescribeEnvironmentsRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeEnvironmentsOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Ready"),
-                         [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::all_of(result.GetEnvironments().begin(), result.GetEnvironments().end(),
-                                              [&](const Model::EnvironmentDescription& item) {
-                                                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) ==
-                                                       expected.get<Aws::String>();
-                                              });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("Launching"),
-                         [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::all_of(result.GetEnvironments().begin(), result.GetEnvironments().end(),
-                                              [&](const Model::EnvironmentDescription& item) {
-                                                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) ==
-                                                       expected.get<Aws::String>();
-                                              });
-                         }});
+    using OutcomeT = Model::DescribeEnvironmentsOutcome;
+    using RequestT = Model::DescribeEnvironmentsRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "EnvironmentExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Ready"),
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::all_of(
+              result.GetEnvironments().begin(), result.GetEnvironments().end(), [&](const Model::EnvironmentDescription& item) {
+                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) == expected.get<Aws::String>();
+              });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "EnvironmentExistsWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Launching"),
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::all_of(
+              result.GetEnvironments().begin(), result.GetEnvironments().end(), [&](const Model::EnvironmentDescription& item) {
+                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) == expected.get<Aws::String>();
+              });
+        }));
 
-    auto operation = [this](const Model::DescribeEnvironmentsRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeEnvironments(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeEnvironmentsRequest, Model::DescribeEnvironmentsOutcome> waiter(20, 6, acceptors, operation,
-                                                                                                      "WaitUntilEnvironmentExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeEnvironments(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(20, 6, std::move(acceptors), operation, "WaitUntilEnvironmentExists");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeEnvironmentsOutcome> WaitUntilEnvironmentTerminated(
       const Model::DescribeEnvironmentsRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeEnvironmentsOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Terminated"),
-                         [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::all_of(result.GetEnvironments().begin(), result.GetEnvironments().end(),
-                                              [&](const Model::EnvironmentDescription& item) {
-                                                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) ==
-                                                       expected.get<Aws::String>();
-                                              });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("Terminating"),
-                         [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::all_of(result.GetEnvironments().begin(), result.GetEnvironments().end(),
-                                              [&](const Model::EnvironmentDescription& item) {
-                                                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) ==
-                                                       expected.get<Aws::String>();
-                                              });
-                         }});
+    using OutcomeT = Model::DescribeEnvironmentsOutcome;
+    using RequestT = Model::DescribeEnvironmentsRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "EnvironmentTerminatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Terminated"),
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::all_of(
+              result.GetEnvironments().begin(), result.GetEnvironments().end(), [&](const Model::EnvironmentDescription& item) {
+                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) == expected.get<Aws::String>();
+              });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "EnvironmentTerminatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Terminating"),
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::all_of(
+              result.GetEnvironments().begin(), result.GetEnvironments().end(), [&](const Model::EnvironmentDescription& item) {
+                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) == expected.get<Aws::String>();
+              });
+        }));
 
-    auto operation = [this](const Model::DescribeEnvironmentsRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeEnvironments(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeEnvironmentsRequest, Model::DescribeEnvironmentsOutcome> waiter(20, 6, acceptors, operation,
-                                                                                                      "WaitUntilEnvironmentTerminated");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeEnvironments(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(20, 6, std::move(acceptors), operation, "WaitUntilEnvironmentTerminated");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeEnvironmentsOutcome> WaitUntilEnvironmentUpdated(
       const Model::DescribeEnvironmentsRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeEnvironmentsOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Ready"),
-                         [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::all_of(result.GetEnvironments().begin(), result.GetEnvironments().end(),
-                                              [&](const Model::EnvironmentDescription& item) {
-                                                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) ==
-                                                       expected.get<Aws::String>();
-                                              });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("Updating"),
-                         [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::all_of(result.GetEnvironments().begin(), result.GetEnvironments().end(),
-                                              [&](const Model::EnvironmentDescription& item) {
-                                                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) ==
-                                                       expected.get<Aws::String>();
-                                              });
-                         }});
+    using OutcomeT = Model::DescribeEnvironmentsOutcome;
+    using RequestT = Model::DescribeEnvironmentsRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "EnvironmentUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Ready"),
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::all_of(
+              result.GetEnvironments().begin(), result.GetEnvironments().end(), [&](const Model::EnvironmentDescription& item) {
+                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) == expected.get<Aws::String>();
+              });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "EnvironmentUpdatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Updating"),
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::all_of(
+              result.GetEnvironments().begin(), result.GetEnvironments().end(), [&](const Model::EnvironmentDescription& item) {
+                return Model::EnvironmentStatusMapper::GetNameForEnvironmentStatus(item.GetStatus()) == expected.get<Aws::String>();
+              });
+        }));
 
-    auto operation = [this](const Model::DescribeEnvironmentsRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeEnvironments(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeEnvironmentsRequest, Model::DescribeEnvironmentsOutcome> waiter(20, 6, acceptors, operation,
-                                                                                                      "WaitUntilEnvironmentUpdated");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeEnvironments(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(20, 6, std::move(acceptors), operation, "WaitUntilEnvironmentUpdated");
     return waiter.Wait(request);
   }
 };

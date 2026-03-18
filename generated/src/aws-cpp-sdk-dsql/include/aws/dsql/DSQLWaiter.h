@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/dsql/DSQLClient.h>
 #include <aws/dsql/model/ClusterStatus.h>
 #include <aws/dsql/model/GetClusterRequest.h>
@@ -19,25 +20,31 @@ template <typename DerivedClient = DSQLClient>
 class DSQLWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::GetClusterOutcome> WaitUntilClusterActive(const Model::GetClusterRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetClusterOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ACTIVE"),
-                         [](const Model::GetClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ClusterStatusMapper::GetNameForClusterStatus(result.GetStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetClusterOutcome;
+    using RequestT = Model::GetClusterRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ClusterActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
+        [](const Model::GetClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ClusterStatusMapper::GetNameForClusterStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetClusterRequest& req) { return static_cast<DerivedClient*>(this)->GetCluster(req); };
-    Aws::Utils::Waiter<Model::GetClusterRequest, Model::GetClusterOutcome> waiter(2, 60, acceptors, operation, "WaitUntilClusterActive");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetCluster(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(2, 60, std::move(acceptors), operation, "WaitUntilClusterActive");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetClusterOutcome> WaitUntilClusterNotExists(const Model::GetClusterRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetClusterOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, Aws::String("ResourceNotFoundException")});
+    using OutcomeT = Model::GetClusterOutcome;
+    using RequestT = Model::GetClusterRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ClusterNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS,
+                                                                                Aws::String("ResourceNotFoundException")));
 
-    auto operation = [this](const Model::GetClusterRequest& req) { return static_cast<DerivedClient*>(this)->GetCluster(req); };
-    Aws::Utils::Waiter<Model::GetClusterRequest, Model::GetClusterOutcome> waiter(2, 60, acceptors, operation, "WaitUntilClusterNotExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetCluster(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(2, 60, std::move(acceptors), operation, "WaitUntilClusterNotExists");
     return waiter.Wait(request);
   }
 };

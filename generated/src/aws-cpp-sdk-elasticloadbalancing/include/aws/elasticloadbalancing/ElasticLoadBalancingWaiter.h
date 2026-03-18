@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingClient.h>
 #include <aws/elasticloadbalancing/model/DescribeInstanceHealthRequest.h>
 #include <aws/elasticloadbalancing/model/DescribeInstanceHealthResult.h>
@@ -19,63 +20,62 @@ class ElasticLoadBalancingWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeInstanceHealthOutcome> WaitUntilAnyInstanceInService(
       const Model::DescribeInstanceHealthRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeInstanceHealthOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("InService"),
-                         [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::any_of(
-                               result.GetInstanceStates().begin(), result.GetInstanceStates().end(),
-                               [&](const Model::InstanceState& item) { return item.GetState() == expected.get<Aws::String>(); });
-                         }});
+    using OutcomeT = Model::DescribeInstanceHealthOutcome;
+    using RequestT = Model::DescribeInstanceHealthRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "AnyInstanceInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
+        [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::any_of(result.GetInstanceStates().begin(), result.GetInstanceStates().end(),
+                             [&](const Model::InstanceState& item) { return item.GetState() == expected.get<Aws::String>(); });
+        }));
 
-    auto operation = [this](const Model::DescribeInstanceHealthRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeInstanceHealth(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeInstanceHealthRequest, Model::DescribeInstanceHealthOutcome> waiter(15, 8, acceptors, operation,
-                                                                                                          "WaitUntilAnyInstanceInService");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeInstanceHealth(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(15, 8, std::move(acceptors), operation, "WaitUntilAnyInstanceInService");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeInstanceHealthOutcome> WaitUntilInstanceDeregistered(
       const Model::DescribeInstanceHealthRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeInstanceHealthOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("OutOfService"),
-                         [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::all_of(
-                               result.GetInstanceStates().begin(), result.GetInstanceStates().end(),
-                               [&](const Model::InstanceState& item) { return item.GetState() == expected.get<Aws::String>(); });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, Aws::String("InvalidInstance")});
+    using OutcomeT = Model::DescribeInstanceHealthOutcome;
+    using RequestT = Model::DescribeInstanceHealthRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InstanceDeregisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("OutOfService"),
+        [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::all_of(result.GetInstanceStates().begin(), result.GetInstanceStates().end(),
+                             [&](const Model::InstanceState& item) { return item.GetState() == expected.get<Aws::String>(); });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "InstanceDeregisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InvalidInstance")));
 
-    auto operation = [this](const Model::DescribeInstanceHealthRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeInstanceHealth(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeInstanceHealthRequest, Model::DescribeInstanceHealthOutcome> waiter(15, 8, acceptors, operation,
-                                                                                                          "WaitUntilInstanceDeregistered");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeInstanceHealth(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(15, 8, std::move(acceptors), operation, "WaitUntilInstanceDeregistered");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeInstanceHealthOutcome> WaitUntilInstanceInService(
       const Model::DescribeInstanceHealthRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeInstanceHealthOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("InService"),
-                         [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return std::all_of(
-                               result.GetInstanceStates().begin(), result.GetInstanceStates().end(),
-                               [&](const Model::InstanceState& item) { return item.GetState() == expected.get<Aws::String>(); });
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InvalidInstance")});
+    using OutcomeT = Model::DescribeInstanceHealthOutcome;
+    using RequestT = Model::DescribeInstanceHealthRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InstanceInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
+        [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return std::all_of(result.GetInstanceStates().begin(), result.GetInstanceStates().end(),
+                             [&](const Model::InstanceState& item) { return item.GetState() == expected.get<Aws::String>(); });
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("InstanceInServiceWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InvalidInstance")));
 
-    auto operation = [this](const Model::DescribeInstanceHealthRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeInstanceHealth(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeInstanceHealthRequest, Model::DescribeInstanceHealthOutcome> waiter(15, 8, acceptors, operation,
-                                                                                                          "WaitUntilInstanceInService");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeInstanceHealth(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(15, 8, std::move(acceptors), operation, "WaitUntilInstanceInService");
     return waiter.Wait(request);
   }
 };

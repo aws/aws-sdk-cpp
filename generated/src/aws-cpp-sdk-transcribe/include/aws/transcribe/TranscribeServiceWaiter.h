@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/transcribe/TranscribeServiceClient.h>
 #include <aws/transcribe/model/CallAnalyticsJobStatus.h>
 #include <aws/transcribe/model/DescribeLanguageModelRequest.h>
@@ -36,180 +37,183 @@ class TranscribeServiceWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeLanguageModelOutcome> WaitUntilLanguageModelCompleted(
       const Model::DescribeLanguageModelRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeLanguageModelOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("COMPLETED"),
-                         [](const Model::DescribeLanguageModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ModelStatusMapper::GetNameForModelStatus(result.GetLanguageModel().GetModelStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::DescribeLanguageModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ModelStatusMapper::GetNameForModelStatus(result.GetLanguageModel().GetModelStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeLanguageModelOutcome;
+    using RequestT = Model::DescribeLanguageModelRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LanguageModelCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
+        [](const Model::DescribeLanguageModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ModelStatusMapper::GetNameForModelStatus(result.GetLanguageModel().GetModelStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LanguageModelCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::DescribeLanguageModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ModelStatusMapper::GetNameForModelStatus(result.GetLanguageModel().GetModelStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeLanguageModelRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeLanguageModel(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeLanguageModelRequest, Model::DescribeLanguageModelOutcome> waiter(120, 1, acceptors, operation,
-                                                                                                        "WaitUntilLanguageModelCompleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeLanguageModel(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(120, 1, std::move(acceptors), operation, "WaitUntilLanguageModelCompleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetCallAnalyticsJobOutcome> WaitUntilCallAnalyticsJobCompleted(
       const Model::GetCallAnalyticsJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetCallAnalyticsJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("COMPLETED"),
-                         [](const Model::GetCallAnalyticsJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::CallAnalyticsJobStatusMapper::GetNameForCallAnalyticsJobStatus(
-                                      result.GetCallAnalyticsJob().GetCallAnalyticsJobStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::GetCallAnalyticsJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::CallAnalyticsJobStatusMapper::GetNameForCallAnalyticsJobStatus(
-                                      result.GetCallAnalyticsJob().GetCallAnalyticsJobStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetCallAnalyticsJobOutcome;
+    using RequestT = Model::GetCallAnalyticsJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CallAnalyticsJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
+        [](const Model::GetCallAnalyticsJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::CallAnalyticsJobStatusMapper::GetNameForCallAnalyticsJobStatus(
+                     result.GetCallAnalyticsJob().GetCallAnalyticsJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CallAnalyticsJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetCallAnalyticsJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::CallAnalyticsJobStatusMapper::GetNameForCallAnalyticsJobStatus(
+                     result.GetCallAnalyticsJob().GetCallAnalyticsJobStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetCallAnalyticsJobRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetCallAnalyticsJob(req);
-    };
-    Aws::Utils::Waiter<Model::GetCallAnalyticsJobRequest, Model::GetCallAnalyticsJobOutcome> waiter(10, 12, acceptors, operation,
-                                                                                                    "WaitUntilCallAnalyticsJobCompleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetCallAnalyticsJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilCallAnalyticsJobCompleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetMedicalScribeJobOutcome> WaitUntilMedicalScribeJobCompleted(
       const Model::GetMedicalScribeJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetMedicalScribeJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("COMPLETED"),
-                         [](const Model::GetMedicalScribeJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MedicalScribeJobStatusMapper::GetNameForMedicalScribeJobStatus(
-                                      result.GetMedicalScribeJob().GetMedicalScribeJobStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::GetMedicalScribeJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MedicalScribeJobStatusMapper::GetNameForMedicalScribeJobStatus(
-                                      result.GetMedicalScribeJob().GetMedicalScribeJobStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetMedicalScribeJobOutcome;
+    using RequestT = Model::GetMedicalScribeJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MedicalScribeJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
+        [](const Model::GetMedicalScribeJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MedicalScribeJobStatusMapper::GetNameForMedicalScribeJobStatus(
+                     result.GetMedicalScribeJob().GetMedicalScribeJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MedicalScribeJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetMedicalScribeJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MedicalScribeJobStatusMapper::GetNameForMedicalScribeJobStatus(
+                     result.GetMedicalScribeJob().GetMedicalScribeJobStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetMedicalScribeJobRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetMedicalScribeJob(req);
-    };
-    Aws::Utils::Waiter<Model::GetMedicalScribeJobRequest, Model::GetMedicalScribeJobOutcome> waiter(10, 12, acceptors, operation,
-                                                                                                    "WaitUntilMedicalScribeJobCompleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetMedicalScribeJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilMedicalScribeJobCompleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetMedicalTranscriptionJobOutcome> WaitUntilMedicalTranscriptionJobCompleted(
       const Model::GetMedicalTranscriptionJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetMedicalTranscriptionJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("COMPLETED"),
-                         [](const Model::GetMedicalTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
-                                      result.GetMedicalTranscriptionJob().GetTranscriptionJobStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::GetMedicalTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
-                                      result.GetMedicalTranscriptionJob().GetTranscriptionJobStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetMedicalTranscriptionJobOutcome;
+    using RequestT = Model::GetMedicalTranscriptionJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MedicalTranscriptionJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
+        [](const Model::GetMedicalTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
+                     result.GetMedicalTranscriptionJob().GetTranscriptionJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MedicalTranscriptionJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetMedicalTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
+                     result.GetMedicalTranscriptionJob().GetTranscriptionJobStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetMedicalTranscriptionJobRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetMedicalTranscriptionJob(req);
-    };
-    Aws::Utils::Waiter<Model::GetMedicalTranscriptionJobRequest, Model::GetMedicalTranscriptionJobOutcome> waiter(
-        10, 12, acceptors, operation, "WaitUntilMedicalTranscriptionJobCompleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetMedicalTranscriptionJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilMedicalTranscriptionJobCompleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetMedicalVocabularyOutcome> WaitUntilMedicalVocabularyReady(
       const Model::GetMedicalVocabularyRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetMedicalVocabularyOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("READY"),
-                         [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetMedicalVocabularyOutcome;
+    using RequestT = Model::GetMedicalVocabularyRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MedicalVocabularyReadyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("READY"),
+        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MedicalVocabularyReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetMedicalVocabularyRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetMedicalVocabulary(req);
-    };
-    Aws::Utils::Waiter<Model::GetMedicalVocabularyRequest, Model::GetMedicalVocabularyOutcome> waiter(10, 12, acceptors, operation,
-                                                                                                      "WaitUntilMedicalVocabularyReady");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetMedicalVocabulary(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilMedicalVocabularyReady");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetTranscriptionJobOutcome> WaitUntilTranscriptionJobCompleted(
       const Model::GetTranscriptionJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetTranscriptionJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("COMPLETED"),
-                         [](const Model::GetTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
-                                      result.GetTranscriptionJob().GetTranscriptionJobStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::GetTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
-                                      result.GetTranscriptionJob().GetTranscriptionJobStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetTranscriptionJobOutcome;
+    using RequestT = Model::GetTranscriptionJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "TranscriptionJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
+        [](const Model::GetTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
+                     result.GetTranscriptionJob().GetTranscriptionJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "TranscriptionJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
+                     result.GetTranscriptionJob().GetTranscriptionJobStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetTranscriptionJobRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetTranscriptionJob(req);
-    };
-    Aws::Utils::Waiter<Model::GetTranscriptionJobRequest, Model::GetTranscriptionJobOutcome> waiter(10, 12, acceptors, operation,
-                                                                                                    "WaitUntilTranscriptionJobCompleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetTranscriptionJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilTranscriptionJobCompleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetVocabularyOutcome> WaitUntilVocabularyReady(const Model::GetVocabularyRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetVocabularyOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("READY"),
-                         [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetVocabularyOutcome;
+    using RequestT = Model::GetVocabularyRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "VocabularyReadyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("READY"),
+        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "VocabularyReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetVocabularyRequest& req) { return static_cast<DerivedClient*>(this)->GetVocabulary(req); };
-    Aws::Utils::Waiter<Model::GetVocabularyRequest, Model::GetVocabularyOutcome> waiter(10, 12, acceptors, operation,
-                                                                                        "WaitUntilVocabularyReady");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetVocabulary(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilVocabularyReady");
     return waiter.Wait(request);
   }
 };

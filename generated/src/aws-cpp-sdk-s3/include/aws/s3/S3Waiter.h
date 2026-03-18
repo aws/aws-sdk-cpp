@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/HeadBucketResult.h>
@@ -20,40 +21,54 @@ template <typename DerivedClient = S3Client>
 class S3Waiter {
  public:
   Aws::Utils::WaiterOutcome<Model::HeadBucketOutcome> WaitUntilBucketExists(const Model::HeadBucketRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::HeadBucketOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, false});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::STATUS, 404});
+    using OutcomeT = Model::HeadBucketOutcome;
+    using RequestT = Model::HeadBucketRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(
+        Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("BucketExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
+    acceptors.emplace_back(
+        Aws::MakeUnique<Aws::Utils::StatusAcceptor<OutcomeT>>("BucketExistsWaiter", Aws::Utils::WaiterState::RETRY, 404));
 
-    auto operation = [this](const Model::HeadBucketRequest& req) { return static_cast<DerivedClient*>(this)->HeadBucket(req); };
-    Aws::Utils::Waiter<Model::HeadBucketRequest, Model::HeadBucketOutcome> waiter(5, 24, acceptors, operation, "WaitUntilBucketExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->HeadBucket(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilBucketExists");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::HeadBucketOutcome> WaitUntilBucketNotExists(const Model::HeadBucketRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::HeadBucketOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::STATUS, 404});
+    using OutcomeT = Model::HeadBucketOutcome;
+    using RequestT = Model::HeadBucketRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(
+        Aws::MakeUnique<Aws::Utils::StatusAcceptor<OutcomeT>>("BucketNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS, 404));
 
-    auto operation = [this](const Model::HeadBucketRequest& req) { return static_cast<DerivedClient*>(this)->HeadBucket(req); };
-    Aws::Utils::Waiter<Model::HeadBucketRequest, Model::HeadBucketOutcome> waiter(5, 24, acceptors, operation, "WaitUntilBucketNotExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->HeadBucket(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilBucketNotExists");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::HeadObjectOutcome> WaitUntilObjectExists(const Model::HeadObjectRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::HeadObjectOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, false});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::STATUS, 404});
+    using OutcomeT = Model::HeadObjectOutcome;
+    using RequestT = Model::HeadObjectRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(
+        Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ObjectExistsWaiter", Aws::Utils::WaiterState::SUCCESS, false));
+    acceptors.emplace_back(
+        Aws::MakeUnique<Aws::Utils::StatusAcceptor<OutcomeT>>("ObjectExistsWaiter", Aws::Utils::WaiterState::RETRY, 404));
 
-    auto operation = [this](const Model::HeadObjectRequest& req) { return static_cast<DerivedClient*>(this)->HeadObject(req); };
-    Aws::Utils::Waiter<Model::HeadObjectRequest, Model::HeadObjectOutcome> waiter(5, 24, acceptors, operation, "WaitUntilObjectExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->HeadObject(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilObjectExists");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::HeadObjectOutcome> WaitUntilObjectNotExists(const Model::HeadObjectRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::HeadObjectOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::STATUS, 404});
+    using OutcomeT = Model::HeadObjectOutcome;
+    using RequestT = Model::HeadObjectRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(
+        Aws::MakeUnique<Aws::Utils::StatusAcceptor<OutcomeT>>("ObjectNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS, 404));
 
-    auto operation = [this](const Model::HeadObjectRequest& req) { return static_cast<DerivedClient*>(this)->HeadObject(req); };
-    Aws::Utils::Waiter<Model::HeadObjectRequest, Model::HeadObjectOutcome> waiter(5, 24, acceptors, operation, "WaitUntilObjectNotExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->HeadObject(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilObjectNotExists");
     return waiter.Wait(request);
   }
 };

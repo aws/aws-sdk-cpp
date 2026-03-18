@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/macie2/Macie2Client.h>
 #include <aws/macie2/model/GetSensitiveDataOccurrencesRequest.h>
 #include <aws/macie2/model/GetSensitiveDataOccurrencesResult.h>
@@ -20,27 +21,26 @@ class Macie2Waiter {
  public:
   Aws::Utils::WaiterOutcome<Model::GetSensitiveDataOccurrencesOutcome> WaitUntilFindingRevealed(
       const Model::GetSensitiveDataOccurrencesRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetSensitiveDataOccurrencesOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("SUCCESS"),
-                         [](const Model::GetSensitiveDataOccurrencesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::RevealRequestStatusMapper::GetNameForRevealRequestStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ERROR"),
-                         [](const Model::GetSensitiveDataOccurrencesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::RevealRequestStatusMapper::GetNameForRevealRequestStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetSensitiveDataOccurrencesOutcome;
+    using RequestT = Model::GetSensitiveDataOccurrencesRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FindingRevealedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCESS"),
+        [](const Model::GetSensitiveDataOccurrencesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RevealRequestStatusMapper::GetNameForRevealRequestStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FindingRevealedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ERROR"),
+        [](const Model::GetSensitiveDataOccurrencesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RevealRequestStatusMapper::GetNameForRevealRequestStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetSensitiveDataOccurrencesRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetSensitiveDataOccurrences(req);
-    };
-    Aws::Utils::Waiter<Model::GetSensitiveDataOccurrencesRequest, Model::GetSensitiveDataOccurrencesOutcome> waiter(
-        2, 60, acceptors, operation, "WaitUntilFindingRevealed");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetSensitiveDataOccurrences(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(2, 60, std::move(acceptors), operation, "WaitUntilFindingRevealed");
     return waiter.Wait(request);
   }
 };

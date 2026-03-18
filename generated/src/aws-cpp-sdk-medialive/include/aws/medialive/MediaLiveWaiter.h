@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/medialive/MediaLiveClient.h>
 #include <aws/medialive/model/ChannelPlacementGroupState.h>
 #include <aws/medialive/model/ChannelState.h>
@@ -38,604 +39,682 @@ template <typename DerivedClient = MediaLiveClient>
 class MediaLiveWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeChannelOutcome> WaitUntilChannelCreated(const Model::DescribeChannelRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeChannelOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("IDLE"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("CREATING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_FAILED"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeChannelOutcome;
+    using RequestT = Model::DescribeChannelRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("IDLE"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ChannelCreatedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeChannelRequest& req) { return static_cast<DerivedClient*>(this)->DescribeChannel(req); };
-    Aws::Utils::Waiter<Model::DescribeChannelRequest, Model::DescribeChannelOutcome> waiter(3, 40, acceptors, operation,
-                                                                                            "WaitUntilChannelCreated");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeChannel(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilChannelCreated");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeChannelOutcome> WaitUntilChannelDeleted(const Model::DescribeChannelRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeChannelOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("DELETED"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DELETING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeChannelOutcome;
+    using RequestT = Model::DescribeChannelRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ChannelDeletedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeChannelRequest& req) { return static_cast<DerivedClient*>(this)->DescribeChannel(req); };
-    Aws::Utils::Waiter<Model::DescribeChannelRequest, Model::DescribeChannelOutcome> waiter(5, 24, acceptors, operation,
-                                                                                            "WaitUntilChannelDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeChannel(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilChannelDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeChannelOutcome> WaitUntilChannelRunning(const Model::DescribeChannelRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeChannelOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("RUNNING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("STARTING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeChannelOutcome;
+    using RequestT = Model::DescribeChannelRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("RUNNING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelRunningWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ChannelRunningWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeChannelRequest& req) { return static_cast<DerivedClient*>(this)->DescribeChannel(req); };
-    Aws::Utils::Waiter<Model::DescribeChannelRequest, Model::DescribeChannelOutcome> waiter(5, 24, acceptors, operation,
-                                                                                            "WaitUntilChannelRunning");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeChannel(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilChannelRunning");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeChannelOutcome> WaitUntilChannelStopped(const Model::DescribeChannelRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeChannelOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("IDLE"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("STOPPING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeChannelOutcome;
+    using RequestT = Model::DescribeChannelRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("IDLE"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelStoppedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STOPPING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ChannelStoppedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeChannelRequest& req) { return static_cast<DerivedClient*>(this)->DescribeChannel(req); };
-    Aws::Utils::Waiter<Model::DescribeChannelRequest, Model::DescribeChannelOutcome> waiter(5, 24, acceptors, operation,
-                                                                                            "WaitUntilChannelStopped");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeChannel(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilChannelStopped");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeChannelPlacementGroupOutcome> WaitUntilChannelPlacementGroupAssigned(
       const Model::DescribeChannelPlacementGroupRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeChannelPlacementGroupOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ASSIGNED"),
-                         [](const Model::DescribeChannelPlacementGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ChannelPlacementGroupStateMapper::GetNameForChannelPlacementGroupState(result.GetState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("ASSIGNING"),
-                         [](const Model::DescribeChannelPlacementGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ChannelPlacementGroupStateMapper::GetNameForChannelPlacementGroupState(result.GetState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeChannelPlacementGroupOutcome;
+    using RequestT = Model::DescribeChannelPlacementGroupRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelPlacementGroupAssignedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ASSIGNED"),
+        [](const Model::DescribeChannelPlacementGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ChannelPlacementGroupStateMapper::GetNameForChannelPlacementGroupState(result.GetState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelPlacementGroupAssignedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ASSIGNING"),
+        [](const Model::DescribeChannelPlacementGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ChannelPlacementGroupStateMapper::GetNameForChannelPlacementGroupState(result.GetState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "ChannelPlacementGroupAssignedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeChannelPlacementGroupRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeChannelPlacementGroup(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeChannelPlacementGroupRequest, Model::DescribeChannelPlacementGroupOutcome> waiter(
-        3, 40, acceptors, operation, "WaitUntilChannelPlacementGroupAssigned");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeChannelPlacementGroup(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilChannelPlacementGroupAssigned");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeChannelPlacementGroupOutcome> WaitUntilChannelPlacementGroupDeleted(
       const Model::DescribeChannelPlacementGroupRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeChannelPlacementGroupOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("DELETED"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DELETING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeChannelPlacementGroupOutcome;
+    using RequestT = Model::DescribeChannelPlacementGroupRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelPlacementGroupDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelPlacementGroupDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "ChannelPlacementGroupDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeChannelPlacementGroupRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeChannelPlacementGroup(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeChannelPlacementGroupRequest, Model::DescribeChannelPlacementGroupOutcome> waiter(
-        5, 24, acceptors, operation, "WaitUntilChannelPlacementGroupDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeChannelPlacementGroup(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilChannelPlacementGroupDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeChannelPlacementGroupOutcome> WaitUntilChannelPlacementGroupUnassigned(
       const Model::DescribeChannelPlacementGroupRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeChannelPlacementGroupOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("UNASSIGNED"),
-                         [](const Model::DescribeChannelPlacementGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ChannelPlacementGroupStateMapper::GetNameForChannelPlacementGroupState(result.GetState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("UNASSIGNING"),
-                         [](const Model::DescribeChannelPlacementGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ChannelPlacementGroupStateMapper::GetNameForChannelPlacementGroupState(result.GetState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeChannelPlacementGroupOutcome;
+    using RequestT = Model::DescribeChannelPlacementGroupRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelPlacementGroupUnassignedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UNASSIGNED"),
+        [](const Model::DescribeChannelPlacementGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ChannelPlacementGroupStateMapper::GetNameForChannelPlacementGroupState(result.GetState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ChannelPlacementGroupUnassignedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UNASSIGNING"),
+        [](const Model::DescribeChannelPlacementGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ChannelPlacementGroupStateMapper::GetNameForChannelPlacementGroupState(result.GetState()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "ChannelPlacementGroupUnassignedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeChannelPlacementGroupRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeChannelPlacementGroup(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeChannelPlacementGroupRequest, Model::DescribeChannelPlacementGroupOutcome> waiter(
-        5, 24, acceptors, operation, "WaitUntilChannelPlacementGroupUnassigned");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeChannelPlacementGroup(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilChannelPlacementGroupUnassigned");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeClusterOutcome> WaitUntilClusterCreated(const Model::DescribeClusterRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeClusterOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ACTIVE"),
-                         [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("CREATING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_FAILED"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeClusterOutcome;
+    using RequestT = Model::DescribeClusterRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ClusterCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
+        [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ClusterCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ClusterCreatedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ClusterCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeClusterRequest& req) { return static_cast<DerivedClient*>(this)->DescribeCluster(req); };
-    Aws::Utils::Waiter<Model::DescribeClusterRequest, Model::DescribeClusterOutcome> waiter(3, 40, acceptors, operation,
-                                                                                            "WaitUntilClusterCreated");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeCluster(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilClusterCreated");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeClusterOutcome> WaitUntilClusterDeleted(const Model::DescribeClusterRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeClusterOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("DELETED"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DELETING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeClusterOutcome;
+    using RequestT = Model::DescribeClusterRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ClusterDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "ClusterDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ClusterDeletedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeClusterRequest& req) { return static_cast<DerivedClient*>(this)->DescribeCluster(req); };
-    Aws::Utils::Waiter<Model::DescribeClusterRequest, Model::DescribeClusterOutcome> waiter(5, 24, acceptors, operation,
-                                                                                            "WaitUntilClusterDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeCluster(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilClusterDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeInputOutcome> WaitUntilInputAttached(const Model::DescribeInputRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeInputOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ATTACHED"),
-                         [](const Model::DescribeInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::InputStateMapper::GetNameForInputState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DETACHED"),
-                         [](const Model::DescribeInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::InputStateMapper::GetNameForInputState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeInputOutcome;
+    using RequestT = Model::DescribeInputRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputAttachedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ATTACHED"),
+        [](const Model::DescribeInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::InputStateMapper::GetNameForInputState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputAttachedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DETACHED"),
+        [](const Model::DescribeInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::InputStateMapper::GetNameForInputState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("InputAttachedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeInputRequest& req) { return static_cast<DerivedClient*>(this)->DescribeInput(req); };
-    Aws::Utils::Waiter<Model::DescribeInputRequest, Model::DescribeInputOutcome> waiter(5, 24, acceptors, operation,
-                                                                                        "WaitUntilInputAttached");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeInput(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilInputAttached");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeInputOutcome> WaitUntilInputDeleted(const Model::DescribeInputRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeInputOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("DELETED"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DELETING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeInputOutcome;
+    using RequestT = Model::DescribeInputRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("InputDeletedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeInputRequest& req) { return static_cast<DerivedClient*>(this)->DescribeInput(req); };
-    Aws::Utils::Waiter<Model::DescribeInputRequest, Model::DescribeInputOutcome> waiter(5, 24, acceptors, operation,
-                                                                                        "WaitUntilInputDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeInput(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilInputDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeInputOutcome> WaitUntilInputDetached(const Model::DescribeInputRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeInputOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("DETACHED"),
-                         [](const Model::DescribeInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::InputStateMapper::GetNameForInputState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("CREATING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("ATTACHED"),
-                         [](const Model::DescribeInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::InputStateMapper::GetNameForInputState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeInputOutcome;
+    using RequestT = Model::DescribeInputRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputDetachedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DETACHED"),
+        [](const Model::DescribeInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::InputStateMapper::GetNameForInputState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputDetachedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "InputDetachedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ATTACHED"),
+        [](const Model::DescribeInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::InputStateMapper::GetNameForInputState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("InputDetachedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeInputRequest& req) { return static_cast<DerivedClient*>(this)->DescribeInput(req); };
-    Aws::Utils::Waiter<Model::DescribeInputRequest, Model::DescribeInputOutcome> waiter(5, 24, acceptors, operation,
-                                                                                        "WaitUntilInputDetached");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeInput(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilInputDetached");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeMultiplexOutcome> WaitUntilMultiplexCreated(const Model::DescribeMultiplexRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeMultiplexOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("IDLE"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("CREATING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_FAILED"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeMultiplexOutcome;
+    using RequestT = Model::DescribeMultiplexRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MultiplexCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("IDLE"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MultiplexCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("MultiplexCreatedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MultiplexCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeMultiplexRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeMultiplex(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeMultiplexRequest, Model::DescribeMultiplexOutcome> waiter(3, 40, acceptors, operation,
-                                                                                                "WaitUntilMultiplexCreated");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeMultiplex(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilMultiplexCreated");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeMultiplexOutcome> WaitUntilMultiplexDeleted(const Model::DescribeMultiplexRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeMultiplexOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("DELETED"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DELETING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeMultiplexOutcome;
+    using RequestT = Model::DescribeMultiplexRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MultiplexDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MultiplexDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("MultiplexDeletedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeMultiplexRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeMultiplex(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeMultiplexRequest, Model::DescribeMultiplexOutcome> waiter(5, 24, acceptors, operation,
-                                                                                                "WaitUntilMultiplexDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeMultiplex(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilMultiplexDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeMultiplexOutcome> WaitUntilMultiplexRunning(const Model::DescribeMultiplexRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeMultiplexOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("RUNNING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("STARTING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeMultiplexOutcome;
+    using RequestT = Model::DescribeMultiplexRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MultiplexRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("RUNNING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MultiplexRunningWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("MultiplexRunningWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeMultiplexRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeMultiplex(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeMultiplexRequest, Model::DescribeMultiplexOutcome> waiter(5, 24, acceptors, operation,
-                                                                                                "WaitUntilMultiplexRunning");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeMultiplex(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilMultiplexRunning");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeMultiplexOutcome> WaitUntilMultiplexStopped(const Model::DescribeMultiplexRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeMultiplexOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("IDLE"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("STOPPING"),
-                         [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeMultiplexOutcome;
+    using RequestT = Model::DescribeMultiplexRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MultiplexStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("IDLE"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "MultiplexStoppedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STOPPING"),
+        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("MultiplexStoppedWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeMultiplexRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeMultiplex(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeMultiplexRequest, Model::DescribeMultiplexOutcome> waiter(5, 24, acceptors, operation,
-                                                                                                "WaitUntilMultiplexStopped");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeMultiplex(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilMultiplexStopped");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeNodeOutcome> WaitUntilNodeDeregistered(const Model::DescribeNodeRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeNodeOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("DEREGISTERED"),
-                         [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DEREGISTERING"),
-                         [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DRAINING"),
-                         [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeNodeOutcome;
+    using RequestT = Model::DescribeNodeRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "NodeDeregisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DEREGISTERED"),
+        [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "NodeDeregisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DEREGISTERING"),
+        [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "NodeDeregisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DRAINING"),
+        [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("NodeDeregisteredWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeNodeRequest& req) { return static_cast<DerivedClient*>(this)->DescribeNode(req); };
-    Aws::Utils::Waiter<Model::DescribeNodeRequest, Model::DescribeNodeOutcome> waiter(5, 24, acceptors, operation,
-                                                                                      "WaitUntilNodeDeregistered");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeNode(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilNodeDeregistered");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeNodeOutcome> WaitUntilNodeRegistered(const Model::DescribeNodeRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeNodeOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ACTIVE"),
-                         [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("REGISTERING"),
-                         [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("NotFoundException")});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("REGISTRATION_FAILED"),
-                         [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("InternalServerErrorException")});
+    using OutcomeT = Model::DescribeNodeOutcome;
+    using RequestT = Model::DescribeNodeRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "NodeRegisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
+        [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "NodeRegisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("REGISTERING"),
+        [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("NodeRegisteredWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("NotFoundException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "NodeRegisteredWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REGISTRATION_FAILED"),
+        [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("NodeRegisteredWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("InternalServerErrorException")));
 
-    auto operation = [this](const Model::DescribeNodeRequest& req) { return static_cast<DerivedClient*>(this)->DescribeNode(req); };
-    Aws::Utils::Waiter<Model::DescribeNodeRequest, Model::DescribeNodeOutcome> waiter(3, 40, acceptors, operation,
-                                                                                      "WaitUntilNodeRegistered");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeNode(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilNodeRegistered");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetSignalMapOutcome> WaitUntilSignalMapCreated(const Model::GetSignalMapRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetSignalMapOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_COMPLETE"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_IN_PROGRESS"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_FAILED"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetSignalMapOutcome;
+    using RequestT = Model::GetSignalMapRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATE_IN_PROGRESS"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetSignalMapRequest& req) { return static_cast<DerivedClient*>(this)->GetSignalMap(req); };
-    Aws::Utils::Waiter<Model::GetSignalMapRequest, Model::GetSignalMapOutcome> waiter(5, 24, acceptors, operation,
-                                                                                      "WaitUntilSignalMapCreated");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetSignalMap(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilSignalMapCreated");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetSignalMapOutcome> WaitUntilSignalMapMonitorDeleted(const Model::GetSignalMapRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetSignalMapOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("DELETE_COMPLETE"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
-                                      result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DELETE_IN_PROGRESS"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
-                                      result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("DELETE_FAILED"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
-                                      result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetSignalMapOutcome;
+    using RequestT = Model::GetSignalMapRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapMonitorDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETE_COMPLETE"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
+                     result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapMonitorDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETE_IN_PROGRESS"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
+                     result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapMonitorDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
+                     result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetSignalMapRequest& req) { return static_cast<DerivedClient*>(this)->GetSignalMap(req); };
-    Aws::Utils::Waiter<Model::GetSignalMapRequest, Model::GetSignalMapOutcome> waiter(5, 24, acceptors, operation,
-                                                                                      "WaitUntilSignalMapMonitorDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetSignalMap(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilSignalMapMonitorDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetSignalMapOutcome> WaitUntilSignalMapMonitorDeployed(const Model::GetSignalMapRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetSignalMapOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("DRY_RUN_DEPLOYMENT_COMPLETE"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
-                                      result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("DEPLOYMENT_COMPLETE"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
-                                      result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DRY_RUN_DEPLOYMENT_IN_PROGRESS"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
-                                      result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DEPLOYMENT_IN_PROGRESS"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
-                                      result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("DRY_RUN_DEPLOYMENT_FAILED"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
-                                      result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("DEPLOYMENT_FAILED"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
-                                      result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetSignalMapOutcome;
+    using RequestT = Model::GetSignalMapRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapMonitorDeployedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DRY_RUN_DEPLOYMENT_COMPLETE"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
+                     result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapMonitorDeployedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DEPLOYMENT_COMPLETE"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
+                     result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapMonitorDeployedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DRY_RUN_DEPLOYMENT_IN_PROGRESS"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
+                     result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapMonitorDeployedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DEPLOYMENT_IN_PROGRESS"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
+                     result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapMonitorDeployedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DRY_RUN_DEPLOYMENT_FAILED"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
+                     result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapMonitorDeployedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DEPLOYMENT_FAILED"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapMonitorDeploymentStatusMapper::GetNameForSignalMapMonitorDeploymentStatus(
+                     result.GetMonitorDeployment().GetStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetSignalMapRequest& req) { return static_cast<DerivedClient*>(this)->GetSignalMap(req); };
-    Aws::Utils::Waiter<Model::GetSignalMapRequest, Model::GetSignalMapOutcome> waiter(5, 24, acceptors, operation,
-                                                                                      "WaitUntilSignalMapMonitorDeployed");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetSignalMap(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilSignalMapMonitorDeployed");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetSignalMapOutcome> WaitUntilSignalMapUpdated(const Model::GetSignalMapRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetSignalMapOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("UPDATE_COMPLETE"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("UPDATE_IN_PROGRESS"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("UPDATE_FAILED"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("UPDATE_REVERTED"),
-                         [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetSignalMapOutcome;
+    using RequestT = Model::GetSignalMapRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_COMPLETE"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapUpdatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATE_IN_PROGRESS"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapUpdatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_FAILED"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SignalMapUpdatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_REVERTED"),
+        [](const Model::GetSignalMapOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SignalMapStatusMapper::GetNameForSignalMapStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetSignalMapRequest& req) { return static_cast<DerivedClient*>(this)->GetSignalMap(req); };
-    Aws::Utils::Waiter<Model::GetSignalMapRequest, Model::GetSignalMapOutcome> waiter(5, 24, acceptors, operation,
-                                                                                      "WaitUntilSignalMapUpdated");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetSignalMap(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 24, std::move(acceptors), operation, "WaitUntilSignalMapUpdated");
     return waiter.Wait(request);
   }
 };

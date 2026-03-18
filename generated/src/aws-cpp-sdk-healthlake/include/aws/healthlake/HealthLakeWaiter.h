@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/healthlake/HealthLakeClient.h>
 #include <aws/healthlake/model/DatastoreStatus.h>
 #include <aws/healthlake/model/DescribeFHIRDatastoreRequest.h>
@@ -25,133 +26,133 @@ class HealthLakeWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeFHIRDatastoreOutcome> WaitUntilFHIRDatastoreActive(
       const Model::DescribeFHIRDatastoreRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeFHIRDatastoreOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ACTIVE"),
-                         [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(
-                                      result.GetDatastoreProperties().GetDatastoreStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_FAILED"),
-                         [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(
-                                      result.GetDatastoreProperties().GetDatastoreStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("DELETED"),
-                         [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(
-                                      result.GetDatastoreProperties().GetDatastoreStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeFHIRDatastoreOutcome;
+    using RequestT = Model::DescribeFHIRDatastoreRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRDatastoreActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
+        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(result.GetDatastoreProperties().GetDatastoreStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRDatastoreActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
+        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(result.GetDatastoreProperties().GetDatastoreStatus()) ==
+                 expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRDatastoreActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETED"),
+        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(result.GetDatastoreProperties().GetDatastoreStatus()) ==
+                 expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeFHIRDatastoreRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeFHIRDatastore(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeFHIRDatastoreRequest, Model::DescribeFHIRDatastoreOutcome> waiter(60, 2, acceptors, operation,
-                                                                                                        "WaitUntilFHIRDatastoreActive");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeFHIRDatastore(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(60, 2, std::move(acceptors), operation, "WaitUntilFHIRDatastoreActive");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeFHIRDatastoreOutcome> WaitUntilFHIRDatastoreDeleted(
       const Model::DescribeFHIRDatastoreRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeFHIRDatastoreOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("DELETED"),
-                         [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(
-                                      result.GetDatastoreProperties().GetDatastoreStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeFHIRDatastoreOutcome;
+    using RequestT = Model::DescribeFHIRDatastoreRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRDatastoreDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
+        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(result.GetDatastoreProperties().GetDatastoreStatus()) ==
+                 expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeFHIRDatastoreRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeFHIRDatastore(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeFHIRDatastoreRequest, Model::DescribeFHIRDatastoreOutcome> waiter(120, 1, acceptors, operation,
-                                                                                                        "WaitUntilFHIRDatastoreDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeFHIRDatastore(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(120, 1, std::move(acceptors), operation, "WaitUntilFHIRDatastoreDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeFHIRExportJobOutcome> WaitUntilFHIRExportJobCompleted(
       const Model::DescribeFHIRExportJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeFHIRExportJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("COMPLETED"),
-                         [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("COMPLETED_WITH_ERRORS"),
-                         [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CANCEL_COMPLETED"),
-                         [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CANCEL_FAILED"),
-                         [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeFHIRExportJobOutcome;
+    using RequestT = Model::DescribeFHIRExportJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRExportJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
+        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRExportJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED_WITH_ERRORS"),
+        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRExportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCEL_COMPLETED"),
+        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRExportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRExportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCEL_FAILED"),
+        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeFHIRExportJobRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeFHIRExportJob(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeFHIRExportJobRequest, Model::DescribeFHIRExportJobOutcome> waiter(120, 1, acceptors, operation,
-                                                                                                        "WaitUntilFHIRExportJobCompleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeFHIRExportJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(120, 1, std::move(acceptors), operation, "WaitUntilFHIRExportJobCompleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeFHIRImportJobOutcome> WaitUntilFHIRImportJobCompleted(
       const Model::DescribeFHIRImportJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeFHIRImportJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("COMPLETED"),
-                         [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobStatusMapper::GetNameForJobStatus(result.GetImportJobProperties().GetJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("COMPLETED_WITH_ERRORS"),
-                         [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobStatusMapper::GetNameForJobStatus(result.GetImportJobProperties().GetJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobStatusMapper::GetNameForJobStatus(result.GetImportJobProperties().GetJobStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeFHIRImportJobOutcome;
+    using RequestT = Model::DescribeFHIRImportJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRImportJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
+        [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetImportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRImportJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED_WITH_ERRORS"),
+        [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetImportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FHIRImportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetImportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeFHIRImportJobRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeFHIRImportJob(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeFHIRImportJobRequest, Model::DescribeFHIRImportJobOutcome> waiter(120, 1, acceptors, operation,
-                                                                                                        "WaitUntilFHIRImportJobCompleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeFHIRImportJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(120, 1, std::move(acceptors), operation, "WaitUntilFHIRImportJobCompleted");
     return waiter.Wait(request);
   }
 };

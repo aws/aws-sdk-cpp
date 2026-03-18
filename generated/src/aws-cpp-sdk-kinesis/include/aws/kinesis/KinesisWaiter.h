@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/kinesis/KinesisClient.h>
 #include <aws/kinesis/model/DescribeStreamRequest.h>
 #include <aws/kinesis/model/DescribeStreamResult.h>
@@ -19,28 +20,32 @@ template <typename DerivedClient = KinesisClient>
 class KinesisWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeStreamOutcome> WaitUntilStreamExists(const Model::DescribeStreamRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeStreamOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ACTIVE"),
-                         [](const Model::DescribeStreamOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::StreamStatusMapper::GetNameForStreamStatus(result.GetStreamDescription().GetStreamStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeStreamOutcome;
+    using RequestT = Model::DescribeStreamRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "StreamExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
+        [](const Model::DescribeStreamOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::StreamStatusMapper::GetNameForStreamStatus(result.GetStreamDescription().GetStreamStatus()) ==
+                 expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeStreamRequest& req) { return static_cast<DerivedClient*>(this)->DescribeStream(req); };
-    Aws::Utils::Waiter<Model::DescribeStreamRequest, Model::DescribeStreamOutcome> waiter(10, 12, acceptors, operation,
-                                                                                          "WaitUntilStreamExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeStream(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilStreamExists");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeStreamOutcome> WaitUntilStreamNotExists(const Model::DescribeStreamRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeStreamOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, Aws::String("ResourceNotFoundException")});
+    using OutcomeT = Model::DescribeStreamOutcome;
+    using RequestT = Model::DescribeStreamRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("StreamNotExistsWaiter", Aws::Utils::WaiterState::SUCCESS,
+                                                                                Aws::String("ResourceNotFoundException")));
 
-    auto operation = [this](const Model::DescribeStreamRequest& req) { return static_cast<DerivedClient*>(this)->DescribeStream(req); };
-    Aws::Utils::Waiter<Model::DescribeStreamRequest, Model::DescribeStreamOutcome> waiter(10, 12, acceptors, operation,
-                                                                                          "WaitUntilStreamNotExists");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeStream(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilStreamNotExists");
     return waiter.Wait(request);
   }
 };

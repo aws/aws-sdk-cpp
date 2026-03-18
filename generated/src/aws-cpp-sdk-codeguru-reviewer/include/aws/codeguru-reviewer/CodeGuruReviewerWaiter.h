@@ -12,6 +12,7 @@
 #include <aws/codeguru-reviewer/model/JobState.h>
 #include <aws/codeguru-reviewer/model/RepositoryAssociationState.h>
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 #include <algorithm>
 
@@ -23,67 +24,68 @@ class CodeGuruReviewerWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeCodeReviewOutcome> WaitUntilCodeReviewCompleted(
       const Model::DescribeCodeReviewRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeCodeReviewOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Completed"),
-                         [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobStateMapper::GetNameForJobState(result.GetCodeReview().GetState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobStateMapper::GetNameForJobState(result.GetCodeReview().GetState()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("Pending"),
-                         [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobStateMapper::GetNameForJobState(result.GetCodeReview().GetState()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeCodeReviewOutcome;
+    using RequestT = Model::DescribeCodeReviewRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CodeReviewCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
+        [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobStateMapper::GetNameForJobState(result.GetCodeReview().GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CodeReviewCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobStateMapper::GetNameForJobState(result.GetCodeReview().GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "CodeReviewCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Pending"),
+        [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobStateMapper::GetNameForJobState(result.GetCodeReview().GetState()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeCodeReviewRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeCodeReview(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeCodeReviewRequest, Model::DescribeCodeReviewOutcome> waiter(10, 12, acceptors, operation,
-                                                                                                  "WaitUntilCodeReviewCompleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeCodeReview(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilCodeReviewCompleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeRepositoryAssociationOutcome> WaitUntilRepositoryAssociationSucceeded(
       const Model::DescribeRepositoryAssociationRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeRepositoryAssociationOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Associated"),
-                         [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::RepositoryAssociationStateMapper::GetNameForRepositoryAssociationState(
-                                      result.GetRepositoryAssociation().GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::RepositoryAssociationStateMapper::GetNameForRepositoryAssociationState(
-                                      result.GetRepositoryAssociation().GetState()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("Associating"),
-                         [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::RepositoryAssociationStateMapper::GetNameForRepositoryAssociationState(
-                                      result.GetRepositoryAssociation().GetState()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeRepositoryAssociationOutcome;
+    using RequestT = Model::DescribeRepositoryAssociationRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "RepositoryAssociationSucceededWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Associated"),
+        [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RepositoryAssociationStateMapper::GetNameForRepositoryAssociationState(
+                     result.GetRepositoryAssociation().GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "RepositoryAssociationSucceededWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RepositoryAssociationStateMapper::GetNameForRepositoryAssociationState(
+                     result.GetRepositoryAssociation().GetState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "RepositoryAssociationSucceededWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Associating"),
+        [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::RepositoryAssociationStateMapper::GetNameForRepositoryAssociationState(
+                     result.GetRepositoryAssociation().GetState()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeRepositoryAssociationRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeRepositoryAssociation(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeRepositoryAssociationRequest, Model::DescribeRepositoryAssociationOutcome> waiter(
-        10, 12, acceptors, operation, "WaitUntilRepositoryAssociationSucceeded");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeRepositoryAssociation(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilRepositoryAssociationSucceeded");
     return waiter.Wait(request);
   }
 };

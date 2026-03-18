@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/lexv2-models/LexModelsV2Client.h>
 #include <aws/lexv2-models/model/BotAliasStatus.h>
 #include <aws/lexv2-models/model/BotLocaleStatus.h>
@@ -33,287 +34,296 @@ template <typename DerivedClient = LexModelsV2Client>
 class LexModelsV2Waiter {
  public:
   Aws::Utils::WaiterOutcome<Model::DescribeBotOutcome> WaitUntilBotAvailable(const Model::DescribeBotRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeBotOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Available"),
-                         [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Deleting"),
-                         [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Inactive"),
-                         [](const Model::DescribeBotOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeBotOutcome;
+    using RequestT = Model::DescribeBotRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Available"),
+        [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Deleting"),
+        [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Inactive"),
+        [](const Model::DescribeBotOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeBotRequest& req) { return static_cast<DerivedClient*>(this)->DescribeBot(req); };
-    Aws::Utils::Waiter<Model::DescribeBotRequest, Model::DescribeBotOutcome> waiter(10, 12, acceptors, operation, "WaitUntilBotAvailable");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeBot(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilBotAvailable");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeBotAliasOutcome> WaitUntilBotAliasAvailable(const Model::DescribeBotAliasRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeBotAliasOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Available"),
-                         [](const Model::DescribeBotAliasOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotAliasStatusMapper::GetNameForBotAliasStatus(result.GetBotAliasStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeBotAliasOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotAliasStatusMapper::GetNameForBotAliasStatus(result.GetBotAliasStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Deleting"),
-                         [](const Model::DescribeBotAliasOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotAliasStatusMapper::GetNameForBotAliasStatus(result.GetBotAliasStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeBotAliasOutcome;
+    using RequestT = Model::DescribeBotAliasRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotAliasAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Available"),
+        [](const Model::DescribeBotAliasOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotAliasStatusMapper::GetNameForBotAliasStatus(result.GetBotAliasStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotAliasAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeBotAliasOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotAliasStatusMapper::GetNameForBotAliasStatus(result.GetBotAliasStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotAliasAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Deleting"),
+        [](const Model::DescribeBotAliasOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotAliasStatusMapper::GetNameForBotAliasStatus(result.GetBotAliasStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeBotAliasRequest& req) { return static_cast<DerivedClient*>(this)->DescribeBotAlias(req); };
-    Aws::Utils::Waiter<Model::DescribeBotAliasRequest, Model::DescribeBotAliasOutcome> waiter(10, 12, acceptors, operation,
-                                                                                              "WaitUntilBotAliasAvailable");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeBotAlias(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilBotAliasAvailable");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeBotLocaleOutcome> WaitUntilBotLocaleBuilt(const Model::DescribeBotLocaleRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeBotLocaleOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Built"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Deleting"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("NotBuilt"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeBotLocaleOutcome;
+    using RequestT = Model::DescribeBotLocaleRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleBuiltWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Built"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleBuiltWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Deleting"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleBuiltWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleBuiltWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("NotBuilt"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeBotLocaleRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeBotLocale(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeBotLocaleRequest, Model::DescribeBotLocaleOutcome> waiter(10, 12, acceptors, operation,
-                                                                                                "WaitUntilBotLocaleBuilt");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeBotLocale(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilBotLocaleBuilt");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeBotLocaleOutcome> WaitUntilBotLocaleCreated(const Model::DescribeBotLocaleRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeBotLocaleOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Built"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ReadyExpressTesting"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("NotBuilt"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Deleting"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeBotLocaleOutcome;
+    using RequestT = Model::DescribeBotLocaleRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Built"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ReadyExpressTesting"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("NotBuilt"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Deleting"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeBotLocaleRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeBotLocale(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeBotLocaleRequest, Model::DescribeBotLocaleOutcome> waiter(10, 12, acceptors, operation,
-                                                                                                "WaitUntilBotLocaleCreated");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeBotLocale(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilBotLocaleCreated");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeBotLocaleOutcome> WaitUntilBotLocaleExpressTestingAvailable(
       const Model::DescribeBotLocaleRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeBotLocaleOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Built"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ReadyExpressTesting"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Deleting"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("NotBuilt"),
-                         [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeBotLocaleOutcome;
+    using RequestT = Model::DescribeBotLocaleRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleExpressTestingAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Built"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleExpressTestingAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ReadyExpressTesting"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleExpressTestingAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Deleting"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleExpressTestingAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotLocaleExpressTestingAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("NotBuilt"),
+        [](const Model::DescribeBotLocaleOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotLocaleStatusMapper::GetNameForBotLocaleStatus(result.GetBotLocaleStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeBotLocaleRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeBotLocale(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeBotLocaleRequest, Model::DescribeBotLocaleOutcome> waiter(
-        10, 12, acceptors, operation, "WaitUntilBotLocaleExpressTestingAvailable");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeBotLocale(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilBotLocaleExpressTestingAvailable");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeBotVersionOutcome> WaitUntilBotVersionAvailable(
       const Model::DescribeBotVersionRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeBotVersionOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Available"),
-                         [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Deleting"),
-                         [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::ERROR, Aws::String("ResourceNotFoundException")});
+    using OutcomeT = Model::DescribeBotVersionOutcome;
+    using RequestT = Model::DescribeBotVersionRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotVersionAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Available"),
+        [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotVersionAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Deleting"),
+        [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotVersionAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("BotVersionAvailableWaiter", Aws::Utils::WaiterState::RETRY,
+                                                                                Aws::String("ResourceNotFoundException")));
 
-    auto operation = [this](const Model::DescribeBotVersionRequest& req) {
-      return static_cast<DerivedClient*>(this)->DescribeBotVersion(req);
-    };
-    Aws::Utils::Waiter<Model::DescribeBotVersionRequest, Model::DescribeBotVersionOutcome> waiter(10, 12, acceptors, operation,
-                                                                                                  "WaitUntilBotVersionAvailable");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeBotVersion(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilBotVersionAvailable");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeExportOutcome> WaitUntilBotExportCompleted(const Model::DescribeExportRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeExportOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Completed"),
-                         [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ExportStatusMapper::GetNameForExportStatus(result.GetExportStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Deleting"),
-                         [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ExportStatusMapper::GetNameForExportStatus(result.GetExportStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ExportStatusMapper::GetNameForExportStatus(result.GetExportStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeExportOutcome;
+    using RequestT = Model::DescribeExportRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotExportCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
+        [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ExportStatusMapper::GetNameForExportStatus(result.GetExportStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotExportCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Deleting"),
+        [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ExportStatusMapper::GetNameForExportStatus(result.GetExportStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotExportCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ExportStatusMapper::GetNameForExportStatus(result.GetExportStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeExportRequest& req) { return static_cast<DerivedClient*>(this)->DescribeExport(req); };
-    Aws::Utils::Waiter<Model::DescribeExportRequest, Model::DescribeExportOutcome> waiter(10, 12, acceptors, operation,
-                                                                                          "WaitUntilBotExportCompleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeExport(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilBotExportCompleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::DescribeImportOutcome> WaitUntilBotImportCompleted(const Model::DescribeImportRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::DescribeImportOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("Completed"),
-                         [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ImportStatusMapper::GetNameForImportStatus(result.GetImportStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Deleting"),
-                         [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ImportStatusMapper::GetNameForImportStatus(result.GetImportStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("Failed"),
-                         [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::ImportStatusMapper::GetNameForImportStatus(result.GetImportStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::DescribeImportOutcome;
+    using RequestT = Model::DescribeImportRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotImportCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
+        [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ImportStatusMapper::GetNameForImportStatus(result.GetImportStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotImportCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Deleting"),
+        [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ImportStatusMapper::GetNameForImportStatus(result.GetImportStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BotImportCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
+        [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::ImportStatusMapper::GetNameForImportStatus(result.GetImportStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::DescribeImportRequest& req) { return static_cast<DerivedClient*>(this)->DescribeImport(req); };
-    Aws::Utils::Waiter<Model::DescribeImportRequest, Model::DescribeImportOutcome> waiter(10, 12, acceptors, operation,
-                                                                                          "WaitUntilBotImportCompleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeImport(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 12, std::move(acceptors), operation, "WaitUntilBotImportCompleted");
     return waiter.Wait(request);
   }
 };

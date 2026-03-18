@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/ssm-incidents/SSMIncidentsClient.h>
 #include <aws/ssm-incidents/model/GetReplicationSetRequest.h>
 #include <aws/ssm-incidents/model/GetReplicationSetResult.h>
@@ -19,62 +20,67 @@ class SSMIncidentsWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::GetReplicationSetOutcome> WaitUntilWaitForReplicationSetActive(
       const Model::GetReplicationSetRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetReplicationSetOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ACTIVE"),
-                         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("CREATING"),
-                         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("UPDATING"),
-                         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetReplicationSetOutcome;
+    using RequestT = Model::GetReplicationSetRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetReplicationSetRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetReplicationSet(req);
-    };
-    Aws::Utils::Waiter<Model::GetReplicationSetRequest, Model::GetReplicationSetOutcome> waiter(30, 1, acceptors, operation,
-                                                                                                "WaitUntilWaitForReplicationSetActive");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetReplicationSet(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 1, std::move(acceptors), operation, "WaitUntilWaitForReplicationSetActive");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetReplicationSetOutcome> WaitUntilWaitForReplicationSetDeleted(
       const Model::GetReplicationSetRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetReplicationSetOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, Aws::String("ResourceNotFoundException")});
-    acceptors.push_back({Aws::Utils::WaiterState::RETRY, Aws::Utils::MatcherType::PATH, Aws::String("DELETING"),
-                         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetReplicationSetOutcome;
+    using RequestT = Model::GetReplicationSetRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "WaitForReplicationSetDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "WaitForReplicationSetDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "WaitForReplicationSetDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetReplicationSetRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetReplicationSet(req);
-    };
-    Aws::Utils::Waiter<Model::GetReplicationSetRequest, Model::GetReplicationSetOutcome> waiter(30, 1, acceptors, operation,
-                                                                                                "WaitUntilWaitForReplicationSetDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetReplicationSet(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(30, 1, std::move(acceptors), operation, "WaitUntilWaitForReplicationSetDeleted");
     return waiter.Wait(request);
   }
 };

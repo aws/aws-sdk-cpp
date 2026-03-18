@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/deadline/DeadlineClient.h>
 #include <aws/deadline/model/FleetStatus.h>
 #include <aws/deadline/model/GetFleetRequest.h>
@@ -35,291 +36,306 @@ template <typename DerivedClient = DeadlineClient>
 class DeadlineWaiter {
  public:
   Aws::Utils::WaiterOutcome<Model::GetFleetOutcome> WaitUntilFleetActive(const Model::GetFleetRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetFleetOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ACTIVE"),
-                         [](const Model::GetFleetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::FleetStatusMapper::GetNameForFleetStatus(result.GetStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_FAILED"),
-                         [](const Model::GetFleetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::FleetStatusMapper::GetNameForFleetStatus(result.GetStatus()) == expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("UPDATE_FAILED"),
-                         [](const Model::GetFleetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::FleetStatusMapper::GetNameForFleetStatus(result.GetStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetFleetOutcome;
+    using RequestT = Model::GetFleetRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FleetActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
+        [](const Model::GetFleetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::FleetStatusMapper::GetNameForFleetStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FleetActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
+        [](const Model::GetFleetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::FleetStatusMapper::GetNameForFleetStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "FleetActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_FAILED"),
+        [](const Model::GetFleetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::FleetStatusMapper::GetNameForFleetStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetFleetRequest& req) { return static_cast<DerivedClient*>(this)->GetFleet(req); };
-    Aws::Utils::Waiter<Model::GetFleetRequest, Model::GetFleetOutcome> waiter(5, 180, acceptors, operation, "WaitUntilFleetActive");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetFleet(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(5, 180, std::move(acceptors), operation, "WaitUntilFleetActive");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetJobOutcome> WaitUntilJobCreateComplete(const Model::GetJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_COMPLETE"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("UPDATE_IN_PROGRESS"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("UPDATE_FAILED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("UPDATE_SUCCEEDED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("UPLOAD_FAILED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CREATE_FAILED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetJobOutcome;
+    using RequestT = Model::GetJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_IN_PROGRESS"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_FAILED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_SUCCEEDED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPLOAD_FAILED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetJobRequest& req) { return static_cast<DerivedClient*>(this)->GetJob(req); };
-    Aws::Utils::Waiter<Model::GetJobRequest, Model::GetJobOutcome> waiter(1, 120, acceptors, operation, "WaitUntilJobCreateComplete");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(1, 120, std::move(acceptors), operation, "WaitUntilJobCreateComplete");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetJobOutcome> WaitUntilJobComplete(const Model::GetJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("SUCCEEDED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("CANCELED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("SUSPENDED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("NOT_COMPATIBLE"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("ARCHIVED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetJobOutcome;
+    using RequestT = Model::GetJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("FAILED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CANCELED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUSPENDED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("NOT_COMPATIBLE"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ARCHIVED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetJobRequest& req) { return static_cast<DerivedClient*>(this)->GetJob(req); };
-    Aws::Utils::Waiter<Model::GetJobRequest, Model::GetJobOutcome> waiter(15, 240, acceptors, operation, "WaitUntilJobComplete");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(15, 240, std::move(acceptors), operation, "WaitUntilJobComplete");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetJobOutcome> WaitUntilJobSucceeded(const Model::GetJobRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetJobOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("SUCCEEDED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("FAILED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("CANCELED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("SUSPENDED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("NOT_COMPATIBLE"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("ARCHIVED"),
-                         [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetJobOutcome;
+    using RequestT = Model::GetJobRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobSucceededWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobSucceededWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobSucceededWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobSucceededWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("SUSPENDED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobSucceededWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("NOT_COMPATIBLE"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::TaskRunStatusMapper::GetNameForTaskRunStatus(result.GetTaskRunStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "JobSucceededWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ARCHIVED"),
+        [](const Model::GetJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::JobLifecycleStatusMapper::GetNameForJobLifecycleStatus(result.GetLifecycleStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetJobRequest& req) { return static_cast<DerivedClient*>(this)->GetJob(req); };
-    Aws::Utils::Waiter<Model::GetJobRequest, Model::GetJobOutcome> waiter(15, 240, acceptors, operation, "WaitUntilJobSucceeded");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetJob(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(15, 240, std::move(acceptors), operation, "WaitUntilJobSucceeded");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetLicenseEndpointOutcome> WaitUntilLicenseEndpointValid(
       const Model::GetLicenseEndpointRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetLicenseEndpointOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("READY"),
-                         [](const Model::GetLicenseEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::LicenseEndpointStatusMapper::GetNameForLicenseEndpointStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("NOT_READY"),
-                         [](const Model::GetLicenseEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::LicenseEndpointStatusMapper::GetNameForLicenseEndpointStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetLicenseEndpointOutcome;
+    using RequestT = Model::GetLicenseEndpointRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LicenseEndpointValidWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("READY"),
+        [](const Model::GetLicenseEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LicenseEndpointStatusMapper::GetNameForLicenseEndpointStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LicenseEndpointValidWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("NOT_READY"),
+        [](const Model::GetLicenseEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LicenseEndpointStatusMapper::GetNameForLicenseEndpointStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetLicenseEndpointRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetLicenseEndpoint(req);
-    };
-    Aws::Utils::Waiter<Model::GetLicenseEndpointRequest, Model::GetLicenseEndpointOutcome> waiter(10, 114, acceptors, operation,
-                                                                                                  "WaitUntilLicenseEndpointValid");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetLicenseEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 114, std::move(acceptors), operation, "WaitUntilLicenseEndpointValid");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetLicenseEndpointOutcome> WaitUntilLicenseEndpointDeleted(
       const Model::GetLicenseEndpointRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetLicenseEndpointOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::ERROR, Aws::String("ResourceNotFoundException")});
-    acceptors.push_back({Aws::Utils::WaiterState::FAILURE, Aws::Utils::MatcherType::PATH, Aws::String("NOT_READY"),
-                         [](const Model::GetLicenseEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::LicenseEndpointStatusMapper::GetNameForLicenseEndpointStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetLicenseEndpointOutcome;
+    using RequestT = Model::GetLicenseEndpointRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "LicenseEndpointDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "LicenseEndpointDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("NOT_READY"),
+        [](const Model::GetLicenseEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::LicenseEndpointStatusMapper::GetNameForLicenseEndpointStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetLicenseEndpointRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetLicenseEndpoint(req);
-    };
-    Aws::Utils::Waiter<Model::GetLicenseEndpointRequest, Model::GetLicenseEndpointOutcome> waiter(10, 234, acceptors, operation,
-                                                                                                  "WaitUntilLicenseEndpointDeleted");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetLicenseEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 234, std::move(acceptors), operation, "WaitUntilLicenseEndpointDeleted");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetQueueOutcome> WaitUntilQueueSchedulingBlocked(const Model::GetQueueRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetQueueOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("SCHEDULING_BLOCKED"),
-                         [](const Model::GetQueueOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::QueueStatusMapper::GetNameForQueueStatus(result.GetStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetQueueOutcome;
+    using RequestT = Model::GetQueueRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "QueueSchedulingBlockedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SCHEDULING_BLOCKED"),
+        [](const Model::GetQueueOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::QueueStatusMapper::GetNameForQueueStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetQueueRequest& req) { return static_cast<DerivedClient*>(this)->GetQueue(req); };
-    Aws::Utils::Waiter<Model::GetQueueRequest, Model::GetQueueOutcome> waiter(10, 30, acceptors, operation,
-                                                                              "WaitUntilQueueSchedulingBlocked");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetQueue(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 30, std::move(acceptors), operation, "WaitUntilQueueSchedulingBlocked");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetQueueOutcome> WaitUntilQueueScheduling(const Model::GetQueueRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetQueueOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("SCHEDULING"),
-                         [](const Model::GetQueueOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::QueueStatusMapper::GetNameForQueueStatus(result.GetStatus()) == expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetQueueOutcome;
+    using RequestT = Model::GetQueueRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "QueueSchedulingWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SCHEDULING"),
+        [](const Model::GetQueueOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::QueueStatusMapper::GetNameForQueueStatus(result.GetStatus()) == expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetQueueRequest& req) { return static_cast<DerivedClient*>(this)->GetQueue(req); };
-    Aws::Utils::Waiter<Model::GetQueueRequest, Model::GetQueueOutcome> waiter(10, 70, acceptors, operation, "WaitUntilQueueScheduling");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetQueue(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 70, std::move(acceptors), operation, "WaitUntilQueueScheduling");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetQueueFleetAssociationOutcome> WaitUntilQueueFleetAssociationStopped(
       const Model::GetQueueFleetAssociationRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetQueueFleetAssociationOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("STOPPED"),
-                         [](const Model::GetQueueLimitAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::QueueLimitAssociationStatusMapper::GetNameForQueueLimitAssociationStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetQueueFleetAssociationOutcome;
+    using RequestT = Model::GetQueueFleetAssociationRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "QueueFleetAssociationStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STOPPED"),
+        [](const Model::GetQueueLimitAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::QueueLimitAssociationStatusMapper::GetNameForQueueLimitAssociationStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetQueueFleetAssociationRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetQueueFleetAssociation(req);
-    };
-    Aws::Utils::Waiter<Model::GetQueueFleetAssociationRequest, Model::GetQueueFleetAssociationOutcome> waiter(
-        10, 60, acceptors, operation, "WaitUntilQueueFleetAssociationStopped");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetQueueFleetAssociation(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 60, std::move(acceptors), operation, "WaitUntilQueueFleetAssociationStopped");
     return waiter.Wait(request);
   }
 
   Aws::Utils::WaiterOutcome<Model::GetQueueLimitAssociationOutcome> WaitUntilQueueLimitAssociationStopped(
       const Model::GetQueueLimitAssociationRequest& request) {
-    std::vector<Aws::Utils::Acceptor<Model::GetQueueLimitAssociationOutcome>> acceptors;
-    acceptors.push_back({Aws::Utils::WaiterState::SUCCESS, Aws::Utils::MatcherType::PATH, Aws::String("STOPPED"),
-                         [](const Model::GetQueueLimitAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
-                           if (!outcome.IsSuccess()) return false;
-                           const auto& result = outcome.GetResult();
-                           return Model::QueueLimitAssociationStatusMapper::GetNameForQueueLimitAssociationStatus(result.GetStatus()) ==
-                                  expected.get<Aws::String>();
-                         }});
+    using OutcomeT = Model::GetQueueLimitAssociationOutcome;
+    using RequestT = Model::GetQueueLimitAssociationRequest;
+    std::vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "QueueLimitAssociationStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STOPPED"),
+        [](const Model::GetQueueLimitAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::QueueLimitAssociationStatusMapper::GetNameForQueueLimitAssociationStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
+        }));
 
-    auto operation = [this](const Model::GetQueueLimitAssociationRequest& req) {
-      return static_cast<DerivedClient*>(this)->GetQueueLimitAssociation(req);
-    };
-    Aws::Utils::Waiter<Model::GetQueueLimitAssociationRequest, Model::GetQueueLimitAssociationOutcome> waiter(
-        10, 60, acceptors, operation, "WaitUntilQueueLimitAssociationStopped");
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetQueueLimitAssociation(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(10, 60, std::move(acceptors), operation, "WaitUntilQueueLimitAssociationStopped");
     return waiter.Wait(request);
   }
 };
