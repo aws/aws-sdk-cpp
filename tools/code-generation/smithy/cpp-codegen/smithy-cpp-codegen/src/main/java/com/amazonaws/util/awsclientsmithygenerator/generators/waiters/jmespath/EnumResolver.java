@@ -14,6 +14,7 @@ import software.amazon.smithy.jmespath.ast.Subexpression;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.Shape;
+import software.amazon.smithy.model.traits.EnumTrait;
 
 /**
  * Walks the Smithy model along the JmesPath field path to determine if the leaf
@@ -30,8 +31,13 @@ public class EnumResolver {
         if (model == null || operation == null) return null;
         Shape current = model.expectShape(operation.getOutputShape());
         current = walkExpression(expr, current, model);
-        if (current != null && current.isEnumShape()) {
-            return new EnumInfo(current.getId().getName());
+        if (current != null) {
+            if (current.isEnumShape()) {
+                return new EnumInfo(current.getId().getName());
+            }
+            if (current.isStringShape() && current.hasTrait(EnumTrait.class)) {
+                return new EnumInfo(current.getId().getName());
+            }
         }
         return null;
     }

@@ -33,6 +33,16 @@
 #include <aws/omics/model/GetWorkflowResult.h>
 #include <aws/omics/model/GetWorkflowVersionRequest.h>
 #include <aws/omics/model/GetWorkflowVersionResult.h>
+#include <aws/omics/model/JobStatus.h>
+#include <aws/omics/model/ReadSetActivationJobStatus.h>
+#include <aws/omics/model/ReadSetExportJobStatus.h>
+#include <aws/omics/model/ReadSetImportJobStatus.h>
+#include <aws/omics/model/ReferenceImportJobStatus.h>
+#include <aws/omics/model/RunStatus.h>
+#include <aws/omics/model/StoreStatus.h>
+#include <aws/omics/model/TaskStatus.h>
+#include <aws/omics/model/VersionStatus.h>
+#include <aws/omics/model/WorkflowStatus.h>
 
 #include <algorithm>
 
@@ -52,35 +62,35 @@ class OmicsWaiter {
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnnotationImportJobCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("IN_PROGRESS"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnnotationImportJobCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnnotationImportJobCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CANCELLED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnnotationImportJobCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetAnnotationImportJob(req); };
@@ -98,28 +108,28 @@ class OmicsWaiter {
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnnotationStoreCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnnotationStoreCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnnotationStoreCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetAnnotationStore(req); };
@@ -137,7 +147,7 @@ class OmicsWaiter {
         [](const Model::GetVariantStoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::StoreStatusMapper::GetNameForStoreStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "AnnotationStoreDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
@@ -146,7 +156,7 @@ class OmicsWaiter {
         [](const Model::GetVariantStoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::StoreStatusMapper::GetNameForStoreStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetAnnotationStore(req); };
@@ -164,28 +174,28 @@ class OmicsWaiter {
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnnotationStoreVersionCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnnotationStoreVersionCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnnotationStoreVersionCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetAnnotationStoreVersion(req); };
@@ -203,7 +213,7 @@ class OmicsWaiter {
         [](const Model::GetVariantStoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::StoreStatusMapper::GetNameForStoreStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "AnnotationStoreVersionDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
@@ -212,7 +222,7 @@ class OmicsWaiter {
         [](const Model::GetVariantStoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::StoreStatusMapper::GetNameForStoreStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetAnnotationStoreVersion(req); };
@@ -230,49 +240,51 @@ class OmicsWaiter {
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetActivationJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("SUBMITTED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetActivationJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("IN_PROGRESS"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetActivationJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CANCELLING"),
         [](const Model::GetReferenceImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::ReferenceImportJobStatusMapper::GetNameForReferenceImportJobStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetActivationJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELLED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetActivationJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetActivationJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("COMPLETED_WITH_FAILURES"),
         [](const Model::GetReferenceImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::ReferenceImportJobStatusMapper::GetNameForReferenceImportJobStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetReadSetActivationJob(req); };
@@ -290,49 +302,51 @@ class OmicsWaiter {
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetExportJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("SUBMITTED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetExportJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("IN_PROGRESS"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetExportJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CANCELLING"),
         [](const Model::GetReferenceImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::ReferenceImportJobStatusMapper::GetNameForReferenceImportJobStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetExportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELLED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetExportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetExportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("COMPLETED_WITH_FAILURES"),
         [](const Model::GetReferenceImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::ReferenceImportJobStatusMapper::GetNameForReferenceImportJobStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetReadSetExportJob(req); };
@@ -350,49 +364,51 @@ class OmicsWaiter {
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetImportJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("SUBMITTED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetImportJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("IN_PROGRESS"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetImportJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CANCELLING"),
         [](const Model::GetReferenceImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::ReferenceImportJobStatusMapper::GetNameForReferenceImportJobStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetImportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELLED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetImportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReadSetImportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("COMPLETED_WITH_FAILURES"),
         [](const Model::GetReferenceImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::ReferenceImportJobStatusMapper::GetNameForReferenceImportJobStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetReadSetImportJob(req); };
@@ -410,49 +426,51 @@ class OmicsWaiter {
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReferenceImportJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("SUBMITTED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReferenceImportJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("IN_PROGRESS"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReferenceImportJobCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CANCELLING"),
         [](const Model::GetReferenceImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::ReferenceImportJobStatusMapper::GetNameForReferenceImportJobStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReferenceImportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELLED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReferenceImportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReferenceImportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("COMPLETED_WITH_FAILURES"),
         [](const Model::GetReferenceImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::ReferenceImportJobStatusMapper::GetNameForReferenceImportJobStatus(result.GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetReferenceImportJob(req); };
@@ -469,35 +487,35 @@ class OmicsWaiter {
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RunRunningWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RunRunningWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RunRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RunRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELLED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRun(req); };
@@ -514,42 +532,42 @@ class OmicsWaiter {
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RunCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RunCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RunCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("RUNNING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RunCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STOPPING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RunCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRun(req); };
@@ -566,35 +584,35 @@ class OmicsWaiter {
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TaskRunningWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TaskRunningWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TaskRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TaskRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELLED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRunTask(req); };
@@ -611,42 +629,42 @@ class OmicsWaiter {
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TaskCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TaskCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TaskCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("RUNNING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TaskCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STOPPING"),
         [](const Model::GetRunTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::TaskStatusMapper::GetNameForTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TaskCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRunTask(req); };
@@ -664,35 +682,35 @@ class OmicsWaiter {
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VariantImportJobCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("IN_PROGRESS"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VariantImportJobCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VariantImportJobCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CANCELLED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VariantImportJobCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
         [](const Model::GetVariantImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::JobStatusMapper::GetNameForJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetVariantImportJob(req); };
@@ -709,28 +727,28 @@ class OmicsWaiter {
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VariantStoreCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VariantStoreCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VariantStoreCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetVariantStore(req); };
@@ -747,7 +765,7 @@ class OmicsWaiter {
         [](const Model::GetVariantStoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::StoreStatusMapper::GetNameForStoreStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "VariantStoreDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
@@ -756,7 +774,7 @@ class OmicsWaiter {
         [](const Model::GetVariantStoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::StoreStatusMapper::GetNameForStoreStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetVariantStore(req); };
@@ -773,28 +791,28 @@ class OmicsWaiter {
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkflowActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkflowActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkflowActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetWorkflow(req); };
@@ -812,28 +830,28 @@ class OmicsWaiter {
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkflowVersionActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkflowVersionActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkflowVersionActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetWorkflowVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetStatus() == expected.get<Aws::String>();
+          return Model::WorkflowStatusMapper::GetNameForWorkflowStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetWorkflowVersion(req); };

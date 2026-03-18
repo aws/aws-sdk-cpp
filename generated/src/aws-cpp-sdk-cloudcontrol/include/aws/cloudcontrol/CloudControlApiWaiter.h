@@ -7,6 +7,7 @@
 #include <aws/cloudcontrol/CloudControlApiClient.h>
 #include <aws/cloudcontrol/model/GetResourceRequestStatusRequest.h>
 #include <aws/cloudcontrol/model/GetResourceRequestStatusResult.h>
+#include <aws/cloudcontrol/model/OperationStatus.h>
 #include <aws/core/utils/Waiter.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 
@@ -28,21 +29,24 @@ class CloudControlApiWaiter {
         [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetProgressEvent().GetOperationStatus() == expected.get<Aws::String>();
+          return Model::OperationStatusMapper::GetNameForOperationStatus(result.GetProgressEvent().GetOperationStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResourceRequestSuccessWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetProgressEvent().GetOperationStatus() == expected.get<Aws::String>();
+          return Model::OperationStatusMapper::GetNameForOperationStatus(result.GetProgressEvent().GetOperationStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResourceRequestSuccessWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCEL_COMPLETE"),
         [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetProgressEvent().GetOperationStatus() == expected.get<Aws::String>();
+          return Model::OperationStatusMapper::GetNameForOperationStatus(result.GetProgressEvent().GetOperationStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetResourceRequestStatus(req); };

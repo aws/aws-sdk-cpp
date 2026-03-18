@@ -12,6 +12,8 @@
 #include <aws/amp/model/DescribeScraperResult.h>
 #include <aws/amp/model/DescribeWorkspaceRequest.h>
 #include <aws/amp/model/DescribeWorkspaceResult.h>
+#include <aws/amp/model/ScraperStatusCode.h>
+#include <aws/amp/model/WorkspaceStatusCode.h>
 #include <aws/core/utils/Waiter.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 
@@ -88,14 +90,16 @@ class PrometheusServiceWaiter {
         [](const Model::DescribeScraperOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetScraper().GetStatus().GetStatusCode() == expected.get<Aws::String>();
+          return Model::ScraperStatusCodeMapper::GetNameForScraperStatusCode(result.GetScraper().GetStatus().GetStatusCode()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ScraperActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATION_FAILED"),
         [](const Model::DescribeScraperOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetScraper().GetStatus().GetStatusCode() == expected.get<Aws::String>();
+          return Model::ScraperStatusCodeMapper::GetNameForScraperStatusCode(result.GetScraper().GetStatus().GetStatusCode()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeScraper(req); };
@@ -114,7 +118,8 @@ class PrometheusServiceWaiter {
         [](const Model::DescribeScraperOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetScraper().GetStatus().GetStatusCode() == expected.get<Aws::String>();
+          return Model::ScraperStatusCodeMapper::GetNameForScraperStatusCode(result.GetScraper().GetStatus().GetStatusCode()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeScraper(req); };
@@ -131,21 +136,24 @@ class PrometheusServiceWaiter {
         [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetWorkspace().GetStatus().GetStatusCode() == expected.get<Aws::String>();
+          return Model::WorkspaceStatusCodeMapper::GetNameForWorkspaceStatusCode(result.GetWorkspace().GetStatus().GetStatusCode()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkspaceActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
         [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetWorkspace().GetStatus().GetStatusCode() == expected.get<Aws::String>();
+          return Model::WorkspaceStatusCodeMapper::GetNameForWorkspaceStatusCode(result.GetWorkspace().GetStatus().GetStatusCode()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkspaceActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
         [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetWorkspace().GetStatus().GetStatusCode() == expected.get<Aws::String>();
+          return Model::WorkspaceStatusCodeMapper::GetNameForWorkspaceStatusCode(result.GetWorkspace().GetStatus().GetStatusCode()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeWorkspace(req); };
@@ -164,7 +172,8 @@ class PrometheusServiceWaiter {
         [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetWorkspace().GetStatus().GetStatusCode() == expected.get<Aws::String>();
+          return Model::WorkspaceStatusCodeMapper::GetNameForWorkspaceStatusCode(result.GetWorkspace().GetStatus().GetStatusCode()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeWorkspace(req); };

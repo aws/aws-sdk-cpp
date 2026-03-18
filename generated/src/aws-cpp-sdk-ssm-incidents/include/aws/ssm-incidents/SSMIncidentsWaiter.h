@@ -9,6 +9,7 @@
 #include <aws/ssm-incidents/SSMIncidentsClient.h>
 #include <aws/ssm-incidents/model/GetReplicationSetRequest.h>
 #include <aws/ssm-incidents/model/GetReplicationSetResult.h>
+#include <aws/ssm-incidents/model/ReplicationSetStatus.h>
 
 #include <algorithm>
 
@@ -28,28 +29,32 @@ class SSMIncidentsWaiter {
         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+          return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+          return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+          return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+          return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetReplicationSet(req); };
@@ -69,14 +74,16 @@ class SSMIncidentsWaiter {
         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+          return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WaitForReplicationSetDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetReplicationSet().GetStatus() == expected.get<Aws::String>();
+          return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetReplicationSet(req); };

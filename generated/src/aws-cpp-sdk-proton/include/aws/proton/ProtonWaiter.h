@@ -7,6 +7,7 @@
 #include <aws/core/utils/Waiter.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/proton/ProtonClient.h>
+#include <aws/proton/model/DeploymentStatus.h>
 #include <aws/proton/model/GetComponentRequest.h>
 #include <aws/proton/model/GetComponentResult.h>
 #include <aws/proton/model/GetEnvironmentRequest.h>
@@ -19,6 +20,8 @@
 #include <aws/proton/model/GetServiceResult.h>
 #include <aws/proton/model/GetServiceTemplateVersionRequest.h>
 #include <aws/proton/model/GetServiceTemplateVersionResult.h>
+#include <aws/proton/model/ServiceStatus.h>
+#include <aws/proton/model/TemplateVersionStatus.h>
 
 #include <algorithm>
 
@@ -37,14 +40,16 @@ class ProtonWaiter {
         [](const Model::GetComponentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetComponent().GetDeploymentStatus() == expected.get<Aws::String>();
+          return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetComponent().GetDeploymentStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ComponentDeployedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetComponentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetComponent().GetDeploymentStatus() == expected.get<Aws::String>();
+          return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetComponent().GetDeploymentStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetComponent(req); };
@@ -63,7 +68,8 @@ class ProtonWaiter {
         [](const Model::GetComponentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetComponent().GetDeploymentStatus() == expected.get<Aws::String>();
+          return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetComponent().GetDeploymentStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetComponent(req); };
@@ -80,14 +86,16 @@ class ProtonWaiter {
         [](const Model::GetEnvironmentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetEnvironment().GetDeploymentStatus() == expected.get<Aws::String>();
+          return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetEnvironment().GetDeploymentStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentDeployedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetEnvironmentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetEnvironment().GetDeploymentStatus() == expected.get<Aws::String>();
+          return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetEnvironment().GetDeploymentStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetEnvironment(req); };
@@ -105,21 +113,24 @@ class ProtonWaiter {
         [](const Model::GetEnvironmentTemplateVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetEnvironmentTemplateVersion().GetStatus() == expected.get<Aws::String>();
+          return Model::TemplateVersionStatusMapper::GetNameForTemplateVersionStatus(result.GetEnvironmentTemplateVersion().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentTemplateVersionRegisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("PUBLISHED"),
         [](const Model::GetEnvironmentTemplateVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetEnvironmentTemplateVersion().GetStatus() == expected.get<Aws::String>();
+          return Model::TemplateVersionStatusMapper::GetNameForTemplateVersionStatus(result.GetEnvironmentTemplateVersion().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentTemplateVersionRegisteredWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REGISTRATION_FAILED"),
         [](const Model::GetEnvironmentTemplateVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetEnvironmentTemplateVersion().GetStatus() == expected.get<Aws::String>();
+          return Model::TemplateVersionStatusMapper::GetNameForTemplateVersionStatus(result.GetEnvironmentTemplateVersion().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetEnvironmentTemplateVersion(req); };
@@ -136,28 +147,28 @@ class ProtonWaiter {
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetStatus() == expected.get<Aws::String>();
+          return Model::ServiceStatusMapper::GetNameForServiceStatus(result.GetService().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED_CLEANUP_COMPLETE"),
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetStatus() == expected.get<Aws::String>();
+          return Model::ServiceStatusMapper::GetNameForServiceStatus(result.GetService().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED_CLEANUP_FAILED"),
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetStatus() == expected.get<Aws::String>();
+          return Model::ServiceStatusMapper::GetNameForServiceStatus(result.GetService().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetStatus() == expected.get<Aws::String>();
+          return Model::ServiceStatusMapper::GetNameForServiceStatus(result.GetService().GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetService(req); };
@@ -174,35 +185,35 @@ class ProtonWaiter {
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetStatus() == expected.get<Aws::String>();
+          return Model::ServiceStatusMapper::GetNameForServiceStatus(result.GetService().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceUpdatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_FAILED_CLEANUP_COMPLETE"),
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetStatus() == expected.get<Aws::String>();
+          return Model::ServiceStatusMapper::GetNameForServiceStatus(result.GetService().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceUpdatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_FAILED_CLEANUP_FAILED"),
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetStatus() == expected.get<Aws::String>();
+          return Model::ServiceStatusMapper::GetNameForServiceStatus(result.GetService().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceUpdatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_FAILED"),
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetStatus() == expected.get<Aws::String>();
+          return Model::ServiceStatusMapper::GetNameForServiceStatus(result.GetService().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceUpdatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_COMPLETE_CLEANUP_FAILED"),
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetStatus() == expected.get<Aws::String>();
+          return Model::ServiceStatusMapper::GetNameForServiceStatus(result.GetService().GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetService(req); };
@@ -221,7 +232,7 @@ class ProtonWaiter {
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetStatus() == expected.get<Aws::String>();
+          return Model::ServiceStatusMapper::GetNameForServiceStatus(result.GetService().GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetService(req); };
@@ -238,14 +249,16 @@ class ProtonWaiter {
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetPipeline().GetDeploymentStatus() == expected.get<Aws::String>();
+          return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetService().GetPipeline().GetDeploymentStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicePipelineDeployedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetServiceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetService().GetPipeline().GetDeploymentStatus() == expected.get<Aws::String>();
+          return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetService().GetPipeline().GetDeploymentStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetService(req); };
@@ -263,14 +276,16 @@ class ProtonWaiter {
         [](const Model::GetServiceInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetServiceInstance().GetDeploymentStatus() == expected.get<Aws::String>();
+          return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetServiceInstance().GetDeploymentStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceInstanceDeployedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
         [](const Model::GetServiceInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetServiceInstance().GetDeploymentStatus() == expected.get<Aws::String>();
+          return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetServiceInstance().GetDeploymentStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetServiceInstance(req); };
@@ -288,21 +303,24 @@ class ProtonWaiter {
         [](const Model::GetServiceTemplateVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetServiceTemplateVersion().GetStatus() == expected.get<Aws::String>();
+          return Model::TemplateVersionStatusMapper::GetNameForTemplateVersionStatus(result.GetServiceTemplateVersion().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceTemplateVersionRegisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("PUBLISHED"),
         [](const Model::GetServiceTemplateVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetServiceTemplateVersion().GetStatus() == expected.get<Aws::String>();
+          return Model::TemplateVersionStatusMapper::GetNameForTemplateVersionStatus(result.GetServiceTemplateVersion().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServiceTemplateVersionRegisteredWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REGISTRATION_FAILED"),
         [](const Model::GetServiceTemplateVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return result.GetServiceTemplateVersion().GetStatus() == expected.get<Aws::String>();
+          return Model::TemplateVersionStatusMapper::GetNameForTemplateVersionStatus(result.GetServiceTemplateVersion().GetStatus()) ==
+                 expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetServiceTemplateVersion(req); };
