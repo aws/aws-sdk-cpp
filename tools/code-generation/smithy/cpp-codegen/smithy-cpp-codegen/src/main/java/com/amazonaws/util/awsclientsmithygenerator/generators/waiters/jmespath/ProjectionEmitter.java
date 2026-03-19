@@ -6,11 +6,13 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.waiters.jmespath;
 
 import software.amazon.smithy.jmespath.JmespathExpression;
 import software.amazon.smithy.jmespath.ast.CurrentExpression;
+import software.amazon.smithy.jmespath.ast.FieldExpression;
 import software.amazon.smithy.jmespath.ast.FlattenExpression;
 import software.amazon.smithy.jmespath.ast.ObjectProjectionExpression;
 import software.amazon.smithy.jmespath.ast.ProjectionExpression;
 import software.amazon.smithy.jmespath.ast.Subexpression;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.MapShape;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.Shape;
 
@@ -148,10 +150,11 @@ public class ProjectionEmitter extends UnsupportedExpressionVisitor<String> {
     @Override
     public String visitObjectProjection(ObjectProjectionExpression expression) {
         String mapGetter = expression.getLeft().accept(new CollectionGetterEmitter());
-        return emitMapProjection(mapGetter, expression.getRight());
+        MapTypeInfo mapTypeInfo = resolveMapTypes(expression.getLeft());
+        return emitMapProjection(mapGetter, expression.getRight(), mapTypeInfo);
     }
 
-    String emitMapProjection(String mapGetter, JmespathExpression right) {
+    String emitMapProjection(String mapGetter, JmespathExpression right, MapTypeInfo mapTypeInfo) {
         String mapPrefix = depth == 0
                 ? "result" + mapGetter
                 : itemVar(depth - 1) + mapGetter;
@@ -164,8 +167,9 @@ public class ProjectionEmitter extends UnsupportedExpressionVisitor<String> {
         sb.append(indent).append("return ").append(algo).append("(")
                 .append(mapPrefix).append(".begin(), ")
                 .append(mapPrefix).append(".end(),\n");
-        sb.append(indent).append("    [&](const auto& ").append(pairName).append(") {\n");
-        sb.append(indent).append("    const auto& ").append(itemName)
+        sb.append(indent).append("    [&](const std::pair<const ").append(mapTypeInfo.keyType)
+                .append(", ").append(mapTypeInfo.valueType).append(">& ").append(pairName).append(") {\n");
+        sb.append(indent).append("    const ").append(mapTypeInfo.valueType).append("& ").append(itemName)
                 .append(" = ").append(pairName).append(".second;\n");
 
         if (right != null && !(right instanceof CurrentExpression)) {
@@ -174,6 +178,44 @@ public class ProjectionEmitter extends UnsupportedExpressionVisitor<String> {
 
         sb.append(indent).append("    });\n");
         return sb.toString();
+    }
+
+    private MapTypeInfo resolveMapTypes(JmespathExpression mapExpr) {
+        if (model == null || operation == null) {
+            return new MapTypeInfo("Aws::String", "auto");
+        }
+        Shape current = model.expectShape(operation.getOutputShape());
+        Shape mapShape = walkToMapShape(mapExpr, current);
+        if (mapShape == null || !mapShape.isMapShape()) {
+            return new MapTypeInfo("Aws::String", "auto");
+        }
+        MapShape map = mapShape.asMapShape().get();
+        String keyType = model.getShape(map.getKey().getTarget())
+                .map(this::resolveKeyType).orElse("Aws::String");
+        String valueType = model.getShape(map.getValue().getTarget())
+                .filter(Shape::isStructureShape)
+                .map(s -> CollectionElementTypeResolver.shapeToTypeName(s, smithyServiceName))
+                .orElse("auto");
+        return new MapTypeInfo(keyType, valueType);
+    }
+
+    private Shape walkToMapShape(JmespathExpression expr, Shape current) {
+        if (expr instanceof FieldExpression) {
+            String fieldName = ((FieldExpression) expr).getName();
+            return current.asStructureShape()
+                    .flatMap(s -> s.getMember(fieldName))
+                    .flatMap(m -> model.getShape(m.getTarget()))
+                    .orElse(null);
+        } else if (expr instanceof Subexpression) {
+            Subexpression sub = (Subexpression) expr;
+            Shape afterLeft = walkToMapShape(sub.getLeft(), current);
+            return afterLeft != null ? walkToMapShape(sub.getRight(), afterLeft) : null;
+        }
+        return null;
+    }
+
+    private String resolveKeyType(Shape keyShape) {
+        return keyShape.isStringShape() ? "Aws::String" : "auto";
     }
 
     private NestedProjectionInfo extractNestedProjection(JmespathExpression left) {

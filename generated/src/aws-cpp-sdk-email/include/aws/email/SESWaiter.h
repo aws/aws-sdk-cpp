@@ -29,11 +29,12 @@ class SESWaiter {
         [](const Model::GetIdentityVerificationAttributesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return std::all_of(result.GetVerificationAttributes().begin(), result.GetVerificationAttributes().end(), [&](const auto& pair0) {
-            const auto& item = pair0.second;
-            return Model::VerificationStatusMapper::GetNameForVerificationStatus(item.GetVerificationStatus()) ==
-                   expected.get<Aws::String>();
-          });
+          return std::all_of(result.GetVerificationAttributes().begin(), result.GetVerificationAttributes().end(),
+                             [&](const std::pair<const Aws::String, Model::IdentityVerificationAttributes>& pair0) {
+                               const Model::IdentityVerificationAttributes& item = pair0.second;
+                               return Model::VerificationStatusMapper::GetNameForVerificationStatus(item.GetVerificationStatus()) ==
+                                      expected.get<Aws::String>();
+                             });
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetIdentityVerificationAttributes(req); };

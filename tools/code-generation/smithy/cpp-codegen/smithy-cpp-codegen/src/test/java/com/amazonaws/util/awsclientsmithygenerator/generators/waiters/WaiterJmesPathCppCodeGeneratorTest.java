@@ -644,9 +644,7 @@ class WaiterJmesPathCppCodeGeneratorTest {
             assertContains(code, ".second");
         }
 
-        @Test
-        void objectProjection_enumLeaf_wrapsInMapper() {
-            // Models SES: VerificationAttributes.*.VerificationStatus where VerificationStatus is an enum
+        private Model buildMapModel() {
             EnumShape enumShape = EnumShape.builder()
                 .id("test.ns#VerificationStatus")
                 .addMember("Success", "Success")
@@ -674,9 +672,14 @@ class WaiterJmesPathCppCodeGeneratorTest {
                 .input(inputShape.getId())
                 .output(outputShape.getId())
                 .build();
-            Model model = Model.builder()
+            return Model.builder()
                 .addShapes(enumShape, attrShape, mapShape, outputShape, inputShape, opShape)
                 .build();
+        }
+
+        @Test
+        void objectProjection_enumLeaf_wrapsInMapper() {
+            Model model = buildMapModel();
             OperationShape op = model.expectShape(
                 ShapeId.from("test.ns#GetIdentityVerificationAttributes"), OperationShape.class);
 
@@ -688,6 +691,24 @@ class WaiterJmesPathCppCodeGeneratorTest {
                 "VerificationStatusMapper::GetNameForVerificationStatus(item.GetVerificationStatus())");
             assertContains(result.getCode(), ".second");
             assertEquals(Set.of("VerificationStatus"), result.getEnumIncludes());
+        }
+
+        @Test
+        void objectProjection_withModel_usesConcreteMapTypes() {
+            Model model = buildMapModel();
+            OperationShape op = model.expectShape(
+                ShapeId.from("test.ns#GetIdentityVerificationAttributes"), OperationShape.class);
+
+            var result = WaiterJmesPathCppCodeGenerator.generate(
+                "VerificationAttributes.*.VerificationStatus",
+                PathComparator.ALL_STRING_EQUALS, OUTCOME, model, op, "testService");
+
+            assertContains(result.getCode(),
+                "std::pair<const Aws::String, Model::IdentityVerificationAttributes>& pair0");
+            assertContains(result.getCode(),
+                "const Model::IdentityVerificationAttributes& item");
+            assertFalse(result.getCode().contains("const auto& pair"));
+            assertFalse(result.getCode().contains("const auto& item"));
         }
 
         @Test
