@@ -23,11 +23,13 @@
 #include <aws/batch/model/CreateComputeEnvironmentResult.h>
 #include <aws/batch/model/CreateConsumableResourceResult.h>
 #include <aws/batch/model/CreateJobQueueResult.h>
+#include <aws/batch/model/CreateQuotaShareResult.h>
 #include <aws/batch/model/CreateSchedulingPolicyResult.h>
 #include <aws/batch/model/CreateServiceEnvironmentResult.h>
 #include <aws/batch/model/DeleteComputeEnvironmentResult.h>
 #include <aws/batch/model/DeleteConsumableResourceResult.h>
 #include <aws/batch/model/DeleteJobQueueResult.h>
+#include <aws/batch/model/DeleteQuotaShareResult.h>
 #include <aws/batch/model/DeleteSchedulingPolicyResult.h>
 #include <aws/batch/model/DeleteServiceEnvironmentResult.h>
 #include <aws/batch/model/DeregisterJobDefinitionResult.h>
@@ -39,6 +41,7 @@
 #include <aws/batch/model/DescribeJobQueuesRequest.h>
 #include <aws/batch/model/DescribeJobQueuesResult.h>
 #include <aws/batch/model/DescribeJobsResult.h>
+#include <aws/batch/model/DescribeQuotaShareResult.h>
 #include <aws/batch/model/DescribeSchedulingPoliciesResult.h>
 #include <aws/batch/model/DescribeServiceEnvironmentsRequest.h>
 #include <aws/batch/model/DescribeServiceEnvironmentsResult.h>
@@ -49,6 +52,7 @@
 #include <aws/batch/model/ListJobsByConsumableResourceResult.h>
 #include <aws/batch/model/ListJobsRequest.h>
 #include <aws/batch/model/ListJobsResult.h>
+#include <aws/batch/model/ListQuotaSharesResult.h>
 #include <aws/batch/model/ListSchedulingPoliciesRequest.h>
 #include <aws/batch/model/ListSchedulingPoliciesResult.h>
 #include <aws/batch/model/ListServiceJobsRequest.h>
@@ -64,8 +68,10 @@
 #include <aws/batch/model/UpdateComputeEnvironmentResult.h>
 #include <aws/batch/model/UpdateConsumableResourceResult.h>
 #include <aws/batch/model/UpdateJobQueueResult.h>
+#include <aws/batch/model/UpdateQuotaShareResult.h>
 #include <aws/batch/model/UpdateSchedulingPolicyResult.h>
 #include <aws/batch/model/UpdateServiceEnvironmentResult.h>
+#include <aws/batch/model/UpdateServiceJobResult.h>
 /* End of service model headers required in BatchClient header */
 
 namespace Aws {
@@ -103,11 +109,13 @@ class CancelJobRequest;
 class CreateComputeEnvironmentRequest;
 class CreateConsumableResourceRequest;
 class CreateJobQueueRequest;
+class CreateQuotaShareRequest;
 class CreateSchedulingPolicyRequest;
 class CreateServiceEnvironmentRequest;
 class DeleteComputeEnvironmentRequest;
 class DeleteConsumableResourceRequest;
 class DeleteJobQueueRequest;
+class DeleteQuotaShareRequest;
 class DeleteSchedulingPolicyRequest;
 class DeleteServiceEnvironmentRequest;
 class DeregisterJobDefinitionRequest;
@@ -116,6 +124,7 @@ class DescribeConsumableResourceRequest;
 class DescribeJobDefinitionsRequest;
 class DescribeJobQueuesRequest;
 class DescribeJobsRequest;
+class DescribeQuotaShareRequest;
 class DescribeSchedulingPoliciesRequest;
 class DescribeServiceEnvironmentsRequest;
 class DescribeServiceJobRequest;
@@ -123,6 +132,7 @@ class GetJobQueueSnapshotRequest;
 class ListConsumableResourcesRequest;
 class ListJobsRequest;
 class ListJobsByConsumableResourceRequest;
+class ListQuotaSharesRequest;
 class ListSchedulingPoliciesRequest;
 class ListServiceJobsRequest;
 class ListTagsForResourceRequest;
@@ -136,8 +146,10 @@ class UntagResourceRequest;
 class UpdateComputeEnvironmentRequest;
 class UpdateConsumableResourceRequest;
 class UpdateJobQueueRequest;
+class UpdateQuotaShareRequest;
 class UpdateSchedulingPolicyRequest;
 class UpdateServiceEnvironmentRequest;
+class UpdateServiceJobRequest;
 /* End of service model forward declarations required in BatchClient header */
 
 /* Service model Outcome class definitions */
@@ -145,11 +157,13 @@ typedef Aws::Utils::Outcome<CancelJobResult, BatchError> CancelJobOutcome;
 typedef Aws::Utils::Outcome<CreateComputeEnvironmentResult, BatchError> CreateComputeEnvironmentOutcome;
 typedef Aws::Utils::Outcome<CreateConsumableResourceResult, BatchError> CreateConsumableResourceOutcome;
 typedef Aws::Utils::Outcome<CreateJobQueueResult, BatchError> CreateJobQueueOutcome;
+typedef Aws::Utils::Outcome<CreateQuotaShareResult, BatchError> CreateQuotaShareOutcome;
 typedef Aws::Utils::Outcome<CreateSchedulingPolicyResult, BatchError> CreateSchedulingPolicyOutcome;
 typedef Aws::Utils::Outcome<CreateServiceEnvironmentResult, BatchError> CreateServiceEnvironmentOutcome;
 typedef Aws::Utils::Outcome<DeleteComputeEnvironmentResult, BatchError> DeleteComputeEnvironmentOutcome;
 typedef Aws::Utils::Outcome<DeleteConsumableResourceResult, BatchError> DeleteConsumableResourceOutcome;
 typedef Aws::Utils::Outcome<DeleteJobQueueResult, BatchError> DeleteJobQueueOutcome;
+typedef Aws::Utils::Outcome<DeleteQuotaShareResult, BatchError> DeleteQuotaShareOutcome;
 typedef Aws::Utils::Outcome<DeleteSchedulingPolicyResult, BatchError> DeleteSchedulingPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteServiceEnvironmentResult, BatchError> DeleteServiceEnvironmentOutcome;
 typedef Aws::Utils::Outcome<DeregisterJobDefinitionResult, BatchError> DeregisterJobDefinitionOutcome;
@@ -158,6 +172,7 @@ typedef Aws::Utils::Outcome<DescribeConsumableResourceResult, BatchError> Descri
 typedef Aws::Utils::Outcome<DescribeJobDefinitionsResult, BatchError> DescribeJobDefinitionsOutcome;
 typedef Aws::Utils::Outcome<DescribeJobQueuesResult, BatchError> DescribeJobQueuesOutcome;
 typedef Aws::Utils::Outcome<DescribeJobsResult, BatchError> DescribeJobsOutcome;
+typedef Aws::Utils::Outcome<DescribeQuotaShareResult, BatchError> DescribeQuotaShareOutcome;
 typedef Aws::Utils::Outcome<DescribeSchedulingPoliciesResult, BatchError> DescribeSchedulingPoliciesOutcome;
 typedef Aws::Utils::Outcome<DescribeServiceEnvironmentsResult, BatchError> DescribeServiceEnvironmentsOutcome;
 typedef Aws::Utils::Outcome<DescribeServiceJobResult, BatchError> DescribeServiceJobOutcome;
@@ -165,6 +180,7 @@ typedef Aws::Utils::Outcome<GetJobQueueSnapshotResult, BatchError> GetJobQueueSn
 typedef Aws::Utils::Outcome<ListConsumableResourcesResult, BatchError> ListConsumableResourcesOutcome;
 typedef Aws::Utils::Outcome<ListJobsResult, BatchError> ListJobsOutcome;
 typedef Aws::Utils::Outcome<ListJobsByConsumableResourceResult, BatchError> ListJobsByConsumableResourceOutcome;
+typedef Aws::Utils::Outcome<ListQuotaSharesResult, BatchError> ListQuotaSharesOutcome;
 typedef Aws::Utils::Outcome<ListSchedulingPoliciesResult, BatchError> ListSchedulingPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListServiceJobsResult, BatchError> ListServiceJobsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BatchError> ListTagsForResourceOutcome;
@@ -178,8 +194,10 @@ typedef Aws::Utils::Outcome<UntagResourceResult, BatchError> UntagResourceOutcom
 typedef Aws::Utils::Outcome<UpdateComputeEnvironmentResult, BatchError> UpdateComputeEnvironmentOutcome;
 typedef Aws::Utils::Outcome<UpdateConsumableResourceResult, BatchError> UpdateConsumableResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateJobQueueResult, BatchError> UpdateJobQueueOutcome;
+typedef Aws::Utils::Outcome<UpdateQuotaShareResult, BatchError> UpdateQuotaShareOutcome;
 typedef Aws::Utils::Outcome<UpdateSchedulingPolicyResult, BatchError> UpdateSchedulingPolicyOutcome;
 typedef Aws::Utils::Outcome<UpdateServiceEnvironmentResult, BatchError> UpdateServiceEnvironmentOutcome;
+typedef Aws::Utils::Outcome<UpdateServiceJobResult, BatchError> UpdateServiceJobOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -187,11 +205,13 @@ typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
 typedef std::future<CreateComputeEnvironmentOutcome> CreateComputeEnvironmentOutcomeCallable;
 typedef std::future<CreateConsumableResourceOutcome> CreateConsumableResourceOutcomeCallable;
 typedef std::future<CreateJobQueueOutcome> CreateJobQueueOutcomeCallable;
+typedef std::future<CreateQuotaShareOutcome> CreateQuotaShareOutcomeCallable;
 typedef std::future<CreateSchedulingPolicyOutcome> CreateSchedulingPolicyOutcomeCallable;
 typedef std::future<CreateServiceEnvironmentOutcome> CreateServiceEnvironmentOutcomeCallable;
 typedef std::future<DeleteComputeEnvironmentOutcome> DeleteComputeEnvironmentOutcomeCallable;
 typedef std::future<DeleteConsumableResourceOutcome> DeleteConsumableResourceOutcomeCallable;
 typedef std::future<DeleteJobQueueOutcome> DeleteJobQueueOutcomeCallable;
+typedef std::future<DeleteQuotaShareOutcome> DeleteQuotaShareOutcomeCallable;
 typedef std::future<DeleteSchedulingPolicyOutcome> DeleteSchedulingPolicyOutcomeCallable;
 typedef std::future<DeleteServiceEnvironmentOutcome> DeleteServiceEnvironmentOutcomeCallable;
 typedef std::future<DeregisterJobDefinitionOutcome> DeregisterJobDefinitionOutcomeCallable;
@@ -200,6 +220,7 @@ typedef std::future<DescribeConsumableResourceOutcome> DescribeConsumableResourc
 typedef std::future<DescribeJobDefinitionsOutcome> DescribeJobDefinitionsOutcomeCallable;
 typedef std::future<DescribeJobQueuesOutcome> DescribeJobQueuesOutcomeCallable;
 typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
+typedef std::future<DescribeQuotaShareOutcome> DescribeQuotaShareOutcomeCallable;
 typedef std::future<DescribeSchedulingPoliciesOutcome> DescribeSchedulingPoliciesOutcomeCallable;
 typedef std::future<DescribeServiceEnvironmentsOutcome> DescribeServiceEnvironmentsOutcomeCallable;
 typedef std::future<DescribeServiceJobOutcome> DescribeServiceJobOutcomeCallable;
@@ -207,6 +228,7 @@ typedef std::future<GetJobQueueSnapshotOutcome> GetJobQueueSnapshotOutcomeCallab
 typedef std::future<ListConsumableResourcesOutcome> ListConsumableResourcesOutcomeCallable;
 typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
 typedef std::future<ListJobsByConsumableResourceOutcome> ListJobsByConsumableResourceOutcomeCallable;
+typedef std::future<ListQuotaSharesOutcome> ListQuotaSharesOutcomeCallable;
 typedef std::future<ListSchedulingPoliciesOutcome> ListSchedulingPoliciesOutcomeCallable;
 typedef std::future<ListServiceJobsOutcome> ListServiceJobsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -220,8 +242,10 @@ typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateComputeEnvironmentOutcome> UpdateComputeEnvironmentOutcomeCallable;
 typedef std::future<UpdateConsumableResourceOutcome> UpdateConsumableResourceOutcomeCallable;
 typedef std::future<UpdateJobQueueOutcome> UpdateJobQueueOutcomeCallable;
+typedef std::future<UpdateQuotaShareOutcome> UpdateQuotaShareOutcomeCallable;
 typedef std::future<UpdateSchedulingPolicyOutcome> UpdateSchedulingPolicyOutcomeCallable;
 typedef std::future<UpdateServiceEnvironmentOutcome> UpdateServiceEnvironmentOutcomeCallable;
+typedef std::future<UpdateServiceJobOutcome> UpdateServiceJobOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -240,6 +264,9 @@ typedef std::function<void(const BatchClient*, const Model::CreateConsumableReso
 typedef std::function<void(const BatchClient*, const Model::CreateJobQueueRequest&, const Model::CreateJobQueueOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateJobQueueResponseReceivedHandler;
+typedef std::function<void(const BatchClient*, const Model::CreateQuotaShareRequest&, const Model::CreateQuotaShareOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateQuotaShareResponseReceivedHandler;
 typedef std::function<void(const BatchClient*, const Model::CreateSchedulingPolicyRequest&, const Model::CreateSchedulingPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateSchedulingPolicyResponseReceivedHandler;
@@ -255,6 +282,9 @@ typedef std::function<void(const BatchClient*, const Model::DeleteConsumableReso
 typedef std::function<void(const BatchClient*, const Model::DeleteJobQueueRequest&, const Model::DeleteJobQueueOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteJobQueueResponseReceivedHandler;
+typedef std::function<void(const BatchClient*, const Model::DeleteQuotaShareRequest&, const Model::DeleteQuotaShareOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteQuotaShareResponseReceivedHandler;
 typedef std::function<void(const BatchClient*, const Model::DeleteSchedulingPolicyRequest&, const Model::DeleteSchedulingPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteSchedulingPolicyResponseReceivedHandler;
@@ -279,6 +309,9 @@ typedef std::function<void(const BatchClient*, const Model::DescribeJobQueuesReq
 typedef std::function<void(const BatchClient*, const Model::DescribeJobsRequest&, const Model::DescribeJobsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeJobsResponseReceivedHandler;
+typedef std::function<void(const BatchClient*, const Model::DescribeQuotaShareRequest&, const Model::DescribeQuotaShareOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeQuotaShareResponseReceivedHandler;
 typedef std::function<void(const BatchClient*, const Model::DescribeSchedulingPoliciesRequest&,
                            const Model::DescribeSchedulingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeSchedulingPoliciesResponseReceivedHandler;
@@ -301,6 +334,9 @@ typedef std::function<void(const BatchClient*, const Model::ListJobsByConsumable
                            const Model::ListJobsByConsumableResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListJobsByConsumableResourceResponseReceivedHandler;
+typedef std::function<void(const BatchClient*, const Model::ListQuotaSharesRequest&, const Model::ListQuotaSharesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListQuotaSharesResponseReceivedHandler;
 typedef std::function<void(const BatchClient*, const Model::ListSchedulingPoliciesRequest&, const Model::ListSchedulingPoliciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSchedulingPoliciesResponseReceivedHandler;
@@ -340,12 +376,18 @@ typedef std::function<void(const BatchClient*, const Model::UpdateConsumableReso
 typedef std::function<void(const BatchClient*, const Model::UpdateJobQueueRequest&, const Model::UpdateJobQueueOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateJobQueueResponseReceivedHandler;
+typedef std::function<void(const BatchClient*, const Model::UpdateQuotaShareRequest&, const Model::UpdateQuotaShareOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateQuotaShareResponseReceivedHandler;
 typedef std::function<void(const BatchClient*, const Model::UpdateSchedulingPolicyRequest&, const Model::UpdateSchedulingPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateSchedulingPolicyResponseReceivedHandler;
 typedef std::function<void(const BatchClient*, const Model::UpdateServiceEnvironmentRequest&, const Model::UpdateServiceEnvironmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateServiceEnvironmentResponseReceivedHandler;
+typedef std::function<void(const BatchClient*, const Model::UpdateServiceJobRequest&, const Model::UpdateServiceJobOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateServiceJobResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace Batch
 }  // namespace Aws

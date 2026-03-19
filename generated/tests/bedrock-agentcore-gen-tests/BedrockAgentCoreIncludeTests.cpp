@@ -27,11 +27,15 @@
 #include <aws/bedrock-agentcore/model/BatchUpdateMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/Branch.h>
 #include <aws/bedrock-agentcore/model/BranchFilter.h>
+#include <aws/bedrock-agentcore/model/BrowserEnterprisePolicy.h>
+#include <aws/bedrock-agentcore/model/BrowserEnterprisePolicyType.h>
 #include <aws/bedrock-agentcore/model/BrowserExtension.h>
 #include <aws/bedrock-agentcore/model/BrowserProfileConfiguration.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStatus.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStream.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionSummary.h>
+#include <aws/bedrock-agentcore/model/Certificate.h>
+#include <aws/bedrock-agentcore/model/CertificateLocation.h>
 #include <aws/bedrock-agentcore/model/CodeInterpreterResult.h>
 #include <aws/bedrock-agentcore/model/CodeInterpreterSessionStatus.h>
 #include <aws/bedrock-agentcore/model/CodeInterpreterSessionSummary.h>
@@ -145,6 +149,7 @@
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileRequest.h>
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileResult.h>
 #include <aws/bedrock-agentcore/model/SearchCriteria.h>
+#include <aws/bedrock-agentcore/model/SecretsManagerLocation.h>
 #include <aws/bedrock-agentcore/model/SessionStatus.h>
 #include <aws/bedrock-agentcore/model/SessionSummary.h>
 #include <aws/bedrock-agentcore/model/SpanContext.h>

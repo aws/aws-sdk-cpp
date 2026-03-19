@@ -7,6 +7,7 @@
 #include <aws/batch/BatchRequest.h>
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/FairsharePolicy.h>
+#include <aws/batch/model/QuotaSharePolicy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -56,7 +57,29 @@ class CreateSchedulingPolicyRequest : public BatchRequest {
 
   ///@{
   /**
-   * <p>The fair-share scheduling policy details.</p>
+   * <p>The quota share scheduling policy details. Only one of fairsharePolicy or
+   * quotaSharePolicy can be set. Once set, this policy type cannot be removed or
+   * changed to a fairSharePolicy.</p>
+   */
+  inline const QuotaSharePolicy& GetQuotaSharePolicy() const { return m_quotaSharePolicy; }
+  inline bool QuotaSharePolicyHasBeenSet() const { return m_quotaSharePolicyHasBeenSet; }
+  template <typename QuotaSharePolicyT = QuotaSharePolicy>
+  void SetQuotaSharePolicy(QuotaSharePolicyT&& value) {
+    m_quotaSharePolicyHasBeenSet = true;
+    m_quotaSharePolicy = std::forward<QuotaSharePolicyT>(value);
+  }
+  template <typename QuotaSharePolicyT = QuotaSharePolicy>
+  CreateSchedulingPolicyRequest& WithQuotaSharePolicy(QuotaSharePolicyT&& value) {
+    SetQuotaSharePolicy(std::forward<QuotaSharePolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The fair-share scheduling policy details. Only one of fairsharePolicy or
+   * quotaSharePolicy can be set. Once set, this policy type cannot be removed or
+   * changed to a quotaSharePolicy.</p>
    */
   inline const FairsharePolicy& GetFairsharePolicy() const { return m_fairsharePolicy; }
   inline bool FairsharePolicyHasBeenSet() const { return m_fairsharePolicyHasBeenSet; }
@@ -107,10 +130,13 @@ class CreateSchedulingPolicyRequest : public BatchRequest {
  private:
   Aws::String m_name;
 
+  QuotaSharePolicy m_quotaSharePolicy;
+
   FairsharePolicy m_fairsharePolicy;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_nameHasBeenSet = false;
+  bool m_quotaSharePolicyHasBeenSet = false;
   bool m_fairsharePolicyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

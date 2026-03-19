@@ -26,6 +26,10 @@ SchedulingPolicyDetail& SchedulingPolicyDetail::operator=(JsonView jsonValue) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("quotaSharePolicy")) {
+    m_quotaSharePolicy = jsonValue.GetObject("quotaSharePolicy");
+    m_quotaSharePolicyHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("fairsharePolicy")) {
     m_fairsharePolicy = jsonValue.GetObject("fairsharePolicy");
     m_fairsharePolicyHasBeenSet = true;
@@ -49,6 +53,10 @@ JsonValue SchedulingPolicyDetail::Jsonize() const {
 
   if (m_arnHasBeenSet) {
     payload.WithString("arn", m_arn);
+  }
+
+  if (m_quotaSharePolicyHasBeenSet) {
+    payload.WithObject("quotaSharePolicy", m_quotaSharePolicy.Jsonize());
   }
 
   if (m_fairsharePolicyHasBeenSet) {

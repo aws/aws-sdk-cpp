@@ -44,6 +44,23 @@ Aws::String StartBrowserSessionRequest::SerializePayload() const {
     payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
   }
 
+  if (m_enterprisePoliciesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> enterprisePoliciesJsonList(m_enterprisePolicies.size());
+    for (unsigned enterprisePoliciesIndex = 0; enterprisePoliciesIndex < enterprisePoliciesJsonList.GetLength();
+         ++enterprisePoliciesIndex) {
+      enterprisePoliciesJsonList[enterprisePoliciesIndex].AsObject(m_enterprisePolicies[enterprisePoliciesIndex].Jsonize());
+    }
+    payload.WithArray("enterprisePolicies", std::move(enterprisePoliciesJsonList));
+  }
+
+  if (m_certificatesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> certificatesJsonList(m_certificates.size());
+    for (unsigned certificatesIndex = 0; certificatesIndex < certificatesJsonList.GetLength(); ++certificatesIndex) {
+      certificatesJsonList[certificatesIndex].AsObject(m_certificates[certificatesIndex].Jsonize());
+    }
+    payload.WithArray("certificates", std::move(certificatesJsonList));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

@@ -1410,6 +1410,7 @@
 #include <aws/ec2/model/FleetLaunchTemplateSpecificationRequest.h>
 #include <aws/ec2/model/FleetOnDemandAllocationStrategy.h>
 #include <aws/ec2/model/FleetReplacementStrategy.h>
+#include <aws/ec2/model/FleetReservationType.h>
 #include <aws/ec2/model/FleetSpotCapacityRebalance.h>
 #include <aws/ec2/model/FleetSpotCapacityRebalanceRequest.h>
 #include <aws/ec2/model/FleetSpotMaintenanceStrategies.h>
@@ -2339,6 +2340,8 @@
 #include <aws/ec2/model/ReservationState.h>
 #include <aws/ec2/model/ReservationType.h>
 #include <aws/ec2/model/ReservationValue.h>
+#include <aws/ec2/model/ReservedCapacityOptions.h>
+#include <aws/ec2/model/ReservedCapacityOptionsRequest.h>
 #include <aws/ec2/model/ReservedInstanceLimitPrice.h>
 #include <aws/ec2/model/ReservedInstanceReservationValue.h>
 #include <aws/ec2/model/ReservedInstanceState.h>

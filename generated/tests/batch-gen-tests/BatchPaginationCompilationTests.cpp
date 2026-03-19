@@ -17,6 +17,7 @@
 #include <aws/batch/model/ListJobsByConsumableResourcePaginationTraits.h>
 #include <aws/batch/model/ListConsumableResourcesPaginationTraits.h>
 #include <aws/batch/model/DescribeServiceEnvironmentsPaginationTraits.h>
+#include <aws/batch/model/ListQuotaSharesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

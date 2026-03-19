@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class DefaultTargetCapacityType { NOT_SET, spot, on_demand, capacity_block };
+enum class DefaultTargetCapacityType { NOT_SET, spot, on_demand, capacity_block, reserved_capacity };
 
 namespace DefaultTargetCapacityTypeMapper {
 AWS_EC2_API DefaultTargetCapacityType GetDefaultTargetCapacityTypeForName(const Aws::String& name);

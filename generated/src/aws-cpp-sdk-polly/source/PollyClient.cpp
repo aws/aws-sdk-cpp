@@ -5,6 +5,7 @@
 
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClient.h>
@@ -12,6 +13,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -27,6 +29,7 @@
 #include <aws/polly/model/ListLexiconsRequest.h>
 #include <aws/polly/model/ListSpeechSynthesisTasksRequest.h>
 #include <aws/polly/model/PutLexiconRequest.h>
+#include <aws/polly/model/StartSpeechSynthesisStreamRequest.h>
 #include <aws/polly/model/StartSpeechSynthesisTaskRequest.h>
 #include <aws/polly/model/SynthesizeSpeechRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -53,7 +56,7 @@ const char* PollyClient::GetAllocationTag() { return ALLOCATION_TAG; }
 PollyClient::PollyClient(const Polly::PollyClientConfiguration& clientConfiguration,
                          std::shared_ptr<PollyEndpointProviderBase> endpointProvider)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
+                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
                     Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                     SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -66,8 +69,9 @@ PollyClient::PollyClient(const Polly::PollyClientConfiguration& clientConfigurat
 PollyClient::PollyClient(const AWSCredentials& credentials, std::shared_ptr<PollyEndpointProviderBase> endpointProvider,
                          const Polly::PollyClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+                    ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
+                    Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<PollyErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PollyEndpointProvider>(ALLOCATION_TAG)) {
@@ -78,8 +82,8 @@ PollyClient::PollyClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
                          std::shared_ptr<PollyEndpointProviderBase> endpointProvider,
                          const Polly::PollyClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
+                                                                      Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<PollyErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PollyEndpointProvider>(ALLOCATION_TAG)) {
@@ -89,7 +93,7 @@ PollyClient::PollyClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
 /* Legacy constructors due deprecation */
 PollyClient::PollyClient(const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(
+                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
                     ALLOCATION_TAG,
                     Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
                     SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
@@ -101,8 +105,9 @@ PollyClient::PollyClient(const Aws::Client::ClientConfiguration& clientConfigura
 
 PollyClient::PollyClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
+                    ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
+                    Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<PollyErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<PollyEndpointProvider>(ALLOCATION_TAG)) {
@@ -112,8 +117,8 @@ PollyClient::PollyClient(const AWSCredentials& credentials, const Aws::Client::C
 PollyClient::PollyClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                          const Aws::Client::ClientConfiguration& clientConfiguration)
     : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
+                                                                      Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
                 Aws::MakeShared<PollyErrorMarshaller>(ALLOCATION_TAG)),
       m_clientConfiguration(clientConfiguration),
       m_endpointProvider(Aws::MakeShared<PollyEndpointProvider>(ALLOCATION_TAG)) {
@@ -379,6 +384,71 @@ PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) cons
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+void PollyClient::StartSpeechSynthesisStreamAsync(Model::StartSpeechSynthesisStreamRequest& request,
+                                                  const StartSpeechSynthesisStreamStreamReadyHandler& streamReadyHandler,
+                                                  const StartSpeechSynthesisStreamResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const {
+  AWS_ASYNC_OPERATION_GUARD(StartSpeechSynthesisStream);
+  if (!m_endpointProvider) {
+    handler(this, request,
+            StartSpeechSynthesisStreamOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
+                                                                                 "Endpoint provider is not initialized", false)),
+            handlerContext);
+    return;
+  }
+  if (!request.EngineHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartSpeechSynthesisStream", "Required field: Engine, is not set");
+    handler(this, request,
+            StartSpeechSynthesisStreamOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [Engine]", false)),
+            handlerContext);
+    return;
+  }
+  if (!request.OutputFormatHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartSpeechSynthesisStream", "Required field: OutputFormat, is not set");
+    handler(this, request,
+            StartSpeechSynthesisStreamOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [OutputFormat]", false)),
+            handlerContext);
+    return;
+  }
+  if (!request.VoiceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartSpeechSynthesisStream", "Required field: VoiceId, is not set");
+    handler(this, request,
+            StartSpeechSynthesisStreamOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [VoiceId]", false)),
+            handlerContext);
+    return;
+  }
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+      [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+      TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  if (!endpointResolutionOutcome.IsSuccess()) {
+    handler(this, request,
+            StartSpeechSynthesisStreamOutcome(Aws::Client::AWSError<CoreErrors>(CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                                                                "ENDPOINT_RESOLUTION_FAILURE",
+                                                                                endpointResolutionOutcome.GetError().GetMessage(), false)),
+            handlerContext);
+    return;
+  }
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/synthesisStream");
+
+  auto eventEncoderStream = Aws::MakeShared<Model::StartSpeechSynthesisStreamActionStream>(ALLOCATION_TAG);
+  eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
+  auto requestCopy = Aws::MakeShared<StartSpeechSynthesisStreamRequest>("StartSpeechSynthesisStream", request);
+  requestCopy->SetActionStream(eventEncoderStream);  // this becomes the body of the request
+  request.SetActionStream(eventEncoderStream);
+
+  auto asyncTask = CreateBidirectionalEventStreamTask<StartSpeechSynthesisStreamOutcome>(
+      this, endpointResolutionOutcome.GetResultWithOwnership(), requestCopy, handler, handlerContext, eventEncoderStream);
+  auto sem = asyncTask.GetSemaphore();
+  m_clientConfiguration.executor->Submit(std::move(asyncTask));
+  sem->WaitOne();
+  streamReadyHandler(*eventEncoderStream);
+}
 StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const StartSpeechSynthesisTaskRequest& request) const {
   AWS_OPERATION_GUARD(StartSpeechSynthesisTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSpeechSynthesisTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);

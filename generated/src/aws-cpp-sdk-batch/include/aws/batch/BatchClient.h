@@ -240,6 +240,34 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates an Batch quota share. Each quota share operates as a virtual queue
+   * with a configured compute capacity, resource sharing strategy, and borrow
+   * limits. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateQuotaShare">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateQuotaShareOutcome CreateQuotaShare(const Model::CreateQuotaShareRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateQuotaShare that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateQuotaShareRequestT = Model::CreateQuotaShareRequest>
+  Model::CreateQuotaShareOutcomeCallable CreateQuotaShareCallable(const CreateQuotaShareRequestT& request) const {
+    return SubmitCallable(&BatchClient::CreateQuotaShare, request);
+  }
+
+  /**
+   * An Async wrapper for CreateQuotaShare that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateQuotaShareRequestT = Model::CreateQuotaShareRequest>
+  void CreateQuotaShareAsync(const CreateQuotaShareRequestT& request, const CreateQuotaShareResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BatchClient::CreateQuotaShare, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Batch scheduling policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateSchedulingPolicy">AWS
    * API Reference</a></p>
@@ -358,9 +386,8 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Deletes the specified job queue. You must first disable submissions for a
    * queue with the <a>UpdateJobQueue</a> operation. All jobs in the queue are
-   * eventually terminated when you delete a job queue. The jobs are terminated at a
-   * rate of about 16 jobs each second.</p> <p>It's not necessary to disassociate
-   * compute environments from a queue before submitting a
+   * eventually terminated when you delete a job queue.</p> <p>It's not necessary to
+   * disassociate compute environments from a queue before submitting a
    * <code>DeleteJobQueue</code> request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">AWS
    * API Reference</a></p>
@@ -383,6 +410,35 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
   void DeleteJobQueueAsync(const DeleteJobQueueRequestT& request, const DeleteJobQueueResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BatchClient::DeleteJobQueue, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified quota share. You must first disable submissions for the
+   * share by updating the state to <code>DISABLED</code> using the
+   * <a>UpdateQuotaShare</a> operation. All jobs in the share are eventually
+   * terminated when you delete a quota share.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteQuotaShare">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteQuotaShareOutcome DeleteQuotaShare(const Model::DeleteQuotaShareRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteQuotaShare that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteQuotaShareRequestT = Model::DeleteQuotaShareRequest>
+  Model::DeleteQuotaShareOutcomeCallable DeleteQuotaShareCallable(const DeleteQuotaShareRequestT& request) const {
+    return SubmitCallable(&BatchClient::DeleteQuotaShare, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteQuotaShare that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteQuotaShareRequestT = Model::DeleteQuotaShareRequest>
+  void DeleteQuotaShareAsync(const DeleteQuotaShareRequestT& request, const DeleteQuotaShareResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BatchClient::DeleteQuotaShare, request, handler, context);
   }
 
   /**
@@ -617,6 +673,33 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a description of the specified quota share.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeQuotaShare">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeQuotaShareOutcome DescribeQuotaShare(const Model::DescribeQuotaShareRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeQuotaShare that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeQuotaShareRequestT = Model::DescribeQuotaShareRequest>
+  Model::DescribeQuotaShareOutcomeCallable DescribeQuotaShareCallable(const DescribeQuotaShareRequestT& request) const {
+    return SubmitCallable(&BatchClient::DescribeQuotaShare, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeQuotaShare that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeQuotaShareRequestT = Model::DescribeQuotaShareRequest>
+  void DescribeQuotaShareAsync(const DescribeQuotaShareRequestT& request, const DescribeQuotaShareResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BatchClient::DescribeQuotaShare, request, handler, context);
+  }
+
+  /**
    * <p>Describes one or more of your scheduling policies.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeSchedulingPolicies">AWS
@@ -703,10 +786,14 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Provides a list of the first 100 <code>RUNNABLE</code> jobs associated to a
-   * single job queue and includes capacity utilization, including total usage and
-   * breakdown by share for fairshare scheduling job queues. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides a snapshot of job queue state, including ordering of
+   * <code>RUNNABLE</code> jobs, as well as capacity utilization for already
+   * dispatched jobs. The first 100 <code>RUNNABLE</code> jobs in the job queue are
+   * listed in order of dispatch. For job queues with an attached quota-share policy,
+   * the first <code>RUNNABLE</code> job in each quota share is also listed. Capacity
+   * utilization for the job queue is provided, as well as break downs by share for
+   * job queues with attached fair-share or quota-share scheduling
+   * policies.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/GetJobQueueSnapshot">AWS
    * API Reference</a></p>
    */
@@ -816,6 +903,32 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
                                          const ListJobsByConsumableResourceResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BatchClient::ListJobsByConsumableResource, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of Batch quota shares associated with a job
+   * queue.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListQuotaShares">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListQuotaSharesOutcome ListQuotaShares(const Model::ListQuotaSharesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListQuotaShares that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListQuotaSharesRequestT = Model::ListQuotaSharesRequest>
+  Model::ListQuotaSharesOutcomeCallable ListQuotaSharesCallable(const ListQuotaSharesRequestT& request) const {
+    return SubmitCallable(&BatchClient::ListQuotaShares, request);
+  }
+
+  /**
+   * An Async wrapper for ListQuotaShares that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListQuotaSharesRequestT = Model::ListQuotaSharesRequest>
+  void ListQuotaSharesAsync(const ListQuotaSharesRequestT& request, const ListQuotaSharesResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BatchClient::ListQuotaShares, request, handler, context);
   }
 
   /**
@@ -1182,6 +1295,32 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates a quota share.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateQuotaShare">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateQuotaShareOutcome UpdateQuotaShare(const Model::UpdateQuotaShareRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateQuotaShare that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateQuotaShareRequestT = Model::UpdateQuotaShareRequest>
+  Model::UpdateQuotaShareOutcomeCallable UpdateQuotaShareCallable(const UpdateQuotaShareRequestT& request) const {
+    return SubmitCallable(&BatchClient::UpdateQuotaShare, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateQuotaShare that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateQuotaShareRequestT = Model::UpdateQuotaShareRequest>
+  void UpdateQuotaShareAsync(const UpdateQuotaShareRequestT& request, const UpdateQuotaShareResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BatchClient::UpdateQuotaShare, request, handler, context);
+  }
+
+  /**
    * <p>Updates a scheduling policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateSchedulingPolicy">AWS
    * API Reference</a></p>
@@ -1236,6 +1375,33 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
                                      const UpdateServiceEnvironmentResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BatchClient::UpdateServiceEnvironment, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the priority of a specified service job in an Batch job
+   * queue.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateServiceJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateServiceJobOutcome UpdateServiceJob(const Model::UpdateServiceJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateServiceJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateServiceJobRequestT = Model::UpdateServiceJobRequest>
+  Model::UpdateServiceJobOutcomeCallable UpdateServiceJobCallable(const UpdateServiceJobRequestT& request) const {
+    return SubmitCallable(&BatchClient::UpdateServiceJob, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateServiceJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateServiceJobRequestT = Model::UpdateServiceJobRequest>
+  void UpdateServiceJobAsync(const UpdateServiceJobRequestT& request, const UpdateServiceJobResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BatchClient::UpdateServiceJob, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

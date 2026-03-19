@@ -22,6 +22,10 @@ SourceLogsConfiguration& SourceLogsConfiguration::operator=(JsonView jsonValue) 
     m_logGroupSelectionCriteria = jsonValue.GetString("LogGroupSelectionCriteria");
     m_logGroupSelectionCriteriaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DataSourceSelectionCriteria")) {
+    m_dataSourceSelectionCriteria = jsonValue.GetString("DataSourceSelectionCriteria");
+    m_dataSourceSelectionCriteriaHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("EncryptedLogGroupStrategy")) {
     m_encryptedLogGroupStrategy =
         EncryptedLogGroupStrategyMapper::GetEncryptedLogGroupStrategyForName(jsonValue.GetString("EncryptedLogGroupStrategy"));
@@ -35,6 +39,10 @@ JsonValue SourceLogsConfiguration::Jsonize() const {
 
   if (m_logGroupSelectionCriteriaHasBeenSet) {
     payload.WithString("LogGroupSelectionCriteria", m_logGroupSelectionCriteria);
+  }
+
+  if (m_dataSourceSelectionCriteriaHasBeenSet) {
+    payload.WithString("DataSourceSelectionCriteria", m_dataSourceSelectionCriteria);
   }
 
   if (m_encryptedLogGroupStrategyHasBeenSet) {

@@ -5,11 +5,13 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/Certificate.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterNetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CodeInterpreterStatus.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -148,6 +150,29 @@ class GetCodeInterpreterResult {
 
   ///@{
   /**
+   * <p>The list of certificates configured for the code interpreter.</p>
+   */
+  inline const Aws::Vector<Certificate>& GetCertificates() const { return m_certificates; }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  void SetCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates = std::forward<CertificatesT>(value);
+  }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  GetCodeInterpreterResult& WithCertificates(CertificatesT&& value) {
+    SetCertificates(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  template <typename CertificatesT = Certificate>
+  GetCodeInterpreterResult& AddCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates.emplace_back(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The reason for failure if the code interpreter is in a failed state.</p>
    */
   inline const Aws::String& GetFailureReason() const { return m_failureReason; }
@@ -228,6 +253,8 @@ class GetCodeInterpreterResult {
 
   CodeInterpreterStatus m_status{CodeInterpreterStatus::NOT_SET};
 
+  Aws::Vector<Certificate> m_certificates;
+
   Aws::String m_failureReason;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -243,6 +270,7 @@ class GetCodeInterpreterResult {
   bool m_executionRoleArnHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;

@@ -294,6 +294,26 @@ class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Synthesizes UTF-8 input, plain text, or SSML over a bidirectional streaming
+   * connection. Specify synthesis parameters in HTTP/2 headers, send text
+   * incrementally as events on the input stream, and receive synthesized audio as it
+   * becomes available.</p> <p>This operation serves as a bidirectional counterpart
+   * to <code>SynthesizeSpeech</code>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/polly/latest/API/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
+   * </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisStream">AWS
+   * API Reference</a></p>
+   *
+   * Queues the request into a thread executor.
+   * The streamReadyHandler is triggered when the stream is ready to be written to.
+   * The handler is triggered when the request is finished.
+   */
+  virtual void StartSpeechSynthesisStreamAsync(
+      Model::StartSpeechSynthesisStreamRequest& request, const StartSpeechSynthesisStreamStreamReadyHandler& streamReadyHandler,
+      const StartSpeechSynthesisStreamResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
+
+  /**
    * <p>Allows the creation of an asynchronous synthesis task, by starting a new
    * <code>SpeechSynthesisTask</code>. This operation requires all the standard
    * information needed for speech synthesis, plus the name of an Amazon S3 bucket

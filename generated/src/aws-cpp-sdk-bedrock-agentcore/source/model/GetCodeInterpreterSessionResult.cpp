@@ -46,6 +46,13 @@ GetCodeInterpreterSessionResult& GetCodeInterpreterSessionResult::operator=(cons
     m_status = CodeInterpreterSessionStatusMapper::GetCodeInterpreterSessionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("certificates")) {
+    Aws::Utils::Array<JsonView> certificatesJsonList = jsonValue.GetArray("certificates");
+    for (unsigned certificatesIndex = 0; certificatesIndex < certificatesJsonList.GetLength(); ++certificatesIndex) {
+      m_certificates.push_back(certificatesJsonList[certificatesIndex].AsObject());
+    }
+    m_certificatesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

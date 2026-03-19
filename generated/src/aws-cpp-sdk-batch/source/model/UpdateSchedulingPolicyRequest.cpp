@@ -19,6 +19,10 @@ Aws::String UpdateSchedulingPolicyRequest::SerializePayload() const {
     payload.WithString("arn", m_arn);
   }
 
+  if (m_quotaSharePolicyHasBeenSet) {
+    payload.WithObject("quotaSharePolicy", m_quotaSharePolicy.Jsonize());
+  }
+
   if (m_fairsharePolicyHasBeenSet) {
     payload.WithObject("fairsharePolicy", m_fairsharePolicy.Jsonize());
   }

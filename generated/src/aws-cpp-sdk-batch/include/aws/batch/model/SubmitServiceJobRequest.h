@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/batch/BatchRequest.h>
 #include <aws/batch/Batch_EXPORTS.h>
+#include <aws/batch/model/ServiceJobPreemptionConfiguration.h>
 #include <aws/batch/model/ServiceJobRetryStrategy.h>
 #include <aws/batch/model/ServiceJobTimeout.h>
 #include <aws/batch/model/ServiceJobType.h>
@@ -167,6 +168,44 @@ class SubmitServiceJobRequest : public BatchRequest {
 
   ///@{
   /**
+   * <p>The quota share for the service job. Don't specify this parameter if the job
+   * queue doesn't have a quota share scheduling policy. If the job queue has a quota
+   * share scheduling policy, then this parameter must be specified.</p>
+   */
+  inline const Aws::String& GetQuotaShareName() const { return m_quotaShareName; }
+  inline bool QuotaShareNameHasBeenSet() const { return m_quotaShareNameHasBeenSet; }
+  template <typename QuotaShareNameT = Aws::String>
+  void SetQuotaShareName(QuotaShareNameT&& value) {
+    m_quotaShareNameHasBeenSet = true;
+    m_quotaShareName = std::forward<QuotaShareNameT>(value);
+  }
+  template <typename QuotaShareNameT = Aws::String>
+  SubmitServiceJobRequest& WithQuotaShareName(QuotaShareNameT&& value) {
+    SetQuotaShareName(std::forward<QuotaShareNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the service job behavior when preempted.</p>
+   */
+  inline const ServiceJobPreemptionConfiguration& GetPreemptionConfiguration() const { return m_preemptionConfiguration; }
+  inline bool PreemptionConfigurationHasBeenSet() const { return m_preemptionConfigurationHasBeenSet; }
+  template <typename PreemptionConfigurationT = ServiceJobPreemptionConfiguration>
+  void SetPreemptionConfiguration(PreemptionConfigurationT&& value) {
+    m_preemptionConfigurationHasBeenSet = true;
+    m_preemptionConfiguration = std::forward<PreemptionConfigurationT>(value);
+  }
+  template <typename PreemptionConfigurationT = ServiceJobPreemptionConfiguration>
+  SubmitServiceJobRequest& WithPreemptionConfiguration(PreemptionConfigurationT&& value) {
+    SetPreemptionConfiguration(std::forward<PreemptionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timeout configuration for the service job. If none is specified, Batch
    * defers to the default timeout of the underlying service handling the job.</p>
    */
@@ -246,6 +285,10 @@ class SubmitServiceJobRequest : public BatchRequest {
 
   Aws::String m_shareIdentifier;
 
+  Aws::String m_quotaShareName;
+
+  ServiceJobPreemptionConfiguration m_preemptionConfiguration;
+
   ServiceJobTimeout m_timeoutConfig;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -258,6 +301,8 @@ class SubmitServiceJobRequest : public BatchRequest {
   bool m_serviceRequestPayloadHasBeenSet = false;
   bool m_serviceJobTypeHasBeenSet = false;
   bool m_shareIdentifierHasBeenSet = false;
+  bool m_quotaShareNameHasBeenSet = false;
+  bool m_preemptionConfigurationHasBeenSet = false;
   bool m_timeoutConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;

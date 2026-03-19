@@ -54,6 +54,21 @@ GetBrowserResult& GetBrowserResult::operator=(const Aws::AmazonWebServiceResult<
     m_browserSigning = jsonValue.GetObject("browserSigning");
     m_browserSigningHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enterprisePolicies")) {
+    Aws::Utils::Array<JsonView> enterprisePoliciesJsonList = jsonValue.GetArray("enterprisePolicies");
+    for (unsigned enterprisePoliciesIndex = 0; enterprisePoliciesIndex < enterprisePoliciesJsonList.GetLength();
+         ++enterprisePoliciesIndex) {
+      m_enterprisePolicies.push_back(enterprisePoliciesJsonList[enterprisePoliciesIndex].AsObject());
+    }
+    m_enterprisePoliciesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("certificates")) {
+    Aws::Utils::Array<JsonView> certificatesJsonList = jsonValue.GetArray("certificates");
+    for (unsigned certificatesIndex = 0; certificatesIndex < certificatesJsonList.GetLength(); ++certificatesIndex) {
+      m_certificates.push_back(certificatesJsonList[certificatesIndex].AsObject());
+    }
+    m_certificatesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = BrowserStatusMapper::GetBrowserStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;

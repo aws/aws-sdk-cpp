@@ -54,6 +54,30 @@ class SourceLogsConfiguration {
 
   ///@{
   /**
+   * <p>The selection criteria that specifies which data sources to centralize. The
+   * selection criteria uses the same filter expression format as
+   * <code>LogGroupSelectionCriteria</code>, but operates on
+   * <code>DataSourceName</code> and <code>DataSourceType</code> operands. When both
+   * <code>LogGroupSelectionCriteria</code> and
+   * <code>DataSourceSelectionCriteria</code> are specified, a log event must match
+   * both criteria to be centralized.</p>
+   */
+  inline const Aws::String& GetDataSourceSelectionCriteria() const { return m_dataSourceSelectionCriteria; }
+  inline bool DataSourceSelectionCriteriaHasBeenSet() const { return m_dataSourceSelectionCriteriaHasBeenSet; }
+  template <typename DataSourceSelectionCriteriaT = Aws::String>
+  void SetDataSourceSelectionCriteria(DataSourceSelectionCriteriaT&& value) {
+    m_dataSourceSelectionCriteriaHasBeenSet = true;
+    m_dataSourceSelectionCriteria = std::forward<DataSourceSelectionCriteriaT>(value);
+  }
+  template <typename DataSourceSelectionCriteriaT = Aws::String>
+  SourceLogsConfiguration& WithDataSourceSelectionCriteria(DataSourceSelectionCriteriaT&& value) {
+    SetDataSourceSelectionCriteria(std::forward<DataSourceSelectionCriteriaT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A strategy determining whether to centralize source log groups that are
    * encrypted with customer managed KMS keys (CMK). ALLOW will consider CMK
    * encrypted source log groups for centralization while SKIP will skip CMK
@@ -73,8 +97,11 @@ class SourceLogsConfiguration {
  private:
   Aws::String m_logGroupSelectionCriteria;
 
+  Aws::String m_dataSourceSelectionCriteria;
+
   EncryptedLogGroupStrategy m_encryptedLogGroupStrategy{EncryptedLogGroupStrategy::NOT_SET};
   bool m_logGroupSelectionCriteriaHasBeenSet = false;
+  bool m_dataSourceSelectionCriteriaHasBeenSet = false;
   bool m_encryptedLogGroupStrategyHasBeenSet = false;
 };
 

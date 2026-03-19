@@ -19,6 +19,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in PollyClient header */
+#include <aws/core/NoResult.h>
 #include <aws/polly/model/DeleteLexiconResult.h>
 #include <aws/polly/model/DescribeVoicesRequest.h>
 #include <aws/polly/model/DescribeVoicesResult.h>
@@ -42,6 +43,10 @@ class HttpClientFactory;
 namespace Utils {
 template <typename R, typename E>
 class Outcome;
+
+namespace Event {
+class EventEncoderStream;
+}  // namespace Event
 
 namespace Threading {
 class Executor;
@@ -71,6 +76,8 @@ class GetSpeechSynthesisTaskRequest;
 class ListLexiconsRequest;
 class ListSpeechSynthesisTasksRequest;
 class PutLexiconRequest;
+class StartSpeechSynthesisStreamRequest;
+class StartSpeechSynthesisStreamActionStream;
 class StartSpeechSynthesisTaskRequest;
 class SynthesizeSpeechRequest;
 /* End of service model forward declarations required in PollyClient header */
@@ -83,6 +90,7 @@ typedef Aws::Utils::Outcome<GetSpeechSynthesisTaskResult, PollyError> GetSpeechS
 typedef Aws::Utils::Outcome<ListLexiconsResult, PollyError> ListLexiconsOutcome;
 typedef Aws::Utils::Outcome<ListSpeechSynthesisTasksResult, PollyError> ListSpeechSynthesisTasksOutcome;
 typedef Aws::Utils::Outcome<PutLexiconResult, PollyError> PutLexiconOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, PollyError> StartSpeechSynthesisStreamOutcome;
 typedef Aws::Utils::Outcome<StartSpeechSynthesisTaskResult, PollyError> StartSpeechSynthesisTaskOutcome;
 typedef Aws::Utils::Outcome<SynthesizeSpeechResult, PollyError> SynthesizeSpeechOutcome;
 /* End of service model Outcome class definitions */
@@ -95,6 +103,7 @@ typedef std::future<GetSpeechSynthesisTaskOutcome> GetSpeechSynthesisTaskOutcome
 typedef std::future<ListLexiconsOutcome> ListLexiconsOutcomeCallable;
 typedef std::future<ListSpeechSynthesisTasksOutcome> ListSpeechSynthesisTasksOutcomeCallable;
 typedef std::future<PutLexiconOutcome> PutLexiconOutcomeCallable;
+typedef std::future<StartSpeechSynthesisStreamOutcome> StartSpeechSynthesisStreamOutcomeCallable;
 typedef std::future<StartSpeechSynthesisTaskOutcome> StartSpeechSynthesisTaskOutcomeCallable;
 typedef std::future<SynthesizeSpeechOutcome> SynthesizeSpeechOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -124,6 +133,10 @@ typedef std::function<void(const PollyClient*, const Model::ListSpeechSynthesisT
 typedef std::function<void(const PollyClient*, const Model::PutLexiconRequest&, const Model::PutLexiconOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutLexiconResponseReceivedHandler;
+typedef std::function<void(Model::StartSpeechSynthesisStreamActionStream&)> StartSpeechSynthesisStreamStreamReadyHandler;
+typedef std::function<void(const PollyClient*, const Model::StartSpeechSynthesisStreamRequest&,
+                           const Model::StartSpeechSynthesisStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartSpeechSynthesisStreamResponseReceivedHandler;
 typedef std::function<void(const PollyClient*, const Model::StartSpeechSynthesisTaskRequest&, const Model::StartSpeechSynthesisTaskOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartSpeechSynthesisTaskResponseReceivedHandler;

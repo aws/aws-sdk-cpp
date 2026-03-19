@@ -1,0 +1,80 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/polly/Polly_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Polly {
+namespace Model {
+
+/**
+ * <p>Provides information about a specific throttling reason.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ThrottlingReason">AWS
+ * API Reference</a></p>
+ */
+class ThrottlingReason {
+ public:
+  AWS_POLLY_API ThrottlingReason() = default;
+  AWS_POLLY_API ThrottlingReason(Aws::Utils::Json::JsonView jsonValue);
+  AWS_POLLY_API ThrottlingReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_POLLY_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The reason code explaining why the request was throttled.</p>
+   */
+  inline const Aws::String& GetReason() const { return m_reason; }
+  inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+  template <typename ReasonT = Aws::String>
+  void SetReason(ReasonT&& value) {
+    m_reasonHasBeenSet = true;
+    m_reason = std::forward<ReasonT>(value);
+  }
+  template <typename ReasonT = Aws::String>
+  ThrottlingReason& WithReason(ReasonT&& value) {
+    SetReason(std::forward<ReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resource that caused the throttling.</p>
+   */
+  inline const Aws::String& GetResource() const { return m_resource; }
+  inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+  template <typename ResourceT = Aws::String>
+  void SetResource(ResourceT&& value) {
+    m_resourceHasBeenSet = true;
+    m_resource = std::forward<ResourceT>(value);
+  }
+  template <typename ResourceT = Aws::String>
+  ThrottlingReason& WithResource(ResourceT&& value) {
+    SetResource(std::forward<ResourceT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_reason;
+
+  Aws::String m_resource;
+  bool m_reasonHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Polly
+}  // namespace Aws

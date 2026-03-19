@@ -5,10 +5,12 @@
 
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/BrowserEnterprisePolicy.h>
 #include <aws/bedrock-agentcore/model/BrowserExtension.h>
 #include <aws/bedrock-agentcore/model/BrowserProfileConfiguration.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStatus.h>
 #include <aws/bedrock-agentcore/model/BrowserSessionStream.h>
+#include <aws/bedrock-agentcore/model/Certificate.h>
 #include <aws/bedrock-agentcore/model/ProxyConfiguration.h>
 #include <aws/bedrock-agentcore/model/ViewPort.h>
 #include <aws/core/http/HttpResponse.h>
@@ -144,6 +146,29 @@ class GetBrowserSessionResult {
 
   ///@{
   /**
+   * <p>A list of files containing enterprise policies for the browser session.</p>
+   */
+  inline const Aws::Vector<BrowserEnterprisePolicy>& GetEnterprisePolicies() const { return m_enterprisePolicies; }
+  template <typename EnterprisePoliciesT = Aws::Vector<BrowserEnterprisePolicy>>
+  void SetEnterprisePolicies(EnterprisePoliciesT&& value) {
+    m_enterprisePoliciesHasBeenSet = true;
+    m_enterprisePolicies = std::forward<EnterprisePoliciesT>(value);
+  }
+  template <typename EnterprisePoliciesT = Aws::Vector<BrowserEnterprisePolicy>>
+  GetBrowserSessionResult& WithEnterprisePolicies(EnterprisePoliciesT&& value) {
+    SetEnterprisePolicies(std::forward<EnterprisePoliciesT>(value));
+    return *this;
+  }
+  template <typename EnterprisePoliciesT = BrowserEnterprisePolicy>
+  GetBrowserSessionResult& AddEnterprisePolicies(EnterprisePoliciesT&& value) {
+    m_enterprisePoliciesHasBeenSet = true;
+    m_enterprisePolicies.emplace_back(std::forward<EnterprisePoliciesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The browser profile configuration associated with this session. Contains the
    * profile identifier that links to persistent browser data such as cookies and
    * local storage.</p>
@@ -232,6 +257,29 @@ class GetBrowserSessionResult {
 
   ///@{
   /**
+   * <p>The list of certificates installed in the browser session.</p>
+   */
+  inline const Aws::Vector<Certificate>& GetCertificates() const { return m_certificates; }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  void SetCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates = std::forward<CertificatesT>(value);
+  }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  GetBrowserSessionResult& WithCertificates(CertificatesT&& value) {
+    SetCertificates(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  template <typename CertificatesT = Certificate>
+  GetBrowserSessionResult& AddCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates.emplace_back(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The artifact containing the session replay information.</p>
    */
   inline const Aws::String& GetSessionReplayArtifact() const { return m_sessionReplayArtifact; }
@@ -293,6 +341,8 @@ class GetBrowserSessionResult {
 
   Aws::Vector<BrowserExtension> m_extensions;
 
+  Aws::Vector<BrowserEnterprisePolicy> m_enterprisePolicies;
+
   BrowserProfileConfiguration m_profileConfiguration;
 
   int m_sessionTimeoutSeconds{0};
@@ -302,6 +352,8 @@ class GetBrowserSessionResult {
   BrowserSessionStream m_streams;
 
   ProxyConfiguration m_proxyConfiguration;
+
+  Aws::Vector<Certificate> m_certificates;
 
   Aws::String m_sessionReplayArtifact;
 
@@ -315,11 +367,13 @@ class GetBrowserSessionResult {
   bool m_createdAtHasBeenSet = false;
   bool m_viewPortHasBeenSet = false;
   bool m_extensionsHasBeenSet = false;
+  bool m_enterprisePoliciesHasBeenSet = false;
   bool m_profileConfigurationHasBeenSet = false;
   bool m_sessionTimeoutSecondsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_streamsHasBeenSet = false;
   bool m_proxyConfigurationHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
   bool m_sessionReplayArtifactHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

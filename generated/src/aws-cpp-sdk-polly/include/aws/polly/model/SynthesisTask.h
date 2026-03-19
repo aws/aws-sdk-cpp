@@ -213,7 +213,8 @@ class SynthesisTask {
   ///@{
   /**
    * <p>The format in which the returned output will be encoded. For audio stream,
-   * this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
+   * this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law, or pcm. For speech marks,
+   * this will be json. </p>
    */
   inline OutputFormat GetOutputFormat() const { return m_outputFormat; }
   inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
@@ -234,7 +235,8 @@ class SynthesisTask {
    * standard voices is "22050". The default value for neural voices is "24000". The
    * default value for long-form voices is "24000". The default value for generative
    * voices is "24000".</p> <p>Valid values for pcm are "8000" and "16000" The
-   * default value is "16000". </p>
+   * default value is "16000". </p> <p>Valid value for ogg_opus is "48000". </p>
+   * <p>Valid value for mu-law and a-law is "8000". </p>
    */
   inline const Aws::String& GetSampleRate() const { return m_sampleRate; }
   inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }

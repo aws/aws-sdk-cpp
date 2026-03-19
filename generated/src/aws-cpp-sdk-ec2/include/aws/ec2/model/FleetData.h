@@ -17,6 +17,7 @@
 #include <aws/ec2/model/FleetStateCode.h>
 #include <aws/ec2/model/FleetType.h>
 #include <aws/ec2/model/OnDemandOptions.h>
+#include <aws/ec2/model/ReservedCapacityOptions.h>
 #include <aws/ec2/model/SpotOptions.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/TargetCapacitySpecification.h>
@@ -381,6 +382,25 @@ class FleetData {
 
   ///@{
   /**
+   * <p>Defines EC2 Fleet preferences for utilizing reserved capacity when
+   * DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+   */
+  inline const ReservedCapacityOptions& GetReservedCapacityOptions() const { return m_reservedCapacityOptions; }
+  inline bool ReservedCapacityOptionsHasBeenSet() const { return m_reservedCapacityOptionsHasBeenSet; }
+  template <typename ReservedCapacityOptionsT = ReservedCapacityOptions>
+  void SetReservedCapacityOptions(ReservedCapacityOptionsT&& value) {
+    m_reservedCapacityOptionsHasBeenSet = true;
+    m_reservedCapacityOptions = std::forward<ReservedCapacityOptionsT>(value);
+  }
+  template <typename ReservedCapacityOptionsT = ReservedCapacityOptions>
+  FleetData& WithReservedCapacityOptions(ReservedCapacityOptionsT&& value) {
+    SetReservedCapacityOptions(std::forward<ReservedCapacityOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags for an EC2 Fleet resource.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -505,6 +525,8 @@ class FleetData {
 
   OnDemandOptions m_onDemandOptions;
 
+  ReservedCapacityOptions m_reservedCapacityOptions;
+
   Aws::Vector<Tag> m_tags;
 
   Aws::Vector<DescribeFleetError> m_errors;
@@ -529,6 +551,7 @@ class FleetData {
   bool m_replaceUnhealthyInstancesHasBeenSet = false;
   bool m_spotOptionsHasBeenSet = false;
   bool m_onDemandOptionsHasBeenSet = false;
+  bool m_reservedCapacityOptionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_instancesHasBeenSet = false;

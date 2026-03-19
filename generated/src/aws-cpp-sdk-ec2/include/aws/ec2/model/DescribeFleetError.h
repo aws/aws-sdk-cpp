@@ -58,8 +58,8 @@ class DescribeFleetError {
 
   ///@{
   /**
-   * <p>Indicates if the instance that could not be launched was a Spot Instance or
-   * On-Demand Instance.</p>
+   * <p>Indicates if the instance that could not be launched was a Spot, On-Demand,
+   * Capacity Block, or Interruptible Capacity Reservation instance.</p>
    */
   inline InstanceLifecycle GetLifecycle() const { return m_lifecycle; }
   inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }

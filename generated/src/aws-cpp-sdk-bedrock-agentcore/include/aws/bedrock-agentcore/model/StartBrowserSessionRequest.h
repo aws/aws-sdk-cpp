@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/BrowserEnterprisePolicy.h>
 #include <aws/bedrock-agentcore/model/BrowserExtension.h>
 #include <aws/bedrock-agentcore/model/BrowserProfileConfiguration.h>
+#include <aws/bedrock-agentcore/model/Certificate.h>
 #include <aws/bedrock-agentcore/model/ProxyConfiguration.h>
 #include <aws/bedrock-agentcore/model/ViewPort.h>
 #include <aws/core/utils/UUID.h>
@@ -218,6 +220,54 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
 
   ///@{
   /**
+   * <p>A list of files containing enterprise policies for the browser.</p>
+   */
+  inline const Aws::Vector<BrowserEnterprisePolicy>& GetEnterprisePolicies() const { return m_enterprisePolicies; }
+  inline bool EnterprisePoliciesHasBeenSet() const { return m_enterprisePoliciesHasBeenSet; }
+  template <typename EnterprisePoliciesT = Aws::Vector<BrowserEnterprisePolicy>>
+  void SetEnterprisePolicies(EnterprisePoliciesT&& value) {
+    m_enterprisePoliciesHasBeenSet = true;
+    m_enterprisePolicies = std::forward<EnterprisePoliciesT>(value);
+  }
+  template <typename EnterprisePoliciesT = Aws::Vector<BrowserEnterprisePolicy>>
+  StartBrowserSessionRequest& WithEnterprisePolicies(EnterprisePoliciesT&& value) {
+    SetEnterprisePolicies(std::forward<EnterprisePoliciesT>(value));
+    return *this;
+  }
+  template <typename EnterprisePoliciesT = BrowserEnterprisePolicy>
+  StartBrowserSessionRequest& AddEnterprisePolicies(EnterprisePoliciesT&& value) {
+    m_enterprisePoliciesHasBeenSet = true;
+    m_enterprisePolicies.emplace_back(std::forward<EnterprisePoliciesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of certificates to install in the browser session.</p>
+   */
+  inline const Aws::Vector<Certificate>& GetCertificates() const { return m_certificates; }
+  inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  void SetCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates = std::forward<CertificatesT>(value);
+  }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  StartBrowserSessionRequest& WithCertificates(CertificatesT&& value) {
+    SetCertificates(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  template <typename CertificatesT = Certificate>
+  StartBrowserSessionRequest& AddCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates.emplace_back(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure that the API request completes
    * no more than one time. If this token matches a previous request, Amazon Bedrock
    * AgentCore ignores the request, but does not return an error. This parameter
@@ -256,6 +306,10 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
 
   ProxyConfiguration m_proxyConfiguration;
 
+  Aws::Vector<BrowserEnterprisePolicy> m_enterprisePolicies;
+
+  Aws::Vector<Certificate> m_certificates;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_traceIdHasBeenSet = false;
   bool m_traceParentHasBeenSet = false;
@@ -266,6 +320,8 @@ class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
   bool m_extensionsHasBeenSet = false;
   bool m_profileConfigurationHasBeenSet = false;
   bool m_proxyConfigurationHasBeenSet = false;
+  bool m_enterprisePoliciesHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

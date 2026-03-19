@@ -57,6 +57,10 @@ ServiceJobSummary& ServiceJobSummary::operator=(JsonView jsonValue) {
     m_shareIdentifier = jsonValue.GetString("shareIdentifier");
     m_shareIdentifierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("quotaShareName")) {
+    m_quotaShareName = jsonValue.GetString("quotaShareName");
+    m_quotaShareNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = ServiceJobStatusMapper::GetServiceJobStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -117,6 +121,10 @@ JsonValue ServiceJobSummary::Jsonize() const {
 
   if (m_shareIdentifierHasBeenSet) {
     payload.WithString("shareIdentifier", m_shareIdentifier);
+  }
+
+  if (m_quotaShareNameHasBeenSet) {
+    payload.WithString("quotaShareName", m_quotaShareName);
   }
 
   if (m_statusHasBeenSet) {

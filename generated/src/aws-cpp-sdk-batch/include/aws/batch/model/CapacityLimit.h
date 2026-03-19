@@ -20,9 +20,8 @@ namespace Batch {
 namespace Model {
 
 /**
- * <p>Defines the capacity limit for a service environment. This structure
- * specifies the maximum amount of resources that can be used by service jobs in
- * the environment.</p><p><h3>See Also:</h3>   <a
+ * <p>Defines the type and maximum quantity of resources that can be allocated to
+ * service jobs in a service environment.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CapacityLimit">AWS
  * API Reference</a></p>
  */
@@ -35,13 +34,19 @@ class CapacityLimit {
 
   ///@{
   /**
-   * <p>The maximum capacity available for the service environment. This value
-   * represents the maximum amount of resources that can be allocated to service
-   * jobs.</p> <p>For example, <code>maxCapacity=50</code>,
-   * <code>capacityUnit=NUM_INSTANCES</code>. This indicates that the maximum number
-   * of instances that can be run on this service environment is 50. You could then
-   * run 5 SageMaker Training jobs that each use 10 instances. However, if you submit
-   * another job that requires 10 instances, it will wait in the queue.</p>
+   * <p>The maximum capacity available for the service environment. For a quota
+   * management enabled service environment, this value represents the maximum
+   * quantity of a particular resource type (specified by <code>capacityUnit</code>)
+   * that can be allocated to service jobs. For other service environments, this
+   * value represents the maximum quantity of all resources that can be allocated to
+   * service jobs.</p> <p>For example, if <code>maxCapacity=50</code> and
+   * <code>capacityUnit=NUM_INSTANCES</code>, you can run up to 50 instances
+   * concurrently. If you run 5 SageMaker Training jobs that each use 10 instances, a
+   * subsequent job requiring 10 instances waits in the queue until capacity is
+   * available. In a quota management enabled service environment with
+   * <code>capacityUnit=ml.m5.large</code>, only <code>ml.m5.large</code> instances
+   * count against this limit, and jobs requiring other instance types wait until a
+   * matching capacity limit is configured.</p>
    */
   inline int GetMaxCapacity() const { return m_maxCapacity; }
   inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
@@ -57,8 +62,11 @@ class CapacityLimit {
 
   ///@{
   /**
-   * <p>The unit of measure for the capacity limit. This defines how the maxCapacity
-   * value should be interpreted. For <code>SAGEMAKER_TRAINING</code> jobs, use
+   * <p>The unit of measure for the capacity limit, which defines how
+   * <code>maxCapacity</code> is interpreted. For <code>SAGEMAKER_TRAINING</code>
+   * jobs in a quota management enabled service environment, specify the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceConfig.html#sagemaker-Type-ResourceConfig-InstanceType">instance
+   * type</a> (for example, <code>ml.m5.large</code>). Otherwise, use
    * <code>NUM_INSTANCES</code>.</p>
    */
   inline const Aws::String& GetCapacityUnit() const { return m_capacityUnit; }

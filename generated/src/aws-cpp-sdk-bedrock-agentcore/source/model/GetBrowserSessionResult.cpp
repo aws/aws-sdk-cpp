@@ -49,6 +49,14 @@ GetBrowserSessionResult& GetBrowserSessionResult::operator=(const Aws::AmazonWeb
     }
     m_extensionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enterprisePolicies")) {
+    Aws::Utils::Array<JsonView> enterprisePoliciesJsonList = jsonValue.GetArray("enterprisePolicies");
+    for (unsigned enterprisePoliciesIndex = 0; enterprisePoliciesIndex < enterprisePoliciesJsonList.GetLength();
+         ++enterprisePoliciesIndex) {
+      m_enterprisePolicies.push_back(enterprisePoliciesJsonList[enterprisePoliciesIndex].AsObject());
+    }
+    m_enterprisePoliciesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("profileConfiguration")) {
     m_profileConfiguration = jsonValue.GetObject("profileConfiguration");
     m_profileConfigurationHasBeenSet = true;
@@ -68,6 +76,13 @@ GetBrowserSessionResult& GetBrowserSessionResult::operator=(const Aws::AmazonWeb
   if (jsonValue.ValueExists("proxyConfiguration")) {
     m_proxyConfiguration = jsonValue.GetObject("proxyConfiguration");
     m_proxyConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("certificates")) {
+    Aws::Utils::Array<JsonView> certificatesJsonList = jsonValue.GetArray("certificates");
+    for (unsigned certificatesIndex = 0; certificatesIndex < certificatesJsonList.GetLength(); ++certificatesIndex) {
+      m_certificates.push_back(certificatesJsonList[certificatesIndex].AsObject());
+    }
+    m_certificatesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("sessionReplayArtifact")) {
     m_sessionReplayArtifact = jsonValue.GetString("sessionReplayArtifact");

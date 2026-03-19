@@ -34,6 +34,8 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizingClaimMatchValueType.h>
 #include <aws/bedrock-agentcore-control/model/BedrockEvaluatorModelConfig.h>
+#include <aws/bedrock-agentcore-control/model/BrowserEnterprisePolicy.h>
+#include <aws/bedrock-agentcore-control/model/BrowserEnterprisePolicyType.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/BrowserNetworkMode.h>
 #include <aws/bedrock-agentcore-control/model/BrowserProfileStatus.h>
@@ -44,6 +46,8 @@
 #include <aws/bedrock-agentcore-control/model/BrowserSummary.h>
 #include <aws/bedrock-agentcore-control/model/CategoricalScaleDefinition.h>
 #include <aws/bedrock-agentcore-control/model/CedarPolicy.h>
+#include <aws/bedrock-agentcore-control/model/Certificate.h>
+#include <aws/bedrock-agentcore-control/model/CertificateLocation.h>
 #include <aws/bedrock-agentcore-control/model/ClaimMatchOperatorType.h>
 #include <aws/bedrock-agentcore-control/model/ClaimMatchValueType.h>
 #include <aws/bedrock-agentcore-control/model/CloudWatchLogsInputConfig.h>
@@ -325,6 +329,7 @@
 #include <aws/bedrock-agentcore-control/model/ReflectionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Resource.h>
+#include <aws/bedrock-agentcore-control/model/ResourceLocation.h>
 #include <aws/bedrock-agentcore-control/model/ResourceType.h>
 #include <aws/bedrock-agentcore-control/model/RestApiMethod.h>
 #include <aws/bedrock-agentcore-control/model/Rule.h>
@@ -338,6 +343,7 @@
 #include <aws/bedrock-agentcore-control/model/SchemaType.h>
 #include <aws/bedrock-agentcore-control/model/SearchType.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
+#include <aws/bedrock-agentcore-control/model/SecretsManagerLocation.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/SemanticConsolidationOverride.h>

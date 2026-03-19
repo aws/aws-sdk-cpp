@@ -48,11 +48,18 @@ class SynthesizeSpeechResult {
    * <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you
    * request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the
    * <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you
+   * request <code>ogg_opus</code> as the <code>OutputFormat</code>, the
+   * <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you
    * request <code>pcm</code> as the <code>OutputFormat</code>, the
    * <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel
-   * (mono), little-endian format. </p> </li> <li> <p>If you request
-   * <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-   * returned is application/x-json-stream.</p> </li> </ul> <p> </p>
+   * (mono), little-endian format. </p> </li> <li> <p> If you request
+   * <code>mu-law</code> as the <code>OutputFormat</code>, the
+   * <code>ContentType</code> returned is audio/mulaw. </p> </li> <li> <p> If you
+   * request <code>a-law</code> as the <code>OutputFormat</code>, the
+   * <code>ContentType</code> returned is audio/alaw. </p> </li> <li> <p>If you
+   * request <code>json</code> as the <code>OutputFormat</code>, the
+   * <code>ContentType</code> returned is application/x-json-stream.</p> </li> </ul>
+   * <p> </p>
    */
   inline const Aws::String& GetContentType() const { return m_contentType; }
   template <typename ContentTypeT = Aws::String>

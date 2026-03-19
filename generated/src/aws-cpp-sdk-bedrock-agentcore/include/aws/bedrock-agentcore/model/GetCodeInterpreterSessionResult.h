@@ -5,10 +5,12 @@
 
 #pragma once
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/Certificate.h>
 #include <aws/bedrock-agentcore/model/CodeInterpreterSessionStatus.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -130,6 +132,29 @@ class GetCodeInterpreterSessionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The list of certificates installed in the code interpreter session.</p>
+   */
+  inline const Aws::Vector<Certificate>& GetCertificates() const { return m_certificates; }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  void SetCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates = std::forward<CertificatesT>(value);
+  }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  GetCodeInterpreterSessionResult& WithCertificates(CertificatesT&& value) {
+    SetCertificates(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  template <typename CertificatesT = Certificate>
+  GetCodeInterpreterSessionResult& AddCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates.emplace_back(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -158,6 +183,8 @@ class GetCodeInterpreterSessionResult {
 
   CodeInterpreterSessionStatus m_status{CodeInterpreterSessionStatus::NOT_SET};
 
+  Aws::Vector<Certificate> m_certificates;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_codeInterpreterIdentifierHasBeenSet = false;
@@ -166,6 +193,7 @@ class GetCodeInterpreterSessionResult {
   bool m_createdAtHasBeenSet = false;
   bool m_sessionTimeoutSecondsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

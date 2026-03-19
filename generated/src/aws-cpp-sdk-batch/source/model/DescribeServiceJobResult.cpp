@@ -88,6 +88,18 @@ DescribeServiceJobResult& DescribeServiceJobResult::operator=(const Aws::AmazonW
     m_shareIdentifier = jsonValue.GetString("shareIdentifier");
     m_shareIdentifierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("quotaShareName")) {
+    m_quotaShareName = jsonValue.GetString("quotaShareName");
+    m_quotaShareNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("preemptionConfiguration")) {
+    m_preemptionConfiguration = jsonValue.GetObject("preemptionConfiguration");
+    m_preemptionConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("preemptionSummary")) {
+    m_preemptionSummary = jsonValue.GetObject("preemptionSummary");
+    m_preemptionSummaryHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("startedAt")) {
     m_startedAt = jsonValue.GetInt64("startedAt");
     m_startedAtHasBeenSet = true;

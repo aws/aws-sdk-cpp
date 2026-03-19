@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/FairsharePolicy.h>
+#include <aws/batch/model/QuotaSharePolicy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -73,6 +74,24 @@ class SchedulingPolicyDetail {
 
   ///@{
   /**
+   * <p>The quota share scheduling policy details.</p>
+   */
+  inline const QuotaSharePolicy& GetQuotaSharePolicy() const { return m_quotaSharePolicy; }
+  inline bool QuotaSharePolicyHasBeenSet() const { return m_quotaSharePolicyHasBeenSet; }
+  template <typename QuotaSharePolicyT = QuotaSharePolicy>
+  void SetQuotaSharePolicy(QuotaSharePolicyT&& value) {
+    m_quotaSharePolicyHasBeenSet = true;
+    m_quotaSharePolicy = std::forward<QuotaSharePolicyT>(value);
+  }
+  template <typename QuotaSharePolicyT = QuotaSharePolicy>
+  SchedulingPolicyDetail& WithQuotaSharePolicy(QuotaSharePolicyT&& value) {
+    SetQuotaSharePolicy(std::forward<QuotaSharePolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The fair-share scheduling policy details.</p>
    */
   inline const FairsharePolicy& GetFairsharePolicy() const { return m_fairsharePolicy; }
@@ -122,11 +141,14 @@ class SchedulingPolicyDetail {
 
   Aws::String m_arn;
 
+  QuotaSharePolicy m_quotaSharePolicy;
+
   FairsharePolicy m_fairsharePolicy;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
+  bool m_quotaSharePolicyHasBeenSet = false;
   bool m_fairsharePolicyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
