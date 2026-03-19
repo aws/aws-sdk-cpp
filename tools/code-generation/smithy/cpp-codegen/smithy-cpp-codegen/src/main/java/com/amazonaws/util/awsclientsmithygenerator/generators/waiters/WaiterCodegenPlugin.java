@@ -26,7 +26,9 @@ public class WaiterCodegenPlugin implements SmithyBuildPlugin {
     public void execute(PluginContext context) {
         var model = context.getModel();
         
+        // Handle legacy services without Smithy models
         if (context.getProjectionName().endsWith(".mock")) {
+            WaiterEmptyHeaderGenerator.generate(context);
             return;
         }
         
