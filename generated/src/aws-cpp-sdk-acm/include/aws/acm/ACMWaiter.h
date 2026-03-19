@@ -8,6 +8,7 @@
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/DescribeCertificateRequest.h>
 #include <aws/acm/model/DescribeCertificateResult.h>
+#include <aws/acm/model/DomainStatus.h>
 #include <aws/core/utils/Waiter.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 
@@ -29,18 +30,22 @@ class ACMWaiter {
         [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return std::all_of(
-              result.GetCertificate().GetDomainValidationOptions().begin(), result.GetCertificate().GetDomainValidationOptions().end(),
-              [&](const Model::DomainValidation& item) { return item.GetValidationStatus() == expected.get<Aws::String>(); });
+          return std::all_of(result.GetCertificate().GetDomainValidationOptions().begin(),
+                             result.GetCertificate().GetDomainValidationOptions().end(), [&](const Model::DomainValidation& item) {
+                               return Model::DomainStatusMapper::GetNameForDomainStatus(item.GetValidationStatus()) ==
+                                      expected.get<Aws::String>();
+                             });
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CertificateValidatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING_VALIDATION"),
         [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return std::any_of(
-              result.GetCertificate().GetDomainValidationOptions().begin(), result.GetCertificate().GetDomainValidationOptions().end(),
-              [&](const Model::DomainValidation& item) { return item.GetValidationStatus() == expected.get<Aws::String>(); });
+          return std::any_of(result.GetCertificate().GetDomainValidationOptions().begin(),
+                             result.GetCertificate().GetDomainValidationOptions().end(), [&](const Model::DomainValidation& item) {
+                               return Model::DomainStatusMapper::GetNameForDomainStatus(item.GetValidationStatus()) ==
+                                      expected.get<Aws::String>();
+                             });
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CertificateValidatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),

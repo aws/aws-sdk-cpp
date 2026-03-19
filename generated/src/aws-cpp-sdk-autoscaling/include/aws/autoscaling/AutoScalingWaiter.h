@@ -53,24 +53,24 @@ class AutoScalingWaiter {
         [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return std::any_of(result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(),
-                             [](const Model::AutoScalingGroup& item) {
-                               return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const auto& inner) {
-                                          return (inner.GetLifecycleState() == "InService");
-                                        }) >= item.GetMinSize());
-                             }) == expected.get<bool>();
+          return std::any_of(
+                     result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(), [](const Model::AutoScalingGroup& item) {
+                       return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const Model::Instance& inner) {
+                                  return (inner.GetLifecycleState() == "InService");
+                                }) >= item.GetMinSize());
+                     }) == expected.get<bool>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GroupInServiceWaiter", Aws::Utils::WaiterState::RETRY, true,
         [](const Model::DescribeAutoScalingGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return std::any_of(result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(),
-                             [](const Model::AutoScalingGroup& item) {
-                               return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const auto& inner) {
-                                          return (inner.GetLifecycleState() == "InService");
-                                        }) >= item.GetMinSize());
-                             }) == expected.get<bool>();
+          return std::any_of(
+                     result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(), [](const Model::AutoScalingGroup& item) {
+                       return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const Model::Instance& inner) {
+                                  return (inner.GetLifecycleState() == "InService");
+                                }) >= item.GetMinSize());
+                     }) == expected.get<bool>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeAutoScalingGroups(req); };
