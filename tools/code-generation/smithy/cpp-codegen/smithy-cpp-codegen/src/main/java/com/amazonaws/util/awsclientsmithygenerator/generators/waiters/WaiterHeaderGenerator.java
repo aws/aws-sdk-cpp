@@ -53,8 +53,9 @@ public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationDa
         for (WaiterOperationData data : operations) {
             String opName = data.getOperation().getId().getName();
             String methodName = ShapeUtil.getOperationMethodName(opName, smithyServiceName);
+            String resultSuffix = ShapeUtil.getResultSuffix(model, data.getOperation(), smithyServiceName);
             writer.writeInclude("aws/" + smithyServiceName + "/model/" + methodName + "Request.h");
-            writer.writeInclude("aws/" + smithyServiceName + "/model/" + methodName + (smithyServiceName.equals("ec2") ? "Response.h" : "Result.h"));
+            writer.writeInclude("aws/" + smithyServiceName + "/model/" + methodName + resultSuffix + ".h");
         }
 
         // Generate all path matcher code once; cache results and collect enum includes.
