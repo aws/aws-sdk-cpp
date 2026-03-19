@@ -17,6 +17,7 @@ import software.amazon.smithy.jmespath.ast.ProjectionExpression;
 import software.amazon.smithy.jmespath.ast.Subexpression;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.waiters.PathComparator;
 
 import java.util.Set;
@@ -115,7 +116,11 @@ public class TopLevelVisitor extends UnsupportedExpressionVisitor<String> {
         }
 
         String collection = "result" + info.collectionGetter;
-        String condition = info.comparator.accept(new FilterPredicateEmitter("item"));
+
+        // Resolve the item shape for the outer collection so inner lambdas get concrete types
+        Shape itemShape = resolveContainsItemShape(collectionArg);
+        String condition = info.comparator.accept(
+                new FilterPredicateEmitter("item", model, itemShape, smithyServiceName));
         if (searchForFalse) {
             condition = "!" + condition;
         }
@@ -166,16 +171,24 @@ public class TopLevelVisitor extends UnsupportedExpressionVisitor<String> {
      * Resolves the element type for the collection in a contains() expression.
      */
     private String resolveContainsElementType(JmespathExpression collectionArg) {
-        if (model == null || operation == null) return "auto";
-        // collectionArg is: Projection(Flatten(Projection(Flatten(Field), MultiSelectList)), Current)
-        // The actual collection is accessed via the inner projection's left side.
-        if (!(collectionArg instanceof ProjectionExpression)) return "auto";
+        Shape itemShape = resolveContainsItemShape(collectionArg);
+        if (itemShape == null || !itemShape.isStructureShape()) return "auto";
+        return CollectionElementTypeResolver.shapeToTypeName(itemShape, smithyServiceName);
+    }
+
+    /**
+     * Resolves the element Shape for the outer collection in a contains() expression.
+     */
+    private Shape resolveContainsItemShape(JmespathExpression collectionArg) {
+        if (model == null || operation == null) return null;
+        if (!(collectionArg instanceof ProjectionExpression)) return null;
         JmespathExpression outerLeft = ((ProjectionExpression) collectionArg).getLeft();
-        if (!(outerLeft instanceof FlattenExpression)) return "auto";
+        if (!(outerLeft instanceof FlattenExpression)) return null;
         JmespathExpression innerExpr = ((FlattenExpression) outerLeft).getExpression();
-        if (!(innerExpr instanceof ProjectionExpression)) return "auto";
-        // Resolve element type of the inner projection
-        return CollectionElementTypeResolver.resolve(innerExpr, model, operation, smithyServiceName);
+        if (!(innerExpr instanceof ProjectionExpression)) return null;
+        Shape outputShape = model.expectShape(operation.getOutputShape());
+        return CollectionElementTypeResolver.resolveElementShape(
+                innerExpr, outputShape, model).orElse(null);
     }
 
     private String emitPathCode(JmespathExpression expr) {

@@ -4,12 +4,12 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.waiters.jmespath;
 
-import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
-import software.amazon.smithy.jmespath.JmespathExpression;
 import software.amazon.smithy.jmespath.ast.AndExpression;
 import software.amazon.smithy.jmespath.ast.ComparatorExpression;
 import software.amazon.smithy.jmespath.ast.NotExpression;
 import software.amazon.smithy.jmespath.ast.OrExpression;
+import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.Shape;
 
 /**
  * Emits a boolean predicate for use inside a filter projection lambda.
@@ -17,9 +17,19 @@ import software.amazon.smithy.jmespath.ast.OrExpression;
  */
 public class FilterPredicateEmitter extends UnsupportedExpressionVisitor<String> {
     private final String itemVar;
+    private final Model model;
+    private final Shape itemShape;
+    private final String smithyServiceName;
 
     FilterPredicateEmitter(String itemVar) {
+        this(itemVar, null, null, null);
+    }
+
+    FilterPredicateEmitter(String itemVar, Model model, Shape itemShape, String smithyServiceName) {
         this.itemVar = itemVar;
+        this.model = model;
+        this.itemShape = itemShape;
+        this.smithyServiceName = smithyServiceName;
     }
 
     @Override
@@ -44,8 +54,8 @@ public class FilterPredicateEmitter extends UnsupportedExpressionVisitor<String>
 
     @Override
     public String visitComparator(ComparatorExpression expression) {
-        String left = expression.getLeft().accept(new FilterOperandEmitter(itemVar));
-        String right = expression.getRight().accept(new FilterOperandEmitter(itemVar));
+        String left = expression.getLeft().accept(new FilterOperandEmitter(itemVar, model, null, itemShape, smithyServiceName));
+        String right = expression.getRight().accept(new FilterOperandEmitter(itemVar, model, null, itemShape, smithyServiceName));
 
         String op;
         switch (expression.getComparator()) {

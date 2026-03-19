@@ -79,6 +79,9 @@ public class EnumResolver {
         if (current == null) return null;
         if (expr instanceof FieldExpression) {
             return resolveMemberTarget(current, ((FieldExpression) expr).getName(), model);
+        } else if (expr instanceof Subexpression) {
+            Shape left = walkExpression(((Subexpression) expr).getLeft(), current, model);
+            return walkProjectionLeft(((Subexpression) expr).getRight(), left, model);
         } else if (expr instanceof FlattenExpression) {
             JmespathExpression inner = ((FlattenExpression) expr).getExpression();
             if (inner instanceof ProjectionExpression) {

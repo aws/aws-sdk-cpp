@@ -40,16 +40,26 @@ public class CollectionElementTypeResolver {
     public static String resolveFromShape(JmespathExpression expr, Shape current, Model model,
                                           String smithyServiceName) {
         if (model == null || current == null) return "auto";
-        return findFirstListElement(expr, current, model)
+        return resolveElementShape(expr, current, model)
                 .filter(Shape::isStructureShape)
-                .map(element -> {
-                    String shapeName = element.getId().getName();
-                    if ("ec2".equals(smithyServiceName) && shapeName.endsWith("Result")) {
-                        shapeName = shapeName.substring(0, shapeName.length() - 6) + "Response";
-                    }
-                    return "Model::" + shapeName;
-                })
+                .map(element -> shapeToTypeName(element, smithyServiceName))
                 .orElse("auto");
+    }
+
+    /**
+     * Resolve the element Shape of the first list encountered in the expression.
+     */
+    public static Optional<Shape> resolveElementShape(JmespathExpression expr, Shape current, Model model) {
+        if (model == null || current == null) return Optional.empty();
+        return findFirstListElement(expr, current, model);
+    }
+
+    static String shapeToTypeName(Shape element, String smithyServiceName) {
+        String shapeName = element.getId().getName();
+        if ("ec2".equals(smithyServiceName) && shapeName.endsWith("Result")) {
+            shapeName = shapeName.substring(0, shapeName.length() - 6) + "Response";
+        }
+        return "Model::" + shapeName;
     }
 
     /**

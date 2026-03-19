@@ -6,13 +6,17 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.waiters.jmespath;
 
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import software.amazon.smithy.jmespath.JmespathExpression;
+import software.amazon.smithy.jmespath.ast.CurrentExpression;
 import software.amazon.smithy.jmespath.ast.FieldExpression;
 import software.amazon.smithy.jmespath.ast.FilterProjectionExpression;
+import software.amazon.smithy.jmespath.ast.FlattenExpression;
 import software.amazon.smithy.jmespath.ast.FunctionExpression;
 import software.amazon.smithy.jmespath.ast.LiteralExpression;
+import software.amazon.smithy.jmespath.ast.ProjectionExpression;
 import software.amazon.smithy.jmespath.ast.Subexpression;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.Shape;
 
 /**
  * Emits operands within a filter predicate — fields resolve relative to the item,
@@ -22,15 +26,20 @@ public class FilterOperandEmitter extends UnsupportedExpressionVisitor<String> {
     private final String itemVar;
     private final Model model;
     private final OperationShape operation;
+    private final Shape itemShape;
+    private final String smithyServiceName;
 
     FilterOperandEmitter(String itemVar) {
-        this(itemVar, null, null);
+        this(itemVar, null, null, null, null);
     }
 
-    FilterOperandEmitter(String itemVar, Model model, OperationShape operation) {
+    FilterOperandEmitter(String itemVar, Model model, OperationShape operation,
+                         Shape itemShape, String smithyServiceName) {
         this.itemVar = itemVar;
         this.model = model;
         this.operation = operation;
+        this.itemShape = itemShape;
+        this.smithyServiceName = smithyServiceName;
     }
 
     @Override
@@ -66,10 +75,18 @@ public class FilterOperandEmitter extends UnsupportedExpressionVisitor<String> {
 
     private String emitItemCountIf(FilterProjectionExpression filterExpr) {
         String collection = itemVar + filterExpr.getLeft().accept(new CollectionGetterEmitter());
+        String innerElementType = resolveInnerElementType(filterExpr.getLeft());
         String predicate = filterExpr.getComparison().accept(new FilterPredicateEmitter("inner"));
-        // For nested count_if inside a filter, the collection is relative to the item,
-        // so type resolution would need the item's shape context. Fall back to auto for now.
         return "std::count_if(" + collection + ".begin(), " + collection + ".end(), "
-                + "[](const auto& inner) { return " + predicate + "; })";
+                + "[](const " + innerElementType + "& inner) { return " + predicate + "; })";
+    }
+
+    private String resolveInnerElementType(JmespathExpression collectionExpr) {
+        if (model == null || itemShape == null) return "auto";
+        // Wrap the field as a projection to use CollectionElementTypeResolver
+        JmespathExpression syntheticProj = new ProjectionExpression(
+                new FlattenExpression(collectionExpr), new CurrentExpression());
+        return CollectionElementTypeResolver.resolveFromShape(
+                syntheticProj, itemShape, model, smithyServiceName);
     }
 }
