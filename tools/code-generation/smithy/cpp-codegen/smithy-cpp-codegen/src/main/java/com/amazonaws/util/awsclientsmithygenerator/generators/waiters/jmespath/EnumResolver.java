@@ -24,13 +24,22 @@ import software.amazon.smithy.model.traits.EnumTrait;
  */
 public class EnumResolver {
     /**
-     * Walk the model from the output shape along the expression's field path.
+     * Walk the model from the outputx shape along the expression's field path.
      * Returns EnumInfo if the leaf is an enum, null otherwise.
      */
     public static EnumInfo resolveEnumInfo(JmespathExpression expr, Model model, OperationShape operation) {
         if (model == null || operation == null) return null;
         Shape current = model.expectShape(operation.getOutputShape());
-        current = walkExpression(expr, current, model);
+        return resolveEnumInfo(expr, model, current);
+    }
+
+    /**
+     * Resolve enum info from a field expression starting from a specific shape.
+     * Used for filter predicates where we know the item shape.
+     */
+    public static EnumInfo resolveEnumInfo(JmespathExpression expr, Model model, Shape itemShape) {
+        if (model == null || itemShape == null) return null;
+        Shape current = walkExpression(expr, itemShape, model);
         if (current != null) {
             if (current.isEnumShape()) {
                 return new EnumInfo(current.getId().getName());

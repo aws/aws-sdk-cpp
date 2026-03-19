@@ -56,7 +56,7 @@ class AutoScalingWaiter {
           return std::any_of(
                      result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(), [](const Model::AutoScalingGroup& item) {
                        return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const Model::Instance& inner) {
-                                  return (inner.GetLifecycleState() == "InService");
+                                  return (Model::LifecycleStateMapper::GetNameForLifecycleState(inner.GetLifecycleState()) == "InService");
                                 }) >= item.GetMinSize());
                      }) == expected.get<bool>();
         }));
@@ -68,7 +68,7 @@ class AutoScalingWaiter {
           return std::any_of(
                      result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(), [](const Model::AutoScalingGroup& item) {
                        return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const Model::Instance& inner) {
-                                  return (inner.GetLifecycleState() == "InService");
+                                  return (Model::LifecycleStateMapper::GetNameForLifecycleState(inner.GetLifecycleState()) == "InService");
                                 }) >= item.GetMinSize());
                      }) == expected.get<bool>();
         }));

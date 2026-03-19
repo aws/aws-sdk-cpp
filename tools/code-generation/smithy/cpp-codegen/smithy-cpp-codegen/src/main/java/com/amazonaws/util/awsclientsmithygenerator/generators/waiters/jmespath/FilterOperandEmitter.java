@@ -17,6 +17,7 @@ import software.amazon.smithy.jmespath.ast.Subexpression;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.Shape;
+import software.amazon.smithy.model.shapes.StructureShape;
 
 /**
  * Emits operands within a filter predicate — fields resolve relative to the item,
@@ -44,7 +45,17 @@ public class FilterOperandEmitter extends UnsupportedExpressionVisitor<String> {
 
     @Override
     public String visitField(FieldExpression expression) {
-        return itemVar + ".Get" + ServiceNameUtil.capitalize(expression.getName()) + "()";
+        String fieldAccess = itemVar + ".Get" + ServiceNameUtil.capitalize(expression.getName()) + "()";
+        
+        // Check if this field is an enum and wrap with enum mapper if needed
+        if (model != null && itemShape != null) {
+            EnumInfo enumInfo = EnumResolver.resolveEnumInfo(expression, model, itemShape);
+            if (enumInfo != null) {
+                return enumInfo.wrapAccess(fieldAccess);
+            }
+        }
+        
+        return fieldAccess;
     }
 
     @Override
@@ -76,7 +87,17 @@ public class FilterOperandEmitter extends UnsupportedExpressionVisitor<String> {
     private String emitItemCountIf(FilterProjectionExpression filterExpr) {
         String collection = itemVar + filterExpr.getLeft().accept(new CollectionGetterEmitter());
         String innerElementType = resolveInnerElementType(filterExpr.getLeft());
-        String predicate = filterExpr.getComparison().accept(new FilterPredicateEmitter("inner"));
+        
+        // Resolve the inner element shape for enum handling
+        Shape innerElementShape = null;
+        if (model != null && itemShape != null) {
+            innerElementShape = CollectionElementTypeResolver.resolveElementShape(
+                new ProjectionExpression(new FlattenExpression(filterExpr.getLeft()), new CurrentExpression()),
+                itemShape, model).orElse(null);
+        }
+        
+        String predicate = filterExpr.getComparison().accept(
+            new FilterPredicateEmitter("inner", model, innerElementShape, smithyServiceName));
         return "std::count_if(" + collection + ".begin(), " + collection + ".end(), "
                 + "[](const " + innerElementType + "& inner) { return " + predicate + "; })";
     }

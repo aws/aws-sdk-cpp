@@ -142,7 +142,10 @@ class DynamoDBWaiter {
           return ((result.GetKinesisDataStreamDestinations().size() > 0) &&
                   (std::count_if(result.GetKinesisDataStreamDestinations().begin(), result.GetKinesisDataStreamDestinations().end(),
                                  [](const Model::KinesisDataStreamDestination& item) {
-                                   return ((item.GetDestinationStatus() == "DISABLED") || (item.GetDestinationStatus() == "ENABLE_FAILED"));
+                                   return ((Model::DestinationStatusMapper::GetNameForDestinationStatus(item.GetDestinationStatus()) ==
+                                            "DISABLED") ||
+                                           (Model::DestinationStatusMapper::GetNameForDestinationStatus(item.GetDestinationStatus()) ==
+                                            "ENABLE_FAILED"));
                                  }) == result.GetKinesisDataStreamDestinations().size())) == expected.get<bool>();
         }));
 

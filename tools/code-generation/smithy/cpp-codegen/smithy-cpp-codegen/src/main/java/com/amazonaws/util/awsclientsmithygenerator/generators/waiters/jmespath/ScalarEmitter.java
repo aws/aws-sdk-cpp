@@ -14,6 +14,7 @@ import software.amazon.smithy.jmespath.ast.LiteralExpression;
 import software.amazon.smithy.jmespath.ast.ProjectionExpression;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.Shape;
 
 /**
  * Emits scalar operands in comparisons: length(), literals, and field access.
@@ -48,8 +49,18 @@ public class ScalarEmitter extends UnsupportedExpressionVisitor<String> {
 
     private String emitCountIf(FilterProjectionExpression filterExpr) {
         String collection = "result" + filterExpr.getLeft().accept(new CollectionGetterEmitter());
-        String predicate = filterExpr.getComparison().accept(new FilterPredicateEmitter("item"));
         String elementType = resolveFilterElementType(filterExpr);
+        
+        // Resolve the element shape for enum handling
+        Shape elementShape = null;
+        if (model != null && operation != null) {
+            elementShape = CollectionElementTypeResolver.resolveElementShape(
+                new ProjectionExpression(filterExpr.getLeft(), new CurrentExpression()),
+                model.expectShape(operation.getOutputShape()), model).orElse(null);
+        }
+        
+        String predicate = filterExpr.getComparison().accept(
+            new FilterPredicateEmitter("item", model, elementShape, smithyServiceName));
         return "std::count_if(" + collection + ".begin(), " + collection + ".end(), "
                 + "[](const " + elementType + "& item) { return " + predicate + "; })";
     }
