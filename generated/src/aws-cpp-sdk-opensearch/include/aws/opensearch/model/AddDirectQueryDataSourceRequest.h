@@ -90,8 +90,9 @@ class AddDirectQueryDataSourceRequest : public OpenSearchServiceRequest {
 
   ///@{
   /**
-   * <p> A list of Amazon Resource Names (ARNs) for the OpenSearch collections that
-   * are associated with the direct query data source. </p>
+   * <p> An optional list of Amazon Resource Names (ARNs) for the OpenSearch
+   * collections that are associated with the direct query data source. This field is
+   * required for CloudWatchLogs and SecurityLake datasource types. </p>
    */
   inline const Aws::Vector<Aws::String>& GetOpenSearchArns() const { return m_openSearchArns; }
   inline bool OpenSearchArnsHasBeenSet() const { return m_openSearchArnsHasBeenSet; }

@@ -65,6 +65,10 @@ GetPolicyResult& GetPolicyResult::operator=(const Aws::AmazonWebServiceResult<Js
     m_effect = PolicyEffectMapper::GetPolicyEffectForName(jsonValue.GetString("effect"));
     m_effectHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

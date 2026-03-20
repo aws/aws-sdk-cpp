@@ -17,6 +17,7 @@ namespace BatchGetPolicyErrorCodeMapper {
 
 static const int POLICY_STORE_NOT_FOUND_HASH = HashingUtils::HashString("POLICY_STORE_NOT_FOUND");
 static const int POLICY_NOT_FOUND_HASH = HashingUtils::HashString("POLICY_NOT_FOUND");
+static const int POLICY_STORE_ALIAS_NOT_FOUND_HASH = HashingUtils::HashString("POLICY_STORE_ALIAS_NOT_FOUND");
 
 BatchGetPolicyErrorCode GetBatchGetPolicyErrorCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ BatchGetPolicyErrorCode GetBatchGetPolicyErrorCodeForName(const Aws::String& nam
     return BatchGetPolicyErrorCode::POLICY_STORE_NOT_FOUND;
   } else if (hashCode == POLICY_NOT_FOUND_HASH) {
     return BatchGetPolicyErrorCode::POLICY_NOT_FOUND;
+  } else if (hashCode == POLICY_STORE_ALIAS_NOT_FOUND_HASH) {
+    return BatchGetPolicyErrorCode::POLICY_STORE_ALIAS_NOT_FOUND;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForBatchGetPolicyErrorCode(BatchGetPolicyErrorCode enumValue)
       return "POLICY_STORE_NOT_FOUND";
     case BatchGetPolicyErrorCode::POLICY_NOT_FOUND:
       return "POLICY_NOT_FOUND";
+    case BatchGetPolicyErrorCode::POLICY_STORE_ALIAS_NOT_FOUND:
+      return "POLICY_STORE_ALIAS_NOT_FOUND";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

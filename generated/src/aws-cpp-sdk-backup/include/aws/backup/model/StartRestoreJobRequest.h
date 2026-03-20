@@ -72,6 +72,8 @@ class StartRestoreJobRequest : public BackupRequest {
    * for Amazon EC2</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-efs.html#efs-restore-cli">Metadata
    * for Amazon EFS</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-eks.html#eks-restore-backup-section">Metadata
+   * for Amazon EKS</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-fsx.html#fsx-restore-cli">Metadata
    * for Amazon FSx</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-nep.html#nep-restore-cli">Metadata
@@ -159,7 +161,8 @@ class StartRestoreJobRequest : public BackupRequest {
    * <code>DynamoDB</code> - Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code> -
    * Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> - Amazon Elastic
    * Compute Cloud</p> </li> <li> <p> <code>EFS</code> - Amazon Elastic File
-   * System</p> </li> <li> <p> <code>FSx</code> - Amazon FSx</p> </li> <li> <p>
+   * System</p> </li> <li> <p> <code>EKS</code> - Amazon Elastic Kubernetes
+   * Service</p> </li> <li> <p> <code>FSx</code> - Amazon FSx</p> </li> <li> <p>
    * <code>Neptune</code> - Amazon Neptune</p> </li> <li> <p> <code>RDS</code> -
    * Amazon Relational Database Service</p> </li> <li> <p> <code>Redshift</code> -
    * Amazon Redshift</p> </li> <li> <p> <code>Storage Gateway</code> - Storage

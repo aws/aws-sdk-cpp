@@ -23,7 +23,7 @@ namespace Model {
 
 /**
  * <p>The request failed because another request to modify a resource occurred at
- * the same.</p><p><h3>See Also:</h3>   <a
+ * the same time.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ConflictException">AWS
  * API Reference</a></p>
  */

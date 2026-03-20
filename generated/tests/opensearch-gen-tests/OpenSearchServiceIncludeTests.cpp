@@ -289,6 +289,7 @@
 #include <aws/opensearch/model/PackageVersionHistory.h>
 #include <aws/opensearch/model/PluginProperties.h>
 #include <aws/opensearch/model/PrincipalType.h>
+#include <aws/opensearch/model/PrometheusDirectQueryDataSource.h>
 #include <aws/opensearch/model/PropertyValueType.h>
 #include <aws/opensearch/model/PurchaseReservedInstanceOfferingRequest.h>
 #include <aws/opensearch/model/PurchaseReservedInstanceOfferingResult.h>

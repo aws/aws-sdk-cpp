@@ -27,6 +27,10 @@ Aws::String CreatePolicyRequest::SerializePayload() const {
     payload.WithObject("definition", m_definition.Jsonize());
   }
 
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -143,6 +143,25 @@ class BatchGetPolicyOutputItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the policy, if one was assigned when the policy was created or
+   * last updated.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  BatchGetPolicyOutputItem& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_policyStoreId;
 
@@ -155,12 +174,15 @@ class BatchGetPolicyOutputItem {
   Aws::Utils::DateTime m_createdDate{};
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
+
+  Aws::String m_name;
   bool m_policyStoreIdHasBeenSet = false;
   bool m_policyIdHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
 };
 
 }  // namespace Model

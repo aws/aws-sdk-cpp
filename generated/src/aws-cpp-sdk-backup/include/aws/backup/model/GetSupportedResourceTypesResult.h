@@ -38,6 +38,7 @@ class GetSupportedResourceTypesResult {
    * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
    * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
    * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+   * <code>EKS</code> for Amazon Elastic Kubernetes Service</p> </li> <li> <p>
    * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
    * Amazon Neptune</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
    * Database Service</p> </li> <li> <p> <code>Redshift</code> for Amazon

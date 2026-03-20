@@ -33,6 +33,8 @@ class DeletePolicyStoreRequest : public VerifiedPermissionsRequest {
   ///@{
   /**
    * <p>Specifies the ID of the policy store that you want to delete.</p>
+   * <p>To specify a policy store, the alias name cannot be used. Only the ID can be
+   * used.</p>
    */
   inline const Aws::String& GetPolicyStoreId() const { return m_policyStoreId; }
   inline bool PolicyStoreIdHasBeenSet() const { return m_policyStoreIdHasBeenSet; }

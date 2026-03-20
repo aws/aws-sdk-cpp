@@ -132,6 +132,24 @@ class GetPolicyTemplateResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The name of the policy template, if one was assigned when the policy template
+   * was created or last updated.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  GetPolicyTemplateResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -160,6 +178,8 @@ class GetPolicyTemplateResult {
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
 
+  Aws::String m_name;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_policyStoreIdHasBeenSet = false;
@@ -168,6 +188,7 @@ class GetPolicyTemplateResult {
   bool m_statementHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

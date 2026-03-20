@@ -46,6 +46,10 @@ GetPolicyTemplateResult& GetPolicyTemplateResult::operator=(const Aws::AmazonWeb
     m_lastUpdatedDate = jsonValue.GetString("lastUpdatedDate");
     m_lastUpdatedDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

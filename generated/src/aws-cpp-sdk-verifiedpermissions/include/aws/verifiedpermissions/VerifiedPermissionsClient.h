@@ -373,6 +373,44 @@ class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : public Aws::Client
   }
 
   /**
+   * <p>Creates a policy store alias for the specified policy store. A policy store
+   * alias is an alternative identifier that you can use to reference a policy store
+   * in API operations.</p> <p>This operation is idempotent. If multiple
+   * CreatePolicyStoreAlias requests are made where the <code>aliasName</code> and
+   * <code>policyStoreId</code> fields are the same between the requests, subsequent
+   * requests will be ignored. For each duplicate CreatePolicyStoreAlias request, a
+   * Success response will be returned and a new policy store alias will not be
+   * created.</p>  <p>Verified Permissions is <i> <a
+   * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
+   * </i>. It can take a few seconds for a new or changed element to propagate
+   * through the service and be visible in the results of other Verified Permissions
+   * operations.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicyStoreAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePolicyStoreAliasOutcome CreatePolicyStoreAlias(const Model::CreatePolicyStoreAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePolicyStoreAlias that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreatePolicyStoreAliasRequestT = Model::CreatePolicyStoreAliasRequest>
+  Model::CreatePolicyStoreAliasOutcomeCallable CreatePolicyStoreAliasCallable(const CreatePolicyStoreAliasRequestT& request) const {
+    return SubmitCallable(&VerifiedPermissionsClient::CreatePolicyStoreAlias, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePolicyStoreAlias that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreatePolicyStoreAliasRequestT = Model::CreatePolicyStoreAliasRequest>
+  void CreatePolicyStoreAliasAsync(const CreatePolicyStoreAliasRequestT& request,
+                                   const CreatePolicyStoreAliasResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&VerifiedPermissionsClient::CreatePolicyStoreAlias, request, handler, context);
+  }
+
+  /**
    * <p>Creates a policy template. A template can use placeholders for the principal
    * and resource. A template must be instantiated into a policy by associating it
    * with specific principals and resources to use for the placeholders. That
@@ -497,6 +535,41 @@ class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : public Aws::Client
   }
 
   /**
+   * <p>Deletes the specified policy store alias.</p> <p>This operation is
+   * idempotent. If you specify a policy store alias that does not exist, the request
+   * response will still return a successful HTTP 200 status code.</p> <p>When a
+   * policy store alias is deleted, it enters the <code>PendingDeletion</code> state.
+   * When a policy store alias is in the <code>PendingDeletion</code> state, new
+   * policy store aliases cannot be created with the same name. If the policy store
+   * alias is used in an API that has a <code>policyStoreId</code> field, the
+   * operation will fail with a <code>ResourceNotFound</code>
+   * exception.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/DeletePolicyStoreAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePolicyStoreAliasOutcome DeletePolicyStoreAlias(const Model::DeletePolicyStoreAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePolicyStoreAlias that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeletePolicyStoreAliasRequestT = Model::DeletePolicyStoreAliasRequest>
+  Model::DeletePolicyStoreAliasOutcomeCallable DeletePolicyStoreAliasCallable(const DeletePolicyStoreAliasRequestT& request) const {
+    return SubmitCallable(&VerifiedPermissionsClient::DeletePolicyStoreAlias, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePolicyStoreAlias that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeletePolicyStoreAliasRequestT = Model::DeletePolicyStoreAliasRequest>
+  void DeletePolicyStoreAliasAsync(const DeletePolicyStoreAliasRequestT& request,
+                                   const DeletePolicyStoreAliasResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&VerifiedPermissionsClient::DeletePolicyStoreAlias, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the specified policy template from the policy store.</p>
    * <p>This operation also deletes any policies that were created from the specified
    * policy template. Those policies are immediately removed from all future API
@@ -602,6 +675,33 @@ class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : public Aws::Client
   void GetPolicyStoreAsync(const GetPolicyStoreRequestT& request, const GetPolicyStoreResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&VerifiedPermissionsClient::GetPolicyStore, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves details about the specified policy store alias.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetPolicyStoreAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPolicyStoreAliasOutcome GetPolicyStoreAlias(const Model::GetPolicyStoreAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPolicyStoreAlias that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPolicyStoreAliasRequestT = Model::GetPolicyStoreAliasRequest>
+  Model::GetPolicyStoreAliasOutcomeCallable GetPolicyStoreAliasCallable(const GetPolicyStoreAliasRequestT& request) const {
+    return SubmitCallable(&VerifiedPermissionsClient::GetPolicyStoreAlias, request);
+  }
+
+  /**
+   * An Async wrapper for GetPolicyStoreAlias that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetPolicyStoreAliasRequestT = Model::GetPolicyStoreAliasRequest>
+  void GetPolicyStoreAliasAsync(const GetPolicyStoreAliasRequestT& request, const GetPolicyStoreAliasResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&VerifiedPermissionsClient::GetPolicyStoreAlias, request, handler, context);
   }
 
   /**
@@ -778,6 +878,34 @@ class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : public Aws::Client
   void ListPoliciesAsync(const ListPoliciesRequestT& request, const ListPoliciesResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&VerifiedPermissionsClient::ListPolicies, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of all policy store aliases in the calling Amazon
+   * Web Services account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListPolicyStoreAliases">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPolicyStoreAliasesOutcome ListPolicyStoreAliases(const Model::ListPolicyStoreAliasesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListPolicyStoreAliases that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPolicyStoreAliasesRequestT = Model::ListPolicyStoreAliasesRequest>
+  Model::ListPolicyStoreAliasesOutcomeCallable ListPolicyStoreAliasesCallable(const ListPolicyStoreAliasesRequestT& request = {}) const {
+    return SubmitCallable(&VerifiedPermissionsClient::ListPolicyStoreAliases, request);
+  }
+
+  /**
+   * An Async wrapper for ListPolicyStoreAliases that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListPolicyStoreAliasesRequestT = Model::ListPolicyStoreAliasesRequest>
+  void ListPolicyStoreAliasesAsync(const ListPolicyStoreAliasesResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const ListPolicyStoreAliasesRequestT& request = {}) const {
+    return SubmitAsync(&VerifiedPermissionsClient::ListPolicyStoreAliases, request, handler, context);
   }
 
   /**

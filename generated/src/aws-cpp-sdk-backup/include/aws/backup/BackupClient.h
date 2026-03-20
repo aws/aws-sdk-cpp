@@ -942,10 +942,11 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Describes whether the Amazon Web Services account is opted in to
-   * cross-account backup. Returns an error if the account is not a member of an
-   * Organizations organization. Example: <code>describe-global-settings --region
-   * us-west-2</code> </p><p><h3>See Also:</h3>   <a
+   * <p>Describes whether the Amazon Web Services account has enabled different
+   * cross-account management options, including cross-account backup, multi-party
+   * approval, and delegated administrator. Returns an error if the account is not a
+   * member of an Organizations organization. Example: <code>describe-global-settings
+   * --region us-west-2</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">AWS
    * API Reference</a></p>
    */
@@ -3010,10 +3011,11 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates whether the Amazon Web Services account is opted in to cross-account
-   * backup. Returns an error if the account is not an Organizations management
-   * account. Use the <code>DescribeGlobalSettings</code> API to determine the
-   * current settings.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates whether the Amazon Web Services account has enabled different
+   * cross-account management options, including cross-account backup, multi-party
+   * approval, and delegated administrator. Returns an error if the account is not an
+   * Organizations management account. Use the <code>DescribeGlobalSettings</code>
+   * API to determine the current settings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">AWS
    * API Reference</a></p>
    */

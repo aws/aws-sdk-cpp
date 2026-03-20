@@ -20,6 +20,7 @@ static const int POLICY_STORE_HASH = HashingUtils::HashString("POLICY_STORE");
 static const int POLICY_HASH = HashingUtils::HashString("POLICY");
 static const int POLICY_TEMPLATE_HASH = HashingUtils::HashString("POLICY_TEMPLATE");
 static const int SCHEMA_HASH = HashingUtils::HashString("SCHEMA");
+static const int POLICY_STORE_ALIAS_HASH = HashingUtils::HashString("POLICY_STORE_ALIAS");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::POLICY_TEMPLATE;
   } else if (hashCode == SCHEMA_HASH) {
     return ResourceType::SCHEMA;
+  } else if (hashCode == POLICY_STORE_ALIAS_HASH) {
+    return ResourceType::POLICY_STORE_ALIAS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "POLICY_TEMPLATE";
     case ResourceType::SCHEMA:
       return "SCHEMA";
+    case ResourceType::POLICY_STORE_ALIAS:
+      return "POLICY_STORE_ALIAS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

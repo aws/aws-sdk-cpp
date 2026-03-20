@@ -8,6 +8,7 @@
 #include <aws/verifiedpermissions/VerifiedPermissionsClient.h>
 #include <aws/verifiedpermissions/model/ListIdentitySourcesPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListPoliciesPaginationTraits.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoreAliasesPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListPolicyStoresPaginationTraits.h>
 #include <aws/verifiedpermissions/model/ListPolicyTemplatesPaginationTraits.h>
 
@@ -19,6 +20,9 @@ using ListIdentitySourcesPaginator =
                                       Pagination::ListIdentitySourcesPaginationTraits<VerifiedPermissionsClient>>;
 using ListPoliciesPaginator = Aws::Utils::Pagination::Paginator<VerifiedPermissionsClient, Model::ListPoliciesRequest,
                                                                 Pagination::ListPoliciesPaginationTraits<VerifiedPermissionsClient>>;
+using ListPolicyStoreAliasesPaginator =
+    Aws::Utils::Pagination::Paginator<VerifiedPermissionsClient, Model::ListPolicyStoreAliasesRequest,
+                                      Pagination::ListPolicyStoreAliasesPaginationTraits<VerifiedPermissionsClient>>;
 using ListPolicyStoresPaginator =
     Aws::Utils::Pagination::Paginator<VerifiedPermissionsClient, Model::ListPolicyStoresRequest,
                                       Pagination::ListPolicyStoresPaginationTraits<VerifiedPermissionsClient>>;

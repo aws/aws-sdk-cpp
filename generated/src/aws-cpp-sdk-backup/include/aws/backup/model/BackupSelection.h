@@ -86,7 +86,10 @@ class BackupSelection {
    * consider a different resource selection strategy, such as assigning all
    * resources of a resource type or refining your resource selection using tags.</p>
    * <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR
-   * logic).</p>
+   * logic).</p>  <p>When using wildcards in ARN patterns for backup
+   * selections, the asterisk (*) must appear at the end of the ARN string (prefix
+   * pattern). For example, <code>arn:aws:s3:::my-bucket-*</code> is valid, but
+   * <code>arn:aws:s3:::*-logs</code> is not supported.</p>
    */
   inline const Aws::Vector<Aws::String>& GetResources() const { return m_resources; }
   inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
