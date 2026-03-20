@@ -169,7 +169,11 @@ if(peekType_${recursionDepth}){
     #end
 #elseif($shapeMember.map)
     #set($template.nestedShapeMember = $shapeMember.mapValue.shape)
+#if($shapeMember.sparse)
+    auto nestedMap_${recursionDepth} = Map<Aws::String, Aws::Crt::Optional<$CppViewHelper.computeCppType($template.nestedShapeMember)>>();
+#else
     auto nestedMap_${recursionDepth} = Map<Aws::String, $CppViewHelper.computeCppType($template.nestedShapeMember)>();
+#end
     auto peekType_${recursionDepth} = decoder->PeekType();
     if (peekType_${recursionDepth}.has_value() && (peekType_${recursionDepth}.value() == CborType::MapStart || peekType_${recursionDepth}.value() == CborType::IndefMapStart))
     {
@@ -214,7 +218,11 @@ if(peekType_${recursionDepth}){
     }
 #elseif($shapeMember.list)
     #set($template.nestedShapeMember = $shapeMember.listMember.shape)
+#if($shapeMember.sparse)
+    auto nestedList_${recursionDepth} = Vector<Aws::Crt::Optional<$CppViewHelper.computeCppType($template.nestedShapeMember)>>();
+#else
     auto nestedList_${recursionDepth} = Vector<$CppViewHelper.computeCppType($template.nestedShapeMember)>();
+#end
     auto peekType_${recursionDepth} = decoder->PeekType();
     if (peekType_${recursionDepth}.has_value() && (peekType_${recursionDepth}.value() == CborType::ArrayStart || peekType_${recursionDepth}.value() == CborType::IndefArrayStart))
     {
