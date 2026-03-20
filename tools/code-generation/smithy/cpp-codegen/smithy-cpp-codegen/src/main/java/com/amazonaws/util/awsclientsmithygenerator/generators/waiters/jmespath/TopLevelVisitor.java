@@ -52,7 +52,7 @@ public class TopLevelVisitor extends UnsupportedExpressionVisitor<String> {
 
     @Override
     public String visitComparator(ComparatorExpression expression) {
-        String cmpCode = expression.accept(new ComparatorEmitter(model, operation, smithyServiceName));
+        String cmpCode = expression.accept(new ComparatorEmitter(model, operation, smithyServiceName, enumIncludes));
         return "    return " + cmpCode + " == expected.get<bool>();\n";
     }
 
@@ -62,7 +62,7 @@ public class TopLevelVisitor extends UnsupportedExpressionVisitor<String> {
             throw new UnsupportedOperationException(
                     "AND expressions only supported with BOOLEAN_EQUALS comparator, got: " + comparator);
         }
-        String andCode = expression.accept(new ComparatorEmitter(model, operation, smithyServiceName));
+        String andCode = expression.accept(new ComparatorEmitter(model, operation, smithyServiceName, enumIncludes));
         return "    return " + andCode + " == expected.get<bool>();\n";
     }
 

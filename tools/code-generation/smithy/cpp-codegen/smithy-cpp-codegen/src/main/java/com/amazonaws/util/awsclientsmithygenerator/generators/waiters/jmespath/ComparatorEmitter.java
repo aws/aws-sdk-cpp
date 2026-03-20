@@ -9,6 +9,8 @@ import software.amazon.smithy.jmespath.ast.ComparatorExpression;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
 
+import java.util.Set;
+
 /**
  * Emits code for comparator expressions like {@code length(Items[]) > `0`}.
  */
@@ -16,15 +18,17 @@ public class ComparatorEmitter extends UnsupportedExpressionVisitor<String> {
     private final Model model;
     private final OperationShape operation;
     private final String smithyServiceName;
+    private final Set<String> enumIncludes;
 
     public ComparatorEmitter() {
-        this(null, null, null);
+        this(null, null, null, null);
     }
 
-    public ComparatorEmitter(Model model, OperationShape operation, String smithyServiceName) {
+    public ComparatorEmitter(Model model, OperationShape operation, String smithyServiceName, Set<String> enumIncludes) {
         this.model = model;
         this.operation = operation;
         this.smithyServiceName = smithyServiceName;
+        this.enumIncludes = enumIncludes;
     }
 
     @Override
@@ -36,7 +40,7 @@ public class ComparatorEmitter extends UnsupportedExpressionVisitor<String> {
 
     @Override
     public String visitComparator(ComparatorExpression expression) {
-        ScalarEmitter scalar = new ScalarEmitter(model, operation, smithyServiceName);
+        ScalarEmitter scalar = new ScalarEmitter(model, operation, smithyServiceName, enumIncludes);
         String left = expression.getLeft().accept(scalar);
         String right = expression.getRight().accept(scalar);
 

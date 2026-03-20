@@ -79,7 +79,8 @@ class NeptuneGraphWaiter {
         [](const Model::GetImportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return ((result.GetStatus() != "CANCELLING") && (result.GetStatus() != "CANCELLED")) == expected.get<bool>();
+          return ((Model::ImportTaskStatusMapper::GetNameForImportTaskStatus(result.GetStatus()) != "CANCELLING") &&
+                  (Model::ImportTaskStatusMapper::GetNameForImportTaskStatus(result.GetStatus()) != "CANCELLED")) == expected.get<bool>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportTaskCancelledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CANCELLED"),
@@ -137,7 +138,8 @@ class NeptuneGraphWaiter {
         [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return (result.GetStatus() != "DELETING") == expected.get<bool>();
+          return (Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) != "DELETING") ==
+                 expected.get<bool>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("GraphDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
@@ -163,7 +165,7 @@ class NeptuneGraphWaiter {
         [](const Model::GetGraphOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return (result.GetStatus() != "STOPPING") == expected.get<bool>();
+          return (Model::GraphStatusMapper::GetNameForGraphStatus(result.GetStatus()) != "STOPPING") == expected.get<bool>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetGraph(req); };
@@ -214,7 +216,8 @@ class NeptuneGraphWaiter {
         [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return (result.GetStatus() != "DELETING") == expected.get<bool>();
+          return (Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) != "DELETING") ==
+                 expected.get<bool>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "GraphSnapshotDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
@@ -279,7 +282,8 @@ class NeptuneGraphWaiter {
         [](const Model::GetImportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return ((result.GetStatus() != "CANCELLING") && (result.GetStatus() != "CANCELLED")) == expected.get<bool>();
+          return ((Model::ImportTaskStatusMapper::GetNameForImportTaskStatus(result.GetStatus()) != "CANCELLING") &&
+                  (Model::ImportTaskStatusMapper::GetNameForImportTaskStatus(result.GetStatus()) != "CANCELLED")) == expected.get<bool>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImportTaskCancelledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CANCELLED"),
@@ -339,7 +343,8 @@ class NeptuneGraphWaiter {
         [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return (result.GetStatus() != "DELETING") == expected.get<bool>();
+          return (Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) != "DELETING") ==
+                 expected.get<bool>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "PrivateGraphEndpointDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));

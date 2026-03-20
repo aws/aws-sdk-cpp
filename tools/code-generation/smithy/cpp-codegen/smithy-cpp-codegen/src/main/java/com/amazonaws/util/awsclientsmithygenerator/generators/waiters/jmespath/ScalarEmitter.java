@@ -16,6 +16,8 @@ import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.Shape;
 
+import java.util.Set;
+
 /**
  * Emits scalar operands in comparisons: length(), literals, and field access.
  */
@@ -23,15 +25,17 @@ public class ScalarEmitter extends UnsupportedExpressionVisitor<String> {
     private final Model model;
     private final OperationShape operation;
     private final String smithyServiceName;
+    private final Set<String> enumIncludes;
 
     public ScalarEmitter() {
-        this(null, null, null);
+        this(null, null, null, null);
     }
 
-    public ScalarEmitter(Model model, OperationShape operation, String smithyServiceName) {
+    public ScalarEmitter(Model model, OperationShape operation, String smithyServiceName, Set<String> enumIncludes) {
         this.model = model;
         this.operation = operation;
         this.smithyServiceName = smithyServiceName;
+        this.enumIncludes = enumIncludes;
     }
 
     @Override
@@ -84,6 +88,14 @@ public class ScalarEmitter extends UnsupportedExpressionVisitor<String> {
 
     @Override
     public String visitField(FieldExpression expression) {
-        return "result.Get" + ServiceNameUtil.capitalize(expression.getName()) + "()";
+        String access = "result.Get" + ServiceNameUtil.capitalize(expression.getName()) + "()";
+        if (model != null && operation != null) {
+            EnumInfo enumInfo = EnumResolver.resolveEnumInfo(expression, model, operation);
+            if (enumInfo != null) {
+                if (enumIncludes != null) enumIncludes.add(enumInfo.shapeName);
+                return enumInfo.wrapAccess(access);
+            }
+        }
+        return access;
     }
 }
