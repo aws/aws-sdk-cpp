@@ -1,24 +1,7 @@
-#set($parentListDepth = $recursionDepth - 1)
-#if($member.shape.sparse)
-{
-    auto nullPeek_${recursionDepth} = decoder->PeekType();
-    if (nullPeek_${recursionDepth}.has_value() && nullPeek_${recursionDepth}.value() == Aws::Crt::Cbor::CborType::Null) {
-        decoder->ConsumeNextSingleElement();
-#if($parentListDepth == 0)
-        ${memberVarName}.emplace_back();
-#else
-        nestedList_${parentListDepth}.emplace_back();
-#end
-    } else {
-#end
 #if($shapeMember.enum)
 auto ${containerVar} = decoder->PopNextTextVal();
 if (${containerVar}.has_value()) {
-#if($parentListDepth == 0)
-    ${memberVarName}.push_back(${shapeMember.name}Mapper::Get${shapeMember.name}ForName(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len)));
-#else
-    nestedList_${parentListDepth}.push_back(${shapeMember.name}Mapper::Get${shapeMember.name}ForName(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len)));
-#end
+    ${value}.push_back(${shapeMember.name}Mapper::Get${shapeMember.name}ForName(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len)));
     }
 #elseif($shapeMember.string)
 auto peekType_${recursionDepth} = decoder->PeekType();
@@ -26,11 +9,7 @@ if(peekType_${recursionDepth}.has_value()){
     if (peekType_${recursionDepth}.value() == Aws::Crt::Cbor::CborType::Text) {
         auto ${containerVar} = decoder->PopNextTextVal();
         if (${containerVar}.has_value()) {
-#if($parentListDepth == 0)
-            ${memberVarName}.push_back(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len));
-#else
-            nestedList_${parentListDepth}.push_back(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len));
-#end
+            ${value}.push_back(Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len));
         }
     } else {
         decoder->ConsumeNextSingleElement();
@@ -48,40 +27,24 @@ if(peekType_${recursionDepth}.has_value()){
                 ss_${recursionDepth} << Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
             }
         }
-#if($parentListDepth == 0)
-        ${memberVarName}.push_back(ss_${recursionDepth}.str());
-#else
-        nestedList_${parentListDepth}.push_back(ss_${recursionDepth}.str());
-#end
+        ${value}.push_back(ss_${recursionDepth}.str());
         ss_${recursionDepth}.clear();
     }
 }
 #elseif($shapeMember.boolean)
     auto ${containerVar} = decoder->PopNextBooleanVal();
     if (${containerVar}.has_value()) {
-#if($parentListDepth == 0)
-    ${memberVarName}.push_back(${containerVar}.value());
-#else
-    nestedList_${parentListDepth}.push_back(${containerVar}.value());
-#end
+    ${value}.push_back(${containerVar}.value());
     }
 #elseif($shapeMember.double)
     auto ${containerVar} = decoder->PopNextFloatVal();
     if (${containerVar}.has_value()) {
-#if($parentListDepth == 0)
-    ${memberVarName}.push_back(${containerVar}.value());
-#else
-    nestedList_${parentListDepth}.push_back(${containerVar}.value());
-#end
+    ${value}.push_back(${containerVar}.value());
     }
 #elseif($shapeMember.float)
     auto ${containerVar} = decoder->PopNextFloatVal();
     if (${containerVar}.has_value()) {
-#if($parentListDepth == 0)
-    ${memberVarName}.push_back(${containerVar}.value());
-#else
-    nestedList_${parentListDepth}.push_back(${containerVar}.value());
-#end
+    ${value}.push_back(${containerVar}.value());
     }
 #elseif($shapeMember.blob)
     auto peekType_${recursionDepth} = decoder->PeekType();
@@ -89,11 +52,7 @@ if(peekType_${recursionDepth}.has_value()){
         if (peekType_${recursionDepth}.value() == Aws::Crt::Cbor::CborType::Bytes) {
             auto ${containerVar} = decoder->PopNextBytesVal();
             if (${containerVar}.has_value()) {
-#if($parentListDepth == 0)
-                ${memberVarName}.push_back(Aws::Utils::ByteBuffer(${containerVar}.value().ptr, ${containerVar}.value().len));
-#else
-                nestedList_${parentListDepth}.push_back(Aws::Utils::ByteBuffer(${containerVar}.value().ptr, ${containerVar}.value().len));
-#end
+                ${value}.push_back(Aws::Utils::ByteBuffer(${containerVar}.value().ptr, ${containerVar}.value().len));
             }
         } else {
             decoder->ConsumeNextSingleElement();
@@ -111,11 +70,7 @@ if(peekType_${recursionDepth}.has_value()){
                     ss_${recursionDepth} << Aws::String(reinterpret_cast<const char*>(${containerVar}.value().ptr), ${containerVar}.value().len);
                 }
             }
-#if($parentListDepth == 0)
-            ${memberVarName}.push_back(Aws::Utils::ByteBuffer(ss_${recursionDepth}.str()));
-#else
-            nestedList_${parentListDepth}.push_back(Aws::Utils::ByteBuffer(ss_${recursionDepth}.str()));
-#end
+            ${value}.push_back(Aws::Utils::ByteBuffer(ss_${recursionDepth}.str()));
             ss_${recursionDepth}.clear();
         }
     }
@@ -130,39 +85,23 @@ if(peekType_${recursionDepth}.has_value()){
             {
                 auto ${containerVar} = decoder->PopNextFloatVal();
                 if (${containerVar}.has_value()) {
-#if($parentListDepth == 0)
-                    ${memberVarName}.push_back(Aws::Utils::DateTime(${containerVar}.value()));
-#else
-                    nestedList_${parentListDepth}.push_back(Aws::Utils::DateTime(${containerVar}.value()));
-#end
+                    ${value}.push_back(Aws::Utils::DateTime(${containerVar}.value()));
                 }
             }
             else
             {
                 auto ${containerVar} = decoder->PopNextUnsignedIntVal();
                 if (${containerVar}.has_value()) {
-#if($parentListDepth == 0)
-                    ${memberVarName}.push_back(Aws::Utils::DateTime(${containerVar}.value()));
-#else
-                    nestedList_${parentListDepth}.push_back(Aws::Utils::DateTime(${containerVar}.value()));
-#end
+                    ${value}.push_back(Aws::Utils::DateTime(${containerVar}.value()));
                 }
             }
         }
     }
 #elseif($shapeMember.structure)
     #if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
-#if($parentListDepth == 0)
-        ${memberVarName}.push_back(Aws::MakeShared<${shapeMember.name}>("${typeInfo.className}", ${shapeMember.name}(decoder)));
-#else
-        nestedList_${parentListDepth}.push_back(Aws::MakeShared<${shapeMember.name}>("${typeInfo.className}", ${shapeMember.name}(decoder)));
-#end
+        ${value}.push_back(Aws::MakeShared<${shapeMember.name}>("${typeInfo.className}", ${shapeMember.name}(decoder)));
     #else
-#if($parentListDepth == 0)
-        ${memberVarName}.push_back(${shapeMember.name}(decoder));
-#else
-        nestedList_${parentListDepth}.push_back(${shapeMember.name}(decoder));
-#end
+        ${value}.push_back(${shapeMember.name}(decoder));
     #end
 #elseif($shapeMember.list)
     #set($template.nestedShapeMember = $shapeMember.listMember.shape)
@@ -206,7 +145,7 @@ if(peekType_${recursionDepth}.has_value()){
       }
       #if($recursionDepth > 1)
         #set($parentDepth = $recursionDepth - 1)
-        nestedList_${parentDepth}.push_back(nestedList_${recursionDepth});
+        nestedList_${parentDepth}.push_back(${value});
       #else
       ${memberVarName}.push_back(nestedList_${recursionDepth});
       #end
@@ -252,7 +191,7 @@ if(peekType_${recursionDepth}.has_value()){
       }
       #if($recursionDepth > 1)
         #set($parentDepth = $recursionDepth - 1)
-        nestedList_${parentDepth}.push_back(nestedMap_${recursionDepth});
+        nestedList_${parentDepth}.push_back(${value});
       #else
       ${memberVarName}.push_back(nestedMap_${recursionDepth});
       #end
@@ -263,25 +202,13 @@ if(peekType_${recursionDepth}.has_value()){
     if(peekType_${recursionDepth}.value() == Aws::Crt::Cbor::CborType::UInt){
         auto ${containerVar} = decoder->PopNextUnsignedIntVal();
         if (${containerVar}.has_value()) {
-#if($parentListDepth == 0)
-            ${memberVarName}.push_back(static_cast<int64_t>(${containerVar}.value()));
-#else
-            nestedList_${parentListDepth}.push_back(static_cast<int64_t>(${containerVar}.value()));
-#end
+            ${value}.push_back(static_cast<int64_t>(${containerVar}.value()));
         }
     } else {
         auto ${containerVar} = decoder->PopNextNegativeIntVal();
         if (${containerVar}.has_value()) {
-#if($parentListDepth == 0)
-            ${memberVarName}.push_back(static_cast<int64_t>(1 - ${containerVar}.value()));
-#else
-            nestedList_${parentListDepth}.push_back(static_cast<int64_t>(1 - ${containerVar}.value()));
-#end
+            ${value}.push_back(static_cast<int64_t>(1 - ${containerVar}.value()));
         }
     }
-}
-#end
-#if($member.shape.sparse)
-    } // end else (non-null sparse element)
 }
 #end

@@ -13,31 +13,8 @@
   ${template.currentSpaces}JsonValue ${template.lowerCaseVarName}JsonMap;
   ${template.currentSpaces}for(auto& ${template.lowerCaseVarName}Item : ${template.containerVar})
   ${template.currentSpaces}{
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}  if(!${template.lowerCaseVarName}Item.second.has_value())
-  ${template.currentSpaces}  {
-  ${template.currentSpaces}    ${template.lowerCaseVarName}JsonMap.WithNull(${template.lowerCaseVarName}Item.first);
-  ${template.currentSpaces}    continue;
-  ${template.currentSpaces}  }
-#end
 #if(!$template.currentShape.mapValue.shape.map && !$template.currentShape.mapValue.shape.list)
 #set($functionCall = "${template.lowerCaseVarName}JsonMap.With${CppViewHelper.computeJsonCppType($template.currentShape.mapValue.shape)}")
-#if($template.currentShape.sparse)
-#set($key = "${template.lowerCaseVarName}Item.first")
-#set($value = "*${template.lowerCaseVarName}Item.second${CppViewHelper.computeJsonizeString($template.currentShape.mapValue.shape)}")
-#if($template.currentShape.mapValue.shape.isBlob())
-#set($value = "HashingUtils::Base64Encode(*${template.lowerCaseVarName}Item.second${CppViewHelper.computeJsonizeString($template.currentShape.mapValue.shape)})")
-#end
-#if($template.currentShape.mapKey.shape.enum)
-#set($enumName = $template.currentShape.mapKey.shape.name)
-#set($key = "${enumName}Mapper::GetNameFor${enumName}(${template.lowerCaseVarName}Item.first)")
-#end
-#if($template.currentShape.mapValue.shape.enum)
-#set($enumName = $template.currentShape.mapValue.shape.name)
-#set($value = "${enumName}Mapper::GetNameFor${enumName}(*${template.lowerCaseVarName}Item.second)")
-#set($functionCall = "${template.lowerCaseVarName}JsonMap.WithString")
-#end
-#else
 #set($key = "${template.lowerCaseVarName}Item.first")
 #set($value = "${template.lowerCaseVarName}Item.second${CppViewHelper.computeJsonizeString($template.currentShape.mapValue.shape)}")
 #if($template.currentShape.mapValue.shape.isBlob())
@@ -51,7 +28,6 @@
 #set($enumName = $template.currentShape.mapValue.shape.name)
 #set($value = "${enumName}Mapper::GetNameFor${enumName}(${value})")
 #set($functionCall = "${template.lowerCaseVarName}JsonMap.WithString")
-#end
 #end
   ${template.currentSpaces}  ${functionCall}(${key}, ${value});
 #set($template.atBottom = true)
@@ -83,34 +59,15 @@
   ${template.currentSpaces}${AwsArray}<JsonValue> ${template.lowerCaseVarName}JsonList(${template.containerVar}.size());
   ${template.currentSpaces}for(unsigned ${template.lowerCaseVarName}Index = 0; ${template.lowerCaseVarName}Index < ${template.lowerCaseVarName}JsonList.GetLength(); ++${template.lowerCaseVarName}Index)
   ${template.currentSpaces}{
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}  if(!${template.containerVar}[${template.lowerCaseVarName}Index].has_value())
-  ${template.currentSpaces}  {
-  ${template.currentSpaces}    ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].AsNull();
-  ${template.currentSpaces}    continue;
-  ${template.currentSpaces}  }
-#end
 #if(!$template.currentShape.listMember.shape.map && !$template.currentShape.listMember.shape.list)
 #set($template.atBottom = true)
 #if($template.currentShape.listMember.shape.enum)
 #set($enumName = $template.currentShape.listMember.shape.name)
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].AsString(${enumName}Mapper::GetNameFor${enumName}(*${template.containerVar}[${template.lowerCaseVarName}Index]));
-#else
   ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].AsString(${enumName}Mapper::GetNameFor${enumName}(${template.containerVar}[${template.lowerCaseVarName}Index]));
-#end
 #elseif($template.currentShape.listMember.shape.blob)
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(HashingUtils::Base64Encode(*${template.containerVar}[${template.lowerCaseVarName}Index]${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape)}));
-#else
   ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(HashingUtils::Base64Encode(${template.containerVar}[${template.lowerCaseVarName}Index]${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape)}));
-#end
-#else
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(*${template.containerVar}[${template.lowerCaseVarName}Index]${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape)});
 #else
   ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(${template.containerVar}[${template.lowerCaseVarName}Index]${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape)});
-#end
 #end
 #else
 #set($currentSpaces = $template.currentSpaces + "  ")

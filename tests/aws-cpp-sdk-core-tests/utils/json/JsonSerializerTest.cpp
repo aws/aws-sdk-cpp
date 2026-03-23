@@ -434,39 +434,6 @@ TEST_F(JsonSerializerTest, TestGetAllObjects)
     ASSERT_EQ(42, all["Key2"].AsInteger());
 }
 
-TEST_F(JsonSerializerTest, TestWithNull)
-{
-    JsonValue value;
-    value.WithString("Key1", "value1");
-    value.WithNull("Key2");
-    value.WithNull(Aws::String("Key3"));
-    value.WithInteger("Key4", 42);
-
-    auto view = value.View();
-
-    ASSERT_TRUE(view.KeyExists("Key2"));
-    ASSERT_FALSE(view.ValueExists("Key2"));
-    ASSERT_TRUE(view.GetObject("Key2").IsNull());
-
-    ASSERT_TRUE(view.KeyExists("Key3"));
-    ASSERT_FALSE(view.ValueExists("Key3"));
-    ASSERT_TRUE(view.GetObject("Key3").IsNull());
-
-    ASSERT_STREQ("value1", view.GetString("Key1").c_str());
-    ASSERT_EQ(42, view.GetInteger("Key4"));
-
-    Aws::String serialized = view.WriteCompact();
-    JsonValue reparsed(serialized);
-    ASSERT_TRUE(reparsed.WasParseSuccessful());
-    auto reparsedView = reparsed.View();
-    ASSERT_TRUE(reparsedView.KeyExists("Key2"));
-    ASSERT_FALSE(reparsedView.ValueExists("Key2"));
-    ASSERT_TRUE(reparsedView.GetObject("Key2").IsNull());
-    ASSERT_TRUE(reparsedView.KeyExists("Key3"));
-    ASSERT_FALSE(reparsedView.ValueExists("Key3"));
-    ASSERT_TRUE(reparsedView.GetObject("Key3").IsNull());
-}
-
 TEST_F(JsonSerializerTest, TestEquality)
 {
     auto input = R"({"AWS" : {

@@ -17,7 +17,7 @@
 #end
 #set($macro.spaces = $spaces)
 #if($mapShape.mapValue.shape.document)
-${macro.spaces}const Aws::Map<$CppViewHelper.computeResultCppType($mapShape.mapKey.shape, $serviceModel.metadata.protocol), $CppViewHelper.computeResultCppType($mapShape.mapValue.shape, $serviceModel.metadata.protocol)>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($mapShape.mapKey.shape), $CppViewHelper.computeCppType($mapShape.mapValue.shape)>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
 ${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
 #foreach($mapItem in $testValidateParamVal.fields())
 ${macro.spaces}EXPECT_STREQ(R"j(${mapItem.value})j", ${macro.mapVarName}.at("$mapItem.key").View().WriteCompact().c_str());
@@ -25,53 +25,21 @@ ${macro.spaces}EXPECT_STREQ(R"j(${mapItem.value})j", ${macro.mapVarName}.at("$ma
 #break
 #end
 #if($mapShape.mapValue.shape.structure)
-#if($mapShape.sparse)
-${macro.spaces}const Aws::Map<$CppViewHelper.computeResultCppType($mapShape.mapKey.shape, $serviceModel.metadata.protocol), Aws::Crt::Optional<$CppViewHelper.computeResultCppType($mapShape.mapValue.shape, $serviceModel.metadata.protocol)>>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($mapShape.mapKey.shape), $CppViewHelper.computeCppType($mapShape.mapValue.shape)>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
 ${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
 #foreach($mapItem in $testValidateParamVal.fields())
 ${macro.spaces}{
   ${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.find("$mapItem.key") != ${macro.mapVarName}.end());
-#if($mapItem.value.isNull())
-  ${macro.spaces}EXPECT_FALSE(${macro.mapVarName}.at("$mapItem.key").has_value());
-#else
-  ${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.at("$mapItem.key").has_value());
-  ${macro.spaces}const $CppViewHelper.computeResultCppType($mapShape.mapValue.shape, $serviceModel.metadata.protocol)& $macro.mapItemVarName = *${macro.mapVarName}.at("$mapItem.key");
-#foreach($innerParam in $mapItem.value.fields())
-#ValidateParamsMacro("${macro.spaces}  " $macro.mapItemVarName $mapShape.mapValue.shape $innerParam)
-#end
-#end
-${macro.spaces}}
-#end
-#else
-${macro.spaces}const Aws::Map<$CppViewHelper.computeResultCppType($mapShape.mapKey.shape, $serviceModel.metadata.protocol), $CppViewHelper.computeResultCppType($mapShape.mapValue.shape, $serviceModel.metadata.protocol)>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
-${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
-#foreach($mapItem in $testValidateParamVal.fields())
-${macro.spaces}{
-  ${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.find("$mapItem.key") != ${macro.mapVarName}.end());
-  ${macro.spaces}const $CppViewHelper.computeResultCppType($mapShape.mapValue.shape, $serviceModel.metadata.protocol)& $macro.mapItemVarName = ${macro.mapVarName}.at("$mapItem.key");
+  ${macro.spaces}const $CppViewHelper.computeCppType($mapShape.mapValue.shape)& $macro.mapItemVarName = ${macro.mapVarName}.at("$mapItem.key");
 #foreach($innerParam in $mapItem.value.fields())
 #ValidateParamsMacro("${macro.spaces}  " $macro.mapItemVarName $mapShape.mapValue.shape $innerParam)
 #end
 ${macro.spaces}}
-#end
 #end
 #break
 #end
 ###----- the map value is not nested structure or document
-#if($mapShape.sparse)
-${macro.spaces}const Aws::Map<$CppViewHelper.computeResultCppType($mapShape.mapKey.shape, $serviceModel.metadata.protocol), Aws::Crt::Optional<$CppViewHelper.computeResultCppType($mapShape.mapValue.shape, $serviceModel.metadata.protocol)>>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
-${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
-#foreach($mapItem in $testValidateParamVal.fields())
-${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.find("$mapItem.key") != ${macro.mapVarName}.end());
-#if($mapItem.value.isNull())
-${macro.spaces}EXPECT_FALSE(${macro.mapVarName}.at("$mapItem.key").has_value());
-#else
-${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.at("$mapItem.key").has_value());
-${macro.spaces}EXPECT_EQ(#ValidateSingleParameterMacro($mapShape.mapValue.shape, $mapItem.value), *${macro.mapVarName}.at("$mapItem.key"));
-#end
-#end
-#else
-${macro.spaces}const Aws::Map<$CppViewHelper.computeResultCppType($mapShape.mapKey.shape, $serviceModel.metadata.protocol), $CppViewHelper.computeResultCppType($mapShape.mapValue.shape, $serviceModel.metadata.protocol)>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
+${macro.spaces}const Aws::Map<$CppViewHelper.computeCppType($mapShape.mapKey.shape), $CppViewHelper.computeCppType($mapShape.mapValue.shape)>& $macro.mapVarName = ${dstObject}.${macro.fieldGetter};
 ${macro.spaces}EXPECT_EQ(${testValidateParamVal.size()}U, ${macro.mapVarName}.size());
 #foreach($mapItem in $testValidateParamVal.fields())
 ${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.find("$mapItem.key") != ${macro.mapVarName}.end());
@@ -80,5 +48,4 @@ ${macro.spaces}EXPECT_TRUE(${macro.mapVarName}.find("$mapItem.key") != ${macro.m
 #set($macro.var = $macro.mapItemVarName)
 #ValidateSingleVariableMacro($macro.spaces, $mapShape.mapValue.shape, $mapItem.value, $macro.parentVarName, $macro.getter, $macro.var)
 #end
-#end##sparse
 #end##macro ValidateMapMacro

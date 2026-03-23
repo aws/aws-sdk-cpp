@@ -22,13 +22,6 @@
 #end
   ${template.currentSpaces}for(auto& ${template.lowerCaseVarName}Item : ${template.lowerCaseVarName}JsonMap)
   ${template.currentSpaces}{
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}  if(${template.lowerCaseVarName}Item.second.IsNull())
-  ${template.currentSpaces}  {
-  ${template.currentSpaces}    ${template.containerVar}[${template.lowerCaseVarName}Item.first];
-  ${template.currentSpaces}    continue;
-  ${template.currentSpaces}  }
-#end
 #if(!$template.currentShape.mapValue.shape.map && !$template.currentShape.mapValue.shape.list)
 #set($lvalue = "${template.containerVar}[${template.lowerCaseVarName}Item.first]")
 #set($rvalue = "${template.lowerCaseVarName}Item.second.As${CppViewHelper.computeJsonCppType($template.currentShape.mapValue.shape)}()")
@@ -89,40 +82,17 @@
 #end
   ${template.currentSpaces}for(unsigned ${template.lowerCaseVarName}Index = 0; ${template.lowerCaseVarName}Index < ${template.lowerCaseVarName}JsonList.GetLength(); ++${template.lowerCaseVarName}Index)
   ${template.currentSpaces}{
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}  if(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].IsNull())
-  ${template.currentSpaces}  {
-  ${template.currentSpaces}    ${template.containerVar}.emplace_back();
-  ${template.currentSpaces}    continue;
-  ${template.currentSpaces}  }
-#end
 #if(!$template.currentShape.listMember.shape.map && !$template.currentShape.listMember.shape.list)
 #set($template.atBottom = true)
 #if($template.currentShape.listMember.shape.enum)
 #set($enumName = $template.currentShape.listMember.shape.name)
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}  ${template.containerVar}.emplace_back(${enumName}Mapper::Get${enumName}ForName(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].AsString()));
-#else
   ${template.currentSpaces}  ${template.containerVar}.push_back(${enumName}Mapper::Get${enumName}ForName(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].AsString()));
-#end
 #elseif($template.currentShape.listMember.shape.blob)
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}  ${template.containerVar}.emplace_back(HashingUtils::Base64Decode(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}()));
-#else
   ${template.currentSpaces}  ${template.containerVar}.push_back(HashingUtils::Base64Decode(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}()));
-#end
 #elseif($template.currentShape.listMember.shape.timeStamp && $template.currentShape.listMember.shape.timestampFormat == "iso8601")
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}  ${template.containerVar}.emplace_back(Aws::Utils::DateTime{${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($template.currentShape.listMember.shape)});
-#else
   ${template.currentSpaces}  ${template.containerVar}.push_back(Aws::Utils::DateTime{${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($template.currentShape.listMember.shape)});
-#end
-#else
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}  ${template.containerVar}.emplace_back(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}());
 #else
   ${template.currentSpaces}  ${template.containerVar}.push_back(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}());
-#end
 #end
 #else
 #set($currentSpaces = $template.currentSpaces + "  ")
