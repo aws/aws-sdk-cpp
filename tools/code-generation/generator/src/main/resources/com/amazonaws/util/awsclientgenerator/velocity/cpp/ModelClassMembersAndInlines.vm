@@ -18,7 +18,7 @@
 #set($cppType = "${metadata.classNamePrefix}Error")
 #set($isStream = false)
 #else
-#set($cppType = $CppViewHelper.computeResultCppType($member.value.shape, $protocol))
+#set($cppType = $CppViewHelper.computeCppType($member.value.shape))
 #set($isStream = false)
 #end
 #set($subShape = $member.value.shape)
@@ -52,7 +52,7 @@
 #elseif($member.value.shape.isMutuallyReferencedWith($shape) || $member.value.shape.getName() == $shape.getName())
 #set($getterBody = "{$nl      return *${memberVariableName};$nl    }")
 #set($setterWithCopy = ";")
-#set($setterWithMove = " {$nl      ${setHasBeenSet}$nl      ${memberVariableName} = Aws::MakeShared<$CppViewHelper.computeResultCppType($member.value.shape, $protocol)>(" + '"' + "${typeInfo.className}" + '"' + ", std::forward<${memberKeyWithFirstLetterCapitalized}T>(value));$nl    }")
+#set($setterWithMove = " {$nl      ${setHasBeenSet}$nl      ${memberVariableName} = Aws::MakeShared<$CppViewHelper.computeCppType($member.value.shape)>(" + '"' + "${typeInfo.className}" + '"' + ", std::forward<${memberKeyWithFirstLetterCapitalized}T>(value));$nl    }")
 #elseif($member.value.isChecksumMember())
 #set($getterBody = " { return ${memberVariableName}; }")
 #set($setterWithCopy = " { ${setHasBeenSet}${memberVariableName} = value; SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
@@ -109,26 +109,8 @@
 #end
 #if($member.value.shape.map)
 #set($mapMember = $member.value.shape)
-#set($keyType = $CppViewHelper.computeResultCppType($mapMember.mapKey.shape, $protocol))
-#set($valueType = $CppViewHelper.computeResultCppType($mapMember.mapValue.shape, $protocol))
-#if($mapMember.sparse)
-#set($optionalValueType = "Aws::Crt::Optional<${valueType}>")
-#if(!$mapMember.mapKey.shape.primitive && !$mapMember.mapKey.shape.enum && !$mapMember.mapValue.shape.primitive && !$mapMember.mapValue.shape.enum)
-#set($keyTemplType = "${memberKeyWithFirstLetterCapitalized}KeyT")
-#set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}ValueT")
-    template<typename ${keyTemplType} = $keyType, typename ${valueTemplType} = $optionalValueType>
-    ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyTemplType}&& key, ${valueTemplType}&& value) {
-      ${setHasBeenSet}${memberVariableName}.emplace(std::forward<${keyTemplType}>(key), std::forward<${valueTemplType}>(value)); return *this;
-    }
-#else
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) {
-      ${setHasBeenSet}${memberVariableName}.emplace(key, value); return *this;
-    }
-#end
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${optionalValueType} value) {
-      ${setHasBeenSet}${memberVariableName}.emplace(key, value); return *this;
-    }
-#else
+#set($keyType = $CppViewHelper.computeCppType($mapMember.mapKey.shape))
+#set($valueType = $CppViewHelper.computeCppType($mapMember.mapValue.shape))
 #if(!$mapMember.mapKey.shape.primitive && !$mapMember.mapKey.shape.enum && !$mapMember.mapValue.shape.primitive && !$mapMember.mapValue.shape.enum)
 #set($keyTemplType = "${memberKeyWithFirstLetterCapitalized}KeyT")
 #set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}ValueT")
@@ -142,28 +124,15 @@
     }
 #end
 #end
-#end
 #if($member.value.shape.list)
 #set($listMember = $member.value.shape)
-#set($valueType = $CppViewHelper.computeResultCppType($listMember.listMember.shape, $protocol))
-#if($listMember.sparse)
-#set($optionalValueType = "Aws::Crt::Optional<${valueType}>")
+#set($valueType = $CppViewHelper.computeCppType($listMember.listMember.shape))
 #if(!$listMember.listMember.shape.primitive && !$listMember.listMember.shape.enum)
 #set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}T")
     template<typename ${valueTemplType} = $valueType>
     ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueTemplType}&& value) { ${setHasBeenSet}${memberVariableName}.emplace_back(std::forward<${valueTemplType}>(value)); return *this; }
 #else
     ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueType} value)$adderWithCopy
-#end
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${optionalValueType} value)$adderWithCopy
-#else
-#if(!$listMember.listMember.shape.primitive && !$listMember.listMember.shape.enum)
-#set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}T")
-    template<typename ${valueTemplType} = $valueType>
-    ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueTemplType}&& value) { ${setHasBeenSet}${memberVariableName}.emplace_back(std::forward<${valueTemplType}>(value)); return *this; }
-#else
-    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueType} value)$adderWithCopy
-#end
 #end
 #end
     ///@}

@@ -439,10 +439,6 @@ public class C2jModelToGeneratorModelTransformer {
         shape.setEvent(c2jShape.isEvent());
         shape.setException(c2jShape.isException());
         shape.setDocument(c2jShape.isDocument());
-        shape.setSparse(c2jShape.isSparse());
-        if (shape.isSparse() && !shape.isList() && !shape.isMap()) {
-            throw new SourceGenerationFailedException("The sparse trait is only applicable to list and map shapes, but was found on shape: " + shape.getName());
-        }
 
         if (c2jShape.getXmlNamespace() != null) {
             XmlNamespace xmlns = new XmlNamespace();
@@ -854,7 +850,6 @@ public class C2jModelToGeneratorModelTransformer {
         cloned.setException(shape.isException());
         cloned.setXmlNamespace(shape.getXmlNamespace());
         cloned.setDocument(shape.isDocument());
-        cloned.setSparse(shape.isSparse());
         return cloned;
     }
 

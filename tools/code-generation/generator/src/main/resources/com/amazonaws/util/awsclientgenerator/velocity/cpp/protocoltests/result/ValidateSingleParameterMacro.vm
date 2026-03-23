@@ -38,14 +38,15 @@ Aws::Utils::DateTime(static_cast<int64_t>(${value}))##
 #elseif($shape.enum)
 ${shape.name}Mapper::Get${shape.name}ForName(R"e(${value.asText()})e")##
 #elseif($shape.list)
-#set($macro.listResult="Aws::Vector<$CppViewHelper.computeResultCppType($shape.listMember.shape, $serviceModel.metadata.protocol)>({")#foreach($listItem in $value)
+#set($macro.listResult="Aws::Vector<$CppViewHelper.computeCppType($shape)>({")
+#foreach($listItem in $value)
 #set($macro.listResult=$macro.listResult + "#ValidateSingleParameterMacro($shape.listMember.shape, $listItem)")
 #if($foreach.hasNext)#set($macro.listResult=$macro.listResult + ", ")#end
 #end
 #set($macro.listResult=$macro.listResult + "})")
 $macro.listResult##
 #elseif($shape.map)
-#set($macro.mapResult="Aws::Map<$CppViewHelper.computeResultCppType($shape.mapKey.shape, $serviceModel.metadata.protocol), $CppViewHelper.computeResultCppType($shape.mapValue.shape, $serviceModel.metadata.protocol)>({")
+#set($macro.mapResult="Aws::Map<$CppViewHelper.computeCppType($shape.mapKey.shape), $CppViewHelper.computeCppType($shape.mapValue.shape)>({")
 #foreach($mapItem in $value.fields())
 #set($macro.mapItem="{" + '"' + "$mapItem.key" + '"' + ",  ")
 #set($macro.mapItem=$macro.mapItem + "#ValidateSingleParameterMacro($shape.mapValue.shape, $mapItem.value)" + "}")

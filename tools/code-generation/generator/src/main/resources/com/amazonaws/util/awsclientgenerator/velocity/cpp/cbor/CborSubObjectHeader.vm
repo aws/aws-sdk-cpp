@@ -51,7 +51,6 @@ ${exportMacro} ${classNameRef} operator=(const ${typeInfo.cborDecoder}& decoder)
 ${exportMacro} void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
 #set($useRequiredField = true)
-#set($protocol = "smithy-rpc-v2-cbor")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
 };
 

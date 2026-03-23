@@ -31,18 +31,6 @@ ${macro.spaces}{
 ${macro.spaces}}
 #end##foreach
 #else## not (list || map || structure)
-#if($listShape.sparse)
-#set($macro.fieldAdder = "Add${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
-#foreach($arrayItem in $testInputParam.value)
-#if($arrayItem == "null")
-${macro.spaces}${dstObject}.${macro.fieldAdder}(Aws::Crt::Optional<$CppViewHelper.computeCppType($macro.listMemberShape)>{});
-#elseif($macro.listMemberShape.list || $macro.listMemberShape.map)
-${macro.spaces}${dstObject}.${macro.fieldAdder}($CppViewHelper.computeCppType($macro.listMemberShape)#SerializeSingleParameterMacro($macro.listMemberShape, $arrayItem));
-#else
-${macro.spaces}${dstObject}.${macro.fieldAdder}(#SerializeSingleParameterMacro($macro.listMemberShape, $arrayItem));
-#end
-#end
-#else
 #set($macro.fieldSetter = "Set${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
 #set($macro.listResult="{")
 #foreach($arrayItem in $testInputParam.value)
@@ -51,6 +39,5 @@ ${macro.spaces}${dstObject}.${macro.fieldAdder}(#SerializeSingleParameterMacro($
 #end
 #set($macro.listResult=$macro.listResult + "}")
 ${spaces}${dstObject}.${macro.fieldSetter}($macro.listResult);
-#end
 #end##(list || map || structure)
 #end##macro SetListMacro

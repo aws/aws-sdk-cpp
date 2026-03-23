@@ -7,11 +7,7 @@
 #else
 #set($isEventStreamInput = false)
 #end
-#if($protocol == "smithy-rpc-v2-cbor")
-#set($cppType = $CppViewHelper.computeCborCppType($shape, $member.key))
-#else
 #set($cppType = $CppViewHelper.computeCppType($shape, $member.key))
-#end
 #if($member.value.shape.isException() && !$member.value.shape.isModeledException())
 #set($cppType = "${metadata.classNamePrefix}Error")
 #end

@@ -32,26 +32,14 @@
 #if($member.shape.mapValue.shape.structure)
   ${spaces}  Aws::StringStream ${macro.lowerCaseVarName}Ss;
   ${spaces}  ${macro.lowerCaseVarName}Ss << location << ${macro.locationIndexValue}".${macro.mapLocationName}." << ${macro.lowerCaseVarName}Idx << ".${macro.mapValueLocationName}";
-#if($member.shape.sparse)
-  ${spaces}  if(item.second.has_value()) {
-  ${spaces}    item.second.value().OutputToStream(oStream, ${macro.lowerCaseVarName}Ss.str().c_str());
-  ${spaces}  }
-#else
   ${spaces}  item.second.OutputToStream(oStream, ${macro.lowerCaseVarName}Ss.str().c_str());
-#end
 #else
 #set($macro.equals='="')
 #if($member.shape.mapValue.shape.list || $member.shape.mapValue.shape.map)
 #set($macro.equals='"')
 #end
 #set($mapValueLocation = '".' + "${macro.mapLocationName}." + '"' + " << ${macro.lowerCaseVarName}Idx << " + '".' + ${macro.mapValueLocationName} + $macro.equals + $nl + "  ${spaces}     ")
-#if($member.shape.sparse)
-  ${spaces}  if(item.second.has_value()) {
-  ${spaces}    oStream << location << ${macro.locationIndexValue}#serializeSubObjQuerySingleElement($member.shape.mapValue, $mapValueLocation, "item.second.value()") << "&";
-  ${spaces}  }
-#else
   ${spaces}  oStream << location << ${macro.locationIndexValue}#serializeSubObjQuerySingleElement($member.shape.mapValue, $mapValueLocation, "item.second") << "&";
-#end
 #end
   ${spaces}  ${macro.lowerCaseVarName}Idx++;
   ${spaces}}
