@@ -15,6 +15,7 @@
 #include <aws/verifiedpermissions/VerifiedPermissionsServiceClientModel.h>
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/verifiedpermissions/model/ActionIdentifier.h>
+#include <aws/verifiedpermissions/model/AliasState.h>
 #include <aws/verifiedpermissions/model/AttributeValue.h>
 #include <aws/verifiedpermissions/model/BatchGetPolicyErrorCode.h>
 #include <aws/verifiedpermissions/model/BatchGetPolicyErrorItem.h>
@@ -47,6 +48,8 @@
 #include <aws/verifiedpermissions/model/CreateIdentitySourceResult.h>
 #include <aws/verifiedpermissions/model/CreatePolicyRequest.h>
 #include <aws/verifiedpermissions/model/CreatePolicyResult.h>
+#include <aws/verifiedpermissions/model/CreatePolicyStoreAliasRequest.h>
+#include <aws/verifiedpermissions/model/CreatePolicyStoreAliasResult.h>
 #include <aws/verifiedpermissions/model/CreatePolicyStoreRequest.h>
 #include <aws/verifiedpermissions/model/CreatePolicyStoreResult.h>
 #include <aws/verifiedpermissions/model/CreatePolicyTemplateRequest.h>
@@ -56,6 +59,8 @@
 #include <aws/verifiedpermissions/model/DeleteIdentitySourceResult.h>
 #include <aws/verifiedpermissions/model/DeletePolicyRequest.h>
 #include <aws/verifiedpermissions/model/DeletePolicyResult.h>
+#include <aws/verifiedpermissions/model/DeletePolicyStoreAliasRequest.h>
+#include <aws/verifiedpermissions/model/DeletePolicyStoreAliasResult.h>
 #include <aws/verifiedpermissions/model/DeletePolicyStoreRequest.h>
 #include <aws/verifiedpermissions/model/DeletePolicyStoreResult.h>
 #include <aws/verifiedpermissions/model/DeletePolicyTemplateRequest.h>
@@ -73,6 +78,8 @@
 #include <aws/verifiedpermissions/model/GetIdentitySourceResult.h>
 #include <aws/verifiedpermissions/model/GetPolicyRequest.h>
 #include <aws/verifiedpermissions/model/GetPolicyResult.h>
+#include <aws/verifiedpermissions/model/GetPolicyStoreAliasRequest.h>
+#include <aws/verifiedpermissions/model/GetPolicyStoreAliasResult.h>
 #include <aws/verifiedpermissions/model/GetPolicyStoreRequest.h>
 #include <aws/verifiedpermissions/model/GetPolicyStoreResult.h>
 #include <aws/verifiedpermissions/model/GetPolicyTemplateRequest.h>
@@ -91,6 +98,8 @@
 #include <aws/verifiedpermissions/model/ListIdentitySourcesResult.h>
 #include <aws/verifiedpermissions/model/ListPoliciesRequest.h>
 #include <aws/verifiedpermissions/model/ListPoliciesResult.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoreAliasesRequest.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoreAliasesResult.h>
 #include <aws/verifiedpermissions/model/ListPolicyStoresRequest.h>
 #include <aws/verifiedpermissions/model/ListPolicyStoresResult.h>
 #include <aws/verifiedpermissions/model/ListPolicyTemplatesRequest.h>
@@ -118,6 +127,8 @@
 #include <aws/verifiedpermissions/model/PolicyEffect.h>
 #include <aws/verifiedpermissions/model/PolicyFilter.h>
 #include <aws/verifiedpermissions/model/PolicyItem.h>
+#include <aws/verifiedpermissions/model/PolicyStoreAliasFilter.h>
+#include <aws/verifiedpermissions/model/PolicyStoreAliasItem.h>
 #include <aws/verifiedpermissions/model/PolicyStoreItem.h>
 #include <aws/verifiedpermissions/model/PolicyTemplateItem.h>
 #include <aws/verifiedpermissions/model/PolicyType.h>

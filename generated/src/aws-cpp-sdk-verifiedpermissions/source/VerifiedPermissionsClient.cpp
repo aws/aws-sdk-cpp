@@ -25,14 +25,17 @@
 #include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenRequest.h>
 #include <aws/verifiedpermissions/model/CreateIdentitySourceRequest.h>
 #include <aws/verifiedpermissions/model/CreatePolicyRequest.h>
+#include <aws/verifiedpermissions/model/CreatePolicyStoreAliasRequest.h>
 #include <aws/verifiedpermissions/model/CreatePolicyStoreRequest.h>
 #include <aws/verifiedpermissions/model/CreatePolicyTemplateRequest.h>
 #include <aws/verifiedpermissions/model/DeleteIdentitySourceRequest.h>
 #include <aws/verifiedpermissions/model/DeletePolicyRequest.h>
+#include <aws/verifiedpermissions/model/DeletePolicyStoreAliasRequest.h>
 #include <aws/verifiedpermissions/model/DeletePolicyStoreRequest.h>
 #include <aws/verifiedpermissions/model/DeletePolicyTemplateRequest.h>
 #include <aws/verifiedpermissions/model/GetIdentitySourceRequest.h>
 #include <aws/verifiedpermissions/model/GetPolicyRequest.h>
+#include <aws/verifiedpermissions/model/GetPolicyStoreAliasRequest.h>
 #include <aws/verifiedpermissions/model/GetPolicyStoreRequest.h>
 #include <aws/verifiedpermissions/model/GetPolicyTemplateRequest.h>
 #include <aws/verifiedpermissions/model/GetSchemaRequest.h>
@@ -40,6 +43,7 @@
 #include <aws/verifiedpermissions/model/IsAuthorizedWithTokenRequest.h>
 #include <aws/verifiedpermissions/model/ListIdentitySourcesRequest.h>
 #include <aws/verifiedpermissions/model/ListPoliciesRequest.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoreAliasesRequest.h>
 #include <aws/verifiedpermissions/model/ListPolicyStoresRequest.h>
 #include <aws/verifiedpermissions/model/ListPolicyTemplatesRequest.h>
 #include <aws/verifiedpermissions/model/ListTagsForResourceRequest.h>
@@ -346,6 +350,35 @@ CreatePolicyStoreOutcome VerifiedPermissionsClient::CreatePolicyStore(const Crea
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreatePolicyStoreAliasOutcome VerifiedPermissionsClient::CreatePolicyStoreAlias(const CreatePolicyStoreAliasRequest& request) const {
+  AWS_OPERATION_GUARD(CreatePolicyStoreAlias);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePolicyStoreAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreatePolicyStoreAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreatePolicyStoreAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreatePolicyStoreAlias",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreatePolicyStoreAliasOutcome>(
+      [&]() -> CreatePolicyStoreAliasOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePolicyStoreAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return CreatePolicyStoreAliasOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreatePolicyTemplateOutcome VerifiedPermissionsClient::CreatePolicyTemplate(const CreatePolicyTemplateRequest& request) const {
   AWS_OPERATION_GUARD(CreatePolicyTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePolicyTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -462,6 +495,35 @@ DeletePolicyStoreOutcome VerifiedPermissionsClient::DeletePolicyStore(const Dele
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeletePolicyStoreAliasOutcome VerifiedPermissionsClient::DeletePolicyStoreAlias(const DeletePolicyStoreAliasRequest& request) const {
+  AWS_OPERATION_GUARD(DeletePolicyStoreAlias);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePolicyStoreAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeletePolicyStoreAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeletePolicyStoreAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeletePolicyStoreAlias",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeletePolicyStoreAliasOutcome>(
+      [&]() -> DeletePolicyStoreAliasOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePolicyStoreAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return DeletePolicyStoreAliasOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeletePolicyTemplateOutcome VerifiedPermissionsClient::DeletePolicyTemplate(const DeletePolicyTemplateRequest& request) const {
   AWS_OPERATION_GUARD(DeletePolicyTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePolicyTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -571,6 +633,35 @@ GetPolicyStoreOutcome VerifiedPermissionsClient::GetPolicyStore(const GetPolicyS
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPolicyStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return GetPolicyStoreOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetPolicyStoreAliasOutcome VerifiedPermissionsClient::GetPolicyStoreAlias(const GetPolicyStoreAliasRequest& request) const {
+  AWS_OPERATION_GUARD(GetPolicyStoreAlias);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPolicyStoreAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetPolicyStoreAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetPolicyStoreAlias, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetPolicyStoreAlias",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetPolicyStoreAliasOutcome>(
+      [&]() -> GetPolicyStoreAliasOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPolicyStoreAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return GetPolicyStoreAliasOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -745,6 +836,35 @@ ListPoliciesOutcome VerifiedPermissionsClient::ListPolicies(const ListPoliciesRe
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return ListPoliciesOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListPolicyStoreAliasesOutcome VerifiedPermissionsClient::ListPolicyStoreAliases(const ListPolicyStoreAliasesRequest& request) const {
+  AWS_OPERATION_GUARD(ListPolicyStoreAliases);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPolicyStoreAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListPolicyStoreAliases, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListPolicyStoreAliases, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListPolicyStoreAliases",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListPolicyStoreAliasesOutcome>(
+      [&]() -> ListPolicyStoreAliasesOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPolicyStoreAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        return ListPolicyStoreAliasesOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

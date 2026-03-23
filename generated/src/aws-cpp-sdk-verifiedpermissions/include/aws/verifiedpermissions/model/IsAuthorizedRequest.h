@@ -37,7 +37,13 @@ class IsAuthorizedRequest : public VerifiedPermissionsRequest {
   ///@{
   /**
    * <p>Specifies the ID of the policy store. Policies in this policy store will be
-   * used to make an authorization decision for the input.</p>
+   * used to make an authorization decision for the input.</p> <p>To specify a policy
+   * store, use its ID or alias name. When using an alias name, prefix it with
+   * <code>policy-store-alias/</code>. For example:</p> <ul> <li> <p>ID:
+   * <code>PSEXAMPLEabcdefg111111</code> </p> </li> <li> <p>Alias name:
+   * <code>policy-store-alias/example-policy-store</code> </p> </li> </ul> <p>To view
+   * aliases, use <a
+   * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
    */
   inline const Aws::String& GetPolicyStoreId() const { return m_policyStoreId; }
   inline bool PolicyStoreIdHasBeenSet() const { return m_policyStoreIdHasBeenSet; }

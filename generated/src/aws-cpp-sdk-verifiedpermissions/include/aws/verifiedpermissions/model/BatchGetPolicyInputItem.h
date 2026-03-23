@@ -53,7 +53,11 @@ class BatchGetPolicyInputItem {
 
   ///@{
   /**
-   * <p>The identifier of the policy you want information about.</p>
+   * <p>The identifier of the policy you want information about.</p> <p>You can use
+   * the policy name in place of the policy ID. When using a name, prefix it with
+   * <code>name/</code>. For example:</p> <ul> <li> <p>ID:
+   * <code>SPEXAMPLEabcdefg111111</code> </p> </li> <li> <p>Name:
+   * <code>name/example-policy</code> </p> </li> </ul>
    */
   inline const Aws::String& GetPolicyId() const { return m_policyId; }
   inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }

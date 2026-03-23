@@ -24,14 +24,17 @@
 #include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenResult.h>
 #include <aws/verifiedpermissions/model/CreateIdentitySourceResult.h>
 #include <aws/verifiedpermissions/model/CreatePolicyResult.h>
+#include <aws/verifiedpermissions/model/CreatePolicyStoreAliasResult.h>
 #include <aws/verifiedpermissions/model/CreatePolicyStoreResult.h>
 #include <aws/verifiedpermissions/model/CreatePolicyTemplateResult.h>
 #include <aws/verifiedpermissions/model/DeleteIdentitySourceResult.h>
 #include <aws/verifiedpermissions/model/DeletePolicyResult.h>
+#include <aws/verifiedpermissions/model/DeletePolicyStoreAliasResult.h>
 #include <aws/verifiedpermissions/model/DeletePolicyStoreResult.h>
 #include <aws/verifiedpermissions/model/DeletePolicyTemplateResult.h>
 #include <aws/verifiedpermissions/model/GetIdentitySourceResult.h>
 #include <aws/verifiedpermissions/model/GetPolicyResult.h>
+#include <aws/verifiedpermissions/model/GetPolicyStoreAliasResult.h>
 #include <aws/verifiedpermissions/model/GetPolicyStoreResult.h>
 #include <aws/verifiedpermissions/model/GetPolicyTemplateResult.h>
 #include <aws/verifiedpermissions/model/GetSchemaResult.h>
@@ -39,6 +42,8 @@
 #include <aws/verifiedpermissions/model/IsAuthorizedWithTokenResult.h>
 #include <aws/verifiedpermissions/model/ListIdentitySourcesResult.h>
 #include <aws/verifiedpermissions/model/ListPoliciesResult.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoreAliasesRequest.h>
+#include <aws/verifiedpermissions/model/ListPolicyStoreAliasesResult.h>
 #include <aws/verifiedpermissions/model/ListPolicyStoresRequest.h>
 #include <aws/verifiedpermissions/model/ListPolicyStoresResult.h>
 #include <aws/verifiedpermissions/model/ListPolicyTemplatesResult.h>
@@ -89,20 +94,24 @@ class BatchIsAuthorizedWithTokenRequest;
 class CreateIdentitySourceRequest;
 class CreatePolicyRequest;
 class CreatePolicyStoreRequest;
+class CreatePolicyStoreAliasRequest;
 class CreatePolicyTemplateRequest;
 class DeleteIdentitySourceRequest;
 class DeletePolicyRequest;
 class DeletePolicyStoreRequest;
+class DeletePolicyStoreAliasRequest;
 class DeletePolicyTemplateRequest;
 class GetIdentitySourceRequest;
 class GetPolicyRequest;
 class GetPolicyStoreRequest;
+class GetPolicyStoreAliasRequest;
 class GetPolicyTemplateRequest;
 class GetSchemaRequest;
 class IsAuthorizedRequest;
 class IsAuthorizedWithTokenRequest;
 class ListIdentitySourcesRequest;
 class ListPoliciesRequest;
+class ListPolicyStoreAliasesRequest;
 class ListPolicyStoresRequest;
 class ListPolicyTemplatesRequest;
 class ListTagsForResourceRequest;
@@ -122,20 +131,24 @@ typedef Aws::Utils::Outcome<BatchIsAuthorizedWithTokenResult, VerifiedPermission
 typedef Aws::Utils::Outcome<CreateIdentitySourceResult, VerifiedPermissionsError> CreateIdentitySourceOutcome;
 typedef Aws::Utils::Outcome<CreatePolicyResult, VerifiedPermissionsError> CreatePolicyOutcome;
 typedef Aws::Utils::Outcome<CreatePolicyStoreResult, VerifiedPermissionsError> CreatePolicyStoreOutcome;
+typedef Aws::Utils::Outcome<CreatePolicyStoreAliasResult, VerifiedPermissionsError> CreatePolicyStoreAliasOutcome;
 typedef Aws::Utils::Outcome<CreatePolicyTemplateResult, VerifiedPermissionsError> CreatePolicyTemplateOutcome;
 typedef Aws::Utils::Outcome<DeleteIdentitySourceResult, VerifiedPermissionsError> DeleteIdentitySourceOutcome;
 typedef Aws::Utils::Outcome<DeletePolicyResult, VerifiedPermissionsError> DeletePolicyOutcome;
 typedef Aws::Utils::Outcome<DeletePolicyStoreResult, VerifiedPermissionsError> DeletePolicyStoreOutcome;
+typedef Aws::Utils::Outcome<DeletePolicyStoreAliasResult, VerifiedPermissionsError> DeletePolicyStoreAliasOutcome;
 typedef Aws::Utils::Outcome<DeletePolicyTemplateResult, VerifiedPermissionsError> DeletePolicyTemplateOutcome;
 typedef Aws::Utils::Outcome<GetIdentitySourceResult, VerifiedPermissionsError> GetIdentitySourceOutcome;
 typedef Aws::Utils::Outcome<GetPolicyResult, VerifiedPermissionsError> GetPolicyOutcome;
 typedef Aws::Utils::Outcome<GetPolicyStoreResult, VerifiedPermissionsError> GetPolicyStoreOutcome;
+typedef Aws::Utils::Outcome<GetPolicyStoreAliasResult, VerifiedPermissionsError> GetPolicyStoreAliasOutcome;
 typedef Aws::Utils::Outcome<GetPolicyTemplateResult, VerifiedPermissionsError> GetPolicyTemplateOutcome;
 typedef Aws::Utils::Outcome<GetSchemaResult, VerifiedPermissionsError> GetSchemaOutcome;
 typedef Aws::Utils::Outcome<IsAuthorizedResult, VerifiedPermissionsError> IsAuthorizedOutcome;
 typedef Aws::Utils::Outcome<IsAuthorizedWithTokenResult, VerifiedPermissionsError> IsAuthorizedWithTokenOutcome;
 typedef Aws::Utils::Outcome<ListIdentitySourcesResult, VerifiedPermissionsError> ListIdentitySourcesOutcome;
 typedef Aws::Utils::Outcome<ListPoliciesResult, VerifiedPermissionsError> ListPoliciesOutcome;
+typedef Aws::Utils::Outcome<ListPolicyStoreAliasesResult, VerifiedPermissionsError> ListPolicyStoreAliasesOutcome;
 typedef Aws::Utils::Outcome<ListPolicyStoresResult, VerifiedPermissionsError> ListPolicyStoresOutcome;
 typedef Aws::Utils::Outcome<ListPolicyTemplatesResult, VerifiedPermissionsError> ListPolicyTemplatesOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, VerifiedPermissionsError> ListTagsForResourceOutcome;
@@ -155,20 +168,24 @@ typedef std::future<BatchIsAuthorizedWithTokenOutcome> BatchIsAuthorizedWithToke
 typedef std::future<CreateIdentitySourceOutcome> CreateIdentitySourceOutcomeCallable;
 typedef std::future<CreatePolicyOutcome> CreatePolicyOutcomeCallable;
 typedef std::future<CreatePolicyStoreOutcome> CreatePolicyStoreOutcomeCallable;
+typedef std::future<CreatePolicyStoreAliasOutcome> CreatePolicyStoreAliasOutcomeCallable;
 typedef std::future<CreatePolicyTemplateOutcome> CreatePolicyTemplateOutcomeCallable;
 typedef std::future<DeleteIdentitySourceOutcome> DeleteIdentitySourceOutcomeCallable;
 typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
 typedef std::future<DeletePolicyStoreOutcome> DeletePolicyStoreOutcomeCallable;
+typedef std::future<DeletePolicyStoreAliasOutcome> DeletePolicyStoreAliasOutcomeCallable;
 typedef std::future<DeletePolicyTemplateOutcome> DeletePolicyTemplateOutcomeCallable;
 typedef std::future<GetIdentitySourceOutcome> GetIdentitySourceOutcomeCallable;
 typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
 typedef std::future<GetPolicyStoreOutcome> GetPolicyStoreOutcomeCallable;
+typedef std::future<GetPolicyStoreAliasOutcome> GetPolicyStoreAliasOutcomeCallable;
 typedef std::future<GetPolicyTemplateOutcome> GetPolicyTemplateOutcomeCallable;
 typedef std::future<GetSchemaOutcome> GetSchemaOutcomeCallable;
 typedef std::future<IsAuthorizedOutcome> IsAuthorizedOutcomeCallable;
 typedef std::future<IsAuthorizedWithTokenOutcome> IsAuthorizedWithTokenOutcomeCallable;
 typedef std::future<ListIdentitySourcesOutcome> ListIdentitySourcesOutcomeCallable;
 typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
+typedef std::future<ListPolicyStoreAliasesOutcome> ListPolicyStoreAliasesOutcomeCallable;
 typedef std::future<ListPolicyStoresOutcome> ListPolicyStoresOutcomeCallable;
 typedef std::future<ListPolicyTemplatesOutcome> ListPolicyTemplatesOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -203,6 +220,9 @@ typedef std::function<void(const VerifiedPermissionsClient*, const Model::Create
 typedef std::function<void(const VerifiedPermissionsClient*, const Model::CreatePolicyStoreRequest&, const Model::CreatePolicyStoreOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreatePolicyStoreResponseReceivedHandler;
+typedef std::function<void(const VerifiedPermissionsClient*, const Model::CreatePolicyStoreAliasRequest&,
+                           const Model::CreatePolicyStoreAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreatePolicyStoreAliasResponseReceivedHandler;
 typedef std::function<void(const VerifiedPermissionsClient*, const Model::CreatePolicyTemplateRequest&,
                            const Model::CreatePolicyTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreatePolicyTemplateResponseReceivedHandler;
@@ -215,6 +235,9 @@ typedef std::function<void(const VerifiedPermissionsClient*, const Model::Delete
 typedef std::function<void(const VerifiedPermissionsClient*, const Model::DeletePolicyStoreRequest&, const Model::DeletePolicyStoreOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePolicyStoreResponseReceivedHandler;
+typedef std::function<void(const VerifiedPermissionsClient*, const Model::DeletePolicyStoreAliasRequest&,
+                           const Model::DeletePolicyStoreAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeletePolicyStoreAliasResponseReceivedHandler;
 typedef std::function<void(const VerifiedPermissionsClient*, const Model::DeletePolicyTemplateRequest&,
                            const Model::DeletePolicyTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePolicyTemplateResponseReceivedHandler;
@@ -227,6 +250,9 @@ typedef std::function<void(const VerifiedPermissionsClient*, const Model::GetPol
 typedef std::function<void(const VerifiedPermissionsClient*, const Model::GetPolicyStoreRequest&, const Model::GetPolicyStoreOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPolicyStoreResponseReceivedHandler;
+typedef std::function<void(const VerifiedPermissionsClient*, const Model::GetPolicyStoreAliasRequest&,
+                           const Model::GetPolicyStoreAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPolicyStoreAliasResponseReceivedHandler;
 typedef std::function<void(const VerifiedPermissionsClient*, const Model::GetPolicyTemplateRequest&, const Model::GetPolicyTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPolicyTemplateResponseReceivedHandler;
@@ -245,6 +271,9 @@ typedef std::function<void(const VerifiedPermissionsClient*, const Model::ListId
 typedef std::function<void(const VerifiedPermissionsClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPoliciesResponseReceivedHandler;
+typedef std::function<void(const VerifiedPermissionsClient*, const Model::ListPolicyStoreAliasesRequest&,
+                           const Model::ListPolicyStoreAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPolicyStoreAliasesResponseReceivedHandler;
 typedef std::function<void(const VerifiedPermissionsClient*, const Model::ListPolicyStoresRequest&, const Model::ListPolicyStoresOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPolicyStoresResponseReceivedHandler;

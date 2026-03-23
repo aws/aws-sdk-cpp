@@ -26,6 +26,10 @@ DirectQueryDataSourceType& DirectQueryDataSourceType::operator=(JsonView jsonVal
     m_securityLake = jsonValue.GetObject("SecurityLake");
     m_securityLakeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Prometheus")) {
+    m_prometheus = jsonValue.GetObject("Prometheus");
+    m_prometheusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue DirectQueryDataSourceType::Jsonize() const {
 
   if (m_securityLakeHasBeenSet) {
     payload.WithObject("SecurityLake", m_securityLake.Jsonize());
+  }
+
+  if (m_prometheusHasBeenSet) {
+    payload.WithObject("Prometheus", m_prometheus.Jsonize());
   }
 
   return payload;

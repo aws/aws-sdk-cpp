@@ -65,7 +65,12 @@ class CreatePolicyRequest : public VerifiedPermissionsRequest {
   ///@{
   /**
    * <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to
-   * store the policy in.</p>
+   * store the policy in.</p> <p>To specify a policy store, use its ID or alias name.
+   * When using an alias name, prefix it with <code>policy-store-alias/</code>. For
+   * example:</p> <ul> <li> <p>ID: <code>PSEXAMPLEabcdefg111111</code> </p> </li>
+   * <li> <p>Alias name: <code>policy-store-alias/example-policy-store</code> </p>
+   * </li> </ul> <p>To view aliases, use <a
+   * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
    */
   inline const Aws::String& GetPolicyStoreId() const { return m_policyStoreId; }
   inline bool PolicyStoreIdHasBeenSet() const { return m_policyStoreIdHasBeenSet; }
@@ -100,15 +105,41 @@ class CreatePolicyRequest : public VerifiedPermissionsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies a name for the policy that is unique among all policies within the
+   * policy store. You can use the name in place of the policy ID in API operations
+   * that reference the policy. The name must be prefixed with
+   * <code>name/</code>.</p> <p>If you specify a name that is already associated with
+   * another policy in the policy store, you receive a <code>ConflictException</code>
+   * error.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreatePolicyRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::String m_policyStoreId;
 
   PolicyDefinition m_definition;
+
+  Aws::String m_name;
   bool m_clientTokenHasBeenSet = true;
   bool m_policyStoreIdHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
 };
 
 }  // namespace Model

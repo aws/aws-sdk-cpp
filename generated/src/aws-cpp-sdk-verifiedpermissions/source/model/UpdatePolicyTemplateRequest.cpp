@@ -31,6 +31,10 @@ Aws::String UpdatePolicyTemplateRequest::SerializePayload() const {
     payload.WithString("statement", m_statement);
   }
 
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
   return payload.View().WriteReadable();
 }
 

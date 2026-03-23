@@ -10,7 +10,7 @@
 namespace Aws {
 namespace VerifiedPermissions {
 namespace Model {
-enum class ResourceType { NOT_SET, IDENTITY_SOURCE, POLICY_STORE, POLICY, POLICY_TEMPLATE, SCHEMA };
+enum class ResourceType { NOT_SET, IDENTITY_SOURCE, POLICY_STORE, POLICY, POLICY_TEMPLATE, SCHEMA, POLICY_STORE_ALIAS };
 
 namespace ResourceTypeMapper {
 AWS_VERIFIEDPERMISSIONS_API ResourceType GetResourceTypeForName(const Aws::String& name);
