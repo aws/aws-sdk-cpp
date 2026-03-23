@@ -89,6 +89,7 @@
 #if($template.currentShape.sparse)
   ${template.currentSpaces}  if(!${template.containerVar}[${template.lowerCaseVarName}Index].has_value())
   ${template.currentSpaces}  {
+  ${template.currentSpaces}    ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].AsNull();
   ${template.currentSpaces}    continue;
   ${template.currentSpaces}  }
 #end

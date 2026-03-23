@@ -101,6 +101,11 @@ namespace Aws
                 JsonValue& WithNull(const char* key);
 
                 /**
+                 * Converts the current JSON node to null.
+                 */
+                JsonValue& AsNull();
+
+                /**
                  * Converts the current JSON node to a string.
                  */
                 JsonValue& AsString(const Aws::String& value);
