@@ -25,6 +25,9 @@
 #if($template.currentShape.sparse)
 #set($key = "${template.lowerCaseVarName}Item.first")
 #set($value = "*${template.lowerCaseVarName}Item.second${CppViewHelper.computeJsonizeString($template.currentShape.mapValue.shape)}")
+#if($template.currentShape.mapValue.shape.isStructure() || $template.currentShape.mapValue.shape.isTimeStamp() || $template.currentShape.mapValue.shape.isDocument())
+#set($value = "${template.lowerCaseVarName}Item.second${CppViewHelper.computeJsonizeString($template.currentShape.mapValue.shape, true)}")
+#end
 #if($template.currentShape.mapValue.shape.isBlob())
 #set($value = "HashingUtils::Base64Encode(*${template.lowerCaseVarName}Item.second${CppViewHelper.computeJsonizeString($template.currentShape.mapValue.shape)})")
 #end
@@ -86,7 +89,6 @@
 #if($template.currentShape.sparse)
   ${template.currentSpaces}  if(!${template.containerVar}[${template.lowerCaseVarName}Index].has_value())
   ${template.currentSpaces}  {
-  ${template.currentSpaces}    ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].AsNull();
   ${template.currentSpaces}    continue;
   ${template.currentSpaces}  }
 #end
@@ -107,7 +109,11 @@
 #end
 #else
 #if($template.currentShape.sparse)
+#if($template.currentShape.listMember.shape.isStructure() || $template.currentShape.listMember.shape.isTimeStamp() || $template.currentShape.listMember.shape.isDocument())
+  ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(${template.containerVar}[${template.lowerCaseVarName}Index]${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape, true)});
+#else
   ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(*${template.containerVar}[${template.lowerCaseVarName}Index]${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape)});
+#end
 #else
   ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(${template.containerVar}[${template.lowerCaseVarName}Index]${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape)});
 #end
