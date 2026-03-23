@@ -9,6 +9,7 @@ import software.amazon.smithy.build.SmithyBuildPlugin;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.knowledge.TopDownIndex;
 import software.amazon.smithy.waiters.WaitableTrait;
+import software.amazon.smithy.model.traits.DeprecatedTrait;
 import software.amazon.smithy.model.shapes.ServiceShape;
 import com.amazonaws.util.awsclientsmithygenerator.generators.ServiceNameUtil;
 import com.amazonaws.util.awsclientsmithygenerator.generators.FeatureParser;
@@ -36,6 +37,7 @@ public class WaiterCodegenPlugin implements SmithyBuildPlugin {
             final ServiceShape processedService = ServiceNameUtil.processS3CrtProjection(service, context.getProjectionName());
             List<WaiterOperationData> waiterOps = TopDownIndex.of(model).getContainedOperations(processedService).stream()
                 .filter(op -> op.hasTrait(WaitableTrait.class))
+                .filter(op -> !op.hasTrait(DeprecatedTrait.class))
                 .flatMap(op -> {
                     var trait = op.expectTrait(WaitableTrait.class);
                     return trait.getWaiters().entrySet().stream()
