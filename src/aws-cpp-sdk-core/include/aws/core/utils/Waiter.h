@@ -78,11 +78,11 @@ struct ErrorAcceptor : Acceptor<OutcomeT> {
   ExpectedValue expected;
   ErrorAcceptor(WaiterState s, ExpectedValue e) : Acceptor<OutcomeT>(s), expected(std::move(e)) {}
   bool Matches(const OutcomeT& outcome) const override {
-    if (this->expected.holds_alternative<bool>()) {
-      return outcome.IsSuccess() != this->expected.get<bool>();
+    if (this->expected.template holds_alternative<bool>()) {
+      return outcome.IsSuccess() != this->expected.template get<bool>();
     }
     if (!outcome.IsSuccess()) {
-      return outcome.GetError().GetExceptionName() == this->expected.get<Aws::String>();
+      return outcome.GetError().GetExceptionName() == this->expected.template get<Aws::String>();
     }
     return false;
   }
