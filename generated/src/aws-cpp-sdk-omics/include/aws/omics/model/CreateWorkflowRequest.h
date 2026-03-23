@@ -77,10 +77,15 @@ class CreateWorkflowRequest : public OmicsRequest {
 
   ///@{
   /**
-   * <p>The workflow engine for the workflow. This is only required if you have
-   * workflow definition files from more than one engine in your zip file. Otherwise,
-   * the service can detect the engine automatically from your workflow
-   * definition.</p>
+   * <p>The workflow engine for the workflow. By default, Amazon Web Services
+   * HealthOmics detects the engine automatically from your workflow definition.
+   * Provide a value if you have workflow definition files from more than one engine
+   * in your zip file, or to use WDL lenient.</p> <p>WDL lenient is designed to
+   * handle workflows migrated from Cromwell. It supports customer Cromwell
+   * directives and some non-conformant logic. For details, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-wdl-type-conversion.html">Implicit
+   * type conversion in WDL lenient</a> in the <i>Amazon Web Services HealthOmics
+   * User Guide</i>.</p>
    */
   inline WorkflowEngine GetEngine() const { return m_engine; }
   inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }

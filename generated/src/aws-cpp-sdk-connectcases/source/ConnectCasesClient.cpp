@@ -47,6 +47,7 @@
 #include <aws/connectcases/model/UpdateCaseRuleRequest.h>
 #include <aws/connectcases/model/UpdateFieldRequest.h>
 #include <aws/connectcases/model/UpdateLayoutRequest.h>
+#include <aws/connectcases/model/UpdateRelatedItemRequest.h>
 #include <aws/connectcases/model/UpdateTemplateRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -1795,6 +1796,56 @@ UpdateLayoutOutcome ConnectCasesClient::UpdateLayout(const UpdateLayoutRequest& 
         endpointResolutionOutcome.GetResult().AddPathSegments("/layouts/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLayoutId());
         return UpdateLayoutOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateRelatedItemOutcome ConnectCasesClient::UpdateRelatedItem(const UpdateRelatedItemRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateRelatedItem);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRelatedItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRelatedItem", "Required field: DomainId, is not set");
+    return UpdateRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [DomainId]", false));
+  }
+  if (!request.CaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRelatedItem", "Required field: CaseId, is not set");
+    return UpdateRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [CaseId]", false));
+  }
+  if (!request.RelatedItemIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRelatedItem", "Required field: RelatedItemId, is not set");
+    return UpdateRelatedItemOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [RelatedItemId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateRelatedItem, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateRelatedItem, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateRelatedItem",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateRelatedItemOutcome>(
+      [&]() -> UpdateRelatedItemOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRelatedItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/cases/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseId());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/related-items/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRelatedItemId());
+        return UpdateRelatedItemOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

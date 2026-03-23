@@ -6,11 +6,13 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/ContactMethodStatus.h>
 #include <aws/lightsail/model/ContactProtocol.h>
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
+#include <aws/lightsail/model/Tag.h>
 
 #include <utility>
 
@@ -204,6 +206,33 @@ class ContactMethod {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tag keys and optional values for the resource. For more information about
+   * tags in Lightsail, see the <a
+   * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
+   * Lightsail Developer Guide</a>.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  ContactMethod& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  ContactMethod& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_contactEndpoint;
 
@@ -222,6 +251,8 @@ class ContactMethod {
   ResourceType m_resourceType{ResourceType::NOT_SET};
 
   Aws::String m_supportCode;
+
+  Aws::Vector<Tag> m_tags;
   bool m_contactEndpointHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
@@ -231,6 +262,7 @@ class ContactMethod {
   bool m_locationHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_supportCodeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -9,12 +9,14 @@
 #include <aws/omics/OmicsClientPagination.h>
 #include <aws/omics/OmicsPaginationBase.h>
 #include <aws/omics/model/ListAnnotationImportJobsPaginationTraits.h>
+#include <aws/omics/model/ListRunsInBatchPaginationTraits.h>
 #include <aws/omics/model/ListReferenceStoresPaginationTraits.h>
 #include <aws/omics/model/ListSharesPaginationTraits.h>
 #include <aws/omics/model/ListReadSetImportJobsPaginationTraits.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsPaginationTraits.h>
 #include <aws/omics/model/ListReadSetUploadPartsPaginationTraits.h>
 #include <aws/omics/model/ListVariantImportJobsPaginationTraits.h>
+#include <aws/omics/model/ListBatchPaginationTraits.h>
 #include <aws/omics/model/ListWorkflowVersionsPaginationTraits.h>
 #include <aws/omics/model/ListRunGroupsPaginationTraits.h>
 #include <aws/omics/model/ListSequenceStoresPaginationTraits.h>

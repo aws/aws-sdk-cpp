@@ -9,6 +9,7 @@
 #include <aws/omics/model/ListAnnotationImportJobsPaginationTraits.h>
 #include <aws/omics/model/ListAnnotationStoreVersionsPaginationTraits.h>
 #include <aws/omics/model/ListAnnotationStoresPaginationTraits.h>
+#include <aws/omics/model/ListBatchPaginationTraits.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsPaginationTraits.h>
 #include <aws/omics/model/ListReadSetActivationJobsPaginationTraits.h>
 #include <aws/omics/model/ListReadSetExportJobsPaginationTraits.h>
@@ -21,6 +22,7 @@
 #include <aws/omics/model/ListRunCachesPaginationTraits.h>
 #include <aws/omics/model/ListRunGroupsPaginationTraits.h>
 #include <aws/omics/model/ListRunTasksPaginationTraits.h>
+#include <aws/omics/model/ListRunsInBatchPaginationTraits.h>
 #include <aws/omics/model/ListRunsPaginationTraits.h>
 #include <aws/omics/model/ListSequenceStoresPaginationTraits.h>
 #include <aws/omics/model/ListSharesPaginationTraits.h>
@@ -40,6 +42,8 @@ using ListAnnotationStoresPaginator = Aws::Utils::Pagination::Paginator<OmicsCli
 using ListAnnotationStoreVersionsPaginator =
     Aws::Utils::Pagination::Paginator<OmicsClient, Model::ListAnnotationStoreVersionsRequest,
                                       Pagination::ListAnnotationStoreVersionsPaginationTraits<OmicsClient>>;
+using ListBatchPaginator =
+    Aws::Utils::Pagination::Paginator<OmicsClient, Model::ListBatchRequest, Pagination::ListBatchPaginationTraits<OmicsClient>>;
 using ListMultipartReadSetUploadsPaginator =
     Aws::Utils::Pagination::Paginator<OmicsClient, Model::ListMultipartReadSetUploadsRequest,
                                       Pagination::ListMultipartReadSetUploadsPaginationTraits<OmicsClient>>;
@@ -67,6 +71,8 @@ using ListRunGroupsPaginator =
     Aws::Utils::Pagination::Paginator<OmicsClient, Model::ListRunGroupsRequest, Pagination::ListRunGroupsPaginationTraits<OmicsClient>>;
 using ListRunsPaginator =
     Aws::Utils::Pagination::Paginator<OmicsClient, Model::ListRunsRequest, Pagination::ListRunsPaginationTraits<OmicsClient>>;
+using ListRunsInBatchPaginator =
+    Aws::Utils::Pagination::Paginator<OmicsClient, Model::ListRunsInBatchRequest, Pagination::ListRunsInBatchPaginationTraits<OmicsClient>>;
 using ListRunTasksPaginator =
     Aws::Utils::Pagination::Paginator<OmicsClient, Model::ListRunTasksRequest, Pagination::ListRunTasksPaginationTraits<OmicsClient>>;
 using ListSequenceStoresPaginator = Aws::Utils::Pagination::Paginator<OmicsClient, Model::ListSequenceStoresRequest,

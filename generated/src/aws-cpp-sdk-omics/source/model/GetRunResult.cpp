@@ -70,6 +70,10 @@ GetRunResult& GetRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValu
     m_runGroupId = jsonValue.GetString("runGroupId");
     m_runGroupIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("batchId")) {
+    m_batchId = jsonValue.GetString("batchId");
+    m_batchIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("priority")) {
     m_priority = jsonValue.GetInteger("priority");
     m_priorityHasBeenSet = true;

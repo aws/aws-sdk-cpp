@@ -58,7 +58,10 @@ class AuditEvent {
 
   ///@{
   /**
-   * <p>The Type of an audit history event.</p>
+   * <p>The type of audit history event.</p> <p>Valid Values:
+   * <code>Case.Created</code> | <code>Case.Updated</code> |
+   * <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> |
+   * <code>RelatedItem.Deleted</code> </p>
    */
   inline AuditEventType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

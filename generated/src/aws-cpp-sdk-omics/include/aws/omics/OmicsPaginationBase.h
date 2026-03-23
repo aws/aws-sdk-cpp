@@ -10,6 +10,7 @@
 #include <aws/omics/model/ListAnnotationImportJobsPaginationTraits.h>
 #include <aws/omics/model/ListAnnotationStoreVersionsPaginationTraits.h>
 #include <aws/omics/model/ListAnnotationStoresPaginationTraits.h>
+#include <aws/omics/model/ListBatchPaginationTraits.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsPaginationTraits.h>
 #include <aws/omics/model/ListReadSetActivationJobsPaginationTraits.h>
 #include <aws/omics/model/ListReadSetExportJobsPaginationTraits.h>
@@ -22,6 +23,7 @@
 #include <aws/omics/model/ListRunCachesPaginationTraits.h>
 #include <aws/omics/model/ListRunGroupsPaginationTraits.h>
 #include <aws/omics/model/ListRunTasksPaginationTraits.h>
+#include <aws/omics/model/ListRunsInBatchPaginationTraits.h>
 #include <aws/omics/model/ListRunsPaginationTraits.h>
 #include <aws/omics/model/ListSequenceStoresPaginationTraits.h>
 #include <aws/omics/model/ListSharesPaginationTraits.h>
@@ -73,6 +75,16 @@ class OmicsPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAnnotationStoreVersionsRequest,
                                              Pagination::ListAnnotationStoreVersionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListBatch operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBatchRequest, Pagination::ListBatchPaginationTraits<DerivedClient>>
+  ListBatchPaginator(const Model::ListBatchRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBatchRequest, Pagination::ListBatchPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
@@ -212,6 +224,18 @@ class OmicsPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRunsRequest, Pagination::ListRunsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRunsInBatch operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRunsInBatchRequest,
+                                    Pagination::ListRunsInBatchPaginationTraits<DerivedClient>>
+  ListRunsInBatchPaginator(const Model::ListRunsInBatchRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRunsInBatchRequest,
+                                             Pagination::ListRunsInBatchPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                         request};
   }
 
   /**

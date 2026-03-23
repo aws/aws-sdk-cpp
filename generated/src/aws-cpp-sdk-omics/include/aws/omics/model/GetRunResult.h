@@ -240,6 +240,23 @@ class GetRunResult {
 
   ///@{
   /**
+   * <p>The run's batch ID.</p>
+   */
+  inline const Aws::String& GetBatchId() const { return m_batchId; }
+  template <typename BatchIdT = Aws::String>
+  void SetBatchId(BatchIdT&& value) {
+    m_batchIdHasBeenSet = true;
+    m_batchId = std::forward<BatchIdT>(value);
+  }
+  template <typename BatchIdT = Aws::String>
+  GetRunResult& WithBatchId(BatchIdT&& value) {
+    SetBatchId(std::forward<BatchIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The run's priority.</p>
    */
   inline int GetPriority() const { return m_priority; }
@@ -689,6 +706,8 @@ class GetRunResult {
 
   Aws::String m_runGroupId;
 
+  Aws::String m_batchId;
+
   int m_priority{0};
 
   Aws::String m_definition;
@@ -751,6 +770,7 @@ class GetRunResult {
   bool m_roleArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_runGroupIdHasBeenSet = false;
+  bool m_batchIdHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
   bool m_digestHasBeenSet = false;

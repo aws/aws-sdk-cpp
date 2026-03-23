@@ -30,9 +30,14 @@
 #include <aws/omics/model/AnnotationType.h>
 #include <aws/omics/model/BatchDeleteReadSetRequest.h>
 #include <aws/omics/model/BatchDeleteReadSetResult.h>
+#include <aws/omics/model/BatchListItem.h>
+#include <aws/omics/model/BatchRunSettings.h>
+#include <aws/omics/model/BatchStatus.h>
 #include <aws/omics/model/CacheBehavior.h>
 #include <aws/omics/model/CancelAnnotationImportJobRequest.h>
 #include <aws/omics/model/CancelAnnotationImportJobResult.h>
+#include <aws/omics/model/CancelRunBatchRequest.h>
+#include <aws/omics/model/CancelRunBatchResult.h>
 #include <aws/omics/model/CancelRunRequest.h>
 #include <aws/omics/model/CancelVariantImportJobRequest.h>
 #include <aws/omics/model/CancelVariantImportJobResult.h>
@@ -63,16 +68,20 @@
 #include <aws/omics/model/CreateWorkflowVersionRequest.h>
 #include <aws/omics/model/CreateWorkflowVersionResult.h>
 #include <aws/omics/model/CreationType.h>
+#include <aws/omics/model/DefaultRunSetting.h>
 #include <aws/omics/model/DefinitionRepository.h>
 #include <aws/omics/model/DefinitionRepositoryDetails.h>
 #include <aws/omics/model/DeleteAnnotationStoreRequest.h>
 #include <aws/omics/model/DeleteAnnotationStoreResult.h>
 #include <aws/omics/model/DeleteAnnotationStoreVersionsRequest.h>
 #include <aws/omics/model/DeleteAnnotationStoreVersionsResult.h>
+#include <aws/omics/model/DeleteBatchRequest.h>
 #include <aws/omics/model/DeleteReferenceRequest.h>
 #include <aws/omics/model/DeleteReferenceResult.h>
 #include <aws/omics/model/DeleteReferenceStoreRequest.h>
 #include <aws/omics/model/DeleteReferenceStoreResult.h>
+#include <aws/omics/model/DeleteRunBatchRequest.h>
+#include <aws/omics/model/DeleteRunBatchResult.h>
 #include <aws/omics/model/DeleteRunCacheRequest.h>
 #include <aws/omics/model/DeleteRunGroupRequest.h>
 #include <aws/omics/model/DeleteRunRequest.h>
@@ -105,6 +114,8 @@
 #include <aws/omics/model/GetAnnotationStoreResult.h>
 #include <aws/omics/model/GetAnnotationStoreVersionRequest.h>
 #include <aws/omics/model/GetAnnotationStoreVersionResult.h>
+#include <aws/omics/model/GetBatchRequest.h>
+#include <aws/omics/model/GetBatchResult.h>
 #include <aws/omics/model/GetReadSetActivationJobRequest.h>
 #include <aws/omics/model/GetReadSetActivationJobResult.h>
 #include <aws/omics/model/GetReadSetExportJobRequest.h>
@@ -153,6 +164,7 @@
 #include <aws/omics/model/ImportReferenceFilter.h>
 #include <aws/omics/model/ImportReferenceJobItem.h>
 #include <aws/omics/model/ImportReferenceSourceItem.h>
+#include <aws/omics/model/InlineSetting.h>
 #include <aws/omics/model/JobStatus.h>
 #include <aws/omics/model/ListAnnotationImportJobsFilter.h>
 #include <aws/omics/model/ListAnnotationImportJobsRequest.h>
@@ -163,6 +175,8 @@
 #include <aws/omics/model/ListAnnotationStoresFilter.h>
 #include <aws/omics/model/ListAnnotationStoresRequest.h>
 #include <aws/omics/model/ListAnnotationStoresResult.h>
+#include <aws/omics/model/ListBatchRequest.h>
+#include <aws/omics/model/ListBatchResult.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsRequest.h>
 #include <aws/omics/model/ListMultipartReadSetUploadsResult.h>
 #include <aws/omics/model/ListReadSetActivationJobsRequest.h>
@@ -187,6 +201,8 @@
 #include <aws/omics/model/ListRunGroupsResult.h>
 #include <aws/omics/model/ListRunTasksRequest.h>
 #include <aws/omics/model/ListRunTasksResult.h>
+#include <aws/omics/model/ListRunsInBatchRequest.h>
+#include <aws/omics/model/ListRunsInBatchResult.h>
 #include <aws/omics/model/ListRunsRequest.h>
 #include <aws/omics/model/ListRunsResult.h>
 #include <aws/omics/model/ListSequenceStoresRequest.h>
@@ -238,6 +254,7 @@
 #include <aws/omics/model/ReferenceStoreFilter.h>
 #include <aws/omics/model/RegistryMapping.h>
 #include <aws/omics/model/ResourceOwner.h>
+#include <aws/omics/model/RunBatchListItem.h>
 #include <aws/omics/model/RunCacheListItem.h>
 #include <aws/omics/model/RunCacheStatus.h>
 #include <aws/omics/model/RunExport.h>
@@ -247,6 +264,7 @@
 #include <aws/omics/model/RunLogLocation.h>
 #include <aws/omics/model/RunRetentionMode.h>
 #include <aws/omics/model/RunStatus.h>
+#include <aws/omics/model/RunSummary.h>
 #include <aws/omics/model/S3AccessConfig.h>
 #include <aws/omics/model/SchemaValueType.h>
 #include <aws/omics/model/SequenceInformation.h>
@@ -274,6 +292,8 @@
 #include <aws/omics/model/StartReferenceImportJobRequest.h>
 #include <aws/omics/model/StartReferenceImportJobResult.h>
 #include <aws/omics/model/StartReferenceImportJobSourceItem.h>
+#include <aws/omics/model/StartRunBatchRequest.h>
+#include <aws/omics/model/StartRunBatchResult.h>
 #include <aws/omics/model/StartRunRequest.h>
 #include <aws/omics/model/StartRunResult.h>
 #include <aws/omics/model/StartVariantImportJobRequest.h>
@@ -283,6 +303,8 @@
 #include <aws/omics/model/StoreOptions.h>
 #include <aws/omics/model/StoreStatus.h>
 #include <aws/omics/model/StoreType.h>
+#include <aws/omics/model/SubmissionStatus.h>
+#include <aws/omics/model/SubmissionSummary.h>
 #include <aws/omics/model/TagResourceRequest.h>
 #include <aws/omics/model/TagResourceResult.h>
 #include <aws/omics/model/TaskListItem.h>

@@ -38,6 +38,7 @@
 #include <aws/connectcases/model/CommentBodyTextType.h>
 #include <aws/connectcases/model/CommentContent.h>
 #include <aws/connectcases/model/CommentFilter.h>
+#include <aws/connectcases/model/CommentUpdateContent.h>
 #include <aws/connectcases/model/CompoundCondition.h>
 #include <aws/connectcases/model/ConnectCaseContent.h>
 #include <aws/connectcases/model/ConnectCaseFilter.h>
@@ -63,6 +64,7 @@
 #include <aws/connectcases/model/CustomFieldsFilter.h>
 #include <aws/connectcases/model/CustomFilter.h>
 #include <aws/connectcases/model/CustomInputContent.h>
+#include <aws/connectcases/model/CustomUpdateContent.h>
 #include <aws/connectcases/model/DeleteCaseRequest.h>
 #include <aws/connectcases/model/DeleteCaseResult.h>
 #include <aws/connectcases/model/DeleteCaseRuleRequest.h>
@@ -146,6 +148,7 @@
 #include <aws/connectcases/model/RelatedItemInputContent.h>
 #include <aws/connectcases/model/RelatedItemType.h>
 #include <aws/connectcases/model/RelatedItemTypeFilter.h>
+#include <aws/connectcases/model/RelatedItemUpdateContent.h>
 #include <aws/connectcases/model/RequiredCaseRule.h>
 #include <aws/connectcases/model/RequiredField.h>
 #include <aws/connectcases/model/ResourceNotFoundException.h>
@@ -188,6 +191,8 @@
 #include <aws/connectcases/model/UpdateFieldResult.h>
 #include <aws/connectcases/model/UpdateLayoutRequest.h>
 #include <aws/connectcases/model/UpdateLayoutResult.h>
+#include <aws/connectcases/model/UpdateRelatedItemRequest.h>
+#include <aws/connectcases/model/UpdateRelatedItemResult.h>
 #include <aws/connectcases/model/UpdateTemplateRequest.h>
 #include <aws/connectcases/model/UpdateTemplateResult.h>
 #include <aws/connectcases/model/UserUnion.h>

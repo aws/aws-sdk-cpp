@@ -31,6 +31,12 @@ void ListRunsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
+  if (m_batchIdHasBeenSet) {
+    ss << m_batchId;
+    uri.AddQueryStringParameter("batchId", ss.str());
+    ss.str("");
+  }
+
   if (m_startingTokenHasBeenSet) {
     ss << m_startingToken;
     uri.AddQueryStringParameter("startingToken", ss.str());

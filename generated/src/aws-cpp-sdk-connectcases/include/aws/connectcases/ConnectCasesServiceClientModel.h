@@ -59,6 +59,7 @@
 #include <aws/connectcases/model/UpdateCaseRuleResult.h>
 #include <aws/connectcases/model/UpdateFieldResult.h>
 #include <aws/connectcases/model/UpdateLayoutResult.h>
+#include <aws/connectcases/model/UpdateRelatedItemResult.h>
 #include <aws/connectcases/model/UpdateTemplateResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ConnectCasesClient header */
@@ -135,6 +136,7 @@ class UpdateCaseRequest;
 class UpdateCaseRuleRequest;
 class UpdateFieldRequest;
 class UpdateLayoutRequest;
+class UpdateRelatedItemRequest;
 class UpdateTemplateRequest;
 /* End of service model forward declarations required in ConnectCasesClient header */
 
@@ -180,6 +182,7 @@ typedef Aws::Utils::Outcome<UpdateCaseResult, ConnectCasesError> UpdateCaseOutco
 typedef Aws::Utils::Outcome<UpdateCaseRuleResult, ConnectCasesError> UpdateCaseRuleOutcome;
 typedef Aws::Utils::Outcome<UpdateFieldResult, ConnectCasesError> UpdateFieldOutcome;
 typedef Aws::Utils::Outcome<UpdateLayoutResult, ConnectCasesError> UpdateLayoutOutcome;
+typedef Aws::Utils::Outcome<UpdateRelatedItemResult, ConnectCasesError> UpdateRelatedItemOutcome;
 typedef Aws::Utils::Outcome<UpdateTemplateResult, ConnectCasesError> UpdateTemplateOutcome;
 /* End of service model Outcome class definitions */
 
@@ -225,6 +228,7 @@ typedef std::future<UpdateCaseOutcome> UpdateCaseOutcomeCallable;
 typedef std::future<UpdateCaseRuleOutcome> UpdateCaseRuleOutcomeCallable;
 typedef std::future<UpdateFieldOutcome> UpdateFieldOutcomeCallable;
 typedef std::future<UpdateLayoutOutcome> UpdateLayoutOutcomeCallable;
+typedef std::future<UpdateRelatedItemOutcome> UpdateRelatedItemOutcomeCallable;
 typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -355,6 +359,9 @@ typedef std::function<void(const ConnectCasesClient*, const Model::UpdateFieldRe
 typedef std::function<void(const ConnectCasesClient*, const Model::UpdateLayoutRequest&, const Model::UpdateLayoutOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateLayoutResponseReceivedHandler;
+typedef std::function<void(const ConnectCasesClient*, const Model::UpdateRelatedItemRequest&, const Model::UpdateRelatedItemOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateRelatedItemResponseReceivedHandler;
 typedef std::function<void(const ConnectCasesClient*, const Model::UpdateTemplateRequest&, const Model::UpdateTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateTemplateResponseReceivedHandler;

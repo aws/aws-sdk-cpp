@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ConnectCases {
 namespace Model {
-enum class AuditEventType { NOT_SET, Case_Created, Case_Updated, RelatedItem_Created };
+enum class AuditEventType { NOT_SET, Case_Created, Case_Updated, RelatedItem_Created, RelatedItem_Deleted, RelatedItem_Updated };
 
 namespace AuditEventTypeMapper {
 AWS_CONNECTCASES_API AuditEventType GetAuditEventTypeForName(const Aws::String& name);

@@ -72,6 +72,24 @@ class ListRunsRequest : public OmicsRequest {
 
   ///@{
   /**
+   * <p>Filter by batch ID.</p>
+   */
+  inline const Aws::String& GetBatchId() const { return m_batchId; }
+  inline bool BatchIdHasBeenSet() const { return m_batchIdHasBeenSet; }
+  template <typename BatchIdT = Aws::String>
+  void SetBatchId(BatchIdT&& value) {
+    m_batchIdHasBeenSet = true;
+    m_batchId = std::forward<BatchIdT>(value);
+  }
+  template <typename BatchIdT = Aws::String>
+  ListRunsRequest& WithBatchId(BatchIdT&& value) {
+    SetBatchId(std::forward<BatchIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specify the pagination token from a previous request to retrieve the next
    * page of results.</p>
    */
@@ -125,6 +143,8 @@ class ListRunsRequest : public OmicsRequest {
 
   Aws::String m_runGroupId;
 
+  Aws::String m_batchId;
+
   Aws::String m_startingToken;
 
   int m_maxResults{0};
@@ -132,6 +152,7 @@ class ListRunsRequest : public OmicsRequest {
   RunStatus m_status{RunStatus::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_runGroupIdHasBeenSet = false;
+  bool m_batchIdHasBeenSet = false;
   bool m_startingTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_statusHasBeenSet = false;

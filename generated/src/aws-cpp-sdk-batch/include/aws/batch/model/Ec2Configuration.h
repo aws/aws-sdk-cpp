@@ -24,8 +24,12 @@ namespace Model {
  * instances in the compute environment. If <code>Ec2Configuration</code> isn't
  * specified, the default is <code>ECS_AL2</code> (<a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
- * Linux 2</a>).</p>  <p>This object isn't applicable to jobs that are
- * running on Fargate resources.</p> <p><h3>See Also:</h3>   <a
+ * ECS-optimized Amazon Linux 2</a>) for EC2 (ECS) compute environments and
+ * <code>EKS_AL2023</code> (<a
+ * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
+ * EKS-optimized Amazon Linux 2023 AMI</a>) for EKS compute environments.</p>
+ *  <p>This object isn't applicable to jobs that are running on Fargate
+ * resources.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Ec2Configuration">AWS
  * API Reference</a></p>
  */
@@ -151,6 +155,48 @@ class Ec2Configuration {
 
   ///@{
   /**
+   * <p>The status of the Batch-provided default AMIs associated with the
+   * <code>imageType</code>.</p> <p>The field only appears after the compute
+   * environment has begun scaling instances using the <code>imageType</code>. The
+   * field is not present when an image is specified in
+   * <code>ComputeResources.imageId</code> (deprecated), the default launch template,
+   * or <code>Ec2Configuration.imageIdOverride</code>. The field is also not present
+   * when the compute environment has a launch template override. For more
+   * information on image selection, see <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/ami-selection-order.html">AMI
+   * selection order</a>.</p>  <p>This field is read-only and only appears in
+   * the <a
+   * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html">DescribeComputeEnvironments</a>
+   * response.</p>  <ul> <li> <p> <code>LATEST</code> − Using the most recent
+   * AMI supported</p> </li> <li> <p> <code>UPDATE_AVAILABLE</code> − An updated AMI
+   * is available</p> <ul> <li> <p>If a compute environment has multiple AMIs for the
+   * <code>imageType</code> and any one AMI has <code>UPDATE_AVAILABLE</code>, the
+   * status shows <code>UPDATE_AVAILABLE</code>.</p> </li> <li> <p>For compute
+   * environments that use <code>BEST_FIT</code> as their allocation strategy, you
+   * can perform a <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/blue-green-updates.html">blue/green
+   * update</a> to update the AMI.</p> </li> <li> <p>For all other compute
+   * environments, you can perform an <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/managing-ami-versions.html#updating-ami-versions">AMI
+   * version update</a> to update the AMI to the latest version.</p> </li> </ul>
+   * </li> </ul>
+   */
+  inline const Aws::String& GetBatchImageStatus() const { return m_batchImageStatus; }
+  inline bool BatchImageStatusHasBeenSet() const { return m_batchImageStatusHasBeenSet; }
+  template <typename BatchImageStatusT = Aws::String>
+  void SetBatchImageStatus(BatchImageStatusT&& value) {
+    m_batchImageStatusHasBeenSet = true;
+    m_batchImageStatus = std::forward<BatchImageStatusT>(value);
+  }
+  template <typename BatchImageStatusT = Aws::String>
+  Ec2Configuration& WithBatchImageStatus(BatchImageStatusT&& value) {
+    SetBatchImageStatus(std::forward<BatchImageStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Kubernetes version for the compute environment. If you don't specify a
    * value, the latest version that Batch supports is used.</p>
    */
@@ -172,9 +218,12 @@ class Ec2Configuration {
 
   Aws::String m_imageIdOverride;
 
+  Aws::String m_batchImageStatus;
+
   Aws::String m_imageKubernetesVersion;
   bool m_imageTypeHasBeenSet = false;
   bool m_imageIdOverrideHasBeenSet = false;
+  bool m_batchImageStatusHasBeenSet = false;
   bool m_imageKubernetesVersionHasBeenSet = false;
 };
 

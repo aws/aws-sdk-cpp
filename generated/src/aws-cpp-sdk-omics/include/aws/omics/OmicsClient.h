@@ -171,10 +171,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Cancels an annotation import
@@ -234,11 +232,42 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Cancels all runs within a specified batch. This operation prevents
+   * not-yet-submitted runs from starting and submits <code>CancelRun</code> requests
+   * for runs that have already started.</p> <p>Cancel is only allowed on batches in
+   * <code>PENDING</code>, <code>SUBMITTING</code>, or <code>INPROGRESS</code> state.
+   * Cancel operations are non-atomic and may be partially successful. Use
+   * <code>GetBatch</code> to review <code>successfulCancelSubmissionCount</code> and
+   * <code>failedCancelSubmissionCount</code> in the <code>submissionSummary</code>.
+   * Only one cancel or delete operation per batch is allowed at a
+   * time.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelRunBatch">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelRunBatchOutcome CancelRunBatch(const Model::CancelRunBatchRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelRunBatch that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CancelRunBatchRequestT = Model::CancelRunBatchRequest>
+  Model::CancelRunBatchOutcomeCallable CancelRunBatchCallable(const CancelRunBatchRequestT& request) const {
+    return SubmitCallable(&OmicsClient::CancelRunBatch, request);
+  }
+
+  /**
+   * An Async wrapper for CancelRunBatch that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CancelRunBatchRequestT = Model::CancelRunBatchRequest>
+  void CancelRunBatchAsync(const CancelRunBatchRequestT& request, const CancelRunBatchResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OmicsClient::CancelRunBatch, request, handler, context);
+  }
+
+  /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Cancels a variant import job.</p></p><p><h3>See
@@ -307,10 +336,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Creates an annotation store.</p></p><p><h3>See
@@ -587,10 +614,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Creates a variant store.</p></p><p><h3>See
@@ -711,10 +736,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Deletes an annotation store.</p></p><p><h3>See
@@ -771,6 +794,39 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
                                           const DeleteAnnotationStoreVersionsResponseReceivedHandler& handler,
                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OmicsClient::DeleteAnnotationStoreVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a run batch resource and its associated metadata. This operation does
+   * not delete the individual workflow runs. To delete the runs, call
+   * <code>DeleteRunBatch</code> before calling <code>DeleteBatch</code>.</p> <p>
+   * <code>DeleteBatch</code> requires the batch to be in a terminal state:
+   * <code>PROCESSED</code>, <code>FAILED</code>, <code>CANCELLED</code>, or
+   * <code>RUNS_DELETED</code>. After <code>DeleteBatch</code> completes, the batch
+   * metadata is no longer accessible. You cannot call <code>GetBatch</code>,
+   * <code>ListRunsInBatch</code>, <code>DeleteRunBatch</code>, or
+   * <code>CancelRunBatch</code> on a deleted batch.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteBatch">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteBatchOutcome DeleteBatch(const Model::DeleteBatchRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteBatch that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteBatchRequestT = Model::DeleteBatchRequest>
+  Model::DeleteBatchOutcomeCallable DeleteBatchCallable(const DeleteBatchRequestT& request) const {
+    return SubmitCallable(&OmicsClient::DeleteBatch, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteBatch that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteBatchRequestT = Model::DeleteBatchRequest>
+  void DeleteBatchAsync(const DeleteBatchRequestT& request, const DeleteBatchResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OmicsClient::DeleteBatch, request, handler, context);
   }
 
   /**
@@ -871,6 +927,39 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
   void DeleteRunAsync(const DeleteRunRequestT& request, const DeleteRunResponseReceivedHandler& handler,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OmicsClient::DeleteRun, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the individual workflow runs within a batch. This operation is
+   * separate from <code>DeleteBatch</code>, which removes the batch metadata.</p>
+   * <p>Delete is only allowed on batches in <code>PROCESSED</code> or
+   * <code>CANCELLED</code> state. Delete operations are non-atomic and may be
+   * partially successful. Use <code>GetBatch</code> to review
+   * <code>successfulDeleteSubmissionCount</code> and
+   * <code>failedDeleteSubmissionCount</code> in the <code>submissionSummary</code>.
+   * Only one cancel or delete operation per batch is allowed at a
+   * time.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunBatch">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRunBatchOutcome DeleteRunBatch(const Model::DeleteRunBatchRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRunBatch that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteRunBatchRequestT = Model::DeleteRunBatchRequest>
+  Model::DeleteRunBatchOutcomeCallable DeleteRunBatchCallable(const DeleteRunBatchRequestT& request) const {
+    return SubmitCallable(&OmicsClient::DeleteRunBatch, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRunBatch that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteRunBatchRequestT = Model::DeleteRunBatchRequest>
+  void DeleteRunBatchAsync(const DeleteRunBatchRequestT& request, const DeleteRunBatchResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OmicsClient::DeleteRunBatch, request, handler, context);
   }
 
   /**
@@ -1025,10 +1114,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Deletes a variant store.</p></p><p><h3>See
@@ -1120,10 +1207,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Gets information about an annotation import
@@ -1155,10 +1240,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Gets information about an annotation
@@ -1214,6 +1297,32 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
                                       const GetAnnotationStoreVersionResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OmicsClient::GetAnnotationStoreVersion, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves details and current status for a specific run batch, including
+   * submission progress and run execution counts.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetBatch">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::GetBatchOutcome GetBatch(const Model::GetBatchRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetBatch that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetBatchRequestT = Model::GetBatchRequest>
+  Model::GetBatchOutcomeCallable GetBatchCallable(const GetBatchRequestT& request) const {
+    return SubmitCallable(&OmicsClient::GetBatch, request);
+  }
+
+  /**
+   * An Async wrapper for GetBatch that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetBatchRequestT = Model::GetBatchRequest>
+  void GetBatchAsync(const GetBatchRequestT& request, const GetBatchResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OmicsClient::GetBatch, request, handler, context);
   }
 
   /**
@@ -1663,10 +1772,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Gets information about a variant import
@@ -1697,10 +1804,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Gets information about a variant
@@ -1789,10 +1894,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Retrieves a list of annotation import
@@ -1854,10 +1957,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Retrieves a list of annotation
@@ -1885,6 +1986,34 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                  const ListAnnotationStoresRequestT& request = {}) const {
     return SubmitAsync(&OmicsClient::ListAnnotationStores, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of run batches in your account, with optional filtering by
+   * status, name, or run group. Results are paginated. Only one filter per call is
+   * supported.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListBatch">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::ListBatchOutcome ListBatch(const Model::ListBatchRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListBatch that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListBatchRequestT = Model::ListBatchRequest>
+  Model::ListBatchOutcomeCallable ListBatchCallable(const ListBatchRequestT& request = {}) const {
+    return SubmitCallable(&OmicsClient::ListBatch, request);
+  }
+
+  /**
+   * An Async wrapper for ListBatch that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListBatchRequestT = Model::ListBatchRequest>
+  void ListBatchAsync(const ListBatchResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                      const ListBatchRequestT& request = {}) const {
+    return SubmitAsync(&OmicsClient::ListBatch, request, handler, context);
   }
 
   /**
@@ -2265,6 +2394,34 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a paginated list of individual workflow runs within a specific batch.
+   * Use this operation to map each <code>runSettingId</code> to its
+   * HealthOmics-generated <code>runId</code>, and to check the submission status of
+   * each run. Only one filter per call is supported.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunsInBatch">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRunsInBatchOutcome ListRunsInBatch(const Model::ListRunsInBatchRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRunsInBatch that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListRunsInBatchRequestT = Model::ListRunsInBatchRequest>
+  Model::ListRunsInBatchOutcomeCallable ListRunsInBatchCallable(const ListRunsInBatchRequestT& request) const {
+    return SubmitCallable(&OmicsClient::ListRunsInBatch, request);
+  }
+
+  /**
+   * An Async wrapper for ListRunsInBatch that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListRunsInBatchRequestT = Model::ListRunsInBatchRequest>
+  void ListRunsInBatchAsync(const ListRunsInBatchRequestT& request, const ListRunsInBatchResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OmicsClient::ListRunsInBatch, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves a list of sequence stores and returns each sequence store's
    * metadata.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/create-sequence-store.html">Creating
@@ -2349,10 +2506,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Retrieves a list of variant import
@@ -2384,10 +2539,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Retrieves a list of variant
@@ -2506,10 +2659,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Starts an annotation import
@@ -2730,11 +2881,42 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Starts a batch of workflow runs. You can group up to 100,000 runs into a
+   * single batch that share a common configuration defined in
+   * <code>defaultRunSetting</code>. Per-run overrides can be provided either inline
+   * via <code>inlineSettings</code> (up to 100 runs) or via a JSON file stored in
+   * Amazon S3 via <code>s3UriSettings</code> (up to 100,000 runs).</p> <p>
+   * <code>StartRunBatch</code> validates common fields synchronously and returns
+   * immediately with a batch ID and status <code>PENDING</code>. Runs are submitted
+   * gradually and asynchronously at a rate governed by your <code>StartRun</code>
+   * throughput quota.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRunBatch">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartRunBatchOutcome StartRunBatch(const Model::StartRunBatchRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartRunBatch that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StartRunBatchRequestT = Model::StartRunBatchRequest>
+  Model::StartRunBatchOutcomeCallable StartRunBatchCallable(const StartRunBatchRequestT& request) const {
+    return SubmitCallable(&OmicsClient::StartRunBatch, request);
+  }
+
+  /**
+   * An Async wrapper for StartRunBatch that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StartRunBatchRequestT = Model::StartRunBatchRequest>
+  void StartRunBatchAsync(const StartRunBatchRequestT& request, const StartRunBatchResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OmicsClient::StartRunBatch, request, handler, context);
+  }
+
+  /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Starts a variant import job.</p></p><p><h3>See
@@ -2815,10 +2997,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Updates an annotation store.</p></p><p><h3>See
@@ -2971,10 +3151,8 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <p>Amazon Web Services HealthOmics variant stores and annotation
-   * stores will no longer be open to new customers starting November 7, 2025. If you
-   * would like to use variant stores or annotation stores, sign up prior to that
-   * date. Existing customers can continue to use the service as normal. For more
-   * information, see <a
+   * stores are no longer open to new customers. Existing customers can continue to
+   * use the service as normal. For more information, see <a
    * href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
    * Amazon Web Services HealthOmics variant store and annotation store availability
    * change</a>.</p>  <p>Updates a variant store.</p></p><p><h3>See
