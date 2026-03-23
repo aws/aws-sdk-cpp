@@ -107,7 +107,7 @@
 #end
 #else
 #if($template.currentShape.sparse)
-  ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(*${template.containerVar}[${template.lowerCaseVarName}Index]${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape)});
+  ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}((*${template.containerVar}[${template.lowerCaseVarName}Index])${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape)});
 #else
   ${template.currentSpaces}  ${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(${template.containerVar}[${template.lowerCaseVarName}Index]${CppViewHelper.computeJsonizeString($template.currentShape.listMember.shape)});
 #end
