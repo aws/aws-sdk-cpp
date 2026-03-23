@@ -43,7 +43,7 @@ public final class WaiterJmesPathCppCodeGenerator {
 
         StringBuilder sb = new StringBuilder();
         sb.append("[](const ").append(outcomeType)
-                .append("& outcome, const Aws::Utils::ExpectedValue& expected) {\n");
+                .append("& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {\n");
         sb.append("    if (!outcome.IsSuccess()) return false;\n");
         sb.append("    const auto& result = outcome.GetResult();\n");
 

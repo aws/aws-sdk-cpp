@@ -37,7 +37,7 @@ class WaiterJmesPathCppCodeGeneratorTest {
         @Test
         void lambdaHasCorrectSignature() {
             String code = gen("Items[].Status", PathComparator.ALL_STRING_EQUALS);
-            assertTrue(code.startsWith("[](const " + OUTCOME + "& outcome, const Aws::Utils::ExpectedValue& expected) {"));
+            assertTrue(code.startsWith("[](const " + OUTCOME + "& outcome, const Aws::Utils::ExpectedValue& expected)"));
             assertTrue(code.endsWith("}"));
         }
 
