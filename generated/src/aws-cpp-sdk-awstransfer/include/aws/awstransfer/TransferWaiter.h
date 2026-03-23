@@ -25,14 +25,14 @@ class TransferWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServerOfflineWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("OFFLINE"),
-        [](const Model::DescribeServerOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeServerOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetServer().GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServerOfflineWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("STOP_FAILED"),
-        [](const Model::DescribeServerOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeServerOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetServer().GetState()) == expected.get<Aws::String>();
@@ -49,14 +49,14 @@ class TransferWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServerOnlineWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ONLINE"),
-        [](const Model::DescribeServerOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeServerOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetServer().GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServerOnlineWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("START_FAILED"),
-        [](const Model::DescribeServerOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeServerOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetServer().GetState()) == expected.get<Aws::String>();

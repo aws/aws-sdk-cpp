@@ -29,14 +29,14 @@ class Route53RecoveryControlConfigWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DEPLOYED"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetCluster().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetCluster().GetStatus()) == expected.get<Aws::String>();
@@ -57,7 +57,7 @@ class Route53RecoveryControlConfigWaiter {
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING_DELETION"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetCluster().GetStatus()) == expected.get<Aws::String>();
@@ -77,14 +77,14 @@ class Route53RecoveryControlConfigWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ControlPanelCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DEPLOYED"),
-        [](const Model::DescribeControlPanelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeControlPanelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetControlPanel().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ControlPanelCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING"),
-        [](const Model::DescribeControlPanelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeControlPanelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetControlPanel().GetStatus()) == expected.get<Aws::String>();
@@ -106,7 +106,7 @@ class Route53RecoveryControlConfigWaiter {
         "ControlPanelDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ControlPanelDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING_DELETION"),
-        [](const Model::DescribeControlPanelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeControlPanelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetControlPanel().GetStatus()) == expected.get<Aws::String>();
@@ -126,14 +126,14 @@ class Route53RecoveryControlConfigWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RoutingControlCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DEPLOYED"),
-        [](const Model::DescribeRoutingControlOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeRoutingControlOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetRoutingControl().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RoutingControlCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING"),
-        [](const Model::DescribeRoutingControlOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeRoutingControlOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetRoutingControl().GetStatus()) == expected.get<Aws::String>();
@@ -155,7 +155,7 @@ class Route53RecoveryControlConfigWaiter {
         "RoutingControlDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RoutingControlDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING_DELETION"),
-        [](const Model::DescribeRoutingControlOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeRoutingControlOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetRoutingControl().GetStatus()) == expected.get<Aws::String>();

@@ -36,14 +36,14 @@ class CloudFormationWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChangeSetCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
-        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StackRefactorStatusMapper::GetNameForStackRefactorStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChangeSetCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeChangeSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeChangeSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ChangeSetStatusMapper::GetNameForChangeSetStatus(result.GetStatus()) == expected.get<Aws::String>();
@@ -63,14 +63,14 @@ class CloudFormationWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRefactorCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
-        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StackRefactorStatusMapper::GetNameForStackRefactorStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRefactorCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StackRefactorStatusMapper::GetNameForStackRefactorStatus(result.GetStatus()) == expected.get<Aws::String>();
@@ -90,7 +90,7 @@ class CloudFormationWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRefactorExecuteCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("EXECUTE_COMPLETE"),
-        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StackRefactorExecutionStatusMapper::GetNameForStackRefactorExecutionStatus(result.GetExecutionStatus()) ==
@@ -98,7 +98,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRefactorExecuteCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("EXECUTE_FAILED"),
-        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StackRefactorExecutionStatusMapper::GetNameForStackRefactorExecutionStatus(result.GetExecutionStatus()) ==
@@ -106,7 +106,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRefactorExecuteCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ROLLBACK_COMPLETE"),
-        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StackRefactorExecutionStatusMapper::GetNameForStackRefactorExecutionStatus(result.GetExecutionStatus()) ==
@@ -126,7 +126,7 @@ class CloudFormationWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -135,7 +135,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -144,7 +144,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_IN_PROGRESS"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -153,7 +153,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_COMPLETE_CLEANUP_IN_PROGRESS"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -162,7 +162,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -171,7 +171,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_ROLLBACK_IN_PROGRESS"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -180,7 +180,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_ROLLBACK_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -189,7 +189,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -198,7 +198,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_ROLLBACK_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -207,7 +207,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -216,7 +216,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -225,7 +225,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -234,7 +234,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ROLLBACK_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -243,7 +243,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ROLLBACK_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -264,7 +264,7 @@ class CloudFormationWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackDeleteCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETE_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -275,7 +275,7 @@ class CloudFormationWaiter {
         "StackDeleteCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ValidationError")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackDeleteCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -284,7 +284,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackDeleteCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -293,7 +293,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackDeleteCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ROLLBACK_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -302,7 +302,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackDeleteCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_ROLLBACK_IN_PROGRESS"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -311,7 +311,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackDeleteCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_ROLLBACK_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -320,7 +320,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackDeleteCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_ROLLBACK_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -329,7 +329,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackDeleteCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -362,7 +362,7 @@ class CloudFormationWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackImportCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("IMPORT_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -371,7 +371,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackImportCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ROLLBACK_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -380,7 +380,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackImportCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ROLLBACK_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -389,7 +389,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackImportCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("IMPORT_ROLLBACK_IN_PROGRESS"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -398,7 +398,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackImportCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("IMPORT_ROLLBACK_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -407,7 +407,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackImportCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("IMPORT_ROLLBACK_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -428,7 +428,7 @@ class CloudFormationWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRollbackCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_ROLLBACK_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -437,7 +437,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRollbackCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -446,7 +446,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRollbackCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_ROLLBACK_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -455,7 +455,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackRollbackCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -476,7 +476,7 @@ class CloudFormationWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackUpdateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UPDATE_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -485,7 +485,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackUpdateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -494,7 +494,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackUpdateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_ROLLBACK_FAILED"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -503,7 +503,7 @@ class CloudFormationWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StackUpdateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_ROLLBACK_COMPLETE"),
-        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStacksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetStacks().begin(), result.GetStacks().end(), [&](const Model::Stack& item) {
@@ -525,14 +525,14 @@ class CloudFormationWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TypeRegistrationCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETE"),
-        [](const Model::DescribeTypeRegistrationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTypeRegistrationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RegistrationStatusMapper::GetNameForRegistrationStatus(result.GetProgressStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TypeRegistrationCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeTypeRegistrationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTypeRegistrationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RegistrationStatusMapper::GetNameForRegistrationStatus(result.GetProgressStatus()) == expected.get<Aws::String>();

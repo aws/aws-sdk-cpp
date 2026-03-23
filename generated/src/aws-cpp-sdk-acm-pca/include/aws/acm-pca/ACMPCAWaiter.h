@@ -30,14 +30,14 @@ class ACMPCAWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AuditReportCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCESS"),
-        [](const Model::DescribeCertificateAuthorityAuditReportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCertificateAuthorityAuditReportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AuditReportStatusMapper::GetNameForAuditReportStatus(result.GetAuditReportStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AuditReportCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeCertificateAuthorityAuditReportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCertificateAuthorityAuditReportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AuditReportStatusMapper::GetNameForAuditReportStatus(result.GetAuditReportStatus()) == expected.get<Aws::String>();

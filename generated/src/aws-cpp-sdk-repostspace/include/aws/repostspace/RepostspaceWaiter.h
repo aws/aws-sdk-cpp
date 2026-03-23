@@ -27,21 +27,21 @@ class RepostspaceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
-        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ChannelStatusMapper::GetNameForChannelStatus(result.GetChannelStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ChannelStatusMapper::GetNameForChannelStatus(result.GetChannelStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
-        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ChannelStatusMapper::GetNameForChannelStatus(result.GetChannelStatus()) == expected.get<Aws::String>();
@@ -60,21 +60,21 @@ class RepostspaceWaiter {
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
-        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ChannelStatusMapper::GetNameForChannelStatus(result.GetChannelStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ChannelStatusMapper::GetNameForChannelStatus(result.GetChannelStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ChannelStatusMapper::GetNameForChannelStatus(result.GetChannelStatus()) == expected.get<Aws::String>();
@@ -91,21 +91,21 @@ class RepostspaceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpaceCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
-        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return result.GetStatus() == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpaceCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return result.GetStatus() == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpaceCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
-        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return result.GetStatus() == expected.get<Aws::String>();
@@ -124,21 +124,21 @@ class RepostspaceWaiter {
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpaceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
-        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return result.GetStatus() == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpaceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return result.GetStatus() == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpaceDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetSpaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return result.GetStatus() == expected.get<Aws::String>();

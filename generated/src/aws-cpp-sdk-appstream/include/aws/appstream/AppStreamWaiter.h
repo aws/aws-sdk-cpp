@@ -25,7 +25,7 @@ class AppStreamWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FleetStartedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("RUNNING"),
-        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetFleets().begin(), result.GetFleets().end(), [&](const Model::Fleet& item) {
@@ -34,7 +34,7 @@ class AppStreamWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FleetStartedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("STOPPING"),
-        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetFleets().begin(), result.GetFleets().end(), [&](const Model::Fleet& item) {
@@ -43,7 +43,7 @@ class AppStreamWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FleetStartedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("STOPPED"),
-        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetFleets().begin(), result.GetFleets().end(), [&](const Model::Fleet& item) {
@@ -62,7 +62,7 @@ class AppStreamWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FleetStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STOPPED"),
-        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetFleets().begin(), result.GetFleets().end(), [&](const Model::Fleet& item) {
@@ -71,7 +71,7 @@ class AppStreamWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FleetStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("STARTING"),
-        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetFleets().begin(), result.GetFleets().end(), [&](const Model::Fleet& item) {
@@ -80,7 +80,7 @@ class AppStreamWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FleetStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("RUNNING"),
-        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFleetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetFleets().begin(), result.GetFleets().end(), [&](const Model::Fleet& item) {

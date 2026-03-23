@@ -31,14 +31,14 @@ class IoTSiteWiseWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AssetActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeAssetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAssetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AssetStateMapper::GetNameForAssetState(result.GetAssetStatus().GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AssetActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeAssetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAssetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AssetStateMapper::GetNameForAssetState(result.GetAssetStatus().GetState()) == expected.get<Aws::String>();
@@ -67,7 +67,7 @@ class IoTSiteWiseWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AssetModelActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeAssetModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAssetModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AssetModelStateMapper::GetNameForAssetModelState(result.GetAssetModelStatus().GetState()) ==
@@ -75,7 +75,7 @@ class IoTSiteWiseWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AssetModelActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeAssetModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAssetModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AssetModelStateMapper::GetNameForAssetModelState(result.GetAssetModelStatus().GetState()) ==
@@ -106,7 +106,7 @@ class IoTSiteWiseWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PortalActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribePortalOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribePortalOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::PortalStateMapper::GetNameForPortalState(result.GetPortalStatus().GetState()) == expected.get<Aws::String>();

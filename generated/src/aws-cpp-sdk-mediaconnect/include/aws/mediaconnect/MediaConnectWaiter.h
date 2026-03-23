@@ -32,21 +32,21 @@ class MediaConnectWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
@@ -57,14 +57,14 @@ class MediaConnectWaiter {
                                                                                 Aws::String("ServiceUnavailableException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("STANDBY"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
@@ -83,7 +83,7 @@ class MediaConnectWaiter {
                                                                                 Aws::String("NotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
@@ -94,7 +94,7 @@ class MediaConnectWaiter {
                                                                                 Aws::String("ServiceUnavailableException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
@@ -111,14 +111,14 @@ class MediaConnectWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowStandbyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STANDBY"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowStandbyWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STOPPING"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
@@ -129,7 +129,7 @@ class MediaConnectWaiter {
                                                                                 Aws::String("ServiceUnavailableException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FlowStandbyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFlowOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StatusMapper::GetNameForStatus(result.GetFlow().GetStatus()) == expected.get<Aws::String>();
@@ -146,7 +146,7 @@ class MediaConnectWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputStandbyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STANDBY"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
@@ -154,7 +154,7 @@ class MediaConnectWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputStandbyWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STOPPING"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
@@ -166,7 +166,7 @@ class MediaConnectWaiter {
                                                                                 Aws::String("ServiceUnavailableException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputStandbyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
@@ -184,7 +184,7 @@ class MediaConnectWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
@@ -196,7 +196,7 @@ class MediaConnectWaiter {
                                                                                 Aws::String("ServiceUnavailableException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
@@ -216,7 +216,7 @@ class MediaConnectWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
@@ -224,7 +224,7 @@ class MediaConnectWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
@@ -232,7 +232,7 @@ class MediaConnectWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
@@ -240,7 +240,7 @@ class MediaConnectWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("MIGRATING"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
@@ -252,7 +252,7 @@ class MediaConnectWaiter {
                                                                                 Aws::String("ServiceUnavailableException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterInputStateMapper::GetNameForRouterInputState(result.GetRouterInput().GetState()) ==
@@ -270,7 +270,7 @@ class MediaConnectWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputUnroutedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("UNROUTED"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputRoutedStateMapper::GetNameForRouterOutputRoutedState(result.GetRouterOutput().GetRoutedState()) ==
@@ -278,7 +278,7 @@ class MediaConnectWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputUnroutedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ROUTING"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputRoutedStateMapper::GetNameForRouterOutputRoutedState(result.GetRouterOutput().GetRoutedState()) ==
@@ -300,7 +300,7 @@ class MediaConnectWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
@@ -312,7 +312,7 @@ class MediaConnectWaiter {
                                                                                 Aws::String("ServiceUnavailableException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
@@ -332,7 +332,7 @@ class MediaConnectWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
@@ -340,7 +340,7 @@ class MediaConnectWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
@@ -348,7 +348,7 @@ class MediaConnectWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
@@ -356,7 +356,7 @@ class MediaConnectWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("MIGRATING"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
@@ -368,7 +368,7 @@ class MediaConnectWaiter {
                                                                                 Aws::String("ServiceUnavailableException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
@@ -386,7 +386,7 @@ class MediaConnectWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputStandbyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STANDBY"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
@@ -394,7 +394,7 @@ class MediaConnectWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputStandbyWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STOPPING"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
@@ -406,7 +406,7 @@ class MediaConnectWaiter {
                                                                                 Aws::String("ServiceUnavailableException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputStandbyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputStateMapper::GetNameForRouterOutputState(result.GetRouterOutput().GetState()) ==
@@ -424,7 +424,7 @@ class MediaConnectWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputRoutedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ROUTED"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputRoutedStateMapper::GetNameForRouterOutputRoutedState(result.GetRouterOutput().GetRoutedState()) ==
@@ -432,7 +432,7 @@ class MediaConnectWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutputRoutedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ROUTING"),
-        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetRouterOutputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RouterOutputRoutedStateMapper::GetNameForRouterOutputRoutedState(result.GetRouterOutput().GetRoutedState()) ==

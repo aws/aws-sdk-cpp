@@ -29,7 +29,7 @@ class ElasticLoadBalancingv2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LoadBalancerAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("active"),
-        [](const Model::DescribeLoadBalancersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeLoadBalancersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetLoadBalancers().begin(), result.GetLoadBalancers().end(), [&](const Model::LoadBalancer& item) {
@@ -39,7 +39,7 @@ class ElasticLoadBalancingv2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LoadBalancerAvailableWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("provisioning"),
-        [](const Model::DescribeLoadBalancersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeLoadBalancersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetLoadBalancers().begin(), result.GetLoadBalancers().end(), [&](const Model::LoadBalancer& item) {
@@ -77,7 +77,7 @@ class ElasticLoadBalancingv2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LoadBalancersDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("active"),
-        [](const Model::DescribeLoadBalancersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeLoadBalancersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetLoadBalancers().begin(), result.GetLoadBalancers().end(), [&](const Model::LoadBalancer& item) {
@@ -102,7 +102,7 @@ class ElasticLoadBalancingv2Waiter {
         "TargetDeregisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InvalidTarget")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TargetDeregisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("unused"),
-        [](const Model::DescribeTargetHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTargetHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetTargetHealthDescriptions().begin(), result.GetTargetHealthDescriptions().end(),
@@ -124,7 +124,7 @@ class ElasticLoadBalancingv2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TargetInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("healthy"),
-        [](const Model::DescribeTargetHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTargetHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetTargetHealthDescriptions().begin(), result.GetTargetHealthDescriptions().end(),

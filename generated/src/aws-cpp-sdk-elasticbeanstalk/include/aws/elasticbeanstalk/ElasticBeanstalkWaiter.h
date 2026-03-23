@@ -26,7 +26,7 @@ class ElasticBeanstalkWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Ready"),
-        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -36,7 +36,7 @@ class ElasticBeanstalkWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentExistsWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Launching"),
-        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -57,7 +57,7 @@ class ElasticBeanstalkWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentTerminatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Terminated"),
-        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -67,7 +67,7 @@ class ElasticBeanstalkWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentTerminatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Terminating"),
-        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -88,7 +88,7 @@ class ElasticBeanstalkWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Ready"),
-        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -98,7 +98,7 @@ class ElasticBeanstalkWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EnvironmentUpdatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Updating"),
-        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeEnvironmentsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(

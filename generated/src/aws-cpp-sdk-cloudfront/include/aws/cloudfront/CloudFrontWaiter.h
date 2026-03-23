@@ -31,7 +31,7 @@ class CloudFrontWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DistributionDeployedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Deployed"),
-        [](const Model::GetDistribution2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetDistribution2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return result.GetDistribution().GetStatus() == expected.get<Aws::String>();
@@ -49,7 +49,7 @@ class CloudFrontWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InvalidationCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
-        [](const Model::GetInvalidationForDistributionTenant2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetInvalidationForDistributionTenant2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return result.GetInvalidation().GetStatus() == expected.get<Aws::String>();
@@ -67,7 +67,7 @@ class CloudFrontWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InvalidationForDistributionTenantCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
-        [](const Model::GetInvalidationForDistributionTenant2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetInvalidationForDistributionTenant2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return result.GetInvalidation().GetStatus() == expected.get<Aws::String>();
@@ -88,7 +88,7 @@ class CloudFrontWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamingDistributionDeployedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Deployed"),
-        [](const Model::GetStreamingDistribution2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetStreamingDistribution2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return result.GetStreamingDistribution().GetStatus() == expected.get<Aws::String>();

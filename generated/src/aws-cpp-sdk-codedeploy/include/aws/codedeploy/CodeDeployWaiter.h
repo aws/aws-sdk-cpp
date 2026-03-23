@@ -25,7 +25,7 @@ class CodeDeployWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DeploymentSuccessfulWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Succeeded"),
-        [](const Model::GetDeploymentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetDeploymentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetDeploymentInfo().GetStatus()) ==
@@ -33,7 +33,7 @@ class CodeDeployWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DeploymentSuccessfulWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::GetDeploymentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetDeploymentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetDeploymentInfo().GetStatus()) ==
@@ -41,7 +41,7 @@ class CodeDeployWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DeploymentSuccessfulWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Stopped"),
-        [](const Model::GetDeploymentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetDeploymentOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::DeploymentStatusMapper::GetNameForDeploymentStatus(result.GetDeploymentInfo().GetStatus()) ==

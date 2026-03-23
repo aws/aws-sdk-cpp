@@ -32,7 +32,7 @@ class RDSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetDBClusters().begin(), result.GetDBClusters().end(),
@@ -40,7 +40,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusters().begin(), result.GetDBClusters().end(),
@@ -48,7 +48,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusters().begin(), result.GetDBClusters().end(),
@@ -56,7 +56,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusters().begin(), result.GetDBClusters().end(),
@@ -64,7 +64,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-restore"),
-        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusters().begin(), result.GetDBClusters().end(),
@@ -72,7 +72,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-parameters"),
-        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusters().begin(), result.GetDBClusters().end(),
@@ -90,7 +90,7 @@ class RDSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetDBClusters().size() == 0) == expected.get<bool>();
@@ -99,7 +99,7 @@ class RDSWaiter {
                                                                                 Aws::String("DBClusterNotFoundFault")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("creating"),
-        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusters().begin(), result.GetDBClusters().end(),
@@ -107,7 +107,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("modifying"),
-        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusters().begin(), result.GetDBClusters().end(),
@@ -115,7 +115,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("rebooting"),
-        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusters().begin(), result.GetDBClusters().end(),
@@ -123,7 +123,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("resetting-master-credentials"),
-        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusters().begin(), result.GetDBClusters().end(),
@@ -142,7 +142,7 @@ class RDSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetDBClusterSnapshots().begin(), result.GetDBClusterSnapshots().end(),
@@ -150,7 +150,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusterSnapshots().begin(), result.GetDBClusterSnapshots().end(),
@@ -158,7 +158,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusterSnapshots().begin(), result.GetDBClusterSnapshots().end(),
@@ -166,7 +166,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusterSnapshots().begin(), result.GetDBClusterSnapshots().end(),
@@ -174,7 +174,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-restore"),
-        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusterSnapshots().begin(), result.GetDBClusterSnapshots().end(),
@@ -182,7 +182,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-parameters"),
-        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusterSnapshots().begin(), result.GetDBClusterSnapshots().end(),
@@ -201,7 +201,7 @@ class RDSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetDBClusterSnapshots().size() == 0) == expected.get<bool>();
@@ -210,7 +210,7 @@ class RDSWaiter {
         "DBClusterSnapshotDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DBClusterSnapshotNotFoundFault")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("creating"),
-        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusterSnapshots().begin(), result.GetDBClusterSnapshots().end(),
@@ -218,7 +218,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("modifying"),
-        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusterSnapshots().begin(), result.GetDBClusterSnapshots().end(),
@@ -226,7 +226,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("rebooting"),
-        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusterSnapshots().begin(), result.GetDBClusterSnapshots().end(),
@@ -234,7 +234,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBClusterSnapshotDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("resetting-master-credentials"),
-        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBClusterSnapshots().begin(), result.GetDBClusterSnapshots().end(),
@@ -253,7 +253,7 @@ class RDSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
@@ -261,7 +261,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
@@ -269,7 +269,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
@@ -277,7 +277,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
@@ -285,7 +285,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-restore"),
-        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
@@ -293,7 +293,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-parameters"),
-        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
@@ -312,7 +312,7 @@ class RDSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetDBInstances().size() == 0) == expected.get<bool>();
@@ -321,7 +321,7 @@ class RDSWaiter {
                                                                                 Aws::String("DBInstanceNotFound")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("creating"),
-        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
@@ -329,7 +329,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("modifying"),
-        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
@@ -337,7 +337,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("rebooting"),
-        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
@@ -345,7 +345,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("resetting-master-credentials"),
-        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBInstances().begin(), result.GetDBInstances().end(),
@@ -364,7 +364,7 @@ class RDSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetDBSnapshots().begin(), result.GetDBSnapshots().end(),
@@ -372,7 +372,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBSnapshots().begin(), result.GetDBSnapshots().end(),
@@ -380,7 +380,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBSnapshots().begin(), result.GetDBSnapshots().end(),
@@ -388,7 +388,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBSnapshots().begin(), result.GetDBSnapshots().end(),
@@ -396,7 +396,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-restore"),
-        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBSnapshots().begin(), result.GetDBSnapshots().end(),
@@ -404,7 +404,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-parameters"),
-        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBSnapshots().begin(), result.GetDBSnapshots().end(),
@@ -423,7 +423,7 @@ class RDSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetDBSnapshots().size() == 0) == expected.get<bool>();
@@ -432,7 +432,7 @@ class RDSWaiter {
                                                                                 Aws::String("DBSnapshotNotFound")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("creating"),
-        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBSnapshots().begin(), result.GetDBSnapshots().end(),
@@ -440,7 +440,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("modifying"),
-        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBSnapshots().begin(), result.GetDBSnapshots().end(),
@@ -448,7 +448,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("rebooting"),
-        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBSnapshots().begin(), result.GetDBSnapshots().end(),
@@ -456,7 +456,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DBSnapshotDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("resetting-master-credentials"),
-        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeDBSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetDBSnapshots().begin(), result.GetDBSnapshots().end(),
@@ -475,7 +475,7 @@ class RDSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TenantDatabaseAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetTenantDatabases().begin(), result.GetTenantDatabases().end(),
@@ -483,7 +483,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TenantDatabaseAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetTenantDatabases().begin(), result.GetTenantDatabases().end(),
@@ -491,7 +491,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TenantDatabaseAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-parameters"),
-        [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetTenantDatabases().begin(), result.GetTenantDatabases().end(),
@@ -499,7 +499,7 @@ class RDSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TenantDatabaseAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-restore"),
-        [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetTenantDatabases().begin(), result.GetTenantDatabases().end(),
@@ -518,7 +518,7 @@ class RDSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TenantDatabaseDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTenantDatabasesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetTenantDatabases().size() == 0) == expected.get<bool>();

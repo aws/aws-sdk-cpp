@@ -26,14 +26,14 @@ class Macie2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FindingRevealedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCESS"),
-        [](const Model::GetSensitiveDataOccurrencesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetSensitiveDataOccurrencesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RevealRequestStatusMapper::GetNameForRevealRequestStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FindingRevealedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ERROR"),
-        [](const Model::GetSensitiveDataOccurrencesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetSensitiveDataOccurrencesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RevealRequestStatusMapper::GetNameForRevealRequestStatus(result.GetStatus()) == expected.get<Aws::String>();

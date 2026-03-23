@@ -28,21 +28,21 @@ class LambdaWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionActiveV2Waiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Active"),
-        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetConfiguration().GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionActiveV2Waiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetConfiguration().GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionActiveV2Waiter", Aws::Utils::WaiterState::RETRY, Aws::String("Pending"),
-        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetConfiguration().GetState()) == expected.get<Aws::String>();
@@ -73,7 +73,7 @@ class LambdaWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionUpdatedV2Waiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Successful"),
-        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LastUpdateStatusMapper::GetNameForLastUpdateStatus(result.GetConfiguration().GetLastUpdateStatus()) ==
@@ -81,7 +81,7 @@ class LambdaWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionUpdatedV2Waiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LastUpdateStatusMapper::GetNameForLastUpdateStatus(result.GetConfiguration().GetLastUpdateStatus()) ==
@@ -89,7 +89,7 @@ class LambdaWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionUpdatedV2Waiter", Aws::Utils::WaiterState::RETRY, Aws::String("InProgress"),
-        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LastUpdateStatusMapper::GetNameForLastUpdateStatus(result.GetConfiguration().GetLastUpdateStatus()) ==
@@ -108,21 +108,21 @@ class LambdaWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Active"),
-        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Pending"),
-        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetState()) == expected.get<Aws::String>();
@@ -140,21 +140,21 @@ class LambdaWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Successful"),
-        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LastUpdateStatusMapper::GetNameForLastUpdateStatus(result.GetLastUpdateStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionUpdatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LastUpdateStatusMapper::GetNameForLastUpdateStatus(result.GetLastUpdateStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FunctionUpdatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InProgress"),
-        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LastUpdateStatusMapper::GetNameForLastUpdateStatus(result.GetLastUpdateStatus()) == expected.get<Aws::String>();
@@ -172,21 +172,21 @@ class LambdaWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PublishedVersionActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Active"),
-        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PublishedVersionActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PublishedVersionActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Pending"),
-        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFunctionConfigurationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StateMapper::GetNameForState(result.GetState()) == expected.get<Aws::String>();

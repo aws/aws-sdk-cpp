@@ -29,14 +29,14 @@ class ECRWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageScanCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETE"),
-        [](const Model::DescribeImageScanFindingsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageScanFindingsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ScanStatusMapper::GetNameForScanStatus(result.GetImageScanStatus().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageScanCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeImageScanFindingsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageScanFindingsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ScanStatusMapper::GetNameForScanStatus(result.GetImageScanStatus().GetStatus()) == expected.get<Aws::String>();
@@ -54,7 +54,7 @@ class ECRWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LifecyclePolicyPreviewCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETE"),
-        [](const Model::GetLifecyclePolicyPreviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetLifecyclePolicyPreviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LifecyclePolicyPreviewStatusMapper::GetNameForLifecyclePolicyPreviewStatus(result.GetStatus()) ==
@@ -62,7 +62,7 @@ class ECRWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LifecyclePolicyPreviewCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetLifecyclePolicyPreviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetLifecyclePolicyPreviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LifecyclePolicyPreviewStatusMapper::GetNameForLifecyclePolicyPreviewStatus(result.GetStatus()) ==

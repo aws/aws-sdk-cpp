@@ -31,7 +31,7 @@ class HealthLakeWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRDatastoreActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(result.GetDatastoreProperties().GetDatastoreStatus()) ==
@@ -39,7 +39,7 @@ class HealthLakeWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRDatastoreActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(result.GetDatastoreProperties().GetDatastoreStatus()) ==
@@ -47,7 +47,7 @@ class HealthLakeWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRDatastoreActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETED"),
-        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(result.GetDatastoreProperties().GetDatastoreStatus()) ==
@@ -66,7 +66,7 @@ class HealthLakeWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRDatastoreDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
-        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRDatastoreOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::DatastoreStatusMapper::GetNameForDatastoreStatus(result.GetDatastoreProperties().GetDatastoreStatus()) ==
@@ -85,35 +85,35 @@ class HealthLakeWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRExportJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRExportJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED_WITH_ERRORS"),
-        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRExportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCEL_COMPLETED"),
-        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRExportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRExportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCEL_FAILED"),
-        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRExportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::JobStatusMapper::GetNameForJobStatus(result.GetExportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
@@ -131,21 +131,21 @@ class HealthLakeWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRImportJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::JobStatusMapper::GetNameForJobStatus(result.GetImportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRImportJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED_WITH_ERRORS"),
-        [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::JobStatusMapper::GetNameForJobStatus(result.GetImportJobProperties().GetJobStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FHIRImportJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFHIRImportJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::JobStatusMapper::GetNameForJobStatus(result.GetImportJobProperties().GetJobStatus()) == expected.get<Aws::String>();

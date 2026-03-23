@@ -27,7 +27,7 @@ class ACMWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CertificateValidatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCESS"),
-        [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetCertificate().GetDomainValidationOptions().begin(),
@@ -38,7 +38,7 @@ class ACMWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CertificateValidatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("PENDING_VALIDATION"),
-        [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCertificate().GetDomainValidationOptions().begin(),
@@ -49,7 +49,7 @@ class ACMWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CertificateValidatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCertificateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CertificateStatusMapper::GetNameForCertificateStatus(result.GetCertificate().GetStatus()) ==

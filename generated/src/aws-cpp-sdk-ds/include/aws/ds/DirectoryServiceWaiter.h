@@ -26,7 +26,7 @@ class DirectoryServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "HybridADUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Updated"),
-        [](const Model::DescribeHybridADUpdateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeHybridADUpdateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetUpdateActivities().GetSelfManagedInstances().begin(),
@@ -36,7 +36,7 @@ class DirectoryServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "HybridADUpdatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UpdateFailed"),
-        [](const Model::DescribeHybridADUpdateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeHybridADUpdateOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetUpdateActivities().GetSelfManagedInstances().begin(),

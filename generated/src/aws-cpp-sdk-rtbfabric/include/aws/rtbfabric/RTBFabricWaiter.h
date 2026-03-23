@@ -36,35 +36,35 @@ class RTBFabricWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REJECTED"),
-        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETED"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ISOLATED"),
-        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
@@ -81,28 +81,28 @@ class RTBFabricWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LinkAcceptedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACCEPTED"),
-        [](const Model::GetLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LinkAcceptedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REJECTED"),
-        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LinkAcceptedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LinkAcceptedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETED"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
@@ -119,28 +119,28 @@ class RTBFabricWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LinkActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LinkActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REJECTED"),
-        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LinkActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LinkActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETED"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
@@ -158,35 +158,35 @@ class RTBFabricWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REJECTED"),
-        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETED"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "OutboundExternalLinkActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ISOLATED"),
-        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetOutboundExternalLinkOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::LinkStatusMapper::GetNameForLinkStatus(result.GetStatus()) == expected.get<Aws::String>();
@@ -204,21 +204,21 @@ class RTBFabricWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RequesterGatewayActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RequesterGatewayActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETED"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RequesterGatewayActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
@@ -236,14 +236,14 @@ class RTBFabricWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RequesterGatewayDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RequesterGatewayDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
@@ -261,21 +261,21 @@ class RTBFabricWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResponderGatewayActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResponderGatewayActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETED"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResponderGatewayActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
@@ -293,14 +293,14 @@ class RTBFabricWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResponderGatewayDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResponderGatewayDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResponderGatewayOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ResponderGatewayStatusMapper::GetNameForResponderGatewayStatus(result.GetStatus()) == expected.get<Aws::String>();

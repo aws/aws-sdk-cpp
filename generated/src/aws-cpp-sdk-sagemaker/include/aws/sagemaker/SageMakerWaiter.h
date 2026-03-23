@@ -45,7 +45,7 @@ class SageMakerWaiter {
                                                                                 Aws::String("ValidationException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EndpointDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::EndpointStatusMapper::GetNameForEndpointStatus(result.GetEndpointStatus()) == expected.get<Aws::String>();
@@ -62,14 +62,14 @@ class SageMakerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EndpointInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
-        [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::EndpointStatusMapper::GetNameForEndpointStatus(result.GetEndpointStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EndpointInServiceWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::EndpointStatusMapper::GetNameForEndpointStatus(result.GetEndpointStatus()) == expected.get<Aws::String>();
@@ -88,14 +88,14 @@ class SageMakerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
-        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
@@ -116,7 +116,7 @@ class SageMakerWaiter {
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
@@ -135,14 +135,14 @@ class SageMakerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageUpdatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
-        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageUpdatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_FAILED"),
-        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ImageStatusMapper::GetNameForImageStatus(result.GetImageStatus()) == expected.get<Aws::String>();
@@ -162,7 +162,7 @@ class SageMakerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageVersionCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATED"),
-        [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ImageVersionStatusMapper::GetNameForImageVersionStatus(result.GetImageVersionStatus()) ==
@@ -170,7 +170,7 @@ class SageMakerWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageVersionCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ImageVersionStatusMapper::GetNameForImageVersionStatus(result.GetImageVersionStatus()) ==
@@ -193,7 +193,7 @@ class SageMakerWaiter {
         "ImageVersionDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageVersionDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ImageVersionStatusMapper::GetNameForImageVersionStatus(result.GetImageVersionStatus()) ==
@@ -216,7 +216,7 @@ class SageMakerWaiter {
         "NotebookInstanceDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ValidationException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NotebookInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(result.GetNotebookInstanceStatus()) ==
@@ -235,7 +235,7 @@ class SageMakerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NotebookInstanceInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
-        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(result.GetNotebookInstanceStatus()) ==
@@ -243,7 +243,7 @@ class SageMakerWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NotebookInstanceInServiceWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(result.GetNotebookInstanceStatus()) ==
@@ -262,7 +262,7 @@ class SageMakerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NotebookInstanceStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Stopped"),
-        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(result.GetNotebookInstanceStatus()) ==
@@ -270,7 +270,7 @@ class SageMakerWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NotebookInstanceStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNotebookInstanceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::NotebookInstanceStatusMapper::GetNameForNotebookInstanceStatus(result.GetNotebookInstanceStatus()) ==
@@ -289,7 +289,7 @@ class SageMakerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ProcessingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
-        [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ProcessingJobStatusMapper::GetNameForProcessingJobStatus(result.GetProcessingJobStatus()) ==
@@ -297,7 +297,7 @@ class SageMakerWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ProcessingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Stopped"),
-        [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ProcessingJobStatusMapper::GetNameForProcessingJobStatus(result.GetProcessingJobStatus()) ==
@@ -305,7 +305,7 @@ class SageMakerWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ProcessingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeProcessingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ProcessingJobStatusMapper::GetNameForProcessingJobStatus(result.GetProcessingJobStatus()) ==
@@ -326,21 +326,21 @@ class SageMakerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TrainingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
-        [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TrainingJobStatusMapper::GetNameForTrainingJobStatus(result.GetTrainingJobStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TrainingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Stopped"),
-        [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TrainingJobStatusMapper::GetNameForTrainingJobStatus(result.GetTrainingJobStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TrainingJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTrainingJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TrainingJobStatusMapper::GetNameForTrainingJobStatus(result.GetTrainingJobStatus()) == expected.get<Aws::String>();
@@ -360,7 +360,7 @@ class SageMakerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TransformJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
-        [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TransformJobStatusMapper::GetNameForTransformJobStatus(result.GetTransformJobStatus()) ==
@@ -368,7 +368,7 @@ class SageMakerWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TransformJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Stopped"),
-        [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TransformJobStatusMapper::GetNameForTransformJobStatus(result.GetTransformJobStatus()) ==
@@ -376,7 +376,7 @@ class SageMakerWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TransformJobCompletedOrStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTransformJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TransformJobStatusMapper::GetNameForTransformJobStatus(result.GetTransformJobStatus()) ==

@@ -25,7 +25,7 @@ class DSQLWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStatusMapper::GetNameForClusterStatus(result.GetStatus()) == expected.get<Aws::String>();

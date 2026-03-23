@@ -27,7 +27,7 @@ class ElastiCacheWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -35,7 +35,7 @@ class ElastiCacheWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -43,7 +43,7 @@ class ElastiCacheWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -51,7 +51,7 @@ class ElastiCacheWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-network"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -59,7 +59,7 @@ class ElastiCacheWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("restore-failed"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -78,7 +78,7 @@ class ElastiCacheWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -88,7 +88,7 @@ class ElastiCacheWaiter {
         "CacheClusterDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CacheClusterNotFound")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("available"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -96,7 +96,7 @@ class ElastiCacheWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("creating"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -104,7 +104,7 @@ class ElastiCacheWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-network"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -112,7 +112,7 @@ class ElastiCacheWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("modifying"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -120,7 +120,7 @@ class ElastiCacheWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("restore-failed"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -128,7 +128,7 @@ class ElastiCacheWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CacheClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("snapshotting"),
-        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCacheClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCacheClusters().begin(), result.GetCacheClusters().end(),
@@ -147,7 +147,7 @@ class ElastiCacheWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationGroupAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeReplicationGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetReplicationGroups().begin(), result.GetReplicationGroups().end(),
@@ -155,7 +155,7 @@ class ElastiCacheWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationGroupAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeReplicationGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationGroups().begin(), result.GetReplicationGroups().end(),
@@ -174,7 +174,7 @@ class ElastiCacheWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationGroupDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
-        [](const Model::DescribeReplicationGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetReplicationGroups().begin(), result.GetReplicationGroups().end(),
@@ -182,7 +182,7 @@ class ElastiCacheWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationGroupDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("available"),
-        [](const Model::DescribeReplicationGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationGroups().begin(), result.GetReplicationGroups().end(),

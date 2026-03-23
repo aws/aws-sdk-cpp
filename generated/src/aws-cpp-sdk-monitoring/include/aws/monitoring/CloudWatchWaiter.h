@@ -26,7 +26,7 @@ class CloudWatchWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AlarmExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeAlarmsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAlarmsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetMetricAlarms().size() > 0) == expected.get<bool>();
@@ -43,7 +43,7 @@ class CloudWatchWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CompositeAlarmExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeAlarmsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAlarmsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetCompositeAlarms().size() > 0) == expected.get<bool>();

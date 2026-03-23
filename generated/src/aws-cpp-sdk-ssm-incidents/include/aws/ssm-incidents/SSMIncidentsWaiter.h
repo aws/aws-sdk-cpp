@@ -26,7 +26,7 @@ class SSMIncidentsWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==
@@ -34,7 +34,7 @@ class SSMIncidentsWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
-        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==
@@ -42,7 +42,7 @@ class SSMIncidentsWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
-        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==
@@ -50,7 +50,7 @@ class SSMIncidentsWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WaitForReplicationSetActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==
@@ -71,7 +71,7 @@ class SSMIncidentsWaiter {
         "WaitForReplicationSetDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WaitForReplicationSetDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==
@@ -79,7 +79,7 @@ class SSMIncidentsWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WaitForReplicationSetDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetReplicationSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ReplicationSetStatusMapper::GetNameForReplicationSetStatus(result.GetReplicationSet().GetStatus()) ==

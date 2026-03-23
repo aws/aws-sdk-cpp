@@ -26,14 +26,14 @@ class B2BIWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TransformerJobSucceededWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("succeeded"),
-        [](const Model::GetTransformerJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetTransformerJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TransformerJobStatusMapper::GetNameForTransformerJobStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TransformerJobSucceededWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::GetTransformerJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetTransformerJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TransformerJobStatusMapper::GetNameForTransformerJobStatus(result.GetStatus()) == expected.get<Aws::String>();

@@ -26,14 +26,14 @@ class SignerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SuccessfulSigningJobWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Succeeded"),
-        [](const Model::DescribeSigningJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSigningJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::SigningStatusMapper::GetNameForSigningStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SuccessfulSigningJobWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeSigningJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSigningJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::SigningStatusMapper::GetNameForSigningStatus(result.GetStatus()) == expected.get<Aws::String>();

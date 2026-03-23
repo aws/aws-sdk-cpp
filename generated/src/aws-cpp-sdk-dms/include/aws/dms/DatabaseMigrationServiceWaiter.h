@@ -31,7 +31,7 @@ class DatabaseMigrationServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TestConnectionSucceedsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("successful"),
-        [](const Model::DescribeConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetConnections().begin(), result.GetConnections().end(),
@@ -39,7 +39,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TestConnectionSucceedsWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetConnections().begin(), result.GetConnections().end(),
@@ -59,7 +59,7 @@ class DatabaseMigrationServiceWaiter {
                                                                                 Aws::String("ResourceNotFoundFault")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EndpointDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("active"),
-        [](const Model::DescribeEndpointsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeEndpointsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetEndpoints().begin(), result.GetEndpoints().end(),
@@ -67,7 +67,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EndpointDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("creating"),
-        [](const Model::DescribeEndpointsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeEndpointsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetEndpoints().begin(), result.GetEndpoints().end(),
@@ -86,7 +86,7 @@ class DatabaseMigrationServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationInstanceAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -95,7 +95,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -104,7 +104,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-credentials"),
-        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -113,7 +113,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("incompatible-network"),
-        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -122,7 +122,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationInstanceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("inaccessible-encryption-credentials"),
-        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -142,7 +142,7 @@ class DatabaseMigrationServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationInstanceDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("available"),
-        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -164,7 +164,7 @@ class DatabaseMigrationServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ready"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -172,7 +172,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("creating"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -180,7 +180,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("stopped"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -188,7 +188,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("running"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -196,7 +196,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -217,7 +217,7 @@ class DatabaseMigrationServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskReadyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ready"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -225,7 +225,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("starting"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -233,7 +233,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("running"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -241,7 +241,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("stopping"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -249,7 +249,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("stopped"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -257,7 +257,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -265,7 +265,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("modifying"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -273,7 +273,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("testing"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -281,7 +281,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -300,7 +300,7 @@ class DatabaseMigrationServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("running"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -308,7 +308,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ready"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -316,7 +316,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("creating"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -324,7 +324,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("stopping"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -332,7 +332,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("stopped"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -340,7 +340,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -348,7 +348,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("modifying"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -356,7 +356,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("testing"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -364,7 +364,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -383,7 +383,7 @@ class DatabaseMigrationServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("stopped"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -391,7 +391,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ready"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -399,7 +399,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("creating"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -407,7 +407,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("starting"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -415,7 +415,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -423,7 +423,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("modifying"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -431,7 +431,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("testing"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),
@@ -439,7 +439,7 @@ class DatabaseMigrationServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ReplicationTaskStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeReplicationTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReplicationTasks().begin(), result.GetReplicationTasks().end(),

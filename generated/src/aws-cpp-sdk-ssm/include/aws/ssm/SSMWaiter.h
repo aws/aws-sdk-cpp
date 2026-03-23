@@ -26,56 +26,56 @@ class SSMWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CommandExecutedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Pending"),
-        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CommandInvocationStatusMapper::GetNameForCommandInvocationStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CommandExecutedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InProgress"),
-        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CommandInvocationStatusMapper::GetNameForCommandInvocationStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CommandExecutedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Delayed"),
-        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CommandInvocationStatusMapper::GetNameForCommandInvocationStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CommandExecutedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Success"),
-        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CommandInvocationStatusMapper::GetNameForCommandInvocationStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CommandExecutedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Cancelled"),
-        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CommandInvocationStatusMapper::GetNameForCommandInvocationStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CommandExecutedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("TimedOut"),
-        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CommandInvocationStatusMapper::GetNameForCommandInvocationStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CommandExecutedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CommandInvocationStatusMapper::GetNameForCommandInvocationStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CommandExecutedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Cancelling"),
-        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetCommandInvocationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CommandInvocationStatusMapper::GetNameForCommandInvocationStatus(result.GetStatus()) == expected.get<Aws::String>();

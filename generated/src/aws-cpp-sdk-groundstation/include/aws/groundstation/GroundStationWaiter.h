@@ -25,14 +25,14 @@ class GroundStationWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ContactScheduledWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED_TO_SCHEDULE"),
-        [](const Model::DescribeContactOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeContactOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ContactStatusMapper::GetNameForContactStatus(result.GetContactStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ContactScheduledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SCHEDULED"),
-        [](const Model::DescribeContactOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeContactOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ContactStatusMapper::GetNameForContactStatus(result.GetContactStatus()) == expected.get<Aws::String>();

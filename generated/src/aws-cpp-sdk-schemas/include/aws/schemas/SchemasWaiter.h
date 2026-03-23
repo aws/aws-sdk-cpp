@@ -26,21 +26,21 @@ class SchemasWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CodeBindingExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
-        [](const Model::DescribeCodeBindingOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCodeBindingOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CodeGenerationStatusMapper::GetNameForCodeGenerationStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CodeBindingExistsWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATE_IN_PROGRESS"),
-        [](const Model::DescribeCodeBindingOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCodeBindingOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CodeGenerationStatusMapper::GetNameForCodeGenerationStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CodeBindingExistsWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeCodeBindingOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCodeBindingOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CodeGenerationStatusMapper::GetNameForCodeGenerationStatus(result.GetStatus()) == expected.get<Aws::String>();

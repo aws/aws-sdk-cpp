@@ -38,7 +38,7 @@ class DynamoDBWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ContributorInsightsEnabledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ENABLED"),
-        [](const Model::DescribeContributorInsightsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeContributorInsightsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ContributorInsightsStatusMapper::GetNameForContributorInsightsStatus(result.GetContributorInsightsStatus()) ==
@@ -46,7 +46,7 @@ class DynamoDBWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ContributorInsightsEnabledWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeContributorInsightsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeContributorInsightsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ContributorInsightsStatusMapper::GetNameForContributorInsightsStatus(result.GetContributorInsightsStatus()) ==
@@ -64,7 +64,7 @@ class DynamoDBWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ExportStatusMapper::GetNameForExportStatus(result.GetExportDescription().GetExportStatus()) ==
@@ -72,7 +72,7 @@ class DynamoDBWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ExportStatusMapper::GetNameForExportStatus(result.GetExportDescription().GetExportStatus()) ==
@@ -90,7 +90,7 @@ class DynamoDBWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImportCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ImportStatusMapper::GetNameForImportStatus(result.GetImportTableDescription().GetImportStatus()) ==
@@ -98,7 +98,7 @@ class DynamoDBWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImportCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ImportStatusMapper::GetNameForImportStatus(result.GetImportTableDescription().GetImportStatus()) ==
@@ -106,7 +106,7 @@ class DynamoDBWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImportCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELLED"),
-        [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ImportStatusMapper::GetNameForImportStatus(result.GetImportTableDescription().GetImportStatus()) ==
@@ -125,7 +125,7 @@ class DynamoDBWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "KinesisStreamingDestinationActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeKinesisStreamingDestinationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeKinesisStreamingDestinationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetKinesisDataStreamDestinations().begin(), result.GetKinesisDataStreamDestinations().end(),
@@ -136,7 +136,7 @@ class DynamoDBWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "KinesisStreamingDestinationActiveWaiter", Aws::Utils::WaiterState::FAILURE, true,
-        [](const Model::DescribeKinesisStreamingDestinationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeKinesisStreamingDestinationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return ((result.GetKinesisDataStreamDestinations().size() > 0) &&
@@ -160,7 +160,7 @@ class DynamoDBWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TableExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeTableOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTableOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TableStatusMapper::GetNameForTableStatus(result.GetTable().GetTableStatus()) == expected.get<Aws::String>();

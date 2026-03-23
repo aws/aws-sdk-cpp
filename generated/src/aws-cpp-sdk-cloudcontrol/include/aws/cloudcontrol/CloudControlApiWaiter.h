@@ -26,7 +26,7 @@ class CloudControlApiWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResourceRequestSuccessWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCESS"),
-        [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::OperationStatusMapper::GetNameForOperationStatus(result.GetProgressEvent().GetOperationStatus()) ==
@@ -34,7 +34,7 @@ class CloudControlApiWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResourceRequestSuccessWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::OperationStatusMapper::GetNameForOperationStatus(result.GetProgressEvent().GetOperationStatus()) ==
@@ -42,7 +42,7 @@ class CloudControlApiWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResourceRequestSuccessWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCEL_COMPLETE"),
-        [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetResourceRequestStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::OperationStatusMapper::GetNameForOperationStatus(result.GetProgressEvent().GetOperationStatus()) ==

@@ -25,7 +25,7 @@ class Route53Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ResourceRecordSetsChangedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("INSYNC"),
-        [](const Model::GetChangeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetChangeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ChangeStatusMapper::GetNameForChangeStatus(result.GetChangeInfo().GetStatus()) == expected.get<Aws::String>();

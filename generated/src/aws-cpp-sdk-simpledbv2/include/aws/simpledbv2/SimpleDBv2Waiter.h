@@ -25,14 +25,14 @@ class SimpleDBv2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportSucceededWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),
-        [](const Model::GetExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ExportStatusMapper::GetNameForExportStatus(result.GetExportStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportSucceededWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetExportOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ExportStatusMapper::GetNameForExportStatus(result.GetExportStatus()) == expected.get<Aws::String>();

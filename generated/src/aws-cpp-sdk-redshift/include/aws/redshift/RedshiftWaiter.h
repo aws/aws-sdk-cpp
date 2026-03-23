@@ -26,7 +26,7 @@ class RedshiftWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetClusters().begin(), result.GetClusters().end(),
@@ -34,7 +34,7 @@ class RedshiftWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetClusters().begin(), result.GetClusters().end(),
@@ -56,7 +56,7 @@ class RedshiftWaiter {
                                                                                 Aws::String("ClusterNotFound")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("creating"),
-        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetClusters().begin(), result.GetClusters().end(),
@@ -64,7 +64,7 @@ class RedshiftWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("modifying"),
-        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetClusters().begin(), result.GetClusters().end(),
@@ -82,7 +82,7 @@ class RedshiftWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterRestoredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
-        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetClusters().begin(), result.GetClusters().end(), [&](const Model::Cluster& item) {
@@ -91,7 +91,7 @@ class RedshiftWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterRestoredWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClustersOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetClusters().begin(), result.GetClusters().end(),
@@ -110,7 +110,7 @@ class RedshiftWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SnapshotAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetSnapshots().begin(), result.GetSnapshots().end(),
@@ -118,7 +118,7 @@ class RedshiftWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetSnapshots().begin(), result.GetSnapshots().end(),
@@ -126,7 +126,7 @@ class RedshiftWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetSnapshots().begin(), result.GetSnapshots().end(),

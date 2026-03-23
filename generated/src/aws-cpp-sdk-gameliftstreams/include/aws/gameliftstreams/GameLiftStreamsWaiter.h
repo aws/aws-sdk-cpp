@@ -31,14 +31,14 @@ class GameLiftStreamsWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ApplicationReadyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("READY"),
-        [](const Model::GetApplicationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetApplicationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ApplicationStatusMapper::GetNameForApplicationStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ApplicationReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StreamSessionStatusMapper::GetNameForStreamSessionStatus(result.GetStatus()) == expected.get<Aws::String>();
@@ -67,28 +67,28 @@ class GameLiftStreamsWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamGroupActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StreamSessionStatusMapper::GetNameForStreamSessionStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamGroupActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StreamSessionStatusMapper::GetNameForStreamSessionStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamGroupActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ACTIVE_WITH_ERRORS"),
-        [](const Model::GetStreamGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetStreamGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StreamGroupStatusMapper::GetNameForStreamGroupStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamGroupActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETING"),
-        [](const Model::GetStreamGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetStreamGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StreamGroupStatusMapper::GetNameForStreamGroupStatus(result.GetStatus()) == expected.get<Aws::String>();
@@ -117,14 +117,14 @@ class GameLiftStreamsWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamSessionActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StreamSessionStatusMapper::GetNameForStreamSessionStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamSessionActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StreamSessionStatusMapper::GetNameForStreamSessionStatus(result.GetStatus()) == expected.get<Aws::String>();

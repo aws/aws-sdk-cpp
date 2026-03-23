@@ -32,7 +32,7 @@ class PrometheusServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnomalyDetectorActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeAnomalyDetectorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAnomalyDetectorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AnomalyDetectorStatusCodeMapper::GetNameForAnomalyDetectorStatusCode(
@@ -40,7 +40,7 @@ class PrometheusServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnomalyDetectorActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
-        [](const Model::DescribeAnomalyDetectorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAnomalyDetectorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AnomalyDetectorStatusCodeMapper::GetNameForAnomalyDetectorStatusCode(
@@ -48,7 +48,7 @@ class PrometheusServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnomalyDetectorActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
-        [](const Model::DescribeAnomalyDetectorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAnomalyDetectorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AnomalyDetectorStatusCodeMapper::GetNameForAnomalyDetectorStatusCode(
@@ -69,7 +69,7 @@ class PrometheusServiceWaiter {
         "AnomalyDetectorDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnomalyDetectorDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::DescribeAnomalyDetectorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAnomalyDetectorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AnomalyDetectorStatusCodeMapper::GetNameForAnomalyDetectorStatusCode(
@@ -87,7 +87,7 @@ class PrometheusServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ScraperActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeScraperOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeScraperOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ScraperStatusCodeMapper::GetNameForScraperStatusCode(result.GetScraper().GetStatus().GetStatusCode()) ==
@@ -95,7 +95,7 @@ class PrometheusServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ScraperActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATION_FAILED"),
-        [](const Model::DescribeScraperOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeScraperOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ScraperStatusCodeMapper::GetNameForScraperStatusCode(result.GetScraper().GetStatus().GetStatusCode()) ==
@@ -115,7 +115,7 @@ class PrometheusServiceWaiter {
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ScraperDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETION_FAILED"),
-        [](const Model::DescribeScraperOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeScraperOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ScraperStatusCodeMapper::GetNameForScraperStatusCode(result.GetScraper().GetStatus().GetStatusCode()) ==
@@ -133,7 +133,7 @@ class PrometheusServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkspaceActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::WorkspaceStatusCodeMapper::GetNameForWorkspaceStatusCode(result.GetWorkspace().GetStatus().GetStatusCode()) ==
@@ -141,7 +141,7 @@ class PrometheusServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkspaceActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("UPDATING"),
-        [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::WorkspaceStatusCodeMapper::GetNameForWorkspaceStatusCode(result.GetWorkspace().GetStatus().GetStatusCode()) ==
@@ -149,7 +149,7 @@ class PrometheusServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkspaceActiveWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
-        [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::WorkspaceStatusCodeMapper::GetNameForWorkspaceStatusCode(result.GetWorkspace().GetStatus().GetStatusCode()) ==
@@ -169,7 +169,7 @@ class PrometheusServiceWaiter {
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "WorkspaceDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeWorkspaceOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::WorkspaceStatusCodeMapper::GetNameForWorkspaceStatusCode(result.GetWorkspace().GetStatus().GetStatusCode()) ==

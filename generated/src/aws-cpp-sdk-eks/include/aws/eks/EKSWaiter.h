@@ -34,21 +34,21 @@ class EKSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AddonActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeAddonOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAddonOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AddonStatusMapper::GetNameForAddonStatus(result.GetAddon().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AddonActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DEGRADED"),
-        [](const Model::DescribeAddonOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAddonOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AddonStatusMapper::GetNameForAddonStatus(result.GetAddon().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AddonActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeAddonOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAddonOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AddonStatusMapper::GetNameForAddonStatus(result.GetAddon().GetStatus()) == expected.get<Aws::String>();
@@ -65,7 +65,7 @@ class EKSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AddonDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::DescribeAddonOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeAddonOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::AddonStatusMapper::GetNameForAddonStatus(result.GetAddon().GetStatus()) == expected.get<Aws::String>();
@@ -84,21 +84,21 @@ class EKSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETING"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStatusMapper::GetNameForClusterStatus(result.GetCluster().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStatusMapper::GetNameForClusterStatus(result.GetCluster().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStatusMapper::GetNameForClusterStatus(result.GetCluster().GetStatus()) == expected.get<Aws::String>();
@@ -115,21 +115,21 @@ class EKSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ACTIVE"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStatusMapper::GetNameForClusterStatus(result.GetCluster().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATING"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStatusMapper::GetNameForClusterStatus(result.GetCluster().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("PENDING"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStatusMapper::GetNameForClusterStatus(result.GetCluster().GetStatus()) == expected.get<Aws::String>();
@@ -149,7 +149,7 @@ class EKSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FargateProfileActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeFargateProfileOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFargateProfileOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::FargateProfileStatusMapper::GetNameForFargateProfileStatus(result.GetFargateProfile().GetStatus()) ==
@@ -157,7 +157,7 @@ class EKSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FargateProfileActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeFargateProfileOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFargateProfileOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::FargateProfileStatusMapper::GetNameForFargateProfileStatus(result.GetFargateProfile().GetStatus()) ==
@@ -176,7 +176,7 @@ class EKSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FargateProfileDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::DescribeFargateProfileOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeFargateProfileOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::FargateProfileStatusMapper::GetNameForFargateProfileStatus(result.GetFargateProfile().GetStatus()) ==
@@ -196,14 +196,14 @@ class EKSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NodegroupActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeNodegroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNodegroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::NodegroupStatusMapper::GetNameForNodegroupStatus(result.GetNodegroup().GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NodegroupActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeNodegroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNodegroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::NodegroupStatusMapper::GetNameForNodegroupStatus(result.GetNodegroup().GetStatus()) == expected.get<Aws::String>();
@@ -220,7 +220,7 @@ class EKSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NodegroupDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::DescribeNodegroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNodegroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::NodegroupStatusMapper::GetNameForNodegroupStatus(result.GetNodegroup().GetStatus()) == expected.get<Aws::String>();

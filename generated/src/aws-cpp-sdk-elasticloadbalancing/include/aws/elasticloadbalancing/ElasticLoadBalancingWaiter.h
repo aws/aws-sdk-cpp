@@ -25,7 +25,7 @@ class ElasticLoadBalancingWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "AnyInstanceInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
-        [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetInstanceStates().begin(), result.GetInstanceStates().end(),
@@ -44,7 +44,7 @@ class ElasticLoadBalancingWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceDeregisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("OutOfService"),
-        [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetInstanceStates().begin(), result.GetInstanceStates().end(),
@@ -65,7 +65,7 @@ class ElasticLoadBalancingWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceInServiceWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("InService"),
-        [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstanceHealthOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetInstanceStates().begin(), result.GetInstanceStates().end(),

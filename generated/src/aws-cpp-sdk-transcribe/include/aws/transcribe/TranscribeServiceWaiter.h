@@ -42,14 +42,14 @@ class TranscribeServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LanguageModelCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::DescribeLanguageModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeLanguageModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ModelStatusMapper::GetNameForModelStatus(result.GetLanguageModel().GetModelStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "LanguageModelCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeLanguageModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeLanguageModelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ModelStatusMapper::GetNameForModelStatus(result.GetLanguageModel().GetModelStatus()) == expected.get<Aws::String>();
@@ -67,7 +67,7 @@ class TranscribeServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CallAnalyticsJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::GetCallAnalyticsJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetCallAnalyticsJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CallAnalyticsJobStatusMapper::GetNameForCallAnalyticsJobStatus(
@@ -75,7 +75,7 @@ class TranscribeServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CallAnalyticsJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetCallAnalyticsJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetCallAnalyticsJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::CallAnalyticsJobStatusMapper::GetNameForCallAnalyticsJobStatus(
@@ -94,7 +94,7 @@ class TranscribeServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MedicalScribeJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::GetMedicalScribeJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetMedicalScribeJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::MedicalScribeJobStatusMapper::GetNameForMedicalScribeJobStatus(
@@ -102,7 +102,7 @@ class TranscribeServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MedicalScribeJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetMedicalScribeJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetMedicalScribeJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::MedicalScribeJobStatusMapper::GetNameForMedicalScribeJobStatus(
@@ -121,7 +121,7 @@ class TranscribeServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MedicalTranscriptionJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::GetMedicalTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetMedicalTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
@@ -129,7 +129,7 @@ class TranscribeServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MedicalTranscriptionJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetMedicalTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetMedicalTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
@@ -148,14 +148,14 @@ class TranscribeServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MedicalVocabularyReadyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("READY"),
-        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MedicalVocabularyReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) == expected.get<Aws::String>();
@@ -173,7 +173,7 @@ class TranscribeServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TranscriptionJobCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::GetTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
@@ -181,7 +181,7 @@ class TranscribeServiceWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TranscriptionJobCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetTranscriptionJobOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::TranscriptionJobStatusMapper::GetNameForTranscriptionJobStatus(
@@ -199,14 +199,14 @@ class TranscribeServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VocabularyReadyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("READY"),
-        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VocabularyReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) == expected.get<Aws::String>();

@@ -32,7 +32,7 @@ class MachineLearningWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BatchPredictionAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetResults().begin(), result.GetResults().end(), [&](const Model::MLModel& item) {
@@ -41,7 +41,7 @@ class MachineLearningWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BatchPredictionAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetResults().begin(), result.GetResults().end(), [&](const Model::MLModel& item) {
@@ -61,7 +61,7 @@ class MachineLearningWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DataSourceAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetResults().begin(), result.GetResults().end(), [&](const Model::MLModel& item) {
@@ -70,7 +70,7 @@ class MachineLearningWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "DataSourceAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetResults().begin(), result.GetResults().end(), [&](const Model::MLModel& item) {
@@ -90,7 +90,7 @@ class MachineLearningWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EvaluationAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetResults().begin(), result.GetResults().end(), [&](const Model::MLModel& item) {
@@ -99,7 +99,7 @@ class MachineLearningWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "EvaluationAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetResults().begin(), result.GetResults().end(), [&](const Model::MLModel& item) {
@@ -118,7 +118,7 @@ class MachineLearningWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MLModelAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetResults().begin(), result.GetResults().end(), [&](const Model::MLModel& item) {
@@ -127,7 +127,7 @@ class MachineLearningWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MLModelAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeMLModelsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetResults().begin(), result.GetResults().end(), [&](const Model::MLModel& item) {

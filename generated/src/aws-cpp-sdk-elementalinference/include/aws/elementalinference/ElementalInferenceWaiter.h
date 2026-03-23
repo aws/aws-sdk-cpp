@@ -27,14 +27,14 @@ class ElementalInferenceWaiter {
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FeedDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
-        [](const Model::GetFeedOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFeedOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::FeedStatusMapper::GetNameForFeedStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "FeedDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::GetFeedOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetFeedOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::FeedStatusMapper::GetNameForFeedStatus(result.GetStatus()) == expected.get<Aws::String>();

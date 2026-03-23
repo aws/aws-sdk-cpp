@@ -92,7 +92,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BundleTaskCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("complete"),
-        [](const Model::DescribeBundleTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeBundleTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetBundleTasks().begin(), result.GetBundleTasks().end(), [&](const Model::BundleTask& item) {
@@ -101,7 +101,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BundleTaskCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeBundleTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeBundleTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetBundleTasks().begin(), result.GetBundleTasks().end(), [&](const Model::BundleTask& item) {
@@ -121,7 +121,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ConversionTaskCancelledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("cancelled"),
-        [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -142,7 +142,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ConversionTaskCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
-        [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -152,7 +152,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ConversionTaskCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("cancelled"),
-        [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -162,7 +162,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ConversionTaskCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("cancelling"),
-        [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -183,7 +183,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ConversionTaskDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
-        [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeConversionTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -204,7 +204,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CustomerGatewayAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeCustomerGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCustomerGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetCustomerGateways().begin(), result.GetCustomerGateways().end(),
@@ -212,7 +212,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CustomerGatewayAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeCustomerGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCustomerGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCustomerGateways().begin(), result.GetCustomerGateways().end(),
@@ -220,7 +220,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CustomerGatewayAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeCustomerGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCustomerGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetCustomerGateways().begin(), result.GetCustomerGateways().end(),
@@ -239,7 +239,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportTaskCancelledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("cancelled"),
-        [](const Model::DescribeExportTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeExportTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetExportTasks().begin(), result.GetExportTasks().end(), [&](const Model::ExportTask& item) {
@@ -259,7 +259,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportTaskCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
-        [](const Model::DescribeExportTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeExportTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetExportTasks().begin(), result.GetExportTasks().end(), [&](const Model::ExportTask& item) {
@@ -278,7 +278,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeImagesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImagesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetImages().begin(), result.GetImages().end(), [&](const Model::Image& item) {
@@ -287,7 +287,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeImagesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImagesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetImages().begin(), result.GetImages().end(), [&](const Model::Image& item) {
@@ -306,7 +306,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeImagesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImagesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetImages().size() > 0) == expected.get<bool>();
@@ -326,7 +326,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageUsageReportAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeImageUsageReportsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageUsageReportsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetImageUsageReports().begin(), result.GetImageUsageReports().end(),
@@ -334,7 +334,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageUsageReportAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeImageUsageReportsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImageUsageReportsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetImageUsageReports().begin(), result.GetImageUsageReports().end(),
@@ -353,7 +353,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SnapshotImportedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
-        [](const Model::DescribeImportSnapshotTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImportSnapshotTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetImportSnapshotTasks().begin(), result.GetImportSnapshotTasks().end(),
@@ -363,7 +363,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SnapshotImportedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("error"),
-        [](const Model::DescribeImportSnapshotTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeImportSnapshotTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetImportSnapshotTasks().begin(), result.GetImportSnapshotTasks().end(),
@@ -383,7 +383,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetReservations().size() > 0) == expected.get<bool>();
@@ -402,7 +402,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("running"),
-        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetReservations().begin(), result.GetReservations().end(), [&](const Model::Reservation& item0) {
@@ -413,7 +413,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("shutting-down"),
-        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReservations().begin(), result.GetReservations().end(), [&](const Model::Reservation& item0) {
@@ -424,7 +424,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("terminated"),
-        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReservations().begin(), result.GetReservations().end(), [&](const Model::Reservation& item0) {
@@ -435,7 +435,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("stopping"),
-        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReservations().begin(), result.GetReservations().end(), [&](const Model::Reservation& item0) {
@@ -458,7 +458,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("stopped"),
-        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetReservations().begin(), result.GetReservations().end(), [&](const Model::Reservation& item0) {
@@ -469,7 +469,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("pending"),
-        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReservations().begin(), result.GetReservations().end(), [&](const Model::Reservation& item0) {
@@ -480,7 +480,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceStoppedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("terminated"),
-        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReservations().begin(), result.GetReservations().end(), [&](const Model::Reservation& item0) {
@@ -501,7 +501,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceTerminatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("terminated"),
-        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetReservations().begin(), result.GetReservations().end(), [&](const Model::Reservation& item0) {
@@ -512,7 +512,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceTerminatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("pending"),
-        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReservations().begin(), result.GetReservations().end(), [&](const Model::Reservation& item0) {
@@ -523,7 +523,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceTerminatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("stopping"),
-        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstancesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetReservations().begin(), result.GetReservations().end(), [&](const Model::Reservation& item0) {
@@ -545,7 +545,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InstanceStatusOkWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ok"),
-        [](const Model::DescribeInstanceStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstanceStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetInstanceStatuses().begin(), result.GetInstanceStatuses().end(),
@@ -569,7 +569,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SystemStatusOkWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ok"),
-        [](const Model::DescribeInstanceStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInstanceStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetInstanceStatuses().begin(), result.GetInstanceStatuses().end(),
@@ -591,7 +591,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InternetGatewayExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeInternetGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeInternetGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetInternetGateways().size() > 0) == expected.get<bool>();
@@ -610,7 +610,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "KeyPairExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeKeyPairsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeKeyPairsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetKeyPairs().size() > 0) == expected.get<bool>();
@@ -630,7 +630,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NatGatewayAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetNatGateways().begin(), result.GetNatGateways().end(), [&](const Model::NatGateway& item) {
@@ -639,7 +639,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NatGatewayAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetNatGateways().begin(), result.GetNatGateways().end(), [&](const Model::NatGateway& item) {
@@ -648,7 +648,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NatGatewayAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetNatGateways().begin(), result.GetNatGateways().end(), [&](const Model::NatGateway& item) {
@@ -657,7 +657,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NatGatewayAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetNatGateways().begin(), result.GetNatGateways().end(), [&](const Model::NatGateway& item) {
@@ -679,7 +679,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NatGatewayDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
-        [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNatGatewaysOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetNatGateways().begin(), result.GetNatGateways().end(), [&](const Model::NatGateway& item) {
@@ -701,7 +701,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "NetworkInterfaceAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeNetworkInterfacesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeNetworkInterfacesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetNetworkInterfaces().begin(), result.GetNetworkInterfaces().end(),
@@ -725,7 +725,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondaryNetworkCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("create-complete"),
-        [](const Model::DescribeSecondaryNetworksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecondaryNetworksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -735,7 +735,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondaryNetworkCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("create-failed"),
-        [](const Model::DescribeSecondaryNetworksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecondaryNetworksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -758,7 +758,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondaryNetworkDeleteCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("delete-complete"),
-        [](const Model::DescribeSecondaryNetworksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecondaryNetworksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -768,7 +768,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondaryNetworkDeleteCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("delete-failed"),
-        [](const Model::DescribeSecondaryNetworksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecondaryNetworksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -789,7 +789,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondarySubnetCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("create-complete"),
-        [](const Model::DescribeSecondarySubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecondarySubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -799,7 +799,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondarySubnetCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("delete-failed"),
-        [](const Model::DescribeSecondarySubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecondarySubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -822,7 +822,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondarySubnetDeleteCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("delete-complete"),
-        [](const Model::DescribeSecondarySubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecondarySubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -832,7 +832,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecondarySubnetDeleteCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("delete-failed"),
-        [](const Model::DescribeSecondarySubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecondarySubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -853,7 +853,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecurityGroupExistsWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeSecurityGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecurityGroupsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetSecurityGroups().size() > 0) == expected.get<bool>();
@@ -873,7 +873,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecurityGroupVpcAssociationAssociatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("associated"),
-        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetSecurityGroupVpcAssociations().begin(), result.GetSecurityGroupVpcAssociations().end(),
@@ -884,7 +884,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecurityGroupVpcAssociationAssociatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("associating"),
-        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetSecurityGroupVpcAssociations().begin(), result.GetSecurityGroupVpcAssociations().end(),
@@ -895,7 +895,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecurityGroupVpcAssociationAssociatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("association-failed"),
-        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetSecurityGroupVpcAssociations().begin(), result.GetSecurityGroupVpcAssociations().end(),
@@ -918,7 +918,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecurityGroupVpcAssociationDisassociatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("disassociated"),
-        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetSecurityGroupVpcAssociations().begin(), result.GetSecurityGroupVpcAssociations().end(),
@@ -929,7 +929,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecurityGroupVpcAssociationDisassociatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("disassociating"),
-        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetSecurityGroupVpcAssociations().begin(), result.GetSecurityGroupVpcAssociations().end(),
@@ -940,7 +940,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecurityGroupVpcAssociationDisassociatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("disassociation-failed"),
-        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetSecurityGroupVpcAssociations().begin(), result.GetSecurityGroupVpcAssociations().end(),
@@ -951,7 +951,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SecurityGroupVpcAssociationDisassociatedWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSecurityGroupVpcAssociationsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetSecurityGroupVpcAssociations().size() == 0) == expected.get<bool>();
@@ -969,7 +969,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SnapshotCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
-        [](const Model::DescribeSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetSnapshots().begin(), result.GetSnapshots().end(), [&](const Model::Snapshot& item) {
@@ -978,7 +978,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SnapshotCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("error"),
-        [](const Model::DescribeSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSnapshotsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetSnapshots().begin(), result.GetSnapshots().end(), [&](const Model::Snapshot& item) {
@@ -998,7 +998,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpotInstanceRequestFulfilledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("fulfilled"),
-        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -1007,7 +1007,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpotInstanceRequestFulfilledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("request-canceled-and-instance-running"),
-        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -1016,7 +1016,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpotInstanceRequestFulfilledWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("schedule-expired"),
-        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -1025,7 +1025,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpotInstanceRequestFulfilledWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("canceled-before-fulfillment"),
-        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -1034,7 +1034,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpotInstanceRequestFulfilledWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("bad-parameters"),
-        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -1043,7 +1043,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SpotInstanceRequestFulfilledWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("system-error"),
-        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSpotInstanceRequestsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -1065,7 +1065,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StoreImageTaskCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
-        [](const Model::DescribeStoreImageTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStoreImageTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(
@@ -1074,7 +1074,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StoreImageTaskCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeStoreImageTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStoreImageTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -1083,7 +1083,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StoreImageTaskCompleteWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InProgress"),
-        [](const Model::DescribeStoreImageTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStoreImageTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(
@@ -1102,7 +1102,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "SubnetAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeSubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeSubnetsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetSubnets().begin(), result.GetSubnets().end(), [&](const Model::Subnet& item) {
@@ -1121,7 +1121,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VolumeAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetVolumes().begin(), result.GetVolumes().end(), [&](const Model::Volume& item) {
@@ -1130,7 +1130,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VolumeAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetVolumes().begin(), result.GetVolumes().end(), [&](const Model::Volume& item) {
@@ -1149,7 +1149,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VolumeDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
-        [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetVolumes().begin(), result.GetVolumes().end(), [&](const Model::Volume& item) {
@@ -1170,7 +1170,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VolumeInUseWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("in-use"),
-        [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetVolumes().begin(), result.GetVolumes().end(), [&](const Model::Volume& item) {
@@ -1179,7 +1179,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VolumeInUseWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVolumesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetVolumes().begin(), result.GetVolumes().end(), [&](const Model::Volume& item) {
@@ -1199,7 +1199,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VpcPeeringConnectionDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
-        [](const Model::DescribeVpcPeeringConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVpcPeeringConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetVpcPeeringConnections().begin(), result.GetVpcPeeringConnections().end(),
@@ -1237,7 +1237,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VpcAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeVpcsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVpcsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetVpcs().begin(), result.GetVpcs().end(), [&](const Model::Vpc& item) {
@@ -1271,7 +1271,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VpnConnectionAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("available"),
-        [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetVpnConnections().begin(), result.GetVpnConnections().end(), [&](const Model::VpnConnection& item) {
@@ -1280,7 +1280,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VpnConnectionAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleting"),
-        [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetVpnConnections().begin(), result.GetVpnConnections().end(), [&](const Model::VpnConnection& item) {
@@ -1289,7 +1289,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VpnConnectionAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("deleted"),
-        [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetVpnConnections().begin(), result.GetVpnConnections().end(), [&](const Model::VpnConnection& item) {
@@ -1309,7 +1309,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VpnConnectionDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("deleted"),
-        [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetVpnConnections().begin(), result.GetVpnConnections().end(), [&](const Model::VpnConnection& item) {
@@ -1318,7 +1318,7 @@ class EC2Waiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "VpnConnectionDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("pending"),
-        [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeVpnConnectionsOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetVpnConnections().begin(), result.GetVpnConnections().end(), [&](const Model::VpnConnection& item) {
@@ -1337,7 +1337,7 @@ class EC2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PasswordDataAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::GetPasswordDataOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetPasswordDataOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (result.GetPasswordData().size() > 0) == expected.get<bool>();

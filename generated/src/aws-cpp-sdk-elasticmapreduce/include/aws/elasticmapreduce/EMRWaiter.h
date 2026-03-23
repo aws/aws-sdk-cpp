@@ -28,7 +28,7 @@ class EMRWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("RUNNING"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStateMapper::GetNameForClusterState(result.GetCluster().GetStatus().GetState()) ==
@@ -36,7 +36,7 @@ class EMRWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("WAITING"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStateMapper::GetNameForClusterState(result.GetCluster().GetStatus().GetState()) ==
@@ -44,7 +44,7 @@ class EMRWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("TERMINATING"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStateMapper::GetNameForClusterState(result.GetCluster().GetStatus().GetState()) ==
@@ -52,7 +52,7 @@ class EMRWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("TERMINATED"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStateMapper::GetNameForClusterState(result.GetCluster().GetStatus().GetState()) ==
@@ -60,7 +60,7 @@ class EMRWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("TERMINATED_WITH_ERRORS"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStateMapper::GetNameForClusterState(result.GetCluster().GetStatus().GetState()) ==
@@ -78,7 +78,7 @@ class EMRWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterTerminatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("TERMINATED"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStateMapper::GetNameForClusterState(result.GetCluster().GetStatus().GetState()) ==
@@ -86,7 +86,7 @@ class EMRWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterTerminatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("TERMINATED_WITH_ERRORS"),
-        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ClusterStateMapper::GetNameForClusterState(result.GetCluster().GetStatus().GetState()) ==
@@ -104,21 +104,21 @@ class EMRWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StepCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
-        [](const Model::DescribeStepOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStepOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StepStateMapper::GetNameForStepState(result.GetStep().GetStatus().GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StepCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::DescribeStepOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStepOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StepStateMapper::GetNameForStepState(result.GetStep().GetStatus().GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StepCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELLED"),
-        [](const Model::DescribeStepOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStepOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StepStateMapper::GetNameForStepState(result.GetStep().GetStatus().GetState()) == expected.get<Aws::String>();

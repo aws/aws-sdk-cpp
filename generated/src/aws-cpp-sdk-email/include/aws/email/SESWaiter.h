@@ -26,7 +26,7 @@ class SESWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "IdentityExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Success"),
-        [](const Model::GetIdentityVerificationAttributesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetIdentityVerificationAttributesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetVerificationAttributes().begin(), result.GetVerificationAttributes().end(),

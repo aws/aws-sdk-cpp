@@ -29,21 +29,21 @@ class CodeGuruReviewerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CodeReviewCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
-        [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::JobStateMapper::GetNameForJobState(result.GetCodeReview().GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CodeReviewCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::JobStateMapper::GetNameForJobState(result.GetCodeReview().GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "CodeReviewCompletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Pending"),
-        [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeCodeReviewOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::JobStateMapper::GetNameForJobState(result.GetCodeReview().GetState()) == expected.get<Aws::String>();
@@ -61,7 +61,7 @@ class CodeGuruReviewerWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RepositoryAssociationSucceededWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Associated"),
-        [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RepositoryAssociationStateMapper::GetNameForRepositoryAssociationState(
@@ -69,7 +69,7 @@ class CodeGuruReviewerWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RepositoryAssociationSucceededWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RepositoryAssociationStateMapper::GetNameForRepositoryAssociationState(
@@ -77,7 +77,7 @@ class CodeGuruReviewerWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "RepositoryAssociationSucceededWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("Associating"),
-        [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeRepositoryAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::RepositoryAssociationStateMapper::GetNameForRepositoryAssociationState(

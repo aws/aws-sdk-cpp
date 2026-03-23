@@ -29,21 +29,21 @@ class ARCRegionswitchWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PlanEvaluationStatusPassedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("passed"),
-        [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::EvaluationStatusMapper::GetNameForEvaluationStatus(result.GetEvaluationState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PlanEvaluationStatusPassedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("actionRequired"),
-        [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::EvaluationStatusMapper::GetNameForEvaluationStatus(result.GetEvaluationState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PlanEvaluationStatusPassedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("pendingEvaluation"),
-        [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetPlanEvaluationStatusOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::EvaluationStatusMapper::GetNameForEvaluationStatus(result.GetEvaluationState()) == expected.get<Aws::String>();
@@ -60,35 +60,35 @@ class ARCRegionswitchWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PlanExecutionCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completed"),
-        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PlanExecutionCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("completedWithExceptions"),
-        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PlanExecutionCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("failed"),
-        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PlanExecutionCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("canceled"),
-        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PlanExecutionCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("planExecutionTimedOut"),
-        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::GetPlanExecutionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::ExecutionStateMapper::GetNameForExecutionState(result.GetExecutionState()) == expected.get<Aws::String>();

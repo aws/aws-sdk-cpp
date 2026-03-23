@@ -25,7 +25,7 @@ class KinesisWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamExistsWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeStreamOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeStreamOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::StreamStatusMapper::GetNameForStreamStatus(result.GetStreamDescription().GetStreamStatus()) ==

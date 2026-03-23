@@ -26,7 +26,7 @@ class ECSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicesInactiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("MISSING"),
-        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetFailures().begin(), result.GetFailures().end(),
@@ -34,7 +34,7 @@ class ECSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicesInactiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("INACTIVE"),
-        [](const Model::DescribeServicesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeServicesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetServices().begin(), result.GetServices().end(),
@@ -52,7 +52,7 @@ class ECSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicesStableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("MISSING"),
-        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetFailures().begin(), result.GetFailures().end(),
@@ -60,7 +60,7 @@ class ECSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicesStableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DRAINING"),
-        [](const Model::DescribeServicesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeServicesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetServices().begin(), result.GetServices().end(),
@@ -68,7 +68,7 @@ class ECSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicesStableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("INACTIVE"),
-        [](const Model::DescribeServicesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeServicesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetServices().begin(), result.GetServices().end(),
@@ -76,7 +76,7 @@ class ECSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicesStableWaiter", Aws::Utils::WaiterState::SUCCESS, true,
-        [](const Model::DescribeServicesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeServicesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return (std::count_if(result.GetServices().begin(), result.GetServices().end(), [](const Model::Service& item) {
@@ -95,7 +95,7 @@ class ECSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TasksRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("STOPPED"),
-        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetTasks().begin(), result.GetTasks().end(),
@@ -103,7 +103,7 @@ class ECSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TasksRunningWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("MISSING"),
-        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetFailures().begin(), result.GetFailures().end(),
@@ -111,7 +111,7 @@ class ECSWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TasksRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("RUNNING"),
-        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetTasks().begin(), result.GetTasks().end(),
@@ -129,7 +129,7 @@ class ECSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "TasksStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STOPPED"),
-        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) {
+        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::all_of(result.GetTasks().begin(), result.GetTasks().end(),
