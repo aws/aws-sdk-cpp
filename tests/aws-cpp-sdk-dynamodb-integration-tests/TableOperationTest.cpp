@@ -242,24 +242,12 @@ protected:
     {
         DescribeTableRequest describeTableRequest;
         describeTableRequest.SetTableName(tableName);
-        bool shouldContinue = true;
-        DescribeTableOutcome outcome = m_client->DescribeTable(describeTableRequest);
 
-        while (shouldContinue)
-        {
-            if (outcome.IsSuccess() && outcome.GetResult().GetTable().GetTableStatus() == TableStatus::ACTIVE)
-            {
-                break;
-            }
-            else
-            {
-                std::this_thread::sleep_for(std::chrono::seconds(1));
-            }
+        auto waiterOutcome = m_client->WaitUntilTableExists(describeTableRequest);
+        EXPECT_TRUE(waiterOutcome.IsSuccess()) << "WaitUntilTableExists failed for table: " << tableName;
+        EXPECT_TRUE(waiterOutcome.GetResult().IsSuccess());
 
-            outcome = m_client->DescribeTable(describeTableRequest);
-        }
-
-        return outcome.GetResult();
+        return waiterOutcome.GetResult().GetResult();
     }
 };
 

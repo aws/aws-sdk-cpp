@@ -81,23 +81,19 @@ namespace
 
     static void DeleteClusters(const Aws::String& clusterName)
     {
-      DescribeClustersRequest clusterExistsRequest;
-      clusterExistsRequest.SetClusterIdentifier(clusterName);
-      DescribeClustersOutcome clusterExistsOutcome = Client->DescribeClusters(clusterExistsRequest);
-
-
       DeleteClusterRequest deleteRequest;
       deleteRequest.SetClusterIdentifier(clusterName);
       deleteRequest.SetSkipFinalClusterSnapshot(true);
       DeleteClusterOutcome deleteOutcome = Client->DeleteCluster(deleteRequest);
 
-
-      while (!deleteOutcome.IsSuccess() && clusterExistsOutcome.IsSuccess())
-      {
+      while (!deleteOutcome.IsSuccess()) {
         std::this_thread::sleep_for(std::chrono::seconds(20));
         deleteOutcome = Client->DeleteCluster(deleteRequest);
-        clusterExistsOutcome = Client->DescribeClusters(clusterExistsRequest);
       }
+      DescribeClustersRequest describeClustersRequest;
+      describeClustersRequest.SetClusterIdentifier(clusterName);
+      auto waiterOutcome = Client->WaitUntilClusterDeleted(describeClustersRequest);
+      ASSERT_TRUE(waiterOutcome.IsSuccess()) << "WaitUntilClusterDeleted failed for cluster: " << clusterName;
     }
 
     static void CreateClusters(const Aws::String& clusterName)
@@ -123,12 +119,8 @@ namespace
       DescribeClustersRequest describeClustersRequest;
       describeClustersRequest.SetClusterIdentifier(clusterName);
 
-      DescribeClustersOutcome describeClustersOutcome = Client->DescribeClusters(describeClustersRequest);
-      while (describeClustersOutcome.GetResult().GetClusters().front().GetClusterStatus().compare("creating") == 0)
-      {
-        std::this_thread::sleep_for(std::chrono::seconds(20));
-        describeClustersOutcome = Client->DescribeClusters(describeClustersRequest);
-      }
+      auto waiterOutcome = Client->WaitUntilClusterAvailable(describeClustersRequest);
+      ASSERT_TRUE(waiterOutcome.IsSuccess()) << "WaitUntilClusterAvailable failed for cluster: " << clusterName;
     }
 
     static void WaitForClusterSnapshotAvailability(const Aws::String& snapshotIdentifier)
@@ -136,12 +128,8 @@ namespace
       DescribeClusterSnapshotsRequest describeSnapshotsRequest;
       describeSnapshotsRequest.SetSnapshotIdentifier(snapshotIdentifier);
 
-      DescribeClusterSnapshotsOutcome describeSnapshotOutcome = Client->DescribeClusterSnapshots(describeSnapshotsRequest);
-      while (describeSnapshotOutcome.GetResult().GetSnapshots().front().GetStatus().compare("creating") == 0)
-      {
-        std::this_thread::sleep_for(std::chrono::seconds(10));
-        describeSnapshotOutcome = Client->DescribeClusterSnapshots(describeSnapshotsRequest);
-      }
+      auto waiterOutcome = Client->WaitUntilSnapshotAvailable(describeSnapshotsRequest);
+      ASSERT_TRUE(waiterOutcome.IsSuccess()) << "WaitUntilSnapshotAvailable failed for snapshot: " << snapshotIdentifier;
     }
   };
 

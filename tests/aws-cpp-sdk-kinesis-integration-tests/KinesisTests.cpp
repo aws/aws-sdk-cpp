@@ -53,22 +53,17 @@ protected:
         auto createStream = m_client->CreateStream(CreateStreamRequest().WithStreamName(streamName).WithShardCount(1));
         AWS_ASSERT_SUCCESS(createStream);
 
-        // Wait 2 minutes for stream to be ready
-        auto describeStream = m_client->DescribeStream(DescribeStreamRequest().WithStreamName(streamName));
-        auto start = Aws::Utils::DateTime::CurrentTimeMillis();
-        while (describeStream.GetResult().GetStreamDescription().GetStreamStatus() != StreamStatus::ACTIVE &&
-                Aws::Utils::DateTime::CurrentTimeMillis() - start < 120000) {
-            AWS_LOGSTREAM_INFO(ALLOC_TAG, "Waiting for kinesis to create stream");
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-            describeStream = m_client->DescribeStream(DescribeStreamRequest().WithStreamName(streamName));
-        }
-        ASSERT_TRUE(describeStream.GetResult().GetStreamDescription().GetStreamStatus() == StreamStatus::ACTIVE);
+        // Wait for stream to be ready using generated waiter
+        auto waiterOutcome = m_client->WaitUntilStreamExists(DescribeStreamRequest().WithStreamName(streamName));
+        ASSERT_TRUE(waiterOutcome.IsSuccess()) << "WaitUntilStreamExists failed for stream: " << streamName;
+        ASSERT_TRUE(waiterOutcome.GetResult().IsSuccess());
 
         // Tag stream as test
         auto tagStreamOutcome =m_client->AddTagsToStream(AddTagsToStreamRequest()
                 .WithStreamName(streamName)
                 .WithTags({{TEST_TAG, TEST_TAG}}));
-        AWS_ASSERT_SUCCESS(describeStream);
+        ASSERT_TRUE(waiterOutcome.GetResult().GetResult().GetStreamDescription().GetStreamStatus() == StreamStatus::ACTIVE);
+        AWS_ASSERT_SUCCESS(waiterOutcome.GetResult());
     }
 
     void TearDown() override {
