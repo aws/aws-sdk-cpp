@@ -18,11 +18,7 @@
 #end
 #if($template.recursionDepth > 1)
 #set($template.containerVar = ${template.lowerCaseVarName} + "Map")
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}Aws::Map<${CppViewHelper.computeCppType($template.currentShape.mapKey.shape)}, Aws::Crt::Optional<${CppViewHelper.computeCppType($template.currentShape.mapValue.shape)}>> ${template.lowerCaseVarName}Map;
-#else
   ${template.currentSpaces}Aws::Map<${CppViewHelper.computeCppType($template.currentShape.mapKey.shape)}, ${CppViewHelper.computeCppType($template.currentShape.mapValue.shape)}> ${template.lowerCaseVarName}Map;
-#end
 #end
   ${template.currentSpaces}for(auto& ${template.lowerCaseVarName}Item : ${template.lowerCaseVarName}JsonMap)
   ${template.currentSpaces}{
@@ -88,11 +84,7 @@
 #end
 #if($template.recursionDepth > 1)
 #set($template.containerVar = ${template.lowerCaseVarName} + "List")
-#if($template.currentShape.sparse)
-  ${template.currentSpaces}Aws::Vector<Aws::Crt::Optional<${CppViewHelper.computeCppType($template.currentShape.listMember.shape)}>> ${template.lowerCaseVarName}List;
-#else
   ${template.currentSpaces}Aws::Vector<${CppViewHelper.computeCppType($template.currentShape.listMember.shape)}> ${template.lowerCaseVarName}List;
-#end
   ${template.currentSpaces}${template.lowerCaseVarName}List.reserve((size_t)${template.lowerCaseVarName}JsonList.GetLength());
 #end
   ${template.currentSpaces}for(unsigned ${template.lowerCaseVarName}Index = 0; ${template.lowerCaseVarName}Index < ${template.lowerCaseVarName}JsonList.GetLength(); ++${template.lowerCaseVarName}Index)
