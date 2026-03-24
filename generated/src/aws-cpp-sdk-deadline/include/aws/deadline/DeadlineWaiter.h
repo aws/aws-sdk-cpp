@@ -308,10 +308,10 @@ class DeadlineWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "QueueFleetAssociationStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("STOPPED"),
-        [](const Model::GetQueueLimitAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetQueueFleetAssociationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::QueueLimitAssociationStatusMapper::GetNameForQueueLimitAssociationStatus(result.GetStatus()) ==
+          return Model::QueueFleetAssociationStatusMapper::GetNameForQueueFleetAssociationStatus(result.GetStatus()) ==
                  expected.get<Aws::String>();
         }));
 

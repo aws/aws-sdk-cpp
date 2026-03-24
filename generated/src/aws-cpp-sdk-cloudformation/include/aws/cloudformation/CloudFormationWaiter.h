@@ -36,10 +36,10 @@ class CloudFormationWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChangeSetCreateCompleteWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CREATE_COMPLETE"),
-        [](const Model::DescribeStackRefactorOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChangeSetOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::StackRefactorStatusMapper::GetNameForStackRefactorStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::ChangeSetStatusMapper::GetNameForChangeSetStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChangeSetCreateCompleteWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),

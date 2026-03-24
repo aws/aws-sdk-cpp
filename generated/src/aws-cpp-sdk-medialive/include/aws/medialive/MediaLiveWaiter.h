@@ -44,26 +44,26 @@ class MediaLiveWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("IDLE"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ChannelStateMapper::GetNameForChannelState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ChannelStateMapper::GetNameForChannelState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ChannelCreatedWaiter", Aws::Utils::WaiterState::RETRY,
                                                                                 Aws::String("InternalServerErrorException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ChannelStateMapper::GetNameForChannelState(result.GetState()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeChannel(req); };
@@ -77,17 +77,17 @@ class MediaLiveWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ChannelStateMapper::GetNameForChannelState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ChannelStateMapper::GetNameForChannelState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ChannelDeletedWaiter", Aws::Utils::WaiterState::RETRY,
                                                                                 Aws::String("InternalServerErrorException")));
@@ -103,17 +103,17 @@ class MediaLiveWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelRunningWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("RUNNING"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ChannelStateMapper::GetNameForChannelState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelRunningWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STARTING"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ChannelStateMapper::GetNameForChannelState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ChannelRunningWaiter", Aws::Utils::WaiterState::RETRY,
                                                                                 Aws::String("InternalServerErrorException")));
@@ -129,17 +129,17 @@ class MediaLiveWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelStoppedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("IDLE"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ChannelStateMapper::GetNameForChannelState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelStoppedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("STOPPING"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChannelOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ChannelStateMapper::GetNameForChannelState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ChannelStoppedWaiter", Aws::Utils::WaiterState::RETRY,
                                                                                 Aws::String("InternalServerErrorException")));
@@ -185,17 +185,19 @@ class MediaLiveWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelPlacementGroupDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChannelPlacementGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ChannelPlacementGroupStateMapper::GetNameForChannelPlacementGroupState(result.GetState()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ChannelPlacementGroupDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeChannelPlacementGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ChannelPlacementGroupStateMapper::GetNameForChannelPlacementGroupState(result.GetState()) ==
+                 expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "ChannelPlacementGroupDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
@@ -240,26 +242,26 @@ class MediaLiveWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterCreatedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::DescribeNodeOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::NodeStateMapper::GetNameForNodeState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ClusterStateMapper::GetNameForClusterState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterCreatedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ClusterStateMapper::GetNameForClusterState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ClusterCreatedWaiter", Aws::Utils::WaiterState::RETRY,
                                                                                 Aws::String("InternalServerErrorException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterCreatedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ClusterStateMapper::GetNameForClusterState(result.GetState()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeCluster(req); };
@@ -273,17 +275,17 @@ class MediaLiveWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ClusterStateMapper::GetNameForClusterState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ClusterDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeClusterOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::ClusterStateMapper::GetNameForClusterState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ClusterDeletedWaiter", Aws::Utils::WaiterState::RETRY,
                                                                                 Aws::String("InternalServerErrorException")));
@@ -325,17 +327,17 @@ class MediaLiveWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DELETED"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::InputStateMapper::GetNameForInputState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::InputStateMapper::GetNameForInputState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("InputDeletedWaiter", Aws::Utils::WaiterState::RETRY,
                                                                                 Aws::String("InternalServerErrorException")));
@@ -358,10 +360,10 @@ class MediaLiveWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputDetachedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("CREATING"),
-        [](const Model::DescribeMultiplexOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeInputOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::MultiplexStateMapper::GetNameForMultiplexState(result.GetState()) == expected.get<Aws::String>();
+          return Model::InputStateMapper::GetNameForInputState(result.GetState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InputDetachedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ATTACHED"),

@@ -26,7 +26,7 @@ class ECSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicesInactiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("MISSING"),
-        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeServicesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetFailures().begin(), result.GetFailures().end(),
@@ -52,7 +52,7 @@ class ECSWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ServicesStableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("MISSING"),
-        [](const Model::DescribeTasksOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeServicesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return std::any_of(result.GetFailures().begin(), result.GetFailures().end(),

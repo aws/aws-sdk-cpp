@@ -39,21 +39,21 @@ class LexModelsV2Waiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BotAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Available"),
-        [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeBotOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Deleting"),
-        [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeBotOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "BotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("Failed"),
-        [](const Model::DescribeBotVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::DescribeBotOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::BotStatusMapper::GetNameForBotStatus(result.GetBotStatus()) == expected.get<Aws::String>();

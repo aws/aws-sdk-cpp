@@ -65,31 +65,31 @@ class BedrockAgentCoreControlWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PolicyActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetPolicyEngineOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetPolicyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PolicyEngineStatusMapper::GetNameForPolicyEngineStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::PolicyStatusMapper::GetNameForPolicyStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PolicyActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CREATE_FAILED"),
-        [](const Model::GetPolicyEngineOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetPolicyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PolicyEngineStatusMapper::GetNameForPolicyEngineStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::PolicyStatusMapper::GetNameForPolicyStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PolicyActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("UPDATE_FAILED"),
-        [](const Model::GetPolicyEngineOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetPolicyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PolicyEngineStatusMapper::GetNameForPolicyEngineStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::PolicyStatusMapper::GetNameForPolicyStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PolicyActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::GetPolicyGenerationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetPolicyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PolicyGenerationStatusMapper::GetNameForPolicyGenerationStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::PolicyStatusMapper::GetNameForPolicyStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetPolicy(req); };
@@ -105,17 +105,17 @@ class BedrockAgentCoreControlWaiter {
                                                                                 Aws::String("ResourceNotFoundException")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PolicyDeletedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("DELETING"),
-        [](const Model::GetPolicyEngineOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetPolicyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PolicyEngineStatusMapper::GetNameForPolicyEngineStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::PolicyStatusMapper::GetNameForPolicyStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PolicyDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::GetPolicyGenerationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetPolicyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PolicyGenerationStatusMapper::GetNameForPolicyGenerationStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::PolicyStatusMapper::GetNameForPolicyStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetPolicy(req); };
@@ -150,10 +150,10 @@ class BedrockAgentCoreControlWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PolicyEngineActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::GetPolicyGenerationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetPolicyEngineOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PolicyGenerationStatusMapper::GetNameForPolicyGenerationStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::PolicyEngineStatusMapper::GetNameForPolicyEngineStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetPolicyEngine(req); };
@@ -176,10 +176,10 @@ class BedrockAgentCoreControlWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "PolicyEngineDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
-        [](const Model::GetPolicyGenerationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetPolicyEngineOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PolicyGenerationStatusMapper::GetNameForPolicyGenerationStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::PolicyEngineStatusMapper::GetNameForPolicyEngineStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetPolicyEngine(req); };

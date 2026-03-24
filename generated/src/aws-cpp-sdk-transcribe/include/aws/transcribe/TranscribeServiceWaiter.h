@@ -148,14 +148,14 @@ class TranscribeServiceWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MedicalVocabularyReadyWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("READY"),
-        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetMedicalVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "MedicalVocabularyReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetMedicalVocabularyOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return Model::VocabularyStateMapper::GetNameForVocabularyState(result.GetVocabularyState()) == expected.get<Aws::String>();

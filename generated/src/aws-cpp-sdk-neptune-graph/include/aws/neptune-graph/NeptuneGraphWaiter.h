@@ -37,32 +37,31 @@ class NeptuneGraphWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportTaskSuccessfulWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELLING"),
-        [](const Model::GetImportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetExportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::ImportTaskStatusMapper::GetNameForImportTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::ExportTaskStatusMapper::GetNameForExportTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportTaskSuccessfulWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELLED"),
-        [](const Model::GetImportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetExportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::ImportTaskStatusMapper::GetNameForImportTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::ExportTaskStatusMapper::GetNameForExportTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportTaskSuccessfulWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetExportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) ==
-                 expected.get<Aws::String>();
+          return Model::ExportTaskStatusMapper::GetNameForExportTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportTaskSuccessfulWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),
-        [](const Model::GetImportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetExportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::ImportTaskStatusMapper::GetNameForImportTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::ExportTaskStatusMapper::GetNameForExportTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetExportTask(req); };
@@ -76,18 +75,18 @@ class NeptuneGraphWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportTaskCancelledWaiter", Aws::Utils::WaiterState::FAILURE, true,
-        [](const Model::GetImportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetExportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return ((Model::ImportTaskStatusMapper::GetNameForImportTaskStatus(result.GetStatus()) != "CANCELLING") &&
-                  (Model::ImportTaskStatusMapper::GetNameForImportTaskStatus(result.GetStatus()) != "CANCELLED")) == expected.get<bool>();
+          return ((Model::ExportTaskStatusMapper::GetNameForExportTaskStatus(result.GetStatus()) != "CANCELLING") &&
+                  (Model::ExportTaskStatusMapper::GetNameForExportTaskStatus(result.GetStatus()) != "CANCELLED")) == expected.get<bool>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ExportTaskCancelledWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CANCELLED"),
-        [](const Model::GetImportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetExportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::ImportTaskStatusMapper::GetNameForImportTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::ExportTaskStatusMapper::GetNameForExportTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetExportTask(req); };
@@ -101,27 +100,24 @@ class NeptuneGraphWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GraphAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETING"),
-        [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetGraphOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) ==
-                 expected.get<Aws::String>();
+          return Model::GraphStatusMapper::GetNameForGraphStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GraphAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetGraphOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) ==
-                 expected.get<Aws::String>();
+          return Model::GraphStatusMapper::GetNameForGraphStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GraphAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("AVAILABLE"),
-        [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetGraphOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) ==
-                 expected.get<Aws::String>();
+          return Model::GraphStatusMapper::GetNameForGraphStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetGraph(req); };
@@ -135,11 +131,10 @@ class NeptuneGraphWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GraphDeletedWaiter", Aws::Utils::WaiterState::FAILURE, true,
-        [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetGraphOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return (Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) != "DELETING") ==
-                 expected.get<bool>();
+          return (Model::GraphStatusMapper::GetNameForGraphStatus(result.GetStatus()) != "DELETING") == expected.get<bool>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("GraphDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
                                                                                 Aws::String("ResourceNotFoundException")));
@@ -179,27 +174,24 @@ class NeptuneGraphWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GraphSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETING"),
-        [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetGraphSnapshotOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) ==
-                 expected.get<Aws::String>();
+          return Model::SnapshotStatusMapper::GetNameForSnapshotStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GraphSnapshotAvailableWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetGraphSnapshotOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) ==
-                 expected.get<Aws::String>();
+          return Model::SnapshotStatusMapper::GetNameForSnapshotStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GraphSnapshotAvailableWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("AVAILABLE"),
-        [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetGraphSnapshotOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) ==
-                 expected.get<Aws::String>();
+          return Model::SnapshotStatusMapper::GetNameForSnapshotStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetGraphSnapshot(req); };
@@ -213,11 +205,10 @@ class NeptuneGraphWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "GraphSnapshotDeletedWaiter", Aws::Utils::WaiterState::FAILURE, true,
-        [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetGraphSnapshotOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return (Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) != "DELETING") ==
-                 expected.get<bool>();
+          return (Model::SnapshotStatusMapper::GetNameForSnapshotStatus(result.GetStatus()) != "DELETING") == expected.get<bool>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
         "GraphSnapshotDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
@@ -254,11 +245,10 @@ class NeptuneGraphWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImportTaskSuccessfulWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
-        [](const Model::GetPrivateGraphEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetImportTaskOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::PrivateGraphEndpointStatusMapper::GetNameForPrivateGraphEndpointStatus(result.GetStatus()) ==
-                 expected.get<Aws::String>();
+          return Model::ImportTaskStatusMapper::GetNameForImportTaskStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImportTaskSuccessfulWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("SUCCEEDED"),

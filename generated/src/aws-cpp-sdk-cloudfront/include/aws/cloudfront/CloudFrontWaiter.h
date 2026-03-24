@@ -49,7 +49,7 @@ class CloudFrontWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "InvalidationCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("Completed"),
-        [](const Model::GetInvalidationForDistributionTenant2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetInvalidation2020_05_31Outcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return result.GetInvalidation().GetStatus() == expected.get<Aws::String>();

@@ -38,10 +38,10 @@ class GameLiftStreamsWaiter {
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ApplicationReadyWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetApplicationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::StreamSessionStatusMapper::GetNameForStreamSessionStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::ApplicationStatusMapper::GetNameForApplicationStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetApplication(req); };
@@ -67,17 +67,17 @@ class GameLiftStreamsWaiter {
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamGroupActiveWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ACTIVE"),
-        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetStreamGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::StreamSessionStatusMapper::GetNameForStreamSessionStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::StreamGroupStatusMapper::GetNameForStreamGroupStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamGroupActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ERROR"),
-        [](const Model::GetStreamSessionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+        [](const Model::GetStreamGroupOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return Model::StreamSessionStatusMapper::GetNameForStreamSessionStatus(result.GetStatus()) == expected.get<Aws::String>();
+          return Model::StreamGroupStatusMapper::GetNameForStreamGroupStatus(result.GetStatus()) == expected.get<Aws::String>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "StreamGroupActiveWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("ACTIVE_WITH_ERRORS"),
