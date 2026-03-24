@@ -140,13 +140,13 @@ class DynamoDBWaiter {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
           return ((result.GetKinesisDataStreamDestinations().size() > 0) &&
-                  (std::count_if(result.GetKinesisDataStreamDestinations().begin(), result.GetKinesisDataStreamDestinations().end(),
-                                 [](const Model::KinesisDataStreamDestination& item) {
-                                   return ((Model::DestinationStatusMapper::GetNameForDestinationStatus(item.GetDestinationStatus()) ==
-                                            "DISABLED") ||
-                                           (Model::DestinationStatusMapper::GetNameForDestinationStatus(item.GetDestinationStatus()) ==
-                                            "ENABLE_FAILED"));
-                                 }) == result.GetKinesisDataStreamDestinations().size())) == expected.get<bool>();
+                  (static_cast<std::size_t>(std::count_if(
+                       result.GetKinesisDataStreamDestinations().begin(), result.GetKinesisDataStreamDestinations().end(),
+                       [](const Model::KinesisDataStreamDestination& item) {
+                         return (
+                             (Model::DestinationStatusMapper::GetNameForDestinationStatus(item.GetDestinationStatus()) == "DISABLED") ||
+                             (Model::DestinationStatusMapper::GetNameForDestinationStatus(item.GetDestinationStatus()) == "ENABLE_FAILED"));
+                       })) == result.GetKinesisDataStreamDestinations().size())) == expected.get<bool>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeKinesisStreamingDestination(req); };
