@@ -24,13 +24,24 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
         });
       }
 #end
-    #if($operation.result && $operation.result.shape.hasStreamMembers())
-        return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&#if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-    #else
+    #if($operation.result && $operation.result.shape.hasEventStreamMembers())
         return ${operation.name}Outcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&#if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-    #end
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
       }));
+    #elseif($operation.result && $operation.result.shape.hasStreamMembers())
+        auto result = MakeRequestWithUnparsedResponse(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&#if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    #else
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&#if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    #end
+#if(!$operation.result || !$operation.result.shape.hasEventStreamMembers())
+#parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
+      });
+#if($operation.result)
+      return result.IsSuccess() ? ${operation.name}Outcome(${operation.result.shape.name}(result.GetResultWithOwnership())) : ${operation.name}Outcome(result.GetError());
+#else
+      return ${operation.name}Outcome(result);
+#end
+#end
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

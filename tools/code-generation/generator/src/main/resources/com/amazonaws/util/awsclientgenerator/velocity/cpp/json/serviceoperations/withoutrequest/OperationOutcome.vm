@@ -18,9 +18,11 @@ AWS_OPERATION_GUARD(${operation.name});
       endpointResolutionOutcome.GetResult().AddPathSegments("${operation.http.requestUri}");
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-      return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}"));
+      auto result = MakeRequestWithUnparsedResponse(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}");
+      return result.IsSuccess() ? ${operation.name}Outcome(${operation.result.shape.name}(result.GetResultWithOwnership())) : ${operation.name}Outcome(result.GetError());
 #else
-      return ${operation.name}Outcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}"));
+      auto result = MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}");
+      return result.IsSuccess() ? ${operation.name}Outcome(${operation.result.shape.name}(result.GetResultWithOwnership())) : ${operation.name}Outcome(result.GetError());
 #end
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

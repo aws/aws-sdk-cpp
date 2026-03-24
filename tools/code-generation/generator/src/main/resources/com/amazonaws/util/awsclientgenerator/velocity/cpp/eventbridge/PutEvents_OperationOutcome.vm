@@ -26,7 +26,8 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
     const char* signerName = Aws::Auth::ASYMMETRIC_SIGV4_SIGNER;
     // SDK must sign the requests with a region value of "*" since the primary and secondary failover regions is not known to the SDK at request time
     const char* signerRegionOverride = "*";
-    return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, signerName, signerRegionOverride));
+    auto result = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, signerName, signerRegionOverride);
+    return result.IsSuccess() ? ${operation.name}Outcome(${operation.result.shape.name}(result.GetResultWithOwnership())) : ${operation.name}Outcome(result.GetError());
   }
   else
   {
@@ -35,10 +36,11 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
 #if($operation.result && $operation.result.shape.hasStreamMembers())
 #if($serviceModel.endpointRules)
-    return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+    auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #else
-    return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+    auto result = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #end
+    return result.IsSuccess() ? ${operation.name}Outcome(${operation.result.shape.name}(result.GetResultWithOwnership())) : ${operation.name}Outcome(result.GetError());
 #elseif($operation.result && $operation.result.shape.hasEventStreamMembers())
     request.SetResponseStreamFactory(
         [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
@@ -58,10 +60,11 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #end
 #else
 #if($serviceModel.endpointRules)
-    return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}));
+    auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName});
 #else
-    return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}));
+    auto result = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName});
 #end
+    return result.IsSuccess() ? ${operation.name}Outcome(${operation.result.shape.name}(result.GetResultWithOwnership())) : ${operation.name}Outcome(result.GetError());
 #end
   }
 }
