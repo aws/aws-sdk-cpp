@@ -9,6 +9,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/Optional.h>
 
 #include <utility>
 
@@ -53,13 +54,13 @@ class SearchCasesResult {
    * <code>CaseId</code> and <code>Fields</code> where each field is a complex union
    * structure. </p>
    */
-  inline const Aws::Vector<SearchCasesResponseItem>& GetCases() const { return m_cases; }
-  template <typename CasesT = Aws::Vector<SearchCasesResponseItem>>
+  inline const Aws::Vector<Aws::Crt::Optional<SearchCasesResponseItem>>& GetCases() const { return m_cases; }
+  template <typename CasesT = Aws::Vector<Aws::Crt::Optional<SearchCasesResponseItem>>>
   void SetCases(CasesT&& value) {
     m_casesHasBeenSet = true;
     m_cases = std::forward<CasesT>(value);
   }
-  template <typename CasesT = Aws::Vector<SearchCasesResponseItem>>
+  template <typename CasesT = Aws::Vector<Aws::Crt::Optional<SearchCasesResponseItem>>>
   SearchCasesResult& WithCases(CasesT&& value) {
     SetCases(std::forward<CasesT>(value));
     return *this;
@@ -68,6 +69,11 @@ class SearchCasesResult {
   SearchCasesResult& AddCases(CasesT&& value) {
     m_casesHasBeenSet = true;
     m_cases.emplace_back(std::forward<CasesT>(value));
+    return *this;
+  }
+  inline SearchCasesResult& AddCases(Aws::Crt::Optional<SearchCasesResponseItem> value) {
+    m_casesHasBeenSet = true;
+    m_cases.push_back(value);
     return *this;
   }
   ///@}
@@ -106,7 +112,7 @@ class SearchCasesResult {
  private:
   Aws::String m_nextToken;
 
-  Aws::Vector<SearchCasesResponseItem> m_cases;
+  Aws::Vector<Aws::Crt::Optional<SearchCasesResponseItem>> m_cases;
 
   long long m_totalCount{0};
 

@@ -29,7 +29,11 @@ SearchCasesResult& SearchCasesResult::operator=(const Aws::AmazonWebServiceResul
   if (jsonValue.ValueExists("cases")) {
     Aws::Utils::Array<JsonView> casesJsonList = jsonValue.GetArray("cases");
     for (unsigned casesIndex = 0; casesIndex < casesJsonList.GetLength(); ++casesIndex) {
-      m_cases.push_back(casesJsonList[casesIndex].AsObject());
+      if (casesJsonList[casesIndex].IsNull()) {
+        m_cases.emplace_back();
+        continue;
+      }
+      m_cases.emplace_back(casesJsonList[casesIndex].AsObject());
     }
     m_casesHasBeenSet = true;
   }

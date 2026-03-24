@@ -161,7 +161,10 @@ def main():
             return -1
 
         if args["generate_protocol_tests"]:
-            protocol_tests_generator = ProtocolTestsGen(args)
+            # Disable smithy generation for protocol tests
+            protocol_args = args.copy()
+            protocol_args["disable_smithy_generation"] = True
+            protocol_tests_generator = ProtocolTestsGen(protocol_args)
             if protocol_tests_generator.generate(executor, max_workers) != 0:
                 print("ERROR: Failed to generate protocol test(s)!")
                 return -1

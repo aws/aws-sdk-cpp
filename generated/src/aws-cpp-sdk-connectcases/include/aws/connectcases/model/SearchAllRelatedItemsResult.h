@@ -9,6 +9,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/Optional.h>
 
 #include <utility>
 
@@ -51,13 +52,13 @@ class SearchAllRelatedItemsResult {
   /**
    * <p>A list of items related to a case.</p>
    */
-  inline const Aws::Vector<SearchAllRelatedItemsResponseItem>& GetRelatedItems() const { return m_relatedItems; }
-  template <typename RelatedItemsT = Aws::Vector<SearchAllRelatedItemsResponseItem>>
+  inline const Aws::Vector<Aws::Crt::Optional<SearchAllRelatedItemsResponseItem>>& GetRelatedItems() const { return m_relatedItems; }
+  template <typename RelatedItemsT = Aws::Vector<Aws::Crt::Optional<SearchAllRelatedItemsResponseItem>>>
   void SetRelatedItems(RelatedItemsT&& value) {
     m_relatedItemsHasBeenSet = true;
     m_relatedItems = std::forward<RelatedItemsT>(value);
   }
-  template <typename RelatedItemsT = Aws::Vector<SearchAllRelatedItemsResponseItem>>
+  template <typename RelatedItemsT = Aws::Vector<Aws::Crt::Optional<SearchAllRelatedItemsResponseItem>>>
   SearchAllRelatedItemsResult& WithRelatedItems(RelatedItemsT&& value) {
     SetRelatedItems(std::forward<RelatedItemsT>(value));
     return *this;
@@ -66,6 +67,11 @@ class SearchAllRelatedItemsResult {
   SearchAllRelatedItemsResult& AddRelatedItems(RelatedItemsT&& value) {
     m_relatedItemsHasBeenSet = true;
     m_relatedItems.emplace_back(std::forward<RelatedItemsT>(value));
+    return *this;
+  }
+  inline SearchAllRelatedItemsResult& AddRelatedItems(Aws::Crt::Optional<SearchAllRelatedItemsResponseItem> value) {
+    m_relatedItemsHasBeenSet = true;
+    m_relatedItems.push_back(value);
     return *this;
   }
   ///@}
@@ -89,7 +95,7 @@ class SearchAllRelatedItemsResult {
  private:
   Aws::String m_nextToken;
 
-  Aws::Vector<SearchAllRelatedItemsResponseItem> m_relatedItems;
+  Aws::Vector<Aws::Crt::Optional<SearchAllRelatedItemsResponseItem>> m_relatedItems;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;

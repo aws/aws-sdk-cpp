@@ -45,10 +45,23 @@
 #end
 #end
 #if($member.shape.listMember.shape.structure)
+#if($member.shape.sparse)
+  ${macro.spaces}  if(item.has_value()) {
+  ${macro.spaces}    item.value().OutputToStream(ss, "${macro.listLocation}.", ${varName}Count, "");
+  ${macro.spaces}  }
+#else
   ${macro.spaces}  item.OutputToStream(ss, "${macro.listLocation}.", ${varName}Count, "");
+#end
+#else
+#if($member.shape.sparse)
+  ${macro.spaces}  if(item.has_value()) {
+  ${macro.spaces}    ss << "${macro.listLocation}." << ${varName}Count << "="
+  ${macro.spaces}        << #serializeQuerySingleElementToText($macro.spaces, $member.shape.listMember, "item.value()") << "&";
+  ${macro.spaces}  }
 #else
   ${macro.spaces}  ss << "${macro.listLocation}." << ${varName}Count << "="
   ${macro.spaces}      << #serializeQuerySingleElementToText($macro.spaces, $member.shape.listMember, "item") << "&";
+#end
 #end
   ${macro.spaces}  ${varName}Count++;
   ${macro.spaces}}

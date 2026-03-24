@@ -7,10 +7,14 @@
 #set($macro.mapItemVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testInputParam.key)})}Item")
 #set($macro.fieldAdder = "Add${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
 #foreach($mapItem in $testInputParam.value.fields())
+#if($mapShape.sparse && $mapItem.value == "null")
+${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", Aws::Crt::Optional<Aws::Utils::Document>{});
+#else
 ${macro.spaces}{
   ${macro.spaces}Aws::Utils::Document ${macro.mapItemVarName}(R"j(${mapItem.value})j");
   ${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", $macro.mapItemVarName);
 ${macro.spaces}}
+#end
 #end
 #break
 #end
@@ -18,6 +22,9 @@ ${macro.spaces}}
 #set($macro.mapItemVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testInputParam.key)})}Item")
 #set($macro.fieldAdder = "Add${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
 #foreach($mapItem in $testInputParam.value.fields())
+#if($mapShape.sparse && $mapItem.value == "null")
+${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", Aws::Crt::Optional<$CppViewHelper.computeCppType($mapShape.mapValue.shape)>{});
+#else
 ${macro.spaces}{
   ${macro.spaces}$CppViewHelper.computeCppType($mapShape.mapValue.shape) $macro.mapItemVarName;
 #foreach($innerParam in $mapItem.value.fields())
@@ -26,9 +33,22 @@ ${macro.spaces}{
   ${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", $macro.mapItemVarName);
 ${macro.spaces}}
 #end
+#end
 #break
 #end
 ###----- the map value is not nested structure or document
+#if($mapShape.sparse)
+#set($macro.fieldAdder = "Add${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
+#foreach($mapItem in $testInputParam.value.fields())
+#if($mapItem.value == "null")
+${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", Aws::Crt::Optional<$CppViewHelper.computeCppType($mapShape.mapValue.shape)>{});
+#elseif($mapShape.mapValue.shape.list || $mapShape.mapValue.shape.map)
+${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", $CppViewHelper.computeCppType($mapShape.mapValue.shape)#SerializeSingleParameterMacro($mapShape.mapValue.shape, $mapItem.value));
+#else
+${macro.spaces}${dstObject}.${macro.fieldAdder}("$mapItem.key", #SerializeSingleParameterMacro($mapShape.mapValue.shape, $mapItem.value));
+#end
+#end
+#else
 #set($macro.mapResult="{")
 #foreach($mapItem in $testInputParam.value.fields())
 #set($macro.mapItem="{" + '"' + "$mapItem.key" + '"' + ",  ")
@@ -38,4 +58,5 @@ ${macro.spaces}}
 #end
 #set($macro.mapResult=$macro.mapResult + "}")
 ${spaces}${dstObject}.${macro.fieldSetter}($macro.mapResult);
+#end
 #end##macro SetMapMacro
