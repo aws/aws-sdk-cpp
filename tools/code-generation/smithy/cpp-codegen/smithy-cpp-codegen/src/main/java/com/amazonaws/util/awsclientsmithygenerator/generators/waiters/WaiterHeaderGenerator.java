@@ -23,8 +23,8 @@ import java.util.Set;
 public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationData> {
 
     private final Model model;
-    /** Cached code generation results, keyed by PathMatcher identity. */
-    private final Map<PathMatcher, WaiterJmesPathCppCodeGenerator.WaiterJmesPathResult> generatedCode = new HashMap<>();
+    /** Cached code generation results, keyed by operation name then PathMatcher hashCode. */
+    private final Map<String, Map<Integer, WaiterJmesPathCppCodeGenerator.WaiterJmesPathResult>> generatedCode = new HashMap<>();
 
     public WaiterHeaderGenerator(ServiceShape service, List<WaiterOperationData> waiterOps,
                                  Map<String, String> serviceMap, Model model,  Map<String, String> namespaceMap) {
@@ -76,12 +76,17 @@ public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationDa
             for (Acceptor acceptor : data.getWaiter().getAcceptors()) {
                 PathMatcher pm = extractPathMatcher(acceptor.getMatcher());
                 if (pm != null) {
-                    WaiterJmesPathCppCodeGenerator.WaiterJmesPathResult result =
-                            WaiterJmesPathCppCodeGenerator.generate(
-                                    pm.getPath(), pm.getComparator(), outcomeType, model, data.getOperation(),
-                                    smithyServiceName);
-                    generatedCode.put(pm, result);
-                    enums.addAll(result.getEnumIncludes());
+                    Map<Integer, WaiterJmesPathCppCodeGenerator.WaiterJmesPathResult> opMap =
+                            generatedCode.computeIfAbsent(data.getOperation().getId().getName(), k -> new HashMap<>());
+                    int key = pm.hashCode();
+                    if (!opMap.containsKey(key)) {
+                        WaiterJmesPathCppCodeGenerator.WaiterJmesPathResult result =
+                                WaiterJmesPathCppCodeGenerator.generate(
+                                        pm.getPath(), pm.getComparator(), outcomeType, model, data.getOperation(),
+                                        smithyServiceName);
+                        opMap.put(key, result);
+                        enums.addAll(result.getEnumIncludes());
+                    }
                 }
             }
         }
@@ -193,7 +198,7 @@ public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationDa
 
         writer.write("acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(\"$L\", $L, $L,",
                 waiterTag, state, expectedExpr);
-        writer.write(generatedCode.get(pathMatcher).getCode());
+        writer.write(generatedCode.get(data.getOperation().getId().getName()).get(pathMatcher.hashCode()).getCode());
         writer.write("));");
     }
 
