@@ -55,11 +55,9 @@ class AutoScalingWaiter {
           const auto& result = outcome.GetResult();
           return std::any_of(
                      result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(), [](const Model::AutoScalingGroup& item) {
-                       return !(static_cast<std::size_t>(
-                                    std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const Model::Instance& inner) {
-                                      return (Model::LifecycleStateMapper::GetNameForLifecycleState(inner.GetLifecycleState()) ==
-                                              "InService");
-                                    })) >= item.GetMinSize());
+                       return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const Model::Instance& inner) {
+                                  return (Model::LifecycleStateMapper::GetNameForLifecycleState(inner.GetLifecycleState()) == "InService");
+                                }) >= item.GetMinSize());
                      }) == expected.get<bool>();
         }));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
@@ -69,11 +67,9 @@ class AutoScalingWaiter {
           const auto& result = outcome.GetResult();
           return std::any_of(
                      result.GetAutoScalingGroups().begin(), result.GetAutoScalingGroups().end(), [](const Model::AutoScalingGroup& item) {
-                       return !(static_cast<std::size_t>(
-                                    std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const Model::Instance& inner) {
-                                      return (Model::LifecycleStateMapper::GetNameForLifecycleState(inner.GetLifecycleState()) ==
-                                              "InService");
-                                    })) >= item.GetMinSize());
+                       return !(std::count_if(item.GetInstances().begin(), item.GetInstances().end(), [](const Model::Instance& inner) {
+                                  return (Model::LifecycleStateMapper::GetNameForLifecycleState(inner.GetLifecycleState()) == "InService");
+                                }) >= item.GetMinSize());
                      }) == expected.get<bool>();
         }));
 

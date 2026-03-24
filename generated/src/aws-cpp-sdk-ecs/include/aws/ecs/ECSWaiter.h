@@ -79,10 +79,9 @@ class ECSWaiter {
         [](const Model::DescribeServicesOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
           if (!outcome.IsSuccess()) return false;
           const auto& result = outcome.GetResult();
-          return (static_cast<std::size_t>(
-                      std::count_if(result.GetServices().begin(), result.GetServices().end(), [](const Model::Service& item) {
-                        return !((item.GetDeployments().size() == 1) && (item.GetRunningCount() == item.GetDesiredCount()));
-                      })) == 0) == expected.get<bool>();
+          return (std::count_if(result.GetServices().begin(), result.GetServices().end(), [](const Model::Service& item) {
+                    return !((item.GetDeployments().size() == 1) && (item.GetRunningCount() == item.GetDesiredCount()));
+                  }) == 0) == expected.get<bool>();
         }));
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeServices(req); };
