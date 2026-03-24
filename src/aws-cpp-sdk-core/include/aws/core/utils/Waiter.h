@@ -95,7 +95,7 @@ template <typename OutcomeT>
 struct PathAcceptor : Acceptor<OutcomeT> {
   ExpectedValue expected;
   PathMatcherFn<OutcomeT> pathMatcher;
-  PathAcceptor(WaiterState s, ExpectedValue e, PathMatcherFn<OutcomeT>&& pm)
+  PathAcceptor(WaiterState s, ExpectedValue e, PathMatcherFn<OutcomeT> pm)
       : Acceptor<OutcomeT>(s), expected(std::move(e)), pathMatcher(std::move(pm)) {}
   bool Matches(const OutcomeT& outcome) const override {
     return pathMatcher ? pathMatcher(outcome, expected) : false;
