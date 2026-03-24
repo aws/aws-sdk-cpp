@@ -543,7 +543,7 @@ class WaiterJmesPathCppCodeGeneratorTest {
         void filterProjectionComparison_withoutAnd() {
             String expr = "length(Items[?Status == 'DISABLED' || Status == 'FAILED']) == length(Items)";
             String code = gen(expr, PathComparator.BOOLEAN_EQUALS);
-            assertContains(code, "std::count_if");
+            assertContains(code, "static_cast<std::size_t>(std::count_if");
             assertContains(code, "item.GetStatus() == \"DISABLED\"");
             assertContains(code, "item.GetStatus() == \"FAILED\"");
             assertContains(code, "result.GetItems().size()");

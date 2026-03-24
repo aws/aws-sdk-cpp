@@ -65,8 +65,8 @@ public class ScalarEmitter extends UnsupportedExpressionVisitor<String> {
         
         String predicate = filterExpr.getComparison().accept(
             new FilterPredicateEmitter("item", model, elementShape, smithyServiceName));
-        return "std::count_if(" + collection + ".begin(), " + collection + ".end(), "
-                + "[](const " + elementType + "& item) { return " + predicate + "; })";
+        return "static_cast<std::size_t>(std::count_if(" + collection + ".begin(), " + collection + ".end(), "
+                + "[](const " + elementType + "& item) { return " + predicate + "; }))";
     }
 
     private String resolveFilterElementType(FilterProjectionExpression filterExpr) {

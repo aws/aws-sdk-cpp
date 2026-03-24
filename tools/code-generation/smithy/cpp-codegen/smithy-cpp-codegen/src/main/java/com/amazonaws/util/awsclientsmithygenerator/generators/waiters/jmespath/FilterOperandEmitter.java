@@ -98,8 +98,8 @@ public class FilterOperandEmitter extends UnsupportedExpressionVisitor<String> {
         
         String predicate = filterExpr.getComparison().accept(
             new FilterPredicateEmitter("inner", model, innerElementShape, smithyServiceName));
-        return "std::count_if(" + collection + ".begin(), " + collection + ".end(), "
-                + "[](const " + innerElementType + "& inner) { return " + predicate + "; })";
+        return "static_cast<std::size_t>(std::count_if(" + collection + ".begin(), " + collection + ".end(), "
+                + "[](const " + innerElementType + "& inner) { return " + predicate + "; }))";
     }
 
     private String resolveInnerElementType(JmespathExpression collectionExpr) {
