@@ -187,12 +187,14 @@ CreateInvocationOutcome BedrockAgentRuntimeClient::CreateInvocation(const Create
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateInvocationOutcome>(
       [&]() -> CreateInvocationOutcome {
-        return CreateInvocationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
-                                                              [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                resolvedEndpoint.AddPathSegments("/sessions/");
-                                                                resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
-                                                                resolvedEndpoint.AddPathSegments("/invocations/");
-                                                              }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/sessions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/invocations/");
+                                             });
+        return result.IsSuccess() ? CreateInvocationOutcome(CreateInvocationResult(result.GetResultWithOwnership()))
+                                  : CreateInvocationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -213,9 +215,11 @@ CreateSessionOutcome BedrockAgentRuntimeClient::CreateSession(const CreateSessio
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateSessionOutcome>(
       [&]() -> CreateSessionOutcome {
-        return CreateSessionOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/sessions/"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/sessions/"); });
+        return result.IsSuccess() ? CreateSessionOutcome(CreateSessionResult(result.GetResultWithOwnership()))
+                                  : CreateSessionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -246,15 +250,16 @@ DeleteAgentMemoryOutcome BedrockAgentRuntimeClient::DeleteAgentMemory(const Dele
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteAgentMemoryOutcome>(
       [&]() -> DeleteAgentMemoryOutcome {
-        return DeleteAgentMemoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                               Aws::Http::HttpMethod::HTTP_DELETE,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 resolvedEndpoint.AddPathSegments("/agents/");
-                                                                 resolvedEndpoint.AddPathSegment(request.GetAgentId());
-                                                                 resolvedEndpoint.AddPathSegments("/agentAliases/");
-                                                                 resolvedEndpoint.AddPathSegment(request.GetAgentAliasId());
-                                                                 resolvedEndpoint.AddPathSegments("/memories");
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/agents/");
+                                               resolvedEndpoint.AddPathSegment(request.GetAgentId());
+                                               resolvedEndpoint.AddPathSegments("/agentAliases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetAgentAliasId());
+                                               resolvedEndpoint.AddPathSegments("/memories");
+                                             });
+        return result.IsSuccess() ? DeleteAgentMemoryOutcome(DeleteAgentMemoryResult(result.GetResultWithOwnership()))
+                                  : DeleteAgentMemoryOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -280,11 +285,13 @@ DeleteSessionOutcome BedrockAgentRuntimeClient::DeleteSession(const DeleteSessio
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteSessionOutcome>(
       [&]() -> DeleteSessionOutcome {
-        return DeleteSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                                           [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                             resolvedEndpoint.AddPathSegments("/sessions/");
-                                                             resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
-                                                           }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/sessions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
+                                             });
+        return result.IsSuccess() ? DeleteSessionOutcome(DeleteSessionResult(result.GetResultWithOwnership()))
+                                  : DeleteSessionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -310,11 +317,13 @@ EndSessionOutcome BedrockAgentRuntimeClient::EndSession(const EndSessionRequest&
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<EndSessionOutcome>(
       [&]() -> EndSessionOutcome {
-        return EndSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
-                                                        [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                          resolvedEndpoint.AddPathSegments("/sessions/");
-                                                          resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
-                                                        }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/sessions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
+                                             });
+        return result.IsSuccess() ? EndSessionOutcome(EndSessionResult(result.GetResultWithOwnership()))
+                                  : EndSessionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -335,9 +344,11 @@ GenerateQueryOutcome BedrockAgentRuntimeClient::GenerateQuery(const GenerateQuer
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GenerateQueryOutcome>(
       [&]() -> GenerateQueryOutcome {
-        return GenerateQueryOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/generateQuery"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/generateQuery"); });
+        return result.IsSuccess() ? GenerateQueryOutcome(GenerateQueryResult(result.GetResultWithOwnership()))
+                                  : GenerateQueryOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -378,14 +389,16 @@ GetAgentMemoryOutcome BedrockAgentRuntimeClient::GetAgentMemory(const GetAgentMe
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAgentMemoryOutcome>(
       [&]() -> GetAgentMemoryOutcome {
-        return GetAgentMemoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                              resolvedEndpoint.AddPathSegments("/agents/");
-                                                              resolvedEndpoint.AddPathSegment(request.GetAgentId());
-                                                              resolvedEndpoint.AddPathSegments("/agentAliases/");
-                                                              resolvedEndpoint.AddPathSegment(request.GetAgentAliasId());
-                                                              resolvedEndpoint.AddPathSegments("/memories");
-                                                            }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/agents/");
+                                               resolvedEndpoint.AddPathSegment(request.GetAgentId());
+                                               resolvedEndpoint.AddPathSegments("/agentAliases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetAgentAliasId());
+                                               resolvedEndpoint.AddPathSegments("/memories");
+                                             });
+        return result.IsSuccess() ? GetAgentMemoryOutcome(GetAgentMemoryResult(result.GetResultWithOwnership()))
+                                  : GetAgentMemoryOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -421,17 +434,18 @@ GetExecutionFlowSnapshotOutcome BedrockAgentRuntimeClient::GetExecutionFlowSnaps
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetExecutionFlowSnapshotOutcome>(
       [&]() -> GetExecutionFlowSnapshotOutcome {
-        return GetExecutionFlowSnapshotOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                      Aws::Http::HttpMethod::HTTP_GET,
-                                                                      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                        resolvedEndpoint.AddPathSegments("/flows/");
-                                                                        resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
-                                                                        resolvedEndpoint.AddPathSegments("/aliases/");
-                                                                        resolvedEndpoint.AddPathSegment(request.GetFlowAliasIdentifier());
-                                                                        resolvedEndpoint.AddPathSegments("/executions/");
-                                                                        resolvedEndpoint.AddPathSegment(request.GetExecutionIdentifier());
-                                                                        resolvedEndpoint.AddPathSegments("/flowsnapshot");
-                                                                      }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/flows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/aliases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetFlowAliasIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/executions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetExecutionIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/flowsnapshot");
+                                             });
+        return result.IsSuccess() ? GetExecutionFlowSnapshotOutcome(GetExecutionFlowSnapshotResult(result.GetResultWithOwnership()))
+                                  : GetExecutionFlowSnapshotOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -467,15 +481,17 @@ GetFlowExecutionOutcome BedrockAgentRuntimeClient::GetFlowExecution(const GetFlo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetFlowExecutionOutcome>(
       [&]() -> GetFlowExecutionOutcome {
-        return GetFlowExecutionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                              [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                resolvedEndpoint.AddPathSegments("/flows/");
-                                                                resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
-                                                                resolvedEndpoint.AddPathSegments("/aliases/");
-                                                                resolvedEndpoint.AddPathSegment(request.GetFlowAliasIdentifier());
-                                                                resolvedEndpoint.AddPathSegments("/executions/");
-                                                                resolvedEndpoint.AddPathSegment(request.GetExecutionIdentifier());
-                                                              }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/flows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/aliases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetFlowAliasIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/executions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetExecutionIdentifier());
+                                             });
+        return result.IsSuccess() ? GetFlowExecutionOutcome(GetFlowExecutionResult(result.GetResultWithOwnership()))
+                                  : GetFlowExecutionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -506,13 +522,15 @@ GetInvocationStepOutcome BedrockAgentRuntimeClient::GetInvocationStep(const GetI
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetInvocationStepOutcome>(
       [&]() -> GetInvocationStepOutcome {
-        return GetInvocationStepOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 resolvedEndpoint.AddPathSegments("/sessions/");
-                                                                 resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
-                                                                 resolvedEndpoint.AddPathSegments("/invocationSteps/");
-                                                                 resolvedEndpoint.AddPathSegment(request.GetInvocationStepId());
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/sessions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/invocationSteps/");
+                                               resolvedEndpoint.AddPathSegment(request.GetInvocationStepId());
+                                             });
+        return result.IsSuccess() ? GetInvocationStepOutcome(GetInvocationStepResult(result.GetResultWithOwnership()))
+                                  : GetInvocationStepOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -538,11 +556,13 @@ GetSessionOutcome BedrockAgentRuntimeClient::GetSession(const GetSessionRequest&
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSessionOutcome>(
       [&]() -> GetSessionOutcome {
-        return GetSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                        [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                          resolvedEndpoint.AddPathSegments("/sessions/");
-                                                          resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
-                                                        }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/sessions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
+                                             });
+        return result.IsSuccess() ? GetSessionOutcome(GetSessionResult(result.GetResultWithOwnership()))
+                                  : GetSessionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -731,17 +751,18 @@ ListFlowExecutionEventsOutcome BedrockAgentRuntimeClient::ListFlowExecutionEvent
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListFlowExecutionEventsOutcome>(
       [&]() -> ListFlowExecutionEventsOutcome {
-        return ListFlowExecutionEventsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                     Aws::Http::HttpMethod::HTTP_GET,
-                                                                     [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                       resolvedEndpoint.AddPathSegments("/flows/");
-                                                                       resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
-                                                                       resolvedEndpoint.AddPathSegments("/aliases/");
-                                                                       resolvedEndpoint.AddPathSegment(request.GetFlowAliasIdentifier());
-                                                                       resolvedEndpoint.AddPathSegments("/executions/");
-                                                                       resolvedEndpoint.AddPathSegment(request.GetExecutionIdentifier());
-                                                                       resolvedEndpoint.AddPathSegments("/events");
-                                                                     }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/flows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/aliases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetFlowAliasIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/executions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetExecutionIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/events");
+                                             });
+        return result.IsSuccess() ? ListFlowExecutionEventsOutcome(ListFlowExecutionEventsResult(result.GetResultWithOwnership()))
+                                  : ListFlowExecutionEventsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -767,12 +788,14 @@ ListFlowExecutionsOutcome BedrockAgentRuntimeClient::ListFlowExecutions(const Li
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListFlowExecutionsOutcome>(
       [&]() -> ListFlowExecutionsOutcome {
-        return ListFlowExecutionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                                [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                  resolvedEndpoint.AddPathSegments("/flows/");
-                                                                  resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
-                                                                  resolvedEndpoint.AddPathSegments("/executions");
-                                                                }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/flows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/executions");
+                                             });
+        return result.IsSuccess() ? ListFlowExecutionsOutcome(ListFlowExecutionsResult(result.GetResultWithOwnership()))
+                                  : ListFlowExecutionsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -798,13 +821,14 @@ ListInvocationStepsOutcome BedrockAgentRuntimeClient::ListInvocationSteps(const 
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListInvocationStepsOutcome>(
       [&]() -> ListInvocationStepsOutcome {
-        return ListInvocationStepsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                 Aws::Http::HttpMethod::HTTP_POST,
-                                                                 [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                   resolvedEndpoint.AddPathSegments("/sessions/");
-                                                                   resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
-                                                                   resolvedEndpoint.AddPathSegments("/invocationSteps/");
-                                                                 }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/sessions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/invocationSteps/");
+                                             });
+        return result.IsSuccess() ? ListInvocationStepsOutcome(ListInvocationStepsResult(result.GetResultWithOwnership()))
+                                  : ListInvocationStepsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -830,12 +854,14 @@ ListInvocationsOutcome BedrockAgentRuntimeClient::ListInvocations(const ListInvo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListInvocationsOutcome>(
       [&]() -> ListInvocationsOutcome {
-        return ListInvocationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                               resolvedEndpoint.AddPathSegments("/sessions/");
-                                                               resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
-                                                               resolvedEndpoint.AddPathSegments("/invocations/");
-                                                             }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/sessions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/invocations/");
+                                             });
+        return result.IsSuccess() ? ListInvocationsOutcome(ListInvocationsResult(result.GetResultWithOwnership()))
+                                  : ListInvocationsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -856,9 +882,11 @@ ListSessionsOutcome BedrockAgentRuntimeClient::ListSessions(const ListSessionsRe
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListSessionsOutcome>(
       [&]() -> ListSessionsOutcome {
-        return ListSessionsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/sessions/"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/sessions/"); });
+        return result.IsSuccess() ? ListSessionsOutcome(ListSessionsResult(result.GetResultWithOwnership()))
+                                  : ListSessionsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -884,11 +912,13 @@ ListTagsForResourceOutcome BedrockAgentRuntimeClient::ListTagsForResource(const 
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
       [&]() -> ListTagsForResourceOutcome {
-        return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                                 [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                   resolvedEndpoint.AddPathSegments("/tags/");
-                                                                   resolvedEndpoint.AddPathSegment(request.GetResourceArn());
-                                                                 }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/tags/");
+                                               resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+                                             });
+        return result.IsSuccess() ? ListTagsForResourceOutcome(ListTagsForResourceResult(result.GetResultWithOwnership()))
+                                  : ListTagsForResourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -949,12 +979,14 @@ PutInvocationStepOutcome BedrockAgentRuntimeClient::PutInvocationStep(const PutI
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutInvocationStepOutcome>(
       [&]() -> PutInvocationStepOutcome {
-        return PutInvocationStepOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 resolvedEndpoint.AddPathSegments("/sessions/");
-                                                                 resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
-                                                                 resolvedEndpoint.AddPathSegments("/invocationSteps/");
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/sessions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/invocationSteps/");
+                                             });
+        return result.IsSuccess() ? PutInvocationStepOutcome(PutInvocationStepResult(result.GetResultWithOwnership()))
+                                  : PutInvocationStepOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -975,9 +1007,10 @@ RerankOutcome BedrockAgentRuntimeClient::Rerank(const RerankRequest& request) co
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RerankOutcome>(
       [&]() -> RerankOutcome {
-        return RerankOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/rerank"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/rerank"); });
+        return result.IsSuccess() ? RerankOutcome(RerankSdkResult(result.GetResultWithOwnership())) : RerankOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1003,12 +1036,13 @@ RetrieveOutcome BedrockAgentRuntimeClient::Retrieve(const RetrieveRequest& reque
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RetrieveOutcome>(
       [&]() -> RetrieveOutcome {
-        return RetrieveOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                        resolvedEndpoint.AddPathSegments("/knowledgebases/");
-                                                        resolvedEndpoint.AddPathSegment(request.GetKnowledgeBaseId());
-                                                        resolvedEndpoint.AddPathSegments("/retrieve");
-                                                      }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/knowledgebases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetKnowledgeBaseId());
+                                               resolvedEndpoint.AddPathSegments("/retrieve");
+                                             });
+        return result.IsSuccess() ? RetrieveOutcome(RetrieveResult(result.GetResultWithOwnership())) : RetrieveOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1029,9 +1063,11 @@ RetrieveAndGenerateOutcome BedrockAgentRuntimeClient::RetrieveAndGenerate(const 
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RetrieveAndGenerateOutcome>(
       [&]() -> RetrieveAndGenerateOutcome {
-        return RetrieveAndGenerateOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/retrieveAndGenerate"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/retrieveAndGenerate"); });
+        return result.IsSuccess() ? RetrieveAndGenerateOutcome(RetrieveAndGenerateResult(result.GetResultWithOwnership()))
+                                  : RetrieveAndGenerateOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1097,14 +1133,16 @@ StartFlowExecutionOutcome BedrockAgentRuntimeClient::StartFlowExecution(const St
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartFlowExecutionOutcome>(
       [&]() -> StartFlowExecutionOutcome {
-        return StartFlowExecutionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                                [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                  resolvedEndpoint.AddPathSegments("/flows/");
-                                                                  resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
-                                                                  resolvedEndpoint.AddPathSegments("/aliases/");
-                                                                  resolvedEndpoint.AddPathSegment(request.GetFlowAliasIdentifier());
-                                                                  resolvedEndpoint.AddPathSegments("/executions");
-                                                                }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/flows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/aliases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetFlowAliasIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/executions");
+                                             });
+        return result.IsSuccess() ? StartFlowExecutionOutcome(StartFlowExecutionResult(result.GetResultWithOwnership()))
+                                  : StartFlowExecutionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1140,16 +1178,18 @@ StopFlowExecutionOutcome BedrockAgentRuntimeClient::StopFlowExecution(const Stop
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StopFlowExecutionOutcome>(
       [&]() -> StopFlowExecutionOutcome {
-        return StopFlowExecutionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 resolvedEndpoint.AddPathSegments("/flows/");
-                                                                 resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
-                                                                 resolvedEndpoint.AddPathSegments("/aliases/");
-                                                                 resolvedEndpoint.AddPathSegment(request.GetFlowAliasIdentifier());
-                                                                 resolvedEndpoint.AddPathSegments("/executions/");
-                                                                 resolvedEndpoint.AddPathSegment(request.GetExecutionIdentifier());
-                                                                 resolvedEndpoint.AddPathSegments("/stop");
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/flows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetFlowIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/aliases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetFlowAliasIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/executions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetExecutionIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/stop");
+                                             });
+        return result.IsSuccess() ? StopFlowExecutionOutcome(StopFlowExecutionResult(result.GetResultWithOwnership()))
+                                  : StopFlowExecutionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1175,11 +1215,13 @@ TagResourceOutcome BedrockAgentRuntimeClient::TagResource(const TagResourceReque
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
       [&]() -> TagResourceOutcome {
-        return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                         [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                           resolvedEndpoint.AddPathSegments("/tags/");
-                                                           resolvedEndpoint.AddPathSegment(request.GetResourceArn());
-                                                         }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/tags/");
+                                               resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+                                             });
+        return result.IsSuccess() ? TagResourceOutcome(TagResourceResult(result.GetResultWithOwnership()))
+                                  : TagResourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1210,11 +1252,13 @@ UntagResourceOutcome BedrockAgentRuntimeClient::UntagResource(const UntagResourc
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
       [&]() -> UntagResourceOutcome {
-        return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                                           [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                             resolvedEndpoint.AddPathSegments("/tags/");
-                                                             resolvedEndpoint.AddPathSegment(request.GetResourceArn());
-                                                           }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/tags/");
+                                               resolvedEndpoint.AddPathSegment(request.GetResourceArn());
+                                             });
+        return result.IsSuccess() ? UntagResourceOutcome(UntagResourceResult(result.GetResultWithOwnership()))
+                                  : UntagResourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1240,11 +1284,13 @@ UpdateSessionOutcome BedrockAgentRuntimeClient::UpdateSession(const UpdateSessio
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateSessionOutcome>(
       [&]() -> UpdateSessionOutcome {
-        return UpdateSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
-                                                           [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                             resolvedEndpoint.AddPathSegments("/sessions/");
-                                                             resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
-                                                           }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/sessions/");
+                                               resolvedEndpoint.AddPathSegment(request.GetSessionIdentifier());
+                                             });
+        return result.IsSuccess() ? UpdateSessionOutcome(UpdateSessionResult(result.GetResultWithOwnership()))
+                                  : UpdateSessionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

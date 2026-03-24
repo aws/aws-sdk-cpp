@@ -187,7 +187,8 @@ AddTagsOutcome MachineLearningClient::AddTags(const AddTagsRequest& request) con
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return AddTagsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? AddTagsOutcome(AddTagsResult(result.GetResultWithOwnership())) : AddTagsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -214,7 +215,9 @@ CreateBatchPredictionOutcome MachineLearningClient::CreateBatchPrediction(const 
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBatchPrediction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return CreateBatchPredictionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateBatchPredictionOutcome(CreateBatchPredictionResult(result.GetResultWithOwnership()))
+                                  : CreateBatchPredictionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -241,8 +244,9 @@ CreateDataSourceFromRDSOutcome MachineLearningClient::CreateDataSourceFromRDS(co
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataSourceFromRDS, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return CreateDataSourceFromRDSOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateDataSourceFromRDSOutcome(CreateDataSourceFromRDSResult(result.GetResultWithOwnership()))
+                                  : CreateDataSourceFromRDSOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -270,8 +274,9 @@ CreateDataSourceFromRedshiftOutcome MachineLearningClient::CreateDataSourceFromR
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataSourceFromRedshift, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        return CreateDataSourceFromRedshiftOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateDataSourceFromRedshiftOutcome(CreateDataSourceFromRedshiftResult(result.GetResultWithOwnership()))
+                                  : CreateDataSourceFromRedshiftOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -298,7 +303,9 @@ CreateDataSourceFromS3Outcome MachineLearningClient::CreateDataSourceFromS3(cons
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataSourceFromS3, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return CreateDataSourceFromS3Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateDataSourceFromS3Outcome(CreateDataSourceFromS3Result(result.GetResultWithOwnership()))
+                                  : CreateDataSourceFromS3Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -325,7 +332,9 @@ CreateEvaluationOutcome MachineLearningClient::CreateEvaluation(const CreateEval
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return CreateEvaluationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateEvaluationOutcome(CreateEvaluationResult(result.GetResultWithOwnership()))
+                                  : CreateEvaluationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -352,7 +361,9 @@ CreateMLModelOutcome MachineLearningClient::CreateMLModel(const CreateMLModelReq
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMLModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return CreateMLModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateMLModelOutcome(CreateMLModelResult(result.GetResultWithOwnership()))
+                                  : CreateMLModelOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -379,7 +390,9 @@ CreateRealtimeEndpointOutcome MachineLearningClient::CreateRealtimeEndpoint(cons
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRealtimeEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return CreateRealtimeEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateRealtimeEndpointOutcome(CreateRealtimeEndpointResult(result.GetResultWithOwnership()))
+                                  : CreateRealtimeEndpointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -406,7 +419,9 @@ DeleteBatchPredictionOutcome MachineLearningClient::DeleteBatchPrediction(const 
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBatchPrediction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return DeleteBatchPredictionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DeleteBatchPredictionOutcome(DeleteBatchPredictionResult(result.GetResultWithOwnership()))
+                                  : DeleteBatchPredictionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -433,7 +448,9 @@ DeleteDataSourceOutcome MachineLearningClient::DeleteDataSource(const DeleteData
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return DeleteDataSourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DeleteDataSourceOutcome(DeleteDataSourceResult(result.GetResultWithOwnership()))
+                                  : DeleteDataSourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -460,7 +477,9 @@ DeleteEvaluationOutcome MachineLearningClient::DeleteEvaluation(const DeleteEval
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return DeleteEvaluationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DeleteEvaluationOutcome(DeleteEvaluationResult(result.GetResultWithOwnership()))
+                                  : DeleteEvaluationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -487,7 +506,9 @@ DeleteMLModelOutcome MachineLearningClient::DeleteMLModel(const DeleteMLModelReq
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMLModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return DeleteMLModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DeleteMLModelOutcome(DeleteMLModelResult(result.GetResultWithOwnership()))
+                                  : DeleteMLModelOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -514,7 +535,9 @@ DeleteRealtimeEndpointOutcome MachineLearningClient::DeleteRealtimeEndpoint(cons
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRealtimeEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return DeleteRealtimeEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DeleteRealtimeEndpointOutcome(DeleteRealtimeEndpointResult(result.GetResultWithOwnership()))
+                                  : DeleteRealtimeEndpointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -541,7 +564,9 @@ DeleteTagsOutcome MachineLearningClient::DeleteTags(const DeleteTagsRequest& req
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return DeleteTagsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DeleteTagsOutcome(DeleteTagsResult(result.GetResultWithOwnership()))
+                                  : DeleteTagsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -568,8 +593,9 @@ DescribeBatchPredictionsOutcome MachineLearningClient::DescribeBatchPredictions(
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBatchPredictions, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        return DescribeBatchPredictionsOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DescribeBatchPredictionsOutcome(DescribeBatchPredictionsResult(result.GetResultWithOwnership()))
+                                  : DescribeBatchPredictionsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -596,7 +622,9 @@ DescribeDataSourcesOutcome MachineLearningClient::DescribeDataSources(const Desc
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDataSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return DescribeDataSourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DescribeDataSourcesOutcome(DescribeDataSourcesResult(result.GetResultWithOwnership()))
+                                  : DescribeDataSourcesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -623,7 +651,9 @@ DescribeEvaluationsOutcome MachineLearningClient::DescribeEvaluations(const Desc
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEvaluations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return DescribeEvaluationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DescribeEvaluationsOutcome(DescribeEvaluationsResult(result.GetResultWithOwnership()))
+                                  : DescribeEvaluationsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -650,7 +680,9 @@ DescribeMLModelsOutcome MachineLearningClient::DescribeMLModels(const DescribeML
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMLModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return DescribeMLModelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DescribeMLModelsOutcome(DescribeMLModelsResult(result.GetResultWithOwnership()))
+                                  : DescribeMLModelsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -677,7 +709,9 @@ DescribeTagsOutcome MachineLearningClient::DescribeTags(const DescribeTagsReques
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return DescribeTagsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DescribeTagsOutcome(DescribeTagsResult(result.GetResultWithOwnership()))
+                                  : DescribeTagsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -704,7 +738,9 @@ GetBatchPredictionOutcome MachineLearningClient::GetBatchPrediction(const GetBat
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBatchPrediction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return GetBatchPredictionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetBatchPredictionOutcome(GetBatchPredictionResult(result.GetResultWithOwnership()))
+                                  : GetBatchPredictionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -731,7 +767,9 @@ GetDataSourceOutcome MachineLearningClient::GetDataSource(const GetDataSourceReq
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return GetDataSourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetDataSourceOutcome(GetDataSourceResult(result.GetResultWithOwnership()))
+                                  : GetDataSourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -758,7 +796,9 @@ GetEvaluationOutcome MachineLearningClient::GetEvaluation(const GetEvaluationReq
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return GetEvaluationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetEvaluationOutcome(GetEvaluationResult(result.GetResultWithOwnership()))
+                                  : GetEvaluationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -785,7 +825,9 @@ GetMLModelOutcome MachineLearningClient::GetMLModel(const GetMLModelRequest& req
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMLModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return GetMLModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetMLModelOutcome(GetMLModelResult(result.GetResultWithOwnership()))
+                                  : GetMLModelOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -812,7 +854,8 @@ PredictOutcome MachineLearningClient::Predict(const PredictRequest& request) con
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Predict, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return PredictOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? PredictOutcome(PredictResult(result.GetResultWithOwnership())) : PredictOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -839,7 +882,9 @@ UpdateBatchPredictionOutcome MachineLearningClient::UpdateBatchPrediction(const 
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBatchPrediction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return UpdateBatchPredictionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateBatchPredictionOutcome(UpdateBatchPredictionResult(result.GetResultWithOwnership()))
+                                  : UpdateBatchPredictionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -866,7 +911,9 @@ UpdateDataSourceOutcome MachineLearningClient::UpdateDataSource(const UpdateData
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return UpdateDataSourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateDataSourceOutcome(UpdateDataSourceResult(result.GetResultWithOwnership()))
+                                  : UpdateDataSourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -893,7 +940,9 @@ UpdateEvaluationOutcome MachineLearningClient::UpdateEvaluation(const UpdateEval
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return UpdateEvaluationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateEvaluationOutcome(UpdateEvaluationResult(result.GetResultWithOwnership()))
+                                  : UpdateEvaluationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -920,7 +969,9 @@ UpdateMLModelOutcome MachineLearningClient::UpdateMLModel(const UpdateMLModelReq
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMLModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        return UpdateMLModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateMLModelOutcome(UpdateMLModelResult(result.GetResultWithOwnership()))
+                                  : UpdateMLModelOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -214,8 +214,9 @@ InvokeEndpointOutcome SageMakerRuntimeClient::InvokeEndpoint(const InvokeEndpoin
         endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/invocations");
-        return InvokeEndpointOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? InvokeEndpointOutcome(InvokeEndpointResult(result.GetResultWithOwnership()))
+                                  : InvokeEndpointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -233,15 +234,35 @@ InvokeEndpointAsyncOutcome SageMakerRuntimeClient::InvokeEndpointAsync(const Inv
     return InvokeEndpointAsyncOutcome(Aws::Client::AWSError<SageMakerRuntimeErrors>(
         SageMakerRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputLocation]", false));
   }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointName());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/async-invocations");
-  };
-
-  return InvokeEndpointAsyncOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, InvokeEndpointAsync, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, InvokeEndpointAsync, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".InvokeEndpointAsync",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<InvokeEndpointAsyncOutcome>(
+      [&]() -> InvokeEndpointAsyncOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InvokeEndpointAsync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointName());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/async-invocations");
+        auto result =
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+        return result.IsSuccess() ? InvokeEndpointAsyncOutcome(InvokeEndpointAsyncResult(result.GetResultWithOwnership()))
+                                  : InvokeEndpointAsyncOutcome(result.GetError());
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 InvokeEndpointWithResponseStreamOutcome SageMakerRuntimeClient::InvokeEndpointWithResponseStream(

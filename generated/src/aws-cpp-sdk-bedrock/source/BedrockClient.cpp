@@ -279,11 +279,12 @@ BatchDeleteEvaluationJobOutcome BedrockClient::BatchDeleteEvaluationJob(const Ba
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<BatchDeleteEvaluationJobOutcome>(
       [&]() -> BatchDeleteEvaluationJobOutcome {
-        return BatchDeleteEvaluationJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                      Aws::Http::HttpMethod::HTTP_POST,
-                                                                      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                        resolvedEndpoint.AddPathSegments("/evaluation-jobs/batch-delete");
-                                                                      }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/evaluation-jobs/batch-delete");
+                                             });
+        return result.IsSuccess() ? BatchDeleteEvaluationJobOutcome(BatchDeleteEvaluationJobResult(result.GetResultWithOwnership()))
+                                  : BatchDeleteEvaluationJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -317,15 +318,17 @@ CancelAutomatedReasoningPolicyBuildWorkflowOutcome BedrockClient::CancelAutomate
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CancelAutomatedReasoningPolicyBuildWorkflowOutcome>(
       [&]() -> CancelAutomatedReasoningPolicyBuildWorkflowOutcome {
-        return CancelAutomatedReasoningPolicyBuildWorkflowOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/build-workflows/");
-                                     resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
-                                     resolvedEndpoint.AddPathSegments("/cancel");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/build-workflows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
+                                               resolvedEndpoint.AddPathSegments("/cancel");
+                                             });
+        return result.IsSuccess() ? CancelAutomatedReasoningPolicyBuildWorkflowOutcome(
+                                        CancelAutomatedReasoningPolicyBuildWorkflowResult(result.GetResultWithOwnership()))
+                                  : CancelAutomatedReasoningPolicyBuildWorkflowOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -347,11 +350,13 @@ CreateAutomatedReasoningPolicyOutcome BedrockClient::CreateAutomatedReasoningPol
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateAutomatedReasoningPolicyOutcome>(
       [&]() -> CreateAutomatedReasoningPolicyOutcome {
-        return CreateAutomatedReasoningPolicyOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies");
+                                             });
+        return result.IsSuccess()
+                   ? CreateAutomatedReasoningPolicyOutcome(CreateAutomatedReasoningPolicyResult(result.GetResultWithOwnership()))
+                   : CreateAutomatedReasoningPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -379,13 +384,15 @@ CreateAutomatedReasoningPolicyTestCaseOutcome BedrockClient::CreateAutomatedReas
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateAutomatedReasoningPolicyTestCaseOutcome>(
       [&]() -> CreateAutomatedReasoningPolicyTestCaseOutcome {
-        return CreateAutomatedReasoningPolicyTestCaseOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/test-cases");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/test-cases");
+                                             });
+        return result.IsSuccess() ? CreateAutomatedReasoningPolicyTestCaseOutcome(
+                                        CreateAutomatedReasoningPolicyTestCaseResult(result.GetResultWithOwnership()))
+                                  : CreateAutomatedReasoningPolicyTestCaseOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -413,13 +420,15 @@ CreateAutomatedReasoningPolicyVersionOutcome BedrockClient::CreateAutomatedReaso
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateAutomatedReasoningPolicyVersionOutcome>(
       [&]() -> CreateAutomatedReasoningPolicyVersionOutcome {
-        return CreateAutomatedReasoningPolicyVersionOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/versions");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/versions");
+                                             });
+        return result.IsSuccess() ? CreateAutomatedReasoningPolicyVersionOutcome(
+                                        CreateAutomatedReasoningPolicyVersionResult(result.GetResultWithOwnership()))
+                                  : CreateAutomatedReasoningPolicyVersionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -440,10 +449,12 @@ CreateCustomModelOutcome BedrockClient::CreateCustomModel(const CreateCustomMode
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateCustomModelOutcome>(
       [&]() -> CreateCustomModelOutcome {
-        return CreateCustomModelOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 resolvedEndpoint.AddPathSegments("/custom-models/create-custom-model");
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/custom-models/create-custom-model");
+                                             });
+        return result.IsSuccess() ? CreateCustomModelOutcome(CreateCustomModelResult(result.GetResultWithOwnership()))
+                                  : CreateCustomModelOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -464,11 +475,12 @@ CreateCustomModelDeploymentOutcome BedrockClient::CreateCustomModelDeployment(co
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateCustomModelDeploymentOutcome>(
       [&]() -> CreateCustomModelDeploymentOutcome {
-        return CreateCustomModelDeploymentOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/model-customization/custom-model-deployments");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model-customization/custom-model-deployments");
+                                             });
+        return result.IsSuccess() ? CreateCustomModelDeploymentOutcome(CreateCustomModelDeploymentResult(result.GetResultWithOwnership()))
+                                  : CreateCustomModelDeploymentOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -489,9 +501,11 @@ CreateEvaluationJobOutcome BedrockClient::CreateEvaluationJob(const CreateEvalua
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateEvaluationJobOutcome>(
       [&]() -> CreateEvaluationJobOutcome {
-        return CreateEvaluationJobOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/evaluation-jobs"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/evaluation-jobs"); });
+        return result.IsSuccess() ? CreateEvaluationJobOutcome(CreateEvaluationJobResult(result.GetResultWithOwnership()))
+                                  : CreateEvaluationJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -513,11 +527,13 @@ CreateFoundationModelAgreementOutcome BedrockClient::CreateFoundationModelAgreem
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateFoundationModelAgreementOutcome>(
       [&]() -> CreateFoundationModelAgreementOutcome {
-        return CreateFoundationModelAgreementOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/create-foundation-model-agreement");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/create-foundation-model-agreement");
+                                             });
+        return result.IsSuccess()
+                   ? CreateFoundationModelAgreementOutcome(CreateFoundationModelAgreementResult(result.GetResultWithOwnership()))
+                   : CreateFoundationModelAgreementOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -538,9 +554,11 @@ CreateGuardrailOutcome BedrockClient::CreateGuardrail(const CreateGuardrailReque
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateGuardrailOutcome>(
       [&]() -> CreateGuardrailOutcome {
-        return CreateGuardrailOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/guardrails"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/guardrails"); });
+        return result.IsSuccess() ? CreateGuardrailOutcome(CreateGuardrailResult(result.GetResultWithOwnership()))
+                                  : CreateGuardrailOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -566,12 +584,13 @@ CreateGuardrailVersionOutcome BedrockClient::CreateGuardrailVersion(const Create
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateGuardrailVersionOutcome>(
       [&]() -> CreateGuardrailVersionOutcome {
-        return CreateGuardrailVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                    Aws::Http::HttpMethod::HTTP_POST,
-                                                                    [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                      resolvedEndpoint.AddPathSegments("/guardrails/");
-                                                                      resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
-                                                                    }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/guardrails/");
+                                               resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
+                                             });
+        return result.IsSuccess() ? CreateGuardrailVersionOutcome(CreateGuardrailVersionResult(result.GetResultWithOwnership()))
+                                  : CreateGuardrailVersionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -592,9 +611,11 @@ CreateInferenceProfileOutcome BedrockClient::CreateInferenceProfile(const Create
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateInferenceProfileOutcome>(
       [&]() -> CreateInferenceProfileOutcome {
-        return CreateInferenceProfileOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/inference-profiles"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/inference-profiles"); });
+        return result.IsSuccess() ? CreateInferenceProfileOutcome(CreateInferenceProfileResult(result.GetResultWithOwnership()))
+                                  : CreateInferenceProfileOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -616,11 +637,13 @@ CreateMarketplaceModelEndpointOutcome BedrockClient::CreateMarketplaceModelEndpo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateMarketplaceModelEndpointOutcome>(
       [&]() -> CreateMarketplaceModelEndpointOutcome {
-        return CreateMarketplaceModelEndpointOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints");
+                                             });
+        return result.IsSuccess()
+                   ? CreateMarketplaceModelEndpointOutcome(CreateMarketplaceModelEndpointResult(result.GetResultWithOwnership()))
+                   : CreateMarketplaceModelEndpointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -641,9 +664,11 @@ CreateModelCopyJobOutcome BedrockClient::CreateModelCopyJob(const CreateModelCop
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateModelCopyJobOutcome>(
       [&]() -> CreateModelCopyJobOutcome {
-        return CreateModelCopyJobOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-copy-jobs"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-copy-jobs"); });
+        return result.IsSuccess() ? CreateModelCopyJobOutcome(CreateModelCopyJobResult(result.GetResultWithOwnership()))
+                                  : CreateModelCopyJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -664,9 +689,11 @@ CreateModelCustomizationJobOutcome BedrockClient::CreateModelCustomizationJob(co
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateModelCustomizationJobOutcome>(
       [&]() -> CreateModelCustomizationJobOutcome {
-        return CreateModelCustomizationJobOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-customization-jobs"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-customization-jobs"); });
+        return result.IsSuccess() ? CreateModelCustomizationJobOutcome(CreateModelCustomizationJobResult(result.GetResultWithOwnership()))
+                                  : CreateModelCustomizationJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -687,9 +714,11 @@ CreateModelImportJobOutcome BedrockClient::CreateModelImportJob(const CreateMode
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateModelImportJobOutcome>(
       [&]() -> CreateModelImportJobOutcome {
-        return CreateModelImportJobOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-import-jobs"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-import-jobs"); });
+        return result.IsSuccess() ? CreateModelImportJobOutcome(CreateModelImportJobResult(result.GetResultWithOwnership()))
+                                  : CreateModelImportJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -710,9 +739,11 @@ CreateModelInvocationJobOutcome BedrockClient::CreateModelInvocationJob(const Cr
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateModelInvocationJobOutcome>(
       [&]() -> CreateModelInvocationJobOutcome {
-        return CreateModelInvocationJobOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-invocation-job"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-invocation-job"); });
+        return result.IsSuccess() ? CreateModelInvocationJobOutcome(CreateModelInvocationJobResult(result.GetResultWithOwnership()))
+                                  : CreateModelInvocationJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -733,9 +764,11 @@ CreatePromptRouterOutcome BedrockClient::CreatePromptRouter(const CreatePromptRo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreatePromptRouterOutcome>(
       [&]() -> CreatePromptRouterOutcome {
-        return CreatePromptRouterOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/prompt-routers"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/prompt-routers"); });
+        return result.IsSuccess() ? CreatePromptRouterOutcome(CreatePromptRouterResult(result.GetResultWithOwnership()))
+                                  : CreatePromptRouterOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -758,11 +791,13 @@ CreateProvisionedModelThroughputOutcome BedrockClient::CreateProvisionedModelThr
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateProvisionedModelThroughputOutcome>(
       [&]() -> CreateProvisionedModelThroughputOutcome {
-        return CreateProvisionedModelThroughputOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/provisioned-model-throughput");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/provisioned-model-throughput");
+                                             });
+        return result.IsSuccess()
+                   ? CreateProvisionedModelThroughputOutcome(CreateProvisionedModelThroughputResult(result.GetResultWithOwnership()))
+                   : CreateProvisionedModelThroughputOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -789,12 +824,14 @@ DeleteAutomatedReasoningPolicyOutcome BedrockClient::DeleteAutomatedReasoningPol
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteAutomatedReasoningPolicyOutcome>(
       [&]() -> DeleteAutomatedReasoningPolicyOutcome {
-        return DeleteAutomatedReasoningPolicyOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                             });
+        return result.IsSuccess()
+                   ? DeleteAutomatedReasoningPolicyOutcome(DeleteAutomatedReasoningPolicyResult(result.GetResultWithOwnership()))
+                   : DeleteAutomatedReasoningPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -833,14 +870,16 @@ DeleteAutomatedReasoningPolicyBuildWorkflowOutcome BedrockClient::DeleteAutomate
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteAutomatedReasoningPolicyBuildWorkflowOutcome>(
       [&]() -> DeleteAutomatedReasoningPolicyBuildWorkflowOutcome {
-        return DeleteAutomatedReasoningPolicyBuildWorkflowOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/build-workflows/");
-                                     resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/build-workflows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
+                                             });
+        return result.IsSuccess() ? DeleteAutomatedReasoningPolicyBuildWorkflowOutcome(
+                                        DeleteAutomatedReasoningPolicyBuildWorkflowResult(result.GetResultWithOwnership()))
+                                  : DeleteAutomatedReasoningPolicyBuildWorkflowOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -878,14 +917,16 @@ DeleteAutomatedReasoningPolicyTestCaseOutcome BedrockClient::DeleteAutomatedReas
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteAutomatedReasoningPolicyTestCaseOutcome>(
       [&]() -> DeleteAutomatedReasoningPolicyTestCaseOutcome {
-        return DeleteAutomatedReasoningPolicyTestCaseOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/test-cases/");
-                                     resolvedEndpoint.AddPathSegment(request.GetTestCaseId());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/test-cases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetTestCaseId());
+                                             });
+        return result.IsSuccess() ? DeleteAutomatedReasoningPolicyTestCaseOutcome(
+                                        DeleteAutomatedReasoningPolicyTestCaseResult(result.GetResultWithOwnership()))
+                                  : DeleteAutomatedReasoningPolicyTestCaseOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -911,12 +952,13 @@ DeleteCustomModelOutcome BedrockClient::DeleteCustomModel(const DeleteCustomMode
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteCustomModelOutcome>(
       [&]() -> DeleteCustomModelOutcome {
-        return DeleteCustomModelOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                               Aws::Http::HttpMethod::HTTP_DELETE,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 resolvedEndpoint.AddPathSegments("/custom-models/");
-                                                                 resolvedEndpoint.AddPathSegment(request.GetModelIdentifier());
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/custom-models/");
+                                               resolvedEndpoint.AddPathSegment(request.GetModelIdentifier());
+                                             });
+        return result.IsSuccess() ? DeleteCustomModelOutcome(DeleteCustomModelResult(result.GetResultWithOwnership()))
+                                  : DeleteCustomModelOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -942,12 +984,13 @@ DeleteCustomModelDeploymentOutcome BedrockClient::DeleteCustomModelDeployment(co
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteCustomModelDeploymentOutcome>(
       [&]() -> DeleteCustomModelDeploymentOutcome {
-        return DeleteCustomModelDeploymentOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/model-customization/custom-model-deployments/");
-                                     resolvedEndpoint.AddPathSegment(request.GetCustomModelDeploymentIdentifier());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model-customization/custom-model-deployments/");
+                                               resolvedEndpoint.AddPathSegment(request.GetCustomModelDeploymentIdentifier());
+                                             });
+        return result.IsSuccess() ? DeleteCustomModelDeploymentOutcome(DeleteCustomModelDeploymentResult(result.GetResultWithOwnership()))
+                                  : DeleteCustomModelDeploymentOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -975,12 +1018,14 @@ DeleteEnforcedGuardrailConfigurationOutcome BedrockClient::DeleteEnforcedGuardra
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteEnforcedGuardrailConfigurationOutcome>(
       [&]() -> DeleteEnforcedGuardrailConfigurationOutcome {
-        return DeleteEnforcedGuardrailConfigurationOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/enforcedGuardrailsConfiguration/");
-                                     resolvedEndpoint.AddPathSegment(request.GetConfigId());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/enforcedGuardrailsConfiguration/");
+                                               resolvedEndpoint.AddPathSegment(request.GetConfigId());
+                                             });
+        return result.IsSuccess() ? DeleteEnforcedGuardrailConfigurationOutcome(
+                                        DeleteEnforcedGuardrailConfigurationResult(result.GetResultWithOwnership()))
+                                  : DeleteEnforcedGuardrailConfigurationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1002,11 +1047,13 @@ DeleteFoundationModelAgreementOutcome BedrockClient::DeleteFoundationModelAgreem
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteFoundationModelAgreementOutcome>(
       [&]() -> DeleteFoundationModelAgreementOutcome {
-        return DeleteFoundationModelAgreementOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/delete-foundation-model-agreement");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/delete-foundation-model-agreement");
+                                             });
+        return result.IsSuccess()
+                   ? DeleteFoundationModelAgreementOutcome(DeleteFoundationModelAgreementResult(result.GetResultWithOwnership()))
+                   : DeleteFoundationModelAgreementOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1032,11 +1079,13 @@ DeleteGuardrailOutcome BedrockClient::DeleteGuardrail(const DeleteGuardrailReque
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteGuardrailOutcome>(
       [&]() -> DeleteGuardrailOutcome {
-        return DeleteGuardrailOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                               resolvedEndpoint.AddPathSegments("/guardrails/");
-                                                               resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
-                                                             }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/guardrails/");
+                                               resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
+                                             });
+        return result.IsSuccess() ? DeleteGuardrailOutcome(DeleteGuardrailResult(result.GetResultWithOwnership()))
+                                  : DeleteGuardrailOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1062,12 +1111,13 @@ DeleteImportedModelOutcome BedrockClient::DeleteImportedModel(const DeleteImport
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteImportedModelOutcome>(
       [&]() -> DeleteImportedModelOutcome {
-        return DeleteImportedModelOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                 Aws::Http::HttpMethod::HTTP_DELETE,
-                                                                 [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                   resolvedEndpoint.AddPathSegments("/imported-models/");
-                                                                   resolvedEndpoint.AddPathSegment(request.GetModelIdentifier());
-                                                                 }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/imported-models/");
+                                               resolvedEndpoint.AddPathSegment(request.GetModelIdentifier());
+                                             });
+        return result.IsSuccess() ? DeleteImportedModelOutcome(DeleteImportedModelResult(result.GetResultWithOwnership()))
+                                  : DeleteImportedModelOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1093,12 +1143,13 @@ DeleteInferenceProfileOutcome BedrockClient::DeleteInferenceProfile(const Delete
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteInferenceProfileOutcome>(
       [&]() -> DeleteInferenceProfileOutcome {
-        return DeleteInferenceProfileOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/inference-profiles/");
-                                     resolvedEndpoint.AddPathSegment(request.GetInferenceProfileIdentifier());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/inference-profiles/");
+                                               resolvedEndpoint.AddPathSegment(request.GetInferenceProfileIdentifier());
+                                             });
+        return result.IsSuccess() ? DeleteInferenceProfileOutcome(DeleteInferenceProfileResult(result.GetResultWithOwnership()))
+                                  : DeleteInferenceProfileOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1125,12 +1176,14 @@ DeleteMarketplaceModelEndpointOutcome BedrockClient::DeleteMarketplaceModelEndpo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteMarketplaceModelEndpointOutcome>(
       [&]() -> DeleteMarketplaceModelEndpointOutcome {
-        return DeleteMarketplaceModelEndpointOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints/");
-                                     resolvedEndpoint.AddPathSegment(request.GetEndpointArn());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints/");
+                                               resolvedEndpoint.AddPathSegment(request.GetEndpointArn());
+                                             });
+        return result.IsSuccess()
+                   ? DeleteMarketplaceModelEndpointOutcome(DeleteMarketplaceModelEndpointResult(result.GetResultWithOwnership()))
+                   : DeleteMarketplaceModelEndpointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1154,9 +1207,12 @@ DeleteModelInvocationLoggingConfigurationOutcome BedrockClient::DeleteModelInvoc
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteModelInvocationLoggingConfigurationOutcome>(
       [&]() -> DeleteModelInvocationLoggingConfigurationOutcome {
-        return DeleteModelInvocationLoggingConfigurationOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/logging/modelinvocations"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/logging/modelinvocations"); });
+        return result.IsSuccess() ? DeleteModelInvocationLoggingConfigurationOutcome(
+                                        DeleteModelInvocationLoggingConfigurationResult(result.GetResultWithOwnership()))
+                                  : DeleteModelInvocationLoggingConfigurationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1182,12 +1238,13 @@ DeletePromptRouterOutcome BedrockClient::DeletePromptRouter(const DeletePromptRo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeletePromptRouterOutcome>(
       [&]() -> DeletePromptRouterOutcome {
-        return DeletePromptRouterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                Aws::Http::HttpMethod::HTTP_DELETE,
-                                                                [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                  resolvedEndpoint.AddPathSegments("/prompt-routers/");
-                                                                  resolvedEndpoint.AddPathSegment(request.GetPromptRouterArn());
-                                                                }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/prompt-routers/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPromptRouterArn());
+                                             });
+        return result.IsSuccess() ? DeletePromptRouterOutcome(DeletePromptRouterResult(result.GetResultWithOwnership()))
+                                  : DeletePromptRouterOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1215,12 +1272,14 @@ DeleteProvisionedModelThroughputOutcome BedrockClient::DeleteProvisionedModelThr
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteProvisionedModelThroughputOutcome>(
       [&]() -> DeleteProvisionedModelThroughputOutcome {
-        return DeleteProvisionedModelThroughputOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/provisioned-model-throughput/");
-                                     resolvedEndpoint.AddPathSegment(request.GetProvisionedModelId());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/provisioned-model-throughput/");
+                                               resolvedEndpoint.AddPathSegment(request.GetProvisionedModelId());
+                                             });
+        return result.IsSuccess()
+                   ? DeleteProvisionedModelThroughputOutcome(DeleteProvisionedModelThroughputResult(result.GetResultWithOwnership()))
+                   : DeleteProvisionedModelThroughputOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1248,13 +1307,15 @@ DeregisterMarketplaceModelEndpointOutcome BedrockClient::DeregisterMarketplaceMo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeregisterMarketplaceModelEndpointOutcome>(
       [&]() -> DeregisterMarketplaceModelEndpointOutcome {
-        return DeregisterMarketplaceModelEndpointOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints/");
-                                     resolvedEndpoint.AddPathSegment(request.GetEndpointArn());
-                                     resolvedEndpoint.AddPathSegments("/registration");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints/");
+                                               resolvedEndpoint.AddPathSegment(request.GetEndpointArn());
+                                               resolvedEndpoint.AddPathSegments("/registration");
+                                             });
+        return result.IsSuccess()
+                   ? DeregisterMarketplaceModelEndpointOutcome(DeregisterMarketplaceModelEndpointResult(result.GetResultWithOwnership()))
+                   : DeregisterMarketplaceModelEndpointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1282,13 +1343,15 @@ ExportAutomatedReasoningPolicyVersionOutcome BedrockClient::ExportAutomatedReaso
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ExportAutomatedReasoningPolicyVersionOutcome>(
       [&]() -> ExportAutomatedReasoningPolicyVersionOutcome {
-        return ExportAutomatedReasoningPolicyVersionOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/export");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/export");
+                                             });
+        return result.IsSuccess() ? ExportAutomatedReasoningPolicyVersionOutcome(
+                                        ExportAutomatedReasoningPolicyVersionResult(result.GetResultWithOwnership()))
+                                  : ExportAutomatedReasoningPolicyVersionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1314,12 +1377,13 @@ GetAutomatedReasoningPolicyOutcome BedrockClient::GetAutomatedReasoningPolicy(co
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAutomatedReasoningPolicyOutcome>(
       [&]() -> GetAutomatedReasoningPolicyOutcome {
-        return GetAutomatedReasoningPolicyOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                             });
+        return result.IsSuccess() ? GetAutomatedReasoningPolicyOutcome(GetAutomatedReasoningPolicyResult(result.GetResultWithOwnership()))
+                                  : GetAutomatedReasoningPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1352,15 +1416,17 @@ GetAutomatedReasoningPolicyAnnotationsOutcome BedrockClient::GetAutomatedReasoni
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAutomatedReasoningPolicyAnnotationsOutcome>(
       [&]() -> GetAutomatedReasoningPolicyAnnotationsOutcome {
-        return GetAutomatedReasoningPolicyAnnotationsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/build-workflows/");
-                                     resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
-                                     resolvedEndpoint.AddPathSegments("/annotations");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/build-workflows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
+                                               resolvedEndpoint.AddPathSegments("/annotations");
+                                             });
+        return result.IsSuccess() ? GetAutomatedReasoningPolicyAnnotationsOutcome(
+                                        GetAutomatedReasoningPolicyAnnotationsResult(result.GetResultWithOwnership()))
+                                  : GetAutomatedReasoningPolicyAnnotationsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1394,14 +1460,16 @@ GetAutomatedReasoningPolicyBuildWorkflowOutcome BedrockClient::GetAutomatedReaso
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAutomatedReasoningPolicyBuildWorkflowOutcome>(
       [&]() -> GetAutomatedReasoningPolicyBuildWorkflowOutcome {
-        return GetAutomatedReasoningPolicyBuildWorkflowOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/build-workflows/");
-                                     resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/build-workflows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
+                                             });
+        return result.IsSuccess() ? GetAutomatedReasoningPolicyBuildWorkflowOutcome(
+                                        GetAutomatedReasoningPolicyBuildWorkflowResult(result.GetResultWithOwnership()))
+                                  : GetAutomatedReasoningPolicyBuildWorkflowOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1440,15 +1508,17 @@ GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutcome BedrockClient::GetAu
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutcome>(
       [&]() -> GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutcome {
-        return GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/build-workflows/");
-                                     resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
-                                     resolvedEndpoint.AddPathSegments("/result-assets");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/build-workflows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
+                                               resolvedEndpoint.AddPathSegments("/result-assets");
+                                             });
+        return result.IsSuccess() ? GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutcome(
+                                        GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResult(result.GetResultWithOwnership()))
+                                  : GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1481,15 +1551,17 @@ GetAutomatedReasoningPolicyNextScenarioOutcome BedrockClient::GetAutomatedReason
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAutomatedReasoningPolicyNextScenarioOutcome>(
       [&]() -> GetAutomatedReasoningPolicyNextScenarioOutcome {
-        return GetAutomatedReasoningPolicyNextScenarioOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/build-workflows/");
-                                     resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
-                                     resolvedEndpoint.AddPathSegments("/scenarios");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/build-workflows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
+                                               resolvedEndpoint.AddPathSegments("/scenarios");
+                                             });
+        return result.IsSuccess() ? GetAutomatedReasoningPolicyNextScenarioOutcome(
+                                        GetAutomatedReasoningPolicyNextScenarioResult(result.GetResultWithOwnership()))
+                                  : GetAutomatedReasoningPolicyNextScenarioOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1522,14 +1594,16 @@ GetAutomatedReasoningPolicyTestCaseOutcome BedrockClient::GetAutomatedReasoningP
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAutomatedReasoningPolicyTestCaseOutcome>(
       [&]() -> GetAutomatedReasoningPolicyTestCaseOutcome {
-        return GetAutomatedReasoningPolicyTestCaseOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/test-cases/");
-                                     resolvedEndpoint.AddPathSegment(request.GetTestCaseId());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/test-cases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetTestCaseId());
+                                             });
+        return result.IsSuccess()
+                   ? GetAutomatedReasoningPolicyTestCaseOutcome(GetAutomatedReasoningPolicyTestCaseResult(result.GetResultWithOwnership()))
+                   : GetAutomatedReasoningPolicyTestCaseOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1567,17 +1641,19 @@ GetAutomatedReasoningPolicyTestResultOutcome BedrockClient::GetAutomatedReasonin
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetAutomatedReasoningPolicyTestResultOutcome>(
       [&]() -> GetAutomatedReasoningPolicyTestResultOutcome {
-        return GetAutomatedReasoningPolicyTestResultOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/build-workflows/");
-                                     resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
-                                     resolvedEndpoint.AddPathSegments("/test-cases/");
-                                     resolvedEndpoint.AddPathSegment(request.GetTestCaseId());
-                                     resolvedEndpoint.AddPathSegments("/test-results");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/build-workflows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
+                                               resolvedEndpoint.AddPathSegments("/test-cases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetTestCaseId());
+                                               resolvedEndpoint.AddPathSegments("/test-results");
+                                             });
+        return result.IsSuccess() ? GetAutomatedReasoningPolicyTestResultOutcome(
+                                        GetAutomatedReasoningPolicyTestResultResult(result.GetResultWithOwnership()))
+                                  : GetAutomatedReasoningPolicyTestResultOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1603,11 +1679,13 @@ GetCustomModelOutcome BedrockClient::GetCustomModel(const GetCustomModelRequest&
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetCustomModelOutcome>(
       [&]() -> GetCustomModelOutcome {
-        return GetCustomModelOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                              resolvedEndpoint.AddPathSegments("/custom-models/");
-                                                              resolvedEndpoint.AddPathSegment(request.GetModelIdentifier());
-                                                            }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/custom-models/");
+                                               resolvedEndpoint.AddPathSegment(request.GetModelIdentifier());
+                                             });
+        return result.IsSuccess() ? GetCustomModelOutcome(GetCustomModelResult(result.GetResultWithOwnership()))
+                                  : GetCustomModelOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1633,12 +1711,13 @@ GetCustomModelDeploymentOutcome BedrockClient::GetCustomModelDeployment(const Ge
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetCustomModelDeploymentOutcome>(
       [&]() -> GetCustomModelDeploymentOutcome {
-        return GetCustomModelDeploymentOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/model-customization/custom-model-deployments/");
-                                     resolvedEndpoint.AddPathSegment(request.GetCustomModelDeploymentIdentifier());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model-customization/custom-model-deployments/");
+                                               resolvedEndpoint.AddPathSegment(request.GetCustomModelDeploymentIdentifier());
+                                             });
+        return result.IsSuccess() ? GetCustomModelDeploymentOutcome(GetCustomModelDeploymentResult(result.GetResultWithOwnership()))
+                                  : GetCustomModelDeploymentOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1664,11 +1743,13 @@ GetEvaluationJobOutcome BedrockClient::GetEvaluationJob(const GetEvaluationJobRe
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetEvaluationJobOutcome>(
       [&]() -> GetEvaluationJobOutcome {
-        return GetEvaluationJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                              [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                resolvedEndpoint.AddPathSegments("/evaluation-jobs/");
-                                                                resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
-                                                              }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/evaluation-jobs/");
+                                               resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
+                                             });
+        return result.IsSuccess() ? GetEvaluationJobOutcome(GetEvaluationJobResult(result.GetResultWithOwnership()))
+                                  : GetEvaluationJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1694,11 +1775,13 @@ GetFoundationModelOutcome BedrockClient::GetFoundationModel(const GetFoundationM
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetFoundationModelOutcome>(
       [&]() -> GetFoundationModelOutcome {
-        return GetFoundationModelOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                                [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                  resolvedEndpoint.AddPathSegments("/foundation-models/");
-                                                                  resolvedEndpoint.AddPathSegment(request.GetModelIdentifier());
-                                                                }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/foundation-models/");
+                                               resolvedEndpoint.AddPathSegment(request.GetModelIdentifier());
+                                             });
+        return result.IsSuccess() ? GetFoundationModelOutcome(GetFoundationModelResult(result.GetResultWithOwnership()))
+                                  : GetFoundationModelOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1725,12 +1808,14 @@ GetFoundationModelAvailabilityOutcome BedrockClient::GetFoundationModelAvailabil
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetFoundationModelAvailabilityOutcome>(
       [&]() -> GetFoundationModelAvailabilityOutcome {
-        return GetFoundationModelAvailabilityOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/foundation-model-availability/");
-                                     resolvedEndpoint.AddPathSegment(request.GetModelId());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/foundation-model-availability/");
+                                               resolvedEndpoint.AddPathSegment(request.GetModelId());
+                                             });
+        return result.IsSuccess()
+                   ? GetFoundationModelAvailabilityOutcome(GetFoundationModelAvailabilityResult(result.GetResultWithOwnership()))
+                   : GetFoundationModelAvailabilityOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1756,11 +1841,13 @@ GetGuardrailOutcome BedrockClient::GetGuardrail(const GetGuardrailRequest& reque
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetGuardrailOutcome>(
       [&]() -> GetGuardrailOutcome {
-        return GetGuardrailOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                          [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                            resolvedEndpoint.AddPathSegments("/guardrails/");
-                                                            resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
-                                                          }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/guardrails/");
+                                               resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
+                                             });
+        return result.IsSuccess() ? GetGuardrailOutcome(GetGuardrailResult(result.GetResultWithOwnership()))
+                                  : GetGuardrailOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1786,11 +1873,13 @@ GetImportedModelOutcome BedrockClient::GetImportedModel(const GetImportedModelRe
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetImportedModelOutcome>(
       [&]() -> GetImportedModelOutcome {
-        return GetImportedModelOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                              [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                resolvedEndpoint.AddPathSegments("/imported-models/");
-                                                                resolvedEndpoint.AddPathSegment(request.GetModelIdentifier());
-                                                              }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/imported-models/");
+                                               resolvedEndpoint.AddPathSegment(request.GetModelIdentifier());
+                                             });
+        return result.IsSuccess() ? GetImportedModelOutcome(GetImportedModelResult(result.GetResultWithOwnership()))
+                                  : GetImportedModelOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1816,11 +1905,13 @@ GetInferenceProfileOutcome BedrockClient::GetInferenceProfile(const GetInference
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetInferenceProfileOutcome>(
       [&]() -> GetInferenceProfileOutcome {
-        return GetInferenceProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                                 [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                   resolvedEndpoint.AddPathSegments("/inference-profiles/");
-                                                                   resolvedEndpoint.AddPathSegment(request.GetInferenceProfileIdentifier());
-                                                                 }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/inference-profiles/");
+                                               resolvedEndpoint.AddPathSegment(request.GetInferenceProfileIdentifier());
+                                             });
+        return result.IsSuccess() ? GetInferenceProfileOutcome(GetInferenceProfileResult(result.GetResultWithOwnership()))
+                                  : GetInferenceProfileOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1846,12 +1937,13 @@ GetMarketplaceModelEndpointOutcome BedrockClient::GetMarketplaceModelEndpoint(co
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetMarketplaceModelEndpointOutcome>(
       [&]() -> GetMarketplaceModelEndpointOutcome {
-        return GetMarketplaceModelEndpointOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints/");
-                                     resolvedEndpoint.AddPathSegment(request.GetEndpointArn());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints/");
+                                               resolvedEndpoint.AddPathSegment(request.GetEndpointArn());
+                                             });
+        return result.IsSuccess() ? GetMarketplaceModelEndpointOutcome(GetMarketplaceModelEndpointResult(result.GetResultWithOwnership()))
+                                  : GetMarketplaceModelEndpointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1877,11 +1969,13 @@ GetModelCopyJobOutcome BedrockClient::GetModelCopyJob(const GetModelCopyJobReque
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetModelCopyJobOutcome>(
       [&]() -> GetModelCopyJobOutcome {
-        return GetModelCopyJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                               resolvedEndpoint.AddPathSegments("/model-copy-jobs/");
-                                                               resolvedEndpoint.AddPathSegment(request.GetJobArn());
-                                                             }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model-copy-jobs/");
+                                               resolvedEndpoint.AddPathSegment(request.GetJobArn());
+                                             });
+        return result.IsSuccess() ? GetModelCopyJobOutcome(GetModelCopyJobResult(result.GetResultWithOwnership()))
+                                  : GetModelCopyJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1907,12 +2001,13 @@ GetModelCustomizationJobOutcome BedrockClient::GetModelCustomizationJob(const Ge
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetModelCustomizationJobOutcome>(
       [&]() -> GetModelCustomizationJobOutcome {
-        return GetModelCustomizationJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                      Aws::Http::HttpMethod::HTTP_GET,
-                                                                      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                        resolvedEndpoint.AddPathSegments("/model-customization-jobs/");
-                                                                        resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
-                                                                      }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model-customization-jobs/");
+                                               resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
+                                             });
+        return result.IsSuccess() ? GetModelCustomizationJobOutcome(GetModelCustomizationJobResult(result.GetResultWithOwnership()))
+                                  : GetModelCustomizationJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1938,11 +2033,13 @@ GetModelImportJobOutcome BedrockClient::GetModelImportJob(const GetModelImportJo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetModelImportJobOutcome>(
       [&]() -> GetModelImportJobOutcome {
-        return GetModelImportJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 resolvedEndpoint.AddPathSegments("/model-import-jobs/");
-                                                                 resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model-import-jobs/");
+                                               resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
+                                             });
+        return result.IsSuccess() ? GetModelImportJobOutcome(GetModelImportJobResult(result.GetResultWithOwnership()))
+                                  : GetModelImportJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1968,12 +2065,13 @@ GetModelInvocationJobOutcome BedrockClient::GetModelInvocationJob(const GetModel
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetModelInvocationJobOutcome>(
       [&]() -> GetModelInvocationJobOutcome {
-        return GetModelInvocationJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                   Aws::Http::HttpMethod::HTTP_GET,
-                                                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                     resolvedEndpoint.AddPathSegments("/model-invocation-job/");
-                                                                     resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
-                                                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model-invocation-job/");
+                                               resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
+                                             });
+        return result.IsSuccess() ? GetModelInvocationJobOutcome(GetModelInvocationJobResult(result.GetResultWithOwnership()))
+                                  : GetModelInvocationJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1996,9 +2094,12 @@ GetModelInvocationLoggingConfigurationOutcome BedrockClient::GetModelInvocationL
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetModelInvocationLoggingConfigurationOutcome>(
       [&]() -> GetModelInvocationLoggingConfigurationOutcome {
-        return GetModelInvocationLoggingConfigurationOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/logging/modelinvocations"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/logging/modelinvocations"); });
+        return result.IsSuccess() ? GetModelInvocationLoggingConfigurationOutcome(
+                                        GetModelInvocationLoggingConfigurationResult(result.GetResultWithOwnership()))
+                                  : GetModelInvocationLoggingConfigurationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2024,11 +2125,13 @@ GetPromptRouterOutcome BedrockClient::GetPromptRouter(const GetPromptRouterReque
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetPromptRouterOutcome>(
       [&]() -> GetPromptRouterOutcome {
-        return GetPromptRouterOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                               resolvedEndpoint.AddPathSegments("/prompt-routers/");
-                                                               resolvedEndpoint.AddPathSegment(request.GetPromptRouterArn());
-                                                             }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/prompt-routers/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPromptRouterArn());
+                                             });
+        return result.IsSuccess() ? GetPromptRouterOutcome(GetPromptRouterResult(result.GetResultWithOwnership()))
+                                  : GetPromptRouterOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2055,12 +2158,14 @@ GetProvisionedModelThroughputOutcome BedrockClient::GetProvisionedModelThroughpu
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetProvisionedModelThroughputOutcome>(
       [&]() -> GetProvisionedModelThroughputOutcome {
-        return GetProvisionedModelThroughputOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/provisioned-model-throughput/");
-                                     resolvedEndpoint.AddPathSegment(request.GetProvisionedModelId());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/provisioned-model-throughput/");
+                                               resolvedEndpoint.AddPathSegment(request.GetProvisionedModelId());
+                                             });
+        return result.IsSuccess()
+                   ? GetProvisionedModelThroughputOutcome(GetProvisionedModelThroughputResult(result.GetResultWithOwnership()))
+                   : GetProvisionedModelThroughputOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2081,9 +2186,11 @@ GetUseCaseForModelAccessOutcome BedrockClient::GetUseCaseForModelAccess(const Ge
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetUseCaseForModelAccessOutcome>(
       [&]() -> GetUseCaseForModelAccessOutcome {
-        return GetUseCaseForModelAccessOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/use-case-for-model-access"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/use-case-for-model-access"); });
+        return result.IsSuccess() ? GetUseCaseForModelAccessOutcome(GetUseCaseForModelAccessResult(result.GetResultWithOwnership()))
+                                  : GetUseCaseForModelAccessOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2105,11 +2212,13 @@ ListAutomatedReasoningPoliciesOutcome BedrockClient::ListAutomatedReasoningPolic
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListAutomatedReasoningPoliciesOutcome>(
       [&]() -> ListAutomatedReasoningPoliciesOutcome {
-        return ListAutomatedReasoningPoliciesOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies");
+                                             });
+        return result.IsSuccess()
+                   ? ListAutomatedReasoningPoliciesOutcome(ListAutomatedReasoningPoliciesResult(result.GetResultWithOwnership()))
+                   : ListAutomatedReasoningPoliciesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2138,13 +2247,15 @@ ListAutomatedReasoningPolicyBuildWorkflowsOutcome BedrockClient::ListAutomatedRe
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListAutomatedReasoningPolicyBuildWorkflowsOutcome>(
       [&]() -> ListAutomatedReasoningPolicyBuildWorkflowsOutcome {
-        return ListAutomatedReasoningPolicyBuildWorkflowsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/build-workflows");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/build-workflows");
+                                             });
+        return result.IsSuccess() ? ListAutomatedReasoningPolicyBuildWorkflowsOutcome(
+                                        ListAutomatedReasoningPolicyBuildWorkflowsResult(result.GetResultWithOwnership()))
+                                  : ListAutomatedReasoningPolicyBuildWorkflowsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2172,13 +2283,15 @@ ListAutomatedReasoningPolicyTestCasesOutcome BedrockClient::ListAutomatedReasoni
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListAutomatedReasoningPolicyTestCasesOutcome>(
       [&]() -> ListAutomatedReasoningPolicyTestCasesOutcome {
-        return ListAutomatedReasoningPolicyTestCasesOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/test-cases");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/test-cases");
+                                             });
+        return result.IsSuccess() ? ListAutomatedReasoningPolicyTestCasesOutcome(
+                                        ListAutomatedReasoningPolicyTestCasesResult(result.GetResultWithOwnership()))
+                                  : ListAutomatedReasoningPolicyTestCasesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2211,15 +2324,17 @@ ListAutomatedReasoningPolicyTestResultsOutcome BedrockClient::ListAutomatedReaso
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListAutomatedReasoningPolicyTestResultsOutcome>(
       [&]() -> ListAutomatedReasoningPolicyTestResultsOutcome {
-        return ListAutomatedReasoningPolicyTestResultsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/build-workflows/");
-                                     resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
-                                     resolvedEndpoint.AddPathSegments("/test-results");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/build-workflows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
+                                               resolvedEndpoint.AddPathSegments("/test-results");
+                                             });
+        return result.IsSuccess() ? ListAutomatedReasoningPolicyTestResultsOutcome(
+                                        ListAutomatedReasoningPolicyTestResultsResult(result.GetResultWithOwnership()))
+                                  : ListAutomatedReasoningPolicyTestResultsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2240,11 +2355,12 @@ ListCustomModelDeploymentsOutcome BedrockClient::ListCustomModelDeployments(cons
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListCustomModelDeploymentsOutcome>(
       [&]() -> ListCustomModelDeploymentsOutcome {
-        return ListCustomModelDeploymentsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/model-customization/custom-model-deployments");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model-customization/custom-model-deployments");
+                                             });
+        return result.IsSuccess() ? ListCustomModelDeploymentsOutcome(ListCustomModelDeploymentsResult(result.GetResultWithOwnership()))
+                                  : ListCustomModelDeploymentsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2265,9 +2381,11 @@ ListCustomModelsOutcome BedrockClient::ListCustomModels(const ListCustomModelsRe
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListCustomModelsOutcome>(
       [&]() -> ListCustomModelsOutcome {
-        return ListCustomModelsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/custom-models"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/custom-models"); });
+        return result.IsSuccess() ? ListCustomModelsOutcome(ListCustomModelsResult(result.GetResultWithOwnership()))
+                                  : ListCustomModelsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2290,11 +2408,13 @@ ListEnforcedGuardrailsConfigurationOutcome BedrockClient::ListEnforcedGuardrails
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListEnforcedGuardrailsConfigurationOutcome>(
       [&]() -> ListEnforcedGuardrailsConfigurationOutcome {
-        return ListEnforcedGuardrailsConfigurationOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/enforcedGuardrailsConfiguration");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/enforcedGuardrailsConfiguration");
+                                             });
+        return result.IsSuccess()
+                   ? ListEnforcedGuardrailsConfigurationOutcome(ListEnforcedGuardrailsConfigurationResult(result.GetResultWithOwnership()))
+                   : ListEnforcedGuardrailsConfigurationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2315,9 +2435,11 @@ ListEvaluationJobsOutcome BedrockClient::ListEvaluationJobs(const ListEvaluation
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListEvaluationJobsOutcome>(
       [&]() -> ListEvaluationJobsOutcome {
-        return ListEvaluationJobsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/evaluation-jobs"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/evaluation-jobs"); });
+        return result.IsSuccess() ? ListEvaluationJobsOutcome(ListEvaluationJobsResult(result.GetResultWithOwnership()))
+                                  : ListEvaluationJobsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2345,12 +2467,14 @@ ListFoundationModelAgreementOffersOutcome BedrockClient::ListFoundationModelAgre
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListFoundationModelAgreementOffersOutcome>(
       [&]() -> ListFoundationModelAgreementOffersOutcome {
-        return ListFoundationModelAgreementOffersOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/list-foundation-model-agreement-offers/");
-                                     resolvedEndpoint.AddPathSegment(request.GetModelId());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/list-foundation-model-agreement-offers/");
+                                               resolvedEndpoint.AddPathSegment(request.GetModelId());
+                                             });
+        return result.IsSuccess()
+                   ? ListFoundationModelAgreementOffersOutcome(ListFoundationModelAgreementOffersResult(result.GetResultWithOwnership()))
+                   : ListFoundationModelAgreementOffersOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2371,9 +2495,11 @@ ListFoundationModelsOutcome BedrockClient::ListFoundationModels(const ListFounda
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListFoundationModelsOutcome>(
       [&]() -> ListFoundationModelsOutcome {
-        return ListFoundationModelsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/foundation-models"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/foundation-models"); });
+        return result.IsSuccess() ? ListFoundationModelsOutcome(ListFoundationModelsResult(result.GetResultWithOwnership()))
+                                  : ListFoundationModelsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2394,9 +2520,11 @@ ListGuardrailsOutcome BedrockClient::ListGuardrails(const ListGuardrailsRequest&
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListGuardrailsOutcome>(
       [&]() -> ListGuardrailsOutcome {
-        return ListGuardrailsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/guardrails"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/guardrails"); });
+        return result.IsSuccess() ? ListGuardrailsOutcome(ListGuardrailsResult(result.GetResultWithOwnership()))
+                                  : ListGuardrailsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2417,9 +2545,11 @@ ListImportedModelsOutcome BedrockClient::ListImportedModels(const ListImportedMo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListImportedModelsOutcome>(
       [&]() -> ListImportedModelsOutcome {
-        return ListImportedModelsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/imported-models"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/imported-models"); });
+        return result.IsSuccess() ? ListImportedModelsOutcome(ListImportedModelsResult(result.GetResultWithOwnership()))
+                                  : ListImportedModelsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2440,9 +2570,11 @@ ListInferenceProfilesOutcome BedrockClient::ListInferenceProfiles(const ListInfe
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListInferenceProfilesOutcome>(
       [&]() -> ListInferenceProfilesOutcome {
-        return ListInferenceProfilesOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/inference-profiles"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/inference-profiles"); });
+        return result.IsSuccess() ? ListInferenceProfilesOutcome(ListInferenceProfilesResult(result.GetResultWithOwnership()))
+                                  : ListInferenceProfilesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2464,11 +2596,13 @@ ListMarketplaceModelEndpointsOutcome BedrockClient::ListMarketplaceModelEndpoint
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListMarketplaceModelEndpointsOutcome>(
       [&]() -> ListMarketplaceModelEndpointsOutcome {
-        return ListMarketplaceModelEndpointsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints");
+                                             });
+        return result.IsSuccess()
+                   ? ListMarketplaceModelEndpointsOutcome(ListMarketplaceModelEndpointsResult(result.GetResultWithOwnership()))
+                   : ListMarketplaceModelEndpointsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2489,9 +2623,11 @@ ListModelCopyJobsOutcome BedrockClient::ListModelCopyJobs(const ListModelCopyJob
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListModelCopyJobsOutcome>(
       [&]() -> ListModelCopyJobsOutcome {
-        return ListModelCopyJobsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-copy-jobs"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-copy-jobs"); });
+        return result.IsSuccess() ? ListModelCopyJobsOutcome(ListModelCopyJobsResult(result.GetResultWithOwnership()))
+                                  : ListModelCopyJobsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2512,9 +2648,11 @@ ListModelCustomizationJobsOutcome BedrockClient::ListModelCustomizationJobs(cons
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListModelCustomizationJobsOutcome>(
       [&]() -> ListModelCustomizationJobsOutcome {
-        return ListModelCustomizationJobsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-customization-jobs"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-customization-jobs"); });
+        return result.IsSuccess() ? ListModelCustomizationJobsOutcome(ListModelCustomizationJobsResult(result.GetResultWithOwnership()))
+                                  : ListModelCustomizationJobsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2535,9 +2673,11 @@ ListModelImportJobsOutcome BedrockClient::ListModelImportJobs(const ListModelImp
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListModelImportJobsOutcome>(
       [&]() -> ListModelImportJobsOutcome {
-        return ListModelImportJobsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-import-jobs"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-import-jobs"); });
+        return result.IsSuccess() ? ListModelImportJobsOutcome(ListModelImportJobsResult(result.GetResultWithOwnership()))
+                                  : ListModelImportJobsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2558,9 +2698,11 @@ ListModelInvocationJobsOutcome BedrockClient::ListModelInvocationJobs(const List
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListModelInvocationJobsOutcome>(
       [&]() -> ListModelInvocationJobsOutcome {
-        return ListModelInvocationJobsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-invocation-jobs"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/model-invocation-jobs"); });
+        return result.IsSuccess() ? ListModelInvocationJobsOutcome(ListModelInvocationJobsResult(result.GetResultWithOwnership()))
+                                  : ListModelInvocationJobsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2581,9 +2723,11 @@ ListPromptRoutersOutcome BedrockClient::ListPromptRouters(const ListPromptRouter
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListPromptRoutersOutcome>(
       [&]() -> ListPromptRoutersOutcome {
-        return ListPromptRoutersOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/prompt-routers"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/prompt-routers"); });
+        return result.IsSuccess() ? ListPromptRoutersOutcome(ListPromptRoutersResult(result.GetResultWithOwnership()))
+                                  : ListPromptRoutersOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2606,11 +2750,13 @@ ListProvisionedModelThroughputsOutcome BedrockClient::ListProvisionedModelThroug
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListProvisionedModelThroughputsOutcome>(
       [&]() -> ListProvisionedModelThroughputsOutcome {
-        return ListProvisionedModelThroughputsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/provisioned-model-throughputs");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/provisioned-model-throughputs");
+                                             });
+        return result.IsSuccess()
+                   ? ListProvisionedModelThroughputsOutcome(ListProvisionedModelThroughputsResult(result.GetResultWithOwnership()))
+                   : ListProvisionedModelThroughputsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2631,9 +2777,11 @@ ListTagsForResourceOutcome BedrockClient::ListTagsForResource(const ListTagsForR
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
       [&]() -> ListTagsForResourceOutcome {
-        return ListTagsForResourceOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/listTagsForResource"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/listTagsForResource"); });
+        return result.IsSuccess() ? ListTagsForResourceOutcome(ListTagsForResourceResult(result.GetResultWithOwnership()))
+                                  : ListTagsForResourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2656,11 +2804,13 @@ PutEnforcedGuardrailConfigurationOutcome BedrockClient::PutEnforcedGuardrailConf
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutEnforcedGuardrailConfigurationOutcome>(
       [&]() -> PutEnforcedGuardrailConfigurationOutcome {
-        return PutEnforcedGuardrailConfigurationOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/enforcedGuardrailsConfiguration");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/enforcedGuardrailsConfiguration");
+                                             });
+        return result.IsSuccess()
+                   ? PutEnforcedGuardrailConfigurationOutcome(PutEnforcedGuardrailConfigurationResult(result.GetResultWithOwnership()))
+                   : PutEnforcedGuardrailConfigurationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2683,9 +2833,12 @@ PutModelInvocationLoggingConfigurationOutcome BedrockClient::PutModelInvocationL
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutModelInvocationLoggingConfigurationOutcome>(
       [&]() -> PutModelInvocationLoggingConfigurationOutcome {
-        return PutModelInvocationLoggingConfigurationOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/logging/modelinvocations"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/logging/modelinvocations"); });
+        return result.IsSuccess() ? PutModelInvocationLoggingConfigurationOutcome(
+                                        PutModelInvocationLoggingConfigurationResult(result.GetResultWithOwnership()))
+                                  : PutModelInvocationLoggingConfigurationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2706,9 +2859,11 @@ PutUseCaseForModelAccessOutcome BedrockClient::PutUseCaseForModelAccess(const Pu
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutUseCaseForModelAccessOutcome>(
       [&]() -> PutUseCaseForModelAccessOutcome {
-        return PutUseCaseForModelAccessOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/use-case-for-model-access"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/use-case-for-model-access"); });
+        return result.IsSuccess() ? PutUseCaseForModelAccessOutcome(PutUseCaseForModelAccessResult(result.GetResultWithOwnership()))
+                                  : PutUseCaseForModelAccessOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2736,13 +2891,15 @@ RegisterMarketplaceModelEndpointOutcome BedrockClient::RegisterMarketplaceModelE
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<RegisterMarketplaceModelEndpointOutcome>(
       [&]() -> RegisterMarketplaceModelEndpointOutcome {
-        return RegisterMarketplaceModelEndpointOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints/");
-                                     resolvedEndpoint.AddPathSegment(request.GetEndpointIdentifier());
-                                     resolvedEndpoint.AddPathSegments("/registration");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints/");
+                                               resolvedEndpoint.AddPathSegment(request.GetEndpointIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/registration");
+                                             });
+        return result.IsSuccess()
+                   ? RegisterMarketplaceModelEndpointOutcome(RegisterMarketplaceModelEndpointResult(result.GetResultWithOwnership()))
+                   : RegisterMarketplaceModelEndpointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2776,7 +2933,7 @@ StartAutomatedReasoningPolicyBuildWorkflowOutcome BedrockClient::StartAutomatedR
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartAutomatedReasoningPolicyBuildWorkflowOutcome>(
       [&]() -> StartAutomatedReasoningPolicyBuildWorkflowOutcome {
-        return StartAutomatedReasoningPolicyBuildWorkflowOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
@@ -2786,7 +2943,10 @@ StartAutomatedReasoningPolicyBuildWorkflowOutcome BedrockClient::StartAutomatedR
                   AutomatedReasoningPolicyBuildWorkflowTypeMapper::GetNameForAutomatedReasoningPolicyBuildWorkflowType(
                       request.GetBuildWorkflowType()));
               resolvedEndpoint.AddPathSegments("/start");
-            }));
+            });
+        return result.IsSuccess() ? StartAutomatedReasoningPolicyBuildWorkflowOutcome(
+                                        StartAutomatedReasoningPolicyBuildWorkflowResult(result.GetResultWithOwnership()))
+                                  : StartAutomatedReasoningPolicyBuildWorkflowOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2820,15 +2980,17 @@ StartAutomatedReasoningPolicyTestWorkflowOutcome BedrockClient::StartAutomatedRe
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StartAutomatedReasoningPolicyTestWorkflowOutcome>(
       [&]() -> StartAutomatedReasoningPolicyTestWorkflowOutcome {
-        return StartAutomatedReasoningPolicyTestWorkflowOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/build-workflows/");
-                                     resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
-                                     resolvedEndpoint.AddPathSegments("/test-workflows");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/build-workflows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
+                                               resolvedEndpoint.AddPathSegments("/test-workflows");
+                                             });
+        return result.IsSuccess() ? StartAutomatedReasoningPolicyTestWorkflowOutcome(
+                                        StartAutomatedReasoningPolicyTestWorkflowResult(result.GetResultWithOwnership()))
+                                  : StartAutomatedReasoningPolicyTestWorkflowOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2854,12 +3016,14 @@ StopEvaluationJobOutcome BedrockClient::StopEvaluationJob(const StopEvaluationJo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StopEvaluationJobOutcome>(
       [&]() -> StopEvaluationJobOutcome {
-        return StopEvaluationJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                               [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                 resolvedEndpoint.AddPathSegments("/evaluation-job/");
-                                                                 resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
-                                                                 resolvedEndpoint.AddPathSegments("/stop");
-                                                               }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/evaluation-job/");
+                                               resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/stop");
+                                             });
+        return result.IsSuccess() ? StopEvaluationJobOutcome(StopEvaluationJobResult(result.GetResultWithOwnership()))
+                                  : StopEvaluationJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2885,13 +3049,14 @@ StopModelCustomizationJobOutcome BedrockClient::StopModelCustomizationJob(const 
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StopModelCustomizationJobOutcome>(
       [&]() -> StopModelCustomizationJobOutcome {
-        return StopModelCustomizationJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                       Aws::Http::HttpMethod::HTTP_POST,
-                                                                       [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                         resolvedEndpoint.AddPathSegments("/model-customization-jobs/");
-                                                                         resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
-                                                                         resolvedEndpoint.AddPathSegments("/stop");
-                                                                       }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model-customization-jobs/");
+                                               resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/stop");
+                                             });
+        return result.IsSuccess() ? StopModelCustomizationJobOutcome(StopModelCustomizationJobResult(result.GetResultWithOwnership()))
+                                  : StopModelCustomizationJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2917,13 +3082,14 @@ StopModelInvocationJobOutcome BedrockClient::StopModelInvocationJob(const StopMo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<StopModelInvocationJobOutcome>(
       [&]() -> StopModelInvocationJobOutcome {
-        return StopModelInvocationJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                    Aws::Http::HttpMethod::HTTP_POST,
-                                                                    [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                      resolvedEndpoint.AddPathSegments("/model-invocation-job/");
-                                                                      resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
-                                                                      resolvedEndpoint.AddPathSegments("/stop");
-                                                                    }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model-invocation-job/");
+                                               resolvedEndpoint.AddPathSegment(request.GetJobIdentifier());
+                                               resolvedEndpoint.AddPathSegments("/stop");
+                                             });
+        return result.IsSuccess() ? StopModelInvocationJobOutcome(StopModelInvocationJobResult(result.GetResultWithOwnership()))
+                                  : StopModelInvocationJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2944,9 +3110,11 @@ TagResourceOutcome BedrockClient::TagResource(const TagResourceRequest& request)
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
       [&]() -> TagResourceOutcome {
-        return TagResourceOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/tagResource"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/tagResource"); });
+        return result.IsSuccess() ? TagResourceOutcome(TagResourceResult(result.GetResultWithOwnership()))
+                                  : TagResourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2967,9 +3135,11 @@ UntagResourceOutcome BedrockClient::UntagResource(const UntagResourceRequest& re
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
       [&]() -> UntagResourceOutcome {
-        return UntagResourceOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/untagResource"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/untagResource"); });
+        return result.IsSuccess() ? UntagResourceOutcome(UntagResourceResult(result.GetResultWithOwnership()))
+                                  : UntagResourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2996,12 +3166,14 @@ UpdateAutomatedReasoningPolicyOutcome BedrockClient::UpdateAutomatedReasoningPol
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateAutomatedReasoningPolicyOutcome>(
       [&]() -> UpdateAutomatedReasoningPolicyOutcome {
-        return UpdateAutomatedReasoningPolicyOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                             });
+        return result.IsSuccess()
+                   ? UpdateAutomatedReasoningPolicyOutcome(UpdateAutomatedReasoningPolicyResult(result.GetResultWithOwnership()))
+                   : UpdateAutomatedReasoningPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3035,15 +3207,17 @@ UpdateAutomatedReasoningPolicyAnnotationsOutcome BedrockClient::UpdateAutomatedR
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateAutomatedReasoningPolicyAnnotationsOutcome>(
       [&]() -> UpdateAutomatedReasoningPolicyAnnotationsOutcome {
-        return UpdateAutomatedReasoningPolicyAnnotationsOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/build-workflows/");
-                                     resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
-                                     resolvedEndpoint.AddPathSegments("/annotations");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/build-workflows/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBuildWorkflowId());
+                                               resolvedEndpoint.AddPathSegments("/annotations");
+                                             });
+        return result.IsSuccess() ? UpdateAutomatedReasoningPolicyAnnotationsOutcome(
+                                        UpdateAutomatedReasoningPolicyAnnotationsResult(result.GetResultWithOwnership()))
+                                  : UpdateAutomatedReasoningPolicyAnnotationsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3076,14 +3250,16 @@ UpdateAutomatedReasoningPolicyTestCaseOutcome BedrockClient::UpdateAutomatedReas
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateAutomatedReasoningPolicyTestCaseOutcome>(
       [&]() -> UpdateAutomatedReasoningPolicyTestCaseOutcome {
-        return UpdateAutomatedReasoningPolicyTestCaseOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
-                                     resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
-                                     resolvedEndpoint.AddPathSegments("/test-cases/");
-                                     resolvedEndpoint.AddPathSegment(request.GetTestCaseId());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/automated-reasoning-policies/");
+                                               resolvedEndpoint.AddPathSegment(request.GetPolicyArn());
+                                               resolvedEndpoint.AddPathSegments("/test-cases/");
+                                               resolvedEndpoint.AddPathSegment(request.GetTestCaseId());
+                                             });
+        return result.IsSuccess() ? UpdateAutomatedReasoningPolicyTestCaseOutcome(
+                                        UpdateAutomatedReasoningPolicyTestCaseResult(result.GetResultWithOwnership()))
+                                  : UpdateAutomatedReasoningPolicyTestCaseOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3109,12 +3285,13 @@ UpdateCustomModelDeploymentOutcome BedrockClient::UpdateCustomModelDeployment(co
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateCustomModelDeploymentOutcome>(
       [&]() -> UpdateCustomModelDeploymentOutcome {
-        return UpdateCustomModelDeploymentOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/model-customization/custom-model-deployments/");
-                                     resolvedEndpoint.AddPathSegment(request.GetCustomModelDeploymentIdentifier());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/model-customization/custom-model-deployments/");
+                                               resolvedEndpoint.AddPathSegment(request.GetCustomModelDeploymentIdentifier());
+                                             });
+        return result.IsSuccess() ? UpdateCustomModelDeploymentOutcome(UpdateCustomModelDeploymentResult(result.GetResultWithOwnership()))
+                                  : UpdateCustomModelDeploymentOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3140,11 +3317,13 @@ UpdateGuardrailOutcome BedrockClient::UpdateGuardrail(const UpdateGuardrailReque
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateGuardrailOutcome>(
       [&]() -> UpdateGuardrailOutcome {
-        return UpdateGuardrailOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
-                                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                               resolvedEndpoint.AddPathSegments("/guardrails/");
-                                                               resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
-                                                             }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/guardrails/");
+                                               resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
+                                             });
+        return result.IsSuccess() ? UpdateGuardrailOutcome(UpdateGuardrailResult(result.GetResultWithOwnership()))
+                                  : UpdateGuardrailOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3171,12 +3350,14 @@ UpdateMarketplaceModelEndpointOutcome BedrockClient::UpdateMarketplaceModelEndpo
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateMarketplaceModelEndpointOutcome>(
       [&]() -> UpdateMarketplaceModelEndpointOutcome {
-        return UpdateMarketplaceModelEndpointOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints/");
-                                     resolvedEndpoint.AddPathSegment(request.GetEndpointArn());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/marketplace-model/endpoints/");
+                                               resolvedEndpoint.AddPathSegment(request.GetEndpointArn());
+                                             });
+        return result.IsSuccess()
+                   ? UpdateMarketplaceModelEndpointOutcome(UpdateMarketplaceModelEndpointResult(result.GetResultWithOwnership()))
+                   : UpdateMarketplaceModelEndpointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3204,12 +3385,14 @@ UpdateProvisionedModelThroughputOutcome BedrockClient::UpdateProvisionedModelThr
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateProvisionedModelThroughputOutcome>(
       [&]() -> UpdateProvisionedModelThroughputOutcome {
-        return UpdateProvisionedModelThroughputOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/provisioned-model-throughput/");
-                                     resolvedEndpoint.AddPathSegment(request.GetProvisionedModelId());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/provisioned-model-throughput/");
+                                               resolvedEndpoint.AddPathSegment(request.GetProvisionedModelId());
+                                             });
+        return result.IsSuccess()
+                   ? UpdateProvisionedModelThroughputOutcome(UpdateProvisionedModelThroughputResult(result.GetResultWithOwnership()))
+                   : UpdateProvisionedModelThroughputOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
