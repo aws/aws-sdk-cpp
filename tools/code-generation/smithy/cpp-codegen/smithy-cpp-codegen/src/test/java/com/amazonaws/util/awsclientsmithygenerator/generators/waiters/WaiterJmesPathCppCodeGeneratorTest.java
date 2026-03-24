@@ -555,6 +555,7 @@ class WaiterJmesPathCppCodeGeneratorTest {
             String expr = "length(services[?!(length(deployments) == `1` && runningCount == desiredCount)]) == `0`";
             String code = gen(expr, PathComparator.BOOLEAN_EQUALS);
             assertContains(code, "std::count_if");
+            assertFalse(code.contains("static_cast"), "Should not cast when comparing against literal:\n" + code);
             assertContains(code, "item.GetDeployments().size() == 1");
             assertContains(code, "item.GetRunningCount() == item.GetDesiredCount()");
             assertContains(code, "!");

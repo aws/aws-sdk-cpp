@@ -54,6 +54,15 @@ public class ComparatorEmitter extends UnsupportedExpressionVisitor<String> {
             case NOT_EQUAL: op = " != "; break;
             default: throw new UnsupportedOperationException("Unsupported comparator: " + expression.getComparator());
         }
+        left = castCountIfForSizeComparison(left, right);
+        right = castCountIfForSizeComparison(right, left);
         return "(" + left + op + right + ")";
+    }
+
+    static String castCountIfForSizeComparison(String operand, String other) {
+        if (operand.contains("std::count_if") && other.contains(".size()")) {
+            return "static_cast<std::size_t>(" + operand + ")";
+        }
+        return operand;
     }
 }

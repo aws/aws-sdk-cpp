@@ -43,7 +43,7 @@ public class ScalarEmitter extends UnsupportedExpressionVisitor<String> {
         if ("length".equals(expression.getName())) {
             JmespathExpression arg = expression.getArguments().get(0);
             if (arg instanceof FilterProjectionExpression) {
-                return emitCountIf((FilterProjectionExpression) arg);
+                return  emitCountIf((FilterProjectionExpression) arg);
             }
             String collection = arg.accept(new CollectionGetterEmitter());
             return "result" + collection + ".size()";
@@ -65,8 +65,8 @@ public class ScalarEmitter extends UnsupportedExpressionVisitor<String> {
         
         String predicate = filterExpr.getComparison().accept(
             new FilterPredicateEmitter("item", model, elementShape, smithyServiceName));
-        return "static_cast<std::size_t>(std::count_if(" + collection + ".begin(), " + collection + ".end(), "
-                + "[](const " + elementType + "& item) { return " + predicate + "; }))";
+        return "std::count_if(" + collection + ".begin(), " + collection + ".end(), "
+                + "[](const " + elementType + "& item) { return " + predicate + "; })";
     }
 
     private String resolveFilterElementType(FilterProjectionExpression filterExpr) {

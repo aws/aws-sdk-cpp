@@ -67,6 +67,8 @@ public class FilterPredicateEmitter extends UnsupportedExpressionVisitor<String>
             case NOT_EQUAL: op = " != "; break;
             default: throw new UnsupportedOperationException("Unsupported comparator: " + expression.getComparator());
         }
+        left = ComparatorEmitter.castCountIfForSizeComparison(left, right);
+        right = ComparatorEmitter.castCountIfForSizeComparison(right, left);
         return "(" + left + op + right + ")";
     }
 }
