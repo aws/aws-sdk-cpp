@@ -43,7 +43,7 @@ tasks.register("generate-smithy-build") {
         val filteredServices: String = project.findProperty("servicesFilter")?.toString() ?: ""
         val filteredServiceList = filteredServices.split(",").map { it.trim() }.filter { it.isNotEmpty() }
         val c2jMapStr: String = project.findProperty("c2jMap")?.toString() ?: "{}"
-        val namespaceMappings: String = project.findProperty("namespaceMappings")?.toString() ?: ""
+        val namespaceMappings: String = project.findProperty("namespaceMappings")?.toString() ?: "{}"
 
         fileTree(models).filter { it.isFile }.files.forEach eachFile@{ file ->
             val model = Model.assembler()
