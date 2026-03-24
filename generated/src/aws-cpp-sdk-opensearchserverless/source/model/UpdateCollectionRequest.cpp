@@ -23,6 +23,10 @@ Aws::String UpdateCollectionRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_vectorOptionsHasBeenSet) {
+    payload.WithObject("vectorOptions", m_vectorOptions.Jsonize());
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

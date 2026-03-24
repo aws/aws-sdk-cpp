@@ -20,10 +20,11 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Respresents an optional value that can be provided to update the
- * human-readable description of the resource. If the field is omitted from the
- * request, it will leave the current decription value unchanged.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Wrapper for updating an optional Description field with PATCH semantics. When
+ * present in an update request, the description is replaced with optionalValue.
+ * When absent, the description is left unchanged. To unset the description,
+ * include the wrapper with optionalValue set to null.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatedDescription">AWS
  * API Reference</a></p>
  */

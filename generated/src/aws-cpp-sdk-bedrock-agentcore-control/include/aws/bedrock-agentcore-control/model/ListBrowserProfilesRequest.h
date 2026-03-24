@@ -66,12 +66,33 @@ class ListBrowserProfilesRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the browser profile to filter results by.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ListBrowserProfilesRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+
+  Aws::String m_name;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
 };
 
 }  // namespace Model

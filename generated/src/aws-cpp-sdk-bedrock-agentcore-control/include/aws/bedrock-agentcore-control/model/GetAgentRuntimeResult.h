@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/FilesystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
@@ -18,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -366,6 +368,29 @@ class GetAgentRuntimeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The filesystem configurations mounted into the AgentCore Runtime.</p>
+   */
+  inline const Aws::Vector<FilesystemConfiguration>& GetFilesystemConfigurations() const { return m_filesystemConfigurations; }
+  template <typename FilesystemConfigurationsT = Aws::Vector<FilesystemConfiguration>>
+  void SetFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations = std::forward<FilesystemConfigurationsT>(value);
+  }
+  template <typename FilesystemConfigurationsT = Aws::Vector<FilesystemConfiguration>>
+  GetAgentRuntimeResult& WithFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    SetFilesystemConfigurations(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  template <typename FilesystemConfigurationsT = FilesystemConfiguration>
+  GetAgentRuntimeResult& AddFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations.emplace_back(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -420,6 +445,8 @@ class GetAgentRuntimeResult {
 
   RuntimeMetadataConfiguration m_metadataConfiguration;
 
+  Aws::Vector<FilesystemConfiguration> m_filesystemConfigurations;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentRuntimeArnHasBeenSet = false;
@@ -441,6 +468,7 @@ class GetAgentRuntimeResult {
   bool m_authorizerConfigurationHasBeenSet = false;
   bool m_requestHeaderConfigurationHasBeenSet = false;
   bool m_metadataConfigurationHasBeenSet = false;
+  bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

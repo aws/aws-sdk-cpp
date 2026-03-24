@@ -198,6 +198,14 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const {
     }
   }
 
+  if (m_enableVPCNetworkingHasBeenSet) {
+    ss << "EnableVPCNetworking=" << std::boolalpha << m_enableVPCNetworking << "&";
+  }
+
+  if (m_enableInternetAccessGatewayHasBeenSet) {
+    ss << "EnableInternetAccessGateway=" << std::boolalpha << m_enableInternetAccessGateway << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

@@ -950,6 +950,50 @@ class RestoreDBClusterFromSnapshotRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to enable VPC networking for the restored DB cluster. Set
+   * this parameter to <code>false</code> to create a cluster without the VPC network
+   * interface (ENI).</p> <p>This parameter must be used together with
+   * <code>EnableInternetAccessGateway</code>. When both parameters are specified,
+   * IAM database authentication is required. You must also specify
+   * <code>EnableIAMDatabaseAuthentication</code>.</p> <p>Valid for Cluster Type:
+   * Aurora PostgreSQL clusters</p>
+   */
+  inline bool GetEnableVPCNetworking() const { return m_enableVPCNetworking; }
+  inline bool EnableVPCNetworkingHasBeenSet() const { return m_enableVPCNetworkingHasBeenSet; }
+  inline void SetEnableVPCNetworking(bool value) {
+    m_enableVPCNetworkingHasBeenSet = true;
+    m_enableVPCNetworking = value;
+  }
+  inline RestoreDBClusterFromSnapshotRequest& WithEnableVPCNetworking(bool value) {
+    SetEnableVPCNetworking(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies that the restored DB cluster should use internet-based connectivity
+   * through an internet access gateway. This allows clients to connect to the
+   * cluster over the internet without requiring a VPC.</p> <p>This parameter must be
+   * used together with <code>EnableVPCNetworking</code> set to <code>false</code>.
+   * When both parameters are specified, IAM database authentication is required. You
+   * must also specify <code>EnableIAMDatabaseAuthentication</code>.</p> <p>Valid for
+   * Cluster Type: Aurora PostgreSQL clusters</p>
+   */
+  inline bool GetEnableInternetAccessGateway() const { return m_enableInternetAccessGateway; }
+  inline bool EnableInternetAccessGatewayHasBeenSet() const { return m_enableInternetAccessGatewayHasBeenSet; }
+  inline void SetEnableInternetAccessGateway(bool value) {
+    m_enableInternetAccessGatewayHasBeenSet = true;
+    m_enableInternetAccessGateway = value;
+  }
+  inline RestoreDBClusterFromSnapshotRequest& WithEnableInternetAccessGateway(bool value) {
+    SetEnableInternetAccessGateway(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
 
@@ -1026,6 +1070,10 @@ class RestoreDBClusterFromSnapshotRequest : public RDSRequest {
   Aws::String m_engineLifecycleSupport;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+
+  bool m_enableVPCNetworking{false};
+
+  bool m_enableInternetAccessGateway{false};
   bool m_availabilityZonesHasBeenSet = false;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_snapshotIdentifierHasBeenSet = false;
@@ -1064,6 +1112,8 @@ class RestoreDBClusterFromSnapshotRequest : public RDSRequest {
   bool m_preferredBackupWindowHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
+  bool m_enableVPCNetworkingHasBeenSet = false;
+  bool m_enableInternetAccessGatewayHasBeenSet = false;
 };
 
 }  // namespace Model

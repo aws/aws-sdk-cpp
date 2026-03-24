@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/FilesystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
@@ -15,6 +16,7 @@
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -241,6 +243,32 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The filesystem configurations to mount into the AgentCore Runtime. Use
+   * filesystem configurations to provide persistent storage to your AgentCore
+   * Runtime sessions.</p>
+   */
+  inline const Aws::Vector<FilesystemConfiguration>& GetFilesystemConfigurations() const { return m_filesystemConfigurations; }
+  inline bool FilesystemConfigurationsHasBeenSet() const { return m_filesystemConfigurationsHasBeenSet; }
+  template <typename FilesystemConfigurationsT = Aws::Vector<FilesystemConfiguration>>
+  void SetFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations = std::forward<FilesystemConfigurationsT>(value);
+  }
+  template <typename FilesystemConfigurationsT = Aws::Vector<FilesystemConfiguration>>
+  CreateAgentRuntimeRequest& WithFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    SetFilesystemConfigurations(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  template <typename FilesystemConfigurationsT = FilesystemConfiguration>
+  CreateAgentRuntimeRequest& AddFilesystemConfigurations(FilesystemConfigurationsT&& value) {
+    m_filesystemConfigurationsHasBeenSet = true;
+    m_filesystemConfigurations.emplace_back(std::forward<FilesystemConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of tag keys and values to assign to the agent runtime. Tags enable you
    * to categorize your resources in different ways, for example, by purpose, owner,
    * or environment.</p>
@@ -287,6 +315,8 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
 
+  Aws::Vector<FilesystemConfiguration> m_filesystemConfigurations;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_agentRuntimeNameHasBeenSet = false;
   bool m_agentRuntimeArtifactHasBeenSet = false;
@@ -299,6 +329,7 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   bool m_protocolConfigurationHasBeenSet = false;
   bool m_lifecycleConfigurationHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
+  bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

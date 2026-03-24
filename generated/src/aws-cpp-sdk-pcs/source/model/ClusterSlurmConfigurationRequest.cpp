@@ -30,6 +30,22 @@ ClusterSlurmConfigurationRequest& ClusterSlurmConfigurationRequest::operator=(Js
     }
     m_slurmCustomSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("slurmdbdCustomSettings")) {
+    Aws::Utils::Array<JsonView> slurmdbdCustomSettingsJsonList = jsonValue.GetArray("slurmdbdCustomSettings");
+    for (unsigned slurmdbdCustomSettingsIndex = 0; slurmdbdCustomSettingsIndex < slurmdbdCustomSettingsJsonList.GetLength();
+         ++slurmdbdCustomSettingsIndex) {
+      m_slurmdbdCustomSettings.push_back(slurmdbdCustomSettingsJsonList[slurmdbdCustomSettingsIndex].AsObject());
+    }
+    m_slurmdbdCustomSettingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cgroupCustomSettings")) {
+    Aws::Utils::Array<JsonView> cgroupCustomSettingsJsonList = jsonValue.GetArray("cgroupCustomSettings");
+    for (unsigned cgroupCustomSettingsIndex = 0; cgroupCustomSettingsIndex < cgroupCustomSettingsJsonList.GetLength();
+         ++cgroupCustomSettingsIndex) {
+      m_cgroupCustomSettings.push_back(cgroupCustomSettingsJsonList[cgroupCustomSettingsIndex].AsObject());
+    }
+    m_cgroupCustomSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("accounting")) {
     m_accounting = jsonValue.GetObject("accounting");
     m_accountingHasBeenSet = true;
@@ -55,6 +71,24 @@ JsonValue ClusterSlurmConfigurationRequest::Jsonize() const {
       slurmCustomSettingsJsonList[slurmCustomSettingsIndex].AsObject(m_slurmCustomSettings[slurmCustomSettingsIndex].Jsonize());
     }
     payload.WithArray("slurmCustomSettings", std::move(slurmCustomSettingsJsonList));
+  }
+
+  if (m_slurmdbdCustomSettingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> slurmdbdCustomSettingsJsonList(m_slurmdbdCustomSettings.size());
+    for (unsigned slurmdbdCustomSettingsIndex = 0; slurmdbdCustomSettingsIndex < slurmdbdCustomSettingsJsonList.GetLength();
+         ++slurmdbdCustomSettingsIndex) {
+      slurmdbdCustomSettingsJsonList[slurmdbdCustomSettingsIndex].AsObject(m_slurmdbdCustomSettings[slurmdbdCustomSettingsIndex].Jsonize());
+    }
+    payload.WithArray("slurmdbdCustomSettings", std::move(slurmdbdCustomSettingsJsonList));
+  }
+
+  if (m_cgroupCustomSettingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cgroupCustomSettingsJsonList(m_cgroupCustomSettings.size());
+    for (unsigned cgroupCustomSettingsIndex = 0; cgroupCustomSettingsIndex < cgroupCustomSettingsJsonList.GetLength();
+         ++cgroupCustomSettingsIndex) {
+      cgroupCustomSettingsJsonList[cgroupCustomSettingsIndex].AsObject(m_cgroupCustomSettings[cgroupCustomSettingsIndex].Jsonize());
+    }
+    payload.WithArray("cgroupCustomSettings", std::move(cgroupCustomSettingsJsonList));
   }
 
   if (m_accountingHasBeenSet) {

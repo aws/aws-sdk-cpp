@@ -1476,6 +1476,25 @@ class CreateDBClusterRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>Specifies to create an Aurora DB Cluster with express configuration in
+   * seconds. Express configuration provides a cluster with a writer instance and
+   * feature specific values set to all other input parameters of this API. </p>
+   * <p>Valid for Cluster Type: Aurora DB clusters</p>
+   */
+  inline bool GetWithExpressConfiguration() const { return m_withExpressConfiguration; }
+  inline bool WithExpressConfigurationHasBeenSet() const { return m_withExpressConfigurationHasBeenSet; }
+  inline void SetWithExpressConfiguration(bool value) {
+    m_withExpressConfigurationHasBeenSet = true;
+    m_withExpressConfiguration = value;
+  }
+  inline CreateDBClusterRequest& WithWithExpressConfiguration(bool value) {
+    SetWithExpressConfiguration(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
    */
   inline const Aws::String& GetSourceRegion() const { return m_sourceRegion; }
@@ -1608,6 +1627,8 @@ class CreateDBClusterRequest : public RDSRequest {
 
   MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
 
+  bool m_withExpressConfiguration{false};
+
   Aws::String m_sourceRegion;
   bool m_availabilityZonesHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
@@ -1667,6 +1688,7 @@ class CreateDBClusterRequest : public RDSRequest {
   bool m_engineLifecycleSupportHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
   bool m_masterUserAuthenticationTypeHasBeenSet = false;
+  bool m_withExpressConfigurationHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

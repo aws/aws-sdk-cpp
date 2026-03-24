@@ -8,6 +8,7 @@
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/CollectionStatus.h>
 #include <aws/opensearchserverless/model/CollectionType.h>
+#include <aws/opensearchserverless/model/VectorOptions.h>
 
 #include <utility>
 
@@ -122,6 +123,24 @@ class UpdateCollectionDetail {
 
   ///@{
   /**
+   * <p>Configuration options for vector search capabilities in the collection.</p>
+   */
+  inline const VectorOptions& GetVectorOptions() const { return m_vectorOptions; }
+  inline bool VectorOptionsHasBeenSet() const { return m_vectorOptionsHasBeenSet; }
+  template <typename VectorOptionsT = VectorOptions>
+  void SetVectorOptions(VectorOptionsT&& value) {
+    m_vectorOptionsHasBeenSet = true;
+    m_vectorOptions = std::forward<VectorOptionsT>(value);
+  }
+  template <typename VectorOptionsT = VectorOptions>
+  UpdateCollectionDetail& WithVectorOptions(VectorOptionsT&& value) {
+    SetVectorOptions(std::forward<VectorOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the collection.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
@@ -180,6 +199,8 @@ class UpdateCollectionDetail {
 
   Aws::String m_description;
 
+  VectorOptions m_vectorOptions;
+
   Aws::String m_arn;
 
   long long m_createdDate{0};
@@ -190,6 +211,7 @@ class UpdateCollectionDetail {
   bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_vectorOptionsHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;

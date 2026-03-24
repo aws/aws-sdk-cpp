@@ -63,6 +63,16 @@ Aws::String CreateAgentRuntimeRequest::SerializePayload() const {
     payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
   }
 
+  if (m_filesystemConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filesystemConfigurationsJsonList(m_filesystemConfigurations.size());
+    for (unsigned filesystemConfigurationsIndex = 0; filesystemConfigurationsIndex < filesystemConfigurationsJsonList.GetLength();
+         ++filesystemConfigurationsIndex) {
+      filesystemConfigurationsJsonList[filesystemConfigurationsIndex].AsObject(
+          m_filesystemConfigurations[filesystemConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("filesystemConfigurations", std::move(filesystemConfigurationsJsonList));
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

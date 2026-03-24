@@ -151,9 +151,9 @@ class SpekeKeyProvider {
 
   ///@{
   /**
-   * <p>The ARN for the certificate that you imported to AWS Certificate Manager to
-   * add content key encryption to this endpoint. For this feature to work, your DRM
-   * key provider must support content key encryption.</p>
+   * <p>The ARN for the certificate that you imported to Amazon Web Services
+   * Certificate Manager to add content key encryption to this endpoint. For this
+   * feature to work, your DRM key provider must support content key encryption.</p>
    */
   inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
   inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }

@@ -1769,6 +1769,42 @@ class DBCluster {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the DB cluster uses VPC-based networking.</p> <p>This
+   * setting is applicable only for Aurora PostgreSQL clusters created through
+   * express configuration.</p>
+   */
+  inline bool GetVPCNetworkingEnabled() const { return m_vPCNetworkingEnabled; }
+  inline bool VPCNetworkingEnabledHasBeenSet() const { return m_vPCNetworkingEnabledHasBeenSet; }
+  inline void SetVPCNetworkingEnabled(bool value) {
+    m_vPCNetworkingEnabledHasBeenSet = true;
+    m_vPCNetworkingEnabled = value;
+  }
+  inline DBCluster& WithVPCNetworkingEnabled(bool value) {
+    SetVPCNetworkingEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the DB cluster has internet-based connectivity enabled
+   * through an internet access gateway.</p> <p>This setting is applicable only for
+   * Aurora PostgreSQL clusters created through express configuration.</p>
+   */
+  inline bool GetInternetAccessGatewayEnabled() const { return m_internetAccessGatewayEnabled; }
+  inline bool InternetAccessGatewayEnabledHasBeenSet() const { return m_internetAccessGatewayEnabledHasBeenSet; }
+  inline void SetInternetAccessGatewayEnabled(bool value) {
+    m_internetAccessGatewayEnabledHasBeenSet = true;
+    m_internetAccessGatewayEnabled = value;
+  }
+  inline DBCluster& WithInternetAccessGatewayEnabled(bool value) {
+    SetInternetAccessGatewayEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_allocatedStorage{0};
 
@@ -1941,6 +1977,10 @@ class DBCluster {
   CertificateDetails m_certificateDetails;
 
   Aws::String m_engineLifecycleSupport;
+
+  bool m_vPCNetworkingEnabled{false};
+
+  bool m_internetAccessGatewayEnabled{false};
   bool m_allocatedStorageHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
@@ -2027,6 +2067,8 @@ class DBCluster {
   bool m_clusterScalabilityTypeHasBeenSet = false;
   bool m_certificateDetailsHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;
+  bool m_vPCNetworkingEnabledHasBeenSet = false;
+  bool m_internetAccessGatewayEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

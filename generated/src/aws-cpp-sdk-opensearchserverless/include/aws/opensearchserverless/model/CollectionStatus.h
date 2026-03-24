@@ -10,7 +10,7 @@
 namespace Aws {
 namespace OpenSearchServerless {
 namespace Model {
-enum class CollectionStatus { NOT_SET, CREATING, DELETING, ACTIVE, FAILED };
+enum class CollectionStatus { NOT_SET, CREATING, UPDATING, DELETING, ACTIVE, FAILED, UPDATE_FAILED };
 
 namespace CollectionStatusMapper {
 AWS_OPENSEARCHSERVERLESS_API CollectionStatus GetCollectionStatusForName(const Aws::String& name);
