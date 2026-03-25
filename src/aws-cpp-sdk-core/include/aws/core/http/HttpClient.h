@@ -6,11 +6,14 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/http/HttpConnection.h>
+#include <aws/core/utils/Outcome.h>
+#include <aws/core/client/AWSError.h>
 
-#include <memory>
 #include <atomic>
-#include <mutex>
 #include <condition_variable>
+#include <memory>
+#include <mutex>
 
 namespace Aws
 {
@@ -75,6 +78,16 @@ namespace Aws
             explicit operator bool() const
             {
                return !m_bad;
+            }
+
+            using AcquireConnectionOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::Connection>,
+              Aws::Client::AWSError<Aws::Client::CoreErrors>>;
+            virtual AcquireConnectionOutcome AcquireConnection(const std::shared_ptr<HttpRequest>& request) {
+              AWS_UNREFERENCED_PARAM(request);
+              return Aws::Client::AWSError<Aws::Client::CoreErrors>{Aws::Client::CoreErrors::NOT_IMPLEMENTED,
+                "NotImplemented",
+                "creating a connection is not supported on this http client",
+                false};
             }
 
         protected:

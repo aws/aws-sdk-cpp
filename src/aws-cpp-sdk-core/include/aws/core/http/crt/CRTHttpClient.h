@@ -54,7 +54,9 @@ namespace Aws
 
             bool IsDefaultAwsHttpClient() const override { return true; }
 
-        private:
+            AcquireConnectionOutcome AcquireConnection(const std::shared_ptr<HttpRequest>& request) override;
+
+           private:
             // Yeah, I know, but someone made MakeRequest() const and didn't think about the fact that
             // making an HTTP request most certainly mutates state. It was me. I'm the person that did that, and
             // now we're stuck with it. Thanks me.
