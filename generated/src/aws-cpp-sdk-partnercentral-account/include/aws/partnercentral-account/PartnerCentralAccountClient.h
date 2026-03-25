@@ -906,6 +906,10 @@ class AWS_PARTNERCENTRALACCOUNT_API PartnerCentralAccountClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralAccountClient>;
   void init(const PartnerCentralAccountClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PartnerCentralAccountError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   PartnerCentralAccountClientConfiguration m_clientConfiguration;
   std::shared_ptr<PartnerCentralAccountEndpointProviderBase> m_endpointProvider;
 };

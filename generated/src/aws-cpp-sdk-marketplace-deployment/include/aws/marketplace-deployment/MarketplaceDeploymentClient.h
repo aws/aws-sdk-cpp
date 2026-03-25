@@ -197,6 +197,12 @@ class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceDeploymentClient>;
   void init(const MarketplaceDeploymentClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MarketplaceDeploymentError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MarketplaceDeploymentClientConfiguration m_clientConfiguration;
   std::shared_ptr<MarketplaceDeploymentEndpointProviderBase> m_endpointProvider;
 };

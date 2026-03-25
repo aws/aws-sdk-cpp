@@ -686,6 +686,12 @@ class AWS_CONNECTCAMPAIGNS_API ConnectCampaignsClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsClient>;
   void init(const ConnectCampaignsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ConnectCampaignsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ConnectCampaignsClientConfiguration m_clientConfiguration;
   std::shared_ptr<ConnectCampaignsEndpointProviderBase> m_endpointProvider;
 };

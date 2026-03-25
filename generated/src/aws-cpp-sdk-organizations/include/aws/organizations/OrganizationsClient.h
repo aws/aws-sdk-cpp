@@ -2573,6 +2573,10 @@ class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OrganizationsClient>;
   void init(const OrganizationsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, OrganizationsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   OrganizationsClientConfiguration m_clientConfiguration;
   std::shared_ptr<OrganizationsEndpointProviderBase> m_endpointProvider;
 };

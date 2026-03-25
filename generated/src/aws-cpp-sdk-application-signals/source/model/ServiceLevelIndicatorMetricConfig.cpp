@@ -45,6 +45,10 @@ ServiceLevelIndicatorMetricConfig& ServiceLevelIndicatorMetricConfig::operator=(
     m_periodSeconds = jsonValue.GetInteger("PeriodSeconds");
     m_periodSecondsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MetricSource")) {
+    m_metricSource = jsonValue.GetObject("MetricSource");
+    m_metricSourceHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("MetricDataQueries")) {
     Aws::Utils::Array<JsonView> metricDataQueriesJsonList = jsonValue.GetArray("MetricDataQueries");
     for (unsigned metricDataQueriesIndex = 0; metricDataQueriesIndex < metricDataQueriesJsonList.GetLength(); ++metricDataQueriesIndex) {
@@ -88,6 +92,10 @@ JsonValue ServiceLevelIndicatorMetricConfig::Jsonize() const {
 
   if (m_periodSecondsHasBeenSet) {
     payload.WithInteger("PeriodSeconds", m_periodSeconds);
+  }
+
+  if (m_metricSourceHasBeenSet) {
+    payload.WithObject("MetricSource", m_metricSource.Jsonize());
   }
 
   if (m_metricDataQueriesHasBeenSet) {

@@ -1129,6 +1129,12 @@ class AWS_IOTTWINMAKER_API IoTTwinMakerClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTTwinMakerClient>;
   void init(const IoTTwinMakerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTTwinMakerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   IoTTwinMakerClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTTwinMakerEndpointProviderBase> m_endpointProvider;
 };

@@ -361,6 +361,12 @@ class AWS_MANAGEDBLOCKCHAINQUERY_API ManagedBlockchainQueryClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ManagedBlockchainQueryClient>;
   void init(const ManagedBlockchainQueryClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ManagedBlockchainQueryError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ManagedBlockchainQueryClientConfiguration m_clientConfiguration;
   std::shared_ptr<ManagedBlockchainQueryEndpointProviderBase> m_endpointProvider;
 };

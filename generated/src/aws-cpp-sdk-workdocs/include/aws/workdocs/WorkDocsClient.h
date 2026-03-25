@@ -1349,6 +1349,12 @@ class AWS_WORKDOCS_API WorkDocsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkDocsClient>;
   void init(const WorkDocsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WorkDocsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   WorkDocsClientConfiguration m_clientConfiguration;
   std::shared_ptr<WorkDocsEndpointProviderBase> m_endpointProvider;
 };

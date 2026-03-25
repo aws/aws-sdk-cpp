@@ -428,6 +428,12 @@ class AWS_BACKUPSEARCH_API BackupSearchClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupSearchClient>;
   void init(const BackupSearchClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BackupSearchError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   BackupSearchClientConfiguration m_clientConfiguration;
   std::shared_ptr<BackupSearchEndpointProviderBase> m_endpointProvider;
 };

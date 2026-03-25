@@ -1146,6 +1146,12 @@ class AWS_TNB_API TnbClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TnbClient>;
   void init(const TnbClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TnbError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   TnbClientConfiguration m_clientConfiguration;
   std::shared_ptr<TnbEndpointProviderBase> m_endpointProvider;
 };

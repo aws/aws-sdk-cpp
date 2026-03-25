@@ -1705,6 +1705,10 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>;
   void init(const CloudWatchClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudWatchError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CloudWatchClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudWatchEndpointProviderBase> m_endpointProvider;
 };

@@ -2365,6 +2365,12 @@ class AWS_MACIE2_API Macie2Client : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Macie2Client>;
   void init(const Macie2ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Macie2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   Macie2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<Macie2EndpointProviderBase> m_endpointProvider;
 };

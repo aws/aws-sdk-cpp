@@ -1742,6 +1742,12 @@ class AWS_CODEARTIFACT_API CodeArtifactClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeArtifactClient>;
   void init(const CodeArtifactClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeArtifactError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CodeArtifactClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeArtifactEndpointProviderBase> m_endpointProvider;
 };

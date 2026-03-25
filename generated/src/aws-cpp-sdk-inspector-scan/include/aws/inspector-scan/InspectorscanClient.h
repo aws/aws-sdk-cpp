@@ -120,6 +120,12 @@ class AWS_INSPECTORSCAN_API InspectorscanClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<InspectorscanClient>;
   void init(const InspectorscanClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, InspectorscanError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   InspectorscanClientConfiguration m_clientConfiguration;
   std::shared_ptr<InspectorscanEndpointProviderBase> m_endpointProvider;
 };

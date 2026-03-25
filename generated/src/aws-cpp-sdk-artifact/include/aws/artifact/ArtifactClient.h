@@ -296,6 +296,12 @@ class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ArtifactClient>;
   void init(const ArtifactClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ArtifactError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ArtifactClientConfiguration m_clientConfiguration;
   std::shared_ptr<ArtifactEndpointProviderBase> m_endpointProvider;
 };

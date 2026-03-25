@@ -389,6 +389,12 @@ class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PollyClient>;
   void init(const PollyClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PollyError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   PollyClientConfiguration m_clientConfiguration;
   std::shared_ptr<PollyEndpointProviderBase> m_endpointProvider;
 };

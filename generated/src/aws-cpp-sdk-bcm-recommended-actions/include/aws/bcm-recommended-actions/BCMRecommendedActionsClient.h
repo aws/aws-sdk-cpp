@@ -119,6 +119,10 @@ class AWS_BCMRECOMMENDEDACTIONS_API BCMRecommendedActionsClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMRecommendedActionsClient>;
   void init(const BCMRecommendedActionsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BCMRecommendedActionsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   BCMRecommendedActionsClientConfiguration m_clientConfiguration;
   std::shared_ptr<BCMRecommendedActionsEndpointProviderBase> m_endpointProvider;
 };

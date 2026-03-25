@@ -1566,6 +1566,10 @@ class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSX
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticBeanstalkClient>;
   void init(const ElasticBeanstalkClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ElasticBeanstalkError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ElasticBeanstalkClientConfiguration m_clientConfiguration;
   std::shared_ptr<ElasticBeanstalkEndpointProviderBase> m_endpointProvider;
 };

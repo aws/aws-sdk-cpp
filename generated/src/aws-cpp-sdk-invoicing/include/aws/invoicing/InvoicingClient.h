@@ -611,6 +611,10 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<InvoicingClient>;
   void init(const InvoicingClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, InvoicingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   InvoicingClientConfiguration m_clientConfiguration;
   std::shared_ptr<InvoicingEndpointProviderBase> m_endpointProvider;
 };

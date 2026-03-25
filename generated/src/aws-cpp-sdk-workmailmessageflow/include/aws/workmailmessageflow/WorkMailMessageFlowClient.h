@@ -151,6 +151,12 @@ class AWS_WORKMAILMESSAGEFLOW_API WorkMailMessageFlowClient : public Aws::Client
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkMailMessageFlowClient>;
   void init(const WorkMailMessageFlowClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WorkMailMessageFlowError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   WorkMailMessageFlowClientConfiguration m_clientConfiguration;
   std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> m_endpointProvider;
 };

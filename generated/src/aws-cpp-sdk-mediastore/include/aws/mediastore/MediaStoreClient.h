@@ -702,6 +702,10 @@ class AWS_MEDIASTORE_API MediaStoreClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreClient>;
   void init(const MediaStoreClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaStoreError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   MediaStoreClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaStoreEndpointProviderBase> m_endpointProvider;
 };

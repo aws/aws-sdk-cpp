@@ -744,6 +744,12 @@ class AWS_CLOUDWATCHRUM_API CloudWatchRUMClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchRUMClient>;
   void init(const CloudWatchRUMClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudWatchRUMError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CloudWatchRUMClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudWatchRUMEndpointProviderBase> m_endpointProvider;
 };

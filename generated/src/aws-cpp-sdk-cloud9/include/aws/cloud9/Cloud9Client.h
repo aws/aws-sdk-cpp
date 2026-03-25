@@ -522,6 +522,10 @@ class AWS_CLOUD9_API Cloud9Client : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Cloud9Client>;
   void init(const Cloud9ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Cloud9Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   Cloud9ClientConfiguration m_clientConfiguration;
   std::shared_ptr<Cloud9EndpointProviderBase> m_endpointProvider;
 };

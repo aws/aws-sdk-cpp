@@ -1317,6 +1317,10 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OdbClient>;
   void init(const OdbClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, OdbError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   OdbClientConfiguration m_clientConfiguration;
   std::shared_ptr<OdbEndpointProviderBase> m_endpointProvider;
 };

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ApplicationSignals {
 namespace Model {
-enum class MetricSourceType { NOT_SET, ServiceOperation, CloudWatchMetric, ServiceDependency };
+enum class MetricSourceType { NOT_SET, ServiceOperation, CloudWatchMetric, ServiceDependency, AppMonitor, Canary, Service };
 
 namespace MetricSourceTypeMapper {
 AWS_APPLICATIONSIGNALS_API MetricSourceType GetMetricSourceTypeForName(const Aws::String& name);

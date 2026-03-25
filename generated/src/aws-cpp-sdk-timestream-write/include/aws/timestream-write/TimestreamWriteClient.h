@@ -722,6 +722,10 @@ class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>;
   void init(const TimestreamWriteClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TimestreamWriteError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
   TimestreamWriteClientConfiguration m_clientConfiguration;
   std::shared_ptr<TimestreamWriteEndpointProviderBase> m_endpointProvider;

@@ -1581,6 +1581,12 @@ class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticsearchServiceClient>;
   void init(const ElasticsearchServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ElasticsearchServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ElasticsearchServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ElasticsearchServiceEndpointProviderBase> m_endpointProvider;
 };

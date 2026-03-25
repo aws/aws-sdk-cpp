@@ -814,6 +814,10 @@ class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>;
   void init(const SupportClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SupportError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SupportClientConfiguration m_clientConfiguration;
   std::shared_ptr<SupportEndpointProviderBase> m_endpointProvider;
 };

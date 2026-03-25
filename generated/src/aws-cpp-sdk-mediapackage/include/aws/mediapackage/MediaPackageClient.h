@@ -547,6 +547,12 @@ class AWS_MEDIAPACKAGE_API MediaPackageClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageClient>;
   void init(const MediaPackageClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaPackageError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MediaPackageClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaPackageEndpointProviderBase> m_endpointProvider;
 };

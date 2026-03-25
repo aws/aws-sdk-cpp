@@ -803,6 +803,12 @@ class AWS_APPREGISTRY_API AppRegistryClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppRegistryClient>;
   void init(const AppRegistryClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppRegistryError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AppRegistryClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppRegistryEndpointProviderBase> m_endpointProvider;
 };

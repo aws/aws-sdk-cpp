@@ -1212,6 +1212,12 @@ class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>;
   void init(const EFSClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EFSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   EFSClientConfiguration m_clientConfiguration;
   std::shared_ptr<EFSEndpointProviderBase> m_endpointProvider;
 };

@@ -619,6 +619,12 @@ class AWS_COGNITOSYNC_API CognitoSyncClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoSyncClient>;
   void init(const CognitoSyncClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CognitoSyncError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CognitoSyncClientConfiguration m_clientConfiguration;
   std::shared_ptr<CognitoSyncEndpointProviderBase> m_endpointProvider;
 };

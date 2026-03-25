@@ -691,6 +691,10 @@ class AWS_HEALTH_API HealthClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<HealthClient>;
   void init(const HealthClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, HealthError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   HealthClientConfiguration m_clientConfiguration;
   std::shared_ptr<HealthEndpointProviderBase> m_endpointProvider;
 };

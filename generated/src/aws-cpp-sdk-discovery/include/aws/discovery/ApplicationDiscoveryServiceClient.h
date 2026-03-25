@@ -953,6 +953,10 @@ class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient>;
   void init(const ApplicationDiscoveryServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApplicationDiscoveryServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ApplicationDiscoveryServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> m_endpointProvider;
 };

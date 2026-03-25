@@ -1114,6 +1114,12 @@ class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ControlTowerClient>;
   void init(const ControlTowerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ControlTowerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ControlTowerClientConfiguration m_clientConfiguration;
   std::shared_ptr<ControlTowerEndpointProviderBase> m_endpointProvider;
 };

@@ -1385,6 +1385,10 @@ class AWS_MEMORYDB_API MemoryDBClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MemoryDBClient>;
   void init(const MemoryDBClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MemoryDBError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   MemoryDBClientConfiguration m_clientConfiguration;
   std::shared_ptr<MemoryDBEndpointProviderBase> m_endpointProvider;
 };

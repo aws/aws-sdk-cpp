@@ -225,6 +225,12 @@ class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeClient>;
   void init(const SageMakerRuntimeClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SageMakerRuntimeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SageMakerRuntimeClientConfiguration m_clientConfiguration;
   std::shared_ptr<SageMakerRuntimeEndpointProviderBase> m_endpointProvider;
 };

@@ -731,6 +731,12 @@ class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SecurityIRClient>;
   void init(const SecurityIRClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SecurityIRError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SecurityIRClientConfiguration m_clientConfiguration;
   std::shared_ptr<SecurityIREndpointProviderBase> m_endpointProvider;
 };

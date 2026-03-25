@@ -199,6 +199,12 @@ class AWS_APPCONFIGDATA_API AppConfigDataClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppConfigDataClient>;
   void init(const AppConfigDataClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppConfigDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AppConfigDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppConfigDataEndpointProviderBase> m_endpointProvider;
 };

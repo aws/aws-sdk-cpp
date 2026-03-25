@@ -2603,6 +2603,10 @@ class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient>;
   void init(const AppStreamClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppStreamError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   AppStreamClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppStreamEndpointProviderBase> m_endpointProvider;
 };

@@ -920,6 +920,10 @@ class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<STSClient>;
   void init(const STSClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, STSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   STSClientConfiguration m_clientConfiguration;
   std::shared_ptr<STSEndpointProviderBase> m_endpointProvider;
 };

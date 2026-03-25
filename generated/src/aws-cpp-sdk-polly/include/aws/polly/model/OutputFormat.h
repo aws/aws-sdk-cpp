@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Polly {
 namespace Model {
-enum class OutputFormat { NOT_SET, json, mp3, ogg_opus, ogg_vorbis, pcm };
+enum class OutputFormat { NOT_SET, json, mp3, ogg_opus, ogg_vorbis, pcm, mulaw, alaw };
 
 namespace OutputFormatMapper {
 AWS_POLLY_API OutputFormat GetOutputFormatForName(const Aws::String& name);

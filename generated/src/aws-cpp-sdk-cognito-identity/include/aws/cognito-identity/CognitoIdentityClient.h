@@ -822,6 +822,10 @@ class AWS_COGNITOIDENTITY_API CognitoIdentityClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityClient>;
   void init(const CognitoIdentityClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CognitoIdentityError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CognitoIdentityClientConfiguration m_clientConfiguration;
   std::shared_ptr<CognitoIdentityEndpointProviderBase> m_endpointProvider;
 };

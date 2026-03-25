@@ -1549,6 +1549,10 @@ class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AW
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient>;
   void init(const TranscribeServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TranscribeServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   TranscribeServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<TranscribeServiceEndpointProviderBase> m_endpointProvider;
 };

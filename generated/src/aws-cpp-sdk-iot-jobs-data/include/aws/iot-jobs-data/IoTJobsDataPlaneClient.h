@@ -250,6 +250,12 @@ class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>;
   void init(const IoTJobsDataPlaneClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTJobsDataPlaneError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   IoTJobsDataPlaneClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> m_endpointProvider;
 };

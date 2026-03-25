@@ -549,6 +549,10 @@ class AWS_TIMESTREAMQUERY_API TimestreamQueryClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamQueryClient>;
   void init(const TimestreamQueryClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TimestreamQueryError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
   TimestreamQueryClientConfiguration m_clientConfiguration;
   std::shared_ptr<TimestreamQueryEndpointProviderBase> m_endpointProvider;

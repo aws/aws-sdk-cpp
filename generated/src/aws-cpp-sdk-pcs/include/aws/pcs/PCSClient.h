@@ -644,6 +644,10 @@ class AWS_PCS_API PCSClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PCSClient>;
   void init(const PCSClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PCSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   PCSClientConfiguration m_clientConfiguration;
   std::shared_ptr<PCSEndpointProviderBase> m_endpointProvider;
 };

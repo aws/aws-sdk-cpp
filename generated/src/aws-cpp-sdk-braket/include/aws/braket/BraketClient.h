@@ -571,6 +571,12 @@ class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>;
   void init(const BraketClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BraketError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   BraketClientConfiguration m_clientConfiguration;
   std::shared_ptr<BraketEndpointProviderBase> m_endpointProvider;
 };

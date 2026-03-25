@@ -1803,6 +1803,12 @@ class AWS_CLEANROOMSML_API CleanRoomsMLClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsMLClient>;
   void init(const CleanRoomsMLClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CleanRoomsMLError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CleanRoomsMLClientConfiguration m_clientConfiguration;
   std::shared_ptr<CleanRoomsMLEndpointProviderBase> m_endpointProvider;
 };

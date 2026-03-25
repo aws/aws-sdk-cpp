@@ -1606,6 +1606,12 @@ class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53GlobalResolverClient>;
   void init(const Route53GlobalResolverClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Route53GlobalResolverError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   Route53GlobalResolverClientConfiguration m_clientConfiguration;
   std::shared_ptr<Route53GlobalResolverEndpointProviderBase> m_endpointProvider;
 };

@@ -232,6 +232,12 @@ class AWS_PERSONALIZEEVENTS_API PersonalizeEventsClient : public Aws::Client::AW
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeEventsClient>;
   void init(const PersonalizeEventsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PersonalizeEventsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   PersonalizeEventsClientConfiguration m_clientConfiguration;
   std::shared_ptr<PersonalizeEventsEndpointProviderBase> m_endpointProvider;
 };

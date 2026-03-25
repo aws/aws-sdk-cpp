@@ -714,6 +714,12 @@ class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<S3VectorsClient>;
   void init(const S3VectorsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, S3VectorsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   S3VectorsClientConfiguration m_clientConfiguration;
   std::shared_ptr<S3VectorsEndpointProviderBase> m_endpointProvider;
 };

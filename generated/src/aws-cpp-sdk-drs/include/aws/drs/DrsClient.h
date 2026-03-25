@@ -1508,6 +1508,12 @@ class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>;
   void init(const DrsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DrsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   DrsClientConfiguration m_clientConfiguration;
   std::shared_ptr<DrsEndpointProviderBase> m_endpointProvider;
 };

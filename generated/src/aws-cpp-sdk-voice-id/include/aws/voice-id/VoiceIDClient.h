@@ -873,6 +873,10 @@ class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<VoiceIDClient>;
   void init(const VoiceIDClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, VoiceIDError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   VoiceIDClientConfiguration m_clientConfiguration;
   std::shared_ptr<VoiceIDEndpointProviderBase> m_endpointProvider;
 };

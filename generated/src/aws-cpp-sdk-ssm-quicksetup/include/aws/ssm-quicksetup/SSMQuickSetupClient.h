@@ -477,6 +477,12 @@ class AWS_SSMQUICKSETUP_API SSMQuickSetupClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMQuickSetupClient>;
   void init(const SSMQuickSetupClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SSMQuickSetupError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SSMQuickSetupClientConfiguration m_clientConfiguration;
   std::shared_ptr<SSMQuickSetupEndpointProviderBase> m_endpointProvider;
 };

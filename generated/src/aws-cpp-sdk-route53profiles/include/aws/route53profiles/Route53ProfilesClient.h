@@ -534,6 +534,12 @@ class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient>;
   void init(const Route53ProfilesClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Route53ProfilesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   Route53ProfilesClientConfiguration m_clientConfiguration;
   std::shared_ptr<Route53ProfilesEndpointProviderBase> m_endpointProvider;
 };

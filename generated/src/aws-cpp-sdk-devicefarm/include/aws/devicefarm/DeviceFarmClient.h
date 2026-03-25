@@ -2205,6 +2205,10 @@ class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DeviceFarmClient>;
   void init(const DeviceFarmClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DeviceFarmError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   DeviceFarmClientConfiguration m_clientConfiguration;
   std::shared_ptr<DeviceFarmEndpointProviderBase> m_endpointProvider;
 };

@@ -707,6 +707,10 @@ class AWS_FIREHOSE_API FirehoseClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FirehoseClient>;
   void init(const FirehoseClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, FirehoseError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   FirehoseClientConfiguration m_clientConfiguration;
   std::shared_ptr<FirehoseEndpointProviderBase> m_endpointProvider;
 };

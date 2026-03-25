@@ -1123,6 +1123,10 @@ class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>;
   void init(const ACMPCAClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ACMPCAError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ACMPCAClientConfiguration m_clientConfiguration;
   std::shared_ptr<ACMPCAEndpointProviderBase> m_endpointProvider;
 };

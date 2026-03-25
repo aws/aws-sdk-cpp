@@ -3095,6 +3095,10 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudFormationClient>;
   void init(const CloudFormationClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudFormationError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CloudFormationClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudFormationEndpointProviderBase> m_endpointProvider;
 };

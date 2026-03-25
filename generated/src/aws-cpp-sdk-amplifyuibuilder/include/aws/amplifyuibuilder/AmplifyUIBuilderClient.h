@@ -818,6 +818,12 @@ class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyUIBuilderClient>;
   void init(const AmplifyUIBuilderClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AmplifyUIBuilderError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AmplifyUIBuilderClientConfiguration m_clientConfiguration;
   std::shared_ptr<AmplifyUIBuilderEndpointProviderBase> m_endpointProvider;
 };

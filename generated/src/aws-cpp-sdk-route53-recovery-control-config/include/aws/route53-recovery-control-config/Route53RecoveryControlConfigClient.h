@@ -795,6 +795,12 @@ class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Route53RecoveryControlConfigClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryControlConfigClient>;
   void init(const Route53RecoveryControlConfigClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Route53RecoveryControlConfigError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   Route53RecoveryControlConfigClientConfiguration m_clientConfiguration;
   std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> m_endpointProvider;
 };

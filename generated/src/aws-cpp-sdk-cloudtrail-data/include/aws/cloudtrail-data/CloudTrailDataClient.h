@@ -122,6 +122,12 @@ class AWS_CLOUDTRAILDATA_API CloudTrailDataClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailDataClient>;
   void init(const CloudTrailDataClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudTrailDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CloudTrailDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudTrailDataEndpointProviderBase> m_endpointProvider;
 };

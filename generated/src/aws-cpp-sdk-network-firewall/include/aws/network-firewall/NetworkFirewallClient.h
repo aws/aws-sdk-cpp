@@ -2622,6 +2622,10 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>;
   void init(const NetworkFirewallClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NetworkFirewallError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   NetworkFirewallClientConfiguration m_clientConfiguration;
   std::shared_ptr<NetworkFirewallEndpointProviderBase> m_endpointProvider;
 };

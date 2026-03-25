@@ -528,6 +528,12 @@ class AWS_CODEGURUREVIEWER_API CodeGuruReviewerClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruReviewerClient>;
   void init(const CodeGuruReviewerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeGuruReviewerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CodeGuruReviewerClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeGuruReviewerEndpointProviderBase> m_endpointProvider;
 };

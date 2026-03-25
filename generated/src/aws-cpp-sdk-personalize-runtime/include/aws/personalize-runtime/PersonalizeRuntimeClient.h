@@ -191,6 +191,12 @@ class AWS_PERSONALIZERUNTIME_API PersonalizeRuntimeClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeRuntimeClient>;
   void init(const PersonalizeRuntimeClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PersonalizeRuntimeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   PersonalizeRuntimeClientConfiguration m_clientConfiguration;
   std::shared_ptr<PersonalizeRuntimeEndpointProviderBase> m_endpointProvider;
 };

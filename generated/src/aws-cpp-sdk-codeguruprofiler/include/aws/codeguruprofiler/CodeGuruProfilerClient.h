@@ -808,6 +808,12 @@ class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>;
   void init(const CodeGuruProfilerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeGuruProfilerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CodeGuruProfilerClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeGuruProfilerEndpointProviderBase> m_endpointProvider;
 };

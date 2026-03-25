@@ -945,6 +945,12 @@ class AWS_ROLESANYWHERE_API RolesAnywhereClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RolesAnywhereClient>;
   void init(const RolesAnywhereClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RolesAnywhereError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   RolesAnywhereClientConfiguration m_clientConfiguration;
   std::shared_ptr<RolesAnywhereEndpointProviderBase> m_endpointProvider;
 };

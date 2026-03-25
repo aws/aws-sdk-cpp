@@ -167,6 +167,12 @@ class AWS_SAGEMAKEREDGEMANAGER_API SagemakerEdgeManagerClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SagemakerEdgeManagerClient>;
   void init(const SagemakerEdgeManagerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SagemakerEdgeManagerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SagemakerEdgeManagerClientConfiguration m_clientConfiguration;
   std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase> m_endpointProvider;
 };

@@ -988,6 +988,12 @@ class AWS_SUPPLYCHAIN_API SupplyChainClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SupplyChainClient>;
   void init(const SupplyChainClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SupplyChainError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SupplyChainClientConfiguration m_clientConfiguration;
   std::shared_ptr<SupplyChainEndpointProviderBase> m_endpointProvider;
 };

@@ -187,6 +187,12 @@ class AWS_KINESISVIDEOWEBRTCSTORAGE_API KinesisVideoWebRTCStorageClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoWebRTCStorageClient>;
   void init(const KinesisVideoWebRTCStorageClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KinesisVideoWebRTCStorageError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   KinesisVideoWebRTCStorageClientConfiguration m_clientConfiguration;
   std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase> m_endpointProvider;
 };

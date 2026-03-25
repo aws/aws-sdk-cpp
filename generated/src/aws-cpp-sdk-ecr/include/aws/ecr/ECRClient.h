@@ -1868,6 +1868,10 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ECRClient>;
   void init(const ECRClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ECRError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ECRClientConfiguration m_clientConfiguration;
   std::shared_ptr<ECREndpointProviderBase> m_endpointProvider;
 };

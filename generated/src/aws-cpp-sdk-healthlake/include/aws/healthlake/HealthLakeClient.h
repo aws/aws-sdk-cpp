@@ -435,6 +435,10 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient>;
   void init(const HealthLakeClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, HealthLakeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   HealthLakeClientConfiguration m_clientConfiguration;
   std::shared_ptr<HealthLakeEndpointProviderBase> m_endpointProvider;
 };

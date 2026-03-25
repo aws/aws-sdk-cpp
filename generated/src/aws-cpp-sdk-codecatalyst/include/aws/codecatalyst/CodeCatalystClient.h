@@ -1175,6 +1175,12 @@ class AWS_CODECATALYST_API CodeCatalystClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient>;
   void init(const CodeCatalystClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeCatalystError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CodeCatalystClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeCatalystEndpointProviderBase> m_endpointProvider;
 };

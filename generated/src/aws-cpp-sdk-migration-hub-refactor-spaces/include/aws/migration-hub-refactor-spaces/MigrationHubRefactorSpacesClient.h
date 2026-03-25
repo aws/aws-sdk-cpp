@@ -849,6 +849,12 @@ class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubRefactorSpacesClient>;
   void init(const MigrationHubRefactorSpacesClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MigrationHubRefactorSpacesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MigrationHubRefactorSpacesClientConfiguration m_clientConfiguration;
   std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> m_endpointProvider;
 };

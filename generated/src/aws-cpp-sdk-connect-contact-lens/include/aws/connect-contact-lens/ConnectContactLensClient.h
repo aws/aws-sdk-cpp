@@ -129,6 +129,12 @@ class AWS_CONNECTCONTACTLENS_API ConnectContactLensClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectContactLensClient>;
   void init(const ConnectContactLensClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ConnectContactLensError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ConnectContactLensClientConfiguration m_clientConfiguration;
   std::shared_ptr<ConnectContactLensEndpointProviderBase> m_endpointProvider;
 };

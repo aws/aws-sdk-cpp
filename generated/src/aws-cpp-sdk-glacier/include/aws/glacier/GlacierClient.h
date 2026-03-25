@@ -1547,6 +1547,12 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>;
   void init(const GlacierClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GlacierError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   GlacierClientConfiguration m_clientConfiguration;
   std::shared_ptr<GlacierEndpointProviderBase> m_endpointProvider;
 };

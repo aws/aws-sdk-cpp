@@ -550,6 +550,12 @@ class AWS_MEDIAPACKAGEVOD_API MediaPackageVodClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageVodClient>;
   void init(const MediaPackageVodClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaPackageVodError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MediaPackageVodClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaPackageVodEndpointProviderBase> m_endpointProvider;
 };

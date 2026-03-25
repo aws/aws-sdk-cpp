@@ -235,6 +235,12 @@ class AWS_SSOOIDC_API SSOOIDCClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSOOIDCClient>;
   void init(const SSOOIDCClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SSOOIDCError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SSOOIDCClientConfiguration m_clientConfiguration;
   std::shared_ptr<SSOOIDCEndpointProviderBase> m_endpointProvider;
 };

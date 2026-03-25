@@ -759,6 +759,10 @@ class AWS_MIGRATIONHUB_API MigrationHubClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubClient>;
   void init(const MigrationHubClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MigrationHubError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   MigrationHubClientConfiguration m_clientConfiguration;
   std::shared_ptr<MigrationHubEndpointProviderBase> m_endpointProvider;
 };

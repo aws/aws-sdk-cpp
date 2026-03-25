@@ -513,6 +513,12 @@ class AWS_NOVAACT_API NovaActClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NovaActClient>;
   void init(const NovaActClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NovaActError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   NovaActClientConfiguration m_clientConfiguration;
   std::shared_ptr<NovaActEndpointProviderBase> m_endpointProvider;
 };

@@ -964,6 +964,12 @@ class AWS_ROUTE53RECOVERYREADINESS_API Route53RecoveryReadinessClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryReadinessClient>;
   void init(const Route53RecoveryReadinessClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Route53RecoveryReadinessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   Route53RecoveryReadinessClientConfiguration m_clientConfiguration;
   std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase> m_endpointProvider;
 };

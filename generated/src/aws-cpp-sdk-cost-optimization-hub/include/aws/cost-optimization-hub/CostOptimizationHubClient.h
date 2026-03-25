@@ -336,6 +336,10 @@ class AWS_COSTOPTIMIZATIONHUB_API CostOptimizationHubClient : public Aws::Client
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CostOptimizationHubClient>;
   void init(const CostOptimizationHubClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CostOptimizationHubError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CostOptimizationHubClientConfiguration m_clientConfiguration;
   std::shared_ptr<CostOptimizationHubEndpointProviderBase> m_endpointProvider;
 };

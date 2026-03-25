@@ -2737,6 +2737,12 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>;
   void init(const Route53ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Route53Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   Route53ClientConfiguration m_clientConfiguration;
   std::shared_ptr<Route53EndpointProviderBase> m_endpointProvider;
 };

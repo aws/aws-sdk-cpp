@@ -822,6 +822,10 @@ class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : public Aws::Client::AW
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient>;
   void init(const ComprehendMedicalClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ComprehendMedicalError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ComprehendMedicalClientConfiguration m_clientConfiguration;
   std::shared_ptr<ComprehendMedicalEndpointProviderBase> m_endpointProvider;
 };

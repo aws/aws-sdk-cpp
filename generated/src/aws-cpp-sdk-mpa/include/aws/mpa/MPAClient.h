@@ -711,6 +711,12 @@ class AWS_MPA_API MPAClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MPAClient>;
   void init(const MPAClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MPAError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MPAClientConfiguration m_clientConfiguration;
   std::shared_ptr<MPAEndpointProviderBase> m_endpointProvider;
 };

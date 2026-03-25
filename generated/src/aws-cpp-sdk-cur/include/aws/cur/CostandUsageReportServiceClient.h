@@ -289,6 +289,10 @@ class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CostandUsageReportServiceClient>;
   void init(const CostandUsageReportServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CostandUsageReportServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CostandUsageReportServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<CostandUsageReportServiceEndpointProviderBase> m_endpointProvider;
 };

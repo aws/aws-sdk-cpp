@@ -1114,6 +1114,12 @@ class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>;
   void init(const KinesisVideoClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KinesisVideoError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   KinesisVideoClientConfiguration m_clientConfiguration;
   std::shared_ptr<KinesisVideoEndpointProviderBase> m_endpointProvider;
 };

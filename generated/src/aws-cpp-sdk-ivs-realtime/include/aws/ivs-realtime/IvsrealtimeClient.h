@@ -1223,6 +1223,12 @@ class AWS_IVSREALTIME_API IvsrealtimeClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IvsrealtimeClient>;
   void init(const IvsrealtimeClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IvsrealtimeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   IvsrealtimeClientConfiguration m_clientConfiguration;
   std::shared_ptr<IvsrealtimeEndpointProviderBase> m_endpointProvider;
 };

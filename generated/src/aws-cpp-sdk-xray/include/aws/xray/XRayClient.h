@@ -1249,6 +1249,12 @@ class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>;
   void init(const XRayClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, XRayError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   XRayClientConfiguration m_clientConfiguration;
   std::shared_ptr<XRayEndpointProviderBase> m_endpointProvider;
 };

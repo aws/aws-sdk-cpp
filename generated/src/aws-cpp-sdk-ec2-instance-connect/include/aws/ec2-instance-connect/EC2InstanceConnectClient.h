@@ -160,6 +160,10 @@ class AWS_EC2INSTANCECONNECT_API EC2InstanceConnectClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EC2InstanceConnectClient>;
   void init(const EC2InstanceConnectClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EC2InstanceConnectError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   EC2InstanceConnectClientConfiguration m_clientConfiguration;
   std::shared_ptr<EC2InstanceConnectEndpointProviderBase> m_endpointProvider;
 };

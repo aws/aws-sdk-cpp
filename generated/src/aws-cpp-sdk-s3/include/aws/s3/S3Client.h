@@ -8294,6 +8294,13 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<S3Client>;
   void init(const S3ClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, S3Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::String bucketName, Aws::Http::HttpMethod httpMethod) const;
+
   S3ClientConfiguration m_clientConfiguration;
   std::shared_ptr<S3EndpointProviderBase> m_endpointProvider;
 };

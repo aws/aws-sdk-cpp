@@ -24,7 +24,20 @@ static const int INVALID_SORT_BY_HASH = HashingUtils::HashString("INVALID_SORT_B
 static const int INVALID_SORT_ORDER_HASH = HashingUtils::HashString("INVALID_SORT_ORDER");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("INVALID_NEXT_TOKEN");
 static const int INVALID_MAX_RESULTS_HASH = HashingUtils::HashString("INVALID_MAX_RESULTS");
+static const int INVALID_TERM_ID_HASH = HashingUtils::HashString("INVALID_TERM_ID");
+static const int MISSING_TERM_ID_HASH = HashingUtils::HashString("MISSING_TERM_ID");
+static const int MISSING_NAME_HASH = HashingUtils::HashString("MISSING_NAME");
+static const int INVALID_NAME_HASH = HashingUtils::HashString("INVALID_NAME");
+static const int INVALID_DESCRIPTION_HASH = HashingUtils::HashString("INVALID_DESCRIPTION");
+static const int MISSING_CHARGE_AMOUNT_HASH = HashingUtils::HashString("MISSING_CHARGE_AMOUNT");
+static const int INVALID_CHARGE_AMOUNT_HASH = HashingUtils::HashString("INVALID_CHARGE_AMOUNT");
+static const int MISSING_PAYMENT_REQUEST_ID_HASH = HashingUtils::HashString("MISSING_PAYMENT_REQUEST_ID");
+static const int INVALID_PAYMENT_REQUEST_ID_HASH = HashingUtils::HashString("INVALID_PAYMENT_REQUEST_ID");
+static const int MISSING_PARTY_TYPE_HASH = HashingUtils::HashString("MISSING_PARTY_TYPE");
+static const int INVALID_PARTY_TYPE_HASH = HashingUtils::HashString("INVALID_PARTY_TYPE");
 static const int UNSUPPORTED_FILTERS_HASH = HashingUtils::HashString("UNSUPPORTED_FILTERS");
+static const int INVALID_REJECTION_REASON_HASH = HashingUtils::HashString("INVALID_REJECTION_REASON");
+static const int INVALID_PAYMENT_REQUEST_STATUS_HASH = HashingUtils::HashString("INVALID_PAYMENT_REQUEST_STATUS");
 static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 
 ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name) {
@@ -47,8 +60,34 @@ ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String&
     return ValidationExceptionReason::INVALID_NEXT_TOKEN;
   } else if (hashCode == INVALID_MAX_RESULTS_HASH) {
     return ValidationExceptionReason::INVALID_MAX_RESULTS;
+  } else if (hashCode == INVALID_TERM_ID_HASH) {
+    return ValidationExceptionReason::INVALID_TERM_ID;
+  } else if (hashCode == MISSING_TERM_ID_HASH) {
+    return ValidationExceptionReason::MISSING_TERM_ID;
+  } else if (hashCode == MISSING_NAME_HASH) {
+    return ValidationExceptionReason::MISSING_NAME;
+  } else if (hashCode == INVALID_NAME_HASH) {
+    return ValidationExceptionReason::INVALID_NAME;
+  } else if (hashCode == INVALID_DESCRIPTION_HASH) {
+    return ValidationExceptionReason::INVALID_DESCRIPTION;
+  } else if (hashCode == MISSING_CHARGE_AMOUNT_HASH) {
+    return ValidationExceptionReason::MISSING_CHARGE_AMOUNT;
+  } else if (hashCode == INVALID_CHARGE_AMOUNT_HASH) {
+    return ValidationExceptionReason::INVALID_CHARGE_AMOUNT;
+  } else if (hashCode == MISSING_PAYMENT_REQUEST_ID_HASH) {
+    return ValidationExceptionReason::MISSING_PAYMENT_REQUEST_ID;
+  } else if (hashCode == INVALID_PAYMENT_REQUEST_ID_HASH) {
+    return ValidationExceptionReason::INVALID_PAYMENT_REQUEST_ID;
+  } else if (hashCode == MISSING_PARTY_TYPE_HASH) {
+    return ValidationExceptionReason::MISSING_PARTY_TYPE;
+  } else if (hashCode == INVALID_PARTY_TYPE_HASH) {
+    return ValidationExceptionReason::INVALID_PARTY_TYPE;
   } else if (hashCode == UNSUPPORTED_FILTERS_HASH) {
     return ValidationExceptionReason::UNSUPPORTED_FILTERS;
+  } else if (hashCode == INVALID_REJECTION_REASON_HASH) {
+    return ValidationExceptionReason::INVALID_REJECTION_REASON;
+  } else if (hashCode == INVALID_PAYMENT_REQUEST_STATUS_HASH) {
+    return ValidationExceptionReason::INVALID_PAYMENT_REQUEST_STATUS;
   } else if (hashCode == OTHER_HASH) {
     return ValidationExceptionReason::OTHER;
   }
@@ -83,8 +122,34 @@ Aws::String GetNameForValidationExceptionReason(ValidationExceptionReason enumVa
       return "INVALID_NEXT_TOKEN";
     case ValidationExceptionReason::INVALID_MAX_RESULTS:
       return "INVALID_MAX_RESULTS";
+    case ValidationExceptionReason::INVALID_TERM_ID:
+      return "INVALID_TERM_ID";
+    case ValidationExceptionReason::MISSING_TERM_ID:
+      return "MISSING_TERM_ID";
+    case ValidationExceptionReason::MISSING_NAME:
+      return "MISSING_NAME";
+    case ValidationExceptionReason::INVALID_NAME:
+      return "INVALID_NAME";
+    case ValidationExceptionReason::INVALID_DESCRIPTION:
+      return "INVALID_DESCRIPTION";
+    case ValidationExceptionReason::MISSING_CHARGE_AMOUNT:
+      return "MISSING_CHARGE_AMOUNT";
+    case ValidationExceptionReason::INVALID_CHARGE_AMOUNT:
+      return "INVALID_CHARGE_AMOUNT";
+    case ValidationExceptionReason::MISSING_PAYMENT_REQUEST_ID:
+      return "MISSING_PAYMENT_REQUEST_ID";
+    case ValidationExceptionReason::INVALID_PAYMENT_REQUEST_ID:
+      return "INVALID_PAYMENT_REQUEST_ID";
+    case ValidationExceptionReason::MISSING_PARTY_TYPE:
+      return "MISSING_PARTY_TYPE";
+    case ValidationExceptionReason::INVALID_PARTY_TYPE:
+      return "INVALID_PARTY_TYPE";
     case ValidationExceptionReason::UNSUPPORTED_FILTERS:
       return "UNSUPPORTED_FILTERS";
+    case ValidationExceptionReason::INVALID_REJECTION_REASON:
+      return "INVALID_REJECTION_REASON";
+    case ValidationExceptionReason::INVALID_PAYMENT_REQUEST_STATUS:
+      return "INVALID_PAYMENT_REQUEST_STATUS";
     case ValidationExceptionReason::OTHER:
       return "OTHER";
     default:

@@ -1318,6 +1318,12 @@ class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ObservabilityAdminClient>;
   void init(const ObservabilityAdminClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ObservabilityAdminError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ObservabilityAdminClientConfiguration m_clientConfiguration;
   std::shared_ptr<ObservabilityAdminEndpointProviderBase> m_endpointProvider;
 };

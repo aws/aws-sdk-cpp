@@ -1932,6 +1932,12 @@ class AWS_CLOUDDIRECTORY_API CloudDirectoryClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudDirectoryClient>;
   void init(const CloudDirectoryClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudDirectoryError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CloudDirectoryClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudDirectoryEndpointProviderBase> m_endpointProvider;
 };

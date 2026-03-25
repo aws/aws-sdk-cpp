@@ -940,6 +940,12 @@ class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkFlowMonitorClient>;
   void init(const NetworkFlowMonitorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NetworkFlowMonitorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   NetworkFlowMonitorClientConfiguration m_clientConfiguration;
   std::shared_ptr<NetworkFlowMonitorEndpointProviderBase> m_endpointProvider;
 };

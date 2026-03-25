@@ -405,6 +405,12 @@ class AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API LicenseManagerLinuxSubscriptionsC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerLinuxSubscriptionsClient>;
   void init(const LicenseManagerLinuxSubscriptionsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LicenseManagerLinuxSubscriptionsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   LicenseManagerLinuxSubscriptionsClientConfiguration m_clientConfiguration;
   std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase> m_endpointProvider;
 };

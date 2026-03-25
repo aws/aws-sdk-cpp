@@ -452,6 +452,12 @@ class AWS_CODEGURUSECURITY_API CodeGuruSecurityClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruSecurityClient>;
   void init(const CodeGuruSecurityClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeGuruSecurityError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CodeGuruSecurityClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeGuruSecurityEndpointProviderBase> m_endpointProvider;
 };

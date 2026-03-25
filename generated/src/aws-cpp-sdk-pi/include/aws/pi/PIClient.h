@@ -486,6 +486,10 @@ class AWS_PI_API PIClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PIClient>;
   void init(const PIClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PIError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   PIClientConfiguration m_clientConfiguration;
   std::shared_ptr<PIEndpointProviderBase> m_endpointProvider;
 };

@@ -996,6 +996,10 @@ class AWS_MACHINELEARNING_API MachineLearningClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MachineLearningClient>;
   void init(const MachineLearningClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MachineLearningError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   MachineLearningClientConfiguration m_clientConfiguration;
   std::shared_ptr<MachineLearningEndpointProviderBase> m_endpointProvider;
 };

@@ -553,6 +553,10 @@ class AWS_PARTNERCENTRALCHANNEL_API PartnerCentralChannelClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralChannelClient>;
   void init(const PartnerCentralChannelClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PartnerCentralChannelError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   PartnerCentralChannelClientConfiguration m_clientConfiguration;
   std::shared_ptr<PartnerCentralChannelEndpointProviderBase> m_endpointProvider;
 };

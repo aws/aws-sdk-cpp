@@ -1322,6 +1322,10 @@ class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>;
   void init(const FMSClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, FMSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   FMSClientConfiguration m_clientConfiguration;
   std::shared_ptr<FMSEndpointProviderBase> m_endpointProvider;
 };

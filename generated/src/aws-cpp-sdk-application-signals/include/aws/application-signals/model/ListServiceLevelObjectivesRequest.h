@@ -7,6 +7,7 @@
 #include <aws/application-signals/ApplicationSignalsRequest.h>
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/application-signals/model/DependencyConfig.h>
+#include <aws/application-signals/model/MetricSource.h>
 #include <aws/application-signals/model/MetricSourceType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -150,6 +151,33 @@ class ListServiceLevelObjectivesRequest : public ApplicationSignalsRequest {
 
   ///@{
   /**
+   * <p>Use this optional field to only include SLOs with the specified metric source
+   * types in the output. Supported types are:</p> <ul> <li> <p>Service operation</p>
+   * </li> <li> <p>Service dependency</p> </li> <li> <p>Service</p> </li> <li>
+   * <p>CloudWatch metric</p> </li> <li> <p>AppMonitor</p> </li> <li> <p>Canary</p>
+   * </li> </ul>
+   */
+  inline const Aws::Vector<MetricSourceType>& GetMetricSourceTypes() const { return m_metricSourceTypes; }
+  inline bool MetricSourceTypesHasBeenSet() const { return m_metricSourceTypesHasBeenSet; }
+  template <typename MetricSourceTypesT = Aws::Vector<MetricSourceType>>
+  void SetMetricSourceTypes(MetricSourceTypesT&& value) {
+    m_metricSourceTypesHasBeenSet = true;
+    m_metricSourceTypes = std::forward<MetricSourceTypesT>(value);
+  }
+  template <typename MetricSourceTypesT = Aws::Vector<MetricSourceType>>
+  ListServiceLevelObjectivesRequest& WithMetricSourceTypes(MetricSourceTypesT&& value) {
+    SetMetricSourceTypes(std::forward<MetricSourceTypesT>(value));
+    return *this;
+  }
+  inline ListServiceLevelObjectivesRequest& AddMetricSourceTypes(MetricSourceType value) {
+    m_metricSourceTypesHasBeenSet = true;
+    m_metricSourceTypes.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>If you are using this operation in a monitoring account, specify
    * <code>true</code> to include SLO from source accounts in the returned data. </p>
    * <p>When you are monitoring an account, you can use Amazon Web Services account
@@ -190,26 +218,18 @@ class ListServiceLevelObjectivesRequest : public ApplicationSignalsRequest {
 
   ///@{
   /**
-   * <p>Use this optional field to only include SLOs with the specified metric source
-   * types in the output. Supported types are:</p> <ul> <li> <p>Service operation</p>
-   * </li> <li> <p>Service dependency</p> </li> <li> <p>CloudWatch metric</p> </li>
-   * </ul>
+   * <p>Identifies the metric source to filter SLOs by.</p>
    */
-  inline const Aws::Vector<MetricSourceType>& GetMetricSourceTypes() const { return m_metricSourceTypes; }
-  inline bool MetricSourceTypesHasBeenSet() const { return m_metricSourceTypesHasBeenSet; }
-  template <typename MetricSourceTypesT = Aws::Vector<MetricSourceType>>
-  void SetMetricSourceTypes(MetricSourceTypesT&& value) {
-    m_metricSourceTypesHasBeenSet = true;
-    m_metricSourceTypes = std::forward<MetricSourceTypesT>(value);
+  inline const MetricSource& GetMetricSource() const { return m_metricSource; }
+  inline bool MetricSourceHasBeenSet() const { return m_metricSourceHasBeenSet; }
+  template <typename MetricSourceT = MetricSource>
+  void SetMetricSource(MetricSourceT&& value) {
+    m_metricSourceHasBeenSet = true;
+    m_metricSource = std::forward<MetricSourceT>(value);
   }
-  template <typename MetricSourceTypesT = Aws::Vector<MetricSourceType>>
-  ListServiceLevelObjectivesRequest& WithMetricSourceTypes(MetricSourceTypesT&& value) {
-    SetMetricSourceTypes(std::forward<MetricSourceTypesT>(value));
-    return *this;
-  }
-  inline ListServiceLevelObjectivesRequest& AddMetricSourceTypes(MetricSourceType value) {
-    m_metricSourceTypesHasBeenSet = true;
-    m_metricSourceTypes.push_back(value);
+  template <typename MetricSourceT = MetricSource>
+  ListServiceLevelObjectivesRequest& WithMetricSource(MetricSourceT&& value) {
+    SetMetricSource(std::forward<MetricSourceT>(value));
     return *this;
   }
   ///@}
@@ -224,19 +244,22 @@ class ListServiceLevelObjectivesRequest : public ApplicationSignalsRequest {
 
   Aws::String m_nextToken;
 
+  Aws::Vector<MetricSourceType> m_metricSourceTypes;
+
   bool m_includeLinkedAccounts{false};
 
   Aws::String m_sloOwnerAwsAccountId;
 
-  Aws::Vector<MetricSourceType> m_metricSourceTypes;
+  MetricSource m_metricSource;
   bool m_keyAttributesHasBeenSet = false;
   bool m_operationNameHasBeenSet = false;
   bool m_dependencyConfigHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_metricSourceTypesHasBeenSet = false;
   bool m_includeLinkedAccountsHasBeenSet = false;
   bool m_sloOwnerAwsAccountIdHasBeenSet = false;
-  bool m_metricSourceTypesHasBeenSet = false;
+  bool m_metricSourceHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -473,6 +473,12 @@ class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeStarNotificationsClient>;
   void init(const CodeStarNotificationsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeStarNotificationsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CodeStarNotificationsClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeStarNotificationsEndpointProviderBase> m_endpointProvider;
 };

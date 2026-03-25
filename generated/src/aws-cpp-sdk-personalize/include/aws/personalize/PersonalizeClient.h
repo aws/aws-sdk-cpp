@@ -2525,6 +2525,10 @@ class AWS_PERSONALIZE_API PersonalizeClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient>;
   void init(const PersonalizeClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PersonalizeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   PersonalizeClientConfiguration m_clientConfiguration;
   std::shared_ptr<PersonalizeEndpointProviderBase> m_endpointProvider;
 };

@@ -1918,6 +1918,10 @@ class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient>;
   void init(const RedshiftServerlessClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RedshiftServerlessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   RedshiftServerlessClientConfiguration m_clientConfiguration;
   std::shared_ptr<RedshiftServerlessEndpointProviderBase> m_endpointProvider;
 };

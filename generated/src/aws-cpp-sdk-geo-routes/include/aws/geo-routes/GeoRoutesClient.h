@@ -229,6 +229,12 @@ class AWS_GEOROUTES_API GeoRoutesClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GeoRoutesClient>;
   void init(const GeoRoutesClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GeoRoutesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   GeoRoutesClientConfiguration m_clientConfiguration;
   std::shared_ptr<GeoRoutesEndpointProviderBase> m_endpointProvider;
 };

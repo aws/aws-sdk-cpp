@@ -126,6 +126,10 @@ class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCommerceAnalyticsClient>;
   void init(const MarketplaceCommerceAnalyticsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MarketplaceCommerceAnalyticsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   MarketplaceCommerceAnalyticsClientConfiguration m_clientConfiguration;
   std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase> m_endpointProvider;
 };

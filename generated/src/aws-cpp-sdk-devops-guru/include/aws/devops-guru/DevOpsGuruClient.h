@@ -1042,6 +1042,12 @@ class AWS_DEVOPSGURU_API DevOpsGuruClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DevOpsGuruClient>;
   void init(const DevOpsGuruClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DevOpsGuruError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   DevOpsGuruClientConfiguration m_clientConfiguration;
   std::shared_ptr<DevOpsGuruEndpointProviderBase> m_endpointProvider;
 };

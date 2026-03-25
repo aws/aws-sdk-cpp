@@ -3514,6 +3514,10 @@ class AWS_WAF_API WAFClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFClient>;
   void init(const WAFClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WAFError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   WAFClientConfiguration m_clientConfiguration;
   std::shared_ptr<WAFEndpointProviderBase> m_endpointProvider;
 };

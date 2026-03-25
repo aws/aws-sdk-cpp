@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/marketplace-agreement/AgreementServiceErrors.h>
 #include <aws/marketplace-agreement/model/AccessDeniedException.h>
+#include <aws/marketplace-agreement/model/ConflictException.h>
 #include <aws/marketplace-agreement/model/InternalServerException.h>
 #include <aws/marketplace-agreement/model/ResourceNotFoundException.h>
 #include <aws/marketplace-agreement/model/ThrottlingException.h>
@@ -19,6 +20,12 @@ using namespace Aws::AgreementService::Model;
 
 namespace Aws {
 namespace AgreementService {
+template <>
+AWS_AGREEMENTSERVICE_API ConflictException AgreementServiceError::GetModeledError() {
+  assert(this->GetErrorType() == AgreementServiceErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
 template <>
 AWS_AGREEMENTSERVICE_API ThrottlingException AgreementServiceError::GetModeledError() {
   assert(this->GetErrorType() == AgreementServiceErrors::THROTTLING);
@@ -51,12 +58,15 @@ AWS_AGREEMENTSERVICE_API AccessDeniedException AgreementServiceError::GetModeled
 
 namespace AgreementServiceErrorMapper {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_SERVER_HASH) {
+  if (hashCode == CONFLICT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AgreementServiceErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AgreementServiceErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);

@@ -7,6 +7,7 @@
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/application-signals/model/DependencyConfig.h>
 #include <aws/application-signals/model/MetricDataQuery.h>
+#include <aws/application-signals/model/MetricSource.h>
 #include <aws/application-signals/model/ServiceLevelIndicatorMetricType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -155,6 +156,25 @@ class ServiceLevelIndicatorMetric {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Identifies the metric source for SLOs on resources other than Application
+   * Signals services.</p>
+   */
+  inline const MetricSource& GetMetricSource() const { return m_metricSource; }
+  inline bool MetricSourceHasBeenSet() const { return m_metricSourceHasBeenSet; }
+  template <typename MetricSourceT = MetricSource>
+  void SetMetricSource(MetricSourceT&& value) {
+    m_metricSourceHasBeenSet = true;
+    m_metricSource = std::forward<MetricSourceT>(value);
+  }
+  template <typename MetricSourceT = MetricSource>
+  ServiceLevelIndicatorMetric& WithMetricSource(MetricSourceT&& value) {
+    SetMetricSource(std::forward<MetricSourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_keyAttributes;
 
@@ -165,11 +185,14 @@ class ServiceLevelIndicatorMetric {
   Aws::Vector<MetricDataQuery> m_metricDataQueries;
 
   DependencyConfig m_dependencyConfig;
+
+  MetricSource m_metricSource;
   bool m_keyAttributesHasBeenSet = false;
   bool m_operationNameHasBeenSet = false;
   bool m_metricTypeHasBeenSet = false;
   bool m_metricDataQueriesHasBeenSet = false;
   bool m_dependencyConfigHasBeenSet = false;
+  bool m_metricSourceHasBeenSet = false;
 };
 
 }  // namespace Model

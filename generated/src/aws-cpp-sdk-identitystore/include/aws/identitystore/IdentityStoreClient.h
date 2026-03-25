@@ -657,6 +657,10 @@ class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>;
   void init(const IdentityStoreClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IdentityStoreError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   IdentityStoreClientConfiguration m_clientConfiguration;
   std::shared_ptr<IdentityStoreEndpointProviderBase> m_endpointProvider;
 };

@@ -711,6 +711,12 @@ class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommenda
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>;
   void init(const MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MigrationHubStrategyRecommendationsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MigrationHubStrategyRecommendationsClientConfiguration m_clientConfiguration;
   std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> m_endpointProvider;
 };

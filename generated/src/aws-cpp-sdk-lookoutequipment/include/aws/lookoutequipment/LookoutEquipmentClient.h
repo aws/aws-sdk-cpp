@@ -1436,6 +1436,10 @@ class AWS_LOOKOUTEQUIPMENT_API LookoutEquipmentClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LookoutEquipmentClient>;
   void init(const LookoutEquipmentClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LookoutEquipmentError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   LookoutEquipmentClientConfiguration m_clientConfiguration;
   std::shared_ptr<LookoutEquipmentEndpointProviderBase> m_endpointProvider;
 };

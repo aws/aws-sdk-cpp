@@ -1046,6 +1046,10 @@ class AWS_SQS_API SQSClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>;
   void init(const SQSClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SQSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SQSClientConfiguration m_clientConfiguration;
   std::shared_ptr<SQSEndpointProviderBase> m_endpointProvider;
 };

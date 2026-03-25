@@ -466,6 +466,10 @@ class AWS_SIMPLEDB_API SimpleDBClient : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBClient>;
   void init(const SimpleDBClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SimpleDBError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SimpleDBClientConfiguration m_clientConfiguration;
   std::shared_ptr<SimpleDBEndpointProviderBase> m_endpointProvider;
 };

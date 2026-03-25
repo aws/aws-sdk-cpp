@@ -499,6 +499,12 @@ class AWS_CONNECTHEALTH_API ConnectHealthClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectHealthClient>;
   void init(const ConnectHealthClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ConnectHealthError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ConnectHealthClientConfiguration m_clientConfiguration;
   std::shared_ptr<ConnectHealthEndpointProviderBase> m_endpointProvider;
 };

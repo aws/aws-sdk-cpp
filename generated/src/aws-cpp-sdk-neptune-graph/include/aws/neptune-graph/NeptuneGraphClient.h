@@ -996,6 +996,12 @@ class AWS_NEPTUNEGRAPH_API NeptuneGraphClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NeptuneGraphClient>;
   void init(const NeptuneGraphClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NeptuneGraphError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   NeptuneGraphClientConfiguration m_clientConfiguration;
   std::shared_ptr<NeptuneGraphEndpointProviderBase> m_endpointProvider;
 };

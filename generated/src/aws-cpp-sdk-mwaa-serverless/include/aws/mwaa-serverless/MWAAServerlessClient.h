@@ -531,6 +531,10 @@ class AWS_MWAASERVERLESS_API MWAAServerlessClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MWAAServerlessClient>;
   void init(const MWAAServerlessClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MWAAServerlessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   MWAAServerlessClientConfiguration m_clientConfiguration;
   std::shared_ptr<MWAAServerlessEndpointProviderBase> m_endpointProvider;
 };

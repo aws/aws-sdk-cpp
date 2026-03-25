@@ -1367,6 +1367,10 @@ class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>;
   void init(const CodeDeployClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeDeployError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CodeDeployClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeDeployEndpointProviderBase> m_endpointProvider;
 };

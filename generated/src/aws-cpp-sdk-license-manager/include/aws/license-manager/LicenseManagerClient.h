@@ -1834,6 +1834,10 @@ class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerClient>;
   void init(const LicenseManagerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LicenseManagerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   LicenseManagerClientConfiguration m_clientConfiguration;
   std::shared_ptr<LicenseManagerEndpointProviderBase> m_endpointProvider;
 };

@@ -2182,6 +2182,12 @@ class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>;
   void init(const EKSClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EKSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   EKSClientConfiguration m_clientConfiguration;
   std::shared_ptr<EKSEndpointProviderBase> m_endpointProvider;
 };

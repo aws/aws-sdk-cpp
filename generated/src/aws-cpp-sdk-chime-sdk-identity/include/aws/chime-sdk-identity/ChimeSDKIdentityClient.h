@@ -942,6 +942,12 @@ class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient>;
   void init(const ChimeSDKIdentityClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ChimeSDKIdentityError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ChimeSDKIdentityClientConfiguration m_clientConfiguration;
   std::shared_ptr<ChimeSDKIdentityEndpointProviderBase> m_endpointProvider;
 };

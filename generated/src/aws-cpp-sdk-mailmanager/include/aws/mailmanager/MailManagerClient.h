@@ -1696,6 +1696,10 @@ class AWS_MAILMANAGER_API MailManagerClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MailManagerClient>;
   void init(const MailManagerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MailManagerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   MailManagerClientConfiguration m_clientConfiguration;
   std::shared_ptr<MailManagerEndpointProviderBase> m_endpointProvider;
 };

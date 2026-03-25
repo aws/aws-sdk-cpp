@@ -115,6 +115,12 @@ class AWS_EKSAUTH_API EKSAuthClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EKSAuthClient>;
   void init(const EKSAuthClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EKSAuthError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   EKSAuthClientConfiguration m_clientConfiguration;
   std::shared_ptr<EKSAuthEndpointProviderBase> m_endpointProvider;
 };

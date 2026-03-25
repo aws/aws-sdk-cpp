@@ -608,6 +608,12 @@ class AWS_ARCZONALSHIFT_API ARCZonalShiftClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient>;
   void init(const ARCZonalShiftClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ARCZonalShiftError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ARCZonalShiftClientConfiguration m_clientConfiguration;
   std::shared_ptr<ARCZonalShiftEndpointProviderBase> m_endpointProvider;
 };

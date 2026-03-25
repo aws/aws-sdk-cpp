@@ -131,6 +131,12 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SigninClient>;
   void init(const SigninClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SigninError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SigninClientConfiguration m_clientConfiguration;
   std::shared_ptr<SigninEndpointProviderBase> m_endpointProvider;
 };

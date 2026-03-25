@@ -1433,6 +1433,12 @@ class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AW
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient>;
   void init(const PrometheusServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PrometheusServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   PrometheusServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<PrometheusServiceEndpointProviderBase> m_endpointProvider;
 };

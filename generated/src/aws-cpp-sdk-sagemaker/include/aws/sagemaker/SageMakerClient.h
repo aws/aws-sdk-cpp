@@ -11623,6 +11623,10 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerClient>;
   void init(const SageMakerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SageMakerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SageMakerClientConfiguration m_clientConfiguration;
   std::shared_ptr<SageMakerEndpointProviderBase> m_endpointProvider;
 };

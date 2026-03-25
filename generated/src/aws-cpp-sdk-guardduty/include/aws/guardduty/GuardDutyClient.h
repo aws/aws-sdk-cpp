@@ -2684,6 +2684,12 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GuardDutyClient>;
   void init(const GuardDutyClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GuardDutyError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   GuardDutyClientConfiguration m_clientConfiguration;
   std::shared_ptr<GuardDutyEndpointProviderBase> m_endpointProvider;
 };

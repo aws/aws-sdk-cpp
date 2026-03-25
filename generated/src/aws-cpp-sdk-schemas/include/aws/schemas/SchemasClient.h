@@ -879,6 +879,12 @@ class AWS_SCHEMAS_API SchemasClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SchemasClient>;
   void init(const SchemasClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SchemasError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SchemasClientConfiguration m_clientConfiguration;
   std::shared_ptr<SchemasEndpointProviderBase> m_endpointProvider;
 };

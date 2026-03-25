@@ -451,6 +451,10 @@ class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsTaggingAPIClient>;
   void init(const ResourceGroupsTaggingAPIClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ResourceGroupsTaggingAPIError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ResourceGroupsTaggingAPIClientConfiguration m_clientConfiguration;
   std::shared_ptr<ResourceGroupsTaggingAPIEndpointProviderBase> m_endpointProvider;
 };

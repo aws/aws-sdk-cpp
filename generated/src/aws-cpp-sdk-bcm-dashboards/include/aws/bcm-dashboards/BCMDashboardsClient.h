@@ -333,6 +333,10 @@ class AWS_BCMDASHBOARDS_API BCMDashboardsClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMDashboardsClient>;
   void init(const BCMDashboardsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BCMDashboardsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   BCMDashboardsClientConfiguration m_clientConfiguration;
   std::shared_ptr<BCMDashboardsEndpointProviderBase> m_endpointProvider;
 };

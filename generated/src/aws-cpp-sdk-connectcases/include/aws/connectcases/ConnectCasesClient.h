@@ -1431,6 +1431,12 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>;
   void init(const ConnectCasesClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ConnectCasesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ConnectCasesClientConfiguration m_clientConfiguration;
   std::shared_ptr<ConnectCasesEndpointProviderBase> m_endpointProvider;
 };

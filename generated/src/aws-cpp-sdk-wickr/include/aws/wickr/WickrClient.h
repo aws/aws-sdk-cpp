@@ -1346,6 +1346,12 @@ class AWS_WICKR_API WickrClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WickrClient>;
   void init(const WickrClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WickrError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   WickrClientConfiguration m_clientConfiguration;
   std::shared_ptr<WickrEndpointProviderBase> m_endpointProvider;
 };

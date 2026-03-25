@@ -516,6 +516,12 @@ class AWS_WORKSPACESTHINCLIENT_API WorkSpacesThinClientClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesThinClientClient>;
   void init(const WorkSpacesThinClientClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WorkSpacesThinClientError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   WorkSpacesThinClientClientConfiguration m_clientConfiguration;
   std::shared_ptr<WorkSpacesThinClientEndpointProviderBase> m_endpointProvider;
 };

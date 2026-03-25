@@ -53,6 +53,10 @@ ServiceLevelObjectiveSummary& ServiceLevelObjectiveSummary::operator=(JsonView j
     m_metricSourceType = MetricSourceTypeMapper::GetMetricSourceTypeForName(jsonValue.GetString("MetricSourceType"));
     m_metricSourceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MetricSource")) {
+    m_metricSource = jsonValue.GetObject("MetricSource");
+    m_metricSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +97,10 @@ JsonValue ServiceLevelObjectiveSummary::Jsonize() const {
 
   if (m_metricSourceTypeHasBeenSet) {
     payload.WithString("MetricSourceType", MetricSourceTypeMapper::GetNameForMetricSourceType(m_metricSourceType));
+  }
+
+  if (m_metricSourceHasBeenSet) {
+    payload.WithObject("MetricSource", m_metricSource.Jsonize());
   }
 
   return payload;

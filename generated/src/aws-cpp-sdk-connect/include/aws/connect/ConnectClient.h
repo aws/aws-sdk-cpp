@@ -11514,6 +11514,12 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>;
   void init(const ConnectClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ConnectError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ConnectClientConfiguration m_clientConfiguration;
   std::shared_ptr<ConnectEndpointProviderBase> m_endpointProvider;
 };

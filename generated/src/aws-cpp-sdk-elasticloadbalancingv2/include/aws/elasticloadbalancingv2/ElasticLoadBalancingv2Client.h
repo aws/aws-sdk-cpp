@@ -1687,6 +1687,10 @@ class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Client
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingv2Client>;
   void init(const ElasticLoadBalancingv2ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ElasticLoadBalancingv2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ElasticLoadBalancingv2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<ElasticLoadBalancingv2EndpointProviderBase> m_endpointProvider;
 };

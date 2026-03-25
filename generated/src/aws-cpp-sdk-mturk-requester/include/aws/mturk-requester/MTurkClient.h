@@ -1374,6 +1374,10 @@ class AWS_MTURK_API MTurkClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MTurkClient>;
   void init(const MTurkClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MTurkError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   MTurkClientConfiguration m_clientConfiguration;
   std::shared_ptr<MTurkEndpointProviderBase> m_endpointProvider;
 };

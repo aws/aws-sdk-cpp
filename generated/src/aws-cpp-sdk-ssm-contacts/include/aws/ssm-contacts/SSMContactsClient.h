@@ -1155,6 +1155,10 @@ class AWS_SSMCONTACTS_API SSMContactsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMContactsClient>;
   void init(const SSMContactsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SSMContactsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SSMContactsClientConfiguration m_clientConfiguration;
   std::shared_ptr<SSMContactsEndpointProviderBase> m_endpointProvider;
 };

@@ -225,6 +225,12 @@ class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainClient : public Aws::Client::AW
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchDomainClient>;
   void init(const CloudSearchDomainClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudSearchDomainError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CloudSearchDomainClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudSearchDomainEndpointProviderBase> m_endpointProvider;
 };

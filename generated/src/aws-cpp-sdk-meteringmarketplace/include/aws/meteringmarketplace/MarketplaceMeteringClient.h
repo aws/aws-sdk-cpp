@@ -392,6 +392,10 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient>;
   void init(const MarketplaceMeteringClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MarketplaceMeteringError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   MarketplaceMeteringClientConfiguration m_clientConfiguration;
   std::shared_ptr<MarketplaceMeteringEndpointProviderBase> m_endpointProvider;
 };

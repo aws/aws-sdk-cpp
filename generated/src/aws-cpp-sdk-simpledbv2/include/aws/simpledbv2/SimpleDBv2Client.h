@@ -176,6 +176,12 @@ class AWS_SIMPLEDBV2_API SimpleDBv2Client : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBv2Client>;
   void init(const SimpleDBv2ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SimpleDBv2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SimpleDBv2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<SimpleDBv2EndpointProviderBase> m_endpointProvider;
 };

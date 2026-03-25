@@ -1926,6 +1926,10 @@ class AWS_SWF_API SWFClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SWFClient>;
   void init(const SWFClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SWFError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SWFClientConfiguration m_clientConfiguration;
   std::shared_ptr<SWFEndpointProviderBase> m_endpointProvider;
 };

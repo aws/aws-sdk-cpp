@@ -3661,6 +3661,10 @@ class AWS_WAFREGIONAL_API WAFRegionalClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFRegionalClient>;
   void init(const WAFRegionalClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WAFRegionalError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   WAFRegionalClientConfiguration m_clientConfiguration;
   std::shared_ptr<WAFRegionalEndpointProviderBase> m_endpointProvider;
 };

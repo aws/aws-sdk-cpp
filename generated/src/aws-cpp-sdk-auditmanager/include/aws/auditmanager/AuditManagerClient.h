@@ -2025,6 +2025,12 @@ class AWS_AUDITMANAGER_API AuditManagerClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AuditManagerClient>;
   void init(const AuditManagerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AuditManagerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AuditManagerClientConfiguration m_clientConfiguration;
   std::shared_ptr<AuditManagerEndpointProviderBase> m_endpointProvider;
 };

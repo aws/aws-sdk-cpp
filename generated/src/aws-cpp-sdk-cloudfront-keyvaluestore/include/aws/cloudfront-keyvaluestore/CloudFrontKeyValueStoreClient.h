@@ -243,6 +243,12 @@ class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontKeyValueStoreClient>;
   void init(const CloudFrontKeyValueStoreClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudFrontKeyValueStoreError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CloudFrontKeyValueStoreClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudFrontKeyValueStoreEndpointProviderBase> m_endpointProvider;
 };

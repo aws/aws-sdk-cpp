@@ -1244,6 +1244,10 @@ class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53DomainsClient>;
   void init(const Route53DomainsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Route53DomainsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   Route53DomainsClientConfiguration m_clientConfiguration;
   std::shared_ptr<Route53DomainsEndpointProviderBase> m_endpointProvider;
 };

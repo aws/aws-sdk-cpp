@@ -1167,6 +1167,12 @@ class AWS_ENTITYRESOLUTION_API EntityResolutionClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EntityResolutionClient>;
   void init(const EntityResolutionClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EntityResolutionError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   EntityResolutionClientConfiguration m_clientConfiguration;
   std::shared_ptr<EntityResolutionEndpointProviderBase> m_endpointProvider;
 };

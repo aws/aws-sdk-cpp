@@ -1936,6 +1936,10 @@ class AWS_EVENTBRIDGE_API EventBridgeClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EventBridgeClient>;
   void init(const EventBridgeClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EventBridgeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   EventBridgeClientConfiguration m_clientConfiguration;
   std::shared_ptr<EventBridgeEndpointProviderBase> m_endpointProvider;
 };

@@ -1080,6 +1080,12 @@ class AWS_QAPPS_API QAppsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<QAppsClient>;
   void init(const QAppsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, QAppsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   QAppsClientConfiguration m_clientConfiguration;
   std::shared_ptr<QAppsEndpointProviderBase> m_endpointProvider;
 };

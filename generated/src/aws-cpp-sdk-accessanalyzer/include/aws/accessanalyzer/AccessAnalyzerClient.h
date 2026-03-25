@@ -1148,6 +1148,12 @@ class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient>;
   void init(const AccessAnalyzerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AccessAnalyzerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AccessAnalyzerClientConfiguration m_clientConfiguration;
   std::shared_ptr<AccessAnalyzerEndpointProviderBase> m_endpointProvider;
 };

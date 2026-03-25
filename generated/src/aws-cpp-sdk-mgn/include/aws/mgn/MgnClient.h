@@ -2756,6 +2756,12 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MgnClient>;
   void init(const MgnClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MgnError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MgnClientConfiguration m_clientConfiguration;
   std::shared_ptr<MgnEndpointProviderBase> m_endpointProvider;
 };

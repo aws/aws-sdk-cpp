@@ -1006,6 +1006,12 @@ class AWS_BILLINGCONDUCTOR_API BillingConductorClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BillingConductorClient>;
   void init(const BillingConductorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BillingConductorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   BillingConductorClientConfiguration m_clientConfiguration;
   std::shared_ptr<BillingConductorEndpointProviderBase> m_endpointProvider;
 };

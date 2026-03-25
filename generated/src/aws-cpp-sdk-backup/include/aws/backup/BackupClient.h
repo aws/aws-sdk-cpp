@@ -3280,6 +3280,12 @@ class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupClient>;
   void init(const BackupClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BackupError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   BackupClientConfiguration m_clientConfiguration;
   std::shared_ptr<BackupEndpointProviderBase> m_endpointProvider;
 };

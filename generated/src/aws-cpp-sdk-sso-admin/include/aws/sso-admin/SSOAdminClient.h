@@ -2586,6 +2586,10 @@ class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSOAdminClient>;
   void init(const SSOAdminClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SSOAdminError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SSOAdminClientConfiguration m_clientConfiguration;
   std::shared_ptr<SSOAdminEndpointProviderBase> m_endpointProvider;
 };

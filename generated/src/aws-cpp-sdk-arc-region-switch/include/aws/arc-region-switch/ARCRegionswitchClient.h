@@ -683,6 +683,10 @@ class AWS_ARCREGIONSWITCH_API ARCRegionswitchClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ARCRegionswitchClient>;
   void init(const ARCRegionswitchClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ARCRegionswitchError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ARCRegionswitchClientConfiguration m_clientConfiguration;
   std::shared_ptr<ARCRegionswitchEndpointProviderBase> m_endpointProvider;
 };

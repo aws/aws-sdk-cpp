@@ -416,6 +416,10 @@ class AWS_BILLING_API BillingClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BillingClient>;
   void init(const BillingClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BillingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   BillingClientConfiguration m_clientConfiguration;
   std::shared_ptr<BillingEndpointProviderBase> m_endpointProvider;
 };

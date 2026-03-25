@@ -470,6 +470,12 @@ class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>;
   void init(const DSQLClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DSQLError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   DSQLClientConfiguration m_clientConfiguration;
   std::shared_ptr<DSQLEndpointProviderBase> m_endpointProvider;
 };

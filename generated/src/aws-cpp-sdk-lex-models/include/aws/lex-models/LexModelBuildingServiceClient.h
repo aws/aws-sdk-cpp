@@ -1427,6 +1427,12 @@ class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LexModelBuildingServiceClient>;
   void init(const LexModelBuildingServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LexModelBuildingServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   LexModelBuildingServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> m_endpointProvider;
 };

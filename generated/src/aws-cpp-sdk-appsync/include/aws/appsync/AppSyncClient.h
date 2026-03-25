@@ -2084,6 +2084,12 @@ class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>;
   void init(const AppSyncClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppSyncError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AppSyncClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppSyncEndpointProviderBase> m_endpointProvider;
 };

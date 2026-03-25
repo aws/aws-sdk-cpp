@@ -1175,6 +1175,10 @@ class AWS_BCMPRICINGCALCULATOR_API BCMPricingCalculatorClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMPricingCalculatorClient>;
   void init(const BCMPricingCalculatorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BCMPricingCalculatorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   BCMPricingCalculatorClientConfiguration m_clientConfiguration;
   std::shared_ptr<BCMPricingCalculatorEndpointProviderBase> m_endpointProvider;
 };

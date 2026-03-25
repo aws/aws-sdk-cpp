@@ -656,6 +656,10 @@ class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>;
   void init(const ACMClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ACMError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ACMClientConfiguration m_clientConfiguration;
   std::shared_ptr<ACMEndpointProviderBase> m_endpointProvider;
 };

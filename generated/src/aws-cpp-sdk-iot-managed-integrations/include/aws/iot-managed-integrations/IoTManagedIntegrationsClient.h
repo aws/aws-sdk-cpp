@@ -2441,6 +2441,12 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTManagedIntegrationsClient>;
   void init(const IoTManagedIntegrationsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTManagedIntegrationsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   IoTManagedIntegrationsClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTManagedIntegrationsEndpointProviderBase> m_endpointProvider;
 };

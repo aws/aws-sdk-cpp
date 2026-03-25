@@ -414,6 +414,12 @@ class AWS_SCHEDULER_API SchedulerClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SchedulerClient>;
   void init(const SchedulerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SchedulerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SchedulerClientConfiguration m_clientConfiguration;
   std::shared_ptr<SchedulerEndpointProviderBase> m_endpointProvider;
 };

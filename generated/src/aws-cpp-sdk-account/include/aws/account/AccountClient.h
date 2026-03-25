@@ -539,6 +539,12 @@ class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AccountClient>;
   void init(const AccountClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AccountError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AccountClientConfiguration m_clientConfiguration;
   std::shared_ptr<AccountEndpointProviderBase> m_endpointProvider;
 };

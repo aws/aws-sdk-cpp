@@ -126,6 +126,12 @@ class AWS_SAGEMAKERRUNTIMEHTTP2_API SageMakerRuntimeHTTP2Client
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeHTTP2Client>;
   void init(const SageMakerRuntimeHTTP2ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SageMakerRuntimeHTTP2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SageMakerRuntimeHTTP2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<SageMakerRuntimeHTTP2EndpointProviderBase> m_endpointProvider;
 };

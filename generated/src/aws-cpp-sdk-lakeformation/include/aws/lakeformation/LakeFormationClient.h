@@ -1892,6 +1892,12 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LakeFormationClient>;
   void init(const LakeFormationClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LakeFormationError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   LakeFormationClientConfiguration m_clientConfiguration;
   std::shared_ptr<LakeFormationEndpointProviderBase> m_endpointProvider;
 };

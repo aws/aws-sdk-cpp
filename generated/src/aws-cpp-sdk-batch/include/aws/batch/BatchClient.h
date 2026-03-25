@@ -1413,6 +1413,12 @@ class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>;
   void init(const BatchClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BatchError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   BatchClientConfiguration m_clientConfiguration;
   std::shared_ptr<BatchEndpointProviderBase> m_endpointProvider;
 };

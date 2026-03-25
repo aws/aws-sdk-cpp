@@ -194,6 +194,12 @@ class AWS_SSMGUICONNECT_API SSMGuiConnectClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMGuiConnectClient>;
   void init(const SSMGuiConnectClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SSMGuiConnectError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SSMGuiConnectClientConfiguration m_clientConfiguration;
   std::shared_ptr<SSMGuiConnectEndpointProviderBase> m_endpointProvider;
 };

@@ -1616,6 +1616,12 @@ class AWS_NEPTUNEDATA_API NeptunedataClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NeptunedataClient>;
   void init(const NeptunedataClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NeptunedataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   NeptunedataClientConfiguration m_clientConfiguration;
   std::shared_ptr<NeptunedataEndpointProviderBase> m_endpointProvider;
 };

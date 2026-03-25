@@ -641,6 +641,10 @@ class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>;
   void init(const TranslateClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TranslateError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   TranslateClientConfiguration m_clientConfiguration;
   std::shared_ptr<TranslateEndpointProviderBase> m_endpointProvider;
 };

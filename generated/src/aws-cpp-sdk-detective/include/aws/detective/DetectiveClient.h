@@ -1027,6 +1027,12 @@ class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>;
   void init(const DetectiveClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DetectiveError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   DetectiveClientConfiguration m_clientConfiguration;
   std::shared_ptr<DetectiveEndpointProviderBase> m_endpointProvider;
 };

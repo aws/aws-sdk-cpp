@@ -3677,6 +3677,10 @@ class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConfigServiceClient>;
   void init(const ConfigServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ConfigServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ConfigServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ConfigServiceEndpointProviderBase> m_endpointProvider;
 };

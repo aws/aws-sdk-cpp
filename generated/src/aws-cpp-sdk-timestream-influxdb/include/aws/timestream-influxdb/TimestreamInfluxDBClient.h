@@ -590,6 +590,10 @@ class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamInfluxDBClient>;
   void init(const TimestreamInfluxDBClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TimestreamInfluxDBError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   TimestreamInfluxDBClientConfiguration m_clientConfiguration;
   std::shared_ptr<TimestreamInfluxDBEndpointProviderBase> m_endpointProvider;
 };

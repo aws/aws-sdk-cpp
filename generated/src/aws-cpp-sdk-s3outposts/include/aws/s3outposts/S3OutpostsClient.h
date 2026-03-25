@@ -240,6 +240,12 @@ class AWS_S3OUTPOSTS_API S3OutpostsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<S3OutpostsClient>;
   void init(const S3OutpostsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, S3OutpostsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   S3OutpostsClientConfiguration m_clientConfiguration;
   std::shared_ptr<S3OutpostsEndpointProviderBase> m_endpointProvider;
 };

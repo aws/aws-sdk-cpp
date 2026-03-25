@@ -1890,6 +1890,10 @@ class AWS_EMR_API EMRClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EMRClient>;
   void init(const EMRClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EMRError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   EMRClientConfiguration m_clientConfiguration;
   std::shared_ptr<EMREndpointProviderBase> m_endpointProvider;
 };

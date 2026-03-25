@@ -1922,6 +1922,12 @@ class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient>;
   void init(const ChimeClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ChimeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ChimeClientConfiguration m_clientConfiguration;
   std::shared_ptr<ChimeEndpointProviderBase> m_endpointProvider;
 };

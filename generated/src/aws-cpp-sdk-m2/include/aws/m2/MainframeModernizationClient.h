@@ -1108,6 +1108,12 @@ class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>;
   void init(const MainframeModernizationClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MainframeModernizationError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MainframeModernizationClientConfiguration m_clientConfiguration;
   std::shared_ptr<MainframeModernizationEndpointProviderBase> m_endpointProvider;
 };

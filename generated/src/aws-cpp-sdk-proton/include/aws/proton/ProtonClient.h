@@ -167,6 +167,10 @@ class AWS_PROTON_API ProtonClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ProtonClient>;
   void init(const ProtonClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ProtonError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ProtonClientConfiguration m_clientConfiguration;
   std::shared_ptr<ProtonEndpointProviderBase> m_endpointProvider;
 };

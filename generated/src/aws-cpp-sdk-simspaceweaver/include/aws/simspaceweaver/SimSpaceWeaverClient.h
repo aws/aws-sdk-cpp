@@ -547,6 +547,12 @@ class AWS_SIMSPACEWEAVER_API SimSpaceWeaverClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SimSpaceWeaverClient>;
   void init(const SimSpaceWeaverClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SimSpaceWeaverError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SimSpaceWeaverClientConfiguration m_clientConfiguration;
   std::shared_ptr<SimSpaceWeaverEndpointProviderBase> m_endpointProvider;
 };
