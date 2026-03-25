@@ -28,7 +28,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeStringUnionValue) {
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJpbmdWYWx1ZSI6ICJmb28iCiAgICB9Cn0=";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -50,7 +50,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeBooleanUnionValue) {
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJib29sZWFuVmFsdWUiOiB0cnVlCiAgICB9Cn0=";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -72,7 +72,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeNumberUnionValue) {
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJudW1iZXJWYWx1ZSI6IDEKICAgIH0KfQ==";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -94,7 +94,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeBlobUnionValue) {
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJibG9iVmFsdWUiOiAiWm05diIKICAgIH0KfQ==";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -116,7 +116,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeTimestampUnionValue) {
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJ0aW1lc3RhbXBWYWx1ZSI6IDEzOTg3OTYyMzgKICAgIH0KfQ==";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -138,7 +138,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeEnumUnionValue) {
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJlbnVtVmFsdWUiOiAiRm9vIgogICAgfQp9";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -160,7 +160,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeListUnionValue) {
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJsaXN0VmFsdWUiOiBbImZvbyIsICJiYXIiXQogICAgfQp9";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -184,7 +184,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeMapUnionValue) {
       "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJtYXBWYWx1ZSI6IHsKICAgICAgICAgICAgImZvbyI6ICJiYXIiLAogICAgICAgICAgICAic3BhbSI6ICJlZ2dzIgogICAg"
       "ICAgIH0KICAgIH0KfQ==";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -211,7 +211,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeStructureUnionValue) {
   expectedRq.body =
       "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJzdHJ1Y3R1cmVWYWx1ZSI6IHsKICAgICAgICAgICAgImhpIjogImhlbGxvIgogICAgICAgIH0KICAgIH0KfQ==";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}, {"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonProtocol.JsonUnions)"}, {"Content-Type", R"(application/x-amz-json-1.1)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
@@ -77,14 +78,17 @@ class HttpPrefixHeadersResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::String m_foo;
-  bool m_fooHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_fooMap;
-  bool m_fooMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_fooHasBeenSet = false;
+  bool m_fooMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

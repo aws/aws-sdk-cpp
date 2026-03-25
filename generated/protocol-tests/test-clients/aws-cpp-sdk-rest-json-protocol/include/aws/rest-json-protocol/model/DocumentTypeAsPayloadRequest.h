@@ -64,9 +64,9 @@ class DocumentTypeAsPayloadRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::Utils::Document m_documentValue;
-  bool m_documentValueHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentValueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

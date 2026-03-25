@@ -20,6 +20,7 @@ using namespace Aws;
 JsonTimestampsResult::JsonTimestampsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 JsonTimestampsResult& JsonTimestampsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("normal")) {
     m_normal = jsonValue.GetDouble("normal");

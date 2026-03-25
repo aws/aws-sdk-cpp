@@ -45,7 +45,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSimpleScalarProperties) {
       "kD0AABsaW50ZWdlclZhbHVlGQEAaWxvbmdWYWx1ZRkmkWpzaG9ydFZhbHVlGSaqa3N0cmluZ1ZhbHVlZnNpbXBsZXB0cnVlQm9vbGVhblZhbHVl9WlibG9iVmFsdWVDZm9v/"
       "w==";
   expectedRq.uri = "/service/RpcV2Protocol/operation/SimpleScalarProperties";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const SimpleScalarPropertiesResult& result = outcome.GetResult();
@@ -82,7 +82,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborClientDoesntSerializeNullStru
   expectedRq.method = "POST";
   expectedRq.body = "v/8=";
   expectedRq.uri = "/service/RpcV2Protocol/operation/SimpleScalarProperties";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const SimpleScalarPropertiesResult& result = outcome.GetResult();
@@ -110,7 +110,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsNaNFloatInputs) {
   expectedRq.method = "POST";
   expectedRq.body = "v2tkb3VibGVWYWx1Zft/+AAAAAAAAGpmbG9hdFZhbHVl+n/AAAD/";
   expectedRq.uri = "/service/RpcV2Protocol/operation/SimpleScalarProperties";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const SimpleScalarPropertiesResult& result = outcome.GetResult();
@@ -139,7 +139,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsInfinityFloatInputs) 
   expectedRq.method = "POST";
   expectedRq.body = "v2tkb3VibGVWYWx1Zft/8AAAAAAAAGpmbG9hdFZhbHVl+n+AAAD/";
   expectedRq.uri = "/service/RpcV2Protocol/operation/SimpleScalarProperties";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const SimpleScalarPropertiesResult& result = outcome.GetResult();
@@ -168,7 +168,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsNegativeInfinityFloat
   expectedRq.method = "POST";
   expectedRq.body = "v2tkb3VibGVWYWx1Zfv/8AAAAAAAAGpmbG9hdFZhbHVl+v+AAAD/";
   expectedRq.uri = "/service/RpcV2Protocol/operation/SimpleScalarProperties";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const SimpleScalarPropertiesResult& result = outcome.GetResult();

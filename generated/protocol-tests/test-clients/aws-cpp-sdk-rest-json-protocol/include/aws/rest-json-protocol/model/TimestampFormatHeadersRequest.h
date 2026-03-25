@@ -160,27 +160,27 @@ class TimestampFormatHeadersRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_memberEpochSeconds{};
-  bool m_memberEpochSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_memberHttpDate{};
-  bool m_memberHttpDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_memberDateTime{};
-  bool m_memberDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_defaultFormat{};
-  bool m_defaultFormatHasBeenSet = false;
 
   Aws::Utils::DateTime m_targetEpochSeconds{};
-  bool m_targetEpochSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_targetHttpDate{};
-  bool m_targetHttpDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_targetDateTime{};
-  bool m_targetDateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memberEpochSecondsHasBeenSet = false;
+  bool m_memberHttpDateHasBeenSet = false;
+  bool m_memberDateTimeHasBeenSet = false;
+  bool m_defaultFormatHasBeenSet = false;
+  bool m_targetEpochSecondsHasBeenSet = false;
+  bool m_targetHttpDateHasBeenSet = false;
+  bool m_targetDateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
@@ -56,11 +57,14 @@ class JsonBlobsResult {
     return *this;
   }
   ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
  private:
   Aws::Utils::ByteBuffer m_data{};
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_dataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

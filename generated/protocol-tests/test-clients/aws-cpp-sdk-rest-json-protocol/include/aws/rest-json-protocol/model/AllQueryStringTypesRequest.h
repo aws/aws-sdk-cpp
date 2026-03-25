@@ -414,66 +414,66 @@ class AllQueryStringTypesRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_queryStringList;
-  bool m_queryStringListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_queryStringSet;
-  bool m_queryStringSetHasBeenSet = false;
 
   int m_queryByte{0};
-  bool m_queryByteHasBeenSet = false;
 
   int m_queryShort{0};
-  bool m_queryShortHasBeenSet = false;
 
   int m_queryInteger{0};
-  bool m_queryIntegerHasBeenSet = false;
 
   Aws::Vector<int> m_queryIntegerList;
-  bool m_queryIntegerListHasBeenSet = false;
 
   Aws::Vector<int> m_queryIntegerSet;
-  bool m_queryIntegerSetHasBeenSet = false;
 
   long long m_queryLong{0};
-  bool m_queryLongHasBeenSet = false;
 
   double m_queryFloat{0.0};
-  bool m_queryFloatHasBeenSet = false;
 
   double m_queryDouble{0.0};
-  bool m_queryDoubleHasBeenSet = false;
 
   Aws::Vector<double> m_queryDoubleList;
-  bool m_queryDoubleListHasBeenSet = false;
 
   bool m_queryBoolean{false};
-  bool m_queryBooleanHasBeenSet = false;
 
   Aws::Vector<bool> m_queryBooleanList;
-  bool m_queryBooleanListHasBeenSet = false;
 
   Aws::Utils::DateTime m_queryTimestamp{};
-  bool m_queryTimestampHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_queryTimestampList;
-  bool m_queryTimestampListHasBeenSet = false;
 
   FooEnum m_queryEnum{FooEnum::NOT_SET};
-  bool m_queryEnumHasBeenSet = false;
 
   Aws::Vector<FooEnum> m_queryEnumList;
-  bool m_queryEnumListHasBeenSet = false;
 
   int m_queryIntegerEnum{0};
-  bool m_queryIntegerEnumHasBeenSet = false;
 
   Aws::Vector<int> m_queryIntegerEnumList;
-  bool m_queryIntegerEnumListHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_queryParamsMapOfStringList;
+  bool m_queryStringHasBeenSet = false;
+  bool m_queryStringListHasBeenSet = false;
+  bool m_queryStringSetHasBeenSet = false;
+  bool m_queryByteHasBeenSet = false;
+  bool m_queryShortHasBeenSet = false;
+  bool m_queryIntegerHasBeenSet = false;
+  bool m_queryIntegerListHasBeenSet = false;
+  bool m_queryIntegerSetHasBeenSet = false;
+  bool m_queryLongHasBeenSet = false;
+  bool m_queryFloatHasBeenSet = false;
+  bool m_queryDoubleHasBeenSet = false;
+  bool m_queryDoubleListHasBeenSet = false;
+  bool m_queryBooleanHasBeenSet = false;
+  bool m_queryBooleanListHasBeenSet = false;
+  bool m_queryTimestampHasBeenSet = false;
+  bool m_queryTimestampListHasBeenSet = false;
+  bool m_queryEnumHasBeenSet = false;
+  bool m_queryEnumListHasBeenSet = false;
+  bool m_queryIntegerEnumHasBeenSet = false;
+  bool m_queryIntegerEnumListHasBeenSet = false;
   bool m_queryParamsMapOfStringListHasBeenSet = false;
 };
 

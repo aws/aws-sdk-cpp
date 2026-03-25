@@ -68,7 +68,7 @@ AWS_PROTOCOL_TEST(RpcV2CborLists, RpcV2CborLists) {
       "vzgAAAaGVudW1MaXN0gmNGb29hMGtpbnRFbnVtTGlzdIIBAnBuZXN0ZWRTdHJpbmdMaXN0goJjZm9vY2JhcoJjYmF6Y3F1eG1zdHJ1Y3R1cmVMaXN0gqJhYWExYWJhMqJhYW"
       "EzYWJhNGhibG9iTGlzdIJDZm9vQ2Jhcv8=";
   expectedRq.uri = "/service/RpcV2Protocol/operation/RpcV2CborLists";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const RpcV2CborListsResult& result = outcome.GetResult();
@@ -152,7 +152,7 @@ AWS_PROTOCOL_TEST(RpcV2CborLists, RpcV2CborListsEmpty) {
   expectedRq.method = "POST";
   expectedRq.body = "v2pzdHJpbmdMaXN0n///";
   expectedRq.uri = "/service/RpcV2Protocol/operation/RpcV2CborLists";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const RpcV2CborListsResult& result = outcome.GetResult();
@@ -180,7 +180,7 @@ AWS_PROTOCOL_TEST(RpcV2CborLists, RpcV2CborListsEmptyUsingDefiniteLength) {
   expectedRq.method = "POST";
   expectedRq.body = "oWpzdHJpbmdMaXN0gA==";
   expectedRq.uri = "/service/RpcV2Protocol/operation/RpcV2CborLists";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.requireHeaders = {"Content-Length"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   const RpcV2CborListsResult& result = outcome.GetResult();

@@ -75,12 +75,12 @@ class SimpleScalarPropertiesRequest : public JsonProtocolRequest {
   ///@}
  private:
   double m_floatValue{0.0};
-  bool m_floatValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_floatValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

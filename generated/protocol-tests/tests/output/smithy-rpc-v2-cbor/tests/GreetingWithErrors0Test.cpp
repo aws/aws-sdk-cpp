@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RpcV2CborComplexError) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 400;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "v2ZfX3R5cGV4K3NtaXRoeS5wcm90b2NvbHRlc3RzLnJwY3YyQ2JvciNDb21wbGV4RXJyb3JoVG9wTGV2ZWxpVG9wIGxldmVsZk5lc3RlZL9jRm9vY2Jhcv//";
   SetMockResponse(mockRs);
 
@@ -31,7 +31,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, RpcV2CborEmptyComplexError) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 400;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "v2ZfX3R5cGV4K3NtaXRoeS5wcm90b2NvbHRlc3RzLnJwY3YyQ2JvciNDb21wbGV4RXJyb3L/";
   SetMockResponse(mockRs);
 

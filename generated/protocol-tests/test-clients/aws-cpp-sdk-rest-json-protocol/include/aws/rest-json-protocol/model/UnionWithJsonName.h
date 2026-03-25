@@ -75,12 +75,12 @@ class UnionWithJsonName {
   ///@}
  private:
   Aws::String m_foo;
-  bool m_fooHasBeenSet = false;
 
   Aws::String m_bar;
-  bool m_barHasBeenSet = false;
 
   Aws::String m_baz;
+  bool m_fooHasBeenSet = false;
+  bool m_barHasBeenSet = false;
   bool m_bazHasBeenSet = false;
 };
 

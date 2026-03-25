@@ -154,24 +154,24 @@ class ErrorWithMembers {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   KitchenSink m_complexData;
-  bool m_complexDataHasBeenSet = false;
 
   int m_integerField{0};
-  bool m_integerFieldHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_listField;
-  bool m_listFieldHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_mapField;
-  bool m_mapFieldHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_stringField;
+  bool m_codeHasBeenSet = false;
+  bool m_complexDataHasBeenSet = false;
+  bool m_integerFieldHasBeenSet = false;
+  bool m_listFieldHasBeenSet = false;
+  bool m_mapFieldHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_stringFieldHasBeenSet = false;
 };
 

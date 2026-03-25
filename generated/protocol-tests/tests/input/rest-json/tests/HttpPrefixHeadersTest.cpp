@@ -24,7 +24,7 @@ AWS_PROTOCOL_TEST(HttpPrefixHeaders, RestJsonHttpPrefixHeadersArePresent) {
   ExpectedRequest expectedRq;
   expectedRq.method = "GET";
   expectedRq.uri = "/HttpPrefixHeaders";
-  expectedRq.headers = {{"x-foo", R"(Foo)"}, {"x-foo-abc", R"(Abc value)"}, {"x-foo-def", R"(Def value)"}};
+  expectedRq.headers = {{"x-foo", R"(Foo)"}, {"x-foo-def", R"(Def value)"}, {"x-foo-abc", R"(Abc value)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -308,6 +308,31 @@ class AWS_RPCV2PROTOCOL_API RpcV2ProtocolClient : public Aws::Client::AWSRpcV2Cb
   /**
    *
    */
+  virtual Model::RpcV2CborSparseMapsOutcome RpcV2CborSparseMaps(const Model::RpcV2CborSparseMapsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for RpcV2CborSparseMaps that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RpcV2CborSparseMapsRequestT = Model::RpcV2CborSparseMapsRequest>
+  Model::RpcV2CborSparseMapsOutcomeCallable RpcV2CborSparseMapsCallable(const RpcV2CborSparseMapsRequestT& request = {}) const {
+    return SubmitCallable(&RpcV2ProtocolClient::RpcV2CborSparseMaps, request);
+  }
+
+  /**
+   * An Async wrapper for RpcV2CborSparseMaps that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename RpcV2CborSparseMapsRequestT = Model::RpcV2CborSparseMapsRequest>
+  void RpcV2CborSparseMapsAsync(const RpcV2CborSparseMapsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const RpcV2CborSparseMapsRequestT& request = {}) const {
+    return SubmitAsync(&RpcV2ProtocolClient::RpcV2CborSparseMaps, request, handler, context);
+  }
+
+  /**
+   *
+   */
   virtual Model::SimpleScalarPropertiesOutcome SimpleScalarProperties(const Model::SimpleScalarPropertiesRequest& request = {}) const;
 
   /**
@@ -330,8 +355,33 @@ class AWS_RPCV2PROTOCOL_API RpcV2ProtocolClient : public Aws::Client::AWSRpcV2Cb
     return SubmitAsync(&RpcV2ProtocolClient::SimpleScalarProperties, request, handler, context);
   }
 
-  void OverrideEndpoint(const Aws::String& endpoint);
-  std::shared_ptr<RpcV2ProtocolEndpointProviderBase>& accessEndpointProvider();
+  /**
+   *
+   */
+  virtual Model::SparseNullsOperationOutcome SparseNullsOperation(const Model::SparseNullsOperationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for SparseNullsOperation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SparseNullsOperationRequestT = Model::SparseNullsOperationRequest>
+  Model::SparseNullsOperationOutcomeCallable SparseNullsOperationCallable(const SparseNullsOperationRequestT& request = {}) const {
+    return SubmitCallable(&RpcV2ProtocolClient::SparseNullsOperation, request);
+  }
+
+  /**
+   * An Async wrapper for SparseNullsOperation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SparseNullsOperationRequestT = Model::SparseNullsOperationRequest>
+  void SparseNullsOperationAsync(const SparseNullsOperationResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const SparseNullsOperationRequestT& request = {}) const {
+    return SubmitAsync(&RpcV2ProtocolClient::SparseNullsOperation, request, handler, context);
+  }
+
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<RpcV2ProtocolEndpointProviderBase>& accessEndpointProvider();
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RpcV2ProtocolClient>;

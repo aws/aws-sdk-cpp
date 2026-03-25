@@ -71,9 +71,9 @@ class DocumentTypeAsMapValueRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Utils::Document> m_docValuedMap;
-  bool m_docValuedMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_docValuedMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

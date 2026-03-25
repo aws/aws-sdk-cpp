@@ -62,9 +62,9 @@ class HttpEnumPayloadRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   StringEnum m_payload{StringEnum::NOT_SET};
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_payloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

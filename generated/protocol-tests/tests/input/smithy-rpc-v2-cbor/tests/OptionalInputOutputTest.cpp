@@ -27,7 +27,7 @@ AWS_PROTOCOL_TEST(OptionalInputOutput, optional_input) {
   expectedRq.method = "POST";
   expectedRq.body = "v/8=";
   expectedRq.uri = "/service/RpcV2Protocol/operation/OptionalInputOutput";
-  expectedRq.headers = {{"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  expectedRq.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Accept", R"(application/cbor)"}, {"Content-Type", R"(application/cbor)"}};
   expectedRq.forbidHeaders = {"X-Amz-Target"};
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
   ValidateRequestSent(expectedRq, [](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {

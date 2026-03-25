@@ -70,9 +70,9 @@ class HttpPrefixHeadersRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_foo;
-  bool m_fooHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_fooMap;
+  bool m_fooHasBeenSet = false;
   bool m_fooMapHasBeenSet = false;
 };
 

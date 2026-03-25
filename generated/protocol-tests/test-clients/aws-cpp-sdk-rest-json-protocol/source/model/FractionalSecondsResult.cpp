@@ -20,6 +20,7 @@ using namespace Aws;
 FractionalSecondsResult::FractionalSecondsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 FractionalSecondsResult& FractionalSecondsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("datetime")) {
     m_datetime = jsonValue.GetString("datetime");

@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborMaps) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "oW5kZW5zZVN0cnVjdE1hcKJjZm9voWJoaWV0aGVyZWNiYXqhYmhpY2J5ZQ==";
   SetMockResponse(mockRs);
 
@@ -47,7 +47,7 @@ AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborDeserializesZeroValuesInMaps) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "om5kZW5zZU51bWJlck1hcKFheABvZGVuc2VCb29sZWFuTWFwoWF49A==";
   SetMockResponse(mockRs);
 
@@ -74,41 +74,8 @@ AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborDeserializesDenseSetMap) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "oWtkZW5zZVNldE1hcKJheIBheYJhYWFi";
-  SetMockResponse(mockRs);
-
-  RpcV2CborDenseMapsRequest request;
-
-  auto outcome = client.RpcV2CborDenseMaps(request);
-  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
-  const RpcV2CborDenseMapsResult& result = outcome.GetResult();
-  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
-    /* expectedResult = R"( {"denseSetMap":{"x":[],"y":["a","b"]}} )" */
-    const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& resultDenseSetMap = result.GetDenseSetMap();
-    EXPECT_EQ(2U, resultDenseSetMap.size());
-    EXPECT_TRUE(resultDenseSetMap.find("x") != resultDenseSetMap.end());
-    {
-      const Aws::Vector<Aws::String>& resultDenseSetMapItem = resultDenseSetMap.at("x");
-      EXPECT_EQ(0U, resultDenseSetMapItem.size());
-    }
-    EXPECT_TRUE(resultDenseSetMap.find("y") != resultDenseSetMap.end());
-    {
-      const Aws::Vector<Aws::String>& resultDenseSetMapItem = resultDenseSetMap.at("y");
-      EXPECT_EQ(2U, resultDenseSetMapItem.size());
-      EXPECT_EQ(R"(a)", resultDenseSetMapItem.at(0));
-      EXPECT_EQ(R"(b)", resultDenseSetMapItem.at(1));
-    }
-  });
-}
-
-AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborDeserializesDenseSetMapAndSkipsNull) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
-
-  OutputResponse mockRs;
-  mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
-  mockRs.body = "oWtkZW5zZVNldE1hcKNheIBheYJhYWFiYXr2";
   SetMockResponse(mockRs);
 
   RpcV2CborDenseMapsRequest request;

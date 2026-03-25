@@ -21,6 +21,7 @@ using namespace Aws;
 JsonBlobsResult::JsonBlobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
 JsonBlobsResult& JsonBlobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
   if (jsonValue.ValueExists("data")) {
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));

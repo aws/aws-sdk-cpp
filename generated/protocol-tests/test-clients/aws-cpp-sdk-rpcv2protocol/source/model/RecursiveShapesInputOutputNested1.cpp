@@ -68,9 +68,7 @@ RecursiveShapesInputOutputNested1& RecursiveShapesInputOutputNested1::operator=(
                 m_nested = Aws::MakeShared<RecursiveShapesInputOutputNested2>("RecursiveShapesInputOutputNested1",
                                                                               RecursiveShapesInputOutputNested2(decoder));
                 m_nestedHasBeenSet = true;
-              }
-
-              else {
+              } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
               }
@@ -131,9 +129,7 @@ RecursiveShapesInputOutputNested1& RecursiveShapesInputOutputNested1::operator=(
               m_nested = Aws::MakeShared<RecursiveShapesInputOutputNested2>("RecursiveShapesInputOutputNested1",
                                                                             RecursiveShapesInputOutputNested2(decoder));
               m_nestedHasBeenSet = true;
-            }
-
-            else {
+            } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
             }

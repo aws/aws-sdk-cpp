@@ -61,9 +61,9 @@ class HttpRequestWithGreedyLabelInPathRequest : public RestJsonProtocolRequest {
   ///@}
  private:
   Aws::String m_foo;
-  bool m_fooHasBeenSet = false;
 
   Aws::String m_baz;
+  bool m_fooHasBeenSet = false;
   bool m_bazHasBeenSet = false;
 };
 

@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(FractionalSeconds, RpcV2CborDateTimeWithFractionalSeconds) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/cbor)"}, {"smithy-protocol", R"(rpc-v2-cbor)"}};
+  mockRs.headers = {{"smithy-protocol", R"(rpc-v2-cbor)"}, {"Content-Type", R"(application/cbor)"}};
   mockRs.body = "v2hkYXRldGltZcH7Qcw32zgPvnf/";
   SetMockResponse(mockRs);
 

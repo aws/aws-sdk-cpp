@@ -65,9 +65,9 @@ class ComplexError {
   ///@}
  private:
   Aws::String m_topLevel;
-  bool m_topLevelHasBeenSet = false;
 
   ComplexNestedErrorData m_nested;
+  bool m_topLevelHasBeenSet = false;
   bool m_nestedHasBeenSet = false;
 };
 

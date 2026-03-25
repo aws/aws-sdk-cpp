@@ -16,7 +16,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RestJsonSimpleScalarProperties) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/json)"}, {"X-Foo", R"(Foo)"}};
+  mockRs.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/json)"}};
   mockRs.body =
       "ewogICAgInN0cmluZ1ZhbHVlIjogInN0cmluZyIsCiAgICAidHJ1ZUJvb2xlYW5WYWx1ZSI6IHRydWUsCiAgICAiZmFsc2VCb29sZWFuVmFsdWUiOiBmYWxzZSwKICAgICJi"
       "eXRlVmFsdWUiOiAxLAogICAgInNob3J0VmFsdWUiOiAyLAogICAgImludGVnZXJWYWx1ZSI6IDMsCiAgICAibG9uZ1ZhbHVlIjogNCwKICAgICJmbG9hdFZhbHVlIjogNS41"
