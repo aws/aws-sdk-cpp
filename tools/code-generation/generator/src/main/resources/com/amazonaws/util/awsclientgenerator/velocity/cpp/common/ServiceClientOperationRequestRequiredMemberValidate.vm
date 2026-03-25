@@ -10,7 +10,7 @@
     return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
   }
 #end
-#else
+#elseif(!$emitGenericOperation)
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
 #end
 #else##-#if(!$operation.request.shape.hasEventStreamMembers())

@@ -249,7 +249,7 @@ namespace ${rootNamespace}
         static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request, const struct aws_s3_meta_request_result *meta_request_result, void *user_data);
 
         void InitCrtEndpointFromUri(aws_uri &endpoint_uri, const Aws::Http::URI &uri) const;
-        
+
         void InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData,
                                         aws_s3_meta_request_options *options,
                                         const Aws::AmazonWebServiceRequest *request,
@@ -261,6 +261,9 @@ namespace ${rootNamespace}
         void init(const ${metadata.classNamePrefix}ClientConfiguration& clientConfiguration);
 #end
 #end
+
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceInvokeOperationHeader.vm")
+
 #if(!$serviceModel.endpointRules)
         void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
         ComputeEndpointOutcome ComputeEndpointString(const Aws::String& bucket) const;
