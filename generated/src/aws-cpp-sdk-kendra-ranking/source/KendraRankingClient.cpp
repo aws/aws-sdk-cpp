@@ -210,7 +210,7 @@ DeleteRescoreExecutionPlanOutcome KendraRankingClient::DeleteRescoreExecutionPla
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRescoreExecutionPlanOutcome(result);
+        return DeleteRescoreExecutionPlanOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -426,7 +426,7 @@ UpdateRescoreExecutionPlanOutcome KendraRankingClient::UpdateRescoreExecutionPla
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateRescoreExecutionPlanOutcome(result);
+        return UpdateRescoreExecutionPlanOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

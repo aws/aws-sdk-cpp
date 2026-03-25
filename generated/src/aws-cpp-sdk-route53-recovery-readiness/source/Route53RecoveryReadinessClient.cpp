@@ -383,7 +383,7 @@ DeleteCellOutcome Route53RecoveryReadinessClient::DeleteCell(const DeleteCellReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCellName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCellOutcome(result);
+        return DeleteCellOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -457,7 +457,7 @@ DeleteReadinessCheckOutcome Route53RecoveryReadinessClient::DeleteReadinessCheck
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReadinessCheckName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteReadinessCheckOutcome(result);
+        return DeleteReadinessCheckOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -492,7 +492,7 @@ DeleteRecoveryGroupOutcome Route53RecoveryReadinessClient::DeleteRecoveryGroup(c
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecoveryGroupName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRecoveryGroupOutcome(result);
+        return DeleteRecoveryGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -527,7 +527,7 @@ DeleteResourceSetOutcome Route53RecoveryReadinessClient::DeleteResourceSet(const
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceSetName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteResourceSetOutcome(result);
+        return DeleteResourceSetOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1158,7 +1158,7 @@ UntagResourceOutcome Route53RecoveryReadinessClient::UntagResource(const UntagRe
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

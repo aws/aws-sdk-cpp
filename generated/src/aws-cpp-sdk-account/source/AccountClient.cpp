@@ -223,7 +223,7 @@ DeleteAlternateContactOutcome AccountClient::DeleteAlternateContact(const Delete
         endpointResolutionOutcome.GetResult().AddPathSegments("/deleteAlternateContact");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAlternateContactOutcome(result);
+        return DeleteAlternateContactOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -254,7 +254,7 @@ DisableRegionOutcome AccountClient::DisableRegion(const DisableRegionRequest& re
         endpointResolutionOutcome.GetResult().AddPathSegments("/disableRegion");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisableRegionOutcome(result);
+        return DisableRegionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -285,7 +285,7 @@ EnableRegionOutcome AccountClient::EnableRegion(const EnableRegionRequest& reque
         endpointResolutionOutcome.GetResult().AddPathSegments("/enableRegion");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return EnableRegionOutcome(result);
+        return EnableRegionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -542,7 +542,7 @@ PutAccountNameOutcome AccountClient::PutAccountName(const PutAccountNameRequest&
         endpointResolutionOutcome.GetResult().AddPathSegments("/putAccountName");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutAccountNameOutcome(result);
+        return PutAccountNameOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -573,7 +573,7 @@ PutAlternateContactOutcome AccountClient::PutAlternateContact(const PutAlternate
         endpointResolutionOutcome.GetResult().AddPathSegments("/putAlternateContact");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutAlternateContactOutcome(result);
+        return PutAlternateContactOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -604,7 +604,7 @@ PutContactInformationOutcome AccountClient::PutContactInformation(const PutConta
         endpointResolutionOutcome.GetResult().AddPathSegments("/putContactInformation");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutContactInformationOutcome(result);
+        return PutContactInformationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

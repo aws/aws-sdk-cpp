@@ -705,7 +705,7 @@ DeleteCampaignOutcome PersonalizeClient::DeleteCampaign(const DeleteCampaignRequ
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCampaignOutcome(result);
+        return DeleteCampaignOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -735,7 +735,7 @@ DeleteDatasetOutcome PersonalizeClient::DeleteDataset(const DeleteDatasetRequest
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteDatasetOutcome(result);
+        return DeleteDatasetOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -765,7 +765,7 @@ DeleteDatasetGroupOutcome PersonalizeClient::DeleteDatasetGroup(const DeleteData
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteDatasetGroupOutcome(result);
+        return DeleteDatasetGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -795,7 +795,7 @@ DeleteEventTrackerOutcome PersonalizeClient::DeleteEventTracker(const DeleteEven
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteEventTrackerOutcome(result);
+        return DeleteEventTrackerOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -825,7 +825,7 @@ DeleteFilterOutcome PersonalizeClient::DeleteFilter(const DeleteFilterRequest& r
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteFilterOutcome(result);
+        return DeleteFilterOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -855,7 +855,7 @@ DeleteMetricAttributionOutcome PersonalizeClient::DeleteMetricAttribution(const 
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteMetricAttributionOutcome(result);
+        return DeleteMetricAttributionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -885,7 +885,7 @@ DeleteRecommenderOutcome PersonalizeClient::DeleteRecommender(const DeleteRecomm
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRecommenderOutcome(result);
+        return DeleteRecommenderOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -915,7 +915,7 @@ DeleteSchemaOutcome PersonalizeClient::DeleteSchema(const DeleteSchemaRequest& r
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSchemaOutcome(result);
+        return DeleteSchemaOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -945,7 +945,7 @@ DeleteSolutionOutcome PersonalizeClient::DeleteSolution(const DeleteSolutionRequ
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSolutionOutcome(result);
+        return DeleteSolutionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2187,7 +2187,7 @@ StopSolutionVersionCreationOutcome PersonalizeClient::StopSolutionVersionCreatio
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopSolutionVersionCreationOutcome(result);
+        return StopSolutionVersionCreationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

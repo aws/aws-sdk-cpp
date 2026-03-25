@@ -297,7 +297,7 @@ AddTagsOutcome ElasticsearchServiceClient::AddTags(const AddTagsRequest& request
         endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/tags");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return AddTagsOutcome(result);
+        return AddTagsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -650,7 +650,7 @@ DeleteElasticsearchServiceRoleOutcome ElasticsearchServiceClient::DeleteElastics
         endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/role");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteElasticsearchServiceRoleOutcome(result);
+        return DeleteElasticsearchServiceRoleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1822,7 +1822,7 @@ RemoveTagsOutcome ElasticsearchServiceClient::RemoveTags(const RemoveTagsRequest
         endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/tags-removal");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return RemoveTagsOutcome(result);
+        return RemoveTagsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

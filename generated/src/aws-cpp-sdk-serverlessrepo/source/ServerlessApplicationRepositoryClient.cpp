@@ -356,7 +356,7 @@ DeleteApplicationOutcome ServerlessApplicationRepositoryClient::DeleteApplicatio
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteApplicationOutcome(result);
+        return DeleteApplicationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -647,7 +647,7 @@ UnshareApplicationOutcome ServerlessApplicationRepositoryClient::UnshareApplicat
         endpointResolutionOutcome.GetResult().AddPathSegments("/unshare");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UnshareApplicationOutcome(result);
+        return UnshareApplicationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

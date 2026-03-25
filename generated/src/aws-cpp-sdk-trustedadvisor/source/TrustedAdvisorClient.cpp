@@ -510,7 +510,7 @@ UpdateOrganizationRecommendationLifecycleOutcome TrustedAdvisorClient::UpdateOrg
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationRecommendationIdentifier());
         endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycle");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateOrganizationRecommendationLifecycleOutcome(result);
+        return UpdateOrganizationRecommendationLifecycleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -546,7 +546,7 @@ UpdateRecommendationLifecycleOutcome TrustedAdvisorClient::UpdateRecommendationL
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationIdentifier());
         endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycle");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateRecommendationLifecycleOutcome(result);
+        return UpdateRecommendationLifecycleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

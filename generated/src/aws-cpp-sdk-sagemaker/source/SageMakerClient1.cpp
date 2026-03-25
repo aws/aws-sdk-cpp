@@ -155,7 +155,7 @@ DeleteHubContentOutcome SageMakerClient::DeleteHubContent(const DeleteHubContent
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteHubContentOutcome(result);
+        return DeleteHubContentOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -185,7 +185,7 @@ DeleteHubContentReferenceOutcome SageMakerClient::DeleteHubContentReference(cons
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteHubContentReferenceOutcome(result);
+        return DeleteHubContentReferenceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -247,7 +247,7 @@ DeleteHyperParameterTuningJobOutcome SageMakerClient::DeleteHyperParameterTuning
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteHyperParameterTuningJobOutcome(result);
+        return DeleteHyperParameterTuningJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -339,7 +339,7 @@ DeleteInferenceComponentOutcome SageMakerClient::DeleteInferenceComponent(const 
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteInferenceComponentOutcome(result);
+        return DeleteInferenceComponentOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -462,7 +462,7 @@ DeleteModelOutcome SageMakerClient::DeleteModel(const DeleteModelRequest& reques
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteModelOutcome(result);
+        return DeleteModelOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -493,7 +493,7 @@ DeleteModelBiasJobDefinitionOutcome SageMakerClient::DeleteModelBiasJobDefinitio
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteModelBiasJobDefinitionOutcome(result);
+        return DeleteModelBiasJobDefinitionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -523,7 +523,7 @@ DeleteModelCardOutcome SageMakerClient::DeleteModelCard(const DeleteModelCardReq
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteModelCardOutcome(result);
+        return DeleteModelCardOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -554,7 +554,7 @@ DeleteModelExplainabilityJobDefinitionOutcome SageMakerClient::DeleteModelExplai
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteModelExplainabilityJobDefinitionOutcome(result);
+        return DeleteModelExplainabilityJobDefinitionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -584,7 +584,7 @@ DeleteModelPackageOutcome SageMakerClient::DeleteModelPackage(const DeleteModelP
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteModelPackageOutcome(result);
+        return DeleteModelPackageOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -614,7 +614,7 @@ DeleteModelPackageGroupOutcome SageMakerClient::DeleteModelPackageGroup(const De
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteModelPackageGroupOutcome(result);
+        return DeleteModelPackageGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -645,7 +645,7 @@ DeleteModelPackageGroupPolicyOutcome SageMakerClient::DeleteModelPackageGroupPol
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteModelPackageGroupPolicyOutcome(result);
+        return DeleteModelPackageGroupPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -676,7 +676,7 @@ DeleteModelQualityJobDefinitionOutcome SageMakerClient::DeleteModelQualityJobDef
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteModelQualityJobDefinitionOutcome(result);
+        return DeleteModelQualityJobDefinitionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -706,7 +706,7 @@ DeleteMonitoringScheduleOutcome SageMakerClient::DeleteMonitoringSchedule(const 
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteMonitoringScheduleOutcome(result);
+        return DeleteMonitoringScheduleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -736,7 +736,7 @@ DeleteNotebookInstanceOutcome SageMakerClient::DeleteNotebookInstance(const Dele
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteNotebookInstanceOutcome(result);
+        return DeleteNotebookInstanceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -767,7 +767,7 @@ DeleteNotebookInstanceLifecycleConfigOutcome SageMakerClient::DeleteNotebookInst
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteNotebookInstanceLifecycleConfigOutcome(result);
+        return DeleteNotebookInstanceLifecycleConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -797,7 +797,7 @@ DeleteOptimizationJobOutcome SageMakerClient::DeleteOptimizationJob(const Delete
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteOptimizationJobOutcome(result);
+        return DeleteOptimizationJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -889,7 +889,7 @@ DeleteProcessingJobOutcome SageMakerClient::DeleteProcessingJob(const DeleteProc
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteProcessingJobOutcome(result);
+        return DeleteProcessingJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -919,7 +919,7 @@ DeleteProjectOutcome SageMakerClient::DeleteProject(const DeleteProjectRequest& 
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteProjectOutcome(result);
+        return DeleteProjectOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -949,7 +949,7 @@ DeleteSpaceOutcome SageMakerClient::DeleteSpace(const DeleteSpaceRequest& reques
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSpaceOutcome(result);
+        return DeleteSpaceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -979,7 +979,7 @@ DeleteStudioLifecycleConfigOutcome SageMakerClient::DeleteStudioLifecycleConfig(
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteStudioLifecycleConfigOutcome(result);
+        return DeleteStudioLifecycleConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1040,7 +1040,7 @@ DeleteTrainingJobOutcome SageMakerClient::DeleteTrainingJob(const DeleteTraining
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTrainingJobOutcome(result);
+        return DeleteTrainingJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1132,7 +1132,7 @@ DeleteUserProfileOutcome SageMakerClient::DeleteUserProfile(const DeleteUserProf
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteUserProfileOutcome(result);
+        return DeleteUserProfileOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1224,7 +1224,7 @@ DeregisterDevicesOutcome SageMakerClient::DeregisterDevices(const DeregisterDevi
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeregisterDevicesOutcome(result);
+        return DeregisterDevicesOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

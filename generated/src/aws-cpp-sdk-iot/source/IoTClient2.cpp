@@ -670,7 +670,7 @@ RejectCertificateTransferOutcome IoTClient::RejectCertificateTransfer(const Reje
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return RejectCertificateTransferOutcome(result);
+        return RejectCertificateTransferOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -767,7 +767,7 @@ ReplaceTopicRuleOutcome IoTClient::ReplaceTopicRule(const ReplaceTopicRuleReques
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return ReplaceTopicRuleOutcome(result);
+        return ReplaceTopicRuleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -873,7 +873,7 @@ SetDefaultPolicyVersionOutcome IoTClient::SetDefaultPolicyVersion(const SetDefau
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyVersionId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return SetDefaultPolicyVersionOutcome(result);
+        return SetDefaultPolicyVersionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -904,7 +904,7 @@ SetLoggingOptionsOutcome IoTClient::SetLoggingOptions(const SetLoggingOptionsReq
         endpointResolutionOutcome.GetResult().AddPathSegments("/loggingOptions");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return SetLoggingOptionsOutcome(result);
+        return SetLoggingOptionsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -935,7 +935,7 @@ SetV2LoggingLevelOutcome IoTClient::SetV2LoggingLevel(const SetV2LoggingLevelReq
         endpointResolutionOutcome.GetResult().AddPathSegments("/v2LoggingLevel");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return SetV2LoggingLevelOutcome(result);
+        return SetV2LoggingLevelOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -966,7 +966,7 @@ SetV2LoggingOptionsOutcome IoTClient::SetV2LoggingOptions(const SetV2LoggingOpti
         endpointResolutionOutcome.GetResult().AddPathSegments("/v2LoggingOptions");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return SetV2LoggingOptionsOutcome(result);
+        return SetV2LoggingOptionsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1486,7 +1486,7 @@ UpdateCACertificateOutcome IoTClient::UpdateCACertificate(const UpdateCACertific
         endpointResolutionOutcome.GetResult().AddPathSegments("/cacertificate/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateId());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCACertificateOutcome(result);
+        return UpdateCACertificateOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1525,7 +1525,7 @@ UpdateCertificateOutcome IoTClient::UpdateCertificate(const UpdateCertificateReq
         endpointResolutionOutcome.GetResult().AddPathSegments("/certificates/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateId());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCertificateOutcome(result);
+        return UpdateCertificateOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1839,7 +1839,7 @@ UpdateFleetMetricOutcome IoTClient::UpdateFleetMetric(const UpdateFleetMetricReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMetricName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return UpdateFleetMetricOutcome(result);
+        return UpdateFleetMetricOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1906,7 +1906,7 @@ UpdateJobOutcome IoTClient::UpdateJob(const UpdateJobRequest& request) const {
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return UpdateJobOutcome(result);
+        return UpdateJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

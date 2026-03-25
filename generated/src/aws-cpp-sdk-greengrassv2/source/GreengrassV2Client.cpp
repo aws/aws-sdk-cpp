@@ -422,7 +422,7 @@ DeleteComponentOutcome GreengrassV2Client::DeleteComponent(const DeleteComponent
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteComponentOutcome(result);
+        return DeleteComponentOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -457,7 +457,7 @@ DeleteCoreDeviceOutcome GreengrassV2Client::DeleteCoreDevice(const DeleteCoreDev
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreDeviceThingName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCoreDeviceOutcome(result);
+        return DeleteCoreDeviceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -492,7 +492,7 @@ DeleteDeploymentOutcome GreengrassV2Client::DeleteDeployment(const DeleteDeploym
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteDeploymentOutcome(result);
+        return DeleteDeploymentOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

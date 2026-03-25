@@ -223,7 +223,7 @@ DeleteInvestigationGroupOutcome AIOpsClient::DeleteInvestigationGroup(const Dele
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteInvestigationGroupOutcome(result);
+        return DeleteInvestigationGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -1803,7 +1803,7 @@ DisassociateAnalyticsDataSetOutcome ConnectClient::DisassociateAnalyticsDataSet(
         endpointResolutionOutcome.GetResult().AddPathSegments("/association");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateAnalyticsDataSetOutcome(result);
+        return DisassociateAnalyticsDataSetOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1844,7 +1844,7 @@ DisassociateApprovedOriginOutcome ConnectClient::DisassociateApprovedOrigin(cons
         endpointResolutionOutcome.GetResult().AddPathSegments("/approved-origin");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateApprovedOriginOutcome(result);
+        return DisassociateApprovedOriginOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1880,7 +1880,7 @@ DisassociateBotOutcome ConnectClient::DisassociateBot(const DisassociateBotReque
         endpointResolutionOutcome.GetResult().AddPathSegments("/bot");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateBotOutcome(result);
+        return DisassociateBotOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2017,7 +2017,7 @@ DisassociateHoursOfOperationsOutcome ConnectClient::DisassociateHoursOfOperation
         endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-hours");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateHoursOfOperationsOutcome(result);
+        return DisassociateHoursOfOperationsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2065,7 +2065,7 @@ DisassociateInstanceStorageConfigOutcome ConnectClient::DisassociateInstanceStor
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateInstanceStorageConfigOutcome(result);
+        return DisassociateInstanceStorageConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2106,7 +2106,7 @@ DisassociateLambdaFunctionOutcome ConnectClient::DisassociateLambdaFunction(cons
         endpointResolutionOutcome.GetResult().AddPathSegments("/lambda-function");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateLambdaFunctionOutcome(result);
+        return DisassociateLambdaFunctionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2152,7 +2152,7 @@ DisassociateLexBotOutcome ConnectClient::DisassociateLexBot(const DisassociateLe
         endpointResolutionOutcome.GetResult().AddPathSegments("/lex-bot");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateLexBotOutcome(result);
+        return DisassociateLexBotOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2194,7 +2194,7 @@ DisassociatePhoneNumberContactFlowOutcome ConnectClient::DisassociatePhoneNumber
         endpointResolutionOutcome.GetResult().AddPathSegments("/contact-flow");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DisassociatePhoneNumberContactFlowOutcome(result);
+        return DisassociatePhoneNumberContactFlowOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2237,7 +2237,7 @@ DisassociateQueueEmailAddressesOutcome ConnectClient::DisassociateQueueEmailAddr
         endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-email-addresses");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateQueueEmailAddressesOutcome(result);
+        return DisassociateQueueEmailAddressesOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2280,7 +2280,7 @@ DisassociateQueueQuickConnectsOutcome ConnectClient::DisassociateQueueQuickConne
         endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-quick-connects");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateQueueQuickConnectsOutcome(result);
+        return DisassociateQueueQuickConnectsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2323,7 +2323,7 @@ DisassociateRoutingProfileQueuesOutcome ConnectClient::DisassociateRoutingProfil
         endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-queues");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateRoutingProfileQueuesOutcome(result);
+        return DisassociateRoutingProfileQueuesOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2365,7 +2365,7 @@ DisassociateSecurityKeyOutcome ConnectClient::DisassociateSecurityKey(const Disa
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateSecurityKeyOutcome(result);
+        return DisassociateSecurityKeyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2400,7 +2400,7 @@ DisassociateSecurityProfilesOutcome ConnectClient::DisassociateSecurityProfiles(
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateSecurityProfilesOutcome(result);
+        return DisassociateSecurityProfilesOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2492,7 +2492,7 @@ DisassociateUserProficienciesOutcome ConnectClient::DisassociateUserProficiencie
         endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-proficiencies");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateUserProficienciesOutcome(result);
+        return DisassociateUserProficienciesOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -289,7 +289,7 @@ DeleteLoggingConfigurationOutcome IvschatClient::DeleteLoggingConfiguration(cons
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLoggingConfiguration");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteLoggingConfigurationOutcome(result);
+        return DeleteLoggingConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -352,7 +352,7 @@ DeleteRoomOutcome IvschatClient::DeleteRoom(const DeleteRoomRequest& request) co
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteRoom");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRoomOutcome(result);
+        return DeleteRoomOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

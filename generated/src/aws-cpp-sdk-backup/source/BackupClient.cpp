@@ -311,7 +311,7 @@ AssociateBackupVaultMpaApprovalTeamOutcome BackupClient::AssociateBackupVaultMpa
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/mpaApprovalTeam");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return AssociateBackupVaultMpaApprovalTeamOutcome(result);
+        return AssociateBackupVaultMpaApprovalTeamOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -798,7 +798,7 @@ DeleteBackupSelectionOutcome BackupClient::DeleteBackupSelection(const DeleteBac
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSelectionId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteBackupSelectionOutcome(result);
+        return DeleteBackupSelectionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -833,7 +833,7 @@ DeleteBackupVaultOutcome BackupClient::DeleteBackupVault(const DeleteBackupVault
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteBackupVaultOutcome(result);
+        return DeleteBackupVaultOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -870,7 +870,7 @@ DeleteBackupVaultAccessPolicyOutcome BackupClient::DeleteBackupVaultAccessPolicy
         endpointResolutionOutcome.GetResult().AddPathSegments("/access-policy");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteBackupVaultAccessPolicyOutcome(result);
+        return DeleteBackupVaultAccessPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -907,7 +907,7 @@ DeleteBackupVaultLockConfigurationOutcome BackupClient::DeleteBackupVaultLockCon
         endpointResolutionOutcome.GetResult().AddPathSegments("/vault-lock");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteBackupVaultLockConfigurationOutcome(result);
+        return DeleteBackupVaultLockConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -944,7 +944,7 @@ DeleteBackupVaultNotificationsOutcome BackupClient::DeleteBackupVaultNotificatio
         endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configuration");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteBackupVaultNotificationsOutcome(result);
+        return DeleteBackupVaultNotificationsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -979,7 +979,7 @@ DeleteFrameworkOutcome BackupClient::DeleteFramework(const DeleteFrameworkReques
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFrameworkName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteFrameworkOutcome(result);
+        return DeleteFrameworkOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1021,7 +1021,7 @@ DeleteRecoveryPointOutcome BackupClient::DeleteRecoveryPoint(const DeleteRecover
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecoveryPointArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRecoveryPointOutcome(result);
+        return DeleteRecoveryPointOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1056,7 +1056,7 @@ DeleteReportPlanOutcome BackupClient::DeleteReportPlan(const DeleteReportPlanReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportPlanName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteReportPlanOutcome(result);
+        return DeleteReportPlanOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1091,7 +1091,7 @@ DeleteRestoreTestingPlanOutcome BackupClient::DeleteRestoreTestingPlan(const Del
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingPlanName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRestoreTestingPlanOutcome(result);
+        return DeleteRestoreTestingPlanOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1134,7 +1134,7 @@ DeleteRestoreTestingSelectionOutcome BackupClient::DeleteRestoreTestingSelection
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreTestingSelectionName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRestoreTestingSelectionOutcome(result);
+        return DeleteRestoreTestingSelectionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1629,7 +1629,7 @@ DisassociateBackupVaultMpaApprovalTeamOutcome BackupClient::DisassociateBackupVa
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateBackupVaultMpaApprovalTeamOutcome(result);
+        return DisassociateBackupVaultMpaApprovalTeamOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1672,7 +1672,7 @@ DisassociateRecoveryPointOutcome BackupClient::DisassociateRecoveryPoint(const D
         endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateRecoveryPointOutcome(result);
+        return DisassociateRecoveryPointOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1716,7 +1716,7 @@ DisassociateRecoveryPointFromParentOutcome BackupClient::DisassociateRecoveryPoi
         endpointResolutionOutcome.GetResult().AddPathSegments("/parentAssociation");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateRecoveryPointFromParentOutcome(result);
+        return DisassociateRecoveryPointFromParentOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3304,7 +3304,7 @@ PutBackupVaultAccessPolicyOutcome BackupClient::PutBackupVaultAccessPolicy(const
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/access-policy");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutBackupVaultAccessPolicyOutcome(result);
+        return PutBackupVaultAccessPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3340,7 +3340,7 @@ PutBackupVaultLockConfigurationOutcome BackupClient::PutBackupVaultLockConfigura
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/vault-lock");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutBackupVaultLockConfigurationOutcome(result);
+        return PutBackupVaultLockConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3375,7 +3375,7 @@ PutBackupVaultNotificationsOutcome BackupClient::PutBackupVaultNotifications(con
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configuration");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutBackupVaultNotificationsOutcome(result);
+        return PutBackupVaultNotificationsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3410,7 +3410,7 @@ PutRestoreValidationResultOutcome BackupClient::PutRestoreValidationResult(const
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreJobId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/validations");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutRestoreValidationResultOutcome(result);
+        return PutRestoreValidationResultOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3453,7 +3453,7 @@ RevokeRestoreAccessBackupVaultOutcome BackupClient::RevokeRestoreAccessBackupVau
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestoreAccessBackupVaultArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return RevokeRestoreAccessBackupVaultOutcome(result);
+        return RevokeRestoreAccessBackupVaultOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3648,7 +3648,7 @@ StopBackupJobOutcome BackupClient::StopBackupJob(const StopBackupJobRequest& req
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupJobId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopBackupJobOutcome(result);
+        return StopBackupJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3683,7 +3683,7 @@ TagResourceOutcome BackupClient::TagResource(const TagResourceRequest& request) 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return TagResourceOutcome(result);
+        return TagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3718,7 +3718,7 @@ UntagResourceOutcome BackupClient::UntagResource(const UntagResourceRequest& req
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3819,7 +3819,7 @@ UpdateGlobalSettingsOutcome BackupClient::UpdateGlobalSettings(const UpdateGloba
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/global-settings");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateGlobalSettingsOutcome(result);
+        return UpdateGlobalSettingsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3938,7 +3938,7 @@ UpdateRegionSettingsOutcome BackupClient::UpdateRegionSettings(const UpdateRegio
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/account-settings");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateRegionSettingsOutcome(result);
+        return UpdateRegionSettingsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -1025,7 +1025,7 @@ DeleteFleetAdvisorCollectorOutcome DatabaseMigrationServiceClient::DeleteFleetAd
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteFleetAdvisorCollectorOutcome(result);
+        return DeleteFleetAdvisorCollectorOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3778,7 +3778,7 @@ StartRecommendationsOutcome DatabaseMigrationServiceClient::StartRecommendations
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StartRecommendationsOutcome(result);
+        return StartRecommendationsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

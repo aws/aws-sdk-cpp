@@ -659,7 +659,7 @@ DeleteConnectorOutcome MgnClient::DeleteConnector(const DeleteConnectorRequest& 
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteConnector");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConnectorOutcome(result);
+        return DeleteConnectorOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -856,7 +856,7 @@ DeleteVcenterClientOutcome MgnClient::DeleteVcenterClient(const DeleteVcenterCli
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteVcenterClient");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVcenterClientOutcome(result);
+        return DeleteVcenterClientOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2851,7 +2851,7 @@ TagResourceOutcome MgnClient::TagResource(const TagResourceRequest& request) con
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return TagResourceOutcome(result);
+        return TagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2987,7 +2987,7 @@ UntagResourceOutcome MgnClient::UntagResource(const UntagResourceRequest& reques
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

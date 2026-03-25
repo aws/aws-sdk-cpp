@@ -178,7 +178,7 @@ PersonalizeEventsClient::InvokeOperationOutcome PersonalizeEventsClient::InvokeS
         endpointResolutionOutcome.GetResult().AddPathSegments("/action-interactions");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutActionInteractionsOutcome(result);
+        return PutActionInteractionsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
@@ -217,7 +217,7 @@ PutActionsOutcome PersonalizeEventsClient::PutActions(const PutActionsRequest& r
         endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutActionsOutcome(result);
+        return PutActionsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -248,7 +248,7 @@ PutEventsOutcome PersonalizeEventsClient::PutEvents(const PutEventsRequest& requ
         endpointResolutionOutcome.GetResult().AddPathSegments("/events");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutEventsOutcome(result);
+        return PutEventsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -279,7 +279,7 @@ PutItemsOutcome PersonalizeEventsClient::PutItems(const PutItemsRequest& request
         endpointResolutionOutcome.GetResult().AddPathSegments("/items");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutItemsOutcome(result);
+        return PutItemsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -310,7 +310,7 @@ PutUsersOutcome PersonalizeEventsClient::PutUsers(const PutUsersRequest& request
         endpointResolutionOutcome.GetResult().AddPathSegments("/users");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutUsersOutcome(result);
+        return PutUsersOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

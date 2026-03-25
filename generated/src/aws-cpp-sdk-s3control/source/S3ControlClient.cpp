@@ -315,6 +315,8 @@ AssociateAccessGrantsIdentityCenterOutcome S3ControlClient::AssociateAccessGrant
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateAccessGrantsIdentityCenter, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/identitycenter");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return AssociateAccessGrantsIdentityCenterOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -351,6 +353,9 @@ CreateAccessGrantOutcome S3ControlClient::CreateAccessGrant(const CreateAccessGr
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAccessGrant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/grant");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateAccessGrantOutcome(CreateAccessGrantResult(result.GetResultWithOwnership()))
+                                  : CreateAccessGrantOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -387,6 +392,9 @@ CreateAccessGrantsInstanceOutcome S3ControlClient::CreateAccessGrantsInstance(co
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAccessGrantsInstance, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateAccessGrantsInstanceOutcome(CreateAccessGrantsInstanceResult(result.GetResultWithOwnership()))
+                                  : CreateAccessGrantsInstanceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -423,6 +431,9 @@ CreateAccessGrantsLocationOutcome S3ControlClient::CreateAccessGrantsLocation(co
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAccessGrantsLocation, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/location");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateAccessGrantsLocationOutcome(CreateAccessGrantsLocationResult(result.GetResultWithOwnership()))
+                                  : CreateAccessGrantsLocationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -460,6 +471,9 @@ CreateAccessPointOutcome S3ControlClient::CreateAccessPoint(const CreateAccessPo
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? CreateAccessPointOutcome(CreateAccessPointResult(result.GetResultWithOwnership()))
+                                  : CreateAccessPointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -498,6 +512,10 @@ CreateAccessPointForObjectLambdaOutcome S3ControlClient::CreateAccessPointForObj
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess()
+                   ? CreateAccessPointForObjectLambdaOutcome(CreateAccessPointForObjectLambdaResult(result.GetResultWithOwnership()))
+                   : CreateAccessPointForObjectLambdaOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -530,6 +548,9 @@ CreateBucketOutcome S3ControlClient::CreateBucket(const CreateBucketRequest& req
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? CreateBucketOutcome(CreateBucketResult(result.GetResultWithOwnership()))
+                                  : CreateBucketOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -566,6 +587,9 @@ CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) con
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/jobs");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateJobOutcome(CreateJobResult(result.GetResultWithOwnership()))
+                                  : CreateJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -603,6 +627,9 @@ CreateMultiRegionAccessPointOutcome S3ControlClient::CreateMultiRegionAccessPoin
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMultiRegionAccessPoint, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/async-requests/mrap/create");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateMultiRegionAccessPointOutcome(CreateMultiRegionAccessPointResult(result.GetResultWithOwnership()))
+                                  : CreateMultiRegionAccessPointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -639,6 +666,8 @@ CreateStorageLensGroupOutcome S3ControlClient::CreateStorageLensGroup(const Crea
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStorageLensGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelensgroup");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return CreateStorageLensGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -681,6 +710,8 @@ DeleteAccessGrantOutcome S3ControlClient::DeleteAccessGrant(const DeleteAccessGr
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/grant/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessGrantId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteAccessGrantOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -717,6 +748,8 @@ DeleteAccessGrantsInstanceOutcome S3ControlClient::DeleteAccessGrantsInstance(co
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAccessGrantsInstance, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteAccessGrantsInstanceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -754,6 +787,8 @@ DeleteAccessGrantsInstanceResourcePolicyOutcome S3ControlClient::DeleteAccessGra
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAccessGrantsInstanceResourcePolicy, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/resourcepolicy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteAccessGrantsInstanceResourcePolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -796,6 +831,8 @@ DeleteAccessGrantsLocationOutcome S3ControlClient::DeleteAccessGrantsLocation(co
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/location/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessGrantsLocationId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteAccessGrantsLocationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -833,6 +870,8 @@ DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPo
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteAccessPointOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -871,6 +910,8 @@ DeleteAccessPointForObjectLambdaOutcome S3ControlClient::DeleteAccessPointForObj
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteAccessPointForObjectLambdaOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -909,6 +950,8 @@ DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const De
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteAccessPointPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -948,6 +991,8 @@ DeleteAccessPointPolicyForObjectLambdaOutcome S3ControlClient::DeleteAccessPoint
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteAccessPointPolicyForObjectLambdaOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -986,6 +1031,8 @@ DeleteAccessPointScopeOutcome S3ControlClient::DeleteAccessPointScope(const Dele
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/scope");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteAccessPointScopeOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1023,6 +1070,8 @@ DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& req
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteBucketOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1062,6 +1111,8 @@ DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycle
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycleconfiguration");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteBucketLifecycleConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1100,6 +1151,8 @@ DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucket
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteBucketPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1138,6 +1191,8 @@ DeleteBucketReplicationOutcome S3ControlClient::DeleteBucketReplication(const De
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/replication");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteBucketReplicationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1176,6 +1231,8 @@ DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBuck
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteBucketTaggingOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1219,6 +1276,9 @@ DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTagging
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/jobs/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteJobTaggingOutcome(DeleteJobTaggingResult(result.GetResultWithOwnership()))
+                                  : DeleteJobTaggingOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1256,6 +1316,9 @@ DeleteMultiRegionAccessPointOutcome S3ControlClient::DeleteMultiRegionAccessPoin
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMultiRegionAccessPoint, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/async-requests/mrap/delete");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DeleteMultiRegionAccessPointOutcome(DeleteMultiRegionAccessPointResult(result.GetResultWithOwnership()))
+                                  : DeleteMultiRegionAccessPointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1292,6 +1355,8 @@ DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const De
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/configuration/publicAccessBlock");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeletePublicAccessBlockOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1335,6 +1400,8 @@ DeleteStorageLensConfigurationOutcome S3ControlClient::DeleteStorageLensConfigur
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelens/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteStorageLensConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1379,6 +1446,10 @@ DeleteStorageLensConfigurationTaggingOutcome S3ControlClient::DeleteStorageLensC
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelens/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteStorageLensConfigurationTaggingOutcome(
+                                        DeleteStorageLensConfigurationTaggingResult(result.GetResultWithOwnership()))
+                                  : DeleteStorageLensConfigurationTaggingOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1416,6 +1487,8 @@ DeleteStorageLensGroupOutcome S3ControlClient::DeleteStorageLensGroup(const Dele
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelensgroup/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteStorageLensGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1458,6 +1531,9 @@ DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& reques
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/jobs/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? DescribeJobOutcome(DescribeJobResult(result.GetResultWithOwnership()))
+                                  : DescribeJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1501,6 +1577,10 @@ DescribeMultiRegionAccessPointOperationOutcome S3ControlClient::DescribeMultiReg
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/async-requests/mrap/");
         endpointResolutionOutcome.GetResult().AddPathSegments(request.GetRequestTokenARN());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? DescribeMultiRegionAccessPointOperationOutcome(
+                                        DescribeMultiRegionAccessPointOperationResult(result.GetResultWithOwnership()))
+                                  : DescribeMultiRegionAccessPointOperationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1538,6 +1618,8 @@ DissociateAccessGrantsIdentityCenterOutcome S3ControlClient::DissociateAccessGra
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DissociateAccessGrantsIdentityCenter, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/identitycenter");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DissociateAccessGrantsIdentityCenterOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1580,6 +1662,9 @@ GetAccessGrantOutcome S3ControlClient::GetAccessGrant(const GetAccessGrantReques
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/grant/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessGrantId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAccessGrantOutcome(GetAccessGrantResult(result.GetResultWithOwnership()))
+                                  : GetAccessGrantOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1616,6 +1701,9 @@ GetAccessGrantsInstanceOutcome S3ControlClient::GetAccessGrantsInstance(const Ge
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccessGrantsInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAccessGrantsInstanceOutcome(GetAccessGrantsInstanceResult(result.GetResultWithOwnership()))
+                                  : GetAccessGrantsInstanceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1658,6 +1746,10 @@ GetAccessGrantsInstanceForPrefixOutcome S3ControlClient::GetAccessGrantsInstance
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccessGrantsInstanceForPrefix, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/prefix");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetAccessGrantsInstanceForPrefixOutcome(GetAccessGrantsInstanceForPrefixResult(result.GetResultWithOwnership()))
+                   : GetAccessGrantsInstanceForPrefixOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1695,6 +1787,10 @@ GetAccessGrantsInstanceResourcePolicyOutcome S3ControlClient::GetAccessGrantsIns
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccessGrantsInstanceResourcePolicy, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/resourcepolicy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAccessGrantsInstanceResourcePolicyOutcome(
+                                        GetAccessGrantsInstanceResourcePolicyResult(result.GetResultWithOwnership()))
+                                  : GetAccessGrantsInstanceResourcePolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1737,6 +1833,9 @@ GetAccessGrantsLocationOutcome S3ControlClient::GetAccessGrantsLocation(const Ge
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/location/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessGrantsLocationId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAccessGrantsLocationOutcome(GetAccessGrantsLocationResult(result.GetResultWithOwnership()))
+                                  : GetAccessGrantsLocationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1774,6 +1873,9 @@ GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointReques
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAccessPointOutcome(GetAccessPointResult(result.GetResultWithOwnership()))
+                                  : GetAccessPointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1813,6 +1915,10 @@ GetAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::GetAccessPoin
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAccessPointConfigurationForObjectLambdaOutcome(
+                                        GetAccessPointConfigurationForObjectLambdaResult(result.GetResultWithOwnership()))
+                                  : GetAccessPointConfigurationForObjectLambdaOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1851,6 +1957,10 @@ GetAccessPointForObjectLambdaOutcome S3ControlClient::GetAccessPointForObjectLam
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetAccessPointForObjectLambdaOutcome(GetAccessPointForObjectLambdaResult(result.GetResultWithOwnership()))
+                   : GetAccessPointForObjectLambdaOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1889,6 +1999,9 @@ GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAcces
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAccessPointPolicyOutcome(GetAccessPointPolicyResult(result.GetResultWithOwnership()))
+                                  : GetAccessPointPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1928,6 +2041,10 @@ GetAccessPointPolicyForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicy
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetAccessPointPolicyForObjectLambdaOutcome(GetAccessPointPolicyForObjectLambdaResult(result.GetResultWithOwnership()))
+                   : GetAccessPointPolicyForObjectLambdaOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1966,6 +2083,9 @@ GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(co
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policyStatus");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAccessPointPolicyStatusOutcome(GetAccessPointPolicyStatusResult(result.GetResultWithOwnership()))
+                                  : GetAccessPointPolicyStatusOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2005,6 +2125,10 @@ GetAccessPointPolicyStatusForObjectLambdaOutcome S3ControlClient::GetAccessPoint
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policyStatus");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAccessPointPolicyStatusForObjectLambdaOutcome(
+                                        GetAccessPointPolicyStatusForObjectLambdaResult(result.GetResultWithOwnership()))
+                                  : GetAccessPointPolicyStatusForObjectLambdaOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2043,6 +2167,9 @@ GetAccessPointScopeOutcome S3ControlClient::GetAccessPointScope(const GetAccessP
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/scope");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAccessPointScopeOutcome(GetAccessPointScopeResult(result.GetResultWithOwnership()))
+                                  : GetAccessPointScopeOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2080,6 +2207,9 @@ GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) con
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetBucketOutcome(GetBucketResult(result.GetResultWithOwnership()))
+                                  : GetBucketOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2119,6 +2249,10 @@ GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfig
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycleconfiguration");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetBucketLifecycleConfigurationOutcome(GetBucketLifecycleConfigurationResult(result.GetResultWithOwnership()))
+                   : GetBucketLifecycleConfigurationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2157,6 +2291,9 @@ GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyReq
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetBucketPolicyOutcome(GetBucketPolicyResult(result.GetResultWithOwnership()))
+                                  : GetBucketPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2195,6 +2332,9 @@ GetBucketReplicationOutcome S3ControlClient::GetBucketReplication(const GetBucke
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/replication");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetBucketReplicationOutcome(GetBucketReplicationResult(result.GetResultWithOwnership()))
+                                  : GetBucketReplicationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2233,6 +2373,9 @@ GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTagging
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetBucketTaggingOutcome(GetBucketTaggingResult(result.GetResultWithOwnership()))
+                                  : GetBucketTaggingOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2271,6 +2414,9 @@ GetBucketVersioningOutcome S3ControlClient::GetBucketVersioning(const GetBucketV
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/versioning");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetBucketVersioningOutcome(GetBucketVersioningResult(result.GetResultWithOwnership()))
+                                  : GetBucketVersioningOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2317,6 +2463,9 @@ GetDataAccessOutcome S3ControlClient::GetDataAccess(const GetDataAccessRequest& 
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/dataaccess");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetDataAccessOutcome(GetDataAccessResult(result.GetResultWithOwnership()))
+                                  : GetDataAccessOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2360,6 +2509,9 @@ GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& 
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/jobs/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetJobTaggingOutcome(GetJobTaggingResult(result.GetResultWithOwnership()))
+                                  : GetJobTaggingOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2397,6 +2549,9 @@ GetMultiRegionAccessPointOutcome S3ControlClient::GetMultiRegionAccessPoint(cons
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances/");
         endpointResolutionOutcome.GetResult().AddPathSegments(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetMultiRegionAccessPointOutcome(GetMultiRegionAccessPointResult(result.GetResultWithOwnership()))
+                                  : GetMultiRegionAccessPointOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2436,6 +2591,10 @@ GetMultiRegionAccessPointPolicyOutcome S3ControlClient::GetMultiRegionAccessPoin
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances/");
         endpointResolutionOutcome.GetResult().AddPathSegments(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetMultiRegionAccessPointPolicyOutcome(GetMultiRegionAccessPointPolicyResult(result.GetResultWithOwnership()))
+                   : GetMultiRegionAccessPointPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2475,6 +2634,10 @@ GetMultiRegionAccessPointPolicyStatusOutcome S3ControlClient::GetMultiRegionAcce
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances/");
         endpointResolutionOutcome.GetResult().AddPathSegments(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policystatus");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetMultiRegionAccessPointPolicyStatusOutcome(
+                                        GetMultiRegionAccessPointPolicyStatusResult(result.GetResultWithOwnership()))
+                                  : GetMultiRegionAccessPointPolicyStatusOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2519,6 +2682,10 @@ GetMultiRegionAccessPointRoutesOutcome S3ControlClient::GetMultiRegionAccessPoin
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances/");
         endpointResolutionOutcome.GetResult().AddPathSegments(request.GetMrap());
         endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetMultiRegionAccessPointRoutesOutcome(GetMultiRegionAccessPointRoutesResult(result.GetResultWithOwnership()))
+                   : GetMultiRegionAccessPointRoutesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2555,6 +2722,9 @@ GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPubli
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/configuration/publicAccessBlock");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetPublicAccessBlockOutcome(GetPublicAccessBlockResult(result.GetResultWithOwnership()))
+                                  : GetPublicAccessBlockOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2597,6 +2767,9 @@ GetStorageLensConfigurationOutcome S3ControlClient::GetStorageLensConfiguration(
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelens/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetStorageLensConfigurationOutcome(GetStorageLensConfigurationResult(result.GetResultWithOwnership()))
+                                  : GetStorageLensConfigurationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2641,6 +2814,10 @@ GetStorageLensConfigurationTaggingOutcome S3ControlClient::GetStorageLensConfigu
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelens/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetStorageLensConfigurationTaggingOutcome(GetStorageLensConfigurationTaggingResult(result.GetResultWithOwnership()))
+                   : GetStorageLensConfigurationTaggingOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2678,6 +2855,9 @@ GetStorageLensGroupOutcome S3ControlClient::GetStorageLensGroup(const GetStorage
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelensgroup/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetStorageLensGroupOutcome(GetStorageLensGroupResult(result.GetResultWithOwnership()))
+                                  : GetStorageLensGroupOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2714,6 +2894,9 @@ ListAccessGrantsOutcome S3ControlClient::ListAccessGrants(const ListAccessGrants
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccessGrants, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/grants");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListAccessGrantsOutcome(ListAccessGrantsResult(result.GetResultWithOwnership()))
+                                  : ListAccessGrantsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2750,6 +2933,9 @@ ListAccessGrantsInstancesOutcome S3ControlClient::ListAccessGrantsInstances(cons
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccessGrantsInstances, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstances");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListAccessGrantsInstancesOutcome(ListAccessGrantsInstancesResult(result.GetResultWithOwnership()))
+                                  : ListAccessGrantsInstancesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2786,6 +2972,9 @@ ListAccessGrantsLocationsOutcome S3ControlClient::ListAccessGrantsLocations(cons
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccessGrantsLocations, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/locations");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListAccessGrantsLocationsOutcome(ListAccessGrantsLocationsResult(result.GetResultWithOwnership()))
+                                  : ListAccessGrantsLocationsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2819,6 +3008,9 @@ ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPoints
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccessPoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListAccessPointsOutcome(ListAccessPointsResult(result.GetResultWithOwnership()))
+                                  : ListAccessPointsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2856,6 +3048,10 @@ ListAccessPointsForDirectoryBucketsOutcome S3ControlClient::ListAccessPointsForD
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccessPointsForDirectoryBuckets, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointfordirectory");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? ListAccessPointsForDirectoryBucketsOutcome(ListAccessPointsForDirectoryBucketsResult(result.GetResultWithOwnership()))
+                   : ListAccessPointsForDirectoryBucketsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2893,6 +3089,10 @@ ListAccessPointsForObjectLambdaOutcome S3ControlClient::ListAccessPointsForObjec
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccessPointsForObjectLambda, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? ListAccessPointsForObjectLambdaOutcome(ListAccessPointsForObjectLambdaResult(result.GetResultWithOwnership()))
+                   : ListAccessPointsForObjectLambdaOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2929,6 +3129,9 @@ ListCallerAccessGrantsOutcome S3ControlClient::ListCallerAccessGrants(const List
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCallerAccessGrants, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/caller/grants");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListCallerAccessGrantsOutcome(ListCallerAccessGrantsResult(result.GetResultWithOwnership()))
+                                  : ListCallerAccessGrantsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2965,6 +3168,8 @@ ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const 
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/jobs");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListJobsOutcome(ListJobsResult(result.GetResultWithOwnership())) : ListJobsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3001,6 +3206,9 @@ ListMultiRegionAccessPointsOutcome S3ControlClient::ListMultiRegionAccessPoints(
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMultiRegionAccessPoints, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListMultiRegionAccessPointsOutcome(ListMultiRegionAccessPointsResult(result.GetResultWithOwnership()))
+                                  : ListMultiRegionAccessPointsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3037,6 +3245,9 @@ ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegion
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRegionalBuckets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListRegionalBucketsOutcome(ListRegionalBucketsResult(result.GetResultWithOwnership()))
+                                  : ListRegionalBucketsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3074,6 +3285,10 @@ ListStorageLensConfigurationsOutcome S3ControlClient::ListStorageLensConfigurati
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStorageLensConfigurations, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelens");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? ListStorageLensConfigurationsOutcome(ListStorageLensConfigurationsResult(result.GetResultWithOwnership()))
+                   : ListStorageLensConfigurationsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3110,6 +3325,9 @@ ListStorageLensGroupsOutcome S3ControlClient::ListStorageLensGroups(const ListSt
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStorageLensGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelensgroup");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListStorageLensGroupsOutcome(ListStorageLensGroupsResult(result.GetResultWithOwnership()))
+                                  : ListStorageLensGroupsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3153,6 +3371,9 @@ ListTagsForResourceOutcome S3ControlClient::ListTagsForResource(const ListTagsFo
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/tags/");
         endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
         endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListTagsForResourceOutcome(ListTagsForResourceResult(result.GetResultWithOwnership()))
+                                  : ListTagsForResourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3190,6 +3411,10 @@ PutAccessGrantsInstanceResourcePolicyOutcome S3ControlClient::PutAccessGrantsIns
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAccessGrantsInstanceResourcePolicy, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/resourcepolicy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? PutAccessGrantsInstanceResourcePolicyOutcome(
+                                        PutAccessGrantsInstanceResourcePolicyResult(result.GetResultWithOwnership()))
+                                  : PutAccessGrantsInstanceResourcePolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3229,6 +3454,8 @@ PutAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::PutAccessPoin
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return PutAccessPointConfigurationForObjectLambdaOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3267,6 +3494,8 @@ PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAcces
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return PutAccessPointPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3306,6 +3535,8 @@ PutAccessPointPolicyForObjectLambdaOutcome S3ControlClient::PutAccessPointPolicy
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspointforobjectlambda/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return PutAccessPointPolicyForObjectLambdaOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3344,6 +3575,8 @@ PutAccessPointScopeOutcome S3ControlClient::PutAccessPointScope(const PutAccessP
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accesspoint/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/scope");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return PutAccessPointScopeOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3383,6 +3616,8 @@ PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfig
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycleconfiguration");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return PutBucketLifecycleConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3421,6 +3656,8 @@ PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyReq
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return PutBucketPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3459,6 +3696,8 @@ PutBucketReplicationOutcome S3ControlClient::PutBucketReplication(const PutBucke
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/replication");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return PutBucketReplicationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3497,6 +3736,8 @@ PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTagging
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return PutBucketTaggingOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3535,6 +3776,8 @@ PutBucketVersioningOutcome S3ControlClient::PutBucketVersioning(const PutBucketV
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/bucket/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBucket());
         endpointResolutionOutcome.GetResult().AddPathSegments("/versioning");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return PutBucketVersioningOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3578,6 +3821,9 @@ PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& 
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/jobs/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? PutJobTaggingOutcome(PutJobTaggingResult(result.GetResultWithOwnership()))
+                                  : PutJobTaggingOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3615,6 +3861,10 @@ PutMultiRegionAccessPointPolicyOutcome S3ControlClient::PutMultiRegionAccessPoin
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutMultiRegionAccessPointPolicy, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/async-requests/mrap/put-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? PutMultiRegionAccessPointPolicyOutcome(PutMultiRegionAccessPointPolicyResult(result.GetResultWithOwnership()))
+                   : PutMultiRegionAccessPointPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3651,6 +3901,8 @@ PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPubli
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutPublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/configuration/publicAccessBlock");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return PutPublicAccessBlockOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3693,6 +3945,8 @@ PutStorageLensConfigurationOutcome S3ControlClient::PutStorageLensConfiguration(
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelens/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return PutStorageLensConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3737,6 +3991,10 @@ PutStorageLensConfigurationTaggingOutcome S3ControlClient::PutStorageLensConfigu
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelens/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/tagging");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess()
+                   ? PutStorageLensConfigurationTaggingOutcome(PutStorageLensConfigurationTaggingResult(result.GetResultWithOwnership()))
+                   : PutStorageLensConfigurationTaggingOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3781,6 +4039,10 @@ SubmitMultiRegionAccessPointRoutesOutcome S3ControlClient::SubmitMultiRegionAcce
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/mrap/instances/");
         endpointResolutionOutcome.GetResult().AddPathSegments(request.GetMrap());
         endpointResolutionOutcome.GetResult().AddPathSegments("/routes");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH);
+        return result.IsSuccess()
+                   ? SubmitMultiRegionAccessPointRoutesOutcome(SubmitMultiRegionAccessPointRoutesResult(result.GetResultWithOwnership()))
+                   : SubmitMultiRegionAccessPointRoutesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3824,6 +4086,9 @@ TagResourceOutcome S3ControlClient::TagResource(const TagResourceRequest& reques
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/tags/");
         endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
         endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? TagResourceOutcome(TagResourceResult(result.GetResultWithOwnership()))
+                                  : TagResourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3872,6 +4137,9 @@ UntagResourceOutcome S3ControlClient::UntagResource(const UntagResourceRequest& 
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/tags/");
         endpointResolutionOutcome.GetResult().SetRfc3986Encoded(true);
         endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? UntagResourceOutcome(UntagResourceResult(result.GetResultWithOwnership()))
+                                  : UntagResourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3914,6 +4182,9 @@ UpdateAccessGrantsLocationOutcome S3ControlClient::UpdateAccessGrantsLocation(co
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/accessgrantsinstance/location/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessGrantsLocationId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateAccessGrantsLocationOutcome(UpdateAccessGrantsLocationResult(result.GetResultWithOwnership()))
+                                  : UpdateAccessGrantsLocationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3962,6 +4233,9 @@ UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPrior
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/jobs/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/priority");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateJobPriorityOutcome(UpdateJobPriorityResult(result.GetResultWithOwnership()))
+                                  : UpdateJobPriorityOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4010,6 +4284,9 @@ UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusReq
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/jobs/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/status");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateJobStatusOutcome(UpdateJobStatusResult(result.GetResultWithOwnership()))
+                                  : UpdateJobStatusOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4047,6 +4324,8 @@ UpdateStorageLensGroupOutcome S3ControlClient::UpdateStorageLensGroup(const Upda
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v20180820/storagelensgroup/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return UpdateStorageLensGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

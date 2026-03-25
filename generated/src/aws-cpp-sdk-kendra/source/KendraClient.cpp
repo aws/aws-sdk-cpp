@@ -450,7 +450,7 @@ ClearQuerySuggestionsOutcome KendraClient::ClearQuerySuggestions(const ClearQuer
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return ClearQuerySuggestionsOutcome(result);
+        return ClearQuerySuggestionsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -765,7 +765,7 @@ DeleteDataSourceOutcome KendraClient::DeleteDataSource(const DeleteDataSourceReq
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteDataSourceOutcome(result);
+        return DeleteDataSourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -826,7 +826,7 @@ DeleteFaqOutcome KendraClient::DeleteFaq(const DeleteFaqRequest& request) const 
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteFaqOutcome(result);
+        return DeleteFaqOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -856,7 +856,7 @@ DeleteIndexOutcome KendraClient::DeleteIndex(const DeleteIndexRequest& request) 
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteIndexOutcome(result);
+        return DeleteIndexOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -886,7 +886,7 @@ DeletePrincipalMappingOutcome KendraClient::DeletePrincipalMapping(const DeleteP
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeletePrincipalMappingOutcome(result);
+        return DeletePrincipalMappingOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -917,7 +917,7 @@ DeleteQuerySuggestionsBlockListOutcome KendraClient::DeleteQuerySuggestionsBlock
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteQuerySuggestionsBlockListOutcome(result);
+        return DeleteQuerySuggestionsBlockListOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -947,7 +947,7 @@ DeleteThesaurusOutcome KendraClient::DeleteThesaurus(const DeleteThesaurusReques
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteThesaurusOutcome(result);
+        return DeleteThesaurusOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1829,7 +1829,7 @@ PutPrincipalMappingOutcome KendraClient::PutPrincipalMapping(const PutPrincipalM
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutPrincipalMappingOutcome(result);
+        return PutPrincipalMappingOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1950,7 +1950,7 @@ StopDataSourceSyncJobOutcome KendraClient::StopDataSourceSyncJob(const StopDataS
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopDataSourceSyncJobOutcome(result);
+        return StopDataSourceSyncJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1980,7 +1980,7 @@ SubmitFeedbackOutcome KendraClient::SubmitFeedback(const SubmitFeedbackRequest& 
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return SubmitFeedbackOutcome(result);
+        return SubmitFeedbackOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2105,7 +2105,7 @@ UpdateDataSourceOutcome KendraClient::UpdateDataSource(const UpdateDataSourceReq
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateDataSourceOutcome(result);
+        return UpdateDataSourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2135,7 +2135,7 @@ UpdateExperienceOutcome KendraClient::UpdateExperience(const UpdateExperienceReq
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateExperienceOutcome(result);
+        return UpdateExperienceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2196,7 +2196,7 @@ UpdateIndexOutcome KendraClient::UpdateIndex(const UpdateIndexRequest& request) 
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateIndexOutcome(result);
+        return UpdateIndexOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2227,7 +2227,7 @@ UpdateQuerySuggestionsBlockListOutcome KendraClient::UpdateQuerySuggestionsBlock
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateQuerySuggestionsBlockListOutcome(result);
+        return UpdateQuerySuggestionsBlockListOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2257,7 +2257,7 @@ UpdateQuerySuggestionsConfigOutcome KendraClient::UpdateQuerySuggestionsConfig(c
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateQuerySuggestionsConfigOutcome(result);
+        return UpdateQuerySuggestionsConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2287,7 +2287,7 @@ UpdateThesaurusOutcome KendraClient::UpdateThesaurus(const UpdateThesaurusReques
                                     endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateThesaurusOutcome(result);
+        return UpdateThesaurusOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

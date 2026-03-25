@@ -252,7 +252,7 @@ SendHeartbeatOutcome SagemakerEdgeManagerClient::SendHeartbeat(const SendHeartbe
         endpointResolutionOutcome.GetResult().AddPathSegments("/SendHeartbeat");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return SendHeartbeatOutcome(result);
+        return SendHeartbeatOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

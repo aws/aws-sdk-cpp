@@ -475,7 +475,7 @@ DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicat
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteApplicationOutcome(result);
+        return DeleteApplicationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -517,7 +517,7 @@ DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(co
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationProfileId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConfigurationProfileOutcome(result);
+        return DeleteConfigurationProfileOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -552,7 +552,7 @@ DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentStrategyId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteDeploymentStrategyOutcome(result);
+        return DeleteDeploymentStrategyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -594,7 +594,7 @@ DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironm
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteEnvironmentOutcome(result);
+        return DeleteEnvironmentOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -629,7 +629,7 @@ DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExtensionIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteExtensionOutcome(result);
+        return DeleteExtensionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -664,7 +664,7 @@ DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(co
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExtensionAssociationId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteExtensionAssociationOutcome(result);
+        return DeleteExtensionAssociationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -714,7 +714,7 @@ DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurati
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionNumber());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteHostedConfigurationVersionOutcome(result);
+        return DeleteHostedConfigurationVersionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1519,7 +1519,7 @@ TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& reques
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return TagResourceOutcome(result);
+        return TagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1559,7 +1559,7 @@ UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1869,7 +1869,7 @@ ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const Valida
         endpointResolutionOutcome.GetResult().AddPathSegments("/validators");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return ValidateConfigurationOutcome(result);
+        return ValidateConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

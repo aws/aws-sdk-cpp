@@ -236,7 +236,7 @@ DeleteRecordOutcome SageMakerFeatureStoreRuntimeClient::DeleteRecord(const Delet
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFeatureGroupName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRecordOutcome(result);
+        return DeleteRecordOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -311,7 +311,7 @@ PutRecordOutcome SageMakerFeatureStoreRuntimeClient::PutRecord(const PutRecordRe
         endpointResolutionOutcome.GetResult().AddPathSegments("/FeatureGroup/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFeatureGroupName());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutRecordOutcome(result);
+        return PutRecordOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

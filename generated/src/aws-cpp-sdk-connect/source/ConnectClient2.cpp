@@ -1896,7 +1896,7 @@ ReleasePhoneNumberOutcome ConnectClient::ReleasePhoneNumber(const ReleasePhoneNu
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return ReleasePhoneNumberOutcome(result);
+        return ReleasePhoneNumberOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

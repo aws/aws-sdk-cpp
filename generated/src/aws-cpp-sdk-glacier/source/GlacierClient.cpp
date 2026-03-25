@@ -255,7 +255,7 @@ AbortMultipartUploadOutcome GlacierClient::AbortMultipartUpload(const AbortMulti
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUploadId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return AbortMultipartUploadOutcome(result);
+        return AbortMultipartUploadOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -302,7 +302,7 @@ AbortVaultLockOutcome GlacierClient::AbortVaultLock(const AbortVaultLockRequest&
         endpointResolutionOutcome.GetResult().AddPathSegments("/lock-policy");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return AbortVaultLockOutcome(result);
+        return AbortVaultLockOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -352,7 +352,7 @@ AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest&
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return AddTagsToVaultOutcome(result);
+        return AddTagsToVaultOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -459,7 +459,7 @@ CompleteVaultLockOutcome GlacierClient::CompleteVaultLock(const CompleteVaultLoc
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLockId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return CompleteVaultLockOutcome(result);
+        return CompleteVaultLockOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -558,7 +558,7 @@ DeleteArchiveOutcome GlacierClient::DeleteArchive(const DeleteArchiveRequest& re
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArchiveId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteArchiveOutcome(result);
+        return DeleteArchiveOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -604,7 +604,7 @@ DeleteVaultOutcome GlacierClient::DeleteVault(const DeleteVaultRequest& request)
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVaultName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVaultOutcome(result);
+        return DeleteVaultOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -651,7 +651,7 @@ DeleteVaultAccessPolicyOutcome GlacierClient::DeleteVaultAccessPolicy(const Dele
         endpointResolutionOutcome.GetResult().AddPathSegments("/access-policy");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVaultAccessPolicyOutcome(result);
+        return DeleteVaultAccessPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -698,7 +698,7 @@ DeleteVaultNotificationsOutcome GlacierClient::DeleteVaultNotifications(const De
         endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configuration");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVaultNotificationsOutcome(result);
+        return DeleteVaultNotificationsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1542,7 +1542,7 @@ RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFr
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return RemoveTagsFromVaultOutcome(result);
+        return RemoveTagsFromVaultOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1581,7 +1581,7 @@ SetDataRetrievalPolicyOutcome GlacierClient::SetDataRetrievalPolicy(const SetDat
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policies/data-retrieval");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return SetDataRetrievalPolicyOutcome(result);
+        return SetDataRetrievalPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1627,7 +1627,7 @@ SetVaultAccessPolicyOutcome GlacierClient::SetVaultAccessPolicy(const SetVaultAc
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVaultName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/access-policy");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return SetVaultAccessPolicyOutcome(result);
+        return SetVaultAccessPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1673,7 +1673,7 @@ SetVaultNotificationsOutcome GlacierClient::SetVaultNotifications(const SetVault
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVaultName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configuration");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return SetVaultNotificationsOutcome(result);
+        return SetVaultNotificationsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -269,7 +269,7 @@ CancelTrainedModelOutcome CleanRoomsMLClient::CancelTrainedModel(const CancelTra
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainedModelArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return CancelTrainedModelOutcome(result);
+        return CancelTrainedModelOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -312,7 +312,7 @@ CancelTrainedModelInferenceJobOutcome CleanRoomsMLClient::CancelTrainedModelInfe
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainedModelInferenceJobArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return CancelTrainedModelInferenceJobOutcome(result);
+        return CancelTrainedModelInferenceJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -593,7 +593,7 @@ DeleteAudienceGenerationJobOutcome CleanRoomsMLClient::DeleteAudienceGenerationJ
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAudienceGenerationJobArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAudienceGenerationJobOutcome(result);
+        return DeleteAudienceGenerationJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -628,7 +628,7 @@ DeleteAudienceModelOutcome CleanRoomsMLClient::DeleteAudienceModel(const DeleteA
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAudienceModelArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAudienceModelOutcome(result);
+        return DeleteAudienceModelOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -664,7 +664,7 @@ DeleteConfiguredAudienceModelOutcome CleanRoomsMLClient::DeleteConfiguredAudienc
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConfiguredAudienceModelOutcome(result);
+        return DeleteConfiguredAudienceModelOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -701,7 +701,7 @@ DeleteConfiguredAudienceModelPolicyOutcome CleanRoomsMLClient::DeleteConfiguredA
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConfiguredAudienceModelPolicyOutcome(result);
+        return DeleteConfiguredAudienceModelPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -737,7 +737,7 @@ DeleteConfiguredModelAlgorithmOutcome CleanRoomsMLClient::DeleteConfiguredModelA
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredModelAlgorithmArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConfiguredModelAlgorithmOutcome(result);
+        return DeleteConfiguredModelAlgorithmOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -781,7 +781,7 @@ DeleteConfiguredModelAlgorithmAssociationOutcome CleanRoomsMLClient::DeleteConfi
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredModelAlgorithmAssociationArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConfiguredModelAlgorithmAssociationOutcome(result);
+        return DeleteConfiguredModelAlgorithmAssociationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -817,7 +817,7 @@ DeleteMLConfigurationOutcome CleanRoomsMLClient::DeleteMLConfiguration(const Del
         endpointResolutionOutcome.GetResult().AddPathSegments("/ml-configurations");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteMLConfigurationOutcome(result);
+        return DeleteMLConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -859,7 +859,7 @@ DeleteMLInputChannelDataOutcome CleanRoomsMLClient::DeleteMLInputChannelData(con
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMlInputChannelArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteMLInputChannelDataOutcome(result);
+        return DeleteMLInputChannelDataOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -901,7 +901,7 @@ DeleteTrainedModelOutputOutcome CleanRoomsMLClient::DeleteTrainedModelOutput(con
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainedModelArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTrainedModelOutputOutcome(result);
+        return DeleteTrainedModelOutputOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -936,7 +936,7 @@ DeleteTrainingDatasetOutcome CleanRoomsMLClient::DeleteTrainingDataset(const Del
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainingDatasetArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTrainingDatasetOutcome(result);
+        return DeleteTrainingDatasetOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2178,7 +2178,7 @@ PutMLConfigurationOutcome CleanRoomsMLClient::PutMLConfiguration(const PutMLConf
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipIdentifier());
         endpointResolutionOutcome.GetResult().AddPathSegments("/ml-configurations");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutMLConfigurationOutcome(result);
+        return PutMLConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2209,7 +2209,7 @@ StartAudienceExportJobOutcome CleanRoomsMLClient::StartAudienceExportJob(const S
         endpointResolutionOutcome.GetResult().AddPathSegments("/audience-export-job");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StartAudienceExportJobOutcome(result);
+        return StartAudienceExportJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2284,7 +2284,7 @@ StartTrainedModelExportJobOutcome CleanRoomsMLClient::StartTrainedModelExportJob
         endpointResolutionOutcome.GetResult().AddPathSegments("/export-jobs");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StartTrainedModelExportJobOutcome(result);
+        return StartTrainedModelExportJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

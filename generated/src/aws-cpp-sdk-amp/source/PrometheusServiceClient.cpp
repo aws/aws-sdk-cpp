@@ -506,7 +506,7 @@ DeleteAlertManagerDefinitionOutcome PrometheusServiceClient::DeleteAlertManagerD
         endpointResolutionOutcome.GetResult().AddPathSegments("/alertmanager/definition");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAlertManagerDefinitionOutcome(result);
+        return DeleteAlertManagerDefinitionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -548,7 +548,7 @@ DeleteAnomalyDetectorOutcome PrometheusServiceClient::DeleteAnomalyDetector(cons
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnomalyDetectorId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAnomalyDetectorOutcome(result);
+        return DeleteAnomalyDetectorOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -585,7 +585,7 @@ DeleteLoggingConfigurationOutcome PrometheusServiceClient::DeleteLoggingConfigur
         endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteLoggingConfigurationOutcome(result);
+        return DeleteLoggingConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -622,7 +622,7 @@ DeleteQueryLoggingConfigurationOutcome PrometheusServiceClient::DeleteQueryLoggi
         endpointResolutionOutcome.GetResult().AddPathSegments("/logging/query");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteQueryLoggingConfigurationOutcome(result);
+        return DeleteQueryLoggingConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -658,7 +658,7 @@ DeleteResourcePolicyOutcome PrometheusServiceClient::DeleteResourcePolicy(const 
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteResourcePolicyOutcome(result);
+        return DeleteResourcePolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -700,7 +700,7 @@ DeleteRuleGroupsNamespaceOutcome PrometheusServiceClient::DeleteRuleGroupsNamesp
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRuleGroupsNamespaceOutcome(result);
+        return DeleteRuleGroupsNamespaceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -773,7 +773,7 @@ DeleteScraperLoggingConfigurationOutcome PrometheusServiceClient::DeleteScraperL
         endpointResolutionOutcome.GetResult().AddPathSegments("/logging-configuration");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteScraperLoggingConfigurationOutcome(result);
+        return DeleteScraperLoggingConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -808,7 +808,7 @@ DeleteWorkspaceOutcome PrometheusServiceClient::DeleteWorkspace(const DeleteWork
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteWorkspaceOutcome(result);
+        return DeleteWorkspaceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1807,7 +1807,7 @@ UpdateWorkspaceAliasOutcome PrometheusServiceClient::UpdateWorkspaceAlias(const 
         endpointResolutionOutcome.GetResult().AddPathSegments("/alias");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateWorkspaceAliasOutcome(result);
+        return UpdateWorkspaceAliasOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

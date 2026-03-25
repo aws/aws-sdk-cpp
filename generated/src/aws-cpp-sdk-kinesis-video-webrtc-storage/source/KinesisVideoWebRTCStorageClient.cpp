@@ -179,7 +179,7 @@ KinesisVideoWebRTCStorageClient::InvokeOperationOutcome KinesisVideoWebRTCStorag
         endpointResolutionOutcome.GetResult().AddPathSegments("/joinStorageSession");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return JoinStorageSessionOutcome(result);
+        return JoinStorageSessionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
@@ -219,7 +219,7 @@ JoinStorageSessionAsViewerOutcome KinesisVideoWebRTCStorageClient::JoinStorageSe
         endpointResolutionOutcome.GetResult().AddPathSegments("/joinStorageSessionAsViewer");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return JoinStorageSessionAsViewerOutcome(result);
+        return JoinStorageSessionAsViewerOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

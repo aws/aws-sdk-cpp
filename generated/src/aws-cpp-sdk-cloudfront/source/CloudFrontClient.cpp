@@ -373,6 +373,8 @@ AssociateAlias2020_05_31Outcome CloudFrontClient::AssociateAlias2020_05_31(const
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetDistributionId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/associate-alias");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return AssociateAlias2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -407,6 +409,10 @@ AssociateDistributionTenantWebACL2020_05_31Outcome CloudFrontClient::AssociateDi
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenant/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/associate-web-acl");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? AssociateDistributionTenantWebACL2020_05_31Outcome(
+                                        AssociateDistributionTenantWebACL2020_05_31Result(result.GetResultWithOwnership()))
+                                  : AssociateDistributionTenantWebACL2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -441,6 +447,10 @@ AssociateDistributionWebACL2020_05_31Outcome CloudFrontClient::AssociateDistribu
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/associate-web-acl");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? AssociateDistributionWebACL2020_05_31Outcome(
+                                        AssociateDistributionWebACL2020_05_31Result(result.GetResultWithOwnership()))
+                                  : AssociateDistributionWebACL2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -474,6 +484,9 @@ CopyDistribution2020_05_31Outcome CloudFrontClient::CopyDistribution2020_05_31(c
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrimaryDistributionId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/copy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CopyDistribution2020_05_31Outcome(CopyDistribution2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CopyDistribution2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -503,6 +516,10 @@ CreateAnycastIpList2020_05_31Outcome CloudFrontClient::CreateAnycastIpList2020_0
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAnycastIpList2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/anycast-ip-list");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? CreateAnycastIpList2020_05_31Outcome(CreateAnycastIpList2020_05_31Result(result.GetResultWithOwnership()))
+                   : CreateAnycastIpList2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -531,6 +548,9 @@ CreateCachePolicy2020_05_31Outcome CloudFrontClient::CreateCachePolicy2020_05_31
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCachePolicy2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/cache-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateCachePolicy2020_05_31Outcome(CreateCachePolicy2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateCachePolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -561,6 +581,10 @@ CreateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::CreateCl
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCloudFrontOriginAccessIdentity2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-identity/cloudfront");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateCloudFrontOriginAccessIdentity2020_05_31Outcome(
+                                        CreateCloudFrontOriginAccessIdentity2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateCloudFrontOriginAccessIdentity2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -590,6 +614,10 @@ CreateConnectionFunction2020_05_31Outcome CloudFrontClient::CreateConnectionFunc
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConnectionFunction2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-function");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? CreateConnectionFunction2020_05_31Outcome(CreateConnectionFunction2020_05_31Result(result.GetResultWithOwnership()))
+                   : CreateConnectionFunction2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -619,6 +647,10 @@ CreateConnectionGroup2020_05_31Outcome CloudFrontClient::CreateConnectionGroup20
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConnectionGroup2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-group");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? CreateConnectionGroup2020_05_31Outcome(CreateConnectionGroup2020_05_31Result(result.GetResultWithOwnership()))
+                   : CreateConnectionGroup2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -649,6 +681,10 @@ CreateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::CreateContin
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateContinuousDeploymentPolicy2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateContinuousDeploymentPolicy2020_05_31Outcome(
+                                        CreateContinuousDeploymentPolicy2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateContinuousDeploymentPolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -678,6 +714,9 @@ CreateDistribution2020_05_31Outcome CloudFrontClient::CreateDistribution2020_05_
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDistribution2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateDistribution2020_05_31Outcome(CreateDistribution2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateDistribution2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -707,6 +746,10 @@ CreateDistributionTenant2020_05_31Outcome CloudFrontClient::CreateDistributionTe
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDistributionTenant2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenant");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? CreateDistributionTenant2020_05_31Outcome(CreateDistributionTenant2020_05_31Result(result.GetResultWithOwnership()))
+                   : CreateDistributionTenant2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -739,6 +782,10 @@ CreateDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateDistribution
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution");
         ss.str("?WithTags");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateDistributionWithTags2020_05_31Outcome(
+                                        CreateDistributionWithTags2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateDistributionWithTags2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -769,6 +816,10 @@ CreateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::CreateFieldL
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFieldLevelEncryptionConfig2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateFieldLevelEncryptionConfig2020_05_31Outcome(
+                                        CreateFieldLevelEncryptionConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateFieldLevelEncryptionConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -799,6 +850,10 @@ CreateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::CreateField
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFieldLevelEncryptionProfile2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption-profile");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateFieldLevelEncryptionProfile2020_05_31Outcome(
+                                        CreateFieldLevelEncryptionProfile2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateFieldLevelEncryptionProfile2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -827,6 +882,9 @@ CreateFunction2020_05_31Outcome CloudFrontClient::CreateFunction2020_05_31(const
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFunction2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/function");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateFunction2020_05_31Outcome(CreateFunction2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateFunction2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -861,6 +919,9 @@ CreateInvalidation2020_05_31Outcome CloudFrontClient::CreateInvalidation2020_05_
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDistributionId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/invalidation");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateInvalidation2020_05_31Outcome(CreateInvalidation2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateInvalidation2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -895,6 +956,10 @@ CreateInvalidationForDistributionTenant2020_05_31Outcome CloudFrontClient::Creat
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenant/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/invalidation");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateInvalidationForDistributionTenant2020_05_31Outcome(
+                                        CreateInvalidationForDistributionTenant2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateInvalidationForDistributionTenant2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -923,6 +988,9 @@ CreateKeyGroup2020_05_31Outcome CloudFrontClient::CreateKeyGroup2020_05_31(const
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKeyGroup2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-group");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateKeyGroup2020_05_31Outcome(CreateKeyGroup2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateKeyGroup2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -952,6 +1020,10 @@ CreateKeyValueStore2020_05_31Outcome CloudFrontClient::CreateKeyValueStore2020_0
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKeyValueStore2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? CreateKeyValueStore2020_05_31Outcome(CreateKeyValueStore2020_05_31Result(result.GetResultWithOwnership()))
+                   : CreateKeyValueStore2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -986,6 +1058,10 @@ CreateMonitoringSubscription2020_05_31Outcome CloudFrontClient::CreateMonitoring
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributions/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDistributionId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/monitoring-subscription");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateMonitoringSubscription2020_05_31Outcome(
+                                        CreateMonitoringSubscription2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateMonitoringSubscription2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1015,6 +1091,10 @@ CreateOriginAccessControl2020_05_31Outcome CloudFrontClient::CreateOriginAccessC
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOriginAccessControl2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-control");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? CreateOriginAccessControl2020_05_31Outcome(CreateOriginAccessControl2020_05_31Result(result.GetResultWithOwnership()))
+                   : CreateOriginAccessControl2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1044,6 +1124,10 @@ CreateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::CreateOriginRequest
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOriginRequestPolicy2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-request-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? CreateOriginRequestPolicy2020_05_31Outcome(CreateOriginRequestPolicy2020_05_31Result(result.GetResultWithOwnership()))
+                   : CreateOriginRequestPolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1072,6 +1156,9 @@ CreatePublicKey2020_05_31Outcome CloudFrontClient::CreatePublicKey2020_05_31(con
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePublicKey2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/public-key");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreatePublicKey2020_05_31Outcome(CreatePublicKey2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreatePublicKey2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1101,6 +1188,10 @@ CreateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::CreateRealtimeLogConf
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRealtimeLogConfig2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/realtime-log-config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? CreateRealtimeLogConfig2020_05_31Outcome(CreateRealtimeLogConfig2020_05_31Result(result.GetResultWithOwnership()))
+                   : CreateRealtimeLogConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1130,6 +1221,10 @@ CreateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::CreateResponseHea
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateResponseHeadersPolicy2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/response-headers-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateResponseHeadersPolicy2020_05_31Outcome(
+                                        CreateResponseHeadersPolicy2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateResponseHeadersPolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1159,6 +1254,10 @@ CreateStreamingDistribution2020_05_31Outcome CloudFrontClient::CreateStreamingDi
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStreamingDistribution2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/streaming-distribution");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateStreamingDistribution2020_05_31Outcome(
+                                        CreateStreamingDistribution2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateStreamingDistribution2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1192,6 +1291,10 @@ CreateStreamingDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateStr
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/streaming-distribution");
         ss.str("?WithTags");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateStreamingDistributionWithTags2020_05_31Outcome(
+                                        CreateStreamingDistributionWithTags2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateStreamingDistributionWithTags2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1220,6 +1323,9 @@ CreateTrustStore2020_05_31Outcome CloudFrontClient::CreateTrustStore2020_05_31(c
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTrustStore2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/trust-store");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateTrustStore2020_05_31Outcome(CreateTrustStore2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateTrustStore2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1248,6 +1354,9 @@ CreateVpcOrigin2020_05_31Outcome CloudFrontClient::CreateVpcOrigin2020_05_31(con
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVpcOrigin2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/vpc-origin");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateVpcOrigin2020_05_31Outcome(CreateVpcOrigin2020_05_31Result(result.GetResultWithOwnership()))
+                                  : CreateVpcOrigin2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1286,6 +1395,8 @@ DeleteAnycastIpList2020_05_31Outcome CloudFrontClient::DeleteAnycastIpList2020_0
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/anycast-ip-list/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteAnycastIpList2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1318,6 +1429,8 @@ DeleteCachePolicy2020_05_31Outcome CloudFrontClient::DeleteCachePolicy2020_05_31
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/cache-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteCachePolicy2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1351,6 +1464,8 @@ DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::DeleteCl
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-identity/cloudfront/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1389,6 +1504,8 @@ DeleteConnectionFunction2020_05_31Outcome CloudFrontClient::DeleteConnectionFunc
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteConnectionFunction2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1427,6 +1544,8 @@ DeleteConnectionGroup2020_05_31Outcome CloudFrontClient::DeleteConnectionGroup20
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-group/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteConnectionGroup2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1460,6 +1579,8 @@ DeleteContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::DeleteContin
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteContinuousDeploymentPolicy2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1493,6 +1614,8 @@ DeleteDistribution2020_05_31Outcome CloudFrontClient::DeleteDistribution2020_05_
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteDistribution2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1531,6 +1654,8 @@ DeleteDistributionTenant2020_05_31Outcome CloudFrontClient::DeleteDistributionTe
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenant/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteDistributionTenant2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1564,6 +1689,8 @@ DeleteFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::DeleteFieldL
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteFieldLevelEncryptionConfig2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1597,6 +1724,8 @@ DeleteFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::DeleteField
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption-profile/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteFieldLevelEncryptionProfile2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1634,6 +1763,8 @@ DeleteFunction2020_05_31Outcome CloudFrontClient::DeleteFunction2020_05_31(const
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteFunction2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1666,6 +1797,8 @@ DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-group/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteKeyGroup2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1704,6 +1837,8 @@ DeleteKeyValueStore2020_05_31Outcome CloudFrontClient::DeleteKeyValueStore2020_0
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteKeyValueStore2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1738,6 +1873,10 @@ DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoring
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributions/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDistributionId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/monitoring-subscription");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteMonitoringSubscription2020_05_31Outcome(
+                                        DeleteMonitoringSubscription2020_05_31Result(result.GetResultWithOwnership()))
+                                  : DeleteMonitoringSubscription2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1771,6 +1910,8 @@ DeleteOriginAccessControl2020_05_31Outcome CloudFrontClient::DeleteOriginAccessC
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-control/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteOriginAccessControl2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1804,6 +1945,8 @@ DeleteOriginRequestPolicy2020_05_31Outcome CloudFrontClient::DeleteOriginRequest
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-request-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteOriginRequestPolicy2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1836,6 +1979,8 @@ DeletePublicKey2020_05_31Outcome CloudFrontClient::DeletePublicKey2020_05_31(con
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/public-key/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeletePublicKey2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1865,6 +2010,8 @@ DeleteRealtimeLogConfig2020_05_31Outcome CloudFrontClient::DeleteRealtimeLogConf
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRealtimeLogConfig2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/delete-realtime-log-config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return DeleteRealtimeLogConfig2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1894,6 +2041,8 @@ DeleteResourcePolicy2020_05_31Outcome CloudFrontClient::DeleteResourcePolicy2020
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/delete-resource-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return DeleteResourcePolicy2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1927,6 +2076,8 @@ DeleteResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::DeleteResponseHea
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/response-headers-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteResponseHeadersPolicy2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1960,6 +2111,8 @@ DeleteStreamingDistribution2020_05_31Outcome CloudFrontClient::DeleteStreamingDi
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/streaming-distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteStreamingDistribution2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1997,6 +2150,8 @@ DeleteTrustStore2020_05_31Outcome CloudFrontClient::DeleteTrustStore2020_05_31(c
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/trust-store/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return DeleteTrustStore2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2034,6 +2189,9 @@ DeleteVpcOrigin2020_05_31Outcome CloudFrontClient::DeleteVpcOrigin2020_05_31(con
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/vpc-origin/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteVpcOrigin2020_05_31Outcome(DeleteVpcOrigin2020_05_31Result(result.GetResultWithOwnership()))
+                                  : DeleteVpcOrigin2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2068,6 +2226,10 @@ DescribeConnectionFunction2020_05_31Outcome CloudFrontClient::DescribeConnection
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         endpointResolutionOutcome.GetResult().AddPathSegments("/describe");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? DescribeConnectionFunction2020_05_31Outcome(
+                                        DescribeConnectionFunction2020_05_31Result(result.GetResultWithOwnership()))
+                                  : DescribeConnectionFunction2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2101,6 +2263,9 @@ DescribeFunction2020_05_31Outcome CloudFrontClient::DescribeFunction2020_05_31(c
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/describe");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? DescribeFunction2020_05_31Outcome(DescribeFunction2020_05_31Result(result.GetResultWithOwnership()))
+                                  : DescribeFunction2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2134,6 +2299,10 @@ DescribeKeyValueStore2020_05_31Outcome CloudFrontClient::DescribeKeyValueStore20
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? DescribeKeyValueStore2020_05_31Outcome(DescribeKeyValueStore2020_05_31Result(result.GetResultWithOwnership()))
+                   : DescribeKeyValueStore2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2168,6 +2337,10 @@ DisassociateDistributionTenantWebACL2020_05_31Outcome CloudFrontClient::Disassoc
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenant/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-web-acl");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? DisassociateDistributionTenantWebACL2020_05_31Outcome(
+                                        DisassociateDistributionTenantWebACL2020_05_31Result(result.GetResultWithOwnership()))
+                                  : DisassociateDistributionTenantWebACL2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2202,6 +2375,10 @@ DisassociateDistributionWebACL2020_05_31Outcome CloudFrontClient::DisassociateDi
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-web-acl");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? DisassociateDistributionWebACL2020_05_31Outcome(
+                                        DisassociateDistributionWebACL2020_05_31Result(result.GetResultWithOwnership()))
+                                  : DisassociateDistributionWebACL2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2234,6 +2411,9 @@ GetAnycastIpList2020_05_31Outcome CloudFrontClient::GetAnycastIpList2020_05_31(c
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/anycast-ip-list/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAnycastIpList2020_05_31Outcome(GetAnycastIpList2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetAnycastIpList2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2266,6 +2446,9 @@ GetCachePolicy2020_05_31Outcome CloudFrontClient::GetCachePolicy2020_05_31(const
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/cache-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetCachePolicy2020_05_31Outcome(GetCachePolicy2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetCachePolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2300,6 +2483,10 @@ GetCachePolicyConfig2020_05_31Outcome CloudFrontClient::GetCachePolicyConfig2020
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/cache-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetCachePolicyConfig2020_05_31Outcome(GetCachePolicyConfig2020_05_31Result(result.GetResultWithOwnership()))
+                   : GetCachePolicyConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2333,6 +2520,10 @@ GetCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::GetCloudFro
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-identity/cloudfront/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetCloudFrontOriginAccessIdentity2020_05_31Outcome(
+                                        GetCloudFrontOriginAccessIdentity2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetCloudFrontOriginAccessIdentity2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2367,6 +2558,10 @@ GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome CloudFrontClient::GetCl
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-identity/cloudfront/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome(
+                                        GetCloudFrontOriginAccessIdentityConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2439,6 +2634,9 @@ GetConnectionGroup2020_05_31Outcome CloudFrontClient::GetConnectionGroup2020_05_
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-group/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetConnectionGroup2020_05_31Outcome(GetConnectionGroup2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetConnectionGroup2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2471,6 +2669,10 @@ GetConnectionGroupByRoutingEndpoint2020_05_31Outcome CloudFrontClient::GetConnec
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetConnectionGroupByRoutingEndpoint2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-group");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetConnectionGroupByRoutingEndpoint2020_05_31Outcome(
+                                        GetConnectionGroupByRoutingEndpoint2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetConnectionGroupByRoutingEndpoint2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2504,6 +2706,10 @@ GetContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::GetContinuousDe
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetContinuousDeploymentPolicy2020_05_31Outcome(
+                                        GetContinuousDeploymentPolicy2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetContinuousDeploymentPolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2538,6 +2744,10 @@ GetContinuousDeploymentPolicyConfig2020_05_31Outcome CloudFrontClient::GetContin
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetContinuousDeploymentPolicyConfig2020_05_31Outcome(
+                                        GetContinuousDeploymentPolicyConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetContinuousDeploymentPolicyConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2570,6 +2780,9 @@ GetDistribution2020_05_31Outcome CloudFrontClient::GetDistribution2020_05_31(con
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetDistribution2020_05_31Outcome(GetDistribution2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetDistribution2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2604,6 +2817,10 @@ GetDistributionConfig2020_05_31Outcome CloudFrontClient::GetDistributionConfig20
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetDistributionConfig2020_05_31Outcome(GetDistributionConfig2020_05_31Result(result.GetResultWithOwnership()))
+                   : GetDistributionConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2637,6 +2854,10 @@ GetDistributionTenant2020_05_31Outcome CloudFrontClient::GetDistributionTenant20
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenant/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetDistributionTenant2020_05_31Outcome(GetDistributionTenant2020_05_31Result(result.GetResultWithOwnership()))
+                   : GetDistributionTenant2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2669,6 +2890,10 @@ GetDistributionTenantByDomain2020_05_31Outcome CloudFrontClient::GetDistribution
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDistributionTenantByDomain2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenant");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetDistributionTenantByDomain2020_05_31Outcome(
+                                        GetDistributionTenantByDomain2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetDistributionTenantByDomain2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2702,6 +2927,10 @@ GetFieldLevelEncryption2020_05_31Outcome CloudFrontClient::GetFieldLevelEncrypti
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetFieldLevelEncryption2020_05_31Outcome(GetFieldLevelEncryption2020_05_31Result(result.GetResultWithOwnership()))
+                   : GetFieldLevelEncryption2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2736,6 +2965,10 @@ GetFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEn
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetFieldLevelEncryptionConfig2020_05_31Outcome(
+                                        GetFieldLevelEncryptionConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetFieldLevelEncryptionConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2769,6 +3002,10 @@ GetFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::GetFieldLevelE
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption-profile/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetFieldLevelEncryptionProfile2020_05_31Outcome(
+                                        GetFieldLevelEncryptionProfile2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetFieldLevelEncryptionProfile2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2803,6 +3040,10 @@ GetFieldLevelEncryptionProfileConfig2020_05_31Outcome CloudFrontClient::GetField
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption-profile/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetFieldLevelEncryptionProfileConfig2020_05_31Outcome(
+                                        GetFieldLevelEncryptionProfileConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetFieldLevelEncryptionProfileConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2879,6 +3120,9 @@ GetInvalidation2020_05_31Outcome CloudFrontClient::GetInvalidation2020_05_31(con
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDistributionId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/invalidation/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetInvalidation2020_05_31Outcome(GetInvalidation2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetInvalidation2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2919,6 +3163,10 @@ GetInvalidationForDistributionTenant2020_05_31Outcome CloudFrontClient::GetInval
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDistributionTenantId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/invalidation/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetInvalidationForDistributionTenant2020_05_31Outcome(
+                                        GetInvalidationForDistributionTenant2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetInvalidationForDistributionTenant2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2951,6 +3199,9 @@ GetKeyGroup2020_05_31Outcome CloudFrontClient::GetKeyGroup2020_05_31(const GetKe
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-group/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetKeyGroup2020_05_31Outcome(GetKeyGroup2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetKeyGroup2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2984,6 +3235,9 @@ GetKeyGroupConfig2020_05_31Outcome CloudFrontClient::GetKeyGroupConfig2020_05_31
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-group/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetKeyGroupConfig2020_05_31Outcome(GetKeyGroupConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetKeyGroupConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3017,6 +3271,10 @@ GetManagedCertificateDetails2020_05_31Outcome CloudFrontClient::GetManagedCertif
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/managed-certificate/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetManagedCertificateDetails2020_05_31Outcome(
+                                        GetManagedCertificateDetails2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetManagedCertificateDetails2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3051,6 +3309,10 @@ GetMonitoringSubscription2020_05_31Outcome CloudFrontClient::GetMonitoringSubscr
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributions/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDistributionId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/monitoring-subscription");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetMonitoringSubscription2020_05_31Outcome(GetMonitoringSubscription2020_05_31Result(result.GetResultWithOwnership()))
+                   : GetMonitoringSubscription2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3084,6 +3346,10 @@ GetOriginAccessControl2020_05_31Outcome CloudFrontClient::GetOriginAccessControl
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-control/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetOriginAccessControl2020_05_31Outcome(GetOriginAccessControl2020_05_31Result(result.GetResultWithOwnership()))
+                   : GetOriginAccessControl2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3118,6 +3384,10 @@ GetOriginAccessControlConfig2020_05_31Outcome CloudFrontClient::GetOriginAccessC
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-control/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetOriginAccessControlConfig2020_05_31Outcome(
+                                        GetOriginAccessControlConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetOriginAccessControlConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3151,6 +3421,10 @@ GetOriginRequestPolicy2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicy
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-request-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetOriginRequestPolicy2020_05_31Outcome(GetOriginRequestPolicy2020_05_31Result(result.GetResultWithOwnership()))
+                   : GetOriginRequestPolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3185,6 +3459,10 @@ GetOriginRequestPolicyConfig2020_05_31Outcome CloudFrontClient::GetOriginRequest
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-request-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetOriginRequestPolicyConfig2020_05_31Outcome(
+                                        GetOriginRequestPolicyConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetOriginRequestPolicyConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3217,6 +3495,9 @@ GetPublicKey2020_05_31Outcome CloudFrontClient::GetPublicKey2020_05_31(const Get
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/public-key/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetPublicKey2020_05_31Outcome(GetPublicKey2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetPublicKey2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3251,6 +3532,9 @@ GetPublicKeyConfig2020_05_31Outcome CloudFrontClient::GetPublicKeyConfig2020_05_
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/public-key/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetPublicKeyConfig2020_05_31Outcome(GetPublicKeyConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetPublicKeyConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3280,6 +3564,10 @@ GetRealtimeLogConfig2020_05_31Outcome CloudFrontClient::GetRealtimeLogConfig2020
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRealtimeLogConfig2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/get-realtime-log-config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? GetRealtimeLogConfig2020_05_31Outcome(GetRealtimeLogConfig2020_05_31Result(result.GetResultWithOwnership()))
+                   : GetRealtimeLogConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3308,6 +3596,9 @@ GetResourcePolicy2020_05_31Outcome CloudFrontClient::GetResourcePolicy2020_05_31
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePolicy2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/get-resource-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetResourcePolicy2020_05_31Outcome(GetResourcePolicy2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetResourcePolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3341,6 +3632,10 @@ GetResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::GetResponseHeadersPo
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/response-headers-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetResponseHeadersPolicy2020_05_31Outcome(GetResponseHeadersPolicy2020_05_31Result(result.GetResultWithOwnership()))
+                   : GetResponseHeadersPolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3375,6 +3670,10 @@ GetResponseHeadersPolicyConfig2020_05_31Outcome CloudFrontClient::GetResponseHea
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/response-headers-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetResponseHeadersPolicyConfig2020_05_31Outcome(
+                                        GetResponseHeadersPolicyConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetResponseHeadersPolicyConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3408,6 +3707,10 @@ GetStreamingDistribution2020_05_31Outcome CloudFrontClient::GetStreamingDistribu
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/streaming-distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetStreamingDistribution2020_05_31Outcome(GetStreamingDistribution2020_05_31Result(result.GetResultWithOwnership()))
+                   : GetStreamingDistribution2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3442,6 +3745,10 @@ GetStreamingDistributionConfig2020_05_31Outcome CloudFrontClient::GetStreamingDi
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/streaming-distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetStreamingDistributionConfig2020_05_31Outcome(
+                                        GetStreamingDistributionConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetStreamingDistributionConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3474,6 +3781,9 @@ GetTrustStore2020_05_31Outcome CloudFrontClient::GetTrustStore2020_05_31(const G
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/trust-store/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetTrustStore2020_05_31Outcome(GetTrustStore2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetTrustStore2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3506,6 +3816,9 @@ GetVpcOrigin2020_05_31Outcome CloudFrontClient::GetVpcOrigin2020_05_31(const Get
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/vpc-origin/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetVpcOrigin2020_05_31Outcome(GetVpcOrigin2020_05_31Result(result.GetResultWithOwnership()))
+                                  : GetVpcOrigin2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3535,6 +3848,9 @@ ListAnycastIpLists2020_05_31Outcome CloudFrontClient::ListAnycastIpLists2020_05_
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAnycastIpLists2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/anycast-ip-list");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListAnycastIpLists2020_05_31Outcome(ListAnycastIpLists2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListAnycastIpLists2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3563,6 +3879,9 @@ ListCachePolicies2020_05_31Outcome CloudFrontClient::ListCachePolicies2020_05_31
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCachePolicies2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/cache-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListCachePolicies2020_05_31Outcome(ListCachePolicies2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListCachePolicies2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3593,6 +3912,10 @@ ListCloudFrontOriginAccessIdentities2020_05_31Outcome CloudFrontClient::ListClou
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCloudFrontOriginAccessIdentities2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-identity/cloudfront");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListCloudFrontOriginAccessIdentities2020_05_31Outcome(
+                                        ListCloudFrontOriginAccessIdentities2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListCloudFrontOriginAccessIdentities2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3630,6 +3953,10 @@ ListConflictingAliases2020_05_31Outcome CloudFrontClient::ListConflictingAliases
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConflictingAliases2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/conflicting-alias");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? ListConflictingAliases2020_05_31Outcome(ListConflictingAliases2020_05_31Result(result.GetResultWithOwnership()))
+                   : ListConflictingAliases2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3659,6 +3986,10 @@ ListConnectionFunctions2020_05_31Outcome CloudFrontClient::ListConnectionFunctio
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConnectionFunctions2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-functions");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? ListConnectionFunctions2020_05_31Outcome(ListConnectionFunctions2020_05_31Result(result.GetResultWithOwnership()))
+                   : ListConnectionFunctions2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3688,6 +4019,10 @@ ListConnectionGroups2020_05_31Outcome CloudFrontClient::ListConnectionGroups2020
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConnectionGroups2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-groups");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? ListConnectionGroups2020_05_31Outcome(ListConnectionGroups2020_05_31Result(result.GetResultWithOwnership()))
+                   : ListConnectionGroups2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3718,6 +4053,10 @@ ListContinuousDeploymentPolicies2020_05_31Outcome CloudFrontClient::ListContinuo
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListContinuousDeploymentPolicies2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListContinuousDeploymentPolicies2020_05_31Outcome(
+                                        ListContinuousDeploymentPolicies2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListContinuousDeploymentPolicies2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3747,6 +4086,10 @@ ListDistributionTenants2020_05_31Outcome CloudFrontClient::ListDistributionTenan
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDistributionTenants2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenants");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? ListDistributionTenants2020_05_31Outcome(ListDistributionTenants2020_05_31Result(result.GetResultWithOwnership()))
+                   : ListDistributionTenants2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3777,6 +4120,10 @@ ListDistributionTenantsByCustomization2020_05_31Outcome CloudFrontClient::ListDi
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDistributionTenantsByCustomization2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenants-by-customization");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ListDistributionTenantsByCustomization2020_05_31Outcome(
+                                        ListDistributionTenantsByCustomization2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionTenantsByCustomization2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3805,6 +4152,9 @@ ListDistributions2020_05_31Outcome CloudFrontClient::ListDistributions2020_05_31
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDistributions2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributions2020_05_31Outcome(ListDistributions2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributions2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3838,6 +4188,10 @@ ListDistributionsByAnycastIpListId2020_05_31Outcome CloudFrontClient::ListDistri
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByAnycastIpListId/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnycastIpListId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributionsByAnycastIpListId2020_05_31Outcome(
+                                        ListDistributionsByAnycastIpListId2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByAnycastIpListId2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3871,6 +4225,10 @@ ListDistributionsByCachePolicyId2020_05_31Outcome CloudFrontClient::ListDistribu
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByCachePolicyId/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCachePolicyId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributionsByCachePolicyId2020_05_31Outcome(
+                                        ListDistributionsByCachePolicyId2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByCachePolicyId2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3903,6 +4261,10 @@ ListDistributionsByConnectionFunction2020_05_31Outcome CloudFrontClient::ListDis
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDistributionsByConnectionFunction2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByConnectionFunction");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributionsByConnectionFunction2020_05_31Outcome(
+                                        ListDistributionsByConnectionFunction2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByConnectionFunction2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3936,6 +4298,10 @@ ListDistributionsByConnectionMode2020_05_31Outcome CloudFrontClient::ListDistrib
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByConnectionMode/");
         endpointResolutionOutcome.GetResult().AddPathSegment(ConnectionModeMapper::GetNameForConnectionMode(request.GetConnectionMode()));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributionsByConnectionMode2020_05_31Outcome(
+                                        ListDistributionsByConnectionMode2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByConnectionMode2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3969,6 +4335,10 @@ ListDistributionsByKeyGroup2020_05_31Outcome CloudFrontClient::ListDistributions
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByKeyGroupId/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyGroupId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributionsByKeyGroup2020_05_31Outcome(
+                                        ListDistributionsByKeyGroup2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByKeyGroup2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4002,6 +4372,10 @@ ListDistributionsByOriginRequestPolicyId2020_05_31Outcome CloudFrontClient::List
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByOriginRequestPolicyId/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOriginRequestPolicyId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributionsByOriginRequestPolicyId2020_05_31Outcome(
+                                        ListDistributionsByOriginRequestPolicyId2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByOriginRequestPolicyId2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4035,6 +4409,10 @@ ListDistributionsByOwnedResource2020_05_31Outcome CloudFrontClient::ListDistribu
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByOwnedResource/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributionsByOwnedResource2020_05_31Outcome(
+                                        ListDistributionsByOwnedResource2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByOwnedResource2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4065,6 +4443,10 @@ ListDistributionsByRealtimeLogConfig2020_05_31Outcome CloudFrontClient::ListDist
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDistributionsByRealtimeLogConfig2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByRealtimeLogConfig");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ListDistributionsByRealtimeLogConfig2020_05_31Outcome(
+                                        ListDistributionsByRealtimeLogConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByRealtimeLogConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4099,6 +4481,10 @@ ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome CloudFrontClient::Li
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByResponseHeadersPolicyId/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResponseHeadersPolicyId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome(
+                                        ListDistributionsByResponseHeadersPolicyId2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4131,6 +4517,10 @@ ListDistributionsByTrustStore2020_05_31Outcome CloudFrontClient::ListDistributio
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDistributionsByTrustStore2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByTrustStore");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributionsByTrustStore2020_05_31Outcome(
+                                        ListDistributionsByTrustStore2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByTrustStore2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4164,6 +4554,10 @@ ListDistributionsByVpcOriginId2020_05_31Outcome CloudFrontClient::ListDistributi
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByVpcOriginId/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVpcOriginId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributionsByVpcOriginId2020_05_31Outcome(
+                                        ListDistributionsByVpcOriginId2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByVpcOriginId2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4197,6 +4591,10 @@ ListDistributionsByWebACLId2020_05_31Outcome CloudFrontClient::ListDistributions
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByWebACLId/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWebACLId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListDistributionsByWebACLId2020_05_31Outcome(
+                                        ListDistributionsByWebACLId2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListDistributionsByWebACLId2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4226,6 +4624,10 @@ ListDomainConflicts2020_05_31Outcome CloudFrontClient::ListDomainConflicts2020_0
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomainConflicts2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/domain-conflicts");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? ListDomainConflicts2020_05_31Outcome(ListDomainConflicts2020_05_31Result(result.GetResultWithOwnership()))
+                   : ListDomainConflicts2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4256,6 +4658,10 @@ ListFieldLevelEncryptionConfigs2020_05_31Outcome CloudFrontClient::ListFieldLeve
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFieldLevelEncryptionConfigs2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListFieldLevelEncryptionConfigs2020_05_31Outcome(
+                                        ListFieldLevelEncryptionConfigs2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListFieldLevelEncryptionConfigs2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4286,6 +4692,10 @@ ListFieldLevelEncryptionProfiles2020_05_31Outcome CloudFrontClient::ListFieldLev
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFieldLevelEncryptionProfiles2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption-profile");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListFieldLevelEncryptionProfiles2020_05_31Outcome(
+                                        ListFieldLevelEncryptionProfiles2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListFieldLevelEncryptionProfiles2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4314,6 +4724,9 @@ ListFunctions2020_05_31Outcome CloudFrontClient::ListFunctions2020_05_31(const L
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFunctions2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/function");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListFunctions2020_05_31Outcome(ListFunctions2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListFunctions2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4347,6 +4760,9 @@ ListInvalidations2020_05_31Outcome CloudFrontClient::ListInvalidations2020_05_31
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDistributionId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/invalidation");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListInvalidations2020_05_31Outcome(ListInvalidations2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListInvalidations2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4381,6 +4797,10 @@ ListInvalidationsForDistributionTenant2020_05_31Outcome CloudFrontClient::ListIn
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenant/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/invalidation");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListInvalidationsForDistributionTenant2020_05_31Outcome(
+                                        ListInvalidationsForDistributionTenant2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListInvalidationsForDistributionTenant2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4409,6 +4829,9 @@ ListKeyGroups2020_05_31Outcome CloudFrontClient::ListKeyGroups2020_05_31(const L
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListKeyGroups2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-group");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListKeyGroups2020_05_31Outcome(ListKeyGroups2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListKeyGroups2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4438,6 +4861,9 @@ ListKeyValueStores2020_05_31Outcome CloudFrontClient::ListKeyValueStores2020_05_
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListKeyValueStores2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListKeyValueStores2020_05_31Outcome(ListKeyValueStores2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListKeyValueStores2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4467,6 +4893,10 @@ ListOriginAccessControls2020_05_31Outcome CloudFrontClient::ListOriginAccessCont
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOriginAccessControls2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-control");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? ListOriginAccessControls2020_05_31Outcome(ListOriginAccessControls2020_05_31Result(result.GetResultWithOwnership()))
+                   : ListOriginAccessControls2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4496,6 +4926,10 @@ ListOriginRequestPolicies2020_05_31Outcome CloudFrontClient::ListOriginRequestPo
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOriginRequestPolicies2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-request-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? ListOriginRequestPolicies2020_05_31Outcome(ListOriginRequestPolicies2020_05_31Result(result.GetResultWithOwnership()))
+                   : ListOriginRequestPolicies2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4524,6 +4958,9 @@ ListPublicKeys2020_05_31Outcome CloudFrontClient::ListPublicKeys2020_05_31(const
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPublicKeys2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/public-key");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListPublicKeys2020_05_31Outcome(ListPublicKeys2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListPublicKeys2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4553,6 +4990,10 @@ ListRealtimeLogConfigs2020_05_31Outcome CloudFrontClient::ListRealtimeLogConfigs
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRealtimeLogConfigs2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/realtime-log-config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? ListRealtimeLogConfigs2020_05_31Outcome(ListRealtimeLogConfigs2020_05_31Result(result.GetResultWithOwnership()))
+                   : ListRealtimeLogConfigs2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4582,6 +5023,10 @@ ListResponseHeadersPolicies2020_05_31Outcome CloudFrontClient::ListResponseHeade
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResponseHeadersPolicies2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/response-headers-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListResponseHeadersPolicies2020_05_31Outcome(
+                                        ListResponseHeadersPolicies2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListResponseHeadersPolicies2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4611,6 +5056,10 @@ ListStreamingDistributions2020_05_31Outcome CloudFrontClient::ListStreamingDistr
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStreamingDistributions2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/streaming-distribution");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListStreamingDistributions2020_05_31Outcome(
+                                        ListStreamingDistributions2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListStreamingDistributions2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4643,6 +5092,10 @@ ListTagsForResource2020_05_31Outcome CloudFrontClient::ListTagsForResource2020_0
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/tagging");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? ListTagsForResource2020_05_31Outcome(ListTagsForResource2020_05_31Result(result.GetResultWithOwnership()))
+                   : ListTagsForResource2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4671,6 +5124,9 @@ ListTrustStores2020_05_31Outcome CloudFrontClient::ListTrustStores2020_05_31(con
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrustStores2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/trust-stores");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ListTrustStores2020_05_31Outcome(ListTrustStores2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListTrustStores2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4699,6 +5155,9 @@ ListVpcOrigins2020_05_31Outcome CloudFrontClient::ListVpcOrigins2020_05_31(const
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVpcOrigins2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/vpc-origin");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListVpcOrigins2020_05_31Outcome(ListVpcOrigins2020_05_31Result(result.GetResultWithOwnership()))
+                                  : ListVpcOrigins2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4738,6 +5197,10 @@ PublishConnectionFunction2020_05_31Outcome CloudFrontClient::PublishConnectionFu
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/publish");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? PublishConnectionFunction2020_05_31Outcome(PublishConnectionFunction2020_05_31Result(result.GetResultWithOwnership()))
+                   : PublishConnectionFunction2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4776,6 +5239,9 @@ PublishFunction2020_05_31Outcome CloudFrontClient::PublishFunction2020_05_31(con
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/publish");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? PublishFunction2020_05_31Outcome(PublishFunction2020_05_31Result(result.GetResultWithOwnership()))
+                                  : PublishFunction2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4804,6 +5270,9 @@ PutResourcePolicy2020_05_31Outcome CloudFrontClient::PutResourcePolicy2020_05_31
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/put-resource-policy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? PutResourcePolicy2020_05_31Outcome(PutResourcePolicy2020_05_31Result(result.GetResultWithOwnership()))
+                                  : PutResourcePolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4838,6 +5307,8 @@ TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagRe
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/tagging");
         ss.str("?Operation=Tag");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return TagResource2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4877,6 +5348,10 @@ TestConnectionFunction2020_05_31Outcome CloudFrontClient::TestConnectionFunction
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/test");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? TestConnectionFunction2020_05_31Outcome(TestConnectionFunction2020_05_31Result(result.GetResultWithOwnership()))
+                   : TestConnectionFunction2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4915,6 +5390,9 @@ TestFunction2020_05_31Outcome CloudFrontClient::TestFunction2020_05_31(const Tes
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/test");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? TestFunction2020_05_31Outcome(TestFunction2020_05_31Result(result.GetResultWithOwnership()))
+                                  : TestFunction2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4949,6 +5427,8 @@ UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const U
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/tagging");
         ss.str("?Operation=Untag");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return UntagResource2020_05_31Outcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4987,6 +5467,10 @@ UpdateAnycastIpList2020_05_31Outcome CloudFrontClient::UpdateAnycastIpList2020_0
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/anycast-ip-list/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess()
+                   ? UpdateAnycastIpList2020_05_31Outcome(UpdateAnycastIpList2020_05_31Result(result.GetResultWithOwnership()))
+                   : UpdateAnycastIpList2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5019,6 +5503,9 @@ UpdateCachePolicy2020_05_31Outcome CloudFrontClient::UpdateCachePolicy2020_05_31
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/cache-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateCachePolicy2020_05_31Outcome(UpdateCachePolicy2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateCachePolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5053,6 +5540,10 @@ UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::UpdateCl
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-identity/cloudfront/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome(
+                                        UpdateCloudFrontOriginAccessIdentity2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5091,6 +5582,10 @@ UpdateConnectionFunction2020_05_31Outcome CloudFrontClient::UpdateConnectionFunc
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess()
+                   ? UpdateConnectionFunction2020_05_31Outcome(UpdateConnectionFunction2020_05_31Result(result.GetResultWithOwnership()))
+                   : UpdateConnectionFunction2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5129,6 +5624,10 @@ UpdateConnectionGroup2020_05_31Outcome CloudFrontClient::UpdateConnectionGroup20
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-group/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess()
+                   ? UpdateConnectionGroup2020_05_31Outcome(UpdateConnectionGroup2020_05_31Result(result.GetResultWithOwnership()))
+                   : UpdateConnectionGroup2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5162,6 +5661,10 @@ UpdateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::UpdateContin
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateContinuousDeploymentPolicy2020_05_31Outcome(
+                                        UpdateContinuousDeploymentPolicy2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateContinuousDeploymentPolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5196,6 +5699,9 @@ UpdateDistribution2020_05_31Outcome CloudFrontClient::UpdateDistribution2020_05_
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateDistribution2020_05_31Outcome(UpdateDistribution2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateDistribution2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5234,6 +5740,10 @@ UpdateDistributionTenant2020_05_31Outcome CloudFrontClient::UpdateDistributionTe
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenant/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess()
+                   ? UpdateDistributionTenant2020_05_31Outcome(UpdateDistributionTenant2020_05_31Result(result.GetResultWithOwnership()))
+                   : UpdateDistributionTenant2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5268,6 +5778,10 @@ UpdateDistributionWithStagingConfig2020_05_31Outcome CloudFrontClient::UpdateDis
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/promote-staging-config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateDistributionWithStagingConfig2020_05_31Outcome(
+                                        UpdateDistributionWithStagingConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateDistributionWithStagingConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5297,6 +5811,10 @@ UpdateDomainAssociation2020_05_31Outcome CloudFrontClient::UpdateDomainAssociati
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDomainAssociation2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/domain-association");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? UpdateDomainAssociation2020_05_31Outcome(UpdateDomainAssociation2020_05_31Result(result.GetResultWithOwnership()))
+                   : UpdateDomainAssociation2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5331,6 +5849,10 @@ UpdateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::UpdateFieldL
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateFieldLevelEncryptionConfig2020_05_31Outcome(
+                                        UpdateFieldLevelEncryptionConfig2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateFieldLevelEncryptionConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5365,6 +5887,10 @@ UpdateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::UpdateField
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption-profile/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateFieldLevelEncryptionProfile2020_05_31Outcome(
+                                        UpdateFieldLevelEncryptionProfile2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateFieldLevelEncryptionProfile2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5402,6 +5928,9 @@ UpdateFunction2020_05_31Outcome CloudFrontClient::UpdateFunction2020_05_31(const
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateFunction2020_05_31Outcome(UpdateFunction2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateFunction2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5434,6 +5963,9 @@ UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-group/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateKeyGroup2020_05_31Outcome(UpdateKeyGroup2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateKeyGroup2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5472,6 +6004,10 @@ UpdateKeyValueStore2020_05_31Outcome CloudFrontClient::UpdateKeyValueStore2020_0
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess()
+                   ? UpdateKeyValueStore2020_05_31Outcome(UpdateKeyValueStore2020_05_31Result(result.GetResultWithOwnership()))
+                   : UpdateKeyValueStore2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5506,6 +6042,10 @@ UpdateOriginAccessControl2020_05_31Outcome CloudFrontClient::UpdateOriginAccessC
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-control/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess()
+                   ? UpdateOriginAccessControl2020_05_31Outcome(UpdateOriginAccessControl2020_05_31Result(result.GetResultWithOwnership()))
+                   : UpdateOriginAccessControl2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5539,6 +6079,10 @@ UpdateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::UpdateOriginRequest
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-request-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess()
+                   ? UpdateOriginRequestPolicy2020_05_31Outcome(UpdateOriginRequestPolicy2020_05_31Result(result.GetResultWithOwnership()))
+                   : UpdateOriginRequestPolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5572,6 +6116,9 @@ UpdatePublicKey2020_05_31Outcome CloudFrontClient::UpdatePublicKey2020_05_31(con
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/public-key/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdatePublicKey2020_05_31Outcome(UpdatePublicKey2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdatePublicKey2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5601,6 +6148,10 @@ UpdateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::UpdateRealtimeLogConf
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRealtimeLogConfig2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/realtime-log-config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess()
+                   ? UpdateRealtimeLogConfig2020_05_31Outcome(UpdateRealtimeLogConfig2020_05_31Result(result.GetResultWithOwnership()))
+                   : UpdateRealtimeLogConfig2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5634,6 +6185,10 @@ UpdateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::UpdateResponseHea
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/response-headers-policy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateResponseHeadersPolicy2020_05_31Outcome(
+                                        UpdateResponseHeadersPolicy2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateResponseHeadersPolicy2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5668,6 +6223,10 @@ UpdateStreamingDistribution2020_05_31Outcome CloudFrontClient::UpdateStreamingDi
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/streaming-distribution/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateStreamingDistribution2020_05_31Outcome(
+                                        UpdateStreamingDistribution2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateStreamingDistribution2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5705,6 +6264,9 @@ UpdateTrustStore2020_05_31Outcome CloudFrontClient::UpdateTrustStore2020_05_31(c
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/trust-store/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateTrustStore2020_05_31Outcome(UpdateTrustStore2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateTrustStore2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5742,6 +6304,9 @@ UpdateVpcOrigin2020_05_31Outcome CloudFrontClient::UpdateVpcOrigin2020_05_31(con
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/vpc-origin/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT);
+        return result.IsSuccess() ? UpdateVpcOrigin2020_05_31Outcome(UpdateVpcOrigin2020_05_31Result(result.GetResultWithOwnership()))
+                                  : UpdateVpcOrigin2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -5771,6 +6336,10 @@ VerifyDnsConfiguration2020_05_31Outcome CloudFrontClient::VerifyDnsConfiguration
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, VerifyDnsConfiguration2020_05_31, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/verify-dns-configuration");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? VerifyDnsConfiguration2020_05_31Outcome(VerifyDnsConfiguration2020_05_31Result(result.GetResultWithOwnership()))
+                   : VerifyDnsConfiguration2020_05_31Outcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -192,7 +192,7 @@ ResourceGroupsClient::InvokeOperationOutcome ResourceGroupsClient::InvokeService
         endpointResolutionOutcome.GetResult().AddPathSegments("/cancel-tag-sync-task");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return CancelTagSyncTaskOutcome(result);
+        return CancelTagSyncTaskOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});

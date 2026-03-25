@@ -908,7 +908,7 @@ DeleteMalwareProtectionPlanOutcome GuardDutyClient::DeleteMalwareProtectionPlan(
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMalwareProtectionPlanId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteMalwareProtectionPlanOutcome(result);
+        return DeleteMalwareProtectionPlanOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3089,7 +3089,7 @@ UpdateMalwareProtectionPlanOutcome GuardDutyClient::UpdateMalwareProtectionPlan(
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMalwareProtectionPlanId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return UpdateMalwareProtectionPlanOutcome(result);
+        return UpdateMalwareProtectionPlanOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

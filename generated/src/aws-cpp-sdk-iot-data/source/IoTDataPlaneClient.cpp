@@ -213,7 +213,7 @@ DeleteConnectionOutcome IoTDataPlaneClient::DeleteConnection(const DeleteConnect
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClientId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConnectionOutcome(result);
+        return DeleteConnectionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -425,7 +425,7 @@ PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopic());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PublishOutcome(result);
+        return PublishOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

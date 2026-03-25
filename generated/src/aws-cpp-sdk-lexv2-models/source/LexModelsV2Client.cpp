@@ -1436,7 +1436,7 @@ DeleteIntentOutcome LexModelsV2Client::DeleteIntent(const DeleteIntentRequest& r
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntentId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteIntentOutcome(result);
+        return DeleteIntentOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1580,7 +1580,7 @@ DeleteSlotOutcome LexModelsV2Client::DeleteSlot(const DeleteSlotRequest& request
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSlotId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSlotOutcome(result);
+        return DeleteSlotOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1636,7 +1636,7 @@ DeleteSlotTypeOutcome LexModelsV2Client::DeleteSlotType(const DeleteSlotTypeRequ
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSlotTypeId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSlotTypeOutcome(result);
+        return DeleteSlotTypeOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1671,7 +1671,7 @@ DeleteTestSetOutcome LexModelsV2Client::DeleteTestSet(const DeleteTestSetRequest
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestSetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTestSetOutcome(result);
+        return DeleteTestSetOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

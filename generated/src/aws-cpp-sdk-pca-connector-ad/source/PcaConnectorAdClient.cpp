@@ -278,7 +278,7 @@ CreateServicePrincipalNameOutcome PcaConnectorAdClient::CreateServicePrincipalNa
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return CreateServicePrincipalNameOutcome(result);
+        return CreateServicePrincipalNameOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -347,7 +347,7 @@ CreateTemplateGroupAccessControlEntryOutcome PcaConnectorAdClient::CreateTemplat
         endpointResolutionOutcome.GetResult().AddPathSegments("/accessControlEntries");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return CreateTemplateGroupAccessControlEntryOutcome(result);
+        return CreateTemplateGroupAccessControlEntryOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -382,7 +382,7 @@ DeleteConnectorOutcome PcaConnectorAdClient::DeleteConnector(const DeleteConnect
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConnectorOutcome(result);
+        return DeleteConnectorOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -418,7 +418,7 @@ DeleteDirectoryRegistrationOutcome PcaConnectorAdClient::DeleteDirectoryRegistra
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDirectoryRegistrationArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteDirectoryRegistrationOutcome(result);
+        return DeleteDirectoryRegistrationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -460,7 +460,7 @@ DeleteServicePrincipalNameOutcome PcaConnectorAdClient::DeleteServicePrincipalNa
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteServicePrincipalNameOutcome(result);
+        return DeleteServicePrincipalNameOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -495,7 +495,7 @@ DeleteTemplateOutcome PcaConnectorAdClient::DeleteTemplate(const DeleteTemplateR
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTemplateOutcome(result);
+        return DeleteTemplateOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -538,7 +538,7 @@ DeleteTemplateGroupAccessControlEntryOutcome PcaConnectorAdClient::DeleteTemplat
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupSecurityIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTemplateGroupAccessControlEntryOutcome(result);
+        return DeleteTemplateGroupAccessControlEntryOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -969,7 +969,7 @@ TagResourceOutcome PcaConnectorAdClient::TagResource(const TagResourceRequest& r
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return TagResourceOutcome(result);
+        return TagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1009,7 +1009,7 @@ UntagResourceOutcome PcaConnectorAdClient::UntagResource(const UntagResourceRequ
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1044,7 +1044,7 @@ UpdateTemplateOutcome PcaConnectorAdClient::UpdateTemplate(const UpdateTemplateR
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return UpdateTemplateOutcome(result);
+        return UpdateTemplateOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1087,7 +1087,7 @@ UpdateTemplateGroupAccessControlEntryOutcome PcaConnectorAdClient::UpdateTemplat
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupSecurityIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return UpdateTemplateGroupAccessControlEntryOutcome(result);
+        return UpdateTemplateGroupAccessControlEntryOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

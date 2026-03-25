@@ -437,7 +437,7 @@ DeleteChannelOutcome IVSClient::DeleteChannel(const DeleteChannelRequest& reques
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteChannel");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteChannelOutcome(result);
+        return DeleteChannelOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -501,7 +501,7 @@ DeletePlaybackRestrictionPolicyOutcome IVSClient::DeletePlaybackRestrictionPolic
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeletePlaybackRestrictionPolicy");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeletePlaybackRestrictionPolicyOutcome(result);
+        return DeletePlaybackRestrictionPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -532,7 +532,7 @@ DeleteRecordingConfigurationOutcome IVSClient::DeleteRecordingConfiguration(cons
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteRecordingConfiguration");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRecordingConfigurationOutcome(result);
+        return DeleteRecordingConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -563,7 +563,7 @@ DeleteStreamKeyOutcome IVSClient::DeleteStreamKey(const DeleteStreamKeyRequest& 
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteStreamKey");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteStreamKeyOutcome(result);
+        return DeleteStreamKeyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1111,7 +1111,7 @@ PutMetadataOutcome IVSClient::PutMetadata(const PutMetadataRequest& request) con
         endpointResolutionOutcome.GetResult().AddPathSegments("/PutMetadata");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutMetadataOutcome(result);
+        return PutMetadataOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

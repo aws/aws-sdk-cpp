@@ -236,7 +236,7 @@ AssociateLibraryItemReviewOutcome QAppsClient::AssociateLibraryItemReview(const 
         endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.associateItemRating");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return AssociateLibraryItemReviewOutcome(result);
+        return AssociateLibraryItemReviewOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -270,7 +270,7 @@ AssociateQAppWithUserOutcome QAppsClient::AssociateQAppWithUser(const AssociateQ
         endpointResolutionOutcome.GetResult().AddPathSegments("/apps.install");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return AssociateQAppWithUserOutcome(result);
+        return AssociateQAppWithUserOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -304,7 +304,7 @@ BatchCreateCategoryOutcome QAppsClient::BatchCreateCategory(const BatchCreateCat
         endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.createCategories");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return BatchCreateCategoryOutcome(result);
+        return BatchCreateCategoryOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -338,7 +338,7 @@ BatchDeleteCategoryOutcome QAppsClient::BatchDeleteCategory(const BatchDeleteCat
         endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.deleteCategories");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return BatchDeleteCategoryOutcome(result);
+        return BatchDeleteCategoryOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -372,7 +372,7 @@ BatchUpdateCategoryOutcome QAppsClient::BatchUpdateCategory(const BatchUpdateCat
         endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.updateCategories");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return BatchUpdateCategoryOutcome(result);
+        return BatchUpdateCategoryOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -511,7 +511,7 @@ DeleteLibraryItemOutcome QAppsClient::DeleteLibraryItem(const DeleteLibraryItemR
         endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.deleteItem");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteLibraryItemOutcome(result);
+        return DeleteLibraryItemOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -545,7 +545,7 @@ DeleteQAppOutcome QAppsClient::DeleteQApp(const DeleteQAppRequest& request) cons
         endpointResolutionOutcome.GetResult().AddPathSegments("/apps.delete");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteQAppOutcome(result);
+        return DeleteQAppOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -618,7 +618,7 @@ DisassociateLibraryItemReviewOutcome QAppsClient::DisassociateLibraryItemReview(
         endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.disassociateItemRating");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateLibraryItemReviewOutcome(result);
+        return DisassociateLibraryItemReviewOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -652,7 +652,7 @@ DisassociateQAppFromUserOutcome QAppsClient::DisassociateQAppFromUser(const Disa
         endpointResolutionOutcome.GetResult().AddPathSegments("/apps.uninstall");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateQAppFromUserOutcome(result);
+        return DisassociateQAppFromUserOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1157,7 +1157,7 @@ StopQAppSessionOutcome QAppsClient::StopQAppSession(const StopQAppSessionRequest
         endpointResolutionOutcome.GetResult().AddPathSegments("/runtime.deleteMiniAppRun");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopQAppSessionOutcome(result);
+        return StopQAppSessionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1303,7 +1303,7 @@ UpdateLibraryItemMetadataOutcome QAppsClient::UpdateLibraryItemMetadata(const Up
         endpointResolutionOutcome.GetResult().AddPathSegments("/catalog.updateItemMetadata");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateLibraryItemMetadataOutcome(result);
+        return UpdateLibraryItemMetadataOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

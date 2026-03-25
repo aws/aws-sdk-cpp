@@ -414,7 +414,7 @@ DeleteApplicationOutcome GameLiftStreamsClient::DeleteApplication(const DeleteAp
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteApplicationOutcome(result);
+        return DeleteApplicationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -449,7 +449,7 @@ DeleteStreamGroupOutcome GameLiftStreamsClient::DeleteStreamGroup(const DeleteSt
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteStreamGroupOutcome(result);
+        return DeleteStreamGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -848,7 +848,7 @@ RemoveStreamGroupLocationsOutcome GameLiftStreamsClient::RemoveStreamGroupLocati
         endpointResolutionOutcome.GetResult().AddPathSegments("/locations");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return RemoveStreamGroupLocationsOutcome(result);
+        return RemoveStreamGroupLocationsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -963,7 +963,7 @@ TerminateStreamSessionOutcome GameLiftStreamsClient::TerminateStreamSession(cons
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamSessionIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return TerminateStreamSessionOutcome(result);
+        return TerminateStreamSessionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

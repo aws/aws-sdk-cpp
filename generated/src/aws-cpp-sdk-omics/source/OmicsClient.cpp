@@ -471,7 +471,7 @@ CancelRunOutcome OmicsClient::CancelRun(const CancelRunRequest& request) const {
         endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return CancelRunOutcome(result);
+        return CancelRunOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1095,7 +1095,7 @@ DeleteBatchOutcome OmicsClient::DeleteBatch(const DeleteBatchRequest& request) c
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBatchId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteBatchOutcome(result);
+        return DeleteBatchOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1215,7 +1215,7 @@ DeleteRunOutcome OmicsClient::DeleteRun(const DeleteRunRequest& request) const {
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRunOutcome(result);
+        return DeleteRunOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1286,7 +1286,7 @@ DeleteRunCacheOutcome OmicsClient::DeleteRunCache(const DeleteRunCacheRequest& r
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRunCacheOutcome(result);
+        return DeleteRunCacheOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1323,7 +1323,7 @@ DeleteRunGroupOutcome OmicsClient::DeleteRunGroup(const DeleteRunGroupRequest& r
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteRunGroupOutcome(result);
+        return DeleteRunGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1512,7 +1512,7 @@ DeleteWorkflowOutcome OmicsClient::DeleteWorkflow(const DeleteWorkflowRequest& r
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteWorkflowOutcome(result);
+        return DeleteWorkflowOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1556,7 +1556,7 @@ DeleteWorkflowVersionOutcome OmicsClient::DeleteWorkflowVersion(const DeleteWork
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteWorkflowVersionOutcome(result);
+        return DeleteWorkflowVersionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3974,7 +3974,7 @@ UpdateRunCacheOutcome OmicsClient::UpdateRunCache(const UpdateRunCacheRequest& r
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateRunCacheOutcome(result);
+        return UpdateRunCacheOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4011,7 +4011,7 @@ UpdateRunGroupOutcome OmicsClient::UpdateRunGroup(const UpdateRunGroupRequest& r
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateRunGroupOutcome(result);
+        return UpdateRunGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4124,7 +4124,7 @@ UpdateWorkflowOutcome OmicsClient::UpdateWorkflow(const UpdateWorkflowRequest& r
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateWorkflowOutcome(result);
+        return UpdateWorkflowOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -4168,7 +4168,7 @@ UpdateWorkflowVersionOutcome OmicsClient::UpdateWorkflowVersion(const UpdateWork
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateWorkflowVersionOutcome(result);
+        return UpdateWorkflowVersionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -263,7 +263,7 @@ AssociateChannelFlowOutcome ChimeSDKMessagingClient::AssociateChannelFlow(const 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
         endpointResolutionOutcome.GetResult().AddPathSegments("/channel-flow");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return AssociateChannelFlowOutcome(result);
+        return AssociateChannelFlowOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -581,7 +581,7 @@ DeleteChannelOutcome ChimeSDKMessagingClient::DeleteChannel(const DeleteChannelR
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteChannelOutcome(result);
+        return DeleteChannelOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -628,7 +628,7 @@ DeleteChannelBanOutcome ChimeSDKMessagingClient::DeleteChannelBan(const DeleteCh
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteChannelBanOutcome(result);
+        return DeleteChannelBanOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -663,7 +663,7 @@ DeleteChannelFlowOutcome ChimeSDKMessagingClient::DeleteChannelFlow(const Delete
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelFlowArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteChannelFlowOutcome(result);
+        return DeleteChannelFlowOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -710,7 +710,7 @@ DeleteChannelMembershipOutcome ChimeSDKMessagingClient::DeleteChannelMembership(
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteChannelMembershipOutcome(result);
+        return DeleteChannelMembershipOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -757,7 +757,7 @@ DeleteChannelMessageOutcome ChimeSDKMessagingClient::DeleteChannelMessage(const 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteChannelMessageOutcome(result);
+        return DeleteChannelMessageOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -804,7 +804,7 @@ DeleteChannelModeratorOutcome ChimeSDKMessagingClient::DeleteChannelModerator(co
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelModeratorArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteChannelModeratorOutcome(result);
+        return DeleteChannelModeratorOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -841,7 +841,7 @@ DeleteMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::DeleteMes
         endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-configurations");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteMessagingStreamingConfigurationsOutcome(result);
+        return DeleteMessagingStreamingConfigurationsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1204,7 +1204,7 @@ DisassociateChannelFlowOutcome ChimeSDKMessagingClient::DisassociateChannelFlow(
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelFlowArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateChannelFlowOutcome(result);
+        return DisassociateChannelFlowOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2137,7 +2137,7 @@ TagResourceOutcome ChimeSDKMessagingClient::TagResource(const TagResourceRequest
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return TagResourceOutcome(result);
+        return TagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2171,7 +2171,7 @@ UntagResourceOutcome ChimeSDKMessagingClient::UntagResource(const UntagResourceR
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

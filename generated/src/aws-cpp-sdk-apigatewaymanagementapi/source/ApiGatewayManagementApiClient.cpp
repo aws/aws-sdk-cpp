@@ -216,7 +216,7 @@ DeleteConnectionOutcome ApiGatewayManagementApiClient::DeleteConnection(const De
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectionId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConnectionOutcome(result);
+        return DeleteConnectionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -286,7 +286,7 @@ PostToConnectionOutcome ApiGatewayManagementApiClient::PostToConnection(const Po
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectionId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PostToConnectionOutcome(result);
+        return PostToConnectionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

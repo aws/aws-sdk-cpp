@@ -1142,7 +1142,7 @@ CreateTagsOutcome MediaLiveClient::CreateTags(const CreateTagsRequest& request) 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return CreateTagsOutcome(result);
+        return CreateTagsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1257,7 +1257,7 @@ DeleteCloudWatchAlarmTemplateOutcome MediaLiveClient::DeleteCloudWatchAlarmTempl
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCloudWatchAlarmTemplateOutcome(result);
+        return DeleteCloudWatchAlarmTemplateOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1293,7 +1293,7 @@ DeleteCloudWatchAlarmTemplateGroupOutcome MediaLiveClient::DeleteCloudWatchAlarm
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCloudWatchAlarmTemplateGroupOutcome(result);
+        return DeleteCloudWatchAlarmTemplateGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1365,7 +1365,7 @@ DeleteEventBridgeRuleTemplateOutcome MediaLiveClient::DeleteEventBridgeRuleTempl
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteEventBridgeRuleTemplateOutcome(result);
+        return DeleteEventBridgeRuleTemplateOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1401,7 +1401,7 @@ DeleteEventBridgeRuleTemplateGroupOutcome MediaLiveClient::DeleteEventBridgeRule
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteEventBridgeRuleTemplateGroupOutcome(result);
+        return DeleteEventBridgeRuleTemplateGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1775,7 +1775,7 @@ DeleteSignalMapOutcome MediaLiveClient::DeleteSignalMap(const DeleteSignalMapReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSignalMapOutcome(result);
+        return DeleteSignalMapOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1815,7 +1815,7 @@ DeleteTagsOutcome MediaLiveClient::DeleteTags(const DeleteTagsRequest& request) 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTagsOutcome(result);
+        return DeleteTagsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

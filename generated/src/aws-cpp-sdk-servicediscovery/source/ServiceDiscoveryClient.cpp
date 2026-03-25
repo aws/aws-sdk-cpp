@@ -984,7 +984,7 @@ UpdateInstanceCustomHealthStatusOutcome ServiceDiscoveryClient::UpdateInstanceCu
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateInstanceCustomHealthStatusOutcome(result);
+        return UpdateInstanceCustomHealthStatusOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

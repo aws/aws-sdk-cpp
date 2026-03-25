@@ -251,7 +251,7 @@ DeleteCampaignOutcome ConnectCampaignsV2Client::DeleteCampaign(const DeleteCampa
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCampaignOutcome(result);
+        return DeleteCampaignOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -293,7 +293,7 @@ DeleteCampaignChannelSubtypeConfigOutcome ConnectCampaignsV2Client::DeleteCampai
         endpointResolutionOutcome.GetResult().AddPathSegments("/channel-subtype-config");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCampaignChannelSubtypeConfigOutcome(result);
+        return DeleteCampaignChannelSubtypeConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -335,7 +335,7 @@ DeleteCampaignCommunicationLimitsOutcome ConnectCampaignsV2Client::DeleteCampaig
         endpointResolutionOutcome.GetResult().AddPathSegments("/communication-limits");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCampaignCommunicationLimitsOutcome(result);
+        return DeleteCampaignCommunicationLimitsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -377,7 +377,7 @@ DeleteCampaignCommunicationTimeOutcome ConnectCampaignsV2Client::DeleteCampaignC
         endpointResolutionOutcome.GetResult().AddPathSegments("/communication-time");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCampaignCommunicationTimeOutcome(result);
+        return DeleteCampaignCommunicationTimeOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -414,7 +414,7 @@ DeleteConnectInstanceConfigOutcome ConnectCampaignsV2Client::DeleteConnectInstan
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConnectInstanceConfigOutcome(result);
+        return DeleteConnectInstanceConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -451,7 +451,7 @@ DeleteConnectInstanceIntegrationOutcome ConnectCampaignsV2Client::DeleteConnectI
         endpointResolutionOutcome.GetResult().AddPathSegments("/integrations/delete");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConnectInstanceIntegrationOutcome(result);
+        return DeleteConnectInstanceIntegrationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -488,7 +488,7 @@ DeleteInstanceOnboardingJobOutcome ConnectCampaignsV2Client::DeleteInstanceOnboa
         endpointResolutionOutcome.GetResult().AddPathSegments("/onboarding");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteInstanceOnboardingJobOutcome(result);
+        return DeleteInstanceOnboardingJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -844,7 +844,7 @@ PauseCampaignOutcome ConnectCampaignsV2Client::PauseCampaign(const PauseCampaign
         endpointResolutionOutcome.GetResult().AddPathSegments("/pause");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PauseCampaignOutcome(result);
+        return PauseCampaignOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -880,7 +880,7 @@ PutConnectInstanceIntegrationOutcome ConnectCampaignsV2Client::PutConnectInstanc
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectInstanceId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/integrations");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutConnectInstanceIntegrationOutcome(result);
+        return PutConnectInstanceIntegrationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -916,7 +916,7 @@ PutInstanceCommunicationLimitsOutcome ConnectCampaignsV2Client::PutInstanceCommu
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectInstanceId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/communication-limits");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutInstanceCommunicationLimitsOutcome(result);
+        return PutInstanceCommunicationLimitsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1026,7 +1026,7 @@ ResumeCampaignOutcome ConnectCampaignsV2Client::ResumeCampaign(const ResumeCampa
         endpointResolutionOutcome.GetResult().AddPathSegments("/resume");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return ResumeCampaignOutcome(result);
+        return ResumeCampaignOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1062,7 +1062,7 @@ StartCampaignOutcome ConnectCampaignsV2Client::StartCampaign(const StartCampaign
         endpointResolutionOutcome.GetResult().AddPathSegments("/start");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StartCampaignOutcome(result);
+        return StartCampaignOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1135,7 +1135,7 @@ StopCampaignOutcome ConnectCampaignsV2Client::StopCampaign(const StopCampaignReq
         endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopCampaignOutcome(result);
+        return StopCampaignOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1170,7 +1170,7 @@ TagResourceOutcome ConnectCampaignsV2Client::TagResource(const TagResourceReques
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return TagResourceOutcome(result);
+        return TagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1210,7 +1210,7 @@ UntagResourceOutcome ConnectCampaignsV2Client::UntagResource(const UntagResource
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1247,7 +1247,7 @@ UpdateCampaignChannelSubtypeConfigOutcome ConnectCampaignsV2Client::UpdateCampai
         endpointResolutionOutcome.GetResult().AddPathSegments("/channel-subtype-config");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCampaignChannelSubtypeConfigOutcome(result);
+        return UpdateCampaignChannelSubtypeConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1284,7 +1284,7 @@ UpdateCampaignCommunicationLimitsOutcome ConnectCampaignsV2Client::UpdateCampaig
         endpointResolutionOutcome.GetResult().AddPathSegments("/communication-limits");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCampaignCommunicationLimitsOutcome(result);
+        return UpdateCampaignCommunicationLimitsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1321,7 +1321,7 @@ UpdateCampaignCommunicationTimeOutcome ConnectCampaignsV2Client::UpdateCampaignC
         endpointResolutionOutcome.GetResult().AddPathSegments("/communication-time");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCampaignCommunicationTimeOutcome(result);
+        return UpdateCampaignCommunicationTimeOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1358,7 +1358,7 @@ UpdateCampaignFlowAssociationOutcome ConnectCampaignsV2Client::UpdateCampaignFlo
         endpointResolutionOutcome.GetResult().AddPathSegments("/flow");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCampaignFlowAssociationOutcome(result);
+        return UpdateCampaignFlowAssociationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1394,7 +1394,7 @@ UpdateCampaignNameOutcome ConnectCampaignsV2Client::UpdateCampaignName(const Upd
         endpointResolutionOutcome.GetResult().AddPathSegments("/name");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCampaignNameOutcome(result);
+        return UpdateCampaignNameOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1430,7 +1430,7 @@ UpdateCampaignScheduleOutcome ConnectCampaignsV2Client::UpdateCampaignSchedule(c
         endpointResolutionOutcome.GetResult().AddPathSegments("/schedule");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCampaignScheduleOutcome(result);
+        return UpdateCampaignScheduleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1466,7 +1466,7 @@ UpdateCampaignSourceOutcome ConnectCampaignsV2Client::UpdateCampaignSource(const
         endpointResolutionOutcome.GetResult().AddPathSegments("/source");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCampaignSourceOutcome(result);
+        return UpdateCampaignSourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

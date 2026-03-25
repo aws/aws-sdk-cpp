@@ -279,7 +279,7 @@ AssociateLensesOutcome WellArchitectedClient::AssociateLenses(const AssociateLen
         endpointResolutionOutcome.GetResult().AddPathSegments("/associateLenses");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return AssociateLensesOutcome(result);
+        return AssociateLensesOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -315,7 +315,7 @@ AssociateProfilesOutcome WellArchitectedClient::AssociateProfiles(const Associat
         endpointResolutionOutcome.GetResult().AddPathSegments("/associateProfiles");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return AssociateProfilesOutcome(result);
+        return AssociateProfilesOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -677,7 +677,7 @@ DeleteLensOutcome WellArchitectedClient::DeleteLens(const DeleteLensRequest& req
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLensAlias());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteLensOutcome(result);
+        return DeleteLensOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -724,7 +724,7 @@ DeleteLensShareOutcome WellArchitectedClient::DeleteLensShare(const DeleteLensSh
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteLensShareOutcome(result);
+        return DeleteLensShareOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -764,7 +764,7 @@ DeleteProfileOutcome WellArchitectedClient::DeleteProfile(const DeleteProfileReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteProfileOutcome(result);
+        return DeleteProfileOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -811,7 +811,7 @@ DeleteProfileShareOutcome WellArchitectedClient::DeleteProfileShare(const Delete
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteProfileShareOutcome(result);
+        return DeleteProfileShareOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -851,7 +851,7 @@ DeleteReviewTemplateOutcome WellArchitectedClient::DeleteReviewTemplate(const De
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteReviewTemplateOutcome(result);
+        return DeleteReviewTemplateOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -897,7 +897,7 @@ DeleteTemplateShareOutcome WellArchitectedClient::DeleteTemplateShare(const Dele
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTemplateShareOutcome(result);
+        return DeleteTemplateShareOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -937,7 +937,7 @@ DeleteWorkloadOutcome WellArchitectedClient::DeleteWorkload(const DeleteWorkload
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteWorkloadOutcome(result);
+        return DeleteWorkloadOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -984,7 +984,7 @@ DeleteWorkloadShareOutcome WellArchitectedClient::DeleteWorkloadShare(const Dele
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteWorkloadShareOutcome(result);
+        return DeleteWorkloadShareOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1020,7 +1020,7 @@ DisassociateLensesOutcome WellArchitectedClient::DisassociateLenses(const Disass
         endpointResolutionOutcome.GetResult().AddPathSegments("/disassociateLenses");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateLensesOutcome(result);
+        return DisassociateLensesOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1056,7 +1056,7 @@ DisassociateProfilesOutcome WellArchitectedClient::DisassociateProfiles(const Di
         endpointResolutionOutcome.GetResult().AddPathSegments("/disassociateProfiles");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateProfilesOutcome(result);
+        return DisassociateProfilesOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2494,7 +2494,7 @@ UpdateGlobalSettingsOutcome WellArchitectedClient::UpdateGlobalSettings(const Up
         endpointResolutionOutcome.GetResult().AddPathSegments("/global-settings");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return UpdateGlobalSettingsOutcome(result);
+        return UpdateGlobalSettingsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2530,7 +2530,7 @@ UpdateIntegrationOutcome WellArchitectedClient::UpdateIntegration(const UpdateIn
         endpointResolutionOutcome.GetResult().AddPathSegments("/updateIntegration");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateIntegrationOutcome(result);
+        return UpdateIntegrationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2898,7 +2898,7 @@ UpgradeLensReviewOutcome WellArchitectedClient::UpgradeLensReview(const UpgradeL
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLensAlias());
         endpointResolutionOutcome.GetResult().AddPathSegments("/upgrade");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpgradeLensReviewOutcome(result);
+        return UpgradeLensReviewOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2940,7 +2940,7 @@ UpgradeProfileVersionOutcome WellArchitectedClient::UpgradeProfileVersion(const 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
         endpointResolutionOutcome.GetResult().AddPathSegments("/upgrade");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpgradeProfileVersionOutcome(result);
+        return UpgradeProfileVersionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2983,7 +2983,7 @@ UpgradeReviewTemplateLensReviewOutcome WellArchitectedClient::UpgradeReviewTempl
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLensAlias());
         endpointResolutionOutcome.GetResult().AddPathSegments("/upgrade");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpgradeReviewTemplateLensReviewOutcome(result);
+        return UpgradeReviewTemplateLensReviewOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

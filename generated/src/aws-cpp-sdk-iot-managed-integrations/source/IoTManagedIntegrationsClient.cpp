@@ -654,7 +654,7 @@ DeleteAccountAssociationOutcome IoTManagedIntegrationsClient::DeleteAccountAssoc
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountAssociationId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAccountAssociationOutcome(result);
+        return DeleteAccountAssociationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -689,7 +689,7 @@ DeleteCloudConnectorOutcome IoTManagedIntegrationsClient::DeleteCloudConnector(c
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCloudConnectorOutcome(result);
+        return DeleteCloudConnectorOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -725,7 +725,7 @@ DeleteConnectorDestinationOutcome IoTManagedIntegrationsClient::DeleteConnectorD
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConnectorDestinationOutcome(result);
+        return DeleteConnectorDestinationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -760,7 +760,7 @@ DeleteCredentialLockerOutcome IoTManagedIntegrationsClient::DeleteCredentialLock
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCredentialLockerOutcome(result);
+        return DeleteCredentialLockerOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -795,7 +795,7 @@ DeleteDestinationOutcome IoTManagedIntegrationsClient::DeleteDestination(const D
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteDestinationOutcome(result);
+        return DeleteDestinationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -831,7 +831,7 @@ DeleteEventLogConfigurationOutcome IoTManagedIntegrationsClient::DeleteEventLogC
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteEventLogConfigurationOutcome(result);
+        return DeleteEventLogConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -866,7 +866,7 @@ DeleteManagedThingOutcome IoTManagedIntegrationsClient::DeleteManagedThing(const
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteManagedThingOutcome(result);
+        return DeleteManagedThingOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -902,7 +902,7 @@ DeleteNotificationConfigurationOutcome IoTManagedIntegrationsClient::DeleteNotif
         endpointResolutionOutcome.GetResult().AddPathSegment(EventTypeMapper::GetNameForEventType(request.GetEventType()));
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteNotificationConfigurationOutcome(result);
+        return DeleteNotificationConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -937,7 +937,7 @@ DeleteOtaTaskOutcome IoTManagedIntegrationsClient::DeleteOtaTask(const DeleteOta
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteOtaTaskOutcome(result);
+        return DeleteOtaTaskOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -973,7 +973,7 @@ DeleteOtaTaskConfigurationOutcome IoTManagedIntegrationsClient::DeleteOtaTaskCon
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteOtaTaskConfigurationOutcome(result);
+        return DeleteOtaTaskConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1009,7 +1009,7 @@ DeleteProvisioningProfileOutcome IoTManagedIntegrationsClient::DeleteProvisionin
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteProvisioningProfileOutcome(result);
+        return DeleteProvisioningProfileOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1040,7 +1040,7 @@ DeregisterAccountAssociationOutcome IoTManagedIntegrationsClient::DeregisterAcco
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/managed-thing-associations/deregister");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return DeregisterAccountAssociationOutcome(result);
+        return DeregisterAccountAssociationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2502,7 +2502,7 @@ PutRuntimeLogConfigurationOutcome IoTManagedIntegrationsClient::PutRuntimeLogCon
         endpointResolutionOutcome.GetResult().AddPathSegments("/runtime-log-configurations/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagedThingId());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutRuntimeLogConfigurationOutcome(result);
+        return PutRuntimeLogConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2602,7 +2602,7 @@ ResetRuntimeLogConfigurationOutcome IoTManagedIntegrationsClient::ResetRuntimeLo
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagedThingId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return ResetRuntimeLogConfigurationOutcome(result);
+        return ResetRuntimeLogConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2857,7 +2857,7 @@ UpdateAccountAssociationOutcome IoTManagedIntegrationsClient::UpdateAccountAssoc
         endpointResolutionOutcome.GetResult().AddPathSegments("/account-associations/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountAssociationId());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateAccountAssociationOutcome(result);
+        return UpdateAccountAssociationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2891,7 +2891,7 @@ UpdateCloudConnectorOutcome IoTManagedIntegrationsClient::UpdateCloudConnector(c
         endpointResolutionOutcome.GetResult().AddPathSegments("/cloud-connectors/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCloudConnectorOutcome(result);
+        return UpdateCloudConnectorOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2926,7 +2926,7 @@ UpdateConnectorDestinationOutcome IoTManagedIntegrationsClient::UpdateConnectorD
         endpointResolutionOutcome.GetResult().AddPathSegments("/connector-destinations/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateConnectorDestinationOutcome(result);
+        return UpdateConnectorDestinationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2960,7 +2960,7 @@ UpdateDestinationOutcome IoTManagedIntegrationsClient::UpdateDestination(const U
         endpointResolutionOutcome.GetResult().AddPathSegments("/destinations/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateDestinationOutcome(result);
+        return UpdateDestinationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2996,7 +2996,7 @@ UpdateEventLogConfigurationOutcome IoTManagedIntegrationsClient::UpdateEventLogC
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return UpdateEventLogConfigurationOutcome(result);
+        return UpdateEventLogConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3030,7 +3030,7 @@ UpdateManagedThingOutcome IoTManagedIntegrationsClient::UpdateManagedThing(const
         endpointResolutionOutcome.GetResult().AddPathSegments("/managed-things/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateManagedThingOutcome(result);
+        return UpdateManagedThingOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3065,7 +3065,7 @@ UpdateNotificationConfigurationOutcome IoTManagedIntegrationsClient::UpdateNotif
         endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configurations/");
         endpointResolutionOutcome.GetResult().AddPathSegment(EventTypeMapper::GetNameForEventType(request.GetEventType()));
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateNotificationConfigurationOutcome(result);
+        return UpdateNotificationConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3099,7 +3099,7 @@ UpdateOtaTaskOutcome IoTManagedIntegrationsClient::UpdateOtaTask(const UpdateOta
         endpointResolutionOutcome.GetResult().AddPathSegments("/ota-tasks/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateOtaTaskOutcome(result);
+        return UpdateOtaTaskOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

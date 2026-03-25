@@ -278,6 +278,9 @@ ActivateKeySigningKeyOutcome Route53Client::ActivateKeySigningKey(const Activate
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/activate");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ActivateKeySigningKeyOutcome(ActivateKeySigningKeyResult(result.GetResultWithOwnership()))
+                                  : ActivateKeySigningKeyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -311,6 +314,9 @@ AssociateVPCWithHostedZoneOutcome Route53Client::AssociateVPCWithHostedZone(cons
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/associatevpc");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? AssociateVPCWithHostedZoneOutcome(AssociateVPCWithHostedZoneResult(result.GetResultWithOwnership()))
+                                  : AssociateVPCWithHostedZoneOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -343,6 +349,9 @@ ChangeCidrCollectionOutcome Route53Client::ChangeCidrCollection(const ChangeCidr
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/cidrcollection/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ChangeCidrCollectionOutcome(ChangeCidrCollectionResult(result.GetResultWithOwnership()))
+                                  : ChangeCidrCollectionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -376,6 +385,9 @@ ChangeResourceRecordSetsOutcome Route53Client::ChangeResourceRecordSets(const Ch
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/rrset/");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ChangeResourceRecordSetsOutcome(ChangeResourceRecordSetsResult(result.GetResultWithOwnership()))
+                                  : ChangeResourceRecordSetsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -414,6 +426,9 @@ ChangeTagsForResourceOutcome Route53Client::ChangeTagsForResource(const ChangeTa
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/tags/");
         endpointResolutionOutcome.GetResult().AddPathSegment(TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType()));
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ChangeTagsForResourceOutcome(ChangeTagsForResourceResult(result.GetResultWithOwnership()))
+                                  : ChangeTagsForResourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -442,6 +457,9 @@ CreateCidrCollectionOutcome Route53Client::CreateCidrCollection(const CreateCidr
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCidrCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/cidrcollection");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateCidrCollectionOutcome(CreateCidrCollectionResult(result.GetResultWithOwnership()))
+                                  : CreateCidrCollectionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -470,6 +488,9 @@ CreateHealthCheckOutcome Route53Client::CreateHealthCheck(const CreateHealthChec
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHealthCheck, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthcheck");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateHealthCheckOutcome(CreateHealthCheckResult(result.GetResultWithOwnership()))
+                                  : CreateHealthCheckOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -498,6 +519,9 @@ CreateHostedZoneOutcome Route53Client::CreateHostedZone(const CreateHostedZoneRe
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHostedZone, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateHostedZoneOutcome(CreateHostedZoneResult(result.GetResultWithOwnership()))
+                                  : CreateHostedZoneOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -526,6 +550,9 @@ CreateKeySigningKeyOutcome Route53Client::CreateKeySigningKey(const CreateKeySig
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKeySigningKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/keysigningkey");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateKeySigningKeyOutcome(CreateKeySigningKeyResult(result.GetResultWithOwnership()))
+                                  : CreateKeySigningKeyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -554,6 +581,9 @@ CreateQueryLoggingConfigOutcome Route53Client::CreateQueryLoggingConfig(const Cr
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateQueryLoggingConfig, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/queryloggingconfig");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateQueryLoggingConfigOutcome(CreateQueryLoggingConfigResult(result.GetResultWithOwnership()))
+                                  : CreateQueryLoggingConfigOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -582,6 +612,9 @@ CreateReusableDelegationSetOutcome Route53Client::CreateReusableDelegationSet(co
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReusableDelegationSet, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/delegationset");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateReusableDelegationSetOutcome(CreateReusableDelegationSetResult(result.GetResultWithOwnership()))
+                                  : CreateReusableDelegationSetOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -610,6 +643,9 @@ CreateTrafficPolicyOutcome Route53Client::CreateTrafficPolicy(const CreateTraffi
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTrafficPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateTrafficPolicyOutcome(CreateTrafficPolicyResult(result.GetResultWithOwnership()))
+                                  : CreateTrafficPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -638,6 +674,9 @@ CreateTrafficPolicyInstanceOutcome Route53Client::CreateTrafficPolicyInstance(co
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTrafficPolicyInstance, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstance");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateTrafficPolicyInstanceOutcome(CreateTrafficPolicyInstanceResult(result.GetResultWithOwnership()))
+                                  : CreateTrafficPolicyInstanceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -670,6 +709,9 @@ CreateTrafficPolicyVersionOutcome Route53Client::CreateTrafficPolicyVersion(cons
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateTrafficPolicyVersionOutcome(CreateTrafficPolicyVersionResult(result.GetResultWithOwnership()))
+                                  : CreateTrafficPolicyVersionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -704,6 +746,10 @@ CreateVPCAssociationAuthorizationOutcome Route53Client::CreateVPCAssociationAuth
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/authorizevpcassociation");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? CreateVPCAssociationAuthorizationOutcome(CreateVPCAssociationAuthorizationResult(result.GetResultWithOwnership()))
+                   : CreateVPCAssociationAuthorizationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -743,6 +789,9 @@ DeactivateKeySigningKeyOutcome Route53Client::DeactivateKeySigningKey(const Deac
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/deactivate");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DeactivateKeySigningKeyOutcome(DeactivateKeySigningKeyResult(result.GetResultWithOwnership()))
+                                  : DeactivateKeySigningKeyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -775,6 +824,9 @@ DeleteCidrCollectionOutcome Route53Client::DeleteCidrCollection(const DeleteCidr
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/cidrcollection/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteCidrCollectionOutcome(DeleteCidrCollectionResult(result.GetResultWithOwnership()))
+                                  : DeleteCidrCollectionOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -807,6 +859,9 @@ DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthChec
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthcheck/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHealthCheckId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteHealthCheckOutcome(DeleteHealthCheckResult(result.GetResultWithOwnership()))
+                                  : DeleteHealthCheckOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -839,6 +894,9 @@ DeleteHostedZoneOutcome Route53Client::DeleteHostedZone(const DeleteHostedZoneRe
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteHostedZoneOutcome(DeleteHostedZoneResult(result.GetResultWithOwnership()))
+                                  : DeleteHostedZoneOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -877,6 +935,9 @@ DeleteKeySigningKeyOutcome Route53Client::DeleteKeySigningKey(const DeleteKeySig
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/keysigningkey/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteKeySigningKeyOutcome(DeleteKeySigningKeyResult(result.GetResultWithOwnership()))
+                                  : DeleteKeySigningKeyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -909,6 +970,9 @@ DeleteQueryLoggingConfigOutcome Route53Client::DeleteQueryLoggingConfig(const De
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/queryloggingconfig/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteQueryLoggingConfigOutcome(DeleteQueryLoggingConfigResult(result.GetResultWithOwnership()))
+                                  : DeleteQueryLoggingConfigOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -941,6 +1005,9 @@ DeleteReusableDelegationSetOutcome Route53Client::DeleteReusableDelegationSet(co
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/delegationset/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteReusableDelegationSetOutcome(DeleteReusableDelegationSetResult(result.GetResultWithOwnership()))
+                                  : DeleteReusableDelegationSetOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -979,6 +1046,9 @@ DeleteTrafficPolicyOutcome Route53Client::DeleteTrafficPolicy(const DeleteTraffi
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteTrafficPolicyOutcome(DeleteTrafficPolicyResult(result.GetResultWithOwnership()))
+                                  : DeleteTrafficPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1011,6 +1081,9 @@ DeleteTrafficPolicyInstanceOutcome Route53Client::DeleteTrafficPolicyInstance(co
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstance/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE);
+        return result.IsSuccess() ? DeleteTrafficPolicyInstanceOutcome(DeleteTrafficPolicyInstanceResult(result.GetResultWithOwnership()))
+                                  : DeleteTrafficPolicyInstanceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1045,6 +1118,10 @@ DeleteVPCAssociationAuthorizationOutcome Route53Client::DeleteVPCAssociationAuth
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/deauthorizevpcassociation");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? DeleteVPCAssociationAuthorizationOutcome(DeleteVPCAssociationAuthorizationResult(result.GetResultWithOwnership()))
+                   : DeleteVPCAssociationAuthorizationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1078,6 +1155,9 @@ DisableHostedZoneDNSSECOutcome Route53Client::DisableHostedZoneDNSSEC(const Disa
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/disable-dnssec");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? DisableHostedZoneDNSSECOutcome(DisableHostedZoneDNSSECResult(result.GetResultWithOwnership()))
+                                  : DisableHostedZoneDNSSECOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1112,6 +1192,10 @@ DisassociateVPCFromHostedZoneOutcome Route53Client::DisassociateVPCFromHostedZon
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/disassociatevpc");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess()
+                   ? DisassociateVPCFromHostedZoneOutcome(DisassociateVPCFromHostedZoneResult(result.GetResultWithOwnership()))
+                   : DisassociateVPCFromHostedZoneOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1145,6 +1229,9 @@ EnableHostedZoneDNSSECOutcome Route53Client::EnableHostedZoneDNSSEC(const Enable
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/enable-dnssec");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? EnableHostedZoneDNSSECOutcome(EnableHostedZoneDNSSECResult(result.GetResultWithOwnership()))
+                                  : EnableHostedZoneDNSSECOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1177,6 +1264,9 @@ GetAccountLimitOutcome Route53Client::GetAccountLimit(const GetAccountLimitReque
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/accountlimit/");
         endpointResolutionOutcome.GetResult().AddPathSegment(AccountLimitTypeMapper::GetNameForAccountLimitType(request.GetType()));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetAccountLimitOutcome(GetAccountLimitResult(result.GetResultWithOwnership()))
+                                  : GetAccountLimitOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1209,6 +1299,9 @@ GetChangeOutcome Route53Client::GetChange(const GetChangeRequest& request) const
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/change/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetChangeOutcome(GetChangeResult(result.GetResultWithOwnership()))
+                                  : GetChangeOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1237,6 +1330,9 @@ GetCheckerIpRangesOutcome Route53Client::GetCheckerIpRanges(const GetCheckerIpRa
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCheckerIpRanges, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/checkeripranges");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetCheckerIpRangesOutcome(GetCheckerIpRangesResult(result.GetResultWithOwnership()))
+                                  : GetCheckerIpRangesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1270,6 +1366,9 @@ GetDNSSECOutcome Route53Client::GetDNSSEC(const GetDNSSECRequest& request) const
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/dnssec");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetDNSSECOutcome(GetDNSSECResult(result.GetResultWithOwnership()))
+                                  : GetDNSSECOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1298,6 +1397,9 @@ GetGeoLocationOutcome Route53Client::GetGeoLocation(const GetGeoLocationRequest&
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGeoLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/geolocation");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetGeoLocationOutcome(GetGeoLocationResult(result.GetResultWithOwnership()))
+                                  : GetGeoLocationOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1330,6 +1432,9 @@ GetHealthCheckOutcome Route53Client::GetHealthCheck(const GetHealthCheckRequest&
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthcheck/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHealthCheckId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetHealthCheckOutcome(GetHealthCheckResult(result.GetResultWithOwnership()))
+                                  : GetHealthCheckOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1358,6 +1463,9 @@ GetHealthCheckCountOutcome Route53Client::GetHealthCheckCount(const GetHealthChe
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHealthCheckCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthcheckcount");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetHealthCheckCountOutcome(GetHealthCheckCountResult(result.GetResultWithOwnership()))
+                                  : GetHealthCheckCountOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1392,6 +1500,10 @@ GetHealthCheckLastFailureReasonOutcome Route53Client::GetHealthCheckLastFailureR
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthcheck/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHealthCheckId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/lastfailurereason");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetHealthCheckLastFailureReasonOutcome(GetHealthCheckLastFailureReasonResult(result.GetResultWithOwnership()))
+                   : GetHealthCheckLastFailureReasonOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1425,6 +1537,9 @@ GetHealthCheckStatusOutcome Route53Client::GetHealthCheckStatus(const GetHealthC
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthcheck/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHealthCheckId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/status");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetHealthCheckStatusOutcome(GetHealthCheckStatusResult(result.GetResultWithOwnership()))
+                                  : GetHealthCheckStatusOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1457,6 +1572,9 @@ GetHostedZoneOutcome Route53Client::GetHostedZone(const GetHostedZoneRequest& re
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetHostedZoneOutcome(GetHostedZoneResult(result.GetResultWithOwnership()))
+                                  : GetHostedZoneOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1485,6 +1603,9 @@ GetHostedZoneCountOutcome Route53Client::GetHostedZoneCount(const GetHostedZoneC
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHostedZoneCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzonecount");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetHostedZoneCountOutcome(GetHostedZoneCountResult(result.GetResultWithOwnership()))
+                                  : GetHostedZoneCountOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1523,6 +1644,9 @@ GetHostedZoneLimitOutcome Route53Client::GetHostedZoneLimit(const GetHostedZoneL
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzonelimit/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegment(HostedZoneLimitTypeMapper::GetNameForHostedZoneLimitType(request.GetType()));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetHostedZoneLimitOutcome(GetHostedZoneLimitResult(result.GetResultWithOwnership()))
+                                  : GetHostedZoneLimitOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1555,6 +1679,9 @@ GetQueryLoggingConfigOutcome Route53Client::GetQueryLoggingConfig(const GetQuery
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/queryloggingconfig/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetQueryLoggingConfigOutcome(GetQueryLoggingConfigResult(result.GetResultWithOwnership()))
+                                  : GetQueryLoggingConfigOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1587,6 +1714,9 @@ GetReusableDelegationSetOutcome Route53Client::GetReusableDelegationSet(const Ge
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/delegationset/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetReusableDelegationSetOutcome(GetReusableDelegationSetResult(result.GetResultWithOwnership()))
+                                  : GetReusableDelegationSetOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1627,6 +1757,10 @@ GetReusableDelegationSetLimitOutcome Route53Client::GetReusableDelegationSetLimi
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDelegationSetId());
         endpointResolutionOutcome.GetResult().AddPathSegment(
             ReusableDelegationSetLimitTypeMapper::GetNameForReusableDelegationSetLimitType(request.GetType()));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetReusableDelegationSetLimitOutcome(GetReusableDelegationSetLimitResult(result.GetResultWithOwnership()))
+                   : GetReusableDelegationSetLimitOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1665,6 +1799,9 @@ GetTrafficPolicyOutcome Route53Client::GetTrafficPolicy(const GetTrafficPolicyRe
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetTrafficPolicyOutcome(GetTrafficPolicyResult(result.GetResultWithOwnership()))
+                                  : GetTrafficPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1697,6 +1834,9 @@ GetTrafficPolicyInstanceOutcome Route53Client::GetTrafficPolicyInstance(const Ge
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstance/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetTrafficPolicyInstanceOutcome(GetTrafficPolicyInstanceResult(result.GetResultWithOwnership()))
+                                  : GetTrafficPolicyInstanceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1726,6 +1866,10 @@ GetTrafficPolicyInstanceCountOutcome Route53Client::GetTrafficPolicyInstanceCoun
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTrafficPolicyInstanceCount, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstancecount");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? GetTrafficPolicyInstanceCountOutcome(GetTrafficPolicyInstanceCountResult(result.GetResultWithOwnership()))
+                   : GetTrafficPolicyInstanceCountOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1759,6 +1903,9 @@ ListCidrBlocksOutcome Route53Client::ListCidrBlocks(const ListCidrBlocksRequest&
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/cidrcollection/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/cidrblocks");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListCidrBlocksOutcome(ListCidrBlocksResult(result.GetResultWithOwnership()))
+                                  : ListCidrBlocksOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1787,6 +1934,9 @@ ListCidrCollectionsOutcome Route53Client::ListCidrCollections(const ListCidrColl
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCidrCollections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/cidrcollection");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListCidrCollectionsOutcome(ListCidrCollectionsResult(result.GetResultWithOwnership()))
+                                  : ListCidrCollectionsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1819,6 +1969,9 @@ ListCidrLocationsOutcome Route53Client::ListCidrLocations(const ListCidrLocation
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/cidrcollection/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListCidrLocationsOutcome(ListCidrLocationsResult(result.GetResultWithOwnership()))
+                                  : ListCidrLocationsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1847,6 +2000,9 @@ ListGeoLocationsOutcome Route53Client::ListGeoLocations(const ListGeoLocationsRe
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGeoLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/geolocations");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListGeoLocationsOutcome(ListGeoLocationsResult(result.GetResultWithOwnership()))
+                                  : ListGeoLocationsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1875,6 +2031,9 @@ ListHealthChecksOutcome Route53Client::ListHealthChecks(const ListHealthChecksRe
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHealthChecks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthcheck");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListHealthChecksOutcome(ListHealthChecksResult(result.GetResultWithOwnership()))
+                                  : ListHealthChecksOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1903,6 +2062,9 @@ ListHostedZonesOutcome Route53Client::ListHostedZones(const ListHostedZonesReque
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHostedZones, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListHostedZonesOutcome(ListHostedZonesResult(result.GetResultWithOwnership()))
+                                  : ListHostedZonesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1931,6 +2093,9 @@ ListHostedZonesByNameOutcome Route53Client::ListHostedZonesByName(const ListHost
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHostedZonesByName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzonesbyname");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListHostedZonesByNameOutcome(ListHostedZonesByNameResult(result.GetResultWithOwnership()))
+                                  : ListHostedZonesByNameOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1967,6 +2132,9 @@ ListHostedZonesByVPCOutcome Route53Client::ListHostedZonesByVPC(const ListHosted
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHostedZonesByVPC, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzonesbyvpc");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListHostedZonesByVPCOutcome(ListHostedZonesByVPCResult(result.GetResultWithOwnership()))
+                                  : ListHostedZonesByVPCOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1995,6 +2163,9 @@ ListQueryLoggingConfigsOutcome Route53Client::ListQueryLoggingConfigs(const List
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListQueryLoggingConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/queryloggingconfig");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListQueryLoggingConfigsOutcome(ListQueryLoggingConfigsResult(result.GetResultWithOwnership()))
+                                  : ListQueryLoggingConfigsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2028,6 +2199,9 @@ ListResourceRecordSetsOutcome Route53Client::ListResourceRecordSets(const ListRe
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/rrset");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListResourceRecordSetsOutcome(ListResourceRecordSetsResult(result.GetResultWithOwnership()))
+                                  : ListResourceRecordSetsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2056,6 +2230,9 @@ ListReusableDelegationSetsOutcome Route53Client::ListReusableDelegationSets(cons
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReusableDelegationSets, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/delegationset");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListReusableDelegationSetsOutcome(ListReusableDelegationSetsResult(result.GetResultWithOwnership()))
+                                  : ListReusableDelegationSetsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2094,6 +2271,9 @@ ListTagsForResourceOutcome Route53Client::ListTagsForResource(const ListTagsForR
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/tags/");
         endpointResolutionOutcome.GetResult().AddPathSegment(TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType()));
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListTagsForResourceOutcome(ListTagsForResourceResult(result.GetResultWithOwnership()))
+                                  : ListTagsForResourceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2126,6 +2306,9 @@ ListTagsForResourcesOutcome Route53Client::ListTagsForResources(const ListTagsFo
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/tags/");
         endpointResolutionOutcome.GetResult().AddPathSegment(TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType()));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ListTagsForResourcesOutcome(ListTagsForResourcesResult(result.GetResultWithOwnership()))
+                                  : ListTagsForResourcesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2154,6 +2337,9 @@ ListTrafficPoliciesOutcome Route53Client::ListTrafficPolicies(const ListTrafficP
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrafficPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicies");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListTrafficPoliciesOutcome(ListTrafficPoliciesResult(result.GetResultWithOwnership()))
+                                  : ListTrafficPoliciesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2182,6 +2368,9 @@ ListTrafficPolicyInstancesOutcome Route53Client::ListTrafficPolicyInstances(cons
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrafficPolicyInstances, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstances");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListTrafficPolicyInstancesOutcome(ListTrafficPolicyInstancesResult(result.GetResultWithOwnership()))
+                                  : ListTrafficPolicyInstancesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2214,6 +2403,10 @@ ListTrafficPolicyInstancesByHostedZoneOutcome Route53Client::ListTrafficPolicyIn
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrafficPolicyInstancesByHostedZone, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstances/hostedzone");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListTrafficPolicyInstancesByHostedZoneOutcome(
+                                        ListTrafficPolicyInstancesByHostedZoneResult(result.GetResultWithOwnership()))
+                                  : ListTrafficPolicyInstancesByHostedZoneOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2251,6 +2444,10 @@ ListTrafficPolicyInstancesByPolicyOutcome Route53Client::ListTrafficPolicyInstan
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrafficPolicyInstancesByPolicy, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstances/trafficpolicy");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? ListTrafficPolicyInstancesByPolicyOutcome(ListTrafficPolicyInstancesByPolicyResult(result.GetResultWithOwnership()))
+                   : ListTrafficPolicyInstancesByPolicyOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2284,6 +2481,9 @@ ListTrafficPolicyVersionsOutcome Route53Client::ListTrafficPolicyVersions(const 
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicies/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? ListTrafficPolicyVersionsOutcome(ListTrafficPolicyVersionsResult(result.GetResultWithOwnership()))
+                                  : ListTrafficPolicyVersionsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2318,6 +2518,10 @@ ListVPCAssociationAuthorizationsOutcome Route53Client::ListVPCAssociationAuthori
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/authorizevpcassociation");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess()
+                   ? ListVPCAssociationAuthorizationsOutcome(ListVPCAssociationAuthorizationsResult(result.GetResultWithOwnership()))
+                   : ListVPCAssociationAuthorizationsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2359,6 +2563,9 @@ TestDNSAnswerOutcome Route53Client::TestDNSAnswer(const TestDNSAnswerRequest& re
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TestDNSAnswer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/testdnsanswer");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? TestDNSAnswerOutcome(TestDNSAnswerResult(result.GetResultWithOwnership()))
+                                  : TestDNSAnswerOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2391,6 +2598,9 @@ UpdateHealthCheckOutcome Route53Client::UpdateHealthCheck(const UpdateHealthChec
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/healthcheck/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHealthCheckId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateHealthCheckOutcome(UpdateHealthCheckResult(result.GetResultWithOwnership()))
+                                  : UpdateHealthCheckOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2423,6 +2633,9 @@ UpdateHostedZoneCommentOutcome Route53Client::UpdateHostedZoneComment(const Upda
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateHostedZoneCommentOutcome(UpdateHostedZoneCommentResult(result.GetResultWithOwnership()))
+                                  : UpdateHostedZoneCommentOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2456,6 +2669,9 @@ UpdateHostedZoneFeaturesOutcome Route53Client::UpdateHostedZoneFeatures(const Up
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/features");
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateHostedZoneFeaturesOutcome(UpdateHostedZoneFeaturesResult(result.GetResultWithOwnership()))
+                                  : UpdateHostedZoneFeaturesOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2494,6 +2710,9 @@ UpdateTrafficPolicyCommentOutcome Route53Client::UpdateTrafficPolicyComment(cons
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicy/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateTrafficPolicyCommentOutcome(UpdateTrafficPolicyCommentResult(result.GetResultWithOwnership()))
+                                  : UpdateTrafficPolicyCommentOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2526,6 +2745,9 @@ UpdateTrafficPolicyInstanceOutcome Route53Client::UpdateTrafficPolicyInstance(co
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/trafficpolicyinstance/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateTrafficPolicyInstanceOutcome(UpdateTrafficPolicyInstanceResult(result.GetResultWithOwnership()))
+                                  : UpdateTrafficPolicyInstanceOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

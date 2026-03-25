@@ -196,7 +196,7 @@ DetectiveClient::InvokeOperationOutcome DetectiveClient::InvokeServiceOperation(
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/invitation");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return AcceptInvitationOutcome(result);
+        return AcceptInvitationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
@@ -367,7 +367,7 @@ DeleteGraphOutcome DetectiveClient::DeleteGraph(const DeleteGraphRequest& reques
         endpointResolutionOutcome.GetResult().AddPathSegments("/graph/removal");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteGraphOutcome(result);
+        return DeleteGraphOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -465,7 +465,7 @@ DisableOrganizationAdminAccountOutcome DetectiveClient::DisableOrganizationAdmin
         endpointResolutionOutcome.GetResult().AddPathSegments("/orgs/disableAdminAccount");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisableOrganizationAdminAccountOutcome(result);
+        return DisableOrganizationAdminAccountOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -496,7 +496,7 @@ DisassociateMembershipOutcome DetectiveClient::DisassociateMembership(const Disa
         endpointResolutionOutcome.GetResult().AddPathSegments("/membership/removal");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateMembershipOutcome(result);
+        return DisassociateMembershipOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -528,7 +528,7 @@ EnableOrganizationAdminAccountOutcome DetectiveClient::EnableOrganizationAdminAc
         endpointResolutionOutcome.GetResult().AddPathSegments("/orgs/enableAdminAccount");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return EnableOrganizationAdminAccountOutcome(result);
+        return EnableOrganizationAdminAccountOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -884,7 +884,7 @@ RejectInvitationOutcome DetectiveClient::RejectInvitation(const RejectInvitation
         endpointResolutionOutcome.GetResult().AddPathSegments("/invitation/removal");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return RejectInvitationOutcome(result);
+        return RejectInvitationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -947,7 +947,7 @@ StartMonitoringMemberOutcome DetectiveClient::StartMonitoringMember(const StartM
         endpointResolutionOutcome.GetResult().AddPathSegments("/graph/member/monitoringstate");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StartMonitoringMemberOutcome(result);
+        return StartMonitoringMemberOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1055,7 +1055,7 @@ UpdateDatasourcePackagesOutcome DetectiveClient::UpdateDatasourcePackages(const 
         endpointResolutionOutcome.GetResult().AddPathSegments("/graph/datasources/update");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateDatasourcePackagesOutcome(result);
+        return UpdateDatasourcePackagesOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1086,7 +1086,7 @@ UpdateInvestigationStateOutcome DetectiveClient::UpdateInvestigationState(const 
         endpointResolutionOutcome.GetResult().AddPathSegments("/investigations/updateInvestigationState");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateInvestigationStateOutcome(result);
+        return UpdateInvestigationStateOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1118,7 +1118,7 @@ UpdateOrganizationConfigurationOutcome DetectiveClient::UpdateOrganizationConfig
         endpointResolutionOutcome.GetResult().AddPathSegments("/orgs/updateOrganizationConfiguration");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateOrganizationConfigurationOutcome(result);
+        return UpdateOrganizationConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

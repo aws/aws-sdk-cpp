@@ -2032,7 +2032,7 @@ DeleteAssetFilterOutcome DataZoneClient::DeleteAssetFilter(const DeleteAssetFilt
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAssetFilterOutcome(result);
+        return DeleteAssetFilterOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2364,7 +2364,7 @@ DeleteEnvironmentOutcome DataZoneClient::DeleteEnvironment(const DeleteEnvironme
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteEnvironmentOutcome(result);
+        return DeleteEnvironmentOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2413,7 +2413,7 @@ DeleteEnvironmentActionOutcome DataZoneClient::DeleteEnvironmentAction(const Del
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteEnvironmentActionOutcome(result);
+        return DeleteEnvironmentActionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2455,7 +2455,7 @@ DeleteEnvironmentBlueprintOutcome DataZoneClient::DeleteEnvironmentBlueprint(con
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteEnvironmentBlueprintOutcome(result);
+        return DeleteEnvironmentBlueprintOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2542,7 +2542,7 @@ DeleteEnvironmentProfileOutcome DataZoneClient::DeleteEnvironmentProfile(const D
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteEnvironmentProfileOutcome(result);
+        return DeleteEnvironmentProfileOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2972,7 +2972,7 @@ DeleteSubscriptionRequestOutcome DataZoneClient::DeleteSubscriptionRequest(const
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSubscriptionRequestOutcome(result);
+        return DeleteSubscriptionRequestOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3021,7 +3021,7 @@ DeleteSubscriptionTargetOutcome DataZoneClient::DeleteSubscriptionTarget(const D
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSubscriptionTargetOutcome(result);
+        return DeleteSubscriptionTargetOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

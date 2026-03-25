@@ -236,7 +236,7 @@ CancelSolNetworkOperationOutcome TnbClient::CancelSolNetworkOperation(const Canc
         endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return CancelSolNetworkOperationOutcome(result);
+        return CancelSolNetworkOperationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -367,7 +367,7 @@ DeleteSolFunctionPackageOutcome TnbClient::DeleteSolFunctionPackage(const Delete
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVnfPkgId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSolFunctionPackageOutcome(result);
+        return DeleteSolFunctionPackageOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -402,7 +402,7 @@ DeleteSolNetworkInstanceOutcome TnbClient::DeleteSolNetworkInstance(const Delete
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNsInstanceId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSolNetworkInstanceOutcome(result);
+        return DeleteSolNetworkInstanceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -437,7 +437,7 @@ DeleteSolNetworkPackageOutcome TnbClient::DeleteSolNetworkPackage(const DeleteSo
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNsdInfoId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSolNetworkPackageOutcome(result);
+        return DeleteSolNetworkPackageOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

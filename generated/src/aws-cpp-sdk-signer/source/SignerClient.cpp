@@ -258,7 +258,7 @@ CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigni
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return CancelSigningProfileOutcome(result);
+        return CancelSigningProfileOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -701,7 +701,7 @@ RevokeSignatureOutcome SignerClient::RevokeSignature(const RevokeSignatureReques
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/revoke");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return RevokeSignatureOutcome(result);
+        return RevokeSignatureOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -736,7 +736,7 @@ RevokeSigningProfileOutcome SignerClient::RevokeSigningProfile(const RevokeSigni
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/revoke");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return RevokeSigningProfileOutcome(result);
+        return RevokeSigningProfileOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

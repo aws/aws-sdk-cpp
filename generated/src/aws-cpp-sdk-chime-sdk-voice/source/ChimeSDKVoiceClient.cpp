@@ -749,7 +749,7 @@ DeletePhoneNumberOutcome ChimeSDKVoiceClient::DeletePhoneNumber(const DeletePhon
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeletePhoneNumberOutcome(result);
+        return DeletePhoneNumberOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -791,7 +791,7 @@ DeleteProxySessionOutcome ChimeSDKVoiceClient::DeleteProxySession(const DeletePr
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProxySessionId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteProxySessionOutcome(result);
+        return DeleteProxySessionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -826,7 +826,7 @@ DeleteSipMediaApplicationOutcome ChimeSDKVoiceClient::DeleteSipMediaApplication(
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSipMediaApplicationId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSipMediaApplicationOutcome(result);
+        return DeleteSipMediaApplicationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -861,7 +861,7 @@ DeleteSipRuleOutcome ChimeSDKVoiceClient::DeleteSipRule(const DeleteSipRuleReque
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSipRuleId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSipRuleOutcome(result);
+        return DeleteSipRuleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -896,7 +896,7 @@ DeleteVoiceConnectorOutcome ChimeSDKVoiceClient::DeleteVoiceConnector(const Dele
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVoiceConnectorOutcome(result);
+        return DeleteVoiceConnectorOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -933,7 +933,7 @@ DeleteVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::De
         endpointResolutionOutcome.GetResult().AddPathSegments("/emergency-calling-configuration");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVoiceConnectorEmergencyCallingConfigurationOutcome(result);
+        return DeleteVoiceConnectorEmergencyCallingConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -970,7 +970,7 @@ DeleteVoiceConnectorExternalSystemsConfigurationOutcome ChimeSDKVoiceClient::Del
         endpointResolutionOutcome.GetResult().AddPathSegments("/external-systems-configuration");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVoiceConnectorExternalSystemsConfigurationOutcome(result);
+        return DeleteVoiceConnectorExternalSystemsConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1005,7 +1005,7 @@ DeleteVoiceConnectorGroupOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorGroup(
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorGroupId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVoiceConnectorGroupOutcome(result);
+        return DeleteVoiceConnectorGroupOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1042,7 +1042,7 @@ DeleteVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::DeleteVoiceConnector
         endpointResolutionOutcome.GetResult().AddPathSegments("/origination");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVoiceConnectorOriginationOutcome(result);
+        return DeleteVoiceConnectorOriginationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1078,7 +1078,7 @@ DeleteVoiceConnectorProxyOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorProxy(
         endpointResolutionOutcome.GetResult().AddPathSegments("/programmable-numbers/proxy");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVoiceConnectorProxyOutcome(result);
+        return DeleteVoiceConnectorProxyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1115,7 +1115,7 @@ DeleteVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::DeleteVoi
         endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-configuration");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVoiceConnectorStreamingConfigurationOutcome(result);
+        return DeleteVoiceConnectorStreamingConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1152,7 +1152,7 @@ DeleteVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::DeleteVoiceConnector
         endpointResolutionOutcome.GetResult().AddPathSegments("/termination");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVoiceConnectorTerminationOutcome(result);
+        return DeleteVoiceConnectorTerminationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1192,7 +1192,7 @@ DeleteVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::DeleteVoi
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVoiceConnectorTerminationCredentialsOutcome(result);
+        return DeleteVoiceConnectorTerminationCredentialsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1227,7 +1227,7 @@ DeleteVoiceProfileOutcome ChimeSDKVoiceClient::DeleteVoiceProfile(const DeleteVo
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceProfileId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVoiceProfileOutcome(result);
+        return DeleteVoiceProfileOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1262,7 +1262,7 @@ DeleteVoiceProfileDomainOutcome ChimeSDKVoiceClient::DeleteVoiceProfileDomain(co
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceProfileDomainId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteVoiceProfileDomainOutcome(result);
+        return DeleteVoiceProfileDomainOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2923,7 +2923,7 @@ PutVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::PutVoiceConn
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutVoiceConnectorTerminationCredentialsOutcome(result);
+        return PutVoiceConnectorTerminationCredentialsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3116,7 +3116,7 @@ StopSpeakerSearchTaskOutcome ChimeSDKVoiceClient::StopSpeakerSearchTask(const St
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopSpeakerSearchTaskOutcome(result);
+        return StopSpeakerSearchTaskOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3161,7 +3161,7 @@ StopVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::StopVoiceToneAnalysisTask(
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopVoiceToneAnalysisTaskOutcome(result);
+        return StopVoiceToneAnalysisTaskOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3195,7 +3195,7 @@ TagResourceOutcome ChimeSDKVoiceClient::TagResource(const TagResourceRequest& re
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return TagResourceOutcome(result);
+        return TagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3229,7 +3229,7 @@ UntagResourceOutcome ChimeSDKVoiceClient::UntagResource(const UntagResourceReque
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3259,7 +3259,7 @@ UpdateGlobalSettingsOutcome ChimeSDKVoiceClient::UpdateGlobalSettings(const Upda
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateGlobalSettingsOutcome(result);
+        return UpdateGlobalSettingsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3325,7 +3325,7 @@ UpdatePhoneNumberSettingsOutcome ChimeSDKVoiceClient::UpdatePhoneNumberSettings(
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/settings/phone-number");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdatePhoneNumberSettingsOutcome(result);
+        return UpdatePhoneNumberSettingsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -321,7 +321,7 @@ DeleteIdentitySourceOutcome MPAClient::DeleteIdentitySource(const DeleteIdentity
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentitySourceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteIdentitySourceOutcome(result);
+        return DeleteIdentitySourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

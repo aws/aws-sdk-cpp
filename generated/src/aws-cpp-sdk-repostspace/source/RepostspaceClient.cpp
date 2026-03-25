@@ -456,7 +456,7 @@ DeleteSpaceOutcome RepostspaceClient::DeleteSpace(const DeleteSpaceRequest& requ
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteSpaceOutcome(result);
+        return DeleteSpaceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -498,7 +498,7 @@ DeregisterAdminOutcome RepostspaceClient::DeregisterAdmin(const DeregisterAdminR
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAdminId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeregisterAdminOutcome(result);
+        return DeregisterAdminOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -718,7 +718,7 @@ RegisterAdminOutcome RepostspaceClient::RegisterAdmin(const RegisterAdminRequest
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAdminId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return RegisterAdminOutcome(result);
+        return RegisterAdminOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -754,7 +754,7 @@ SendInvitesOutcome RepostspaceClient::SendInvites(const SendInvitesRequest& requ
         endpointResolutionOutcome.GetResult().AddPathSegments("/invite");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return SendInvitesOutcome(result);
+        return SendInvitesOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -907,7 +907,7 @@ UpdateSpaceOutcome RepostspaceClient::UpdateSpace(const UpdateSpaceRequest& requ
         endpointResolutionOutcome.GetResult().AddPathSegments("/spaces/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateSpaceOutcome(result);
+        return UpdateSpaceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

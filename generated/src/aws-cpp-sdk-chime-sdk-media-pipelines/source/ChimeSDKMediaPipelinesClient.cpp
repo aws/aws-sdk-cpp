@@ -458,7 +458,7 @@ DeleteMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaCaptu
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMediaPipelineId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteMediaCapturePipelineOutcome(result);
+        return DeleteMediaCapturePipelineOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -494,7 +494,7 @@ DeleteMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::De
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteMediaInsightsPipelineConfigurationOutcome(result);
+        return DeleteMediaInsightsPipelineConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -529,7 +529,7 @@ DeleteMediaPipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipeline(con
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMediaPipelineId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteMediaPipelineOutcome(result);
+        return DeleteMediaPipelineOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -565,7 +565,7 @@ DeleteMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::D
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteMediaPipelineKinesisVideoStreamPoolOutcome(result);
+        return DeleteMediaPipelineKinesisVideoStreamPoolOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1084,7 +1084,7 @@ StopSpeakerSearchTaskOutcome ChimeSDKMediaPipelinesClient::StopSpeakerSearchTask
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopSpeakerSearchTaskOutcome(result);
+        return StopSpeakerSearchTaskOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1130,7 +1130,7 @@ StopVoiceToneAnalysisTaskOutcome ChimeSDKMediaPipelinesClient::StopVoiceToneAnal
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopVoiceToneAnalysisTaskOutcome(result);
+        return StopVoiceToneAnalysisTaskOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1272,7 +1272,7 @@ UpdateMediaInsightsPipelineStatusOutcome ChimeSDKMediaPipelinesClient::UpdateMed
         endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipeline-status/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return UpdateMediaInsightsPipelineStatusOutcome(result);
+        return UpdateMediaInsightsPipelineStatusOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

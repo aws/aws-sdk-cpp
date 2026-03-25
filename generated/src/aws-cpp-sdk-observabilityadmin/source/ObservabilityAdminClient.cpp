@@ -408,7 +408,7 @@ DeleteCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::DeleteC
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteCentralizationRuleForOrganization");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCentralizationRuleForOrganizationOutcome(result);
+        return DeleteCentralizationRuleForOrganizationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -439,7 +439,7 @@ DeleteS3TableIntegrationOutcome ObservabilityAdminClient::DeleteS3TableIntegrati
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteS3TableIntegration");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteS3TableIntegrationOutcome(result);
+        return DeleteS3TableIntegrationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -502,7 +502,7 @@ DeleteTelemetryRuleOutcome ObservabilityAdminClient::DeleteTelemetryRule(const D
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteTelemetryRule");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTelemetryRuleOutcome(result);
+        return DeleteTelemetryRuleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -534,7 +534,7 @@ DeleteTelemetryRuleForOrganizationOutcome ObservabilityAdminClient::DeleteTeleme
         endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteTelemetryRuleForOrganization");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTelemetryRuleForOrganizationOutcome(result);
+        return DeleteTelemetryRuleForOrganizationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1124,7 +1124,7 @@ StartTelemetryEvaluationOutcome ObservabilityAdminClient::StartTelemetryEvaluati
         endpointResolutionOutcome.GetResult().AddPathSegments("/StartTelemetryEvaluation");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StartTelemetryEvaluationOutcome(result);
+        return StartTelemetryEvaluationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1156,7 +1156,7 @@ StartTelemetryEvaluationForOrganizationOutcome ObservabilityAdminClient::StartTe
         endpointResolutionOutcome.GetResult().AddPathSegments("/StartTelemetryEvaluationForOrganization");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StartTelemetryEvaluationForOrganizationOutcome(result);
+        return StartTelemetryEvaluationForOrganizationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1219,7 +1219,7 @@ StopTelemetryEvaluationOutcome ObservabilityAdminClient::StopTelemetryEvaluation
         endpointResolutionOutcome.GetResult().AddPathSegments("/StopTelemetryEvaluation");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopTelemetryEvaluationOutcome(result);
+        return StopTelemetryEvaluationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1251,7 +1251,7 @@ StopTelemetryEvaluationForOrganizationOutcome ObservabilityAdminClient::StopTele
         endpointResolutionOutcome.GetResult().AddPathSegments("/StopTelemetryEvaluationForOrganization");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopTelemetryEvaluationForOrganizationOutcome(result);
+        return StopTelemetryEvaluationForOrganizationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1282,7 +1282,7 @@ TagResourceOutcome ObservabilityAdminClient::TagResource(const TagResourceReques
         endpointResolutionOutcome.GetResult().AddPathSegments("/TagResource");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return TagResourceOutcome(result);
+        return TagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1345,7 +1345,7 @@ UntagResourceOutcome ObservabilityAdminClient::UntagResource(const UntagResource
         endpointResolutionOutcome.GetResult().AddPathSegments("/UntagResource");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

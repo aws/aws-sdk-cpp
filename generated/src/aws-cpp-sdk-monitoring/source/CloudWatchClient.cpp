@@ -210,7 +210,7 @@ CloudWatchClient::InvokeOperationOutcome CloudWatchClient::InvokeServiceOperatio
         endpointResolutionOutcome.GetResult().AddPathSegments("/service/GraniteServiceVersion20100801/operation/DeleteAlarmMuteRule");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAlarmMuteRuleOutcome(result);
+        return DeleteAlarmMuteRuleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
@@ -244,7 +244,7 @@ DeleteAlarmsOutcome CloudWatchClient::DeleteAlarms(const DeleteAlarmsRequest& re
         endpointResolutionOutcome.GetResult().AddPathSegments("/service/GraniteServiceVersion20100801/operation/DeleteAlarms");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAlarmsOutcome(result);
+        return DeleteAlarmsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -595,7 +595,7 @@ DisableAlarmActionsOutcome CloudWatchClient::DisableAlarmActions(const DisableAl
         endpointResolutionOutcome.GetResult().AddPathSegments("/service/GraniteServiceVersion20100801/operation/DisableAlarmActions");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisableAlarmActionsOutcome(result);
+        return DisableAlarmActionsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -658,7 +658,7 @@ EnableAlarmActionsOutcome CloudWatchClient::EnableAlarmActions(const EnableAlarm
         endpointResolutionOutcome.GetResult().AddPathSegments("/service/GraniteServiceVersion20100801/operation/EnableAlarmActions");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return EnableAlarmActionsOutcome(result);
+        return EnableAlarmActionsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1137,7 +1137,7 @@ PutAlarmMuteRuleOutcome CloudWatchClient::PutAlarmMuteRule(const PutAlarmMuteRul
         endpointResolutionOutcome.GetResult().AddPathSegments("/service/GraniteServiceVersion20100801/operation/PutAlarmMuteRule");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutAlarmMuteRuleOutcome(result);
+        return PutAlarmMuteRuleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1200,7 +1200,7 @@ PutCompositeAlarmOutcome CloudWatchClient::PutCompositeAlarm(const PutCompositeA
         endpointResolutionOutcome.GetResult().AddPathSegments("/service/GraniteServiceVersion20100801/operation/PutCompositeAlarm");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutCompositeAlarmOutcome(result);
+        return PutCompositeAlarmOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1327,7 +1327,7 @@ PutMetricAlarmOutcome CloudWatchClient::PutMetricAlarm(const PutMetricAlarmReque
         endpointResolutionOutcome.GetResult().AddPathSegments("/service/GraniteServiceVersion20100801/operation/PutMetricAlarm");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutMetricAlarmOutcome(result);
+        return PutMetricAlarmOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1358,7 +1358,7 @@ PutMetricDataOutcome CloudWatchClient::PutMetricData(const PutMetricDataRequest&
         endpointResolutionOutcome.GetResult().AddPathSegments("/service/GraniteServiceVersion20100801/operation/PutMetricData");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PutMetricDataOutcome(result);
+        return PutMetricDataOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1421,7 +1421,7 @@ SetAlarmStateOutcome CloudWatchClient::SetAlarmState(const SetAlarmStateRequest&
         endpointResolutionOutcome.GetResult().AddPathSegments("/service/GraniteServiceVersion20100801/operation/SetAlarmState");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return SetAlarmStateOutcome(result);
+        return SetAlarmStateOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

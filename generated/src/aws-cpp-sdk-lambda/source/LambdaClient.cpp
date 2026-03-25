@@ -616,7 +616,7 @@ DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAliasOutcome(result);
+        return DeleteAliasOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -797,7 +797,7 @@ DeleteFunctionCodeSigningConfigOutcome LambdaClient::DeleteFunctionCodeSigningCo
         endpointResolutionOutcome.GetResult().AddPathSegments("/code-signing-config");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteFunctionCodeSigningConfigOutcome(result);
+        return DeleteFunctionCodeSigningConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -833,7 +833,7 @@ DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const D
         endpointResolutionOutcome.GetResult().AddPathSegments("/concurrency");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteFunctionConcurrencyOutcome(result);
+        return DeleteFunctionConcurrencyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -870,7 +870,7 @@ DeleteFunctionEventInvokeConfigOutcome LambdaClient::DeleteFunctionEventInvokeCo
         endpointResolutionOutcome.GetResult().AddPathSegments("/event-invoke-config");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteFunctionEventInvokeConfigOutcome(result);
+        return DeleteFunctionEventInvokeConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -906,7 +906,7 @@ DeleteFunctionUrlConfigOutcome LambdaClient::DeleteFunctionUrlConfig(const Delet
         endpointResolutionOutcome.GetResult().AddPathSegments("/url");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteFunctionUrlConfigOutcome(result);
+        return DeleteFunctionUrlConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -948,7 +948,7 @@ DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVers
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionNumber());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteLayerVersionOutcome(result);
+        return DeleteLayerVersionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -990,7 +990,7 @@ DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurr
         endpointResolutionOutcome.GetResult().AddPathSegments("/provisioned-concurrency");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteProvisionedConcurrencyConfigOutcome(result);
+        return DeleteProvisionedConcurrencyConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2807,7 +2807,7 @@ RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(c
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return RemoveLayerVersionPermissionOutcome(result);
+        return RemoveLayerVersionPermissionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2849,7 +2849,7 @@ RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return RemovePermissionOutcome(result);
+        return RemovePermissionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3038,7 +3038,7 @@ TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResource());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return TagResourceOutcome(result);
+        return TagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3078,7 +3078,7 @@ UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& req
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResource());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

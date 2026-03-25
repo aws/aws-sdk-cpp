@@ -253,7 +253,7 @@ AbortDocumentVersionUploadOutcome WorkDocsClient::AbortDocumentVersionUpload(con
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return AbortDocumentVersionUploadOutcome(result);
+        return AbortDocumentVersionUploadOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -582,7 +582,7 @@ DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest
         endpointResolutionOutcome.GetResult().AddPathSegments("/activation");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeactivateUserOutcome(result);
+        return DeactivateUserOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -631,7 +631,7 @@ DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& r
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCommentId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCommentOutcome(result);
+        return DeleteCommentOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -703,7 +703,7 @@ DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteDocumentOutcome(result);
+        return DeleteDocumentOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -750,7 +750,7 @@ DeleteDocumentVersionOutcome WorkDocsClient::DeleteDocumentVersion(const DeleteD
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteDocumentVersionOutcome(result);
+        return DeleteDocumentVersionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -785,7 +785,7 @@ DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& requ
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFolderId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteFolderOutcome(result);
+        return DeleteFolderOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -821,7 +821,7 @@ DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFol
         endpointResolutionOutcome.GetResult().AddPathSegments("/contents");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteFolderContentsOutcome(result);
+        return DeleteFolderContentsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -901,7 +901,7 @@ DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscrip
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSubscriptionId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteNotificationSubscriptionOutcome(result);
+        return DeleteNotificationSubscriptionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -936,7 +936,7 @@ DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) c
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteUserOutcome(result);
+        return DeleteUserOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1574,7 +1574,7 @@ RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions
         endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return RemoveAllResourcePermissionsOutcome(result);
+        return RemoveAllResourcePermissionsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1616,7 +1616,7 @@ RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const R
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return RemoveResourcePermissionOutcome(result);
+        return RemoveResourcePermissionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1651,7 +1651,7 @@ RestoreDocumentVersionsOutcome WorkDocsClient::RestoreDocumentVersions(const Res
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return RestoreDocumentVersionsOutcome(result);
+        return RestoreDocumentVersionsOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1718,7 +1718,7 @@ UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return UpdateDocumentOutcome(result);
+        return UpdateDocumentOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1760,7 +1760,7 @@ UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateD
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return UpdateDocumentVersionOutcome(result);
+        return UpdateDocumentVersionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1795,7 +1795,7 @@ UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& requ
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFolderId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return UpdateFolderOutcome(result);
+        return UpdateFolderOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -238,7 +238,7 @@ DeleteCampaignOutcome ConnectCampaignsClient::DeleteCampaign(const DeleteCampaig
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCampaignOutcome(result);
+        return DeleteCampaignOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -275,7 +275,7 @@ DeleteConnectInstanceConfigOutcome ConnectCampaignsClient::DeleteConnectInstance
         endpointResolutionOutcome.GetResult().AddPathSegments("/config");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteConnectInstanceConfigOutcome(result);
+        return DeleteConnectInstanceConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -312,7 +312,7 @@ DeleteInstanceOnboardingJobOutcome ConnectCampaignsClient::DeleteInstanceOnboard
         endpointResolutionOutcome.GetResult().AddPathSegments("/onboarding");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteInstanceOnboardingJobOutcome(result);
+        return DeleteInstanceOnboardingJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -592,7 +592,7 @@ PauseCampaignOutcome ConnectCampaignsClient::PauseCampaign(const PauseCampaignRe
         endpointResolutionOutcome.GetResult().AddPathSegments("/pause");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return PauseCampaignOutcome(result);
+        return PauseCampaignOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -664,7 +664,7 @@ ResumeCampaignOutcome ConnectCampaignsClient::ResumeCampaign(const ResumeCampaig
         endpointResolutionOutcome.GetResult().AddPathSegments("/resume");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return ResumeCampaignOutcome(result);
+        return ResumeCampaignOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -700,7 +700,7 @@ StartCampaignOutcome ConnectCampaignsClient::StartCampaign(const StartCampaignRe
         endpointResolutionOutcome.GetResult().AddPathSegments("/start");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StartCampaignOutcome(result);
+        return StartCampaignOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -773,7 +773,7 @@ StopCampaignOutcome ConnectCampaignsClient::StopCampaign(const StopCampaignReque
         endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return StopCampaignOutcome(result);
+        return StopCampaignOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -808,7 +808,7 @@ TagResourceOutcome ConnectCampaignsClient::TagResource(const TagResourceRequest&
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return TagResourceOutcome(result);
+        return TagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -848,7 +848,7 @@ UntagResourceOutcome ConnectCampaignsClient::UntagResource(const UntagResourceRe
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -885,7 +885,7 @@ UpdateCampaignDialerConfigOutcome ConnectCampaignsClient::UpdateCampaignDialerCo
         endpointResolutionOutcome.GetResult().AddPathSegments("/dialer-config");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCampaignDialerConfigOutcome(result);
+        return UpdateCampaignDialerConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -921,7 +921,7 @@ UpdateCampaignNameOutcome ConnectCampaignsClient::UpdateCampaignName(const Updat
         endpointResolutionOutcome.GetResult().AddPathSegments("/name");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCampaignNameOutcome(result);
+        return UpdateCampaignNameOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -958,7 +958,7 @@ UpdateCampaignOutboundCallConfigOutcome ConnectCampaignsClient::UpdateCampaignOu
         endpointResolutionOutcome.GetResult().AddPathSegments("/outbound-call-config");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UpdateCampaignOutboundCallConfigOutcome(result);
+        return UpdateCampaignOutboundCallConfigOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -348,7 +348,7 @@ DeleteAppInstanceOutcome ChimeSDKIdentityClient::DeleteAppInstance(const DeleteA
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAppInstanceOutcome(result);
+        return DeleteAppInstanceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -390,7 +390,7 @@ DeleteAppInstanceAdminOutcome ChimeSDKIdentityClient::DeleteAppInstanceAdmin(con
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceAdminArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAppInstanceAdminOutcome(result);
+        return DeleteAppInstanceAdminOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -425,7 +425,7 @@ DeleteAppInstanceBotOutcome ChimeSDKIdentityClient::DeleteAppInstanceBot(const D
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceBotArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAppInstanceBotOutcome(result);
+        return DeleteAppInstanceBotOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -460,7 +460,7 @@ DeleteAppInstanceUserOutcome ChimeSDKIdentityClient::DeleteAppInstanceUser(const
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppInstanceUserArn());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteAppInstanceUserOutcome(result);
+        return DeleteAppInstanceUserOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -503,7 +503,7 @@ DeregisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DeregisterAppIn
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeregisterAppInstanceUserEndpointOutcome(result);
+        return DeregisterAppInstanceUserEndpointOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1087,7 +1087,7 @@ TagResourceOutcome ChimeSDKIdentityClient::TagResource(const TagResourceRequest&
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return TagResourceOutcome(result);
+        return TagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1121,7 +1121,7 @@ UntagResourceOutcome ChimeSDKIdentityClient::UntagResource(const UntagResourceRe
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return UntagResourceOutcome(result);
+        return UntagResourceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

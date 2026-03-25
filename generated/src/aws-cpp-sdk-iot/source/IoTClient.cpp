@@ -300,7 +300,7 @@ AcceptCertificateTransferOutcome IoTClient::AcceptCertificateTransfer(const Acce
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return AcceptCertificateTransferOutcome(result);
+        return AcceptCertificateTransferOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -478,7 +478,7 @@ AttachPolicyOutcome IoTClient::AttachPolicy(const AttachPolicyRequest& request) 
         endpointResolutionOutcome.GetResult().AddPathSegments("/target-policies/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyName());
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return AttachPolicyOutcome(result);
+        return AttachPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -669,7 +669,7 @@ CancelCertificateTransferOutcome IoTClient::CancelCertificateTransfer(const Canc
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
-        return CancelCertificateTransferOutcome(result);
+        return CancelCertificateTransferOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -785,7 +785,7 @@ CancelJobExecutionOutcome IoTClient::CancelJobExecution(const CancelJobExecution
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return CancelJobExecutionOutcome(result);
+        return CancelJobExecutionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1957,7 +1957,7 @@ CreateTopicRuleOutcome IoTClient::CreateTopicRule(const CreateTopicRuleRequest& 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return CreateTopicRuleOutcome(result);
+        return CreateTopicRuleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2198,7 +2198,7 @@ DeleteCertificateOutcome IoTClient::DeleteCertificate(const DeleteCertificateReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCertificateId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteCertificateOutcome(result);
+        return DeleteCertificateOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2490,7 +2490,7 @@ DeleteFleetMetricOutcome IoTClient::DeleteFleetMetric(const DeleteFleetMetricReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMetricName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteFleetMetricOutcome(result);
+        return DeleteFleetMetricOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2525,7 +2525,7 @@ DeleteJobOutcome IoTClient::DeleteJob(const DeleteJobRequest& request) const {
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteJobOutcome(result);
+        return DeleteJobOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2574,7 +2574,7 @@ DeleteJobExecutionOutcome IoTClient::DeleteJobExecution(const DeleteJobExecution
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionNumber());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteJobExecutionOutcome(result);
+        return DeleteJobExecutionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2609,7 +2609,7 @@ DeleteJobTemplateOutcome IoTClient::DeleteJobTemplate(const DeleteJobTemplateReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobTemplateId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteJobTemplateOutcome(result);
+        return DeleteJobTemplateOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2795,7 +2795,7 @@ DeletePolicyOutcome IoTClient::DeletePolicy(const DeletePolicyRequest& request) 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeletePolicyOutcome(result);
+        return DeletePolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2837,7 +2837,7 @@ DeletePolicyVersionOutcome IoTClient::DeletePolicyVersion(const DeletePolicyVers
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyVersionId());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeletePolicyVersionOutcome(result);
+        return DeletePolicyVersionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3237,7 +3237,7 @@ DeleteTopicRuleOutcome IoTClient::DeleteTopicRule(const DeleteTopicRuleRequest& 
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTopicRuleOutcome(result);
+        return DeleteTopicRuleOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3312,7 +3312,7 @@ DeleteV2LoggingLevelOutcome IoTClient::DeleteV2LoggingLevel(const DeleteV2Loggin
         endpointResolutionOutcome.GetResult().AddPathSegments("/v2LoggingLevel");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteV2LoggingLevelOutcome(result);
+        return DeleteV2LoggingLevelOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -471,7 +471,7 @@ DisassociateDefaultViewOutcome ResourceExplorer2Client::DisassociateDefaultView(
         endpointResolutionOutcome.GetResult().AddPathSegments("/DisassociateDefaultView");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-        return DisassociateDefaultViewOutcome(result);
+        return DisassociateDefaultViewOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

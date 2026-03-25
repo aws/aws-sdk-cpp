@@ -196,6 +196,9 @@ ImportExportClient::InvokeOperationOutcome ImportExportClient::InvokeServiceOper
         endpointResolutionOutcome.GetResult().AddPathSegments("/");
         ss.str("?Operation=CancelJob");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CancelJobOutcome(CancelJobResult(result.GetResultWithOwnership()))
+                                  : CancelJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
@@ -229,6 +232,9 @@ CreateJobOutcome ImportExportClient::CreateJob(const CreateJobRequest& request) 
         endpointResolutionOutcome.GetResult().AddPathSegments("/");
         ss.str("?Operation=CreateJob");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? CreateJobOutcome(CreateJobResult(result.GetResultWithOwnership()))
+                                  : CreateJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -260,6 +266,9 @@ GetShippingLabelOutcome ImportExportClient::GetShippingLabel(const GetShippingLa
         endpointResolutionOutcome.GetResult().AddPathSegments("/");
         ss.str("?Operation=GetShippingLabel");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetShippingLabelOutcome(GetShippingLabelResult(result.GetResultWithOwnership()))
+                                  : GetShippingLabelOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -291,6 +300,9 @@ GetStatusOutcome ImportExportClient::GetStatus(const GetStatusRequest& request) 
         endpointResolutionOutcome.GetResult().AddPathSegments("/");
         ss.str("?Operation=GetStatus");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetStatusOutcome(GetStatusResult(result.GetResultWithOwnership()))
+                                  : GetStatusOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -322,6 +334,8 @@ ListJobsOutcome ImportExportClient::ListJobs(const ListJobsRequest& request) con
         endpointResolutionOutcome.GetResult().AddPathSegments("/");
         ss.str("?Operation=ListJobs");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ListJobsOutcome(ListJobsResult(result.GetResultWithOwnership())) : ListJobsOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -353,6 +367,9 @@ UpdateJobOutcome ImportExportClient::UpdateJob(const UpdateJobRequest& request) 
         endpointResolutionOutcome.GetResult().AddPathSegments("/");
         ss.str("?Operation=UpdateJob");
         endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateJobOutcome(UpdateJobResult(result.GetResultWithOwnership()))
+                                  : UpdateJobOutcome(result.GetError());
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

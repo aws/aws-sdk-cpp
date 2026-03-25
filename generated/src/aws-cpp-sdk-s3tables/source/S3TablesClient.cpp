@@ -364,7 +364,7 @@ DeleteNamespaceOutcome S3TablesClient::DeleteNamespace(const DeleteNamespaceRequ
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteNamespaceOutcome(result);
+        return DeleteNamespaceOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -411,7 +411,7 @@ DeleteTableOutcome S3TablesClient::DeleteTable(const DeleteTableRequest& request
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTableOutcome(result);
+        return DeleteTableOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -446,7 +446,7 @@ DeleteTableBucketOutcome S3TablesClient::DeleteTableBucket(const DeleteTableBuck
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTableBucketOutcome(result);
+        return DeleteTableBucketOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -482,7 +482,7 @@ DeleteTableBucketEncryptionOutcome S3TablesClient::DeleteTableBucketEncryption(c
         endpointResolutionOutcome.GetResult().AddPathSegments("/encryption");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTableBucketEncryptionOutcome(result);
+        return DeleteTableBucketEncryptionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -519,7 +519,7 @@ DeleteTableBucketMetricsConfigurationOutcome S3TablesClient::DeleteTableBucketMe
         endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTableBucketMetricsConfigurationOutcome(result);
+        return DeleteTableBucketMetricsConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -555,7 +555,7 @@ DeleteTableBucketPolicyOutcome S3TablesClient::DeleteTableBucketPolicy(const Del
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTableBucketPolicyOutcome(result);
+        return DeleteTableBucketPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -589,7 +589,7 @@ DeleteTableBucketReplicationOutcome S3TablesClient::DeleteTableBucketReplication
         endpointResolutionOutcome.GetResult().AddPathSegments("/table-bucket-replication");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTableBucketReplicationOutcome(result);
+        return DeleteTableBucketReplicationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -637,7 +637,7 @@ DeleteTablePolicyOutcome S3TablesClient::DeleteTablePolicy(const DeleteTablePoli
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTablePolicyOutcome(result);
+        return DeleteTablePolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -676,7 +676,7 @@ DeleteTableReplicationOutcome S3TablesClient::DeleteTableReplication(const Delet
         endpointResolutionOutcome.GetResult().AddPathSegments("/table-replication");
         auto result =
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-        return DeleteTableReplicationOutcome(result);
+        return DeleteTableReplicationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1601,7 +1601,7 @@ PutTableBucketEncryptionOutcome S3TablesClient::PutTableBucketEncryption(const P
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
         endpointResolutionOutcome.GetResult().AddPathSegments("/encryption");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutTableBucketEncryptionOutcome(result);
+        return PutTableBucketEncryptionOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1644,7 +1644,7 @@ PutTableBucketMaintenanceConfigurationOutcome S3TablesClient::PutTableBucketMain
         endpointResolutionOutcome.GetResult().AddPathSegment(
             TableBucketMaintenanceTypeMapper::GetNameForTableBucketMaintenanceType(request.GetType()));
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutTableBucketMaintenanceConfigurationOutcome(result);
+        return PutTableBucketMaintenanceConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1680,7 +1680,7 @@ PutTableBucketMetricsConfigurationOutcome S3TablesClient::PutTableBucketMetricsC
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
         endpointResolutionOutcome.GetResult().AddPathSegments("/metrics");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutTableBucketMetricsConfigurationOutcome(result);
+        return PutTableBucketMetricsConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1715,7 +1715,7 @@ PutTableBucketPolicyOutcome S3TablesClient::PutTableBucketPolicy(const PutTableB
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutTableBucketPolicyOutcome(result);
+        return PutTableBucketPolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1784,7 +1784,7 @@ PutTableBucketStorageClassOutcome S3TablesClient::PutTableBucketStorageClass(con
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
         endpointResolutionOutcome.GetResult().AddPathSegments("/storage-class");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutTableBucketStorageClassOutcome(result);
+        return PutTableBucketStorageClassOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1838,7 +1838,7 @@ PutTableMaintenanceConfigurationOutcome S3TablesClient::PutTableMaintenanceConfi
         endpointResolutionOutcome.GetResult().AddPathSegments("/maintenance/");
         endpointResolutionOutcome.GetResult().AddPathSegment(TableMaintenanceTypeMapper::GetNameForTableMaintenanceType(request.GetType()));
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutTableMaintenanceConfigurationOutcome(result);
+        return PutTableMaintenanceConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1885,7 +1885,7 @@ PutTablePolicyOutcome S3TablesClient::PutTablePolicy(const PutTablePolicyRequest
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutTablePolicyOutcome(result);
+        return PutTablePolicyOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1919,7 +1919,7 @@ PutTableRecordExpirationConfigurationOutcome S3TablesClient::PutTableRecordExpir
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/table-record-expiration");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return PutTableRecordExpirationConfigurationOutcome(result);
+        return PutTableRecordExpirationConfigurationOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2000,7 +2000,7 @@ RenameTableOutcome S3TablesClient::RenameTable(const RenameTableRequest& request
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/rename");
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-        return RenameTableOutcome(result);
+        return RenameTableOutcome(std::move(result));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
