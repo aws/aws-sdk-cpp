@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/waf/WAFPaginationBase.h>
 #include <aws/waf/WAFServiceClientModel.h>
+#include <aws/waf/WAFWaiter.h>
 #include <aws/waf/WAF_EXPORTS.h>
 
 namespace Aws {
@@ -35,7 +36,8 @@ namespace WAF {
  */
 class AWS_WAF_API WAFClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<WAFClient>,
-                              public WAFPaginationBase<WAFClient> {
+                              public WAFPaginationBase<WAFClient>,
+                              public WAFWaiter<WAFClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bcm-data-exports/BCMDataExportsPaginationBase.h>
 #include <aws/bcm-data-exports/BCMDataExportsServiceClientModel.h>
+#include <aws/bcm-data-exports/BCMDataExportsWaiter.h>
 #include <aws/bcm-data-exports/BCMDataExports_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -23,7 +24,8 @@ namespace BCMDataExports {
  */
 class AWS_BCMDATAEXPORTS_API BCMDataExportsClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<BCMDataExportsClient>,
-                                                    public BCMDataExportsPaginationBase<BCMDataExportsClient> {
+                                                    public BCMDataExportsPaginationBase<BCMDataExportsClient>,
+                                                    public BCMDataExportsWaiter<BCMDataExportsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

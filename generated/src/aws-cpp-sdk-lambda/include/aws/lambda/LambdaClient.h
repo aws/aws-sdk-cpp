@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lambda/LambdaPaginationBase.h>
 #include <aws/lambda/LambdaServiceClientModel.h>
+#include <aws/lambda/LambdaWaiter.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 
 namespace Aws {
@@ -70,7 +71,8 @@ namespace Lambda {
  */
 class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<LambdaClient>,
-                                    public LambdaPaginationBase<LambdaClient> {
+                                    public LambdaPaginationBase<LambdaClient>,
+                                    public LambdaWaiter<LambdaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

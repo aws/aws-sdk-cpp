@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsPaginationBase.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsServiceClientModel.h>
+#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsWaiter.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalytics_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace MarketplaceCommerceAnalytics {
 class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCommerceAnalyticsClient>,
-      public MarketplaceCommerceAnalyticsPaginationBase<MarketplaceCommerceAnalyticsClient> {
+      public MarketplaceCommerceAnalyticsPaginationBase<MarketplaceCommerceAnalyticsClient>,
+      public MarketplaceCommerceAnalyticsWaiter<MarketplaceCommerceAnalyticsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

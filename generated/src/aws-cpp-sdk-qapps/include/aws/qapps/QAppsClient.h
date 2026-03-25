@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/qapps/QAppsPaginationBase.h>
 #include <aws/qapps/QAppsServiceClientModel.h>
+#include <aws/qapps/QAppsWaiter.h>
 #include <aws/qapps/QApps_EXPORTS.h>
 
 namespace Aws {
@@ -34,7 +35,8 @@ namespace QApps {
  */
 class AWS_QAPPS_API QAppsClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<QAppsClient>,
-                                  public QAppsPaginationBase<QAppsClient> {
+                                  public QAppsPaginationBase<QAppsClient>,
+                                  public QAppsWaiter<QAppsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

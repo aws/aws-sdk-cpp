@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediastore-data/MediaStoreDataPaginationBase.h>
 #include <aws/mediastore-data/MediaStoreDataServiceClientModel.h>
+#include <aws/mediastore-data/MediaStoreDataWaiter.h>
 #include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace MediaStoreData {
  */
 class AWS_MEDIASTOREDATA_API MediaStoreDataClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreDataClient>,
-                                                    public MediaStoreDataPaginationBase<MediaStoreDataClient> {
+                                                    public MediaStoreDataPaginationBase<MediaStoreDataClient>,
+                                                    public MediaStoreDataWaiter<MediaStoreDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

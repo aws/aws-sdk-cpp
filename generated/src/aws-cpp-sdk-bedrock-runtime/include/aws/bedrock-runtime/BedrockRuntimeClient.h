@@ -7,6 +7,7 @@
 #include <aws/bedrock-runtime/BedrockRuntimeErrorMarshaller.h>
 #include <aws/bedrock-runtime/BedrockRuntimePaginationBase.h>
 #include <aws/bedrock-runtime/BedrockRuntimeServiceClientModel.h>
+#include <aws/bedrock-runtime/BedrockRuntimeWaiter.h>
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -29,7 +30,8 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
           Aws::BedrockRuntime::SERVICE_NAME, Aws::BedrockRuntime::BedrockRuntimeClientConfiguration, smithy::AuthSchemeResolverBase<>,
           Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::BearerTokenAuthScheme>, BedrockRuntimeEndpointProviderBase,
           smithy::client::JsonOutcomeSerializer, smithy::client::JsonOutcome, Aws::Client::BedrockRuntimeErrorMarshaller>,
-      public BedrockRuntimePaginationBase<BedrockRuntimeClient> {
+      public BedrockRuntimePaginationBase<BedrockRuntimeClient>,
+      public BedrockRuntimeWaiter<BedrockRuntimeClient> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeguruprofiler/CodeGuruProfilerPaginationBase.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerServiceClientModel.h>
+#include <aws/codeguruprofiler/CodeGuruProfilerWaiter.h>
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -35,7 +36,8 @@ namespace CodeGuruProfiler {
  */
 class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>,
-                                                        public CodeGuruProfilerPaginationBase<CodeGuruProfilerClient> {
+                                                        public CodeGuruProfilerPaginationBase<CodeGuruProfilerClient>,
+                                                        public CodeGuruProfilerWaiter<CodeGuruProfilerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

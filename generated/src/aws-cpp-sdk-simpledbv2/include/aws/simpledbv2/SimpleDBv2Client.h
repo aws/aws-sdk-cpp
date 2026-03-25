@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/simpledbv2/SimpleDBv2PaginationBase.h>
 #include <aws/simpledbv2/SimpleDBv2ServiceClientModel.h>
+#include <aws/simpledbv2/SimpleDBv2Waiter.h>
 #include <aws/simpledbv2/SimpleDBv2_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace SimpleDBv2 {
  */
 class AWS_SIMPLEDBV2_API SimpleDBv2Client : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBv2Client>,
-                                            public SimpleDBv2PaginationBase<SimpleDBv2Client> {
+                                            public SimpleDBv2PaginationBase<SimpleDBv2Client>,
+                                            public SimpleDBv2Waiter<SimpleDBv2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

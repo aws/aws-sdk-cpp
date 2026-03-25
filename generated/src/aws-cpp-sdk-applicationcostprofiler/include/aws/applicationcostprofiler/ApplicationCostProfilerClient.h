@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/applicationcostprofiler/ApplicationCostProfilerPaginationBase.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerServiceClientModel.h>
+#include <aws/applicationcostprofiler/ApplicationCostProfilerWaiter.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -26,7 +27,8 @@ namespace ApplicationCostProfiler {
 class AWS_APPLICATIONCOSTPROFILER_API ApplicationCostProfilerClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationCostProfilerClient>,
-      public ApplicationCostProfilerPaginationBase<ApplicationCostProfilerClient> {
+      public ApplicationCostProfilerPaginationBase<ApplicationCostProfilerClient>,
+      public ApplicationCostProfilerWaiter<ApplicationCostProfilerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

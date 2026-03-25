@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupPaginationBase.h>
 #include <aws/ssm-quicksetup/SSMQuickSetupServiceClientModel.h>
+#include <aws/ssm-quicksetup/SSMQuickSetupWaiter.h>
 #include <aws/ssm-quicksetup/SSMQuickSetup_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace SSMQuickSetup {
  */
 class AWS_SSMQUICKSETUP_API SSMQuickSetupClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<SSMQuickSetupClient>,
-                                                  public SSMQuickSetupPaginationBase<SSMQuickSetupClient> {
+                                                  public SSMQuickSetupPaginationBase<SSMQuickSetupClient>,
+                                                  public SSMQuickSetupWaiter<SSMQuickSetupClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

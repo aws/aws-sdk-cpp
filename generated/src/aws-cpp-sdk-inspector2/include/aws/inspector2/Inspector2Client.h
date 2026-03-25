@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/inspector2/Inspector2PaginationBase.h>
 #include <aws/inspector2/Inspector2ServiceClientModel.h>
+#include <aws/inspector2/Inspector2Waiter.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace Inspector2 {
  */
 class AWS_INSPECTOR2_API Inspector2Client : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<Inspector2Client>,
-                                            public Inspector2PaginationBase<Inspector2Client> {
+                                            public Inspector2PaginationBase<Inspector2Client>,
+                                            public Inspector2Waiter<Inspector2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

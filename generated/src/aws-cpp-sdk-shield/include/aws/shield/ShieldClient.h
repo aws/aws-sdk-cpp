@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/shield/ShieldPaginationBase.h>
 #include <aws/shield/ShieldServiceClientModel.h>
+#include <aws/shield/ShieldWaiter.h>
 #include <aws/shield/Shield_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace Shield {
  */
 class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<ShieldClient>,
-                                    public ShieldPaginationBase<ShieldClient> {
+                                    public ShieldPaginationBase<ShieldClient>,
+                                    public ShieldWaiter<ShieldClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

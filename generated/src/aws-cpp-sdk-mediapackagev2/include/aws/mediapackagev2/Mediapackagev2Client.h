@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediapackagev2/Mediapackagev2PaginationBase.h>
 #include <aws/mediapackagev2/Mediapackagev2ServiceClientModel.h>
+#include <aws/mediapackagev2/Mediapackagev2Waiter.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 
 namespace Aws {
@@ -37,7 +38,8 @@ namespace mediapackagev2 {
  */
 class AWS_MEDIAPACKAGEV2_API Mediapackagev2Client : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<Mediapackagev2Client>,
-                                                    public Mediapackagev2PaginationBase<Mediapackagev2Client> {
+                                                    public Mediapackagev2PaginationBase<Mediapackagev2Client>,
+                                                    public Mediapackagev2Waiter<Mediapackagev2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

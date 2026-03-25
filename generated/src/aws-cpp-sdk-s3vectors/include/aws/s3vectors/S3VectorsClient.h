@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/s3vectors/S3VectorsPaginationBase.h>
 #include <aws/s3vectors/S3VectorsServiceClientModel.h>
+#include <aws/s3vectors/S3VectorsWaiter.h>
 #include <aws/s3vectors/S3Vectors_EXPORTS.h>
 
 namespace Aws {
@@ -26,7 +27,8 @@ namespace S3Vectors {
  */
 class AWS_S3VECTORS_API S3VectorsClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<S3VectorsClient>,
-                                          public S3VectorsPaginationBase<S3VectorsClient> {
+                                          public S3VectorsPaginationBase<S3VectorsClient>,
+                                          public S3VectorsWaiter<S3VectorsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

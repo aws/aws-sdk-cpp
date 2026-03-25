@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/grafana/ManagedGrafanaPaginationBase.h>
 #include <aws/grafana/ManagedGrafanaServiceClientModel.h>
+#include <aws/grafana/ManagedGrafanaWaiter.h>
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace ManagedGrafana {
  */
 class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient>,
-                                                    public ManagedGrafanaPaginationBase<ManagedGrafanaClient> {
+                                                    public ManagedGrafanaPaginationBase<ManagedGrafanaClient>,
+                                                    public ManagedGrafanaWaiter<ManagedGrafanaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

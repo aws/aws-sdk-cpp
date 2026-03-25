@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appintegrations/AppIntegrationsServicePaginationBase.h>
 #include <aws/appintegrations/AppIntegrationsServiceServiceClientModel.h>
+#include <aws/appintegrations/AppIntegrationsServiceWaiter.h>
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -33,7 +34,8 @@ namespace AppIntegrationsService {
 class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>,
-      public AppIntegrationsServicePaginationBase<AppIntegrationsServiceClient> {
+      public AppIntegrationsServicePaginationBase<AppIntegrationsServiceClient>,
+      public AppIntegrationsServiceWaiter<AppIntegrationsServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

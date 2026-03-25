@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/datasync/DataSyncPaginationBase.h>
 #include <aws/datasync/DataSyncServiceClientModel.h>
+#include <aws/datasync/DataSyncWaiter.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace DataSync {
  */
 class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>,
-                                        public DataSyncPaginationBase<DataSyncClient> {
+                                        public DataSyncPaginationBase<DataSyncClient>,
+                                        public DataSyncWaiter<DataSyncClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

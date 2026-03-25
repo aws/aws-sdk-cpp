@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudfront/CloudFrontPaginationBase.h>
 #include <aws/cloudfront/CloudFrontServiceClientModel.h>
+#include <aws/cloudfront/CloudFrontWaiter.h>
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
@@ -25,7 +26,8 @@ namespace CloudFront {
  */
 class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>,
-                                            public CloudFrontPaginationBase<CloudFrontClient> {
+                                            public CloudFrontPaginationBase<CloudFrontClient>,
+                                            public CloudFrontWaiter<CloudFrontClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

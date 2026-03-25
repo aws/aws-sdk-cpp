@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/qconnect/QConnectPaginationBase.h>
 #include <aws/qconnect/QConnectServiceClientModel.h>
+#include <aws/qconnect/QConnectWaiter.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 
 namespace Aws {
@@ -43,7 +44,8 @@ namespace QConnect {
  */
 class AWS_QCONNECT_API QConnectClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<QConnectClient>,
-                                        public QConnectPaginationBase<QConnectClient> {
+                                        public QConnectPaginationBase<QConnectClient>,
+                                        public QConnectWaiter<QConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

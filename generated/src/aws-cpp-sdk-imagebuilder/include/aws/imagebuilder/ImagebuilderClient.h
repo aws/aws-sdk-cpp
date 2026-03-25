@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/imagebuilder/ImagebuilderPaginationBase.h>
 #include <aws/imagebuilder/ImagebuilderServiceClientModel.h>
+#include <aws/imagebuilder/ImagebuilderWaiter.h>
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace imagebuilder {
  */
 class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient>,
-                                                public ImagebuilderPaginationBase<ImagebuilderClient> {
+                                                public ImagebuilderPaginationBase<ImagebuilderClient>,
+                                                public ImagebuilderWaiter<ImagebuilderClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

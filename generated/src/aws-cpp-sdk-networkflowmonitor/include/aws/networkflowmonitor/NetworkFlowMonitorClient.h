@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorPaginationBase.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitorServiceClientModel.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitorWaiter.h>
 #include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 
 namespace Aws {
@@ -34,7 +35,8 @@ namespace NetworkFlowMonitor {
  */
 class AWS_NETWORKFLOWMONITOR_API NetworkFlowMonitorClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFlowMonitorClient>,
-                                                            public NetworkFlowMonitorPaginationBase<NetworkFlowMonitorClient> {
+                                                            public NetworkFlowMonitorPaginationBase<NetworkFlowMonitorClient>,
+                                                            public NetworkFlowMonitorWaiter<NetworkFlowMonitorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

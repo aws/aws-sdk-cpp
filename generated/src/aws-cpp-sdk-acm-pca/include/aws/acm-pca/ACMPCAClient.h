@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/acm-pca/ACMPCAPaginationBase.h>
 #include <aws/acm-pca/ACMPCAServiceClientModel.h>
+#include <aws/acm-pca/ACMPCAWaiter.h>
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -40,7 +41,8 @@ namespace ACMPCA {
  */
 class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>,
-                                    public ACMPCAPaginationBase<ACMPCAClient> {
+                                    public ACMPCAPaginationBase<ACMPCAClient>,
+                                    public ACMPCAWaiter<ACMPCAClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

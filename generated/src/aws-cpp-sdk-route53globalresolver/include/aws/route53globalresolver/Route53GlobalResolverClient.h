@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53globalresolver/Route53GlobalResolverPaginationBase.h>
 #include <aws/route53globalresolver/Route53GlobalResolverServiceClientModel.h>
+#include <aws/route53globalresolver/Route53GlobalResolverWaiter.h>
 #include <aws/route53globalresolver/Route53GlobalResolver_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace Route53GlobalResolver {
 class AWS_ROUTE53GLOBALRESOLVER_API Route53GlobalResolverClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<Route53GlobalResolverClient>,
-      public Route53GlobalResolverPaginationBase<Route53GlobalResolverClient> {
+      public Route53GlobalResolverPaginationBase<Route53GlobalResolverClient>,
+      public Route53GlobalResolverWaiter<Route53GlobalResolverClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -9,6 +9,7 @@
 #include <aws/dynamodb/DynamoDBErrorMarshaller.h>
 #include <aws/dynamodb/DynamoDBPaginationBase.h>
 #include <aws/dynamodb/DynamoDBServiceClientModel.h>
+#include <aws/dynamodb/DynamoDBWaiter.h>
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <smithy/client/AwsSmithyClient.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
@@ -42,7 +43,8 @@ class AWS_DYNAMODB_API DynamoDBClient
                                               smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
                                               DynamoDBEndpointProviderBase, smithy::client::JsonOutcomeSerializer,
                                               smithy::client::JsonOutcome, Aws::Client::DynamoDBErrorMarshaller>,
-      public DynamoDBPaginationBase<DynamoDBClient> {
+      public DynamoDBPaginationBase<DynamoDBClient>,
+      public DynamoDBWaiter<DynamoDBClient> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();

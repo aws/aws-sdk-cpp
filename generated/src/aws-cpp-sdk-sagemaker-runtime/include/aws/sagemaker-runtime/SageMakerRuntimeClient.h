@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimePaginationBase.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeServiceClientModel.h>
+#include <aws/sagemaker-runtime/SageMakerRuntimeWaiter.h>
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace SageMakerRuntime {
  */
 class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeClient>,
-                                                        public SageMakerRuntimePaginationBase<SageMakerRuntimeClient> {
+                                                        public SageMakerRuntimePaginationBase<SageMakerRuntimeClient>,
+                                                        public SageMakerRuntimeWaiter<SageMakerRuntimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

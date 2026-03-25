@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/waf-regional/WAFRegionalPaginationBase.h>
 #include <aws/waf-regional/WAFRegionalServiceClientModel.h>
+#include <aws/waf-regional/WAFRegionalWaiter.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 
 namespace Aws {
@@ -39,7 +40,8 @@ namespace WAFRegional {
  */
 class AWS_WAFREGIONAL_API WAFRegionalClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<WAFRegionalClient>,
-                                              public WAFRegionalPaginationBase<WAFRegionalClient> {
+                                              public WAFRegionalPaginationBase<WAFRegionalClient>,
+                                              public WAFRegionalWaiter<WAFRegionalClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

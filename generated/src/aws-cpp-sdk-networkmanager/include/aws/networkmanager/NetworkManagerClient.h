@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/networkmanager/NetworkManagerPaginationBase.h>
 #include <aws/networkmanager/NetworkManagerServiceClientModel.h>
+#include <aws/networkmanager/NetworkManagerWaiter.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace NetworkManager {
  */
 class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<NetworkManagerClient>,
-                                                    public NetworkManagerPaginationBase<NetworkManagerClient> {
+                                                    public NetworkManagerPaginationBase<NetworkManagerClient>,
+                                                    public NetworkManagerWaiter<NetworkManagerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

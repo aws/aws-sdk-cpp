@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eks-auth/EKSAuthPaginationBase.h>
 #include <aws/eks-auth/EKSAuthServiceClientModel.h>
+#include <aws/eks-auth/EKSAuthWaiter.h>
 #include <aws/eks-auth/EKSAuth_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace EKSAuth {
  */
 class AWS_EKSAUTH_API EKSAuthClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<EKSAuthClient>,
-                                      public EKSAuthPaginationBase<EKSAuthClient> {
+                                      public EKSAuthPaginationBase<EKSAuthClient>,
+                                      public EKSAuthWaiter<EKSAuthClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

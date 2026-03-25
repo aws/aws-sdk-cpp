@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mpa/MPAPaginationBase.h>
 #include <aws/mpa/MPAServiceClientModel.h>
+#include <aws/mpa/MPAWaiter.h>
 #include <aws/mpa/MPA_EXPORTS.h>
 
 namespace Aws {
@@ -32,7 +33,8 @@ namespace MPA {
  */
 class AWS_MPA_API MPAClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<MPAClient>,
-                              public MPAPaginationBase<MPAClient> {
+                              public MPAPaginationBase<MPAClient>,
+                              public MPAWaiter<MPAClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

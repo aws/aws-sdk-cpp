@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryPaginationBase.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryServiceClientModel.h>
+#include <aws/serverlessrepo/ServerlessApplicationRepositoryWaiter.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepository_EXPORTS.h>
 
 namespace Aws {
@@ -64,7 +65,8 @@ developers, and publish new versions of applications. </p>
 class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ServerlessApplicationRepositoryClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ServerlessApplicationRepositoryClient>,
-      public ServerlessApplicationRepositoryPaginationBase<ServerlessApplicationRepositoryClient> {
+      public ServerlessApplicationRepositoryPaginationBase<ServerlessApplicationRepositoryClient>,
+      public ServerlessApplicationRepositoryWaiter<ServerlessApplicationRepositoryClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

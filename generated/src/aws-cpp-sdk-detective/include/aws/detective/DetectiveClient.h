@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/detective/DetectivePaginationBase.h>
 #include <aws/detective/DetectiveServiceClientModel.h>
+#include <aws/detective/DetectiveWaiter.h>
 #include <aws/detective/Detective_EXPORTS.h>
 
 namespace Aws {
@@ -63,7 +64,8 @@ namespace Detective {
  */
 class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>,
-                                          public DetectivePaginationBase<DetectiveClient> {
+                                          public DetectivePaginationBase<DetectiveClient>,
+                                          public DetectiveWaiter<DetectiveClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

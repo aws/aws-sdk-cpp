@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/macie2/Macie2PaginationBase.h>
 #include <aws/macie2/Macie2ServiceClientModel.h>
+#include <aws/macie2/Macie2Waiter.h>
 #include <aws/macie2/Macie2_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace Macie2 {
  */
 class AWS_MACIE2_API Macie2Client : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<Macie2Client>,
-                                    public Macie2PaginationBase<Macie2Client> {
+                                    public Macie2PaginationBase<Macie2Client>,
+                                    public Macie2Waiter<Macie2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

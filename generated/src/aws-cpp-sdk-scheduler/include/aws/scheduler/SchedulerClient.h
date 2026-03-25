@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/scheduler/SchedulerPaginationBase.h>
 #include <aws/scheduler/SchedulerServiceClientModel.h>
+#include <aws/scheduler/SchedulerWaiter.h>
 #include <aws/scheduler/Scheduler_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace Scheduler {
  */
 class AWS_SCHEDULER_API SchedulerClient : public Aws::Client::AWSJsonClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<SchedulerClient>,
-                                          public SchedulerPaginationBase<SchedulerClient> {
+                                          public SchedulerPaginationBase<SchedulerClient>,
+                                          public SchedulerWaiter<SchedulerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

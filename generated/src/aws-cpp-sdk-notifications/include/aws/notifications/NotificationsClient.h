@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/notifications/NotificationsPaginationBase.h>
 #include <aws/notifications/NotificationsServiceClientModel.h>
+#include <aws/notifications/NotificationsWaiter.h>
 #include <aws/notifications/Notifications_EXPORTS.h>
 
 namespace Aws {
@@ -36,7 +37,8 @@ namespace Notifications {
  */
 class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>,
-                                                  public NotificationsPaginationBase<NotificationsClient> {
+                                                  public NotificationsPaginationBase<NotificationsClient>,
+                                                  public NotificationsWaiter<NotificationsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/autoscaling/AutoScalingPaginationBase.h>
 #include <aws/autoscaling/AutoScalingServiceClientModel.h>
+#include <aws/autoscaling/AutoScalingWaiter.h>
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
@@ -33,7 +34,8 @@ namespace AutoScaling {
  */
 class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingClient>,
-                                              public AutoScalingPaginationBase<AutoScalingClient> {
+                                              public AutoScalingPaginationBase<AutoScalingClient>,
+                                              public AutoScalingWaiter<AutoScalingClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

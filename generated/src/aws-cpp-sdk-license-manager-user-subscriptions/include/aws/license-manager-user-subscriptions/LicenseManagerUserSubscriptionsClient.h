@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsPaginationBase.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsServiceClientModel.h>
+#include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsWaiter.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace LicenseManagerUserSubscriptions {
 class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseManagerUserSubscriptionsClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerUserSubscriptionsClient>,
-      public LicenseManagerUserSubscriptionsPaginationBase<LicenseManagerUserSubscriptionsClient> {
+      public LicenseManagerUserSubscriptionsPaginationBase<LicenseManagerUserSubscriptionsClient>,
+      public LicenseManagerUserSubscriptionsWaiter<LicenseManagerUserSubscriptionsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

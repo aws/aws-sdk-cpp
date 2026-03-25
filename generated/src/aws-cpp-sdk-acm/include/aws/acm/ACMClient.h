@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/acm/ACMPaginationBase.h>
 #include <aws/acm/ACMServiceClientModel.h>
+#include <aws/acm/ACMWaiter.h>
 #include <aws/acm/ACM_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -23,7 +24,8 @@ namespace ACM {
  */
 class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<ACMClient>,
-                              public ACMPaginationBase<ACMClient> {
+                              public ACMPaginationBase<ACMClient>,
+                              public ACMWaiter<ACMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

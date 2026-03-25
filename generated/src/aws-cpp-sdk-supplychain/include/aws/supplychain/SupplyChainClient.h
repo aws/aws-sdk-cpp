@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/supplychain/SupplyChainPaginationBase.h>
 #include <aws/supplychain/SupplyChainServiceClientModel.h>
+#include <aws/supplychain/SupplyChainWaiter.h>
 #include <aws/supplychain/SupplyChain_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace SupplyChain {
  */
 class AWS_SUPPLYCHAIN_API SupplyChainClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<SupplyChainClient>,
-                                              public SupplyChainPaginationBase<SupplyChainClient> {
+                                              public SupplyChainPaginationBase<SupplyChainClient>,
+                                              public SupplyChainWaiter<SupplyChainClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

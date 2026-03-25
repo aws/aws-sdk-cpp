@@ -163,33 +163,12 @@ protected:
         NOT_FOUND
     };
 
-    static void WaitForFunctionStatus(const Aws::String& functionName, const Aws::Lambda::Model::State targetStatus)
+    static void WaitForFunctionStatusActive(const Aws::String& functionName)
     {
-        Aws::Lambda::Model::State currentState = Aws::Lambda::Model::State::NOT_SET;
-        GetFunctionRequest getFunctionRequest;
-        getFunctionRequest.SetFunctionName(functionName);
-
-        static const size_t MAX_WAIT_CYCLES = 3600;
-        for(size_t i = 0; i < MAX_WAIT_CYCLES; ++i)
-        {
-            const Aws::Lambda::Model::GetFunctionOutcome& getFunctionOutcome = m_client->GetFunction(getFunctionRequest);
-            if(getFunctionOutcome.IsSuccess())
-            {
-                const Aws::Lambda::Model::FunctionConfiguration& funcConfig = getFunctionOutcome.GetResult().GetConfiguration();
-                currentState = funcConfig.GetState();
-                if(targetStatus == currentState)
-                    return;
-            }
-            else
-            {
-                ASSERT_EQ(Aws::Http::HttpResponseCode::NOT_FOUND, getFunctionOutcome.GetError().GetResponseCode());
-            }
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-
-        FAIL() << "Lambda function " << functionName << " didn't went into status " <<
-            Aws::Lambda::Model::StateMapper::GetNameForState(targetStatus) << ". Last known status " <<
-            Aws::Lambda::Model::StateMapper::GetNameForState(currentState);
+          GetFunctionRequest getFunctionRequest;
+          getFunctionRequest.SetFunctionName(functionName);
+          auto waiterOutcome = m_client->WaitUntilFunctionActiveV2(getFunctionRequest);
+          ASSERT_TRUE(waiterOutcome.IsSuccess()) << "WaitUntilFunctionActiveV2 failed for function: " << functionName;
     }
 
     static void DeleteFunction(Aws::String functionName)
@@ -256,7 +235,7 @@ protected:
         ASSERT_EQ(Aws::Lambda::Model::Runtime::nodejs22_x, createFunctionOutcome.GetResult().GetRuntime());
         functionArnMapping[functionName] = createFunctionOutcome.GetResult().GetFunctionArn();
 
-        WaitForFunctionStatus(functionName, Aws::Lambda::Model::State::Active);
+        WaitForFunctionStatusActive(functionName);
     }
 
     static Aws::String getLambdaCodePathFromEnvIfExists(const Aws::String& cmakePath, const Aws::String& filePath) {

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/autoscaling-plans/AutoScalingPlansPaginationBase.h>
 #include <aws/autoscaling-plans/AutoScalingPlansServiceClientModel.h>
+#include <aws/autoscaling-plans/AutoScalingPlansWaiter.h>
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -33,7 +34,8 @@ namespace AutoScalingPlans {
  */
 class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingPlansClient>,
-                                                        public AutoScalingPlansPaginationBase<AutoScalingPlansClient> {
+                                                        public AutoScalingPlansPaginationBase<AutoScalingPlansClient>,
+                                                        public AutoScalingPlansWaiter<AutoScalingPlansClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

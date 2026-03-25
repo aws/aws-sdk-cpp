@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/snow-device-management/SnowDeviceManagementPaginationBase.h>
 #include <aws/snow-device-management/SnowDeviceManagementServiceClientModel.h>
+#include <aws/snow-device-management/SnowDeviceManagementWaiter.h>
 #include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace SnowDeviceManagement {
 class AWS_SNOWDEVICEMANAGEMENT_API SnowDeviceManagementClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<SnowDeviceManagementClient>,
-      public SnowDeviceManagementPaginationBase<SnowDeviceManagementClient> {
+      public SnowDeviceManagementPaginationBase<SnowDeviceManagementClient>,
+      public SnowDeviceManagementWaiter<SnowDeviceManagementClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

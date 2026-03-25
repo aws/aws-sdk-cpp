@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/geo-maps/GeoMapsPaginationBase.h>
 #include <aws/geo-maps/GeoMapsServiceClientModel.h>
+#include <aws/geo-maps/GeoMapsWaiter.h>
 #include <aws/geo-maps/GeoMaps_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace GeoMaps {
  */
 class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<GeoMapsClient>,
-                                      public GeoMapsPaginationBase<GeoMapsClient> {
+                                      public GeoMapsPaginationBase<GeoMapsClient>,
+                                      public GeoMapsWaiter<GeoMapsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

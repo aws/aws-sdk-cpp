@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mwaa/MWAAPaginationBase.h>
 #include <aws/mwaa/MWAAServiceClientModel.h>
+#include <aws/mwaa/MWAAWaiter.h>
 #include <aws/mwaa/MWAA_EXPORTS.h>
 
 namespace Aws {
@@ -52,7 +53,8 @@ namespace MWAA {
  */
 class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient,
                                 public Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>,
-                                public MWAAPaginationBase<MWAAClient> {
+                                public MWAAPaginationBase<MWAAClient>,
+                                public MWAAWaiter<MWAAClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

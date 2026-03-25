@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dataexchange/DataExchangePaginationBase.h>
 #include <aws/dataexchange/DataExchangeServiceClientModel.h>
+#include <aws/dataexchange/DataExchangeWaiter.h>
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 
 namespace Aws {
@@ -36,7 +37,8 @@ namespace DataExchange {
  */
 class AWS_DATAEXCHANGE_API DataExchangeClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient>,
-                                                public DataExchangePaginationBase<DataExchangeClient> {
+                                                public DataExchangePaginationBase<DataExchangeClient>,
+                                                public DataExchangeWaiter<DataExchangeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

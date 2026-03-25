@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/iam/IAMPaginationBase.h>
 #include <aws/iam/IAMServiceClientModel.h>
+#include <aws/iam/IAMWaiter.h>
 #include <aws/iam/IAM_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace IAM {
  */
 class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<IAMClient>,
-                              public IAMPaginationBase<IAMClient> {
+                              public IAMPaginationBase<IAMClient>,
+                              public IAMWaiter<IAMClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

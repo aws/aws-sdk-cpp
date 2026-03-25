@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wickr/WickrPaginationBase.h>
 #include <aws/wickr/WickrServiceClientModel.h>
+#include <aws/wickr/WickrWaiter.h>
 #include <aws/wickr/Wickr_EXPORTS.h>
 
 namespace Aws {
@@ -60,7 +61,8 @@ namespace Wickr {
  */
 class AWS_WICKR_API WickrClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<WickrClient>,
-                                  public WickrPaginationBase<WickrClient> {
+                                  public WickrPaginationBase<WickrClient>,
+                                  public WickrWaiter<WickrClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

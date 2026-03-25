@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lakeformation/LakeFormationPaginationBase.h>
 #include <aws/lakeformation/LakeFormationServiceClientModel.h>
+#include <aws/lakeformation/LakeFormationWaiter.h>
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace LakeFormation {
  */
 class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<LakeFormationClient>,
-                                                  public LakeFormationPaginationBase<LakeFormationClient> {
+                                                  public LakeFormationPaginationBase<LakeFormationClient>,
+                                                  public LakeFormationWaiter<LakeFormationClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

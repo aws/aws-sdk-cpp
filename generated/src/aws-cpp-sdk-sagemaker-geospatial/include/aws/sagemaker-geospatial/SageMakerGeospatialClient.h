@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialPaginationBase.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatialServiceClientModel.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatialWaiter.h>
 #include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace SageMakerGeospatial {
  */
 class AWS_SAGEMAKERGEOSPATIAL_API SageMakerGeospatialClient : public Aws::Client::AWSJsonClient,
                                                               public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerGeospatialClient>,
-                                                              public SageMakerGeospatialPaginationBase<SageMakerGeospatialClient> {
+                                                              public SageMakerGeospatialPaginationBase<SageMakerGeospatialClient>,
+                                                              public SageMakerGeospatialWaiter<SageMakerGeospatialClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

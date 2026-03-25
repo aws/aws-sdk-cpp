@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsPaginationBase.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsServiceClientModel.h>
+#include <aws/chime-sdk-meetings/ChimeSDKMeetingsWaiter.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -24,7 +25,8 @@ namespace ChimeSDKMeetings {
  */
 class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>,
-                                                        public ChimeSDKMeetingsPaginationBase<ChimeSDKMeetingsClient> {
+                                                        public ChimeSDKMeetingsPaginationBase<ChimeSDKMeetingsClient>,
+                                                        public ChimeSDKMeetingsWaiter<ChimeSDKMeetingsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

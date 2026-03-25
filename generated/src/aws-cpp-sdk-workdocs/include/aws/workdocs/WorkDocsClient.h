@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workdocs/WorkDocsPaginationBase.h>
 #include <aws/workdocs/WorkDocsServiceClientModel.h>
+#include <aws/workdocs/WorkDocsWaiter.h>
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
 
 namespace Aws {
@@ -50,7 +51,8 @@ namespace WorkDocs {
  */
 class AWS_WORKDOCS_API WorkDocsClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<WorkDocsClient>,
-                                        public WorkDocsPaginationBase<WorkDocsClient> {
+                                        public WorkDocsPaginationBase<WorkDocsClient>,
+                                        public WorkDocsWaiter<WorkDocsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

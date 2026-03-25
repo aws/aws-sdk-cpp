@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/BackupPaginationBase.h>
 #include <aws/backup/BackupServiceClientModel.h>
+#include <aws/backup/BackupWaiter.h>
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -22,7 +23,8 @@ namespace Backup {
  */
 class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<BackupClient>,
-                                    public BackupPaginationBase<BackupClient> {
+                                    public BackupPaginationBase<BackupClient>,
+                                    public BackupWaiter<BackupClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

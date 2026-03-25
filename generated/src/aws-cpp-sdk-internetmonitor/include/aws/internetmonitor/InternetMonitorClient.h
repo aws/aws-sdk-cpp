@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/internetmonitor/InternetMonitorPaginationBase.h>
 #include <aws/internetmonitor/InternetMonitorServiceClientModel.h>
+#include <aws/internetmonitor/InternetMonitorWaiter.h>
 #include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 
 namespace Aws {
@@ -45,7 +46,8 @@ namespace InternetMonitor {
  */
 class AWS_INTERNETMONITOR_API InternetMonitorClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<InternetMonitorClient>,
-                                                      public InternetMonitorPaginationBase<InternetMonitorClient> {
+                                                      public InternetMonitorPaginationBase<InternetMonitorClient>,
+                                                      public InternetMonitorWaiter<InternetMonitorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

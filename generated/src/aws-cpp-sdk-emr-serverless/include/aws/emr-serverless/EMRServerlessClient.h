@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/emr-serverless/EMRServerlessPaginationBase.h>
 #include <aws/emr-serverless/EMRServerlessServiceClientModel.h>
+#include <aws/emr-serverless/EMRServerlessWaiter.h>
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 
 namespace Aws {
@@ -34,7 +35,8 @@ namespace EMRServerless {
  */
 class AWS_EMRSERVERLESS_API EMRServerlessClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<EMRServerlessClient>,
-                                                  public EMRServerlessPaginationBase<EMRServerlessClient> {
+                                                  public EMRServerlessPaginationBase<EMRServerlessClient>,
+                                                  public EMRServerlessWaiter<EMRServerlessClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

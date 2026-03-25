@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/gamelift/GameLiftPaginationBase.h>
 #include <aws/gamelift/GameLiftServiceClientModel.h>
+#include <aws/gamelift/GameLiftWaiter.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
 namespace Aws {
@@ -57,7 +58,8 @@ namespace GameLift {
  */
 class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>,
-                                        public GameLiftPaginationBase<GameLiftClient> {
+                                        public GameLiftPaginationBase<GameLiftClient>,
+                                        public GameLiftWaiter<GameLiftClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

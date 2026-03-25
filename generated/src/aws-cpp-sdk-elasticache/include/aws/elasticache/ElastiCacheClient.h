@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticache/ElastiCachePaginationBase.h>
 #include <aws/elasticache/ElastiCacheServiceClientModel.h>
+#include <aws/elasticache/ElastiCacheWaiter.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace ElastiCache {
  */
 class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<ElastiCacheClient>,
-                                              public ElastiCachePaginationBase<ElastiCacheClient> {
+                                              public ElastiCachePaginationBase<ElastiCacheClient>,
+                                              public ElastiCacheWaiter<ElastiCacheClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

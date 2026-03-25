@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedicalPaginationBase.h>
 #include <aws/comprehendmedical/ComprehendMedicalServiceClientModel.h>
+#include <aws/comprehendmedical/ComprehendMedicalWaiter.h>
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -25,7 +26,8 @@ namespace ComprehendMedical {
  */
 class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : public Aws::Client::AWSJsonClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient>,
-                                                          public ComprehendMedicalPaginationBase<ComprehendMedicalClient> {
+                                                          public ComprehendMedicalPaginationBase<ComprehendMedicalClient>,
+                                                          public ComprehendMedicalWaiter<ComprehendMedicalClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

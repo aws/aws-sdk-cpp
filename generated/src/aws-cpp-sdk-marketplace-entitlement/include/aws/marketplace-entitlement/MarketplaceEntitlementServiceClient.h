@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServicePaginationBase.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceServiceClientModel.h>
+#include <aws/marketplace-entitlement/MarketplaceEntitlementServiceWaiter.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementService_EXPORTS.h>
 
 namespace Aws {
@@ -28,7 +29,8 @@ namespace MarketplaceEntitlementService {
 class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceEntitlementServiceClient>,
-      public MarketplaceEntitlementServicePaginationBase<MarketplaceEntitlementServiceClient> {
+      public MarketplaceEntitlementServicePaginationBase<MarketplaceEntitlementServiceClient>,
+      public MarketplaceEntitlementServiceWaiter<MarketplaceEntitlementServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

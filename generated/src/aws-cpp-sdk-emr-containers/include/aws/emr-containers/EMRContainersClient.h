@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/emr-containers/EMRContainersPaginationBase.h>
 #include <aws/emr-containers/EMRContainersServiceClientModel.h>
+#include <aws/emr-containers/EMRContainersWaiter.h>
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
 
 namespace Aws {
@@ -39,7 +40,8 @@ namespace EMRContainers {
  */
 class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<EMRContainersClient>,
-                                                  public EMRContainersPaginationBase<EMRContainersClient> {
+                                                  public EMRContainersPaginationBase<EMRContainersClient>,
+                                                  public EMRContainersWaiter<EMRContainersClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/memorydb/MemoryDBPaginationBase.h>
 #include <aws/memorydb/MemoryDBServiceClientModel.h>
+#include <aws/memorydb/MemoryDBWaiter.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace MemoryDB {
  */
 class AWS_MEMORYDB_API MemoryDBClient : public Aws::Client::AWSJsonClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<MemoryDBClient>,
-                                        public MemoryDBPaginationBase<MemoryDBClient> {
+                                        public MemoryDBPaginationBase<MemoryDBClient>,
+                                        public MemoryDBWaiter<MemoryDBClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

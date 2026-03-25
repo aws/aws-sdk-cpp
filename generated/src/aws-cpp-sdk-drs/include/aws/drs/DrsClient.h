@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/drs/DrsPaginationBase.h>
 #include <aws/drs/DrsServiceClientModel.h>
+#include <aws/drs/DrsWaiter.h>
 #include <aws/drs/Drs_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace drs {
  */
 class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>,
-                              public DrsPaginationBase<DrsClient> {
+                              public DrsPaginationBase<DrsClient>,
+                              public DrsWaiter<DrsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

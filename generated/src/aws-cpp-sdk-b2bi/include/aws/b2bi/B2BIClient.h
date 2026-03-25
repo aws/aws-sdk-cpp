@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/b2bi/B2BIPaginationBase.h>
 #include <aws/b2bi/B2BIServiceClientModel.h>
+#include <aws/b2bi/B2BIWaiter.h>
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -31,7 +32,8 @@ namespace B2BI {
  */
 class AWS_B2BI_API B2BIClient : public Aws::Client::AWSJsonClient,
                                 public Aws::Client::ClientWithAsyncTemplateMethods<B2BIClient>,
-                                public B2BIPaginationBase<B2BIClient> {
+                                public B2BIPaginationBase<B2BIClient>,
+                                public B2BIWaiter<B2BIClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime/ChimePaginationBase.h>
 #include <aws/chime/ChimeServiceClientModel.h>
+#include <aws/chime/ChimeWaiter.h>
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -60,7 +61,8 @@ namespace Chime {
  */
 class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient>,
-                                  public ChimePaginationBase<ChimeClient> {
+                                  public ChimePaginationBase<ChimeClient>,
+                                  public ChimeWaiter<ChimeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

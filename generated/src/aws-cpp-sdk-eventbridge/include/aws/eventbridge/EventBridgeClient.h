@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eventbridge/EventBridgePaginationBase.h>
 #include <aws/eventbridge/EventBridgeServiceClientModel.h>
+#include <aws/eventbridge/EventBridgeWaiter.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 
 namespace Aws {
@@ -32,7 +33,8 @@ namespace EventBridge {
  */
 class AWS_EVENTBRIDGE_API EventBridgeClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<EventBridgeClient>,
-                                              public EventBridgePaginationBase<EventBridgeClient> {
+                                              public EventBridgePaginationBase<EventBridgeClient>,
+                                              public EventBridgeWaiter<EventBridgeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

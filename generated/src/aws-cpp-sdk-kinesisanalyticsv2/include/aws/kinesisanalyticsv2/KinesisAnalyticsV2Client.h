@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2PaginationBase.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2ServiceClientModel.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2Waiter.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace KinesisAnalyticsV2 {
  */
 class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>,
-                                                            public KinesisAnalyticsV2PaginationBase<KinesisAnalyticsV2Client> {
+                                                            public KinesisAnalyticsV2PaginationBase<KinesisAnalyticsV2Client>,
+                                                            public KinesisAnalyticsV2Waiter<KinesisAnalyticsV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

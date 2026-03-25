@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorPaginationBase.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorServiceClientModel.h>
+#include <aws/migrationhuborchestrator/MigrationHubOrchestratorWaiter.h>
 #include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace MigrationHubOrchestrator {
 class AWS_MIGRATIONHUBORCHESTRATOR_API MigrationHubOrchestratorClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubOrchestratorClient>,
-      public MigrationHubOrchestratorPaginationBase<MigrationHubOrchestratorClient> {
+      public MigrationHubOrchestratorPaginationBase<MigrationHubOrchestratorClient>,
+      public MigrationHubOrchestratorWaiter<MigrationHubOrchestratorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

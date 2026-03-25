@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsPaginationBase.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefitsServiceClientModel.h>
+#include <aws/partnercentral-benefits/PartnerCentralBenefitsWaiter.h>
 #include <aws/partnercentral-benefits/PartnerCentralBenefits_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace PartnerCentralBenefits {
 class AWS_PARTNERCENTRALBENEFITS_API PartnerCentralBenefitsClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralBenefitsClient>,
-      public PartnerCentralBenefitsPaginationBase<PartnerCentralBenefitsClient> {
+      public PartnerCentralBenefitsPaginationBase<PartnerCentralBenefitsClient>,
+      public PartnerCentralBenefitsWaiter<PartnerCentralBenefitsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

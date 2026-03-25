@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIPaginationBase.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIServiceClientModel.h>
+#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIWaiter.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace ResourceGroupsTaggingAPI {
 class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsTaggingAPIClient>,
-      public ResourceGroupsTaggingAPIPaginationBase<ResourceGroupsTaggingAPIClient> {
+      public ResourceGroupsTaggingAPIPaginationBase<ResourceGroupsTaggingAPIClient>,
+      public ResourceGroupsTaggingAPIWaiter<ResourceGroupsTaggingAPIClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

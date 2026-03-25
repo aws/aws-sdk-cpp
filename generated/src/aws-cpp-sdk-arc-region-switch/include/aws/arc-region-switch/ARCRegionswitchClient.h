@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/arc-region-switch/ARCRegionswitchPaginationBase.h>
 #include <aws/arc-region-switch/ARCRegionswitchServiceClientModel.h>
+#include <aws/arc-region-switch/ARCRegionswitchWaiter.h>
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -29,7 +30,8 @@ namespace ARCRegionswitch {
  */
 class AWS_ARCREGIONSWITCH_API ARCRegionswitchClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<ARCRegionswitchClient>,
-                                                      public ARCRegionswitchPaginationBase<ARCRegionswitchClient> {
+                                                      public ARCRegionswitchPaginationBase<ARCRegionswitchClient>,
+                                                      public ARCRegionswitchWaiter<ARCRegionswitchClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

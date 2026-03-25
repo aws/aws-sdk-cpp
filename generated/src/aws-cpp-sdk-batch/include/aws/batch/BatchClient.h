@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/batch/BatchPaginationBase.h>
 #include <aws/batch/BatchServiceClientModel.h>
+#include <aws/batch/BatchWaiter.h>
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -32,7 +33,8 @@ namespace Batch {
  */
 class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient,
                                   public Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>,
-                                  public BatchPaginationBase<BatchClient> {
+                                  public BatchPaginationBase<BatchClient>,
+                                  public BatchWaiter<BatchClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

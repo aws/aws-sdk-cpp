@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dms/DatabaseMigrationServicePaginationBase.h>
 #include <aws/dms/DatabaseMigrationServiceServiceClientModel.h>
+#include <aws/dms/DatabaseMigrationServiceWaiter.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace DatabaseMigrationService {
 class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<DatabaseMigrationServiceClient>,
-      public DatabaseMigrationServicePaginationBase<DatabaseMigrationServiceClient> {
+      public DatabaseMigrationServicePaginationBase<DatabaseMigrationServiceClient>,
+      public DatabaseMigrationServiceWaiter<DatabaseMigrationServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

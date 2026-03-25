@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediaconvert/MediaConvertPaginationBase.h>
 #include <aws/mediaconvert/MediaConvertServiceClientModel.h>
+#include <aws/mediaconvert/MediaConvertWaiter.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace MediaConvert {
  */
 class AWS_MEDIACONVERT_API MediaConvertClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<MediaConvertClient>,
-                                                public MediaConvertPaginationBase<MediaConvertClient> {
+                                                public MediaConvertPaginationBase<MediaConvertClient>,
+                                                public MediaConvertWaiter<MediaConvertClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

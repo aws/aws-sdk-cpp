@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectPaginationBase.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnectServiceClientModel.h>
+#include <aws/ec2-instance-connect/EC2InstanceConnectWaiter.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace EC2InstanceConnect {
  */
 class AWS_EC2INSTANCECONNECT_API EC2InstanceConnectClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<EC2InstanceConnectClient>,
-                                                            public EC2InstanceConnectPaginationBase<EC2InstanceConnectClient> {
+                                                            public EC2InstanceConnectPaginationBase<EC2InstanceConnectClient>,
+                                                            public EC2InstanceConnectWaiter<EC2InstanceConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2PaginationBase.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2ServiceClientModel.h>
+#include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2Waiter.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace SageMakerRuntimeHTTP2 {
 class AWS_SAGEMAKERRUNTIMEHTTP2_API SageMakerRuntimeHTTP2Client
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeHTTP2Client>,
-      public SageMakerRuntimeHTTP2PaginationBase<SageMakerRuntimeHTTP2Client> {
+      public SageMakerRuntimeHTTP2PaginationBase<SageMakerRuntimeHTTP2Client>,
+      public SageMakerRuntimeHTTP2Waiter<SageMakerRuntimeHTTP2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

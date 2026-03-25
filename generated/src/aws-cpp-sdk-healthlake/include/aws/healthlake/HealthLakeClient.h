@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/healthlake/HealthLakePaginationBase.h>
 #include <aws/healthlake/HealthLakeServiceClientModel.h>
+#include <aws/healthlake/HealthLakeWaiter.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 
 namespace Aws {
@@ -22,7 +23,8 @@ namespace HealthLake {
  */
 class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient>,
-                                            public HealthLakePaginationBase<HealthLakeClient> {
+                                            public HealthLakePaginationBase<HealthLakeClient>,
+                                            public HealthLakeWaiter<HealthLakeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

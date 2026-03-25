@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/events/CloudWatchEventsPaginationBase.h>
 #include <aws/events/CloudWatchEventsServiceClientModel.h>
+#include <aws/events/CloudWatchEventsWaiter.h>
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 
 namespace Aws {
@@ -32,7 +33,8 @@ namespace CloudWatchEvents {
  */
 class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchEventsClient>,
-                                                        public CloudWatchEventsPaginationBase<CloudWatchEventsClient> {
+                                                        public CloudWatchEventsPaginationBase<CloudWatchEventsClient>,
+                                                        public CloudWatchEventsWaiter<CloudWatchEventsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

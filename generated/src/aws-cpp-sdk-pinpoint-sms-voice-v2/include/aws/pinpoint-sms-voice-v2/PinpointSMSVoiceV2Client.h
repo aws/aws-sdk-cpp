@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2PaginationBase.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2ServiceClientModel.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2Waiter.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
 namespace Aws {
@@ -55,7 +56,8 @@ namespace PinpointSMSVoiceV2 {
  */
 class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceV2Client>,
-                                                            public PinpointSMSVoiceV2PaginationBase<PinpointSMSVoiceV2Client> {
+                                                            public PinpointSMSVoiceV2PaginationBase<PinpointSMSVoiceV2Client>,
+                                                            public PinpointSMSVoiceV2Waiter<PinpointSMSVoiceV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

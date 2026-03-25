@@ -11,6 +11,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/importexport/ImportExportPaginationBase.h>
 #include <aws/importexport/ImportExportServiceClientModel.h>
+#include <aws/importexport/ImportExportWaiter.h>
 #include <aws/importexport/ImportExport_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace ImportExport {
  */
 class AWS_IMPORTEXPORT_API ImportExportClient : public Aws::Client::AWSXMLClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<ImportExportClient>,
-                                                public ImportExportPaginationBase<ImportExportClient> {
+                                                public ImportExportPaginationBase<ImportExportClient>,
+                                                public ImportExportWaiter<ImportExportClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

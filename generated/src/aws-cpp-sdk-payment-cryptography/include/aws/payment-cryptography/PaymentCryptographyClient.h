@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/payment-cryptography/PaymentCryptographyPaginationBase.h>
 #include <aws/payment-cryptography/PaymentCryptographyServiceClientModel.h>
+#include <aws/payment-cryptography/PaymentCryptographyWaiter.h>
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 
 namespace Aws {
@@ -41,7 +42,8 @@ namespace PaymentCryptography {
  */
 class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyClient : public Aws::Client::AWSJsonClient,
                                                               public Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyClient>,
-                                                              public PaymentCryptographyPaginationBase<PaymentCryptographyClient> {
+                                                              public PaymentCryptographyPaginationBase<PaymentCryptographyClient>,
+                                                              public PaymentCryptographyWaiter<PaymentCryptographyClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

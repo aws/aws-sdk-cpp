@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/braket/BraketPaginationBase.h>
 #include <aws/braket/BraketServiceClientModel.h>
+#include <aws/braket/BraketWaiter.h>
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -54,7 +55,8 @@ namespace Braket {
  */
 class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>,
-                                    public BraketPaginationBase<BraketClient> {
+                                    public BraketPaginationBase<BraketClient>,
+                                    public BraketWaiter<BraketClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/directconnect/DirectConnectPaginationBase.h>
 #include <aws/directconnect/DirectConnectServiceClientModel.h>
+#include <aws/directconnect/DirectConnectWaiter.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace DirectConnect {
  */
 class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<DirectConnectClient>,
-                                                  public DirectConnectPaginationBase<DirectConnectClient> {
+                                                  public DirectConnectPaginationBase<DirectConnectClient>,
+                                                  public DirectConnectWaiter<DirectConnectClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

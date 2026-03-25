@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediastore/MediaStorePaginationBase.h>
 #include <aws/mediastore/MediaStoreServiceClientModel.h>
+#include <aws/mediastore/MediaStoreWaiter.h>
 #include <aws/mediastore/MediaStore_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace MediaStore {
  */
 class AWS_MEDIASTORE_API MediaStoreClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreClient>,
-                                            public MediaStorePaginationBase<MediaStoreClient> {
+                                            public MediaStorePaginationBase<MediaStoreClient>,
+                                            public MediaStoreWaiter<MediaStoreClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

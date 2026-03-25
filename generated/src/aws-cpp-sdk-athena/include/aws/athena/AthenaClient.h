@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/athena/AthenaPaginationBase.h>
 #include <aws/athena/AthenaServiceClientModel.h>
+#include <aws/athena/AthenaWaiter.h>
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -32,7 +33,8 @@ namespace Athena {
  */
 class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>,
-                                    public AthenaPaginationBase<AthenaClient> {
+                                    public AthenaPaginationBase<AthenaClient>,
+                                    public AthenaWaiter<AthenaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

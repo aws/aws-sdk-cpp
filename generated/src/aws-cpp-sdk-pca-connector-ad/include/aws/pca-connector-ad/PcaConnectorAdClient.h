@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pca-connector-ad/PcaConnectorAdPaginationBase.h>
 #include <aws/pca-connector-ad/PcaConnectorAdServiceClientModel.h>
+#include <aws/pca-connector-ad/PcaConnectorAdWaiter.h>
 #include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace PcaConnectorAd {
  */
 class AWS_PCACONNECTORAD_API PcaConnectorAdClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorAdClient>,
-                                                    public PcaConnectorAdPaginationBase<PcaConnectorAdClient> {
+                                                    public PcaConnectorAdPaginationBase<PcaConnectorAdClient>,
+                                                    public PcaConnectorAdWaiter<PcaConnectorAdClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

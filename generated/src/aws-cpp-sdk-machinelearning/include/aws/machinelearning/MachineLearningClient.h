@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/machinelearning/MachineLearningPaginationBase.h>
 #include <aws/machinelearning/MachineLearningServiceClientModel.h>
+#include <aws/machinelearning/MachineLearningWaiter.h>
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 
 namespace Aws {
@@ -19,7 +20,8 @@ namespace MachineLearning {
  */
 class AWS_MACHINELEARNING_API MachineLearningClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<MachineLearningClient>,
-                                                      public MachineLearningPaginationBase<MachineLearningClient> {
+                                                      public MachineLearningPaginationBase<MachineLearningClient>,
+                                                      public MachineLearningWaiter<MachineLearningClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

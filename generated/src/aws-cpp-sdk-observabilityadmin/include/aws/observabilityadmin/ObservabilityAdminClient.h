@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/observabilityadmin/ObservabilityAdminPaginationBase.h>
 #include <aws/observabilityadmin/ObservabilityAdminServiceClientModel.h>
+#include <aws/observabilityadmin/ObservabilityAdminWaiter.h>
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 
 namespace Aws {
@@ -32,7 +33,8 @@ namespace ObservabilityAdmin {
  */
 class AWS_OBSERVABILITYADMIN_API ObservabilityAdminClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<ObservabilityAdminClient>,
-                                                            public ObservabilityAdminPaginationBase<ObservabilityAdminClient> {
+                                                            public ObservabilityAdminPaginationBase<ObservabilityAdminClient>,
+                                                            public ObservabilityAdminWaiter<ObservabilityAdminClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

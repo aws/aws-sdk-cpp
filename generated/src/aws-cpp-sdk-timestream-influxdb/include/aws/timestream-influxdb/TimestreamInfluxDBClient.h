@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBPaginationBase.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDBServiceClientModel.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDBWaiter.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 
 namespace Aws {
@@ -24,7 +25,8 @@ namespace TimestreamInfluxDB {
  */
 class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::AWSJsonClient,
                                                             public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamInfluxDBClient>,
-                                                            public TimestreamInfluxDBPaginationBase<TimestreamInfluxDBClient> {
+                                                            public TimestreamInfluxDBPaginationBase<TimestreamInfluxDBClient>,
+                                                            public TimestreamInfluxDBWaiter<TimestreamInfluxDBClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

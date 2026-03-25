@@ -5,7 +5,12 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.model.Model;
-import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.shapes.IntegerShape;
+import software.amazon.smithy.model.shapes.LongShape;
+import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.shapes.Shape;
+import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.traits.Trait;
 import java.util.*;
 
@@ -42,7 +47,7 @@ public class ShapeUtil {
      *
      */
     private static final Map<String, Set<String>> LEGACY_SDK_RESULT_OPERATIONS = Map.of(
-        "medialive", Set.of("ListChannelPlacementGroups", "ListClusters", "ListNetworks", "ListNodes")
+        "medialive", Set.of("ListChannelPlacementGroups", "ListClusters", "ListNetworks", "ListNodes", "DescribeChannelPlacementGroup", "DescribeCluster", "DescribeNode")
     );
     
     /**

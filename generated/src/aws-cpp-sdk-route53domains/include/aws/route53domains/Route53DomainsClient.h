@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53domains/Route53DomainsPaginationBase.h>
 #include <aws/route53domains/Route53DomainsServiceClientModel.h>
+#include <aws/route53domains/Route53DomainsWaiter.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 
 namespace Aws {
@@ -20,7 +21,8 @@ namespace Route53Domains {
  */
 class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<Route53DomainsClient>,
-                                                    public Route53DomainsPaginationBase<Route53DomainsClient> {
+                                                    public Route53DomainsPaginationBase<Route53DomainsClient>,
+                                                    public Route53DomainsWaiter<Route53DomainsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

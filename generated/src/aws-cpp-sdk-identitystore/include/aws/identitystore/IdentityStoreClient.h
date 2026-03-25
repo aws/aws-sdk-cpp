@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/identitystore/IdentityStorePaginationBase.h>
 #include <aws/identitystore/IdentityStoreServiceClientModel.h>
+#include <aws/identitystore/IdentityStoreWaiter.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace IdentityStore {
  */
 class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>,
-                                                  public IdentityStorePaginationBase<IdentityStoreClient> {
+                                                  public IdentityStorePaginationBase<IdentityStoreClient>,
+                                                  public IdentityStoreWaiter<IdentityStoreClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

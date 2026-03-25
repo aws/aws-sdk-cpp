@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm-contacts/SSMContactsPaginationBase.h>
 #include <aws/ssm-contacts/SSMContactsServiceClientModel.h>
+#include <aws/ssm-contacts/SSMContactsWaiter.h>
 #include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 
 namespace Aws {
@@ -27,7 +28,8 @@ namespace SSMContacts {
  */
 class AWS_SSMCONTACTS_API SSMContactsClient : public Aws::Client::AWSJsonClient,
                                               public Aws::Client::ClientWithAsyncTemplateMethods<SSMContactsClient>,
-                                              public SSMContactsPaginationBase<SSMContactsClient> {
+                                              public SSMContactsPaginationBase<SSMContactsClient>,
+                                              public SSMContactsWaiter<SSMContactsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

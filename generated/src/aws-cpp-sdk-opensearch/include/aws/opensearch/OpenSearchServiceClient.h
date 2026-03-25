@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opensearch/OpenSearchServicePaginationBase.h>
 #include <aws/opensearch/OpenSearchServiceServiceClientModel.h>
+#include <aws/opensearch/OpenSearchServiceWaiter.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace OpenSearchService {
  */
 class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AWSJsonClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>,
-                                                          public OpenSearchServicePaginationBase<OpenSearchServiceClient> {
+                                                          public OpenSearchServicePaginationBase<OpenSearchServiceClient>,
+                                                          public OpenSearchServiceWaiter<OpenSearchServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

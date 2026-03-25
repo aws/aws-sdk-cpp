@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudhsmv2/CloudHSMV2PaginationBase.h>
 #include <aws/cloudhsmv2/CloudHSMV2ServiceClientModel.h>
+#include <aws/cloudhsmv2/CloudHSMV2Waiter.h>
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -22,7 +23,8 @@ namespace CloudHSMV2 {
  */
 class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMV2Client>,
-                                            public CloudHSMV2PaginationBase<CloudHSMV2Client> {
+                                            public CloudHSMV2PaginationBase<CloudHSMV2Client>,
+                                            public CloudHSMV2Waiter<CloudHSMV2Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

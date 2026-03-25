@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/organizations/OrganizationsPaginationBase.h>
 #include <aws/organizations/OrganizationsServiceClientModel.h>
+#include <aws/organizations/OrganizationsWaiter.h>
 #include <aws/organizations/Organizations_EXPORTS.h>
 
 namespace Aws {
@@ -62,7 +63,8 @@ namespace Organizations {
  */
 class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<OrganizationsClient>,
-                                                  public OrganizationsPaginationBase<OrganizationsClient> {
+                                                  public OrganizationsPaginationBase<OrganizationsClient>,
+                                                  public OrganizationsWaiter<OrganizationsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

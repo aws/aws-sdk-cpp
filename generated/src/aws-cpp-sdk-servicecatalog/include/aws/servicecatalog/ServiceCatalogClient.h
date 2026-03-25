@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicecatalog/ServiceCatalogPaginationBase.h>
 #include <aws/servicecatalog/ServiceCatalogServiceClientModel.h>
+#include <aws/servicecatalog/ServiceCatalogWaiter.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace ServiceCatalog {
  */
 class AWS_SERVICECATALOG_API ServiceCatalogClient : public Aws::Client::AWSJsonClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<ServiceCatalogClient>,
-                                                    public ServiceCatalogPaginationBase<ServiceCatalogClient> {
+                                                    public ServiceCatalogPaginationBase<ServiceCatalogClient>,
+                                                    public ServiceCatalogWaiter<ServiceCatalogClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

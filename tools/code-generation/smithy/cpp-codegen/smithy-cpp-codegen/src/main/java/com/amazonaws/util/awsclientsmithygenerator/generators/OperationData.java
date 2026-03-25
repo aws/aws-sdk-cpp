@@ -4,7 +4,8 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
-import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.ServiceShape;
 import software.amazon.smithy.model.traits.Trait;
 
 public class OperationData<T extends Trait> {

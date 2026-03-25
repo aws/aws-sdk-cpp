@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appmesh/AppMeshPaginationBase.h>
 #include <aws/appmesh/AppMeshServiceClientModel.h>
+#include <aws/appmesh/AppMeshWaiter.h>
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -34,7 +35,8 @@ namespace AppMesh {
  */
 class AWS_APPMESH_API AppMeshClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<AppMeshClient>,
-                                      public AppMeshPaginationBase<AppMeshClient> {
+                                      public AppMeshPaginationBase<AppMeshClient>,
+                                      public AppMeshWaiter<AppMeshClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

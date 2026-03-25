@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dax/DAXPaginationBase.h>
 #include <aws/dax/DAXServiceClientModel.h>
+#include <aws/dax/DAXWaiter.h>
 #include <aws/dax/DAX_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace DAX {
  */
 class AWS_DAX_API DAXClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<DAXClient>,
-                              public DAXPaginationBase<DAXClient> {
+                              public DAXPaginationBase<DAXClient>,
+                              public DAXWaiter<DAXClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

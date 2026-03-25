@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/m2/MainframeModernizationPaginationBase.h>
 #include <aws/m2/MainframeModernizationServiceClientModel.h>
+#include <aws/m2/MainframeModernizationWaiter.h>
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 
 namespace Aws {
@@ -25,7 +26,8 @@ namespace MainframeModernization {
 class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient
     : public Aws::Client::AWSJsonClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>,
-      public MainframeModernizationPaginationBase<MainframeModernizationClient> {
+      public MainframeModernizationPaginationBase<MainframeModernizationClient>,
+      public MainframeModernizationWaiter<MainframeModernizationClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

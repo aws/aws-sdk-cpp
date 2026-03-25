@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apigateway/APIGatewayPaginationBase.h>
 #include <aws/apigateway/APIGatewayServiceClientModel.h>
+#include <aws/apigateway/APIGatewayWaiter.h>
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -23,7 +24,8 @@ namespace APIGateway {
  */
 class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<APIGatewayClient>,
-                                            public APIGatewayPaginationBase<APIGatewayClient> {
+                                            public APIGatewayPaginationBase<APIGatewayClient>,
+                                            public APIGatewayWaiter<APIGatewayClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

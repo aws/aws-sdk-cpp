@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/devicefarm/DeviceFarmPaginationBase.h>
 #include <aws/devicefarm/DeviceFarmServiceClientModel.h>
+#include <aws/devicefarm/DeviceFarmWaiter.h>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 
 namespace Aws {
@@ -30,7 +31,8 @@ namespace DeviceFarm {
  */
 class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<DeviceFarmClient>,
-                                            public DeviceFarmPaginationBase<DeviceFarmClient> {
+                                            public DeviceFarmPaginationBase<DeviceFarmClient>,
+                                            public DeviceFarmWaiter<DeviceFarmClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

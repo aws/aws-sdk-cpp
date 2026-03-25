@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/support-app/SupportAppPaginationBase.h>
 #include <aws/support-app/SupportAppServiceClientModel.h>
+#include <aws/support-app/SupportAppWaiter.h>
 #include <aws/support-app/SupportApp_EXPORTS.h>
 
 namespace Aws {
@@ -48,7 +49,8 @@ namespace SupportApp {
  */
 class AWS_SUPPORTAPP_API SupportAppClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<SupportAppClient>,
-                                            public SupportAppPaginationBase<SupportAppClient> {
+                                            public SupportAppPaginationBase<SupportAppClient>,
+                                            public SupportAppWaiter<SupportAppClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

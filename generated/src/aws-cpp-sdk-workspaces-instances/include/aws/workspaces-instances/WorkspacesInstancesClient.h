@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workspaces-instances/WorkspacesInstancesPaginationBase.h>
 #include <aws/workspaces-instances/WorkspacesInstancesServiceClientModel.h>
+#include <aws/workspaces-instances/WorkspacesInstancesWaiter.h>
 #include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace WorkspacesInstances {
  */
 class AWS_WORKSPACESINSTANCES_API WorkspacesInstancesClient : public Aws::Client::AWSJsonClient,
                                                               public Aws::Client::ClientWithAsyncTemplateMethods<WorkspacesInstancesClient>,
-                                                              public WorkspacesInstancesPaginationBase<WorkspacesInstancesClient> {
+                                                              public WorkspacesInstancesPaginationBase<WorkspacesInstancesClient>,
+                                                              public WorkspacesInstancesWaiter<WorkspacesInstancesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

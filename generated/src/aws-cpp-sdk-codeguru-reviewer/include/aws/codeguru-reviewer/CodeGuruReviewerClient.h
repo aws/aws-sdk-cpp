@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewerPaginationBase.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerServiceClientModel.h>
+#include <aws/codeguru-reviewer/CodeGuruReviewerWaiter.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -34,7 +35,8 @@ namespace CodeGuruReviewer {
  */
 class AWS_CODEGURUREVIEWER_API CodeGuruReviewerClient : public Aws::Client::AWSJsonClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruReviewerClient>,
-                                                        public CodeGuruReviewerPaginationBase<CodeGuruReviewerClient> {
+                                                        public CodeGuruReviewerPaginationBase<CodeGuruReviewerClient>,
+                                                        public CodeGuruReviewerWaiter<CodeGuruReviewerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

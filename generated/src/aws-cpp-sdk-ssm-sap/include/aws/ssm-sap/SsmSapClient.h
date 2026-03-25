@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm-sap/SsmSapPaginationBase.h>
 #include <aws/ssm-sap/SsmSapServiceClientModel.h>
+#include <aws/ssm-sap/SsmSapWaiter.h>
 #include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
 namespace Aws {
@@ -21,7 +22,8 @@ namespace SsmSap {
  */
 class AWS_SSMSAP_API SsmSapClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<SsmSapClient>,
-                                    public SsmSapPaginationBase<SsmSapClient> {
+                                    public SsmSapPaginationBase<SsmSapClient>,
+                                    public SsmSapWaiter<SsmSapClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

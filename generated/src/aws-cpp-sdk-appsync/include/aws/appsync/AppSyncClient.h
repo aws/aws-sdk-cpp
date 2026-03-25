@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appsync/AppSyncPaginationBase.h>
 #include <aws/appsync/AppSyncServiceClientModel.h>
+#include <aws/appsync/AppSyncWaiter.h>
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -20,7 +21,8 @@ namespace AppSync {
  */
 class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient,
                                       public Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>,
-                                      public AppSyncPaginationBase<AppSyncClient> {
+                                      public AppSyncPaginationBase<AppSyncClient>,
+                                      public AppSyncWaiter<AppSyncClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

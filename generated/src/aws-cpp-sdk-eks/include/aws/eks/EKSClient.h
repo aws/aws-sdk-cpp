@@ -10,6 +10,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eks/EKSPaginationBase.h>
 #include <aws/eks/EKSServiceClientModel.h>
+#include <aws/eks/EKSWaiter.h>
 #include <aws/eks/EKS_EXPORTS.h>
 
 namespace Aws {
@@ -29,7 +30,8 @@ namespace EKS {
  */
 class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>,
-                              public EKSPaginationBase<EKSClient> {
+                              public EKSPaginationBase<EKSClient>,
+                              public EKSWaiter<EKSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
