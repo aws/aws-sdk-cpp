@@ -74,14 +74,17 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
       auto result = MakeRequestWithUnparsedResponse(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride});
 #end
       return result.IsSuccess() ? ${operation.name}Outcome(${operation.result.shape.name}(result.GetResultWithOwnership())) : ${operation.name}Outcome(result.GetError());
-#end
 #else
 #if($serviceModel.endpointRules)
       auto result = MakeRequest(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #else
       auto result = MakeRequest(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride});
 #end
+#if($operation.result)
       return result.IsSuccess() ? ${operation.name}Outcome(${operation.result.shape.name}(result.GetResultWithOwnership())) : ${operation.name}Outcome(result.GetError());
+#else
+      return ${operation.name}Outcome(std::move(result));
+#end
 #end
 #end
     },
@@ -130,7 +133,7 @@ ${operation.name}Outcome ${className}::${operation.name}() const
 #if($operation.result)
         return result.IsSuccess() ? ${operation.name}Outcome(${operation.result.shape.name}(result.GetResultWithOwnership())) : ${operation.name}Outcome(result.GetError());
 #else
-        return ${operation.name}Outcome(result);
+        return ${operation.name}Outcome(std::move(result));
 #end
 #end
 #else##-#if($serviceModel.endpointRules)
@@ -145,7 +148,7 @@ ${operation.name}Outcome ${className}::${operation.name}() const
 #if($operation.result)
         return result.IsSuccess() ? ${operation.name}Outcome(${operation.result.shape.name}(result.GetResultWithOwnership())) : ${operation.name}Outcome(result.GetError());
 #else
-        return ${operation.name}Outcome(result);
+        return ${operation.name}Outcome(std::move(result));
 #end
 #end
 #end
@@ -171,5 +174,5 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
     } );
 }
 #end
-
+#end 
 #end

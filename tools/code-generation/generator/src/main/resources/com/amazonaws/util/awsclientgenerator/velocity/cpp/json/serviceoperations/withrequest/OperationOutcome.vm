@@ -49,7 +49,7 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #if($operation.result)
       return result.IsSuccess() ? ${operation.name}Outcome(${operation.result.shape.name}(result.GetResultWithOwnership())) : ${operation.name}Outcome(result.GetError());
 #else
-      return ${operation.name}Outcome(result);
+      return ${operation.name}Outcome(std::move(result));
 #end
 #end
     },
