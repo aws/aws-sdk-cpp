@@ -25,12 +25,13 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
       }
 #end
     #if($operation.result && $operation.result.shape.hasStreamMembers())
-        return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&#if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        auto result = MakeRequestWithUnparsedResponse(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&#if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
     #else
-        return ${operation.name}Outcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&#if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&#if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
     #end
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
-      }));
+      });
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
