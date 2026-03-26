@@ -120,6 +120,18 @@ RebootDbInstanceResult& RebootDbInstanceResult::operator=(const Aws::AmazonWebSe
     }
     m_instanceModesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("maintenanceSchedule")) {
+    m_maintenanceSchedule = jsonValue.GetObject("maintenanceSchedule");
+    m_maintenanceScheduleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastMaintenanceTime")) {
+    m_lastMaintenanceTime = jsonValue.GetString("lastMaintenanceTime");
+    m_lastMaintenanceTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextMaintenanceTime")) {
+    m_nextMaintenanceTime = jsonValue.GetString("nextMaintenanceTime");
+    m_nextMaintenanceTimeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

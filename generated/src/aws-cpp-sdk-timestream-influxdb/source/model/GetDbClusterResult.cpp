@@ -86,6 +86,18 @@ GetDbClusterResult& GetDbClusterResult::operator=(const Aws::AmazonWebServiceRes
     m_logDeliveryConfiguration = jsonValue.GetObject("logDeliveryConfiguration");
     m_logDeliveryConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("maintenanceSchedule")) {
+    m_maintenanceSchedule = jsonValue.GetObject("maintenanceSchedule");
+    m_maintenanceScheduleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastMaintenanceTime")) {
+    m_lastMaintenanceTime = jsonValue.GetString("lastMaintenanceTime");
+    m_lastMaintenanceTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextMaintenanceTime")) {
+    m_nextMaintenanceTime = jsonValue.GetString("nextMaintenanceTime");
+    m_nextMaintenanceTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("influxAuthParametersSecretArn")) {
     m_influxAuthParametersSecretArn = jsonValue.GetString("influxAuthParametersSecretArn");
     m_influxAuthParametersSecretArnHasBeenSet = true;
@@ -108,6 +120,10 @@ GetDbClusterResult& GetDbClusterResult::operator=(const Aws::AmazonWebServiceRes
   if (jsonValue.ValueExists("failoverMode")) {
     m_failoverMode = FailoverModeMapper::GetFailoverModeForName(jsonValue.GetString("failoverMode"));
     m_failoverModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("clusterConfiguration")) {
+    m_clusterConfiguration = jsonValue.GetObject("clusterConfiguration");
+    m_clusterConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

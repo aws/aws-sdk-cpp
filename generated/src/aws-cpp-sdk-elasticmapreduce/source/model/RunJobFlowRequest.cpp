@@ -51,6 +51,10 @@ Aws::String RunJobFlowRequest::SerializePayload() const {
     payload.WithArray("Steps", std::move(stepsJsonList));
   }
 
+  if (m_stepExecutionRoleArnHasBeenSet) {
+    payload.WithString("StepExecutionRoleArn", m_stepExecutionRoleArn);
+  }
+
   if (m_bootstrapActionsHasBeenSet) {
     Aws::Utils::Array<JsonValue> bootstrapActionsJsonList(m_bootstrapActions.size());
     for (unsigned bootstrapActionsIndex = 0; bootstrapActionsIndex < bootstrapActionsJsonList.GetLength(); ++bootstrapActionsIndex) {

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/model/QueryLanguage.h>
+#include <aws/logs/model/QueryParameter.h>
 
 #include <utility>
 
@@ -149,6 +150,31 @@ class QueryDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If this query definition contains a list of query parameters that define
+   * placeholder variables for the query string, that list appears here.</p>
+   */
+  inline const Aws::Vector<QueryParameter>& GetParameters() const { return m_parameters; }
+  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+  template <typename ParametersT = Aws::Vector<QueryParameter>>
+  void SetParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters = std::forward<ParametersT>(value);
+  }
+  template <typename ParametersT = Aws::Vector<QueryParameter>>
+  QueryDefinition& WithParameters(ParametersT&& value) {
+    SetParameters(std::forward<ParametersT>(value));
+    return *this;
+  }
+  template <typename ParametersT = QueryParameter>
+  QueryDefinition& AddParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters.emplace_back(std::forward<ParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
 
@@ -161,12 +187,15 @@ class QueryDefinition {
   long long m_lastModified{0};
 
   Aws::Vector<Aws::String> m_logGroupNames;
+
+  Aws::Vector<QueryParameter> m_parameters;
   bool m_queryLanguageHasBeenSet = false;
   bool m_queryDefinitionIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_queryStringHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_logGroupNamesHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -39,6 +39,10 @@ Aws::String UpdateDbClusterRequest::SerializePayload() const {
     payload.WithString("failoverMode", FailoverModeMapper::GetNameForFailoverMode(m_failoverMode));
   }
 
+  if (m_maintenanceScheduleHasBeenSet) {
+    payload.WithObject("maintenanceSchedule", m_maintenanceSchedule.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

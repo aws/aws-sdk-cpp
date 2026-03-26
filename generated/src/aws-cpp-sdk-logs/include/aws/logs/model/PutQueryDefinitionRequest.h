@@ -10,6 +10,7 @@
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/model/QueryLanguage.h>
+#include <aws/logs/model/QueryParameter.h>
 
 #include <utility>
 
@@ -166,6 +167,35 @@ class PutQueryDefinitionRequest : public CloudWatchLogsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Use this parameter to include specific query parameters as part of your query
+   * definition. Query parameters are supported only for Logs Insights QL queries.
+   * Query parameters allow you to use placeholder variables in your query string
+   * that are substituted with values at execution time. Use the
+   * <code>{{parameterName}}</code> syntax in your query string to reference a
+   * parameter.</p>
+   */
+  inline const Aws::Vector<QueryParameter>& GetParameters() const { return m_parameters; }
+  inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+  template <typename ParametersT = Aws::Vector<QueryParameter>>
+  void SetParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters = std::forward<ParametersT>(value);
+  }
+  template <typename ParametersT = Aws::Vector<QueryParameter>>
+  PutQueryDefinitionRequest& WithParameters(ParametersT&& value) {
+    SetParameters(std::forward<ParametersT>(value));
+    return *this;
+  }
+  template <typename ParametersT = QueryParameter>
+  PutQueryDefinitionRequest& AddParameters(ParametersT&& value) {
+    m_parametersHasBeenSet = true;
+    m_parameters.emplace_back(std::forward<ParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
 
@@ -178,12 +208,15 @@ class PutQueryDefinitionRequest : public CloudWatchLogsRequest {
   Aws::String m_queryString;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  Aws::Vector<QueryParameter> m_parameters;
   bool m_queryLanguageHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_queryDefinitionIdHasBeenSet = false;
   bool m_logGroupNamesHasBeenSet = false;
   bool m_queryStringHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_parametersHasBeenSet = false;
 };
 
 }  // namespace Model

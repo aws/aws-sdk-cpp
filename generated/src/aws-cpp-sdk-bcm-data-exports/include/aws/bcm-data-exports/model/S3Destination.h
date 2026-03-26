@@ -54,6 +54,25 @@ class S3Destination {
 
   ///@{
   /**
+   * <p>The AWS Account ID that owns the S3 bucket used as the destination for the
+   * data export.</p>
+   */
+  inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
+  inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
+  template <typename S3BucketOwnerT = Aws::String>
+  void SetS3BucketOwner(S3BucketOwnerT&& value) {
+    m_s3BucketOwnerHasBeenSet = true;
+    m_s3BucketOwner = std::forward<S3BucketOwnerT>(value);
+  }
+  template <typename S3BucketOwnerT = Aws::String>
+  S3Destination& WithS3BucketOwner(S3BucketOwnerT&& value) {
+    SetS3BucketOwner(std::forward<S3BucketOwnerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The S3 path prefix you want prepended to the name of your data export.</p>
    */
   inline const Aws::String& GetS3Prefix() const { return m_s3Prefix; }
@@ -108,12 +127,15 @@ class S3Destination {
  private:
   Aws::String m_s3Bucket;
 
+  Aws::String m_s3BucketOwner;
+
   Aws::String m_s3Prefix;
 
   Aws::String m_s3Region;
 
   S3OutputConfigurations m_s3OutputConfigurations;
   bool m_s3BucketHasBeenSet = false;
+  bool m_s3BucketOwnerHasBeenSet = false;
   bool m_s3PrefixHasBeenSet = false;
   bool m_s3RegionHasBeenSet = false;
   bool m_s3OutputConfigurationsHasBeenSet = false;

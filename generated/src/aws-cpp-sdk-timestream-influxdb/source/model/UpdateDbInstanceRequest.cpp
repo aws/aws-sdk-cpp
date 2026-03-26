@@ -47,6 +47,10 @@ Aws::String UpdateDbInstanceRequest::SerializePayload() const {
     payload.WithInteger("allocatedStorage", m_allocatedStorage);
   }
 
+  if (m_maintenanceScheduleHasBeenSet) {
+    payload.WithObject("maintenanceSchedule", m_maintenanceSchedule.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 
