@@ -1142,6 +1142,12 @@ class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Client : public Aws::Client::AW
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ResourceExplorer2Client>;
   void init(const ResourceExplorer2ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ResourceExplorer2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ResourceExplorer2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<ResourceExplorer2EndpointProviderBase> m_endpointProvider;
 };

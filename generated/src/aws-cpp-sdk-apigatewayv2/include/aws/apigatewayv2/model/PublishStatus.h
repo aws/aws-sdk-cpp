@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ApiGatewayV2 {
 namespace Model {
-enum class PublishStatus { NOT_SET, PUBLISHED, PUBLISH_IN_PROGRESS, PUBLISH_FAILED, DISABLED };
+enum class PublishStatus { NOT_SET, PUBLISHED, PUBLISH_IN_PROGRESS, PUBLISH_FAILED, DISABLE_IN_PROGRESS, DISABLE_FAILED, DISABLED };
 
 namespace PublishStatusMapper {
 AWS_APIGATEWAYV2_API PublishStatus GetPublishStatusForName(const Aws::String& name);

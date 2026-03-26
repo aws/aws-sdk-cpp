@@ -337,6 +337,12 @@ class AWS_NOTIFICATIONSCONTACTS_API NotificationsContactsClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NotificationsContactsClient>;
   void init(const NotificationsContactsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NotificationsContactsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   NotificationsContactsClientConfiguration m_clientConfiguration;
   std::shared_ptr<NotificationsContactsEndpointProviderBase> m_endpointProvider;
 };

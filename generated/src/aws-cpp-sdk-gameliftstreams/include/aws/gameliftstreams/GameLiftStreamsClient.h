@@ -1036,6 +1036,12 @@ class AWS_GAMELIFTSTREAMS_API GameLiftStreamsClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GameLiftStreamsClient>;
   void init(const GameLiftStreamsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GameLiftStreamsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   GameLiftStreamsClientConfiguration m_clientConfiguration;
   std::shared_ptr<GameLiftStreamsEndpointProviderBase> m_endpointProvider;
 };

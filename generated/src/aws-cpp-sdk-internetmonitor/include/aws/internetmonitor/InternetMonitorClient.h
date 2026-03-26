@@ -607,6 +607,12 @@ class AWS_INTERNETMONITOR_API InternetMonitorClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<InternetMonitorClient>;
   void init(const InternetMonitorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, InternetMonitorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   InternetMonitorClientConfiguration m_clientConfiguration;
   std::shared_ptr<InternetMonitorEndpointProviderBase> m_endpointProvider;
 };

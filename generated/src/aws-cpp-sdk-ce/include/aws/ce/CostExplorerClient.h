@@ -1584,6 +1584,10 @@ class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CostExplorerClient>;
   void init(const CostExplorerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CostExplorerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CostExplorerClientConfiguration m_clientConfiguration;
   std::shared_ptr<CostExplorerEndpointProviderBase> m_endpointProvider;
 };

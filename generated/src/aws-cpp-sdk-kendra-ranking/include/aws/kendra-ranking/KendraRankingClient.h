@@ -361,6 +361,10 @@ class AWS_KENDRARANKING_API KendraRankingClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KendraRankingClient>;
   void init(const KendraRankingClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KendraRankingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   KendraRankingClientConfiguration m_clientConfiguration;
   std::shared_ptr<KendraRankingEndpointProviderBase> m_endpointProvider;
 };

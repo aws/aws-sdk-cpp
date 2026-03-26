@@ -1231,6 +1231,10 @@ class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>;
   void init(const AppRunnerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppRunnerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   AppRunnerClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppRunnerEndpointProviderBase> m_endpointProvider;
 };

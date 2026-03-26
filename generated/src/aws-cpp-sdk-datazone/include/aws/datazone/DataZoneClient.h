@@ -5173,6 +5173,12 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DataZoneClient>;
   void init(const DataZoneClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DataZoneError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   DataZoneClientConfiguration m_clientConfiguration;
   std::shared_ptr<DataZoneEndpointProviderBase> m_endpointProvider;
 };

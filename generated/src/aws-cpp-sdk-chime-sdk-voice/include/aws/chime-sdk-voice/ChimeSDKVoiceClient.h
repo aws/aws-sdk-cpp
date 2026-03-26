@@ -2855,6 +2855,12 @@ class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKVoiceClient>;
   void init(const ChimeSDKVoiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ChimeSDKVoiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ChimeSDKVoiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ChimeSDKVoiceEndpointProviderBase> m_endpointProvider;
 };

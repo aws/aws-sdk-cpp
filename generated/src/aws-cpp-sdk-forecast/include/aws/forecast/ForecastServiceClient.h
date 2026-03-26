@@ -2274,6 +2274,10 @@ class AWS_FORECASTSERVICE_API ForecastServiceClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ForecastServiceClient>;
   void init(const ForecastServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ForecastServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ForecastServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ForecastServiceEndpointProviderBase> m_endpointProvider;
 };

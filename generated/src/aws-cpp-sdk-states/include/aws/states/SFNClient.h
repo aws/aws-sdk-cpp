@@ -1586,6 +1586,10 @@ class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>;
   void init(const SFNClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SFNError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SFNClientConfiguration m_clientConfiguration;
   std::shared_ptr<SFNEndpointProviderBase> m_endpointProvider;
 };

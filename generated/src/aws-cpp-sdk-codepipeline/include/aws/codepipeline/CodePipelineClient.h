@@ -1444,6 +1444,10 @@ class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>;
   void init(const CodePipelineClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodePipelineError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CodePipelineClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodePipelineEndpointProviderBase> m_endpointProvider;
 };

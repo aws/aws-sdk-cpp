@@ -766,6 +766,10 @@ class AWS_ECRPUBLIC_API ECRPublicClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ECRPublicClient>;
   void init(const ECRPublicClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ECRPublicError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ECRPublicClientConfiguration m_clientConfiguration;
   std::shared_ptr<ECRPublicEndpointProviderBase> m_endpointProvider;
 };

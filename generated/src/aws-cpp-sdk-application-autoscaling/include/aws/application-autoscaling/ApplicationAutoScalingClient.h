@@ -640,6 +640,10 @@ class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient>;
   void init(const ApplicationAutoScalingClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApplicationAutoScalingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ApplicationAutoScalingClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApplicationAutoScalingEndpointProviderBase> m_endpointProvider;
 };

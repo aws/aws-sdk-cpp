@@ -219,6 +219,10 @@ class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient>;
   void init(const DynamoDBStreamsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DynamoDBStreamsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   DynamoDBStreamsClientConfiguration m_clientConfiguration;
   std::shared_ptr<DynamoDBStreamsEndpointProviderBase> m_endpointProvider;
 };

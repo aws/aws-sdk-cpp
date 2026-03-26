@@ -414,6 +414,12 @@ class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>;
   void init(const MWAAClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MWAAError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MWAAClientConfiguration m_clientConfiguration;
   std::shared_ptr<MWAAEndpointProviderBase> m_endpointProvider;
 };

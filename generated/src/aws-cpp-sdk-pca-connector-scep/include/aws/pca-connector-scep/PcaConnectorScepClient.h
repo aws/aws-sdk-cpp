@@ -429,6 +429,12 @@ class AWS_PCACONNECTORSCEP_API PcaConnectorScepClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorScepClient>;
   void init(const PcaConnectorScepClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PcaConnectorScepError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   PcaConnectorScepClientConfiguration m_clientConfiguration;
   std::shared_ptr<PcaConnectorScepEndpointProviderBase> m_endpointProvider;
 };

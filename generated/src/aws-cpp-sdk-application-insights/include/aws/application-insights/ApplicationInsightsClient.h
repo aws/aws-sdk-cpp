@@ -1005,6 +1005,10 @@ class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient : public Aws::Client
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>;
   void init(const ApplicationInsightsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApplicationInsightsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ApplicationInsightsClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApplicationInsightsEndpointProviderBase> m_endpointProvider;
 };

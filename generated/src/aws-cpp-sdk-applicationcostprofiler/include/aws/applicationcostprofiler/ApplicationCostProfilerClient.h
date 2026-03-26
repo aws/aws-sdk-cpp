@@ -263,6 +263,12 @@ class AWS_APPLICATIONCOSTPROFILER_API ApplicationCostProfilerClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationCostProfilerClient>;
   void init(const ApplicationCostProfilerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApplicationCostProfilerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ApplicationCostProfilerClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApplicationCostProfilerEndpointProviderBase> m_endpointProvider;
 };

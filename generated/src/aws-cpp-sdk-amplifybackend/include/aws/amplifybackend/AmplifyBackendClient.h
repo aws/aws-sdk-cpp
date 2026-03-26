@@ -897,6 +897,12 @@ class AWS_AMPLIFYBACKEND_API AmplifyBackendClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyBackendClient>;
   void init(const AmplifyBackendClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AmplifyBackendError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AmplifyBackendClientConfiguration m_clientConfiguration;
   std::shared_ptr<AmplifyBackendEndpointProviderBase> m_endpointProvider;
 };

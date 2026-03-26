@@ -1800,6 +1800,12 @@ class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KafkaClient>;
   void init(const KafkaClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KafkaError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   KafkaClientConfiguration m_clientConfiguration;
   std::shared_ptr<KafkaEndpointProviderBase> m_endpointProvider;
 };

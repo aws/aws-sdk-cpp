@@ -894,6 +894,12 @@ class AWS_MIGRATIONHUBORCHESTRATOR_API MigrationHubOrchestratorClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubOrchestratorClient>;
   void init(const MigrationHubOrchestratorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MigrationHubOrchestratorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MigrationHubOrchestratorClientConfiguration m_clientConfiguration;
   std::shared_ptr<MigrationHubOrchestratorEndpointProviderBase> m_endpointProvider;
 };

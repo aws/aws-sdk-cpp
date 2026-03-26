@@ -126,6 +126,10 @@ class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceEntitlementServiceClient>;
   void init(const MarketplaceEntitlementServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MarketplaceEntitlementServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   MarketplaceEntitlementServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<MarketplaceEntitlementServiceEndpointProviderBase> m_endpointProvider;
 };

@@ -2507,6 +2507,10 @@ class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElastiCacheClient>;
   void init(const ElastiCacheClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ElastiCacheError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ElastiCacheClientConfiguration m_clientConfiguration;
   std::shared_ptr<ElastiCacheEndpointProviderBase> m_endpointProvider;
 };

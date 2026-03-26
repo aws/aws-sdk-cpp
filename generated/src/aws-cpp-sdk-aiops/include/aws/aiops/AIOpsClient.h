@@ -434,6 +434,12 @@ class AWS_AIOPS_API AIOpsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AIOpsClient>;
   void init(const AIOpsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AIOpsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AIOpsClientConfiguration m_clientConfiguration;
   std::shared_ptr<AIOpsEndpointProviderBase> m_endpointProvider;
 };

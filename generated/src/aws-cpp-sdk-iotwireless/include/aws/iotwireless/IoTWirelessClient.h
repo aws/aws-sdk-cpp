@@ -3139,6 +3139,12 @@ class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>;
   void init(const IoTWirelessClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTWirelessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   IoTWirelessClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTWirelessEndpointProviderBase> m_endpointProvider;
 };

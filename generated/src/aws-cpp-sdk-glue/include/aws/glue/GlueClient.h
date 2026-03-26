@@ -7698,6 +7698,10 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GlueClient>;
   void init(const GlueClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GlueError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   GlueClientConfiguration m_clientConfiguration;
   std::shared_ptr<GlueEndpointProviderBase> m_endpointProvider;
 };

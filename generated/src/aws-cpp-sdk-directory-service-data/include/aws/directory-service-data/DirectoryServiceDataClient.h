@@ -607,6 +607,12 @@ class AWS_DIRECTORYSERVICEDATA_API DirectoryServiceDataClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceDataClient>;
   void init(const DirectoryServiceDataClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DirectoryServiceDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   DirectoryServiceDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<DirectoryServiceDataEndpointProviderBase> m_endpointProvider;
 };

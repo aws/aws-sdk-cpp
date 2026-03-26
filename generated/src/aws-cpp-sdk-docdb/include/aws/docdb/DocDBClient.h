@@ -1790,6 +1790,10 @@ class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DocDBClient>;
   void init(const DocDBClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DocDBError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   DocDBClientConfiguration m_clientConfiguration;
   std::shared_ptr<DocDBEndpointProviderBase> m_endpointProvider;
 };

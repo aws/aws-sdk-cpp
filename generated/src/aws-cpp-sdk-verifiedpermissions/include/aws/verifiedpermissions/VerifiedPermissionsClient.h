@@ -1245,6 +1245,10 @@ class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : public Aws::Client
   friend class Aws::Client::ClientWithAsyncTemplateMethods<VerifiedPermissionsClient>;
   void init(const VerifiedPermissionsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, VerifiedPermissionsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   VerifiedPermissionsClientConfiguration m_clientConfiguration;
   std::shared_ptr<VerifiedPermissionsEndpointProviderBase> m_endpointProvider;
 };

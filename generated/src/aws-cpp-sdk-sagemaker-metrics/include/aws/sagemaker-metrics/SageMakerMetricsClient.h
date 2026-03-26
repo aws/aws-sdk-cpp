@@ -142,6 +142,12 @@ class AWS_SAGEMAKERMETRICS_API SageMakerMetricsClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerMetricsClient>;
   void init(const SageMakerMetricsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SageMakerMetricsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SageMakerMetricsClientConfiguration m_clientConfiguration;
   std::shared_ptr<SageMakerMetricsEndpointProviderBase> m_endpointProvider;
 };

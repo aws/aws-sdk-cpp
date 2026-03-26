@@ -1332,6 +1332,12 @@ class AWS_MEDIATAILOR_API MediaTailorClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaTailorClient>;
   void init(const MediaTailorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaTailorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MediaTailorClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaTailorEndpointProviderBase> m_endpointProvider;
 };

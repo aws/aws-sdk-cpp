@@ -251,6 +251,12 @@ class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RDSDataServiceClient>;
   void init(const RDSDataServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RDSDataServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   RDSDataServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<RDSDataServiceEndpointProviderBase> m_endpointProvider;
 };

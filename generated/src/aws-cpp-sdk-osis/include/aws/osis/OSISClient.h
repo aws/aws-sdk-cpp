@@ -709,6 +709,12 @@ class AWS_OSIS_API OSISClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OSISClient>;
   void init(const OSISClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, OSISError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   OSISClientConfiguration m_clientConfiguration;
   std::shared_ptr<OSISEndpointProviderBase> m_endpointProvider;
 };

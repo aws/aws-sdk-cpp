@@ -1978,6 +1978,12 @@ class AWS_RESILIENCEHUB_API ResilienceHubClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ResilienceHubClient>;
   void init(const ResilienceHubClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ResilienceHubError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ResilienceHubClientConfiguration m_clientConfiguration;
   std::shared_ptr<ResilienceHubEndpointProviderBase> m_endpointProvider;
 };

@@ -273,6 +273,10 @@ class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingPlansClient>;
   void init(const AutoScalingPlansClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AutoScalingPlansError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   AutoScalingPlansClientConfiguration m_clientConfiguration;
   std::shared_ptr<AutoScalingPlansEndpointProviderBase> m_endpointProvider;
 };

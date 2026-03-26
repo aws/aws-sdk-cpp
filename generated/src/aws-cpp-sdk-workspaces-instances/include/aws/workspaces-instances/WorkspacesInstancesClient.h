@@ -434,6 +434,10 @@ class AWS_WORKSPACESINSTANCES_API WorkspacesInstancesClient : public Aws::Client
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkspacesInstancesClient>;
   void init(const WorkspacesInstancesClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WorkspacesInstancesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   WorkspacesInstancesClientConfiguration m_clientConfiguration;
   std::shared_ptr<WorkspacesInstancesEndpointProviderBase> m_endpointProvider;
 };

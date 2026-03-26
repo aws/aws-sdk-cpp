@@ -4774,6 +4774,10 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>;
   void init(const SSMClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SSMError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SSMClientConfiguration m_clientConfiguration;
   std::shared_ptr<SSMEndpointProviderBase> m_endpointProvider;
 };

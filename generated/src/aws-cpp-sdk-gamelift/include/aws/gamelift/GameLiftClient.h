@@ -5371,6 +5371,10 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>;
   void init(const GameLiftClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GameLiftError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   GameLiftClientConfiguration m_clientConfiguration;
   std::shared_ptr<GameLiftEndpointProviderBase> m_endpointProvider;
 };

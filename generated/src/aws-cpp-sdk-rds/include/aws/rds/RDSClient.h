@@ -5659,6 +5659,10 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RDSClient>;
   void init(const RDSClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RDSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   RDSClientConfiguration m_clientConfiguration;
   std::shared_ptr<RDSEndpointProviderBase> m_endpointProvider;
 };

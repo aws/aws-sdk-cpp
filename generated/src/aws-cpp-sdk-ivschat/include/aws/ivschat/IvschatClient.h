@@ -631,6 +631,12 @@ class AWS_IVSCHAT_API IvschatClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IvschatClient>;
   void init(const IvschatClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IvschatError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   IvschatClientConfiguration m_clientConfiguration;
   std::shared_ptr<IvschatEndpointProviderBase> m_endpointProvider;
 };

@@ -982,6 +982,10 @@ class AWS_B2BI_API B2BIClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<B2BIClient>;
   void init(const B2BIClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, B2BIError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   B2BIClientConfiguration m_clientConfiguration;
   std::shared_ptr<B2BIEndpointProviderBase> m_endpointProvider;
 };

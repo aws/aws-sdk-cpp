@@ -785,6 +785,12 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TaxSettingsClient>;
   void init(const TaxSettingsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TaxSettingsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   TaxSettingsClientConfiguration m_clientConfiguration;
   std::shared_ptr<TaxSettingsEndpointProviderBase> m_endpointProvider;
 };

@@ -422,6 +422,10 @@ class AWS_BCMDATAEXPORTS_API BCMDataExportsClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BCMDataExportsClient>;
   void init(const BCMDataExportsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BCMDataExportsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   BCMDataExportsClientConfiguration m_clientConfiguration;
   std::shared_ptr<BCMDataExportsEndpointProviderBase> m_endpointProvider;
 };

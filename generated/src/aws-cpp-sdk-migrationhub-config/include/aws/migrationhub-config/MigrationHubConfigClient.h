@@ -215,6 +215,10 @@ class AWS_MIGRATIONHUBCONFIG_API MigrationHubConfigClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubConfigClient>;
   void init(const MigrationHubConfigClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MigrationHubConfigError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   MigrationHubConfigClientConfiguration m_clientConfiguration;
   std::shared_ptr<MigrationHubConfigEndpointProviderBase> m_endpointProvider;
 };

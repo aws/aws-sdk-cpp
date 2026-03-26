@@ -20,6 +20,8 @@ static const int mp3_HASH = HashingUtils::HashString("mp3");
 static const int ogg_opus_HASH = HashingUtils::HashString("ogg_opus");
 static const int ogg_vorbis_HASH = HashingUtils::HashString("ogg_vorbis");
 static const int pcm_HASH = HashingUtils::HashString("pcm");
+static const int mulaw_HASH = HashingUtils::HashString("mulaw");
+static const int alaw_HASH = HashingUtils::HashString("alaw");
 
 OutputFormat GetOutputFormatForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +35,10 @@ OutputFormat GetOutputFormatForName(const Aws::String& name) {
     return OutputFormat::ogg_vorbis;
   } else if (hashCode == pcm_HASH) {
     return OutputFormat::pcm;
+  } else if (hashCode == mulaw_HASH) {
+    return OutputFormat::mulaw;
+  } else if (hashCode == alaw_HASH) {
+    return OutputFormat::alaw;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +63,10 @@ Aws::String GetNameForOutputFormat(OutputFormat enumValue) {
       return "ogg_vorbis";
     case OutputFormat::pcm:
       return "pcm";
+    case OutputFormat::mulaw:
+      return "mulaw";
+    case OutputFormat::alaw:
+      return "alaw";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -870,6 +870,10 @@ class AWS_KINESISANALYTICS_API KinesisAnalyticsClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsClient>;
   void init(const KinesisAnalyticsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KinesisAnalyticsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   KinesisAnalyticsClientConfiguration m_clientConfiguration;
   std::shared_ptr<KinesisAnalyticsEndpointProviderBase> m_endpointProvider;
 };

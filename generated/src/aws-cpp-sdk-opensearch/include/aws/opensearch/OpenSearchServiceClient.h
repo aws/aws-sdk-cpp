@@ -2456,6 +2456,12 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>;
   void init(const OpenSearchServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, OpenSearchServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   OpenSearchServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<OpenSearchServiceEndpointProviderBase> m_endpointProvider;
 };

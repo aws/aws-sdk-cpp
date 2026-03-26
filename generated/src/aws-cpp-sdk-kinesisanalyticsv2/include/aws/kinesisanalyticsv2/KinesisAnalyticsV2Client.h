@@ -1143,6 +1143,10 @@ class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>;
   void init(const KinesisAnalyticsV2ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KinesisAnalyticsV2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   KinesisAnalyticsV2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<KinesisAnalyticsV2EndpointProviderBase> m_endpointProvider;
 };

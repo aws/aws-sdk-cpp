@@ -2139,6 +2139,10 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53ResolverClient>;
   void init(const Route53ResolverClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, Route53ResolverError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   Route53ResolverClientConfiguration m_clientConfiguration;
   std::shared_ptr<Route53ResolverEndpointProviderBase> m_endpointProvider;
 };

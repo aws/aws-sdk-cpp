@@ -853,6 +853,10 @@ class AWS_BUDGETS_API BudgetsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BudgetsClient>;
   void init(const BudgetsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BudgetsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   BudgetsClientConfiguration m_clientConfiguration;
   std::shared_ptr<BudgetsEndpointProviderBase> m_endpointProvider;
 };

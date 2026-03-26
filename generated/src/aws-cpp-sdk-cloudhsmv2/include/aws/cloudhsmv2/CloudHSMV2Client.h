@@ -645,6 +645,10 @@ class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMV2Client>;
   void init(const CloudHSMV2ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudHSMV2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CloudHSMV2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudHSMV2EndpointProviderBase> m_endpointProvider;
 };

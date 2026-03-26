@@ -1913,6 +1913,10 @@ class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FSxClient>;
   void init(const FSxClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, FSxError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   FSxClientConfiguration m_clientConfiguration;
   std::shared_ptr<FSxEndpointProviderBase> m_endpointProvider;
 };

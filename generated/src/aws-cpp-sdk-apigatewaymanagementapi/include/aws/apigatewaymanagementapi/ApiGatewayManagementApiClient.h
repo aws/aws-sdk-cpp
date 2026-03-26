@@ -171,6 +171,12 @@ class AWS_APIGATEWAYMANAGEMENTAPI_API ApiGatewayManagementApiClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayManagementApiClient>;
   void init(const ApiGatewayManagementApiClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApiGatewayManagementApiError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ApiGatewayManagementApiClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApiGatewayManagementApiEndpointProviderBase> m_endpointProvider;
 };

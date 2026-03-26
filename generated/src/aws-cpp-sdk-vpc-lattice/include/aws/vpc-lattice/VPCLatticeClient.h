@@ -2213,6 +2213,12 @@ class AWS_VPCLATTICE_API VPCLatticeClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<VPCLatticeClient>;
   void init(const VPCLatticeClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, VPCLatticeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   VPCLatticeClientConfiguration m_clientConfiguration;
   std::shared_ptr<VPCLatticeEndpointProviderBase> m_endpointProvider;
 };

@@ -430,6 +430,12 @@ class AWS_TRUSTEDADVISOR_API TrustedAdvisorClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TrustedAdvisorClient>;
   void init(const TrustedAdvisorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TrustedAdvisorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   TrustedAdvisorClientConfiguration m_clientConfiguration;
   std::shared_ptr<TrustedAdvisorEndpointProviderBase> m_endpointProvider;
 };

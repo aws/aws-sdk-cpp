@@ -862,6 +862,12 @@ class AWS_APPLICATIONSIGNALS_API ApplicationSignalsClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationSignalsClient>;
   void init(const ApplicationSignalsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApplicationSignalsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ApplicationSignalsClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApplicationSignalsEndpointProviderBase> m_endpointProvider;
 };

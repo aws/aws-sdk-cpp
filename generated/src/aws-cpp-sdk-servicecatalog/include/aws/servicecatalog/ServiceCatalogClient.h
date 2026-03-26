@@ -2876,6 +2876,10 @@ class AWS_SERVICECATALOG_API ServiceCatalogClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceCatalogClient>;
   void init(const ServiceCatalogClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ServiceCatalogError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ServiceCatalogClientConfiguration m_clientConfiguration;
   std::shared_ptr<ServiceCatalogEndpointProviderBase> m_endpointProvider;
 };

@@ -2747,6 +2747,10 @@ class AWS_WORKMAIL_API WorkMailClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkMailClient>;
   void init(const WorkMailClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WorkMailError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   WorkMailClientConfiguration m_clientConfiguration;
   std::shared_ptr<WorkMailEndpointProviderBase> m_endpointProvider;
 };

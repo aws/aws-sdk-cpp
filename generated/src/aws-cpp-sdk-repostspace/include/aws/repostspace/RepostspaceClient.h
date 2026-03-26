@@ -600,6 +600,12 @@ class AWS_REPOSTSPACE_API RepostspaceClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RepostspaceClient>;
   void init(const RepostspaceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RepostspaceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   RepostspaceClientConfiguration m_clientConfiguration;
   std::shared_ptr<RepostspaceEndpointProviderBase> m_endpointProvider;
 };

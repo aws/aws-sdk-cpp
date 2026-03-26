@@ -871,6 +871,10 @@ class AWS_CODECONNECTIONS_API CodeConnectionsClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeConnectionsClient>;
   void init(const CodeConnectionsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeConnectionsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CodeConnectionsClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeConnectionsEndpointProviderBase> m_endpointProvider;
 };

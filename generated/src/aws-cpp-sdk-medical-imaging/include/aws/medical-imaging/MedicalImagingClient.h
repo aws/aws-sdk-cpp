@@ -571,6 +571,12 @@ class AWS_MEDICALIMAGING_API MedicalImagingClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MedicalImagingClient>;
   void init(const MedicalImagingClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MedicalImagingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MedicalImagingClientConfiguration m_clientConfiguration;
   std::shared_ptr<MedicalImagingEndpointProviderBase> m_endpointProvider;
 };

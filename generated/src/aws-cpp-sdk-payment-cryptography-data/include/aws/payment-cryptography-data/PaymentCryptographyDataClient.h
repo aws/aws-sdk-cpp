@@ -877,6 +877,12 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PaymentCryptographyDataClient>;
   void init(const PaymentCryptographyDataClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PaymentCryptographyDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   PaymentCryptographyDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<PaymentCryptographyDataEndpointProviderBase> m_endpointProvider;
 };

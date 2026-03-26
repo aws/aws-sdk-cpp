@@ -2587,6 +2587,10 @@ class AWS_SES_API SESClient : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SESClient>;
   void init(const SESClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SESError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SESClientConfiguration m_clientConfiguration;
   std::shared_ptr<SESEndpointProviderBase> m_endpointProvider;
 };

@@ -2695,6 +2695,10 @@ class AWS_COMPREHEND_API ComprehendClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>;
   void init(const ComprehendClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ComprehendError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ComprehendClientConfiguration m_clientConfiguration;
   std::shared_ptr<ComprehendEndpointProviderBase> m_endpointProvider;
 };

@@ -2458,6 +2458,10 @@ class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceClient>;
   void init(const DirectoryServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DirectoryServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   DirectoryServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<DirectoryServiceEndpointProviderBase> m_endpointProvider;
 };

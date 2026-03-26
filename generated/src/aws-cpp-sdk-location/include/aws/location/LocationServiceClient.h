@@ -2329,6 +2329,12 @@ class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>;
   void init(const LocationServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LocationServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   LocationServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<LocationServiceEndpointProviderBase> m_endpointProvider;
 };

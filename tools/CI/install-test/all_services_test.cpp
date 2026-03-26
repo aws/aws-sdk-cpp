@@ -407,6 +407,7 @@
 #include <aws/transcribestreaming/TranscribeStreamingServiceClient.h>
 #include <aws/translate/TranslateClient.h>
 #include <aws/trustedadvisor/TrustedAdvisorClient.h>
+#include <aws/uxc/UxcClient.h>
 #include <aws/verifiedpermissions/VerifiedPermissionsClient.h>
 #include <aws/voice-id/VoiceIDClient.h>
 #include <aws/vpc-lattice/VPCLatticeClient.h>

@@ -172,6 +172,12 @@ class AWS_MARKETPLACEREPORTING_API MarketplaceReportingClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceReportingClient>;
   void init(const MarketplaceReportingClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MarketplaceReportingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MarketplaceReportingClientConfiguration m_clientConfiguration;
   std::shared_ptr<MarketplaceReportingEndpointProviderBase> m_endpointProvider;
 };

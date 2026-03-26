@@ -241,7 +241,8 @@ class ServiceLevelObjective {
   /**
    * <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
    * <ul> <li> <p>Service operation</p> </li> <li> <p>Service dependency</p> </li>
-   * <li> <p>CloudWatch metric</p> </li> </ul>
+   * <li> <p>Service</p> </li> <li> <p>CloudWatch metric</p> </li> <li>
+   * <p>AppMonitor</p> </li> <li> <p>Canary</p> </li> </ul>
    */
   inline MetricSourceType GetMetricSourceType() const { return m_metricSourceType; }
   inline bool MetricSourceTypeHasBeenSet() const { return m_metricSourceTypeHasBeenSet; }

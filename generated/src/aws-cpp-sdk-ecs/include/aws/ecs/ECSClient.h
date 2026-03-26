@@ -2535,6 +2535,10 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>;
   void init(const ECSClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ECSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ECSClientConfiguration m_clientConfiguration;
   std::shared_ptr<ECSEndpointProviderBase> m_endpointProvider;
 };

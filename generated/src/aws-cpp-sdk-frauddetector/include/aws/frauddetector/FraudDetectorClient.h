@@ -2185,6 +2185,10 @@ class AWS_FRAUDDETECTOR_API FraudDetectorClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient>;
   void init(const FraudDetectorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, FraudDetectorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   FraudDetectorClientConfiguration m_clientConfiguration;
   std::shared_ptr<FraudDetectorEndpointProviderBase> m_endpointProvider;
 };

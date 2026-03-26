@@ -2445,6 +2445,12 @@ class AWS_QBUSINESS_API QBusinessClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<QBusinessClient>;
   void init(const QBusinessClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, QBusinessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   QBusinessClientConfiguration m_clientConfiguration;
   std::shared_ptr<QBusinessEndpointProviderBase> m_endpointProvider;
 };

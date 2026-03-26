@@ -244,6 +244,12 @@ class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscribeStreamingServiceClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TranscribeStreamingServiceClient>;
   void init(const TranscribeStreamingServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TranscribeStreamingServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   TranscribeStreamingServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> m_endpointProvider;
 };

@@ -1727,6 +1727,10 @@ class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchEventsClient>;
   void init(const CloudWatchEventsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudWatchEventsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CloudWatchEventsClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudWatchEventsEndpointProviderBase> m_endpointProvider;
 };

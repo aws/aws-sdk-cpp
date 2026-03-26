@@ -1535,6 +1535,10 @@ class AWS_SNS_API SNSClient : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SNSClient>;
   void init(const SNSClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SNSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SNSClientConfiguration m_clientConfiguration;
   std::shared_ptr<SNSEndpointProviderBase> m_endpointProvider;
 };

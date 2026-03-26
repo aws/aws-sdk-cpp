@@ -693,6 +693,12 @@ class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>;
   void init(const ChimeSDKMeetingsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ChimeSDKMeetingsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ChimeSDKMeetingsClientConfiguration m_clientConfiguration;
   std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase> m_endpointProvider;
 };

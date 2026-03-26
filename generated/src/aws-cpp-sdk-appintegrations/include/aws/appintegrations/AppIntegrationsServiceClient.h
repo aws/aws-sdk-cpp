@@ -763,6 +763,12 @@ class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>;
   void init(const AppIntegrationsServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppIntegrationsServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AppIntegrationsServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppIntegrationsServiceEndpointProviderBase> m_endpointProvider;
 };

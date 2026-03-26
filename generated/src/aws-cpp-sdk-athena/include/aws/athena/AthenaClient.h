@@ -2118,6 +2118,10 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>;
   void init(const AthenaClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AthenaError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   AthenaClientConfiguration m_clientConfiguration;
   std::shared_ptr<AthenaEndpointProviderBase> m_endpointProvider;
 };

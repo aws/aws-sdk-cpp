@@ -246,6 +246,12 @@ class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AugmentedAIRuntimeClient>;
   void init(const AugmentedAIRuntimeClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AugmentedAIRuntimeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AugmentedAIRuntimeClientConfiguration m_clientConfiguration;
   std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> m_endpointProvider;
 };

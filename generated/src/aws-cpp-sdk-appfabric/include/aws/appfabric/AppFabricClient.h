@@ -807,6 +807,12 @@ class AWS_APPFABRIC_API AppFabricClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppFabricClient>;
   void init(const AppFabricClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppFabricError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AppFabricClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppFabricEndpointProviderBase> m_endpointProvider;
 };

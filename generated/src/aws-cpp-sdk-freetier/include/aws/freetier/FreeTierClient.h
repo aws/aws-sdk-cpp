@@ -227,6 +227,10 @@ class AWS_FREETIER_API FreeTierClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FreeTierClient>;
   void init(const FreeTierClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, FreeTierError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   FreeTierClientConfiguration m_clientConfiguration;
   std::shared_ptr<FreeTierEndpointProviderBase> m_endpointProvider;
 };

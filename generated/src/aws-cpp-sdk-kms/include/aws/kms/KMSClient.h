@@ -3852,6 +3852,10 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>;
   void init(const KMSClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KMSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   KMSClientConfiguration m_clientConfiguration;
   std::shared_ptr<KMSEndpointProviderBase> m_endpointProvider;
 };

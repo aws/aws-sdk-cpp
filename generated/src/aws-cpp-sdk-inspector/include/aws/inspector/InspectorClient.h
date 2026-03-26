@@ -1144,6 +1144,10 @@ class AWS_INSPECTOR_API InspectorClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<InspectorClient>;
   void init(const InspectorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, InspectorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   InspectorClientConfiguration m_clientConfiguration;
   std::shared_ptr<InspectorEndpointProviderBase> m_endpointProvider;
 };

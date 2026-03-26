@@ -942,6 +942,12 @@ class AWS_SSMINCIDENTS_API SSMIncidentsClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMIncidentsClient>;
   void init(const SSMIncidentsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SSMIncidentsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SSMIncidentsClientConfiguration m_clientConfiguration;
   std::shared_ptr<SSMIncidentsEndpointProviderBase> m_endpointProvider;
 };

@@ -3376,6 +3376,12 @@ class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<APIGatewayClient>;
   void init(const APIGatewayClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, APIGatewayError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   APIGatewayClientConfiguration m_clientConfiguration;
   std::shared_ptr<APIGatewayEndpointProviderBase> m_endpointProvider;
 };

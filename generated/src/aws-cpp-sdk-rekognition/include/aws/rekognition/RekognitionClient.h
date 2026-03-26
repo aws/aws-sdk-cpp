@@ -3321,6 +3321,10 @@ class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RekognitionClient>;
   void init(const RekognitionClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RekognitionError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   RekognitionClientConfiguration m_clientConfiguration;
   std::shared_ptr<RekognitionEndpointProviderBase> m_endpointProvider;
 };

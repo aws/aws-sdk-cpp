@@ -1759,6 +1759,10 @@ class AWS_IOTFLEETWISE_API IoTFleetWiseClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient>;
   void init(const IoTFleetWiseClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTFleetWiseError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   IoTFleetWiseClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTFleetWiseEndpointProviderBase> m_endpointProvider;
 };

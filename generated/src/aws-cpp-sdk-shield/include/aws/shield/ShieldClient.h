@@ -1195,6 +1195,10 @@ class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ShieldClient>;
   void init(const ShieldClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ShieldError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ShieldClientConfiguration m_clientConfiguration;
   std::shared_ptr<ShieldEndpointProviderBase> m_endpointProvider;
 };

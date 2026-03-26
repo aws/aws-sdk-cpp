@@ -497,6 +497,12 @@ class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient>;
   void init(const IoTDeviceAdvisorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTDeviceAdvisorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   IoTDeviceAdvisorClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> m_endpointProvider;
 };

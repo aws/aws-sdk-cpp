@@ -830,6 +830,12 @@ class AWS_SSMSAP_API SsmSapClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SsmSapClient>;
   void init(const SsmSapClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SsmSapError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SsmSapClientConfiguration m_clientConfiguration;
   std::shared_ptr<SsmSapEndpointProviderBase> m_endpointProvider;
 };

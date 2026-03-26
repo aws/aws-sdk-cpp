@@ -3434,6 +3434,12 @@ class AWS_MEDIALIVE_API MediaLiveClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaLiveClient>;
   void init(const MediaLiveClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaLiveError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MediaLiveClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaLiveEndpointProviderBase> m_endpointProvider;
 };

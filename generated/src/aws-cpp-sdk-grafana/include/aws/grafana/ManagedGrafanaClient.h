@@ -865,6 +865,12 @@ class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient>;
   void init(const ManagedGrafanaClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ManagedGrafanaError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ManagedGrafanaClientConfiguration m_clientConfiguration;
   std::shared_ptr<ManagedGrafanaEndpointProviderBase> m_endpointProvider;
 };

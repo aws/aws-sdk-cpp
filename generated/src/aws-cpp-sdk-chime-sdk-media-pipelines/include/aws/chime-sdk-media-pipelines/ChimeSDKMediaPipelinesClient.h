@@ -1008,6 +1008,12 @@ class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMediaPipelinesClient>;
   void init(const ChimeSDKMediaPipelinesClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ChimeSDKMediaPipelinesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ChimeSDKMediaPipelinesClientConfiguration m_clientConfiguration;
   std::shared_ptr<ChimeSDKMediaPipelinesEndpointProviderBase> m_endpointProvider;
 };

@@ -447,6 +447,12 @@ class AWS_SUPPORTAPP_API SupportAppClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SupportAppClient>;
   void init(const SupportAppClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SupportAppError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SupportAppClientConfiguration m_clientConfiguration;
   std::shared_ptr<SupportAppEndpointProviderBase> m_endpointProvider;
 };

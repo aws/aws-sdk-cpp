@@ -928,6 +928,10 @@ class AWS_CLOUDSEARCH_API CloudSearchClient : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchClient>;
   void init(const CloudSearchClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudSearchError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CloudSearchClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudSearchEndpointProviderBase> m_endpointProvider;
 };

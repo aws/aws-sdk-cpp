@@ -556,6 +556,10 @@ class AWS_PARTNERCENTRALBENEFITS_API PartnerCentralBenefitsClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralBenefitsClient>;
   void init(const PartnerCentralBenefitsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PartnerCentralBenefitsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   PartnerCentralBenefitsClientConfiguration m_clientConfiguration;
   std::shared_ptr<PartnerCentralBenefitsEndpointProviderBase> m_endpointProvider;
 };

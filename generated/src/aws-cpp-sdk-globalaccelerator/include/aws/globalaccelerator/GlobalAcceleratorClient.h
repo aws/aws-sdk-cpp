@@ -1927,6 +1927,10 @@ class AWS_GLOBALACCELERATOR_API GlobalAcceleratorClient : public Aws::Client::AW
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GlobalAcceleratorClient>;
   void init(const GlobalAcceleratorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GlobalAcceleratorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   GlobalAcceleratorClientConfiguration m_clientConfiguration;
   std::shared_ptr<GlobalAcceleratorEndpointProviderBase> m_endpointProvider;
 };

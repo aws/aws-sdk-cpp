@@ -1695,6 +1695,12 @@ class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingClient : public Aws::Client::AW
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient>;
   void init(const ChimeSDKMessagingClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ChimeSDKMessagingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ChimeSDKMessagingClientConfiguration m_clientConfiguration;
   std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> m_endpointProvider;
 };

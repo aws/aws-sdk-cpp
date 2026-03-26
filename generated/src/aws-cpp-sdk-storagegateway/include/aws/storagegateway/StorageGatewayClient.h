@@ -3307,6 +3307,10 @@ class AWS_STORAGEGATEWAY_API StorageGatewayClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<StorageGatewayClient>;
   void init(const StorageGatewayClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, StorageGatewayError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   StorageGatewayClientConfiguration m_clientConfiguration;
   std::shared_ptr<StorageGatewayEndpointProviderBase> m_endpointProvider;
 };

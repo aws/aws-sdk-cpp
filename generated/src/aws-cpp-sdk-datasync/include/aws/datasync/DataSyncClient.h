@@ -1694,6 +1694,10 @@ class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>;
   void init(const DataSyncClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DataSyncError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   DataSyncClientConfiguration m_clientConfiguration;
   std::shared_ptr<DataSyncEndpointProviderBase> m_endpointProvider;
 };

@@ -1073,6 +1073,12 @@ class AWS_CHATBOT_API ChatbotClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ChatbotClient>;
   void init(const ChatbotClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ChatbotError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ChatbotClientConfiguration m_clientConfiguration;
   std::shared_ptr<ChatbotEndpointProviderBase> m_endpointProvider;
 };

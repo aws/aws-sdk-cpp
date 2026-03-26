@@ -2077,6 +2077,10 @@ class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>;
   void init(const CloudTrailClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudTrailError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CloudTrailClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudTrailEndpointProviderBase> m_endpointProvider;
 };

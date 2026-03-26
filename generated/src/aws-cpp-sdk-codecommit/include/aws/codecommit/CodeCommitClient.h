@@ -2563,6 +2563,10 @@ class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>;
   void init(const CodeCommitClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeCommitError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CodeCommitClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeCommitEndpointProviderBase> m_endpointProvider;
 };

@@ -1970,6 +1970,10 @@ class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFV2Client>;
   void init(const WAFV2ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WAFV2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   WAFV2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<WAFV2EndpointProviderBase> m_endpointProvider;
 };

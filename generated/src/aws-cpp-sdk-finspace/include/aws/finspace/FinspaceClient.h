@@ -1289,6 +1289,12 @@ class AWS_FINSPACE_API FinspaceClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<FinspaceClient>;
   void init(const FinspaceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, FinspaceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   FinspaceClientConfiguration m_clientConfiguration;
   std::shared_ptr<FinspaceEndpointProviderBase> m_endpointProvider;
 };

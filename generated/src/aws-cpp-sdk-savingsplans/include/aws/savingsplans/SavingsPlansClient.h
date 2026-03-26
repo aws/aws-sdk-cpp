@@ -364,6 +364,12 @@ class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SavingsPlansClient>;
   void init(const SavingsPlansClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SavingsPlansError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SavingsPlansClientConfiguration m_clientConfiguration;
   std::shared_ptr<SavingsPlansEndpointProviderBase> m_endpointProvider;
 };

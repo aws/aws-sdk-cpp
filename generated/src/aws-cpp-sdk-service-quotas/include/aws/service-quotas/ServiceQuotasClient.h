@@ -888,6 +888,10 @@ class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>;
   void init(const ServiceQuotasClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ServiceQuotasError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ServiceQuotasClientConfiguration m_clientConfiguration;
   std::shared_ptr<ServiceQuotasEndpointProviderBase> m_endpointProvider;
 };

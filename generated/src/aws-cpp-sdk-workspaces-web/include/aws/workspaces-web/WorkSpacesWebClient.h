@@ -2145,6 +2145,12 @@ class AWS_WORKSPACESWEB_API WorkSpacesWebClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesWebClient>;
   void init(const WorkSpacesWebClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, WorkSpacesWebError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   WorkSpacesWebClientConfiguration m_clientConfiguration;
   std::shared_ptr<WorkSpacesWebEndpointProviderBase> m_endpointProvider;
 };

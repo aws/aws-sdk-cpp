@@ -2371,6 +2371,12 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaConnectClient>;
   void init(const MediaConnectClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaConnectError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MediaConnectClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaConnectEndpointProviderBase> m_endpointProvider;
 };

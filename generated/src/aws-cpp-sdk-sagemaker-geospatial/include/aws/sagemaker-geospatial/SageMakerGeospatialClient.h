@@ -620,6 +620,12 @@ class AWS_SAGEMAKERGEOSPATIAL_API SageMakerGeospatialClient : public Aws::Client
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerGeospatialClient>;
   void init(const SageMakerGeospatialClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SageMakerGeospatialError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SageMakerGeospatialClientConfiguration m_clientConfiguration;
   std::shared_ptr<SageMakerGeospatialEndpointProviderBase> m_endpointProvider;
 };

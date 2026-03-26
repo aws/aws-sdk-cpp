@@ -2042,6 +2042,10 @@ class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DirectConnectClient>;
   void init(const DirectConnectClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DirectConnectError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   DirectConnectClientConfiguration m_clientConfiguration;
   std::shared_ptr<DirectConnectEndpointProviderBase> m_endpointProvider;
 };

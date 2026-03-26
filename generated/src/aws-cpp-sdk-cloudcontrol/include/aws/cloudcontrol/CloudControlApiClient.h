@@ -351,6 +351,10 @@ class AWS_CLOUDCONTROLAPI_API CloudControlApiClient : public Aws::Client::AWSJso
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>;
   void init(const CloudControlApiClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudControlApiError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CloudControlApiClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudControlApiEndpointProviderBase> m_endpointProvider;
 };

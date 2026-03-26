@@ -2506,6 +2506,12 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentCoreControlClient>;
   void init(const BedrockAgentCoreControlClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BedrockAgentCoreControlError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   BedrockAgentCoreControlClientConfiguration m_clientConfiguration;
   std::shared_ptr<BedrockAgentCoreControlEndpointProviderBase> m_endpointProvider;
 };

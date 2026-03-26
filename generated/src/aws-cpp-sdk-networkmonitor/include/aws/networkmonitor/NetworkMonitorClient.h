@@ -458,6 +458,12 @@ class AWS_NETWORKMONITOR_API NetworkMonitorClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkMonitorClient>;
   void init(const NetworkMonitorClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NetworkMonitorError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   NetworkMonitorClientConfiguration m_clientConfiguration;
   std::shared_ptr<NetworkMonitorEndpointProviderBase> m_endpointProvider;
 };

@@ -6739,6 +6739,10 @@ class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IAMClient>;
   void init(const IAMClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IAMError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   IAMClientConfiguration m_clientConfiguration;
   std::shared_ptr<IAMEndpointProviderBase> m_endpointProvider;
 };

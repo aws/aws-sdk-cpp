@@ -1273,6 +1273,12 @@ class AWS_NOTIFICATIONS_API NotificationsClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NotificationsClient>;
   void init(const NotificationsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NotificationsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   NotificationsClientConfiguration m_clientConfiguration;
   std::shared_ptr<NotificationsEndpointProviderBase> m_endpointProvider;
 };

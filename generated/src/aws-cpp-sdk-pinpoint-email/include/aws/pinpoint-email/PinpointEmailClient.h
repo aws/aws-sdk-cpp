@@ -1439,6 +1439,12 @@ class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient>;
   void init(const PinpointEmailClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PinpointEmailError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   PinpointEmailClientConfiguration m_clientConfiguration;
   std::shared_ptr<PinpointEmailEndpointProviderBase> m_endpointProvider;
 };

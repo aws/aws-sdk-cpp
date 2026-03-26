@@ -919,6 +919,10 @@ class AWS_SNOWBALL_API SnowballClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SnowballClient>;
   void init(const SnowballClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SnowballError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SnowballClientConfiguration m_clientConfiguration;
   std::shared_ptr<SnowballEndpointProviderBase> m_endpointProvider;
 };

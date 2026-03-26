@@ -94,6 +94,10 @@ class AWS_IOTTHINGSGRAPH_API IoTThingsGraphClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTThingsGraphClient>;
   void init(const IoTThingsGraphClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTThingsGraphError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   IoTThingsGraphClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTThingsGraphEndpointProviderBase> m_endpointProvider;
 };

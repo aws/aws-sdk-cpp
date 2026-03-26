@@ -995,6 +995,10 @@ class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TextractClient>;
   void init(const TextractClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TextractError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   TextractClientConfiguration m_clientConfiguration;
   std::shared_ptr<TextractEndpointProviderBase> m_endpointProvider;
 };

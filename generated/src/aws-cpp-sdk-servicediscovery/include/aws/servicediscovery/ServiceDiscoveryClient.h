@@ -997,6 +997,10 @@ class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceDiscoveryClient>;
   void init(const ServiceDiscoveryClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ServiceDiscoveryError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ServiceDiscoveryClientConfiguration m_clientConfiguration;
   std::shared_ptr<ServiceDiscoveryEndpointProviderBase> m_endpointProvider;
 };

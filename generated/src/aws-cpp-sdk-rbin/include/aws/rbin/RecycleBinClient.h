@@ -379,6 +379,12 @@ class AWS_RECYCLEBIN_API RecycleBinClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>;
   void init(const RecycleBinClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RecycleBinError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   RecycleBinClientConfiguration m_clientConfiguration;
   std::shared_ptr<RecycleBinEndpointProviderBase> m_endpointProvider;
 };

@@ -326,6 +326,12 @@ class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GeoPlacesClient>;
   void init(const GeoPlacesClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GeoPlacesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   GeoPlacesClientConfiguration m_clientConfiguration;
   std::shared_ptr<GeoPlacesEndpointProviderBase> m_endpointProvider;
 };

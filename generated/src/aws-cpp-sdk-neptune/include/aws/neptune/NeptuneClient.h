@@ -2313,6 +2313,10 @@ class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<NeptuneClient>;
   void init(const NeptuneClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, NeptuneError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   NeptuneClientConfiguration m_clientConfiguration;
   std::shared_ptr<NeptuneEndpointProviderBase> m_endpointProvider;
 };

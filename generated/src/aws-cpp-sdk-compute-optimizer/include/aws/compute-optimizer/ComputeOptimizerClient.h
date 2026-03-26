@@ -1085,6 +1085,10 @@ class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient>;
   void init(const ComputeOptimizerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ComputeOptimizerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ComputeOptimizerClientConfiguration m_clientConfiguration;
   std::shared_ptr<ComputeOptimizerEndpointProviderBase> m_endpointProvider;
 };

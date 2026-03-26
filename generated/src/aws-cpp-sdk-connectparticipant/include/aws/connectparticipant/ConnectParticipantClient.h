@@ -545,6 +545,12 @@ class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectParticipantClient>;
   void init(const ConnectParticipantClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ConnectParticipantError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ConnectParticipantClientConfiguration m_clientConfiguration;
   std::shared_ptr<ConnectParticipantEndpointProviderBase> m_endpointProvider;
 };

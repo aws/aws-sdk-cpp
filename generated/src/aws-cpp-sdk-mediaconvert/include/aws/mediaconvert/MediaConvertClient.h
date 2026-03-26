@@ -977,6 +977,12 @@ class AWS_MEDIACONVERT_API MediaConvertClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaConvertClient>;
   void init(const MediaConvertClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, MediaConvertError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   MediaConvertClientConfiguration m_clientConfiguration;
   std::shared_ptr<MediaConvertEndpointProviderBase> m_endpointProvider;
 };

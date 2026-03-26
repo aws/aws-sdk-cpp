@@ -44,7 +44,8 @@ enum class AgreementServiceErrors {
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER
 };
 
 class AWS_AGREEMENTSERVICE_API AgreementServiceError : public Aws::Client::AWSError<AgreementServiceErrors> {

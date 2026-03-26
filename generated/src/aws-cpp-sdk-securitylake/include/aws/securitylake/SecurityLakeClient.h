@@ -1093,6 +1093,12 @@ class AWS_SECURITYLAKE_API SecurityLakeClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SecurityLakeClient>;
   void init(const SecurityLakeClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SecurityLakeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SecurityLakeClientConfiguration m_clientConfiguration;
   std::shared_ptr<SecurityLakeEndpointProviderBase> m_endpointProvider;
 };

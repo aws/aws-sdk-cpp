@@ -3117,6 +3117,12 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DeadlineClient>;
   void init(const DeadlineClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DeadlineError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   DeadlineClientConfiguration m_clientConfiguration;
   std::shared_ptr<DeadlineEndpointProviderBase> m_endpointProvider;
 };

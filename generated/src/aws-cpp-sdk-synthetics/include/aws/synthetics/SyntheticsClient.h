@@ -791,6 +791,12 @@ class AWS_SYNTHETICS_API SyntheticsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient>;
   void init(const SyntheticsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SyntheticsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SyntheticsClientConfiguration m_clientConfiguration;
   std::shared_ptr<SyntheticsEndpointProviderBase> m_endpointProvider;
 };

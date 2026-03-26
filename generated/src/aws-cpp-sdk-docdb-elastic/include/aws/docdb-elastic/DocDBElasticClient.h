@@ -609,6 +609,12 @@ class AWS_DOCDBELASTIC_API DocDBElasticClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>;
   void init(const DocDBElasticClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DocDBElasticError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   DocDBElasticClientConfiguration m_clientConfiguration;
   std::shared_ptr<DocDBElasticEndpointProviderBase> m_endpointProvider;
 };

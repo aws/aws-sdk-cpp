@@ -5594,6 +5594,12 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>;
   void init(const CloudFrontClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudFrontError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   CloudFrontClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudFrontEndpointProviderBase> m_endpointProvider;
 };

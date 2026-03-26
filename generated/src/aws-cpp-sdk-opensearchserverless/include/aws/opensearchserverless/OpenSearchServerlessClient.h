@@ -1457,6 +1457,10 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServerlessClient>;
   void init(const OpenSearchServerlessClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, OpenSearchServerlessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   OpenSearchServerlessClientConfiguration m_clientConfiguration;
   std::shared_ptr<OpenSearchServerlessEndpointProviderBase> m_endpointProvider;
 };

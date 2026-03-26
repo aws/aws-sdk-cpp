@@ -529,6 +529,12 @@ class AWS_EMRSERVERLESS_API EMRServerlessClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EMRServerlessClient>;
   void init(const EMRServerlessClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EMRServerlessError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   EMRServerlessClientConfiguration m_clientConfiguration;
   std::shared_ptr<EMRServerlessEndpointProviderBase> m_endpointProvider;
 };

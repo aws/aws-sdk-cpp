@@ -843,6 +843,12 @@ class AWS_APPFLOW_API AppflowClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppflowClient>;
   void init(const AppflowClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppflowError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AppflowClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppflowEndpointProviderBase> m_endpointProvider;
 };

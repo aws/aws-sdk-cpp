@@ -501,6 +501,10 @@ class AWS_EVS_API EVSClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EVSClient>;
   void init(const EVSClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EVSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   EVSClientConfiguration m_clientConfiguration;
   std::shared_ptr<EVSEndpointProviderBase> m_endpointProvider;
 };

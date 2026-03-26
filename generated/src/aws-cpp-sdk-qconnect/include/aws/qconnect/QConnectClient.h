@@ -2653,6 +2653,12 @@ class AWS_QCONNECT_API QConnectClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<QConnectClient>;
   void init(const QConnectClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, QConnectError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   QConnectClientConfiguration m_clientConfiguration;
   std::shared_ptr<QConnectEndpointProviderBase> m_endpointProvider;
 };

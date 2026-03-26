@@ -53,11 +53,12 @@ class ListServiceJobsRequest : public BatchRequest {
   /**
    * <p>The job status used to filter service jobs in the specified queue. If the
    * <code>filters</code> parameter is specified, the <code>jobStatus</code>
-   * parameter is ignored and jobs with any status are returned. The exception is the
-   * <code>SHARE_IDENTIFIER</code> filter and <code>jobStatus</code> can be used
-   * together. If you don't specify a status, only <code>RUNNING</code> jobs are
-   * returned.</p>  <p>The <code>SHARE_IDENTIFIER</code> filter and the
-   * <code>jobStatus</code> field can be used together to filter results.</p>
+   * parameter is ignored and jobs with any status are returned. The exceptions are
+   * the <code>SHARE_IDENTIFIER</code> filter and <code>QUOTA_SHARE_NAME</code>
+   * filter, which can be used with <code>jobStatus</code>. If you don't specify a
+   * status, only <code>RUNNING</code> jobs are returned.</p>  <p>The
+   * <code>SHARE_IDENTIFIER</code> filter or <code>QUOTA_SHARE_NAME</code> filter can
+   * be used with the <code>jobStatus</code> field to filter results.</p>
    */
   inline ServiceJobStatus GetJobStatus() const { return m_jobStatus; }
   inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
@@ -122,13 +123,14 @@ class ListServiceJobsRequest : public BatchRequest {
   /**
    * <p>The filter to apply to the query. Only one filter can be used at a time. When
    * the filter is used, <code>jobStatus</code> is ignored with the exception that
-   * <code>SHARE_IDENTIFIER</code> and <code>jobStatus</code> can be used together.
-   * The results are sorted by the <code>createdAt</code> field, with the most recent
-   * jobs being first.</p>  <p>The <code>SHARE_IDENTIFIER</code> filter and the
-   * <code>jobStatus</code> field can be used together to filter results.</p>
-   * <dl> <dt>JOB_NAME</dt> <dd> <p>The value of the filter is a case-insensitive
-   * match for the job name. If the value ends with an asterisk (*), the filter
-   * matches any job name that begins with the string before the '*'. This
+   * <code>SHARE_IDENTIFIER</code> or <code>QUOTA_SHARE_NAME</code> and
+   * <code>jobStatus</code> can be used together. The results are sorted by the
+   * <code>createdAt</code> field, with the most recent jobs being first.</p>
+   * <p>The <code>SHARE_IDENTIFIER</code> or <code>QUOTA_SHARE_NAME</code> filter and
+   * the <code>jobStatus</code> field can be used together to filter results.</p>
+   *  <dl> <dt>JOB_NAME</dt> <dd> <p>The value of the filter is a
+   * case-insensitive match for the job name. If the value ends with an asterisk (*),
+   * the filter matches any job name that begins with the string before the '*'. This
    * corresponds to the <code>jobName</code> value. For example, <code>test1</code>
    * matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code>
    * matches both <code>test1</code> and <code>Test10</code>. When the
@@ -142,7 +144,8 @@ class ListServiceJobsRequest : public BatchRequest {
    * The value is a string representation of the number of milliseconds since
    * 00:00:00 UTC (midnight) on January 1, 1970.</p> </dd> <dt>SHARE_IDENTIFIER</dt>
    * <dd> <p>The value for the filter is the fairshare scheduling share
-   * identifier.</p> </dd> </dl>
+   * identifier.</p> </dd> <dt>QUOTA_SHARE_NAME</dt> <dd> <p>The value for the filter
+   * is the quota management share name.</p> </dd> </dl>
    */
   inline const Aws::Vector<KeyValuesPair>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

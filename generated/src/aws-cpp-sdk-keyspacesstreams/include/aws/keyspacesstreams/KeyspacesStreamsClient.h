@@ -226,6 +226,10 @@ class AWS_KEYSPACESSTREAMS_API KeyspacesStreamsClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesStreamsClient>;
   void init(const KeyspacesStreamsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KeyspacesStreamsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   KeyspacesStreamsClientConfiguration m_clientConfiguration;
   std::shared_ptr<KeyspacesStreamsEndpointProviderBase> m_endpointProvider;
 };

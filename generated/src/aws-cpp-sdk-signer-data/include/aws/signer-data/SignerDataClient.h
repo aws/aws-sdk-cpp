@@ -114,6 +114,12 @@ class AWS_SIGNERDATA_API SignerDataClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SignerDataClient>;
   void init(const SignerDataClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SignerDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SignerDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<SignerDataEndpointProviderBase> m_endpointProvider;
 };

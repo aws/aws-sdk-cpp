@@ -1473,6 +1473,12 @@ class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AppConfigClient>;
   void init(const AppConfigClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AppConfigError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AppConfigClientConfiguration m_clientConfiguration;
   std::shared_ptr<AppConfigEndpointProviderBase> m_endpointProvider;
 };

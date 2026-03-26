@@ -352,6 +352,12 @@ class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>;
   void init(const IoTDataPlaneClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTDataPlaneError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   IoTDataPlaneClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTDataPlaneEndpointProviderBase> m_endpointProvider;
 };

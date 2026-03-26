@@ -504,6 +504,12 @@ class AWS_LAUNCHWIZARD_API LaunchWizardClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LaunchWizardClient>;
   void init(const LaunchWizardClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LaunchWizardError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   LaunchWizardClientConfiguration m_clientConfiguration;
   std::shared_ptr<LaunchWizardEndpointProviderBase> m_endpointProvider;
 };

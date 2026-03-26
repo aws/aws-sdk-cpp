@@ -673,6 +673,10 @@ class AWS_DATAPIPELINE_API DataPipelineClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DataPipelineClient>;
   void init(const DataPipelineClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DataPipelineError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   DataPipelineClientConfiguration m_clientConfiguration;
   std::shared_ptr<DataPipelineEndpointProviderBase> m_endpointProvider;
 };

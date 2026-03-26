@@ -3199,6 +3199,12 @@ class AWS_LEXMODELSV2_API LexModelsV2Client : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LexModelsV2Client>;
   void init(const LexModelsV2ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LexModelsV2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   LexModelsV2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<LexModelsV2EndpointProviderBase> m_endpointProvider;
 };

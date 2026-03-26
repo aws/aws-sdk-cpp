@@ -1436,6 +1436,10 @@ class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralSellingClient>;
   void init(const PartnerCentralSellingClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PartnerCentralSellingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   PartnerCentralSellingClientConfiguration m_clientConfiguration;
   std::shared_ptr<PartnerCentralSellingEndpointProviderBase> m_endpointProvider;
 };

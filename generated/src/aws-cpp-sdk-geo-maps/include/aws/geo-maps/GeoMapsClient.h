@@ -244,6 +244,12 @@ class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GeoMapsClient>;
   void init(const GeoMapsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GeoMapsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   GeoMapsClientConfiguration m_clientConfiguration;
   std::shared_ptr<GeoMapsEndpointProviderBase> m_endpointProvider;
 };

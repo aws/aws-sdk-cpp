@@ -4194,6 +4194,10 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>;
   void init(const CloudWatchLogsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudWatchLogsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CloudWatchLogsClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudWatchLogsEndpointProviderBase> m_endpointProvider;
 };

@@ -362,6 +362,12 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ElementalInferenceClient>;
   void init(const ElementalInferenceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ElementalInferenceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ElementalInferenceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ElementalInferenceEndpointProviderBase> m_endpointProvider;
 };

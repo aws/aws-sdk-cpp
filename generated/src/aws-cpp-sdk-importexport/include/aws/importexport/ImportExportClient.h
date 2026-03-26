@@ -266,6 +266,10 @@ class AWS_IMPORTEXPORT_API ImportExportClient : public Aws::Client::AWSXMLClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ImportExportClient>;
   void init(const ImportExportClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ImportExportError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ImportExportClientConfiguration m_clientConfiguration;
   std::shared_ptr<ImportExportEndpointProviderBase> m_endpointProvider;
 };

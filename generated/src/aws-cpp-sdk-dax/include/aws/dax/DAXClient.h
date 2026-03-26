@@ -681,6 +681,10 @@ class AWS_DAX_API DAXClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DAXClient>;
   void init(const DAXClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DAXError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   DAXClientConfiguration m_clientConfiguration;
   std::shared_ptr<DAXEndpointProviderBase> m_endpointProvider;
 };

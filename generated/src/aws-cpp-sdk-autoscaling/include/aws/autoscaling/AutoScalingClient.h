@@ -2536,6 +2536,10 @@ class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingClient>;
   void init(const AutoScalingClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AutoScalingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   AutoScalingClientConfiguration m_clientConfiguration;
   std::shared_ptr<AutoScalingEndpointProviderBase> m_endpointProvider;
 };

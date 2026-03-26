@@ -5177,6 +5177,10 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<LightsailClient>;
   void init(const LightsailClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, LightsailError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   LightsailClientConfiguration m_clientConfiguration;
   std::shared_ptr<LightsailEndpointProviderBase> m_endpointProvider;
 };

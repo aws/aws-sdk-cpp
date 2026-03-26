@@ -1782,6 +1782,10 @@ class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient>;
   void init(const KinesisClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KinesisError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   KinesisClientConfiguration m_clientConfiguration;
   std::shared_ptr<KinesisEndpointProviderBase> m_endpointProvider;
 };

@@ -2201,6 +2201,10 @@ class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>;
   void init(const TransferClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, TransferError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   TransferClientConfiguration m_clientConfiguration;
   std::shared_ptr<TransferEndpointProviderBase> m_endpointProvider;
 };

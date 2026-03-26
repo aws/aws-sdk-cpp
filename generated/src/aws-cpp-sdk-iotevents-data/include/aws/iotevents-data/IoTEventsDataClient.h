@@ -419,6 +419,12 @@ class AWS_IOTEVENTSDATA_API IoTEventsDataClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsDataClient>;
   void init(const IoTEventsDataClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTEventsDataError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   IoTEventsDataClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTEventsDataEndpointProviderBase> m_endpointProvider;
 };

@@ -39,6 +39,10 @@ Aws::String ListServiceLevelObjectivesRequest::SerializePayload() const {
     payload.WithArray("MetricSourceTypes", std::move(metricSourceTypesJsonList));
   }
 
+  if (m_metricSourceHasBeenSet) {
+    payload.WithObject("MetricSource", m_metricSource.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

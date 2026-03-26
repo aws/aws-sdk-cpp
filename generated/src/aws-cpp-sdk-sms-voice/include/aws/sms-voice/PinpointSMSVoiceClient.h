@@ -318,6 +318,12 @@ class AWS_PINPOINTSMSVOICE_API PinpointSMSVoiceClient : public Aws::Client::AWSJ
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceClient>;
   void init(const PinpointSMSVoiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PinpointSMSVoiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   PinpointSMSVoiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<PinpointSMSVoiceEndpointProviderBase> m_endpointProvider;
 };

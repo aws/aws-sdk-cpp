@@ -1208,6 +1208,10 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>;
   void init(const SecretsManagerClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SecretsManagerError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   SecretsManagerClientConfiguration m_clientConfiguration;
   std::shared_ptr<SecretsManagerEndpointProviderBase> m_endpointProvider;
 };

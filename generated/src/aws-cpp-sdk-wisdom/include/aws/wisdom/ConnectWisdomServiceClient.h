@@ -1170,6 +1170,12 @@ class AWS_CONNECTWISDOMSERVICE_API ConnectWisdomServiceClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectWisdomServiceClient>;
   void init(const ConnectWisdomServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ConnectWisdomServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ConnectWisdomServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ConnectWisdomServiceEndpointProviderBase> m_endpointProvider;
 };

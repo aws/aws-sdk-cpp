@@ -1244,6 +1244,12 @@ class AWS_GLUEDATABREW_API GlueDataBrewClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GlueDataBrewClient>;
   void init(const GlueDataBrewClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GlueDataBrewError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   GlueDataBrewClientConfiguration m_clientConfiguration;
   std::shared_ptr<GlueDataBrewEndpointProviderBase> m_endpointProvider;
 };

@@ -3781,6 +3781,10 @@ class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DatabaseMigrationServiceClient>;
   void init(const DatabaseMigrationServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DatabaseMigrationServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   DatabaseMigrationServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase> m_endpointProvider;
 };

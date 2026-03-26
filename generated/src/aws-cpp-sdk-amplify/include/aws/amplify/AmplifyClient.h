@@ -1083,6 +1083,12 @@ class AWS_AMPLIFY_API AmplifyClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyClient>;
   void init(const AmplifyClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, AmplifyError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   AmplifyClientConfiguration m_clientConfiguration;
   std::shared_ptr<AmplifyEndpointProviderBase> m_endpointProvider;
 };

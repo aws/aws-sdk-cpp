@@ -590,6 +590,10 @@ class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RedshiftDataAPIServiceClient>;
   void init(const RedshiftDataAPIServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RedshiftDataAPIServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   RedshiftDataAPIServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase> m_endpointProvider;
 };

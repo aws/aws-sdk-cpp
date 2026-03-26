@@ -18,6 +18,8 @@ namespace PublishStatusMapper {
 static const int PUBLISHED_HASH = HashingUtils::HashString("PUBLISHED");
 static const int PUBLISH_IN_PROGRESS_HASH = HashingUtils::HashString("PUBLISH_IN_PROGRESS");
 static const int PUBLISH_FAILED_HASH = HashingUtils::HashString("PUBLISH_FAILED");
+static const int DISABLE_IN_PROGRESS_HASH = HashingUtils::HashString("DISABLE_IN_PROGRESS");
+static const int DISABLE_FAILED_HASH = HashingUtils::HashString("DISABLE_FAILED");
 static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 PublishStatus GetPublishStatusForName(const Aws::String& name) {
@@ -28,6 +30,10 @@ PublishStatus GetPublishStatusForName(const Aws::String& name) {
     return PublishStatus::PUBLISH_IN_PROGRESS;
   } else if (hashCode == PUBLISH_FAILED_HASH) {
     return PublishStatus::PUBLISH_FAILED;
+  } else if (hashCode == DISABLE_IN_PROGRESS_HASH) {
+    return PublishStatus::DISABLE_IN_PROGRESS;
+  } else if (hashCode == DISABLE_FAILED_HASH) {
+    return PublishStatus::DISABLE_FAILED;
   } else if (hashCode == DISABLED_HASH) {
     return PublishStatus::DISABLED;
   }
@@ -50,6 +56,10 @@ Aws::String GetNameForPublishStatus(PublishStatus enumValue) {
       return "PUBLISH_IN_PROGRESS";
     case PublishStatus::PUBLISH_FAILED:
       return "PUBLISH_FAILED";
+    case PublishStatus::DISABLE_IN_PROGRESS:
+      return "DISABLE_IN_PROGRESS";
+    case PublishStatus::DISABLE_FAILED:
+      return "DISABLE_FAILED";
     case PublishStatus::DISABLED:
       return "DISABLED";
     default:

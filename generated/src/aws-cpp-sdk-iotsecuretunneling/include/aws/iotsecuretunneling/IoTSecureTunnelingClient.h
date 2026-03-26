@@ -319,6 +319,10 @@ class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingClient : public Aws::Client::
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTSecureTunnelingClient>;
   void init(const IoTSecureTunnelingClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTSecureTunnelingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   IoTSecureTunnelingClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTSecureTunnelingEndpointProviderBase> m_endpointProvider;
 };

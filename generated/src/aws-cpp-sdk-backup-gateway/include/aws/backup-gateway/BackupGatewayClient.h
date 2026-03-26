@@ -805,6 +805,10 @@ class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonCli
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>;
   void init(const BackupGatewayClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BackupGatewayError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   BackupGatewayClientConfiguration m_clientConfiguration;
   std::shared_ptr<BackupGatewayEndpointProviderBase> m_endpointProvider;
 };

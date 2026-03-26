@@ -1716,6 +1716,12 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<S3TablesClient>;
   void init(const S3TablesClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, S3TablesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   S3TablesClientConfiguration m_clientConfiguration;
   std::shared_ptr<S3TablesEndpointProviderBase> m_endpointProvider;
 };

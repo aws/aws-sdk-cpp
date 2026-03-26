@@ -167,6 +167,12 @@ class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoSignalingChannelsClient>;
   void init(const KinesisVideoSignalingChannelsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KinesisVideoSignalingChannelsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   KinesisVideoSignalingChannelsClientConfiguration m_clientConfiguration;
   std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase> m_endpointProvider;
 };

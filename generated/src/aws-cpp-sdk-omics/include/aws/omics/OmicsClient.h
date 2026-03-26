@@ -3286,6 +3286,12 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>;
   void init(const OmicsClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, OmicsError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   OmicsClientConfiguration m_clientConfiguration;
   std::shared_ptr<OmicsEndpointProviderBase> m_endpointProvider;
 };

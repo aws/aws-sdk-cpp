@@ -3382,6 +3382,12 @@ class AWS_PINPOINT_API PinpointClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointClient>;
   void init(const PinpointClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PinpointError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   PinpointClientConfiguration m_clientConfiguration;
   std::shared_ptr<PinpointEndpointProviderBase> m_endpointProvider;
 };

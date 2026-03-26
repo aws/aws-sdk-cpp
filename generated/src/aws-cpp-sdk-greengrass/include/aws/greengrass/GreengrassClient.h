@@ -2693,6 +2693,12 @@ class AWS_GREENGRASS_API GreengrassClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<GreengrassClient>;
   void init(const GreengrassClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, GreengrassError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   GreengrassClientConfiguration m_clientConfiguration;
   std::shared_ptr<GreengrassEndpointProviderBase> m_endpointProvider;
 };

@@ -2214,6 +2214,10 @@ class AWS_KENDRA_API KendraClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KendraClient>;
   void init(const KendraClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KendraError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   KendraClientConfiguration m_clientConfiguration;
   std::shared_ptr<KendraEndpointProviderBase> m_endpointProvider;
 };

@@ -523,6 +523,12 @@ Permissions</a>
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ServerlessApplicationRepositoryClient>;
   void init(const ServerlessApplicationRepositoryClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ServerlessApplicationRepositoryError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ServerlessApplicationRepositoryClientConfiguration m_clientConfiguration;
   std::shared_ptr<ServerlessApplicationRepositoryEndpointProviderBase> m_endpointProvider;
 };

@@ -8319,6 +8319,13 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient,
   void InitCommonCrtRequestOption(CrtRequestCallbackUserData* userData, aws_s3_meta_request_options* options,
                                   const Aws::AmazonWebServiceRequest* request, const Aws::Http::URI& uri,
                                   Aws::Http::HttpMethod method) const;
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, S3CrtError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::String bucketName, Aws::Http::HttpMethod httpMethod) const;
+
   S3Crt::ClientConfiguration m_clientConfiguration;
   struct aws_s3_client* m_s3CrtClient = {};
   struct aws_signing_config_aws m_s3CrtSigningConfig = {};

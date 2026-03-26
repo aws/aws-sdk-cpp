@@ -439,6 +439,12 @@ class AWS_SNOWDEVICEMANAGEMENT_API SnowDeviceManagementClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<SnowDeviceManagementClient>;
   void init(const SnowDeviceManagementClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, SnowDeviceManagementError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   SnowDeviceManagementClientConfiguration m_clientConfiguration;
   std::shared_ptr<SnowDeviceManagementEndpointProviderBase> m_endpointProvider;
 };

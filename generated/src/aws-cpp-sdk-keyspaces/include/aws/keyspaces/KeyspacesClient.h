@@ -744,6 +744,10 @@ class AWS_KEYSPACES_API KeyspacesClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesClient>;
   void init(const KeyspacesClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, KeyspacesError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   KeyspacesClientConfiguration m_clientConfiguration;
   std::shared_ptr<KeyspacesEndpointProviderBase> m_endpointProvider;
 };

@@ -1008,6 +1008,12 @@ class AWS_PANORAMA_API PanoramaClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PanoramaClient>;
   void init(const PanoramaClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PanoramaError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   PanoramaClientConfiguration m_clientConfiguration;
   std::shared_ptr<PanoramaEndpointProviderBase> m_endpointProvider;
 };

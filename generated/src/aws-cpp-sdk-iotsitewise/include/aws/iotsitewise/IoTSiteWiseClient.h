@@ -3213,6 +3213,12 @@ class AWS_IOTSITEWISE_API IoTSiteWiseClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTSiteWiseClient>;
   void init(const IoTSiteWiseClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, IoTSiteWiseError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   IoTSiteWiseClientConfiguration m_clientConfiguration;
   std::shared_ptr<IoTSiteWiseEndpointProviderBase> m_endpointProvider;
 };

@@ -266,6 +266,10 @@ class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>;
   void init(const PricingClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PricingError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   PricingClientConfiguration m_clientConfiguration;
   std::shared_ptr<PricingEndpointProviderBase> m_endpointProvider;
 };

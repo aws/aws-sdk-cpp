@@ -1708,6 +1708,10 @@ class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeBuildClient>;
   void init(const CodeBuildClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CodeBuildError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CodeBuildClientConfiguration m_clientConfiguration;
   std::shared_ptr<CodeBuildEndpointProviderBase> m_endpointProvider;
 };

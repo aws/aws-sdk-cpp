@@ -2760,6 +2760,12 @@ class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayV2Client>;
   void init(const ApiGatewayV2ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ApiGatewayV2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   ApiGatewayV2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<ApiGatewayV2EndpointProviderBase> m_endpointProvider;
 };

@@ -95,6 +95,10 @@ class AWS_CLOUDHSM_API CloudHSMClient : public Aws::Client::AWSJsonClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMClient>;
   void init(const CloudHSMClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, CloudHSMError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   CloudHSMClientConfiguration m_clientConfiguration;
   std::shared_ptr<CloudHSMEndpointProviderBase> m_endpointProvider;
 };

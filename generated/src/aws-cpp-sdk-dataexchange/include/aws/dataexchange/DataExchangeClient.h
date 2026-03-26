@@ -1061,6 +1061,12 @@ class AWS_DATAEXCHANGE_API DataExchangeClient : public Aws::Client::AWSJsonClien
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient>;
   void init(const DataExchangeClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, DataExchangeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   DataExchangeClientConfiguration m_clientConfiguration;
   std::shared_ptr<DataExchangeEndpointProviderBase> m_endpointProvider;
 };

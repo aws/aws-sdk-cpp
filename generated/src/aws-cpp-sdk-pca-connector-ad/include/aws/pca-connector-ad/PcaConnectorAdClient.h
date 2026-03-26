@@ -801,6 +801,12 @@ class AWS_PCACONNECTORAD_API PcaConnectorAdClient : public Aws::Client::AWSJsonC
   friend class Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorAdClient>;
   void init(const PcaConnectorAdClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, PcaConnectorAdError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
   PcaConnectorAdClientConfiguration m_clientConfiguration;
   std::shared_ptr<PcaConnectorAdEndpointProviderBase> m_endpointProvider;
 };

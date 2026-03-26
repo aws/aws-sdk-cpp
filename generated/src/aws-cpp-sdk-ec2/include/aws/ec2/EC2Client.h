@@ -25452,6 +25452,10 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   friend class Aws::Client::ClientWithAsyncTemplateMethods<EC2Client>;
   void init(const EC2ClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, EC2Error> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   EC2ClientConfiguration m_clientConfiguration;
   std::shared_ptr<EC2EndpointProviderBase> m_endpointProvider;
 };

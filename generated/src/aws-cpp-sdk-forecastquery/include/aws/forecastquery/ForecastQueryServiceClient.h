@@ -149,6 +149,10 @@ class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceClient
   friend class Aws::Client::ClientWithAsyncTemplateMethods<ForecastQueryServiceClient>;
   void init(const ForecastQueryServiceClientConfiguration& clientConfiguration);
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ForecastQueryServiceError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   ForecastQueryServiceClientConfiguration m_clientConfiguration;
   std::shared_ptr<ForecastQueryServiceEndpointProviderBase> m_endpointProvider;
 };
