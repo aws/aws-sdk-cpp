@@ -209,7 +209,9 @@ CreateLandingZoneOutcome ControlTowerClient::CreateLandingZone(const CreateLandi
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-landingzone");
   };
 
-  return CreateLandingZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLandingZoneOutcome(result.GetResultWithOwnership())
+                            : CreateLandingZoneOutcome(std::move(result.GetError()));
 }
 
 DeleteLandingZoneOutcome ControlTowerClient::DeleteLandingZone(const DeleteLandingZoneRequest& request) const {
@@ -218,7 +220,9 @@ DeleteLandingZoneOutcome ControlTowerClient::DeleteLandingZone(const DeleteLandi
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-landingzone");
   };
 
-  return DeleteLandingZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLandingZoneOutcome(result.GetResultWithOwnership())
+                            : DeleteLandingZoneOutcome(std::move(result.GetError()));
 }
 
 DisableBaselineOutcome ControlTowerClient::DisableBaseline(const DisableBaselineRequest& request) const {
@@ -227,7 +231,9 @@ DisableBaselineOutcome ControlTowerClient::DisableBaseline(const DisableBaseline
     endpointResolutionOutcome.GetResult().AddPathSegments("/disable-baseline");
   };
 
-  return DisableBaselineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableBaselineOutcome(result.GetResultWithOwnership())
+                            : DisableBaselineOutcome(std::move(result.GetError()));
 }
 
 DisableControlOutcome ControlTowerClient::DisableControl(const DisableControlRequest& request) const {
@@ -236,7 +242,8 @@ DisableControlOutcome ControlTowerClient::DisableControl(const DisableControlReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/disable-control");
   };
 
-  return DisableControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableControlOutcome(result.GetResultWithOwnership()) : DisableControlOutcome(std::move(result.GetError()));
 }
 
 EnableBaselineOutcome ControlTowerClient::EnableBaseline(const EnableBaselineRequest& request) const {
@@ -245,7 +252,8 @@ EnableBaselineOutcome ControlTowerClient::EnableBaseline(const EnableBaselineReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/enable-baseline");
   };
 
-  return EnableBaselineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableBaselineOutcome(result.GetResultWithOwnership()) : EnableBaselineOutcome(std::move(result.GetError()));
 }
 
 EnableControlOutcome ControlTowerClient::EnableControl(const EnableControlRequest& request) const {
@@ -254,7 +262,8 @@ EnableControlOutcome ControlTowerClient::EnableControl(const EnableControlReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/enable-control");
   };
 
-  return EnableControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableControlOutcome(result.GetResultWithOwnership()) : EnableControlOutcome(std::move(result.GetError()));
 }
 
 GetBaselineOutcome ControlTowerClient::GetBaseline(const GetBaselineRequest& request) const {
@@ -263,7 +272,8 @@ GetBaselineOutcome ControlTowerClient::GetBaseline(const GetBaselineRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-baseline");
   };
 
-  return GetBaselineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBaselineOutcome(result.GetResultWithOwnership()) : GetBaselineOutcome(std::move(result.GetError()));
 }
 
 GetBaselineOperationOutcome ControlTowerClient::GetBaselineOperation(const GetBaselineOperationRequest& request) const {
@@ -272,7 +282,9 @@ GetBaselineOperationOutcome ControlTowerClient::GetBaselineOperation(const GetBa
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-baseline-operation");
   };
 
-  return GetBaselineOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBaselineOperationOutcome(result.GetResultWithOwnership())
+                            : GetBaselineOperationOutcome(std::move(result.GetError()));
 }
 
 GetControlOperationOutcome ControlTowerClient::GetControlOperation(const GetControlOperationRequest& request) const {
@@ -281,7 +293,9 @@ GetControlOperationOutcome ControlTowerClient::GetControlOperation(const GetCont
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-control-operation");
   };
 
-  return GetControlOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetControlOperationOutcome(result.GetResultWithOwnership())
+                            : GetControlOperationOutcome(std::move(result.GetError()));
 }
 
 GetEnabledBaselineOutcome ControlTowerClient::GetEnabledBaseline(const GetEnabledBaselineRequest& request) const {
@@ -290,7 +304,9 @@ GetEnabledBaselineOutcome ControlTowerClient::GetEnabledBaseline(const GetEnable
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-enabled-baseline");
   };
 
-  return GetEnabledBaselineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEnabledBaselineOutcome(result.GetResultWithOwnership())
+                            : GetEnabledBaselineOutcome(std::move(result.GetError()));
 }
 
 GetEnabledControlOutcome ControlTowerClient::GetEnabledControl(const GetEnabledControlRequest& request) const {
@@ -299,7 +315,9 @@ GetEnabledControlOutcome ControlTowerClient::GetEnabledControl(const GetEnabledC
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-enabled-control");
   };
 
-  return GetEnabledControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEnabledControlOutcome(result.GetResultWithOwnership())
+                            : GetEnabledControlOutcome(std::move(result.GetError()));
 }
 
 GetLandingZoneOutcome ControlTowerClient::GetLandingZone(const GetLandingZoneRequest& request) const {
@@ -308,7 +326,8 @@ GetLandingZoneOutcome ControlTowerClient::GetLandingZone(const GetLandingZoneReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-landingzone");
   };
 
-  return GetLandingZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLandingZoneOutcome(result.GetResultWithOwnership()) : GetLandingZoneOutcome(std::move(result.GetError()));
 }
 
 GetLandingZoneOperationOutcome ControlTowerClient::GetLandingZoneOperation(const GetLandingZoneOperationRequest& request) const {
@@ -317,7 +336,9 @@ GetLandingZoneOperationOutcome ControlTowerClient::GetLandingZoneOperation(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-landingzone-operation");
   };
 
-  return GetLandingZoneOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLandingZoneOperationOutcome(result.GetResultWithOwnership())
+                            : GetLandingZoneOperationOutcome(std::move(result.GetError()));
 }
 
 ListBaselinesOutcome ControlTowerClient::ListBaselines(const ListBaselinesRequest& request) const {
@@ -326,7 +347,8 @@ ListBaselinesOutcome ControlTowerClient::ListBaselines(const ListBaselinesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-baselines");
   };
 
-  return ListBaselinesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBaselinesOutcome(result.GetResultWithOwnership()) : ListBaselinesOutcome(std::move(result.GetError()));
 }
 
 ListControlOperationsOutcome ControlTowerClient::ListControlOperations(const ListControlOperationsRequest& request) const {
@@ -335,7 +357,9 @@ ListControlOperationsOutcome ControlTowerClient::ListControlOperations(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-control-operations");
   };
 
-  return ListControlOperationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListControlOperationsOutcome(result.GetResultWithOwnership())
+                            : ListControlOperationsOutcome(std::move(result.GetError()));
 }
 
 ListEnabledBaselinesOutcome ControlTowerClient::ListEnabledBaselines(const ListEnabledBaselinesRequest& request) const {
@@ -344,7 +368,9 @@ ListEnabledBaselinesOutcome ControlTowerClient::ListEnabledBaselines(const ListE
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-enabled-baselines");
   };
 
-  return ListEnabledBaselinesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEnabledBaselinesOutcome(result.GetResultWithOwnership())
+                            : ListEnabledBaselinesOutcome(std::move(result.GetError()));
 }
 
 ListEnabledControlsOutcome ControlTowerClient::ListEnabledControls(const ListEnabledControlsRequest& request) const {
@@ -353,7 +379,9 @@ ListEnabledControlsOutcome ControlTowerClient::ListEnabledControls(const ListEna
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-enabled-controls");
   };
 
-  return ListEnabledControlsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEnabledControlsOutcome(result.GetResultWithOwnership())
+                            : ListEnabledControlsOutcome(std::move(result.GetError()));
 }
 
 ListLandingZoneOperationsOutcome ControlTowerClient::ListLandingZoneOperations(const ListLandingZoneOperationsRequest& request) const {
@@ -362,7 +390,9 @@ ListLandingZoneOperationsOutcome ControlTowerClient::ListLandingZoneOperations(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-landingzone-operations");
   };
 
-  return ListLandingZoneOperationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLandingZoneOperationsOutcome(result.GetResultWithOwnership())
+                            : ListLandingZoneOperationsOutcome(std::move(result.GetError()));
 }
 
 ListLandingZonesOutcome ControlTowerClient::ListLandingZones(const ListLandingZonesRequest& request) const {
@@ -371,7 +401,9 @@ ListLandingZonesOutcome ControlTowerClient::ListLandingZones(const ListLandingZo
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-landingzones");
   };
 
-  return ListLandingZonesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLandingZonesOutcome(result.GetResultWithOwnership())
+                            : ListLandingZonesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ControlTowerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -387,7 +419,9 @@ ListTagsForResourceOutcome ControlTowerClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ResetEnabledBaselineOutcome ControlTowerClient::ResetEnabledBaseline(const ResetEnabledBaselineRequest& request) const {
@@ -396,7 +430,9 @@ ResetEnabledBaselineOutcome ControlTowerClient::ResetEnabledBaseline(const Reset
     endpointResolutionOutcome.GetResult().AddPathSegments("/reset-enabled-baseline");
   };
 
-  return ResetEnabledBaselineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetEnabledBaselineOutcome(result.GetResultWithOwnership())
+                            : ResetEnabledBaselineOutcome(std::move(result.GetError()));
 }
 
 ResetEnabledControlOutcome ControlTowerClient::ResetEnabledControl(const ResetEnabledControlRequest& request) const {
@@ -405,7 +441,9 @@ ResetEnabledControlOutcome ControlTowerClient::ResetEnabledControl(const ResetEn
     endpointResolutionOutcome.GetResult().AddPathSegments("/reset-enabled-control");
   };
 
-  return ResetEnabledControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetEnabledControlOutcome(result.GetResultWithOwnership())
+                            : ResetEnabledControlOutcome(std::move(result.GetError()));
 }
 
 ResetLandingZoneOutcome ControlTowerClient::ResetLandingZone(const ResetLandingZoneRequest& request) const {
@@ -414,7 +452,9 @@ ResetLandingZoneOutcome ControlTowerClient::ResetLandingZone(const ResetLandingZ
     endpointResolutionOutcome.GetResult().AddPathSegments("/reset-landingzone");
   };
 
-  return ResetLandingZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetLandingZoneOutcome(result.GetResultWithOwnership())
+                            : ResetLandingZoneOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ControlTowerClient::TagResource(const TagResourceRequest& request) const {
@@ -430,7 +470,8 @@ TagResourceOutcome ControlTowerClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ControlTowerClient::UntagResource(const UntagResourceRequest& request) const {
@@ -451,7 +492,8 @@ UntagResourceOutcome ControlTowerClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateEnabledBaselineOutcome ControlTowerClient::UpdateEnabledBaseline(const UpdateEnabledBaselineRequest& request) const {
@@ -460,7 +502,9 @@ UpdateEnabledBaselineOutcome ControlTowerClient::UpdateEnabledBaseline(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-enabled-baseline");
   };
 
-  return UpdateEnabledBaselineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEnabledBaselineOutcome(result.GetResultWithOwnership())
+                            : UpdateEnabledBaselineOutcome(std::move(result.GetError()));
 }
 
 UpdateEnabledControlOutcome ControlTowerClient::UpdateEnabledControl(const UpdateEnabledControlRequest& request) const {
@@ -469,7 +513,9 @@ UpdateEnabledControlOutcome ControlTowerClient::UpdateEnabledControl(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-enabled-control");
   };
 
-  return UpdateEnabledControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEnabledControlOutcome(result.GetResultWithOwnership())
+                            : UpdateEnabledControlOutcome(std::move(result.GetError()));
 }
 
 UpdateLandingZoneOutcome ControlTowerClient::UpdateLandingZone(const UpdateLandingZoneRequest& request) const {
@@ -478,5 +524,7 @@ UpdateLandingZoneOutcome ControlTowerClient::UpdateLandingZone(const UpdateLandi
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-landingzone");
   };
 
-  return UpdateLandingZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLandingZoneOutcome(result.GetResultWithOwnership())
+                            : UpdateLandingZoneOutcome(std::move(result.GetError()));
 }

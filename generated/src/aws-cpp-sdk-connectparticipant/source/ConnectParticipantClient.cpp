@@ -203,7 +203,9 @@ CancelParticipantAuthenticationOutcome ConnectParticipantClient::CancelParticipa
     endpointResolutionOutcome.GetResult().AddPathSegments("/participant/cancel-authentication");
   };
 
-  return CancelParticipantAuthenticationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelParticipantAuthenticationOutcome(result.GetResultWithOwnership())
+                            : CancelParticipantAuthenticationOutcome(std::move(result.GetError()));
 }
 
 CompleteAttachmentUploadOutcome ConnectParticipantClient::CompleteAttachmentUpload(const CompleteAttachmentUploadRequest& request) const {
@@ -218,7 +220,9 @@ CompleteAttachmentUploadOutcome ConnectParticipantClient::CompleteAttachmentUplo
     endpointResolutionOutcome.GetResult().AddPathSegments("/participant/complete-attachment-upload");
   };
 
-  return CompleteAttachmentUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CompleteAttachmentUploadOutcome(result.GetResultWithOwnership())
+                            : CompleteAttachmentUploadOutcome(std::move(result.GetError()));
 }
 
 CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantConnection(
@@ -234,7 +238,9 @@ CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/participant/connection");
   };
 
-  return CreateParticipantConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateParticipantConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateParticipantConnectionOutcome(std::move(result.GetError()));
 }
 
 DescribeViewOutcome ConnectParticipantClient::DescribeView(const DescribeViewRequest& request) const {
@@ -255,7 +261,8 @@ DescribeViewOutcome ConnectParticipantClient::DescribeView(const DescribeViewReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetViewToken());
   };
 
-  return DescribeViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeViewOutcome(result.GetResultWithOwnership()) : DescribeViewOutcome(std::move(result.GetError()));
 }
 
 DisconnectParticipantOutcome ConnectParticipantClient::DisconnectParticipant(const DisconnectParticipantRequest& request) const {
@@ -270,7 +277,9 @@ DisconnectParticipantOutcome ConnectParticipantClient::DisconnectParticipant(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/participant/disconnect");
   };
 
-  return DisconnectParticipantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisconnectParticipantOutcome(result.GetResultWithOwnership())
+                            : DisconnectParticipantOutcome(std::move(result.GetError()));
 }
 
 GetAttachmentOutcome ConnectParticipantClient::GetAttachment(const GetAttachmentRequest& request) const {
@@ -285,7 +294,8 @@ GetAttachmentOutcome ConnectParticipantClient::GetAttachment(const GetAttachment
     endpointResolutionOutcome.GetResult().AddPathSegments("/participant/attachment");
   };
 
-  return GetAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAttachmentOutcome(result.GetResultWithOwnership()) : GetAttachmentOutcome(std::move(result.GetError()));
 }
 
 GetAuthenticationUrlOutcome ConnectParticipantClient::GetAuthenticationUrl(const GetAuthenticationUrlRequest& request) const {
@@ -300,7 +310,9 @@ GetAuthenticationUrlOutcome ConnectParticipantClient::GetAuthenticationUrl(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/participant/authentication-url");
   };
 
-  return GetAuthenticationUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAuthenticationUrlOutcome(result.GetResultWithOwnership())
+                            : GetAuthenticationUrlOutcome(std::move(result.GetError()));
 }
 
 GetTranscriptOutcome ConnectParticipantClient::GetTranscript(const GetTranscriptRequest& request) const {
@@ -315,7 +327,8 @@ GetTranscriptOutcome ConnectParticipantClient::GetTranscript(const GetTranscript
     endpointResolutionOutcome.GetResult().AddPathSegments("/participant/transcript");
   };
 
-  return GetTranscriptOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTranscriptOutcome(result.GetResultWithOwnership()) : GetTranscriptOutcome(std::move(result.GetError()));
 }
 
 SendEventOutcome ConnectParticipantClient::SendEvent(const SendEventRequest& request) const {
@@ -330,7 +343,8 @@ SendEventOutcome ConnectParticipantClient::SendEvent(const SendEventRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/participant/event");
   };
 
-  return SendEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendEventOutcome(result.GetResultWithOwnership()) : SendEventOutcome(std::move(result.GetError()));
 }
 
 SendMessageOutcome ConnectParticipantClient::SendMessage(const SendMessageRequest& request) const {
@@ -345,7 +359,8 @@ SendMessageOutcome ConnectParticipantClient::SendMessage(const SendMessageReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/participant/message");
   };
 
-  return SendMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendMessageOutcome(result.GetResultWithOwnership()) : SendMessageOutcome(std::move(result.GetError()));
 }
 
 StartAttachmentUploadOutcome ConnectParticipantClient::StartAttachmentUpload(const StartAttachmentUploadRequest& request) const {
@@ -360,5 +375,7 @@ StartAttachmentUploadOutcome ConnectParticipantClient::StartAttachmentUpload(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/participant/start-attachment-upload");
   };
 
-  return StartAttachmentUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAttachmentUploadOutcome(result.GetResultWithOwnership())
+                            : StartAttachmentUploadOutcome(std::move(result.GetError()));
 }

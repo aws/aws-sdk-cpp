@@ -211,7 +211,9 @@ AddNotificationChannelOutcome DevOpsGuruClient::AddNotificationChannel(const Add
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   };
 
-  return AddNotificationChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AddNotificationChannelOutcome(result.GetResultWithOwnership())
+                            : AddNotificationChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteInsightOutcome DevOpsGuruClient::DeleteInsight(const DeleteInsightRequest& request) const {
@@ -227,7 +229,8 @@ DeleteInsightOutcome DevOpsGuruClient::DeleteInsight(const DeleteInsightRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteInsightOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInsightOutcome(result.GetResultWithOwnership()) : DeleteInsightOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountHealthOutcome DevOpsGuruClient::DescribeAccountHealth(const DescribeAccountHealthRequest& request) const {
@@ -236,7 +239,9 @@ DescribeAccountHealthOutcome DevOpsGuruClient::DescribeAccountHealth(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/health");
   };
 
-  return DescribeAccountHealthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAccountHealthOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountHealthOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountOverviewOutcome DevOpsGuruClient::DescribeAccountOverview(const DescribeAccountOverviewRequest& request) const {
@@ -245,7 +250,9 @@ DescribeAccountOverviewOutcome DevOpsGuruClient::DescribeAccountOverview(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/overview");
   };
 
-  return DescribeAccountOverviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountOverviewOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountOverviewOutcome(std::move(result.GetError()));
 }
 
 DescribeAnomalyOutcome DevOpsGuruClient::DescribeAnomaly(const DescribeAnomalyRequest& request) const {
@@ -261,7 +268,9 @@ DescribeAnomalyOutcome DevOpsGuruClient::DescribeAnomaly(const DescribeAnomalyRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribeAnomalyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAnomalyOutcome(result.GetResultWithOwnership())
+                            : DescribeAnomalyOutcome(std::move(result.GetError()));
 }
 
 DescribeEventSourcesConfigOutcome DevOpsGuruClient::DescribeEventSourcesConfig(const DescribeEventSourcesConfigRequest& request) const {
@@ -270,7 +279,9 @@ DescribeEventSourcesConfigOutcome DevOpsGuruClient::DescribeEventSourcesConfig(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-sources");
   };
 
-  return DescribeEventSourcesConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventSourcesConfigOutcome(result.GetResultWithOwnership())
+                            : DescribeEventSourcesConfigOutcome(std::move(result.GetError()));
 }
 
 DescribeFeedbackOutcome DevOpsGuruClient::DescribeFeedback(const DescribeFeedbackRequest& request) const {
@@ -279,7 +290,9 @@ DescribeFeedbackOutcome DevOpsGuruClient::DescribeFeedback(const DescribeFeedbac
     endpointResolutionOutcome.GetResult().AddPathSegments("/feedback");
   };
 
-  return DescribeFeedbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFeedbackOutcome(result.GetResultWithOwnership())
+                            : DescribeFeedbackOutcome(std::move(result.GetError()));
 }
 
 DescribeInsightOutcome DevOpsGuruClient::DescribeInsight(const DescribeInsightRequest& request) const {
@@ -295,7 +308,9 @@ DescribeInsightOutcome DevOpsGuruClient::DescribeInsight(const DescribeInsightRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribeInsightOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeInsightOutcome(result.GetResultWithOwnership())
+                            : DescribeInsightOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationHealthOutcome DevOpsGuruClient::DescribeOrganizationHealth(const DescribeOrganizationHealthRequest& request) const {
@@ -304,7 +319,9 @@ DescribeOrganizationHealthOutcome DevOpsGuruClient::DescribeOrganizationHealth(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/health");
   };
 
-  return DescribeOrganizationHealthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationHealthOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationHealthOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationOverviewOutcome DevOpsGuruClient::DescribeOrganizationOverview(
@@ -314,7 +331,9 @@ DescribeOrganizationOverviewOutcome DevOpsGuruClient::DescribeOrganizationOvervi
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/overview");
   };
 
-  return DescribeOrganizationOverviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationOverviewOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationOverviewOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationResourceCollectionHealthOutcome DevOpsGuruClient::DescribeOrganizationResourceCollectionHealth(
@@ -324,8 +343,9 @@ DescribeOrganizationResourceCollectionHealthOutcome DevOpsGuruClient::DescribeOr
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/health/resource-collection");
   };
 
-  return DescribeOrganizationResourceCollectionHealthOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationResourceCollectionHealthOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationResourceCollectionHealthOutcome(std::move(result.GetError()));
 }
 
 DescribeResourceCollectionHealthOutcome DevOpsGuruClient::DescribeResourceCollectionHealth(
@@ -343,7 +363,9 @@ DescribeResourceCollectionHealthOutcome DevOpsGuruClient::DescribeResourceCollec
         ResourceCollectionTypeMapper::GetNameForResourceCollectionType(request.GetResourceCollectionType()));
   };
 
-  return DescribeResourceCollectionHealthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeResourceCollectionHealthOutcome(result.GetResultWithOwnership())
+                            : DescribeResourceCollectionHealthOutcome(std::move(result.GetError()));
 }
 
 DescribeServiceIntegrationOutcome DevOpsGuruClient::DescribeServiceIntegration(const DescribeServiceIntegrationRequest& request) const {
@@ -352,7 +374,9 @@ DescribeServiceIntegrationOutcome DevOpsGuruClient::DescribeServiceIntegration(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/service-integrations");
   };
 
-  return DescribeServiceIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeServiceIntegrationOutcome(result.GetResultWithOwnership())
+                            : DescribeServiceIntegrationOutcome(std::move(result.GetError()));
 }
 
 GetCostEstimationOutcome DevOpsGuruClient::GetCostEstimation(const GetCostEstimationRequest& request) const {
@@ -361,7 +385,9 @@ GetCostEstimationOutcome DevOpsGuruClient::GetCostEstimation(const GetCostEstima
     endpointResolutionOutcome.GetResult().AddPathSegments("/cost-estimation");
   };
 
-  return GetCostEstimationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCostEstimationOutcome(result.GetResultWithOwnership())
+                            : GetCostEstimationOutcome(std::move(result.GetError()));
 }
 
 GetResourceCollectionOutcome DevOpsGuruClient::GetResourceCollection(const GetResourceCollectionRequest& request) const {
@@ -378,7 +404,9 @@ GetResourceCollectionOutcome DevOpsGuruClient::GetResourceCollection(const GetRe
         ResourceCollectionTypeMapper::GetNameForResourceCollectionType(request.GetResourceCollectionType()));
   };
 
-  return GetResourceCollectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourceCollectionOutcome(result.GetResultWithOwnership())
+                            : GetResourceCollectionOutcome(std::move(result.GetError()));
 }
 
 ListAnomaliesForInsightOutcome DevOpsGuruClient::ListAnomaliesForInsight(const ListAnomaliesForInsightRequest& request) const {
@@ -394,7 +422,9 @@ ListAnomaliesForInsightOutcome DevOpsGuruClient::ListAnomaliesForInsight(const L
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInsightId());
   };
 
-  return ListAnomaliesForInsightOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAnomaliesForInsightOutcome(result.GetResultWithOwnership())
+                            : ListAnomaliesForInsightOutcome(std::move(result.GetError()));
 }
 
 ListAnomalousLogGroupsOutcome DevOpsGuruClient::ListAnomalousLogGroups(const ListAnomalousLogGroupsRequest& request) const {
@@ -403,7 +433,9 @@ ListAnomalousLogGroupsOutcome DevOpsGuruClient::ListAnomalousLogGroups(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-log-anomalies");
   };
 
-  return ListAnomalousLogGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAnomalousLogGroupsOutcome(result.GetResultWithOwnership())
+                            : ListAnomalousLogGroupsOutcome(std::move(result.GetError()));
 }
 
 ListEventsOutcome DevOpsGuruClient::ListEvents(const ListEventsRequest& request) const {
@@ -412,7 +444,8 @@ ListEventsOutcome DevOpsGuruClient::ListEvents(const ListEventsRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/events");
   };
 
-  return ListEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventsOutcome(result.GetResultWithOwnership()) : ListEventsOutcome(std::move(result.GetError()));
 }
 
 ListInsightsOutcome DevOpsGuruClient::ListInsights(const ListInsightsRequest& request) const {
@@ -421,7 +454,8 @@ ListInsightsOutcome DevOpsGuruClient::ListInsights(const ListInsightsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights");
   };
 
-  return ListInsightsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInsightsOutcome(result.GetResultWithOwnership()) : ListInsightsOutcome(std::move(result.GetError()));
 }
 
 ListMonitoredResourcesOutcome DevOpsGuruClient::ListMonitoredResources(const ListMonitoredResourcesRequest& request) const {
@@ -430,7 +464,9 @@ ListMonitoredResourcesOutcome DevOpsGuruClient::ListMonitoredResources(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/monitoredResources");
   };
 
-  return ListMonitoredResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMonitoredResourcesOutcome(result.GetResultWithOwnership())
+                            : ListMonitoredResourcesOutcome(std::move(result.GetError()));
 }
 
 ListNotificationChannelsOutcome DevOpsGuruClient::ListNotificationChannels(const ListNotificationChannelsRequest& request) const {
@@ -439,7 +475,9 @@ ListNotificationChannelsOutcome DevOpsGuruClient::ListNotificationChannels(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   };
 
-  return ListNotificationChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNotificationChannelsOutcome(result.GetResultWithOwnership())
+                            : ListNotificationChannelsOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationInsightsOutcome DevOpsGuruClient::ListOrganizationInsights(const ListOrganizationInsightsRequest& request) const {
@@ -448,7 +486,9 @@ ListOrganizationInsightsOutcome DevOpsGuruClient::ListOrganizationInsights(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/insights");
   };
 
-  return ListOrganizationInsightsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOrganizationInsightsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationInsightsOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationsOutcome DevOpsGuruClient::ListRecommendations(const ListRecommendationsRequest& request) const {
@@ -457,7 +497,9 @@ ListRecommendationsOutcome DevOpsGuruClient::ListRecommendations(const ListRecom
     endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations");
   };
 
-  return ListRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationsOutcome(std::move(result.GetError()));
 }
 
 PutFeedbackOutcome DevOpsGuruClient::PutFeedback(const PutFeedbackRequest& request) const {
@@ -466,7 +508,8 @@ PutFeedbackOutcome DevOpsGuruClient::PutFeedback(const PutFeedbackRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/feedback");
   };
 
-  return PutFeedbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutFeedbackOutcome(result.GetResultWithOwnership()) : PutFeedbackOutcome(std::move(result.GetError()));
 }
 
 RemoveNotificationChannelOutcome DevOpsGuruClient::RemoveNotificationChannel(const RemoveNotificationChannelRequest& request) const {
@@ -482,7 +525,9 @@ RemoveNotificationChannelOutcome DevOpsGuruClient::RemoveNotificationChannel(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return RemoveNotificationChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveNotificationChannelOutcome(result.GetResultWithOwnership())
+                            : RemoveNotificationChannelOutcome(std::move(result.GetError()));
 }
 
 SearchInsightsOutcome DevOpsGuruClient::SearchInsights(const SearchInsightsRequest& request) const {
@@ -491,7 +536,8 @@ SearchInsightsOutcome DevOpsGuruClient::SearchInsights(const SearchInsightsReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights/search");
   };
 
-  return SearchInsightsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchInsightsOutcome(result.GetResultWithOwnership()) : SearchInsightsOutcome(std::move(result.GetError()));
 }
 
 SearchOrganizationInsightsOutcome DevOpsGuruClient::SearchOrganizationInsights(const SearchOrganizationInsightsRequest& request) const {
@@ -500,7 +546,9 @@ SearchOrganizationInsightsOutcome DevOpsGuruClient::SearchOrganizationInsights(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/insights/search");
   };
 
-  return SearchOrganizationInsightsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchOrganizationInsightsOutcome(result.GetResultWithOwnership())
+                            : SearchOrganizationInsightsOutcome(std::move(result.GetError()));
 }
 
 StartCostEstimationOutcome DevOpsGuruClient::StartCostEstimation(const StartCostEstimationRequest& request) const {
@@ -509,7 +557,9 @@ StartCostEstimationOutcome DevOpsGuruClient::StartCostEstimation(const StartCost
     endpointResolutionOutcome.GetResult().AddPathSegments("/cost-estimation");
   };
 
-  return StartCostEstimationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartCostEstimationOutcome(result.GetResultWithOwnership())
+                            : StartCostEstimationOutcome(std::move(result.GetError()));
 }
 
 UpdateEventSourcesConfigOutcome DevOpsGuruClient::UpdateEventSourcesConfig(const UpdateEventSourcesConfigRequest& request) const {
@@ -518,7 +568,9 @@ UpdateEventSourcesConfigOutcome DevOpsGuruClient::UpdateEventSourcesConfig(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-sources");
   };
 
-  return UpdateEventSourcesConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEventSourcesConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateEventSourcesConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceCollectionOutcome DevOpsGuruClient::UpdateResourceCollection(const UpdateResourceCollectionRequest& request) const {
@@ -527,7 +579,9 @@ UpdateResourceCollectionOutcome DevOpsGuruClient::UpdateResourceCollection(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/resource-collections");
   };
 
-  return UpdateResourceCollectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateResourceCollectionOutcome(result.GetResultWithOwnership())
+                            : UpdateResourceCollectionOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceIntegrationOutcome DevOpsGuruClient::UpdateServiceIntegration(const UpdateServiceIntegrationRequest& request) const {
@@ -536,5 +590,7 @@ UpdateServiceIntegrationOutcome DevOpsGuruClient::UpdateServiceIntegration(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/service-integrations");
   };
 
-  return UpdateServiceIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateServiceIntegrationOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceIntegrationOutcome(std::move(result.GetError()));
 }

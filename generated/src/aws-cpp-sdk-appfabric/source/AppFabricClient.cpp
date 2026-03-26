@@ -206,7 +206,9 @@ BatchGetUserAccessTasksOutcome AppFabricClient::BatchGetUserAccessTasks(const Ba
     endpointResolutionOutcome.GetResult().AddPathSegments("/useraccess/batchget");
   };
 
-  return BatchGetUserAccessTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetUserAccessTasksOutcome(result.GetResultWithOwnership())
+                            : BatchGetUserAccessTasksOutcome(std::move(result.GetError()));
 }
 
 ConnectAppAuthorizationOutcome AppFabricClient::ConnectAppAuthorization(const ConnectAppAuthorizationRequest& request) const {
@@ -230,7 +232,9 @@ ConnectAppAuthorizationOutcome AppFabricClient::ConnectAppAuthorization(const Co
     endpointResolutionOutcome.GetResult().AddPathSegments("/connect");
   };
 
-  return ConnectAppAuthorizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConnectAppAuthorizationOutcome(result.GetResultWithOwnership())
+                            : ConnectAppAuthorizationOutcome(std::move(result.GetError()));
 }
 
 CreateAppAuthorizationOutcome AppFabricClient::CreateAppAuthorization(const CreateAppAuthorizationRequest& request) const {
@@ -247,7 +251,9 @@ CreateAppAuthorizationOutcome AppFabricClient::CreateAppAuthorization(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/appauthorizations");
   };
 
-  return CreateAppAuthorizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppAuthorizationOutcome(result.GetResultWithOwnership())
+                            : CreateAppAuthorizationOutcome(std::move(result.GetError()));
 }
 
 CreateAppBundleOutcome AppFabricClient::CreateAppBundle(const CreateAppBundleRequest& request) const {
@@ -256,7 +262,9 @@ CreateAppBundleOutcome AppFabricClient::CreateAppBundle(const CreateAppBundleReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/appbundles");
   };
 
-  return CreateAppBundleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppBundleOutcome(result.GetResultWithOwnership())
+                            : CreateAppBundleOutcome(std::move(result.GetError()));
 }
 
 CreateIngestionOutcome AppFabricClient::CreateIngestion(const CreateIngestionRequest& request) const {
@@ -273,7 +281,9 @@ CreateIngestionOutcome AppFabricClient::CreateIngestion(const CreateIngestionReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/ingestions");
   };
 
-  return CreateIngestionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIngestionOutcome(result.GetResultWithOwnership())
+                            : CreateIngestionOutcome(std::move(result.GetError()));
 }
 
 CreateIngestionDestinationOutcome AppFabricClient::CreateIngestionDestination(const CreateIngestionDestinationRequest& request) const {
@@ -297,7 +307,9 @@ CreateIngestionDestinationOutcome AppFabricClient::CreateIngestionDestination(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/ingestiondestinations");
   };
 
-  return CreateIngestionDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIngestionDestinationOutcome(result.GetResultWithOwnership())
+                            : CreateIngestionDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteAppAuthorizationOutcome AppFabricClient::DeleteAppAuthorization(const DeleteAppAuthorizationRequest& request) const {
@@ -320,7 +332,9 @@ DeleteAppAuthorizationOutcome AppFabricClient::DeleteAppAuthorization(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppAuthorizationIdentifier());
   };
 
-  return DeleteAppAuthorizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAppAuthorizationOutcome(result.GetResultWithOwnership())
+                            : DeleteAppAuthorizationOutcome(std::move(result.GetError()));
 }
 
 DeleteAppBundleOutcome AppFabricClient::DeleteAppBundle(const DeleteAppBundleRequest& request) const {
@@ -336,7 +350,9 @@ DeleteAppBundleOutcome AppFabricClient::DeleteAppBundle(const DeleteAppBundleReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppBundleIdentifier());
   };
 
-  return DeleteAppBundleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAppBundleOutcome(result.GetResultWithOwnership())
+                            : DeleteAppBundleOutcome(std::move(result.GetError()));
 }
 
 DeleteIngestionOutcome AppFabricClient::DeleteIngestion(const DeleteIngestionRequest& request) const {
@@ -359,7 +375,9 @@ DeleteIngestionOutcome AppFabricClient::DeleteIngestion(const DeleteIngestionReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIngestionIdentifier());
   };
 
-  return DeleteIngestionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIngestionOutcome(result.GetResultWithOwnership())
+                            : DeleteIngestionOutcome(std::move(result.GetError()));
 }
 
 DeleteIngestionDestinationOutcome AppFabricClient::DeleteIngestionDestination(const DeleteIngestionDestinationRequest& request) const {
@@ -389,7 +407,9 @@ DeleteIngestionDestinationOutcome AppFabricClient::DeleteIngestionDestination(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIngestionDestinationIdentifier());
   };
 
-  return DeleteIngestionDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIngestionDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteIngestionDestinationOutcome(std::move(result.GetError()));
 }
 
 GetAppAuthorizationOutcome AppFabricClient::GetAppAuthorization(const GetAppAuthorizationRequest& request) const {
@@ -412,7 +432,9 @@ GetAppAuthorizationOutcome AppFabricClient::GetAppAuthorization(const GetAppAuth
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppAuthorizationIdentifier());
   };
 
-  return GetAppAuthorizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAppAuthorizationOutcome(result.GetResultWithOwnership())
+                            : GetAppAuthorizationOutcome(std::move(result.GetError()));
 }
 
 GetAppBundleOutcome AppFabricClient::GetAppBundle(const GetAppBundleRequest& request) const {
@@ -428,7 +450,8 @@ GetAppBundleOutcome AppFabricClient::GetAppBundle(const GetAppBundleRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppBundleIdentifier());
   };
 
-  return GetAppBundleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAppBundleOutcome(result.GetResultWithOwnership()) : GetAppBundleOutcome(std::move(result.GetError()));
 }
 
 GetIngestionOutcome AppFabricClient::GetIngestion(const GetIngestionRequest& request) const {
@@ -451,7 +474,8 @@ GetIngestionOutcome AppFabricClient::GetIngestion(const GetIngestionRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIngestionIdentifier());
   };
 
-  return GetIngestionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIngestionOutcome(result.GetResultWithOwnership()) : GetIngestionOutcome(std::move(result.GetError()));
 }
 
 GetIngestionDestinationOutcome AppFabricClient::GetIngestionDestination(const GetIngestionDestinationRequest& request) const {
@@ -481,7 +505,9 @@ GetIngestionDestinationOutcome AppFabricClient::GetIngestionDestination(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIngestionDestinationIdentifier());
   };
 
-  return GetIngestionDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIngestionDestinationOutcome(result.GetResultWithOwnership())
+                            : GetIngestionDestinationOutcome(std::move(result.GetError()));
 }
 
 ListAppAuthorizationsOutcome AppFabricClient::ListAppAuthorizations(const ListAppAuthorizationsRequest& request) const {
@@ -498,7 +524,9 @@ ListAppAuthorizationsOutcome AppFabricClient::ListAppAuthorizations(const ListAp
     endpointResolutionOutcome.GetResult().AddPathSegments("/appauthorizations");
   };
 
-  return ListAppAuthorizationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAppAuthorizationsOutcome(result.GetResultWithOwnership())
+                            : ListAppAuthorizationsOutcome(std::move(result.GetError()));
 }
 
 ListAppBundlesOutcome AppFabricClient::ListAppBundles(const ListAppBundlesRequest& request) const {
@@ -507,7 +535,8 @@ ListAppBundlesOutcome AppFabricClient::ListAppBundles(const ListAppBundlesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/appbundles");
   };
 
-  return ListAppBundlesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAppBundlesOutcome(result.GetResultWithOwnership()) : ListAppBundlesOutcome(std::move(result.GetError()));
 }
 
 ListIngestionDestinationsOutcome AppFabricClient::ListIngestionDestinations(const ListIngestionDestinationsRequest& request) const {
@@ -531,7 +560,9 @@ ListIngestionDestinationsOutcome AppFabricClient::ListIngestionDestinations(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/ingestiondestinations");
   };
 
-  return ListIngestionDestinationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIngestionDestinationsOutcome(result.GetResultWithOwnership())
+                            : ListIngestionDestinationsOutcome(std::move(result.GetError()));
 }
 
 ListIngestionsOutcome AppFabricClient::ListIngestions(const ListIngestionsRequest& request) const {
@@ -548,7 +579,8 @@ ListIngestionsOutcome AppFabricClient::ListIngestions(const ListIngestionsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/ingestions");
   };
 
-  return ListIngestionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIngestionsOutcome(result.GetResultWithOwnership()) : ListIngestionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AppFabricClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -564,7 +596,9 @@ ListTagsForResourceOutcome AppFabricClient::ListTagsForResource(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartIngestionOutcome AppFabricClient::StartIngestion(const StartIngestionRequest& request) const {
@@ -588,7 +622,8 @@ StartIngestionOutcome AppFabricClient::StartIngestion(const StartIngestionReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartIngestionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartIngestionOutcome(result.GetResultWithOwnership()) : StartIngestionOutcome(std::move(result.GetError()));
 }
 
 StartUserAccessTasksOutcome AppFabricClient::StartUserAccessTasks(const StartUserAccessTasksRequest& request) const {
@@ -597,7 +632,9 @@ StartUserAccessTasksOutcome AppFabricClient::StartUserAccessTasks(const StartUse
     endpointResolutionOutcome.GetResult().AddPathSegments("/useraccess/start");
   };
 
-  return StartUserAccessTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartUserAccessTasksOutcome(result.GetResultWithOwnership())
+                            : StartUserAccessTasksOutcome(std::move(result.GetError()));
 }
 
 StopIngestionOutcome AppFabricClient::StopIngestion(const StopIngestionRequest& request) const {
@@ -621,7 +658,8 @@ StopIngestionOutcome AppFabricClient::StopIngestion(const StopIngestionRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopIngestionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopIngestionOutcome(result.GetResultWithOwnership()) : StopIngestionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AppFabricClient::TagResource(const TagResourceRequest& request) const {
@@ -637,7 +675,8 @@ TagResourceOutcome AppFabricClient::TagResource(const TagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AppFabricClient::UntagResource(const UntagResourceRequest& request) const {
@@ -658,7 +697,8 @@ UntagResourceOutcome AppFabricClient::UntagResource(const UntagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAppAuthorizationOutcome AppFabricClient::UpdateAppAuthorization(const UpdateAppAuthorizationRequest& request) const {
@@ -681,7 +721,9 @@ UpdateAppAuthorizationOutcome AppFabricClient::UpdateAppAuthorization(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppAuthorizationIdentifier());
   };
 
-  return UpdateAppAuthorizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAppAuthorizationOutcome(result.GetResultWithOwnership())
+                            : UpdateAppAuthorizationOutcome(std::move(result.GetError()));
 }
 
 UpdateIngestionDestinationOutcome AppFabricClient::UpdateIngestionDestination(const UpdateIngestionDestinationRequest& request) const {
@@ -711,5 +753,7 @@ UpdateIngestionDestinationOutcome AppFabricClient::UpdateIngestionDestination(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIngestionDestinationIdentifier());
   };
 
-  return UpdateIngestionDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateIngestionDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateIngestionDestinationOutcome(std::move(result.GetError()));
 }

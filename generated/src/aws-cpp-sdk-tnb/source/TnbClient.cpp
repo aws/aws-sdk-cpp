@@ -221,7 +221,9 @@ CancelSolNetworkOperationOutcome TnbClient::CancelSolNetworkOperation(const Canc
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelSolNetworkOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelSolNetworkOperationOutcome(result.GetResultWithOwnership())
+                            : CancelSolNetworkOperationOutcome(std::move(result.GetError()));
 }
 
 CreateSolFunctionPackageOutcome TnbClient::CreateSolFunctionPackage(const CreateSolFunctionPackageRequest& request) const {
@@ -230,7 +232,9 @@ CreateSolFunctionPackageOutcome TnbClient::CreateSolFunctionPackage(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/sol/vnfpkgm/v1/vnf_packages");
   };
 
-  return CreateSolFunctionPackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSolFunctionPackageOutcome(result.GetResultWithOwnership())
+                            : CreateSolFunctionPackageOutcome(std::move(result.GetError()));
 }
 
 CreateSolNetworkInstanceOutcome TnbClient::CreateSolNetworkInstance(const CreateSolNetworkInstanceRequest& request) const {
@@ -239,7 +243,9 @@ CreateSolNetworkInstanceOutcome TnbClient::CreateSolNetworkInstance(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/sol/nslcm/v1/ns_instances");
   };
 
-  return CreateSolNetworkInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSolNetworkInstanceOutcome(result.GetResultWithOwnership())
+                            : CreateSolNetworkInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateSolNetworkPackageOutcome TnbClient::CreateSolNetworkPackage(const CreateSolNetworkPackageRequest& request) const {
@@ -248,7 +254,9 @@ CreateSolNetworkPackageOutcome TnbClient::CreateSolNetworkPackage(const CreateSo
     endpointResolutionOutcome.GetResult().AddPathSegments("/sol/nsd/v1/ns_descriptors");
   };
 
-  return CreateSolNetworkPackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSolNetworkPackageOutcome(result.GetResultWithOwnership())
+                            : CreateSolNetworkPackageOutcome(std::move(result.GetError()));
 }
 
 DeleteSolFunctionPackageOutcome TnbClient::DeleteSolFunctionPackage(const DeleteSolFunctionPackageRequest& request) const {
@@ -264,7 +272,9 @@ DeleteSolFunctionPackageOutcome TnbClient::DeleteSolFunctionPackage(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVnfPkgId());
   };
 
-  return DeleteSolFunctionPackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSolFunctionPackageOutcome(result.GetResultWithOwnership())
+                            : DeleteSolFunctionPackageOutcome(std::move(result.GetError()));
 }
 
 DeleteSolNetworkInstanceOutcome TnbClient::DeleteSolNetworkInstance(const DeleteSolNetworkInstanceRequest& request) const {
@@ -280,7 +290,9 @@ DeleteSolNetworkInstanceOutcome TnbClient::DeleteSolNetworkInstance(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNsInstanceId());
   };
 
-  return DeleteSolNetworkInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSolNetworkInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteSolNetworkInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteSolNetworkPackageOutcome TnbClient::DeleteSolNetworkPackage(const DeleteSolNetworkPackageRequest& request) const {
@@ -296,7 +308,9 @@ DeleteSolNetworkPackageOutcome TnbClient::DeleteSolNetworkPackage(const DeleteSo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNsdInfoId());
   };
 
-  return DeleteSolNetworkPackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSolNetworkPackageOutcome(result.GetResultWithOwnership())
+                            : DeleteSolNetworkPackageOutcome(std::move(result.GetError()));
 }
 
 GetSolFunctionInstanceOutcome TnbClient::GetSolFunctionInstance(const GetSolFunctionInstanceRequest& request) const {
@@ -312,7 +326,9 @@ GetSolFunctionInstanceOutcome TnbClient::GetSolFunctionInstance(const GetSolFunc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVnfInstanceId());
   };
 
-  return GetSolFunctionInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSolFunctionInstanceOutcome(result.GetResultWithOwnership())
+                            : GetSolFunctionInstanceOutcome(std::move(result.GetError()));
 }
 
 GetSolFunctionPackageOutcome TnbClient::GetSolFunctionPackage(const GetSolFunctionPackageRequest& request) const {
@@ -328,7 +344,9 @@ GetSolFunctionPackageOutcome TnbClient::GetSolFunctionPackage(const GetSolFuncti
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVnfPkgId());
   };
 
-  return GetSolFunctionPackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSolFunctionPackageOutcome(result.GetResultWithOwnership())
+                            : GetSolFunctionPackageOutcome(std::move(result.GetError()));
 }
 
 GetSolFunctionPackageContentOutcome TnbClient::GetSolFunctionPackageContent(const GetSolFunctionPackageContentRequest& request) const {
@@ -365,8 +383,9 @@ GetSolFunctionPackageContentOutcome TnbClient::GetSolFunctionPackageContent(cons
         endpointResolutionOutcome.GetResult().AddPathSegments("/sol/vnfpkgm/v1/vnf_packages/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVnfPkgId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/package_content");
-        return GetSolFunctionPackageContentOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetSolFunctionPackageContentOutcome(result.GetResultWithOwnership())
+                                  : GetSolFunctionPackageContentOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -408,8 +427,9 @@ GetSolFunctionPackageDescriptorOutcome TnbClient::GetSolFunctionPackageDescripto
         endpointResolutionOutcome.GetResult().AddPathSegments("/sol/vnfpkgm/v1/vnf_packages/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVnfPkgId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/vnfd");
-        return GetSolFunctionPackageDescriptorOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetSolFunctionPackageDescriptorOutcome(result.GetResultWithOwnership())
+                                  : GetSolFunctionPackageDescriptorOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -429,7 +449,9 @@ GetSolNetworkInstanceOutcome TnbClient::GetSolNetworkInstance(const GetSolNetwor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNsInstanceId());
   };
 
-  return GetSolNetworkInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSolNetworkInstanceOutcome(result.GetResultWithOwnership())
+                            : GetSolNetworkInstanceOutcome(std::move(result.GetError()));
 }
 
 GetSolNetworkOperationOutcome TnbClient::GetSolNetworkOperation(const GetSolNetworkOperationRequest& request) const {
@@ -445,7 +467,9 @@ GetSolNetworkOperationOutcome TnbClient::GetSolNetworkOperation(const GetSolNetw
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNsLcmOpOccId());
   };
 
-  return GetSolNetworkOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSolNetworkOperationOutcome(result.GetResultWithOwnership())
+                            : GetSolNetworkOperationOutcome(std::move(result.GetError()));
 }
 
 GetSolNetworkPackageOutcome TnbClient::GetSolNetworkPackage(const GetSolNetworkPackageRequest& request) const {
@@ -461,7 +485,9 @@ GetSolNetworkPackageOutcome TnbClient::GetSolNetworkPackage(const GetSolNetworkP
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNsdInfoId());
   };
 
-  return GetSolNetworkPackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSolNetworkPackageOutcome(result.GetResultWithOwnership())
+                            : GetSolNetworkPackageOutcome(std::move(result.GetError()));
 }
 
 GetSolNetworkPackageContentOutcome TnbClient::GetSolNetworkPackageContent(const GetSolNetworkPackageContentRequest& request) const {
@@ -498,8 +524,9 @@ GetSolNetworkPackageContentOutcome TnbClient::GetSolNetworkPackageContent(const 
         endpointResolutionOutcome.GetResult().AddPathSegments("/sol/nsd/v1/ns_descriptors/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNsdInfoId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/nsd_content");
-        return GetSolNetworkPackageContentOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetSolNetworkPackageContentOutcome(result.GetResultWithOwnership())
+                                  : GetSolNetworkPackageContentOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -536,8 +563,9 @@ GetSolNetworkPackageDescriptorOutcome TnbClient::GetSolNetworkPackageDescriptor(
         endpointResolutionOutcome.GetResult().AddPathSegments("/sol/nsd/v1/ns_descriptors/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNsdInfoId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/nsd");
-        return GetSolNetworkPackageDescriptorOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetSolNetworkPackageDescriptorOutcome(result.GetResultWithOwnership())
+                                  : GetSolNetworkPackageDescriptorOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -558,7 +586,9 @@ InstantiateSolNetworkInstanceOutcome TnbClient::InstantiateSolNetworkInstance(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/instantiate");
   };
 
-  return InstantiateSolNetworkInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InstantiateSolNetworkInstanceOutcome(result.GetResultWithOwnership())
+                            : InstantiateSolNetworkInstanceOutcome(std::move(result.GetError()));
 }
 
 ListSolFunctionInstancesOutcome TnbClient::ListSolFunctionInstances(const ListSolFunctionInstancesRequest& request) const {
@@ -567,7 +597,9 @@ ListSolFunctionInstancesOutcome TnbClient::ListSolFunctionInstances(const ListSo
     endpointResolutionOutcome.GetResult().AddPathSegments("/sol/vnflcm/v1/vnf_instances");
   };
 
-  return ListSolFunctionInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSolFunctionInstancesOutcome(result.GetResultWithOwnership())
+                            : ListSolFunctionInstancesOutcome(std::move(result.GetError()));
 }
 
 ListSolFunctionPackagesOutcome TnbClient::ListSolFunctionPackages(const ListSolFunctionPackagesRequest& request) const {
@@ -576,7 +608,9 @@ ListSolFunctionPackagesOutcome TnbClient::ListSolFunctionPackages(const ListSolF
     endpointResolutionOutcome.GetResult().AddPathSegments("/sol/vnfpkgm/v1/vnf_packages");
   };
 
-  return ListSolFunctionPackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSolFunctionPackagesOutcome(result.GetResultWithOwnership())
+                            : ListSolFunctionPackagesOutcome(std::move(result.GetError()));
 }
 
 ListSolNetworkInstancesOutcome TnbClient::ListSolNetworkInstances(const ListSolNetworkInstancesRequest& request) const {
@@ -585,7 +619,9 @@ ListSolNetworkInstancesOutcome TnbClient::ListSolNetworkInstances(const ListSolN
     endpointResolutionOutcome.GetResult().AddPathSegments("/sol/nslcm/v1/ns_instances");
   };
 
-  return ListSolNetworkInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSolNetworkInstancesOutcome(result.GetResultWithOwnership())
+                            : ListSolNetworkInstancesOutcome(std::move(result.GetError()));
 }
 
 ListSolNetworkOperationsOutcome TnbClient::ListSolNetworkOperations(const ListSolNetworkOperationsRequest& request) const {
@@ -594,7 +630,9 @@ ListSolNetworkOperationsOutcome TnbClient::ListSolNetworkOperations(const ListSo
     endpointResolutionOutcome.GetResult().AddPathSegments("/sol/nslcm/v1/ns_lcm_op_occs");
   };
 
-  return ListSolNetworkOperationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSolNetworkOperationsOutcome(result.GetResultWithOwnership())
+                            : ListSolNetworkOperationsOutcome(std::move(result.GetError()));
 }
 
 ListSolNetworkPackagesOutcome TnbClient::ListSolNetworkPackages(const ListSolNetworkPackagesRequest& request) const {
@@ -603,7 +641,9 @@ ListSolNetworkPackagesOutcome TnbClient::ListSolNetworkPackages(const ListSolNet
     endpointResolutionOutcome.GetResult().AddPathSegments("/sol/nsd/v1/ns_descriptors");
   };
 
-  return ListSolNetworkPackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSolNetworkPackagesOutcome(result.GetResultWithOwnership())
+                            : ListSolNetworkPackagesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome TnbClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -619,7 +659,9 @@ ListTagsForResourceOutcome TnbClient::ListTagsForResource(const ListTagsForResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutSolFunctionPackageContentOutcome TnbClient::PutSolFunctionPackageContent(const PutSolFunctionPackageContentRequest& request) const {
@@ -636,7 +678,9 @@ PutSolFunctionPackageContentOutcome TnbClient::PutSolFunctionPackageContent(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/package_content");
   };
 
-  return PutSolFunctionPackageContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutSolFunctionPackageContentOutcome(result.GetResultWithOwnership())
+                            : PutSolFunctionPackageContentOutcome(std::move(result.GetError()));
 }
 
 PutSolNetworkPackageContentOutcome TnbClient::PutSolNetworkPackageContent(const PutSolNetworkPackageContentRequest& request) const {
@@ -653,7 +697,9 @@ PutSolNetworkPackageContentOutcome TnbClient::PutSolNetworkPackageContent(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/nsd_content");
   };
 
-  return PutSolNetworkPackageContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutSolNetworkPackageContentOutcome(result.GetResultWithOwnership())
+                            : PutSolNetworkPackageContentOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome TnbClient::TagResource(const TagResourceRequest& request) const {
@@ -669,7 +715,8 @@ TagResourceOutcome TnbClient::TagResource(const TagResourceRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TerminateSolNetworkInstanceOutcome TnbClient::TerminateSolNetworkInstance(const TerminateSolNetworkInstanceRequest& request) const {
@@ -686,7 +733,9 @@ TerminateSolNetworkInstanceOutcome TnbClient::TerminateSolNetworkInstance(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/terminate");
   };
 
-  return TerminateSolNetworkInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateSolNetworkInstanceOutcome(result.GetResultWithOwnership())
+                            : TerminateSolNetworkInstanceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome TnbClient::UntagResource(const UntagResourceRequest& request) const {
@@ -707,7 +756,8 @@ UntagResourceOutcome TnbClient::UntagResource(const UntagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateSolFunctionPackageOutcome TnbClient::UpdateSolFunctionPackage(const UpdateSolFunctionPackageRequest& request) const {
@@ -723,7 +773,9 @@ UpdateSolFunctionPackageOutcome TnbClient::UpdateSolFunctionPackage(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVnfPkgId());
   };
 
-  return UpdateSolFunctionPackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSolFunctionPackageOutcome(result.GetResultWithOwnership())
+                            : UpdateSolFunctionPackageOutcome(std::move(result.GetError()));
 }
 
 UpdateSolNetworkInstanceOutcome TnbClient::UpdateSolNetworkInstance(const UpdateSolNetworkInstanceRequest& request) const {
@@ -740,7 +792,9 @@ UpdateSolNetworkInstanceOutcome TnbClient::UpdateSolNetworkInstance(const Update
     endpointResolutionOutcome.GetResult().AddPathSegments("/update");
   };
 
-  return UpdateSolNetworkInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSolNetworkInstanceOutcome(result.GetResultWithOwnership())
+                            : UpdateSolNetworkInstanceOutcome(std::move(result.GetError()));
 }
 
 UpdateSolNetworkPackageOutcome TnbClient::UpdateSolNetworkPackage(const UpdateSolNetworkPackageRequest& request) const {
@@ -756,7 +810,9 @@ UpdateSolNetworkPackageOutcome TnbClient::UpdateSolNetworkPackage(const UpdateSo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNsdInfoId());
   };
 
-  return UpdateSolNetworkPackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSolNetworkPackageOutcome(result.GetResultWithOwnership())
+                            : UpdateSolNetworkPackageOutcome(std::move(result.GetError()));
 }
 
 ValidateSolFunctionPackageContentOutcome TnbClient::ValidateSolFunctionPackageContent(
@@ -774,7 +830,9 @@ ValidateSolFunctionPackageContentOutcome TnbClient::ValidateSolFunctionPackageCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/package_content/validate");
   };
 
-  return ValidateSolFunctionPackageContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ValidateSolFunctionPackageContentOutcome(result.GetResultWithOwnership())
+                            : ValidateSolFunctionPackageContentOutcome(std::move(result.GetError()));
 }
 
 ValidateSolNetworkPackageContentOutcome TnbClient::ValidateSolNetworkPackageContent(
@@ -792,5 +850,7 @@ ValidateSolNetworkPackageContentOutcome TnbClient::ValidateSolNetworkPackageCont
     endpointResolutionOutcome.GetResult().AddPathSegments("/nsd_content/validate");
   };
 
-  return ValidateSolNetworkPackageContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ValidateSolNetworkPackageContentOutcome(result.GetResultWithOwnership())
+                            : ValidateSolNetworkPackageContentOutcome(std::move(result.GetError()));
 }

@@ -212,7 +212,9 @@ BatchCreateAttendeeOutcome ChimeSDKMeetingsClient::BatchCreateAttendee(const Bat
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return BatchCreateAttendeeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateAttendeeOutcome(result.GetResultWithOwnership())
+                            : BatchCreateAttendeeOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateAttendeeCapabilitiesExceptOutcome ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExcept(
@@ -233,7 +235,9 @@ BatchUpdateAttendeeCapabilitiesExceptOutcome ChimeSDKMeetingsClient::BatchUpdate
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return BatchUpdateAttendeeCapabilitiesExceptOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchUpdateAttendeeCapabilitiesExceptOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateAttendeeCapabilitiesExceptOutcome(std::move(result.GetError()));
 }
 
 CreateAttendeeOutcome ChimeSDKMeetingsClient::CreateAttendee(const CreateAttendeeRequest& request) const {
@@ -250,7 +254,8 @@ CreateAttendeeOutcome ChimeSDKMeetingsClient::CreateAttendee(const CreateAttende
     endpointResolutionOutcome.GetResult().AddPathSegments("/attendees");
   };
 
-  return CreateAttendeeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAttendeeOutcome(result.GetResultWithOwnership()) : CreateAttendeeOutcome(std::move(result.GetError()));
 }
 
 CreateMeetingOutcome ChimeSDKMeetingsClient::CreateMeeting(const CreateMeetingRequest& request) const {
@@ -259,7 +264,8 @@ CreateMeetingOutcome ChimeSDKMeetingsClient::CreateMeeting(const CreateMeetingRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/meetings");
   };
 
-  return CreateMeetingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMeetingOutcome(result.GetResultWithOwnership()) : CreateMeetingOutcome(std::move(result.GetError()));
 }
 
 CreateMeetingWithAttendeesOutcome ChimeSDKMeetingsClient::CreateMeetingWithAttendees(
@@ -272,7 +278,9 @@ CreateMeetingWithAttendeesOutcome ChimeSDKMeetingsClient::CreateMeetingWithAtten
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return CreateMeetingWithAttendeesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMeetingWithAttendeesOutcome(result.GetResultWithOwnership())
+                            : CreateMeetingWithAttendeesOutcome(std::move(result.GetError()));
 }
 
 DeleteAttendeeOutcome ChimeSDKMeetingsClient::DeleteAttendee(const DeleteAttendeeRequest& request) const {
@@ -295,7 +303,8 @@ DeleteAttendeeOutcome ChimeSDKMeetingsClient::DeleteAttendee(const DeleteAttende
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttendeeId());
   };
 
-  return DeleteAttendeeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAttendeeOutcome(result.GetResultWithOwnership()) : DeleteAttendeeOutcome(std::move(result.GetError()));
 }
 
 DeleteMeetingOutcome ChimeSDKMeetingsClient::DeleteMeeting(const DeleteMeetingRequest& request) const {
@@ -311,7 +320,8 @@ DeleteMeetingOutcome ChimeSDKMeetingsClient::DeleteMeeting(const DeleteMeetingRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
   };
 
-  return DeleteMeetingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMeetingOutcome(result.GetResultWithOwnership()) : DeleteMeetingOutcome(std::move(result.GetError()));
 }
 
 GetAttendeeOutcome ChimeSDKMeetingsClient::GetAttendee(const GetAttendeeRequest& request) const {
@@ -334,7 +344,8 @@ GetAttendeeOutcome ChimeSDKMeetingsClient::GetAttendee(const GetAttendeeRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttendeeId());
   };
 
-  return GetAttendeeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAttendeeOutcome(result.GetResultWithOwnership()) : GetAttendeeOutcome(std::move(result.GetError()));
 }
 
 GetMeetingOutcome ChimeSDKMeetingsClient::GetMeeting(const GetMeetingRequest& request) const {
@@ -350,7 +361,8 @@ GetMeetingOutcome ChimeSDKMeetingsClient::GetMeeting(const GetMeetingRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMeetingId());
   };
 
-  return GetMeetingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMeetingOutcome(result.GetResultWithOwnership()) : GetMeetingOutcome(std::move(result.GetError()));
 }
 
 ListAttendeesOutcome ChimeSDKMeetingsClient::ListAttendees(const ListAttendeesRequest& request) const {
@@ -367,7 +379,8 @@ ListAttendeesOutcome ChimeSDKMeetingsClient::ListAttendees(const ListAttendeesRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/attendees");
   };
 
-  return ListAttendeesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAttendeesOutcome(result.GetResultWithOwnership()) : ListAttendeesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ChimeSDKMeetingsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -382,7 +395,9 @@ ListTagsForResourceOutcome ChimeSDKMeetingsClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StartMeetingTranscription(const StartMeetingTranscriptionRequest& request) const {
@@ -402,7 +417,9 @@ StartMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StartMeetingTranscripti
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return StartMeetingTranscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMeetingTranscriptionOutcome(result.GetResultWithOwnership())
+                            : StartMeetingTranscriptionOutcome(std::move(result.GetError()));
 }
 
 StopMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StopMeetingTranscription(const StopMeetingTranscriptionRequest& request) const {
@@ -422,7 +439,9 @@ StopMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StopMeetingTranscription
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return StopMeetingTranscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopMeetingTranscriptionOutcome(result.GetResultWithOwnership())
+                            : StopMeetingTranscriptionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ChimeSDKMeetingsClient::TagResource(const TagResourceRequest& request) const {
@@ -434,7 +453,8 @@ TagResourceOutcome ChimeSDKMeetingsClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ChimeSDKMeetingsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -446,7 +466,8 @@ UntagResourceOutcome ChimeSDKMeetingsClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAttendeeCapabilitiesOutcome ChimeSDKMeetingsClient::UpdateAttendeeCapabilities(
@@ -471,5 +492,7 @@ UpdateAttendeeCapabilitiesOutcome ChimeSDKMeetingsClient::UpdateAttendeeCapabili
     endpointResolutionOutcome.GetResult().AddPathSegments("/capabilities");
   };
 
-  return UpdateAttendeeCapabilitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAttendeeCapabilitiesOutcome(result.GetResultWithOwnership())
+                            : UpdateAttendeeCapabilitiesOutcome(std::move(result.GetError()));
 }

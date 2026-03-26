@@ -223,7 +223,9 @@ CreateConfigurationSetOutcome PinpointEmailClient::CreateConfigurationSet(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/configuration-sets");
   };
 
-  return CreateConfigurationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationSetOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationSetOutcome(std::move(result.GetError()));
 }
 
 CreateConfigurationSetEventDestinationOutcome PinpointEmailClient::CreateConfigurationSetEventDestination(
@@ -241,7 +243,9 @@ CreateConfigurationSetEventDestinationOutcome PinpointEmailClient::CreateConfigu
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-destinations");
   };
 
-  return CreateConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }
 
 CreateDedicatedIpPoolOutcome PinpointEmailClient::CreateDedicatedIpPool(const CreateDedicatedIpPoolRequest& request) const {
@@ -250,7 +254,9 @@ CreateDedicatedIpPoolOutcome PinpointEmailClient::CreateDedicatedIpPool(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/dedicated-ip-pools");
   };
 
-  return CreateDedicatedIpPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDedicatedIpPoolOutcome(result.GetResultWithOwnership())
+                            : CreateDedicatedIpPoolOutcome(std::move(result.GetError()));
 }
 
 CreateDeliverabilityTestReportOutcome PinpointEmailClient::CreateDeliverabilityTestReport(
@@ -260,7 +266,9 @@ CreateDeliverabilityTestReportOutcome PinpointEmailClient::CreateDeliverabilityT
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/deliverability-dashboard/test");
   };
 
-  return CreateDeliverabilityTestReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeliverabilityTestReportOutcome(result.GetResultWithOwnership())
+                            : CreateDeliverabilityTestReportOutcome(std::move(result.GetError()));
 }
 
 CreateEmailIdentityOutcome PinpointEmailClient::CreateEmailIdentity(const CreateEmailIdentityRequest& request) const {
@@ -269,7 +277,9 @@ CreateEmailIdentityOutcome PinpointEmailClient::CreateEmailIdentity(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/identities");
   };
 
-  return CreateEmailIdentityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEmailIdentityOutcome(result.GetResultWithOwnership())
+                            : CreateEmailIdentityOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationSetOutcome PinpointEmailClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const {
@@ -285,7 +295,9 @@ DeleteConfigurationSetOutcome PinpointEmailClient::DeleteConfigurationSet(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationSetName());
   };
 
-  return DeleteConfigurationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationSetOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationSetOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationSetEventDestinationOutcome PinpointEmailClient::DeleteConfigurationSetEventDestination(
@@ -309,7 +321,9 @@ DeleteConfigurationSetEventDestinationOutcome PinpointEmailClient::DeleteConfigu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventDestinationName());
   };
 
-  return DeleteConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteDedicatedIpPoolOutcome PinpointEmailClient::DeleteDedicatedIpPool(const DeleteDedicatedIpPoolRequest& request) const {
@@ -325,7 +339,9 @@ DeleteDedicatedIpPoolOutcome PinpointEmailClient::DeleteDedicatedIpPool(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPoolName());
   };
 
-  return DeleteDedicatedIpPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDedicatedIpPoolOutcome(result.GetResultWithOwnership())
+                            : DeleteDedicatedIpPoolOutcome(std::move(result.GetError()));
 }
 
 DeleteEmailIdentityOutcome PinpointEmailClient::DeleteEmailIdentity(const DeleteEmailIdentityRequest& request) const {
@@ -341,7 +357,9 @@ DeleteEmailIdentityOutcome PinpointEmailClient::DeleteEmailIdentity(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailIdentity());
   };
 
-  return DeleteEmailIdentityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEmailIdentityOutcome(result.GetResultWithOwnership())
+                            : DeleteEmailIdentityOutcome(std::move(result.GetError()));
 }
 
 GetAccountOutcome PinpointEmailClient::GetAccount(const GetAccountRequest& request) const {
@@ -350,7 +368,8 @@ GetAccountOutcome PinpointEmailClient::GetAccount(const GetAccountRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/account");
   };
 
-  return GetAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountOutcome(result.GetResultWithOwnership()) : GetAccountOutcome(std::move(result.GetError()));
 }
 
 GetBlacklistReportsOutcome PinpointEmailClient::GetBlacklistReports(const GetBlacklistReportsRequest& request) const {
@@ -365,7 +384,9 @@ GetBlacklistReportsOutcome PinpointEmailClient::GetBlacklistReports(const GetBla
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/deliverability-dashboard/blacklist-report");
   };
 
-  return GetBlacklistReportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBlacklistReportsOutcome(result.GetResultWithOwnership())
+                            : GetBlacklistReportsOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationSetOutcome PinpointEmailClient::GetConfigurationSet(const GetConfigurationSetRequest& request) const {
@@ -381,7 +402,9 @@ GetConfigurationSetOutcome PinpointEmailClient::GetConfigurationSet(const GetCon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationSetName());
   };
 
-  return GetConfigurationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationSetOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationSetOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationSetEventDestinationsOutcome PinpointEmailClient::GetConfigurationSetEventDestinations(
@@ -399,7 +422,9 @@ GetConfigurationSetEventDestinationsOutcome PinpointEmailClient::GetConfiguratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-destinations");
   };
 
-  return GetConfigurationSetEventDestinationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationSetEventDestinationsOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationSetEventDestinationsOutcome(std::move(result.GetError()));
 }
 
 GetDedicatedIpOutcome PinpointEmailClient::GetDedicatedIp(const GetDedicatedIpRequest& request) const {
@@ -415,7 +440,8 @@ GetDedicatedIpOutcome PinpointEmailClient::GetDedicatedIp(const GetDedicatedIpRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIp());
   };
 
-  return GetDedicatedIpOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDedicatedIpOutcome(result.GetResultWithOwnership()) : GetDedicatedIpOutcome(std::move(result.GetError()));
 }
 
 GetDedicatedIpsOutcome PinpointEmailClient::GetDedicatedIps(const GetDedicatedIpsRequest& request) const {
@@ -424,7 +450,9 @@ GetDedicatedIpsOutcome PinpointEmailClient::GetDedicatedIps(const GetDedicatedIp
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/dedicated-ips");
   };
 
-  return GetDedicatedIpsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDedicatedIpsOutcome(result.GetResultWithOwnership())
+                            : GetDedicatedIpsOutcome(std::move(result.GetError()));
 }
 
 GetDeliverabilityDashboardOptionsOutcome PinpointEmailClient::GetDeliverabilityDashboardOptions(
@@ -434,7 +462,9 @@ GetDeliverabilityDashboardOptionsOutcome PinpointEmailClient::GetDeliverabilityD
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/deliverability-dashboard");
   };
 
-  return GetDeliverabilityDashboardOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeliverabilityDashboardOptionsOutcome(result.GetResultWithOwnership())
+                            : GetDeliverabilityDashboardOptionsOutcome(std::move(result.GetError()));
 }
 
 GetDeliverabilityTestReportOutcome PinpointEmailClient::GetDeliverabilityTestReport(
@@ -451,7 +481,9 @@ GetDeliverabilityTestReportOutcome PinpointEmailClient::GetDeliverabilityTestRep
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportId());
   };
 
-  return GetDeliverabilityTestReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeliverabilityTestReportOutcome(result.GetResultWithOwnership())
+                            : GetDeliverabilityTestReportOutcome(std::move(result.GetError()));
 }
 
 GetDomainDeliverabilityCampaignOutcome PinpointEmailClient::GetDomainDeliverabilityCampaign(
@@ -468,7 +500,9 @@ GetDomainDeliverabilityCampaignOutcome PinpointEmailClient::GetDomainDeliverabil
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCampaignId());
   };
 
-  return GetDomainDeliverabilityCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainDeliverabilityCampaignOutcome(result.GetResultWithOwnership())
+                            : GetDomainDeliverabilityCampaignOutcome(std::move(result.GetError()));
 }
 
 GetDomainStatisticsReportOutcome PinpointEmailClient::GetDomainStatisticsReport(const GetDomainStatisticsReportRequest& request) const {
@@ -494,7 +528,9 @@ GetDomainStatisticsReportOutcome PinpointEmailClient::GetDomainStatisticsReport(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomain());
   };
 
-  return GetDomainStatisticsReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainStatisticsReportOutcome(result.GetResultWithOwnership())
+                            : GetDomainStatisticsReportOutcome(std::move(result.GetError()));
 }
 
 GetEmailIdentityOutcome PinpointEmailClient::GetEmailIdentity(const GetEmailIdentityRequest& request) const {
@@ -510,7 +546,9 @@ GetEmailIdentityOutcome PinpointEmailClient::GetEmailIdentity(const GetEmailIden
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailIdentity());
   };
 
-  return GetEmailIdentityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEmailIdentityOutcome(result.GetResultWithOwnership())
+                            : GetEmailIdentityOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationSetsOutcome PinpointEmailClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const {
@@ -519,7 +557,9 @@ ListConfigurationSetsOutcome PinpointEmailClient::ListConfigurationSets(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/configuration-sets");
   };
 
-  return ListConfigurationSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigurationSetsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationSetsOutcome(std::move(result.GetError()));
 }
 
 ListDedicatedIpPoolsOutcome PinpointEmailClient::ListDedicatedIpPools(const ListDedicatedIpPoolsRequest& request) const {
@@ -528,7 +568,9 @@ ListDedicatedIpPoolsOutcome PinpointEmailClient::ListDedicatedIpPools(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/dedicated-ip-pools");
   };
 
-  return ListDedicatedIpPoolsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDedicatedIpPoolsOutcome(result.GetResultWithOwnership())
+                            : ListDedicatedIpPoolsOutcome(std::move(result.GetError()));
 }
 
 ListDeliverabilityTestReportsOutcome PinpointEmailClient::ListDeliverabilityTestReports(
@@ -538,7 +580,9 @@ ListDeliverabilityTestReportsOutcome PinpointEmailClient::ListDeliverabilityTest
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/deliverability-dashboard/test-reports");
   };
 
-  return ListDeliverabilityTestReportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDeliverabilityTestReportsOutcome(result.GetResultWithOwnership())
+                            : ListDeliverabilityTestReportsOutcome(std::move(result.GetError()));
 }
 
 ListDomainDeliverabilityCampaignsOutcome PinpointEmailClient::ListDomainDeliverabilityCampaigns(
@@ -566,7 +610,9 @@ ListDomainDeliverabilityCampaignsOutcome PinpointEmailClient::ListDomainDelivera
     endpointResolutionOutcome.GetResult().AddPathSegments("/campaigns");
   };
 
-  return ListDomainDeliverabilityCampaignsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainDeliverabilityCampaignsOutcome(result.GetResultWithOwnership())
+                            : ListDomainDeliverabilityCampaignsOutcome(std::move(result.GetError()));
 }
 
 ListEmailIdentitiesOutcome PinpointEmailClient::ListEmailIdentities(const ListEmailIdentitiesRequest& request) const {
@@ -575,7 +621,9 @@ ListEmailIdentitiesOutcome PinpointEmailClient::ListEmailIdentities(const ListEm
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/identities");
   };
 
-  return ListEmailIdentitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEmailIdentitiesOutcome(result.GetResultWithOwnership())
+                            : ListEmailIdentitiesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PinpointEmailClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -590,7 +638,9 @@ ListTagsForResourceOutcome PinpointEmailClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutAccountDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutAccountDedicatedIpWarmupAttributes(
@@ -600,7 +650,9 @@ PutAccountDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutAccountDedi
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/account/dedicated-ips/warmup");
   };
 
-  return PutAccountDedicatedIpWarmupAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccountDedicatedIpWarmupAttributesOutcome(result.GetResultWithOwnership())
+                            : PutAccountDedicatedIpWarmupAttributesOutcome(std::move(result.GetError()));
 }
 
 PutAccountSendingAttributesOutcome PinpointEmailClient::PutAccountSendingAttributes(
@@ -610,7 +662,9 @@ PutAccountSendingAttributesOutcome PinpointEmailClient::PutAccountSendingAttribu
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/account/sending");
   };
 
-  return PutAccountSendingAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccountSendingAttributesOutcome(result.GetResultWithOwnership())
+                            : PutAccountSendingAttributesOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetDeliveryOptionsOutcome PinpointEmailClient::PutConfigurationSetDeliveryOptions(
@@ -628,7 +682,9 @@ PutConfigurationSetDeliveryOptionsOutcome PinpointEmailClient::PutConfigurationS
     endpointResolutionOutcome.GetResult().AddPathSegments("/delivery-options");
   };
 
-  return PutConfigurationSetDeliveryOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationSetDeliveryOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetDeliveryOptionsOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetReputationOptionsOutcome PinpointEmailClient::PutConfigurationSetReputationOptions(
@@ -646,7 +702,9 @@ PutConfigurationSetReputationOptionsOutcome PinpointEmailClient::PutConfiguratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/reputation-options");
   };
 
-  return PutConfigurationSetReputationOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationSetReputationOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetReputationOptionsOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetSendingOptionsOutcome PinpointEmailClient::PutConfigurationSetSendingOptions(
@@ -664,7 +722,9 @@ PutConfigurationSetSendingOptionsOutcome PinpointEmailClient::PutConfigurationSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/sending");
   };
 
-  return PutConfigurationSetSendingOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationSetSendingOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetSendingOptionsOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetTrackingOptionsOutcome PinpointEmailClient::PutConfigurationSetTrackingOptions(
@@ -682,7 +742,9 @@ PutConfigurationSetTrackingOptionsOutcome PinpointEmailClient::PutConfigurationS
     endpointResolutionOutcome.GetResult().AddPathSegments("/tracking-options");
   };
 
-  return PutConfigurationSetTrackingOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationSetTrackingOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetTrackingOptionsOutcome(std::move(result.GetError()));
 }
 
 PutDedicatedIpInPoolOutcome PinpointEmailClient::PutDedicatedIpInPool(const PutDedicatedIpInPoolRequest& request) const {
@@ -699,7 +761,9 @@ PutDedicatedIpInPoolOutcome PinpointEmailClient::PutDedicatedIpInPool(const PutD
     endpointResolutionOutcome.GetResult().AddPathSegments("/pool");
   };
 
-  return PutDedicatedIpInPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDedicatedIpInPoolOutcome(result.GetResultWithOwnership())
+                            : PutDedicatedIpInPoolOutcome(std::move(result.GetError()));
 }
 
 PutDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutDedicatedIpWarmupAttributes(
@@ -717,7 +781,9 @@ PutDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutDedicatedIpWarmupA
     endpointResolutionOutcome.GetResult().AddPathSegments("/warmup");
   };
 
-  return PutDedicatedIpWarmupAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDedicatedIpWarmupAttributesOutcome(result.GetResultWithOwnership())
+                            : PutDedicatedIpWarmupAttributesOutcome(std::move(result.GetError()));
 }
 
 PutDeliverabilityDashboardOptionOutcome PinpointEmailClient::PutDeliverabilityDashboardOption(
@@ -727,7 +793,9 @@ PutDeliverabilityDashboardOptionOutcome PinpointEmailClient::PutDeliverabilityDa
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/deliverability-dashboard");
   };
 
-  return PutDeliverabilityDashboardOptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDeliverabilityDashboardOptionOutcome(result.GetResultWithOwnership())
+                            : PutDeliverabilityDashboardOptionOutcome(std::move(result.GetError()));
 }
 
 PutEmailIdentityDkimAttributesOutcome PinpointEmailClient::PutEmailIdentityDkimAttributes(
@@ -745,7 +813,9 @@ PutEmailIdentityDkimAttributesOutcome PinpointEmailClient::PutEmailIdentityDkimA
     endpointResolutionOutcome.GetResult().AddPathSegments("/dkim");
   };
 
-  return PutEmailIdentityDkimAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutEmailIdentityDkimAttributesOutcome(result.GetResultWithOwnership())
+                            : PutEmailIdentityDkimAttributesOutcome(std::move(result.GetError()));
 }
 
 PutEmailIdentityFeedbackAttributesOutcome PinpointEmailClient::PutEmailIdentityFeedbackAttributes(
@@ -763,7 +833,9 @@ PutEmailIdentityFeedbackAttributesOutcome PinpointEmailClient::PutEmailIdentityF
     endpointResolutionOutcome.GetResult().AddPathSegments("/feedback");
   };
 
-  return PutEmailIdentityFeedbackAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutEmailIdentityFeedbackAttributesOutcome(result.GetResultWithOwnership())
+                            : PutEmailIdentityFeedbackAttributesOutcome(std::move(result.GetError()));
 }
 
 PutEmailIdentityMailFromAttributesOutcome PinpointEmailClient::PutEmailIdentityMailFromAttributes(
@@ -781,7 +853,9 @@ PutEmailIdentityMailFromAttributesOutcome PinpointEmailClient::PutEmailIdentityM
     endpointResolutionOutcome.GetResult().AddPathSegments("/mail-from");
   };
 
-  return PutEmailIdentityMailFromAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutEmailIdentityMailFromAttributesOutcome(result.GetResultWithOwnership())
+                            : PutEmailIdentityMailFromAttributesOutcome(std::move(result.GetError()));
 }
 
 SendEmailOutcome PinpointEmailClient::SendEmail(const SendEmailRequest& request) const {
@@ -790,7 +864,8 @@ SendEmailOutcome PinpointEmailClient::SendEmail(const SendEmailRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/outbound-emails");
   };
 
-  return SendEmailOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendEmailOutcome(result.GetResultWithOwnership()) : SendEmailOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PinpointEmailClient::TagResource(const TagResourceRequest& request) const {
@@ -799,7 +874,8 @@ TagResourceOutcome PinpointEmailClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/tags");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PinpointEmailClient::UntagResource(const UntagResourceRequest& request) const {
@@ -819,7 +895,8 @@ UntagResourceOutcome PinpointEmailClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/tags");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationSetEventDestinationOutcome PinpointEmailClient::UpdateConfigurationSetEventDestination(
@@ -843,5 +920,7 @@ UpdateConfigurationSetEventDestinationOutcome PinpointEmailClient::UpdateConfigu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventDestinationName());
   };
 
-  return UpdateConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }

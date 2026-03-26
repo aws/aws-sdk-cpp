@@ -211,138 +211,194 @@ VerifiedPermissionsClient::InvokeOperationOutcome VerifiedPermissionsClient::Inv
 }
 
 BatchGetPolicyOutcome VerifiedPermissionsClient::BatchGetPolicy(const BatchGetPolicyRequest& request) const {
-  return BatchGetPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetPolicyOutcome(result.GetResultWithOwnership()) : BatchGetPolicyOutcome(std::move(result.GetError()));
 }
 
 BatchIsAuthorizedOutcome VerifiedPermissionsClient::BatchIsAuthorized(const BatchIsAuthorizedRequest& request) const {
-  return BatchIsAuthorizedOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchIsAuthorizedOutcome(result.GetResultWithOwnership())
+                            : BatchIsAuthorizedOutcome(std::move(result.GetError()));
 }
 
 BatchIsAuthorizedWithTokenOutcome VerifiedPermissionsClient::BatchIsAuthorizedWithToken(
     const BatchIsAuthorizedWithTokenRequest& request) const {
-  return BatchIsAuthorizedWithTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchIsAuthorizedWithTokenOutcome(result.GetResultWithOwnership())
+                            : BatchIsAuthorizedWithTokenOutcome(std::move(result.GetError()));
 }
 
 CreateIdentitySourceOutcome VerifiedPermissionsClient::CreateIdentitySource(const CreateIdentitySourceRequest& request) const {
-  return CreateIdentitySourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIdentitySourceOutcome(result.GetResultWithOwnership())
+                            : CreateIdentitySourceOutcome(std::move(result.GetError()));
 }
 
 CreatePolicyOutcome VerifiedPermissionsClient::CreatePolicy(const CreatePolicyRequest& request) const {
-  return CreatePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePolicyOutcome(result.GetResultWithOwnership()) : CreatePolicyOutcome(std::move(result.GetError()));
 }
 
 CreatePolicyStoreOutcome VerifiedPermissionsClient::CreatePolicyStore(const CreatePolicyStoreRequest& request) const {
-  return CreatePolicyStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePolicyStoreOutcome(result.GetResultWithOwnership())
+                            : CreatePolicyStoreOutcome(std::move(result.GetError()));
 }
 
 CreatePolicyStoreAliasOutcome VerifiedPermissionsClient::CreatePolicyStoreAlias(const CreatePolicyStoreAliasRequest& request) const {
-  return CreatePolicyStoreAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePolicyStoreAliasOutcome(result.GetResultWithOwnership())
+                            : CreatePolicyStoreAliasOutcome(std::move(result.GetError()));
 }
 
 CreatePolicyTemplateOutcome VerifiedPermissionsClient::CreatePolicyTemplate(const CreatePolicyTemplateRequest& request) const {
-  return CreatePolicyTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePolicyTemplateOutcome(result.GetResultWithOwnership())
+                            : CreatePolicyTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteIdentitySourceOutcome VerifiedPermissionsClient::DeleteIdentitySource(const DeleteIdentitySourceRequest& request) const {
-  return DeleteIdentitySourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIdentitySourceOutcome(result.GetResultWithOwnership())
+                            : DeleteIdentitySourceOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyOutcome VerifiedPermissionsClient::DeletePolicy(const DeletePolicyRequest& request) const {
-  return DeletePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePolicyOutcome(result.GetResultWithOwnership()) : DeletePolicyOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyStoreOutcome VerifiedPermissionsClient::DeletePolicyStore(const DeletePolicyStoreRequest& request) const {
-  return DeletePolicyStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePolicyStoreOutcome(result.GetResultWithOwnership())
+                            : DeletePolicyStoreOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyStoreAliasOutcome VerifiedPermissionsClient::DeletePolicyStoreAlias(const DeletePolicyStoreAliasRequest& request) const {
-  return DeletePolicyStoreAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePolicyStoreAliasOutcome(result.GetResultWithOwnership())
+                            : DeletePolicyStoreAliasOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyTemplateOutcome VerifiedPermissionsClient::DeletePolicyTemplate(const DeletePolicyTemplateRequest& request) const {
-  return DeletePolicyTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePolicyTemplateOutcome(result.GetResultWithOwnership())
+                            : DeletePolicyTemplateOutcome(std::move(result.GetError()));
 }
 
 GetIdentitySourceOutcome VerifiedPermissionsClient::GetIdentitySource(const GetIdentitySourceRequest& request) const {
-  return GetIdentitySourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIdentitySourceOutcome(result.GetResultWithOwnership())
+                            : GetIdentitySourceOutcome(std::move(result.GetError()));
 }
 
 GetPolicyOutcome VerifiedPermissionsClient::GetPolicy(const GetPolicyRequest& request) const {
-  return GetPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPolicyOutcome(result.GetResultWithOwnership()) : GetPolicyOutcome(std::move(result.GetError()));
 }
 
 GetPolicyStoreOutcome VerifiedPermissionsClient::GetPolicyStore(const GetPolicyStoreRequest& request) const {
-  return GetPolicyStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPolicyStoreOutcome(result.GetResultWithOwnership()) : GetPolicyStoreOutcome(std::move(result.GetError()));
 }
 
 GetPolicyStoreAliasOutcome VerifiedPermissionsClient::GetPolicyStoreAlias(const GetPolicyStoreAliasRequest& request) const {
-  return GetPolicyStoreAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPolicyStoreAliasOutcome(result.GetResultWithOwnership())
+                            : GetPolicyStoreAliasOutcome(std::move(result.GetError()));
 }
 
 GetPolicyTemplateOutcome VerifiedPermissionsClient::GetPolicyTemplate(const GetPolicyTemplateRequest& request) const {
-  return GetPolicyTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPolicyTemplateOutcome(result.GetResultWithOwnership())
+                            : GetPolicyTemplateOutcome(std::move(result.GetError()));
 }
 
 GetSchemaOutcome VerifiedPermissionsClient::GetSchema(const GetSchemaRequest& request) const {
-  return GetSchemaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSchemaOutcome(result.GetResultWithOwnership()) : GetSchemaOutcome(std::move(result.GetError()));
 }
 
 IsAuthorizedOutcome VerifiedPermissionsClient::IsAuthorized(const IsAuthorizedRequest& request) const {
-  return IsAuthorizedOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? IsAuthorizedOutcome(result.GetResultWithOwnership()) : IsAuthorizedOutcome(std::move(result.GetError()));
 }
 
 IsAuthorizedWithTokenOutcome VerifiedPermissionsClient::IsAuthorizedWithToken(const IsAuthorizedWithTokenRequest& request) const {
-  return IsAuthorizedWithTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? IsAuthorizedWithTokenOutcome(result.GetResultWithOwnership())
+                            : IsAuthorizedWithTokenOutcome(std::move(result.GetError()));
 }
 
 ListIdentitySourcesOutcome VerifiedPermissionsClient::ListIdentitySources(const ListIdentitySourcesRequest& request) const {
-  return ListIdentitySourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIdentitySourcesOutcome(result.GetResultWithOwnership())
+                            : ListIdentitySourcesOutcome(std::move(result.GetError()));
 }
 
 ListPoliciesOutcome VerifiedPermissionsClient::ListPolicies(const ListPoliciesRequest& request) const {
-  return ListPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPoliciesOutcome(result.GetResultWithOwnership()) : ListPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListPolicyStoreAliasesOutcome VerifiedPermissionsClient::ListPolicyStoreAliases(const ListPolicyStoreAliasesRequest& request) const {
-  return ListPolicyStoreAliasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPolicyStoreAliasesOutcome(result.GetResultWithOwnership())
+                            : ListPolicyStoreAliasesOutcome(std::move(result.GetError()));
 }
 
 ListPolicyStoresOutcome VerifiedPermissionsClient::ListPolicyStores(const ListPolicyStoresRequest& request) const {
-  return ListPolicyStoresOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPolicyStoresOutcome(result.GetResultWithOwnership())
+                            : ListPolicyStoresOutcome(std::move(result.GetError()));
 }
 
 ListPolicyTemplatesOutcome VerifiedPermissionsClient::ListPolicyTemplates(const ListPolicyTemplatesRequest& request) const {
-  return ListPolicyTemplatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPolicyTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListPolicyTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome VerifiedPermissionsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutSchemaOutcome VerifiedPermissionsClient::PutSchema(const PutSchemaRequest& request) const {
-  return PutSchemaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutSchemaOutcome(result.GetResultWithOwnership()) : PutSchemaOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome VerifiedPermissionsClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome VerifiedPermissionsClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateIdentitySourceOutcome VerifiedPermissionsClient::UpdateIdentitySource(const UpdateIdentitySourceRequest& request) const {
-  return UpdateIdentitySourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIdentitySourceOutcome(result.GetResultWithOwnership())
+                            : UpdateIdentitySourceOutcome(std::move(result.GetError()));
 }
 
 UpdatePolicyOutcome VerifiedPermissionsClient::UpdatePolicy(const UpdatePolicyRequest& request) const {
-  return UpdatePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePolicyOutcome(result.GetResultWithOwnership()) : UpdatePolicyOutcome(std::move(result.GetError()));
 }
 
 UpdatePolicyStoreOutcome VerifiedPermissionsClient::UpdatePolicyStore(const UpdatePolicyStoreRequest& request) const {
-  return UpdatePolicyStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePolicyStoreOutcome(result.GetResultWithOwnership())
+                            : UpdatePolicyStoreOutcome(std::move(result.GetError()));
 }
 
 UpdatePolicyTemplateOutcome VerifiedPermissionsClient::UpdatePolicyTemplate(const UpdatePolicyTemplateRequest& request) const {
-  return UpdatePolicyTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePolicyTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdatePolicyTemplateOutcome(std::move(result.GetError()));
 }

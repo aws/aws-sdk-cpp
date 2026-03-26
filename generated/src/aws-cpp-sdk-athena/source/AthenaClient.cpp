@@ -242,284 +242,407 @@ AthenaClient::InvokeOperationOutcome AthenaClient::InvokeServiceOperation(const 
 }
 
 BatchGetNamedQueryOutcome AthenaClient::BatchGetNamedQuery(const BatchGetNamedQueryRequest& request) const {
-  return BatchGetNamedQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetNamedQueryOutcome(result.GetResultWithOwnership())
+                            : BatchGetNamedQueryOutcome(std::move(result.GetError()));
 }
 
 BatchGetPreparedStatementOutcome AthenaClient::BatchGetPreparedStatement(const BatchGetPreparedStatementRequest& request) const {
-  return BatchGetPreparedStatementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetPreparedStatementOutcome(result.GetResultWithOwnership())
+                            : BatchGetPreparedStatementOutcome(std::move(result.GetError()));
 }
 
 BatchGetQueryExecutionOutcome AthenaClient::BatchGetQueryExecution(const BatchGetQueryExecutionRequest& request) const {
-  return BatchGetQueryExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetQueryExecutionOutcome(result.GetResultWithOwnership())
+                            : BatchGetQueryExecutionOutcome(std::move(result.GetError()));
 }
 
 CancelCapacityReservationOutcome AthenaClient::CancelCapacityReservation(const CancelCapacityReservationRequest& request) const {
-  return CancelCapacityReservationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : CancelCapacityReservationOutcome(std::move(result.GetError()));
 }
 
 CreateCapacityReservationOutcome AthenaClient::CreateCapacityReservation(const CreateCapacityReservationRequest& request) const {
-  return CreateCapacityReservationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : CreateCapacityReservationOutcome(std::move(result.GetError()));
 }
 
 CreateDataCatalogOutcome AthenaClient::CreateDataCatalog(const CreateDataCatalogRequest& request) const {
-  return CreateDataCatalogOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataCatalogOutcome(result.GetResultWithOwnership())
+                            : CreateDataCatalogOutcome(std::move(result.GetError()));
 }
 
 CreateNamedQueryOutcome AthenaClient::CreateNamedQuery(const CreateNamedQueryRequest& request) const {
-  return CreateNamedQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNamedQueryOutcome(result.GetResultWithOwnership())
+                            : CreateNamedQueryOutcome(std::move(result.GetError()));
 }
 
 CreateNotebookOutcome AthenaClient::CreateNotebook(const CreateNotebookRequest& request) const {
-  return CreateNotebookOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNotebookOutcome(result.GetResultWithOwnership()) : CreateNotebookOutcome(std::move(result.GetError()));
 }
 
 CreatePreparedStatementOutcome AthenaClient::CreatePreparedStatement(const CreatePreparedStatementRequest& request) const {
-  return CreatePreparedStatementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePreparedStatementOutcome(result.GetResultWithOwnership())
+                            : CreatePreparedStatementOutcome(std::move(result.GetError()));
 }
 
 CreatePresignedNotebookUrlOutcome AthenaClient::CreatePresignedNotebookUrl(const CreatePresignedNotebookUrlRequest& request) const {
-  return CreatePresignedNotebookUrlOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePresignedNotebookUrlOutcome(result.GetResultWithOwnership())
+                            : CreatePresignedNotebookUrlOutcome(std::move(result.GetError()));
 }
 
 CreateWorkGroupOutcome AthenaClient::CreateWorkGroup(const CreateWorkGroupRequest& request) const {
-  return CreateWorkGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkGroupOutcome(result.GetResultWithOwnership())
+                            : CreateWorkGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteCapacityReservationOutcome AthenaClient::DeleteCapacityReservation(const DeleteCapacityReservationRequest& request) const {
-  return DeleteCapacityReservationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : DeleteCapacityReservationOutcome(std::move(result.GetError()));
 }
 
 DeleteDataCatalogOutcome AthenaClient::DeleteDataCatalog(const DeleteDataCatalogRequest& request) const {
-  return DeleteDataCatalogOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataCatalogOutcome(result.GetResultWithOwnership())
+                            : DeleteDataCatalogOutcome(std::move(result.GetError()));
 }
 
 DeleteNamedQueryOutcome AthenaClient::DeleteNamedQuery(const DeleteNamedQueryRequest& request) const {
-  return DeleteNamedQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNamedQueryOutcome(result.GetResultWithOwnership())
+                            : DeleteNamedQueryOutcome(std::move(result.GetError()));
 }
 
 DeleteNotebookOutcome AthenaClient::DeleteNotebook(const DeleteNotebookRequest& request) const {
-  return DeleteNotebookOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNotebookOutcome(result.GetResultWithOwnership()) : DeleteNotebookOutcome(std::move(result.GetError()));
 }
 
 DeletePreparedStatementOutcome AthenaClient::DeletePreparedStatement(const DeletePreparedStatementRequest& request) const {
-  return DeletePreparedStatementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePreparedStatementOutcome(result.GetResultWithOwnership())
+                            : DeletePreparedStatementOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkGroupOutcome AthenaClient::DeleteWorkGroup(const DeleteWorkGroupRequest& request) const {
-  return DeleteWorkGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWorkGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkGroupOutcome(std::move(result.GetError()));
 }
 
 ExportNotebookOutcome AthenaClient::ExportNotebook(const ExportNotebookRequest& request) const {
-  return ExportNotebookOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportNotebookOutcome(result.GetResultWithOwnership()) : ExportNotebookOutcome(std::move(result.GetError()));
 }
 
 GetCalculationExecutionOutcome AthenaClient::GetCalculationExecution(const GetCalculationExecutionRequest& request) const {
-  return GetCalculationExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCalculationExecutionOutcome(result.GetResultWithOwnership())
+                            : GetCalculationExecutionOutcome(std::move(result.GetError()));
 }
 
 GetCalculationExecutionCodeOutcome AthenaClient::GetCalculationExecutionCode(const GetCalculationExecutionCodeRequest& request) const {
-  return GetCalculationExecutionCodeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCalculationExecutionCodeOutcome(result.GetResultWithOwnership())
+                            : GetCalculationExecutionCodeOutcome(std::move(result.GetError()));
 }
 
 GetCalculationExecutionStatusOutcome AthenaClient::GetCalculationExecutionStatus(
     const GetCalculationExecutionStatusRequest& request) const {
-  return GetCalculationExecutionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCalculationExecutionStatusOutcome(result.GetResultWithOwnership())
+                            : GetCalculationExecutionStatusOutcome(std::move(result.GetError()));
 }
 
 GetCapacityAssignmentConfigurationOutcome AthenaClient::GetCapacityAssignmentConfiguration(
     const GetCapacityAssignmentConfigurationRequest& request) const {
-  return GetCapacityAssignmentConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCapacityAssignmentConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetCapacityAssignmentConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetCapacityReservationOutcome AthenaClient::GetCapacityReservation(const GetCapacityReservationRequest& request) const {
-  return GetCapacityReservationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : GetCapacityReservationOutcome(std::move(result.GetError()));
 }
 
 GetDataCatalogOutcome AthenaClient::GetDataCatalog(const GetDataCatalogRequest& request) const {
-  return GetDataCatalogOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataCatalogOutcome(result.GetResultWithOwnership()) : GetDataCatalogOutcome(std::move(result.GetError()));
 }
 
 GetDatabaseOutcome AthenaClient::GetDatabase(const GetDatabaseRequest& request) const {
-  return GetDatabaseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDatabaseOutcome(result.GetResultWithOwnership()) : GetDatabaseOutcome(std::move(result.GetError()));
 }
 
 GetNamedQueryOutcome AthenaClient::GetNamedQuery(const GetNamedQueryRequest& request) const {
-  return GetNamedQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetNamedQueryOutcome(result.GetResultWithOwnership()) : GetNamedQueryOutcome(std::move(result.GetError()));
 }
 
 GetNotebookMetadataOutcome AthenaClient::GetNotebookMetadata(const GetNotebookMetadataRequest& request) const {
-  return GetNotebookMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetNotebookMetadataOutcome(result.GetResultWithOwnership())
+                            : GetNotebookMetadataOutcome(std::move(result.GetError()));
 }
 
 GetPreparedStatementOutcome AthenaClient::GetPreparedStatement(const GetPreparedStatementRequest& request) const {
-  return GetPreparedStatementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPreparedStatementOutcome(result.GetResultWithOwnership())
+                            : GetPreparedStatementOutcome(std::move(result.GetError()));
 }
 
 GetQueryExecutionOutcome AthenaClient::GetQueryExecution(const GetQueryExecutionRequest& request) const {
-  return GetQueryExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQueryExecutionOutcome(result.GetResultWithOwnership())
+                            : GetQueryExecutionOutcome(std::move(result.GetError()));
 }
 
 GetQueryResultsOutcome AthenaClient::GetQueryResults(const GetQueryResultsRequest& request) const {
-  return GetQueryResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQueryResultsOutcome(result.GetResultWithOwnership())
+                            : GetQueryResultsOutcome(std::move(result.GetError()));
 }
 
 GetQueryRuntimeStatisticsOutcome AthenaClient::GetQueryRuntimeStatistics(const GetQueryRuntimeStatisticsRequest& request) const {
-  return GetQueryRuntimeStatisticsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQueryRuntimeStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetQueryRuntimeStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetResourceDashboardOutcome AthenaClient::GetResourceDashboard(const GetResourceDashboardRequest& request) const {
-  return GetResourceDashboardOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceDashboardOutcome(result.GetResultWithOwnership())
+                            : GetResourceDashboardOutcome(std::move(result.GetError()));
 }
 
 GetSessionOutcome AthenaClient::GetSession(const GetSessionRequest& request) const {
-  return GetSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
 }
 
 GetSessionEndpointOutcome AthenaClient::GetSessionEndpoint(const GetSessionEndpointRequest& request) const {
-  return GetSessionEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSessionEndpointOutcome(result.GetResultWithOwnership())
+                            : GetSessionEndpointOutcome(std::move(result.GetError()));
 }
 
 GetSessionStatusOutcome AthenaClient::GetSessionStatus(const GetSessionStatusRequest& request) const {
-  return GetSessionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSessionStatusOutcome(result.GetResultWithOwnership())
+                            : GetSessionStatusOutcome(std::move(result.GetError()));
 }
 
 GetTableMetadataOutcome AthenaClient::GetTableMetadata(const GetTableMetadataRequest& request) const {
-  return GetTableMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTableMetadataOutcome(result.GetResultWithOwnership())
+                            : GetTableMetadataOutcome(std::move(result.GetError()));
 }
 
 GetWorkGroupOutcome AthenaClient::GetWorkGroup(const GetWorkGroupRequest& request) const {
-  return GetWorkGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkGroupOutcome(result.GetResultWithOwnership()) : GetWorkGroupOutcome(std::move(result.GetError()));
 }
 
 ImportNotebookOutcome AthenaClient::ImportNotebook(const ImportNotebookRequest& request) const {
-  return ImportNotebookOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportNotebookOutcome(result.GetResultWithOwnership()) : ImportNotebookOutcome(std::move(result.GetError()));
 }
 
 ListApplicationDPUSizesOutcome AthenaClient::ListApplicationDPUSizes(const ListApplicationDPUSizesRequest& request) const {
-  return ListApplicationDPUSizesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationDPUSizesOutcome(result.GetResultWithOwnership())
+                            : ListApplicationDPUSizesOutcome(std::move(result.GetError()));
 }
 
 ListCalculationExecutionsOutcome AthenaClient::ListCalculationExecutions(const ListCalculationExecutionsRequest& request) const {
-  return ListCalculationExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCalculationExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListCalculationExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListCapacityReservationsOutcome AthenaClient::ListCapacityReservations(const ListCapacityReservationsRequest& request) const {
-  return ListCapacityReservationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCapacityReservationsOutcome(result.GetResultWithOwnership())
+                            : ListCapacityReservationsOutcome(std::move(result.GetError()));
 }
 
 ListDataCatalogsOutcome AthenaClient::ListDataCatalogs(const ListDataCatalogsRequest& request) const {
-  return ListDataCatalogsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataCatalogsOutcome(result.GetResultWithOwnership())
+                            : ListDataCatalogsOutcome(std::move(result.GetError()));
 }
 
 ListDatabasesOutcome AthenaClient::ListDatabases(const ListDatabasesRequest& request) const {
-  return ListDatabasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatabasesOutcome(result.GetResultWithOwnership()) : ListDatabasesOutcome(std::move(result.GetError()));
 }
 
 ListEngineVersionsOutcome AthenaClient::ListEngineVersions(const ListEngineVersionsRequest& request) const {
-  return ListEngineVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEngineVersionsOutcome(result.GetResultWithOwnership())
+                            : ListEngineVersionsOutcome(std::move(result.GetError()));
 }
 
 ListExecutorsOutcome AthenaClient::ListExecutors(const ListExecutorsRequest& request) const {
-  return ListExecutorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExecutorsOutcome(result.GetResultWithOwnership()) : ListExecutorsOutcome(std::move(result.GetError()));
 }
 
 ListNamedQueriesOutcome AthenaClient::ListNamedQueries(const ListNamedQueriesRequest& request) const {
-  return ListNamedQueriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNamedQueriesOutcome(result.GetResultWithOwnership())
+                            : ListNamedQueriesOutcome(std::move(result.GetError()));
 }
 
 ListNotebookMetadataOutcome AthenaClient::ListNotebookMetadata(const ListNotebookMetadataRequest& request) const {
-  return ListNotebookMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNotebookMetadataOutcome(result.GetResultWithOwnership())
+                            : ListNotebookMetadataOutcome(std::move(result.GetError()));
 }
 
 ListNotebookSessionsOutcome AthenaClient::ListNotebookSessions(const ListNotebookSessionsRequest& request) const {
-  return ListNotebookSessionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNotebookSessionsOutcome(result.GetResultWithOwnership())
+                            : ListNotebookSessionsOutcome(std::move(result.GetError()));
 }
 
 ListPreparedStatementsOutcome AthenaClient::ListPreparedStatements(const ListPreparedStatementsRequest& request) const {
-  return ListPreparedStatementsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPreparedStatementsOutcome(result.GetResultWithOwnership())
+                            : ListPreparedStatementsOutcome(std::move(result.GetError()));
 }
 
 ListQueryExecutionsOutcome AthenaClient::ListQueryExecutions(const ListQueryExecutionsRequest& request) const {
-  return ListQueryExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListQueryExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListQueryExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListSessionsOutcome AthenaClient::ListSessions(const ListSessionsRequest& request) const {
-  return ListSessionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
 }
 
 ListTableMetadataOutcome AthenaClient::ListTableMetadata(const ListTableMetadataRequest& request) const {
-  return ListTableMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTableMetadataOutcome(result.GetResultWithOwnership())
+                            : ListTableMetadataOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AthenaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWorkGroupsOutcome AthenaClient::ListWorkGroups(const ListWorkGroupsRequest& request) const {
-  return ListWorkGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkGroupsOutcome(result.GetResultWithOwnership()) : ListWorkGroupsOutcome(std::move(result.GetError()));
 }
 
 PutCapacityAssignmentConfigurationOutcome AthenaClient::PutCapacityAssignmentConfiguration(
     const PutCapacityAssignmentConfigurationRequest& request) const {
-  return PutCapacityAssignmentConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutCapacityAssignmentConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutCapacityAssignmentConfigurationOutcome(std::move(result.GetError()));
 }
 
 StartCalculationExecutionOutcome AthenaClient::StartCalculationExecution(const StartCalculationExecutionRequest& request) const {
-  return StartCalculationExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCalculationExecutionOutcome(result.GetResultWithOwnership())
+                            : StartCalculationExecutionOutcome(std::move(result.GetError()));
 }
 
 StartQueryExecutionOutcome AthenaClient::StartQueryExecution(const StartQueryExecutionRequest& request) const {
-  return StartQueryExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQueryExecutionOutcome(result.GetResultWithOwnership())
+                            : StartQueryExecutionOutcome(std::move(result.GetError()));
 }
 
 StartSessionOutcome AthenaClient::StartSession(const StartSessionRequest& request) const {
-  return StartSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSessionOutcome(result.GetResultWithOwnership()) : StartSessionOutcome(std::move(result.GetError()));
 }
 
 StopCalculationExecutionOutcome AthenaClient::StopCalculationExecution(const StopCalculationExecutionRequest& request) const {
-  return StopCalculationExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopCalculationExecutionOutcome(result.GetResultWithOwnership())
+                            : StopCalculationExecutionOutcome(std::move(result.GetError()));
 }
 
 StopQueryExecutionOutcome AthenaClient::StopQueryExecution(const StopQueryExecutionRequest& request) const {
-  return StopQueryExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopQueryExecutionOutcome(result.GetResultWithOwnership())
+                            : StopQueryExecutionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AthenaClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TerminateSessionOutcome AthenaClient::TerminateSession(const TerminateSessionRequest& request) const {
-  return TerminateSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateSessionOutcome(result.GetResultWithOwnership())
+                            : TerminateSessionOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AthenaClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCapacityReservationOutcome AthenaClient::UpdateCapacityReservation(const UpdateCapacityReservationRequest& request) const {
-  return UpdateCapacityReservationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : UpdateCapacityReservationOutcome(std::move(result.GetError()));
 }
 
 UpdateDataCatalogOutcome AthenaClient::UpdateDataCatalog(const UpdateDataCatalogRequest& request) const {
-  return UpdateDataCatalogOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataCatalogOutcome(result.GetResultWithOwnership())
+                            : UpdateDataCatalogOutcome(std::move(result.GetError()));
 }
 
 UpdateNamedQueryOutcome AthenaClient::UpdateNamedQuery(const UpdateNamedQueryRequest& request) const {
-  return UpdateNamedQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNamedQueryOutcome(result.GetResultWithOwnership())
+                            : UpdateNamedQueryOutcome(std::move(result.GetError()));
 }
 
 UpdateNotebookOutcome AthenaClient::UpdateNotebook(const UpdateNotebookRequest& request) const {
-  return UpdateNotebookOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNotebookOutcome(result.GetResultWithOwnership()) : UpdateNotebookOutcome(std::move(result.GetError()));
 }
 
 UpdateNotebookMetadataOutcome AthenaClient::UpdateNotebookMetadata(const UpdateNotebookMetadataRequest& request) const {
-  return UpdateNotebookMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNotebookMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateNotebookMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdatePreparedStatementOutcome AthenaClient::UpdatePreparedStatement(const UpdatePreparedStatementRequest& request) const {
-  return UpdatePreparedStatementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePreparedStatementOutcome(result.GetResultWithOwnership())
+                            : UpdatePreparedStatementOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkGroupOutcome AthenaClient::UpdateWorkGroup(const UpdateWorkGroupRequest& request) const {
-  return UpdateWorkGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkGroupOutcome(std::move(result.GetError()));
 }

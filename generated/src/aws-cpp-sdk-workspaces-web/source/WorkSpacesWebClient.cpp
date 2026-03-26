@@ -269,7 +269,9 @@ AssociateBrowserSettingsOutcome WorkSpacesWebClient::AssociateBrowserSettings(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/browserSettings");
   };
 
-  return AssociateBrowserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateBrowserSettingsOutcome(result.GetResultWithOwnership())
+                            : AssociateBrowserSettingsOutcome(std::move(result.GetError()));
 }
 
 AssociateDataProtectionSettingsOutcome WorkSpacesWebClient::AssociateDataProtectionSettings(
@@ -292,7 +294,9 @@ AssociateDataProtectionSettingsOutcome WorkSpacesWebClient::AssociateDataProtect
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataProtectionSettings");
   };
 
-  return AssociateDataProtectionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateDataProtectionSettingsOutcome(result.GetResultWithOwnership())
+                            : AssociateDataProtectionSettingsOutcome(std::move(result.GetError()));
 }
 
 AssociateIpAccessSettingsOutcome WorkSpacesWebClient::AssociateIpAccessSettings(const AssociateIpAccessSettingsRequest& request) const {
@@ -314,7 +318,9 @@ AssociateIpAccessSettingsOutcome WorkSpacesWebClient::AssociateIpAccessSettings(
     endpointResolutionOutcome.GetResult().AddPathSegments("/ipAccessSettings");
   };
 
-  return AssociateIpAccessSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateIpAccessSettingsOutcome(result.GetResultWithOwnership())
+                            : AssociateIpAccessSettingsOutcome(std::move(result.GetError()));
 }
 
 AssociateNetworkSettingsOutcome WorkSpacesWebClient::AssociateNetworkSettings(const AssociateNetworkSettingsRequest& request) const {
@@ -336,7 +342,9 @@ AssociateNetworkSettingsOutcome WorkSpacesWebClient::AssociateNetworkSettings(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/networkSettings");
   };
 
-  return AssociateNetworkSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateNetworkSettingsOutcome(result.GetResultWithOwnership())
+                            : AssociateNetworkSettingsOutcome(std::move(result.GetError()));
 }
 
 AssociateSessionLoggerOutcome WorkSpacesWebClient::AssociateSessionLogger(const AssociateSessionLoggerRequest& request) const {
@@ -358,7 +366,9 @@ AssociateSessionLoggerOutcome WorkSpacesWebClient::AssociateSessionLogger(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessionLogger");
   };
 
-  return AssociateSessionLoggerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateSessionLoggerOutcome(result.GetResultWithOwnership())
+                            : AssociateSessionLoggerOutcome(std::move(result.GetError()));
 }
 
 AssociateTrustStoreOutcome WorkSpacesWebClient::AssociateTrustStore(const AssociateTrustStoreRequest& request) const {
@@ -380,7 +390,9 @@ AssociateTrustStoreOutcome WorkSpacesWebClient::AssociateTrustStore(const Associ
     endpointResolutionOutcome.GetResult().AddPathSegments("/trustStores");
   };
 
-  return AssociateTrustStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateTrustStoreOutcome(result.GetResultWithOwnership())
+                            : AssociateTrustStoreOutcome(std::move(result.GetError()));
 }
 
 AssociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::AssociateUserAccessLoggingSettings(
@@ -403,7 +415,9 @@ AssociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::AssociateUserAcce
     endpointResolutionOutcome.GetResult().AddPathSegments("/userAccessLoggingSettings");
   };
 
-  return AssociateUserAccessLoggingSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateUserAccessLoggingSettingsOutcome(result.GetResultWithOwnership())
+                            : AssociateUserAccessLoggingSettingsOutcome(std::move(result.GetError()));
 }
 
 AssociateUserSettingsOutcome WorkSpacesWebClient::AssociateUserSettings(const AssociateUserSettingsRequest& request) const {
@@ -425,7 +439,9 @@ AssociateUserSettingsOutcome WorkSpacesWebClient::AssociateUserSettings(const As
     endpointResolutionOutcome.GetResult().AddPathSegments("/userSettings");
   };
 
-  return AssociateUserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateUserSettingsOutcome(result.GetResultWithOwnership())
+                            : AssociateUserSettingsOutcome(std::move(result.GetError()));
 }
 
 CreateBrowserSettingsOutcome WorkSpacesWebClient::CreateBrowserSettings(const CreateBrowserSettingsRequest& request) const {
@@ -434,7 +450,9 @@ CreateBrowserSettingsOutcome WorkSpacesWebClient::CreateBrowserSettings(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/browserSettings");
   };
 
-  return CreateBrowserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBrowserSettingsOutcome(result.GetResultWithOwnership())
+                            : CreateBrowserSettingsOutcome(std::move(result.GetError()));
 }
 
 CreateDataProtectionSettingsOutcome WorkSpacesWebClient::CreateDataProtectionSettings(
@@ -444,7 +462,9 @@ CreateDataProtectionSettingsOutcome WorkSpacesWebClient::CreateDataProtectionSet
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataProtectionSettings");
   };
 
-  return CreateDataProtectionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataProtectionSettingsOutcome(result.GetResultWithOwnership())
+                            : CreateDataProtectionSettingsOutcome(std::move(result.GetError()));
 }
 
 CreateIdentityProviderOutcome WorkSpacesWebClient::CreateIdentityProvider(const CreateIdentityProviderRequest& request) const {
@@ -453,7 +473,9 @@ CreateIdentityProviderOutcome WorkSpacesWebClient::CreateIdentityProvider(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/identityProviders");
   };
 
-  return CreateIdentityProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIdentityProviderOutcome(result.GetResultWithOwnership())
+                            : CreateIdentityProviderOutcome(std::move(result.GetError()));
 }
 
 CreateIpAccessSettingsOutcome WorkSpacesWebClient::CreateIpAccessSettings(const CreateIpAccessSettingsRequest& request) const {
@@ -462,7 +484,9 @@ CreateIpAccessSettingsOutcome WorkSpacesWebClient::CreateIpAccessSettings(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/ipAccessSettings");
   };
 
-  return CreateIpAccessSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpAccessSettingsOutcome(result.GetResultWithOwnership())
+                            : CreateIpAccessSettingsOutcome(std::move(result.GetError()));
 }
 
 CreateNetworkSettingsOutcome WorkSpacesWebClient::CreateNetworkSettings(const CreateNetworkSettingsRequest& request) const {
@@ -471,7 +495,9 @@ CreateNetworkSettingsOutcome WorkSpacesWebClient::CreateNetworkSettings(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/networkSettings");
   };
 
-  return CreateNetworkSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNetworkSettingsOutcome(result.GetResultWithOwnership())
+                            : CreateNetworkSettingsOutcome(std::move(result.GetError()));
 }
 
 CreatePortalOutcome WorkSpacesWebClient::CreatePortal(const CreatePortalRequest& request) const {
@@ -480,7 +506,8 @@ CreatePortalOutcome WorkSpacesWebClient::CreatePortal(const CreatePortalRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/portals");
   };
 
-  return CreatePortalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePortalOutcome(result.GetResultWithOwnership()) : CreatePortalOutcome(std::move(result.GetError()));
 }
 
 CreateSessionLoggerOutcome WorkSpacesWebClient::CreateSessionLogger(const CreateSessionLoggerRequest& request) const {
@@ -489,7 +516,9 @@ CreateSessionLoggerOutcome WorkSpacesWebClient::CreateSessionLogger(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessionLoggers");
   };
 
-  return CreateSessionLoggerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSessionLoggerOutcome(result.GetResultWithOwnership())
+                            : CreateSessionLoggerOutcome(std::move(result.GetError()));
 }
 
 CreateTrustStoreOutcome WorkSpacesWebClient::CreateTrustStore(const CreateTrustStoreRequest& request) const {
@@ -498,7 +527,9 @@ CreateTrustStoreOutcome WorkSpacesWebClient::CreateTrustStore(const CreateTrustS
     endpointResolutionOutcome.GetResult().AddPathSegments("/trustStores");
   };
 
-  return CreateTrustStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrustStoreOutcome(result.GetResultWithOwnership())
+                            : CreateTrustStoreOutcome(std::move(result.GetError()));
 }
 
 CreateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::CreateUserAccessLoggingSettings(
@@ -508,7 +539,9 @@ CreateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::CreateUserAccessLogg
     endpointResolutionOutcome.GetResult().AddPathSegments("/userAccessLoggingSettings");
   };
 
-  return CreateUserAccessLoggingSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserAccessLoggingSettingsOutcome(result.GetResultWithOwnership())
+                            : CreateUserAccessLoggingSettingsOutcome(std::move(result.GetError()));
 }
 
 CreateUserSettingsOutcome WorkSpacesWebClient::CreateUserSettings(const CreateUserSettingsRequest& request) const {
@@ -517,7 +550,9 @@ CreateUserSettingsOutcome WorkSpacesWebClient::CreateUserSettings(const CreateUs
     endpointResolutionOutcome.GetResult().AddPathSegments("/userSettings");
   };
 
-  return CreateUserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserSettingsOutcome(result.GetResultWithOwnership())
+                            : CreateUserSettingsOutcome(std::move(result.GetError()));
 }
 
 DeleteBrowserSettingsOutcome WorkSpacesWebClient::DeleteBrowserSettings(const DeleteBrowserSettingsRequest& request) const {
@@ -533,7 +568,9 @@ DeleteBrowserSettingsOutcome WorkSpacesWebClient::DeleteBrowserSettings(const De
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetBrowserSettingsArn());
   };
 
-  return DeleteBrowserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBrowserSettingsOutcome(result.GetResultWithOwnership())
+                            : DeleteBrowserSettingsOutcome(std::move(result.GetError()));
 }
 
 DeleteDataProtectionSettingsOutcome WorkSpacesWebClient::DeleteDataProtectionSettings(
@@ -550,7 +587,9 @@ DeleteDataProtectionSettingsOutcome WorkSpacesWebClient::DeleteDataProtectionSet
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetDataProtectionSettingsArn());
   };
 
-  return DeleteDataProtectionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataProtectionSettingsOutcome(result.GetResultWithOwnership())
+                            : DeleteDataProtectionSettingsOutcome(std::move(result.GetError()));
 }
 
 DeleteIdentityProviderOutcome WorkSpacesWebClient::DeleteIdentityProvider(const DeleteIdentityProviderRequest& request) const {
@@ -566,7 +605,9 @@ DeleteIdentityProviderOutcome WorkSpacesWebClient::DeleteIdentityProvider(const 
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIdentityProviderArn());
   };
 
-  return DeleteIdentityProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIdentityProviderOutcome(result.GetResultWithOwnership())
+                            : DeleteIdentityProviderOutcome(std::move(result.GetError()));
 }
 
 DeleteIpAccessSettingsOutcome WorkSpacesWebClient::DeleteIpAccessSettings(const DeleteIpAccessSettingsRequest& request) const {
@@ -582,7 +623,9 @@ DeleteIpAccessSettingsOutcome WorkSpacesWebClient::DeleteIpAccessSettings(const 
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIpAccessSettingsArn());
   };
 
-  return DeleteIpAccessSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIpAccessSettingsOutcome(result.GetResultWithOwnership())
+                            : DeleteIpAccessSettingsOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkSettingsOutcome WorkSpacesWebClient::DeleteNetworkSettings(const DeleteNetworkSettingsRequest& request) const {
@@ -598,7 +641,9 @@ DeleteNetworkSettingsOutcome WorkSpacesWebClient::DeleteNetworkSettings(const De
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetNetworkSettingsArn());
   };
 
-  return DeleteNetworkSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNetworkSettingsOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkSettingsOutcome(std::move(result.GetError()));
 }
 
 DeletePortalOutcome WorkSpacesWebClient::DeletePortal(const DeletePortalRequest& request) const {
@@ -614,7 +659,8 @@ DeletePortalOutcome WorkSpacesWebClient::DeletePortal(const DeletePortalRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
   };
 
-  return DeletePortalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePortalOutcome(result.GetResultWithOwnership()) : DeletePortalOutcome(std::move(result.GetError()));
 }
 
 DeleteSessionLoggerOutcome WorkSpacesWebClient::DeleteSessionLogger(const DeleteSessionLoggerRequest& request) const {
@@ -630,7 +676,9 @@ DeleteSessionLoggerOutcome WorkSpacesWebClient::DeleteSessionLogger(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetSessionLoggerArn());
   };
 
-  return DeleteSessionLoggerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSessionLoggerOutcome(result.GetResultWithOwnership())
+                            : DeleteSessionLoggerOutcome(std::move(result.GetError()));
 }
 
 DeleteTrustStoreOutcome WorkSpacesWebClient::DeleteTrustStore(const DeleteTrustStoreRequest& request) const {
@@ -646,7 +694,9 @@ DeleteTrustStoreOutcome WorkSpacesWebClient::DeleteTrustStore(const DeleteTrustS
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetTrustStoreArn());
   };
 
-  return DeleteTrustStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTrustStoreOutcome(result.GetResultWithOwnership())
+                            : DeleteTrustStoreOutcome(std::move(result.GetError()));
 }
 
 DeleteUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DeleteUserAccessLoggingSettings(
@@ -663,7 +713,9 @@ DeleteUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DeleteUserAccessLogg
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetUserAccessLoggingSettingsArn());
   };
 
-  return DeleteUserAccessLoggingSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserAccessLoggingSettingsOutcome(result.GetResultWithOwnership())
+                            : DeleteUserAccessLoggingSettingsOutcome(std::move(result.GetError()));
 }
 
 DeleteUserSettingsOutcome WorkSpacesWebClient::DeleteUserSettings(const DeleteUserSettingsRequest& request) const {
@@ -679,7 +731,9 @@ DeleteUserSettingsOutcome WorkSpacesWebClient::DeleteUserSettings(const DeleteUs
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetUserSettingsArn());
   };
 
-  return DeleteUserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserSettingsOutcome(result.GetResultWithOwnership())
+                            : DeleteUserSettingsOutcome(std::move(result.GetError()));
 }
 
 DisassociateBrowserSettingsOutcome WorkSpacesWebClient::DisassociateBrowserSettings(
@@ -697,7 +751,9 @@ DisassociateBrowserSettingsOutcome WorkSpacesWebClient::DisassociateBrowserSetti
     endpointResolutionOutcome.GetResult().AddPathSegments("/browserSettings");
   };
 
-  return DisassociateBrowserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateBrowserSettingsOutcome(result.GetResultWithOwnership())
+                            : DisassociateBrowserSettingsOutcome(std::move(result.GetError()));
 }
 
 DisassociateDataProtectionSettingsOutcome WorkSpacesWebClient::DisassociateDataProtectionSettings(
@@ -715,7 +771,9 @@ DisassociateDataProtectionSettingsOutcome WorkSpacesWebClient::DisassociateDataP
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataProtectionSettings");
   };
 
-  return DisassociateDataProtectionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateDataProtectionSettingsOutcome(result.GetResultWithOwnership())
+                            : DisassociateDataProtectionSettingsOutcome(std::move(result.GetError()));
 }
 
 DisassociateIpAccessSettingsOutcome WorkSpacesWebClient::DisassociateIpAccessSettings(
@@ -733,7 +791,9 @@ DisassociateIpAccessSettingsOutcome WorkSpacesWebClient::DisassociateIpAccessSet
     endpointResolutionOutcome.GetResult().AddPathSegments("/ipAccessSettings");
   };
 
-  return DisassociateIpAccessSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateIpAccessSettingsOutcome(result.GetResultWithOwnership())
+                            : DisassociateIpAccessSettingsOutcome(std::move(result.GetError()));
 }
 
 DisassociateNetworkSettingsOutcome WorkSpacesWebClient::DisassociateNetworkSettings(
@@ -751,7 +811,9 @@ DisassociateNetworkSettingsOutcome WorkSpacesWebClient::DisassociateNetworkSetti
     endpointResolutionOutcome.GetResult().AddPathSegments("/networkSettings");
   };
 
-  return DisassociateNetworkSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateNetworkSettingsOutcome(result.GetResultWithOwnership())
+                            : DisassociateNetworkSettingsOutcome(std::move(result.GetError()));
 }
 
 DisassociateSessionLoggerOutcome WorkSpacesWebClient::DisassociateSessionLogger(const DisassociateSessionLoggerRequest& request) const {
@@ -768,7 +830,9 @@ DisassociateSessionLoggerOutcome WorkSpacesWebClient::DisassociateSessionLogger(
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessionLogger");
   };
 
-  return DisassociateSessionLoggerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateSessionLoggerOutcome(result.GetResultWithOwnership())
+                            : DisassociateSessionLoggerOutcome(std::move(result.GetError()));
 }
 
 DisassociateTrustStoreOutcome WorkSpacesWebClient::DisassociateTrustStore(const DisassociateTrustStoreRequest& request) const {
@@ -785,7 +849,9 @@ DisassociateTrustStoreOutcome WorkSpacesWebClient::DisassociateTrustStore(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/trustStores");
   };
 
-  return DisassociateTrustStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateTrustStoreOutcome(result.GetResultWithOwnership())
+                            : DisassociateTrustStoreOutcome(std::move(result.GetError()));
 }
 
 DisassociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DisassociateUserAccessLoggingSettings(
@@ -803,7 +869,9 @@ DisassociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DisassociateUs
     endpointResolutionOutcome.GetResult().AddPathSegments("/userAccessLoggingSettings");
   };
 
-  return DisassociateUserAccessLoggingSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateUserAccessLoggingSettingsOutcome(result.GetResultWithOwnership())
+                            : DisassociateUserAccessLoggingSettingsOutcome(std::move(result.GetError()));
 }
 
 DisassociateUserSettingsOutcome WorkSpacesWebClient::DisassociateUserSettings(const DisassociateUserSettingsRequest& request) const {
@@ -820,7 +888,9 @@ DisassociateUserSettingsOutcome WorkSpacesWebClient::DisassociateUserSettings(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/userSettings");
   };
 
-  return DisassociateUserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateUserSettingsOutcome(result.GetResultWithOwnership())
+                            : DisassociateUserSettingsOutcome(std::move(result.GetError()));
 }
 
 ExpireSessionOutcome WorkSpacesWebClient::ExpireSession(const ExpireSessionRequest& request) const {
@@ -843,7 +913,8 @@ ExpireSessionOutcome WorkSpacesWebClient::ExpireSession(const ExpireSessionReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return ExpireSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? ExpireSessionOutcome(result.GetResultWithOwnership()) : ExpireSessionOutcome(std::move(result.GetError()));
 }
 
 GetBrowserSettingsOutcome WorkSpacesWebClient::GetBrowserSettings(const GetBrowserSettingsRequest& request) const {
@@ -859,7 +930,9 @@ GetBrowserSettingsOutcome WorkSpacesWebClient::GetBrowserSettings(const GetBrows
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetBrowserSettingsArn());
   };
 
-  return GetBrowserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBrowserSettingsOutcome(result.GetResultWithOwnership())
+                            : GetBrowserSettingsOutcome(std::move(result.GetError()));
 }
 
 GetDataProtectionSettingsOutcome WorkSpacesWebClient::GetDataProtectionSettings(const GetDataProtectionSettingsRequest& request) const {
@@ -875,7 +948,9 @@ GetDataProtectionSettingsOutcome WorkSpacesWebClient::GetDataProtectionSettings(
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetDataProtectionSettingsArn());
   };
 
-  return GetDataProtectionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataProtectionSettingsOutcome(result.GetResultWithOwnership())
+                            : GetDataProtectionSettingsOutcome(std::move(result.GetError()));
 }
 
 GetIdentityProviderOutcome WorkSpacesWebClient::GetIdentityProvider(const GetIdentityProviderRequest& request) const {
@@ -891,7 +966,9 @@ GetIdentityProviderOutcome WorkSpacesWebClient::GetIdentityProvider(const GetIde
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIdentityProviderArn());
   };
 
-  return GetIdentityProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIdentityProviderOutcome(result.GetResultWithOwnership())
+                            : GetIdentityProviderOutcome(std::move(result.GetError()));
 }
 
 GetIpAccessSettingsOutcome WorkSpacesWebClient::GetIpAccessSettings(const GetIpAccessSettingsRequest& request) const {
@@ -907,7 +984,9 @@ GetIpAccessSettingsOutcome WorkSpacesWebClient::GetIpAccessSettings(const GetIpA
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIpAccessSettingsArn());
   };
 
-  return GetIpAccessSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIpAccessSettingsOutcome(result.GetResultWithOwnership())
+                            : GetIpAccessSettingsOutcome(std::move(result.GetError()));
 }
 
 GetNetworkSettingsOutcome WorkSpacesWebClient::GetNetworkSettings(const GetNetworkSettingsRequest& request) const {
@@ -923,7 +1002,9 @@ GetNetworkSettingsOutcome WorkSpacesWebClient::GetNetworkSettings(const GetNetwo
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetNetworkSettingsArn());
   };
 
-  return GetNetworkSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNetworkSettingsOutcome(result.GetResultWithOwnership())
+                            : GetNetworkSettingsOutcome(std::move(result.GetError()));
 }
 
 GetPortalOutcome WorkSpacesWebClient::GetPortal(const GetPortalRequest& request) const {
@@ -939,7 +1020,8 @@ GetPortalOutcome WorkSpacesWebClient::GetPortal(const GetPortalRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
   };
 
-  return GetPortalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPortalOutcome(result.GetResultWithOwnership()) : GetPortalOutcome(std::move(result.GetError()));
 }
 
 GetPortalServiceProviderMetadataOutcome WorkSpacesWebClient::GetPortalServiceProviderMetadata(
@@ -956,7 +1038,9 @@ GetPortalServiceProviderMetadataOutcome WorkSpacesWebClient::GetPortalServicePro
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
   };
 
-  return GetPortalServiceProviderMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPortalServiceProviderMetadataOutcome(result.GetResultWithOwnership())
+                            : GetPortalServiceProviderMetadataOutcome(std::move(result.GetError()));
 }
 
 GetSessionOutcome WorkSpacesWebClient::GetSession(const GetSessionRequest& request) const {
@@ -979,7 +1063,8 @@ GetSessionOutcome WorkSpacesWebClient::GetSession(const GetSessionRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return GetSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
 }
 
 GetSessionLoggerOutcome WorkSpacesWebClient::GetSessionLogger(const GetSessionLoggerRequest& request) const {
@@ -995,7 +1080,9 @@ GetSessionLoggerOutcome WorkSpacesWebClient::GetSessionLogger(const GetSessionLo
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetSessionLoggerArn());
   };
 
-  return GetSessionLoggerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionLoggerOutcome(result.GetResultWithOwnership())
+                            : GetSessionLoggerOutcome(std::move(result.GetError()));
 }
 
 GetTrustStoreOutcome WorkSpacesWebClient::GetTrustStore(const GetTrustStoreRequest& request) const {
@@ -1011,7 +1098,8 @@ GetTrustStoreOutcome WorkSpacesWebClient::GetTrustStore(const GetTrustStoreReque
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetTrustStoreArn());
   };
 
-  return GetTrustStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrustStoreOutcome(result.GetResultWithOwnership()) : GetTrustStoreOutcome(std::move(result.GetError()));
 }
 
 GetTrustStoreCertificateOutcome WorkSpacesWebClient::GetTrustStoreCertificate(const GetTrustStoreCertificateRequest& request) const {
@@ -1033,7 +1121,9 @@ GetTrustStoreCertificateOutcome WorkSpacesWebClient::GetTrustStoreCertificate(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/certificate");
   };
 
-  return GetTrustStoreCertificateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrustStoreCertificateOutcome(result.GetResultWithOwnership())
+                            : GetTrustStoreCertificateOutcome(std::move(result.GetError()));
 }
 
 GetUserAccessLoggingSettingsOutcome WorkSpacesWebClient::GetUserAccessLoggingSettings(
@@ -1050,7 +1140,9 @@ GetUserAccessLoggingSettingsOutcome WorkSpacesWebClient::GetUserAccessLoggingSet
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetUserAccessLoggingSettingsArn());
   };
 
-  return GetUserAccessLoggingSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUserAccessLoggingSettingsOutcome(result.GetResultWithOwnership())
+                            : GetUserAccessLoggingSettingsOutcome(std::move(result.GetError()));
 }
 
 GetUserSettingsOutcome WorkSpacesWebClient::GetUserSettings(const GetUserSettingsRequest& request) const {
@@ -1066,7 +1158,9 @@ GetUserSettingsOutcome WorkSpacesWebClient::GetUserSettings(const GetUserSetting
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetUserSettingsArn());
   };
 
-  return GetUserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUserSettingsOutcome(result.GetResultWithOwnership())
+                            : GetUserSettingsOutcome(std::move(result.GetError()));
 }
 
 ListBrowserSettingsOutcome WorkSpacesWebClient::ListBrowserSettings(const ListBrowserSettingsRequest& request) const {
@@ -1075,7 +1169,9 @@ ListBrowserSettingsOutcome WorkSpacesWebClient::ListBrowserSettings(const ListBr
     endpointResolutionOutcome.GetResult().AddPathSegments("/browserSettings");
   };
 
-  return ListBrowserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBrowserSettingsOutcome(result.GetResultWithOwnership())
+                            : ListBrowserSettingsOutcome(std::move(result.GetError()));
 }
 
 ListDataProtectionSettingsOutcome WorkSpacesWebClient::ListDataProtectionSettings(const ListDataProtectionSettingsRequest& request) const {
@@ -1084,7 +1180,9 @@ ListDataProtectionSettingsOutcome WorkSpacesWebClient::ListDataProtectionSetting
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataProtectionSettings");
   };
 
-  return ListDataProtectionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataProtectionSettingsOutcome(result.GetResultWithOwnership())
+                            : ListDataProtectionSettingsOutcome(std::move(result.GetError()));
 }
 
 ListIdentityProvidersOutcome WorkSpacesWebClient::ListIdentityProviders(const ListIdentityProvidersRequest& request) const {
@@ -1101,7 +1199,9 @@ ListIdentityProvidersOutcome WorkSpacesWebClient::ListIdentityProviders(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/identityProviders");
   };
 
-  return ListIdentityProvidersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIdentityProvidersOutcome(result.GetResultWithOwnership())
+                            : ListIdentityProvidersOutcome(std::move(result.GetError()));
 }
 
 ListIpAccessSettingsOutcome WorkSpacesWebClient::ListIpAccessSettings(const ListIpAccessSettingsRequest& request) const {
@@ -1110,7 +1210,9 @@ ListIpAccessSettingsOutcome WorkSpacesWebClient::ListIpAccessSettings(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/ipAccessSettings");
   };
 
-  return ListIpAccessSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIpAccessSettingsOutcome(result.GetResultWithOwnership())
+                            : ListIpAccessSettingsOutcome(std::move(result.GetError()));
 }
 
 ListNetworkSettingsOutcome WorkSpacesWebClient::ListNetworkSettings(const ListNetworkSettingsRequest& request) const {
@@ -1119,7 +1221,9 @@ ListNetworkSettingsOutcome WorkSpacesWebClient::ListNetworkSettings(const ListNe
     endpointResolutionOutcome.GetResult().AddPathSegments("/networkSettings");
   };
 
-  return ListNetworkSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNetworkSettingsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkSettingsOutcome(std::move(result.GetError()));
 }
 
 ListPortalsOutcome WorkSpacesWebClient::ListPortals(const ListPortalsRequest& request) const {
@@ -1128,7 +1232,8 @@ ListPortalsOutcome WorkSpacesWebClient::ListPortals(const ListPortalsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/portals");
   };
 
-  return ListPortalsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPortalsOutcome(result.GetResultWithOwnership()) : ListPortalsOutcome(std::move(result.GetError()));
 }
 
 ListSessionLoggersOutcome WorkSpacesWebClient::ListSessionLoggers(const ListSessionLoggersRequest& request) const {
@@ -1137,7 +1242,9 @@ ListSessionLoggersOutcome WorkSpacesWebClient::ListSessionLoggers(const ListSess
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessionLoggers");
   };
 
-  return ListSessionLoggersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSessionLoggersOutcome(result.GetResultWithOwnership())
+                            : ListSessionLoggersOutcome(std::move(result.GetError()));
 }
 
 ListSessionsOutcome WorkSpacesWebClient::ListSessions(const ListSessionsRequest& request) const {
@@ -1154,7 +1261,8 @@ ListSessionsOutcome WorkSpacesWebClient::ListSessions(const ListSessionsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
   };
 
-  return ListSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome WorkSpacesWebClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1171,7 +1279,9 @@ ListTagsForResourceOutcome WorkSpacesWebClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTrustStoreCertificatesOutcome WorkSpacesWebClient::ListTrustStoreCertificates(const ListTrustStoreCertificatesRequest& request) const {
@@ -1188,7 +1298,9 @@ ListTrustStoreCertificatesOutcome WorkSpacesWebClient::ListTrustStoreCertificate
     endpointResolutionOutcome.GetResult().AddPathSegments("/certificates");
   };
 
-  return ListTrustStoreCertificatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrustStoreCertificatesOutcome(result.GetResultWithOwnership())
+                            : ListTrustStoreCertificatesOutcome(std::move(result.GetError()));
 }
 
 ListTrustStoresOutcome WorkSpacesWebClient::ListTrustStores(const ListTrustStoresRequest& request) const {
@@ -1197,7 +1309,9 @@ ListTrustStoresOutcome WorkSpacesWebClient::ListTrustStores(const ListTrustStore
     endpointResolutionOutcome.GetResult().AddPathSegments("/trustStores");
   };
 
-  return ListTrustStoresOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrustStoresOutcome(result.GetResultWithOwnership())
+                            : ListTrustStoresOutcome(std::move(result.GetError()));
 }
 
 ListUserAccessLoggingSettingsOutcome WorkSpacesWebClient::ListUserAccessLoggingSettings(
@@ -1207,7 +1321,9 @@ ListUserAccessLoggingSettingsOutcome WorkSpacesWebClient::ListUserAccessLoggingS
     endpointResolutionOutcome.GetResult().AddPathSegments("/userAccessLoggingSettings");
   };
 
-  return ListUserAccessLoggingSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListUserAccessLoggingSettingsOutcome(result.GetResultWithOwnership())
+                            : ListUserAccessLoggingSettingsOutcome(std::move(result.GetError()));
 }
 
 ListUserSettingsOutcome WorkSpacesWebClient::ListUserSettings(const ListUserSettingsRequest& request) const {
@@ -1216,7 +1332,9 @@ ListUserSettingsOutcome WorkSpacesWebClient::ListUserSettings(const ListUserSett
     endpointResolutionOutcome.GetResult().AddPathSegments("/userSettings");
   };
 
-  return ListUserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListUserSettingsOutcome(result.GetResultWithOwnership())
+                            : ListUserSettingsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome WorkSpacesWebClient::TagResource(const TagResourceRequest& request) const {
@@ -1233,7 +1351,8 @@ TagResourceOutcome WorkSpacesWebClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome WorkSpacesWebClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1255,7 +1374,8 @@ UntagResourceOutcome WorkSpacesWebClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBrowserSettingsOutcome WorkSpacesWebClient::UpdateBrowserSettings(const UpdateBrowserSettingsRequest& request) const {
@@ -1271,7 +1391,9 @@ UpdateBrowserSettingsOutcome WorkSpacesWebClient::UpdateBrowserSettings(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetBrowserSettingsArn());
   };
 
-  return UpdateBrowserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateBrowserSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateBrowserSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateDataProtectionSettingsOutcome WorkSpacesWebClient::UpdateDataProtectionSettings(
@@ -1288,7 +1410,9 @@ UpdateDataProtectionSettingsOutcome WorkSpacesWebClient::UpdateDataProtectionSet
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetDataProtectionSettingsArn());
   };
 
-  return UpdateDataProtectionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDataProtectionSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateDataProtectionSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateIdentityProviderOutcome WorkSpacesWebClient::UpdateIdentityProvider(const UpdateIdentityProviderRequest& request) const {
@@ -1304,7 +1428,9 @@ UpdateIdentityProviderOutcome WorkSpacesWebClient::UpdateIdentityProvider(const 
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIdentityProviderArn());
   };
 
-  return UpdateIdentityProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateIdentityProviderOutcome(result.GetResultWithOwnership())
+                            : UpdateIdentityProviderOutcome(std::move(result.GetError()));
 }
 
 UpdateIpAccessSettingsOutcome WorkSpacesWebClient::UpdateIpAccessSettings(const UpdateIpAccessSettingsRequest& request) const {
@@ -1320,7 +1446,9 @@ UpdateIpAccessSettingsOutcome WorkSpacesWebClient::UpdateIpAccessSettings(const 
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIpAccessSettingsArn());
   };
 
-  return UpdateIpAccessSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateIpAccessSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateIpAccessSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateNetworkSettingsOutcome WorkSpacesWebClient::UpdateNetworkSettings(const UpdateNetworkSettingsRequest& request) const {
@@ -1336,7 +1464,9 @@ UpdateNetworkSettingsOutcome WorkSpacesWebClient::UpdateNetworkSettings(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetNetworkSettingsArn());
   };
 
-  return UpdateNetworkSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateNetworkSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateNetworkSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdatePortalOutcome WorkSpacesWebClient::UpdatePortal(const UpdatePortalRequest& request) const {
@@ -1352,7 +1482,8 @@ UpdatePortalOutcome WorkSpacesWebClient::UpdatePortal(const UpdatePortalRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
   };
 
-  return UpdatePortalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePortalOutcome(result.GetResultWithOwnership()) : UpdatePortalOutcome(std::move(result.GetError()));
 }
 
 UpdateSessionLoggerOutcome WorkSpacesWebClient::UpdateSessionLogger(const UpdateSessionLoggerRequest& request) const {
@@ -1368,7 +1499,9 @@ UpdateSessionLoggerOutcome WorkSpacesWebClient::UpdateSessionLogger(const Update
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetSessionLoggerArn());
   };
 
-  return UpdateSessionLoggerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSessionLoggerOutcome(result.GetResultWithOwnership())
+                            : UpdateSessionLoggerOutcome(std::move(result.GetError()));
 }
 
 UpdateTrustStoreOutcome WorkSpacesWebClient::UpdateTrustStore(const UpdateTrustStoreRequest& request) const {
@@ -1384,7 +1517,9 @@ UpdateTrustStoreOutcome WorkSpacesWebClient::UpdateTrustStore(const UpdateTrustS
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetTrustStoreArn());
   };
 
-  return UpdateTrustStoreOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateTrustStoreOutcome(result.GetResultWithOwnership())
+                            : UpdateTrustStoreOutcome(std::move(result.GetError()));
 }
 
 UpdateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::UpdateUserAccessLoggingSettings(
@@ -1401,7 +1536,9 @@ UpdateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::UpdateUserAccessLogg
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetUserAccessLoggingSettingsArn());
   };
 
-  return UpdateUserAccessLoggingSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateUserAccessLoggingSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateUserAccessLoggingSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateUserSettingsOutcome WorkSpacesWebClient::UpdateUserSettings(const UpdateUserSettingsRequest& request) const {
@@ -1417,5 +1554,7 @@ UpdateUserSettingsOutcome WorkSpacesWebClient::UpdateUserSettings(const UpdateUs
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetUserSettingsArn());
   };
 
-  return UpdateUserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateUserSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateUserSettingsOutcome(std::move(result.GetError()));
 }

@@ -193,7 +193,9 @@ BatchUpdateRecommendationResourceExclusionOutcome TrustedAdvisorClient::BatchUpd
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/batch-update-recommendation-resource-exclusion");
   };
 
-  return BatchUpdateRecommendationResourceExclusionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchUpdateRecommendationResourceExclusionOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateRecommendationResourceExclusionOutcome(std::move(result.GetError()));
 }
 
 GetOrganizationRecommendationOutcome TrustedAdvisorClient::GetOrganizationRecommendation(
@@ -211,7 +213,9 @@ GetOrganizationRecommendationOutcome TrustedAdvisorClient::GetOrganizationRecomm
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationRecommendationIdentifier());
   };
 
-  return GetOrganizationRecommendationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOrganizationRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetOrganizationRecommendationOutcome(std::move(result.GetError()));
 }
 
 GetRecommendationOutcome TrustedAdvisorClient::GetRecommendation(const GetRecommendationRequest& request) const {
@@ -227,7 +231,9 @@ GetRecommendationOutcome TrustedAdvisorClient::GetRecommendation(const GetRecomm
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationIdentifier());
   };
 
-  return GetRecommendationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetRecommendationOutcome(std::move(result.GetError()));
 }
 
 ListChecksOutcome TrustedAdvisorClient::ListChecks(const ListChecksRequest& request) const {
@@ -236,7 +242,8 @@ ListChecksOutcome TrustedAdvisorClient::ListChecks(const ListChecksRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/checks");
   };
 
-  return ListChecksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChecksOutcome(result.GetResultWithOwnership()) : ListChecksOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationRecommendationAccountsOutcome TrustedAdvisorClient::ListOrganizationRecommendationAccounts(
@@ -255,7 +262,9 @@ ListOrganizationRecommendationAccountsOutcome TrustedAdvisorClient::ListOrganiza
     endpointResolutionOutcome.GetResult().AddPathSegments("/accounts");
   };
 
-  return ListOrganizationRecommendationAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrganizationRecommendationAccountsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationRecommendationAccountsOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationRecommendationResourcesOutcome TrustedAdvisorClient::ListOrganizationRecommendationResources(
@@ -274,7 +283,9 @@ ListOrganizationRecommendationResourcesOutcome TrustedAdvisorClient::ListOrganiz
     endpointResolutionOutcome.GetResult().AddPathSegments("/resources");
   };
 
-  return ListOrganizationRecommendationResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrganizationRecommendationResourcesOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationRecommendationResourcesOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationRecommendationsOutcome TrustedAdvisorClient::ListOrganizationRecommendations(
@@ -284,7 +295,9 @@ ListOrganizationRecommendationsOutcome TrustedAdvisorClient::ListOrganizationRec
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/organization-recommendations");
   };
 
-  return ListOrganizationRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrganizationRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationResourcesOutcome TrustedAdvisorClient::ListRecommendationResources(
@@ -302,7 +315,9 @@ ListRecommendationResourcesOutcome TrustedAdvisorClient::ListRecommendationResou
     endpointResolutionOutcome.GetResult().AddPathSegments("/resources");
   };
 
-  return ListRecommendationResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommendationResourcesOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationResourcesOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationsOutcome TrustedAdvisorClient::ListRecommendations(const ListRecommendationsRequest& request) const {
@@ -311,7 +326,9 @@ ListRecommendationsOutcome TrustedAdvisorClient::ListRecommendations(const ListR
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/recommendations");
   };
 
-  return ListRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationsOutcome(std::move(result.GetError()));
 }
 
 UpdateOrganizationRecommendationLifecycleOutcome TrustedAdvisorClient::UpdateOrganizationRecommendationLifecycle(
@@ -330,7 +347,9 @@ UpdateOrganizationRecommendationLifecycleOutcome TrustedAdvisorClient::UpdateOrg
     endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycle");
   };
 
-  return UpdateOrganizationRecommendationLifecycleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateOrganizationRecommendationLifecycleOutcome(result.GetResultWithOwnership())
+                            : UpdateOrganizationRecommendationLifecycleOutcome(std::move(result.GetError()));
 }
 
 UpdateRecommendationLifecycleOutcome TrustedAdvisorClient::UpdateRecommendationLifecycle(
@@ -348,5 +367,7 @@ UpdateRecommendationLifecycleOutcome TrustedAdvisorClient::UpdateRecommendationL
     endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycle");
   };
 
-  return UpdateRecommendationLifecycleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRecommendationLifecycleOutcome(result.GetResultWithOwnership())
+                            : UpdateRecommendationLifecycleOutcome(std::move(result.GetError()));
 }

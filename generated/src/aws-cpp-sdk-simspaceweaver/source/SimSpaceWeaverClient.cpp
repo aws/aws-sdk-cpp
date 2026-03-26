@@ -197,7 +197,8 @@ CreateSnapshotOutcome SimSpaceWeaverClient::CreateSnapshot(const CreateSnapshotR
     endpointResolutionOutcome.GetResult().AddPathSegments("/createsnapshot");
   };
 
-  return CreateSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapshotOutcome(result.GetResultWithOwnership()) : CreateSnapshotOutcome(std::move(result.GetError()));
 }
 
 DeleteAppOutcome SimSpaceWeaverClient::DeleteApp(const DeleteAppRequest& request) const {
@@ -222,7 +223,8 @@ DeleteAppOutcome SimSpaceWeaverClient::DeleteApp(const DeleteAppRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteapp");
   };
 
-  return DeleteAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAppOutcome(result.GetResultWithOwnership()) : DeleteAppOutcome(std::move(result.GetError()));
 }
 
 DeleteSimulationOutcome SimSpaceWeaverClient::DeleteSimulation(const DeleteSimulationRequest& request) const {
@@ -237,7 +239,9 @@ DeleteSimulationOutcome SimSpaceWeaverClient::DeleteSimulation(const DeleteSimul
     endpointResolutionOutcome.GetResult().AddPathSegments("/deletesimulation");
   };
 
-  return DeleteSimulationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSimulationOutcome(result.GetResultWithOwnership())
+                            : DeleteSimulationOutcome(std::move(result.GetError()));
 }
 
 DescribeAppOutcome SimSpaceWeaverClient::DescribeApp(const DescribeAppRequest& request) const {
@@ -262,7 +266,8 @@ DescribeAppOutcome SimSpaceWeaverClient::DescribeApp(const DescribeAppRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/describeapp");
   };
 
-  return DescribeAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAppOutcome(result.GetResultWithOwnership()) : DescribeAppOutcome(std::move(result.GetError()));
 }
 
 DescribeSimulationOutcome SimSpaceWeaverClient::DescribeSimulation(const DescribeSimulationRequest& request) const {
@@ -277,7 +282,9 @@ DescribeSimulationOutcome SimSpaceWeaverClient::DescribeSimulation(const Describ
     endpointResolutionOutcome.GetResult().AddPathSegments("/describesimulation");
   };
 
-  return DescribeSimulationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSimulationOutcome(result.GetResultWithOwnership())
+                            : DescribeSimulationOutcome(std::move(result.GetError()));
 }
 
 ListAppsOutcome SimSpaceWeaverClient::ListApps(const ListAppsRequest& request) const {
@@ -292,7 +299,8 @@ ListAppsOutcome SimSpaceWeaverClient::ListApps(const ListAppsRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/listapps");
   };
 
-  return ListAppsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAppsOutcome(result.GetResultWithOwnership()) : ListAppsOutcome(std::move(result.GetError()));
 }
 
 ListSimulationsOutcome SimSpaceWeaverClient::ListSimulations(const ListSimulationsRequest& request) const {
@@ -301,7 +309,9 @@ ListSimulationsOutcome SimSpaceWeaverClient::ListSimulations(const ListSimulatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/listsimulations");
   };
 
-  return ListSimulationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSimulationsOutcome(result.GetResultWithOwnership())
+                            : ListSimulationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SimSpaceWeaverClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -317,7 +327,9 @@ ListTagsForResourceOutcome SimSpaceWeaverClient::ListTagsForResource(const ListT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartAppOutcome SimSpaceWeaverClient::StartApp(const StartAppRequest& request) const {
@@ -326,7 +338,8 @@ StartAppOutcome SimSpaceWeaverClient::StartApp(const StartAppRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/startapp");
   };
 
-  return StartAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAppOutcome(result.GetResultWithOwnership()) : StartAppOutcome(std::move(result.GetError()));
 }
 
 StartClockOutcome SimSpaceWeaverClient::StartClock(const StartClockRequest& request) const {
@@ -335,7 +348,8 @@ StartClockOutcome SimSpaceWeaverClient::StartClock(const StartClockRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/startclock");
   };
 
-  return StartClockOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartClockOutcome(result.GetResultWithOwnership()) : StartClockOutcome(std::move(result.GetError()));
 }
 
 StartSimulationOutcome SimSpaceWeaverClient::StartSimulation(const StartSimulationRequest& request) const {
@@ -344,7 +358,9 @@ StartSimulationOutcome SimSpaceWeaverClient::StartSimulation(const StartSimulati
     endpointResolutionOutcome.GetResult().AddPathSegments("/startsimulation");
   };
 
-  return StartSimulationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSimulationOutcome(result.GetResultWithOwnership())
+                            : StartSimulationOutcome(std::move(result.GetError()));
 }
 
 StopAppOutcome SimSpaceWeaverClient::StopApp(const StopAppRequest& request) const {
@@ -353,7 +369,8 @@ StopAppOutcome SimSpaceWeaverClient::StopApp(const StopAppRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/stopapp");
   };
 
-  return StopAppOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopAppOutcome(result.GetResultWithOwnership()) : StopAppOutcome(std::move(result.GetError()));
 }
 
 StopClockOutcome SimSpaceWeaverClient::StopClock(const StopClockRequest& request) const {
@@ -362,7 +379,8 @@ StopClockOutcome SimSpaceWeaverClient::StopClock(const StopClockRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/stopclock");
   };
 
-  return StopClockOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopClockOutcome(result.GetResultWithOwnership()) : StopClockOutcome(std::move(result.GetError()));
 }
 
 StopSimulationOutcome SimSpaceWeaverClient::StopSimulation(const StopSimulationRequest& request) const {
@@ -371,7 +389,8 @@ StopSimulationOutcome SimSpaceWeaverClient::StopSimulation(const StopSimulationR
     endpointResolutionOutcome.GetResult().AddPathSegments("/stopsimulation");
   };
 
-  return StopSimulationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopSimulationOutcome(result.GetResultWithOwnership()) : StopSimulationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SimSpaceWeaverClient::TagResource(const TagResourceRequest& request) const {
@@ -387,7 +406,8 @@ TagResourceOutcome SimSpaceWeaverClient::TagResource(const TagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SimSpaceWeaverClient::UntagResource(const UntagResourceRequest& request) const {
@@ -408,5 +428,6 @@ UntagResourceOutcome SimSpaceWeaverClient::UntagResource(const UntagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

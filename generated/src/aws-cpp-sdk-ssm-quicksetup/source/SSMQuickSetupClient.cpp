@@ -195,7 +195,9 @@ CreateConfigurationManagerOutcome SSMQuickSetupClient::CreateConfigurationManage
     endpointResolutionOutcome.GetResult().AddPathSegments("/configurationManager");
   };
 
-  return CreateConfigurationManagerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationManagerOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationManagerOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationManagerOutcome SSMQuickSetupClient::DeleteConfigurationManager(const DeleteConfigurationManagerRequest& request) const {
@@ -211,7 +213,9 @@ DeleteConfigurationManagerOutcome SSMQuickSetupClient::DeleteConfigurationManage
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagerArn());
   };
 
-  return DeleteConfigurationManagerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationManagerOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationManagerOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationOutcome SSMQuickSetupClient::GetConfiguration(const GetConfigurationRequest& request) const {
@@ -227,7 +231,9 @@ GetConfigurationOutcome SSMQuickSetupClient::GetConfiguration(const GetConfigura
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationId());
   };
 
-  return GetConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationManagerOutcome SSMQuickSetupClient::GetConfigurationManager(const GetConfigurationManagerRequest& request) const {
@@ -243,7 +249,9 @@ GetConfigurationManagerOutcome SSMQuickSetupClient::GetConfigurationManager(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagerArn());
   };
 
-  return GetConfigurationManagerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationManagerOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationManagerOutcome(std::move(result.GetError()));
 }
 
 GetServiceSettingsOutcome SSMQuickSetupClient::GetServiceSettings(const GetServiceSettingsRequest& request) const {
@@ -252,7 +260,9 @@ GetServiceSettingsOutcome SSMQuickSetupClient::GetServiceSettings(const GetServi
     endpointResolutionOutcome.GetResult().AddPathSegments("/serviceSettings");
   };
 
-  return GetServiceSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServiceSettingsOutcome(result.GetResultWithOwnership())
+                            : GetServiceSettingsOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationManagersOutcome SSMQuickSetupClient::ListConfigurationManagers(const ListConfigurationManagersRequest& request) const {
@@ -261,7 +271,9 @@ ListConfigurationManagersOutcome SSMQuickSetupClient::ListConfigurationManagers(
     endpointResolutionOutcome.GetResult().AddPathSegments("/listConfigurationManagers");
   };
 
-  return ListConfigurationManagersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConfigurationManagersOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationManagersOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationsOutcome SSMQuickSetupClient::ListConfigurations(const ListConfigurationsRequest& request) const {
@@ -270,7 +282,9 @@ ListConfigurationsOutcome SSMQuickSetupClient::ListConfigurations(const ListConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/listConfigurations");
   };
 
-  return ListConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListQuickSetupTypesOutcome SSMQuickSetupClient::ListQuickSetupTypes(const ListQuickSetupTypesRequest& request) const {
@@ -279,7 +293,9 @@ ListQuickSetupTypesOutcome SSMQuickSetupClient::ListQuickSetupTypes(const ListQu
     endpointResolutionOutcome.GetResult().AddPathSegments("/listQuickSetupTypes");
   };
 
-  return ListQuickSetupTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQuickSetupTypesOutcome(result.GetResultWithOwnership())
+                            : ListQuickSetupTypesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SSMQuickSetupClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -295,7 +311,9 @@ ListTagsForResourceOutcome SSMQuickSetupClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SSMQuickSetupClient::TagResource(const TagResourceRequest& request) const {
@@ -311,7 +329,8 @@ TagResourceOutcome SSMQuickSetupClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SSMQuickSetupClient::UntagResource(const UntagResourceRequest& request) const {
@@ -332,7 +351,8 @@ UntagResourceOutcome SSMQuickSetupClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationDefinitionOutcome SSMQuickSetupClient::UpdateConfigurationDefinition(
@@ -355,7 +375,9 @@ UpdateConfigurationDefinitionOutcome SSMQuickSetupClient::UpdateConfigurationDef
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateConfigurationDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConfigurationDefinitionOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationDefinitionOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationManagerOutcome SSMQuickSetupClient::UpdateConfigurationManager(const UpdateConfigurationManagerRequest& request) const {
@@ -371,7 +393,9 @@ UpdateConfigurationManagerOutcome SSMQuickSetupClient::UpdateConfigurationManage
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagerArn());
   };
 
-  return UpdateConfigurationManagerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConfigurationManagerOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationManagerOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceSettingsOutcome SSMQuickSetupClient::UpdateServiceSettings(const UpdateServiceSettingsRequest& request) const {
@@ -380,5 +404,7 @@ UpdateServiceSettingsOutcome SSMQuickSetupClient::UpdateServiceSettings(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/serviceSettings");
   };
 
-  return UpdateServiceSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateServiceSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceSettingsOutcome(std::move(result.GetError()));
 }

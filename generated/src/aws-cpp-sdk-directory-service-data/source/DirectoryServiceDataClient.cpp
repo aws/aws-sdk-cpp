@@ -212,7 +212,8 @@ AddGroupMemberOutcome DirectoryServiceDataClient::AddGroupMember(const AddGroupM
     endpointResolutionOutcome.GetResult().AddPathSegments("/GroupMemberships/AddGroupMember");
   };
 
-  return AddGroupMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddGroupMemberOutcome(result.GetResultWithOwnership()) : AddGroupMemberOutcome(std::move(result.GetError()));
 }
 
 CreateGroupOutcome DirectoryServiceDataClient::CreateGroup(const CreateGroupRequest& request) const {
@@ -227,7 +228,8 @@ CreateGroupOutcome DirectoryServiceDataClient::CreateGroup(const CreateGroupRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/Groups/CreateGroup");
   };
 
-  return CreateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGroupOutcome(result.GetResultWithOwnership()) : CreateGroupOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome DirectoryServiceDataClient::CreateUser(const CreateUserRequest& request) const {
@@ -242,7 +244,8 @@ CreateUserOutcome DirectoryServiceDataClient::CreateUser(const CreateUserRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/Users/CreateUser");
   };
 
-  return CreateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupOutcome DirectoryServiceDataClient::DeleteGroup(const DeleteGroupRequest& request) const {
@@ -257,7 +260,8 @@ DeleteGroupOutcome DirectoryServiceDataClient::DeleteGroup(const DeleteGroupRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/Groups/DeleteGroup");
   };
 
-  return DeleteGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGroupOutcome(result.GetResultWithOwnership()) : DeleteGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome DirectoryServiceDataClient::DeleteUser(const DeleteUserRequest& request) const {
@@ -272,7 +276,8 @@ DeleteUserOutcome DirectoryServiceDataClient::DeleteUser(const DeleteUserRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/Users/DeleteUser");
   };
 
-  return DeleteUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DescribeGroupOutcome DirectoryServiceDataClient::DescribeGroup(const DescribeGroupRequest& request) const {
@@ -287,7 +292,8 @@ DescribeGroupOutcome DirectoryServiceDataClient::DescribeGroup(const DescribeGro
     endpointResolutionOutcome.GetResult().AddPathSegments("/Groups/DescribeGroup");
   };
 
-  return DescribeGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeGroupOutcome(result.GetResultWithOwnership()) : DescribeGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeUserOutcome DirectoryServiceDataClient::DescribeUser(const DescribeUserRequest& request) const {
@@ -302,7 +308,8 @@ DescribeUserOutcome DirectoryServiceDataClient::DescribeUser(const DescribeUserR
     endpointResolutionOutcome.GetResult().AddPathSegments("/Users/DescribeUser");
   };
 
-  return DescribeUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUserOutcome(result.GetResultWithOwnership()) : DescribeUserOutcome(std::move(result.GetError()));
 }
 
 DisableUserOutcome DirectoryServiceDataClient::DisableUser(const DisableUserRequest& request) const {
@@ -317,7 +324,8 @@ DisableUserOutcome DirectoryServiceDataClient::DisableUser(const DisableUserRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/Users/DisableUser");
   };
 
-  return DisableUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableUserOutcome(result.GetResultWithOwnership()) : DisableUserOutcome(std::move(result.GetError()));
 }
 
 ListGroupMembersOutcome DirectoryServiceDataClient::ListGroupMembers(const ListGroupMembersRequest& request) const {
@@ -332,7 +340,9 @@ ListGroupMembersOutcome DirectoryServiceDataClient::ListGroupMembers(const ListG
     endpointResolutionOutcome.GetResult().AddPathSegments("/GroupMemberships/ListGroupMembers");
   };
 
-  return ListGroupMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupMembersOutcome(result.GetResultWithOwnership())
+                            : ListGroupMembersOutcome(std::move(result.GetError()));
 }
 
 ListGroupsOutcome DirectoryServiceDataClient::ListGroups(const ListGroupsRequest& request) const {
@@ -347,7 +357,8 @@ ListGroupsOutcome DirectoryServiceDataClient::ListGroups(const ListGroupsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/Groups/ListGroups");
   };
 
-  return ListGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupsOutcome(result.GetResultWithOwnership()) : ListGroupsOutcome(std::move(result.GetError()));
 }
 
 ListGroupsForMemberOutcome DirectoryServiceDataClient::ListGroupsForMember(const ListGroupsForMemberRequest& request) const {
@@ -362,7 +373,9 @@ ListGroupsForMemberOutcome DirectoryServiceDataClient::ListGroupsForMember(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/GroupMemberships/ListGroupsForMember");
   };
 
-  return ListGroupsForMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupsForMemberOutcome(result.GetResultWithOwnership())
+                            : ListGroupsForMemberOutcome(std::move(result.GetError()));
 }
 
 ListUsersOutcome DirectoryServiceDataClient::ListUsers(const ListUsersRequest& request) const {
@@ -377,7 +390,8 @@ ListUsersOutcome DirectoryServiceDataClient::ListUsers(const ListUsersRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/Users/ListUsers");
   };
 
-  return ListUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUsersOutcome(result.GetResultWithOwnership()) : ListUsersOutcome(std::move(result.GetError()));
 }
 
 RemoveGroupMemberOutcome DirectoryServiceDataClient::RemoveGroupMember(const RemoveGroupMemberRequest& request) const {
@@ -392,7 +406,9 @@ RemoveGroupMemberOutcome DirectoryServiceDataClient::RemoveGroupMember(const Rem
     endpointResolutionOutcome.GetResult().AddPathSegments("/GroupMemberships/RemoveGroupMember");
   };
 
-  return RemoveGroupMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveGroupMemberOutcome(result.GetResultWithOwnership())
+                            : RemoveGroupMemberOutcome(std::move(result.GetError()));
 }
 
 SearchGroupsOutcome DirectoryServiceDataClient::SearchGroups(const SearchGroupsRequest& request) const {
@@ -407,7 +423,8 @@ SearchGroupsOutcome DirectoryServiceDataClient::SearchGroups(const SearchGroupsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/Groups/SearchGroups");
   };
 
-  return SearchGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchGroupsOutcome(result.GetResultWithOwnership()) : SearchGroupsOutcome(std::move(result.GetError()));
 }
 
 SearchUsersOutcome DirectoryServiceDataClient::SearchUsers(const SearchUsersRequest& request) const {
@@ -422,7 +439,8 @@ SearchUsersOutcome DirectoryServiceDataClient::SearchUsers(const SearchUsersRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/Users/SearchUsers");
   };
 
-  return SearchUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchUsersOutcome(result.GetResultWithOwnership()) : SearchUsersOutcome(std::move(result.GetError()));
 }
 
 UpdateGroupOutcome DirectoryServiceDataClient::UpdateGroup(const UpdateGroupRequest& request) const {
@@ -437,7 +455,8 @@ UpdateGroupOutcome DirectoryServiceDataClient::UpdateGroup(const UpdateGroupRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/Groups/UpdateGroup");
   };
 
-  return UpdateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGroupOutcome(result.GetResultWithOwnership()) : UpdateGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome DirectoryServiceDataClient::UpdateUser(const UpdateUserRequest& request) const {
@@ -452,5 +471,6 @@ UpdateUserOutcome DirectoryServiceDataClient::UpdateUser(const UpdateUserRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/Users/UpdateUser");
   };
 
-  return UpdateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }

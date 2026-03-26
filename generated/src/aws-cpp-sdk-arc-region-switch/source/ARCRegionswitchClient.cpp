@@ -197,86 +197,121 @@ ARCRegionswitchClient::InvokeOperationOutcome ARCRegionswitchClient::InvokeServi
 }
 
 ApprovePlanExecutionStepOutcome ARCRegionswitchClient::ApprovePlanExecutionStep(const ApprovePlanExecutionStepRequest& request) const {
-  return ApprovePlanExecutionStepOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ApprovePlanExecutionStepOutcome(result.GetResultWithOwnership())
+                            : ApprovePlanExecutionStepOutcome(std::move(result.GetError()));
 }
 
 CancelPlanExecutionOutcome ARCRegionswitchClient::CancelPlanExecution(const CancelPlanExecutionRequest& request) const {
-  return CancelPlanExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelPlanExecutionOutcome(result.GetResultWithOwnership())
+                            : CancelPlanExecutionOutcome(std::move(result.GetError()));
 }
 
 CreatePlanOutcome ARCRegionswitchClient::CreatePlan(const CreatePlanRequest& request) const {
-  return CreatePlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePlanOutcome(result.GetResultWithOwnership()) : CreatePlanOutcome(std::move(result.GetError()));
 }
 
 DeletePlanOutcome ARCRegionswitchClient::DeletePlan(const DeletePlanRequest& request) const {
-  return DeletePlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePlanOutcome(result.GetResultWithOwnership()) : DeletePlanOutcome(std::move(result.GetError()));
 }
 
 GetPlanOutcome ARCRegionswitchClient::GetPlan(const GetPlanRequest& request) const {
-  return GetPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPlanOutcome(result.GetResultWithOwnership()) : GetPlanOutcome(std::move(result.GetError()));
 }
 
 GetPlanEvaluationStatusOutcome ARCRegionswitchClient::GetPlanEvaluationStatus(const GetPlanEvaluationStatusRequest& request) const {
-  return GetPlanEvaluationStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPlanEvaluationStatusOutcome(result.GetResultWithOwnership())
+                            : GetPlanEvaluationStatusOutcome(std::move(result.GetError()));
 }
 
 GetPlanExecutionOutcome ARCRegionswitchClient::GetPlanExecution(const GetPlanExecutionRequest& request) const {
-  return GetPlanExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPlanExecutionOutcome(result.GetResultWithOwnership())
+                            : GetPlanExecutionOutcome(std::move(result.GetError()));
 }
 
 GetPlanInRegionOutcome ARCRegionswitchClient::GetPlanInRegion(const GetPlanInRegionRequest& request) const {
-  return GetPlanInRegionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPlanInRegionOutcome(result.GetResultWithOwnership())
+                            : GetPlanInRegionOutcome(std::move(result.GetError()));
 }
 
 ListPlanExecutionEventsOutcome ARCRegionswitchClient::ListPlanExecutionEvents(const ListPlanExecutionEventsRequest& request) const {
-  return ListPlanExecutionEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPlanExecutionEventsOutcome(result.GetResultWithOwnership())
+                            : ListPlanExecutionEventsOutcome(std::move(result.GetError()));
 }
 
 ListPlanExecutionsOutcome ARCRegionswitchClient::ListPlanExecutions(const ListPlanExecutionsRequest& request) const {
-  return ListPlanExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPlanExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListPlanExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListPlansOutcome ARCRegionswitchClient::ListPlans(const ListPlansRequest& request) const {
-  return ListPlansOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPlansOutcome(result.GetResultWithOwnership()) : ListPlansOutcome(std::move(result.GetError()));
 }
 
 ListPlansInRegionOutcome ARCRegionswitchClient::ListPlansInRegion(const ListPlansInRegionRequest& request) const {
-  return ListPlansInRegionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPlansInRegionOutcome(result.GetResultWithOwnership())
+                            : ListPlansInRegionOutcome(std::move(result.GetError()));
 }
 
 ListRoute53HealthChecksOutcome ARCRegionswitchClient::ListRoute53HealthChecks(const ListRoute53HealthChecksRequest& request) const {
-  return ListRoute53HealthChecksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRoute53HealthChecksOutcome(result.GetResultWithOwnership())
+                            : ListRoute53HealthChecksOutcome(std::move(result.GetError()));
 }
 
 ListRoute53HealthChecksInRegionOutcome ARCRegionswitchClient::ListRoute53HealthChecksInRegion(
     const ListRoute53HealthChecksInRegionRequest& request) const {
-  return ListRoute53HealthChecksInRegionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRoute53HealthChecksInRegionOutcome(result.GetResultWithOwnership())
+                            : ListRoute53HealthChecksInRegionOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ARCRegionswitchClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartPlanExecutionOutcome ARCRegionswitchClient::StartPlanExecution(const StartPlanExecutionRequest& request) const {
-  return StartPlanExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartPlanExecutionOutcome(result.GetResultWithOwnership())
+                            : StartPlanExecutionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ARCRegionswitchClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ARCRegionswitchClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdatePlanOutcome ARCRegionswitchClient::UpdatePlan(const UpdatePlanRequest& request) const {
-  return UpdatePlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePlanOutcome(result.GetResultWithOwnership()) : UpdatePlanOutcome(std::move(result.GetError()));
 }
 
 UpdatePlanExecutionOutcome ARCRegionswitchClient::UpdatePlanExecution(const UpdatePlanExecutionRequest& request) const {
-  return UpdatePlanExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePlanExecutionOutcome(result.GetResultWithOwnership())
+                            : UpdatePlanExecutionOutcome(std::move(result.GetError()));
 }
 
 UpdatePlanExecutionStepOutcome ARCRegionswitchClient::UpdatePlanExecutionStep(const UpdatePlanExecutionStepRequest& request) const {
-  return UpdatePlanExecutionStepOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePlanExecutionStepOutcome(result.GetResultWithOwnership())
+                            : UpdatePlanExecutionStepOutcome(std::move(result.GetError()));
 }

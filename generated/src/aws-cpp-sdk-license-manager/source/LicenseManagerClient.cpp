@@ -235,264 +235,372 @@ LicenseManagerClient::InvokeOperationOutcome LicenseManagerClient::InvokeService
 }
 
 AcceptGrantOutcome LicenseManagerClient::AcceptGrant(const AcceptGrantRequest& request) const {
-  return AcceptGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptGrantOutcome(result.GetResultWithOwnership()) : AcceptGrantOutcome(std::move(result.GetError()));
 }
 
 CheckInLicenseOutcome LicenseManagerClient::CheckInLicense(const CheckInLicenseRequest& request) const {
-  return CheckInLicenseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckInLicenseOutcome(result.GetResultWithOwnership()) : CheckInLicenseOutcome(std::move(result.GetError()));
 }
 
 CheckoutBorrowLicenseOutcome LicenseManagerClient::CheckoutBorrowLicense(const CheckoutBorrowLicenseRequest& request) const {
-  return CheckoutBorrowLicenseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckoutBorrowLicenseOutcome(result.GetResultWithOwnership())
+                            : CheckoutBorrowLicenseOutcome(std::move(result.GetError()));
 }
 
 CheckoutLicenseOutcome LicenseManagerClient::CheckoutLicense(const CheckoutLicenseRequest& request) const {
-  return CheckoutLicenseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckoutLicenseOutcome(result.GetResultWithOwnership())
+                            : CheckoutLicenseOutcome(std::move(result.GetError()));
 }
 
 CreateGrantOutcome LicenseManagerClient::CreateGrant(const CreateGrantRequest& request) const {
-  return CreateGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGrantOutcome(result.GetResultWithOwnership()) : CreateGrantOutcome(std::move(result.GetError()));
 }
 
 CreateGrantVersionOutcome LicenseManagerClient::CreateGrantVersion(const CreateGrantVersionRequest& request) const {
-  return CreateGrantVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGrantVersionOutcome(result.GetResultWithOwnership())
+                            : CreateGrantVersionOutcome(std::move(result.GetError()));
 }
 
 CreateLicenseOutcome LicenseManagerClient::CreateLicense(const CreateLicenseRequest& request) const {
-  return CreateLicenseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLicenseOutcome(result.GetResultWithOwnership()) : CreateLicenseOutcome(std::move(result.GetError()));
 }
 
 CreateLicenseAssetGroupOutcome LicenseManagerClient::CreateLicenseAssetGroup(const CreateLicenseAssetGroupRequest& request) const {
-  return CreateLicenseAssetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLicenseAssetGroupOutcome(result.GetResultWithOwnership())
+                            : CreateLicenseAssetGroupOutcome(std::move(result.GetError()));
 }
 
 CreateLicenseAssetRulesetOutcome LicenseManagerClient::CreateLicenseAssetRuleset(const CreateLicenseAssetRulesetRequest& request) const {
-  return CreateLicenseAssetRulesetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLicenseAssetRulesetOutcome(result.GetResultWithOwnership())
+                            : CreateLicenseAssetRulesetOutcome(std::move(result.GetError()));
 }
 
 CreateLicenseConfigurationOutcome LicenseManagerClient::CreateLicenseConfiguration(const CreateLicenseConfigurationRequest& request) const {
-  return CreateLicenseConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLicenseConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateLicenseConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateLicenseConversionTaskForResourceOutcome LicenseManagerClient::CreateLicenseConversionTaskForResource(
     const CreateLicenseConversionTaskForResourceRequest& request) const {
-  return CreateLicenseConversionTaskForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLicenseConversionTaskForResourceOutcome(result.GetResultWithOwnership())
+                            : CreateLicenseConversionTaskForResourceOutcome(std::move(result.GetError()));
 }
 
 CreateLicenseManagerReportGeneratorOutcome LicenseManagerClient::CreateLicenseManagerReportGenerator(
     const CreateLicenseManagerReportGeneratorRequest& request) const {
-  return CreateLicenseManagerReportGeneratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLicenseManagerReportGeneratorOutcome(result.GetResultWithOwnership())
+                            : CreateLicenseManagerReportGeneratorOutcome(std::move(result.GetError()));
 }
 
 CreateLicenseVersionOutcome LicenseManagerClient::CreateLicenseVersion(const CreateLicenseVersionRequest& request) const {
-  return CreateLicenseVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLicenseVersionOutcome(result.GetResultWithOwnership())
+                            : CreateLicenseVersionOutcome(std::move(result.GetError()));
 }
 
 CreateTokenOutcome LicenseManagerClient::CreateToken(const CreateTokenRequest& request) const {
-  return CreateTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTokenOutcome(result.GetResultWithOwnership()) : CreateTokenOutcome(std::move(result.GetError()));
 }
 
 DeleteGrantOutcome LicenseManagerClient::DeleteGrant(const DeleteGrantRequest& request) const {
-  return DeleteGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGrantOutcome(result.GetResultWithOwnership()) : DeleteGrantOutcome(std::move(result.GetError()));
 }
 
 DeleteLicenseOutcome LicenseManagerClient::DeleteLicense(const DeleteLicenseRequest& request) const {
-  return DeleteLicenseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLicenseOutcome(result.GetResultWithOwnership()) : DeleteLicenseOutcome(std::move(result.GetError()));
 }
 
 DeleteLicenseAssetGroupOutcome LicenseManagerClient::DeleteLicenseAssetGroup(const DeleteLicenseAssetGroupRequest& request) const {
-  return DeleteLicenseAssetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLicenseAssetGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteLicenseAssetGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteLicenseAssetRulesetOutcome LicenseManagerClient::DeleteLicenseAssetRuleset(const DeleteLicenseAssetRulesetRequest& request) const {
-  return DeleteLicenseAssetRulesetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLicenseAssetRulesetOutcome(result.GetResultWithOwnership())
+                            : DeleteLicenseAssetRulesetOutcome(std::move(result.GetError()));
 }
 
 DeleteLicenseConfigurationOutcome LicenseManagerClient::DeleteLicenseConfiguration(const DeleteLicenseConfigurationRequest& request) const {
-  return DeleteLicenseConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLicenseConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteLicenseConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteLicenseManagerReportGeneratorOutcome LicenseManagerClient::DeleteLicenseManagerReportGenerator(
     const DeleteLicenseManagerReportGeneratorRequest& request) const {
-  return DeleteLicenseManagerReportGeneratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLicenseManagerReportGeneratorOutcome(result.GetResultWithOwnership())
+                            : DeleteLicenseManagerReportGeneratorOutcome(std::move(result.GetError()));
 }
 
 DeleteTokenOutcome LicenseManagerClient::DeleteToken(const DeleteTokenRequest& request) const {
-  return DeleteTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTokenOutcome(result.GetResultWithOwnership()) : DeleteTokenOutcome(std::move(result.GetError()));
 }
 
 ExtendLicenseConsumptionOutcome LicenseManagerClient::ExtendLicenseConsumption(const ExtendLicenseConsumptionRequest& request) const {
-  return ExtendLicenseConsumptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExtendLicenseConsumptionOutcome(result.GetResultWithOwnership())
+                            : ExtendLicenseConsumptionOutcome(std::move(result.GetError()));
 }
 
 GetAccessTokenOutcome LicenseManagerClient::GetAccessToken(const GetAccessTokenRequest& request) const {
-  return GetAccessTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccessTokenOutcome(result.GetResultWithOwnership()) : GetAccessTokenOutcome(std::move(result.GetError()));
 }
 
 GetGrantOutcome LicenseManagerClient::GetGrant(const GetGrantRequest& request) const {
-  return GetGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGrantOutcome(result.GetResultWithOwnership()) : GetGrantOutcome(std::move(result.GetError()));
 }
 
 GetLicenseOutcome LicenseManagerClient::GetLicense(const GetLicenseRequest& request) const {
-  return GetLicenseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLicenseOutcome(result.GetResultWithOwnership()) : GetLicenseOutcome(std::move(result.GetError()));
 }
 
 GetLicenseAssetGroupOutcome LicenseManagerClient::GetLicenseAssetGroup(const GetLicenseAssetGroupRequest& request) const {
-  return GetLicenseAssetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLicenseAssetGroupOutcome(result.GetResultWithOwnership())
+                            : GetLicenseAssetGroupOutcome(std::move(result.GetError()));
 }
 
 GetLicenseAssetRulesetOutcome LicenseManagerClient::GetLicenseAssetRuleset(const GetLicenseAssetRulesetRequest& request) const {
-  return GetLicenseAssetRulesetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLicenseAssetRulesetOutcome(result.GetResultWithOwnership())
+                            : GetLicenseAssetRulesetOutcome(std::move(result.GetError()));
 }
 
 GetLicenseConfigurationOutcome LicenseManagerClient::GetLicenseConfiguration(const GetLicenseConfigurationRequest& request) const {
-  return GetLicenseConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLicenseConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetLicenseConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetLicenseConversionTaskOutcome LicenseManagerClient::GetLicenseConversionTask(const GetLicenseConversionTaskRequest& request) const {
-  return GetLicenseConversionTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLicenseConversionTaskOutcome(result.GetResultWithOwnership())
+                            : GetLicenseConversionTaskOutcome(std::move(result.GetError()));
 }
 
 GetLicenseManagerReportGeneratorOutcome LicenseManagerClient::GetLicenseManagerReportGenerator(
     const GetLicenseManagerReportGeneratorRequest& request) const {
-  return GetLicenseManagerReportGeneratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLicenseManagerReportGeneratorOutcome(result.GetResultWithOwnership())
+                            : GetLicenseManagerReportGeneratorOutcome(std::move(result.GetError()));
 }
 
 GetLicenseUsageOutcome LicenseManagerClient::GetLicenseUsage(const GetLicenseUsageRequest& request) const {
-  return GetLicenseUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLicenseUsageOutcome(result.GetResultWithOwnership())
+                            : GetLicenseUsageOutcome(std::move(result.GetError()));
 }
 
 GetServiceSettingsOutcome LicenseManagerClient::GetServiceSettings(const GetServiceSettingsRequest& request) const {
-  return GetServiceSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceSettingsOutcome(result.GetResultWithOwnership())
+                            : GetServiceSettingsOutcome(std::move(result.GetError()));
 }
 
 ListAssetsForLicenseAssetGroupOutcome LicenseManagerClient::ListAssetsForLicenseAssetGroup(
     const ListAssetsForLicenseAssetGroupRequest& request) const {
-  return ListAssetsForLicenseAssetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssetsForLicenseAssetGroupOutcome(result.GetResultWithOwnership())
+                            : ListAssetsForLicenseAssetGroupOutcome(std::move(result.GetError()));
 }
 
 ListAssociationsForLicenseConfigurationOutcome LicenseManagerClient::ListAssociationsForLicenseConfiguration(
     const ListAssociationsForLicenseConfigurationRequest& request) const {
-  return ListAssociationsForLicenseConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssociationsForLicenseConfigurationOutcome(result.GetResultWithOwnership())
+                            : ListAssociationsForLicenseConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListDistributedGrantsOutcome LicenseManagerClient::ListDistributedGrants(const ListDistributedGrantsRequest& request) const {
-  return ListDistributedGrantsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDistributedGrantsOutcome(result.GetResultWithOwnership())
+                            : ListDistributedGrantsOutcome(std::move(result.GetError()));
 }
 
 ListFailuresForLicenseConfigurationOperationsOutcome LicenseManagerClient::ListFailuresForLicenseConfigurationOperations(
     const ListFailuresForLicenseConfigurationOperationsRequest& request) const {
-  return ListFailuresForLicenseConfigurationOperationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFailuresForLicenseConfigurationOperationsOutcome(result.GetResultWithOwnership())
+                            : ListFailuresForLicenseConfigurationOperationsOutcome(std::move(result.GetError()));
 }
 
 ListLicenseAssetGroupsOutcome LicenseManagerClient::ListLicenseAssetGroups(const ListLicenseAssetGroupsRequest& request) const {
-  return ListLicenseAssetGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLicenseAssetGroupsOutcome(result.GetResultWithOwnership())
+                            : ListLicenseAssetGroupsOutcome(std::move(result.GetError()));
 }
 
 ListLicenseAssetRulesetsOutcome LicenseManagerClient::ListLicenseAssetRulesets(const ListLicenseAssetRulesetsRequest& request) const {
-  return ListLicenseAssetRulesetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLicenseAssetRulesetsOutcome(result.GetResultWithOwnership())
+                            : ListLicenseAssetRulesetsOutcome(std::move(result.GetError()));
 }
 
 ListLicenseConfigurationsOutcome LicenseManagerClient::ListLicenseConfigurations(const ListLicenseConfigurationsRequest& request) const {
-  return ListLicenseConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLicenseConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListLicenseConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListLicenseConfigurationsForOrganizationOutcome LicenseManagerClient::ListLicenseConfigurationsForOrganization(
     const ListLicenseConfigurationsForOrganizationRequest& request) const {
-  return ListLicenseConfigurationsForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLicenseConfigurationsForOrganizationOutcome(result.GetResultWithOwnership())
+                            : ListLicenseConfigurationsForOrganizationOutcome(std::move(result.GetError()));
 }
 
 ListLicenseConversionTasksOutcome LicenseManagerClient::ListLicenseConversionTasks(const ListLicenseConversionTasksRequest& request) const {
-  return ListLicenseConversionTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLicenseConversionTasksOutcome(result.GetResultWithOwnership())
+                            : ListLicenseConversionTasksOutcome(std::move(result.GetError()));
 }
 
 ListLicenseManagerReportGeneratorsOutcome LicenseManagerClient::ListLicenseManagerReportGenerators(
     const ListLicenseManagerReportGeneratorsRequest& request) const {
-  return ListLicenseManagerReportGeneratorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLicenseManagerReportGeneratorsOutcome(result.GetResultWithOwnership())
+                            : ListLicenseManagerReportGeneratorsOutcome(std::move(result.GetError()));
 }
 
 ListLicenseSpecificationsForResourceOutcome LicenseManagerClient::ListLicenseSpecificationsForResource(
     const ListLicenseSpecificationsForResourceRequest& request) const {
-  return ListLicenseSpecificationsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLicenseSpecificationsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListLicenseSpecificationsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListLicenseVersionsOutcome LicenseManagerClient::ListLicenseVersions(const ListLicenseVersionsRequest& request) const {
-  return ListLicenseVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLicenseVersionsOutcome(result.GetResultWithOwnership())
+                            : ListLicenseVersionsOutcome(std::move(result.GetError()));
 }
 
 ListLicensesOutcome LicenseManagerClient::ListLicenses(const ListLicensesRequest& request) const {
-  return ListLicensesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLicensesOutcome(result.GetResultWithOwnership()) : ListLicensesOutcome(std::move(result.GetError()));
 }
 
 ListReceivedGrantsOutcome LicenseManagerClient::ListReceivedGrants(const ListReceivedGrantsRequest& request) const {
-  return ListReceivedGrantsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReceivedGrantsOutcome(result.GetResultWithOwnership())
+                            : ListReceivedGrantsOutcome(std::move(result.GetError()));
 }
 
 ListReceivedGrantsForOrganizationOutcome LicenseManagerClient::ListReceivedGrantsForOrganization(
     const ListReceivedGrantsForOrganizationRequest& request) const {
-  return ListReceivedGrantsForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReceivedGrantsForOrganizationOutcome(result.GetResultWithOwnership())
+                            : ListReceivedGrantsForOrganizationOutcome(std::move(result.GetError()));
 }
 
 ListReceivedLicensesOutcome LicenseManagerClient::ListReceivedLicenses(const ListReceivedLicensesRequest& request) const {
-  return ListReceivedLicensesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReceivedLicensesOutcome(result.GetResultWithOwnership())
+                            : ListReceivedLicensesOutcome(std::move(result.GetError()));
 }
 
 ListReceivedLicensesForOrganizationOutcome LicenseManagerClient::ListReceivedLicensesForOrganization(
     const ListReceivedLicensesForOrganizationRequest& request) const {
-  return ListReceivedLicensesForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReceivedLicensesForOrganizationOutcome(result.GetResultWithOwnership())
+                            : ListReceivedLicensesForOrganizationOutcome(std::move(result.GetError()));
 }
 
 ListResourceInventoryOutcome LicenseManagerClient::ListResourceInventory(const ListResourceInventoryRequest& request) const {
-  return ListResourceInventoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceInventoryOutcome(result.GetResultWithOwnership())
+                            : ListResourceInventoryOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome LicenseManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTokensOutcome LicenseManagerClient::ListTokens(const ListTokensRequest& request) const {
-  return ListTokensOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTokensOutcome(result.GetResultWithOwnership()) : ListTokensOutcome(std::move(result.GetError()));
 }
 
 ListUsageForLicenseConfigurationOutcome LicenseManagerClient::ListUsageForLicenseConfiguration(
     const ListUsageForLicenseConfigurationRequest& request) const {
-  return ListUsageForLicenseConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUsageForLicenseConfigurationOutcome(result.GetResultWithOwnership())
+                            : ListUsageForLicenseConfigurationOutcome(std::move(result.GetError()));
 }
 
 RejectGrantOutcome LicenseManagerClient::RejectGrant(const RejectGrantRequest& request) const {
-  return RejectGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectGrantOutcome(result.GetResultWithOwnership()) : RejectGrantOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome LicenseManagerClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome LicenseManagerClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateLicenseAssetGroupOutcome LicenseManagerClient::UpdateLicenseAssetGroup(const UpdateLicenseAssetGroupRequest& request) const {
-  return UpdateLicenseAssetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLicenseAssetGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateLicenseAssetGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateLicenseAssetRulesetOutcome LicenseManagerClient::UpdateLicenseAssetRuleset(const UpdateLicenseAssetRulesetRequest& request) const {
-  return UpdateLicenseAssetRulesetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLicenseAssetRulesetOutcome(result.GetResultWithOwnership())
+                            : UpdateLicenseAssetRulesetOutcome(std::move(result.GetError()));
 }
 
 UpdateLicenseConfigurationOutcome LicenseManagerClient::UpdateLicenseConfiguration(const UpdateLicenseConfigurationRequest& request) const {
-  return UpdateLicenseConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLicenseConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateLicenseConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateLicenseManagerReportGeneratorOutcome LicenseManagerClient::UpdateLicenseManagerReportGenerator(
     const UpdateLicenseManagerReportGeneratorRequest& request) const {
-  return UpdateLicenseManagerReportGeneratorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLicenseManagerReportGeneratorOutcome(result.GetResultWithOwnership())
+                            : UpdateLicenseManagerReportGeneratorOutcome(std::move(result.GetError()));
 }
 
 UpdateLicenseSpecificationsForResourceOutcome LicenseManagerClient::UpdateLicenseSpecificationsForResource(
     const UpdateLicenseSpecificationsForResourceRequest& request) const {
-  return UpdateLicenseSpecificationsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLicenseSpecificationsForResourceOutcome(result.GetResultWithOwnership())
+                            : UpdateLicenseSpecificationsForResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceSettingsOutcome LicenseManagerClient::UpdateServiceSettings(const UpdateServiceSettingsRequest& request) const {
-  return UpdateServiceSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServiceSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceSettingsOutcome(std::move(result.GetError()));
 }

@@ -188,7 +188,9 @@ GetActionRecommendationsOutcome PersonalizeRuntimeClient::GetActionRecommendatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/action-recommendations");
   };
 
-  return GetActionRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetActionRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetActionRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetPersonalizedRankingOutcome PersonalizeRuntimeClient::GetPersonalizedRanking(const GetPersonalizedRankingRequest& request) const {
@@ -197,7 +199,9 @@ GetPersonalizedRankingOutcome PersonalizeRuntimeClient::GetPersonalizedRanking(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/personalize-ranking");
   };
 
-  return GetPersonalizedRankingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPersonalizedRankingOutcome(result.GetResultWithOwnership())
+                            : GetPersonalizedRankingOutcome(std::move(result.GetError()));
 }
 
 GetRecommendationsOutcome PersonalizeRuntimeClient::GetRecommendations(const GetRecommendationsRequest& request) const {
@@ -206,5 +210,7 @@ GetRecommendationsOutcome PersonalizeRuntimeClient::GetRecommendations(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations");
   };
 
-  return GetRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetRecommendationsOutcome(std::move(result.GetError()));
 }

@@ -261,369 +261,521 @@ AppStreamClient::InvokeOperationOutcome AppStreamClient::InvokeServiceOperation(
 
 AssociateAppBlockBuilderAppBlockOutcome AppStreamClient::AssociateAppBlockBuilderAppBlock(
     const AssociateAppBlockBuilderAppBlockRequest& request) const {
-  return AssociateAppBlockBuilderAppBlockOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateAppBlockBuilderAppBlockOutcome(result.GetResultWithOwnership())
+                            : AssociateAppBlockBuilderAppBlockOutcome(std::move(result.GetError()));
 }
 
 AssociateApplicationFleetOutcome AppStreamClient::AssociateApplicationFleet(const AssociateApplicationFleetRequest& request) const {
-  return AssociateApplicationFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateApplicationFleetOutcome(result.GetResultWithOwnership())
+                            : AssociateApplicationFleetOutcome(std::move(result.GetError()));
 }
 
 AssociateApplicationToEntitlementOutcome AppStreamClient::AssociateApplicationToEntitlement(
     const AssociateApplicationToEntitlementRequest& request) const {
-  return AssociateApplicationToEntitlementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateApplicationToEntitlementOutcome(result.GetResultWithOwnership())
+                            : AssociateApplicationToEntitlementOutcome(std::move(result.GetError()));
 }
 
 AssociateFleetOutcome AppStreamClient::AssociateFleet(const AssociateFleetRequest& request) const {
-  return AssociateFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateFleetOutcome(result.GetResultWithOwnership()) : AssociateFleetOutcome(std::move(result.GetError()));
 }
 
 AssociateSoftwareToImageBuilderOutcome AppStreamClient::AssociateSoftwareToImageBuilder(
     const AssociateSoftwareToImageBuilderRequest& request) const {
-  return AssociateSoftwareToImageBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSoftwareToImageBuilderOutcome(result.GetResultWithOwnership())
+                            : AssociateSoftwareToImageBuilderOutcome(std::move(result.GetError()));
 }
 
 BatchAssociateUserStackOutcome AppStreamClient::BatchAssociateUserStack(const BatchAssociateUserStackRequest& request) const {
-  return BatchAssociateUserStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAssociateUserStackOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateUserStackOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateUserStackOutcome AppStreamClient::BatchDisassociateUserStack(const BatchDisassociateUserStackRequest& request) const {
-  return BatchDisassociateUserStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisassociateUserStackOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateUserStackOutcome(std::move(result.GetError()));
 }
 
 CopyImageOutcome AppStreamClient::CopyImage(const CopyImageRequest& request) const {
-  return CopyImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyImageOutcome(result.GetResultWithOwnership()) : CopyImageOutcome(std::move(result.GetError()));
 }
 
 CreateAppBlockOutcome AppStreamClient::CreateAppBlock(const CreateAppBlockRequest& request) const {
-  return CreateAppBlockOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppBlockOutcome(result.GetResultWithOwnership()) : CreateAppBlockOutcome(std::move(result.GetError()));
 }
 
 CreateAppBlockBuilderOutcome AppStreamClient::CreateAppBlockBuilder(const CreateAppBlockBuilderRequest& request) const {
-  return CreateAppBlockBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppBlockBuilderOutcome(result.GetResultWithOwnership())
+                            : CreateAppBlockBuilderOutcome(std::move(result.GetError()));
 }
 
 CreateAppBlockBuilderStreamingURLOutcome AppStreamClient::CreateAppBlockBuilderStreamingURL(
     const CreateAppBlockBuilderStreamingURLRequest& request) const {
-  return CreateAppBlockBuilderStreamingURLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAppBlockBuilderStreamingURLOutcome(result.GetResultWithOwnership())
+                            : CreateAppBlockBuilderStreamingURLOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome AppStreamClient::CreateApplication(const CreateApplicationRequest& request) const {
-  return CreateApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateDirectoryConfigOutcome AppStreamClient::CreateDirectoryConfig(const CreateDirectoryConfigRequest& request) const {
-  return CreateDirectoryConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDirectoryConfigOutcome(result.GetResultWithOwnership())
+                            : CreateDirectoryConfigOutcome(std::move(result.GetError()));
 }
 
 CreateEntitlementOutcome AppStreamClient::CreateEntitlement(const CreateEntitlementRequest& request) const {
-  return CreateEntitlementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEntitlementOutcome(result.GetResultWithOwnership())
+                            : CreateEntitlementOutcome(std::move(result.GetError()));
 }
 
 CreateExportImageTaskOutcome AppStreamClient::CreateExportImageTask(const CreateExportImageTaskRequest& request) const {
-  return CreateExportImageTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExportImageTaskOutcome(result.GetResultWithOwnership())
+                            : CreateExportImageTaskOutcome(std::move(result.GetError()));
 }
 
 CreateFleetOutcome AppStreamClient::CreateFleet(const CreateFleetRequest& request) const {
-  return CreateFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFleetOutcome(result.GetResultWithOwnership()) : CreateFleetOutcome(std::move(result.GetError()));
 }
 
 CreateImageBuilderOutcome AppStreamClient::CreateImageBuilder(const CreateImageBuilderRequest& request) const {
-  return CreateImageBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateImageBuilderOutcome(result.GetResultWithOwnership())
+                            : CreateImageBuilderOutcome(std::move(result.GetError()));
 }
 
 CreateImageBuilderStreamingURLOutcome AppStreamClient::CreateImageBuilderStreamingURL(
     const CreateImageBuilderStreamingURLRequest& request) const {
-  return CreateImageBuilderStreamingURLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateImageBuilderStreamingURLOutcome(result.GetResultWithOwnership())
+                            : CreateImageBuilderStreamingURLOutcome(std::move(result.GetError()));
 }
 
 CreateImportedImageOutcome AppStreamClient::CreateImportedImage(const CreateImportedImageRequest& request) const {
-  return CreateImportedImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateImportedImageOutcome(result.GetResultWithOwnership())
+                            : CreateImportedImageOutcome(std::move(result.GetError()));
 }
 
 CreateStackOutcome AppStreamClient::CreateStack(const CreateStackRequest& request) const {
-  return CreateStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStackOutcome(result.GetResultWithOwnership()) : CreateStackOutcome(std::move(result.GetError()));
 }
 
 CreateStreamingURLOutcome AppStreamClient::CreateStreamingURL(const CreateStreamingURLRequest& request) const {
-  return CreateStreamingURLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamingURLOutcome(result.GetResultWithOwnership())
+                            : CreateStreamingURLOutcome(std::move(result.GetError()));
 }
 
 CreateThemeForStackOutcome AppStreamClient::CreateThemeForStack(const CreateThemeForStackRequest& request) const {
-  return CreateThemeForStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateThemeForStackOutcome(result.GetResultWithOwnership())
+                            : CreateThemeForStackOutcome(std::move(result.GetError()));
 }
 
 CreateUpdatedImageOutcome AppStreamClient::CreateUpdatedImage(const CreateUpdatedImageRequest& request) const {
-  return CreateUpdatedImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUpdatedImageOutcome(result.GetResultWithOwnership())
+                            : CreateUpdatedImageOutcome(std::move(result.GetError()));
 }
 
 CreateUsageReportSubscriptionOutcome AppStreamClient::CreateUsageReportSubscription(
     const CreateUsageReportSubscriptionRequest& request) const {
-  return CreateUsageReportSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUsageReportSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateUsageReportSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome AppStreamClient::CreateUser(const CreateUserRequest& request) const {
-  return CreateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 DeleteAppBlockOutcome AppStreamClient::DeleteAppBlock(const DeleteAppBlockRequest& request) const {
-  return DeleteAppBlockOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAppBlockOutcome(result.GetResultWithOwnership()) : DeleteAppBlockOutcome(std::move(result.GetError()));
 }
 
 DeleteAppBlockBuilderOutcome AppStreamClient::DeleteAppBlockBuilder(const DeleteAppBlockBuilderRequest& request) const {
-  return DeleteAppBlockBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAppBlockBuilderOutcome(result.GetResultWithOwnership())
+                            : DeleteAppBlockBuilderOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome AppStreamClient::DeleteApplication(const DeleteApplicationRequest& request) const {
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteDirectoryConfigOutcome AppStreamClient::DeleteDirectoryConfig(const DeleteDirectoryConfigRequest& request) const {
-  return DeleteDirectoryConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDirectoryConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteDirectoryConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteEntitlementOutcome AppStreamClient::DeleteEntitlement(const DeleteEntitlementRequest& request) const {
-  return DeleteEntitlementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEntitlementOutcome(result.GetResultWithOwnership())
+                            : DeleteEntitlementOutcome(std::move(result.GetError()));
 }
 
 DeleteFleetOutcome AppStreamClient::DeleteFleet(const DeleteFleetRequest& request) const {
-  return DeleteFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFleetOutcome(result.GetResultWithOwnership()) : DeleteFleetOutcome(std::move(result.GetError()));
 }
 
 DeleteImageOutcome AppStreamClient::DeleteImage(const DeleteImageRequest& request) const {
-  return DeleteImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteImageOutcome(result.GetResultWithOwnership()) : DeleteImageOutcome(std::move(result.GetError()));
 }
 
 DeleteImageBuilderOutcome AppStreamClient::DeleteImageBuilder(const DeleteImageBuilderRequest& request) const {
-  return DeleteImageBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteImageBuilderOutcome(result.GetResultWithOwnership())
+                            : DeleteImageBuilderOutcome(std::move(result.GetError()));
 }
 
 DeleteImagePermissionsOutcome AppStreamClient::DeleteImagePermissions(const DeleteImagePermissionsRequest& request) const {
-  return DeleteImagePermissionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteImagePermissionsOutcome(result.GetResultWithOwnership())
+                            : DeleteImagePermissionsOutcome(std::move(result.GetError()));
 }
 
 DeleteStackOutcome AppStreamClient::DeleteStack(const DeleteStackRequest& request) const {
-  return DeleteStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStackOutcome(result.GetResultWithOwnership()) : DeleteStackOutcome(std::move(result.GetError()));
 }
 
 DeleteThemeForStackOutcome AppStreamClient::DeleteThemeForStack(const DeleteThemeForStackRequest& request) const {
-  return DeleteThemeForStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteThemeForStackOutcome(result.GetResultWithOwnership())
+                            : DeleteThemeForStackOutcome(std::move(result.GetError()));
 }
 
 DeleteUsageReportSubscriptionOutcome AppStreamClient::DeleteUsageReportSubscription(
     const DeleteUsageReportSubscriptionRequest& request) const {
-  return DeleteUsageReportSubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUsageReportSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteUsageReportSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome AppStreamClient::DeleteUser(const DeleteUserRequest& request) const {
-  return DeleteUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DescribeAppBlockBuilderAppBlockAssociationsOutcome AppStreamClient::DescribeAppBlockBuilderAppBlockAssociations(
     const DescribeAppBlockBuilderAppBlockAssociationsRequest& request) const {
-  return DescribeAppBlockBuilderAppBlockAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAppBlockBuilderAppBlockAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeAppBlockBuilderAppBlockAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeAppBlockBuildersOutcome AppStreamClient::DescribeAppBlockBuilders(const DescribeAppBlockBuildersRequest& request) const {
-  return DescribeAppBlockBuildersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAppBlockBuildersOutcome(result.GetResultWithOwnership())
+                            : DescribeAppBlockBuildersOutcome(std::move(result.GetError()));
 }
 
 DescribeAppBlocksOutcome AppStreamClient::DescribeAppBlocks(const DescribeAppBlocksRequest& request) const {
-  return DescribeAppBlocksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAppBlocksOutcome(result.GetResultWithOwnership())
+                            : DescribeAppBlocksOutcome(std::move(result.GetError()));
 }
 
 DescribeAppLicenseUsageOutcome AppStreamClient::DescribeAppLicenseUsage(const DescribeAppLicenseUsageRequest& request) const {
-  return DescribeAppLicenseUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAppLicenseUsageOutcome(result.GetResultWithOwnership())
+                            : DescribeAppLicenseUsageOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationFleetAssociationsOutcome AppStreamClient::DescribeApplicationFleetAssociations(
     const DescribeApplicationFleetAssociationsRequest& request) const {
-  return DescribeApplicationFleetAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationFleetAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationFleetAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationsOutcome AppStreamClient::DescribeApplications(const DescribeApplicationsRequest& request) const {
-  return DescribeApplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationsOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationsOutcome(std::move(result.GetError()));
 }
 
 DescribeDirectoryConfigsOutcome AppStreamClient::DescribeDirectoryConfigs(const DescribeDirectoryConfigsRequest& request) const {
-  return DescribeDirectoryConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDirectoryConfigsOutcome(result.GetResultWithOwnership())
+                            : DescribeDirectoryConfigsOutcome(std::move(result.GetError()));
 }
 
 DescribeEntitlementsOutcome AppStreamClient::DescribeEntitlements(const DescribeEntitlementsRequest& request) const {
-  return DescribeEntitlementsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEntitlementsOutcome(result.GetResultWithOwnership())
+                            : DescribeEntitlementsOutcome(std::move(result.GetError()));
 }
 
 DescribeFleetsOutcome AppStreamClient::DescribeFleets(const DescribeFleetsRequest& request) const {
-  return DescribeFleetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFleetsOutcome(result.GetResultWithOwnership()) : DescribeFleetsOutcome(std::move(result.GetError()));
 }
 
 DescribeImageBuildersOutcome AppStreamClient::DescribeImageBuilders(const DescribeImageBuildersRequest& request) const {
-  return DescribeImageBuildersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeImageBuildersOutcome(result.GetResultWithOwnership())
+                            : DescribeImageBuildersOutcome(std::move(result.GetError()));
 }
 
 DescribeImagePermissionsOutcome AppStreamClient::DescribeImagePermissions(const DescribeImagePermissionsRequest& request) const {
-  return DescribeImagePermissionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeImagePermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeImagePermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeImagesOutcome AppStreamClient::DescribeImages(const DescribeImagesRequest& request) const {
-  return DescribeImagesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeImagesOutcome(result.GetResultWithOwnership()) : DescribeImagesOutcome(std::move(result.GetError()));
 }
 
 DescribeSessionsOutcome AppStreamClient::DescribeSessions(const DescribeSessionsRequest& request) const {
-  return DescribeSessionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSessionsOutcome(result.GetResultWithOwnership())
+                            : DescribeSessionsOutcome(std::move(result.GetError()));
 }
 
 DescribeSoftwareAssociationsOutcome AppStreamClient::DescribeSoftwareAssociations(
     const DescribeSoftwareAssociationsRequest& request) const {
-  return DescribeSoftwareAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSoftwareAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeSoftwareAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeStacksOutcome AppStreamClient::DescribeStacks(const DescribeStacksRequest& request) const {
-  return DescribeStacksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStacksOutcome(result.GetResultWithOwnership()) : DescribeStacksOutcome(std::move(result.GetError()));
 }
 
 DescribeThemeForStackOutcome AppStreamClient::DescribeThemeForStack(const DescribeThemeForStackRequest& request) const {
-  return DescribeThemeForStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeThemeForStackOutcome(result.GetResultWithOwnership())
+                            : DescribeThemeForStackOutcome(std::move(result.GetError()));
 }
 
 DescribeUsageReportSubscriptionsOutcome AppStreamClient::DescribeUsageReportSubscriptions(
     const DescribeUsageReportSubscriptionsRequest& request) const {
-  return DescribeUsageReportSubscriptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUsageReportSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeUsageReportSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeUserStackAssociationsOutcome AppStreamClient::DescribeUserStackAssociations(
     const DescribeUserStackAssociationsRequest& request) const {
-  return DescribeUserStackAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUserStackAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeUserStackAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeUsersOutcome AppStreamClient::DescribeUsers(const DescribeUsersRequest& request) const {
-  return DescribeUsersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUsersOutcome(result.GetResultWithOwnership()) : DescribeUsersOutcome(std::move(result.GetError()));
 }
 
 DisableUserOutcome AppStreamClient::DisableUser(const DisableUserRequest& request) const {
-  return DisableUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableUserOutcome(result.GetResultWithOwnership()) : DisableUserOutcome(std::move(result.GetError()));
 }
 
 DisassociateAppBlockBuilderAppBlockOutcome AppStreamClient::DisassociateAppBlockBuilderAppBlock(
     const DisassociateAppBlockBuilderAppBlockRequest& request) const {
-  return DisassociateAppBlockBuilderAppBlockOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateAppBlockBuilderAppBlockOutcome(result.GetResultWithOwnership())
+                            : DisassociateAppBlockBuilderAppBlockOutcome(std::move(result.GetError()));
 }
 
 DisassociateApplicationFleetOutcome AppStreamClient::DisassociateApplicationFleet(
     const DisassociateApplicationFleetRequest& request) const {
-  return DisassociateApplicationFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateApplicationFleetOutcome(result.GetResultWithOwnership())
+                            : DisassociateApplicationFleetOutcome(std::move(result.GetError()));
 }
 
 DisassociateApplicationFromEntitlementOutcome AppStreamClient::DisassociateApplicationFromEntitlement(
     const DisassociateApplicationFromEntitlementRequest& request) const {
-  return DisassociateApplicationFromEntitlementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateApplicationFromEntitlementOutcome(result.GetResultWithOwnership())
+                            : DisassociateApplicationFromEntitlementOutcome(std::move(result.GetError()));
 }
 
 DisassociateFleetOutcome AppStreamClient::DisassociateFleet(const DisassociateFleetRequest& request) const {
-  return DisassociateFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFleetOutcome(result.GetResultWithOwnership())
+                            : DisassociateFleetOutcome(std::move(result.GetError()));
 }
 
 DisassociateSoftwareFromImageBuilderOutcome AppStreamClient::DisassociateSoftwareFromImageBuilder(
     const DisassociateSoftwareFromImageBuilderRequest& request) const {
-  return DisassociateSoftwareFromImageBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateSoftwareFromImageBuilderOutcome(result.GetResultWithOwnership())
+                            : DisassociateSoftwareFromImageBuilderOutcome(std::move(result.GetError()));
 }
 
 EnableUserOutcome AppStreamClient::EnableUser(const EnableUserRequest& request) const {
-  return EnableUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableUserOutcome(result.GetResultWithOwnership()) : EnableUserOutcome(std::move(result.GetError()));
 }
 
 ExpireSessionOutcome AppStreamClient::ExpireSession(const ExpireSessionRequest& request) const {
-  return ExpireSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExpireSessionOutcome(result.GetResultWithOwnership()) : ExpireSessionOutcome(std::move(result.GetError()));
 }
 
 GetExportImageTaskOutcome AppStreamClient::GetExportImageTask(const GetExportImageTaskRequest& request) const {
-  return GetExportImageTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetExportImageTaskOutcome(result.GetResultWithOwnership())
+                            : GetExportImageTaskOutcome(std::move(result.GetError()));
 }
 
 ListAssociatedFleetsOutcome AppStreamClient::ListAssociatedFleets(const ListAssociatedFleetsRequest& request) const {
-  return ListAssociatedFleetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssociatedFleetsOutcome(result.GetResultWithOwnership())
+                            : ListAssociatedFleetsOutcome(std::move(result.GetError()));
 }
 
 ListAssociatedStacksOutcome AppStreamClient::ListAssociatedStacks(const ListAssociatedStacksRequest& request) const {
-  return ListAssociatedStacksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssociatedStacksOutcome(result.GetResultWithOwnership())
+                            : ListAssociatedStacksOutcome(std::move(result.GetError()));
 }
 
 ListEntitledApplicationsOutcome AppStreamClient::ListEntitledApplications(const ListEntitledApplicationsRequest& request) const {
-  return ListEntitledApplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEntitledApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListEntitledApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListExportImageTasksOutcome AppStreamClient::ListExportImageTasks(const ListExportImageTasksRequest& request) const {
-  return ListExportImageTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExportImageTasksOutcome(result.GetResultWithOwnership())
+                            : ListExportImageTasksOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AppStreamClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartAppBlockBuilderOutcome AppStreamClient::StartAppBlockBuilder(const StartAppBlockBuilderRequest& request) const {
-  return StartAppBlockBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAppBlockBuilderOutcome(result.GetResultWithOwnership())
+                            : StartAppBlockBuilderOutcome(std::move(result.GetError()));
 }
 
 StartFleetOutcome AppStreamClient::StartFleet(const StartFleetRequest& request) const {
-  return StartFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFleetOutcome(result.GetResultWithOwnership()) : StartFleetOutcome(std::move(result.GetError()));
 }
 
 StartImageBuilderOutcome AppStreamClient::StartImageBuilder(const StartImageBuilderRequest& request) const {
-  return StartImageBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartImageBuilderOutcome(result.GetResultWithOwnership())
+                            : StartImageBuilderOutcome(std::move(result.GetError()));
 }
 
 StartSoftwareDeploymentToImageBuilderOutcome AppStreamClient::StartSoftwareDeploymentToImageBuilder(
     const StartSoftwareDeploymentToImageBuilderRequest& request) const {
-  return StartSoftwareDeploymentToImageBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSoftwareDeploymentToImageBuilderOutcome(result.GetResultWithOwnership())
+                            : StartSoftwareDeploymentToImageBuilderOutcome(std::move(result.GetError()));
 }
 
 StopAppBlockBuilderOutcome AppStreamClient::StopAppBlockBuilder(const StopAppBlockBuilderRequest& request) const {
-  return StopAppBlockBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopAppBlockBuilderOutcome(result.GetResultWithOwnership())
+                            : StopAppBlockBuilderOutcome(std::move(result.GetError()));
 }
 
 StopFleetOutcome AppStreamClient::StopFleet(const StopFleetRequest& request) const {
-  return StopFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopFleetOutcome(result.GetResultWithOwnership()) : StopFleetOutcome(std::move(result.GetError()));
 }
 
 StopImageBuilderOutcome AppStreamClient::StopImageBuilder(const StopImageBuilderRequest& request) const {
-  return StopImageBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopImageBuilderOutcome(result.GetResultWithOwnership())
+                            : StopImageBuilderOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AppStreamClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AppStreamClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAppBlockBuilderOutcome AppStreamClient::UpdateAppBlockBuilder(const UpdateAppBlockBuilderRequest& request) const {
-  return UpdateAppBlockBuilderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAppBlockBuilderOutcome(result.GetResultWithOwnership())
+                            : UpdateAppBlockBuilderOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome AppStreamClient::UpdateApplication(const UpdateApplicationRequest& request) const {
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateDirectoryConfigOutcome AppStreamClient::UpdateDirectoryConfig(const UpdateDirectoryConfigRequest& request) const {
-  return UpdateDirectoryConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDirectoryConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateDirectoryConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateEntitlementOutcome AppStreamClient::UpdateEntitlement(const UpdateEntitlementRequest& request) const {
-  return UpdateEntitlementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEntitlementOutcome(result.GetResultWithOwnership())
+                            : UpdateEntitlementOutcome(std::move(result.GetError()));
 }
 
 UpdateFleetOutcome AppStreamClient::UpdateFleet(const UpdateFleetRequest& request) const {
-  return UpdateFleetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFleetOutcome(result.GetResultWithOwnership()) : UpdateFleetOutcome(std::move(result.GetError()));
 }
 
 UpdateImagePermissionsOutcome AppStreamClient::UpdateImagePermissions(const UpdateImagePermissionsRequest& request) const {
-  return UpdateImagePermissionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateImagePermissionsOutcome(result.GetResultWithOwnership())
+                            : UpdateImagePermissionsOutcome(std::move(result.GetError()));
 }
 
 UpdateStackOutcome AppStreamClient::UpdateStack(const UpdateStackRequest& request) const {
-  return UpdateStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStackOutcome(result.GetResultWithOwnership()) : UpdateStackOutcome(std::move(result.GetError()));
 }
 
 UpdateThemeForStackOutcome AppStreamClient::UpdateThemeForStack(const UpdateThemeForStackRequest& request) const {
-  return UpdateThemeForStackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateThemeForStackOutcome(result.GetResultWithOwnership())
+                            : UpdateThemeForStackOutcome(std::move(result.GetError()));
 }

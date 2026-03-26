@@ -200,7 +200,9 @@ ListTagsForResourceOutcome MarketplaceDeploymentClient::ListTagsForResource(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutDeploymentParameterOutcome MarketplaceDeploymentClient::PutDeploymentParameter(const PutDeploymentParameterRequest& request) const {
@@ -224,7 +226,9 @@ PutDeploymentParameterOutcome MarketplaceDeploymentClient::PutDeploymentParamete
     endpointResolutionOutcome.GetResult().AddPathSegments("/deployment-parameters");
   };
 
-  return PutDeploymentParameterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDeploymentParameterOutcome(result.GetResultWithOwnership())
+                            : PutDeploymentParameterOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MarketplaceDeploymentClient::TagResource(const TagResourceRequest& request) const {
@@ -240,7 +244,8 @@ TagResourceOutcome MarketplaceDeploymentClient::TagResource(const TagResourceReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MarketplaceDeploymentClient::UntagResource(const UntagResourceRequest& request) const {
@@ -261,5 +266,6 @@ UntagResourceOutcome MarketplaceDeploymentClient::UntagResource(const UntagResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

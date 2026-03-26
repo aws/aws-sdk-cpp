@@ -206,7 +206,9 @@ CreateAccessPointOutcome EFSClient::CreateAccessPoint(const CreateAccessPointReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-02-01/access-points");
   };
 
-  return CreateAccessPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessPointOutcome(result.GetResultWithOwnership())
+                            : CreateAccessPointOutcome(std::move(result.GetError()));
 }
 
 CreateFileSystemOutcome EFSClient::CreateFileSystem(const CreateFileSystemRequest& request) const {
@@ -215,7 +217,9 @@ CreateFileSystemOutcome EFSClient::CreateFileSystem(const CreateFileSystemReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-02-01/file-systems");
   };
 
-  return CreateFileSystemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFileSystemOutcome(result.GetResultWithOwnership())
+                            : CreateFileSystemOutcome(std::move(result.GetError()));
 }
 
 CreateMountTargetOutcome EFSClient::CreateMountTarget(const CreateMountTargetRequest& request) const {
@@ -224,7 +228,9 @@ CreateMountTargetOutcome EFSClient::CreateMountTarget(const CreateMountTargetReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-02-01/mount-targets");
   };
 
-  return CreateMountTargetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMountTargetOutcome(result.GetResultWithOwnership())
+                            : CreateMountTargetOutcome(std::move(result.GetError()));
 }
 
 CreateReplicationConfigurationOutcome EFSClient::CreateReplicationConfiguration(
@@ -242,7 +248,9 @@ CreateReplicationConfigurationOutcome EFSClient::CreateReplicationConfiguration(
     endpointResolutionOutcome.GetResult().AddPathSegments("/replication-configuration");
   };
 
-  return CreateReplicationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReplicationConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateReplicationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessPointOutcome EFSClient::DeleteAccessPoint(const DeleteAccessPointRequest& request) const {
@@ -258,7 +266,9 @@ DeleteAccessPointOutcome EFSClient::DeleteAccessPoint(const DeleteAccessPointReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessPointId());
   };
 
-  return DeleteAccessPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessPointOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessPointOutcome(std::move(result.GetError()));
 }
 
 DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemRequest& request) const {
@@ -274,7 +284,9 @@ DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileSystemId());
   };
 
-  return DeleteFileSystemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFileSystemOutcome(result.GetResultWithOwnership())
+                            : DeleteFileSystemOutcome(std::move(result.GetError()));
 }
 
 DeleteFileSystemPolicyOutcome EFSClient::DeleteFileSystemPolicy(const DeleteFileSystemPolicyRequest& request) const {
@@ -291,7 +303,9 @@ DeleteFileSystemPolicyOutcome EFSClient::DeleteFileSystemPolicy(const DeleteFile
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteFileSystemPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFileSystemPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteFileSystemPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetRequest& request) const {
@@ -307,7 +321,9 @@ DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMountTargetId());
   };
 
-  return DeleteMountTargetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMountTargetOutcome(result.GetResultWithOwnership())
+                            : DeleteMountTargetOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationConfigurationOutcome EFSClient::DeleteReplicationConfiguration(
@@ -325,7 +341,9 @@ DeleteReplicationConfigurationOutcome EFSClient::DeleteReplicationConfiguration(
     endpointResolutionOutcome.GetResult().AddPathSegments("/replication-configuration");
   };
 
-  return DeleteReplicationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteReplicationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteReplicationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeAccessPointsOutcome EFSClient::DescribeAccessPoints(const DescribeAccessPointsRequest& request) const {
@@ -334,7 +352,9 @@ DescribeAccessPointsOutcome EFSClient::DescribeAccessPoints(const DescribeAccess
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-02-01/access-points");
   };
 
-  return DescribeAccessPointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAccessPointsOutcome(result.GetResultWithOwnership())
+                            : DescribeAccessPointsOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountPreferencesOutcome EFSClient::DescribeAccountPreferences(const DescribeAccountPreferencesRequest& request) const {
@@ -343,7 +363,9 @@ DescribeAccountPreferencesOutcome EFSClient::DescribeAccountPreferences(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-02-01/account-preferences");
   };
 
-  return DescribeAccountPreferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAccountPreferencesOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountPreferencesOutcome(std::move(result.GetError()));
 }
 
 DescribeBackupPolicyOutcome EFSClient::DescribeBackupPolicy(const DescribeBackupPolicyRequest& request) const {
@@ -360,7 +382,9 @@ DescribeBackupPolicyOutcome EFSClient::DescribeBackupPolicy(const DescribeBackup
     endpointResolutionOutcome.GetResult().AddPathSegments("/backup-policy");
   };
 
-  return DescribeBackupPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeBackupPolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeBackupPolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeFileSystemPolicyOutcome EFSClient::DescribeFileSystemPolicy(const DescribeFileSystemPolicyRequest& request) const {
@@ -377,7 +401,9 @@ DescribeFileSystemPolicyOutcome EFSClient::DescribeFileSystemPolicy(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DescribeFileSystemPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFileSystemPolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeFileSystemPolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeFileSystemsOutcome EFSClient::DescribeFileSystems(const DescribeFileSystemsRequest& request) const {
@@ -386,7 +412,9 @@ DescribeFileSystemsOutcome EFSClient::DescribeFileSystems(const DescribeFileSyst
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-02-01/file-systems");
   };
 
-  return DescribeFileSystemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFileSystemsOutcome(result.GetResultWithOwnership())
+                            : DescribeFileSystemsOutcome(std::move(result.GetError()));
 }
 
 DescribeLifecycleConfigurationOutcome EFSClient::DescribeLifecycleConfiguration(
@@ -404,7 +432,9 @@ DescribeLifecycleConfigurationOutcome EFSClient::DescribeLifecycleConfiguration(
     endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycle-configuration");
   };
 
-  return DescribeLifecycleConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeLifecycleConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeLifecycleConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityGroups(
@@ -422,7 +452,9 @@ DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityG
     endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups");
   };
 
-  return DescribeMountTargetSecurityGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeMountTargetSecurityGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeMountTargetSecurityGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeMountTargetsOutcome EFSClient::DescribeMountTargets(const DescribeMountTargetsRequest& request) const {
@@ -431,7 +463,9 @@ DescribeMountTargetsOutcome EFSClient::DescribeMountTargets(const DescribeMountT
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-02-01/mount-targets");
   };
 
-  return DescribeMountTargetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeMountTargetsOutcome(result.GetResultWithOwnership())
+                            : DescribeMountTargetsOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationConfigurationsOutcome EFSClient::DescribeReplicationConfigurations(
@@ -441,7 +475,9 @@ DescribeReplicationConfigurationsOutcome EFSClient::DescribeReplicationConfigura
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-02-01/file-systems/replication-configurations");
   };
 
-  return DescribeReplicationConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeReplicationConfigurationsOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome EFSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -457,7 +493,9 @@ ListTagsForResourceOutcome EFSClient::ListTagsForResource(const ListTagsForResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceId());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroups(
@@ -475,7 +513,9 @@ ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroup
     endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups");
   };
 
-  return ModifyMountTargetSecurityGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ModifyMountTargetSecurityGroupsOutcome(result.GetResultWithOwnership())
+                            : ModifyMountTargetSecurityGroupsOutcome(std::move(result.GetError()));
 }
 
 PutAccountPreferencesOutcome EFSClient::PutAccountPreferences(const PutAccountPreferencesRequest& request) const {
@@ -484,7 +524,9 @@ PutAccountPreferencesOutcome EFSClient::PutAccountPreferences(const PutAccountPr
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-02-01/account-preferences");
   };
 
-  return PutAccountPreferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccountPreferencesOutcome(result.GetResultWithOwnership())
+                            : PutAccountPreferencesOutcome(std::move(result.GetError()));
 }
 
 PutBackupPolicyOutcome EFSClient::PutBackupPolicy(const PutBackupPolicyRequest& request) const {
@@ -501,7 +543,9 @@ PutBackupPolicyOutcome EFSClient::PutBackupPolicy(const PutBackupPolicyRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/backup-policy");
   };
 
-  return PutBackupPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBackupPolicyOutcome(result.GetResultWithOwnership())
+                            : PutBackupPolicyOutcome(std::move(result.GetError()));
 }
 
 PutFileSystemPolicyOutcome EFSClient::PutFileSystemPolicy(const PutFileSystemPolicyRequest& request) const {
@@ -518,7 +562,9 @@ PutFileSystemPolicyOutcome EFSClient::PutFileSystemPolicy(const PutFileSystemPol
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutFileSystemPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutFileSystemPolicyOutcome(result.GetResultWithOwnership())
+                            : PutFileSystemPolicyOutcome(std::move(result.GetError()));
 }
 
 PutLifecycleConfigurationOutcome EFSClient::PutLifecycleConfiguration(const PutLifecycleConfigurationRequest& request) const {
@@ -535,7 +581,9 @@ PutLifecycleConfigurationOutcome EFSClient::PutLifecycleConfiguration(const PutL
     endpointResolutionOutcome.GetResult().AddPathSegments("/lifecycle-configuration");
   };
 
-  return PutLifecycleConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutLifecycleConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutLifecycleConfigurationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome EFSClient::TagResource(const TagResourceRequest& request) const {
@@ -551,7 +599,8 @@ TagResourceOutcome EFSClient::TagResource(const TagResourceRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceId());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome EFSClient::UntagResource(const UntagResourceRequest& request) const {
@@ -572,7 +621,8 @@ UntagResourceOutcome EFSClient::UntagResource(const UntagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceId());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemRequest& request) const {
@@ -588,7 +638,9 @@ UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileSystemId());
   };
 
-  return UpdateFileSystemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFileSystemOutcome(result.GetResultWithOwnership())
+                            : UpdateFileSystemOutcome(std::move(result.GetError()));
 }
 
 UpdateFileSystemProtectionOutcome EFSClient::UpdateFileSystemProtection(const UpdateFileSystemProtectionRequest& request) const {
@@ -605,5 +657,7 @@ UpdateFileSystemProtectionOutcome EFSClient::UpdateFileSystemProtection(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/protection");
   };
 
-  return UpdateFileSystemProtectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFileSystemProtectionOutcome(result.GetResultWithOwnership())
+                            : UpdateFileSystemProtectionOutcome(std::move(result.GetError()));
 }

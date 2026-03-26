@@ -190,37 +190,50 @@ ResourceGroupsTaggingAPIClient::InvokeOperationOutcome ResourceGroupsTaggingAPIC
 }
 
 DescribeReportCreationOutcome ResourceGroupsTaggingAPIClient::DescribeReportCreation(const DescribeReportCreationRequest& request) const {
-  return DescribeReportCreationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReportCreationOutcome(result.GetResultWithOwnership())
+                            : DescribeReportCreationOutcome(std::move(result.GetError()));
 }
 
 GetComplianceSummaryOutcome ResourceGroupsTaggingAPIClient::GetComplianceSummary(const GetComplianceSummaryRequest& request) const {
-  return GetComplianceSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetComplianceSummaryOutcome(result.GetResultWithOwnership())
+                            : GetComplianceSummaryOutcome(std::move(result.GetError()));
 }
 
 GetResourcesOutcome ResourceGroupsTaggingAPIClient::GetResources(const GetResourcesRequest& request) const {
-  return GetResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcesOutcome(result.GetResultWithOwnership()) : GetResourcesOutcome(std::move(result.GetError()));
 }
 
 GetTagKeysOutcome ResourceGroupsTaggingAPIClient::GetTagKeys(const GetTagKeysRequest& request) const {
-  return GetTagKeysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTagKeysOutcome(result.GetResultWithOwnership()) : GetTagKeysOutcome(std::move(result.GetError()));
 }
 
 GetTagValuesOutcome ResourceGroupsTaggingAPIClient::GetTagValues(const GetTagValuesRequest& request) const {
-  return GetTagValuesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTagValuesOutcome(result.GetResultWithOwnership()) : GetTagValuesOutcome(std::move(result.GetError()));
 }
 
 ListRequiredTagsOutcome ResourceGroupsTaggingAPIClient::ListRequiredTags(const ListRequiredTagsRequest& request) const {
-  return ListRequiredTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRequiredTagsOutcome(result.GetResultWithOwnership())
+                            : ListRequiredTagsOutcome(std::move(result.GetError()));
 }
 
 StartReportCreationOutcome ResourceGroupsTaggingAPIClient::StartReportCreation(const StartReportCreationRequest& request) const {
-  return StartReportCreationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReportCreationOutcome(result.GetResultWithOwnership())
+                            : StartReportCreationOutcome(std::move(result.GetError()));
 }
 
 TagResourcesOutcome ResourceGroupsTaggingAPIClient::TagResources(const TagResourcesRequest& request) const {
-  return TagResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourcesOutcome(result.GetResultWithOwnership()) : TagResourcesOutcome(std::move(result.GetError()));
 }
 
 UntagResourcesOutcome ResourceGroupsTaggingAPIClient::UntagResources(const UntagResourcesRequest& request) const {
-  return UntagResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourcesOutcome(result.GetResultWithOwnership()) : UntagResourcesOutcome(std::move(result.GetError()));
 }

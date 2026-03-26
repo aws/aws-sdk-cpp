@@ -213,7 +213,9 @@ BatchGetChannelOutcome IVSClient::BatchGetChannel(const BatchGetChannelRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchGetChannel");
   };
 
-  return BatchGetChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetChannelOutcome(result.GetResultWithOwnership())
+                            : BatchGetChannelOutcome(std::move(result.GetError()));
 }
 
 BatchGetStreamKeyOutcome IVSClient::BatchGetStreamKey(const BatchGetStreamKeyRequest& request) const {
@@ -222,7 +224,9 @@ BatchGetStreamKeyOutcome IVSClient::BatchGetStreamKey(const BatchGetStreamKeyReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchGetStreamKey");
   };
 
-  return BatchGetStreamKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetStreamKeyOutcome(result.GetResultWithOwnership())
+                            : BatchGetStreamKeyOutcome(std::move(result.GetError()));
 }
 
 BatchStartViewerSessionRevocationOutcome IVSClient::BatchStartViewerSessionRevocation(
@@ -232,7 +236,9 @@ BatchStartViewerSessionRevocationOutcome IVSClient::BatchStartViewerSessionRevoc
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchStartViewerSessionRevocation");
   };
 
-  return BatchStartViewerSessionRevocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchStartViewerSessionRevocationOutcome(result.GetResultWithOwnership())
+                            : BatchStartViewerSessionRevocationOutcome(std::move(result.GetError()));
 }
 
 CreateChannelOutcome IVSClient::CreateChannel(const CreateChannelRequest& request) const {
@@ -241,7 +247,8 @@ CreateChannelOutcome IVSClient::CreateChannel(const CreateChannelRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateChannel");
   };
 
-  return CreateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelOutcome(result.GetResultWithOwnership()) : CreateChannelOutcome(std::move(result.GetError()));
 }
 
 CreatePlaybackRestrictionPolicyOutcome IVSClient::CreatePlaybackRestrictionPolicy(
@@ -251,7 +258,9 @@ CreatePlaybackRestrictionPolicyOutcome IVSClient::CreatePlaybackRestrictionPolic
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreatePlaybackRestrictionPolicy");
   };
 
-  return CreatePlaybackRestrictionPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePlaybackRestrictionPolicyOutcome(result.GetResultWithOwnership())
+                            : CreatePlaybackRestrictionPolicyOutcome(std::move(result.GetError()));
 }
 
 CreateRecordingConfigurationOutcome IVSClient::CreateRecordingConfiguration(const CreateRecordingConfigurationRequest& request) const {
@@ -260,7 +269,9 @@ CreateRecordingConfigurationOutcome IVSClient::CreateRecordingConfiguration(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateRecordingConfiguration");
   };
 
-  return CreateRecordingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecordingConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateRecordingConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateStreamKeyOutcome IVSClient::CreateStreamKey(const CreateStreamKeyRequest& request) const {
@@ -269,7 +280,9 @@ CreateStreamKeyOutcome IVSClient::CreateStreamKey(const CreateStreamKeyRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateStreamKey");
   };
 
-  return CreateStreamKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamKeyOutcome(result.GetResultWithOwnership())
+                            : CreateStreamKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelOutcome IVSClient::DeleteChannel(const DeleteChannelRequest& request) const {
@@ -278,7 +291,8 @@ DeleteChannelOutcome IVSClient::DeleteChannel(const DeleteChannelRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteChannel");
   };
 
-  return DeleteChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteChannelOutcome(result.GetResultWithOwnership()) : DeleteChannelOutcome(std::move(result.GetError()));
 }
 
 DeletePlaybackKeyPairOutcome IVSClient::DeletePlaybackKeyPair(const DeletePlaybackKeyPairRequest& request) const {
@@ -287,7 +301,9 @@ DeletePlaybackKeyPairOutcome IVSClient::DeletePlaybackKeyPair(const DeletePlayba
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeletePlaybackKeyPair");
   };
 
-  return DeletePlaybackKeyPairOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePlaybackKeyPairOutcome(result.GetResultWithOwnership())
+                            : DeletePlaybackKeyPairOutcome(std::move(result.GetError()));
 }
 
 DeletePlaybackRestrictionPolicyOutcome IVSClient::DeletePlaybackRestrictionPolicy(
@@ -297,7 +313,9 @@ DeletePlaybackRestrictionPolicyOutcome IVSClient::DeletePlaybackRestrictionPolic
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeletePlaybackRestrictionPolicy");
   };
 
-  return DeletePlaybackRestrictionPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePlaybackRestrictionPolicyOutcome(result.GetResultWithOwnership())
+                            : DeletePlaybackRestrictionPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteRecordingConfigurationOutcome IVSClient::DeleteRecordingConfiguration(const DeleteRecordingConfigurationRequest& request) const {
@@ -306,7 +324,9 @@ DeleteRecordingConfigurationOutcome IVSClient::DeleteRecordingConfiguration(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteRecordingConfiguration");
   };
 
-  return DeleteRecordingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRecordingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteRecordingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteStreamKeyOutcome IVSClient::DeleteStreamKey(const DeleteStreamKeyRequest& request) const {
@@ -315,7 +335,9 @@ DeleteStreamKeyOutcome IVSClient::DeleteStreamKey(const DeleteStreamKeyRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteStreamKey");
   };
 
-  return DeleteStreamKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStreamKeyOutcome(result.GetResultWithOwnership())
+                            : DeleteStreamKeyOutcome(std::move(result.GetError()));
 }
 
 GetChannelOutcome IVSClient::GetChannel(const GetChannelRequest& request) const {
@@ -324,7 +346,8 @@ GetChannelOutcome IVSClient::GetChannel(const GetChannelRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetChannel");
   };
 
-  return GetChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetChannelOutcome(result.GetResultWithOwnership()) : GetChannelOutcome(std::move(result.GetError()));
 }
 
 GetPlaybackKeyPairOutcome IVSClient::GetPlaybackKeyPair(const GetPlaybackKeyPairRequest& request) const {
@@ -333,7 +356,9 @@ GetPlaybackKeyPairOutcome IVSClient::GetPlaybackKeyPair(const GetPlaybackKeyPair
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetPlaybackKeyPair");
   };
 
-  return GetPlaybackKeyPairOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPlaybackKeyPairOutcome(result.GetResultWithOwnership())
+                            : GetPlaybackKeyPairOutcome(std::move(result.GetError()));
 }
 
 GetPlaybackRestrictionPolicyOutcome IVSClient::GetPlaybackRestrictionPolicy(const GetPlaybackRestrictionPolicyRequest& request) const {
@@ -342,7 +367,9 @@ GetPlaybackRestrictionPolicyOutcome IVSClient::GetPlaybackRestrictionPolicy(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetPlaybackRestrictionPolicy");
   };
 
-  return GetPlaybackRestrictionPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPlaybackRestrictionPolicyOutcome(result.GetResultWithOwnership())
+                            : GetPlaybackRestrictionPolicyOutcome(std::move(result.GetError()));
 }
 
 GetRecordingConfigurationOutcome IVSClient::GetRecordingConfiguration(const GetRecordingConfigurationRequest& request) const {
@@ -351,7 +378,9 @@ GetRecordingConfigurationOutcome IVSClient::GetRecordingConfiguration(const GetR
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetRecordingConfiguration");
   };
 
-  return GetRecordingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecordingConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetRecordingConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetStreamOutcome IVSClient::GetStream(const GetStreamRequest& request) const {
@@ -360,7 +389,8 @@ GetStreamOutcome IVSClient::GetStream(const GetStreamRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetStream");
   };
 
-  return GetStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStreamOutcome(result.GetResultWithOwnership()) : GetStreamOutcome(std::move(result.GetError()));
 }
 
 GetStreamKeyOutcome IVSClient::GetStreamKey(const GetStreamKeyRequest& request) const {
@@ -369,7 +399,8 @@ GetStreamKeyOutcome IVSClient::GetStreamKey(const GetStreamKeyRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetStreamKey");
   };
 
-  return GetStreamKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStreamKeyOutcome(result.GetResultWithOwnership()) : GetStreamKeyOutcome(std::move(result.GetError()));
 }
 
 GetStreamSessionOutcome IVSClient::GetStreamSession(const GetStreamSessionRequest& request) const {
@@ -378,7 +409,9 @@ GetStreamSessionOutcome IVSClient::GetStreamSession(const GetStreamSessionReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetStreamSession");
   };
 
-  return GetStreamSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStreamSessionOutcome(result.GetResultWithOwnership())
+                            : GetStreamSessionOutcome(std::move(result.GetError()));
 }
 
 ImportPlaybackKeyPairOutcome IVSClient::ImportPlaybackKeyPair(const ImportPlaybackKeyPairRequest& request) const {
@@ -387,7 +420,9 @@ ImportPlaybackKeyPairOutcome IVSClient::ImportPlaybackKeyPair(const ImportPlayba
     endpointResolutionOutcome.GetResult().AddPathSegments("/ImportPlaybackKeyPair");
   };
 
-  return ImportPlaybackKeyPairOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportPlaybackKeyPairOutcome(result.GetResultWithOwnership())
+                            : ImportPlaybackKeyPairOutcome(std::move(result.GetError()));
 }
 
 ListChannelsOutcome IVSClient::ListChannels(const ListChannelsRequest& request) const {
@@ -396,7 +431,8 @@ ListChannelsOutcome IVSClient::ListChannels(const ListChannelsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListChannels");
   };
 
-  return ListChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
 }
 
 ListPlaybackKeyPairsOutcome IVSClient::ListPlaybackKeyPairs(const ListPlaybackKeyPairsRequest& request) const {
@@ -405,7 +441,9 @@ ListPlaybackKeyPairsOutcome IVSClient::ListPlaybackKeyPairs(const ListPlaybackKe
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListPlaybackKeyPairs");
   };
 
-  return ListPlaybackKeyPairsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPlaybackKeyPairsOutcome(result.GetResultWithOwnership())
+                            : ListPlaybackKeyPairsOutcome(std::move(result.GetError()));
 }
 
 ListPlaybackRestrictionPoliciesOutcome IVSClient::ListPlaybackRestrictionPolicies(
@@ -415,7 +453,9 @@ ListPlaybackRestrictionPoliciesOutcome IVSClient::ListPlaybackRestrictionPolicie
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListPlaybackRestrictionPolicies");
   };
 
-  return ListPlaybackRestrictionPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPlaybackRestrictionPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListPlaybackRestrictionPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListRecordingConfigurationsOutcome IVSClient::ListRecordingConfigurations(const ListRecordingConfigurationsRequest& request) const {
@@ -424,7 +464,9 @@ ListRecordingConfigurationsOutcome IVSClient::ListRecordingConfigurations(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListRecordingConfigurations");
   };
 
-  return ListRecordingConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecordingConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListRecordingConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListStreamKeysOutcome IVSClient::ListStreamKeys(const ListStreamKeysRequest& request) const {
@@ -433,7 +475,8 @@ ListStreamKeysOutcome IVSClient::ListStreamKeys(const ListStreamKeysRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListStreamKeys");
   };
 
-  return ListStreamKeysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStreamKeysOutcome(result.GetResultWithOwnership()) : ListStreamKeysOutcome(std::move(result.GetError()));
 }
 
 ListStreamSessionsOutcome IVSClient::ListStreamSessions(const ListStreamSessionsRequest& request) const {
@@ -442,7 +485,9 @@ ListStreamSessionsOutcome IVSClient::ListStreamSessions(const ListStreamSessions
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListStreamSessions");
   };
 
-  return ListStreamSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStreamSessionsOutcome(result.GetResultWithOwnership())
+                            : ListStreamSessionsOutcome(std::move(result.GetError()));
 }
 
 ListStreamsOutcome IVSClient::ListStreams(const ListStreamsRequest& request) const {
@@ -451,7 +496,8 @@ ListStreamsOutcome IVSClient::ListStreams(const ListStreamsRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListStreams");
   };
 
-  return ListStreamsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStreamsOutcome(result.GetResultWithOwnership()) : ListStreamsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome IVSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -467,7 +513,9 @@ ListTagsForResourceOutcome IVSClient::ListTagsForResource(const ListTagsForResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutMetadataOutcome IVSClient::PutMetadata(const PutMetadataRequest& request) const {
@@ -476,7 +524,8 @@ PutMetadataOutcome IVSClient::PutMetadata(const PutMetadataRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutMetadata");
   };
 
-  return PutMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutMetadataOutcome(result.GetResultWithOwnership()) : PutMetadataOutcome(std::move(result.GetError()));
 }
 
 StartViewerSessionRevocationOutcome IVSClient::StartViewerSessionRevocation(const StartViewerSessionRevocationRequest& request) const {
@@ -485,7 +534,9 @@ StartViewerSessionRevocationOutcome IVSClient::StartViewerSessionRevocation(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartViewerSessionRevocation");
   };
 
-  return StartViewerSessionRevocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartViewerSessionRevocationOutcome(result.GetResultWithOwnership())
+                            : StartViewerSessionRevocationOutcome(std::move(result.GetError()));
 }
 
 StopStreamOutcome IVSClient::StopStream(const StopStreamRequest& request) const {
@@ -494,7 +545,8 @@ StopStreamOutcome IVSClient::StopStream(const StopStreamRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/StopStream");
   };
 
-  return StopStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopStreamOutcome(result.GetResultWithOwnership()) : StopStreamOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome IVSClient::TagResource(const TagResourceRequest& request) const {
@@ -510,7 +562,8 @@ TagResourceOutcome IVSClient::TagResource(const TagResourceRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome IVSClient::UntagResource(const UntagResourceRequest& request) const {
@@ -531,7 +584,8 @@ UntagResourceOutcome IVSClient::UntagResource(const UntagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelOutcome IVSClient::UpdateChannel(const UpdateChannelRequest& request) const {
@@ -540,7 +594,8 @@ UpdateChannelOutcome IVSClient::UpdateChannel(const UpdateChannelRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateChannel");
   };
 
-  return UpdateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateChannelOutcome(result.GetResultWithOwnership()) : UpdateChannelOutcome(std::move(result.GetError()));
 }
 
 UpdatePlaybackRestrictionPolicyOutcome IVSClient::UpdatePlaybackRestrictionPolicy(
@@ -550,5 +605,7 @@ UpdatePlaybackRestrictionPolicyOutcome IVSClient::UpdatePlaybackRestrictionPolic
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdatePlaybackRestrictionPolicy");
   };
 
-  return UpdatePlaybackRestrictionPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePlaybackRestrictionPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdatePlaybackRestrictionPolicyOutcome(std::move(result.GetError()));
 }

@@ -229,7 +229,9 @@ CancelCapacityTaskOutcome OutpostsClient::CancelCapacityTask(const CancelCapacit
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapacityTaskId());
   };
 
-  return CancelCapacityTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelCapacityTaskOutcome(result.GetResultWithOwnership())
+                            : CancelCapacityTaskOutcome(std::move(result.GetError()));
 }
 
 CancelOrderOutcome OutpostsClient::CancelOrder(const CancelOrderRequest& request) const {
@@ -246,7 +248,8 @@ CancelOrderOutcome OutpostsClient::CancelOrder(const CancelOrderRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelOrderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelOrderOutcome(result.GetResultWithOwnership()) : CancelOrderOutcome(std::move(result.GetError()));
 }
 
 CreateOrderOutcome OutpostsClient::CreateOrder(const CreateOrderRequest& request) const {
@@ -255,7 +258,8 @@ CreateOrderOutcome OutpostsClient::CreateOrder(const CreateOrderRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/orders");
   };
 
-  return CreateOrderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOrderOutcome(result.GetResultWithOwnership()) : CreateOrderOutcome(std::move(result.GetError()));
 }
 
 CreateOutpostOutcome OutpostsClient::CreateOutpost(const CreateOutpostRequest& request) const {
@@ -264,7 +268,8 @@ CreateOutpostOutcome OutpostsClient::CreateOutpost(const CreateOutpostRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/outposts");
   };
 
-  return CreateOutpostOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOutpostOutcome(result.GetResultWithOwnership()) : CreateOutpostOutcome(std::move(result.GetError()));
 }
 
 CreateSiteOutcome OutpostsClient::CreateSite(const CreateSiteRequest& request) const {
@@ -273,7 +278,8 @@ CreateSiteOutcome OutpostsClient::CreateSite(const CreateSiteRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/sites");
   };
 
-  return CreateSiteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSiteOutcome(result.GetResultWithOwnership()) : CreateSiteOutcome(std::move(result.GetError()));
 }
 
 DeleteOutpostOutcome OutpostsClient::DeleteOutpost(const DeleteOutpostRequest& request) const {
@@ -289,7 +295,8 @@ DeleteOutpostOutcome OutpostsClient::DeleteOutpost(const DeleteOutpostRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostId());
   };
 
-  return DeleteOutpostOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteOutpostOutcome(result.GetResultWithOwnership()) : DeleteOutpostOutcome(std::move(result.GetError()));
 }
 
 DeleteSiteOutcome OutpostsClient::DeleteSite(const DeleteSiteRequest& request) const {
@@ -305,7 +312,8 @@ DeleteSiteOutcome OutpostsClient::DeleteSite(const DeleteSiteRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSiteId());
   };
 
-  return DeleteSiteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSiteOutcome(result.GetResultWithOwnership()) : DeleteSiteOutcome(std::move(result.GetError()));
 }
 
 GetCapacityTaskOutcome OutpostsClient::GetCapacityTask(const GetCapacityTaskRequest& request) const {
@@ -328,7 +336,9 @@ GetCapacityTaskOutcome OutpostsClient::GetCapacityTask(const GetCapacityTaskRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapacityTaskId());
   };
 
-  return GetCapacityTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCapacityTaskOutcome(result.GetResultWithOwnership())
+                            : GetCapacityTaskOutcome(std::move(result.GetError()));
 }
 
 GetCatalogItemOutcome OutpostsClient::GetCatalogItem(const GetCatalogItemRequest& request) const {
@@ -344,7 +354,8 @@ GetCatalogItemOutcome OutpostsClient::GetCatalogItem(const GetCatalogItemRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCatalogItemId());
   };
 
-  return GetCatalogItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCatalogItemOutcome(result.GetResultWithOwnership()) : GetCatalogItemOutcome(std::move(result.GetError()));
 }
 
 GetConnectionOutcome OutpostsClient::GetConnection(const GetConnectionRequest& request) const {
@@ -360,7 +371,8 @@ GetConnectionOutcome OutpostsClient::GetConnection(const GetConnectionRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectionId());
   };
 
-  return GetConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectionOutcome(result.GetResultWithOwnership()) : GetConnectionOutcome(std::move(result.GetError()));
 }
 
 GetOrderOutcome OutpostsClient::GetOrder(const GetOrderRequest& request) const {
@@ -376,7 +388,8 @@ GetOrderOutcome OutpostsClient::GetOrder(const GetOrderRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrderId());
   };
 
-  return GetOrderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOrderOutcome(result.GetResultWithOwnership()) : GetOrderOutcome(std::move(result.GetError()));
 }
 
 GetOutpostOutcome OutpostsClient::GetOutpost(const GetOutpostRequest& request) const {
@@ -392,7 +405,8 @@ GetOutpostOutcome OutpostsClient::GetOutpost(const GetOutpostRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostId());
   };
 
-  return GetOutpostOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOutpostOutcome(result.GetResultWithOwnership()) : GetOutpostOutcome(std::move(result.GetError()));
 }
 
 GetOutpostBillingInformationOutcome OutpostsClient::GetOutpostBillingInformation(const GetOutpostBillingInformationRequest& request) const {
@@ -409,7 +423,9 @@ GetOutpostBillingInformationOutcome OutpostsClient::GetOutpostBillingInformation
     endpointResolutionOutcome.GetResult().AddPathSegments("/billing-information");
   };
 
-  return GetOutpostBillingInformationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOutpostBillingInformationOutcome(result.GetResultWithOwnership())
+                            : GetOutpostBillingInformationOutcome(std::move(result.GetError()));
 }
 
 GetOutpostInstanceTypesOutcome OutpostsClient::GetOutpostInstanceTypes(const GetOutpostInstanceTypesRequest& request) const {
@@ -426,7 +442,9 @@ GetOutpostInstanceTypesOutcome OutpostsClient::GetOutpostInstanceTypes(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/instanceTypes");
   };
 
-  return GetOutpostInstanceTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOutpostInstanceTypesOutcome(result.GetResultWithOwnership())
+                            : GetOutpostInstanceTypesOutcome(std::move(result.GetError()));
 }
 
 GetOutpostSupportedInstanceTypesOutcome OutpostsClient::GetOutpostSupportedInstanceTypes(
@@ -444,7 +462,9 @@ GetOutpostSupportedInstanceTypesOutcome OutpostsClient::GetOutpostSupportedInsta
     endpointResolutionOutcome.GetResult().AddPathSegments("/supportedInstanceTypes");
   };
 
-  return GetOutpostSupportedInstanceTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOutpostSupportedInstanceTypesOutcome(result.GetResultWithOwnership())
+                            : GetOutpostSupportedInstanceTypesOutcome(std::move(result.GetError()));
 }
 
 GetSiteOutcome OutpostsClient::GetSite(const GetSiteRequest& request) const {
@@ -460,7 +480,8 @@ GetSiteOutcome OutpostsClient::GetSite(const GetSiteRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSiteId());
   };
 
-  return GetSiteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSiteOutcome(result.GetResultWithOwnership()) : GetSiteOutcome(std::move(result.GetError()));
 }
 
 GetSiteAddressOutcome OutpostsClient::GetSiteAddress(const GetSiteAddressRequest& request) const {
@@ -482,7 +503,8 @@ GetSiteAddressOutcome OutpostsClient::GetSiteAddress(const GetSiteAddressRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/address");
   };
 
-  return GetSiteAddressOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSiteAddressOutcome(result.GetResultWithOwnership()) : GetSiteAddressOutcome(std::move(result.GetError()));
 }
 
 ListAssetInstancesOutcome OutpostsClient::ListAssetInstances(const ListAssetInstancesRequest& request) const {
@@ -499,7 +521,9 @@ ListAssetInstancesOutcome OutpostsClient::ListAssetInstances(const ListAssetInst
     endpointResolutionOutcome.GetResult().AddPathSegments("/assetInstances");
   };
 
-  return ListAssetInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetInstancesOutcome(result.GetResultWithOwnership())
+                            : ListAssetInstancesOutcome(std::move(result.GetError()));
 }
 
 ListAssetsOutcome OutpostsClient::ListAssets(const ListAssetsRequest& request) const {
@@ -516,7 +540,8 @@ ListAssetsOutcome OutpostsClient::ListAssets(const ListAssetsRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
   };
 
-  return ListAssetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetsOutcome(result.GetResultWithOwnership()) : ListAssetsOutcome(std::move(result.GetError()));
 }
 
 ListBlockingInstancesForCapacityTaskOutcome OutpostsClient::ListBlockingInstancesForCapacityTask(
@@ -541,7 +566,9 @@ ListBlockingInstancesForCapacityTaskOutcome OutpostsClient::ListBlockingInstance
     endpointResolutionOutcome.GetResult().AddPathSegments("/blockingInstances");
   };
 
-  return ListBlockingInstancesForCapacityTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBlockingInstancesForCapacityTaskOutcome(result.GetResultWithOwnership())
+                            : ListBlockingInstancesForCapacityTaskOutcome(std::move(result.GetError()));
 }
 
 ListCapacityTasksOutcome OutpostsClient::ListCapacityTasks(const ListCapacityTasksRequest& request) const {
@@ -550,7 +577,9 @@ ListCapacityTasksOutcome OutpostsClient::ListCapacityTasks(const ListCapacityTas
     endpointResolutionOutcome.GetResult().AddPathSegments("/capacity/tasks");
   };
 
-  return ListCapacityTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCapacityTasksOutcome(result.GetResultWithOwnership())
+                            : ListCapacityTasksOutcome(std::move(result.GetError()));
 }
 
 ListCatalogItemsOutcome OutpostsClient::ListCatalogItems(const ListCatalogItemsRequest& request) const {
@@ -559,7 +588,9 @@ ListCatalogItemsOutcome OutpostsClient::ListCatalogItems(const ListCatalogItemsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/catalog/items");
   };
 
-  return ListCatalogItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCatalogItemsOutcome(result.GetResultWithOwnership())
+                            : ListCatalogItemsOutcome(std::move(result.GetError()));
 }
 
 ListOrdersOutcome OutpostsClient::ListOrders(const ListOrdersRequest& request) const {
@@ -568,7 +599,8 @@ ListOrdersOutcome OutpostsClient::ListOrders(const ListOrdersRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-orders");
   };
 
-  return ListOrdersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrdersOutcome(result.GetResultWithOwnership()) : ListOrdersOutcome(std::move(result.GetError()));
 }
 
 ListOutpostsOutcome OutpostsClient::ListOutposts(const ListOutpostsRequest& request) const {
@@ -577,7 +609,8 @@ ListOutpostsOutcome OutpostsClient::ListOutposts(const ListOutpostsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/outposts");
   };
 
-  return ListOutpostsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOutpostsOutcome(result.GetResultWithOwnership()) : ListOutpostsOutcome(std::move(result.GetError()));
 }
 
 ListSitesOutcome OutpostsClient::ListSites(const ListSitesRequest& request) const {
@@ -586,7 +619,8 @@ ListSitesOutcome OutpostsClient::ListSites(const ListSitesRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/sites");
   };
 
-  return ListSitesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSitesOutcome(result.GetResultWithOwnership()) : ListSitesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome OutpostsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -602,7 +636,9 @@ ListTagsForResourceOutcome OutpostsClient::ListTagsForResource(const ListTagsFor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartCapacityTaskOutcome OutpostsClient::StartCapacityTask(const StartCapacityTaskRequest& request) const {
@@ -619,7 +655,9 @@ StartCapacityTaskOutcome OutpostsClient::StartCapacityTask(const StartCapacityTa
     endpointResolutionOutcome.GetResult().AddPathSegments("/capacity");
   };
 
-  return StartCapacityTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCapacityTaskOutcome(result.GetResultWithOwnership())
+                            : StartCapacityTaskOutcome(std::move(result.GetError()));
 }
 
 StartConnectionOutcome OutpostsClient::StartConnection(const StartConnectionRequest& request) const {
@@ -628,7 +666,9 @@ StartConnectionOutcome OutpostsClient::StartConnection(const StartConnectionRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/connections");
   };
 
-  return StartConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartConnectionOutcome(result.GetResultWithOwnership())
+                            : StartConnectionOutcome(std::move(result.GetError()));
 }
 
 StartOutpostDecommissionOutcome OutpostsClient::StartOutpostDecommission(const StartOutpostDecommissionRequest& request) const {
@@ -645,7 +685,9 @@ StartOutpostDecommissionOutcome OutpostsClient::StartOutpostDecommission(const S
     endpointResolutionOutcome.GetResult().AddPathSegments("/decommission");
   };
 
-  return StartOutpostDecommissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartOutpostDecommissionOutcome(result.GetResultWithOwnership())
+                            : StartOutpostDecommissionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome OutpostsClient::TagResource(const TagResourceRequest& request) const {
@@ -661,7 +703,8 @@ TagResourceOutcome OutpostsClient::TagResource(const TagResourceRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome OutpostsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -682,7 +725,8 @@ UntagResourceOutcome OutpostsClient::UntagResource(const UntagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateOutpostOutcome OutpostsClient::UpdateOutpost(const UpdateOutpostRequest& request) const {
@@ -698,7 +742,8 @@ UpdateOutpostOutcome OutpostsClient::UpdateOutpost(const UpdateOutpostRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostId());
   };
 
-  return UpdateOutpostOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateOutpostOutcome(result.GetResultWithOwnership()) : UpdateOutpostOutcome(std::move(result.GetError()));
 }
 
 UpdateSiteOutcome OutpostsClient::UpdateSite(const UpdateSiteRequest& request) const {
@@ -714,7 +759,8 @@ UpdateSiteOutcome OutpostsClient::UpdateSite(const UpdateSiteRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSiteId());
   };
 
-  return UpdateSiteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSiteOutcome(result.GetResultWithOwnership()) : UpdateSiteOutcome(std::move(result.GetError()));
 }
 
 UpdateSiteAddressOutcome OutpostsClient::UpdateSiteAddress(const UpdateSiteAddressRequest& request) const {
@@ -731,7 +777,9 @@ UpdateSiteAddressOutcome OutpostsClient::UpdateSiteAddress(const UpdateSiteAddre
     endpointResolutionOutcome.GetResult().AddPathSegments("/address");
   };
 
-  return UpdateSiteAddressOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSiteAddressOutcome(result.GetResultWithOwnership())
+                            : UpdateSiteAddressOutcome(std::move(result.GetError()));
 }
 
 UpdateSiteRackPhysicalPropertiesOutcome OutpostsClient::UpdateSiteRackPhysicalProperties(
@@ -749,5 +797,7 @@ UpdateSiteRackPhysicalPropertiesOutcome OutpostsClient::UpdateSiteRackPhysicalPr
     endpointResolutionOutcome.GetResult().AddPathSegments("/rackPhysicalProperties");
   };
 
-  return UpdateSiteRackPhysicalPropertiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSiteRackPhysicalPropertiesOutcome(result.GetResultWithOwnership())
+                            : UpdateSiteRackPhysicalPropertiesOutcome(std::move(result.GetError()));
 }

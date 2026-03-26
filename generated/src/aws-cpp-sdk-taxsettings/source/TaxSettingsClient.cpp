@@ -196,7 +196,9 @@ BatchDeleteTaxRegistrationOutcome TaxSettingsClient::BatchDeleteTaxRegistration(
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchDeleteTaxRegistration");
   };
 
-  return BatchDeleteTaxRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteTaxRegistrationOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteTaxRegistrationOutcome(std::move(result.GetError()));
 }
 
 BatchGetTaxExemptionsOutcome TaxSettingsClient::BatchGetTaxExemptions(const BatchGetTaxExemptionsRequest& request) const {
@@ -205,7 +207,9 @@ BatchGetTaxExemptionsOutcome TaxSettingsClient::BatchGetTaxExemptions(const Batc
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchGetTaxExemptions");
   };
 
-  return BatchGetTaxExemptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetTaxExemptionsOutcome(result.GetResultWithOwnership())
+                            : BatchGetTaxExemptionsOutcome(std::move(result.GetError()));
 }
 
 BatchPutTaxRegistrationOutcome TaxSettingsClient::BatchPutTaxRegistration(const BatchPutTaxRegistrationRequest& request) const {
@@ -214,7 +218,9 @@ BatchPutTaxRegistrationOutcome TaxSettingsClient::BatchPutTaxRegistration(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchPutTaxRegistration");
   };
 
-  return BatchPutTaxRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchPutTaxRegistrationOutcome(result.GetResultWithOwnership())
+                            : BatchPutTaxRegistrationOutcome(std::move(result.GetError()));
 }
 
 DeleteSupplementalTaxRegistrationOutcome TaxSettingsClient::DeleteSupplementalTaxRegistration(
@@ -224,7 +230,9 @@ DeleteSupplementalTaxRegistrationOutcome TaxSettingsClient::DeleteSupplementalTa
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteSupplementalTaxRegistration");
   };
 
-  return DeleteSupplementalTaxRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSupplementalTaxRegistrationOutcome(result.GetResultWithOwnership())
+                            : DeleteSupplementalTaxRegistrationOutcome(std::move(result.GetError()));
 }
 
 DeleteTaxRegistrationOutcome TaxSettingsClient::DeleteTaxRegistration(const DeleteTaxRegistrationRequest& request) const {
@@ -233,7 +241,9 @@ DeleteTaxRegistrationOutcome TaxSettingsClient::DeleteTaxRegistration(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteTaxRegistration");
   };
 
-  return DeleteTaxRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTaxRegistrationOutcome(result.GetResultWithOwnership())
+                            : DeleteTaxRegistrationOutcome(std::move(result.GetError()));
 }
 
 GetTaxExemptionTypesOutcome TaxSettingsClient::GetTaxExemptionTypes(const GetTaxExemptionTypesRequest& request) const {
@@ -242,7 +252,9 @@ GetTaxExemptionTypesOutcome TaxSettingsClient::GetTaxExemptionTypes(const GetTax
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTaxExemptionTypes");
   };
 
-  return GetTaxExemptionTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTaxExemptionTypesOutcome(result.GetResultWithOwnership())
+                            : GetTaxExemptionTypesOutcome(std::move(result.GetError()));
 }
 
 GetTaxInheritanceOutcome TaxSettingsClient::GetTaxInheritance(const GetTaxInheritanceRequest& request) const {
@@ -251,7 +263,9 @@ GetTaxInheritanceOutcome TaxSettingsClient::GetTaxInheritance(const GetTaxInheri
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTaxInheritance");
   };
 
-  return GetTaxInheritanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTaxInheritanceOutcome(result.GetResultWithOwnership())
+                            : GetTaxInheritanceOutcome(std::move(result.GetError()));
 }
 
 GetTaxRegistrationOutcome TaxSettingsClient::GetTaxRegistration(const GetTaxRegistrationRequest& request) const {
@@ -260,7 +274,9 @@ GetTaxRegistrationOutcome TaxSettingsClient::GetTaxRegistration(const GetTaxRegi
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTaxRegistration");
   };
 
-  return GetTaxRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTaxRegistrationOutcome(result.GetResultWithOwnership())
+                            : GetTaxRegistrationOutcome(std::move(result.GetError()));
 }
 
 GetTaxRegistrationDocumentOutcome TaxSettingsClient::GetTaxRegistrationDocument(const GetTaxRegistrationDocumentRequest& request) const {
@@ -269,7 +285,9 @@ GetTaxRegistrationDocumentOutcome TaxSettingsClient::GetTaxRegistrationDocument(
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTaxRegistrationDocument");
   };
 
-  return GetTaxRegistrationDocumentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTaxRegistrationDocumentOutcome(result.GetResultWithOwnership())
+                            : GetTaxRegistrationDocumentOutcome(std::move(result.GetError()));
 }
 
 ListSupplementalTaxRegistrationsOutcome TaxSettingsClient::ListSupplementalTaxRegistrations(
@@ -279,7 +297,9 @@ ListSupplementalTaxRegistrationsOutcome TaxSettingsClient::ListSupplementalTaxRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListSupplementalTaxRegistrations");
   };
 
-  return ListSupplementalTaxRegistrationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSupplementalTaxRegistrationsOutcome(result.GetResultWithOwnership())
+                            : ListSupplementalTaxRegistrationsOutcome(std::move(result.GetError()));
 }
 
 ListTaxExemptionsOutcome TaxSettingsClient::ListTaxExemptions(const ListTaxExemptionsRequest& request) const {
@@ -288,7 +308,9 @@ ListTaxExemptionsOutcome TaxSettingsClient::ListTaxExemptions(const ListTaxExemp
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTaxExemptions");
   };
 
-  return ListTaxExemptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTaxExemptionsOutcome(result.GetResultWithOwnership())
+                            : ListTaxExemptionsOutcome(std::move(result.GetError()));
 }
 
 ListTaxRegistrationsOutcome TaxSettingsClient::ListTaxRegistrations(const ListTaxRegistrationsRequest& request) const {
@@ -297,7 +319,9 @@ ListTaxRegistrationsOutcome TaxSettingsClient::ListTaxRegistrations(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTaxRegistrations");
   };
 
-  return ListTaxRegistrationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTaxRegistrationsOutcome(result.GetResultWithOwnership())
+                            : ListTaxRegistrationsOutcome(std::move(result.GetError()));
 }
 
 PutSupplementalTaxRegistrationOutcome TaxSettingsClient::PutSupplementalTaxRegistration(
@@ -307,7 +331,9 @@ PutSupplementalTaxRegistrationOutcome TaxSettingsClient::PutSupplementalTaxRegis
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutSupplementalTaxRegistration");
   };
 
-  return PutSupplementalTaxRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutSupplementalTaxRegistrationOutcome(result.GetResultWithOwnership())
+                            : PutSupplementalTaxRegistrationOutcome(std::move(result.GetError()));
 }
 
 PutTaxExemptionOutcome TaxSettingsClient::PutTaxExemption(const PutTaxExemptionRequest& request) const {
@@ -316,7 +342,9 @@ PutTaxExemptionOutcome TaxSettingsClient::PutTaxExemption(const PutTaxExemptionR
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutTaxExemption");
   };
 
-  return PutTaxExemptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutTaxExemptionOutcome(result.GetResultWithOwnership())
+                            : PutTaxExemptionOutcome(std::move(result.GetError()));
 }
 
 PutTaxInheritanceOutcome TaxSettingsClient::PutTaxInheritance(const PutTaxInheritanceRequest& request) const {
@@ -325,7 +353,9 @@ PutTaxInheritanceOutcome TaxSettingsClient::PutTaxInheritance(const PutTaxInheri
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutTaxInheritance");
   };
 
-  return PutTaxInheritanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutTaxInheritanceOutcome(result.GetResultWithOwnership())
+                            : PutTaxInheritanceOutcome(std::move(result.GetError()));
 }
 
 PutTaxRegistrationOutcome TaxSettingsClient::PutTaxRegistration(const PutTaxRegistrationRequest& request) const {
@@ -334,5 +364,7 @@ PutTaxRegistrationOutcome TaxSettingsClient::PutTaxRegistration(const PutTaxRegi
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutTaxRegistration");
   };
 
-  return PutTaxRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutTaxRegistrationOutcome(result.GetResultWithOwnership())
+                            : PutTaxRegistrationOutcome(std::move(result.GetError()));
 }

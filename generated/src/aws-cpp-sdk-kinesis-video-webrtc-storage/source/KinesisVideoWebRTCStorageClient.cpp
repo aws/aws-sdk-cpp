@@ -191,7 +191,9 @@ JoinStorageSessionOutcome KinesisVideoWebRTCStorageClient::JoinStorageSession(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/joinStorageSession");
   };
 
-  return JoinStorageSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? JoinStorageSessionOutcome(result.GetResultWithOwnership())
+                            : JoinStorageSessionOutcome(std::move(result.GetError()));
 }
 
 JoinStorageSessionAsViewerOutcome KinesisVideoWebRTCStorageClient::JoinStorageSessionAsViewer(
@@ -201,5 +203,7 @@ JoinStorageSessionAsViewerOutcome KinesisVideoWebRTCStorageClient::JoinStorageSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/joinStorageSessionAsViewer");
   };
 
-  return JoinStorageSessionAsViewerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? JoinStorageSessionAsViewerOutcome(result.GetResultWithOwnership())
+                            : JoinStorageSessionAsViewerOutcome(std::move(result.GetError()));
 }

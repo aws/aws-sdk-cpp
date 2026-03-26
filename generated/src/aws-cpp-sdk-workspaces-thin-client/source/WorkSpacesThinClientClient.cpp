@@ -205,7 +205,9 @@ CreateEnvironmentOutcome WorkSpacesThinClientClient::CreateEnvironment(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
   };
 
-  return CreateEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEnvironmentOutcome(result.GetResultWithOwnership())
+                            : CreateEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeleteDeviceOutcome WorkSpacesThinClientClient::DeleteDevice(const DeleteDeviceRequest& request) const {
@@ -221,7 +223,8 @@ DeleteDeviceOutcome WorkSpacesThinClientClient::DeleteDevice(const DeleteDeviceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDeviceOutcome(result.GetResultWithOwnership()) : DeleteDeviceOutcome(std::move(result.GetError()));
 }
 
 DeleteEnvironmentOutcome WorkSpacesThinClientClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const {
@@ -237,7 +240,9 @@ DeleteEnvironmentOutcome WorkSpacesThinClientClient::DeleteEnvironment(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEnvironmentOutcome(result.GetResultWithOwnership())
+                            : DeleteEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeregisterDeviceOutcome WorkSpacesThinClientClient::DeregisterDevice(const DeregisterDeviceRequest& request) const {
@@ -253,7 +258,9 @@ DeregisterDeviceOutcome WorkSpacesThinClientClient::DeregisterDevice(const Dereg
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeregisterDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterDeviceOutcome(result.GetResultWithOwnership())
+                            : DeregisterDeviceOutcome(std::move(result.GetError()));
 }
 
 GetDeviceOutcome WorkSpacesThinClientClient::GetDevice(const GetDeviceRequest& request) const {
@@ -269,7 +276,8 @@ GetDeviceOutcome WorkSpacesThinClientClient::GetDevice(const GetDeviceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeviceOutcome(result.GetResultWithOwnership()) : GetDeviceOutcome(std::move(result.GetError()));
 }
 
 GetEnvironmentOutcome WorkSpacesThinClientClient::GetEnvironment(const GetEnvironmentRequest& request) const {
@@ -285,7 +293,8 @@ GetEnvironmentOutcome WorkSpacesThinClientClient::GetEnvironment(const GetEnviro
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEnvironmentOutcome(result.GetResultWithOwnership()) : GetEnvironmentOutcome(std::move(result.GetError()));
 }
 
 GetSoftwareSetOutcome WorkSpacesThinClientClient::GetSoftwareSet(const GetSoftwareSetRequest& request) const {
@@ -301,7 +310,8 @@ GetSoftwareSetOutcome WorkSpacesThinClientClient::GetSoftwareSet(const GetSoftwa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetSoftwareSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSoftwareSetOutcome(result.GetResultWithOwnership()) : GetSoftwareSetOutcome(std::move(result.GetError()));
 }
 
 ListDevicesOutcome WorkSpacesThinClientClient::ListDevices(const ListDevicesRequest& request) const {
@@ -310,7 +320,8 @@ ListDevicesOutcome WorkSpacesThinClientClient::ListDevices(const ListDevicesRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
   };
 
-  return ListDevicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDevicesOutcome(result.GetResultWithOwnership()) : ListDevicesOutcome(std::move(result.GetError()));
 }
 
 ListEnvironmentsOutcome WorkSpacesThinClientClient::ListEnvironments(const ListEnvironmentsRequest& request) const {
@@ -319,7 +330,9 @@ ListEnvironmentsOutcome WorkSpacesThinClientClient::ListEnvironments(const ListE
     endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
   };
 
-  return ListEnvironmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : ListEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 ListSoftwareSetsOutcome WorkSpacesThinClientClient::ListSoftwareSets(const ListSoftwareSetsRequest& request) const {
@@ -328,7 +341,9 @@ ListSoftwareSetsOutcome WorkSpacesThinClientClient::ListSoftwareSets(const ListS
     endpointResolutionOutcome.GetResult().AddPathSegments("/softwaresets");
   };
 
-  return ListSoftwareSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSoftwareSetsOutcome(result.GetResultWithOwnership())
+                            : ListSoftwareSetsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome WorkSpacesThinClientClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -344,7 +359,9 @@ ListTagsForResourceOutcome WorkSpacesThinClientClient::ListTagsForResource(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome WorkSpacesThinClientClient::TagResource(const TagResourceRequest& request) const {
@@ -360,7 +377,8 @@ TagResourceOutcome WorkSpacesThinClientClient::TagResource(const TagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome WorkSpacesThinClientClient::UntagResource(const UntagResourceRequest& request) const {
@@ -381,7 +399,8 @@ UntagResourceOutcome WorkSpacesThinClientClient::UntagResource(const UntagResour
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDeviceOutcome WorkSpacesThinClientClient::UpdateDevice(const UpdateDeviceRequest& request) const {
@@ -397,7 +416,8 @@ UpdateDeviceOutcome WorkSpacesThinClientClient::UpdateDevice(const UpdateDeviceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDeviceOutcome(result.GetResultWithOwnership()) : UpdateDeviceOutcome(std::move(result.GetError()));
 }
 
 UpdateEnvironmentOutcome WorkSpacesThinClientClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const {
@@ -413,7 +433,9 @@ UpdateEnvironmentOutcome WorkSpacesThinClientClient::UpdateEnvironment(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEnvironmentOutcome(result.GetResultWithOwnership())
+                            : UpdateEnvironmentOutcome(std::move(result.GetError()));
 }
 
 UpdateSoftwareSetOutcome WorkSpacesThinClientClient::UpdateSoftwareSet(const UpdateSoftwareSetRequest& request) const {
@@ -429,5 +451,7 @@ UpdateSoftwareSetOutcome WorkSpacesThinClientClient::UpdateSoftwareSet(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateSoftwareSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSoftwareSetOutcome(result.GetResultWithOwnership())
+                            : UpdateSoftwareSetOutcome(std::move(result.GetError()));
 }

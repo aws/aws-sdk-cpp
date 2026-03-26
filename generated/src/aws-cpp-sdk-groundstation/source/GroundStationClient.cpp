@@ -223,7 +223,8 @@ CancelContactOutcome GroundStationClient::CancelContact(const CancelContactReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
   };
 
-  return CancelContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelContactOutcome(result.GetResultWithOwnership()) : CancelContactOutcome(std::move(result.GetError()));
 }
 
 CreateConfigOutcome GroundStationClient::CreateConfig(const CreateConfigRequest& request) const {
@@ -232,7 +233,8 @@ CreateConfigOutcome GroundStationClient::CreateConfig(const CreateConfigRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return CreateConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigOutcome(result.GetResultWithOwnership()) : CreateConfigOutcome(std::move(result.GetError()));
 }
 
 CreateDataflowEndpointGroupOutcome GroundStationClient::CreateDataflowEndpointGroup(
@@ -242,7 +244,9 @@ CreateDataflowEndpointGroupOutcome GroundStationClient::CreateDataflowEndpointGr
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataflowEndpointGroup");
   };
 
-  return CreateDataflowEndpointGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataflowEndpointGroupOutcome(result.GetResultWithOwnership())
+                            : CreateDataflowEndpointGroupOutcome(std::move(result.GetError()));
 }
 
 CreateDataflowEndpointGroupV2Outcome GroundStationClient::CreateDataflowEndpointGroupV2(
@@ -252,7 +256,9 @@ CreateDataflowEndpointGroupV2Outcome GroundStationClient::CreateDataflowEndpoint
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataflowEndpointGroupV2");
   };
 
-  return CreateDataflowEndpointGroupV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataflowEndpointGroupV2Outcome(result.GetResultWithOwnership())
+                            : CreateDataflowEndpointGroupV2Outcome(std::move(result.GetError()));
 }
 
 CreateEphemerisOutcome GroundStationClient::CreateEphemeris(const CreateEphemerisRequest& request) const {
@@ -261,7 +267,9 @@ CreateEphemerisOutcome GroundStationClient::CreateEphemeris(const CreateEphemeri
     endpointResolutionOutcome.GetResult().AddPathSegments("/ephemeris");
   };
 
-  return CreateEphemerisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEphemerisOutcome(result.GetResultWithOwnership())
+                            : CreateEphemerisOutcome(std::move(result.GetError()));
 }
 
 CreateMissionProfileOutcome GroundStationClient::CreateMissionProfile(const CreateMissionProfileRequest& request) const {
@@ -270,7 +278,9 @@ CreateMissionProfileOutcome GroundStationClient::CreateMissionProfile(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/missionprofile");
   };
 
-  return CreateMissionProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMissionProfileOutcome(result.GetResultWithOwnership())
+                            : CreateMissionProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigOutcome GroundStationClient::DeleteConfig(const DeleteConfigRequest& request) const {
@@ -293,7 +303,8 @@ DeleteConfigOutcome GroundStationClient::DeleteConfig(const DeleteConfigRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
   };
 
-  return DeleteConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigOutcome(result.GetResultWithOwnership()) : DeleteConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteDataflowEndpointGroupOutcome GroundStationClient::DeleteDataflowEndpointGroup(
@@ -310,7 +321,9 @@ DeleteDataflowEndpointGroupOutcome GroundStationClient::DeleteDataflowEndpointGr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataflowEndpointGroupId());
   };
 
-  return DeleteDataflowEndpointGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataflowEndpointGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteDataflowEndpointGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteEphemerisOutcome GroundStationClient::DeleteEphemeris(const DeleteEphemerisRequest& request) const {
@@ -326,7 +339,9 @@ DeleteEphemerisOutcome GroundStationClient::DeleteEphemeris(const DeleteEphemeri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEphemerisId());
   };
 
-  return DeleteEphemerisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEphemerisOutcome(result.GetResultWithOwnership())
+                            : DeleteEphemerisOutcome(std::move(result.GetError()));
 }
 
 DeleteMissionProfileOutcome GroundStationClient::DeleteMissionProfile(const DeleteMissionProfileRequest& request) const {
@@ -342,7 +357,9 @@ DeleteMissionProfileOutcome GroundStationClient::DeleteMissionProfile(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMissionProfileId());
   };
 
-  return DeleteMissionProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMissionProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteMissionProfileOutcome(std::move(result.GetError()));
 }
 
 DescribeContactOutcome GroundStationClient::DescribeContact(const DescribeContactRequest& request) const {
@@ -358,7 +375,9 @@ DescribeContactOutcome GroundStationClient::DescribeContact(const DescribeContac
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
   };
 
-  return DescribeContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeContactOutcome(result.GetResultWithOwnership())
+                            : DescribeContactOutcome(std::move(result.GetError()));
 }
 
 DescribeEphemerisOutcome GroundStationClient::DescribeEphemeris(const DescribeEphemerisRequest& request) const {
@@ -374,7 +393,9 @@ DescribeEphemerisOutcome GroundStationClient::DescribeEphemeris(const DescribeEp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEphemerisId());
   };
 
-  return DescribeEphemerisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeEphemerisOutcome(result.GetResultWithOwnership())
+                            : DescribeEphemerisOutcome(std::move(result.GetError()));
 }
 
 GetAgentConfigurationOutcome GroundStationClient::GetAgentConfiguration(const GetAgentConfigurationRequest& request) const {
@@ -391,7 +412,9 @@ GetAgentConfigurationOutcome GroundStationClient::GetAgentConfiguration(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return GetAgentConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAgentConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetAgentConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetAgentTaskResponseUrlOutcome GroundStationClient::GetAgentTaskResponseUrl(const GetAgentTaskResponseUrlRequest& request) const {
@@ -413,7 +436,9 @@ GetAgentTaskResponseUrlOutcome GroundStationClient::GetAgentTaskResponseUrl(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
   };
 
-  return GetAgentTaskResponseUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAgentTaskResponseUrlOutcome(result.GetResultWithOwnership())
+                            : GetAgentTaskResponseUrlOutcome(std::move(result.GetError()));
 }
 
 GetConfigOutcome GroundStationClient::GetConfig(const GetConfigRequest& request) const {
@@ -436,7 +461,8 @@ GetConfigOutcome GroundStationClient::GetConfig(const GetConfigRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
   };
 
-  return GetConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigOutcome(result.GetResultWithOwnership()) : GetConfigOutcome(std::move(result.GetError()));
 }
 
 GetDataflowEndpointGroupOutcome GroundStationClient::GetDataflowEndpointGroup(const GetDataflowEndpointGroupRequest& request) const {
@@ -452,7 +478,9 @@ GetDataflowEndpointGroupOutcome GroundStationClient::GetDataflowEndpointGroup(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataflowEndpointGroupId());
   };
 
-  return GetDataflowEndpointGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataflowEndpointGroupOutcome(result.GetResultWithOwnership())
+                            : GetDataflowEndpointGroupOutcome(std::move(result.GetError()));
 }
 
 GetMinuteUsageOutcome GroundStationClient::GetMinuteUsage(const GetMinuteUsageRequest& request) const {
@@ -461,7 +489,8 @@ GetMinuteUsageOutcome GroundStationClient::GetMinuteUsage(const GetMinuteUsageRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/minute-usage");
   };
 
-  return GetMinuteUsageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMinuteUsageOutcome(result.GetResultWithOwnership()) : GetMinuteUsageOutcome(std::move(result.GetError()));
 }
 
 GetMissionProfileOutcome GroundStationClient::GetMissionProfile(const GetMissionProfileRequest& request) const {
@@ -477,7 +506,9 @@ GetMissionProfileOutcome GroundStationClient::GetMissionProfile(const GetMission
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMissionProfileId());
   };
 
-  return GetMissionProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMissionProfileOutcome(result.GetResultWithOwnership())
+                            : GetMissionProfileOutcome(std::move(result.GetError()));
 }
 
 GetSatelliteOutcome GroundStationClient::GetSatellite(const GetSatelliteRequest& request) const {
@@ -493,7 +524,8 @@ GetSatelliteOutcome GroundStationClient::GetSatellite(const GetSatelliteRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSatelliteId());
   };
 
-  return GetSatelliteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSatelliteOutcome(result.GetResultWithOwnership()) : GetSatelliteOutcome(std::move(result.GetError()));
 }
 
 ListConfigsOutcome GroundStationClient::ListConfigs(const ListConfigsRequest& request) const {
@@ -502,7 +534,8 @@ ListConfigsOutcome GroundStationClient::ListConfigs(const ListConfigsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return ListConfigsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigsOutcome(result.GetResultWithOwnership()) : ListConfigsOutcome(std::move(result.GetError()));
 }
 
 ListContactsOutcome GroundStationClient::ListContacts(const ListContactsRequest& request) const {
@@ -511,7 +544,8 @@ ListContactsOutcome GroundStationClient::ListContacts(const ListContactsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/contacts");
   };
 
-  return ListContactsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContactsOutcome(result.GetResultWithOwnership()) : ListContactsOutcome(std::move(result.GetError()));
 }
 
 ListDataflowEndpointGroupsOutcome GroundStationClient::ListDataflowEndpointGroups(const ListDataflowEndpointGroupsRequest& request) const {
@@ -520,7 +554,9 @@ ListDataflowEndpointGroupsOutcome GroundStationClient::ListDataflowEndpointGroup
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataflowEndpointGroup");
   };
 
-  return ListDataflowEndpointGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataflowEndpointGroupsOutcome(result.GetResultWithOwnership())
+                            : ListDataflowEndpointGroupsOutcome(std::move(result.GetError()));
 }
 
 ListEphemeridesOutcome GroundStationClient::ListEphemerides(const ListEphemeridesRequest& request) const {
@@ -529,7 +565,9 @@ ListEphemeridesOutcome GroundStationClient::ListEphemerides(const ListEphemeride
     endpointResolutionOutcome.GetResult().AddPathSegments("/ephemerides");
   };
 
-  return ListEphemeridesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEphemeridesOutcome(result.GetResultWithOwnership())
+                            : ListEphemeridesOutcome(std::move(result.GetError()));
 }
 
 ListGroundStationsOutcome GroundStationClient::ListGroundStations(const ListGroundStationsRequest& request) const {
@@ -538,7 +576,9 @@ ListGroundStationsOutcome GroundStationClient::ListGroundStations(const ListGrou
     endpointResolutionOutcome.GetResult().AddPathSegments("/groundstation");
   };
 
-  return ListGroundStationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGroundStationsOutcome(result.GetResultWithOwnership())
+                            : ListGroundStationsOutcome(std::move(result.GetError()));
 }
 
 ListMissionProfilesOutcome GroundStationClient::ListMissionProfiles(const ListMissionProfilesRequest& request) const {
@@ -547,7 +587,9 @@ ListMissionProfilesOutcome GroundStationClient::ListMissionProfiles(const ListMi
     endpointResolutionOutcome.GetResult().AddPathSegments("/missionprofile");
   };
 
-  return ListMissionProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMissionProfilesOutcome(result.GetResultWithOwnership())
+                            : ListMissionProfilesOutcome(std::move(result.GetError()));
 }
 
 ListSatellitesOutcome GroundStationClient::ListSatellites(const ListSatellitesRequest& request) const {
@@ -556,7 +598,8 @@ ListSatellitesOutcome GroundStationClient::ListSatellites(const ListSatellitesRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/satellite");
   };
 
-  return ListSatellitesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSatellitesOutcome(result.GetResultWithOwnership()) : ListSatellitesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome GroundStationClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -572,7 +615,9 @@ ListTagsForResourceOutcome GroundStationClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterAgentOutcome GroundStationClient::RegisterAgent(const RegisterAgentRequest& request) const {
@@ -581,7 +626,8 @@ RegisterAgentOutcome GroundStationClient::RegisterAgent(const RegisterAgentReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/agent");
   };
 
-  return RegisterAgentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterAgentOutcome(result.GetResultWithOwnership()) : RegisterAgentOutcome(std::move(result.GetError()));
 }
 
 ReserveContactOutcome GroundStationClient::ReserveContact(const ReserveContactRequest& request) const {
@@ -590,7 +636,8 @@ ReserveContactOutcome GroundStationClient::ReserveContact(const ReserveContactRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/contact");
   };
 
-  return ReserveContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReserveContactOutcome(result.GetResultWithOwnership()) : ReserveContactOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome GroundStationClient::TagResource(const TagResourceRequest& request) const {
@@ -606,7 +653,8 @@ TagResourceOutcome GroundStationClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome GroundStationClient::UntagResource(const UntagResourceRequest& request) const {
@@ -627,7 +675,8 @@ UntagResourceOutcome GroundStationClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAgentStatusOutcome GroundStationClient::UpdateAgentStatus(const UpdateAgentStatusRequest& request) const {
@@ -643,7 +692,9 @@ UpdateAgentStatusOutcome GroundStationClient::UpdateAgentStatus(const UpdateAgen
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentId());
   };
 
-  return UpdateAgentStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAgentStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateAgentStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigOutcome GroundStationClient::UpdateConfig(const UpdateConfigRequest& request) const {
@@ -666,7 +717,8 @@ UpdateConfigOutcome GroundStationClient::UpdateConfig(const UpdateConfigRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigId());
   };
 
-  return UpdateConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConfigOutcome(result.GetResultWithOwnership()) : UpdateConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateEphemerisOutcome GroundStationClient::UpdateEphemeris(const UpdateEphemerisRequest& request) const {
@@ -682,7 +734,9 @@ UpdateEphemerisOutcome GroundStationClient::UpdateEphemeris(const UpdateEphemeri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEphemerisId());
   };
 
-  return UpdateEphemerisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEphemerisOutcome(result.GetResultWithOwnership())
+                            : UpdateEphemerisOutcome(std::move(result.GetError()));
 }
 
 UpdateMissionProfileOutcome GroundStationClient::UpdateMissionProfile(const UpdateMissionProfileRequest& request) const {
@@ -698,5 +752,7 @@ UpdateMissionProfileOutcome GroundStationClient::UpdateMissionProfile(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMissionProfileId());
   };
 
-  return UpdateMissionProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateMissionProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateMissionProfileOutcome(std::move(result.GetError()));
 }

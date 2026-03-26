@@ -214,7 +214,9 @@ CreateApplicationInstanceOutcome PanoramaClient::CreateApplicationInstance(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/application-instances");
   };
 
-  return CreateApplicationInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationInstanceOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateJobForDevicesOutcome PanoramaClient::CreateJobForDevices(const CreateJobForDevicesRequest& request) const {
@@ -223,7 +225,9 @@ CreateJobForDevicesOutcome PanoramaClient::CreateJobForDevices(const CreateJobFo
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return CreateJobForDevicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobForDevicesOutcome(result.GetResultWithOwnership())
+                            : CreateJobForDevicesOutcome(std::move(result.GetError()));
 }
 
 CreateNodeFromTemplateJobOutcome PanoramaClient::CreateNodeFromTemplateJob(const CreateNodeFromTemplateJobRequest& request) const {
@@ -232,7 +236,9 @@ CreateNodeFromTemplateJobOutcome PanoramaClient::CreateNodeFromTemplateJob(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/packages/template-job");
   };
 
-  return CreateNodeFromTemplateJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNodeFromTemplateJobOutcome(result.GetResultWithOwnership())
+                            : CreateNodeFromTemplateJobOutcome(std::move(result.GetError()));
 }
 
 CreatePackageOutcome PanoramaClient::CreatePackage(const CreatePackageRequest& request) const {
@@ -241,7 +247,8 @@ CreatePackageOutcome PanoramaClient::CreatePackage(const CreatePackageRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/packages");
   };
 
-  return CreatePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePackageOutcome(result.GetResultWithOwnership()) : CreatePackageOutcome(std::move(result.GetError()));
 }
 
 CreatePackageImportJobOutcome PanoramaClient::CreatePackageImportJob(const CreatePackageImportJobRequest& request) const {
@@ -250,7 +257,9 @@ CreatePackageImportJobOutcome PanoramaClient::CreatePackageImportJob(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/packages/import-jobs");
   };
 
-  return CreatePackageImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePackageImportJobOutcome(result.GetResultWithOwnership())
+                            : CreatePackageImportJobOutcome(std::move(result.GetError()));
 }
 
 DeleteDeviceOutcome PanoramaClient::DeleteDevice(const DeleteDeviceRequest& request) const {
@@ -266,7 +275,8 @@ DeleteDeviceOutcome PanoramaClient::DeleteDevice(const DeleteDeviceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceId());
   };
 
-  return DeleteDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDeviceOutcome(result.GetResultWithOwnership()) : DeleteDeviceOutcome(std::move(result.GetError()));
 }
 
 DeletePackageOutcome PanoramaClient::DeletePackage(const DeletePackageRequest& request) const {
@@ -282,7 +292,8 @@ DeletePackageOutcome PanoramaClient::DeletePackage(const DeletePackageRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageId());
   };
 
-  return DeletePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePackageOutcome(result.GetResultWithOwnership()) : DeletePackageOutcome(std::move(result.GetError()));
 }
 
 DeregisterPackageVersionOutcome PanoramaClient::DeregisterPackageVersion(const DeregisterPackageVersionRequest& request) const {
@@ -312,7 +323,9 @@ DeregisterPackageVersionOutcome PanoramaClient::DeregisterPackageVersion(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPatchVersion());
   };
 
-  return DeregisterPackageVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeregisterPackageVersionOutcome(result.GetResultWithOwnership())
+                            : DeregisterPackageVersionOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationInstanceOutcome PanoramaClient::DescribeApplicationInstance(const DescribeApplicationInstanceRequest& request) const {
@@ -328,7 +341,9 @@ DescribeApplicationInstanceOutcome PanoramaClient::DescribeApplicationInstance(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationInstanceId());
   };
 
-  return DescribeApplicationInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeApplicationInstanceOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationInstanceOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationInstanceDetailsOutcome PanoramaClient::DescribeApplicationInstanceDetails(
@@ -346,7 +361,9 @@ DescribeApplicationInstanceDetailsOutcome PanoramaClient::DescribeApplicationIns
     endpointResolutionOutcome.GetResult().AddPathSegments("/details");
   };
 
-  return DescribeApplicationInstanceDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeApplicationInstanceDetailsOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationInstanceDetailsOutcome(std::move(result.GetError()));
 }
 
 DescribeDeviceOutcome PanoramaClient::DescribeDevice(const DescribeDeviceRequest& request) const {
@@ -362,7 +379,8 @@ DescribeDeviceOutcome PanoramaClient::DescribeDevice(const DescribeDeviceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceId());
   };
 
-  return DescribeDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDeviceOutcome(result.GetResultWithOwnership()) : DescribeDeviceOutcome(std::move(result.GetError()));
 }
 
 DescribeDeviceJobOutcome PanoramaClient::DescribeDeviceJob(const DescribeDeviceJobRequest& request) const {
@@ -378,7 +396,9 @@ DescribeDeviceJobOutcome PanoramaClient::DescribeDeviceJob(const DescribeDeviceJ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DescribeDeviceJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDeviceJobOutcome(result.GetResultWithOwnership())
+                            : DescribeDeviceJobOutcome(std::move(result.GetError()));
 }
 
 DescribeNodeOutcome PanoramaClient::DescribeNode(const DescribeNodeRequest& request) const {
@@ -394,7 +414,8 @@ DescribeNodeOutcome PanoramaClient::DescribeNode(const DescribeNodeRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNodeId());
   };
 
-  return DescribeNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeNodeOutcome(result.GetResultWithOwnership()) : DescribeNodeOutcome(std::move(result.GetError()));
 }
 
 DescribeNodeFromTemplateJobOutcome PanoramaClient::DescribeNodeFromTemplateJob(const DescribeNodeFromTemplateJobRequest& request) const {
@@ -410,7 +431,9 @@ DescribeNodeFromTemplateJobOutcome PanoramaClient::DescribeNodeFromTemplateJob(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DescribeNodeFromTemplateJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeNodeFromTemplateJobOutcome(result.GetResultWithOwnership())
+                            : DescribeNodeFromTemplateJobOutcome(std::move(result.GetError()));
 }
 
 DescribePackageOutcome PanoramaClient::DescribePackage(const DescribePackageRequest& request) const {
@@ -426,7 +449,9 @@ DescribePackageOutcome PanoramaClient::DescribePackage(const DescribePackageRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageId());
   };
 
-  return DescribePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePackageOutcome(result.GetResultWithOwnership())
+                            : DescribePackageOutcome(std::move(result.GetError()));
 }
 
 DescribePackageImportJobOutcome PanoramaClient::DescribePackageImportJob(const DescribePackageImportJobRequest& request) const {
@@ -442,7 +467,9 @@ DescribePackageImportJobOutcome PanoramaClient::DescribePackageImportJob(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DescribePackageImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePackageImportJobOutcome(result.GetResultWithOwnership())
+                            : DescribePackageImportJobOutcome(std::move(result.GetError()));
 }
 
 DescribePackageVersionOutcome PanoramaClient::DescribePackageVersion(const DescribePackageVersionRequest& request) const {
@@ -465,7 +492,9 @@ DescribePackageVersionOutcome PanoramaClient::DescribePackageVersion(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageVersion());
   };
 
-  return DescribePackageVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePackageVersionOutcome(result.GetResultWithOwnership())
+                            : DescribePackageVersionOutcome(std::move(result.GetError()));
 }
 
 ListApplicationInstanceDependenciesOutcome PanoramaClient::ListApplicationInstanceDependencies(
@@ -483,7 +512,9 @@ ListApplicationInstanceDependenciesOutcome PanoramaClient::ListApplicationInstan
     endpointResolutionOutcome.GetResult().AddPathSegments("/package-dependencies");
   };
 
-  return ListApplicationInstanceDependenciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationInstanceDependenciesOutcome(result.GetResultWithOwnership())
+                            : ListApplicationInstanceDependenciesOutcome(std::move(result.GetError()));
 }
 
 ListApplicationInstanceNodeInstancesOutcome PanoramaClient::ListApplicationInstanceNodeInstances(
@@ -501,7 +532,9 @@ ListApplicationInstanceNodeInstancesOutcome PanoramaClient::ListApplicationInsta
     endpointResolutionOutcome.GetResult().AddPathSegments("/node-instances");
   };
 
-  return ListApplicationInstanceNodeInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationInstanceNodeInstancesOutcome(result.GetResultWithOwnership())
+                            : ListApplicationInstanceNodeInstancesOutcome(std::move(result.GetError()));
 }
 
 ListApplicationInstancesOutcome PanoramaClient::ListApplicationInstances(const ListApplicationInstancesRequest& request) const {
@@ -510,7 +543,9 @@ ListApplicationInstancesOutcome PanoramaClient::ListApplicationInstances(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/application-instances");
   };
 
-  return ListApplicationInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationInstancesOutcome(result.GetResultWithOwnership())
+                            : ListApplicationInstancesOutcome(std::move(result.GetError()));
 }
 
 ListDevicesOutcome PanoramaClient::ListDevices(const ListDevicesRequest& request) const {
@@ -519,7 +554,8 @@ ListDevicesOutcome PanoramaClient::ListDevices(const ListDevicesRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
   };
 
-  return ListDevicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDevicesOutcome(result.GetResultWithOwnership()) : ListDevicesOutcome(std::move(result.GetError()));
 }
 
 ListDevicesJobsOutcome PanoramaClient::ListDevicesJobs(const ListDevicesJobsRequest& request) const {
@@ -528,7 +564,9 @@ ListDevicesJobsOutcome PanoramaClient::ListDevicesJobs(const ListDevicesJobsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return ListDevicesJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDevicesJobsOutcome(result.GetResultWithOwnership())
+                            : ListDevicesJobsOutcome(std::move(result.GetError()));
 }
 
 ListNodeFromTemplateJobsOutcome PanoramaClient::ListNodeFromTemplateJobs(const ListNodeFromTemplateJobsRequest& request) const {
@@ -537,7 +575,9 @@ ListNodeFromTemplateJobsOutcome PanoramaClient::ListNodeFromTemplateJobs(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/packages/template-job");
   };
 
-  return ListNodeFromTemplateJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNodeFromTemplateJobsOutcome(result.GetResultWithOwnership())
+                            : ListNodeFromTemplateJobsOutcome(std::move(result.GetError()));
 }
 
 ListNodesOutcome PanoramaClient::ListNodes(const ListNodesRequest& request) const {
@@ -546,7 +586,8 @@ ListNodesOutcome PanoramaClient::ListNodes(const ListNodesRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodes");
   };
 
-  return ListNodesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNodesOutcome(result.GetResultWithOwnership()) : ListNodesOutcome(std::move(result.GetError()));
 }
 
 ListPackageImportJobsOutcome PanoramaClient::ListPackageImportJobs(const ListPackageImportJobsRequest& request) const {
@@ -555,7 +596,9 @@ ListPackageImportJobsOutcome PanoramaClient::ListPackageImportJobs(const ListPac
     endpointResolutionOutcome.GetResult().AddPathSegments("/packages/import-jobs");
   };
 
-  return ListPackageImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPackageImportJobsOutcome(result.GetResultWithOwnership())
+                            : ListPackageImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListPackagesOutcome PanoramaClient::ListPackages(const ListPackagesRequest& request) const {
@@ -564,7 +607,8 @@ ListPackagesOutcome PanoramaClient::ListPackages(const ListPackagesRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/packages");
   };
 
-  return ListPackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPackagesOutcome(result.GetResultWithOwnership()) : ListPackagesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PanoramaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -580,7 +624,9 @@ ListTagsForResourceOutcome PanoramaClient::ListTagsForResource(const ListTagsFor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ProvisionDeviceOutcome PanoramaClient::ProvisionDevice(const ProvisionDeviceRequest& request) const {
@@ -589,7 +635,9 @@ ProvisionDeviceOutcome PanoramaClient::ProvisionDevice(const ProvisionDeviceRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
   };
 
-  return ProvisionDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ProvisionDeviceOutcome(result.GetResultWithOwnership())
+                            : ProvisionDeviceOutcome(std::move(result.GetError()));
 }
 
 RegisterPackageVersionOutcome PanoramaClient::RegisterPackageVersion(const RegisterPackageVersionRequest& request) const {
@@ -619,7 +667,9 @@ RegisterPackageVersionOutcome PanoramaClient::RegisterPackageVersion(const Regis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPatchVersion());
   };
 
-  return RegisterPackageVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RegisterPackageVersionOutcome(result.GetResultWithOwnership())
+                            : RegisterPackageVersionOutcome(std::move(result.GetError()));
 }
 
 RemoveApplicationInstanceOutcome PanoramaClient::RemoveApplicationInstance(const RemoveApplicationInstanceRequest& request) const {
@@ -635,7 +685,9 @@ RemoveApplicationInstanceOutcome PanoramaClient::RemoveApplicationInstance(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationInstanceId());
   };
 
-  return RemoveApplicationInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveApplicationInstanceOutcome(result.GetResultWithOwnership())
+                            : RemoveApplicationInstanceOutcome(std::move(result.GetError()));
 }
 
 SignalApplicationInstanceNodeInstancesOutcome PanoramaClient::SignalApplicationInstanceNodeInstances(
@@ -653,7 +705,9 @@ SignalApplicationInstanceNodeInstancesOutcome PanoramaClient::SignalApplicationI
     endpointResolutionOutcome.GetResult().AddPathSegments("/node-signals");
   };
 
-  return SignalApplicationInstanceNodeInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? SignalApplicationInstanceNodeInstancesOutcome(result.GetResultWithOwnership())
+                            : SignalApplicationInstanceNodeInstancesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PanoramaClient::TagResource(const TagResourceRequest& request) const {
@@ -669,7 +723,8 @@ TagResourceOutcome PanoramaClient::TagResource(const TagResourceRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PanoramaClient::UntagResource(const UntagResourceRequest& request) const {
@@ -690,7 +745,8 @@ UntagResourceOutcome PanoramaClient::UntagResource(const UntagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDeviceMetadataOutcome PanoramaClient::UpdateDeviceMetadata(const UpdateDeviceMetadataRequest& request) const {
@@ -706,5 +762,7 @@ UpdateDeviceMetadataOutcome PanoramaClient::UpdateDeviceMetadata(const UpdateDev
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceId());
   };
 
-  return UpdateDeviceMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDeviceMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateDeviceMetadataOutcome(std::move(result.GetError()));
 }

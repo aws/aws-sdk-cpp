@@ -200,7 +200,8 @@ CreateMonitorOutcome InternetMonitorClient::CreateMonitor(const CreateMonitorReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20210603/Monitors");
   };
 
-  return CreateMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMonitorOutcome(result.GetResultWithOwnership()) : CreateMonitorOutcome(std::move(result.GetError()));
 }
 
 DeleteMonitorOutcome InternetMonitorClient::DeleteMonitor(const DeleteMonitorRequest& request) const {
@@ -216,7 +217,8 @@ DeleteMonitorOutcome InternetMonitorClient::DeleteMonitor(const DeleteMonitorReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
   };
 
-  return DeleteMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMonitorOutcome(result.GetResultWithOwnership()) : DeleteMonitorOutcome(std::move(result.GetError()));
 }
 
 GetHealthEventOutcome InternetMonitorClient::GetHealthEvent(const GetHealthEventRequest& request) const {
@@ -239,7 +241,8 @@ GetHealthEventOutcome InternetMonitorClient::GetHealthEvent(const GetHealthEvent
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventId());
   };
 
-  return GetHealthEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHealthEventOutcome(result.GetResultWithOwnership()) : GetHealthEventOutcome(std::move(result.GetError()));
 }
 
 GetInternetEventOutcome InternetMonitorClient::GetInternetEvent(const GetInternetEventRequest& request) const {
@@ -255,7 +258,9 @@ GetInternetEventOutcome InternetMonitorClient::GetInternetEvent(const GetInterne
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventId());
   };
 
-  return GetInternetEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInternetEventOutcome(result.GetResultWithOwnership())
+                            : GetInternetEventOutcome(std::move(result.GetError()));
 }
 
 GetMonitorOutcome InternetMonitorClient::GetMonitor(const GetMonitorRequest& request) const {
@@ -271,7 +276,8 @@ GetMonitorOutcome InternetMonitorClient::GetMonitor(const GetMonitorRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
   };
 
-  return GetMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMonitorOutcome(result.GetResultWithOwnership()) : GetMonitorOutcome(std::move(result.GetError()));
 }
 
 GetQueryResultsOutcome InternetMonitorClient::GetQueryResults(const GetQueryResultsRequest& request) const {
@@ -295,7 +301,9 @@ GetQueryResultsOutcome InternetMonitorClient::GetQueryResults(const GetQueryResu
     endpointResolutionOutcome.GetResult().AddPathSegments("/Results");
   };
 
-  return GetQueryResultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryResultsOutcome(result.GetResultWithOwnership())
+                            : GetQueryResultsOutcome(std::move(result.GetError()));
 }
 
 GetQueryStatusOutcome InternetMonitorClient::GetQueryStatus(const GetQueryStatusRequest& request) const {
@@ -319,7 +327,8 @@ GetQueryStatusOutcome InternetMonitorClient::GetQueryStatus(const GetQueryStatus
     endpointResolutionOutcome.GetResult().AddPathSegments("/Status");
   };
 
-  return GetQueryStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryStatusOutcome(result.GetResultWithOwnership()) : GetQueryStatusOutcome(std::move(result.GetError()));
 }
 
 ListHealthEventsOutcome InternetMonitorClient::ListHealthEvents(const ListHealthEventsRequest& request) const {
@@ -336,7 +345,9 @@ ListHealthEventsOutcome InternetMonitorClient::ListHealthEvents(const ListHealth
     endpointResolutionOutcome.GetResult().AddPathSegments("/HealthEvents");
   };
 
-  return ListHealthEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHealthEventsOutcome(result.GetResultWithOwnership())
+                            : ListHealthEventsOutcome(std::move(result.GetError()));
 }
 
 ListInternetEventsOutcome InternetMonitorClient::ListInternetEvents(const ListInternetEventsRequest& request) const {
@@ -345,7 +356,9 @@ ListInternetEventsOutcome InternetMonitorClient::ListInternetEvents(const ListIn
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20210603/InternetEvents");
   };
 
-  return ListInternetEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInternetEventsOutcome(result.GetResultWithOwnership())
+                            : ListInternetEventsOutcome(std::move(result.GetError()));
 }
 
 ListMonitorsOutcome InternetMonitorClient::ListMonitors(const ListMonitorsRequest& request) const {
@@ -354,7 +367,8 @@ ListMonitorsOutcome InternetMonitorClient::ListMonitors(const ListMonitorsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/v20210603/Monitors");
   };
 
-  return ListMonitorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMonitorsOutcome(result.GetResultWithOwnership()) : ListMonitorsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome InternetMonitorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -370,7 +384,9 @@ ListTagsForResourceOutcome InternetMonitorClient::ListTagsForResource(const List
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartQueryOutcome InternetMonitorClient::StartQuery(const StartQueryRequest& request) const {
@@ -387,7 +403,8 @@ StartQueryOutcome InternetMonitorClient::StartQuery(const StartQueryRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/Queries");
   };
 
-  return StartQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQueryOutcome(result.GetResultWithOwnership()) : StartQueryOutcome(std::move(result.GetError()));
 }
 
 StopQueryOutcome InternetMonitorClient::StopQuery(const StopQueryRequest& request) const {
@@ -410,7 +427,8 @@ StopQueryOutcome InternetMonitorClient::StopQuery(const StopQueryRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
   };
 
-  return StopQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? StopQueryOutcome(result.GetResultWithOwnership()) : StopQueryOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome InternetMonitorClient::TagResource(const TagResourceRequest& request) const {
@@ -426,7 +444,8 @@ TagResourceOutcome InternetMonitorClient::TagResource(const TagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome InternetMonitorClient::UntagResource(const UntagResourceRequest& request) const {
@@ -447,7 +466,8 @@ UntagResourceOutcome InternetMonitorClient::UntagResource(const UntagResourceReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateMonitorOutcome InternetMonitorClient::UpdateMonitor(const UpdateMonitorRequest& request) const {
@@ -463,5 +483,6 @@ UpdateMonitorOutcome InternetMonitorClient::UpdateMonitor(const UpdateMonitorReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
   };
 
-  return UpdateMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMonitorOutcome(result.GetResultWithOwnership()) : UpdateMonitorOutcome(std::move(result.GetError()));
 }

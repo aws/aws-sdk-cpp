@@ -259,7 +259,9 @@ AssociatePhoneNumberWithUserOutcome ChimeClient::AssociatePhoneNumberWithUser(co
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return AssociatePhoneNumberWithUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociatePhoneNumberWithUserOutcome(result.GetResultWithOwnership())
+                            : AssociatePhoneNumberWithUserOutcome(std::move(result.GetError()));
 }
 
 AssociateSigninDelegateGroupsWithAccountOutcome ChimeClient::AssociateSigninDelegateGroupsWithAccount(
@@ -279,7 +281,9 @@ AssociateSigninDelegateGroupsWithAccountOutcome ChimeClient::AssociateSigninDele
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return AssociateSigninDelegateGroupsWithAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSigninDelegateGroupsWithAccountOutcome(result.GetResultWithOwnership())
+                            : AssociateSigninDelegateGroupsWithAccountOutcome(std::move(result.GetError()));
 }
 
 BatchCreateRoomMembershipOutcome ChimeClient::BatchCreateRoomMembership(const BatchCreateRoomMembershipRequest& request) const {
@@ -306,7 +310,9 @@ BatchCreateRoomMembershipOutcome ChimeClient::BatchCreateRoomMembership(const Ba
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return BatchCreateRoomMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateRoomMembershipOutcome(result.GetResultWithOwnership())
+                            : BatchCreateRoomMembershipOutcome(std::move(result.GetError()));
 }
 
 BatchDeletePhoneNumberOutcome ChimeClient::BatchDeletePhoneNumber(const BatchDeletePhoneNumberRequest& request) const {
@@ -318,7 +324,9 @@ BatchDeletePhoneNumberOutcome ChimeClient::BatchDeletePhoneNumber(const BatchDel
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return BatchDeletePhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeletePhoneNumberOutcome(result.GetResultWithOwnership())
+                            : BatchDeletePhoneNumberOutcome(std::move(result.GetError()));
 }
 
 BatchSuspendUserOutcome ChimeClient::BatchSuspendUser(const BatchSuspendUserRequest& request) const {
@@ -338,7 +346,9 @@ BatchSuspendUserOutcome ChimeClient::BatchSuspendUser(const BatchSuspendUserRequ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return BatchSuspendUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchSuspendUserOutcome(result.GetResultWithOwnership())
+                            : BatchSuspendUserOutcome(std::move(result.GetError()));
 }
 
 BatchUnsuspendUserOutcome ChimeClient::BatchUnsuspendUser(const BatchUnsuspendUserRequest& request) const {
@@ -358,7 +368,9 @@ BatchUnsuspendUserOutcome ChimeClient::BatchUnsuspendUser(const BatchUnsuspendUs
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return BatchUnsuspendUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUnsuspendUserOutcome(result.GetResultWithOwnership())
+                            : BatchUnsuspendUserOutcome(std::move(result.GetError()));
 }
 
 BatchUpdatePhoneNumberOutcome ChimeClient::BatchUpdatePhoneNumber(const BatchUpdatePhoneNumberRequest& request) const {
@@ -370,7 +382,9 @@ BatchUpdatePhoneNumberOutcome ChimeClient::BatchUpdatePhoneNumber(const BatchUpd
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return BatchUpdatePhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdatePhoneNumberOutcome(result.GetResultWithOwnership())
+                            : BatchUpdatePhoneNumberOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateUserOutcome ChimeClient::BatchUpdateUser(const BatchUpdateUserRequest& request) const {
@@ -387,7 +401,9 @@ BatchUpdateUserOutcome ChimeClient::BatchUpdateUser(const BatchUpdateUserRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   };
 
-  return BatchUpdateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateUserOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateUserOutcome(std::move(result.GetError()));
 }
 
 CreateAccountOutcome ChimeClient::CreateAccount(const CreateAccountRequest& request) const {
@@ -396,7 +412,8 @@ CreateAccountOutcome ChimeClient::CreateAccount(const CreateAccountRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/accounts");
   };
 
-  return CreateAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccountOutcome(result.GetResultWithOwnership()) : CreateAccountOutcome(std::move(result.GetError()));
 }
 
 CreateBotOutcome ChimeClient::CreateBot(const CreateBotRequest& request) const {
@@ -413,7 +430,8 @@ CreateBotOutcome ChimeClient::CreateBot(const CreateBotRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/bots");
   };
 
-  return CreateBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBotOutcome(result.GetResultWithOwnership()) : CreateBotOutcome(std::move(result.GetError()));
 }
 
 CreateMeetingDialOutOutcome ChimeClient::CreateMeetingDialOut(const CreateMeetingDialOutRequest& request) const {
@@ -430,7 +448,9 @@ CreateMeetingDialOutOutcome ChimeClient::CreateMeetingDialOut(const CreateMeetin
     endpointResolutionOutcome.GetResult().AddPathSegments("/dial-outs");
   };
 
-  return CreateMeetingDialOutOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMeetingDialOutOutcome(result.GetResultWithOwnership())
+                            : CreateMeetingDialOutOutcome(std::move(result.GetError()));
 }
 
 CreatePhoneNumberOrderOutcome ChimeClient::CreatePhoneNumberOrder(const CreatePhoneNumberOrderRequest& request) const {
@@ -439,7 +459,9 @@ CreatePhoneNumberOrderOutcome ChimeClient::CreatePhoneNumberOrder(const CreatePh
     endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number-orders");
   };
 
-  return CreatePhoneNumberOrderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePhoneNumberOrderOutcome(result.GetResultWithOwnership())
+                            : CreatePhoneNumberOrderOutcome(std::move(result.GetError()));
 }
 
 CreateRoomOutcome ChimeClient::CreateRoom(const CreateRoomRequest& request) const {
@@ -456,7 +478,8 @@ CreateRoomOutcome ChimeClient::CreateRoom(const CreateRoomRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/rooms");
   };
 
-  return CreateRoomOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRoomOutcome(result.GetResultWithOwnership()) : CreateRoomOutcome(std::move(result.GetError()));
 }
 
 CreateRoomMembershipOutcome ChimeClient::CreateRoomMembership(const CreateRoomMembershipRequest& request) const {
@@ -480,7 +503,9 @@ CreateRoomMembershipOutcome ChimeClient::CreateRoomMembership(const CreateRoomMe
     endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
   };
 
-  return CreateRoomMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRoomMembershipOutcome(result.GetResultWithOwnership())
+                            : CreateRoomMembershipOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome ChimeClient::CreateUser(const CreateUserRequest& request) const {
@@ -500,7 +525,8 @@ CreateUserOutcome ChimeClient::CreateUser(const CreateUserRequest& request) cons
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return CreateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountOutcome ChimeClient::DeleteAccount(const DeleteAccountRequest& request) const {
@@ -516,7 +542,8 @@ DeleteAccountOutcome ChimeClient::DeleteAccount(const DeleteAccountRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountId());
   };
 
-  return DeleteAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccountOutcome(result.GetResultWithOwnership()) : DeleteAccountOutcome(std::move(result.GetError()));
 }
 
 DeleteEventsConfigurationOutcome ChimeClient::DeleteEventsConfiguration(const DeleteEventsConfigurationRequest& request) const {
@@ -540,7 +567,9 @@ DeleteEventsConfigurationOutcome ChimeClient::DeleteEventsConfiguration(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/events-configuration");
   };
 
-  return DeleteEventsConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventsConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteEventsConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeletePhoneNumberOutcome ChimeClient::DeletePhoneNumber(const DeletePhoneNumberRequest& request) const {
@@ -556,7 +585,9 @@ DeletePhoneNumberOutcome ChimeClient::DeletePhoneNumber(const DeletePhoneNumberR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
   };
 
-  return DeletePhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePhoneNumberOutcome(result.GetResultWithOwnership())
+                            : DeletePhoneNumberOutcome(std::move(result.GetError()));
 }
 
 DeleteRoomOutcome ChimeClient::DeleteRoom(const DeleteRoomRequest& request) const {
@@ -579,7 +610,8 @@ DeleteRoomOutcome ChimeClient::DeleteRoom(const DeleteRoomRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRoomId());
   };
 
-  return DeleteRoomOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRoomOutcome(result.GetResultWithOwnership()) : DeleteRoomOutcome(std::move(result.GetError()));
 }
 
 DeleteRoomMembershipOutcome ChimeClient::DeleteRoomMembership(const DeleteRoomMembershipRequest& request) const {
@@ -609,7 +641,9 @@ DeleteRoomMembershipOutcome ChimeClient::DeleteRoomMembership(const DeleteRoomMe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberId());
   };
 
-  return DeleteRoomMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRoomMembershipOutcome(result.GetResultWithOwnership())
+                            : DeleteRoomMembershipOutcome(std::move(result.GetError()));
 }
 
 DisassociatePhoneNumberFromUserOutcome ChimeClient::DisassociatePhoneNumberFromUser(
@@ -636,7 +670,9 @@ DisassociatePhoneNumberFromUserOutcome ChimeClient::DisassociatePhoneNumberFromU
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DisassociatePhoneNumberFromUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociatePhoneNumberFromUserOutcome(result.GetResultWithOwnership())
+                            : DisassociatePhoneNumberFromUserOutcome(std::move(result.GetError()));
 }
 
 DisassociateSigninDelegateGroupsFromAccountOutcome ChimeClient::DisassociateSigninDelegateGroupsFromAccount(
@@ -656,7 +692,9 @@ DisassociateSigninDelegateGroupsFromAccountOutcome ChimeClient::DisassociateSign
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DisassociateSigninDelegateGroupsFromAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateSigninDelegateGroupsFromAccountOutcome(result.GetResultWithOwnership())
+                            : DisassociateSigninDelegateGroupsFromAccountOutcome(std::move(result.GetError()));
 }
 
 GetAccountOutcome ChimeClient::GetAccount(const GetAccountRequest& request) const {
@@ -672,7 +710,8 @@ GetAccountOutcome ChimeClient::GetAccount(const GetAccountRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountId());
   };
 
-  return GetAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountOutcome(result.GetResultWithOwnership()) : GetAccountOutcome(std::move(result.GetError()));
 }
 
 GetAccountSettingsOutcome ChimeClient::GetAccountSettings(const GetAccountSettingsRequest& request) const {
@@ -689,7 +728,9 @@ GetAccountSettingsOutcome ChimeClient::GetAccountSettings(const GetAccountSettin
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return GetAccountSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : GetAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 GetBotOutcome ChimeClient::GetBot(const GetBotRequest& request) const {
@@ -712,7 +753,8 @@ GetBotOutcome ChimeClient::GetBot(const GetBotRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
   };
 
-  return GetBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotOutcome(result.GetResultWithOwnership()) : GetBotOutcome(std::move(result.GetError()));
 }
 
 GetEventsConfigurationOutcome ChimeClient::GetEventsConfiguration(const GetEventsConfigurationRequest& request) const {
@@ -736,7 +778,9 @@ GetEventsConfigurationOutcome ChimeClient::GetEventsConfiguration(const GetEvent
     endpointResolutionOutcome.GetResult().AddPathSegments("/events-configuration");
   };
 
-  return GetEventsConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventsConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetEventsConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetGlobalSettingsOutcome ChimeClient::GetGlobalSettings(const GetGlobalSettingsRequest& request) const {
@@ -745,7 +789,9 @@ GetGlobalSettingsOutcome ChimeClient::GetGlobalSettings(const GetGlobalSettingsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return GetGlobalSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGlobalSettingsOutcome(result.GetResultWithOwnership())
+                            : GetGlobalSettingsOutcome(std::move(result.GetError()));
 }
 
 GetPhoneNumberOutcome ChimeClient::GetPhoneNumber(const GetPhoneNumberRequest& request) const {
@@ -761,7 +807,8 @@ GetPhoneNumberOutcome ChimeClient::GetPhoneNumber(const GetPhoneNumberRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
   };
 
-  return GetPhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPhoneNumberOutcome(result.GetResultWithOwnership()) : GetPhoneNumberOutcome(std::move(result.GetError()));
 }
 
 GetPhoneNumberOrderOutcome ChimeClient::GetPhoneNumberOrder(const GetPhoneNumberOrderRequest& request) const {
@@ -777,7 +824,9 @@ GetPhoneNumberOrderOutcome ChimeClient::GetPhoneNumberOrder(const GetPhoneNumber
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberOrderId());
   };
 
-  return GetPhoneNumberOrderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPhoneNumberOrderOutcome(result.GetResultWithOwnership())
+                            : GetPhoneNumberOrderOutcome(std::move(result.GetError()));
 }
 
 GetPhoneNumberSettingsOutcome ChimeClient::GetPhoneNumberSettings(const GetPhoneNumberSettingsRequest& request) const {
@@ -786,7 +835,9 @@ GetPhoneNumberSettingsOutcome ChimeClient::GetPhoneNumberSettings(const GetPhone
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings/phone-number");
   };
 
-  return GetPhoneNumberSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPhoneNumberSettingsOutcome(result.GetResultWithOwnership())
+                            : GetPhoneNumberSettingsOutcome(std::move(result.GetError()));
 }
 
 GetRetentionSettingsOutcome ChimeClient::GetRetentionSettings(const GetRetentionSettingsRequest& request) const {
@@ -803,7 +854,9 @@ GetRetentionSettingsOutcome ChimeClient::GetRetentionSettings(const GetRetention
     endpointResolutionOutcome.GetResult().AddPathSegments("/retention-settings");
   };
 
-  return GetRetentionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRetentionSettingsOutcome(result.GetResultWithOwnership())
+                            : GetRetentionSettingsOutcome(std::move(result.GetError()));
 }
 
 GetRoomOutcome ChimeClient::GetRoom(const GetRoomRequest& request) const {
@@ -826,7 +879,8 @@ GetRoomOutcome ChimeClient::GetRoom(const GetRoomRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRoomId());
   };
 
-  return GetRoomOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRoomOutcome(result.GetResultWithOwnership()) : GetRoomOutcome(std::move(result.GetError()));
 }
 
 GetUserOutcome ChimeClient::GetUser(const GetUserRequest& request) const {
@@ -849,7 +903,8 @@ GetUserOutcome ChimeClient::GetUser(const GetUserRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return GetUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUserOutcome(result.GetResultWithOwnership()) : GetUserOutcome(std::move(result.GetError()));
 }
 
 GetUserSettingsOutcome ChimeClient::GetUserSettings(const GetUserSettingsRequest& request) const {
@@ -873,7 +928,9 @@ GetUserSettingsOutcome ChimeClient::GetUserSettings(const GetUserSettingsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return GetUserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUserSettingsOutcome(result.GetResultWithOwnership())
+                            : GetUserSettingsOutcome(std::move(result.GetError()));
 }
 
 InviteUsersOutcome ChimeClient::InviteUsers(const InviteUsersRequest& request) const {
@@ -893,7 +950,8 @@ InviteUsersOutcome ChimeClient::InviteUsers(const InviteUsersRequest& request) c
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return InviteUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InviteUsersOutcome(result.GetResultWithOwnership()) : InviteUsersOutcome(std::move(result.GetError()));
 }
 
 ListAccountsOutcome ChimeClient::ListAccounts(const ListAccountsRequest& request) const {
@@ -902,7 +960,8 @@ ListAccountsOutcome ChimeClient::ListAccounts(const ListAccountsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/accounts");
   };
 
-  return ListAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccountsOutcome(result.GetResultWithOwnership()) : ListAccountsOutcome(std::move(result.GetError()));
 }
 
 ListBotsOutcome ChimeClient::ListBots(const ListBotsRequest& request) const {
@@ -919,7 +978,8 @@ ListBotsOutcome ChimeClient::ListBots(const ListBotsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/bots");
   };
 
-  return ListBotsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBotsOutcome(result.GetResultWithOwnership()) : ListBotsOutcome(std::move(result.GetError()));
 }
 
 ListPhoneNumberOrdersOutcome ChimeClient::ListPhoneNumberOrders(const ListPhoneNumberOrdersRequest& request) const {
@@ -928,7 +988,9 @@ ListPhoneNumberOrdersOutcome ChimeClient::ListPhoneNumberOrders(const ListPhoneN
     endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number-orders");
   };
 
-  return ListPhoneNumberOrdersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPhoneNumberOrdersOutcome(result.GetResultWithOwnership())
+                            : ListPhoneNumberOrdersOutcome(std::move(result.GetError()));
 }
 
 ListPhoneNumbersOutcome ChimeClient::ListPhoneNumbers(const ListPhoneNumbersRequest& request) const {
@@ -937,7 +999,9 @@ ListPhoneNumbersOutcome ChimeClient::ListPhoneNumbers(const ListPhoneNumbersRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/phone-numbers");
   };
 
-  return ListPhoneNumbersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPhoneNumbersOutcome(result.GetResultWithOwnership())
+                            : ListPhoneNumbersOutcome(std::move(result.GetError()));
 }
 
 ListRoomMembershipsOutcome ChimeClient::ListRoomMemberships(const ListRoomMembershipsRequest& request) const {
@@ -961,7 +1025,9 @@ ListRoomMembershipsOutcome ChimeClient::ListRoomMemberships(const ListRoomMember
     endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
   };
 
-  return ListRoomMembershipsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRoomMembershipsOutcome(result.GetResultWithOwnership())
+                            : ListRoomMembershipsOutcome(std::move(result.GetError()));
 }
 
 ListRoomsOutcome ChimeClient::ListRooms(const ListRoomsRequest& request) const {
@@ -978,7 +1044,8 @@ ListRoomsOutcome ChimeClient::ListRooms(const ListRoomsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/rooms");
   };
 
-  return ListRoomsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRoomsOutcome(result.GetResultWithOwnership()) : ListRoomsOutcome(std::move(result.GetError()));
 }
 
 ListSupportedPhoneNumberCountriesOutcome ChimeClient::ListSupportedPhoneNumberCountries(
@@ -994,7 +1061,9 @@ ListSupportedPhoneNumberCountriesOutcome ChimeClient::ListSupportedPhoneNumberCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number-countries");
   };
 
-  return ListSupportedPhoneNumberCountriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSupportedPhoneNumberCountriesOutcome(result.GetResultWithOwnership())
+                            : ListSupportedPhoneNumberCountriesOutcome(std::move(result.GetError()));
 }
 
 ListUsersOutcome ChimeClient::ListUsers(const ListUsersRequest& request) const {
@@ -1011,7 +1080,8 @@ ListUsersOutcome ChimeClient::ListUsers(const ListUsersRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   };
 
-  return ListUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListUsersOutcome(result.GetResultWithOwnership()) : ListUsersOutcome(std::move(result.GetError()));
 }
 
 LogoutUserOutcome ChimeClient::LogoutUser(const LogoutUserRequest& request) const {
@@ -1037,7 +1107,8 @@ LogoutUserOutcome ChimeClient::LogoutUser(const LogoutUserRequest& request) cons
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return LogoutUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? LogoutUserOutcome(result.GetResultWithOwnership()) : LogoutUserOutcome(std::move(result.GetError()));
 }
 
 PutEventsConfigurationOutcome ChimeClient::PutEventsConfiguration(const PutEventsConfigurationRequest& request) const {
@@ -1061,7 +1132,9 @@ PutEventsConfigurationOutcome ChimeClient::PutEventsConfiguration(const PutEvent
     endpointResolutionOutcome.GetResult().AddPathSegments("/events-configuration");
   };
 
-  return PutEventsConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutEventsConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutEventsConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutRetentionSettingsOutcome ChimeClient::PutRetentionSettings(const PutRetentionSettingsRequest& request) const {
@@ -1078,7 +1151,9 @@ PutRetentionSettingsOutcome ChimeClient::PutRetentionSettings(const PutRetention
     endpointResolutionOutcome.GetResult().AddPathSegments("/retention-settings");
   };
 
-  return PutRetentionSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutRetentionSettingsOutcome(result.GetResultWithOwnership())
+                            : PutRetentionSettingsOutcome(std::move(result.GetError()));
 }
 
 RedactConversationMessageOutcome ChimeClient::RedactConversationMessage(const RedactConversationMessageRequest& request) const {
@@ -1111,7 +1186,9 @@ RedactConversationMessageOutcome ChimeClient::RedactConversationMessage(const Re
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return RedactConversationMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RedactConversationMessageOutcome(result.GetResultWithOwnership())
+                            : RedactConversationMessageOutcome(std::move(result.GetError()));
 }
 
 RedactRoomMessageOutcome ChimeClient::RedactRoomMessage(const RedactRoomMessageRequest& request) const {
@@ -1144,7 +1221,9 @@ RedactRoomMessageOutcome ChimeClient::RedactRoomMessage(const RedactRoomMessageR
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return RedactRoomMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RedactRoomMessageOutcome(result.GetResultWithOwnership())
+                            : RedactRoomMessageOutcome(std::move(result.GetError()));
 }
 
 RegenerateSecurityTokenOutcome ChimeClient::RegenerateSecurityToken(const RegenerateSecurityTokenRequest& request) const {
@@ -1170,7 +1249,9 @@ RegenerateSecurityTokenOutcome ChimeClient::RegenerateSecurityToken(const Regene
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return RegenerateSecurityTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegenerateSecurityTokenOutcome(result.GetResultWithOwnership())
+                            : RegenerateSecurityTokenOutcome(std::move(result.GetError()));
 }
 
 ResetPersonalPINOutcome ChimeClient::ResetPersonalPIN(const ResetPersonalPINRequest& request) const {
@@ -1196,7 +1277,9 @@ ResetPersonalPINOutcome ChimeClient::ResetPersonalPIN(const ResetPersonalPINRequ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ResetPersonalPINOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetPersonalPINOutcome(result.GetResultWithOwnership())
+                            : ResetPersonalPINOutcome(std::move(result.GetError()));
 }
 
 RestorePhoneNumberOutcome ChimeClient::RestorePhoneNumber(const RestorePhoneNumberRequest& request) const {
@@ -1215,7 +1298,9 @@ RestorePhoneNumberOutcome ChimeClient::RestorePhoneNumber(const RestorePhoneNumb
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return RestorePhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestorePhoneNumberOutcome(result.GetResultWithOwnership())
+                            : RestorePhoneNumberOutcome(std::move(result.GetError()));
 }
 
 SearchAvailablePhoneNumbersOutcome ChimeClient::SearchAvailablePhoneNumbers(const SearchAvailablePhoneNumbersRequest& request) const {
@@ -1227,7 +1312,9 @@ SearchAvailablePhoneNumbersOutcome ChimeClient::SearchAvailablePhoneNumbers(cons
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return SearchAvailablePhoneNumbersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? SearchAvailablePhoneNumbersOutcome(result.GetResultWithOwnership())
+                            : SearchAvailablePhoneNumbersOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountOutcome ChimeClient::UpdateAccount(const UpdateAccountRequest& request) const {
@@ -1243,7 +1330,8 @@ UpdateAccountOutcome ChimeClient::UpdateAccount(const UpdateAccountRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountId());
   };
 
-  return UpdateAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccountOutcome(result.GetResultWithOwnership()) : UpdateAccountOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountSettingsOutcome ChimeClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const {
@@ -1260,7 +1348,9 @@ UpdateAccountSettingsOutcome ChimeClient::UpdateAccountSettings(const UpdateAcco
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return UpdateAccountSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateBotOutcome ChimeClient::UpdateBot(const UpdateBotRequest& request) const {
@@ -1283,7 +1373,8 @@ UpdateBotOutcome ChimeClient::UpdateBot(const UpdateBotRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
   };
 
-  return UpdateBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBotOutcome(result.GetResultWithOwnership()) : UpdateBotOutcome(std::move(result.GetError()));
 }
 
 UpdateGlobalSettingsOutcome ChimeClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const {
@@ -1292,7 +1383,9 @@ UpdateGlobalSettingsOutcome ChimeClient::UpdateGlobalSettings(const UpdateGlobal
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return UpdateGlobalSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateGlobalSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateGlobalSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdatePhoneNumberOutcome ChimeClient::UpdatePhoneNumber(const UpdatePhoneNumberRequest& request) const {
@@ -1308,7 +1401,9 @@ UpdatePhoneNumberOutcome ChimeClient::UpdatePhoneNumber(const UpdatePhoneNumberR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
   };
 
-  return UpdatePhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePhoneNumberOutcome(result.GetResultWithOwnership())
+                            : UpdatePhoneNumberOutcome(std::move(result.GetError()));
 }
 
 UpdatePhoneNumberSettingsOutcome ChimeClient::UpdatePhoneNumberSettings(const UpdatePhoneNumberSettingsRequest& request) const {
@@ -1317,7 +1412,9 @@ UpdatePhoneNumberSettingsOutcome ChimeClient::UpdatePhoneNumberSettings(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings/phone-number");
   };
 
-  return UpdatePhoneNumberSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePhoneNumberSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdatePhoneNumberSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateRoomOutcome ChimeClient::UpdateRoom(const UpdateRoomRequest& request) const {
@@ -1340,7 +1437,8 @@ UpdateRoomOutcome ChimeClient::UpdateRoom(const UpdateRoomRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRoomId());
   };
 
-  return UpdateRoomOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoomOutcome(result.GetResultWithOwnership()) : UpdateRoomOutcome(std::move(result.GetError()));
 }
 
 UpdateRoomMembershipOutcome ChimeClient::UpdateRoomMembership(const UpdateRoomMembershipRequest& request) const {
@@ -1370,7 +1468,9 @@ UpdateRoomMembershipOutcome ChimeClient::UpdateRoomMembership(const UpdateRoomMe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberId());
   };
 
-  return UpdateRoomMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoomMembershipOutcome(result.GetResultWithOwnership())
+                            : UpdateRoomMembershipOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome ChimeClient::UpdateUser(const UpdateUserRequest& request) const {
@@ -1393,7 +1493,8 @@ UpdateUserOutcome ChimeClient::UpdateUser(const UpdateUserRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return UpdateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }
 
 UpdateUserSettingsOutcome ChimeClient::UpdateUserSettings(const UpdateUserSettingsRequest& request) const {
@@ -1417,5 +1518,7 @@ UpdateUserSettingsOutcome ChimeClient::UpdateUserSettings(const UpdateUserSettin
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return UpdateUserSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateUserSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateUserSettingsOutcome(std::move(result.GetError()));
 }

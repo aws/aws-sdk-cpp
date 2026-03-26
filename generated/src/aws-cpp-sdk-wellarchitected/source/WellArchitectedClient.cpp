@@ -264,7 +264,9 @@ AssociateLensesOutcome WellArchitectedClient::AssociateLenses(const AssociateLen
     endpointResolutionOutcome.GetResult().AddPathSegments("/associateLenses");
   };
 
-  return AssociateLensesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? AssociateLensesOutcome(result.GetResultWithOwnership())
+                            : AssociateLensesOutcome(std::move(result.GetError()));
 }
 
 AssociateProfilesOutcome WellArchitectedClient::AssociateProfiles(const AssociateProfilesRequest& request) const {
@@ -281,7 +283,9 @@ AssociateProfilesOutcome WellArchitectedClient::AssociateProfiles(const Associat
     endpointResolutionOutcome.GetResult().AddPathSegments("/associateProfiles");
   };
 
-  return AssociateProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? AssociateProfilesOutcome(result.GetResultWithOwnership())
+                            : AssociateProfilesOutcome(std::move(result.GetError()));
 }
 
 CreateLensShareOutcome WellArchitectedClient::CreateLensShare(const CreateLensShareRequest& request) const {
@@ -298,7 +302,9 @@ CreateLensShareOutcome WellArchitectedClient::CreateLensShare(const CreateLensSh
     endpointResolutionOutcome.GetResult().AddPathSegments("/shares");
   };
 
-  return CreateLensShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLensShareOutcome(result.GetResultWithOwnership())
+                            : CreateLensShareOutcome(std::move(result.GetError()));
 }
 
 CreateLensVersionOutcome WellArchitectedClient::CreateLensVersion(const CreateLensVersionRequest& request) const {
@@ -315,7 +321,9 @@ CreateLensVersionOutcome WellArchitectedClient::CreateLensVersion(const CreateLe
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return CreateLensVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLensVersionOutcome(result.GetResultWithOwnership())
+                            : CreateLensVersionOutcome(std::move(result.GetError()));
 }
 
 CreateMilestoneOutcome WellArchitectedClient::CreateMilestone(const CreateMilestoneRequest& request) const {
@@ -332,7 +340,9 @@ CreateMilestoneOutcome WellArchitectedClient::CreateMilestone(const CreateMilest
     endpointResolutionOutcome.GetResult().AddPathSegments("/milestones");
   };
 
-  return CreateMilestoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMilestoneOutcome(result.GetResultWithOwnership())
+                            : CreateMilestoneOutcome(std::move(result.GetError()));
 }
 
 CreateProfileOutcome WellArchitectedClient::CreateProfile(const CreateProfileRequest& request) const {
@@ -341,7 +351,8 @@ CreateProfileOutcome WellArchitectedClient::CreateProfile(const CreateProfileReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles");
   };
 
-  return CreateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProfileOutcome(result.GetResultWithOwnership()) : CreateProfileOutcome(std::move(result.GetError()));
 }
 
 CreateProfileShareOutcome WellArchitectedClient::CreateProfileShare(const CreateProfileShareRequest& request) const {
@@ -358,7 +369,9 @@ CreateProfileShareOutcome WellArchitectedClient::CreateProfileShare(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/shares");
   };
 
-  return CreateProfileShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProfileShareOutcome(result.GetResultWithOwnership())
+                            : CreateProfileShareOutcome(std::move(result.GetError()));
 }
 
 CreateReviewTemplateOutcome WellArchitectedClient::CreateReviewTemplate(const CreateReviewTemplateRequest& request) const {
@@ -367,7 +380,9 @@ CreateReviewTemplateOutcome WellArchitectedClient::CreateReviewTemplate(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/reviewTemplates");
   };
 
-  return CreateReviewTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReviewTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateReviewTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateTemplateShareOutcome WellArchitectedClient::CreateTemplateShare(const CreateTemplateShareRequest& request) const {
@@ -383,7 +398,9 @@ CreateTemplateShareOutcome WellArchitectedClient::CreateTemplateShare(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateArn());
   };
 
-  return CreateTemplateShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTemplateShareOutcome(result.GetResultWithOwnership())
+                            : CreateTemplateShareOutcome(std::move(result.GetError()));
 }
 
 CreateWorkloadOutcome WellArchitectedClient::CreateWorkload(const CreateWorkloadRequest& request) const {
@@ -392,7 +409,8 @@ CreateWorkloadOutcome WellArchitectedClient::CreateWorkload(const CreateWorkload
     endpointResolutionOutcome.GetResult().AddPathSegments("/workloads");
   };
 
-  return CreateWorkloadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkloadOutcome(result.GetResultWithOwnership()) : CreateWorkloadOutcome(std::move(result.GetError()));
 }
 
 CreateWorkloadShareOutcome WellArchitectedClient::CreateWorkloadShare(const CreateWorkloadShareRequest& request) const {
@@ -409,7 +427,9 @@ CreateWorkloadShareOutcome WellArchitectedClient::CreateWorkloadShare(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/shares");
   };
 
-  return CreateWorkloadShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkloadShareOutcome(result.GetResultWithOwnership())
+                            : CreateWorkloadShareOutcome(std::move(result.GetError()));
 }
 
 DeleteLensOutcome WellArchitectedClient::DeleteLens(const DeleteLensRequest& request) const {
@@ -435,7 +455,8 @@ DeleteLensOutcome WellArchitectedClient::DeleteLens(const DeleteLensRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLensAlias());
   };
 
-  return DeleteLensOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLensOutcome(result.GetResultWithOwnership()) : DeleteLensOutcome(std::move(result.GetError()));
 }
 
 DeleteLensShareOutcome WellArchitectedClient::DeleteLensShare(const DeleteLensShareRequest& request) const {
@@ -463,7 +484,9 @@ DeleteLensShareOutcome WellArchitectedClient::DeleteLensShare(const DeleteLensSh
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
   };
 
-  return DeleteLensShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLensShareOutcome(result.GetResultWithOwnership())
+                            : DeleteLensShareOutcome(std::move(result.GetError()));
 }
 
 DeleteProfileOutcome WellArchitectedClient::DeleteProfile(const DeleteProfileRequest& request) const {
@@ -484,7 +507,8 @@ DeleteProfileOutcome WellArchitectedClient::DeleteProfile(const DeleteProfileReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
   };
 
-  return DeleteProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProfileOutcome(result.GetResultWithOwnership()) : DeleteProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteProfileShareOutcome WellArchitectedClient::DeleteProfileShare(const DeleteProfileShareRequest& request) const {
@@ -512,7 +536,9 @@ DeleteProfileShareOutcome WellArchitectedClient::DeleteProfileShare(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
   };
 
-  return DeleteProfileShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProfileShareOutcome(result.GetResultWithOwnership())
+                            : DeleteProfileShareOutcome(std::move(result.GetError()));
 }
 
 DeleteReviewTemplateOutcome WellArchitectedClient::DeleteReviewTemplate(const DeleteReviewTemplateRequest& request) const {
@@ -533,7 +559,9 @@ DeleteReviewTemplateOutcome WellArchitectedClient::DeleteReviewTemplate(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateArn());
   };
 
-  return DeleteReviewTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteReviewTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteReviewTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteTemplateShareOutcome WellArchitectedClient::DeleteTemplateShare(const DeleteTemplateShareRequest& request) const {
@@ -560,7 +588,9 @@ DeleteTemplateShareOutcome WellArchitectedClient::DeleteTemplateShare(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
   };
 
-  return DeleteTemplateShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTemplateShareOutcome(result.GetResultWithOwnership())
+                            : DeleteTemplateShareOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkloadOutcome WellArchitectedClient::DeleteWorkload(const DeleteWorkloadRequest& request) const {
@@ -581,7 +611,8 @@ DeleteWorkloadOutcome WellArchitectedClient::DeleteWorkload(const DeleteWorkload
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadId());
   };
 
-  return DeleteWorkloadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkloadOutcome(result.GetResultWithOwnership()) : DeleteWorkloadOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkloadShareOutcome WellArchitectedClient::DeleteWorkloadShare(const DeleteWorkloadShareRequest& request) const {
@@ -609,7 +640,9 @@ DeleteWorkloadShareOutcome WellArchitectedClient::DeleteWorkloadShare(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
   };
 
-  return DeleteWorkloadShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkloadShareOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkloadShareOutcome(std::move(result.GetError()));
 }
 
 DisassociateLensesOutcome WellArchitectedClient::DisassociateLenses(const DisassociateLensesRequest& request) const {
@@ -626,7 +659,9 @@ DisassociateLensesOutcome WellArchitectedClient::DisassociateLenses(const Disass
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociateLenses");
   };
 
-  return DisassociateLensesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? DisassociateLensesOutcome(result.GetResultWithOwnership())
+                            : DisassociateLensesOutcome(std::move(result.GetError()));
 }
 
 DisassociateProfilesOutcome WellArchitectedClient::DisassociateProfiles(const DisassociateProfilesRequest& request) const {
@@ -643,7 +678,9 @@ DisassociateProfilesOutcome WellArchitectedClient::DisassociateProfiles(const Di
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociateProfiles");
   };
 
-  return DisassociateProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? DisassociateProfilesOutcome(result.GetResultWithOwnership())
+                            : DisassociateProfilesOutcome(std::move(result.GetError()));
 }
 
 ExportLensOutcome WellArchitectedClient::ExportLens(const ExportLensRequest& request) const {
@@ -660,7 +697,8 @@ ExportLensOutcome WellArchitectedClient::ExportLens(const ExportLensRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/export");
   };
 
-  return ExportLensOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ExportLensOutcome(result.GetResultWithOwnership()) : ExportLensOutcome(std::move(result.GetError()));
 }
 
 GetAnswerOutcome WellArchitectedClient::GetAnswer(const GetAnswerRequest& request) const {
@@ -690,7 +728,8 @@ GetAnswerOutcome WellArchitectedClient::GetAnswer(const GetAnswerRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuestionId());
   };
 
-  return GetAnswerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAnswerOutcome(result.GetResultWithOwnership()) : GetAnswerOutcome(std::move(result.GetError()));
 }
 
 GetConsolidatedReportOutcome WellArchitectedClient::GetConsolidatedReport(const GetConsolidatedReportRequest& request) const {
@@ -705,7 +744,9 @@ GetConsolidatedReportOutcome WellArchitectedClient::GetConsolidatedReport(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/consolidatedReport");
   };
 
-  return GetConsolidatedReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConsolidatedReportOutcome(result.GetResultWithOwnership())
+                            : GetConsolidatedReportOutcome(std::move(result.GetError()));
 }
 
 GetGlobalSettingsOutcome WellArchitectedClient::GetGlobalSettings(const GetGlobalSettingsRequest& request) const {
@@ -714,7 +755,9 @@ GetGlobalSettingsOutcome WellArchitectedClient::GetGlobalSettings(const GetGloba
     endpointResolutionOutcome.GetResult().AddPathSegments("/global-settings");
   };
 
-  return GetGlobalSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGlobalSettingsOutcome(result.GetResultWithOwnership())
+                            : GetGlobalSettingsOutcome(std::move(result.GetError()));
 }
 
 GetLensOutcome WellArchitectedClient::GetLens(const GetLensRequest& request) const {
@@ -730,7 +773,8 @@ GetLensOutcome WellArchitectedClient::GetLens(const GetLensRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLensAlias());
   };
 
-  return GetLensOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLensOutcome(result.GetResultWithOwnership()) : GetLensOutcome(std::move(result.GetError()));
 }
 
 GetLensReviewOutcome WellArchitectedClient::GetLensReview(const GetLensReviewRequest& request) const {
@@ -753,7 +797,8 @@ GetLensReviewOutcome WellArchitectedClient::GetLensReview(const GetLensReviewReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLensAlias());
   };
 
-  return GetLensReviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLensReviewOutcome(result.GetResultWithOwnership()) : GetLensReviewOutcome(std::move(result.GetError()));
 }
 
 GetLensReviewReportOutcome WellArchitectedClient::GetLensReviewReport(const GetLensReviewReportRequest& request) const {
@@ -777,7 +822,9 @@ GetLensReviewReportOutcome WellArchitectedClient::GetLensReviewReport(const GetL
     endpointResolutionOutcome.GetResult().AddPathSegments("/report");
   };
 
-  return GetLensReviewReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLensReviewReportOutcome(result.GetResultWithOwnership())
+                            : GetLensReviewReportOutcome(std::move(result.GetError()));
 }
 
 GetLensVersionDifferenceOutcome WellArchitectedClient::GetLensVersionDifference(const GetLensVersionDifferenceRequest& request) const {
@@ -794,7 +841,9 @@ GetLensVersionDifferenceOutcome WellArchitectedClient::GetLensVersionDifference(
     endpointResolutionOutcome.GetResult().AddPathSegments("/versionDifference");
   };
 
-  return GetLensVersionDifferenceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLensVersionDifferenceOutcome(result.GetResultWithOwnership())
+                            : GetLensVersionDifferenceOutcome(std::move(result.GetError()));
 }
 
 GetMilestoneOutcome WellArchitectedClient::GetMilestone(const GetMilestoneRequest& request) const {
@@ -817,7 +866,8 @@ GetMilestoneOutcome WellArchitectedClient::GetMilestone(const GetMilestoneReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMilestoneNumber());
   };
 
-  return GetMilestoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMilestoneOutcome(result.GetResultWithOwnership()) : GetMilestoneOutcome(std::move(result.GetError()));
 }
 
 GetProfileOutcome WellArchitectedClient::GetProfile(const GetProfileRequest& request) const {
@@ -833,7 +883,8 @@ GetProfileOutcome WellArchitectedClient::GetProfile(const GetProfileRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
   };
 
-  return GetProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProfileOutcome(result.GetResultWithOwnership()) : GetProfileOutcome(std::move(result.GetError()));
 }
 
 GetProfileTemplateOutcome WellArchitectedClient::GetProfileTemplate(const GetProfileTemplateRequest& request) const {
@@ -842,7 +893,9 @@ GetProfileTemplateOutcome WellArchitectedClient::GetProfileTemplate(const GetPro
     endpointResolutionOutcome.GetResult().AddPathSegments("/profileTemplate");
   };
 
-  return GetProfileTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProfileTemplateOutcome(result.GetResultWithOwnership())
+                            : GetProfileTemplateOutcome(std::move(result.GetError()));
 }
 
 GetReviewTemplateOutcome WellArchitectedClient::GetReviewTemplate(const GetReviewTemplateRequest& request) const {
@@ -858,7 +911,9 @@ GetReviewTemplateOutcome WellArchitectedClient::GetReviewTemplate(const GetRevie
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateArn());
   };
 
-  return GetReviewTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReviewTemplateOutcome(result.GetResultWithOwnership())
+                            : GetReviewTemplateOutcome(std::move(result.GetError()));
 }
 
 GetReviewTemplateAnswerOutcome WellArchitectedClient::GetReviewTemplateAnswer(const GetReviewTemplateAnswerRequest& request) const {
@@ -888,7 +943,9 @@ GetReviewTemplateAnswerOutcome WellArchitectedClient::GetReviewTemplateAnswer(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuestionId());
   };
 
-  return GetReviewTemplateAnswerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReviewTemplateAnswerOutcome(result.GetResultWithOwnership())
+                            : GetReviewTemplateAnswerOutcome(std::move(result.GetError()));
 }
 
 GetReviewTemplateLensReviewOutcome WellArchitectedClient::GetReviewTemplateLensReview(
@@ -912,7 +969,9 @@ GetReviewTemplateLensReviewOutcome WellArchitectedClient::GetReviewTemplateLensR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLensAlias());
   };
 
-  return GetReviewTemplateLensReviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReviewTemplateLensReviewOutcome(result.GetResultWithOwnership())
+                            : GetReviewTemplateLensReviewOutcome(std::move(result.GetError()));
 }
 
 GetWorkloadOutcome WellArchitectedClient::GetWorkload(const GetWorkloadRequest& request) const {
@@ -928,7 +987,8 @@ GetWorkloadOutcome WellArchitectedClient::GetWorkload(const GetWorkloadRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadId());
   };
 
-  return GetWorkloadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkloadOutcome(result.GetResultWithOwnership()) : GetWorkloadOutcome(std::move(result.GetError()));
 }
 
 ImportLensOutcome WellArchitectedClient::ImportLens(const ImportLensRequest& request) const {
@@ -937,7 +997,8 @@ ImportLensOutcome WellArchitectedClient::ImportLens(const ImportLensRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/importLens");
   };
 
-  return ImportLensOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ImportLensOutcome(result.GetResultWithOwnership()) : ImportLensOutcome(std::move(result.GetError()));
 }
 
 ListAnswersOutcome WellArchitectedClient::ListAnswers(const ListAnswersRequest& request) const {
@@ -961,7 +1022,8 @@ ListAnswersOutcome WellArchitectedClient::ListAnswers(const ListAnswersRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/answers");
   };
 
-  return ListAnswersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAnswersOutcome(result.GetResultWithOwnership()) : ListAnswersOutcome(std::move(result.GetError()));
 }
 
 ListCheckDetailsOutcome WellArchitectedClient::ListCheckDetails(const ListCheckDetailsRequest& request) const {
@@ -978,7 +1040,9 @@ ListCheckDetailsOutcome WellArchitectedClient::ListCheckDetails(const ListCheckD
     endpointResolutionOutcome.GetResult().AddPathSegments("/checks");
   };
 
-  return ListCheckDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCheckDetailsOutcome(result.GetResultWithOwnership())
+                            : ListCheckDetailsOutcome(std::move(result.GetError()));
 }
 
 ListCheckSummariesOutcome WellArchitectedClient::ListCheckSummaries(const ListCheckSummariesRequest& request) const {
@@ -995,7 +1059,9 @@ ListCheckSummariesOutcome WellArchitectedClient::ListCheckSummaries(const ListCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/checkSummaries");
   };
 
-  return ListCheckSummariesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCheckSummariesOutcome(result.GetResultWithOwnership())
+                            : ListCheckSummariesOutcome(std::move(result.GetError()));
 }
 
 ListLensReviewImprovementsOutcome WellArchitectedClient::ListLensReviewImprovements(
@@ -1020,7 +1086,9 @@ ListLensReviewImprovementsOutcome WellArchitectedClient::ListLensReviewImproveme
     endpointResolutionOutcome.GetResult().AddPathSegments("/improvements");
   };
 
-  return ListLensReviewImprovementsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLensReviewImprovementsOutcome(result.GetResultWithOwnership())
+                            : ListLensReviewImprovementsOutcome(std::move(result.GetError()));
 }
 
 ListLensReviewsOutcome WellArchitectedClient::ListLensReviews(const ListLensReviewsRequest& request) const {
@@ -1037,7 +1105,9 @@ ListLensReviewsOutcome WellArchitectedClient::ListLensReviews(const ListLensRevi
     endpointResolutionOutcome.GetResult().AddPathSegments("/lensReviews");
   };
 
-  return ListLensReviewsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLensReviewsOutcome(result.GetResultWithOwnership())
+                            : ListLensReviewsOutcome(std::move(result.GetError()));
 }
 
 ListLensSharesOutcome WellArchitectedClient::ListLensShares(const ListLensSharesRequest& request) const {
@@ -1054,7 +1124,8 @@ ListLensSharesOutcome WellArchitectedClient::ListLensShares(const ListLensShares
     endpointResolutionOutcome.GetResult().AddPathSegments("/shares");
   };
 
-  return ListLensSharesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLensSharesOutcome(result.GetResultWithOwnership()) : ListLensSharesOutcome(std::move(result.GetError()));
 }
 
 ListLensesOutcome WellArchitectedClient::ListLenses(const ListLensesRequest& request) const {
@@ -1063,7 +1134,8 @@ ListLensesOutcome WellArchitectedClient::ListLenses(const ListLensesRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/lenses");
   };
 
-  return ListLensesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLensesOutcome(result.GetResultWithOwnership()) : ListLensesOutcome(std::move(result.GetError()));
 }
 
 ListMilestonesOutcome WellArchitectedClient::ListMilestones(const ListMilestonesRequest& request) const {
@@ -1080,7 +1152,8 @@ ListMilestonesOutcome WellArchitectedClient::ListMilestones(const ListMilestones
     endpointResolutionOutcome.GetResult().AddPathSegments("/milestonesSummaries");
   };
 
-  return ListMilestonesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMilestonesOutcome(result.GetResultWithOwnership()) : ListMilestonesOutcome(std::move(result.GetError()));
 }
 
 ListNotificationsOutcome WellArchitectedClient::ListNotifications(const ListNotificationsRequest& request) const {
@@ -1089,7 +1162,9 @@ ListNotificationsOutcome WellArchitectedClient::ListNotifications(const ListNoti
     endpointResolutionOutcome.GetResult().AddPathSegments("/notifications");
   };
 
-  return ListNotificationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNotificationsOutcome(result.GetResultWithOwnership())
+                            : ListNotificationsOutcome(std::move(result.GetError()));
 }
 
 ListProfileNotificationsOutcome WellArchitectedClient::ListProfileNotifications(const ListProfileNotificationsRequest& request) const {
@@ -1098,7 +1173,9 @@ ListProfileNotificationsOutcome WellArchitectedClient::ListProfileNotifications(
     endpointResolutionOutcome.GetResult().AddPathSegments("/profileNotifications/");
   };
 
-  return ListProfileNotificationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfileNotificationsOutcome(result.GetResultWithOwnership())
+                            : ListProfileNotificationsOutcome(std::move(result.GetError()));
 }
 
 ListProfileSharesOutcome WellArchitectedClient::ListProfileShares(const ListProfileSharesRequest& request) const {
@@ -1115,7 +1192,9 @@ ListProfileSharesOutcome WellArchitectedClient::ListProfileShares(const ListProf
     endpointResolutionOutcome.GetResult().AddPathSegments("/shares");
   };
 
-  return ListProfileSharesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfileSharesOutcome(result.GetResultWithOwnership())
+                            : ListProfileSharesOutcome(std::move(result.GetError()));
 }
 
 ListProfilesOutcome WellArchitectedClient::ListProfiles(const ListProfilesRequest& request) const {
@@ -1124,7 +1203,8 @@ ListProfilesOutcome WellArchitectedClient::ListProfiles(const ListProfilesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/profileSummaries");
   };
 
-  return ListProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfilesOutcome(result.GetResultWithOwnership()) : ListProfilesOutcome(std::move(result.GetError()));
 }
 
 ListReviewTemplateAnswersOutcome WellArchitectedClient::ListReviewTemplateAnswers(const ListReviewTemplateAnswersRequest& request) const {
@@ -1148,7 +1228,9 @@ ListReviewTemplateAnswersOutcome WellArchitectedClient::ListReviewTemplateAnswer
     endpointResolutionOutcome.GetResult().AddPathSegments("/answers");
   };
 
-  return ListReviewTemplateAnswersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReviewTemplateAnswersOutcome(result.GetResultWithOwnership())
+                            : ListReviewTemplateAnswersOutcome(std::move(result.GetError()));
 }
 
 ListReviewTemplatesOutcome WellArchitectedClient::ListReviewTemplates(const ListReviewTemplatesRequest& request) const {
@@ -1157,7 +1239,9 @@ ListReviewTemplatesOutcome WellArchitectedClient::ListReviewTemplates(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/reviewTemplates");
   };
 
-  return ListReviewTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReviewTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListReviewTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListShareInvitationsOutcome WellArchitectedClient::ListShareInvitations(const ListShareInvitationsRequest& request) const {
@@ -1166,7 +1250,9 @@ ListShareInvitationsOutcome WellArchitectedClient::ListShareInvitations(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/shareInvitations");
   };
 
-  return ListShareInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListShareInvitationsOutcome(result.GetResultWithOwnership())
+                            : ListShareInvitationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome WellArchitectedClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1182,7 +1268,9 @@ ListTagsForResourceOutcome WellArchitectedClient::ListTagsForResource(const List
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTemplateSharesOutcome WellArchitectedClient::ListTemplateShares(const ListTemplateSharesRequest& request) const {
@@ -1198,7 +1286,9 @@ ListTemplateSharesOutcome WellArchitectedClient::ListTemplateShares(const ListTe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateArn());
   };
 
-  return ListTemplateSharesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTemplateSharesOutcome(result.GetResultWithOwnership())
+                            : ListTemplateSharesOutcome(std::move(result.GetError()));
 }
 
 ListWorkloadSharesOutcome WellArchitectedClient::ListWorkloadShares(const ListWorkloadSharesRequest& request) const {
@@ -1215,7 +1305,9 @@ ListWorkloadSharesOutcome WellArchitectedClient::ListWorkloadShares(const ListWo
     endpointResolutionOutcome.GetResult().AddPathSegments("/shares");
   };
 
-  return ListWorkloadSharesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkloadSharesOutcome(result.GetResultWithOwnership())
+                            : ListWorkloadSharesOutcome(std::move(result.GetError()));
 }
 
 ListWorkloadsOutcome WellArchitectedClient::ListWorkloads(const ListWorkloadsRequest& request) const {
@@ -1224,7 +1316,8 @@ ListWorkloadsOutcome WellArchitectedClient::ListWorkloads(const ListWorkloadsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/workloadsSummaries");
   };
 
-  return ListWorkloadsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkloadsOutcome(result.GetResultWithOwnership()) : ListWorkloadsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome WellArchitectedClient::TagResource(const TagResourceRequest& request) const {
@@ -1240,7 +1333,8 @@ TagResourceOutcome WellArchitectedClient::TagResource(const TagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome WellArchitectedClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1261,7 +1355,8 @@ UntagResourceOutcome WellArchitectedClient::UntagResource(const UntagResourceReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAnswerOutcome WellArchitectedClient::UpdateAnswer(const UpdateAnswerRequest& request) const {
@@ -1291,7 +1386,8 @@ UpdateAnswerOutcome WellArchitectedClient::UpdateAnswer(const UpdateAnswerReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuestionId());
   };
 
-  return UpdateAnswerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAnswerOutcome(result.GetResultWithOwnership()) : UpdateAnswerOutcome(std::move(result.GetError()));
 }
 
 UpdateGlobalSettingsOutcome WellArchitectedClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const {
@@ -1300,7 +1396,9 @@ UpdateGlobalSettingsOutcome WellArchitectedClient::UpdateGlobalSettings(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/global-settings");
   };
 
-  return UpdateGlobalSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateGlobalSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateGlobalSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateIntegrationOutcome WellArchitectedClient::UpdateIntegration(const UpdateIntegrationRequest& request) const {
@@ -1317,7 +1415,9 @@ UpdateIntegrationOutcome WellArchitectedClient::UpdateIntegration(const UpdateIn
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateIntegration");
   };
 
-  return UpdateIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIntegrationOutcome(result.GetResultWithOwnership())
+                            : UpdateIntegrationOutcome(std::move(result.GetError()));
 }
 
 UpdateLensReviewOutcome WellArchitectedClient::UpdateLensReview(const UpdateLensReviewRequest& request) const {
@@ -1340,7 +1440,9 @@ UpdateLensReviewOutcome WellArchitectedClient::UpdateLensReview(const UpdateLens
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLensAlias());
   };
 
-  return UpdateLensReviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateLensReviewOutcome(result.GetResultWithOwnership())
+                            : UpdateLensReviewOutcome(std::move(result.GetError()));
 }
 
 UpdateProfileOutcome WellArchitectedClient::UpdateProfile(const UpdateProfileRequest& request) const {
@@ -1356,7 +1458,8 @@ UpdateProfileOutcome WellArchitectedClient::UpdateProfile(const UpdateProfileReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
   };
 
-  return UpdateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateProfileOutcome(result.GetResultWithOwnership()) : UpdateProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateReviewTemplateOutcome WellArchitectedClient::UpdateReviewTemplate(const UpdateReviewTemplateRequest& request) const {
@@ -1372,7 +1475,9 @@ UpdateReviewTemplateOutcome WellArchitectedClient::UpdateReviewTemplate(const Up
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateArn());
   };
 
-  return UpdateReviewTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateReviewTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateReviewTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateReviewTemplateAnswerOutcome WellArchitectedClient::UpdateReviewTemplateAnswer(
@@ -1403,7 +1508,9 @@ UpdateReviewTemplateAnswerOutcome WellArchitectedClient::UpdateReviewTemplateAns
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuestionId());
   };
 
-  return UpdateReviewTemplateAnswerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateReviewTemplateAnswerOutcome(result.GetResultWithOwnership())
+                            : UpdateReviewTemplateAnswerOutcome(std::move(result.GetError()));
 }
 
 UpdateReviewTemplateLensReviewOutcome WellArchitectedClient::UpdateReviewTemplateLensReview(
@@ -1427,7 +1534,9 @@ UpdateReviewTemplateLensReviewOutcome WellArchitectedClient::UpdateReviewTemplat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLensAlias());
   };
 
-  return UpdateReviewTemplateLensReviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateReviewTemplateLensReviewOutcome(result.GetResultWithOwnership())
+                            : UpdateReviewTemplateLensReviewOutcome(std::move(result.GetError()));
 }
 
 UpdateShareInvitationOutcome WellArchitectedClient::UpdateShareInvitation(const UpdateShareInvitationRequest& request) const {
@@ -1443,7 +1552,9 @@ UpdateShareInvitationOutcome WellArchitectedClient::UpdateShareInvitation(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareInvitationId());
   };
 
-  return UpdateShareInvitationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateShareInvitationOutcome(result.GetResultWithOwnership())
+                            : UpdateShareInvitationOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkloadOutcome WellArchitectedClient::UpdateWorkload(const UpdateWorkloadRequest& request) const {
@@ -1459,7 +1570,8 @@ UpdateWorkloadOutcome WellArchitectedClient::UpdateWorkload(const UpdateWorkload
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadId());
   };
 
-  return UpdateWorkloadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateWorkloadOutcome(result.GetResultWithOwnership()) : UpdateWorkloadOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkloadShareOutcome WellArchitectedClient::UpdateWorkloadShare(const UpdateWorkloadShareRequest& request) const {
@@ -1482,7 +1594,9 @@ UpdateWorkloadShareOutcome WellArchitectedClient::UpdateWorkloadShare(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
   };
 
-  return UpdateWorkloadShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateWorkloadShareOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkloadShareOutcome(std::move(result.GetError()));
 }
 
 UpgradeLensReviewOutcome WellArchitectedClient::UpgradeLensReview(const UpgradeLensReviewRequest& request) const {
@@ -1506,7 +1620,9 @@ UpgradeLensReviewOutcome WellArchitectedClient::UpgradeLensReview(const UpgradeL
     endpointResolutionOutcome.GetResult().AddPathSegments("/upgrade");
   };
 
-  return UpgradeLensReviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpgradeLensReviewOutcome(result.GetResultWithOwnership())
+                            : UpgradeLensReviewOutcome(std::move(result.GetError()));
 }
 
 UpgradeProfileVersionOutcome WellArchitectedClient::UpgradeProfileVersion(const UpgradeProfileVersionRequest& request) const {
@@ -1530,7 +1646,9 @@ UpgradeProfileVersionOutcome WellArchitectedClient::UpgradeProfileVersion(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/upgrade");
   };
 
-  return UpgradeProfileVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpgradeProfileVersionOutcome(result.GetResultWithOwnership())
+                            : UpgradeProfileVersionOutcome(std::move(result.GetError()));
 }
 
 UpgradeReviewTemplateLensReviewOutcome WellArchitectedClient::UpgradeReviewTemplateLensReview(
@@ -1555,5 +1673,7 @@ UpgradeReviewTemplateLensReviewOutcome WellArchitectedClient::UpgradeReviewTempl
     endpointResolutionOutcome.GetResult().AddPathSegments("/upgrade");
   };
 
-  return UpgradeReviewTemplateLensReviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpgradeReviewTemplateLensReviewOutcome(result.GetResultWithOwnership())
+                            : UpgradeReviewTemplateLensReviewOutcome(std::move(result.GetError()));
 }

@@ -198,7 +198,9 @@ CompleteSnapshotOutcome EBSClient::CompleteSnapshot(const CompleteSnapshotReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSnapshotId());
   };
 
-  return CompleteSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CompleteSnapshotOutcome(result.GetResultWithOwnership())
+                            : CompleteSnapshotOutcome(std::move(result.GetError()));
 }
 
 GetSnapshotBlockOutcome EBSClient::GetSnapshotBlock(const GetSnapshotBlockRequest& request) const {
@@ -241,8 +243,9 @@ GetSnapshotBlockOutcome EBSClient::GetSnapshotBlock(const GetSnapshotBlockReques
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSnapshotId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/blocks/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBlockIndex());
-        return GetSnapshotBlockOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetSnapshotBlockOutcome(result.GetResultWithOwnership())
+                                  : GetSnapshotBlockOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -263,7 +266,9 @@ ListChangedBlocksOutcome EBSClient::ListChangedBlocks(const ListChangedBlocksReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/changedblocks");
   };
 
-  return ListChangedBlocksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChangedBlocksOutcome(result.GetResultWithOwnership())
+                            : ListChangedBlocksOutcome(std::move(result.GetError()));
 }
 
 ListSnapshotBlocksOutcome EBSClient::ListSnapshotBlocks(const ListSnapshotBlocksRequest& request) const {
@@ -280,7 +285,9 @@ ListSnapshotBlocksOutcome EBSClient::ListSnapshotBlocks(const ListSnapshotBlocks
     endpointResolutionOutcome.GetResult().AddPathSegments("/blocks");
   };
 
-  return ListSnapshotBlocksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSnapshotBlocksOutcome(result.GetResultWithOwnership())
+                            : ListSnapshotBlocksOutcome(std::move(result.GetError()));
 }
 
 PutSnapshotBlockOutcome EBSClient::PutSnapshotBlock(const PutSnapshotBlockRequest& request) const {
@@ -318,7 +325,9 @@ PutSnapshotBlockOutcome EBSClient::PutSnapshotBlock(const PutSnapshotBlockReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBlockIndex());
   };
 
-  return PutSnapshotBlockOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutSnapshotBlockOutcome(result.GetResultWithOwnership())
+                            : PutSnapshotBlockOutcome(std::move(result.GetError()));
 }
 
 StartSnapshotOutcome EBSClient::StartSnapshot(const StartSnapshotRequest& request) const {
@@ -327,5 +336,6 @@ StartSnapshotOutcome EBSClient::StartSnapshot(const StartSnapshotRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/snapshots");
   };
 
-  return StartSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSnapshotOutcome(result.GetResultWithOwnership()) : StartSnapshotOutcome(std::move(result.GetError()));
 }

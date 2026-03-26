@@ -217,182 +217,254 @@ CodePipelineClient::InvokeOperationOutcome CodePipelineClient::InvokeServiceOper
 }
 
 AcknowledgeJobOutcome CodePipelineClient::AcknowledgeJob(const AcknowledgeJobRequest& request) const {
-  return AcknowledgeJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcknowledgeJobOutcome(result.GetResultWithOwnership()) : AcknowledgeJobOutcome(std::move(result.GetError()));
 }
 
 AcknowledgeThirdPartyJobOutcome CodePipelineClient::AcknowledgeThirdPartyJob(const AcknowledgeThirdPartyJobRequest& request) const {
-  return AcknowledgeThirdPartyJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcknowledgeThirdPartyJobOutcome(result.GetResultWithOwnership())
+                            : AcknowledgeThirdPartyJobOutcome(std::move(result.GetError()));
 }
 
 CreateCustomActionTypeOutcome CodePipelineClient::CreateCustomActionType(const CreateCustomActionTypeRequest& request) const {
-  return CreateCustomActionTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomActionTypeOutcome(result.GetResultWithOwnership())
+                            : CreateCustomActionTypeOutcome(std::move(result.GetError()));
 }
 
 CreatePipelineOutcome CodePipelineClient::CreatePipeline(const CreatePipelineRequest& request) const {
-  return CreatePipelineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePipelineOutcome(result.GetResultWithOwnership()) : CreatePipelineOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomActionTypeOutcome CodePipelineClient::DeleteCustomActionType(const DeleteCustomActionTypeRequest& request) const {
-  return DeleteCustomActionTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCustomActionTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomActionTypeOutcome(std::move(result.GetError()));
 }
 
 DeletePipelineOutcome CodePipelineClient::DeletePipeline(const DeletePipelineRequest& request) const {
-  return DeletePipelineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePipelineOutcome(result.GetResultWithOwnership()) : DeletePipelineOutcome(std::move(result.GetError()));
 }
 
 DeleteWebhookOutcome CodePipelineClient::DeleteWebhook(const DeleteWebhookRequest& request) const {
-  return DeleteWebhookOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWebhookOutcome(result.GetResultWithOwnership()) : DeleteWebhookOutcome(std::move(result.GetError()));
 }
 
 DeregisterWebhookWithThirdPartyOutcome CodePipelineClient::DeregisterWebhookWithThirdParty(
     const DeregisterWebhookWithThirdPartyRequest& request) const {
-  return DeregisterWebhookWithThirdPartyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterWebhookWithThirdPartyOutcome(result.GetResultWithOwnership())
+                            : DeregisterWebhookWithThirdPartyOutcome(std::move(result.GetError()));
 }
 
 DisableStageTransitionOutcome CodePipelineClient::DisableStageTransition(const DisableStageTransitionRequest& request) const {
-  return DisableStageTransitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableStageTransitionOutcome(result.GetResultWithOwnership())
+                            : DisableStageTransitionOutcome(std::move(result.GetError()));
 }
 
 EnableStageTransitionOutcome CodePipelineClient::EnableStageTransition(const EnableStageTransitionRequest& request) const {
-  return EnableStageTransitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableStageTransitionOutcome(result.GetResultWithOwnership())
+                            : EnableStageTransitionOutcome(std::move(result.GetError()));
 }
 
 GetActionTypeOutcome CodePipelineClient::GetActionType(const GetActionTypeRequest& request) const {
-  return GetActionTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetActionTypeOutcome(result.GetResultWithOwnership()) : GetActionTypeOutcome(std::move(result.GetError()));
 }
 
 GetJobDetailsOutcome CodePipelineClient::GetJobDetails(const GetJobDetailsRequest& request) const {
-  return GetJobDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetJobDetailsOutcome(result.GetResultWithOwnership()) : GetJobDetailsOutcome(std::move(result.GetError()));
 }
 
 GetPipelineOutcome CodePipelineClient::GetPipeline(const GetPipelineRequest& request) const {
-  return GetPipelineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPipelineOutcome(result.GetResultWithOwnership()) : GetPipelineOutcome(std::move(result.GetError()));
 }
 
 GetPipelineExecutionOutcome CodePipelineClient::GetPipelineExecution(const GetPipelineExecutionRequest& request) const {
-  return GetPipelineExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPipelineExecutionOutcome(result.GetResultWithOwnership())
+                            : GetPipelineExecutionOutcome(std::move(result.GetError()));
 }
 
 GetPipelineStateOutcome CodePipelineClient::GetPipelineState(const GetPipelineStateRequest& request) const {
-  return GetPipelineStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPipelineStateOutcome(result.GetResultWithOwnership())
+                            : GetPipelineStateOutcome(std::move(result.GetError()));
 }
 
 GetThirdPartyJobDetailsOutcome CodePipelineClient::GetThirdPartyJobDetails(const GetThirdPartyJobDetailsRequest& request) const {
-  return GetThirdPartyJobDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetThirdPartyJobDetailsOutcome(result.GetResultWithOwnership())
+                            : GetThirdPartyJobDetailsOutcome(std::move(result.GetError()));
 }
 
 ListActionExecutionsOutcome CodePipelineClient::ListActionExecutions(const ListActionExecutionsRequest& request) const {
-  return ListActionExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListActionExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListActionExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListActionTypesOutcome CodePipelineClient::ListActionTypes(const ListActionTypesRequest& request) const {
-  return ListActionTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListActionTypesOutcome(result.GetResultWithOwnership())
+                            : ListActionTypesOutcome(std::move(result.GetError()));
 }
 
 ListDeployActionExecutionTargetsOutcome CodePipelineClient::ListDeployActionExecutionTargets(
     const ListDeployActionExecutionTargetsRequest& request) const {
-  return ListDeployActionExecutionTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDeployActionExecutionTargetsOutcome(result.GetResultWithOwnership())
+                            : ListDeployActionExecutionTargetsOutcome(std::move(result.GetError()));
 }
 
 ListPipelineExecutionsOutcome CodePipelineClient::ListPipelineExecutions(const ListPipelineExecutionsRequest& request) const {
-  return ListPipelineExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPipelineExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListPipelineExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListPipelinesOutcome CodePipelineClient::ListPipelines(const ListPipelinesRequest& request) const {
-  return ListPipelinesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPipelinesOutcome(result.GetResultWithOwnership()) : ListPipelinesOutcome(std::move(result.GetError()));
 }
 
 ListRuleExecutionsOutcome CodePipelineClient::ListRuleExecutions(const ListRuleExecutionsRequest& request) const {
-  return ListRuleExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRuleExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListRuleExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListRuleTypesOutcome CodePipelineClient::ListRuleTypes(const ListRuleTypesRequest& request) const {
-  return ListRuleTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRuleTypesOutcome(result.GetResultWithOwnership()) : ListRuleTypesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CodePipelineClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWebhooksOutcome CodePipelineClient::ListWebhooks(const ListWebhooksRequest& request) const {
-  return ListWebhooksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWebhooksOutcome(result.GetResultWithOwnership()) : ListWebhooksOutcome(std::move(result.GetError()));
 }
 
 OverrideStageConditionOutcome CodePipelineClient::OverrideStageCondition(const OverrideStageConditionRequest& request) const {
-  return OverrideStageConditionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? OverrideStageConditionOutcome(result.GetResultWithOwnership())
+                            : OverrideStageConditionOutcome(std::move(result.GetError()));
 }
 
 PollForJobsOutcome CodePipelineClient::PollForJobs(const PollForJobsRequest& request) const {
-  return PollForJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PollForJobsOutcome(result.GetResultWithOwnership()) : PollForJobsOutcome(std::move(result.GetError()));
 }
 
 PollForThirdPartyJobsOutcome CodePipelineClient::PollForThirdPartyJobs(const PollForThirdPartyJobsRequest& request) const {
-  return PollForThirdPartyJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PollForThirdPartyJobsOutcome(result.GetResultWithOwnership())
+                            : PollForThirdPartyJobsOutcome(std::move(result.GetError()));
 }
 
 PutActionRevisionOutcome CodePipelineClient::PutActionRevision(const PutActionRevisionRequest& request) const {
-  return PutActionRevisionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutActionRevisionOutcome(result.GetResultWithOwnership())
+                            : PutActionRevisionOutcome(std::move(result.GetError()));
 }
 
 PutApprovalResultOutcome CodePipelineClient::PutApprovalResult(const PutApprovalResultRequest& request) const {
-  return PutApprovalResultOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutApprovalResultOutcome(result.GetResultWithOwnership())
+                            : PutApprovalResultOutcome(std::move(result.GetError()));
 }
 
 PutJobFailureResultOutcome CodePipelineClient::PutJobFailureResult(const PutJobFailureResultRequest& request) const {
-  return PutJobFailureResultOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutJobFailureResultOutcome(result.GetResultWithOwnership())
+                            : PutJobFailureResultOutcome(std::move(result.GetError()));
 }
 
 PutJobSuccessResultOutcome CodePipelineClient::PutJobSuccessResult(const PutJobSuccessResultRequest& request) const {
-  return PutJobSuccessResultOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutJobSuccessResultOutcome(result.GetResultWithOwnership())
+                            : PutJobSuccessResultOutcome(std::move(result.GetError()));
 }
 
 PutThirdPartyJobFailureResultOutcome CodePipelineClient::PutThirdPartyJobFailureResult(
     const PutThirdPartyJobFailureResultRequest& request) const {
-  return PutThirdPartyJobFailureResultOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutThirdPartyJobFailureResultOutcome(result.GetResultWithOwnership())
+                            : PutThirdPartyJobFailureResultOutcome(std::move(result.GetError()));
 }
 
 PutThirdPartyJobSuccessResultOutcome CodePipelineClient::PutThirdPartyJobSuccessResult(
     const PutThirdPartyJobSuccessResultRequest& request) const {
-  return PutThirdPartyJobSuccessResultOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutThirdPartyJobSuccessResultOutcome(result.GetResultWithOwnership())
+                            : PutThirdPartyJobSuccessResultOutcome(std::move(result.GetError()));
 }
 
 PutWebhookOutcome CodePipelineClient::PutWebhook(const PutWebhookRequest& request) const {
-  return PutWebhookOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutWebhookOutcome(result.GetResultWithOwnership()) : PutWebhookOutcome(std::move(result.GetError()));
 }
 
 RegisterWebhookWithThirdPartyOutcome CodePipelineClient::RegisterWebhookWithThirdParty(
     const RegisterWebhookWithThirdPartyRequest& request) const {
-  return RegisterWebhookWithThirdPartyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterWebhookWithThirdPartyOutcome(result.GetResultWithOwnership())
+                            : RegisterWebhookWithThirdPartyOutcome(std::move(result.GetError()));
 }
 
 RetryStageExecutionOutcome CodePipelineClient::RetryStageExecution(const RetryStageExecutionRequest& request) const {
-  return RetryStageExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetryStageExecutionOutcome(result.GetResultWithOwnership())
+                            : RetryStageExecutionOutcome(std::move(result.GetError()));
 }
 
 RollbackStageOutcome CodePipelineClient::RollbackStage(const RollbackStageRequest& request) const {
-  return RollbackStageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RollbackStageOutcome(result.GetResultWithOwnership()) : RollbackStageOutcome(std::move(result.GetError()));
 }
 
 StartPipelineExecutionOutcome CodePipelineClient::StartPipelineExecution(const StartPipelineExecutionRequest& request) const {
-  return StartPipelineExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartPipelineExecutionOutcome(result.GetResultWithOwnership())
+                            : StartPipelineExecutionOutcome(std::move(result.GetError()));
 }
 
 StopPipelineExecutionOutcome CodePipelineClient::StopPipelineExecution(const StopPipelineExecutionRequest& request) const {
-  return StopPipelineExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopPipelineExecutionOutcome(result.GetResultWithOwnership())
+                            : StopPipelineExecutionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CodePipelineClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CodePipelineClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateActionTypeOutcome CodePipelineClient::UpdateActionType(const UpdateActionTypeRequest& request) const {
-  return UpdateActionTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateActionTypeOutcome(result.GetResultWithOwnership())
+                            : UpdateActionTypeOutcome(std::move(result.GetError()));
 }
 
 UpdatePipelineOutcome CodePipelineClient::UpdatePipeline(const UpdatePipelineRequest& request) const {
-  return UpdatePipelineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePipelineOutcome(result.GetResultWithOwnership()) : UpdatePipelineOutcome(std::move(result.GetError()));
 }

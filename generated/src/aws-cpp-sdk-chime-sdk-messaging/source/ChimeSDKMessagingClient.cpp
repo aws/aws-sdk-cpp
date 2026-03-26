@@ -249,7 +249,9 @@ AssociateChannelFlowOutcome ChimeSDKMessagingClient::AssociateChannelFlow(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/channel-flow");
   };
 
-  return AssociateChannelFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateChannelFlowOutcome(result.GetResultWithOwnership())
+                            : AssociateChannelFlowOutcome(std::move(result.GetError()));
 }
 
 BatchCreateChannelMembershipOutcome ChimeSDKMessagingClient::BatchCreateChannelMembership(
@@ -275,7 +277,9 @@ BatchCreateChannelMembershipOutcome ChimeSDKMessagingClient::BatchCreateChannelM
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return BatchCreateChannelMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateChannelMembershipOutcome(result.GetResultWithOwnership())
+                            : BatchCreateChannelMembershipOutcome(std::move(result.GetError()));
 }
 
 ChannelFlowCallbackOutcome ChimeSDKMessagingClient::ChannelFlowCallback(const ChannelFlowCallbackRequest& request) const {
@@ -294,7 +298,9 @@ ChannelFlowCallbackOutcome ChimeSDKMessagingClient::ChannelFlowCallback(const Ch
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ChannelFlowCallbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ChannelFlowCallbackOutcome(result.GetResultWithOwnership())
+                            : ChannelFlowCallbackOutcome(std::move(result.GetError()));
 }
 
 CreateChannelOutcome ChimeSDKMessagingClient::CreateChannel(const CreateChannelRequest& request) const {
@@ -309,7 +315,8 @@ CreateChannelOutcome ChimeSDKMessagingClient::CreateChannel(const CreateChannelR
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   };
 
-  return CreateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelOutcome(result.GetResultWithOwnership()) : CreateChannelOutcome(std::move(result.GetError()));
 }
 
 CreateChannelBanOutcome ChimeSDKMessagingClient::CreateChannelBan(const CreateChannelBanRequest& request) const {
@@ -331,7 +338,9 @@ CreateChannelBanOutcome ChimeSDKMessagingClient::CreateChannelBan(const CreateCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/bans");
   };
 
-  return CreateChannelBanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelBanOutcome(result.GetResultWithOwnership())
+                            : CreateChannelBanOutcome(std::move(result.GetError()));
 }
 
 CreateChannelFlowOutcome ChimeSDKMessagingClient::CreateChannelFlow(const CreateChannelFlowRequest& request) const {
@@ -340,7 +349,9 @@ CreateChannelFlowOutcome ChimeSDKMessagingClient::CreateChannelFlow(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/channel-flows");
   };
 
-  return CreateChannelFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelFlowOutcome(result.GetResultWithOwnership())
+                            : CreateChannelFlowOutcome(std::move(result.GetError()));
 }
 
 CreateChannelMembershipOutcome ChimeSDKMessagingClient::CreateChannelMembership(const CreateChannelMembershipRequest& request) const {
@@ -362,7 +373,9 @@ CreateChannelMembershipOutcome ChimeSDKMessagingClient::CreateChannelMembership(
     endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
   };
 
-  return CreateChannelMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelMembershipOutcome(result.GetResultWithOwnership())
+                            : CreateChannelMembershipOutcome(std::move(result.GetError()));
 }
 
 CreateChannelModeratorOutcome ChimeSDKMessagingClient::CreateChannelModerator(const CreateChannelModeratorRequest& request) const {
@@ -384,7 +397,9 @@ CreateChannelModeratorOutcome ChimeSDKMessagingClient::CreateChannelModerator(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/moderators");
   };
 
-  return CreateChannelModeratorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelModeratorOutcome(result.GetResultWithOwnership())
+                            : CreateChannelModeratorOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelOutcome ChimeSDKMessagingClient::DeleteChannel(const DeleteChannelRequest& request) const {
@@ -405,7 +420,8 @@ DeleteChannelOutcome ChimeSDKMessagingClient::DeleteChannel(const DeleteChannelR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   };
 
-  return DeleteChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelOutcome(result.GetResultWithOwnership()) : DeleteChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelBanOutcome ChimeSDKMessagingClient::DeleteChannelBan(const DeleteChannelBanRequest& request) const {
@@ -433,7 +449,9 @@ DeleteChannelBanOutcome ChimeSDKMessagingClient::DeleteChannelBan(const DeleteCh
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
   };
 
-  return DeleteChannelBanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelBanOutcome(result.GetResultWithOwnership())
+                            : DeleteChannelBanOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelFlowOutcome ChimeSDKMessagingClient::DeleteChannelFlow(const DeleteChannelFlowRequest& request) const {
@@ -449,7 +467,9 @@ DeleteChannelFlowOutcome ChimeSDKMessagingClient::DeleteChannelFlow(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelFlowArn());
   };
 
-  return DeleteChannelFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelFlowOutcome(result.GetResultWithOwnership())
+                            : DeleteChannelFlowOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelMembershipOutcome ChimeSDKMessagingClient::DeleteChannelMembership(const DeleteChannelMembershipRequest& request) const {
@@ -477,7 +497,9 @@ DeleteChannelMembershipOutcome ChimeSDKMessagingClient::DeleteChannelMembership(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
   };
 
-  return DeleteChannelMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelMembershipOutcome(result.GetResultWithOwnership())
+                            : DeleteChannelMembershipOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelMessageOutcome ChimeSDKMessagingClient::DeleteChannelMessage(const DeleteChannelMessageRequest& request) const {
@@ -505,7 +527,9 @@ DeleteChannelMessageOutcome ChimeSDKMessagingClient::DeleteChannelMessage(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
   };
 
-  return DeleteChannelMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelMessageOutcome(result.GetResultWithOwnership())
+                            : DeleteChannelMessageOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelModeratorOutcome ChimeSDKMessagingClient::DeleteChannelModerator(const DeleteChannelModeratorRequest& request) const {
@@ -533,7 +557,9 @@ DeleteChannelModeratorOutcome ChimeSDKMessagingClient::DeleteChannelModerator(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelModeratorArn());
   };
 
-  return DeleteChannelModeratorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelModeratorOutcome(result.GetResultWithOwnership())
+                            : DeleteChannelModeratorOutcome(std::move(result.GetError()));
 }
 
 DeleteMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::DeleteMessagingStreamingConfigurations(
@@ -551,7 +577,9 @@ DeleteMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::DeleteMes
     endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-configurations");
   };
 
-  return DeleteMessagingStreamingConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMessagingStreamingConfigurationsOutcome(result.GetResultWithOwnership())
+                            : DeleteMessagingStreamingConfigurationsOutcome(std::move(result.GetError()));
 }
 
 DescribeChannelOutcome ChimeSDKMessagingClient::DescribeChannel(const DescribeChannelRequest& request) const {
@@ -572,7 +600,9 @@ DescribeChannelOutcome ChimeSDKMessagingClient::DescribeChannel(const DescribeCh
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   };
 
-  return DescribeChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChannelOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelOutcome(std::move(result.GetError()));
 }
 
 DescribeChannelBanOutcome ChimeSDKMessagingClient::DescribeChannelBan(const DescribeChannelBanRequest& request) const {
@@ -600,7 +630,9 @@ DescribeChannelBanOutcome ChimeSDKMessagingClient::DescribeChannelBan(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
   };
 
-  return DescribeChannelBanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChannelBanOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelBanOutcome(std::move(result.GetError()));
 }
 
 DescribeChannelFlowOutcome ChimeSDKMessagingClient::DescribeChannelFlow(const DescribeChannelFlowRequest& request) const {
@@ -616,7 +648,9 @@ DescribeChannelFlowOutcome ChimeSDKMessagingClient::DescribeChannelFlow(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelFlowArn());
   };
 
-  return DescribeChannelFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChannelFlowOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelFlowOutcome(std::move(result.GetError()));
 }
 
 DescribeChannelMembershipOutcome ChimeSDKMessagingClient::DescribeChannelMembership(const DescribeChannelMembershipRequest& request) const {
@@ -644,7 +678,9 @@ DescribeChannelMembershipOutcome ChimeSDKMessagingClient::DescribeChannelMembers
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberArn());
   };
 
-  return DescribeChannelMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChannelMembershipOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelMembershipOutcome(std::move(result.GetError()));
 }
 
 DescribeChannelMembershipForAppInstanceUserOutcome ChimeSDKMessagingClient::DescribeChannelMembershipForAppInstanceUser(
@@ -674,7 +710,9 @@ DescribeChannelMembershipForAppInstanceUserOutcome ChimeSDKMessagingClient::Desc
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DescribeChannelMembershipForAppInstanceUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChannelMembershipForAppInstanceUserOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelMembershipForAppInstanceUserOutcome(std::move(result.GetError()));
 }
 
 DescribeChannelModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::DescribeChannelModeratedByAppInstanceUser(
@@ -704,7 +742,9 @@ DescribeChannelModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::Descri
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DescribeChannelModeratedByAppInstanceUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChannelModeratedByAppInstanceUserOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelModeratedByAppInstanceUserOutcome(std::move(result.GetError()));
 }
 
 DescribeChannelModeratorOutcome ChimeSDKMessagingClient::DescribeChannelModerator(const DescribeChannelModeratorRequest& request) const {
@@ -732,7 +772,9 @@ DescribeChannelModeratorOutcome ChimeSDKMessagingClient::DescribeChannelModerato
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelModeratorArn());
   };
 
-  return DescribeChannelModeratorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChannelModeratorOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelModeratorOutcome(std::move(result.GetError()));
 }
 
 DisassociateChannelFlowOutcome ChimeSDKMessagingClient::DisassociateChannelFlow(const DisassociateChannelFlowRequest& request) const {
@@ -760,7 +802,9 @@ DisassociateChannelFlowOutcome ChimeSDKMessagingClient::DisassociateChannelFlow(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelFlowArn());
   };
 
-  return DisassociateChannelFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateChannelFlowOutcome(result.GetResultWithOwnership())
+                            : DisassociateChannelFlowOutcome(std::move(result.GetError()));
 }
 
 GetChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::GetChannelMembershipPreferences(
@@ -790,7 +834,9 @@ GetChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::GetChannelMember
     endpointResolutionOutcome.GetResult().AddPathSegments("/preferences");
   };
 
-  return GetChannelMembershipPreferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChannelMembershipPreferencesOutcome(result.GetResultWithOwnership())
+                            : GetChannelMembershipPreferencesOutcome(std::move(result.GetError()));
 }
 
 GetChannelMessageOutcome ChimeSDKMessagingClient::GetChannelMessage(const GetChannelMessageRequest& request) const {
@@ -818,7 +864,9 @@ GetChannelMessageOutcome ChimeSDKMessagingClient::GetChannelMessage(const GetCha
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
   };
 
-  return GetChannelMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChannelMessageOutcome(result.GetResultWithOwnership())
+                            : GetChannelMessageOutcome(std::move(result.GetError()));
 }
 
 GetChannelMessageStatusOutcome ChimeSDKMessagingClient::GetChannelMessageStatus(const GetChannelMessageStatusRequest& request) const {
@@ -849,7 +897,9 @@ GetChannelMessageStatusOutcome ChimeSDKMessagingClient::GetChannelMessageStatus(
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetChannelMessageStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChannelMessageStatusOutcome(result.GetResultWithOwnership())
+                            : GetChannelMessageStatusOutcome(std::move(result.GetError()));
 }
 
 GetMessagingSessionEndpointOutcome ChimeSDKMessagingClient::GetMessagingSessionEndpoint(
@@ -859,7 +909,9 @@ GetMessagingSessionEndpointOutcome ChimeSDKMessagingClient::GetMessagingSessionE
     endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/messaging-session");
   };
 
-  return GetMessagingSessionEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMessagingSessionEndpointOutcome(result.GetResultWithOwnership())
+                            : GetMessagingSessionEndpointOutcome(std::move(result.GetError()));
 }
 
 GetMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::GetMessagingStreamingConfigurations(
@@ -877,7 +929,9 @@ GetMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::GetMessaging
     endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-configurations");
   };
 
-  return GetMessagingStreamingConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMessagingStreamingConfigurationsOutcome(result.GetResultWithOwnership())
+                            : GetMessagingStreamingConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListChannelBansOutcome ChimeSDKMessagingClient::ListChannelBans(const ListChannelBansRequest& request) const {
@@ -899,7 +953,9 @@ ListChannelBansOutcome ChimeSDKMessagingClient::ListChannelBans(const ListChanne
     endpointResolutionOutcome.GetResult().AddPathSegments("/bans");
   };
 
-  return ListChannelBansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelBansOutcome(result.GetResultWithOwnership())
+                            : ListChannelBansOutcome(std::move(result.GetError()));
 }
 
 ListChannelFlowsOutcome ChimeSDKMessagingClient::ListChannelFlows(const ListChannelFlowsRequest& request) const {
@@ -914,7 +970,9 @@ ListChannelFlowsOutcome ChimeSDKMessagingClient::ListChannelFlows(const ListChan
     endpointResolutionOutcome.GetResult().AddPathSegments("/channel-flows");
   };
 
-  return ListChannelFlowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelFlowsOutcome(result.GetResultWithOwnership())
+                            : ListChannelFlowsOutcome(std::move(result.GetError()));
 }
 
 ListChannelMembershipsOutcome ChimeSDKMessagingClient::ListChannelMemberships(const ListChannelMembershipsRequest& request) const {
@@ -936,7 +994,9 @@ ListChannelMembershipsOutcome ChimeSDKMessagingClient::ListChannelMemberships(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
   };
 
-  return ListChannelMembershipsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelMembershipsOutcome(result.GetResultWithOwnership())
+                            : ListChannelMembershipsOutcome(std::move(result.GetError()));
 }
 
 ListChannelMembershipsForAppInstanceUserOutcome ChimeSDKMessagingClient::ListChannelMembershipsForAppInstanceUser(
@@ -955,7 +1015,9 @@ ListChannelMembershipsForAppInstanceUserOutcome ChimeSDKMessagingClient::ListCha
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListChannelMembershipsForAppInstanceUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelMembershipsForAppInstanceUserOutcome(result.GetResultWithOwnership())
+                            : ListChannelMembershipsForAppInstanceUserOutcome(std::move(result.GetError()));
 }
 
 ListChannelMessagesOutcome ChimeSDKMessagingClient::ListChannelMessages(const ListChannelMessagesRequest& request) const {
@@ -977,7 +1039,9 @@ ListChannelMessagesOutcome ChimeSDKMessagingClient::ListChannelMessages(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/messages");
   };
 
-  return ListChannelMessagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelMessagesOutcome(result.GetResultWithOwnership())
+                            : ListChannelMessagesOutcome(std::move(result.GetError()));
 }
 
 ListChannelModeratorsOutcome ChimeSDKMessagingClient::ListChannelModerators(const ListChannelModeratorsRequest& request) const {
@@ -999,7 +1063,9 @@ ListChannelModeratorsOutcome ChimeSDKMessagingClient::ListChannelModerators(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/moderators");
   };
 
-  return ListChannelModeratorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelModeratorsOutcome(result.GetResultWithOwnership())
+                            : ListChannelModeratorsOutcome(std::move(result.GetError()));
 }
 
 ListChannelsOutcome ChimeSDKMessagingClient::ListChannels(const ListChannelsRequest& request) const {
@@ -1019,7 +1085,8 @@ ListChannelsOutcome ChimeSDKMessagingClient::ListChannels(const ListChannelsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   };
 
-  return ListChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
 }
 
 ListChannelsAssociatedWithChannelFlowOutcome ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlow(
@@ -1038,7 +1105,9 @@ ListChannelsAssociatedWithChannelFlowOutcome ChimeSDKMessagingClient::ListChanne
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListChannelsAssociatedWithChannelFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelsAssociatedWithChannelFlowOutcome(result.GetResultWithOwnership())
+                            : ListChannelsAssociatedWithChannelFlowOutcome(std::move(result.GetError()));
 }
 
 ListChannelsModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUser(
@@ -1057,7 +1126,9 @@ ListChannelsModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::ListChann
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListChannelsModeratedByAppInstanceUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelsModeratedByAppInstanceUserOutcome(result.GetResultWithOwnership())
+                            : ListChannelsModeratedByAppInstanceUserOutcome(std::move(result.GetError()));
 }
 
 ListSubChannelsOutcome ChimeSDKMessagingClient::ListSubChannels(const ListSubChannelsRequest& request) const {
@@ -1079,7 +1150,9 @@ ListSubChannelsOutcome ChimeSDKMessagingClient::ListSubChannels(const ListSubCha
     endpointResolutionOutcome.GetResult().AddPathSegments("/subchannels");
   };
 
-  return ListSubChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSubChannelsOutcome(result.GetResultWithOwnership())
+                            : ListSubChannelsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ChimeSDKMessagingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1094,7 +1167,9 @@ ListTagsForResourceOutcome ChimeSDKMessagingClient::ListTagsForResource(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutChannelExpirationSettingsOutcome ChimeSDKMessagingClient::PutChannelExpirationSettings(
@@ -1112,7 +1187,9 @@ PutChannelExpirationSettingsOutcome ChimeSDKMessagingClient::PutChannelExpiratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/expiration-settings");
   };
 
-  return PutChannelExpirationSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutChannelExpirationSettingsOutcome(result.GetResultWithOwnership())
+                            : PutChannelExpirationSettingsOutcome(std::move(result.GetError()));
 }
 
 PutChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::PutChannelMembershipPreferences(
@@ -1142,7 +1219,9 @@ PutChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::PutChannelMember
     endpointResolutionOutcome.GetResult().AddPathSegments("/preferences");
   };
 
-  return PutChannelMembershipPreferencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutChannelMembershipPreferencesOutcome(result.GetResultWithOwnership())
+                            : PutChannelMembershipPreferencesOutcome(std::move(result.GetError()));
 }
 
 PutMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::PutMessagingStreamingConfigurations(
@@ -1160,7 +1239,9 @@ PutMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::PutMessaging
     endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-configurations");
   };
 
-  return PutMessagingStreamingConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutMessagingStreamingConfigurationsOutcome(result.GetResultWithOwnership())
+                            : PutMessagingStreamingConfigurationsOutcome(std::move(result.GetError()));
 }
 
 RedactChannelMessageOutcome ChimeSDKMessagingClient::RedactChannelMessage(const RedactChannelMessageRequest& request) const {
@@ -1191,7 +1272,9 @@ RedactChannelMessageOutcome ChimeSDKMessagingClient::RedactChannelMessage(const 
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return RedactChannelMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RedactChannelMessageOutcome(result.GetResultWithOwnership())
+                            : RedactChannelMessageOutcome(std::move(result.GetError()));
 }
 
 SearchChannelsOutcome ChimeSDKMessagingClient::SearchChannels(const SearchChannelsRequest& request) const {
@@ -1203,7 +1286,8 @@ SearchChannelsOutcome ChimeSDKMessagingClient::SearchChannels(const SearchChanne
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return SearchChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchChannelsOutcome(result.GetResultWithOwnership()) : SearchChannelsOutcome(std::move(result.GetError()));
 }
 
 SendChannelMessageOutcome ChimeSDKMessagingClient::SendChannelMessage(const SendChannelMessageRequest& request) const {
@@ -1225,7 +1309,9 @@ SendChannelMessageOutcome ChimeSDKMessagingClient::SendChannelMessage(const Send
     endpointResolutionOutcome.GetResult().AddPathSegments("/messages");
   };
 
-  return SendChannelMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendChannelMessageOutcome(result.GetResultWithOwnership())
+                            : SendChannelMessageOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ChimeSDKMessagingClient::TagResource(const TagResourceRequest& request) const {
@@ -1237,7 +1323,8 @@ TagResourceOutcome ChimeSDKMessagingClient::TagResource(const TagResourceRequest
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ChimeSDKMessagingClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1249,7 +1336,8 @@ UntagResourceOutcome ChimeSDKMessagingClient::UntagResource(const UntagResourceR
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelOutcome ChimeSDKMessagingClient::UpdateChannel(const UpdateChannelRequest& request) const {
@@ -1270,7 +1358,8 @@ UpdateChannelOutcome ChimeSDKMessagingClient::UpdateChannel(const UpdateChannelR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   };
 
-  return UpdateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelOutcome(result.GetResultWithOwnership()) : UpdateChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelFlowOutcome ChimeSDKMessagingClient::UpdateChannelFlow(const UpdateChannelFlowRequest& request) const {
@@ -1286,7 +1375,9 @@ UpdateChannelFlowOutcome ChimeSDKMessagingClient::UpdateChannelFlow(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelFlowArn());
   };
 
-  return UpdateChannelFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelFlowOutcome(result.GetResultWithOwnership())
+                            : UpdateChannelFlowOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelMessageOutcome ChimeSDKMessagingClient::UpdateChannelMessage(const UpdateChannelMessageRequest& request) const {
@@ -1314,7 +1405,9 @@ UpdateChannelMessageOutcome ChimeSDKMessagingClient::UpdateChannelMessage(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
   };
 
-  return UpdateChannelMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelMessageOutcome(result.GetResultWithOwnership())
+                            : UpdateChannelMessageOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelReadMarkerOutcome ChimeSDKMessagingClient::UpdateChannelReadMarker(const UpdateChannelReadMarkerRequest& request) const {
@@ -1336,5 +1429,7 @@ UpdateChannelReadMarkerOutcome ChimeSDKMessagingClient::UpdateChannelReadMarker(
     endpointResolutionOutcome.GetResult().AddPathSegments("/readMarker");
   };
 
-  return UpdateChannelReadMarkerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelReadMarkerOutcome(result.GetResultWithOwnership())
+                            : UpdateChannelReadMarkerOutcome(std::move(result.GetError()));
 }

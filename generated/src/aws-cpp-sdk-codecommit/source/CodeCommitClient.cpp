@@ -252,338 +252,477 @@ CodeCommitClient::InvokeOperationOutcome CodeCommitClient::InvokeServiceOperatio
 
 AssociateApprovalRuleTemplateWithRepositoryOutcome CodeCommitClient::AssociateApprovalRuleTemplateWithRepository(
     const AssociateApprovalRuleTemplateWithRepositoryRequest& request) const {
-  return AssociateApprovalRuleTemplateWithRepositoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateApprovalRuleTemplateWithRepositoryOutcome(result.GetResultWithOwnership())
+                            : AssociateApprovalRuleTemplateWithRepositoryOutcome(std::move(result.GetError()));
 }
 
 BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome CodeCommitClient::BatchAssociateApprovalRuleTemplateWithRepositories(
     const BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request) const {
-  return BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome(std::move(result.GetError()));
 }
 
 BatchDescribeMergeConflictsOutcome CodeCommitClient::BatchDescribeMergeConflicts(const BatchDescribeMergeConflictsRequest& request) const {
-  return BatchDescribeMergeConflictsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDescribeMergeConflictsOutcome(result.GetResultWithOwnership())
+                            : BatchDescribeMergeConflictsOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome CodeCommitClient::BatchDisassociateApprovalRuleTemplateFromRepositories(
     const BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request) const {
-  return BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome(std::move(result.GetError()));
 }
 
 BatchGetCommitsOutcome CodeCommitClient::BatchGetCommits(const BatchGetCommitsRequest& request) const {
-  return BatchGetCommitsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCommitsOutcome(result.GetResultWithOwnership())
+                            : BatchGetCommitsOutcome(std::move(result.GetError()));
 }
 
 BatchGetRepositoriesOutcome CodeCommitClient::BatchGetRepositories(const BatchGetRepositoriesRequest& request) const {
-  return BatchGetRepositoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetRepositoriesOutcome(result.GetResultWithOwnership())
+                            : BatchGetRepositoriesOutcome(std::move(result.GetError()));
 }
 
 CreateApprovalRuleTemplateOutcome CodeCommitClient::CreateApprovalRuleTemplate(const CreateApprovalRuleTemplateRequest& request) const {
-  return CreateApprovalRuleTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApprovalRuleTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateApprovalRuleTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateBranchOutcome CodeCommitClient::CreateBranch(const CreateBranchRequest& request) const {
-  return CreateBranchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBranchOutcome(result.GetResultWithOwnership()) : CreateBranchOutcome(std::move(result.GetError()));
 }
 
 CreateCommitOutcome CodeCommitClient::CreateCommit(const CreateCommitRequest& request) const {
-  return CreateCommitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCommitOutcome(result.GetResultWithOwnership()) : CreateCommitOutcome(std::move(result.GetError()));
 }
 
 CreatePullRequestOutcome CodeCommitClient::CreatePullRequest(const CreatePullRequestRequest& request) const {
-  return CreatePullRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePullRequestOutcome(result.GetResultWithOwnership())
+                            : CreatePullRequestOutcome(std::move(result.GetError()));
 }
 
 CreatePullRequestApprovalRuleOutcome CodeCommitClient::CreatePullRequestApprovalRule(
     const CreatePullRequestApprovalRuleRequest& request) const {
-  return CreatePullRequestApprovalRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePullRequestApprovalRuleOutcome(result.GetResultWithOwnership())
+                            : CreatePullRequestApprovalRuleOutcome(std::move(result.GetError()));
 }
 
 CreateRepositoryOutcome CodeCommitClient::CreateRepository(const CreateRepositoryRequest& request) const {
-  return CreateRepositoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRepositoryOutcome(result.GetResultWithOwnership())
+                            : CreateRepositoryOutcome(std::move(result.GetError()));
 }
 
 CreateUnreferencedMergeCommitOutcome CodeCommitClient::CreateUnreferencedMergeCommit(
     const CreateUnreferencedMergeCommitRequest& request) const {
-  return CreateUnreferencedMergeCommitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUnreferencedMergeCommitOutcome(result.GetResultWithOwnership())
+                            : CreateUnreferencedMergeCommitOutcome(std::move(result.GetError()));
 }
 
 DeleteApprovalRuleTemplateOutcome CodeCommitClient::DeleteApprovalRuleTemplate(const DeleteApprovalRuleTemplateRequest& request) const {
-  return DeleteApprovalRuleTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApprovalRuleTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteApprovalRuleTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteBranchOutcome CodeCommitClient::DeleteBranch(const DeleteBranchRequest& request) const {
-  return DeleteBranchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBranchOutcome(result.GetResultWithOwnership()) : DeleteBranchOutcome(std::move(result.GetError()));
 }
 
 DeleteCommentContentOutcome CodeCommitClient::DeleteCommentContent(const DeleteCommentContentRequest& request) const {
-  return DeleteCommentContentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCommentContentOutcome(result.GetResultWithOwnership())
+                            : DeleteCommentContentOutcome(std::move(result.GetError()));
 }
 
 DeleteFileOutcome CodeCommitClient::DeleteFile(const DeleteFileRequest& request) const {
-  return DeleteFileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFileOutcome(result.GetResultWithOwnership()) : DeleteFileOutcome(std::move(result.GetError()));
 }
 
 DeletePullRequestApprovalRuleOutcome CodeCommitClient::DeletePullRequestApprovalRule(
     const DeletePullRequestApprovalRuleRequest& request) const {
-  return DeletePullRequestApprovalRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePullRequestApprovalRuleOutcome(result.GetResultWithOwnership())
+                            : DeletePullRequestApprovalRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteRepositoryOutcome CodeCommitClient::DeleteRepository(const DeleteRepositoryRequest& request) const {
-  return DeleteRepositoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRepositoryOutcome(result.GetResultWithOwnership())
+                            : DeleteRepositoryOutcome(std::move(result.GetError()));
 }
 
 DescribeMergeConflictsOutcome CodeCommitClient::DescribeMergeConflicts(const DescribeMergeConflictsRequest& request) const {
-  return DescribeMergeConflictsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMergeConflictsOutcome(result.GetResultWithOwnership())
+                            : DescribeMergeConflictsOutcome(std::move(result.GetError()));
 }
 
 DescribePullRequestEventsOutcome CodeCommitClient::DescribePullRequestEvents(const DescribePullRequestEventsRequest& request) const {
-  return DescribePullRequestEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePullRequestEventsOutcome(result.GetResultWithOwnership())
+                            : DescribePullRequestEventsOutcome(std::move(result.GetError()));
 }
 
 DisassociateApprovalRuleTemplateFromRepositoryOutcome CodeCommitClient::DisassociateApprovalRuleTemplateFromRepository(
     const DisassociateApprovalRuleTemplateFromRepositoryRequest& request) const {
-  return DisassociateApprovalRuleTemplateFromRepositoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateApprovalRuleTemplateFromRepositoryOutcome(result.GetResultWithOwnership())
+                            : DisassociateApprovalRuleTemplateFromRepositoryOutcome(std::move(result.GetError()));
 }
 
 EvaluatePullRequestApprovalRulesOutcome CodeCommitClient::EvaluatePullRequestApprovalRules(
     const EvaluatePullRequestApprovalRulesRequest& request) const {
-  return EvaluatePullRequestApprovalRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EvaluatePullRequestApprovalRulesOutcome(result.GetResultWithOwnership())
+                            : EvaluatePullRequestApprovalRulesOutcome(std::move(result.GetError()));
 }
 
 GetApprovalRuleTemplateOutcome CodeCommitClient::GetApprovalRuleTemplate(const GetApprovalRuleTemplateRequest& request) const {
-  return GetApprovalRuleTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetApprovalRuleTemplateOutcome(result.GetResultWithOwnership())
+                            : GetApprovalRuleTemplateOutcome(std::move(result.GetError()));
 }
 
 GetBlobOutcome CodeCommitClient::GetBlob(const GetBlobRequest& request) const {
-  return GetBlobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBlobOutcome(result.GetResultWithOwnership()) : GetBlobOutcome(std::move(result.GetError()));
 }
 
 GetBranchOutcome CodeCommitClient::GetBranch(const GetBranchRequest& request) const {
-  return GetBranchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBranchOutcome(result.GetResultWithOwnership()) : GetBranchOutcome(std::move(result.GetError()));
 }
 
 GetCommentOutcome CodeCommitClient::GetComment(const GetCommentRequest& request) const {
-  return GetCommentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCommentOutcome(result.GetResultWithOwnership()) : GetCommentOutcome(std::move(result.GetError()));
 }
 
 GetCommentReactionsOutcome CodeCommitClient::GetCommentReactions(const GetCommentReactionsRequest& request) const {
-  return GetCommentReactionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCommentReactionsOutcome(result.GetResultWithOwnership())
+                            : GetCommentReactionsOutcome(std::move(result.GetError()));
 }
 
 GetCommentsForComparedCommitOutcome CodeCommitClient::GetCommentsForComparedCommit(
     const GetCommentsForComparedCommitRequest& request) const {
-  return GetCommentsForComparedCommitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCommentsForComparedCommitOutcome(result.GetResultWithOwnership())
+                            : GetCommentsForComparedCommitOutcome(std::move(result.GetError()));
 }
 
 GetCommentsForPullRequestOutcome CodeCommitClient::GetCommentsForPullRequest(const GetCommentsForPullRequestRequest& request) const {
-  return GetCommentsForPullRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCommentsForPullRequestOutcome(result.GetResultWithOwnership())
+                            : GetCommentsForPullRequestOutcome(std::move(result.GetError()));
 }
 
 GetCommitOutcome CodeCommitClient::GetCommit(const GetCommitRequest& request) const {
-  return GetCommitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCommitOutcome(result.GetResultWithOwnership()) : GetCommitOutcome(std::move(result.GetError()));
 }
 
 GetDifferencesOutcome CodeCommitClient::GetDifferences(const GetDifferencesRequest& request) const {
-  return GetDifferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDifferencesOutcome(result.GetResultWithOwnership()) : GetDifferencesOutcome(std::move(result.GetError()));
 }
 
 GetFileOutcome CodeCommitClient::GetFile(const GetFileRequest& request) const {
-  return GetFileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFileOutcome(result.GetResultWithOwnership()) : GetFileOutcome(std::move(result.GetError()));
 }
 
 GetFolderOutcome CodeCommitClient::GetFolder(const GetFolderRequest& request) const {
-  return GetFolderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFolderOutcome(result.GetResultWithOwnership()) : GetFolderOutcome(std::move(result.GetError()));
 }
 
 GetMergeCommitOutcome CodeCommitClient::GetMergeCommit(const GetMergeCommitRequest& request) const {
-  return GetMergeCommitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMergeCommitOutcome(result.GetResultWithOwnership()) : GetMergeCommitOutcome(std::move(result.GetError()));
 }
 
 GetMergeConflictsOutcome CodeCommitClient::GetMergeConflicts(const GetMergeConflictsRequest& request) const {
-  return GetMergeConflictsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMergeConflictsOutcome(result.GetResultWithOwnership())
+                            : GetMergeConflictsOutcome(std::move(result.GetError()));
 }
 
 GetMergeOptionsOutcome CodeCommitClient::GetMergeOptions(const GetMergeOptionsRequest& request) const {
-  return GetMergeOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMergeOptionsOutcome(result.GetResultWithOwnership())
+                            : GetMergeOptionsOutcome(std::move(result.GetError()));
 }
 
 GetPullRequestOutcome CodeCommitClient::GetPullRequest(const GetPullRequestRequest& request) const {
-  return GetPullRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPullRequestOutcome(result.GetResultWithOwnership()) : GetPullRequestOutcome(std::move(result.GetError()));
 }
 
 GetPullRequestApprovalStatesOutcome CodeCommitClient::GetPullRequestApprovalStates(
     const GetPullRequestApprovalStatesRequest& request) const {
-  return GetPullRequestApprovalStatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPullRequestApprovalStatesOutcome(result.GetResultWithOwnership())
+                            : GetPullRequestApprovalStatesOutcome(std::move(result.GetError()));
 }
 
 GetPullRequestOverrideStateOutcome CodeCommitClient::GetPullRequestOverrideState(const GetPullRequestOverrideStateRequest& request) const {
-  return GetPullRequestOverrideStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPullRequestOverrideStateOutcome(result.GetResultWithOwnership())
+                            : GetPullRequestOverrideStateOutcome(std::move(result.GetError()));
 }
 
 GetRepositoryOutcome CodeCommitClient::GetRepository(const GetRepositoryRequest& request) const {
-  return GetRepositoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRepositoryOutcome(result.GetResultWithOwnership()) : GetRepositoryOutcome(std::move(result.GetError()));
 }
 
 GetRepositoryTriggersOutcome CodeCommitClient::GetRepositoryTriggers(const GetRepositoryTriggersRequest& request) const {
-  return GetRepositoryTriggersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRepositoryTriggersOutcome(result.GetResultWithOwnership())
+                            : GetRepositoryTriggersOutcome(std::move(result.GetError()));
 }
 
 ListApprovalRuleTemplatesOutcome CodeCommitClient::ListApprovalRuleTemplates(const ListApprovalRuleTemplatesRequest& request) const {
-  return ListApprovalRuleTemplatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApprovalRuleTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListApprovalRuleTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListAssociatedApprovalRuleTemplatesForRepositoryOutcome CodeCommitClient::ListAssociatedApprovalRuleTemplatesForRepository(
     const ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request) const {
-  return ListAssociatedApprovalRuleTemplatesForRepositoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssociatedApprovalRuleTemplatesForRepositoryOutcome(result.GetResultWithOwnership())
+                            : ListAssociatedApprovalRuleTemplatesForRepositoryOutcome(std::move(result.GetError()));
 }
 
 ListBranchesOutcome CodeCommitClient::ListBranches(const ListBranchesRequest& request) const {
-  return ListBranchesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBranchesOutcome(result.GetResultWithOwnership()) : ListBranchesOutcome(std::move(result.GetError()));
 }
 
 ListFileCommitHistoryOutcome CodeCommitClient::ListFileCommitHistory(const ListFileCommitHistoryRequest& request) const {
-  return ListFileCommitHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFileCommitHistoryOutcome(result.GetResultWithOwnership())
+                            : ListFileCommitHistoryOutcome(std::move(result.GetError()));
 }
 
 ListPullRequestsOutcome CodeCommitClient::ListPullRequests(const ListPullRequestsRequest& request) const {
-  return ListPullRequestsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPullRequestsOutcome(result.GetResultWithOwnership())
+                            : ListPullRequestsOutcome(std::move(result.GetError()));
 }
 
 ListRepositoriesOutcome CodeCommitClient::ListRepositories(const ListRepositoriesRequest& request) const {
-  return ListRepositoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRepositoriesOutcome(result.GetResultWithOwnership())
+                            : ListRepositoriesOutcome(std::move(result.GetError()));
 }
 
 ListRepositoriesForApprovalRuleTemplateOutcome CodeCommitClient::ListRepositoriesForApprovalRuleTemplate(
     const ListRepositoriesForApprovalRuleTemplateRequest& request) const {
-  return ListRepositoriesForApprovalRuleTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRepositoriesForApprovalRuleTemplateOutcome(result.GetResultWithOwnership())
+                            : ListRepositoriesForApprovalRuleTemplateOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CodeCommitClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 MergeBranchesByFastForwardOutcome CodeCommitClient::MergeBranchesByFastForward(const MergeBranchesByFastForwardRequest& request) const {
-  return MergeBranchesByFastForwardOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MergeBranchesByFastForwardOutcome(result.GetResultWithOwnership())
+                            : MergeBranchesByFastForwardOutcome(std::move(result.GetError()));
 }
 
 MergeBranchesBySquashOutcome CodeCommitClient::MergeBranchesBySquash(const MergeBranchesBySquashRequest& request) const {
-  return MergeBranchesBySquashOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MergeBranchesBySquashOutcome(result.GetResultWithOwnership())
+                            : MergeBranchesBySquashOutcome(std::move(result.GetError()));
 }
 
 MergeBranchesByThreeWayOutcome CodeCommitClient::MergeBranchesByThreeWay(const MergeBranchesByThreeWayRequest& request) const {
-  return MergeBranchesByThreeWayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MergeBranchesByThreeWayOutcome(result.GetResultWithOwnership())
+                            : MergeBranchesByThreeWayOutcome(std::move(result.GetError()));
 }
 
 MergePullRequestByFastForwardOutcome CodeCommitClient::MergePullRequestByFastForward(
     const MergePullRequestByFastForwardRequest& request) const {
-  return MergePullRequestByFastForwardOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MergePullRequestByFastForwardOutcome(result.GetResultWithOwnership())
+                            : MergePullRequestByFastForwardOutcome(std::move(result.GetError()));
 }
 
 MergePullRequestBySquashOutcome CodeCommitClient::MergePullRequestBySquash(const MergePullRequestBySquashRequest& request) const {
-  return MergePullRequestBySquashOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MergePullRequestBySquashOutcome(result.GetResultWithOwnership())
+                            : MergePullRequestBySquashOutcome(std::move(result.GetError()));
 }
 
 MergePullRequestByThreeWayOutcome CodeCommitClient::MergePullRequestByThreeWay(const MergePullRequestByThreeWayRequest& request) const {
-  return MergePullRequestByThreeWayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MergePullRequestByThreeWayOutcome(result.GetResultWithOwnership())
+                            : MergePullRequestByThreeWayOutcome(std::move(result.GetError()));
 }
 
 OverridePullRequestApprovalRulesOutcome CodeCommitClient::OverridePullRequestApprovalRules(
     const OverridePullRequestApprovalRulesRequest& request) const {
-  return OverridePullRequestApprovalRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? OverridePullRequestApprovalRulesOutcome(result.GetResultWithOwnership())
+                            : OverridePullRequestApprovalRulesOutcome(std::move(result.GetError()));
 }
 
 PostCommentForComparedCommitOutcome CodeCommitClient::PostCommentForComparedCommit(
     const PostCommentForComparedCommitRequest& request) const {
-  return PostCommentForComparedCommitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PostCommentForComparedCommitOutcome(result.GetResultWithOwnership())
+                            : PostCommentForComparedCommitOutcome(std::move(result.GetError()));
 }
 
 PostCommentForPullRequestOutcome CodeCommitClient::PostCommentForPullRequest(const PostCommentForPullRequestRequest& request) const {
-  return PostCommentForPullRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PostCommentForPullRequestOutcome(result.GetResultWithOwnership())
+                            : PostCommentForPullRequestOutcome(std::move(result.GetError()));
 }
 
 PostCommentReplyOutcome CodeCommitClient::PostCommentReply(const PostCommentReplyRequest& request) const {
-  return PostCommentReplyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PostCommentReplyOutcome(result.GetResultWithOwnership())
+                            : PostCommentReplyOutcome(std::move(result.GetError()));
 }
 
 PutCommentReactionOutcome CodeCommitClient::PutCommentReaction(const PutCommentReactionRequest& request) const {
-  return PutCommentReactionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutCommentReactionOutcome(result.GetResultWithOwnership())
+                            : PutCommentReactionOutcome(std::move(result.GetError()));
 }
 
 PutFileOutcome CodeCommitClient::PutFile(const PutFileRequest& request) const {
-  return PutFileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutFileOutcome(result.GetResultWithOwnership()) : PutFileOutcome(std::move(result.GetError()));
 }
 
 PutRepositoryTriggersOutcome CodeCommitClient::PutRepositoryTriggers(const PutRepositoryTriggersRequest& request) const {
-  return PutRepositoryTriggersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRepositoryTriggersOutcome(result.GetResultWithOwnership())
+                            : PutRepositoryTriggersOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CodeCommitClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestRepositoryTriggersOutcome CodeCommitClient::TestRepositoryTriggers(const TestRepositoryTriggersRequest& request) const {
-  return TestRepositoryTriggersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestRepositoryTriggersOutcome(result.GetResultWithOwnership())
+                            : TestRepositoryTriggersOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CodeCommitClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApprovalRuleTemplateContentOutcome CodeCommitClient::UpdateApprovalRuleTemplateContent(
     const UpdateApprovalRuleTemplateContentRequest& request) const {
-  return UpdateApprovalRuleTemplateContentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApprovalRuleTemplateContentOutcome(result.GetResultWithOwnership())
+                            : UpdateApprovalRuleTemplateContentOutcome(std::move(result.GetError()));
 }
 
 UpdateApprovalRuleTemplateDescriptionOutcome CodeCommitClient::UpdateApprovalRuleTemplateDescription(
     const UpdateApprovalRuleTemplateDescriptionRequest& request) const {
-  return UpdateApprovalRuleTemplateDescriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApprovalRuleTemplateDescriptionOutcome(result.GetResultWithOwnership())
+                            : UpdateApprovalRuleTemplateDescriptionOutcome(std::move(result.GetError()));
 }
 
 UpdateApprovalRuleTemplateNameOutcome CodeCommitClient::UpdateApprovalRuleTemplateName(
     const UpdateApprovalRuleTemplateNameRequest& request) const {
-  return UpdateApprovalRuleTemplateNameOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApprovalRuleTemplateNameOutcome(result.GetResultWithOwnership())
+                            : UpdateApprovalRuleTemplateNameOutcome(std::move(result.GetError()));
 }
 
 UpdateCommentOutcome CodeCommitClient::UpdateComment(const UpdateCommentRequest& request) const {
-  return UpdateCommentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCommentOutcome(result.GetResultWithOwnership()) : UpdateCommentOutcome(std::move(result.GetError()));
 }
 
 UpdateDefaultBranchOutcome CodeCommitClient::UpdateDefaultBranch(const UpdateDefaultBranchRequest& request) const {
-  return UpdateDefaultBranchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDefaultBranchOutcome(result.GetResultWithOwnership())
+                            : UpdateDefaultBranchOutcome(std::move(result.GetError()));
 }
 
 UpdatePullRequestApprovalRuleContentOutcome CodeCommitClient::UpdatePullRequestApprovalRuleContent(
     const UpdatePullRequestApprovalRuleContentRequest& request) const {
-  return UpdatePullRequestApprovalRuleContentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePullRequestApprovalRuleContentOutcome(result.GetResultWithOwnership())
+                            : UpdatePullRequestApprovalRuleContentOutcome(std::move(result.GetError()));
 }
 
 UpdatePullRequestApprovalStateOutcome CodeCommitClient::UpdatePullRequestApprovalState(
     const UpdatePullRequestApprovalStateRequest& request) const {
-  return UpdatePullRequestApprovalStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePullRequestApprovalStateOutcome(result.GetResultWithOwnership())
+                            : UpdatePullRequestApprovalStateOutcome(std::move(result.GetError()));
 }
 
 UpdatePullRequestDescriptionOutcome CodeCommitClient::UpdatePullRequestDescription(
     const UpdatePullRequestDescriptionRequest& request) const {
-  return UpdatePullRequestDescriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePullRequestDescriptionOutcome(result.GetResultWithOwnership())
+                            : UpdatePullRequestDescriptionOutcome(std::move(result.GetError()));
 }
 
 UpdatePullRequestStatusOutcome CodeCommitClient::UpdatePullRequestStatus(const UpdatePullRequestStatusRequest& request) const {
-  return UpdatePullRequestStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePullRequestStatusOutcome(result.GetResultWithOwnership())
+                            : UpdatePullRequestStatusOutcome(std::move(result.GetError()));
 }
 
 UpdatePullRequestTitleOutcome CodeCommitClient::UpdatePullRequestTitle(const UpdatePullRequestTitleRequest& request) const {
-  return UpdatePullRequestTitleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePullRequestTitleOutcome(result.GetResultWithOwnership())
+                            : UpdatePullRequestTitleOutcome(std::move(result.GetError()));
 }
 
 UpdateRepositoryDescriptionOutcome CodeCommitClient::UpdateRepositoryDescription(const UpdateRepositoryDescriptionRequest& request) const {
-  return UpdateRepositoryDescriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRepositoryDescriptionOutcome(result.GetResultWithOwnership())
+                            : UpdateRepositoryDescriptionOutcome(std::move(result.GetError()));
 }
 
 UpdateRepositoryEncryptionKeyOutcome CodeCommitClient::UpdateRepositoryEncryptionKey(
     const UpdateRepositoryEncryptionKeyRequest& request) const {
-  return UpdateRepositoryEncryptionKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRepositoryEncryptionKeyOutcome(result.GetResultWithOwnership())
+                            : UpdateRepositoryEncryptionKeyOutcome(std::move(result.GetError()));
 }
 
 UpdateRepositoryNameOutcome CodeCommitClient::UpdateRepositoryName(const UpdateRepositoryNameRequest& request) const {
-  return UpdateRepositoryNameOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRepositoryNameOutcome(result.GetResultWithOwnership())
+                            : UpdateRepositoryNameOutcome(std::move(result.GetError()));
 }

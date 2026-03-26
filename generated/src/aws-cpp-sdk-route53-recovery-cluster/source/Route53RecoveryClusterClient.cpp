@@ -185,19 +185,27 @@ Route53RecoveryClusterClient::InvokeOperationOutcome Route53RecoveryClusterClien
 }
 
 GetRoutingControlStateOutcome Route53RecoveryClusterClient::GetRoutingControlState(const GetRoutingControlStateRequest& request) const {
-  return GetRoutingControlStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRoutingControlStateOutcome(result.GetResultWithOwnership())
+                            : GetRoutingControlStateOutcome(std::move(result.GetError()));
 }
 
 ListRoutingControlsOutcome Route53RecoveryClusterClient::ListRoutingControls(const ListRoutingControlsRequest& request) const {
-  return ListRoutingControlsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRoutingControlsOutcome(result.GetResultWithOwnership())
+                            : ListRoutingControlsOutcome(std::move(result.GetError()));
 }
 
 UpdateRoutingControlStateOutcome Route53RecoveryClusterClient::UpdateRoutingControlState(
     const UpdateRoutingControlStateRequest& request) const {
-  return UpdateRoutingControlStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoutingControlStateOutcome(result.GetResultWithOwnership())
+                            : UpdateRoutingControlStateOutcome(std::move(result.GetError()));
 }
 
 UpdateRoutingControlStatesOutcome Route53RecoveryClusterClient::UpdateRoutingControlStates(
     const UpdateRoutingControlStatesRequest& request) const {
-  return UpdateRoutingControlStatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoutingControlStatesOutcome(result.GetResultWithOwnership())
+                            : UpdateRoutingControlStatesOutcome(std::move(result.GetError()));
 }

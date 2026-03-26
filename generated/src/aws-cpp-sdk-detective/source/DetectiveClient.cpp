@@ -209,7 +209,9 @@ AcceptInvitationOutcome DetectiveClient::AcceptInvitation(const AcceptInvitation
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitation");
   };
 
-  return AcceptInvitationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AcceptInvitationOutcome(result.GetResultWithOwnership())
+                            : AcceptInvitationOutcome(std::move(result.GetError()));
 }
 
 BatchGetGraphMemberDatasourcesOutcome DetectiveClient::BatchGetGraphMemberDatasources(
@@ -219,7 +221,9 @@ BatchGetGraphMemberDatasourcesOutcome DetectiveClient::BatchGetGraphMemberDataso
     endpointResolutionOutcome.GetResult().AddPathSegments("/graph/datasources/get");
   };
 
-  return BatchGetGraphMemberDatasourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetGraphMemberDatasourcesOutcome(result.GetResultWithOwnership())
+                            : BatchGetGraphMemberDatasourcesOutcome(std::move(result.GetError()));
 }
 
 BatchGetMembershipDatasourcesOutcome DetectiveClient::BatchGetMembershipDatasources(
@@ -229,7 +233,9 @@ BatchGetMembershipDatasourcesOutcome DetectiveClient::BatchGetMembershipDatasour
     endpointResolutionOutcome.GetResult().AddPathSegments("/membership/datasources/get");
   };
 
-  return BatchGetMembershipDatasourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetMembershipDatasourcesOutcome(result.GetResultWithOwnership())
+                            : BatchGetMembershipDatasourcesOutcome(std::move(result.GetError()));
 }
 
 CreateGraphOutcome DetectiveClient::CreateGraph(const CreateGraphRequest& request) const {
@@ -238,7 +244,8 @@ CreateGraphOutcome DetectiveClient::CreateGraph(const CreateGraphRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/graph");
   };
 
-  return CreateGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGraphOutcome(result.GetResultWithOwnership()) : CreateGraphOutcome(std::move(result.GetError()));
 }
 
 CreateMembersOutcome DetectiveClient::CreateMembers(const CreateMembersRequest& request) const {
@@ -247,7 +254,8 @@ CreateMembersOutcome DetectiveClient::CreateMembers(const CreateMembersRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/graph/members");
   };
 
-  return CreateMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMembersOutcome(result.GetResultWithOwnership()) : CreateMembersOutcome(std::move(result.GetError()));
 }
 
 DeleteGraphOutcome DetectiveClient::DeleteGraph(const DeleteGraphRequest& request) const {
@@ -256,7 +264,8 @@ DeleteGraphOutcome DetectiveClient::DeleteGraph(const DeleteGraphRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/graph/removal");
   };
 
-  return DeleteGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGraphOutcome(result.GetResultWithOwnership()) : DeleteGraphOutcome(std::move(result.GetError()));
 }
 
 DeleteMembersOutcome DetectiveClient::DeleteMembers(const DeleteMembersRequest& request) const {
@@ -265,7 +274,8 @@ DeleteMembersOutcome DetectiveClient::DeleteMembers(const DeleteMembersRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/graph/members/removal");
   };
 
-  return DeleteMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMembersOutcome(result.GetResultWithOwnership()) : DeleteMembersOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationConfigurationOutcome DetectiveClient::DescribeOrganizationConfiguration(
@@ -275,7 +285,9 @@ DescribeOrganizationConfigurationOutcome DetectiveClient::DescribeOrganizationCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/orgs/describeOrganizationConfiguration");
   };
 
-  return DescribeOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DisableOrganizationAdminAccountOutcome DetectiveClient::DisableOrganizationAdminAccount(
@@ -285,7 +297,9 @@ DisableOrganizationAdminAccountOutcome DetectiveClient::DisableOrganizationAdmin
     endpointResolutionOutcome.GetResult().AddPathSegments("/orgs/disableAdminAccount");
   };
 
-  return DisableOrganizationAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : DisableOrganizationAdminAccountOutcome(std::move(result.GetError()));
 }
 
 DisassociateMembershipOutcome DetectiveClient::DisassociateMembership(const DisassociateMembershipRequest& request) const {
@@ -294,7 +308,9 @@ DisassociateMembershipOutcome DetectiveClient::DisassociateMembership(const Disa
     endpointResolutionOutcome.GetResult().AddPathSegments("/membership/removal");
   };
 
-  return DisassociateMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateMembershipOutcome(result.GetResultWithOwnership())
+                            : DisassociateMembershipOutcome(std::move(result.GetError()));
 }
 
 EnableOrganizationAdminAccountOutcome DetectiveClient::EnableOrganizationAdminAccount(
@@ -304,7 +320,9 @@ EnableOrganizationAdminAccountOutcome DetectiveClient::EnableOrganizationAdminAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/orgs/enableAdminAccount");
   };
 
-  return EnableOrganizationAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : EnableOrganizationAdminAccountOutcome(std::move(result.GetError()));
 }
 
 GetInvestigationOutcome DetectiveClient::GetInvestigation(const GetInvestigationRequest& request) const {
@@ -313,7 +331,9 @@ GetInvestigationOutcome DetectiveClient::GetInvestigation(const GetInvestigation
     endpointResolutionOutcome.GetResult().AddPathSegments("/investigations/getInvestigation");
   };
 
-  return GetInvestigationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInvestigationOutcome(result.GetResultWithOwnership())
+                            : GetInvestigationOutcome(std::move(result.GetError()));
 }
 
 GetMembersOutcome DetectiveClient::GetMembers(const GetMembersRequest& request) const {
@@ -322,7 +342,8 @@ GetMembersOutcome DetectiveClient::GetMembers(const GetMembersRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/graph/members/get");
   };
 
-  return GetMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMembersOutcome(result.GetResultWithOwnership()) : GetMembersOutcome(std::move(result.GetError()));
 }
 
 ListDatasourcePackagesOutcome DetectiveClient::ListDatasourcePackages(const ListDatasourcePackagesRequest& request) const {
@@ -331,7 +352,9 @@ ListDatasourcePackagesOutcome DetectiveClient::ListDatasourcePackages(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/graph/datasources/list");
   };
 
-  return ListDatasourcePackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasourcePackagesOutcome(result.GetResultWithOwnership())
+                            : ListDatasourcePackagesOutcome(std::move(result.GetError()));
 }
 
 ListGraphsOutcome DetectiveClient::ListGraphs(const ListGraphsRequest& request) const {
@@ -340,7 +363,8 @@ ListGraphsOutcome DetectiveClient::ListGraphs(const ListGraphsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/graphs/list");
   };
 
-  return ListGraphsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGraphsOutcome(result.GetResultWithOwnership()) : ListGraphsOutcome(std::move(result.GetError()));
 }
 
 ListIndicatorsOutcome DetectiveClient::ListIndicators(const ListIndicatorsRequest& request) const {
@@ -349,7 +373,8 @@ ListIndicatorsOutcome DetectiveClient::ListIndicators(const ListIndicatorsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/investigations/listIndicators");
   };
 
-  return ListIndicatorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIndicatorsOutcome(result.GetResultWithOwnership()) : ListIndicatorsOutcome(std::move(result.GetError()));
 }
 
 ListInvestigationsOutcome DetectiveClient::ListInvestigations(const ListInvestigationsRequest& request) const {
@@ -358,7 +383,9 @@ ListInvestigationsOutcome DetectiveClient::ListInvestigations(const ListInvestig
     endpointResolutionOutcome.GetResult().AddPathSegments("/investigations/listInvestigations");
   };
 
-  return ListInvestigationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInvestigationsOutcome(result.GetResultWithOwnership())
+                            : ListInvestigationsOutcome(std::move(result.GetError()));
 }
 
 ListInvitationsOutcome DetectiveClient::ListInvitations(const ListInvitationsRequest& request) const {
@@ -367,7 +394,9 @@ ListInvitationsOutcome DetectiveClient::ListInvitations(const ListInvitationsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations/list");
   };
 
-  return ListInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInvitationsOutcome(result.GetResultWithOwnership())
+                            : ListInvitationsOutcome(std::move(result.GetError()));
 }
 
 ListMembersOutcome DetectiveClient::ListMembers(const ListMembersRequest& request) const {
@@ -376,7 +405,8 @@ ListMembersOutcome DetectiveClient::ListMembers(const ListMembersRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/graph/members/list");
   };
 
-  return ListMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMembersOutcome(result.GetResultWithOwnership()) : ListMembersOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationAdminAccountsOutcome DetectiveClient::ListOrganizationAdminAccounts(
@@ -386,7 +416,9 @@ ListOrganizationAdminAccountsOutcome DetectiveClient::ListOrganizationAdminAccou
     endpointResolutionOutcome.GetResult().AddPathSegments("/orgs/adminAccountslist");
   };
 
-  return ListOrganizationAdminAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOrganizationAdminAccountsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationAdminAccountsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DetectiveClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -402,7 +434,9 @@ ListTagsForResourceOutcome DetectiveClient::ListTagsForResource(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RejectInvitationOutcome DetectiveClient::RejectInvitation(const RejectInvitationRequest& request) const {
@@ -411,7 +445,9 @@ RejectInvitationOutcome DetectiveClient::RejectInvitation(const RejectInvitation
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitation/removal");
   };
 
-  return RejectInvitationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectInvitationOutcome(result.GetResultWithOwnership())
+                            : RejectInvitationOutcome(std::move(result.GetError()));
 }
 
 StartInvestigationOutcome DetectiveClient::StartInvestigation(const StartInvestigationRequest& request) const {
@@ -420,7 +456,9 @@ StartInvestigationOutcome DetectiveClient::StartInvestigation(const StartInvesti
     endpointResolutionOutcome.GetResult().AddPathSegments("/investigations/startInvestigation");
   };
 
-  return StartInvestigationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartInvestigationOutcome(result.GetResultWithOwnership())
+                            : StartInvestigationOutcome(std::move(result.GetError()));
 }
 
 StartMonitoringMemberOutcome DetectiveClient::StartMonitoringMember(const StartMonitoringMemberRequest& request) const {
@@ -429,7 +467,9 @@ StartMonitoringMemberOutcome DetectiveClient::StartMonitoringMember(const StartM
     endpointResolutionOutcome.GetResult().AddPathSegments("/graph/member/monitoringstate");
   };
 
-  return StartMonitoringMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMonitoringMemberOutcome(result.GetResultWithOwnership())
+                            : StartMonitoringMemberOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome DetectiveClient::TagResource(const TagResourceRequest& request) const {
@@ -445,7 +485,8 @@ TagResourceOutcome DetectiveClient::TagResource(const TagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome DetectiveClient::UntagResource(const UntagResourceRequest& request) const {
@@ -466,7 +507,8 @@ UntagResourceOutcome DetectiveClient::UntagResource(const UntagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDatasourcePackagesOutcome DetectiveClient::UpdateDatasourcePackages(const UpdateDatasourcePackagesRequest& request) const {
@@ -475,7 +517,9 @@ UpdateDatasourcePackagesOutcome DetectiveClient::UpdateDatasourcePackages(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/graph/datasources/update");
   };
 
-  return UpdateDatasourcePackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDatasourcePackagesOutcome(result.GetResultWithOwnership())
+                            : UpdateDatasourcePackagesOutcome(std::move(result.GetError()));
 }
 
 UpdateInvestigationStateOutcome DetectiveClient::UpdateInvestigationState(const UpdateInvestigationStateRequest& request) const {
@@ -484,7 +528,9 @@ UpdateInvestigationStateOutcome DetectiveClient::UpdateInvestigationState(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/investigations/updateInvestigationState");
   };
 
-  return UpdateInvestigationStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInvestigationStateOutcome(result.GetResultWithOwnership())
+                            : UpdateInvestigationStateOutcome(std::move(result.GetError()));
 }
 
 UpdateOrganizationConfigurationOutcome DetectiveClient::UpdateOrganizationConfiguration(
@@ -494,5 +540,7 @@ UpdateOrganizationConfigurationOutcome DetectiveClient::UpdateOrganizationConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/orgs/updateOrganizationConfiguration");
   };
 
-  return UpdateOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateOrganizationConfigurationOutcome(std::move(result.GetError()));
 }

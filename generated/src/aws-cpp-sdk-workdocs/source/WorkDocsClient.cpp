@@ -238,7 +238,9 @@ AbortDocumentVersionUploadOutcome WorkDocsClient::AbortDocumentVersionUpload(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
   };
 
-  return AbortDocumentVersionUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? AbortDocumentVersionUploadOutcome(result.GetResultWithOwnership())
+                            : AbortDocumentVersionUploadOutcome(std::move(result.GetError()));
 }
 
 ActivateUserOutcome WorkDocsClient::ActivateUser(const ActivateUserRequest& request) const {
@@ -255,7 +257,8 @@ ActivateUserOutcome WorkDocsClient::ActivateUser(const ActivateUserRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/activation");
   };
 
-  return ActivateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateUserOutcome(result.GetResultWithOwnership()) : ActivateUserOutcome(std::move(result.GetError()));
 }
 
 AddResourcePermissionsOutcome WorkDocsClient::AddResourcePermissions(const AddResourcePermissionsRequest& request) const {
@@ -272,7 +275,9 @@ AddResourcePermissionsOutcome WorkDocsClient::AddResourcePermissions(const AddRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return AddResourcePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddResourcePermissionsOutcome(result.GetResultWithOwnership())
+                            : AddResourcePermissionsOutcome(std::move(result.GetError()));
 }
 
 CreateCommentOutcome WorkDocsClient::CreateComment(const CreateCommentRequest& request) const {
@@ -296,7 +301,8 @@ CreateCommentOutcome WorkDocsClient::CreateComment(const CreateCommentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/comment");
   };
 
-  return CreateCommentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCommentOutcome(result.GetResultWithOwnership()) : CreateCommentOutcome(std::move(result.GetError()));
 }
 
 CreateCustomMetadataOutcome WorkDocsClient::CreateCustomMetadata(const CreateCustomMetadataRequest& request) const {
@@ -313,7 +319,9 @@ CreateCustomMetadataOutcome WorkDocsClient::CreateCustomMetadata(const CreateCus
     endpointResolutionOutcome.GetResult().AddPathSegments("/customMetadata");
   };
 
-  return CreateCustomMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateCustomMetadataOutcome(result.GetResultWithOwnership())
+                            : CreateCustomMetadataOutcome(std::move(result.GetError()));
 }
 
 CreateFolderOutcome WorkDocsClient::CreateFolder(const CreateFolderRequest& request) const {
@@ -322,7 +330,8 @@ CreateFolderOutcome WorkDocsClient::CreateFolder(const CreateFolderRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/folders");
   };
 
-  return CreateFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFolderOutcome(result.GetResultWithOwnership()) : CreateFolderOutcome(std::move(result.GetError()));
 }
 
 CreateLabelsOutcome WorkDocsClient::CreateLabels(const CreateLabelsRequest& request) const {
@@ -339,7 +348,8 @@ CreateLabelsOutcome WorkDocsClient::CreateLabels(const CreateLabelsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/labels");
   };
 
-  return CreateLabelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateLabelsOutcome(result.GetResultWithOwnership()) : CreateLabelsOutcome(std::move(result.GetError()));
 }
 
 CreateNotificationSubscriptionOutcome WorkDocsClient::CreateNotificationSubscription(
@@ -357,7 +367,9 @@ CreateNotificationSubscriptionOutcome WorkDocsClient::CreateNotificationSubscrip
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
   };
 
-  return CreateNotificationSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNotificationSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateNotificationSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome WorkDocsClient::CreateUser(const CreateUserRequest& request) const {
@@ -366,7 +378,8 @@ CreateUserOutcome WorkDocsClient::CreateUser(const CreateUserRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/users");
   };
 
-  return CreateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest& request) const {
@@ -383,7 +396,8 @@ DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/activation");
   };
 
-  return DeactivateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeactivateUserOutcome(result.GetResultWithOwnership()) : DeactivateUserOutcome(std::move(result.GetError()));
 }
 
 DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& request) const {
@@ -413,7 +427,8 @@ DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCommentId());
   };
 
-  return DeleteCommentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCommentOutcome(result.GetResultWithOwnership()) : DeleteCommentOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomMetadataOutcome WorkDocsClient::DeleteCustomMetadata(const DeleteCustomMetadataRequest& request) const {
@@ -430,7 +445,9 @@ DeleteCustomMetadataOutcome WorkDocsClient::DeleteCustomMetadata(const DeleteCus
     endpointResolutionOutcome.GetResult().AddPathSegments("/customMetadata");
   };
 
-  return DeleteCustomMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCustomMetadataOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomMetadataOutcome(std::move(result.GetError()));
 }
 
 DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest& request) const {
@@ -446,7 +463,8 @@ DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
   };
 
-  return DeleteDocumentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDocumentOutcome(result.GetResultWithOwnership()) : DeleteDocumentOutcome(std::move(result.GetError()));
 }
 
 DeleteDocumentVersionOutcome WorkDocsClient::DeleteDocumentVersion(const DeleteDocumentVersionRequest& request) const {
@@ -474,7 +492,9 @@ DeleteDocumentVersionOutcome WorkDocsClient::DeleteDocumentVersion(const DeleteD
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
   };
 
-  return DeleteDocumentVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDocumentVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteDocumentVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& request) const {
@@ -490,7 +510,8 @@ DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFolderId());
   };
 
-  return DeleteFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFolderOutcome(result.GetResultWithOwnership()) : DeleteFolderOutcome(std::move(result.GetError()));
 }
 
 DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFolderContentsRequest& request) const {
@@ -507,7 +528,9 @@ DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFol
     endpointResolutionOutcome.GetResult().AddPathSegments("/contents");
   };
 
-  return DeleteFolderContentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFolderContentsOutcome(result.GetResultWithOwnership())
+                            : DeleteFolderContentsOutcome(std::move(result.GetError()));
 }
 
 DeleteLabelsOutcome WorkDocsClient::DeleteLabels(const DeleteLabelsRequest& request) const {
@@ -524,7 +547,8 @@ DeleteLabelsOutcome WorkDocsClient::DeleteLabels(const DeleteLabelsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/labels");
   };
 
-  return DeleteLabelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLabelsOutcome(result.GetResultWithOwnership()) : DeleteLabelsOutcome(std::move(result.GetError()));
 }
 
 DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscription(
@@ -548,7 +572,9 @@ DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscrip
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSubscriptionId());
   };
 
-  return DeleteNotificationSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNotificationSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteNotificationSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) const {
@@ -564,7 +590,8 @@ DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return DeleteUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActivitiesRequest& request) const {
@@ -573,7 +600,9 @@ DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActiv
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/activities");
   };
 
-  return DescribeActivitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeActivitiesOutcome(result.GetResultWithOwnership())
+                            : DescribeActivitiesOutcome(std::move(result.GetError()));
 }
 
 DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsRequest& request) const {
@@ -597,7 +626,9 @@ DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/comments");
   };
 
-  return DescribeCommentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeCommentsOutcome(result.GetResultWithOwnership())
+                            : DescribeCommentsOutcome(std::move(result.GetError()));
 }
 
 DescribeDocumentVersionsOutcome WorkDocsClient::DescribeDocumentVersions(const DescribeDocumentVersionsRequest& request) const {
@@ -614,7 +645,9 @@ DescribeDocumentVersionsOutcome WorkDocsClient::DescribeDocumentVersions(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return DescribeDocumentVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDocumentVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDocumentVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeFolderContentsOutcome WorkDocsClient::DescribeFolderContents(const DescribeFolderContentsRequest& request) const {
@@ -631,7 +664,9 @@ DescribeFolderContentsOutcome WorkDocsClient::DescribeFolderContents(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegments("/contents");
   };
 
-  return DescribeFolderContentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFolderContentsOutcome(result.GetResultWithOwnership())
+                            : DescribeFolderContentsOutcome(std::move(result.GetError()));
 }
 
 DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest& request) const {
@@ -646,7 +681,8 @@ DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/groups");
   };
 
-  return DescribeGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeGroupsOutcome(result.GetResultWithOwnership()) : DescribeGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSubscriptions(
@@ -664,7 +700,9 @@ DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSub
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
   };
 
-  return DescribeNotificationSubscriptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeNotificationSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeNotificationSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeResourcePermissionsOutcome WorkDocsClient::DescribeResourcePermissions(const DescribeResourcePermissionsRequest& request) const {
@@ -681,7 +719,9 @@ DescribeResourcePermissionsOutcome WorkDocsClient::DescribeResourcePermissions(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return DescribeResourcePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeResourcePermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeResourcePermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRootFoldersRequest& request) const {
@@ -696,7 +736,9 @@ DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRoo
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/me/root");
   };
 
-  return DescribeRootFoldersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRootFoldersOutcome(result.GetResultWithOwnership())
+                            : DescribeRootFoldersOutcome(std::move(result.GetError()));
 }
 
 DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& request) const {
@@ -705,7 +747,8 @@ DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/users");
   };
 
-  return DescribeUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeUsersOutcome(result.GetResultWithOwnership()) : DescribeUsersOutcome(std::move(result.GetError()));
 }
 
 GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest& request) const {
@@ -720,7 +763,8 @@ GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/me");
   };
 
-  return GetCurrentUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCurrentUserOutcome(result.GetResultWithOwnership()) : GetCurrentUserOutcome(std::move(result.GetError()));
 }
 
 GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request) const {
@@ -736,7 +780,8 @@ GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
   };
 
-  return GetDocumentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDocumentOutcome(result.GetResultWithOwnership()) : GetDocumentOutcome(std::move(result.GetError()));
 }
 
 GetDocumentPathOutcome WorkDocsClient::GetDocumentPath(const GetDocumentPathRequest& request) const {
@@ -753,7 +798,9 @@ GetDocumentPathOutcome WorkDocsClient::GetDocumentPath(const GetDocumentPathRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/path");
   };
 
-  return GetDocumentPathOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDocumentPathOutcome(result.GetResultWithOwnership())
+                            : GetDocumentPathOutcome(std::move(result.GetError()));
 }
 
 GetDocumentVersionOutcome WorkDocsClient::GetDocumentVersion(const GetDocumentVersionRequest& request) const {
@@ -776,7 +823,9 @@ GetDocumentVersionOutcome WorkDocsClient::GetDocumentVersion(const GetDocumentVe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
   };
 
-  return GetDocumentVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDocumentVersionOutcome(result.GetResultWithOwnership())
+                            : GetDocumentVersionOutcome(std::move(result.GetError()));
 }
 
 GetFolderOutcome WorkDocsClient::GetFolder(const GetFolderRequest& request) const {
@@ -792,7 +841,8 @@ GetFolderOutcome WorkDocsClient::GetFolder(const GetFolderRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFolderId());
   };
 
-  return GetFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFolderOutcome(result.GetResultWithOwnership()) : GetFolderOutcome(std::move(result.GetError()));
 }
 
 GetFolderPathOutcome WorkDocsClient::GetFolderPath(const GetFolderPathRequest& request) const {
@@ -809,7 +859,8 @@ GetFolderPathOutcome WorkDocsClient::GetFolderPath(const GetFolderPathRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/path");
   };
 
-  return GetFolderPathOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFolderPathOutcome(result.GetResultWithOwnership()) : GetFolderPathOutcome(std::move(result.GetError()));
 }
 
 GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& request) const {
@@ -818,7 +869,8 @@ GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/resources");
   };
 
-  return GetResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourcesOutcome(result.GetResultWithOwnership()) : GetResourcesOutcome(std::move(result.GetError()));
 }
 
 InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUpload(
@@ -828,7 +880,9 @@ InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUplo
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/documents");
   };
 
-  return InitiateDocumentVersionUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InitiateDocumentVersionUploadOutcome(result.GetResultWithOwnership())
+                            : InitiateDocumentVersionUploadOutcome(std::move(result.GetError()));
 }
 
 RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions(const RemoveAllResourcePermissionsRequest& request) const {
@@ -845,7 +899,9 @@ RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return RemoveAllResourcePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveAllResourcePermissionsOutcome(result.GetResultWithOwnership())
+                            : RemoveAllResourcePermissionsOutcome(std::move(result.GetError()));
 }
 
 RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const RemoveResourcePermissionRequest& request) const {
@@ -868,7 +924,9 @@ RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const R
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
   };
 
-  return RemoveResourcePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveResourcePermissionOutcome(result.GetResultWithOwnership())
+                            : RemoveResourcePermissionOutcome(std::move(result.GetError()));
 }
 
 RestoreDocumentVersionsOutcome WorkDocsClient::RestoreDocumentVersions(const RestoreDocumentVersionsRequest& request) const {
@@ -884,7 +942,9 @@ RestoreDocumentVersionsOutcome WorkDocsClient::RestoreDocumentVersions(const Res
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
   };
 
-  return RestoreDocumentVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreDocumentVersionsOutcome(result.GetResultWithOwnership())
+                            : RestoreDocumentVersionsOutcome(std::move(result.GetError()));
 }
 
 SearchResourcesOutcome WorkDocsClient::SearchResources(const SearchResourcesRequest& request) const {
@@ -893,7 +953,9 @@ SearchResourcesOutcome WorkDocsClient::SearchResources(const SearchResourcesRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v1/search");
   };
 
-  return SearchResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchResourcesOutcome(result.GetResultWithOwnership())
+                            : SearchResourcesOutcome(std::move(result.GetError()));
 }
 
 UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest& request) const {
@@ -909,7 +971,8 @@ UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDocumentId());
   };
 
-  return UpdateDocumentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDocumentOutcome(result.GetResultWithOwnership()) : UpdateDocumentOutcome(std::move(result.GetError()));
 }
 
 UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateDocumentVersionRequest& request) const {
@@ -932,7 +995,9 @@ UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateD
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
   };
 
-  return UpdateDocumentVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDocumentVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateDocumentVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& request) const {
@@ -948,7 +1013,8 @@ UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFolderId());
   };
 
-  return UpdateFolderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFolderOutcome(result.GetResultWithOwnership()) : UpdateFolderOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome WorkDocsClient::UpdateUser(const UpdateUserRequest& request) const {
@@ -964,5 +1030,6 @@ UpdateUserOutcome WorkDocsClient::UpdateUser(const UpdateUserRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return UpdateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }

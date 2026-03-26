@@ -214,7 +214,8 @@ CreateClusterOutcome Route53RecoveryControlConfigClient::CreateCluster(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/cluster");
   };
 
-  return CreateClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
 }
 
 CreateControlPanelOutcome Route53RecoveryControlConfigClient::CreateControlPanel(const CreateControlPanelRequest& request) const {
@@ -223,7 +224,9 @@ CreateControlPanelOutcome Route53RecoveryControlConfigClient::CreateControlPanel
     endpointResolutionOutcome.GetResult().AddPathSegments("/controlpanel");
   };
 
-  return CreateControlPanelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateControlPanelOutcome(result.GetResultWithOwnership())
+                            : CreateControlPanelOutcome(std::move(result.GetError()));
 }
 
 CreateRoutingControlOutcome Route53RecoveryControlConfigClient::CreateRoutingControl(const CreateRoutingControlRequest& request) const {
@@ -232,7 +235,9 @@ CreateRoutingControlOutcome Route53RecoveryControlConfigClient::CreateRoutingCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/routingcontrol");
   };
 
-  return CreateRoutingControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRoutingControlOutcome(result.GetResultWithOwnership())
+                            : CreateRoutingControlOutcome(std::move(result.GetError()));
 }
 
 CreateSafetyRuleOutcome Route53RecoveryControlConfigClient::CreateSafetyRule(const CreateSafetyRuleRequest& request) const {
@@ -241,7 +246,9 @@ CreateSafetyRuleOutcome Route53RecoveryControlConfigClient::CreateSafetyRule(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/safetyrule");
   };
 
-  return CreateSafetyRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSafetyRuleOutcome(result.GetResultWithOwnership())
+                            : CreateSafetyRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterOutcome Route53RecoveryControlConfigClient::DeleteCluster(const DeleteClusterRequest& request) const {
@@ -257,7 +264,8 @@ DeleteClusterOutcome Route53RecoveryControlConfigClient::DeleteCluster(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
   };
 
-  return DeleteClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteClusterOutcome(result.GetResultWithOwnership()) : DeleteClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteControlPanelOutcome Route53RecoveryControlConfigClient::DeleteControlPanel(const DeleteControlPanelRequest& request) const {
@@ -273,7 +281,9 @@ DeleteControlPanelOutcome Route53RecoveryControlConfigClient::DeleteControlPanel
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetControlPanelArn());
   };
 
-  return DeleteControlPanelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteControlPanelOutcome(result.GetResultWithOwnership())
+                            : DeleteControlPanelOutcome(std::move(result.GetError()));
 }
 
 DeleteRoutingControlOutcome Route53RecoveryControlConfigClient::DeleteRoutingControl(const DeleteRoutingControlRequest& request) const {
@@ -289,7 +299,9 @@ DeleteRoutingControlOutcome Route53RecoveryControlConfigClient::DeleteRoutingCon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRoutingControlArn());
   };
 
-  return DeleteRoutingControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRoutingControlOutcome(result.GetResultWithOwnership())
+                            : DeleteRoutingControlOutcome(std::move(result.GetError()));
 }
 
 DeleteSafetyRuleOutcome Route53RecoveryControlConfigClient::DeleteSafetyRule(const DeleteSafetyRuleRequest& request) const {
@@ -305,7 +317,9 @@ DeleteSafetyRuleOutcome Route53RecoveryControlConfigClient::DeleteSafetyRule(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSafetyRuleArn());
   };
 
-  return DeleteSafetyRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSafetyRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteSafetyRuleOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterOutcome Route53RecoveryControlConfigClient::DescribeCluster(const DescribeClusterRequest& request) const {
@@ -321,7 +335,9 @@ DescribeClusterOutcome Route53RecoveryControlConfigClient::DescribeCluster(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
   };
 
-  return DescribeClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeClusterOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterOutcome(std::move(result.GetError()));
 }
 
 DescribeControlPanelOutcome Route53RecoveryControlConfigClient::DescribeControlPanel(const DescribeControlPanelRequest& request) const {
@@ -337,7 +353,9 @@ DescribeControlPanelOutcome Route53RecoveryControlConfigClient::DescribeControlP
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetControlPanelArn());
   };
 
-  return DescribeControlPanelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeControlPanelOutcome(result.GetResultWithOwnership())
+                            : DescribeControlPanelOutcome(std::move(result.GetError()));
 }
 
 DescribeRoutingControlOutcome Route53RecoveryControlConfigClient::DescribeRoutingControl(
@@ -354,7 +372,9 @@ DescribeRoutingControlOutcome Route53RecoveryControlConfigClient::DescribeRoutin
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRoutingControlArn());
   };
 
-  return DescribeRoutingControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRoutingControlOutcome(result.GetResultWithOwnership())
+                            : DescribeRoutingControlOutcome(std::move(result.GetError()));
 }
 
 DescribeSafetyRuleOutcome Route53RecoveryControlConfigClient::DescribeSafetyRule(const DescribeSafetyRuleRequest& request) const {
@@ -370,7 +390,9 @@ DescribeSafetyRuleOutcome Route53RecoveryControlConfigClient::DescribeSafetyRule
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSafetyRuleArn());
   };
 
-  return DescribeSafetyRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSafetyRuleOutcome(result.GetResultWithOwnership())
+                            : DescribeSafetyRuleOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome Route53RecoveryControlConfigClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
@@ -386,7 +408,9 @@ GetResourcePolicyOutcome Route53RecoveryControlConfigClient::GetResourcePolicy(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 ListAssociatedRoute53HealthChecksOutcome Route53RecoveryControlConfigClient::ListAssociatedRoute53HealthChecks(
@@ -404,7 +428,9 @@ ListAssociatedRoute53HealthChecksOutcome Route53RecoveryControlConfigClient::Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/associatedRoute53HealthChecks");
   };
 
-  return ListAssociatedRoute53HealthChecksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssociatedRoute53HealthChecksOutcome(result.GetResultWithOwnership())
+                            : ListAssociatedRoute53HealthChecksOutcome(std::move(result.GetError()));
 }
 
 ListClustersOutcome Route53RecoveryControlConfigClient::ListClusters(const ListClustersRequest& request) const {
@@ -413,7 +439,8 @@ ListClustersOutcome Route53RecoveryControlConfigClient::ListClusters(const ListC
     endpointResolutionOutcome.GetResult().AddPathSegments("/cluster");
   };
 
-  return ListClustersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClustersOutcome(result.GetResultWithOwnership()) : ListClustersOutcome(std::move(result.GetError()));
 }
 
 ListControlPanelsOutcome Route53RecoveryControlConfigClient::ListControlPanels(const ListControlPanelsRequest& request) const {
@@ -422,7 +449,9 @@ ListControlPanelsOutcome Route53RecoveryControlConfigClient::ListControlPanels(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/controlpanels");
   };
 
-  return ListControlPanelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListControlPanelsOutcome(result.GetResultWithOwnership())
+                            : ListControlPanelsOutcome(std::move(result.GetError()));
 }
 
 ListRoutingControlsOutcome Route53RecoveryControlConfigClient::ListRoutingControls(const ListRoutingControlsRequest& request) const {
@@ -439,7 +468,9 @@ ListRoutingControlsOutcome Route53RecoveryControlConfigClient::ListRoutingContro
     endpointResolutionOutcome.GetResult().AddPathSegments("/routingcontrols");
   };
 
-  return ListRoutingControlsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRoutingControlsOutcome(result.GetResultWithOwnership())
+                            : ListRoutingControlsOutcome(std::move(result.GetError()));
 }
 
 ListSafetyRulesOutcome Route53RecoveryControlConfigClient::ListSafetyRules(const ListSafetyRulesRequest& request) const {
@@ -456,7 +487,9 @@ ListSafetyRulesOutcome Route53RecoveryControlConfigClient::ListSafetyRules(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/safetyrules");
   };
 
-  return ListSafetyRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSafetyRulesOutcome(result.GetResultWithOwnership())
+                            : ListSafetyRulesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome Route53RecoveryControlConfigClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -472,7 +505,9 @@ ListTagsForResourceOutcome Route53RecoveryControlConfigClient::ListTagsForResour
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome Route53RecoveryControlConfigClient::TagResource(const TagResourceRequest& request) const {
@@ -488,7 +523,8 @@ TagResourceOutcome Route53RecoveryControlConfigClient::TagResource(const TagReso
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome Route53RecoveryControlConfigClient::UntagResource(const UntagResourceRequest& request) const {
@@ -509,7 +545,8 @@ UntagResourceOutcome Route53RecoveryControlConfigClient::UntagResource(const Unt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateClusterOutcome Route53RecoveryControlConfigClient::UpdateCluster(const UpdateClusterRequest& request) const {
@@ -518,7 +555,8 @@ UpdateClusterOutcome Route53RecoveryControlConfigClient::UpdateCluster(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegments("/cluster");
   };
 
-  return UpdateClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateClusterOutcome(result.GetResultWithOwnership()) : UpdateClusterOutcome(std::move(result.GetError()));
 }
 
 UpdateControlPanelOutcome Route53RecoveryControlConfigClient::UpdateControlPanel(const UpdateControlPanelRequest& request) const {
@@ -527,7 +565,9 @@ UpdateControlPanelOutcome Route53RecoveryControlConfigClient::UpdateControlPanel
     endpointResolutionOutcome.GetResult().AddPathSegments("/controlpanel");
   };
 
-  return UpdateControlPanelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateControlPanelOutcome(result.GetResultWithOwnership())
+                            : UpdateControlPanelOutcome(std::move(result.GetError()));
 }
 
 UpdateRoutingControlOutcome Route53RecoveryControlConfigClient::UpdateRoutingControl(const UpdateRoutingControlRequest& request) const {
@@ -536,7 +576,9 @@ UpdateRoutingControlOutcome Route53RecoveryControlConfigClient::UpdateRoutingCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/routingcontrol");
   };
 
-  return UpdateRoutingControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRoutingControlOutcome(result.GetResultWithOwnership())
+                            : UpdateRoutingControlOutcome(std::move(result.GetError()));
 }
 
 UpdateSafetyRuleOutcome Route53RecoveryControlConfigClient::UpdateSafetyRule(const UpdateSafetyRuleRequest& request) const {
@@ -545,5 +587,7 @@ UpdateSafetyRuleOutcome Route53RecoveryControlConfigClient::UpdateSafetyRule(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/safetyrule");
   };
 
-  return UpdateSafetyRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSafetyRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateSafetyRuleOutcome(std::move(result.GetError()));
 }

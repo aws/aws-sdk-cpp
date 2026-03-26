@@ -246,296 +246,410 @@ FraudDetectorClient::InvokeOperationOutcome FraudDetectorClient::InvokeServiceOp
 }
 
 BatchCreateVariableOutcome FraudDetectorClient::BatchCreateVariable(const BatchCreateVariableRequest& request) const {
-  return BatchCreateVariableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateVariableOutcome(result.GetResultWithOwnership())
+                            : BatchCreateVariableOutcome(std::move(result.GetError()));
 }
 
 BatchGetVariableOutcome FraudDetectorClient::BatchGetVariable(const BatchGetVariableRequest& request) const {
-  return BatchGetVariableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetVariableOutcome(result.GetResultWithOwnership())
+                            : BatchGetVariableOutcome(std::move(result.GetError()));
 }
 
 CancelBatchImportJobOutcome FraudDetectorClient::CancelBatchImportJob(const CancelBatchImportJobRequest& request) const {
-  return CancelBatchImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelBatchImportJobOutcome(result.GetResultWithOwnership())
+                            : CancelBatchImportJobOutcome(std::move(result.GetError()));
 }
 
 CancelBatchPredictionJobOutcome FraudDetectorClient::CancelBatchPredictionJob(const CancelBatchPredictionJobRequest& request) const {
-  return CancelBatchPredictionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelBatchPredictionJobOutcome(result.GetResultWithOwnership())
+                            : CancelBatchPredictionJobOutcome(std::move(result.GetError()));
 }
 
 CreateBatchImportJobOutcome FraudDetectorClient::CreateBatchImportJob(const CreateBatchImportJobRequest& request) const {
-  return CreateBatchImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBatchImportJobOutcome(result.GetResultWithOwnership())
+                            : CreateBatchImportJobOutcome(std::move(result.GetError()));
 }
 
 CreateBatchPredictionJobOutcome FraudDetectorClient::CreateBatchPredictionJob(const CreateBatchPredictionJobRequest& request) const {
-  return CreateBatchPredictionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBatchPredictionJobOutcome(result.GetResultWithOwnership())
+                            : CreateBatchPredictionJobOutcome(std::move(result.GetError()));
 }
 
 CreateDetectorVersionOutcome FraudDetectorClient::CreateDetectorVersion(const CreateDetectorVersionRequest& request) const {
-  return CreateDetectorVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDetectorVersionOutcome(result.GetResultWithOwnership())
+                            : CreateDetectorVersionOutcome(std::move(result.GetError()));
 }
 
 CreateListOutcome FraudDetectorClient::CreateList(const CreateListRequest& request) const {
-  return CreateListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateListOutcome(result.GetResultWithOwnership()) : CreateListOutcome(std::move(result.GetError()));
 }
 
 CreateModelOutcome FraudDetectorClient::CreateModel(const CreateModelRequest& request) const {
-  return CreateModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateModelOutcome(result.GetResultWithOwnership()) : CreateModelOutcome(std::move(result.GetError()));
 }
 
 CreateModelVersionOutcome FraudDetectorClient::CreateModelVersion(const CreateModelVersionRequest& request) const {
-  return CreateModelVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateModelVersionOutcome(result.GetResultWithOwnership())
+                            : CreateModelVersionOutcome(std::move(result.GetError()));
 }
 
 CreateRuleOutcome FraudDetectorClient::CreateRule(const CreateRuleRequest& request) const {
-  return CreateRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRuleOutcome(result.GetResultWithOwnership()) : CreateRuleOutcome(std::move(result.GetError()));
 }
 
 CreateVariableOutcome FraudDetectorClient::CreateVariable(const CreateVariableRequest& request) const {
-  return CreateVariableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVariableOutcome(result.GetResultWithOwnership()) : CreateVariableOutcome(std::move(result.GetError()));
 }
 
 DeleteBatchImportJobOutcome FraudDetectorClient::DeleteBatchImportJob(const DeleteBatchImportJobRequest& request) const {
-  return DeleteBatchImportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBatchImportJobOutcome(result.GetResultWithOwnership())
+                            : DeleteBatchImportJobOutcome(std::move(result.GetError()));
 }
 
 DeleteBatchPredictionJobOutcome FraudDetectorClient::DeleteBatchPredictionJob(const DeleteBatchPredictionJobRequest& request) const {
-  return DeleteBatchPredictionJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBatchPredictionJobOutcome(result.GetResultWithOwnership())
+                            : DeleteBatchPredictionJobOutcome(std::move(result.GetError()));
 }
 
 DeleteDetectorOutcome FraudDetectorClient::DeleteDetector(const DeleteDetectorRequest& request) const {
-  return DeleteDetectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDetectorOutcome(result.GetResultWithOwnership()) : DeleteDetectorOutcome(std::move(result.GetError()));
 }
 
 DeleteDetectorVersionOutcome FraudDetectorClient::DeleteDetectorVersion(const DeleteDetectorVersionRequest& request) const {
-  return DeleteDetectorVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDetectorVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteDetectorVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteEntityTypeOutcome FraudDetectorClient::DeleteEntityType(const DeleteEntityTypeRequest& request) const {
-  return DeleteEntityTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEntityTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteEntityTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteEventOutcome FraudDetectorClient::DeleteEvent(const DeleteEventRequest& request) const {
-  return DeleteEventOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEventOutcome(result.GetResultWithOwnership()) : DeleteEventOutcome(std::move(result.GetError()));
 }
 
 DeleteEventTypeOutcome FraudDetectorClient::DeleteEventType(const DeleteEventTypeRequest& request) const {
-  return DeleteEventTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEventTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteEventTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteEventsByEventTypeOutcome FraudDetectorClient::DeleteEventsByEventType(const DeleteEventsByEventTypeRequest& request) const {
-  return DeleteEventsByEventTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEventsByEventTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteEventsByEventTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteExternalModelOutcome FraudDetectorClient::DeleteExternalModel(const DeleteExternalModelRequest& request) const {
-  return DeleteExternalModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteExternalModelOutcome(result.GetResultWithOwnership())
+                            : DeleteExternalModelOutcome(std::move(result.GetError()));
 }
 
 DeleteLabelOutcome FraudDetectorClient::DeleteLabel(const DeleteLabelRequest& request) const {
-  return DeleteLabelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLabelOutcome(result.GetResultWithOwnership()) : DeleteLabelOutcome(std::move(result.GetError()));
 }
 
 DeleteListOutcome FraudDetectorClient::DeleteList(const DeleteListRequest& request) const {
-  return DeleteListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteListOutcome(result.GetResultWithOwnership()) : DeleteListOutcome(std::move(result.GetError()));
 }
 
 DeleteModelOutcome FraudDetectorClient::DeleteModel(const DeleteModelRequest& request) const {
-  return DeleteModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteModelOutcome(result.GetResultWithOwnership()) : DeleteModelOutcome(std::move(result.GetError()));
 }
 
 DeleteModelVersionOutcome FraudDetectorClient::DeleteModelVersion(const DeleteModelVersionRequest& request) const {
-  return DeleteModelVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteModelVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteModelVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteOutcomeOutcome FraudDetectorClient::DeleteOutcome(const DeleteOutcomeRequest& request) const {
-  return DeleteOutcomeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOutcomeOutcome(result.GetResultWithOwnership()) : DeleteOutcomeOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleOutcome FraudDetectorClient::DeleteRule(const DeleteRuleRequest& request) const {
-  return DeleteRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRuleOutcome(result.GetResultWithOwnership()) : DeleteRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteVariableOutcome FraudDetectorClient::DeleteVariable(const DeleteVariableRequest& request) const {
-  return DeleteVariableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVariableOutcome(result.GetResultWithOwnership()) : DeleteVariableOutcome(std::move(result.GetError()));
 }
 
 DescribeDetectorOutcome FraudDetectorClient::DescribeDetector(const DescribeDetectorRequest& request) const {
-  return DescribeDetectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDetectorOutcome(result.GetResultWithOwnership())
+                            : DescribeDetectorOutcome(std::move(result.GetError()));
 }
 
 DescribeModelVersionsOutcome FraudDetectorClient::DescribeModelVersions(const DescribeModelVersionsRequest& request) const {
-  return DescribeModelVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeModelVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeModelVersionsOutcome(std::move(result.GetError()));
 }
 
 GetBatchImportJobsOutcome FraudDetectorClient::GetBatchImportJobs(const GetBatchImportJobsRequest& request) const {
-  return GetBatchImportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBatchImportJobsOutcome(result.GetResultWithOwnership())
+                            : GetBatchImportJobsOutcome(std::move(result.GetError()));
 }
 
 GetBatchPredictionJobsOutcome FraudDetectorClient::GetBatchPredictionJobs(const GetBatchPredictionJobsRequest& request) const {
-  return GetBatchPredictionJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBatchPredictionJobsOutcome(result.GetResultWithOwnership())
+                            : GetBatchPredictionJobsOutcome(std::move(result.GetError()));
 }
 
 GetDeleteEventsByEventTypeStatusOutcome FraudDetectorClient::GetDeleteEventsByEventTypeStatus(
     const GetDeleteEventsByEventTypeStatusRequest& request) const {
-  return GetDeleteEventsByEventTypeStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDeleteEventsByEventTypeStatusOutcome(result.GetResultWithOwnership())
+                            : GetDeleteEventsByEventTypeStatusOutcome(std::move(result.GetError()));
 }
 
 GetDetectorVersionOutcome FraudDetectorClient::GetDetectorVersion(const GetDetectorVersionRequest& request) const {
-  return GetDetectorVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDetectorVersionOutcome(result.GetResultWithOwnership())
+                            : GetDetectorVersionOutcome(std::move(result.GetError()));
 }
 
 GetDetectorsOutcome FraudDetectorClient::GetDetectors(const GetDetectorsRequest& request) const {
-  return GetDetectorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDetectorsOutcome(result.GetResultWithOwnership()) : GetDetectorsOutcome(std::move(result.GetError()));
 }
 
 GetEntityTypesOutcome FraudDetectorClient::GetEntityTypes(const GetEntityTypesRequest& request) const {
-  return GetEntityTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEntityTypesOutcome(result.GetResultWithOwnership()) : GetEntityTypesOutcome(std::move(result.GetError()));
 }
 
 GetEventOutcome FraudDetectorClient::GetEvent(const GetEventRequest& request) const {
-  return GetEventOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEventOutcome(result.GetResultWithOwnership()) : GetEventOutcome(std::move(result.GetError()));
 }
 
 GetEventPredictionOutcome FraudDetectorClient::GetEventPrediction(const GetEventPredictionRequest& request) const {
-  return GetEventPredictionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEventPredictionOutcome(result.GetResultWithOwnership())
+                            : GetEventPredictionOutcome(std::move(result.GetError()));
 }
 
 GetEventPredictionMetadataOutcome FraudDetectorClient::GetEventPredictionMetadata(const GetEventPredictionMetadataRequest& request) const {
-  return GetEventPredictionMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEventPredictionMetadataOutcome(result.GetResultWithOwnership())
+                            : GetEventPredictionMetadataOutcome(std::move(result.GetError()));
 }
 
 GetEventTypesOutcome FraudDetectorClient::GetEventTypes(const GetEventTypesRequest& request) const {
-  return GetEventTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEventTypesOutcome(result.GetResultWithOwnership()) : GetEventTypesOutcome(std::move(result.GetError()));
 }
 
 GetExternalModelsOutcome FraudDetectorClient::GetExternalModels(const GetExternalModelsRequest& request) const {
-  return GetExternalModelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetExternalModelsOutcome(result.GetResultWithOwnership())
+                            : GetExternalModelsOutcome(std::move(result.GetError()));
 }
 
 GetKMSEncryptionKeyOutcome FraudDetectorClient::GetKMSEncryptionKey(const GetKMSEncryptionKeyRequest& request) const {
-  return GetKMSEncryptionKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetKMSEncryptionKeyOutcome(result.GetResultWithOwnership())
+                            : GetKMSEncryptionKeyOutcome(std::move(result.GetError()));
 }
 
 GetLabelsOutcome FraudDetectorClient::GetLabels(const GetLabelsRequest& request) const {
-  return GetLabelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLabelsOutcome(result.GetResultWithOwnership()) : GetLabelsOutcome(std::move(result.GetError()));
 }
 
 GetListElementsOutcome FraudDetectorClient::GetListElements(const GetListElementsRequest& request) const {
-  return GetListElementsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetListElementsOutcome(result.GetResultWithOwnership())
+                            : GetListElementsOutcome(std::move(result.GetError()));
 }
 
 GetListsMetadataOutcome FraudDetectorClient::GetListsMetadata(const GetListsMetadataRequest& request) const {
-  return GetListsMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetListsMetadataOutcome(result.GetResultWithOwnership())
+                            : GetListsMetadataOutcome(std::move(result.GetError()));
 }
 
 GetModelVersionOutcome FraudDetectorClient::GetModelVersion(const GetModelVersionRequest& request) const {
-  return GetModelVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetModelVersionOutcome(result.GetResultWithOwnership())
+                            : GetModelVersionOutcome(std::move(result.GetError()));
 }
 
 GetModelsOutcome FraudDetectorClient::GetModels(const GetModelsRequest& request) const {
-  return GetModelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetModelsOutcome(result.GetResultWithOwnership()) : GetModelsOutcome(std::move(result.GetError()));
 }
 
 GetOutcomesOutcome FraudDetectorClient::GetOutcomes(const GetOutcomesRequest& request) const {
-  return GetOutcomesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOutcomesOutcome(result.GetResultWithOwnership()) : GetOutcomesOutcome(std::move(result.GetError()));
 }
 
 GetRulesOutcome FraudDetectorClient::GetRules(const GetRulesRequest& request) const {
-  return GetRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRulesOutcome(result.GetResultWithOwnership()) : GetRulesOutcome(std::move(result.GetError()));
 }
 
 GetVariablesOutcome FraudDetectorClient::GetVariables(const GetVariablesRequest& request) const {
-  return GetVariablesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVariablesOutcome(result.GetResultWithOwnership()) : GetVariablesOutcome(std::move(result.GetError()));
 }
 
 ListEventPredictionsOutcome FraudDetectorClient::ListEventPredictions(const ListEventPredictionsRequest& request) const {
-  return ListEventPredictionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventPredictionsOutcome(result.GetResultWithOwnership())
+                            : ListEventPredictionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome FraudDetectorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutDetectorOutcome FraudDetectorClient::PutDetector(const PutDetectorRequest& request) const {
-  return PutDetectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDetectorOutcome(result.GetResultWithOwnership()) : PutDetectorOutcome(std::move(result.GetError()));
 }
 
 PutEntityTypeOutcome FraudDetectorClient::PutEntityType(const PutEntityTypeRequest& request) const {
-  return PutEntityTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEntityTypeOutcome(result.GetResultWithOwnership()) : PutEntityTypeOutcome(std::move(result.GetError()));
 }
 
 PutEventTypeOutcome FraudDetectorClient::PutEventType(const PutEventTypeRequest& request) const {
-  return PutEventTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEventTypeOutcome(result.GetResultWithOwnership()) : PutEventTypeOutcome(std::move(result.GetError()));
 }
 
 PutExternalModelOutcome FraudDetectorClient::PutExternalModel(const PutExternalModelRequest& request) const {
-  return PutExternalModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutExternalModelOutcome(result.GetResultWithOwnership())
+                            : PutExternalModelOutcome(std::move(result.GetError()));
 }
 
 PutKMSEncryptionKeyOutcome FraudDetectorClient::PutKMSEncryptionKey(const PutKMSEncryptionKeyRequest& request) const {
-  return PutKMSEncryptionKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutKMSEncryptionKeyOutcome(result.GetResultWithOwnership())
+                            : PutKMSEncryptionKeyOutcome(std::move(result.GetError()));
 }
 
 PutLabelOutcome FraudDetectorClient::PutLabel(const PutLabelRequest& request) const {
-  return PutLabelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutLabelOutcome(result.GetResultWithOwnership()) : PutLabelOutcome(std::move(result.GetError()));
 }
 
 PutOutcomeOutcome FraudDetectorClient::PutOutcome(const PutOutcomeRequest& request) const {
-  return PutOutcomeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutOutcomeOutcome(result.GetResultWithOwnership()) : PutOutcomeOutcome(std::move(result.GetError()));
 }
 
 SendEventOutcome FraudDetectorClient::SendEvent(const SendEventRequest& request) const {
-  return SendEventOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendEventOutcome(result.GetResultWithOwnership()) : SendEventOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome FraudDetectorClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome FraudDetectorClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDetectorVersionOutcome FraudDetectorClient::UpdateDetectorVersion(const UpdateDetectorVersionRequest& request) const {
-  return UpdateDetectorVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDetectorVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateDetectorVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateDetectorVersionMetadataOutcome FraudDetectorClient::UpdateDetectorVersionMetadata(
     const UpdateDetectorVersionMetadataRequest& request) const {
-  return UpdateDetectorVersionMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDetectorVersionMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateDetectorVersionMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateDetectorVersionStatusOutcome FraudDetectorClient::UpdateDetectorVersionStatus(
     const UpdateDetectorVersionStatusRequest& request) const {
-  return UpdateDetectorVersionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDetectorVersionStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateDetectorVersionStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateEventLabelOutcome FraudDetectorClient::UpdateEventLabel(const UpdateEventLabelRequest& request) const {
-  return UpdateEventLabelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEventLabelOutcome(result.GetResultWithOwnership())
+                            : UpdateEventLabelOutcome(std::move(result.GetError()));
 }
 
 UpdateListOutcome FraudDetectorClient::UpdateList(const UpdateListRequest& request) const {
-  return UpdateListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateListOutcome(result.GetResultWithOwnership()) : UpdateListOutcome(std::move(result.GetError()));
 }
 
 UpdateModelOutcome FraudDetectorClient::UpdateModel(const UpdateModelRequest& request) const {
-  return UpdateModelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateModelOutcome(result.GetResultWithOwnership()) : UpdateModelOutcome(std::move(result.GetError()));
 }
 
 UpdateModelVersionOutcome FraudDetectorClient::UpdateModelVersion(const UpdateModelVersionRequest& request) const {
-  return UpdateModelVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateModelVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateModelVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateModelVersionStatusOutcome FraudDetectorClient::UpdateModelVersionStatus(const UpdateModelVersionStatusRequest& request) const {
-  return UpdateModelVersionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateModelVersionStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateModelVersionStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateRuleMetadataOutcome FraudDetectorClient::UpdateRuleMetadata(const UpdateRuleMetadataRequest& request) const {
-  return UpdateRuleMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRuleMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateRuleMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateRuleVersionOutcome FraudDetectorClient::UpdateRuleVersion(const UpdateRuleVersionRequest& request) const {
-  return UpdateRuleVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRuleVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateRuleVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateVariableOutcome FraudDetectorClient::UpdateVariable(const UpdateVariableRequest& request) const {
-  return UpdateVariableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVariableOutcome(result.GetResultWithOwnership()) : UpdateVariableOutcome(std::move(result.GetError()));
 }

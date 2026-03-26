@@ -245,294 +245,428 @@ Route53ResolverClient::InvokeOperationOutcome Route53ResolverClient::InvokeServi
 
 AssociateFirewallRuleGroupOutcome Route53ResolverClient::AssociateFirewallRuleGroup(
     const AssociateFirewallRuleGroupRequest& request) const {
-  return AssociateFirewallRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateFirewallRuleGroupOutcome(result.GetResultWithOwnership())
+                            : AssociateFirewallRuleGroupOutcome(std::move(result.GetError()));
 }
 
 AssociateResolverEndpointIpAddressOutcome Route53ResolverClient::AssociateResolverEndpointIpAddress(
     const AssociateResolverEndpointIpAddressRequest& request) const {
-  return AssociateResolverEndpointIpAddressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateResolverEndpointIpAddressOutcome(result.GetResultWithOwnership())
+                            : AssociateResolverEndpointIpAddressOutcome(std::move(result.GetError()));
 }
 
 AssociateResolverQueryLogConfigOutcome Route53ResolverClient::AssociateResolverQueryLogConfig(
     const AssociateResolverQueryLogConfigRequest& request) const {
-  return AssociateResolverQueryLogConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateResolverQueryLogConfigOutcome(result.GetResultWithOwnership())
+                            : AssociateResolverQueryLogConfigOutcome(std::move(result.GetError()));
 }
 
 AssociateResolverRuleOutcome Route53ResolverClient::AssociateResolverRule(const AssociateResolverRuleRequest& request) const {
-  return AssociateResolverRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateResolverRuleOutcome(result.GetResultWithOwnership())
+                            : AssociateResolverRuleOutcome(std::move(result.GetError()));
 }
 
 CreateFirewallDomainListOutcome Route53ResolverClient::CreateFirewallDomainList(const CreateFirewallDomainListRequest& request) const {
-  return CreateFirewallDomainListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFirewallDomainListOutcome(result.GetResultWithOwnership())
+                            : CreateFirewallDomainListOutcome(std::move(result.GetError()));
 }
 
 CreateFirewallRuleOutcome Route53ResolverClient::CreateFirewallRule(const CreateFirewallRuleRequest& request) const {
-  return CreateFirewallRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : CreateFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 CreateFirewallRuleGroupOutcome Route53ResolverClient::CreateFirewallRuleGroup(const CreateFirewallRuleGroupRequest& request) const {
-  return CreateFirewallRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFirewallRuleGroupOutcome(result.GetResultWithOwnership())
+                            : CreateFirewallRuleGroupOutcome(std::move(result.GetError()));
 }
 
 CreateOutpostResolverOutcome Route53ResolverClient::CreateOutpostResolver(const CreateOutpostResolverRequest& request) const {
-  return CreateOutpostResolverOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOutpostResolverOutcome(result.GetResultWithOwnership())
+                            : CreateOutpostResolverOutcome(std::move(result.GetError()));
 }
 
 CreateResolverEndpointOutcome Route53ResolverClient::CreateResolverEndpoint(const CreateResolverEndpointRequest& request) const {
-  return CreateResolverEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResolverEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateResolverEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateResolverQueryLogConfigOutcome Route53ResolverClient::CreateResolverQueryLogConfig(
     const CreateResolverQueryLogConfigRequest& request) const {
-  return CreateResolverQueryLogConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResolverQueryLogConfigOutcome(result.GetResultWithOwnership())
+                            : CreateResolverQueryLogConfigOutcome(std::move(result.GetError()));
 }
 
 CreateResolverRuleOutcome Route53ResolverClient::CreateResolverRule(const CreateResolverRuleRequest& request) const {
-  return CreateResolverRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResolverRuleOutcome(result.GetResultWithOwnership())
+                            : CreateResolverRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteFirewallDomainListOutcome Route53ResolverClient::DeleteFirewallDomainList(const DeleteFirewallDomainListRequest& request) const {
-  return DeleteFirewallDomainListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFirewallDomainListOutcome(result.GetResultWithOwnership())
+                            : DeleteFirewallDomainListOutcome(std::move(result.GetError()));
 }
 
 DeleteFirewallRuleOutcome Route53ResolverClient::DeleteFirewallRule(const DeleteFirewallRuleRequest& request) const {
-  return DeleteFirewallRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteFirewallRuleGroupOutcome Route53ResolverClient::DeleteFirewallRuleGroup(const DeleteFirewallRuleGroupRequest& request) const {
-  return DeleteFirewallRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFirewallRuleGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteFirewallRuleGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteOutpostResolverOutcome Route53ResolverClient::DeleteOutpostResolver(const DeleteOutpostResolverRequest& request) const {
-  return DeleteOutpostResolverOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOutpostResolverOutcome(result.GetResultWithOwnership())
+                            : DeleteOutpostResolverOutcome(std::move(result.GetError()));
 }
 
 DeleteResolverEndpointOutcome Route53ResolverClient::DeleteResolverEndpoint(const DeleteResolverEndpointRequest& request) const {
-  return DeleteResolverEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResolverEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteResolverEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteResolverQueryLogConfigOutcome Route53ResolverClient::DeleteResolverQueryLogConfig(
     const DeleteResolverQueryLogConfigRequest& request) const {
-  return DeleteResolverQueryLogConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResolverQueryLogConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteResolverQueryLogConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteResolverRuleOutcome Route53ResolverClient::DeleteResolverRule(const DeleteResolverRuleRequest& request) const {
-  return DeleteResolverRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResolverRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteResolverRuleOutcome(std::move(result.GetError()));
 }
 
 DisassociateFirewallRuleGroupOutcome Route53ResolverClient::DisassociateFirewallRuleGroup(
     const DisassociateFirewallRuleGroupRequest& request) const {
-  return DisassociateFirewallRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFirewallRuleGroupOutcome(result.GetResultWithOwnership())
+                            : DisassociateFirewallRuleGroupOutcome(std::move(result.GetError()));
 }
 
 DisassociateResolverEndpointIpAddressOutcome Route53ResolverClient::DisassociateResolverEndpointIpAddress(
     const DisassociateResolverEndpointIpAddressRequest& request) const {
-  return DisassociateResolverEndpointIpAddressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateResolverEndpointIpAddressOutcome(result.GetResultWithOwnership())
+                            : DisassociateResolverEndpointIpAddressOutcome(std::move(result.GetError()));
 }
 
 DisassociateResolverQueryLogConfigOutcome Route53ResolverClient::DisassociateResolverQueryLogConfig(
     const DisassociateResolverQueryLogConfigRequest& request) const {
-  return DisassociateResolverQueryLogConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateResolverQueryLogConfigOutcome(result.GetResultWithOwnership())
+                            : DisassociateResolverQueryLogConfigOutcome(std::move(result.GetError()));
 }
 
 DisassociateResolverRuleOutcome Route53ResolverClient::DisassociateResolverRule(const DisassociateResolverRuleRequest& request) const {
-  return DisassociateResolverRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateResolverRuleOutcome(result.GetResultWithOwnership())
+                            : DisassociateResolverRuleOutcome(std::move(result.GetError()));
 }
 
 GetFirewallConfigOutcome Route53ResolverClient::GetFirewallConfig(const GetFirewallConfigRequest& request) const {
-  return GetFirewallConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFirewallConfigOutcome(result.GetResultWithOwnership())
+                            : GetFirewallConfigOutcome(std::move(result.GetError()));
 }
 
 GetFirewallDomainListOutcome Route53ResolverClient::GetFirewallDomainList(const GetFirewallDomainListRequest& request) const {
-  return GetFirewallDomainListOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFirewallDomainListOutcome(result.GetResultWithOwnership())
+                            : GetFirewallDomainListOutcome(std::move(result.GetError()));
 }
 
 GetFirewallRuleGroupOutcome Route53ResolverClient::GetFirewallRuleGroup(const GetFirewallRuleGroupRequest& request) const {
-  return GetFirewallRuleGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFirewallRuleGroupOutcome(result.GetResultWithOwnership())
+                            : GetFirewallRuleGroupOutcome(std::move(result.GetError()));
 }
 
 GetFirewallRuleGroupAssociationOutcome Route53ResolverClient::GetFirewallRuleGroupAssociation(
     const GetFirewallRuleGroupAssociationRequest& request) const {
-  return GetFirewallRuleGroupAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFirewallRuleGroupAssociationOutcome(result.GetResultWithOwnership())
+                            : GetFirewallRuleGroupAssociationOutcome(std::move(result.GetError()));
 }
 
 GetFirewallRuleGroupPolicyOutcome Route53ResolverClient::GetFirewallRuleGroupPolicy(
     const GetFirewallRuleGroupPolicyRequest& request) const {
-  return GetFirewallRuleGroupPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFirewallRuleGroupPolicyOutcome(result.GetResultWithOwnership())
+                            : GetFirewallRuleGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 GetOutpostResolverOutcome Route53ResolverClient::GetOutpostResolver(const GetOutpostResolverRequest& request) const {
-  return GetOutpostResolverOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOutpostResolverOutcome(result.GetResultWithOwnership())
+                            : GetOutpostResolverOutcome(std::move(result.GetError()));
 }
 
 GetResolverConfigOutcome Route53ResolverClient::GetResolverConfig(const GetResolverConfigRequest& request) const {
-  return GetResolverConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResolverConfigOutcome(result.GetResultWithOwnership())
+                            : GetResolverConfigOutcome(std::move(result.GetError()));
 }
 
 GetResolverDnssecConfigOutcome Route53ResolverClient::GetResolverDnssecConfig(const GetResolverDnssecConfigRequest& request) const {
-  return GetResolverDnssecConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResolverDnssecConfigOutcome(result.GetResultWithOwnership())
+                            : GetResolverDnssecConfigOutcome(std::move(result.GetError()));
 }
 
 GetResolverEndpointOutcome Route53ResolverClient::GetResolverEndpoint(const GetResolverEndpointRequest& request) const {
-  return GetResolverEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResolverEndpointOutcome(result.GetResultWithOwnership())
+                            : GetResolverEndpointOutcome(std::move(result.GetError()));
 }
 
 GetResolverQueryLogConfigOutcome Route53ResolverClient::GetResolverQueryLogConfig(const GetResolverQueryLogConfigRequest& request) const {
-  return GetResolverQueryLogConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResolverQueryLogConfigOutcome(result.GetResultWithOwnership())
+                            : GetResolverQueryLogConfigOutcome(std::move(result.GetError()));
 }
 
 GetResolverQueryLogConfigAssociationOutcome Route53ResolverClient::GetResolverQueryLogConfigAssociation(
     const GetResolverQueryLogConfigAssociationRequest& request) const {
-  return GetResolverQueryLogConfigAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResolverQueryLogConfigAssociationOutcome(result.GetResultWithOwnership())
+                            : GetResolverQueryLogConfigAssociationOutcome(std::move(result.GetError()));
 }
 
 GetResolverQueryLogConfigPolicyOutcome Route53ResolverClient::GetResolverQueryLogConfigPolicy(
     const GetResolverQueryLogConfigPolicyRequest& request) const {
-  return GetResolverQueryLogConfigPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResolverQueryLogConfigPolicyOutcome(result.GetResultWithOwnership())
+                            : GetResolverQueryLogConfigPolicyOutcome(std::move(result.GetError()));
 }
 
 GetResolverRuleOutcome Route53ResolverClient::GetResolverRule(const GetResolverRuleRequest& request) const {
-  return GetResolverRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResolverRuleOutcome(result.GetResultWithOwnership())
+                            : GetResolverRuleOutcome(std::move(result.GetError()));
 }
 
 GetResolverRuleAssociationOutcome Route53ResolverClient::GetResolverRuleAssociation(
     const GetResolverRuleAssociationRequest& request) const {
-  return GetResolverRuleAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResolverRuleAssociationOutcome(result.GetResultWithOwnership())
+                            : GetResolverRuleAssociationOutcome(std::move(result.GetError()));
 }
 
 GetResolverRulePolicyOutcome Route53ResolverClient::GetResolverRulePolicy(const GetResolverRulePolicyRequest& request) const {
-  return GetResolverRulePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResolverRulePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResolverRulePolicyOutcome(std::move(result.GetError()));
 }
 
 ImportFirewallDomainsOutcome Route53ResolverClient::ImportFirewallDomains(const ImportFirewallDomainsRequest& request) const {
-  return ImportFirewallDomainsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportFirewallDomainsOutcome(result.GetResultWithOwnership())
+                            : ImportFirewallDomainsOutcome(std::move(result.GetError()));
 }
 
 ListFirewallConfigsOutcome Route53ResolverClient::ListFirewallConfigs(const ListFirewallConfigsRequest& request) const {
-  return ListFirewallConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFirewallConfigsOutcome(result.GetResultWithOwnership())
+                            : ListFirewallConfigsOutcome(std::move(result.GetError()));
 }
 
 ListFirewallDomainListsOutcome Route53ResolverClient::ListFirewallDomainLists(const ListFirewallDomainListsRequest& request) const {
-  return ListFirewallDomainListsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFirewallDomainListsOutcome(result.GetResultWithOwnership())
+                            : ListFirewallDomainListsOutcome(std::move(result.GetError()));
 }
 
 ListFirewallDomainsOutcome Route53ResolverClient::ListFirewallDomains(const ListFirewallDomainsRequest& request) const {
-  return ListFirewallDomainsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFirewallDomainsOutcome(result.GetResultWithOwnership())
+                            : ListFirewallDomainsOutcome(std::move(result.GetError()));
 }
 
 ListFirewallRuleGroupAssociationsOutcome Route53ResolverClient::ListFirewallRuleGroupAssociations(
     const ListFirewallRuleGroupAssociationsRequest& request) const {
-  return ListFirewallRuleGroupAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFirewallRuleGroupAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListFirewallRuleGroupAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListFirewallRuleGroupsOutcome Route53ResolverClient::ListFirewallRuleGroups(const ListFirewallRuleGroupsRequest& request) const {
-  return ListFirewallRuleGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFirewallRuleGroupsOutcome(result.GetResultWithOwnership())
+                            : ListFirewallRuleGroupsOutcome(std::move(result.GetError()));
 }
 
 ListFirewallRulesOutcome Route53ResolverClient::ListFirewallRules(const ListFirewallRulesRequest& request) const {
-  return ListFirewallRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFirewallRulesOutcome(result.GetResultWithOwnership())
+                            : ListFirewallRulesOutcome(std::move(result.GetError()));
 }
 
 ListOutpostResolversOutcome Route53ResolverClient::ListOutpostResolvers(const ListOutpostResolversRequest& request) const {
-  return ListOutpostResolversOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOutpostResolversOutcome(result.GetResultWithOwnership())
+                            : ListOutpostResolversOutcome(std::move(result.GetError()));
 }
 
 ListResolverConfigsOutcome Route53ResolverClient::ListResolverConfigs(const ListResolverConfigsRequest& request) const {
-  return ListResolverConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResolverConfigsOutcome(result.GetResultWithOwnership())
+                            : ListResolverConfigsOutcome(std::move(result.GetError()));
 }
 
 ListResolverDnssecConfigsOutcome Route53ResolverClient::ListResolverDnssecConfigs(const ListResolverDnssecConfigsRequest& request) const {
-  return ListResolverDnssecConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResolverDnssecConfigsOutcome(result.GetResultWithOwnership())
+                            : ListResolverDnssecConfigsOutcome(std::move(result.GetError()));
 }
 
 ListResolverEndpointIpAddressesOutcome Route53ResolverClient::ListResolverEndpointIpAddresses(
     const ListResolverEndpointIpAddressesRequest& request) const {
-  return ListResolverEndpointIpAddressesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResolverEndpointIpAddressesOutcome(result.GetResultWithOwnership())
+                            : ListResolverEndpointIpAddressesOutcome(std::move(result.GetError()));
 }
 
 ListResolverEndpointsOutcome Route53ResolverClient::ListResolverEndpoints(const ListResolverEndpointsRequest& request) const {
-  return ListResolverEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResolverEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListResolverEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListResolverQueryLogConfigAssociationsOutcome Route53ResolverClient::ListResolverQueryLogConfigAssociations(
     const ListResolverQueryLogConfigAssociationsRequest& request) const {
-  return ListResolverQueryLogConfigAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResolverQueryLogConfigAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListResolverQueryLogConfigAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListResolverQueryLogConfigsOutcome Route53ResolverClient::ListResolverQueryLogConfigs(
     const ListResolverQueryLogConfigsRequest& request) const {
-  return ListResolverQueryLogConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResolverQueryLogConfigsOutcome(result.GetResultWithOwnership())
+                            : ListResolverQueryLogConfigsOutcome(std::move(result.GetError()));
 }
 
 ListResolverRuleAssociationsOutcome Route53ResolverClient::ListResolverRuleAssociations(
     const ListResolverRuleAssociationsRequest& request) const {
-  return ListResolverRuleAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResolverRuleAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListResolverRuleAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListResolverRulesOutcome Route53ResolverClient::ListResolverRules(const ListResolverRulesRequest& request) const {
-  return ListResolverRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResolverRulesOutcome(result.GetResultWithOwnership())
+                            : ListResolverRulesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome Route53ResolverClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutFirewallRuleGroupPolicyOutcome Route53ResolverClient::PutFirewallRuleGroupPolicy(
     const PutFirewallRuleGroupPolicyRequest& request) const {
-  return PutFirewallRuleGroupPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutFirewallRuleGroupPolicyOutcome(result.GetResultWithOwnership())
+                            : PutFirewallRuleGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 PutResolverQueryLogConfigPolicyOutcome Route53ResolverClient::PutResolverQueryLogConfigPolicy(
     const PutResolverQueryLogConfigPolicyRequest& request) const {
-  return PutResolverQueryLogConfigPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResolverQueryLogConfigPolicyOutcome(result.GetResultWithOwnership())
+                            : PutResolverQueryLogConfigPolicyOutcome(std::move(result.GetError()));
 }
 
 PutResolverRulePolicyOutcome Route53ResolverClient::PutResolverRulePolicy(const PutResolverRulePolicyRequest& request) const {
-  return PutResolverRulePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResolverRulePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResolverRulePolicyOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome Route53ResolverClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome Route53ResolverClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallConfigOutcome Route53ResolverClient::UpdateFirewallConfig(const UpdateFirewallConfigRequest& request) const {
-  return UpdateFirewallConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFirewallConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallDomainsOutcome Route53ResolverClient::UpdateFirewallDomains(const UpdateFirewallDomainsRequest& request) const {
-  return UpdateFirewallDomainsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFirewallDomainsOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallDomainsOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallRuleOutcome Route53ResolverClient::UpdateFirewallRule(const UpdateFirewallRuleRequest& request) const {
-  return UpdateFirewallRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallRuleGroupAssociationOutcome Route53ResolverClient::UpdateFirewallRuleGroupAssociation(
     const UpdateFirewallRuleGroupAssociationRequest& request) const {
-  return UpdateFirewallRuleGroupAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFirewallRuleGroupAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallRuleGroupAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateOutpostResolverOutcome Route53ResolverClient::UpdateOutpostResolver(const UpdateOutpostResolverRequest& request) const {
-  return UpdateOutpostResolverOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOutpostResolverOutcome(result.GetResultWithOwnership())
+                            : UpdateOutpostResolverOutcome(std::move(result.GetError()));
 }
 
 UpdateResolverConfigOutcome Route53ResolverClient::UpdateResolverConfig(const UpdateResolverConfigRequest& request) const {
-  return UpdateResolverConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResolverConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateResolverConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateResolverDnssecConfigOutcome Route53ResolverClient::UpdateResolverDnssecConfig(
     const UpdateResolverDnssecConfigRequest& request) const {
-  return UpdateResolverDnssecConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResolverDnssecConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateResolverDnssecConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateResolverEndpointOutcome Route53ResolverClient::UpdateResolverEndpoint(const UpdateResolverEndpointRequest& request) const {
-  return UpdateResolverEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResolverEndpointOutcome(result.GetResultWithOwnership())
+                            : UpdateResolverEndpointOutcome(std::move(result.GetError()));
 }
 
 UpdateResolverRuleOutcome Route53ResolverClient::UpdateResolverRule(const UpdateResolverRuleRequest& request) const {
-  return UpdateResolverRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResolverRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateResolverRuleOutcome(std::move(result.GetError()));
 }

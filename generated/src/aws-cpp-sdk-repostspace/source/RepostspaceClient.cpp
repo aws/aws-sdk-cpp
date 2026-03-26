@@ -215,7 +215,9 @@ BatchAddChannelRoleToAccessorsOutcome RepostspaceClient::BatchAddChannelRoleToAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/roles");
   };
 
-  return BatchAddChannelRoleToAccessorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAddChannelRoleToAccessorsOutcome(result.GetResultWithOwnership())
+                            : BatchAddChannelRoleToAccessorsOutcome(std::move(result.GetError()));
 }
 
 BatchAddRoleOutcome RepostspaceClient::BatchAddRole(const BatchAddRoleRequest& request) const {
@@ -232,7 +234,8 @@ BatchAddRoleOutcome RepostspaceClient::BatchAddRole(const BatchAddRoleRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/roles");
   };
 
-  return BatchAddRoleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAddRoleOutcome(result.GetResultWithOwnership()) : BatchAddRoleOutcome(std::move(result.GetError()));
 }
 
 BatchRemoveChannelRoleFromAccessorsOutcome RepostspaceClient::BatchRemoveChannelRoleFromAccessors(
@@ -257,7 +260,9 @@ BatchRemoveChannelRoleFromAccessorsOutcome RepostspaceClient::BatchRemoveChannel
     endpointResolutionOutcome.GetResult().AddPathSegments("/roles");
   };
 
-  return BatchRemoveChannelRoleFromAccessorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchRemoveChannelRoleFromAccessorsOutcome(result.GetResultWithOwnership())
+                            : BatchRemoveChannelRoleFromAccessorsOutcome(std::move(result.GetError()));
 }
 
 BatchRemoveRoleOutcome RepostspaceClient::BatchRemoveRole(const BatchRemoveRoleRequest& request) const {
@@ -274,7 +279,9 @@ BatchRemoveRoleOutcome RepostspaceClient::BatchRemoveRole(const BatchRemoveRoleR
     endpointResolutionOutcome.GetResult().AddPathSegments("/roles");
   };
 
-  return BatchRemoveRoleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchRemoveRoleOutcome(result.GetResultWithOwnership())
+                            : BatchRemoveRoleOutcome(std::move(result.GetError()));
 }
 
 CreateChannelOutcome RepostspaceClient::CreateChannel(const CreateChannelRequest& request) const {
@@ -291,7 +298,8 @@ CreateChannelOutcome RepostspaceClient::CreateChannel(const CreateChannelRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   };
 
-  return CreateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelOutcome(result.GetResultWithOwnership()) : CreateChannelOutcome(std::move(result.GetError()));
 }
 
 CreateSpaceOutcome RepostspaceClient::CreateSpace(const CreateSpaceRequest& request) const {
@@ -300,7 +308,8 @@ CreateSpaceOutcome RepostspaceClient::CreateSpace(const CreateSpaceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/spaces");
   };
 
-  return CreateSpaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSpaceOutcome(result.GetResultWithOwnership()) : CreateSpaceOutcome(std::move(result.GetError()));
 }
 
 DeleteSpaceOutcome RepostspaceClient::DeleteSpace(const DeleteSpaceRequest& request) const {
@@ -316,7 +325,8 @@ DeleteSpaceOutcome RepostspaceClient::DeleteSpace(const DeleteSpaceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
   };
 
-  return DeleteSpaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSpaceOutcome(result.GetResultWithOwnership()) : DeleteSpaceOutcome(std::move(result.GetError()));
 }
 
 DeregisterAdminOutcome RepostspaceClient::DeregisterAdmin(const DeregisterAdminRequest& request) const {
@@ -339,7 +349,9 @@ DeregisterAdminOutcome RepostspaceClient::DeregisterAdmin(const DeregisterAdminR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAdminId());
   };
 
-  return DeregisterAdminOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeregisterAdminOutcome(result.GetResultWithOwnership())
+                            : DeregisterAdminOutcome(std::move(result.GetError()));
 }
 
 GetChannelOutcome RepostspaceClient::GetChannel(const GetChannelRequest& request) const {
@@ -362,7 +374,8 @@ GetChannelOutcome RepostspaceClient::GetChannel(const GetChannelRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelId());
   };
 
-  return GetChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChannelOutcome(result.GetResultWithOwnership()) : GetChannelOutcome(std::move(result.GetError()));
 }
 
 GetSpaceOutcome RepostspaceClient::GetSpace(const GetSpaceRequest& request) const {
@@ -378,7 +391,8 @@ GetSpaceOutcome RepostspaceClient::GetSpace(const GetSpaceRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
   };
 
-  return GetSpaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSpaceOutcome(result.GetResultWithOwnership()) : GetSpaceOutcome(std::move(result.GetError()));
 }
 
 ListChannelsOutcome RepostspaceClient::ListChannels(const ListChannelsRequest& request) const {
@@ -395,7 +409,8 @@ ListChannelsOutcome RepostspaceClient::ListChannels(const ListChannelsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   };
 
-  return ListChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
 }
 
 ListSpacesOutcome RepostspaceClient::ListSpaces(const ListSpacesRequest& request) const {
@@ -404,7 +419,8 @@ ListSpacesOutcome RepostspaceClient::ListSpaces(const ListSpacesRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/spaces");
   };
 
-  return ListSpacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSpacesOutcome(result.GetResultWithOwnership()) : ListSpacesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome RepostspaceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -420,7 +436,9 @@ ListTagsForResourceOutcome RepostspaceClient::ListTagsForResource(const ListTags
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterAdminOutcome RepostspaceClient::RegisterAdmin(const RegisterAdminRequest& request) const {
@@ -443,7 +461,8 @@ RegisterAdminOutcome RepostspaceClient::RegisterAdmin(const RegisterAdminRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAdminId());
   };
 
-  return RegisterAdminOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterAdminOutcome(result.GetResultWithOwnership()) : RegisterAdminOutcome(std::move(result.GetError()));
 }
 
 SendInvitesOutcome RepostspaceClient::SendInvites(const SendInvitesRequest& request) const {
@@ -460,7 +479,8 @@ SendInvitesOutcome RepostspaceClient::SendInvites(const SendInvitesRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/invite");
   };
 
-  return SendInvitesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendInvitesOutcome(result.GetResultWithOwnership()) : SendInvitesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome RepostspaceClient::TagResource(const TagResourceRequest& request) const {
@@ -476,7 +496,8 @@ TagResourceOutcome RepostspaceClient::TagResource(const TagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome RepostspaceClient::UntagResource(const UntagResourceRequest& request) const {
@@ -497,7 +518,8 @@ UntagResourceOutcome RepostspaceClient::UntagResource(const UntagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelOutcome RepostspaceClient::UpdateChannel(const UpdateChannelRequest& request) const {
@@ -520,7 +542,8 @@ UpdateChannelOutcome RepostspaceClient::UpdateChannel(const UpdateChannelRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelId());
   };
 
-  return UpdateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelOutcome(result.GetResultWithOwnership()) : UpdateChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateSpaceOutcome RepostspaceClient::UpdateSpace(const UpdateSpaceRequest& request) const {
@@ -536,5 +559,6 @@ UpdateSpaceOutcome RepostspaceClient::UpdateSpace(const UpdateSpaceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceId());
   };
 
-  return UpdateSpaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSpaceOutcome(result.GetResultWithOwnership()) : UpdateSpaceOutcome(std::move(result.GetError()));
 }

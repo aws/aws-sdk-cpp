@@ -212,7 +212,9 @@ DeleteEarthObservationJobOutcome SageMakerGeospatialClient::DeleteEarthObservati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteEarthObservationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEarthObservationJobOutcome(result.GetResultWithOwnership())
+                            : DeleteEarthObservationJobOutcome(std::move(result.GetError()));
 }
 
 DeleteVectorEnrichmentJobOutcome SageMakerGeospatialClient::DeleteVectorEnrichmentJob(
@@ -229,7 +231,9 @@ DeleteVectorEnrichmentJobOutcome SageMakerGeospatialClient::DeleteVectorEnrichme
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteVectorEnrichmentJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVectorEnrichmentJobOutcome(result.GetResultWithOwnership())
+                            : DeleteVectorEnrichmentJobOutcome(std::move(result.GetError()));
 }
 
 ExportEarthObservationJobOutcome SageMakerGeospatialClient::ExportEarthObservationJob(
@@ -239,7 +243,9 @@ ExportEarthObservationJobOutcome SageMakerGeospatialClient::ExportEarthObservati
     endpointResolutionOutcome.GetResult().AddPathSegments("/export-earth-observation-job");
   };
 
-  return ExportEarthObservationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportEarthObservationJobOutcome(result.GetResultWithOwnership())
+                            : ExportEarthObservationJobOutcome(std::move(result.GetError()));
 }
 
 ExportVectorEnrichmentJobOutcome SageMakerGeospatialClient::ExportVectorEnrichmentJob(
@@ -249,7 +255,9 @@ ExportVectorEnrichmentJobOutcome SageMakerGeospatialClient::ExportVectorEnrichme
     endpointResolutionOutcome.GetResult().AddPathSegments("/export-vector-enrichment-jobs");
   };
 
-  return ExportVectorEnrichmentJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportVectorEnrichmentJobOutcome(result.GetResultWithOwnership())
+                            : ExportVectorEnrichmentJobOutcome(std::move(result.GetError()));
 }
 
 GetEarthObservationJobOutcome SageMakerGeospatialClient::GetEarthObservationJob(const GetEarthObservationJobRequest& request) const {
@@ -265,7 +273,9 @@ GetEarthObservationJobOutcome SageMakerGeospatialClient::GetEarthObservationJob(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetEarthObservationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEarthObservationJobOutcome(result.GetResultWithOwnership())
+                            : GetEarthObservationJobOutcome(std::move(result.GetError()));
 }
 
 GetRasterDataCollectionOutcome SageMakerGeospatialClient::GetRasterDataCollection(const GetRasterDataCollectionRequest& request) const {
@@ -281,7 +291,9 @@ GetRasterDataCollectionOutcome SageMakerGeospatialClient::GetRasterDataCollectio
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetRasterDataCollectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRasterDataCollectionOutcome(result.GetResultWithOwnership())
+                            : GetRasterDataCollectionOutcome(std::move(result.GetError()));
 }
 
 GetTileOutcome SageMakerGeospatialClient::GetTile(const GetTileRequest& request) const {
@@ -339,8 +351,8 @@ GetTileOutcome SageMakerGeospatialClient::GetTile(const GetTileRequest& request)
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetZ());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetX());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetY());
-        return GetTileOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetTileOutcome(result.GetResultWithOwnership()) : GetTileOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -360,7 +372,9 @@ GetVectorEnrichmentJobOutcome SageMakerGeospatialClient::GetVectorEnrichmentJob(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetVectorEnrichmentJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVectorEnrichmentJobOutcome(result.GetResultWithOwnership())
+                            : GetVectorEnrichmentJobOutcome(std::move(result.GetError()));
 }
 
 ListEarthObservationJobsOutcome SageMakerGeospatialClient::ListEarthObservationJobs(const ListEarthObservationJobsRequest& request) const {
@@ -369,7 +383,9 @@ ListEarthObservationJobsOutcome SageMakerGeospatialClient::ListEarthObservationJ
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-earth-observation-jobs");
   };
 
-  return ListEarthObservationJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEarthObservationJobsOutcome(result.GetResultWithOwnership())
+                            : ListEarthObservationJobsOutcome(std::move(result.GetError()));
 }
 
 ListRasterDataCollectionsOutcome SageMakerGeospatialClient::ListRasterDataCollections(
@@ -379,7 +395,9 @@ ListRasterDataCollectionsOutcome SageMakerGeospatialClient::ListRasterDataCollec
     endpointResolutionOutcome.GetResult().AddPathSegments("/raster-data-collections");
   };
 
-  return ListRasterDataCollectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRasterDataCollectionsOutcome(result.GetResultWithOwnership())
+                            : ListRasterDataCollectionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SageMakerGeospatialClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -395,7 +413,9 @@ ListTagsForResourceOutcome SageMakerGeospatialClient::ListTagsForResource(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVectorEnrichmentJobsOutcome SageMakerGeospatialClient::ListVectorEnrichmentJobs(const ListVectorEnrichmentJobsRequest& request) const {
@@ -404,7 +424,9 @@ ListVectorEnrichmentJobsOutcome SageMakerGeospatialClient::ListVectorEnrichmentJ
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-vector-enrichment-jobs");
   };
 
-  return ListVectorEnrichmentJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVectorEnrichmentJobsOutcome(result.GetResultWithOwnership())
+                            : ListVectorEnrichmentJobsOutcome(std::move(result.GetError()));
 }
 
 SearchRasterDataCollectionOutcome SageMakerGeospatialClient::SearchRasterDataCollection(
@@ -414,7 +436,9 @@ SearchRasterDataCollectionOutcome SageMakerGeospatialClient::SearchRasterDataCol
     endpointResolutionOutcome.GetResult().AddPathSegments("/search-raster-data-collection");
   };
 
-  return SearchRasterDataCollectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchRasterDataCollectionOutcome(result.GetResultWithOwnership())
+                            : SearchRasterDataCollectionOutcome(std::move(result.GetError()));
 }
 
 StartEarthObservationJobOutcome SageMakerGeospatialClient::StartEarthObservationJob(const StartEarthObservationJobRequest& request) const {
@@ -423,7 +447,9 @@ StartEarthObservationJobOutcome SageMakerGeospatialClient::StartEarthObservation
     endpointResolutionOutcome.GetResult().AddPathSegments("/earth-observation-jobs");
   };
 
-  return StartEarthObservationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartEarthObservationJobOutcome(result.GetResultWithOwnership())
+                            : StartEarthObservationJobOutcome(std::move(result.GetError()));
 }
 
 StartVectorEnrichmentJobOutcome SageMakerGeospatialClient::StartVectorEnrichmentJob(const StartVectorEnrichmentJobRequest& request) const {
@@ -432,7 +458,9 @@ StartVectorEnrichmentJobOutcome SageMakerGeospatialClient::StartVectorEnrichment
     endpointResolutionOutcome.GetResult().AddPathSegments("/vector-enrichment-jobs");
   };
 
-  return StartVectorEnrichmentJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartVectorEnrichmentJobOutcome(result.GetResultWithOwnership())
+                            : StartVectorEnrichmentJobOutcome(std::move(result.GetError()));
 }
 
 StopEarthObservationJobOutcome SageMakerGeospatialClient::StopEarthObservationJob(const StopEarthObservationJobRequest& request) const {
@@ -441,7 +469,9 @@ StopEarthObservationJobOutcome SageMakerGeospatialClient::StopEarthObservationJo
     endpointResolutionOutcome.GetResult().AddPathSegments("/earth-observation-jobs/stop");
   };
 
-  return StopEarthObservationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopEarthObservationJobOutcome(result.GetResultWithOwnership())
+                            : StopEarthObservationJobOutcome(std::move(result.GetError()));
 }
 
 StopVectorEnrichmentJobOutcome SageMakerGeospatialClient::StopVectorEnrichmentJob(const StopVectorEnrichmentJobRequest& request) const {
@@ -450,7 +480,9 @@ StopVectorEnrichmentJobOutcome SageMakerGeospatialClient::StopVectorEnrichmentJo
     endpointResolutionOutcome.GetResult().AddPathSegments("/vector-enrichment-jobs/stop");
   };
 
-  return StopVectorEnrichmentJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopVectorEnrichmentJobOutcome(result.GetResultWithOwnership())
+                            : StopVectorEnrichmentJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SageMakerGeospatialClient::TagResource(const TagResourceRequest& request) const {
@@ -466,7 +498,8 @@ TagResourceOutcome SageMakerGeospatialClient::TagResource(const TagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SageMakerGeospatialClient::UntagResource(const UntagResourceRequest& request) const {
@@ -487,5 +520,6 @@ UntagResourceOutcome SageMakerGeospatialClient::UntagResource(const UntagResourc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

@@ -232,244 +232,334 @@ CloudTrailClient::InvokeOperationOutcome CloudTrailClient::InvokeServiceOperatio
 }
 
 AddTagsOutcome CloudTrailClient::AddTags(const AddTagsRequest& request) const {
-  return AddTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsOutcome(result.GetResultWithOwnership()) : AddTagsOutcome(std::move(result.GetError()));
 }
 
 CancelQueryOutcome CloudTrailClient::CancelQuery(const CancelQueryRequest& request) const {
-  return CancelQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelQueryOutcome(result.GetResultWithOwnership()) : CancelQueryOutcome(std::move(result.GetError()));
 }
 
 CreateChannelOutcome CloudTrailClient::CreateChannel(const CreateChannelRequest& request) const {
-  return CreateChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelOutcome(result.GetResultWithOwnership()) : CreateChannelOutcome(std::move(result.GetError()));
 }
 
 CreateDashboardOutcome CloudTrailClient::CreateDashboard(const CreateDashboardRequest& request) const {
-  return CreateDashboardOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDashboardOutcome(result.GetResultWithOwnership())
+                            : CreateDashboardOutcome(std::move(result.GetError()));
 }
 
 CreateEventDataStoreOutcome CloudTrailClient::CreateEventDataStore(const CreateEventDataStoreRequest& request) const {
-  return CreateEventDataStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventDataStoreOutcome(result.GetResultWithOwnership())
+                            : CreateEventDataStoreOutcome(std::move(result.GetError()));
 }
 
 CreateTrailOutcome CloudTrailClient::CreateTrail(const CreateTrailRequest& request) const {
-  return CreateTrailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrailOutcome(result.GetResultWithOwnership()) : CreateTrailOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelOutcome CloudTrailClient::DeleteChannel(const DeleteChannelRequest& request) const {
-  return DeleteChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteChannelOutcome(result.GetResultWithOwnership()) : DeleteChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteDashboardOutcome CloudTrailClient::DeleteDashboard(const DeleteDashboardRequest& request) const {
-  return DeleteDashboardOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDashboardOutcome(result.GetResultWithOwnership())
+                            : DeleteDashboardOutcome(std::move(result.GetError()));
 }
 
 DeleteEventDataStoreOutcome CloudTrailClient::DeleteEventDataStore(const DeleteEventDataStoreRequest& request) const {
-  return DeleteEventDataStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEventDataStoreOutcome(result.GetResultWithOwnership())
+                            : DeleteEventDataStoreOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome CloudTrailClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteTrailOutcome CloudTrailClient::DeleteTrail(const DeleteTrailRequest& request) const {
-  return DeleteTrailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTrailOutcome(result.GetResultWithOwnership()) : DeleteTrailOutcome(std::move(result.GetError()));
 }
 
 DeregisterOrganizationDelegatedAdminOutcome CloudTrailClient::DeregisterOrganizationDelegatedAdmin(
     const DeregisterOrganizationDelegatedAdminRequest& request) const {
-  return DeregisterOrganizationDelegatedAdminOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterOrganizationDelegatedAdminOutcome(result.GetResultWithOwnership())
+                            : DeregisterOrganizationDelegatedAdminOutcome(std::move(result.GetError()));
 }
 
 DescribeQueryOutcome CloudTrailClient::DescribeQuery(const DescribeQueryRequest& request) const {
-  return DescribeQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeQueryOutcome(result.GetResultWithOwnership()) : DescribeQueryOutcome(std::move(result.GetError()));
 }
 
 DescribeTrailsOutcome CloudTrailClient::DescribeTrails(const DescribeTrailsRequest& request) const {
-  return DescribeTrailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrailsOutcome(result.GetResultWithOwnership()) : DescribeTrailsOutcome(std::move(result.GetError()));
 }
 
 DisableFederationOutcome CloudTrailClient::DisableFederation(const DisableFederationRequest& request) const {
-  return DisableFederationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableFederationOutcome(result.GetResultWithOwnership())
+                            : DisableFederationOutcome(std::move(result.GetError()));
 }
 
 EnableFederationOutcome CloudTrailClient::EnableFederation(const EnableFederationRequest& request) const {
-  return EnableFederationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableFederationOutcome(result.GetResultWithOwnership())
+                            : EnableFederationOutcome(std::move(result.GetError()));
 }
 
 GenerateQueryOutcome CloudTrailClient::GenerateQuery(const GenerateQueryRequest& request) const {
-  return GenerateQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateQueryOutcome(result.GetResultWithOwnership()) : GenerateQueryOutcome(std::move(result.GetError()));
 }
 
 GetChannelOutcome CloudTrailClient::GetChannel(const GetChannelRequest& request) const {
-  return GetChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetChannelOutcome(result.GetResultWithOwnership()) : GetChannelOutcome(std::move(result.GetError()));
 }
 
 GetDashboardOutcome CloudTrailClient::GetDashboard(const GetDashboardRequest& request) const {
-  return GetDashboardOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDashboardOutcome(result.GetResultWithOwnership()) : GetDashboardOutcome(std::move(result.GetError()));
 }
 
 GetEventConfigurationOutcome CloudTrailClient::GetEventConfiguration(const GetEventConfigurationRequest& request) const {
-  return GetEventConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEventConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetEventConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetEventDataStoreOutcome CloudTrailClient::GetEventDataStore(const GetEventDataStoreRequest& request) const {
-  return GetEventDataStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEventDataStoreOutcome(result.GetResultWithOwnership())
+                            : GetEventDataStoreOutcome(std::move(result.GetError()));
 }
 
 GetEventSelectorsOutcome CloudTrailClient::GetEventSelectors(const GetEventSelectorsRequest& request) const {
-  return GetEventSelectorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEventSelectorsOutcome(result.GetResultWithOwnership())
+                            : GetEventSelectorsOutcome(std::move(result.GetError()));
 }
 
 GetImportOutcome CloudTrailClient::GetImport(const GetImportRequest& request) const {
-  return GetImportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetImportOutcome(result.GetResultWithOwnership()) : GetImportOutcome(std::move(result.GetError()));
 }
 
 GetInsightSelectorsOutcome CloudTrailClient::GetInsightSelectors(const GetInsightSelectorsRequest& request) const {
-  return GetInsightSelectorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInsightSelectorsOutcome(result.GetResultWithOwnership())
+                            : GetInsightSelectorsOutcome(std::move(result.GetError()));
 }
 
 GetQueryResultsOutcome CloudTrailClient::GetQueryResults(const GetQueryResultsRequest& request) const {
-  return GetQueryResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQueryResultsOutcome(result.GetResultWithOwnership())
+                            : GetQueryResultsOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome CloudTrailClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 GetTrailOutcome CloudTrailClient::GetTrail(const GetTrailRequest& request) const {
-  return GetTrailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTrailOutcome(result.GetResultWithOwnership()) : GetTrailOutcome(std::move(result.GetError()));
 }
 
 GetTrailStatusOutcome CloudTrailClient::GetTrailStatus(const GetTrailStatusRequest& request) const {
-  return GetTrailStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTrailStatusOutcome(result.GetResultWithOwnership()) : GetTrailStatusOutcome(std::move(result.GetError()));
 }
 
 ListChannelsOutcome CloudTrailClient::ListChannels(const ListChannelsRequest& request) const {
-  return ListChannelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
 }
 
 ListDashboardsOutcome CloudTrailClient::ListDashboards(const ListDashboardsRequest& request) const {
-  return ListDashboardsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDashboardsOutcome(result.GetResultWithOwnership()) : ListDashboardsOutcome(std::move(result.GetError()));
 }
 
 ListEventDataStoresOutcome CloudTrailClient::ListEventDataStores(const ListEventDataStoresRequest& request) const {
-  return ListEventDataStoresOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventDataStoresOutcome(result.GetResultWithOwnership())
+                            : ListEventDataStoresOutcome(std::move(result.GetError()));
 }
 
 ListImportFailuresOutcome CloudTrailClient::ListImportFailures(const ListImportFailuresRequest& request) const {
-  return ListImportFailuresOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImportFailuresOutcome(result.GetResultWithOwnership())
+                            : ListImportFailuresOutcome(std::move(result.GetError()));
 }
 
 ListImportsOutcome CloudTrailClient::ListImports(const ListImportsRequest& request) const {
-  return ListImportsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImportsOutcome(result.GetResultWithOwnership()) : ListImportsOutcome(std::move(result.GetError()));
 }
 
 ListInsightsDataOutcome CloudTrailClient::ListInsightsData(const ListInsightsDataRequest& request) const {
-  return ListInsightsDataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInsightsDataOutcome(result.GetResultWithOwnership())
+                            : ListInsightsDataOutcome(std::move(result.GetError()));
 }
 
 ListInsightsMetricDataOutcome CloudTrailClient::ListInsightsMetricData(const ListInsightsMetricDataRequest& request) const {
-  return ListInsightsMetricDataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInsightsMetricDataOutcome(result.GetResultWithOwnership())
+                            : ListInsightsMetricDataOutcome(std::move(result.GetError()));
 }
 
 ListPublicKeysOutcome CloudTrailClient::ListPublicKeys(const ListPublicKeysRequest& request) const {
-  return ListPublicKeysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPublicKeysOutcome(result.GetResultWithOwnership()) : ListPublicKeysOutcome(std::move(result.GetError()));
 }
 
 ListQueriesOutcome CloudTrailClient::ListQueries(const ListQueriesRequest& request) const {
-  return ListQueriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListQueriesOutcome(result.GetResultWithOwnership()) : ListQueriesOutcome(std::move(result.GetError()));
 }
 
 ListTagsOutcome CloudTrailClient::ListTags(const ListTagsRequest& request) const {
-  return ListTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsOutcome(result.GetResultWithOwnership()) : ListTagsOutcome(std::move(result.GetError()));
 }
 
 ListTrailsOutcome CloudTrailClient::ListTrails(const ListTrailsRequest& request) const {
-  return ListTrailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrailsOutcome(result.GetResultWithOwnership()) : ListTrailsOutcome(std::move(result.GetError()));
 }
 
 LookupEventsOutcome CloudTrailClient::LookupEvents(const LookupEventsRequest& request) const {
-  return LookupEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? LookupEventsOutcome(result.GetResultWithOwnership()) : LookupEventsOutcome(std::move(result.GetError()));
 }
 
 PutEventConfigurationOutcome CloudTrailClient::PutEventConfiguration(const PutEventConfigurationRequest& request) const {
-  return PutEventConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEventConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutEventConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutEventSelectorsOutcome CloudTrailClient::PutEventSelectors(const PutEventSelectorsRequest& request) const {
-  return PutEventSelectorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEventSelectorsOutcome(result.GetResultWithOwnership())
+                            : PutEventSelectorsOutcome(std::move(result.GetError()));
 }
 
 PutInsightSelectorsOutcome CloudTrailClient::PutInsightSelectors(const PutInsightSelectorsRequest& request) const {
-  return PutInsightSelectorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutInsightSelectorsOutcome(result.GetResultWithOwnership())
+                            : PutInsightSelectorsOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome CloudTrailClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 RegisterOrganizationDelegatedAdminOutcome CloudTrailClient::RegisterOrganizationDelegatedAdmin(
     const RegisterOrganizationDelegatedAdminRequest& request) const {
-  return RegisterOrganizationDelegatedAdminOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterOrganizationDelegatedAdminOutcome(result.GetResultWithOwnership())
+                            : RegisterOrganizationDelegatedAdminOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsOutcome CloudTrailClient::RemoveTags(const RemoveTagsRequest& request) const {
-  return RemoveTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsOutcome(result.GetResultWithOwnership()) : RemoveTagsOutcome(std::move(result.GetError()));
 }
 
 RestoreEventDataStoreOutcome CloudTrailClient::RestoreEventDataStore(const RestoreEventDataStoreRequest& request) const {
-  return RestoreEventDataStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreEventDataStoreOutcome(result.GetResultWithOwnership())
+                            : RestoreEventDataStoreOutcome(std::move(result.GetError()));
 }
 
 SearchSampleQueriesOutcome CloudTrailClient::SearchSampleQueries(const SearchSampleQueriesRequest& request) const {
-  return SearchSampleQueriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchSampleQueriesOutcome(result.GetResultWithOwnership())
+                            : SearchSampleQueriesOutcome(std::move(result.GetError()));
 }
 
 StartDashboardRefreshOutcome CloudTrailClient::StartDashboardRefresh(const StartDashboardRefreshRequest& request) const {
-  return StartDashboardRefreshOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDashboardRefreshOutcome(result.GetResultWithOwnership())
+                            : StartDashboardRefreshOutcome(std::move(result.GetError()));
 }
 
 StartEventDataStoreIngestionOutcome CloudTrailClient::StartEventDataStoreIngestion(
     const StartEventDataStoreIngestionRequest& request) const {
-  return StartEventDataStoreIngestionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartEventDataStoreIngestionOutcome(result.GetResultWithOwnership())
+                            : StartEventDataStoreIngestionOutcome(std::move(result.GetError()));
 }
 
 StartImportOutcome CloudTrailClient::StartImport(const StartImportRequest& request) const {
-  return StartImportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartImportOutcome(result.GetResultWithOwnership()) : StartImportOutcome(std::move(result.GetError()));
 }
 
 StartLoggingOutcome CloudTrailClient::StartLogging(const StartLoggingRequest& request) const {
-  return StartLoggingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartLoggingOutcome(result.GetResultWithOwnership()) : StartLoggingOutcome(std::move(result.GetError()));
 }
 
 StartQueryOutcome CloudTrailClient::StartQuery(const StartQueryRequest& request) const {
-  return StartQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQueryOutcome(result.GetResultWithOwnership()) : StartQueryOutcome(std::move(result.GetError()));
 }
 
 StopEventDataStoreIngestionOutcome CloudTrailClient::StopEventDataStoreIngestion(const StopEventDataStoreIngestionRequest& request) const {
-  return StopEventDataStoreIngestionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopEventDataStoreIngestionOutcome(result.GetResultWithOwnership())
+                            : StopEventDataStoreIngestionOutcome(std::move(result.GetError()));
 }
 
 StopImportOutcome CloudTrailClient::StopImport(const StopImportRequest& request) const {
-  return StopImportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopImportOutcome(result.GetResultWithOwnership()) : StopImportOutcome(std::move(result.GetError()));
 }
 
 StopLoggingOutcome CloudTrailClient::StopLogging(const StopLoggingRequest& request) const {
-  return StopLoggingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopLoggingOutcome(result.GetResultWithOwnership()) : StopLoggingOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelOutcome CloudTrailClient::UpdateChannel(const UpdateChannelRequest& request) const {
-  return UpdateChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateChannelOutcome(result.GetResultWithOwnership()) : UpdateChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateDashboardOutcome CloudTrailClient::UpdateDashboard(const UpdateDashboardRequest& request) const {
-  return UpdateDashboardOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDashboardOutcome(result.GetResultWithOwnership())
+                            : UpdateDashboardOutcome(std::move(result.GetError()));
 }
 
 UpdateEventDataStoreOutcome CloudTrailClient::UpdateEventDataStore(const UpdateEventDataStoreRequest& request) const {
-  return UpdateEventDataStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEventDataStoreOutcome(result.GetResultWithOwnership())
+                            : UpdateEventDataStoreOutcome(std::move(result.GetError()));
 }
 
 UpdateTrailOutcome CloudTrailClient::UpdateTrail(const UpdateTrailRequest& request) const {
-  return UpdateTrailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTrailOutcome(result.GetResultWithOwnership()) : UpdateTrailOutcome(std::move(result.GetError()));
 }

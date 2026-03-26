@@ -200,73 +200,105 @@ PartnerCentralChannelClient::InvokeOperationOutcome PartnerCentralChannelClient:
 }
 
 AcceptChannelHandshakeOutcome PartnerCentralChannelClient::AcceptChannelHandshake(const AcceptChannelHandshakeRequest& request) const {
-  return AcceptChannelHandshakeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptChannelHandshakeOutcome(result.GetResultWithOwnership())
+                            : AcceptChannelHandshakeOutcome(std::move(result.GetError()));
 }
 
 CancelChannelHandshakeOutcome PartnerCentralChannelClient::CancelChannelHandshake(const CancelChannelHandshakeRequest& request) const {
-  return CancelChannelHandshakeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelChannelHandshakeOutcome(result.GetResultWithOwnership())
+                            : CancelChannelHandshakeOutcome(std::move(result.GetError()));
 }
 
 CreateChannelHandshakeOutcome PartnerCentralChannelClient::CreateChannelHandshake(const CreateChannelHandshakeRequest& request) const {
-  return CreateChannelHandshakeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelHandshakeOutcome(result.GetResultWithOwnership())
+                            : CreateChannelHandshakeOutcome(std::move(result.GetError()));
 }
 
 CreateProgramManagementAccountOutcome PartnerCentralChannelClient::CreateProgramManagementAccount(
     const CreateProgramManagementAccountRequest& request) const {
-  return CreateProgramManagementAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProgramManagementAccountOutcome(result.GetResultWithOwnership())
+                            : CreateProgramManagementAccountOutcome(std::move(result.GetError()));
 }
 
 CreateRelationshipOutcome PartnerCentralChannelClient::CreateRelationship(const CreateRelationshipRequest& request) const {
-  return CreateRelationshipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRelationshipOutcome(result.GetResultWithOwnership())
+                            : CreateRelationshipOutcome(std::move(result.GetError()));
 }
 
 DeleteProgramManagementAccountOutcome PartnerCentralChannelClient::DeleteProgramManagementAccount(
     const DeleteProgramManagementAccountRequest& request) const {
-  return DeleteProgramManagementAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProgramManagementAccountOutcome(result.GetResultWithOwnership())
+                            : DeleteProgramManagementAccountOutcome(std::move(result.GetError()));
 }
 
 DeleteRelationshipOutcome PartnerCentralChannelClient::DeleteRelationship(const DeleteRelationshipRequest& request) const {
-  return DeleteRelationshipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRelationshipOutcome(result.GetResultWithOwnership())
+                            : DeleteRelationshipOutcome(std::move(result.GetError()));
 }
 
 GetRelationshipOutcome PartnerCentralChannelClient::GetRelationship(const GetRelationshipRequest& request) const {
-  return GetRelationshipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRelationshipOutcome(result.GetResultWithOwnership())
+                            : GetRelationshipOutcome(std::move(result.GetError()));
 }
 
 ListChannelHandshakesOutcome PartnerCentralChannelClient::ListChannelHandshakes(const ListChannelHandshakesRequest& request) const {
-  return ListChannelHandshakesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListChannelHandshakesOutcome(result.GetResultWithOwnership())
+                            : ListChannelHandshakesOutcome(std::move(result.GetError()));
 }
 
 ListProgramManagementAccountsOutcome PartnerCentralChannelClient::ListProgramManagementAccounts(
     const ListProgramManagementAccountsRequest& request) const {
-  return ListProgramManagementAccountsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProgramManagementAccountsOutcome(result.GetResultWithOwnership())
+                            : ListProgramManagementAccountsOutcome(std::move(result.GetError()));
 }
 
 ListRelationshipsOutcome PartnerCentralChannelClient::ListRelationships(const ListRelationshipsRequest& request) const {
-  return ListRelationshipsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRelationshipsOutcome(result.GetResultWithOwnership())
+                            : ListRelationshipsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PartnerCentralChannelClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RejectChannelHandshakeOutcome PartnerCentralChannelClient::RejectChannelHandshake(const RejectChannelHandshakeRequest& request) const {
-  return RejectChannelHandshakeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectChannelHandshakeOutcome(result.GetResultWithOwnership())
+                            : RejectChannelHandshakeOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PartnerCentralChannelClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PartnerCentralChannelClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateProgramManagementAccountOutcome PartnerCentralChannelClient::UpdateProgramManagementAccount(
     const UpdateProgramManagementAccountRequest& request) const {
-  return UpdateProgramManagementAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProgramManagementAccountOutcome(result.GetResultWithOwnership())
+                            : UpdateProgramManagementAccountOutcome(std::move(result.GetError()));
 }
 
 UpdateRelationshipOutcome PartnerCentralChannelClient::UpdateRelationship(const UpdateRelationshipRequest& request) const {
-  return UpdateRelationshipOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRelationshipOutcome(result.GetResultWithOwnership())
+                            : UpdateRelationshipOutcome(std::move(result.GetError()));
 }

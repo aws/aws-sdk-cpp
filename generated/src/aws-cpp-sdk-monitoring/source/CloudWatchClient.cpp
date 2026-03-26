@@ -218,173 +218,246 @@ CloudWatchClient::InvokeOperationOutcome CloudWatchClient::InvokeServiceOperatio
 }
 
 DeleteAlarmMuteRuleOutcome CloudWatchClient::DeleteAlarmMuteRule(const DeleteAlarmMuteRuleRequest& request) const {
-  return DeleteAlarmMuteRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAlarmMuteRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteAlarmMuteRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteAlarmsOutcome CloudWatchClient::DeleteAlarms(const DeleteAlarmsRequest& request) const {
-  return DeleteAlarmsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAlarmsOutcome(result.GetResultWithOwnership()) : DeleteAlarmsOutcome(std::move(result.GetError()));
 }
 
 DeleteAnomalyDetectorOutcome CloudWatchClient::DeleteAnomalyDetector(const DeleteAnomalyDetectorRequest& request) const {
-  return DeleteAnomalyDetectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAnomalyDetectorOutcome(result.GetResultWithOwnership())
+                            : DeleteAnomalyDetectorOutcome(std::move(result.GetError()));
 }
 
 DeleteDashboardsOutcome CloudWatchClient::DeleteDashboards(const DeleteDashboardsRequest& request) const {
-  return DeleteDashboardsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDashboardsOutcome(result.GetResultWithOwnership())
+                            : DeleteDashboardsOutcome(std::move(result.GetError()));
 }
 
 DeleteInsightRulesOutcome CloudWatchClient::DeleteInsightRules(const DeleteInsightRulesRequest& request) const {
-  return DeleteInsightRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInsightRulesOutcome(result.GetResultWithOwnership())
+                            : DeleteInsightRulesOutcome(std::move(result.GetError()));
 }
 
 DeleteMetricStreamOutcome CloudWatchClient::DeleteMetricStream(const DeleteMetricStreamRequest& request) const {
-  return DeleteMetricStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMetricStreamOutcome(result.GetResultWithOwnership())
+                            : DeleteMetricStreamOutcome(std::move(result.GetError()));
 }
 
 DescribeAlarmContributorsOutcome CloudWatchClient::DescribeAlarmContributors(const DescribeAlarmContributorsRequest& request) const {
-  return DescribeAlarmContributorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAlarmContributorsOutcome(result.GetResultWithOwnership())
+                            : DescribeAlarmContributorsOutcome(std::move(result.GetError()));
 }
 
 DescribeAlarmHistoryOutcome CloudWatchClient::DescribeAlarmHistory(const DescribeAlarmHistoryRequest& request) const {
-  return DescribeAlarmHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAlarmHistoryOutcome(result.GetResultWithOwnership())
+                            : DescribeAlarmHistoryOutcome(std::move(result.GetError()));
 }
 
 DescribeAlarmsOutcome CloudWatchClient::DescribeAlarms(const DescribeAlarmsRequest& request) const {
-  return DescribeAlarmsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAlarmsOutcome(result.GetResultWithOwnership()) : DescribeAlarmsOutcome(std::move(result.GetError()));
 }
 
 DescribeAlarmsForMetricOutcome CloudWatchClient::DescribeAlarmsForMetric(const DescribeAlarmsForMetricRequest& request) const {
-  return DescribeAlarmsForMetricOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAlarmsForMetricOutcome(result.GetResultWithOwnership())
+                            : DescribeAlarmsForMetricOutcome(std::move(result.GetError()));
 }
 
 DescribeAnomalyDetectorsOutcome CloudWatchClient::DescribeAnomalyDetectors(const DescribeAnomalyDetectorsRequest& request) const {
-  return DescribeAnomalyDetectorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAnomalyDetectorsOutcome(result.GetResultWithOwnership())
+                            : DescribeAnomalyDetectorsOutcome(std::move(result.GetError()));
 }
 
 DescribeInsightRulesOutcome CloudWatchClient::DescribeInsightRules(const DescribeInsightRulesRequest& request) const {
-  return DescribeInsightRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInsightRulesOutcome(result.GetResultWithOwnership())
+                            : DescribeInsightRulesOutcome(std::move(result.GetError()));
 }
 
 DisableAlarmActionsOutcome CloudWatchClient::DisableAlarmActions(const DisableAlarmActionsRequest& request) const {
-  return DisableAlarmActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableAlarmActionsOutcome(result.GetResultWithOwnership())
+                            : DisableAlarmActionsOutcome(std::move(result.GetError()));
 }
 
 DisableInsightRulesOutcome CloudWatchClient::DisableInsightRules(const DisableInsightRulesRequest& request) const {
-  return DisableInsightRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableInsightRulesOutcome(result.GetResultWithOwnership())
+                            : DisableInsightRulesOutcome(std::move(result.GetError()));
 }
 
 EnableAlarmActionsOutcome CloudWatchClient::EnableAlarmActions(const EnableAlarmActionsRequest& request) const {
-  return EnableAlarmActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableAlarmActionsOutcome(result.GetResultWithOwnership())
+                            : EnableAlarmActionsOutcome(std::move(result.GetError()));
 }
 
 EnableInsightRulesOutcome CloudWatchClient::EnableInsightRules(const EnableInsightRulesRequest& request) const {
-  return EnableInsightRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableInsightRulesOutcome(result.GetResultWithOwnership())
+                            : EnableInsightRulesOutcome(std::move(result.GetError()));
 }
 
 GetAlarmMuteRuleOutcome CloudWatchClient::GetAlarmMuteRule(const GetAlarmMuteRuleRequest& request) const {
-  return GetAlarmMuteRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAlarmMuteRuleOutcome(result.GetResultWithOwnership())
+                            : GetAlarmMuteRuleOutcome(std::move(result.GetError()));
 }
 
 GetDashboardOutcome CloudWatchClient::GetDashboard(const GetDashboardRequest& request) const {
-  return GetDashboardOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDashboardOutcome(result.GetResultWithOwnership()) : GetDashboardOutcome(std::move(result.GetError()));
 }
 
 GetInsightRuleReportOutcome CloudWatchClient::GetInsightRuleReport(const GetInsightRuleReportRequest& request) const {
-  return GetInsightRuleReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInsightRuleReportOutcome(result.GetResultWithOwnership())
+                            : GetInsightRuleReportOutcome(std::move(result.GetError()));
 }
 
 GetMetricDataOutcome CloudWatchClient::GetMetricData(const GetMetricDataRequest& request) const {
-  return GetMetricDataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMetricDataOutcome(result.GetResultWithOwnership()) : GetMetricDataOutcome(std::move(result.GetError()));
 }
 
 GetMetricStatisticsOutcome CloudWatchClient::GetMetricStatistics(const GetMetricStatisticsRequest& request) const {
-  return GetMetricStatisticsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMetricStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetMetricStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetMetricStreamOutcome CloudWatchClient::GetMetricStream(const GetMetricStreamRequest& request) const {
-  return GetMetricStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMetricStreamOutcome(result.GetResultWithOwnership())
+                            : GetMetricStreamOutcome(std::move(result.GetError()));
 }
 
 GetMetricWidgetImageOutcome CloudWatchClient::GetMetricWidgetImage(const GetMetricWidgetImageRequest& request) const {
-  return GetMetricWidgetImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMetricWidgetImageOutcome(result.GetResultWithOwnership())
+                            : GetMetricWidgetImageOutcome(std::move(result.GetError()));
 }
 
 ListAlarmMuteRulesOutcome CloudWatchClient::ListAlarmMuteRules(const ListAlarmMuteRulesRequest& request) const {
-  return ListAlarmMuteRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAlarmMuteRulesOutcome(result.GetResultWithOwnership())
+                            : ListAlarmMuteRulesOutcome(std::move(result.GetError()));
 }
 
 ListDashboardsOutcome CloudWatchClient::ListDashboards(const ListDashboardsRequest& request) const {
-  return ListDashboardsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDashboardsOutcome(result.GetResultWithOwnership()) : ListDashboardsOutcome(std::move(result.GetError()));
 }
 
 ListManagedInsightRulesOutcome CloudWatchClient::ListManagedInsightRules(const ListManagedInsightRulesRequest& request) const {
-  return ListManagedInsightRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListManagedInsightRulesOutcome(result.GetResultWithOwnership())
+                            : ListManagedInsightRulesOutcome(std::move(result.GetError()));
 }
 
 ListMetricStreamsOutcome CloudWatchClient::ListMetricStreams(const ListMetricStreamsRequest& request) const {
-  return ListMetricStreamsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMetricStreamsOutcome(result.GetResultWithOwnership())
+                            : ListMetricStreamsOutcome(std::move(result.GetError()));
 }
 
 ListMetricsOutcome CloudWatchClient::ListMetrics(const ListMetricsRequest& request) const {
-  return ListMetricsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMetricsOutcome(result.GetResultWithOwnership()) : ListMetricsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CloudWatchClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutAlarmMuteRuleOutcome CloudWatchClient::PutAlarmMuteRule(const PutAlarmMuteRuleRequest& request) const {
-  return PutAlarmMuteRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAlarmMuteRuleOutcome(result.GetResultWithOwnership())
+                            : PutAlarmMuteRuleOutcome(std::move(result.GetError()));
 }
 
 PutAnomalyDetectorOutcome CloudWatchClient::PutAnomalyDetector(const PutAnomalyDetectorRequest& request) const {
-  return PutAnomalyDetectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAnomalyDetectorOutcome(result.GetResultWithOwnership())
+                            : PutAnomalyDetectorOutcome(std::move(result.GetError()));
 }
 
 PutCompositeAlarmOutcome CloudWatchClient::PutCompositeAlarm(const PutCompositeAlarmRequest& request) const {
-  return PutCompositeAlarmOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutCompositeAlarmOutcome(result.GetResultWithOwnership())
+                            : PutCompositeAlarmOutcome(std::move(result.GetError()));
 }
 
 PutDashboardOutcome CloudWatchClient::PutDashboard(const PutDashboardRequest& request) const {
-  return PutDashboardOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDashboardOutcome(result.GetResultWithOwnership()) : PutDashboardOutcome(std::move(result.GetError()));
 }
 
 PutInsightRuleOutcome CloudWatchClient::PutInsightRule(const PutInsightRuleRequest& request) const {
-  return PutInsightRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutInsightRuleOutcome(result.GetResultWithOwnership()) : PutInsightRuleOutcome(std::move(result.GetError()));
 }
 
 PutManagedInsightRulesOutcome CloudWatchClient::PutManagedInsightRules(const PutManagedInsightRulesRequest& request) const {
-  return PutManagedInsightRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutManagedInsightRulesOutcome(result.GetResultWithOwnership())
+                            : PutManagedInsightRulesOutcome(std::move(result.GetError()));
 }
 
 PutMetricAlarmOutcome CloudWatchClient::PutMetricAlarm(const PutMetricAlarmRequest& request) const {
-  return PutMetricAlarmOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutMetricAlarmOutcome(result.GetResultWithOwnership()) : PutMetricAlarmOutcome(std::move(result.GetError()));
 }
 
 PutMetricDataOutcome CloudWatchClient::PutMetricData(const PutMetricDataRequest& request) const {
-  return PutMetricDataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutMetricDataOutcome(result.GetResultWithOwnership()) : PutMetricDataOutcome(std::move(result.GetError()));
 }
 
 PutMetricStreamOutcome CloudWatchClient::PutMetricStream(const PutMetricStreamRequest& request) const {
-  return PutMetricStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutMetricStreamOutcome(result.GetResultWithOwnership())
+                            : PutMetricStreamOutcome(std::move(result.GetError()));
 }
 
 SetAlarmStateOutcome CloudWatchClient::SetAlarmState(const SetAlarmStateRequest& request) const {
-  return SetAlarmStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetAlarmStateOutcome(result.GetResultWithOwnership()) : SetAlarmStateOutcome(std::move(result.GetError()));
 }
 
 StartMetricStreamsOutcome CloudWatchClient::StartMetricStreams(const StartMetricStreamsRequest& request) const {
-  return StartMetricStreamsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMetricStreamsOutcome(result.GetResultWithOwnership())
+                            : StartMetricStreamsOutcome(std::move(result.GetError()));
 }
 
 StopMetricStreamsOutcome CloudWatchClient::StopMetricStreams(const StopMetricStreamsRequest& request) const {
-  return StopMetricStreamsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopMetricStreamsOutcome(result.GetResultWithOwnership())
+                            : StopMetricStreamsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CloudWatchClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CloudWatchClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

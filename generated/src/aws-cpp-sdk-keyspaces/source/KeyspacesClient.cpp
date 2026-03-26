@@ -191,77 +191,98 @@ KeyspacesClient::InvokeOperationOutcome KeyspacesClient::InvokeServiceOperation(
 }
 
 CreateKeyspaceOutcome KeyspacesClient::CreateKeyspace(const CreateKeyspaceRequest& request) const {
-  return CreateKeyspaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKeyspaceOutcome(result.GetResultWithOwnership()) : CreateKeyspaceOutcome(std::move(result.GetError()));
 }
 
 CreateTableOutcome KeyspacesClient::CreateTable(const CreateTableRequest& request) const {
-  return CreateTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTableOutcome(result.GetResultWithOwnership()) : CreateTableOutcome(std::move(result.GetError()));
 }
 
 CreateTypeOutcome KeyspacesClient::CreateType(const CreateTypeRequest& request) const {
-  return CreateTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTypeOutcome(result.GetResultWithOwnership()) : CreateTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteKeyspaceOutcome KeyspacesClient::DeleteKeyspace(const DeleteKeyspaceRequest& request) const {
-  return DeleteKeyspaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteKeyspaceOutcome(result.GetResultWithOwnership()) : DeleteKeyspaceOutcome(std::move(result.GetError()));
 }
 
 DeleteTableOutcome KeyspacesClient::DeleteTable(const DeleteTableRequest& request) const {
-  return DeleteTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTableOutcome(result.GetResultWithOwnership()) : DeleteTableOutcome(std::move(result.GetError()));
 }
 
 DeleteTypeOutcome KeyspacesClient::DeleteType(const DeleteTypeRequest& request) const {
-  return DeleteTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTypeOutcome(result.GetResultWithOwnership()) : DeleteTypeOutcome(std::move(result.GetError()));
 }
 
 GetKeyspaceOutcome KeyspacesClient::GetKeyspace(const GetKeyspaceRequest& request) const {
-  return GetKeyspaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetKeyspaceOutcome(result.GetResultWithOwnership()) : GetKeyspaceOutcome(std::move(result.GetError()));
 }
 
 GetTableOutcome KeyspacesClient::GetTable(const GetTableRequest& request) const {
-  return GetTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTableOutcome(result.GetResultWithOwnership()) : GetTableOutcome(std::move(result.GetError()));
 }
 
 GetTableAutoScalingSettingsOutcome KeyspacesClient::GetTableAutoScalingSettings(const GetTableAutoScalingSettingsRequest& request) const {
-  return GetTableAutoScalingSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTableAutoScalingSettingsOutcome(result.GetResultWithOwnership())
+                            : GetTableAutoScalingSettingsOutcome(std::move(result.GetError()));
 }
 
 GetTypeOutcome KeyspacesClient::GetType(const GetTypeRequest& request) const {
-  return GetTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTypeOutcome(result.GetResultWithOwnership()) : GetTypeOutcome(std::move(result.GetError()));
 }
 
 ListKeyspacesOutcome KeyspacesClient::ListKeyspaces(const ListKeyspacesRequest& request) const {
-  return ListKeyspacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListKeyspacesOutcome(result.GetResultWithOwnership()) : ListKeyspacesOutcome(std::move(result.GetError()));
 }
 
 ListTablesOutcome KeyspacesClient::ListTables(const ListTablesRequest& request) const {
-  return ListTablesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTablesOutcome(result.GetResultWithOwnership()) : ListTablesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome KeyspacesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTypesOutcome KeyspacesClient::ListTypes(const ListTypesRequest& request) const {
-  return ListTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTypesOutcome(result.GetResultWithOwnership()) : ListTypesOutcome(std::move(result.GetError()));
 }
 
 RestoreTableOutcome KeyspacesClient::RestoreTable(const RestoreTableRequest& request) const {
-  return RestoreTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreTableOutcome(result.GetResultWithOwnership()) : RestoreTableOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome KeyspacesClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome KeyspacesClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateKeyspaceOutcome KeyspacesClient::UpdateKeyspace(const UpdateKeyspaceRequest& request) const {
-  return UpdateKeyspaceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateKeyspaceOutcome(result.GetResultWithOwnership()) : UpdateKeyspaceOutcome(std::move(result.GetError()));
 }
 
 UpdateTableOutcome KeyspacesClient::UpdateTable(const UpdateTableRequest& request) const {
-  return UpdateTableOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTableOutcome(result.GetResultWithOwnership()) : UpdateTableOutcome(std::move(result.GetError()));
 }

@@ -224,7 +224,9 @@ ConfigureLogsForChannelOutcome MediaTailorClient::ConfigureLogsForChannel(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/configureLogs/channel");
   };
 
-  return ConfigureLogsForChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ConfigureLogsForChannelOutcome(result.GetResultWithOwnership())
+                            : ConfigureLogsForChannelOutcome(std::move(result.GetError()));
 }
 
 ConfigureLogsForPlaybackConfigurationOutcome MediaTailorClient::ConfigureLogsForPlaybackConfiguration(
@@ -234,7 +236,9 @@ ConfigureLogsForPlaybackConfigurationOutcome MediaTailorClient::ConfigureLogsFor
     endpointResolutionOutcome.GetResult().AddPathSegments("/configureLogs/playbackConfiguration");
   };
 
-  return ConfigureLogsForPlaybackConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ConfigureLogsForPlaybackConfigurationOutcome(result.GetResultWithOwnership())
+                            : ConfigureLogsForPlaybackConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateChannelOutcome MediaTailorClient::CreateChannel(const CreateChannelRequest& request) const {
@@ -250,7 +254,8 @@ CreateChannelOutcome MediaTailorClient::CreateChannel(const CreateChannelRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelName());
   };
 
-  return CreateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelOutcome(result.GetResultWithOwnership()) : CreateChannelOutcome(std::move(result.GetError()));
 }
 
 CreateLiveSourceOutcome MediaTailorClient::CreateLiveSource(const CreateLiveSourceRequest& request) const {
@@ -273,7 +278,9 @@ CreateLiveSourceOutcome MediaTailorClient::CreateLiveSource(const CreateLiveSour
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLiveSourceName());
   };
 
-  return CreateLiveSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLiveSourceOutcome(result.GetResultWithOwnership())
+                            : CreateLiveSourceOutcome(std::move(result.GetError()));
 }
 
 CreatePrefetchScheduleOutcome MediaTailorClient::CreatePrefetchSchedule(const CreatePrefetchScheduleRequest& request) const {
@@ -295,7 +302,9 @@ CreatePrefetchScheduleOutcome MediaTailorClient::CreatePrefetchSchedule(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return CreatePrefetchScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePrefetchScheduleOutcome(result.GetResultWithOwnership())
+                            : CreatePrefetchScheduleOutcome(std::move(result.GetError()));
 }
 
 CreateProgramOutcome MediaTailorClient::CreateProgram(const CreateProgramRequest& request) const {
@@ -318,7 +327,8 @@ CreateProgramOutcome MediaTailorClient::CreateProgram(const CreateProgramRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProgramName());
   };
 
-  return CreateProgramOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProgramOutcome(result.GetResultWithOwnership()) : CreateProgramOutcome(std::move(result.GetError()));
 }
 
 CreateSourceLocationOutcome MediaTailorClient::CreateSourceLocation(const CreateSourceLocationRequest& request) const {
@@ -334,7 +344,9 @@ CreateSourceLocationOutcome MediaTailorClient::CreateSourceLocation(const Create
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSourceLocationName());
   };
 
-  return CreateSourceLocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSourceLocationOutcome(result.GetResultWithOwnership())
+                            : CreateSourceLocationOutcome(std::move(result.GetError()));
 }
 
 CreateVodSourceOutcome MediaTailorClient::CreateVodSource(const CreateVodSourceRequest& request) const {
@@ -357,7 +369,9 @@ CreateVodSourceOutcome MediaTailorClient::CreateVodSource(const CreateVodSourceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVodSourceName());
   };
 
-  return CreateVodSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVodSourceOutcome(result.GetResultWithOwnership())
+                            : CreateVodSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelOutcome MediaTailorClient::DeleteChannel(const DeleteChannelRequest& request) const {
@@ -373,7 +387,8 @@ DeleteChannelOutcome MediaTailorClient::DeleteChannel(const DeleteChannelRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelName());
   };
 
-  return DeleteChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelOutcome(result.GetResultWithOwnership()) : DeleteChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelPolicyOutcome MediaTailorClient::DeleteChannelPolicy(const DeleteChannelPolicyRequest& request) const {
@@ -390,7 +405,9 @@ DeleteChannelPolicyOutcome MediaTailorClient::DeleteChannelPolicy(const DeleteCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteChannelPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteChannelPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteLiveSourceOutcome MediaTailorClient::DeleteLiveSource(const DeleteLiveSourceRequest& request) const {
@@ -413,7 +430,9 @@ DeleteLiveSourceOutcome MediaTailorClient::DeleteLiveSource(const DeleteLiveSour
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLiveSourceName());
   };
 
-  return DeleteLiveSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLiveSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteLiveSourceOutcome(std::move(result.GetError()));
 }
 
 DeletePlaybackConfigurationOutcome MediaTailorClient::DeletePlaybackConfiguration(const DeletePlaybackConfigurationRequest& request) const {
@@ -429,7 +448,9 @@ DeletePlaybackConfigurationOutcome MediaTailorClient::DeletePlaybackConfiguratio
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeletePlaybackConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePlaybackConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeletePlaybackConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeletePrefetchScheduleOutcome MediaTailorClient::DeletePrefetchSchedule(const DeletePrefetchScheduleRequest& request) const {
@@ -451,7 +472,9 @@ DeletePrefetchScheduleOutcome MediaTailorClient::DeletePrefetchSchedule(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeletePrefetchScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePrefetchScheduleOutcome(result.GetResultWithOwnership())
+                            : DeletePrefetchScheduleOutcome(std::move(result.GetError()));
 }
 
 DeleteProgramOutcome MediaTailorClient::DeleteProgram(const DeleteProgramRequest& request) const {
@@ -474,7 +497,8 @@ DeleteProgramOutcome MediaTailorClient::DeleteProgram(const DeleteProgramRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProgramName());
   };
 
-  return DeleteProgramOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProgramOutcome(result.GetResultWithOwnership()) : DeleteProgramOutcome(std::move(result.GetError()));
 }
 
 DeleteSourceLocationOutcome MediaTailorClient::DeleteSourceLocation(const DeleteSourceLocationRequest& request) const {
@@ -490,7 +514,9 @@ DeleteSourceLocationOutcome MediaTailorClient::DeleteSourceLocation(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSourceLocationName());
   };
 
-  return DeleteSourceLocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSourceLocationOutcome(result.GetResultWithOwnership())
+                            : DeleteSourceLocationOutcome(std::move(result.GetError()));
 }
 
 DeleteVodSourceOutcome MediaTailorClient::DeleteVodSource(const DeleteVodSourceRequest& request) const {
@@ -513,7 +539,9 @@ DeleteVodSourceOutcome MediaTailorClient::DeleteVodSource(const DeleteVodSourceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVodSourceName());
   };
 
-  return DeleteVodSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVodSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteVodSourceOutcome(std::move(result.GetError()));
 }
 
 DescribeChannelOutcome MediaTailorClient::DescribeChannel(const DescribeChannelRequest& request) const {
@@ -529,7 +557,9 @@ DescribeChannelOutcome MediaTailorClient::DescribeChannel(const DescribeChannelR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelName());
   };
 
-  return DescribeChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeChannelOutcome(result.GetResultWithOwnership())
+                            : DescribeChannelOutcome(std::move(result.GetError()));
 }
 
 DescribeLiveSourceOutcome MediaTailorClient::DescribeLiveSource(const DescribeLiveSourceRequest& request) const {
@@ -552,7 +582,9 @@ DescribeLiveSourceOutcome MediaTailorClient::DescribeLiveSource(const DescribeLi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLiveSourceName());
   };
 
-  return DescribeLiveSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeLiveSourceOutcome(result.GetResultWithOwnership())
+                            : DescribeLiveSourceOutcome(std::move(result.GetError()));
 }
 
 DescribeProgramOutcome MediaTailorClient::DescribeProgram(const DescribeProgramRequest& request) const {
@@ -575,7 +607,9 @@ DescribeProgramOutcome MediaTailorClient::DescribeProgram(const DescribeProgramR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProgramName());
   };
 
-  return DescribeProgramOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeProgramOutcome(result.GetResultWithOwnership())
+                            : DescribeProgramOutcome(std::move(result.GetError()));
 }
 
 DescribeSourceLocationOutcome MediaTailorClient::DescribeSourceLocation(const DescribeSourceLocationRequest& request) const {
@@ -591,7 +625,9 @@ DescribeSourceLocationOutcome MediaTailorClient::DescribeSourceLocation(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSourceLocationName());
   };
 
-  return DescribeSourceLocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSourceLocationOutcome(result.GetResultWithOwnership())
+                            : DescribeSourceLocationOutcome(std::move(result.GetError()));
 }
 
 DescribeVodSourceOutcome MediaTailorClient::DescribeVodSource(const DescribeVodSourceRequest& request) const {
@@ -614,7 +650,9 @@ DescribeVodSourceOutcome MediaTailorClient::DescribeVodSource(const DescribeVodS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVodSourceName());
   };
 
-  return DescribeVodSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeVodSourceOutcome(result.GetResultWithOwnership())
+                            : DescribeVodSourceOutcome(std::move(result.GetError()));
 }
 
 GetChannelPolicyOutcome MediaTailorClient::GetChannelPolicy(const GetChannelPolicyRequest& request) const {
@@ -631,7 +669,9 @@ GetChannelPolicyOutcome MediaTailorClient::GetChannelPolicy(const GetChannelPoli
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetChannelPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChannelPolicyOutcome(result.GetResultWithOwnership())
+                            : GetChannelPolicyOutcome(std::move(result.GetError()));
 }
 
 GetChannelScheduleOutcome MediaTailorClient::GetChannelSchedule(const GetChannelScheduleRequest& request) const {
@@ -648,7 +688,9 @@ GetChannelScheduleOutcome MediaTailorClient::GetChannelSchedule(const GetChannel
     endpointResolutionOutcome.GetResult().AddPathSegments("/schedule");
   };
 
-  return GetChannelScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChannelScheduleOutcome(result.GetResultWithOwnership())
+                            : GetChannelScheduleOutcome(std::move(result.GetError()));
 }
 
 GetPlaybackConfigurationOutcome MediaTailorClient::GetPlaybackConfiguration(const GetPlaybackConfigurationRequest& request) const {
@@ -664,7 +706,9 @@ GetPlaybackConfigurationOutcome MediaTailorClient::GetPlaybackConfiguration(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetPlaybackConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPlaybackConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetPlaybackConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetPrefetchScheduleOutcome MediaTailorClient::GetPrefetchSchedule(const GetPrefetchScheduleRequest& request) const {
@@ -686,7 +730,9 @@ GetPrefetchScheduleOutcome MediaTailorClient::GetPrefetchSchedule(const GetPrefe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetPrefetchScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPrefetchScheduleOutcome(result.GetResultWithOwnership())
+                            : GetPrefetchScheduleOutcome(std::move(result.GetError()));
 }
 
 ListAlertsOutcome MediaTailorClient::ListAlerts(const ListAlertsRequest& request) const {
@@ -701,7 +747,8 @@ ListAlertsOutcome MediaTailorClient::ListAlerts(const ListAlertsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/alerts");
   };
 
-  return ListAlertsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAlertsOutcome(result.GetResultWithOwnership()) : ListAlertsOutcome(std::move(result.GetError()));
 }
 
 ListChannelsOutcome MediaTailorClient::ListChannels(const ListChannelsRequest& request) const {
@@ -710,7 +757,8 @@ ListChannelsOutcome MediaTailorClient::ListChannels(const ListChannelsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   };
 
-  return ListChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
 }
 
 ListLiveSourcesOutcome MediaTailorClient::ListLiveSources(const ListLiveSourcesRequest& request) const {
@@ -727,7 +775,9 @@ ListLiveSourcesOutcome MediaTailorClient::ListLiveSources(const ListLiveSourcesR
     endpointResolutionOutcome.GetResult().AddPathSegments("/liveSources");
   };
 
-  return ListLiveSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLiveSourcesOutcome(result.GetResultWithOwnership())
+                            : ListLiveSourcesOutcome(std::move(result.GetError()));
 }
 
 ListPlaybackConfigurationsOutcome MediaTailorClient::ListPlaybackConfigurations(const ListPlaybackConfigurationsRequest& request) const {
@@ -736,7 +786,9 @@ ListPlaybackConfigurationsOutcome MediaTailorClient::ListPlaybackConfigurations(
     endpointResolutionOutcome.GetResult().AddPathSegments("/playbackConfigurations");
   };
 
-  return ListPlaybackConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPlaybackConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListPlaybackConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListPrefetchSchedulesOutcome MediaTailorClient::ListPrefetchSchedules(const ListPrefetchSchedulesRequest& request) const {
@@ -752,7 +804,9 @@ ListPrefetchSchedulesOutcome MediaTailorClient::ListPrefetchSchedules(const List
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlaybackConfigurationName());
   };
 
-  return ListPrefetchSchedulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPrefetchSchedulesOutcome(result.GetResultWithOwnership())
+                            : ListPrefetchSchedulesOutcome(std::move(result.GetError()));
 }
 
 ListSourceLocationsOutcome MediaTailorClient::ListSourceLocations(const ListSourceLocationsRequest& request) const {
@@ -761,7 +815,9 @@ ListSourceLocationsOutcome MediaTailorClient::ListSourceLocations(const ListSour
     endpointResolutionOutcome.GetResult().AddPathSegments("/sourceLocations");
   };
 
-  return ListSourceLocationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSourceLocationsOutcome(result.GetResultWithOwnership())
+                            : ListSourceLocationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MediaTailorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -777,7 +833,9 @@ ListTagsForResourceOutcome MediaTailorClient::ListTagsForResource(const ListTags
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVodSourcesOutcome MediaTailorClient::ListVodSources(const ListVodSourcesRequest& request) const {
@@ -794,7 +852,8 @@ ListVodSourcesOutcome MediaTailorClient::ListVodSources(const ListVodSourcesRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/vodSources");
   };
 
-  return ListVodSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVodSourcesOutcome(result.GetResultWithOwnership()) : ListVodSourcesOutcome(std::move(result.GetError()));
 }
 
 PutChannelPolicyOutcome MediaTailorClient::PutChannelPolicy(const PutChannelPolicyRequest& request) const {
@@ -811,7 +870,9 @@ PutChannelPolicyOutcome MediaTailorClient::PutChannelPolicy(const PutChannelPoli
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutChannelPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutChannelPolicyOutcome(result.GetResultWithOwnership())
+                            : PutChannelPolicyOutcome(std::move(result.GetError()));
 }
 
 PutPlaybackConfigurationOutcome MediaTailorClient::PutPlaybackConfiguration(const PutPlaybackConfigurationRequest& request) const {
@@ -820,7 +881,9 @@ PutPlaybackConfigurationOutcome MediaTailorClient::PutPlaybackConfiguration(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/playbackConfiguration");
   };
 
-  return PutPlaybackConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutPlaybackConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutPlaybackConfigurationOutcome(std::move(result.GetError()));
 }
 
 StartChannelOutcome MediaTailorClient::StartChannel(const StartChannelRequest& request) const {
@@ -837,7 +900,8 @@ StartChannelOutcome MediaTailorClient::StartChannel(const StartChannelRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartChannelOutcome(result.GetResultWithOwnership()) : StartChannelOutcome(std::move(result.GetError()));
 }
 
 StopChannelOutcome MediaTailorClient::StopChannel(const StopChannelRequest& request) const {
@@ -854,7 +918,8 @@ StopChannelOutcome MediaTailorClient::StopChannel(const StopChannelRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StopChannelOutcome(result.GetResultWithOwnership()) : StopChannelOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MediaTailorClient::TagResource(const TagResourceRequest& request) const {
@@ -870,7 +935,8 @@ TagResourceOutcome MediaTailorClient::TagResource(const TagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MediaTailorClient::UntagResource(const UntagResourceRequest& request) const {
@@ -891,7 +957,8 @@ UntagResourceOutcome MediaTailorClient::UntagResource(const UntagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelOutcome MediaTailorClient::UpdateChannel(const UpdateChannelRequest& request) const {
@@ -907,7 +974,8 @@ UpdateChannelOutcome MediaTailorClient::UpdateChannel(const UpdateChannelRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelName());
   };
 
-  return UpdateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChannelOutcome(result.GetResultWithOwnership()) : UpdateChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateLiveSourceOutcome MediaTailorClient::UpdateLiveSource(const UpdateLiveSourceRequest& request) const {
@@ -930,7 +998,9 @@ UpdateLiveSourceOutcome MediaTailorClient::UpdateLiveSource(const UpdateLiveSour
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLiveSourceName());
   };
 
-  return UpdateLiveSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateLiveSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateLiveSourceOutcome(std::move(result.GetError()));
 }
 
 UpdateProgramOutcome MediaTailorClient::UpdateProgram(const UpdateProgramRequest& request) const {
@@ -953,7 +1023,8 @@ UpdateProgramOutcome MediaTailorClient::UpdateProgram(const UpdateProgramRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProgramName());
   };
 
-  return UpdateProgramOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateProgramOutcome(result.GetResultWithOwnership()) : UpdateProgramOutcome(std::move(result.GetError()));
 }
 
 UpdateSourceLocationOutcome MediaTailorClient::UpdateSourceLocation(const UpdateSourceLocationRequest& request) const {
@@ -969,7 +1040,9 @@ UpdateSourceLocationOutcome MediaTailorClient::UpdateSourceLocation(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSourceLocationName());
   };
 
-  return UpdateSourceLocationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSourceLocationOutcome(result.GetResultWithOwnership())
+                            : UpdateSourceLocationOutcome(std::move(result.GetError()));
 }
 
 UpdateVodSourceOutcome MediaTailorClient::UpdateVodSource(const UpdateVodSourceRequest& request) const {
@@ -992,5 +1065,7 @@ UpdateVodSourceOutcome MediaTailorClient::UpdateVodSource(const UpdateVodSourceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVodSourceName());
   };
 
-  return UpdateVodSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVodSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateVodSourceOutcome(std::move(result.GetError()));
 }

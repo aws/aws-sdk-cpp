@@ -225,7 +225,8 @@ CancelJobOutcome BatchClient::CancelJob(const CancelJobRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/canceljob");
   };
 
-  return CancelJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelJobOutcome(result.GetResultWithOwnership()) : CancelJobOutcome(std::move(result.GetError()));
 }
 
 CreateComputeEnvironmentOutcome BatchClient::CreateComputeEnvironment(const CreateComputeEnvironmentRequest& request) const {
@@ -234,7 +235,9 @@ CreateComputeEnvironmentOutcome BatchClient::CreateComputeEnvironment(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/createcomputeenvironment");
   };
 
-  return CreateComputeEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateComputeEnvironmentOutcome(result.GetResultWithOwnership())
+                            : CreateComputeEnvironmentOutcome(std::move(result.GetError()));
 }
 
 CreateConsumableResourceOutcome BatchClient::CreateConsumableResource(const CreateConsumableResourceRequest& request) const {
@@ -243,7 +246,9 @@ CreateConsumableResourceOutcome BatchClient::CreateConsumableResource(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/createconsumableresource");
   };
 
-  return CreateConsumableResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConsumableResourceOutcome(result.GetResultWithOwnership())
+                            : CreateConsumableResourceOutcome(std::move(result.GetError()));
 }
 
 CreateJobQueueOutcome BatchClient::CreateJobQueue(const CreateJobQueueRequest& request) const {
@@ -252,7 +257,8 @@ CreateJobQueueOutcome BatchClient::CreateJobQueue(const CreateJobQueueRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/createjobqueue");
   };
 
-  return CreateJobQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobQueueOutcome(result.GetResultWithOwnership()) : CreateJobQueueOutcome(std::move(result.GetError()));
 }
 
 CreateQuotaShareOutcome BatchClient::CreateQuotaShare(const CreateQuotaShareRequest& request) const {
@@ -261,7 +267,9 @@ CreateQuotaShareOutcome BatchClient::CreateQuotaShare(const CreateQuotaShareRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/createquotashare");
   };
 
-  return CreateQuotaShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQuotaShareOutcome(result.GetResultWithOwnership())
+                            : CreateQuotaShareOutcome(std::move(result.GetError()));
 }
 
 CreateSchedulingPolicyOutcome BatchClient::CreateSchedulingPolicy(const CreateSchedulingPolicyRequest& request) const {
@@ -270,7 +278,9 @@ CreateSchedulingPolicyOutcome BatchClient::CreateSchedulingPolicy(const CreateSc
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/createschedulingpolicy");
   };
 
-  return CreateSchedulingPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSchedulingPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateSchedulingPolicyOutcome(std::move(result.GetError()));
 }
 
 CreateServiceEnvironmentOutcome BatchClient::CreateServiceEnvironment(const CreateServiceEnvironmentRequest& request) const {
@@ -279,7 +289,9 @@ CreateServiceEnvironmentOutcome BatchClient::CreateServiceEnvironment(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/createserviceenvironment");
   };
 
-  return CreateServiceEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceEnvironmentOutcome(result.GetResultWithOwnership())
+                            : CreateServiceEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeleteComputeEnvironmentOutcome BatchClient::DeleteComputeEnvironment(const DeleteComputeEnvironmentRequest& request) const {
@@ -288,7 +300,9 @@ DeleteComputeEnvironmentOutcome BatchClient::DeleteComputeEnvironment(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/deletecomputeenvironment");
   };
 
-  return DeleteComputeEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteComputeEnvironmentOutcome(result.GetResultWithOwnership())
+                            : DeleteComputeEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeleteConsumableResourceOutcome BatchClient::DeleteConsumableResource(const DeleteConsumableResourceRequest& request) const {
@@ -297,7 +311,9 @@ DeleteConsumableResourceOutcome BatchClient::DeleteConsumableResource(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/deleteconsumableresource");
   };
 
-  return DeleteConsumableResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConsumableResourceOutcome(result.GetResultWithOwnership())
+                            : DeleteConsumableResourceOutcome(std::move(result.GetError()));
 }
 
 DeleteJobQueueOutcome BatchClient::DeleteJobQueue(const DeleteJobQueueRequest& request) const {
@@ -306,7 +322,8 @@ DeleteJobQueueOutcome BatchClient::DeleteJobQueue(const DeleteJobQueueRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/deletejobqueue");
   };
 
-  return DeleteJobQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteJobQueueOutcome(result.GetResultWithOwnership()) : DeleteJobQueueOutcome(std::move(result.GetError()));
 }
 
 DeleteQuotaShareOutcome BatchClient::DeleteQuotaShare(const DeleteQuotaShareRequest& request) const {
@@ -315,7 +332,9 @@ DeleteQuotaShareOutcome BatchClient::DeleteQuotaShare(const DeleteQuotaShareRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/deletequotashare");
   };
 
-  return DeleteQuotaShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteQuotaShareOutcome(result.GetResultWithOwnership())
+                            : DeleteQuotaShareOutcome(std::move(result.GetError()));
 }
 
 DeleteSchedulingPolicyOutcome BatchClient::DeleteSchedulingPolicy(const DeleteSchedulingPolicyRequest& request) const {
@@ -324,7 +343,9 @@ DeleteSchedulingPolicyOutcome BatchClient::DeleteSchedulingPolicy(const DeleteSc
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/deleteschedulingpolicy");
   };
 
-  return DeleteSchedulingPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSchedulingPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteSchedulingPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceEnvironmentOutcome BatchClient::DeleteServiceEnvironment(const DeleteServiceEnvironmentRequest& request) const {
@@ -333,7 +354,9 @@ DeleteServiceEnvironmentOutcome BatchClient::DeleteServiceEnvironment(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/deleteserviceenvironment");
   };
 
-  return DeleteServiceEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServiceEnvironmentOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeregisterJobDefinitionOutcome BatchClient::DeregisterJobDefinition(const DeregisterJobDefinitionRequest& request) const {
@@ -342,7 +365,9 @@ DeregisterJobDefinitionOutcome BatchClient::DeregisterJobDefinition(const Deregi
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/deregisterjobdefinition");
   };
 
-  return DeregisterJobDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterJobDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeregisterJobDefinitionOutcome(std::move(result.GetError()));
 }
 
 DescribeComputeEnvironmentsOutcome BatchClient::DescribeComputeEnvironments(const DescribeComputeEnvironmentsRequest& request) const {
@@ -351,7 +376,9 @@ DescribeComputeEnvironmentsOutcome BatchClient::DescribeComputeEnvironments(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/describecomputeenvironments");
   };
 
-  return DescribeComputeEnvironmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeComputeEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : DescribeComputeEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 DescribeConsumableResourceOutcome BatchClient::DescribeConsumableResource(const DescribeConsumableResourceRequest& request) const {
@@ -360,7 +387,9 @@ DescribeConsumableResourceOutcome BatchClient::DescribeConsumableResource(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/describeconsumableresource");
   };
 
-  return DescribeConsumableResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConsumableResourceOutcome(result.GetResultWithOwnership())
+                            : DescribeConsumableResourceOutcome(std::move(result.GetError()));
 }
 
 DescribeJobDefinitionsOutcome BatchClient::DescribeJobDefinitions(const DescribeJobDefinitionsRequest& request) const {
@@ -369,7 +398,9 @@ DescribeJobDefinitionsOutcome BatchClient::DescribeJobDefinitions(const Describe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/describejobdefinitions");
   };
 
-  return DescribeJobDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeJobDefinitionsOutcome(result.GetResultWithOwnership())
+                            : DescribeJobDefinitionsOutcome(std::move(result.GetError()));
 }
 
 DescribeJobQueuesOutcome BatchClient::DescribeJobQueues(const DescribeJobQueuesRequest& request) const {
@@ -378,7 +409,9 @@ DescribeJobQueuesOutcome BatchClient::DescribeJobQueues(const DescribeJobQueuesR
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/describejobqueues");
   };
 
-  return DescribeJobQueuesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeJobQueuesOutcome(result.GetResultWithOwnership())
+                            : DescribeJobQueuesOutcome(std::move(result.GetError()));
 }
 
 DescribeJobsOutcome BatchClient::DescribeJobs(const DescribeJobsRequest& request) const {
@@ -387,7 +420,8 @@ DescribeJobsOutcome BatchClient::DescribeJobs(const DescribeJobsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/describejobs");
   };
 
-  return DescribeJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeJobsOutcome(result.GetResultWithOwnership()) : DescribeJobsOutcome(std::move(result.GetError()));
 }
 
 DescribeQuotaShareOutcome BatchClient::DescribeQuotaShare(const DescribeQuotaShareRequest& request) const {
@@ -396,7 +430,9 @@ DescribeQuotaShareOutcome BatchClient::DescribeQuotaShare(const DescribeQuotaSha
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/describequotashare");
   };
 
-  return DescribeQuotaShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeQuotaShareOutcome(result.GetResultWithOwnership())
+                            : DescribeQuotaShareOutcome(std::move(result.GetError()));
 }
 
 DescribeSchedulingPoliciesOutcome BatchClient::DescribeSchedulingPolicies(const DescribeSchedulingPoliciesRequest& request) const {
@@ -405,7 +441,9 @@ DescribeSchedulingPoliciesOutcome BatchClient::DescribeSchedulingPolicies(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/describeschedulingpolicies");
   };
 
-  return DescribeSchedulingPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSchedulingPoliciesOutcome(result.GetResultWithOwnership())
+                            : DescribeSchedulingPoliciesOutcome(std::move(result.GetError()));
 }
 
 DescribeServiceEnvironmentsOutcome BatchClient::DescribeServiceEnvironments(const DescribeServiceEnvironmentsRequest& request) const {
@@ -414,7 +452,9 @@ DescribeServiceEnvironmentsOutcome BatchClient::DescribeServiceEnvironments(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/describeserviceenvironments");
   };
 
-  return DescribeServiceEnvironmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServiceEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : DescribeServiceEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 DescribeServiceJobOutcome BatchClient::DescribeServiceJob(const DescribeServiceJobRequest& request) const {
@@ -423,7 +463,9 @@ DescribeServiceJobOutcome BatchClient::DescribeServiceJob(const DescribeServiceJ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/describeservicejob");
   };
 
-  return DescribeServiceJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServiceJobOutcome(result.GetResultWithOwnership())
+                            : DescribeServiceJobOutcome(std::move(result.GetError()));
 }
 
 GetJobQueueSnapshotOutcome BatchClient::GetJobQueueSnapshot(const GetJobQueueSnapshotRequest& request) const {
@@ -432,7 +474,9 @@ GetJobQueueSnapshotOutcome BatchClient::GetJobQueueSnapshot(const GetJobQueueSna
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/getjobqueuesnapshot");
   };
 
-  return GetJobQueueSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetJobQueueSnapshotOutcome(result.GetResultWithOwnership())
+                            : GetJobQueueSnapshotOutcome(std::move(result.GetError()));
 }
 
 ListConsumableResourcesOutcome BatchClient::ListConsumableResources(const ListConsumableResourcesRequest& request) const {
@@ -441,7 +485,9 @@ ListConsumableResourcesOutcome BatchClient::ListConsumableResources(const ListCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/listconsumableresources");
   };
 
-  return ListConsumableResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConsumableResourcesOutcome(result.GetResultWithOwnership())
+                            : ListConsumableResourcesOutcome(std::move(result.GetError()));
 }
 
 ListJobsOutcome BatchClient::ListJobs(const ListJobsRequest& request) const {
@@ -450,7 +496,8 @@ ListJobsOutcome BatchClient::ListJobs(const ListJobsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/listjobs");
   };
 
-  return ListJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
 }
 
 ListJobsByConsumableResourceOutcome BatchClient::ListJobsByConsumableResource(const ListJobsByConsumableResourceRequest& request) const {
@@ -459,7 +506,9 @@ ListJobsByConsumableResourceOutcome BatchClient::ListJobsByConsumableResource(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/listjobsbyconsumableresource");
   };
 
-  return ListJobsByConsumableResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListJobsByConsumableResourceOutcome(result.GetResultWithOwnership())
+                            : ListJobsByConsumableResourceOutcome(std::move(result.GetError()));
 }
 
 ListQuotaSharesOutcome BatchClient::ListQuotaShares(const ListQuotaSharesRequest& request) const {
@@ -468,7 +517,9 @@ ListQuotaSharesOutcome BatchClient::ListQuotaShares(const ListQuotaSharesRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/listquotashares");
   };
 
-  return ListQuotaSharesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListQuotaSharesOutcome(result.GetResultWithOwnership())
+                            : ListQuotaSharesOutcome(std::move(result.GetError()));
 }
 
 ListSchedulingPoliciesOutcome BatchClient::ListSchedulingPolicies(const ListSchedulingPoliciesRequest& request) const {
@@ -477,7 +528,9 @@ ListSchedulingPoliciesOutcome BatchClient::ListSchedulingPolicies(const ListSche
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/listschedulingpolicies");
   };
 
-  return ListSchedulingPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSchedulingPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListSchedulingPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListServiceJobsOutcome BatchClient::ListServiceJobs(const ListServiceJobsRequest& request) const {
@@ -486,7 +539,9 @@ ListServiceJobsOutcome BatchClient::ListServiceJobs(const ListServiceJobsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/listservicejobs");
   };
 
-  return ListServiceJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceJobsOutcome(result.GetResultWithOwnership())
+                            : ListServiceJobsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome BatchClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -502,7 +557,9 @@ ListTagsForResourceOutcome BatchClient::ListTagsForResource(const ListTagsForRes
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterJobDefinitionOutcome BatchClient::RegisterJobDefinition(const RegisterJobDefinitionRequest& request) const {
@@ -511,7 +568,9 @@ RegisterJobDefinitionOutcome BatchClient::RegisterJobDefinition(const RegisterJo
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/registerjobdefinition");
   };
 
-  return RegisterJobDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterJobDefinitionOutcome(result.GetResultWithOwnership())
+                            : RegisterJobDefinitionOutcome(std::move(result.GetError()));
 }
 
 SubmitJobOutcome BatchClient::SubmitJob(const SubmitJobRequest& request) const {
@@ -520,7 +579,8 @@ SubmitJobOutcome BatchClient::SubmitJob(const SubmitJobRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/submitjob");
   };
 
-  return SubmitJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubmitJobOutcome(result.GetResultWithOwnership()) : SubmitJobOutcome(std::move(result.GetError()));
 }
 
 SubmitServiceJobOutcome BatchClient::SubmitServiceJob(const SubmitServiceJobRequest& request) const {
@@ -529,7 +589,9 @@ SubmitServiceJobOutcome BatchClient::SubmitServiceJob(const SubmitServiceJobRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/submitservicejob");
   };
 
-  return SubmitServiceJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubmitServiceJobOutcome(result.GetResultWithOwnership())
+                            : SubmitServiceJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome BatchClient::TagResource(const TagResourceRequest& request) const {
@@ -545,7 +607,8 @@ TagResourceOutcome BatchClient::TagResource(const TagResourceRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TerminateJobOutcome BatchClient::TerminateJob(const TerminateJobRequest& request) const {
@@ -554,7 +617,8 @@ TerminateJobOutcome BatchClient::TerminateJob(const TerminateJobRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/terminatejob");
   };
 
-  return TerminateJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateJobOutcome(result.GetResultWithOwnership()) : TerminateJobOutcome(std::move(result.GetError()));
 }
 
 TerminateServiceJobOutcome BatchClient::TerminateServiceJob(const TerminateServiceJobRequest& request) const {
@@ -563,7 +627,9 @@ TerminateServiceJobOutcome BatchClient::TerminateServiceJob(const TerminateServi
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/terminateservicejob");
   };
 
-  return TerminateServiceJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateServiceJobOutcome(result.GetResultWithOwnership())
+                            : TerminateServiceJobOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome BatchClient::UntagResource(const UntagResourceRequest& request) const {
@@ -584,7 +650,8 @@ UntagResourceOutcome BatchClient::UntagResource(const UntagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateComputeEnvironmentOutcome BatchClient::UpdateComputeEnvironment(const UpdateComputeEnvironmentRequest& request) const {
@@ -593,7 +660,9 @@ UpdateComputeEnvironmentOutcome BatchClient::UpdateComputeEnvironment(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/updatecomputeenvironment");
   };
 
-  return UpdateComputeEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateComputeEnvironmentOutcome(result.GetResultWithOwnership())
+                            : UpdateComputeEnvironmentOutcome(std::move(result.GetError()));
 }
 
 UpdateConsumableResourceOutcome BatchClient::UpdateConsumableResource(const UpdateConsumableResourceRequest& request) const {
@@ -602,7 +671,9 @@ UpdateConsumableResourceOutcome BatchClient::UpdateConsumableResource(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/updateconsumableresource");
   };
 
-  return UpdateConsumableResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConsumableResourceOutcome(result.GetResultWithOwnership())
+                            : UpdateConsumableResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateJobQueueOutcome BatchClient::UpdateJobQueue(const UpdateJobQueueRequest& request) const {
@@ -611,7 +682,8 @@ UpdateJobQueueOutcome BatchClient::UpdateJobQueue(const UpdateJobQueueRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/updatejobqueue");
   };
 
-  return UpdateJobQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateJobQueueOutcome(result.GetResultWithOwnership()) : UpdateJobQueueOutcome(std::move(result.GetError()));
 }
 
 UpdateQuotaShareOutcome BatchClient::UpdateQuotaShare(const UpdateQuotaShareRequest& request) const {
@@ -620,7 +692,9 @@ UpdateQuotaShareOutcome BatchClient::UpdateQuotaShare(const UpdateQuotaShareRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/updatequotashare");
   };
 
-  return UpdateQuotaShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQuotaShareOutcome(result.GetResultWithOwnership())
+                            : UpdateQuotaShareOutcome(std::move(result.GetError()));
 }
 
 UpdateSchedulingPolicyOutcome BatchClient::UpdateSchedulingPolicy(const UpdateSchedulingPolicyRequest& request) const {
@@ -629,7 +703,9 @@ UpdateSchedulingPolicyOutcome BatchClient::UpdateSchedulingPolicy(const UpdateSc
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/updateschedulingpolicy");
   };
 
-  return UpdateSchedulingPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSchedulingPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateSchedulingPolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceEnvironmentOutcome BatchClient::UpdateServiceEnvironment(const UpdateServiceEnvironmentRequest& request) const {
@@ -638,7 +714,9 @@ UpdateServiceEnvironmentOutcome BatchClient::UpdateServiceEnvironment(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/updateserviceenvironment");
   };
 
-  return UpdateServiceEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServiceEnvironmentOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceEnvironmentOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceJobOutcome BatchClient::UpdateServiceJob(const UpdateServiceJobRequest& request) const {
@@ -647,5 +725,7 @@ UpdateServiceJobOutcome BatchClient::UpdateServiceJob(const UpdateServiceJobRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/updateservicejob");
   };
 
-  return UpdateServiceJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServiceJobOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceJobOutcome(std::move(result.GetError()));
 }

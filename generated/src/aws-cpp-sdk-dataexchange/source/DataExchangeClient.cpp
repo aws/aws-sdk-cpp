@@ -228,7 +228,9 @@ AcceptDataGrantOutcome DataExchangeClient::AcceptDataGrant(const AcceptDataGrant
     endpointResolutionOutcome.GetResult().AddPathSegments("/accept");
   };
 
-  return AcceptDataGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptDataGrantOutcome(result.GetResultWithOwnership())
+                            : AcceptDataGrantOutcome(std::move(result.GetError()));
 }
 
 CancelJobOutcome DataExchangeClient::CancelJob(const CancelJobRequest& request) const {
@@ -244,7 +246,8 @@ CancelJobOutcome DataExchangeClient::CancelJob(const CancelJobRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return CancelJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelJobOutcome(result.GetResultWithOwnership()) : CancelJobOutcome(std::move(result.GetError()));
 }
 
 CreateDataGrantOutcome DataExchangeClient::CreateDataGrant(const CreateDataGrantRequest& request) const {
@@ -253,7 +256,9 @@ CreateDataGrantOutcome DataExchangeClient::CreateDataGrant(const CreateDataGrant
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/data-grants");
   };
 
-  return CreateDataGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataGrantOutcome(result.GetResultWithOwnership())
+                            : CreateDataGrantOutcome(std::move(result.GetError()));
 }
 
 CreateDataSetOutcome DataExchangeClient::CreateDataSet(const CreateDataSetRequest& request) const {
@@ -262,7 +267,8 @@ CreateDataSetOutcome DataExchangeClient::CreateDataSet(const CreateDataSetReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/data-sets");
   };
 
-  return CreateDataSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataSetOutcome(result.GetResultWithOwnership()) : CreateDataSetOutcome(std::move(result.GetError()));
 }
 
 CreateEventActionOutcome DataExchangeClient::CreateEventAction(const CreateEventActionRequest& request) const {
@@ -271,7 +277,9 @@ CreateEventActionOutcome DataExchangeClient::CreateEventAction(const CreateEvent
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/event-actions");
   };
 
-  return CreateEventActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventActionOutcome(result.GetResultWithOwnership())
+                            : CreateEventActionOutcome(std::move(result.GetError()));
 }
 
 CreateJobOutcome DataExchangeClient::CreateJob(const CreateJobRequest& request) const {
@@ -280,7 +288,8 @@ CreateJobOutcome DataExchangeClient::CreateJob(const CreateJobRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/jobs");
   };
 
-  return CreateJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobOutcome(result.GetResultWithOwnership()) : CreateJobOutcome(std::move(result.GetError()));
 }
 
 CreateRevisionOutcome DataExchangeClient::CreateRevision(const CreateRevisionRequest& request) const {
@@ -297,7 +306,8 @@ CreateRevisionOutcome DataExchangeClient::CreateRevision(const CreateRevisionReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/revisions");
   };
 
-  return CreateRevisionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRevisionOutcome(result.GetResultWithOwnership()) : CreateRevisionOutcome(std::move(result.GetError()));
 }
 
 DeleteAssetOutcome DataExchangeClient::DeleteAsset(const DeleteAssetRequest& request) const {
@@ -327,7 +337,8 @@ DeleteAssetOutcome DataExchangeClient::DeleteAsset(const DeleteAssetRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
   };
 
-  return DeleteAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssetOutcome(result.GetResultWithOwnership()) : DeleteAssetOutcome(std::move(result.GetError()));
 }
 
 DeleteDataGrantOutcome DataExchangeClient::DeleteDataGrant(const DeleteDataGrantRequest& request) const {
@@ -343,7 +354,9 @@ DeleteDataGrantOutcome DataExchangeClient::DeleteDataGrant(const DeleteDataGrant
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataGrantId());
   };
 
-  return DeleteDataGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataGrantOutcome(result.GetResultWithOwnership())
+                            : DeleteDataGrantOutcome(std::move(result.GetError()));
 }
 
 DeleteDataSetOutcome DataExchangeClient::DeleteDataSet(const DeleteDataSetRequest& request) const {
@@ -359,7 +372,8 @@ DeleteDataSetOutcome DataExchangeClient::DeleteDataSet(const DeleteDataSetReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
   };
 
-  return DeleteDataSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataSetOutcome(result.GetResultWithOwnership()) : DeleteDataSetOutcome(std::move(result.GetError()));
 }
 
 DeleteEventActionOutcome DataExchangeClient::DeleteEventAction(const DeleteEventActionRequest& request) const {
@@ -375,7 +389,9 @@ DeleteEventActionOutcome DataExchangeClient::DeleteEventAction(const DeleteEvent
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventActionId());
   };
 
-  return DeleteEventActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventActionOutcome(result.GetResultWithOwnership())
+                            : DeleteEventActionOutcome(std::move(result.GetError()));
 }
 
 DeleteRevisionOutcome DataExchangeClient::DeleteRevision(const DeleteRevisionRequest& request) const {
@@ -398,7 +414,8 @@ DeleteRevisionOutcome DataExchangeClient::DeleteRevision(const DeleteRevisionReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRevisionId());
   };
 
-  return DeleteRevisionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRevisionOutcome(result.GetResultWithOwnership()) : DeleteRevisionOutcome(std::move(result.GetError()));
 }
 
 GetAssetOutcome DataExchangeClient::GetAsset(const GetAssetRequest& request) const {
@@ -428,7 +445,8 @@ GetAssetOutcome DataExchangeClient::GetAsset(const GetAssetRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
   };
 
-  return GetAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssetOutcome(result.GetResultWithOwnership()) : GetAssetOutcome(std::move(result.GetError()));
 }
 
 GetDataGrantOutcome DataExchangeClient::GetDataGrant(const GetDataGrantRequest& request) const {
@@ -444,7 +462,8 @@ GetDataGrantOutcome DataExchangeClient::GetDataGrant(const GetDataGrantRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataGrantId());
   };
 
-  return GetDataGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataGrantOutcome(result.GetResultWithOwnership()) : GetDataGrantOutcome(std::move(result.GetError()));
 }
 
 GetDataSetOutcome DataExchangeClient::GetDataSet(const GetDataSetRequest& request) const {
@@ -460,7 +479,8 @@ GetDataSetOutcome DataExchangeClient::GetDataSet(const GetDataSetRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
   };
 
-  return GetDataSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataSetOutcome(result.GetResultWithOwnership()) : GetDataSetOutcome(std::move(result.GetError()));
 }
 
 GetEventActionOutcome DataExchangeClient::GetEventAction(const GetEventActionRequest& request) const {
@@ -476,7 +496,8 @@ GetEventActionOutcome DataExchangeClient::GetEventAction(const GetEventActionReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventActionId());
   };
 
-  return GetEventActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventActionOutcome(result.GetResultWithOwnership()) : GetEventActionOutcome(std::move(result.GetError()));
 }
 
 GetJobOutcome DataExchangeClient::GetJob(const GetJobRequest& request) const {
@@ -492,7 +513,8 @@ GetJobOutcome DataExchangeClient::GetJob(const GetJobRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobOutcome(result.GetResultWithOwnership()) : GetJobOutcome(std::move(result.GetError()));
 }
 
 GetReceivedDataGrantOutcome DataExchangeClient::GetReceivedDataGrant(const GetReceivedDataGrantRequest& request) const {
@@ -508,7 +530,9 @@ GetReceivedDataGrantOutcome DataExchangeClient::GetReceivedDataGrant(const GetRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataGrantArn());
   };
 
-  return GetReceivedDataGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReceivedDataGrantOutcome(result.GetResultWithOwnership())
+                            : GetReceivedDataGrantOutcome(std::move(result.GetError()));
 }
 
 GetRevisionOutcome DataExchangeClient::GetRevision(const GetRevisionRequest& request) const {
@@ -531,7 +555,8 @@ GetRevisionOutcome DataExchangeClient::GetRevision(const GetRevisionRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRevisionId());
   };
 
-  return GetRevisionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRevisionOutcome(result.GetResultWithOwnership()) : GetRevisionOutcome(std::move(result.GetError()));
 }
 
 ListDataGrantsOutcome DataExchangeClient::ListDataGrants(const ListDataGrantsRequest& request) const {
@@ -540,7 +565,8 @@ ListDataGrantsOutcome DataExchangeClient::ListDataGrants(const ListDataGrantsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/data-grants");
   };
 
-  return ListDataGrantsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataGrantsOutcome(result.GetResultWithOwnership()) : ListDataGrantsOutcome(std::move(result.GetError()));
 }
 
 ListDataSetRevisionsOutcome DataExchangeClient::ListDataSetRevisions(const ListDataSetRevisionsRequest& request) const {
@@ -557,7 +583,9 @@ ListDataSetRevisionsOutcome DataExchangeClient::ListDataSetRevisions(const ListD
     endpointResolutionOutcome.GetResult().AddPathSegments("/revisions");
   };
 
-  return ListDataSetRevisionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSetRevisionsOutcome(result.GetResultWithOwnership())
+                            : ListDataSetRevisionsOutcome(std::move(result.GetError()));
 }
 
 ListDataSetsOutcome DataExchangeClient::ListDataSets(const ListDataSetsRequest& request) const {
@@ -566,7 +594,8 @@ ListDataSetsOutcome DataExchangeClient::ListDataSets(const ListDataSetsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/data-sets");
   };
 
-  return ListDataSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSetsOutcome(result.GetResultWithOwnership()) : ListDataSetsOutcome(std::move(result.GetError()));
 }
 
 ListEventActionsOutcome DataExchangeClient::ListEventActions(const ListEventActionsRequest& request) const {
@@ -575,7 +604,9 @@ ListEventActionsOutcome DataExchangeClient::ListEventActions(const ListEventActi
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/event-actions");
   };
 
-  return ListEventActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEventActionsOutcome(result.GetResultWithOwnership())
+                            : ListEventActionsOutcome(std::move(result.GetError()));
 }
 
 ListJobsOutcome DataExchangeClient::ListJobs(const ListJobsRequest& request) const {
@@ -584,7 +615,8 @@ ListJobsOutcome DataExchangeClient::ListJobs(const ListJobsRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/jobs");
   };
 
-  return ListJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
 }
 
 ListReceivedDataGrantsOutcome DataExchangeClient::ListReceivedDataGrants(const ListReceivedDataGrantsRequest& request) const {
@@ -593,7 +625,9 @@ ListReceivedDataGrantsOutcome DataExchangeClient::ListReceivedDataGrants(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/received-data-grants");
   };
 
-  return ListReceivedDataGrantsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReceivedDataGrantsOutcome(result.GetResultWithOwnership())
+                            : ListReceivedDataGrantsOutcome(std::move(result.GetError()));
 }
 
 ListRevisionAssetsOutcome DataExchangeClient::ListRevisionAssets(const ListRevisionAssetsRequest& request) const {
@@ -617,7 +651,9 @@ ListRevisionAssetsOutcome DataExchangeClient::ListRevisionAssets(const ListRevis
     endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
   };
 
-  return ListRevisionAssetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRevisionAssetsOutcome(result.GetResultWithOwnership())
+                            : ListRevisionAssetsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DataExchangeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -633,7 +669,9 @@ ListTagsForResourceOutcome DataExchangeClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RevokeRevisionOutcome DataExchangeClient::RevokeRevision(const RevokeRevisionRequest& request) const {
@@ -657,7 +695,8 @@ RevokeRevisionOutcome DataExchangeClient::RevokeRevision(const RevokeRevisionReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/revoke");
   };
 
-  return RevokeRevisionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeRevisionOutcome(result.GetResultWithOwnership()) : RevokeRevisionOutcome(std::move(result.GetError()));
 }
 
 SendApiAssetOutcome DataExchangeClient::SendApiAsset(const SendApiAssetRequest& request) const {
@@ -699,8 +738,9 @@ SendApiAssetOutcome DataExchangeClient::SendApiAsset(const SendApiAssetRequest& 
         auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api-fulfill.");
         AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), SendApiAssetOutcome(addPrefixErr.value()));
         endpointResolutionOutcome.GetResult().AddPathSegments("/v1");
-        return SendApiAssetOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? SendApiAssetOutcome(result.GetResultWithOwnership())
+                                  : SendApiAssetOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -721,7 +761,9 @@ SendDataSetNotificationOutcome DataExchangeClient::SendDataSetNotification(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification");
   };
 
-  return SendDataSetNotificationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendDataSetNotificationOutcome(result.GetResultWithOwnership())
+                            : SendDataSetNotificationOutcome(std::move(result.GetError()));
 }
 
 StartJobOutcome DataExchangeClient::StartJob(const StartJobRequest& request) const {
@@ -737,7 +779,8 @@ StartJobOutcome DataExchangeClient::StartJob(const StartJobRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return StartJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? StartJobOutcome(result.GetResultWithOwnership()) : StartJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome DataExchangeClient::TagResource(const TagResourceRequest& request) const {
@@ -753,7 +796,8 @@ TagResourceOutcome DataExchangeClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome DataExchangeClient::UntagResource(const UntagResourceRequest& request) const {
@@ -774,7 +818,8 @@ UntagResourceOutcome DataExchangeClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAssetOutcome DataExchangeClient::UpdateAsset(const UpdateAssetRequest& request) const {
@@ -804,7 +849,8 @@ UpdateAssetOutcome DataExchangeClient::UpdateAsset(const UpdateAssetRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetId());
   };
 
-  return UpdateAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAssetOutcome(result.GetResultWithOwnership()) : UpdateAssetOutcome(std::move(result.GetError()));
 }
 
 UpdateDataSetOutcome DataExchangeClient::UpdateDataSet(const UpdateDataSetRequest& request) const {
@@ -820,7 +866,8 @@ UpdateDataSetOutcome DataExchangeClient::UpdateDataSet(const UpdateDataSetReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
   };
 
-  return UpdateDataSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDataSetOutcome(result.GetResultWithOwnership()) : UpdateDataSetOutcome(std::move(result.GetError()));
 }
 
 UpdateEventActionOutcome DataExchangeClient::UpdateEventAction(const UpdateEventActionRequest& request) const {
@@ -836,7 +883,9 @@ UpdateEventActionOutcome DataExchangeClient::UpdateEventAction(const UpdateEvent
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventActionId());
   };
 
-  return UpdateEventActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEventActionOutcome(result.GetResultWithOwnership())
+                            : UpdateEventActionOutcome(std::move(result.GetError()));
 }
 
 UpdateRevisionOutcome DataExchangeClient::UpdateRevision(const UpdateRevisionRequest& request) const {
@@ -859,5 +908,6 @@ UpdateRevisionOutcome DataExchangeClient::UpdateRevision(const UpdateRevisionReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRevisionId());
   };
 
-  return UpdateRevisionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRevisionOutcome(result.GetResultWithOwnership()) : UpdateRevisionOutcome(std::move(result.GetError()));
 }

@@ -252,222 +252,312 @@ ElasticLoadBalancingv2Client::InvokeOperationOutcome ElasticLoadBalancingv2Clien
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AddListenerCertificatesOutcome ElasticLoadBalancingv2Client::AddListenerCertificates(const AddListenerCertificatesRequest& request) const {
-  return AddListenerCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddListenerCertificatesOutcome(result.GetResultWithOwnership())
+                            : AddListenerCertificatesOutcome(std::move(result.GetError()));
 }
 
 AddTagsOutcome ElasticLoadBalancingv2Client::AddTags(const AddTagsRequest& request) const {
-  return AddTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsOutcome(result.GetResultWithOwnership()) : AddTagsOutcome(std::move(result.GetError()));
 }
 
 AddTrustStoreRevocationsOutcome ElasticLoadBalancingv2Client::AddTrustStoreRevocations(
     const AddTrustStoreRevocationsRequest& request) const {
-  return AddTrustStoreRevocationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTrustStoreRevocationsOutcome(result.GetResultWithOwnership())
+                            : AddTrustStoreRevocationsOutcome(std::move(result.GetError()));
 }
 
 CreateListenerOutcome ElasticLoadBalancingv2Client::CreateListener(const CreateListenerRequest& request) const {
-  return CreateListenerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateListenerOutcome(result.GetResultWithOwnership()) : CreateListenerOutcome(std::move(result.GetError()));
 }
 
 CreateLoadBalancerOutcome ElasticLoadBalancingv2Client::CreateLoadBalancer(const CreateLoadBalancerRequest& request) const {
-  return CreateLoadBalancerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLoadBalancerOutcome(result.GetResultWithOwnership())
+                            : CreateLoadBalancerOutcome(std::move(result.GetError()));
 }
 
 CreateRuleOutcome ElasticLoadBalancingv2Client::CreateRule(const CreateRuleRequest& request) const {
-  return CreateRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRuleOutcome(result.GetResultWithOwnership()) : CreateRuleOutcome(std::move(result.GetError()));
 }
 
 CreateTargetGroupOutcome ElasticLoadBalancingv2Client::CreateTargetGroup(const CreateTargetGroupRequest& request) const {
-  return CreateTargetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTargetGroupOutcome(result.GetResultWithOwnership())
+                            : CreateTargetGroupOutcome(std::move(result.GetError()));
 }
 
 CreateTrustStoreOutcome ElasticLoadBalancingv2Client::CreateTrustStore(const CreateTrustStoreRequest& request) const {
-  return CreateTrustStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrustStoreOutcome(result.GetResultWithOwnership())
+                            : CreateTrustStoreOutcome(std::move(result.GetError()));
 }
 
 DeleteListenerOutcome ElasticLoadBalancingv2Client::DeleteListener(const DeleteListenerRequest& request) const {
-  return DeleteListenerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteListenerOutcome(result.GetResultWithOwnership()) : DeleteListenerOutcome(std::move(result.GetError()));
 }
 
 DeleteLoadBalancerOutcome ElasticLoadBalancingv2Client::DeleteLoadBalancer(const DeleteLoadBalancerRequest& request) const {
-  return DeleteLoadBalancerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLoadBalancerOutcome(result.GetResultWithOwnership())
+                            : DeleteLoadBalancerOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleOutcome ElasticLoadBalancingv2Client::DeleteRule(const DeleteRuleRequest& request) const {
-  return DeleteRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRuleOutcome(result.GetResultWithOwnership()) : DeleteRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteSharedTrustStoreAssociationOutcome ElasticLoadBalancingv2Client::DeleteSharedTrustStoreAssociation(
     const DeleteSharedTrustStoreAssociationRequest& request) const {
-  return DeleteSharedTrustStoreAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSharedTrustStoreAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteSharedTrustStoreAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteTargetGroupOutcome ElasticLoadBalancingv2Client::DeleteTargetGroup(const DeleteTargetGroupRequest& request) const {
-  return DeleteTargetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTargetGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteTargetGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteTrustStoreOutcome ElasticLoadBalancingv2Client::DeleteTrustStore(const DeleteTrustStoreRequest& request) const {
-  return DeleteTrustStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTrustStoreOutcome(result.GetResultWithOwnership())
+                            : DeleteTrustStoreOutcome(std::move(result.GetError()));
 }
 
 DeregisterTargetsOutcome ElasticLoadBalancingv2Client::DeregisterTargets(const DeregisterTargetsRequest& request) const {
-  return DeregisterTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterTargetsOutcome(result.GetResultWithOwnership())
+                            : DeregisterTargetsOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountLimitsOutcome ElasticLoadBalancingv2Client::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const {
-  return DescribeAccountLimitsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountLimitsOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountLimitsOutcome(std::move(result.GetError()));
 }
 
 DescribeCapacityReservationOutcome ElasticLoadBalancingv2Client::DescribeCapacityReservation(
     const DescribeCapacityReservationRequest& request) const {
-  return DescribeCapacityReservationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityReservationOutcome(std::move(result.GetError()));
 }
 
 DescribeListenerAttributesOutcome ElasticLoadBalancingv2Client::DescribeListenerAttributes(
     const DescribeListenerAttributesRequest& request) const {
-  return DescribeListenerAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeListenerAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeListenerAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeListenerCertificatesOutcome ElasticLoadBalancingv2Client::DescribeListenerCertificates(
     const DescribeListenerCertificatesRequest& request) const {
-  return DescribeListenerCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeListenerCertificatesOutcome(result.GetResultWithOwnership())
+                            : DescribeListenerCertificatesOutcome(std::move(result.GetError()));
 }
 
 DescribeListenersOutcome ElasticLoadBalancingv2Client::DescribeListeners(const DescribeListenersRequest& request) const {
-  return DescribeListenersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeListenersOutcome(result.GetResultWithOwnership())
+                            : DescribeListenersOutcome(std::move(result.GetError()));
 }
 
 DescribeLoadBalancerAttributesOutcome ElasticLoadBalancingv2Client::DescribeLoadBalancerAttributes(
     const DescribeLoadBalancerAttributesRequest& request) const {
-  return DescribeLoadBalancerAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLoadBalancerAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeLoadBalancerAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeLoadBalancersOutcome ElasticLoadBalancingv2Client::DescribeLoadBalancers(const DescribeLoadBalancersRequest& request) const {
-  return DescribeLoadBalancersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLoadBalancersOutcome(result.GetResultWithOwnership())
+                            : DescribeLoadBalancersOutcome(std::move(result.GetError()));
 }
 
 DescribeRulesOutcome ElasticLoadBalancingv2Client::DescribeRules(const DescribeRulesRequest& request) const {
-  return DescribeRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRulesOutcome(result.GetResultWithOwnership()) : DescribeRulesOutcome(std::move(result.GetError()));
 }
 
 DescribeSSLPoliciesOutcome ElasticLoadBalancingv2Client::DescribeSSLPolicies(const DescribeSSLPoliciesRequest& request) const {
-  return DescribeSSLPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSSLPoliciesOutcome(result.GetResultWithOwnership())
+                            : DescribeSSLPoliciesOutcome(std::move(result.GetError()));
 }
 
 DescribeTagsOutcome ElasticLoadBalancingv2Client::DescribeTags(const DescribeTagsRequest& request) const {
-  return DescribeTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTagsOutcome(result.GetResultWithOwnership()) : DescribeTagsOutcome(std::move(result.GetError()));
 }
 
 DescribeTargetGroupAttributesOutcome ElasticLoadBalancingv2Client::DescribeTargetGroupAttributes(
     const DescribeTargetGroupAttributesRequest& request) const {
-  return DescribeTargetGroupAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTargetGroupAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeTargetGroupAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeTargetGroupsOutcome ElasticLoadBalancingv2Client::DescribeTargetGroups(const DescribeTargetGroupsRequest& request) const {
-  return DescribeTargetGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTargetGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeTargetGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeTargetHealthOutcome ElasticLoadBalancingv2Client::DescribeTargetHealth(const DescribeTargetHealthRequest& request) const {
-  return DescribeTargetHealthOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTargetHealthOutcome(result.GetResultWithOwnership())
+                            : DescribeTargetHealthOutcome(std::move(result.GetError()));
 }
 
 DescribeTrustStoreAssociationsOutcome ElasticLoadBalancingv2Client::DescribeTrustStoreAssociations(
     const DescribeTrustStoreAssociationsRequest& request) const {
-  return DescribeTrustStoreAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrustStoreAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeTrustStoreAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeTrustStoreRevocationsOutcome ElasticLoadBalancingv2Client::DescribeTrustStoreRevocations(
     const DescribeTrustStoreRevocationsRequest& request) const {
-  return DescribeTrustStoreRevocationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrustStoreRevocationsOutcome(result.GetResultWithOwnership())
+                            : DescribeTrustStoreRevocationsOutcome(std::move(result.GetError()));
 }
 
 DescribeTrustStoresOutcome ElasticLoadBalancingv2Client::DescribeTrustStores(const DescribeTrustStoresRequest& request) const {
-  return DescribeTrustStoresOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrustStoresOutcome(result.GetResultWithOwnership())
+                            : DescribeTrustStoresOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome ElasticLoadBalancingv2Client::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 GetTrustStoreCaCertificatesBundleOutcome ElasticLoadBalancingv2Client::GetTrustStoreCaCertificatesBundle(
     const GetTrustStoreCaCertificatesBundleRequest& request) const {
-  return GetTrustStoreCaCertificatesBundleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTrustStoreCaCertificatesBundleOutcome(result.GetResultWithOwnership())
+                            : GetTrustStoreCaCertificatesBundleOutcome(std::move(result.GetError()));
 }
 
 GetTrustStoreRevocationContentOutcome ElasticLoadBalancingv2Client::GetTrustStoreRevocationContent(
     const GetTrustStoreRevocationContentRequest& request) const {
-  return GetTrustStoreRevocationContentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTrustStoreRevocationContentOutcome(result.GetResultWithOwnership())
+                            : GetTrustStoreRevocationContentOutcome(std::move(result.GetError()));
 }
 
 ModifyCapacityReservationOutcome ElasticLoadBalancingv2Client::ModifyCapacityReservation(
     const ModifyCapacityReservationRequest& request) const {
-  return ModifyCapacityReservationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : ModifyCapacityReservationOutcome(std::move(result.GetError()));
 }
 
 ModifyIpPoolsOutcome ElasticLoadBalancingv2Client::ModifyIpPools(const ModifyIpPoolsRequest& request) const {
-  return ModifyIpPoolsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyIpPoolsOutcome(result.GetResultWithOwnership()) : ModifyIpPoolsOutcome(std::move(result.GetError()));
 }
 
 ModifyListenerOutcome ElasticLoadBalancingv2Client::ModifyListener(const ModifyListenerRequest& request) const {
-  return ModifyListenerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyListenerOutcome(result.GetResultWithOwnership()) : ModifyListenerOutcome(std::move(result.GetError()));
 }
 
 ModifyListenerAttributesOutcome ElasticLoadBalancingv2Client::ModifyListenerAttributes(
     const ModifyListenerAttributesRequest& request) const {
-  return ModifyListenerAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyListenerAttributesOutcome(result.GetResultWithOwnership())
+                            : ModifyListenerAttributesOutcome(std::move(result.GetError()));
 }
 
 ModifyLoadBalancerAttributesOutcome ElasticLoadBalancingv2Client::ModifyLoadBalancerAttributes(
     const ModifyLoadBalancerAttributesRequest& request) const {
-  return ModifyLoadBalancerAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyLoadBalancerAttributesOutcome(result.GetResultWithOwnership())
+                            : ModifyLoadBalancerAttributesOutcome(std::move(result.GetError()));
 }
 
 ModifyRuleOutcome ElasticLoadBalancingv2Client::ModifyRule(const ModifyRuleRequest& request) const {
-  return ModifyRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyRuleOutcome(result.GetResultWithOwnership()) : ModifyRuleOutcome(std::move(result.GetError()));
 }
 
 ModifyTargetGroupOutcome ElasticLoadBalancingv2Client::ModifyTargetGroup(const ModifyTargetGroupRequest& request) const {
-  return ModifyTargetGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTargetGroupOutcome(result.GetResultWithOwnership())
+                            : ModifyTargetGroupOutcome(std::move(result.GetError()));
 }
 
 ModifyTargetGroupAttributesOutcome ElasticLoadBalancingv2Client::ModifyTargetGroupAttributes(
     const ModifyTargetGroupAttributesRequest& request) const {
-  return ModifyTargetGroupAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTargetGroupAttributesOutcome(result.GetResultWithOwnership())
+                            : ModifyTargetGroupAttributesOutcome(std::move(result.GetError()));
 }
 
 ModifyTrustStoreOutcome ElasticLoadBalancingv2Client::ModifyTrustStore(const ModifyTrustStoreRequest& request) const {
-  return ModifyTrustStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTrustStoreOutcome(result.GetResultWithOwnership())
+                            : ModifyTrustStoreOutcome(std::move(result.GetError()));
 }
 
 RegisterTargetsOutcome ElasticLoadBalancingv2Client::RegisterTargets(const RegisterTargetsRequest& request) const {
-  return RegisterTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterTargetsOutcome(result.GetResultWithOwnership())
+                            : RegisterTargetsOutcome(std::move(result.GetError()));
 }
 
 RemoveListenerCertificatesOutcome ElasticLoadBalancingv2Client::RemoveListenerCertificates(
     const RemoveListenerCertificatesRequest& request) const {
-  return RemoveListenerCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveListenerCertificatesOutcome(result.GetResultWithOwnership())
+                            : RemoveListenerCertificatesOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsOutcome ElasticLoadBalancingv2Client::RemoveTags(const RemoveTagsRequest& request) const {
-  return RemoveTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsOutcome(result.GetResultWithOwnership()) : RemoveTagsOutcome(std::move(result.GetError()));
 }
 
 RemoveTrustStoreRevocationsOutcome ElasticLoadBalancingv2Client::RemoveTrustStoreRevocations(
     const RemoveTrustStoreRevocationsRequest& request) const {
-  return RemoveTrustStoreRevocationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTrustStoreRevocationsOutcome(result.GetResultWithOwnership())
+                            : RemoveTrustStoreRevocationsOutcome(std::move(result.GetError()));
 }
 
 SetIpAddressTypeOutcome ElasticLoadBalancingv2Client::SetIpAddressType(const SetIpAddressTypeRequest& request) const {
-  return SetIpAddressTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetIpAddressTypeOutcome(result.GetResultWithOwnership())
+                            : SetIpAddressTypeOutcome(std::move(result.GetError()));
 }
 
 SetRulePrioritiesOutcome ElasticLoadBalancingv2Client::SetRulePriorities(const SetRulePrioritiesRequest& request) const {
-  return SetRulePrioritiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetRulePrioritiesOutcome(result.GetResultWithOwnership())
+                            : SetRulePrioritiesOutcome(std::move(result.GetError()));
 }
 
 SetSecurityGroupsOutcome ElasticLoadBalancingv2Client::SetSecurityGroups(const SetSecurityGroupsRequest& request) const {
-  return SetSecurityGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetSecurityGroupsOutcome(result.GetResultWithOwnership())
+                            : SetSecurityGroupsOutcome(std::move(result.GetError()));
 }
 
 SetSubnetsOutcome ElasticLoadBalancingv2Client::SetSubnets(const SetSubnetsRequest& request) const {
-  return SetSubnetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetSubnetsOutcome(result.GetResultWithOwnership()) : SetSubnetsOutcome(std::move(result.GetError()));
 }

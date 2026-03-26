@@ -209,152 +209,223 @@ InspectorClient::InvokeOperationOutcome InspectorClient::InvokeServiceOperation(
 }
 
 AddAttributesToFindingsOutcome InspectorClient::AddAttributesToFindings(const AddAttributesToFindingsRequest& request) const {
-  return AddAttributesToFindingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddAttributesToFindingsOutcome(result.GetResultWithOwnership())
+                            : AddAttributesToFindingsOutcome(std::move(result.GetError()));
 }
 
 CreateAssessmentTargetOutcome InspectorClient::CreateAssessmentTarget(const CreateAssessmentTargetRequest& request) const {
-  return CreateAssessmentTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssessmentTargetOutcome(result.GetResultWithOwnership())
+                            : CreateAssessmentTargetOutcome(std::move(result.GetError()));
 }
 
 CreateAssessmentTemplateOutcome InspectorClient::CreateAssessmentTemplate(const CreateAssessmentTemplateRequest& request) const {
-  return CreateAssessmentTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssessmentTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateAssessmentTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateExclusionsPreviewOutcome InspectorClient::CreateExclusionsPreview(const CreateExclusionsPreviewRequest& request) const {
-  return CreateExclusionsPreviewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExclusionsPreviewOutcome(result.GetResultWithOwnership())
+                            : CreateExclusionsPreviewOutcome(std::move(result.GetError()));
 }
 
 CreateResourceGroupOutcome InspectorClient::CreateResourceGroup(const CreateResourceGroupRequest& request) const {
-  return CreateResourceGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceGroupOutcome(result.GetResultWithOwnership())
+                            : CreateResourceGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteAssessmentRunOutcome InspectorClient::DeleteAssessmentRun(const DeleteAssessmentRunRequest& request) const {
-  return DeleteAssessmentRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAssessmentRunOutcome(result.GetResultWithOwnership())
+                            : DeleteAssessmentRunOutcome(std::move(result.GetError()));
 }
 
 DeleteAssessmentTargetOutcome InspectorClient::DeleteAssessmentTarget(const DeleteAssessmentTargetRequest& request) const {
-  return DeleteAssessmentTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAssessmentTargetOutcome(result.GetResultWithOwnership())
+                            : DeleteAssessmentTargetOutcome(std::move(result.GetError()));
 }
 
 DeleteAssessmentTemplateOutcome InspectorClient::DeleteAssessmentTemplate(const DeleteAssessmentTemplateRequest& request) const {
-  return DeleteAssessmentTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAssessmentTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteAssessmentTemplateOutcome(std::move(result.GetError()));
 }
 
 DescribeAssessmentRunsOutcome InspectorClient::DescribeAssessmentRuns(const DescribeAssessmentRunsRequest& request) const {
-  return DescribeAssessmentRunsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAssessmentRunsOutcome(result.GetResultWithOwnership())
+                            : DescribeAssessmentRunsOutcome(std::move(result.GetError()));
 }
 
 DescribeAssessmentTargetsOutcome InspectorClient::DescribeAssessmentTargets(const DescribeAssessmentTargetsRequest& request) const {
-  return DescribeAssessmentTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAssessmentTargetsOutcome(result.GetResultWithOwnership())
+                            : DescribeAssessmentTargetsOutcome(std::move(result.GetError()));
 }
 
 DescribeAssessmentTemplatesOutcome InspectorClient::DescribeAssessmentTemplates(const DescribeAssessmentTemplatesRequest& request) const {
-  return DescribeAssessmentTemplatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAssessmentTemplatesOutcome(result.GetResultWithOwnership())
+                            : DescribeAssessmentTemplatesOutcome(std::move(result.GetError()));
 }
 
 DescribeCrossAccountAccessRoleOutcome InspectorClient::DescribeCrossAccountAccessRole(
     const DescribeCrossAccountAccessRoleRequest& request) const {
-  return DescribeCrossAccountAccessRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCrossAccountAccessRoleOutcome(result.GetResultWithOwnership())
+                            : DescribeCrossAccountAccessRoleOutcome(std::move(result.GetError()));
 }
 
 DescribeExclusionsOutcome InspectorClient::DescribeExclusions(const DescribeExclusionsRequest& request) const {
-  return DescribeExclusionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExclusionsOutcome(result.GetResultWithOwnership())
+                            : DescribeExclusionsOutcome(std::move(result.GetError()));
 }
 
 DescribeFindingsOutcome InspectorClient::DescribeFindings(const DescribeFindingsRequest& request) const {
-  return DescribeFindingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFindingsOutcome(result.GetResultWithOwnership())
+                            : DescribeFindingsOutcome(std::move(result.GetError()));
 }
 
 DescribeResourceGroupsOutcome InspectorClient::DescribeResourceGroups(const DescribeResourceGroupsRequest& request) const {
-  return DescribeResourceGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResourceGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeResourceGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeRulesPackagesOutcome InspectorClient::DescribeRulesPackages(const DescribeRulesPackagesRequest& request) const {
-  return DescribeRulesPackagesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRulesPackagesOutcome(result.GetResultWithOwnership())
+                            : DescribeRulesPackagesOutcome(std::move(result.GetError()));
 }
 
 GetAssessmentReportOutcome InspectorClient::GetAssessmentReport(const GetAssessmentReportRequest& request) const {
-  return GetAssessmentReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAssessmentReportOutcome(result.GetResultWithOwnership())
+                            : GetAssessmentReportOutcome(std::move(result.GetError()));
 }
 
 GetExclusionsPreviewOutcome InspectorClient::GetExclusionsPreview(const GetExclusionsPreviewRequest& request) const {
-  return GetExclusionsPreviewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetExclusionsPreviewOutcome(result.GetResultWithOwnership())
+                            : GetExclusionsPreviewOutcome(std::move(result.GetError()));
 }
 
 GetTelemetryMetadataOutcome InspectorClient::GetTelemetryMetadata(const GetTelemetryMetadataRequest& request) const {
-  return GetTelemetryMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTelemetryMetadataOutcome(result.GetResultWithOwnership())
+                            : GetTelemetryMetadataOutcome(std::move(result.GetError()));
 }
 
 ListAssessmentRunAgentsOutcome InspectorClient::ListAssessmentRunAgents(const ListAssessmentRunAgentsRequest& request) const {
-  return ListAssessmentRunAgentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssessmentRunAgentsOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentRunAgentsOutcome(std::move(result.GetError()));
 }
 
 ListAssessmentRunsOutcome InspectorClient::ListAssessmentRuns(const ListAssessmentRunsRequest& request) const {
-  return ListAssessmentRunsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssessmentRunsOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentRunsOutcome(std::move(result.GetError()));
 }
 
 ListAssessmentTargetsOutcome InspectorClient::ListAssessmentTargets(const ListAssessmentTargetsRequest& request) const {
-  return ListAssessmentTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssessmentTargetsOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentTargetsOutcome(std::move(result.GetError()));
 }
 
 ListAssessmentTemplatesOutcome InspectorClient::ListAssessmentTemplates(const ListAssessmentTemplatesRequest& request) const {
-  return ListAssessmentTemplatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssessmentTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListAssessmentTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListEventSubscriptionsOutcome InspectorClient::ListEventSubscriptions(const ListEventSubscriptionsRequest& request) const {
-  return ListEventSubscriptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListEventSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 ListExclusionsOutcome InspectorClient::ListExclusions(const ListExclusionsRequest& request) const {
-  return ListExclusionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExclusionsOutcome(result.GetResultWithOwnership()) : ListExclusionsOutcome(std::move(result.GetError()));
 }
 
 ListFindingsOutcome InspectorClient::ListFindings(const ListFindingsRequest& request) const {
-  return ListFindingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFindingsOutcome(result.GetResultWithOwnership()) : ListFindingsOutcome(std::move(result.GetError()));
 }
 
 ListRulesPackagesOutcome InspectorClient::ListRulesPackages(const ListRulesPackagesRequest& request) const {
-  return ListRulesPackagesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRulesPackagesOutcome(result.GetResultWithOwnership())
+                            : ListRulesPackagesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome InspectorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PreviewAgentsOutcome InspectorClient::PreviewAgents(const PreviewAgentsRequest& request) const {
-  return PreviewAgentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PreviewAgentsOutcome(result.GetResultWithOwnership()) : PreviewAgentsOutcome(std::move(result.GetError()));
 }
 
 RegisterCrossAccountAccessRoleOutcome InspectorClient::RegisterCrossAccountAccessRole(
     const RegisterCrossAccountAccessRoleRequest& request) const {
-  return RegisterCrossAccountAccessRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterCrossAccountAccessRoleOutcome(result.GetResultWithOwnership())
+                            : RegisterCrossAccountAccessRoleOutcome(std::move(result.GetError()));
 }
 
 RemoveAttributesFromFindingsOutcome InspectorClient::RemoveAttributesFromFindings(
     const RemoveAttributesFromFindingsRequest& request) const {
-  return RemoveAttributesFromFindingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveAttributesFromFindingsOutcome(result.GetResultWithOwnership())
+                            : RemoveAttributesFromFindingsOutcome(std::move(result.GetError()));
 }
 
 SetTagsForResourceOutcome InspectorClient::SetTagsForResource(const SetTagsForResourceRequest& request) const {
-  return SetTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : SetTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartAssessmentRunOutcome InspectorClient::StartAssessmentRun(const StartAssessmentRunRequest& request) const {
-  return StartAssessmentRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAssessmentRunOutcome(result.GetResultWithOwnership())
+                            : StartAssessmentRunOutcome(std::move(result.GetError()));
 }
 
 StopAssessmentRunOutcome InspectorClient::StopAssessmentRun(const StopAssessmentRunRequest& request) const {
-  return StopAssessmentRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopAssessmentRunOutcome(result.GetResultWithOwnership())
+                            : StopAssessmentRunOutcome(std::move(result.GetError()));
 }
 
 SubscribeToEventOutcome InspectorClient::SubscribeToEvent(const SubscribeToEventRequest& request) const {
-  return SubscribeToEventOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubscribeToEventOutcome(result.GetResultWithOwnership())
+                            : SubscribeToEventOutcome(std::move(result.GetError()));
 }
 
 UnsubscribeFromEventOutcome InspectorClient::UnsubscribeFromEvent(const UnsubscribeFromEventRequest& request) const {
-  return UnsubscribeFromEventOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnsubscribeFromEventOutcome(result.GetResultWithOwnership())
+                            : UnsubscribeFromEventOutcome(std::move(result.GetError()));
 }
 
 UpdateAssessmentTargetOutcome InspectorClient::UpdateAssessmentTarget(const UpdateAssessmentTargetRequest& request) const {
-  return UpdateAssessmentTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAssessmentTargetOutcome(result.GetResultWithOwnership())
+                            : UpdateAssessmentTargetOutcome(std::move(result.GetError()));
 }

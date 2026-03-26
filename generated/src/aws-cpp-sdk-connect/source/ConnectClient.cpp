@@ -294,7 +294,9 @@ ActivateEvaluationFormOutcome ConnectClient::ActivateEvaluationForm(const Activa
     endpointResolutionOutcome.GetResult().AddPathSegments("/activate");
   };
 
-  return ActivateEvaluationFormOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateEvaluationFormOutcome(result.GetResultWithOwnership())
+                            : ActivateEvaluationFormOutcome(std::move(result.GetError()));
 }
 
 AssociateAnalyticsDataSetOutcome ConnectClient::AssociateAnalyticsDataSet(const AssociateAnalyticsDataSetRequest& request) const {
@@ -311,7 +313,9 @@ AssociateAnalyticsDataSetOutcome ConnectClient::AssociateAnalyticsDataSet(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/association");
   };
 
-  return AssociateAnalyticsDataSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateAnalyticsDataSetOutcome(result.GetResultWithOwnership())
+                            : AssociateAnalyticsDataSetOutcome(std::move(result.GetError()));
 }
 
 AssociateApprovedOriginOutcome ConnectClient::AssociateApprovedOrigin(const AssociateApprovedOriginRequest& request) const {
@@ -328,7 +332,9 @@ AssociateApprovedOriginOutcome ConnectClient::AssociateApprovedOrigin(const Asso
     endpointResolutionOutcome.GetResult().AddPathSegments("/approved-origin");
   };
 
-  return AssociateApprovedOriginOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateApprovedOriginOutcome(result.GetResultWithOwnership())
+                            : AssociateApprovedOriginOutcome(std::move(result.GetError()));
 }
 
 AssociateBotOutcome ConnectClient::AssociateBot(const AssociateBotRequest& request) const {
@@ -345,7 +351,8 @@ AssociateBotOutcome ConnectClient::AssociateBot(const AssociateBotRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/bot");
   };
 
-  return AssociateBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateBotOutcome(result.GetResultWithOwnership()) : AssociateBotOutcome(std::move(result.GetError()));
 }
 
 AssociateContactWithUserOutcome ConnectClient::AssociateContactWithUser(const AssociateContactWithUserRequest& request) const {
@@ -368,7 +375,9 @@ AssociateContactWithUserOutcome ConnectClient::AssociateContactWithUser(const As
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-user");
   };
 
-  return AssociateContactWithUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateContactWithUserOutcome(result.GetResultWithOwnership())
+                            : AssociateContactWithUserOutcome(std::move(result.GetError()));
 }
 
 AssociateDefaultVocabularyOutcome ConnectClient::AssociateDefaultVocabulary(const AssociateDefaultVocabularyRequest& request) const {
@@ -391,7 +400,9 @@ AssociateDefaultVocabularyOutcome ConnectClient::AssociateDefaultVocabulary(cons
         VocabularyLanguageCodeMapper::GetNameForVocabularyLanguageCode(request.GetLanguageCode()));
   };
 
-  return AssociateDefaultVocabularyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateDefaultVocabularyOutcome(result.GetResultWithOwnership())
+                            : AssociateDefaultVocabularyOutcome(std::move(result.GetError()));
 }
 
 AssociateEmailAddressAliasOutcome ConnectClient::AssociateEmailAddressAlias(const AssociateEmailAddressAliasRequest& request) const {
@@ -414,7 +425,9 @@ AssociateEmailAddressAliasOutcome ConnectClient::AssociateEmailAddressAlias(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-alias");
   };
 
-  return AssociateEmailAddressAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateEmailAddressAliasOutcome(result.GetResultWithOwnership())
+                            : AssociateEmailAddressAliasOutcome(std::move(result.GetError()));
 }
 
 AssociateFlowOutcome ConnectClient::AssociateFlow(const AssociateFlowRequest& request) const {
@@ -430,7 +443,8 @@ AssociateFlowOutcome ConnectClient::AssociateFlow(const AssociateFlowRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return AssociateFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateFlowOutcome(result.GetResultWithOwnership()) : AssociateFlowOutcome(std::move(result.GetError()));
 }
 
 AssociateHoursOfOperationsOutcome ConnectClient::AssociateHoursOfOperations(const AssociateHoursOfOperationsRequest& request) const {
@@ -453,7 +467,9 @@ AssociateHoursOfOperationsOutcome ConnectClient::AssociateHoursOfOperations(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-hours");
   };
 
-  return AssociateHoursOfOperationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateHoursOfOperationsOutcome(result.GetResultWithOwnership())
+                            : AssociateHoursOfOperationsOutcome(std::move(result.GetError()));
 }
 
 AssociateInstanceStorageConfigOutcome ConnectClient::AssociateInstanceStorageConfig(
@@ -471,7 +487,9 @@ AssociateInstanceStorageConfigOutcome ConnectClient::AssociateInstanceStorageCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/storage-config");
   };
 
-  return AssociateInstanceStorageConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateInstanceStorageConfigOutcome(result.GetResultWithOwnership())
+                            : AssociateInstanceStorageConfigOutcome(std::move(result.GetError()));
 }
 
 AssociateLambdaFunctionOutcome ConnectClient::AssociateLambdaFunction(const AssociateLambdaFunctionRequest& request) const {
@@ -488,7 +506,9 @@ AssociateLambdaFunctionOutcome ConnectClient::AssociateLambdaFunction(const Asso
     endpointResolutionOutcome.GetResult().AddPathSegments("/lambda-function");
   };
 
-  return AssociateLambdaFunctionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateLambdaFunctionOutcome(result.GetResultWithOwnership())
+                            : AssociateLambdaFunctionOutcome(std::move(result.GetError()));
 }
 
 AssociateLexBotOutcome ConnectClient::AssociateLexBot(const AssociateLexBotRequest& request) const {
@@ -505,7 +525,9 @@ AssociateLexBotOutcome ConnectClient::AssociateLexBot(const AssociateLexBotReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/lex-bot");
   };
 
-  return AssociateLexBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateLexBotOutcome(result.GetResultWithOwnership())
+                            : AssociateLexBotOutcome(std::move(result.GetError()));
 }
 
 AssociatePhoneNumberContactFlowOutcome ConnectClient::AssociatePhoneNumberContactFlow(
@@ -523,7 +545,9 @@ AssociatePhoneNumberContactFlowOutcome ConnectClient::AssociatePhoneNumberContac
     endpointResolutionOutcome.GetResult().AddPathSegments("/contact-flow");
   };
 
-  return AssociatePhoneNumberContactFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociatePhoneNumberContactFlowOutcome(result.GetResultWithOwnership())
+                            : AssociatePhoneNumberContactFlowOutcome(std::move(result.GetError()));
 }
 
 AssociateQueueEmailAddressesOutcome ConnectClient::AssociateQueueEmailAddresses(const AssociateQueueEmailAddressesRequest& request) const {
@@ -546,7 +570,9 @@ AssociateQueueEmailAddressesOutcome ConnectClient::AssociateQueueEmailAddresses(
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-email-addresses");
   };
 
-  return AssociateQueueEmailAddressesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateQueueEmailAddressesOutcome(result.GetResultWithOwnership())
+                            : AssociateQueueEmailAddressesOutcome(std::move(result.GetError()));
 }
 
 AssociateQueueQuickConnectsOutcome ConnectClient::AssociateQueueQuickConnects(const AssociateQueueQuickConnectsRequest& request) const {
@@ -569,7 +595,9 @@ AssociateQueueQuickConnectsOutcome ConnectClient::AssociateQueueQuickConnects(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-quick-connects");
   };
 
-  return AssociateQueueQuickConnectsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateQueueQuickConnectsOutcome(result.GetResultWithOwnership())
+                            : AssociateQueueQuickConnectsOutcome(std::move(result.GetError()));
 }
 
 AssociateRoutingProfileQueuesOutcome ConnectClient::AssociateRoutingProfileQueues(
@@ -593,7 +621,9 @@ AssociateRoutingProfileQueuesOutcome ConnectClient::AssociateRoutingProfileQueue
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-queues");
   };
 
-  return AssociateRoutingProfileQueuesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateRoutingProfileQueuesOutcome(result.GetResultWithOwnership())
+                            : AssociateRoutingProfileQueuesOutcome(std::move(result.GetError()));
 }
 
 AssociateSecurityKeyOutcome ConnectClient::AssociateSecurityKey(const AssociateSecurityKeyRequest& request) const {
@@ -610,7 +640,9 @@ AssociateSecurityKeyOutcome ConnectClient::AssociateSecurityKey(const AssociateS
     endpointResolutionOutcome.GetResult().AddPathSegments("/security-key");
   };
 
-  return AssociateSecurityKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateSecurityKeyOutcome(result.GetResultWithOwnership())
+                            : AssociateSecurityKeyOutcome(std::move(result.GetError()));
 }
 
 AssociateSecurityProfilesOutcome ConnectClient::AssociateSecurityProfiles(const AssociateSecurityProfilesRequest& request) const {
@@ -626,7 +658,9 @@ AssociateSecurityProfilesOutcome ConnectClient::AssociateSecurityProfiles(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return AssociateSecurityProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSecurityProfilesOutcome(result.GetResultWithOwnership())
+                            : AssociateSecurityProfilesOutcome(std::move(result.GetError()));
 }
 
 AssociateTrafficDistributionGroupUserOutcome ConnectClient::AssociateTrafficDistributionGroupUser(
@@ -644,7 +678,9 @@ AssociateTrafficDistributionGroupUserOutcome ConnectClient::AssociateTrafficDist
     endpointResolutionOutcome.GetResult().AddPathSegments("/user");
   };
 
-  return AssociateTrafficDistributionGroupUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateTrafficDistributionGroupUserOutcome(result.GetResultWithOwnership())
+                            : AssociateTrafficDistributionGroupUserOutcome(std::move(result.GetError()));
 }
 
 AssociateUserProficienciesOutcome ConnectClient::AssociateUserProficiencies(const AssociateUserProficienciesRequest& request) const {
@@ -667,7 +703,9 @@ AssociateUserProficienciesOutcome ConnectClient::AssociateUserProficiencies(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-proficiencies");
   };
 
-  return AssociateUserProficienciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateUserProficienciesOutcome(result.GetResultWithOwnership())
+                            : AssociateUserProficienciesOutcome(std::move(result.GetError()));
 }
 
 AssociateWorkspaceOutcome ConnectClient::AssociateWorkspace(const AssociateWorkspaceRequest& request) const {
@@ -690,7 +728,9 @@ AssociateWorkspaceOutcome ConnectClient::AssociateWorkspace(const AssociateWorks
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate");
   };
 
-  return AssociateWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateWorkspaceOutcome(result.GetResultWithOwnership())
+                            : AssociateWorkspaceOutcome(std::move(result.GetError()));
 }
 
 BatchAssociateAnalyticsDataSetOutcome ConnectClient::BatchAssociateAnalyticsDataSet(
@@ -708,7 +748,9 @@ BatchAssociateAnalyticsDataSetOutcome ConnectClient::BatchAssociateAnalyticsData
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return BatchAssociateAnalyticsDataSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchAssociateAnalyticsDataSetOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateAnalyticsDataSetOutcome(std::move(result.GetError()));
 }
 
 BatchCreateDataTableValueOutcome ConnectClient::BatchCreateDataTableValue(const BatchCreateDataTableValueRequest& request) const {
@@ -731,7 +773,9 @@ BatchCreateDataTableValueOutcome ConnectClient::BatchCreateDataTableValue(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/values/create");
   };
 
-  return BatchCreateDataTableValueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateDataTableValueOutcome(result.GetResultWithOwnership())
+                            : BatchCreateDataTableValueOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteDataTableValueOutcome ConnectClient::BatchDeleteDataTableValue(const BatchDeleteDataTableValueRequest& request) const {
@@ -754,7 +798,9 @@ BatchDeleteDataTableValueOutcome ConnectClient::BatchDeleteDataTableValue(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/values/delete");
   };
 
-  return BatchDeleteDataTableValueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteDataTableValueOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteDataTableValueOutcome(std::move(result.GetError()));
 }
 
 BatchDescribeDataTableValueOutcome ConnectClient::BatchDescribeDataTableValue(const BatchDescribeDataTableValueRequest& request) const {
@@ -777,7 +823,9 @@ BatchDescribeDataTableValueOutcome ConnectClient::BatchDescribeDataTableValue(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/values/describe");
   };
 
-  return BatchDescribeDataTableValueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDescribeDataTableValueOutcome(result.GetResultWithOwnership())
+                            : BatchDescribeDataTableValueOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateAnalyticsDataSetOutcome ConnectClient::BatchDisassociateAnalyticsDataSet(
@@ -795,7 +843,9 @@ BatchDisassociateAnalyticsDataSetOutcome ConnectClient::BatchDisassociateAnalyti
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return BatchDisassociateAnalyticsDataSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisassociateAnalyticsDataSetOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateAnalyticsDataSetOutcome(std::move(result.GetError()));
 }
 
 BatchGetAttachedFileMetadataOutcome ConnectClient::BatchGetAttachedFileMetadata(const BatchGetAttachedFileMetadataRequest& request) const {
@@ -816,7 +866,9 @@ BatchGetAttachedFileMetadataOutcome ConnectClient::BatchGetAttachedFileMetadata(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return BatchGetAttachedFileMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetAttachedFileMetadataOutcome(result.GetResultWithOwnership())
+                            : BatchGetAttachedFileMetadataOutcome(std::move(result.GetError()));
 }
 
 BatchGetFlowAssociationOutcome ConnectClient::BatchGetFlowAssociation(const BatchGetFlowAssociationRequest& request) const {
@@ -832,7 +884,9 @@ BatchGetFlowAssociationOutcome ConnectClient::BatchGetFlowAssociation(const Batc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return BatchGetFlowAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetFlowAssociationOutcome(result.GetResultWithOwnership())
+                            : BatchGetFlowAssociationOutcome(std::move(result.GetError()));
 }
 
 BatchPutContactOutcome ConnectClient::BatchPutContact(const BatchPutContactRequest& request) const {
@@ -848,7 +902,9 @@ BatchPutContactOutcome ConnectClient::BatchPutContact(const BatchPutContactReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return BatchPutContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchPutContactOutcome(result.GetResultWithOwnership())
+                            : BatchPutContactOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateDataTableValueOutcome ConnectClient::BatchUpdateDataTableValue(const BatchUpdateDataTableValueRequest& request) const {
@@ -871,7 +927,9 @@ BatchUpdateDataTableValueOutcome ConnectClient::BatchUpdateDataTableValue(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/values/update");
   };
 
-  return BatchUpdateDataTableValueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateDataTableValueOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateDataTableValueOutcome(std::move(result.GetError()));
 }
 
 ClaimPhoneNumberOutcome ConnectClient::ClaimPhoneNumber(const ClaimPhoneNumberRequest& request) const {
@@ -880,7 +938,9 @@ ClaimPhoneNumberOutcome ConnectClient::ClaimPhoneNumber(const ClaimPhoneNumberRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number/claim");
   };
 
-  return ClaimPhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ClaimPhoneNumberOutcome(result.GetResultWithOwnership())
+                            : ClaimPhoneNumberOutcome(std::move(result.GetError()));
 }
 
 CompleteAttachedFileUploadOutcome ConnectClient::CompleteAttachedFileUpload(const CompleteAttachedFileUploadRequest& request) const {
@@ -907,7 +967,9 @@ CompleteAttachedFileUploadOutcome ConnectClient::CompleteAttachedFileUpload(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileId());
   };
 
-  return CompleteAttachedFileUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CompleteAttachedFileUploadOutcome(result.GetResultWithOwnership())
+                            : CompleteAttachedFileUploadOutcome(std::move(result.GetError()));
 }
 
 CreateAgentStatusOutcome ConnectClient::CreateAgentStatus(const CreateAgentStatusRequest& request) const {
@@ -923,7 +985,9 @@ CreateAgentStatusOutcome ConnectClient::CreateAgentStatus(const CreateAgentStatu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateAgentStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateAgentStatusOutcome(result.GetResultWithOwnership())
+                            : CreateAgentStatusOutcome(std::move(result.GetError()));
 }
 
 CreateContactOutcome ConnectClient::CreateContact(const CreateContactRequest& request) const {
@@ -932,7 +996,8 @@ CreateContactOutcome ConnectClient::CreateContact(const CreateContactRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/contact/create-contact");
   };
 
-  return CreateContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateContactOutcome(result.GetResultWithOwnership()) : CreateContactOutcome(std::move(result.GetError()));
 }
 
 CreateContactFlowOutcome ConnectClient::CreateContactFlow(const CreateContactFlowRequest& request) const {
@@ -948,7 +1013,9 @@ CreateContactFlowOutcome ConnectClient::CreateContactFlow(const CreateContactFlo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateContactFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateContactFlowOutcome(result.GetResultWithOwnership())
+                            : CreateContactFlowOutcome(std::move(result.GetError()));
 }
 
 CreateContactFlowModuleOutcome ConnectClient::CreateContactFlowModule(const CreateContactFlowModuleRequest& request) const {
@@ -964,7 +1031,9 @@ CreateContactFlowModuleOutcome ConnectClient::CreateContactFlowModule(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateContactFlowModuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateContactFlowModuleOutcome(result.GetResultWithOwnership())
+                            : CreateContactFlowModuleOutcome(std::move(result.GetError()));
 }
 
 CreateContactFlowModuleAliasOutcome ConnectClient::CreateContactFlowModuleAlias(const CreateContactFlowModuleAliasRequest& request) const {
@@ -987,7 +1056,9 @@ CreateContactFlowModuleAliasOutcome ConnectClient::CreateContactFlowModuleAlias(
     endpointResolutionOutcome.GetResult().AddPathSegments("/alias");
   };
 
-  return CreateContactFlowModuleAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateContactFlowModuleAliasOutcome(result.GetResultWithOwnership())
+                            : CreateContactFlowModuleAliasOutcome(std::move(result.GetError()));
 }
 
 CreateContactFlowModuleVersionOutcome ConnectClient::CreateContactFlowModuleVersion(
@@ -1011,7 +1082,9 @@ CreateContactFlowModuleVersionOutcome ConnectClient::CreateContactFlowModuleVers
     endpointResolutionOutcome.GetResult().AddPathSegments("/version");
   };
 
-  return CreateContactFlowModuleVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateContactFlowModuleVersionOutcome(result.GetResultWithOwnership())
+                            : CreateContactFlowModuleVersionOutcome(std::move(result.GetError()));
 }
 
 CreateContactFlowVersionOutcome ConnectClient::CreateContactFlowVersion(const CreateContactFlowVersionRequest& request) const {
@@ -1034,7 +1107,9 @@ CreateContactFlowVersionOutcome ConnectClient::CreateContactFlowVersion(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/version");
   };
 
-  return CreateContactFlowVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateContactFlowVersionOutcome(result.GetResultWithOwnership())
+                            : CreateContactFlowVersionOutcome(std::move(result.GetError()));
 }
 
 CreateDataTableOutcome ConnectClient::CreateDataTable(const CreateDataTableRequest& request) const {
@@ -1050,7 +1125,9 @@ CreateDataTableOutcome ConnectClient::CreateDataTable(const CreateDataTableReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateDataTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateDataTableOutcome(result.GetResultWithOwnership())
+                            : CreateDataTableOutcome(std::move(result.GetError()));
 }
 
 CreateDataTableAttributeOutcome ConnectClient::CreateDataTableAttribute(const CreateDataTableAttributeRequest& request) const {
@@ -1073,7 +1150,9 @@ CreateDataTableAttributeOutcome ConnectClient::CreateDataTableAttribute(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/attributes");
   };
 
-  return CreateDataTableAttributeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateDataTableAttributeOutcome(result.GetResultWithOwnership())
+                            : CreateDataTableAttributeOutcome(std::move(result.GetError()));
 }
 
 CreateEmailAddressOutcome ConnectClient::CreateEmailAddress(const CreateEmailAddressRequest& request) const {
@@ -1089,7 +1168,9 @@ CreateEmailAddressOutcome ConnectClient::CreateEmailAddress(const CreateEmailAdd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateEmailAddressOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateEmailAddressOutcome(result.GetResultWithOwnership())
+                            : CreateEmailAddressOutcome(std::move(result.GetError()));
 }
 
 CreateEvaluationFormOutcome ConnectClient::CreateEvaluationForm(const CreateEvaluationFormRequest& request) const {
@@ -1105,7 +1186,9 @@ CreateEvaluationFormOutcome ConnectClient::CreateEvaluationForm(const CreateEval
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateEvaluationFormOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateEvaluationFormOutcome(result.GetResultWithOwnership())
+                            : CreateEvaluationFormOutcome(std::move(result.GetError()));
 }
 
 CreateHoursOfOperationOutcome ConnectClient::CreateHoursOfOperation(const CreateHoursOfOperationRequest& request) const {
@@ -1121,7 +1204,9 @@ CreateHoursOfOperationOutcome ConnectClient::CreateHoursOfOperation(const Create
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateHoursOfOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateHoursOfOperationOutcome(result.GetResultWithOwnership())
+                            : CreateHoursOfOperationOutcome(std::move(result.GetError()));
 }
 
 CreateHoursOfOperationOverrideOutcome ConnectClient::CreateHoursOfOperationOverride(
@@ -1145,7 +1230,9 @@ CreateHoursOfOperationOverrideOutcome ConnectClient::CreateHoursOfOperationOverr
     endpointResolutionOutcome.GetResult().AddPathSegments("/overrides");
   };
 
-  return CreateHoursOfOperationOverrideOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateHoursOfOperationOverrideOutcome(result.GetResultWithOwnership())
+                            : CreateHoursOfOperationOverrideOutcome(std::move(result.GetError()));
 }
 
 CreateInstanceOutcome ConnectClient::CreateInstance(const CreateInstanceRequest& request) const {
@@ -1154,7 +1241,8 @@ CreateInstanceOutcome ConnectClient::CreateInstance(const CreateInstanceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/instance");
   };
 
-  return CreateInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateInstanceOutcome(result.GetResultWithOwnership()) : CreateInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateIntegrationAssociationOutcome ConnectClient::CreateIntegrationAssociation(const CreateIntegrationAssociationRequest& request) const {
@@ -1171,7 +1259,9 @@ CreateIntegrationAssociationOutcome ConnectClient::CreateIntegrationAssociation(
     endpointResolutionOutcome.GetResult().AddPathSegments("/integration-associations");
   };
 
-  return CreateIntegrationAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateIntegrationAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateIntegrationAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateNotificationOutcome ConnectClient::CreateNotification(const CreateNotificationRequest& request) const {
@@ -1187,7 +1277,9 @@ CreateNotificationOutcome ConnectClient::CreateNotification(const CreateNotifica
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateNotificationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateNotificationOutcome(result.GetResultWithOwnership())
+                            : CreateNotificationOutcome(std::move(result.GetError()));
 }
 
 CreateParticipantOutcome ConnectClient::CreateParticipant(const CreateParticipantRequest& request) const {
@@ -1196,7 +1288,9 @@ CreateParticipantOutcome ConnectClient::CreateParticipant(const CreateParticipan
     endpointResolutionOutcome.GetResult().AddPathSegments("/contact/create-participant");
   };
 
-  return CreateParticipantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateParticipantOutcome(result.GetResultWithOwnership())
+                            : CreateParticipantOutcome(std::move(result.GetError()));
 }
 
 CreatePersistentContactAssociationOutcome ConnectClient::CreatePersistentContactAssociation(
@@ -1219,7 +1313,9 @@ CreatePersistentContactAssociationOutcome ConnectClient::CreatePersistentContact
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInitialContactId());
   };
 
-  return CreatePersistentContactAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePersistentContactAssociationOutcome(result.GetResultWithOwnership())
+                            : CreatePersistentContactAssociationOutcome(std::move(result.GetError()));
 }
 
 CreatePredefinedAttributeOutcome ConnectClient::CreatePredefinedAttribute(const CreatePredefinedAttributeRequest& request) const {
@@ -1235,7 +1331,9 @@ CreatePredefinedAttributeOutcome ConnectClient::CreatePredefinedAttribute(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreatePredefinedAttributeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreatePredefinedAttributeOutcome(result.GetResultWithOwnership())
+                            : CreatePredefinedAttributeOutcome(std::move(result.GetError()));
 }
 
 CreatePromptOutcome ConnectClient::CreatePrompt(const CreatePromptRequest& request) const {
@@ -1251,7 +1349,8 @@ CreatePromptOutcome ConnectClient::CreatePrompt(const CreatePromptRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreatePromptOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreatePromptOutcome(result.GetResultWithOwnership()) : CreatePromptOutcome(std::move(result.GetError()));
 }
 
 CreatePushNotificationRegistrationOutcome ConnectClient::CreatePushNotificationRegistration(
@@ -1269,7 +1368,9 @@ CreatePushNotificationRegistrationOutcome ConnectClient::CreatePushNotificationR
     endpointResolutionOutcome.GetResult().AddPathSegments("/registrations");
   };
 
-  return CreatePushNotificationRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreatePushNotificationRegistrationOutcome(result.GetResultWithOwnership())
+                            : CreatePushNotificationRegistrationOutcome(std::move(result.GetError()));
 }
 
 CreateQueueOutcome ConnectClient::CreateQueue(const CreateQueueRequest& request) const {
@@ -1285,7 +1386,8 @@ CreateQueueOutcome ConnectClient::CreateQueue(const CreateQueueRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateQueueOutcome(result.GetResultWithOwnership()) : CreateQueueOutcome(std::move(result.GetError()));
 }
 
 CreateQuickConnectOutcome ConnectClient::CreateQuickConnect(const CreateQuickConnectRequest& request) const {
@@ -1301,7 +1403,9 @@ CreateQuickConnectOutcome ConnectClient::CreateQuickConnect(const CreateQuickCon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateQuickConnectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateQuickConnectOutcome(result.GetResultWithOwnership())
+                            : CreateQuickConnectOutcome(std::move(result.GetError()));
 }
 
 CreateRoutingProfileOutcome ConnectClient::CreateRoutingProfile(const CreateRoutingProfileRequest& request) const {
@@ -1317,7 +1421,9 @@ CreateRoutingProfileOutcome ConnectClient::CreateRoutingProfile(const CreateRout
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateRoutingProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateRoutingProfileOutcome(result.GetResultWithOwnership())
+                            : CreateRoutingProfileOutcome(std::move(result.GetError()));
 }
 
 CreateRuleOutcome ConnectClient::CreateRule(const CreateRuleRequest& request) const {
@@ -1333,7 +1439,8 @@ CreateRuleOutcome ConnectClient::CreateRule(const CreateRuleRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRuleOutcome(result.GetResultWithOwnership()) : CreateRuleOutcome(std::move(result.GetError()));
 }
 
 CreateSecurityProfileOutcome ConnectClient::CreateSecurityProfile(const CreateSecurityProfileRequest& request) const {
@@ -1349,7 +1456,9 @@ CreateSecurityProfileOutcome ConnectClient::CreateSecurityProfile(const CreateSe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateSecurityProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateSecurityProfileOutcome(result.GetResultWithOwnership())
+                            : CreateSecurityProfileOutcome(std::move(result.GetError()));
 }
 
 CreateTaskTemplateOutcome ConnectClient::CreateTaskTemplate(const CreateTaskTemplateRequest& request) const {
@@ -1366,7 +1475,9 @@ CreateTaskTemplateOutcome ConnectClient::CreateTaskTemplate(const CreateTaskTemp
     endpointResolutionOutcome.GetResult().AddPathSegments("/task/template");
   };
 
-  return CreateTaskTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateTaskTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateTaskTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateTestCaseOutcome ConnectClient::CreateTestCase(const CreateTestCaseRequest& request) const {
@@ -1382,7 +1493,8 @@ CreateTestCaseOutcome ConnectClient::CreateTestCase(const CreateTestCaseRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateTestCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateTestCaseOutcome(result.GetResultWithOwnership()) : CreateTestCaseOutcome(std::move(result.GetError()));
 }
 
 CreateTrafficDistributionGroupOutcome ConnectClient::CreateTrafficDistributionGroup(
@@ -1392,7 +1504,9 @@ CreateTrafficDistributionGroupOutcome ConnectClient::CreateTrafficDistributionGr
     endpointResolutionOutcome.GetResult().AddPathSegments("/traffic-distribution-group");
   };
 
-  return CreateTrafficDistributionGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateTrafficDistributionGroupOutcome(result.GetResultWithOwnership())
+                            : CreateTrafficDistributionGroupOutcome(std::move(result.GetError()));
 }
 
 CreateUseCaseOutcome ConnectClient::CreateUseCase(const CreateUseCaseRequest& request) const {
@@ -1416,7 +1530,8 @@ CreateUseCaseOutcome ConnectClient::CreateUseCase(const CreateUseCaseRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/use-cases");
   };
 
-  return CreateUseCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateUseCaseOutcome(result.GetResultWithOwnership()) : CreateUseCaseOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome ConnectClient::CreateUser(const CreateUserRequest& request) const {
@@ -1432,7 +1547,8 @@ CreateUserOutcome ConnectClient::CreateUser(const CreateUserRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 CreateUserHierarchyGroupOutcome ConnectClient::CreateUserHierarchyGroup(const CreateUserHierarchyGroupRequest& request) const {
@@ -1448,7 +1564,9 @@ CreateUserHierarchyGroupOutcome ConnectClient::CreateUserHierarchyGroup(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateUserHierarchyGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateUserHierarchyGroupOutcome(result.GetResultWithOwnership())
+                            : CreateUserHierarchyGroupOutcome(std::move(result.GetError()));
 }
 
 CreateViewOutcome ConnectClient::CreateView(const CreateViewRequest& request) const {
@@ -1464,7 +1582,8 @@ CreateViewOutcome ConnectClient::CreateView(const CreateViewRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateViewOutcome(result.GetResultWithOwnership()) : CreateViewOutcome(std::move(result.GetError()));
 }
 
 CreateViewVersionOutcome ConnectClient::CreateViewVersion(const CreateViewVersionRequest& request) const {
@@ -1487,7 +1606,9 @@ CreateViewVersionOutcome ConnectClient::CreateViewVersion(const CreateViewVersio
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return CreateViewVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateViewVersionOutcome(result.GetResultWithOwnership())
+                            : CreateViewVersionOutcome(std::move(result.GetError()));
 }
 
 CreateVocabularyOutcome ConnectClient::CreateVocabulary(const CreateVocabularyRequest& request) const {
@@ -1503,7 +1624,9 @@ CreateVocabularyOutcome ConnectClient::CreateVocabulary(const CreateVocabularyRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateVocabularyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVocabularyOutcome(result.GetResultWithOwnership())
+                            : CreateVocabularyOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspaceOutcome ConnectClient::CreateWorkspace(const CreateWorkspaceRequest& request) const {
@@ -1519,7 +1642,9 @@ CreateWorkspaceOutcome ConnectClient::CreateWorkspace(const CreateWorkspaceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return CreateWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateWorkspaceOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspaceOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspacePageOutcome ConnectClient::CreateWorkspacePage(const CreateWorkspacePageRequest& request) const {
@@ -1542,7 +1667,9 @@ CreateWorkspacePageOutcome ConnectClient::CreateWorkspacePage(const CreateWorksp
     endpointResolutionOutcome.GetResult().AddPathSegments("/pages");
   };
 
-  return CreateWorkspacePageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateWorkspacePageOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspacePageOutcome(std::move(result.GetError()));
 }
 
 DeactivateEvaluationFormOutcome ConnectClient::DeactivateEvaluationForm(const DeactivateEvaluationFormRequest& request) const {
@@ -1565,7 +1692,9 @@ DeactivateEvaluationFormOutcome ConnectClient::DeactivateEvaluationForm(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/deactivate");
   };
 
-  return DeactivateEvaluationFormOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeactivateEvaluationFormOutcome(result.GetResultWithOwnership())
+                            : DeactivateEvaluationFormOutcome(std::move(result.GetError()));
 }
 
 DeleteAttachedFileOutcome ConnectClient::DeleteAttachedFile(const DeleteAttachedFileRequest& request) const {
@@ -1592,7 +1721,9 @@ DeleteAttachedFileOutcome ConnectClient::DeleteAttachedFile(const DeleteAttached
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileId());
   };
 
-  return DeleteAttachedFileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAttachedFileOutcome(result.GetResultWithOwnership())
+                            : DeleteAttachedFileOutcome(std::move(result.GetError()));
 }
 
 DeleteContactEvaluationOutcome ConnectClient::DeleteContactEvaluation(const DeleteContactEvaluationRequest& request) const {
@@ -1614,7 +1745,9 @@ DeleteContactEvaluationOutcome ConnectClient::DeleteContactEvaluation(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluationId());
   };
 
-  return DeleteContactEvaluationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContactEvaluationOutcome(result.GetResultWithOwnership())
+                            : DeleteContactEvaluationOutcome(std::move(result.GetError()));
 }
 
 DeleteContactFlowOutcome ConnectClient::DeleteContactFlow(const DeleteContactFlowRequest& request) const {
@@ -1636,7 +1769,9 @@ DeleteContactFlowOutcome ConnectClient::DeleteContactFlow(const DeleteContactFlo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactFlowId());
   };
 
-  return DeleteContactFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContactFlowOutcome(result.GetResultWithOwnership())
+                            : DeleteContactFlowOutcome(std::move(result.GetError()));
 }
 
 DeleteContactFlowModuleOutcome ConnectClient::DeleteContactFlowModule(const DeleteContactFlowModuleRequest& request) const {
@@ -1658,7 +1793,9 @@ DeleteContactFlowModuleOutcome ConnectClient::DeleteContactFlowModule(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactFlowModuleId());
   };
 
-  return DeleteContactFlowModuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContactFlowModuleOutcome(result.GetResultWithOwnership())
+                            : DeleteContactFlowModuleOutcome(std::move(result.GetError()));
 }
 
 DeleteContactFlowModuleAliasOutcome ConnectClient::DeleteContactFlowModuleAlias(const DeleteContactFlowModuleAliasRequest& request) const {
@@ -1687,7 +1824,9 @@ DeleteContactFlowModuleAliasOutcome ConnectClient::DeleteContactFlowModuleAlias(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAliasId());
   };
 
-  return DeleteContactFlowModuleAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContactFlowModuleAliasOutcome(result.GetResultWithOwnership())
+                            : DeleteContactFlowModuleAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteContactFlowModuleVersionOutcome ConnectClient::DeleteContactFlowModuleVersion(
@@ -1717,7 +1856,9 @@ DeleteContactFlowModuleVersionOutcome ConnectClient::DeleteContactFlowModuleVers
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactFlowModuleVersion());
   };
 
-  return DeleteContactFlowModuleVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContactFlowModuleVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteContactFlowModuleVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteContactFlowVersionOutcome ConnectClient::DeleteContactFlowVersion(const DeleteContactFlowVersionRequest& request) const {
@@ -1746,7 +1887,9 @@ DeleteContactFlowVersionOutcome ConnectClient::DeleteContactFlowVersion(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactFlowVersion());
   };
 
-  return DeleteContactFlowVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContactFlowVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteContactFlowVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteDataTableOutcome ConnectClient::DeleteDataTable(const DeleteDataTableRequest& request) const {
@@ -1768,7 +1911,9 @@ DeleteDataTableOutcome ConnectClient::DeleteDataTable(const DeleteDataTableReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
   };
 
-  return DeleteDataTableOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataTableOutcome(result.GetResultWithOwnership())
+                            : DeleteDataTableOutcome(std::move(result.GetError()));
 }
 
 DeleteDataTableAttributeOutcome ConnectClient::DeleteDataTableAttribute(const DeleteDataTableAttributeRequest& request) const {
@@ -1797,7 +1942,9 @@ DeleteDataTableAttributeOutcome ConnectClient::DeleteDataTableAttribute(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttributeName());
   };
 
-  return DeleteDataTableAttributeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataTableAttributeOutcome(result.GetResultWithOwnership())
+                            : DeleteDataTableAttributeOutcome(std::move(result.GetError()));
 }
 
 DeleteEmailAddressOutcome ConnectClient::DeleteEmailAddress(const DeleteEmailAddressRequest& request) const {
@@ -1819,7 +1966,9 @@ DeleteEmailAddressOutcome ConnectClient::DeleteEmailAddress(const DeleteEmailAdd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailAddressId());
   };
 
-  return DeleteEmailAddressOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEmailAddressOutcome(result.GetResultWithOwnership())
+                            : DeleteEmailAddressOutcome(std::move(result.GetError()));
 }
 
 DeleteEvaluationFormOutcome ConnectClient::DeleteEvaluationForm(const DeleteEvaluationFormRequest& request) const {
@@ -1841,7 +1990,9 @@ DeleteEvaluationFormOutcome ConnectClient::DeleteEvaluationForm(const DeleteEval
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluationFormId());
   };
 
-  return DeleteEvaluationFormOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEvaluationFormOutcome(result.GetResultWithOwnership())
+                            : DeleteEvaluationFormOutcome(std::move(result.GetError()));
 }
 
 DeleteHoursOfOperationOutcome ConnectClient::DeleteHoursOfOperation(const DeleteHoursOfOperationRequest& request) const {
@@ -1863,7 +2014,9 @@ DeleteHoursOfOperationOutcome ConnectClient::DeleteHoursOfOperation(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationId());
   };
 
-  return DeleteHoursOfOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteHoursOfOperationOutcome(result.GetResultWithOwnership())
+                            : DeleteHoursOfOperationOutcome(std::move(result.GetError()));
 }
 
 DeleteHoursOfOperationOverrideOutcome ConnectClient::DeleteHoursOfOperationOverride(
@@ -1893,7 +2046,9 @@ DeleteHoursOfOperationOverrideOutcome ConnectClient::DeleteHoursOfOperationOverr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationOverrideId());
   };
 
-  return DeleteHoursOfOperationOverrideOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteHoursOfOperationOverrideOutcome(result.GetResultWithOwnership())
+                            : DeleteHoursOfOperationOverrideOutcome(std::move(result.GetError()));
 }
 
 DeleteInstanceOutcome ConnectClient::DeleteInstance(const DeleteInstanceRequest& request) const {
@@ -1909,7 +2064,8 @@ DeleteInstanceOutcome ConnectClient::DeleteInstance(const DeleteInstanceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return DeleteInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInstanceOutcome(result.GetResultWithOwnership()) : DeleteInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteIntegrationAssociationOutcome ConnectClient::DeleteIntegrationAssociation(const DeleteIntegrationAssociationRequest& request) const {
@@ -1932,7 +2088,9 @@ DeleteIntegrationAssociationOutcome ConnectClient::DeleteIntegrationAssociation(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntegrationAssociationId());
   };
 
-  return DeleteIntegrationAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIntegrationAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteIntegrationAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteNotificationOutcome ConnectClient::DeleteNotification(const DeleteNotificationRequest& request) const {
@@ -1954,7 +2112,9 @@ DeleteNotificationOutcome ConnectClient::DeleteNotification(const DeleteNotifica
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNotificationId());
   };
 
-  return DeleteNotificationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNotificationOutcome(result.GetResultWithOwnership())
+                            : DeleteNotificationOutcome(std::move(result.GetError()));
 }
 
 DeletePredefinedAttributeOutcome ConnectClient::DeletePredefinedAttribute(const DeletePredefinedAttributeRequest& request) const {
@@ -1976,7 +2136,9 @@ DeletePredefinedAttributeOutcome ConnectClient::DeletePredefinedAttribute(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeletePredefinedAttributeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePredefinedAttributeOutcome(result.GetResultWithOwnership())
+                            : DeletePredefinedAttributeOutcome(std::move(result.GetError()));
 }
 
 DeletePromptOutcome ConnectClient::DeletePrompt(const DeletePromptRequest& request) const {
@@ -1998,7 +2160,8 @@ DeletePromptOutcome ConnectClient::DeletePrompt(const DeletePromptRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPromptId());
   };
 
-  return DeletePromptOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePromptOutcome(result.GetResultWithOwnership()) : DeletePromptOutcome(std::move(result.GetError()));
 }
 
 DeletePushNotificationRegistrationOutcome ConnectClient::DeletePushNotificationRegistration(
@@ -2027,7 +2190,9 @@ DeletePushNotificationRegistrationOutcome ConnectClient::DeletePushNotificationR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRegistrationId());
   };
 
-  return DeletePushNotificationRegistrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePushNotificationRegistrationOutcome(result.GetResultWithOwnership())
+                            : DeletePushNotificationRegistrationOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueOutcome ConnectClient::DeleteQueue(const DeleteQueueRequest& request) const {
@@ -2049,7 +2214,8 @@ DeleteQueueOutcome ConnectClient::DeleteQueue(const DeleteQueueRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
   };
 
-  return DeleteQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueueOutcome(result.GetResultWithOwnership()) : DeleteQueueOutcome(std::move(result.GetError()));
 }
 
 DeleteQuickConnectOutcome ConnectClient::DeleteQuickConnect(const DeleteQuickConnectRequest& request) const {
@@ -2071,7 +2237,9 @@ DeleteQuickConnectOutcome ConnectClient::DeleteQuickConnect(const DeleteQuickCon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuickConnectId());
   };
 
-  return DeleteQuickConnectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQuickConnectOutcome(result.GetResultWithOwnership())
+                            : DeleteQuickConnectOutcome(std::move(result.GetError()));
 }
 
 DeleteRoutingProfileOutcome ConnectClient::DeleteRoutingProfile(const DeleteRoutingProfileRequest& request) const {
@@ -2093,7 +2261,9 @@ DeleteRoutingProfileOutcome ConnectClient::DeleteRoutingProfile(const DeleteRout
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRoutingProfileId());
   };
 
-  return DeleteRoutingProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRoutingProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteRoutingProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleOutcome ConnectClient::DeleteRule(const DeleteRuleRequest& request) const {
@@ -2115,7 +2285,8 @@ DeleteRuleOutcome ConnectClient::DeleteRule(const DeleteRuleRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
   };
 
-  return DeleteRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRuleOutcome(result.GetResultWithOwnership()) : DeleteRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteSecurityProfileOutcome ConnectClient::DeleteSecurityProfile(const DeleteSecurityProfileRequest& request) const {
@@ -2137,7 +2308,9 @@ DeleteSecurityProfileOutcome ConnectClient::DeleteSecurityProfile(const DeleteSe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSecurityProfileId());
   };
 
-  return DeleteSecurityProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSecurityProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteSecurityProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteTaskTemplateOutcome ConnectClient::DeleteTaskTemplate(const DeleteTaskTemplateRequest& request) const {
@@ -2160,7 +2333,9 @@ DeleteTaskTemplateOutcome ConnectClient::DeleteTaskTemplate(const DeleteTaskTemp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskTemplateId());
   };
 
-  return DeleteTaskTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTaskTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteTaskTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteTestCaseOutcome ConnectClient::DeleteTestCase(const DeleteTestCaseRequest& request) const {
@@ -2182,7 +2357,8 @@ DeleteTestCaseOutcome ConnectClient::DeleteTestCase(const DeleteTestCaseRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestCaseId());
   };
 
-  return DeleteTestCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTestCaseOutcome(result.GetResultWithOwnership()) : DeleteTestCaseOutcome(std::move(result.GetError()));
 }
 
 DeleteTrafficDistributionGroupOutcome ConnectClient::DeleteTrafficDistributionGroup(
@@ -2199,7 +2375,9 @@ DeleteTrafficDistributionGroupOutcome ConnectClient::DeleteTrafficDistributionGr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrafficDistributionGroupId());
   };
 
-  return DeleteTrafficDistributionGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTrafficDistributionGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteTrafficDistributionGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteUseCaseOutcome ConnectClient::DeleteUseCase(const DeleteUseCaseRequest& request) const {
@@ -2229,7 +2407,8 @@ DeleteUseCaseOutcome ConnectClient::DeleteUseCase(const DeleteUseCaseRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUseCaseId());
   };
 
-  return DeleteUseCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUseCaseOutcome(result.GetResultWithOwnership()) : DeleteUseCaseOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome ConnectClient::DeleteUser(const DeleteUserRequest& request) const {
@@ -2251,7 +2430,8 @@ DeleteUserOutcome ConnectClient::DeleteUser(const DeleteUserRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return DeleteUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DeleteUserHierarchyGroupOutcome ConnectClient::DeleteUserHierarchyGroup(const DeleteUserHierarchyGroupRequest& request) const {
@@ -2273,5 +2453,7 @@ DeleteUserHierarchyGroupOutcome ConnectClient::DeleteUserHierarchyGroup(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHierarchyGroupId());
   };
 
-  return DeleteUserHierarchyGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserHierarchyGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteUserHierarchyGroupOutcome(std::move(result.GetError()));
 }

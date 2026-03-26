@@ -241,7 +241,9 @@ CancelBatchJobExecutionOutcome MainframeModernizationClient::CancelBatchJobExecu
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelBatchJobExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelBatchJobExecutionOutcome(result.GetResultWithOwnership())
+                            : CancelBatchJobExecutionOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome MainframeModernizationClient::CreateApplication(const CreateApplicationRequest& request) const {
@@ -250,7 +252,9 @@ CreateApplicationOutcome MainframeModernizationClient::CreateApplication(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return CreateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateDataSetExportTaskOutcome MainframeModernizationClient::CreateDataSetExportTask(const CreateDataSetExportTaskRequest& request) const {
@@ -267,7 +271,9 @@ CreateDataSetExportTaskOutcome MainframeModernizationClient::CreateDataSetExport
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataset-export-task");
   };
 
-  return CreateDataSetExportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataSetExportTaskOutcome(result.GetResultWithOwnership())
+                            : CreateDataSetExportTaskOutcome(std::move(result.GetError()));
 }
 
 CreateDataSetImportTaskOutcome MainframeModernizationClient::CreateDataSetImportTask(const CreateDataSetImportTaskRequest& request) const {
@@ -284,7 +290,9 @@ CreateDataSetImportTaskOutcome MainframeModernizationClient::CreateDataSetImport
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataset-import-task");
   };
 
-  return CreateDataSetImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataSetImportTaskOutcome(result.GetResultWithOwnership())
+                            : CreateDataSetImportTaskOutcome(std::move(result.GetError()));
 }
 
 CreateDeploymentOutcome MainframeModernizationClient::CreateDeployment(const CreateDeploymentRequest& request) const {
@@ -301,7 +309,9 @@ CreateDeploymentOutcome MainframeModernizationClient::CreateDeployment(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/deployments");
   };
 
-  return CreateDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeploymentOutcome(result.GetResultWithOwnership())
+                            : CreateDeploymentOutcome(std::move(result.GetError()));
 }
 
 CreateEnvironmentOutcome MainframeModernizationClient::CreateEnvironment(const CreateEnvironmentRequest& request) const {
@@ -310,7 +320,9 @@ CreateEnvironmentOutcome MainframeModernizationClient::CreateEnvironment(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
   };
 
-  return CreateEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEnvironmentOutcome(result.GetResultWithOwnership())
+                            : CreateEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome MainframeModernizationClient::DeleteApplication(const DeleteApplicationRequest& request) const {
@@ -326,7 +338,9 @@ DeleteApplicationOutcome MainframeModernizationClient::DeleteApplication(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationFromEnvironmentOutcome MainframeModernizationClient::DeleteApplicationFromEnvironment(
@@ -350,7 +364,9 @@ DeleteApplicationFromEnvironmentOutcome MainframeModernizationClient::DeleteAppl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
   };
 
-  return DeleteApplicationFromEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApplicationFromEnvironmentOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationFromEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeleteEnvironmentOutcome MainframeModernizationClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const {
@@ -366,7 +382,9 @@ DeleteEnvironmentOutcome MainframeModernizationClient::DeleteEnvironment(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
   };
 
-  return DeleteEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEnvironmentOutcome(result.GetResultWithOwnership())
+                            : DeleteEnvironmentOutcome(std::move(result.GetError()));
 }
 
 GetApplicationOutcome MainframeModernizationClient::GetApplication(const GetApplicationRequest& request) const {
@@ -382,7 +400,8 @@ GetApplicationOutcome MainframeModernizationClient::GetApplication(const GetAppl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return GetApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationOutcome(result.GetResultWithOwnership()) : GetApplicationOutcome(std::move(result.GetError()));
 }
 
 GetApplicationVersionOutcome MainframeModernizationClient::GetApplicationVersion(const GetApplicationVersionRequest& request) const {
@@ -405,7 +424,9 @@ GetApplicationVersionOutcome MainframeModernizationClient::GetApplicationVersion
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationVersion());
   };
 
-  return GetApplicationVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationVersionOutcome(result.GetResultWithOwnership())
+                            : GetApplicationVersionOutcome(std::move(result.GetError()));
 }
 
 GetBatchJobExecutionOutcome MainframeModernizationClient::GetBatchJobExecution(const GetBatchJobExecutionRequest& request) const {
@@ -428,7 +449,9 @@ GetBatchJobExecutionOutcome MainframeModernizationClient::GetBatchJobExecution(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionId());
   };
 
-  return GetBatchJobExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBatchJobExecutionOutcome(result.GetResultWithOwnership())
+                            : GetBatchJobExecutionOutcome(std::move(result.GetError()));
 }
 
 GetDataSetDetailsOutcome MainframeModernizationClient::GetDataSetDetails(const GetDataSetDetailsRequest& request) const {
@@ -451,7 +474,9 @@ GetDataSetDetailsOutcome MainframeModernizationClient::GetDataSetDetails(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetName());
   };
 
-  return GetDataSetDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataSetDetailsOutcome(result.GetResultWithOwnership())
+                            : GetDataSetDetailsOutcome(std::move(result.GetError()));
 }
 
 GetDataSetExportTaskOutcome MainframeModernizationClient::GetDataSetExportTask(const GetDataSetExportTaskRequest& request) const {
@@ -474,7 +499,9 @@ GetDataSetExportTaskOutcome MainframeModernizationClient::GetDataSetExportTask(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
   };
 
-  return GetDataSetExportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataSetExportTaskOutcome(result.GetResultWithOwnership())
+                            : GetDataSetExportTaskOutcome(std::move(result.GetError()));
 }
 
 GetDataSetImportTaskOutcome MainframeModernizationClient::GetDataSetImportTask(const GetDataSetImportTaskRequest& request) const {
@@ -497,7 +524,9 @@ GetDataSetImportTaskOutcome MainframeModernizationClient::GetDataSetImportTask(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
   };
 
-  return GetDataSetImportTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataSetImportTaskOutcome(result.GetResultWithOwnership())
+                            : GetDataSetImportTaskOutcome(std::move(result.GetError()));
 }
 
 GetDeploymentOutcome MainframeModernizationClient::GetDeployment(const GetDeploymentRequest& request) const {
@@ -520,7 +549,8 @@ GetDeploymentOutcome MainframeModernizationClient::GetDeployment(const GetDeploy
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentId());
   };
 
-  return GetDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeploymentOutcome(result.GetResultWithOwnership()) : GetDeploymentOutcome(std::move(result.GetError()));
 }
 
 GetEnvironmentOutcome MainframeModernizationClient::GetEnvironment(const GetEnvironmentRequest& request) const {
@@ -536,7 +566,8 @@ GetEnvironmentOutcome MainframeModernizationClient::GetEnvironment(const GetEnvi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
   };
 
-  return GetEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEnvironmentOutcome(result.GetResultWithOwnership()) : GetEnvironmentOutcome(std::move(result.GetError()));
 }
 
 GetSignedBluinsightsUrlOutcome MainframeModernizationClient::GetSignedBluinsightsUrl(const GetSignedBluinsightsUrlRequest& request) const {
@@ -545,7 +576,9 @@ GetSignedBluinsightsUrlOutcome MainframeModernizationClient::GetSignedBluinsight
     endpointResolutionOutcome.GetResult().AddPathSegments("/signed-bi-url");
   };
 
-  return GetSignedBluinsightsUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSignedBluinsightsUrlOutcome(result.GetResultWithOwnership())
+                            : GetSignedBluinsightsUrlOutcome(std::move(result.GetError()));
 }
 
 ListApplicationVersionsOutcome MainframeModernizationClient::ListApplicationVersions(const ListApplicationVersionsRequest& request) const {
@@ -562,7 +595,9 @@ ListApplicationVersionsOutcome MainframeModernizationClient::ListApplicationVers
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListApplicationVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationVersionsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationVersionsOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome MainframeModernizationClient::ListApplications(const ListApplicationsRequest& request) const {
@@ -571,7 +606,9 @@ ListApplicationsOutcome MainframeModernizationClient::ListApplications(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return ListApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListBatchJobDefinitionsOutcome MainframeModernizationClient::ListBatchJobDefinitions(const ListBatchJobDefinitionsRequest& request) const {
@@ -588,7 +625,9 @@ ListBatchJobDefinitionsOutcome MainframeModernizationClient::ListBatchJobDefinit
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-job-definitions");
   };
 
-  return ListBatchJobDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBatchJobDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListBatchJobDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListBatchJobExecutionsOutcome MainframeModernizationClient::ListBatchJobExecutions(const ListBatchJobExecutionsRequest& request) const {
@@ -605,7 +644,9 @@ ListBatchJobExecutionsOutcome MainframeModernizationClient::ListBatchJobExecutio
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-job-executions");
   };
 
-  return ListBatchJobExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBatchJobExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListBatchJobExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListBatchJobRestartPointsOutcome MainframeModernizationClient::ListBatchJobRestartPoints(
@@ -630,7 +671,9 @@ ListBatchJobRestartPointsOutcome MainframeModernizationClient::ListBatchJobResta
     endpointResolutionOutcome.GetResult().AddPathSegments("/steps");
   };
 
-  return ListBatchJobRestartPointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBatchJobRestartPointsOutcome(result.GetResultWithOwnership())
+                            : ListBatchJobRestartPointsOutcome(std::move(result.GetError()));
 }
 
 ListDataSetExportHistoryOutcome MainframeModernizationClient::ListDataSetExportHistory(
@@ -648,7 +691,9 @@ ListDataSetExportHistoryOutcome MainframeModernizationClient::ListDataSetExportH
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataset-export-tasks");
   };
 
-  return ListDataSetExportHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSetExportHistoryOutcome(result.GetResultWithOwnership())
+                            : ListDataSetExportHistoryOutcome(std::move(result.GetError()));
 }
 
 ListDataSetImportHistoryOutcome MainframeModernizationClient::ListDataSetImportHistory(
@@ -666,7 +711,9 @@ ListDataSetImportHistoryOutcome MainframeModernizationClient::ListDataSetImportH
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataset-import-tasks");
   };
 
-  return ListDataSetImportHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSetImportHistoryOutcome(result.GetResultWithOwnership())
+                            : ListDataSetImportHistoryOutcome(std::move(result.GetError()));
 }
 
 ListDataSetsOutcome MainframeModernizationClient::ListDataSets(const ListDataSetsRequest& request) const {
@@ -683,7 +730,8 @@ ListDataSetsOutcome MainframeModernizationClient::ListDataSets(const ListDataSet
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
   };
 
-  return ListDataSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSetsOutcome(result.GetResultWithOwnership()) : ListDataSetsOutcome(std::move(result.GetError()));
 }
 
 ListDeploymentsOutcome MainframeModernizationClient::ListDeployments(const ListDeploymentsRequest& request) const {
@@ -700,7 +748,9 @@ ListDeploymentsOutcome MainframeModernizationClient::ListDeployments(const ListD
     endpointResolutionOutcome.GetResult().AddPathSegments("/deployments");
   };
 
-  return ListDeploymentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDeploymentsOutcome(result.GetResultWithOwnership())
+                            : ListDeploymentsOutcome(std::move(result.GetError()));
 }
 
 ListEngineVersionsOutcome MainframeModernizationClient::ListEngineVersions(const ListEngineVersionsRequest& request) const {
@@ -709,7 +759,9 @@ ListEngineVersionsOutcome MainframeModernizationClient::ListEngineVersions(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/engine-versions");
   };
 
-  return ListEngineVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEngineVersionsOutcome(result.GetResultWithOwnership())
+                            : ListEngineVersionsOutcome(std::move(result.GetError()));
 }
 
 ListEnvironmentsOutcome MainframeModernizationClient::ListEnvironments(const ListEnvironmentsRequest& request) const {
@@ -718,7 +770,9 @@ ListEnvironmentsOutcome MainframeModernizationClient::ListEnvironments(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
   };
 
-  return ListEnvironmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : ListEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MainframeModernizationClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -734,7 +788,9 @@ ListTagsForResourceOutcome MainframeModernizationClient::ListTagsForResource(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartApplicationOutcome MainframeModernizationClient::StartApplication(const StartApplicationRequest& request) const {
@@ -751,7 +807,9 @@ StartApplicationOutcome MainframeModernizationClient::StartApplication(const Sta
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartApplicationOutcome(result.GetResultWithOwnership())
+                            : StartApplicationOutcome(std::move(result.GetError()));
 }
 
 StartBatchJobOutcome MainframeModernizationClient::StartBatchJob(const StartBatchJobRequest& request) const {
@@ -768,7 +826,8 @@ StartBatchJobOutcome MainframeModernizationClient::StartBatchJob(const StartBatc
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-job");
   };
 
-  return StartBatchJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartBatchJobOutcome(result.GetResultWithOwnership()) : StartBatchJobOutcome(std::move(result.GetError()));
 }
 
 StopApplicationOutcome MainframeModernizationClient::StopApplication(const StopApplicationRequest& request) const {
@@ -785,7 +844,9 @@ StopApplicationOutcome MainframeModernizationClient::StopApplication(const StopA
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopApplicationOutcome(result.GetResultWithOwnership())
+                            : StopApplicationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MainframeModernizationClient::TagResource(const TagResourceRequest& request) const {
@@ -801,7 +862,8 @@ TagResourceOutcome MainframeModernizationClient::TagResource(const TagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MainframeModernizationClient::UntagResource(const UntagResourceRequest& request) const {
@@ -822,7 +884,8 @@ UntagResourceOutcome MainframeModernizationClient::UntagResource(const UntagReso
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome MainframeModernizationClient::UpdateApplication(const UpdateApplicationRequest& request) const {
@@ -838,7 +901,9 @@ UpdateApplicationOutcome MainframeModernizationClient::UpdateApplication(const U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateEnvironmentOutcome MainframeModernizationClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const {
@@ -854,5 +919,7 @@ UpdateEnvironmentOutcome MainframeModernizationClient::UpdateEnvironment(const U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
   };
 
-  return UpdateEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEnvironmentOutcome(result.GetResultWithOwnership())
+                            : UpdateEnvironmentOutcome(std::move(result.GetError()));
 }

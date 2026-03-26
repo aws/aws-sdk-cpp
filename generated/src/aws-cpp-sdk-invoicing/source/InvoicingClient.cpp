@@ -189,75 +189,105 @@ InvoicingClient::InvokeOperationOutcome InvoicingClient::InvokeServiceOperation(
 }
 
 BatchGetInvoiceProfileOutcome InvoicingClient::BatchGetInvoiceProfile(const BatchGetInvoiceProfileRequest& request) const {
-  return BatchGetInvoiceProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetInvoiceProfileOutcome(result.GetResultWithOwnership())
+                            : BatchGetInvoiceProfileOutcome(std::move(result.GetError()));
 }
 
 CreateInvoiceUnitOutcome InvoicingClient::CreateInvoiceUnit(const CreateInvoiceUnitRequest& request) const {
-  return CreateInvoiceUnitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInvoiceUnitOutcome(result.GetResultWithOwnership())
+                            : CreateInvoiceUnitOutcome(std::move(result.GetError()));
 }
 
 CreateProcurementPortalPreferenceOutcome InvoicingClient::CreateProcurementPortalPreference(
     const CreateProcurementPortalPreferenceRequest& request) const {
-  return CreateProcurementPortalPreferenceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProcurementPortalPreferenceOutcome(result.GetResultWithOwnership())
+                            : CreateProcurementPortalPreferenceOutcome(std::move(result.GetError()));
 }
 
 DeleteInvoiceUnitOutcome InvoicingClient::DeleteInvoiceUnit(const DeleteInvoiceUnitRequest& request) const {
-  return DeleteInvoiceUnitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInvoiceUnitOutcome(result.GetResultWithOwnership())
+                            : DeleteInvoiceUnitOutcome(std::move(result.GetError()));
 }
 
 DeleteProcurementPortalPreferenceOutcome InvoicingClient::DeleteProcurementPortalPreference(
     const DeleteProcurementPortalPreferenceRequest& request) const {
-  return DeleteProcurementPortalPreferenceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProcurementPortalPreferenceOutcome(result.GetResultWithOwnership())
+                            : DeleteProcurementPortalPreferenceOutcome(std::move(result.GetError()));
 }
 
 GetInvoicePDFOutcome InvoicingClient::GetInvoicePDF(const GetInvoicePDFRequest& request) const {
-  return GetInvoicePDFOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInvoicePDFOutcome(result.GetResultWithOwnership()) : GetInvoicePDFOutcome(std::move(result.GetError()));
 }
 
 GetInvoiceUnitOutcome InvoicingClient::GetInvoiceUnit(const GetInvoiceUnitRequest& request) const {
-  return GetInvoiceUnitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInvoiceUnitOutcome(result.GetResultWithOwnership()) : GetInvoiceUnitOutcome(std::move(result.GetError()));
 }
 
 GetProcurementPortalPreferenceOutcome InvoicingClient::GetProcurementPortalPreference(
     const GetProcurementPortalPreferenceRequest& request) const {
-  return GetProcurementPortalPreferenceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProcurementPortalPreferenceOutcome(result.GetResultWithOwnership())
+                            : GetProcurementPortalPreferenceOutcome(std::move(result.GetError()));
 }
 
 ListInvoiceSummariesOutcome InvoicingClient::ListInvoiceSummaries(const ListInvoiceSummariesRequest& request) const {
-  return ListInvoiceSummariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInvoiceSummariesOutcome(result.GetResultWithOwnership())
+                            : ListInvoiceSummariesOutcome(std::move(result.GetError()));
 }
 
 ListInvoiceUnitsOutcome InvoicingClient::ListInvoiceUnits(const ListInvoiceUnitsRequest& request) const {
-  return ListInvoiceUnitsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInvoiceUnitsOutcome(result.GetResultWithOwnership())
+                            : ListInvoiceUnitsOutcome(std::move(result.GetError()));
 }
 
 ListProcurementPortalPreferencesOutcome InvoicingClient::ListProcurementPortalPreferences(
     const ListProcurementPortalPreferencesRequest& request) const {
-  return ListProcurementPortalPreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProcurementPortalPreferencesOutcome(result.GetResultWithOwnership())
+                            : ListProcurementPortalPreferencesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome InvoicingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutProcurementPortalPreferenceOutcome InvoicingClient::PutProcurementPortalPreference(
     const PutProcurementPortalPreferenceRequest& request) const {
-  return PutProcurementPortalPreferenceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutProcurementPortalPreferenceOutcome(result.GetResultWithOwnership())
+                            : PutProcurementPortalPreferenceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome InvoicingClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome InvoicingClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateInvoiceUnitOutcome InvoicingClient::UpdateInvoiceUnit(const UpdateInvoiceUnitRequest& request) const {
-  return UpdateInvoiceUnitOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInvoiceUnitOutcome(result.GetResultWithOwnership())
+                            : UpdateInvoiceUnitOutcome(std::move(result.GetError()));
 }
 
 UpdateProcurementPortalPreferenceStatusOutcome InvoicingClient::UpdateProcurementPortalPreferenceStatus(
     const UpdateProcurementPortalPreferenceStatusRequest& request) const {
-  return UpdateProcurementPortalPreferenceStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProcurementPortalPreferenceStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateProcurementPortalPreferenceStatusOutcome(std::move(result.GetError()));
 }

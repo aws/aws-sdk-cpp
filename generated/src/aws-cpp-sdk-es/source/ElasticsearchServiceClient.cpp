@@ -250,7 +250,9 @@ AcceptInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::Acc
     endpointResolutionOutcome.GetResult().AddPathSegments("/accept");
   };
 
-  return AcceptInboundCrossClusterSearchConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AcceptInboundCrossClusterSearchConnectionOutcome(result.GetResultWithOwnership())
+                            : AcceptInboundCrossClusterSearchConnectionOutcome(std::move(result.GetError()));
 }
 
 AddTagsOutcome ElasticsearchServiceClient::AddTags(const AddTagsRequest& request) const {
@@ -259,7 +261,8 @@ AddTagsOutcome ElasticsearchServiceClient::AddTags(const AddTagsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/tags");
   };
 
-  return AddTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsOutcome(result.GetResultWithOwnership()) : AddTagsOutcome(std::move(result.GetError()));
 }
 
 AssociatePackageOutcome ElasticsearchServiceClient::AssociatePackage(const AssociatePackageRequest& request) const {
@@ -281,7 +284,9 @@ AssociatePackageOutcome ElasticsearchServiceClient::AssociatePackage(const Assoc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return AssociatePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociatePackageOutcome(result.GetResultWithOwnership())
+                            : AssociatePackageOutcome(std::move(result.GetError()));
 }
 
 AuthorizeVpcEndpointAccessOutcome ElasticsearchServiceClient::AuthorizeVpcEndpointAccess(
@@ -299,7 +304,9 @@ AuthorizeVpcEndpointAccessOutcome ElasticsearchServiceClient::AuthorizeVpcEndpoi
     endpointResolutionOutcome.GetResult().AddPathSegments("/authorizeVpcEndpointAccess");
   };
 
-  return AuthorizeVpcEndpointAccessOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AuthorizeVpcEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : AuthorizeVpcEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 CancelDomainConfigChangeOutcome ElasticsearchServiceClient::CancelDomainConfigChange(const CancelDomainConfigChangeRequest& request) const {
@@ -316,7 +323,9 @@ CancelDomainConfigChangeOutcome ElasticsearchServiceClient::CancelDomainConfigCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/config/cancel");
   };
 
-  return CancelDomainConfigChangeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelDomainConfigChangeOutcome(result.GetResultWithOwnership())
+                            : CancelDomainConfigChangeOutcome(std::move(result.GetError()));
 }
 
 CancelElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdate(
@@ -326,7 +335,9 @@ CancelElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::Canc
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/serviceSoftwareUpdate/cancel");
   };
 
-  return CancelElasticsearchServiceSoftwareUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelElasticsearchServiceSoftwareUpdateOutcome(result.GetResultWithOwnership())
+                            : CancelElasticsearchServiceSoftwareUpdateOutcome(std::move(result.GetError()));
 }
 
 CreateElasticsearchDomainOutcome ElasticsearchServiceClient::CreateElasticsearchDomain(
@@ -336,7 +347,9 @@ CreateElasticsearchDomainOutcome ElasticsearchServiceClient::CreateElasticsearch
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/domain");
   };
 
-  return CreateElasticsearchDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateElasticsearchDomainOutcome(result.GetResultWithOwnership())
+                            : CreateElasticsearchDomainOutcome(std::move(result.GetError()));
 }
 
 CreateOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnection(
@@ -346,7 +359,9 @@ CreateOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/ccs/outboundConnection");
   };
 
-  return CreateOutboundCrossClusterSearchConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOutboundCrossClusterSearchConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateOutboundCrossClusterSearchConnectionOutcome(std::move(result.GetError()));
 }
 
 CreatePackageOutcome ElasticsearchServiceClient::CreatePackage(const CreatePackageRequest& request) const {
@@ -355,7 +370,8 @@ CreatePackageOutcome ElasticsearchServiceClient::CreatePackage(const CreatePacka
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/packages");
   };
 
-  return CreatePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePackageOutcome(result.GetResultWithOwnership()) : CreatePackageOutcome(std::move(result.GetError()));
 }
 
 CreateVpcEndpointOutcome ElasticsearchServiceClient::CreateVpcEndpoint(const CreateVpcEndpointRequest& request) const {
@@ -364,7 +380,9 @@ CreateVpcEndpointOutcome ElasticsearchServiceClient::CreateVpcEndpoint(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/vpcEndpoints");
   };
 
-  return CreateVpcEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVpcEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateVpcEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteElasticsearchDomainOutcome ElasticsearchServiceClient::DeleteElasticsearchDomain(
@@ -381,7 +399,9 @@ DeleteElasticsearchDomainOutcome ElasticsearchServiceClient::DeleteElasticsearch
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return DeleteElasticsearchDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteElasticsearchDomainOutcome(result.GetResultWithOwnership())
+                            : DeleteElasticsearchDomainOutcome(std::move(result.GetError()));
 }
 
 DeleteElasticsearchServiceRoleOutcome ElasticsearchServiceClient::DeleteElasticsearchServiceRole(
@@ -391,7 +411,9 @@ DeleteElasticsearchServiceRoleOutcome ElasticsearchServiceClient::DeleteElastics
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/role");
   };
 
-  return DeleteElasticsearchServiceRoleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteElasticsearchServiceRoleOutcome(result.GetResultWithOwnership())
+                            : DeleteElasticsearchServiceRoleOutcome(std::move(result.GetError()));
 }
 
 DeleteInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::DeleteInboundCrossClusterSearchConnection(
@@ -409,7 +431,9 @@ DeleteInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCrossClusterSearchConnectionId());
   };
 
-  return DeleteInboundCrossClusterSearchConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInboundCrossClusterSearchConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteInboundCrossClusterSearchConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::DeleteOutboundCrossClusterSearchConnection(
@@ -427,8 +451,9 @@ DeleteOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCrossClusterSearchConnectionId());
   };
 
-  return DeleteOutboundCrossClusterSearchConnectionOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteOutboundCrossClusterSearchConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteOutboundCrossClusterSearchConnectionOutcome(std::move(result.GetError()));
 }
 
 DeletePackageOutcome ElasticsearchServiceClient::DeletePackage(const DeletePackageRequest& request) const {
@@ -444,7 +469,8 @@ DeletePackageOutcome ElasticsearchServiceClient::DeletePackage(const DeletePacka
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageID());
   };
 
-  return DeletePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePackageOutcome(result.GetResultWithOwnership()) : DeletePackageOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcEndpointOutcome ElasticsearchServiceClient::DeleteVpcEndpoint(const DeleteVpcEndpointRequest& request) const {
@@ -460,7 +486,9 @@ DeleteVpcEndpointOutcome ElasticsearchServiceClient::DeleteVpcEndpoint(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVpcEndpointId());
   };
 
-  return DeleteVpcEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVpcEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcEndpointOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainAutoTunesOutcome ElasticsearchServiceClient::DescribeDomainAutoTunes(const DescribeDomainAutoTunesRequest& request) const {
@@ -477,7 +505,9 @@ DescribeDomainAutoTunesOutcome ElasticsearchServiceClient::DescribeDomainAutoTun
     endpointResolutionOutcome.GetResult().AddPathSegments("/autoTunes");
   };
 
-  return DescribeDomainAutoTunesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDomainAutoTunesOutcome(result.GetResultWithOwnership())
+                            : DescribeDomainAutoTunesOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainChangeProgressOutcome ElasticsearchServiceClient::DescribeDomainChangeProgress(
@@ -495,7 +525,9 @@ DescribeDomainChangeProgressOutcome ElasticsearchServiceClient::DescribeDomainCh
     endpointResolutionOutcome.GetResult().AddPathSegments("/progress");
   };
 
-  return DescribeDomainChangeProgressOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDomainChangeProgressOutcome(result.GetResultWithOwnership())
+                            : DescribeDomainChangeProgressOutcome(std::move(result.GetError()));
 }
 
 DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticsearchDomain(
@@ -512,7 +544,9 @@ DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticse
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return DescribeElasticsearchDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeElasticsearchDomainOutcome(result.GetResultWithOwnership())
+                            : DescribeElasticsearchDomainOutcome(std::move(result.GetError()));
 }
 
 DescribeElasticsearchDomainConfigOutcome ElasticsearchServiceClient::DescribeElasticsearchDomainConfig(
@@ -530,7 +564,9 @@ DescribeElasticsearchDomainConfigOutcome ElasticsearchServiceClient::DescribeEla
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return DescribeElasticsearchDomainConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeElasticsearchDomainConfigOutcome(result.GetResultWithOwnership())
+                            : DescribeElasticsearchDomainConfigOutcome(std::move(result.GetError()));
 }
 
 DescribeElasticsearchDomainsOutcome ElasticsearchServiceClient::DescribeElasticsearchDomains(
@@ -540,7 +576,9 @@ DescribeElasticsearchDomainsOutcome ElasticsearchServiceClient::DescribeElastics
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/domain-info");
   };
 
-  return DescribeElasticsearchDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeElasticsearchDomainsOutcome(result.GetResultWithOwnership())
+                            : DescribeElasticsearchDomainsOutcome(std::move(result.GetError()));
 }
 
 DescribeElasticsearchInstanceTypeLimitsOutcome ElasticsearchServiceClient::DescribeElasticsearchInstanceTypeLimits(
@@ -564,7 +602,9 @@ DescribeElasticsearchInstanceTypeLimitsOutcome ElasticsearchServiceClient::Descr
         ESPartitionInstanceTypeMapper::GetNameForESPartitionInstanceType(request.GetInstanceType()));
   };
 
-  return DescribeElasticsearchInstanceTypeLimitsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeElasticsearchInstanceTypeLimitsOutcome(result.GetResultWithOwnership())
+                            : DescribeElasticsearchInstanceTypeLimitsOutcome(std::move(result.GetError()));
 }
 
 DescribeInboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnections(
@@ -574,8 +614,9 @@ DescribeInboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/ccs/inboundConnection/search");
   };
 
-  return DescribeInboundCrossClusterSearchConnectionsOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInboundCrossClusterSearchConnectionsOutcome(result.GetResultWithOwnership())
+                            : DescribeInboundCrossClusterSearchConnectionsOutcome(std::move(result.GetError()));
 }
 
 DescribeOutboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnections(
@@ -585,8 +626,9 @@ DescribeOutboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient:
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/ccs/outboundConnection/search");
   };
 
-  return DescribeOutboundCrossClusterSearchConnectionsOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOutboundCrossClusterSearchConnectionsOutcome(result.GetResultWithOwnership())
+                            : DescribeOutboundCrossClusterSearchConnectionsOutcome(std::move(result.GetError()));
 }
 
 DescribePackagesOutcome ElasticsearchServiceClient::DescribePackages(const DescribePackagesRequest& request) const {
@@ -595,7 +637,9 @@ DescribePackagesOutcome ElasticsearchServiceClient::DescribePackages(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/packages/describe");
   };
 
-  return DescribePackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePackagesOutcome(result.GetResultWithOwnership())
+                            : DescribePackagesOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedElasticsearchInstanceOfferingsOutcome ElasticsearchServiceClient::DescribeReservedElasticsearchInstanceOfferings(
@@ -605,8 +649,9 @@ DescribeReservedElasticsearchInstanceOfferingsOutcome ElasticsearchServiceClient
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/reservedInstanceOfferings");
   };
 
-  return DescribeReservedElasticsearchInstanceOfferingsOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeReservedElasticsearchInstanceOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedElasticsearchInstanceOfferingsOutcome(std::move(result.GetError()));
 }
 
 DescribeReservedElasticsearchInstancesOutcome ElasticsearchServiceClient::DescribeReservedElasticsearchInstances(
@@ -616,7 +661,9 @@ DescribeReservedElasticsearchInstancesOutcome ElasticsearchServiceClient::Descri
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/reservedInstances");
   };
 
-  return DescribeReservedElasticsearchInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeReservedElasticsearchInstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeReservedElasticsearchInstancesOutcome(std::move(result.GetError()));
 }
 
 DescribeVpcEndpointsOutcome ElasticsearchServiceClient::DescribeVpcEndpoints(const DescribeVpcEndpointsRequest& request) const {
@@ -625,7 +672,9 @@ DescribeVpcEndpointsOutcome ElasticsearchServiceClient::DescribeVpcEndpoints(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/vpcEndpoints/describe");
   };
 
-  return DescribeVpcEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeVpcEndpointsOutcome(result.GetResultWithOwnership())
+                            : DescribeVpcEndpointsOutcome(std::move(result.GetError()));
 }
 
 DissociatePackageOutcome ElasticsearchServiceClient::DissociatePackage(const DissociatePackageRequest& request) const {
@@ -647,7 +696,9 @@ DissociatePackageOutcome ElasticsearchServiceClient::DissociatePackage(const Dis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return DissociatePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DissociatePackageOutcome(result.GetResultWithOwnership())
+                            : DissociatePackageOutcome(std::move(result.GetError()));
 }
 
 GetCompatibleElasticsearchVersionsOutcome ElasticsearchServiceClient::GetCompatibleElasticsearchVersions(
@@ -657,7 +708,9 @@ GetCompatibleElasticsearchVersionsOutcome ElasticsearchServiceClient::GetCompati
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/compatibleVersions");
   };
 
-  return GetCompatibleElasticsearchVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCompatibleElasticsearchVersionsOutcome(result.GetResultWithOwnership())
+                            : GetCompatibleElasticsearchVersionsOutcome(std::move(result.GetError()));
 }
 
 GetPackageVersionHistoryOutcome ElasticsearchServiceClient::GetPackageVersionHistory(const GetPackageVersionHistoryRequest& request) const {
@@ -674,7 +727,9 @@ GetPackageVersionHistoryOutcome ElasticsearchServiceClient::GetPackageVersionHis
     endpointResolutionOutcome.GetResult().AddPathSegments("/history");
   };
 
-  return GetPackageVersionHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPackageVersionHistoryOutcome(result.GetResultWithOwnership())
+                            : GetPackageVersionHistoryOutcome(std::move(result.GetError()));
 }
 
 GetUpgradeHistoryOutcome ElasticsearchServiceClient::GetUpgradeHistory(const GetUpgradeHistoryRequest& request) const {
@@ -691,7 +746,9 @@ GetUpgradeHistoryOutcome ElasticsearchServiceClient::GetUpgradeHistory(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/history");
   };
 
-  return GetUpgradeHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUpgradeHistoryOutcome(result.GetResultWithOwnership())
+                            : GetUpgradeHistoryOutcome(std::move(result.GetError()));
 }
 
 GetUpgradeStatusOutcome ElasticsearchServiceClient::GetUpgradeStatus(const GetUpgradeStatusRequest& request) const {
@@ -708,7 +765,9 @@ GetUpgradeStatusOutcome ElasticsearchServiceClient::GetUpgradeStatus(const GetUp
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return GetUpgradeStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUpgradeStatusOutcome(result.GetResultWithOwnership())
+                            : GetUpgradeStatusOutcome(std::move(result.GetError()));
 }
 
 ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames(const ListDomainNamesRequest& request) const {
@@ -717,7 +776,9 @@ ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames(const ListDom
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/domain");
   };
 
-  return ListDomainNamesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainNamesOutcome(result.GetResultWithOwnership())
+                            : ListDomainNamesOutcome(std::move(result.GetError()));
 }
 
 ListDomainsForPackageOutcome ElasticsearchServiceClient::ListDomainsForPackage(const ListDomainsForPackageRequest& request) const {
@@ -734,7 +795,9 @@ ListDomainsForPackageOutcome ElasticsearchServiceClient::ListDomainsForPackage(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/domains");
   };
 
-  return ListDomainsForPackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainsForPackageOutcome(result.GetResultWithOwnership())
+                            : ListDomainsForPackageOutcome(std::move(result.GetError()));
 }
 
 ListElasticsearchInstanceTypesOutcome ElasticsearchServiceClient::ListElasticsearchInstanceTypes(
@@ -751,7 +814,9 @@ ListElasticsearchInstanceTypesOutcome ElasticsearchServiceClient::ListElasticsea
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetElasticsearchVersion());
   };
 
-  return ListElasticsearchInstanceTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListElasticsearchInstanceTypesOutcome(result.GetResultWithOwnership())
+                            : ListElasticsearchInstanceTypesOutcome(std::move(result.GetError()));
 }
 
 ListElasticsearchVersionsOutcome ElasticsearchServiceClient::ListElasticsearchVersions(
@@ -761,7 +826,9 @@ ListElasticsearchVersionsOutcome ElasticsearchServiceClient::ListElasticsearchVe
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/versions");
   };
 
-  return ListElasticsearchVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListElasticsearchVersionsOutcome(result.GetResultWithOwnership())
+                            : ListElasticsearchVersionsOutcome(std::move(result.GetError()));
 }
 
 ListPackagesForDomainOutcome ElasticsearchServiceClient::ListPackagesForDomain(const ListPackagesForDomainRequest& request) const {
@@ -778,7 +845,9 @@ ListPackagesForDomainOutcome ElasticsearchServiceClient::ListPackagesForDomain(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/packages");
   };
 
-  return ListPackagesForDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPackagesForDomainOutcome(result.GetResultWithOwnership())
+                            : ListPackagesForDomainOutcome(std::move(result.GetError()));
 }
 
 ListTagsOutcome ElasticsearchServiceClient::ListTags(const ListTagsRequest& request) const {
@@ -793,7 +862,8 @@ ListTagsOutcome ElasticsearchServiceClient::ListTags(const ListTagsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/tags/");
   };
 
-  return ListTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsOutcome(result.GetResultWithOwnership()) : ListTagsOutcome(std::move(result.GetError()));
 }
 
 ListVpcEndpointAccessOutcome ElasticsearchServiceClient::ListVpcEndpointAccess(const ListVpcEndpointAccessRequest& request) const {
@@ -810,7 +880,9 @@ ListVpcEndpointAccessOutcome ElasticsearchServiceClient::ListVpcEndpointAccess(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/listVpcEndpointAccess");
   };
 
-  return ListVpcEndpointAccessOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVpcEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : ListVpcEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 ListVpcEndpointsOutcome ElasticsearchServiceClient::ListVpcEndpoints(const ListVpcEndpointsRequest& request) const {
@@ -819,7 +891,9 @@ ListVpcEndpointsOutcome ElasticsearchServiceClient::ListVpcEndpoints(const ListV
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/vpcEndpoints");
   };
 
-  return ListVpcEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVpcEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListVpcEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListVpcEndpointsForDomainOutcome ElasticsearchServiceClient::ListVpcEndpointsForDomain(
@@ -837,7 +911,9 @@ ListVpcEndpointsForDomainOutcome ElasticsearchServiceClient::ListVpcEndpointsFor
     endpointResolutionOutcome.GetResult().AddPathSegments("/vpcEndpoints");
   };
 
-  return ListVpcEndpointsForDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVpcEndpointsForDomainOutcome(result.GetResultWithOwnership())
+                            : ListVpcEndpointsForDomainOutcome(std::move(result.GetError()));
 }
 
 PurchaseReservedElasticsearchInstanceOfferingOutcome ElasticsearchServiceClient::PurchaseReservedElasticsearchInstanceOffering(
@@ -847,8 +923,9 @@ PurchaseReservedElasticsearchInstanceOfferingOutcome ElasticsearchServiceClient:
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/purchaseReservedInstanceOffering");
   };
 
-  return PurchaseReservedElasticsearchInstanceOfferingOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseReservedElasticsearchInstanceOfferingOutcome(result.GetResultWithOwnership())
+                            : PurchaseReservedElasticsearchInstanceOfferingOutcome(std::move(result.GetError()));
 }
 
 RejectInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::RejectInboundCrossClusterSearchConnection(
@@ -867,7 +944,9 @@ RejectInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::Rej
     endpointResolutionOutcome.GetResult().AddPathSegments("/reject");
   };
 
-  return RejectInboundCrossClusterSearchConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RejectInboundCrossClusterSearchConnectionOutcome(result.GetResultWithOwnership())
+                            : RejectInboundCrossClusterSearchConnectionOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsOutcome ElasticsearchServiceClient::RemoveTags(const RemoveTagsRequest& request) const {
@@ -876,7 +955,8 @@ RemoveTagsOutcome ElasticsearchServiceClient::RemoveTags(const RemoveTagsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/tags-removal");
   };
 
-  return RemoveTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsOutcome(result.GetResultWithOwnership()) : RemoveTagsOutcome(std::move(result.GetError()));
 }
 
 RevokeVpcEndpointAccessOutcome ElasticsearchServiceClient::RevokeVpcEndpointAccess(const RevokeVpcEndpointAccessRequest& request) const {
@@ -893,7 +973,9 @@ RevokeVpcEndpointAccessOutcome ElasticsearchServiceClient::RevokeVpcEndpointAcce
     endpointResolutionOutcome.GetResult().AddPathSegments("/revokeVpcEndpointAccess");
   };
 
-  return RevokeVpcEndpointAccessOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeVpcEndpointAccessOutcome(result.GetResultWithOwnership())
+                            : RevokeVpcEndpointAccessOutcome(std::move(result.GetError()));
 }
 
 StartElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdate(
@@ -903,7 +985,9 @@ StartElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::Start
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/serviceSoftwareUpdate/start");
   };
 
-  return StartElasticsearchServiceSoftwareUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartElasticsearchServiceSoftwareUpdateOutcome(result.GetResultWithOwnership())
+                            : StartElasticsearchServiceSoftwareUpdateOutcome(std::move(result.GetError()));
 }
 
 UpdateElasticsearchDomainConfigOutcome ElasticsearchServiceClient::UpdateElasticsearchDomainConfig(
@@ -921,7 +1005,9 @@ UpdateElasticsearchDomainConfigOutcome ElasticsearchServiceClient::UpdateElastic
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return UpdateElasticsearchDomainConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateElasticsearchDomainConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateElasticsearchDomainConfigOutcome(std::move(result.GetError()));
 }
 
 UpdatePackageOutcome ElasticsearchServiceClient::UpdatePackage(const UpdatePackageRequest& request) const {
@@ -930,7 +1016,8 @@ UpdatePackageOutcome ElasticsearchServiceClient::UpdatePackage(const UpdatePacka
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/packages/update");
   };
 
-  return UpdatePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePackageOutcome(result.GetResultWithOwnership()) : UpdatePackageOutcome(std::move(result.GetError()));
 }
 
 UpdateVpcEndpointOutcome ElasticsearchServiceClient::UpdateVpcEndpoint(const UpdateVpcEndpointRequest& request) const {
@@ -939,7 +1026,9 @@ UpdateVpcEndpointOutcome ElasticsearchServiceClient::UpdateVpcEndpoint(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/vpcEndpoints/update");
   };
 
-  return UpdateVpcEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVpcEndpointOutcome(result.GetResultWithOwnership())
+                            : UpdateVpcEndpointOutcome(std::move(result.GetError()));
 }
 
 UpgradeElasticsearchDomainOutcome ElasticsearchServiceClient::UpgradeElasticsearchDomain(
@@ -949,5 +1038,7 @@ UpgradeElasticsearchDomainOutcome ElasticsearchServiceClient::UpgradeElasticsear
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/upgradeDomain");
   };
 
-  return UpgradeElasticsearchDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpgradeElasticsearchDomainOutcome(result.GetResultWithOwnership())
+                            : UpgradeElasticsearchDomainOutcome(std::move(result.GetError()));
 }

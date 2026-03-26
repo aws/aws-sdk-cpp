@@ -235,7 +235,9 @@ AbortMultipartUploadOutcome GlacierClient::AbortMultipartUpload(const AbortMulti
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUploadId());
   };
 
-  return AbortMultipartUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? AbortMultipartUploadOutcome(result.GetResultWithOwnership())
+                            : AbortMultipartUploadOutcome(std::move(result.GetError()));
 }
 
 AbortVaultLockOutcome GlacierClient::AbortVaultLock(const AbortVaultLockRequest& request) const {
@@ -258,7 +260,8 @@ AbortVaultLockOutcome GlacierClient::AbortVaultLock(const AbortVaultLockRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/lock-policy");
   };
 
-  return AbortVaultLockOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? AbortVaultLockOutcome(result.GetResultWithOwnership()) : AbortVaultLockOutcome(std::move(result.GetError()));
 }
 
 AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest& request) const {
@@ -284,7 +287,8 @@ AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest&
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return AddTagsToVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsToVaultOutcome(result.GetResultWithOwnership()) : AddTagsToVaultOutcome(std::move(result.GetError()));
 }
 
 CompleteMultipartUploadOutcome GlacierClient::CompleteMultipartUpload(const CompleteMultipartUploadRequest& request) const {
@@ -313,7 +317,9 @@ CompleteMultipartUploadOutcome GlacierClient::CompleteMultipartUpload(const Comp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUploadId());
   };
 
-  return CompleteMultipartUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CompleteMultipartUploadOutcome(result.GetResultWithOwnership())
+                            : CompleteMultipartUploadOutcome(std::move(result.GetError()));
 }
 
 CompleteVaultLockOutcome GlacierClient::CompleteVaultLock(const CompleteVaultLockRequest& request) const {
@@ -342,7 +348,9 @@ CompleteVaultLockOutcome GlacierClient::CompleteVaultLock(const CompleteVaultLoc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLockId());
   };
 
-  return CompleteVaultLockOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CompleteVaultLockOutcome(result.GetResultWithOwnership())
+                            : CompleteVaultLockOutcome(std::move(result.GetError()));
 }
 
 CreateVaultOutcome GlacierClient::CreateVault(const CreateVaultRequest& request) const {
@@ -364,7 +372,8 @@ CreateVaultOutcome GlacierClient::CreateVault(const CreateVaultRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVaultName());
   };
 
-  return CreateVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateVaultOutcome(result.GetResultWithOwnership()) : CreateVaultOutcome(std::move(result.GetError()));
 }
 
 DeleteArchiveOutcome GlacierClient::DeleteArchive(const DeleteArchiveRequest& request) const {
@@ -393,7 +402,8 @@ DeleteArchiveOutcome GlacierClient::DeleteArchive(const DeleteArchiveRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArchiveId());
   };
 
-  return DeleteArchiveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteArchiveOutcome(result.GetResultWithOwnership()) : DeleteArchiveOutcome(std::move(result.GetError()));
 }
 
 DeleteVaultOutcome GlacierClient::DeleteVault(const DeleteVaultRequest& request) const {
@@ -415,7 +425,8 @@ DeleteVaultOutcome GlacierClient::DeleteVault(const DeleteVaultRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVaultName());
   };
 
-  return DeleteVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVaultOutcome(result.GetResultWithOwnership()) : DeleteVaultOutcome(std::move(result.GetError()));
 }
 
 DeleteVaultAccessPolicyOutcome GlacierClient::DeleteVaultAccessPolicy(const DeleteVaultAccessPolicyRequest& request) const {
@@ -438,7 +449,9 @@ DeleteVaultAccessPolicyOutcome GlacierClient::DeleteVaultAccessPolicy(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-policy");
   };
 
-  return DeleteVaultAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVaultAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteVaultAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteVaultNotificationsOutcome GlacierClient::DeleteVaultNotifications(const DeleteVaultNotificationsRequest& request) const {
@@ -461,7 +474,9 @@ DeleteVaultNotificationsOutcome GlacierClient::DeleteVaultNotifications(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configuration");
   };
 
-  return DeleteVaultNotificationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVaultNotificationsOutcome(result.GetResultWithOwnership())
+                            : DeleteVaultNotificationsOutcome(std::move(result.GetError()));
 }
 
 DescribeJobOutcome GlacierClient::DescribeJob(const DescribeJobRequest& request) const {
@@ -490,7 +505,8 @@ DescribeJobOutcome GlacierClient::DescribeJob(const DescribeJobRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DescribeJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeJobOutcome(result.GetResultWithOwnership()) : DescribeJobOutcome(std::move(result.GetError()));
 }
 
 DescribeVaultOutcome GlacierClient::DescribeVault(const DescribeVaultRequest& request) const {
@@ -512,7 +528,8 @@ DescribeVaultOutcome GlacierClient::DescribeVault(const DescribeVaultRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVaultName());
   };
 
-  return DescribeVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeVaultOutcome(result.GetResultWithOwnership()) : DescribeVaultOutcome(std::move(result.GetError()));
 }
 
 GetDataRetrievalPolicyOutcome GlacierClient::GetDataRetrievalPolicy(const GetDataRetrievalPolicyRequest& request) const {
@@ -528,7 +545,9 @@ GetDataRetrievalPolicyOutcome GlacierClient::GetDataRetrievalPolicy(const GetDat
     endpointResolutionOutcome.GetResult().AddPathSegments("/policies/data-retrieval");
   };
 
-  return GetDataRetrievalPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataRetrievalPolicyOutcome(result.GetResultWithOwnership())
+                            : GetDataRetrievalPolicyOutcome(std::move(result.GetError()));
 }
 
 GetJobOutputOutcome GlacierClient::GetJobOutput(const GetJobOutputRequest& request) const {
@@ -578,8 +597,9 @@ GetJobOutputOutcome GlacierClient::GetJobOutput(const GetJobOutputRequest& reque
         endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/output");
-        return GetJobOutputOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetJobOutputOutcome(result.GetResultWithOwnership())
+                                  : GetJobOutputOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -606,7 +626,9 @@ GetVaultAccessPolicyOutcome GlacierClient::GetVaultAccessPolicy(const GetVaultAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-policy");
   };
 
-  return GetVaultAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVaultAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : GetVaultAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 GetVaultLockOutcome GlacierClient::GetVaultLock(const GetVaultLockRequest& request) const {
@@ -629,7 +651,8 @@ GetVaultLockOutcome GlacierClient::GetVaultLock(const GetVaultLockRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/lock-policy");
   };
 
-  return GetVaultLockOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVaultLockOutcome(result.GetResultWithOwnership()) : GetVaultLockOutcome(std::move(result.GetError()));
 }
 
 GetVaultNotificationsOutcome GlacierClient::GetVaultNotifications(const GetVaultNotificationsRequest& request) const {
@@ -652,7 +675,9 @@ GetVaultNotificationsOutcome GlacierClient::GetVaultNotifications(const GetVault
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configuration");
   };
 
-  return GetVaultNotificationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVaultNotificationsOutcome(result.GetResultWithOwnership())
+                            : GetVaultNotificationsOutcome(std::move(result.GetError()));
 }
 
 InitiateJobOutcome GlacierClient::InitiateJob(const InitiateJobRequest& request) const {
@@ -675,7 +700,8 @@ InitiateJobOutcome GlacierClient::InitiateJob(const InitiateJobRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return InitiateJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InitiateJobOutcome(result.GetResultWithOwnership()) : InitiateJobOutcome(std::move(result.GetError()));
 }
 
 InitiateMultipartUploadOutcome GlacierClient::InitiateMultipartUpload(const InitiateMultipartUploadRequest& request) const {
@@ -698,7 +724,9 @@ InitiateMultipartUploadOutcome GlacierClient::InitiateMultipartUpload(const Init
     endpointResolutionOutcome.GetResult().AddPathSegments("/multipart-uploads");
   };
 
-  return InitiateMultipartUploadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InitiateMultipartUploadOutcome(result.GetResultWithOwnership())
+                            : InitiateMultipartUploadOutcome(std::move(result.GetError()));
 }
 
 InitiateVaultLockOutcome GlacierClient::InitiateVaultLock(const InitiateVaultLockRequest& request) const {
@@ -721,7 +749,9 @@ InitiateVaultLockOutcome GlacierClient::InitiateVaultLock(const InitiateVaultLoc
     endpointResolutionOutcome.GetResult().AddPathSegments("/lock-policy");
   };
 
-  return InitiateVaultLockOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InitiateVaultLockOutcome(result.GetResultWithOwnership())
+                            : InitiateVaultLockOutcome(std::move(result.GetError()));
 }
 
 ListJobsOutcome GlacierClient::ListJobs(const ListJobsRequest& request) const {
@@ -744,7 +774,8 @@ ListJobsOutcome GlacierClient::ListJobs(const ListJobsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return ListJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
 }
 
 ListMultipartUploadsOutcome GlacierClient::ListMultipartUploads(const ListMultipartUploadsRequest& request) const {
@@ -767,7 +798,9 @@ ListMultipartUploadsOutcome GlacierClient::ListMultipartUploads(const ListMultip
     endpointResolutionOutcome.GetResult().AddPathSegments("/multipart-uploads");
   };
 
-  return ListMultipartUploadsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMultipartUploadsOutcome(result.GetResultWithOwnership())
+                            : ListMultipartUploadsOutcome(std::move(result.GetError()));
 }
 
 ListPartsOutcome GlacierClient::ListParts(const ListPartsRequest& request) const {
@@ -796,7 +829,8 @@ ListPartsOutcome GlacierClient::ListParts(const ListPartsRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUploadId());
   };
 
-  return ListPartsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPartsOutcome(result.GetResultWithOwnership()) : ListPartsOutcome(std::move(result.GetError()));
 }
 
 ListProvisionedCapacityOutcome GlacierClient::ListProvisionedCapacity(const ListProvisionedCapacityRequest& request) const {
@@ -812,7 +846,9 @@ ListProvisionedCapacityOutcome GlacierClient::ListProvisionedCapacity(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/provisioned-capacity");
   };
 
-  return ListProvisionedCapacityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProvisionedCapacityOutcome(result.GetResultWithOwnership())
+                            : ListProvisionedCapacityOutcome(std::move(result.GetError()));
 }
 
 ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRequest& request) const {
@@ -835,7 +871,9 @@ ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return ListTagsForVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForVaultOutcome(result.GetResultWithOwnership())
+                            : ListTagsForVaultOutcome(std::move(result.GetError()));
 }
 
 ListVaultsOutcome GlacierClient::ListVaults(const ListVaultsRequest& request) const {
@@ -851,7 +889,8 @@ ListVaultsOutcome GlacierClient::ListVaults(const ListVaultsRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/vaults");
   };
 
-  return ListVaultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVaultsOutcome(result.GetResultWithOwnership()) : ListVaultsOutcome(std::move(result.GetError()));
 }
 
 PurchaseProvisionedCapacityOutcome GlacierClient::PurchaseProvisionedCapacity(const PurchaseProvisionedCapacityRequest& request) const {
@@ -867,7 +906,9 @@ PurchaseProvisionedCapacityOutcome GlacierClient::PurchaseProvisionedCapacity(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/provisioned-capacity");
   };
 
-  return PurchaseProvisionedCapacityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PurchaseProvisionedCapacityOutcome(result.GetResultWithOwnership())
+                            : PurchaseProvisionedCapacityOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFromVaultRequest& request) const {
@@ -893,7 +934,9 @@ RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFr
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return RemoveTagsFromVaultOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsFromVaultOutcome(result.GetResultWithOwnership())
+                            : RemoveTagsFromVaultOutcome(std::move(result.GetError()));
 }
 
 SetDataRetrievalPolicyOutcome GlacierClient::SetDataRetrievalPolicy(const SetDataRetrievalPolicyRequest& request) const {
@@ -909,7 +952,9 @@ SetDataRetrievalPolicyOutcome GlacierClient::SetDataRetrievalPolicy(const SetDat
     endpointResolutionOutcome.GetResult().AddPathSegments("/policies/data-retrieval");
   };
 
-  return SetDataRetrievalPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? SetDataRetrievalPolicyOutcome(result.GetResultWithOwnership())
+                            : SetDataRetrievalPolicyOutcome(std::move(result.GetError()));
 }
 
 SetVaultAccessPolicyOutcome GlacierClient::SetVaultAccessPolicy(const SetVaultAccessPolicyRequest& request) const {
@@ -932,7 +977,9 @@ SetVaultAccessPolicyOutcome GlacierClient::SetVaultAccessPolicy(const SetVaultAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-policy");
   };
 
-  return SetVaultAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? SetVaultAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : SetVaultAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 SetVaultNotificationsOutcome GlacierClient::SetVaultNotifications(const SetVaultNotificationsRequest& request) const {
@@ -955,7 +1002,9 @@ SetVaultNotificationsOutcome GlacierClient::SetVaultNotifications(const SetVault
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configuration");
   };
 
-  return SetVaultNotificationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? SetVaultNotificationsOutcome(result.GetResultWithOwnership())
+                            : SetVaultNotificationsOutcome(std::move(result.GetError()));
 }
 
 UploadArchiveOutcome GlacierClient::UploadArchive(const UploadArchiveRequest& request) const {
@@ -978,7 +1027,8 @@ UploadArchiveOutcome GlacierClient::UploadArchive(const UploadArchiveRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/archives");
   };
 
-  return UploadArchiveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UploadArchiveOutcome(result.GetResultWithOwnership()) : UploadArchiveOutcome(std::move(result.GetError()));
 }
 
 UploadMultipartPartOutcome GlacierClient::UploadMultipartPart(const UploadMultipartPartRequest& request) const {
@@ -1007,5 +1057,7 @@ UploadMultipartPartOutcome GlacierClient::UploadMultipartPart(const UploadMultip
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUploadId());
   };
 
-  return UploadMultipartPartOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UploadMultipartPartOutcome(result.GetResultWithOwnership())
+                            : UploadMultipartPartOutcome(std::move(result.GetError()));
 }

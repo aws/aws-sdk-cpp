@@ -189,5 +189,7 @@ AssumeRoleForPodIdentityOutcome EKSAuthClient::AssumeRoleForPodIdentity(const As
     endpointResolutionOutcome.GetResult().AddPathSegments("/assume-role-for-pod-identity");
   };
 
-  return AssumeRoleForPodIdentityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssumeRoleForPodIdentityOutcome(result.GetResultWithOwnership())
+                            : AssumeRoleForPodIdentityOutcome(std::move(result.GetError()));
 }

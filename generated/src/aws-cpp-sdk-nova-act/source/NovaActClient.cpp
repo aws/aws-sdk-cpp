@@ -218,7 +218,8 @@ CreateActOutcome NovaActClient::CreateAct(const CreateActRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/acts");
   };
 
-  return CreateActOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateActOutcome(result.GetResultWithOwnership()) : CreateActOutcome(std::move(result.GetError()));
 }
 
 CreateSessionOutcome NovaActClient::CreateSession(const CreateSessionRequest& request) const {
@@ -242,7 +243,8 @@ CreateSessionOutcome NovaActClient::CreateSession(const CreateSessionRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
   };
 
-  return CreateSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateSessionOutcome(result.GetResultWithOwnership()) : CreateSessionOutcome(std::move(result.GetError()));
 }
 
 CreateWorkflowDefinitionOutcome NovaActClient::CreateWorkflowDefinition(const CreateWorkflowDefinitionRequest& request) const {
@@ -251,7 +253,9 @@ CreateWorkflowDefinitionOutcome NovaActClient::CreateWorkflowDefinition(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflow-definitions");
   };
 
-  return CreateWorkflowDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateWorkflowDefinitionOutcome(result.GetResultWithOwnership())
+                            : CreateWorkflowDefinitionOutcome(std::move(result.GetError()));
 }
 
 CreateWorkflowRunOutcome NovaActClient::CreateWorkflowRun(const CreateWorkflowRunRequest& request) const {
@@ -268,7 +272,9 @@ CreateWorkflowRunOutcome NovaActClient::CreateWorkflowRun(const CreateWorkflowRu
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflow-runs");
   };
 
-  return CreateWorkflowRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateWorkflowRunOutcome(result.GetResultWithOwnership())
+                            : CreateWorkflowRunOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowDefinitionOutcome NovaActClient::DeleteWorkflowDefinition(const DeleteWorkflowDefinitionRequest& request) const {
@@ -284,7 +290,9 @@ DeleteWorkflowDefinitionOutcome NovaActClient::DeleteWorkflowDefinition(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowDefinitionName());
   };
 
-  return DeleteWorkflowDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkflowDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkflowDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowRunOutcome NovaActClient::DeleteWorkflowRun(const DeleteWorkflowRunRequest& request) const {
@@ -307,7 +315,9 @@ DeleteWorkflowRunOutcome NovaActClient::DeleteWorkflowRun(const DeleteWorkflowRu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowRunId());
   };
 
-  return DeleteWorkflowRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkflowRunOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkflowRunOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowDefinitionOutcome NovaActClient::GetWorkflowDefinition(const GetWorkflowDefinitionRequest& request) const {
@@ -323,7 +333,9 @@ GetWorkflowDefinitionOutcome NovaActClient::GetWorkflowDefinition(const GetWorkf
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowDefinitionName());
   };
 
-  return GetWorkflowDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowDefinitionOutcome(result.GetResultWithOwnership())
+                            : GetWorkflowDefinitionOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowRunOutcome NovaActClient::GetWorkflowRun(const GetWorkflowRunRequest& request) const {
@@ -346,7 +358,8 @@ GetWorkflowRunOutcome NovaActClient::GetWorkflowRun(const GetWorkflowRunRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowRunId());
   };
 
-  return GetWorkflowRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowRunOutcome(result.GetResultWithOwnership()) : GetWorkflowRunOutcome(std::move(result.GetError()));
 }
 
 InvokeActStepOutcome NovaActClient::InvokeActStep(const InvokeActStepRequest& request) const {
@@ -384,7 +397,8 @@ InvokeActStepOutcome NovaActClient::InvokeActStep(const InvokeActStepRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/invoke-step/");
   };
 
-  return InvokeActStepOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? InvokeActStepOutcome(result.GetResultWithOwnership()) : InvokeActStepOutcome(std::move(result.GetError()));
 }
 
 ListActsOutcome NovaActClient::ListActs(const ListActsRequest& request) const {
@@ -401,7 +415,8 @@ ListActsOutcome NovaActClient::ListActs(const ListActsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/acts");
   };
 
-  return ListActsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListActsOutcome(result.GetResultWithOwnership()) : ListActsOutcome(std::move(result.GetError()));
 }
 
 ListModelsOutcome NovaActClient::ListModels(const ListModelsRequest& request) const {
@@ -416,7 +431,8 @@ ListModelsOutcome NovaActClient::ListModels(const ListModelsRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/models");
   };
 
-  return ListModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelsOutcome(result.GetResultWithOwnership()) : ListModelsOutcome(std::move(result.GetError()));
 }
 
 ListSessionsOutcome NovaActClient::ListSessions(const ListSessionsRequest& request) const {
@@ -439,7 +455,8 @@ ListSessionsOutcome NovaActClient::ListSessions(const ListSessionsRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowRunId());
   };
 
-  return ListSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowDefinitionsOutcome NovaActClient::ListWorkflowDefinitions(const ListWorkflowDefinitionsRequest& request) const {
@@ -448,7 +465,9 @@ ListWorkflowDefinitionsOutcome NovaActClient::ListWorkflowDefinitions(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflow-definitions");
   };
 
-  return ListWorkflowDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListWorkflowDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowRunsOutcome NovaActClient::ListWorkflowRuns(const ListWorkflowRunsRequest& request) const {
@@ -465,7 +484,9 @@ ListWorkflowRunsOutcome NovaActClient::ListWorkflowRuns(const ListWorkflowRunsRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflow-runs");
   };
 
-  return ListWorkflowRunsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowRunsOutcome(result.GetResultWithOwnership())
+                            : ListWorkflowRunsOutcome(std::move(result.GetError()));
 }
 
 UpdateActOutcome NovaActClient::UpdateAct(const UpdateActRequest& request) const {
@@ -502,7 +523,8 @@ UpdateActOutcome NovaActClient::UpdateAct(const UpdateActRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetActId());
   };
 
-  return UpdateActOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateActOutcome(result.GetResultWithOwnership()) : UpdateActOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkflowRunOutcome NovaActClient::UpdateWorkflowRun(const UpdateWorkflowRunRequest& request) const {
@@ -525,5 +547,7 @@ UpdateWorkflowRunOutcome NovaActClient::UpdateWorkflowRun(const UpdateWorkflowRu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowRunId());
   };
 
-  return UpdateWorkflowRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateWorkflowRunOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkflowRunOutcome(std::move(result.GetError()));
 }

@@ -193,7 +193,9 @@ BatchAcknowledgeAlarmOutcome IoTEventsDataClient::BatchAcknowledgeAlarm(const Ba
     endpointResolutionOutcome.GetResult().AddPathSegments("/alarms/acknowledge");
   };
 
-  return BatchAcknowledgeAlarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAcknowledgeAlarmOutcome(result.GetResultWithOwnership())
+                            : BatchAcknowledgeAlarmOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteDetectorOutcome IoTEventsDataClient::BatchDeleteDetector(const BatchDeleteDetectorRequest& request) const {
@@ -202,7 +204,9 @@ BatchDeleteDetectorOutcome IoTEventsDataClient::BatchDeleteDetector(const BatchD
     endpointResolutionOutcome.GetResult().AddPathSegments("/detectors/delete");
   };
 
-  return BatchDeleteDetectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteDetectorOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteDetectorOutcome(std::move(result.GetError()));
 }
 
 BatchDisableAlarmOutcome IoTEventsDataClient::BatchDisableAlarm(const BatchDisableAlarmRequest& request) const {
@@ -211,7 +215,9 @@ BatchDisableAlarmOutcome IoTEventsDataClient::BatchDisableAlarm(const BatchDisab
     endpointResolutionOutcome.GetResult().AddPathSegments("/alarms/disable");
   };
 
-  return BatchDisableAlarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisableAlarmOutcome(result.GetResultWithOwnership())
+                            : BatchDisableAlarmOutcome(std::move(result.GetError()));
 }
 
 BatchEnableAlarmOutcome IoTEventsDataClient::BatchEnableAlarm(const BatchEnableAlarmRequest& request) const {
@@ -220,7 +226,9 @@ BatchEnableAlarmOutcome IoTEventsDataClient::BatchEnableAlarm(const BatchEnableA
     endpointResolutionOutcome.GetResult().AddPathSegments("/alarms/enable");
   };
 
-  return BatchEnableAlarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchEnableAlarmOutcome(result.GetResultWithOwnership())
+                            : BatchEnableAlarmOutcome(std::move(result.GetError()));
 }
 
 BatchPutMessageOutcome IoTEventsDataClient::BatchPutMessage(const BatchPutMessageRequest& request) const {
@@ -229,7 +237,9 @@ BatchPutMessageOutcome IoTEventsDataClient::BatchPutMessage(const BatchPutMessag
     endpointResolutionOutcome.GetResult().AddPathSegments("/inputs/messages");
   };
 
-  return BatchPutMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchPutMessageOutcome(result.GetResultWithOwnership())
+                            : BatchPutMessageOutcome(std::move(result.GetError()));
 }
 
 BatchResetAlarmOutcome IoTEventsDataClient::BatchResetAlarm(const BatchResetAlarmRequest& request) const {
@@ -238,7 +248,9 @@ BatchResetAlarmOutcome IoTEventsDataClient::BatchResetAlarm(const BatchResetAlar
     endpointResolutionOutcome.GetResult().AddPathSegments("/alarms/reset");
   };
 
-  return BatchResetAlarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchResetAlarmOutcome(result.GetResultWithOwnership())
+                            : BatchResetAlarmOutcome(std::move(result.GetError()));
 }
 
 BatchSnoozeAlarmOutcome IoTEventsDataClient::BatchSnoozeAlarm(const BatchSnoozeAlarmRequest& request) const {
@@ -247,7 +259,9 @@ BatchSnoozeAlarmOutcome IoTEventsDataClient::BatchSnoozeAlarm(const BatchSnoozeA
     endpointResolutionOutcome.GetResult().AddPathSegments("/alarms/snooze");
   };
 
-  return BatchSnoozeAlarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchSnoozeAlarmOutcome(result.GetResultWithOwnership())
+                            : BatchSnoozeAlarmOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateDetectorOutcome IoTEventsDataClient::BatchUpdateDetector(const BatchUpdateDetectorRequest& request) const {
@@ -256,7 +270,9 @@ BatchUpdateDetectorOutcome IoTEventsDataClient::BatchUpdateDetector(const BatchU
     endpointResolutionOutcome.GetResult().AddPathSegments("/detectors");
   };
 
-  return BatchUpdateDetectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateDetectorOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateDetectorOutcome(std::move(result.GetError()));
 }
 
 DescribeAlarmOutcome IoTEventsDataClient::DescribeAlarm(const DescribeAlarmRequest& request) const {
@@ -273,7 +289,8 @@ DescribeAlarmOutcome IoTEventsDataClient::DescribeAlarm(const DescribeAlarmReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/keyValues/");
   };
 
-  return DescribeAlarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAlarmOutcome(result.GetResultWithOwnership()) : DescribeAlarmOutcome(std::move(result.GetError()));
 }
 
 DescribeDetectorOutcome IoTEventsDataClient::DescribeDetector(const DescribeDetectorRequest& request) const {
@@ -290,7 +307,9 @@ DescribeDetectorOutcome IoTEventsDataClient::DescribeDetector(const DescribeDete
     endpointResolutionOutcome.GetResult().AddPathSegments("/keyValues/");
   };
 
-  return DescribeDetectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDetectorOutcome(result.GetResultWithOwnership())
+                            : DescribeDetectorOutcome(std::move(result.GetError()));
 }
 
 ListAlarmsOutcome IoTEventsDataClient::ListAlarms(const ListAlarmsRequest& request) const {
@@ -306,7 +325,8 @@ ListAlarmsOutcome IoTEventsDataClient::ListAlarms(const ListAlarmsRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAlarmModelName());
   };
 
-  return ListAlarmsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAlarmsOutcome(result.GetResultWithOwnership()) : ListAlarmsOutcome(std::move(result.GetError()));
 }
 
 ListDetectorsOutcome IoTEventsDataClient::ListDetectors(const ListDetectorsRequest& request) const {
@@ -322,5 +342,6 @@ ListDetectorsOutcome IoTEventsDataClient::ListDetectors(const ListDetectorsReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorModelName());
   };
 
-  return ListDetectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDetectorsOutcome(result.GetResultWithOwnership()) : ListDetectorsOutcome(std::move(result.GetError()));
 }

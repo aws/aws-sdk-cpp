@@ -207,7 +207,8 @@ AssociateUserOutcome LicenseManagerUserSubscriptionsClient::AssociateUser(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/user/AssociateUser");
   };
 
-  return AssociateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateUserOutcome(result.GetResultWithOwnership()) : AssociateUserOutcome(std::move(result.GetError()));
 }
 
 CreateLicenseServerEndpointOutcome LicenseManagerUserSubscriptionsClient::CreateLicenseServerEndpoint(
@@ -217,7 +218,9 @@ CreateLicenseServerEndpointOutcome LicenseManagerUserSubscriptionsClient::Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/license-server/CreateLicenseServerEndpoint");
   };
 
-  return CreateLicenseServerEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLicenseServerEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateLicenseServerEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteLicenseServerEndpointOutcome LicenseManagerUserSubscriptionsClient::DeleteLicenseServerEndpoint(
@@ -227,7 +230,9 @@ DeleteLicenseServerEndpointOutcome LicenseManagerUserSubscriptionsClient::Delete
     endpointResolutionOutcome.GetResult().AddPathSegments("/license-server/DeleteLicenseServerEndpoint");
   };
 
-  return DeleteLicenseServerEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLicenseServerEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteLicenseServerEndpointOutcome(std::move(result.GetError()));
 }
 
 DeregisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::DeregisterIdentityProvider(
@@ -237,7 +242,9 @@ DeregisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::Deregis
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-provider/DeregisterIdentityProvider");
   };
 
-  return DeregisterIdentityProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterIdentityProviderOutcome(result.GetResultWithOwnership())
+                            : DeregisterIdentityProviderOutcome(std::move(result.GetError()));
 }
 
 DisassociateUserOutcome LicenseManagerUserSubscriptionsClient::DisassociateUser(const DisassociateUserRequest& request) const {
@@ -246,7 +253,9 @@ DisassociateUserOutcome LicenseManagerUserSubscriptionsClient::DisassociateUser(
     endpointResolutionOutcome.GetResult().AddPathSegments("/user/DisassociateUser");
   };
 
-  return DisassociateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateUserOutcome(result.GetResultWithOwnership())
+                            : DisassociateUserOutcome(std::move(result.GetError()));
 }
 
 ListIdentityProvidersOutcome LicenseManagerUserSubscriptionsClient::ListIdentityProviders(
@@ -256,7 +265,9 @@ ListIdentityProvidersOutcome LicenseManagerUserSubscriptionsClient::ListIdentity
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-provider/ListIdentityProviders");
   };
 
-  return ListIdentityProvidersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIdentityProvidersOutcome(result.GetResultWithOwnership())
+                            : ListIdentityProvidersOutcome(std::move(result.GetError()));
 }
 
 ListInstancesOutcome LicenseManagerUserSubscriptionsClient::ListInstances(const ListInstancesRequest& request) const {
@@ -265,7 +276,8 @@ ListInstancesOutcome LicenseManagerUserSubscriptionsClient::ListInstances(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/instance/ListInstances");
   };
 
-  return ListInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInstancesOutcome(result.GetResultWithOwnership()) : ListInstancesOutcome(std::move(result.GetError()));
 }
 
 ListLicenseServerEndpointsOutcome LicenseManagerUserSubscriptionsClient::ListLicenseServerEndpoints(
@@ -275,7 +287,9 @@ ListLicenseServerEndpointsOutcome LicenseManagerUserSubscriptionsClient::ListLic
     endpointResolutionOutcome.GetResult().AddPathSegments("/license-server/ListLicenseServerEndpoints");
   };
 
-  return ListLicenseServerEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLicenseServerEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListLicenseServerEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListProductSubscriptionsOutcome LicenseManagerUserSubscriptionsClient::ListProductSubscriptions(
@@ -285,7 +299,9 @@ ListProductSubscriptionsOutcome LicenseManagerUserSubscriptionsClient::ListProdu
     endpointResolutionOutcome.GetResult().AddPathSegments("/user/ListProductSubscriptions");
   };
 
-  return ListProductSubscriptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProductSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListProductSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome LicenseManagerUserSubscriptionsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -301,7 +317,9 @@ ListTagsForResourceOutcome LicenseManagerUserSubscriptionsClient::ListTagsForRes
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListUserAssociationsOutcome LicenseManagerUserSubscriptionsClient::ListUserAssociations(const ListUserAssociationsRequest& request) const {
@@ -310,7 +328,9 @@ ListUserAssociationsOutcome LicenseManagerUserSubscriptionsClient::ListUserAssoc
     endpointResolutionOutcome.GetResult().AddPathSegments("/user/ListUserAssociations");
   };
 
-  return ListUserAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUserAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListUserAssociationsOutcome(std::move(result.GetError()));
 }
 
 RegisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::RegisterIdentityProvider(
@@ -320,7 +340,9 @@ RegisterIdentityProviderOutcome LicenseManagerUserSubscriptionsClient::RegisterI
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-provider/RegisterIdentityProvider");
   };
 
-  return RegisterIdentityProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterIdentityProviderOutcome(result.GetResultWithOwnership())
+                            : RegisterIdentityProviderOutcome(std::move(result.GetError()));
 }
 
 StartProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StartProductSubscription(
@@ -330,7 +352,9 @@ StartProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StartProd
     endpointResolutionOutcome.GetResult().AddPathSegments("/user/StartProductSubscription");
   };
 
-  return StartProductSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartProductSubscriptionOutcome(result.GetResultWithOwnership())
+                            : StartProductSubscriptionOutcome(std::move(result.GetError()));
 }
 
 StopProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StopProductSubscription(
@@ -340,7 +364,9 @@ StopProductSubscriptionOutcome LicenseManagerUserSubscriptionsClient::StopProduc
     endpointResolutionOutcome.GetResult().AddPathSegments("/user/StopProductSubscription");
   };
 
-  return StopProductSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopProductSubscriptionOutcome(result.GetResultWithOwnership())
+                            : StopProductSubscriptionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome LicenseManagerUserSubscriptionsClient::TagResource(const TagResourceRequest& request) const {
@@ -356,7 +382,8 @@ TagResourceOutcome LicenseManagerUserSubscriptionsClient::TagResource(const TagR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome LicenseManagerUserSubscriptionsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -377,7 +404,8 @@ UntagResourceOutcome LicenseManagerUserSubscriptionsClient::UntagResource(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateIdentityProviderSettingsOutcome LicenseManagerUserSubscriptionsClient::UpdateIdentityProviderSettings(
@@ -387,5 +415,7 @@ UpdateIdentityProviderSettingsOutcome LicenseManagerUserSubscriptionsClient::Upd
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-provider/UpdateIdentityProviderSettings");
   };
 
-  return UpdateIdentityProviderSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIdentityProviderSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateIdentityProviderSettingsOutcome(std::move(result.GetError()));
 }

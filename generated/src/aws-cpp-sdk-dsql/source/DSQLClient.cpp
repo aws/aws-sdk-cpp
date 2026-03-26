@@ -190,7 +190,8 @@ CreateClusterOutcome DSQLClient::CreateCluster(const CreateClusterRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/cluster");
   };
 
-  return CreateClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterOutcome DSQLClient::DeleteCluster(const DeleteClusterRequest& request) const {
@@ -206,7 +207,8 @@ DeleteClusterOutcome DSQLClient::DeleteCluster(const DeleteClusterRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteClusterOutcome(result.GetResultWithOwnership()) : DeleteClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterPolicyOutcome DSQLClient::DeleteClusterPolicy(const DeleteClusterPolicyRequest& request) const {
@@ -223,7 +225,9 @@ DeleteClusterPolicyOutcome DSQLClient::DeleteClusterPolicy(const DeleteClusterPo
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteClusterPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteClusterPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteClusterPolicyOutcome(std::move(result.GetError()));
 }
 
 GetClusterOutcome DSQLClient::GetCluster(const GetClusterRequest& request) const {
@@ -239,7 +243,8 @@ GetClusterOutcome DSQLClient::GetCluster(const GetClusterRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetClusterOutcome(result.GetResultWithOwnership()) : GetClusterOutcome(std::move(result.GetError()));
 }
 
 GetClusterPolicyOutcome DSQLClient::GetClusterPolicy(const GetClusterPolicyRequest& request) const {
@@ -256,7 +261,9 @@ GetClusterPolicyOutcome DSQLClient::GetClusterPolicy(const GetClusterPolicyReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetClusterPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetClusterPolicyOutcome(result.GetResultWithOwnership())
+                            : GetClusterPolicyOutcome(std::move(result.GetError()));
 }
 
 GetVpcEndpointServiceNameOutcome DSQLClient::GetVpcEndpointServiceName(const GetVpcEndpointServiceNameRequest& request) const {
@@ -273,7 +280,9 @@ GetVpcEndpointServiceNameOutcome DSQLClient::GetVpcEndpointServiceName(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/vpc-endpoint-service-name");
   };
 
-  return GetVpcEndpointServiceNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVpcEndpointServiceNameOutcome(result.GetResultWithOwnership())
+                            : GetVpcEndpointServiceNameOutcome(std::move(result.GetError()));
 }
 
 ListClustersOutcome DSQLClient::ListClusters(const ListClustersRequest& request) const {
@@ -282,7 +291,8 @@ ListClustersOutcome DSQLClient::ListClusters(const ListClustersRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/cluster");
   };
 
-  return ListClustersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClustersOutcome(result.GetResultWithOwnership()) : ListClustersOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DSQLClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -298,7 +308,9 @@ ListTagsForResourceOutcome DSQLClient::ListTagsForResource(const ListTagsForReso
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutClusterPolicyOutcome DSQLClient::PutClusterPolicy(const PutClusterPolicyRequest& request) const {
@@ -315,7 +327,9 @@ PutClusterPolicyOutcome DSQLClient::PutClusterPolicy(const PutClusterPolicyReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutClusterPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutClusterPolicyOutcome(result.GetResultWithOwnership())
+                            : PutClusterPolicyOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome DSQLClient::TagResource(const TagResourceRequest& request) const {
@@ -331,7 +345,8 @@ TagResourceOutcome DSQLClient::TagResource(const TagResourceRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome DSQLClient::UntagResource(const UntagResourceRequest& request) const {
@@ -352,7 +367,8 @@ UntagResourceOutcome DSQLClient::UntagResource(const UntagResourceRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateClusterOutcome DSQLClient::UpdateCluster(const UpdateClusterRequest& request) const {
@@ -368,7 +384,8 @@ UpdateClusterOutcome DSQLClient::UpdateCluster(const UpdateClusterRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateClusterOutcome(result.GetResultWithOwnership()) : UpdateClusterOutcome(std::move(result.GetError()));
 }
 
 Aws::Utils::Outcome<String, DSQLError> DSQLClient::GenerateDBConnectAuthToken(const Aws::String& hostname, const Aws::String& region,

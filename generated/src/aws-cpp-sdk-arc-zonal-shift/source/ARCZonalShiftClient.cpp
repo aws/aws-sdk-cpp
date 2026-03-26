@@ -203,7 +203,9 @@ CancelPracticeRunOutcome ARCZonalShiftClient::CancelPracticeRun(const CancelPrac
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetZonalShiftId());
   };
 
-  return CancelPracticeRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelPracticeRunOutcome(result.GetResultWithOwnership())
+                            : CancelPracticeRunOutcome(std::move(result.GetError()));
 }
 
 CancelZonalShiftOutcome ARCZonalShiftClient::CancelZonalShift(const CancelZonalShiftRequest& request) const {
@@ -219,7 +221,9 @@ CancelZonalShiftOutcome ARCZonalShiftClient::CancelZonalShift(const CancelZonalS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetZonalShiftId());
   };
 
-  return CancelZonalShiftOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelZonalShiftOutcome(result.GetResultWithOwnership())
+                            : CancelZonalShiftOutcome(std::move(result.GetError()));
 }
 
 CreatePracticeRunConfigurationOutcome ARCZonalShiftClient::CreatePracticeRunConfiguration(
@@ -229,7 +233,9 @@ CreatePracticeRunConfigurationOutcome ARCZonalShiftClient::CreatePracticeRunConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return CreatePracticeRunConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePracticeRunConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreatePracticeRunConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeletePracticeRunConfigurationOutcome ARCZonalShiftClient::DeletePracticeRunConfiguration(
@@ -246,7 +252,9 @@ DeletePracticeRunConfigurationOutcome ARCZonalShiftClient::DeletePracticeRunConf
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
   };
 
-  return DeletePracticeRunConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePracticeRunConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeletePracticeRunConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetAutoshiftObserverNotificationStatusOutcome ARCZonalShiftClient::GetAutoshiftObserverNotificationStatus(
@@ -256,7 +264,9 @@ GetAutoshiftObserverNotificationStatusOutcome ARCZonalShiftClient::GetAutoshiftO
     endpointResolutionOutcome.GetResult().AddPathSegments("/autoshift-observer-notification");
   };
 
-  return GetAutoshiftObserverNotificationStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAutoshiftObserverNotificationStatusOutcome(result.GetResultWithOwnership())
+                            : GetAutoshiftObserverNotificationStatusOutcome(std::move(result.GetError()));
 }
 
 GetManagedResourceOutcome ARCZonalShiftClient::GetManagedResource(const GetManagedResourceRequest& request) const {
@@ -272,7 +282,9 @@ GetManagedResourceOutcome ARCZonalShiftClient::GetManagedResource(const GetManag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
   };
 
-  return GetManagedResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetManagedResourceOutcome(result.GetResultWithOwnership())
+                            : GetManagedResourceOutcome(std::move(result.GetError()));
 }
 
 ListAutoshiftsOutcome ARCZonalShiftClient::ListAutoshifts(const ListAutoshiftsRequest& request) const {
@@ -281,7 +293,8 @@ ListAutoshiftsOutcome ARCZonalShiftClient::ListAutoshifts(const ListAutoshiftsRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/autoshifts");
   };
 
-  return ListAutoshiftsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAutoshiftsOutcome(result.GetResultWithOwnership()) : ListAutoshiftsOutcome(std::move(result.GetError()));
 }
 
 ListManagedResourcesOutcome ARCZonalShiftClient::ListManagedResources(const ListManagedResourcesRequest& request) const {
@@ -290,7 +303,9 @@ ListManagedResourcesOutcome ARCZonalShiftClient::ListManagedResources(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/managedresources");
   };
 
-  return ListManagedResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListManagedResourcesOutcome(result.GetResultWithOwnership())
+                            : ListManagedResourcesOutcome(std::move(result.GetError()));
 }
 
 ListZonalShiftsOutcome ARCZonalShiftClient::ListZonalShifts(const ListZonalShiftsRequest& request) const {
@@ -299,7 +314,9 @@ ListZonalShiftsOutcome ARCZonalShiftClient::ListZonalShifts(const ListZonalShift
     endpointResolutionOutcome.GetResult().AddPathSegments("/zonalshifts");
   };
 
-  return ListZonalShiftsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListZonalShiftsOutcome(result.GetResultWithOwnership())
+                            : ListZonalShiftsOutcome(std::move(result.GetError()));
 }
 
 StartPracticeRunOutcome ARCZonalShiftClient::StartPracticeRun(const StartPracticeRunRequest& request) const {
@@ -308,7 +325,9 @@ StartPracticeRunOutcome ARCZonalShiftClient::StartPracticeRun(const StartPractic
     endpointResolutionOutcome.GetResult().AddPathSegments("/practiceruns");
   };
 
-  return StartPracticeRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartPracticeRunOutcome(result.GetResultWithOwnership())
+                            : StartPracticeRunOutcome(std::move(result.GetError()));
 }
 
 StartZonalShiftOutcome ARCZonalShiftClient::StartZonalShift(const StartZonalShiftRequest& request) const {
@@ -317,7 +336,9 @@ StartZonalShiftOutcome ARCZonalShiftClient::StartZonalShift(const StartZonalShif
     endpointResolutionOutcome.GetResult().AddPathSegments("/zonalshifts");
   };
 
-  return StartZonalShiftOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartZonalShiftOutcome(result.GetResultWithOwnership())
+                            : StartZonalShiftOutcome(std::move(result.GetError()));
 }
 
 UpdateAutoshiftObserverNotificationStatusOutcome ARCZonalShiftClient::UpdateAutoshiftObserverNotificationStatus(
@@ -327,7 +348,9 @@ UpdateAutoshiftObserverNotificationStatusOutcome ARCZonalShiftClient::UpdateAuto
     endpointResolutionOutcome.GetResult().AddPathSegments("/autoshift-observer-notification");
   };
 
-  return UpdateAutoshiftObserverNotificationStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAutoshiftObserverNotificationStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateAutoshiftObserverNotificationStatusOutcome(std::move(result.GetError()));
 }
 
 UpdatePracticeRunConfigurationOutcome ARCZonalShiftClient::UpdatePracticeRunConfiguration(
@@ -344,7 +367,9 @@ UpdatePracticeRunConfigurationOutcome ARCZonalShiftClient::UpdatePracticeRunConf
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
   };
 
-  return UpdatePracticeRunConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdatePracticeRunConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdatePracticeRunConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateZonalAutoshiftConfigurationOutcome ARCZonalShiftClient::UpdateZonalAutoshiftConfiguration(
@@ -361,7 +386,9 @@ UpdateZonalAutoshiftConfigurationOutcome ARCZonalShiftClient::UpdateZonalAutoshi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceIdentifier());
   };
 
-  return UpdateZonalAutoshiftConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateZonalAutoshiftConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateZonalAutoshiftConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateZonalShiftOutcome ARCZonalShiftClient::UpdateZonalShift(const UpdateZonalShiftRequest& request) const {
@@ -377,5 +404,7 @@ UpdateZonalShiftOutcome ARCZonalShiftClient::UpdateZonalShift(const UpdateZonalS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetZonalShiftId());
   };
 
-  return UpdateZonalShiftOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateZonalShiftOutcome(result.GetResultWithOwnership())
+                            : UpdateZonalShiftOutcome(std::move(result.GetError()));
 }

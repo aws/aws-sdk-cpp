@@ -211,7 +211,8 @@ CancelJobRunOutcome EMRServerlessClient::CancelJobRun(const CancelJobRunRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobRunId());
   };
 
-  return CancelJobRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelJobRunOutcome(result.GetResultWithOwnership()) : CancelJobRunOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome EMRServerlessClient::CreateApplication(const CreateApplicationRequest& request) const {
@@ -220,7 +221,9 @@ CreateApplicationOutcome EMRServerlessClient::CreateApplication(const CreateAppl
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return CreateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome EMRServerlessClient::DeleteApplication(const DeleteApplicationRequest& request) const {
@@ -236,7 +239,9 @@ DeleteApplicationOutcome EMRServerlessClient::DeleteApplication(const DeleteAppl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 GetApplicationOutcome EMRServerlessClient::GetApplication(const GetApplicationRequest& request) const {
@@ -252,7 +257,8 @@ GetApplicationOutcome EMRServerlessClient::GetApplication(const GetApplicationRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return GetApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationOutcome(result.GetResultWithOwnership()) : GetApplicationOutcome(std::move(result.GetError()));
 }
 
 GetDashboardForJobRunOutcome EMRServerlessClient::GetDashboardForJobRun(const GetDashboardForJobRunRequest& request) const {
@@ -276,7 +282,9 @@ GetDashboardForJobRunOutcome EMRServerlessClient::GetDashboardForJobRun(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegments("/dashboard");
   };
 
-  return GetDashboardForJobRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDashboardForJobRunOutcome(result.GetResultWithOwnership())
+                            : GetDashboardForJobRunOutcome(std::move(result.GetError()));
 }
 
 GetJobRunOutcome EMRServerlessClient::GetJobRun(const GetJobRunRequest& request) const {
@@ -299,7 +307,8 @@ GetJobRunOutcome EMRServerlessClient::GetJobRun(const GetJobRunRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobRunId());
   };
 
-  return GetJobRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobRunOutcome(result.GetResultWithOwnership()) : GetJobRunOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome EMRServerlessClient::ListApplications(const ListApplicationsRequest& request) const {
@@ -308,7 +317,9 @@ ListApplicationsOutcome EMRServerlessClient::ListApplications(const ListApplicat
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return ListApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListJobRunAttemptsOutcome EMRServerlessClient::ListJobRunAttempts(const ListJobRunAttemptsRequest& request) const {
@@ -332,7 +343,9 @@ ListJobRunAttemptsOutcome EMRServerlessClient::ListJobRunAttempts(const ListJobR
     endpointResolutionOutcome.GetResult().AddPathSegments("/attempts");
   };
 
-  return ListJobRunAttemptsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobRunAttemptsOutcome(result.GetResultWithOwnership())
+                            : ListJobRunAttemptsOutcome(std::move(result.GetError()));
 }
 
 ListJobRunsOutcome EMRServerlessClient::ListJobRuns(const ListJobRunsRequest& request) const {
@@ -349,7 +362,8 @@ ListJobRunsOutcome EMRServerlessClient::ListJobRuns(const ListJobRunsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobruns");
   };
 
-  return ListJobRunsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobRunsOutcome(result.GetResultWithOwnership()) : ListJobRunsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome EMRServerlessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -365,7 +379,9 @@ ListTagsForResourceOutcome EMRServerlessClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartApplicationOutcome EMRServerlessClient::StartApplication(const StartApplicationRequest& request) const {
@@ -382,7 +398,9 @@ StartApplicationOutcome EMRServerlessClient::StartApplication(const StartApplica
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartApplicationOutcome(result.GetResultWithOwnership())
+                            : StartApplicationOutcome(std::move(result.GetError()));
 }
 
 StartJobRunOutcome EMRServerlessClient::StartJobRun(const StartJobRunRequest& request) const {
@@ -399,7 +417,8 @@ StartJobRunOutcome EMRServerlessClient::StartJobRun(const StartJobRunRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobruns");
   };
 
-  return StartJobRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartJobRunOutcome(result.GetResultWithOwnership()) : StartJobRunOutcome(std::move(result.GetError()));
 }
 
 StopApplicationOutcome EMRServerlessClient::StopApplication(const StopApplicationRequest& request) const {
@@ -416,7 +435,9 @@ StopApplicationOutcome EMRServerlessClient::StopApplication(const StopApplicatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopApplicationOutcome(result.GetResultWithOwnership())
+                            : StopApplicationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome EMRServerlessClient::TagResource(const TagResourceRequest& request) const {
@@ -432,7 +453,8 @@ TagResourceOutcome EMRServerlessClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome EMRServerlessClient::UntagResource(const UntagResourceRequest& request) const {
@@ -453,7 +475,8 @@ UntagResourceOutcome EMRServerlessClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome EMRServerlessClient::UpdateApplication(const UpdateApplicationRequest& request) const {
@@ -469,5 +492,7 @@ UpdateApplicationOutcome EMRServerlessClient::UpdateApplication(const UpdateAppl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }

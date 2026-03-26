@@ -204,8 +204,9 @@ GetLatestConfigurationOutcome AppConfigDataClient::GetLatestConfiguration(const 
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLatestConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
-        return GetLatestConfigurationOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetLatestConfigurationOutcome(result.GetResultWithOwnership())
+                                  : GetLatestConfigurationOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -218,5 +219,7 @@ StartConfigurationSessionOutcome AppConfigDataClient::StartConfigurationSession(
     endpointResolutionOutcome.GetResult().AddPathSegments("/configurationsessions");
   };
 
-  return StartConfigurationSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartConfigurationSessionOutcome(result.GetResultWithOwnership())
+                            : StartConfigurationSessionOutcome(std::move(result.GetError()));
 }

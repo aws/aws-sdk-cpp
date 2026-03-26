@@ -373,7 +373,9 @@ AcceptPredictionsOutcome DataZoneClient::AcceptPredictions(const AcceptPredictio
     endpointResolutionOutcome.GetResult().AddPathSegments("/accept-predictions");
   };
 
-  return AcceptPredictionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AcceptPredictionsOutcome(result.GetResultWithOwnership())
+                            : AcceptPredictionsOutcome(std::move(result.GetError()));
 }
 
 AcceptSubscriptionRequestOutcome DataZoneClient::AcceptSubscriptionRequest(const AcceptSubscriptionRequestRequest& request) const {
@@ -397,7 +399,9 @@ AcceptSubscriptionRequestOutcome DataZoneClient::AcceptSubscriptionRequest(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/accept");
   };
 
-  return AcceptSubscriptionRequestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AcceptSubscriptionRequestOutcome(result.GetResultWithOwnership())
+                            : AcceptSubscriptionRequestOutcome(std::move(result.GetError()));
 }
 
 AddEntityOwnerOutcome DataZoneClient::AddEntityOwner(const AddEntityOwnerRequest& request) const {
@@ -427,7 +431,8 @@ AddEntityOwnerOutcome DataZoneClient::AddEntityOwner(const AddEntityOwnerRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/addOwner");
   };
 
-  return AddEntityOwnerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddEntityOwnerOutcome(result.GetResultWithOwnership()) : AddEntityOwnerOutcome(std::move(result.GetError()));
 }
 
 AddPolicyGrantOutcome DataZoneClient::AddPolicyGrant(const AddPolicyGrantRequest& request) const {
@@ -457,7 +462,8 @@ AddPolicyGrantOutcome DataZoneClient::AddPolicyGrant(const AddPolicyGrantRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/addGrant");
   };
 
-  return AddPolicyGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddPolicyGrantOutcome(result.GetResultWithOwnership()) : AddPolicyGrantOutcome(std::move(result.GetError()));
 }
 
 AssociateEnvironmentRoleOutcome DataZoneClient::AssociateEnvironmentRole(const AssociateEnvironmentRoleRequest& request) const {
@@ -487,7 +493,9 @@ AssociateEnvironmentRoleOutcome DataZoneClient::AssociateEnvironmentRole(const A
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentRoleArn());
   };
 
-  return AssociateEnvironmentRoleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateEnvironmentRoleOutcome(result.GetResultWithOwnership())
+                            : AssociateEnvironmentRoleOutcome(std::move(result.GetError()));
 }
 
 AssociateGovernedTermsOutcome DataZoneClient::AssociateGovernedTerms(const AssociateGovernedTermsRequest& request) const {
@@ -517,7 +525,9 @@ AssociateGovernedTermsOutcome DataZoneClient::AssociateGovernedTerms(const Assoc
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-governed-terms");
   };
 
-  return AssociateGovernedTermsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? AssociateGovernedTermsOutcome(result.GetResultWithOwnership())
+                            : AssociateGovernedTermsOutcome(std::move(result.GetError()));
 }
 
 BatchGetAttributesMetadataOutcome DataZoneClient::BatchGetAttributesMetadata(const BatchGetAttributesMetadataRequest& request) const {
@@ -552,7 +562,9 @@ BatchGetAttributesMetadataOutcome DataZoneClient::BatchGetAttributesMetadata(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/attributes-metadata");
   };
 
-  return BatchGetAttributesMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? BatchGetAttributesMetadataOutcome(result.GetResultWithOwnership())
+                            : BatchGetAttributesMetadataOutcome(std::move(result.GetError()));
 }
 
 BatchPutAttributesMetadataOutcome DataZoneClient::BatchPutAttributesMetadata(const BatchPutAttributesMetadataRequest& request) const {
@@ -582,7 +594,9 @@ BatchPutAttributesMetadataOutcome DataZoneClient::BatchPutAttributesMetadata(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/attributes-metadata");
   };
 
-  return BatchPutAttributesMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchPutAttributesMetadataOutcome(result.GetResultWithOwnership())
+                            : BatchPutAttributesMetadataOutcome(std::move(result.GetError()));
 }
 
 CancelMetadataGenerationRunOutcome DataZoneClient::CancelMetadataGenerationRun(const CancelMetadataGenerationRunRequest& request) const {
@@ -606,7 +620,9 @@ CancelMetadataGenerationRunOutcome DataZoneClient::CancelMetadataGenerationRun(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelMetadataGenerationRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelMetadataGenerationRunOutcome(result.GetResultWithOwnership())
+                            : CancelMetadataGenerationRunOutcome(std::move(result.GetError()));
 }
 
 CancelSubscriptionOutcome DataZoneClient::CancelSubscription(const CancelSubscriptionRequest& request) const {
@@ -630,7 +646,9 @@ CancelSubscriptionOutcome DataZoneClient::CancelSubscription(const CancelSubscri
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CancelSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CancelSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateAccountPoolOutcome DataZoneClient::CreateAccountPool(const CreateAccountPoolRequest& request) const {
@@ -647,7 +665,9 @@ CreateAccountPoolOutcome DataZoneClient::CreateAccountPool(const CreateAccountPo
     endpointResolutionOutcome.GetResult().AddPathSegments("/account-pools");
   };
 
-  return CreateAccountPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccountPoolOutcome(result.GetResultWithOwnership())
+                            : CreateAccountPoolOutcome(std::move(result.GetError()));
 }
 
 CreateAssetOutcome DataZoneClient::CreateAsset(const CreateAssetRequest& request) const {
@@ -664,7 +684,8 @@ CreateAssetOutcome DataZoneClient::CreateAsset(const CreateAssetRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
   };
 
-  return CreateAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssetOutcome(result.GetResultWithOwnership()) : CreateAssetOutcome(std::move(result.GetError()));
 }
 
 CreateAssetFilterOutcome DataZoneClient::CreateAssetFilter(const CreateAssetFilterRequest& request) const {
@@ -688,7 +709,9 @@ CreateAssetFilterOutcome DataZoneClient::CreateAssetFilter(const CreateAssetFilt
     endpointResolutionOutcome.GetResult().AddPathSegments("/filters");
   };
 
-  return CreateAssetFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssetFilterOutcome(result.GetResultWithOwnership())
+                            : CreateAssetFilterOutcome(std::move(result.GetError()));
 }
 
 CreateAssetRevisionOutcome DataZoneClient::CreateAssetRevision(const CreateAssetRevisionRequest& request) const {
@@ -712,7 +735,9 @@ CreateAssetRevisionOutcome DataZoneClient::CreateAssetRevision(const CreateAsset
     endpointResolutionOutcome.GetResult().AddPathSegments("/revisions");
   };
 
-  return CreateAssetRevisionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssetRevisionOutcome(result.GetResultWithOwnership())
+                            : CreateAssetRevisionOutcome(std::move(result.GetError()));
 }
 
 CreateAssetTypeOutcome DataZoneClient::CreateAssetType(const CreateAssetTypeRequest& request) const {
@@ -729,7 +754,9 @@ CreateAssetTypeOutcome DataZoneClient::CreateAssetType(const CreateAssetTypeRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/asset-types");
   };
 
-  return CreateAssetTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssetTypeOutcome(result.GetResultWithOwnership())
+                            : CreateAssetTypeOutcome(std::move(result.GetError()));
 }
 
 CreateConnectionOutcome DataZoneClient::CreateConnection(const CreateConnectionRequest& request) const {
@@ -746,7 +773,9 @@ CreateConnectionOutcome DataZoneClient::CreateConnection(const CreateConnectionR
     endpointResolutionOutcome.GetResult().AddPathSegments("/connections");
   };
 
-  return CreateConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateConnectionOutcome(std::move(result.GetError()));
 }
 
 CreateDataProductOutcome DataZoneClient::CreateDataProduct(const CreateDataProductRequest& request) const {
@@ -763,7 +792,9 @@ CreateDataProductOutcome DataZoneClient::CreateDataProduct(const CreateDataProdu
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-products");
   };
 
-  return CreateDataProductOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataProductOutcome(result.GetResultWithOwnership())
+                            : CreateDataProductOutcome(std::move(result.GetError()));
 }
 
 CreateDataProductRevisionOutcome DataZoneClient::CreateDataProductRevision(const CreateDataProductRevisionRequest& request) const {
@@ -787,7 +818,9 @@ CreateDataProductRevisionOutcome DataZoneClient::CreateDataProductRevision(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/revisions");
   };
 
-  return CreateDataProductRevisionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataProductRevisionOutcome(result.GetResultWithOwnership())
+                            : CreateDataProductRevisionOutcome(std::move(result.GetError()));
 }
 
 CreateDataSourceOutcome DataZoneClient::CreateDataSource(const CreateDataSourceRequest& request) const {
@@ -804,7 +837,9 @@ CreateDataSourceOutcome DataZoneClient::CreateDataSource(const CreateDataSourceR
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-sources");
   };
 
-  return CreateDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataSourceOutcome(result.GetResultWithOwnership())
+                            : CreateDataSourceOutcome(std::move(result.GetError()));
 }
 
 CreateDomainOutcome DataZoneClient::CreateDomain(const CreateDomainRequest& request) const {
@@ -813,7 +848,8 @@ CreateDomainOutcome DataZoneClient::CreateDomain(const CreateDomainRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains");
   };
 
-  return CreateDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainOutcome(result.GetResultWithOwnership()) : CreateDomainOutcome(std::move(result.GetError()));
 }
 
 CreateDomainUnitOutcome DataZoneClient::CreateDomainUnit(const CreateDomainUnitRequest& request) const {
@@ -830,7 +866,9 @@ CreateDomainUnitOutcome DataZoneClient::CreateDomainUnit(const CreateDomainUnitR
     endpointResolutionOutcome.GetResult().AddPathSegments("/domain-units");
   };
 
-  return CreateDomainUnitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainUnitOutcome(result.GetResultWithOwnership())
+                            : CreateDomainUnitOutcome(std::move(result.GetError()));
 }
 
 CreateEnvironmentOutcome DataZoneClient::CreateEnvironment(const CreateEnvironmentRequest& request) const {
@@ -847,7 +885,9 @@ CreateEnvironmentOutcome DataZoneClient::CreateEnvironment(const CreateEnvironme
     endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
   };
 
-  return CreateEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEnvironmentOutcome(result.GetResultWithOwnership())
+                            : CreateEnvironmentOutcome(std::move(result.GetError()));
 }
 
 CreateEnvironmentActionOutcome DataZoneClient::CreateEnvironmentAction(const CreateEnvironmentActionRequest& request) const {
@@ -871,7 +911,9 @@ CreateEnvironmentActionOutcome DataZoneClient::CreateEnvironmentAction(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
   };
 
-  return CreateEnvironmentActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEnvironmentActionOutcome(result.GetResultWithOwnership())
+                            : CreateEnvironmentActionOutcome(std::move(result.GetError()));
 }
 
 CreateEnvironmentBlueprintOutcome DataZoneClient::CreateEnvironmentBlueprint(const CreateEnvironmentBlueprintRequest& request) const {
@@ -888,7 +930,9 @@ CreateEnvironmentBlueprintOutcome DataZoneClient::CreateEnvironmentBlueprint(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/environment-blueprints");
   };
 
-  return CreateEnvironmentBlueprintOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEnvironmentBlueprintOutcome(result.GetResultWithOwnership())
+                            : CreateEnvironmentBlueprintOutcome(std::move(result.GetError()));
 }
 
 CreateEnvironmentProfileOutcome DataZoneClient::CreateEnvironmentProfile(const CreateEnvironmentProfileRequest& request) const {
@@ -905,7 +949,9 @@ CreateEnvironmentProfileOutcome DataZoneClient::CreateEnvironmentProfile(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/environment-profiles");
   };
 
-  return CreateEnvironmentProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEnvironmentProfileOutcome(result.GetResultWithOwnership())
+                            : CreateEnvironmentProfileOutcome(std::move(result.GetError()));
 }
 
 CreateFormTypeOutcome DataZoneClient::CreateFormType(const CreateFormTypeRequest& request) const {
@@ -922,7 +968,8 @@ CreateFormTypeOutcome DataZoneClient::CreateFormType(const CreateFormTypeRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/form-types");
   };
 
-  return CreateFormTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFormTypeOutcome(result.GetResultWithOwnership()) : CreateFormTypeOutcome(std::move(result.GetError()));
 }
 
 CreateGlossaryOutcome DataZoneClient::CreateGlossary(const CreateGlossaryRequest& request) const {
@@ -939,7 +986,8 @@ CreateGlossaryOutcome DataZoneClient::CreateGlossary(const CreateGlossaryRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/glossaries");
   };
 
-  return CreateGlossaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGlossaryOutcome(result.GetResultWithOwnership()) : CreateGlossaryOutcome(std::move(result.GetError()));
 }
 
 CreateGlossaryTermOutcome DataZoneClient::CreateGlossaryTerm(const CreateGlossaryTermRequest& request) const {
@@ -956,7 +1004,9 @@ CreateGlossaryTermOutcome DataZoneClient::CreateGlossaryTerm(const CreateGlossar
     endpointResolutionOutcome.GetResult().AddPathSegments("/glossary-terms");
   };
 
-  return CreateGlossaryTermOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGlossaryTermOutcome(result.GetResultWithOwnership())
+                            : CreateGlossaryTermOutcome(std::move(result.GetError()));
 }
 
 CreateGroupProfileOutcome DataZoneClient::CreateGroupProfile(const CreateGroupProfileRequest& request) const {
@@ -973,7 +1023,9 @@ CreateGroupProfileOutcome DataZoneClient::CreateGroupProfile(const CreateGroupPr
     endpointResolutionOutcome.GetResult().AddPathSegments("/group-profiles");
   };
 
-  return CreateGroupProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGroupProfileOutcome(result.GetResultWithOwnership())
+                            : CreateGroupProfileOutcome(std::move(result.GetError()));
 }
 
 CreateListingChangeSetOutcome DataZoneClient::CreateListingChangeSet(const CreateListingChangeSetRequest& request) const {
@@ -990,7 +1042,9 @@ CreateListingChangeSetOutcome DataZoneClient::CreateListingChangeSet(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/listings/change-set");
   };
 
-  return CreateListingChangeSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateListingChangeSetOutcome(result.GetResultWithOwnership())
+                            : CreateListingChangeSetOutcome(std::move(result.GetError()));
 }
 
 CreateProjectOutcome DataZoneClient::CreateProject(const CreateProjectRequest& request) const {
@@ -1007,7 +1061,8 @@ CreateProjectOutcome DataZoneClient::CreateProject(const CreateProjectRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/projects");
   };
 
-  return CreateProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProjectOutcome(result.GetResultWithOwnership()) : CreateProjectOutcome(std::move(result.GetError()));
 }
 
 CreateProjectMembershipOutcome DataZoneClient::CreateProjectMembership(const CreateProjectMembershipRequest& request) const {
@@ -1031,7 +1086,9 @@ CreateProjectMembershipOutcome DataZoneClient::CreateProjectMembership(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/createMembership");
   };
 
-  return CreateProjectMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProjectMembershipOutcome(result.GetResultWithOwnership())
+                            : CreateProjectMembershipOutcome(std::move(result.GetError()));
 }
 
 CreateProjectProfileOutcome DataZoneClient::CreateProjectProfile(const CreateProjectProfileRequest& request) const {
@@ -1048,7 +1105,9 @@ CreateProjectProfileOutcome DataZoneClient::CreateProjectProfile(const CreatePro
     endpointResolutionOutcome.GetResult().AddPathSegments("/project-profiles");
   };
 
-  return CreateProjectProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProjectProfileOutcome(result.GetResultWithOwnership())
+                            : CreateProjectProfileOutcome(std::move(result.GetError()));
 }
 
 CreateRuleOutcome DataZoneClient::CreateRule(const CreateRuleRequest& request) const {
@@ -1065,7 +1124,8 @@ CreateRuleOutcome DataZoneClient::CreateRule(const CreateRuleRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/rules");
   };
 
-  return CreateRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRuleOutcome(result.GetResultWithOwnership()) : CreateRuleOutcome(std::move(result.GetError()));
 }
 
 CreateSubscriptionGrantOutcome DataZoneClient::CreateSubscriptionGrant(const CreateSubscriptionGrantRequest& request) const {
@@ -1082,7 +1142,9 @@ CreateSubscriptionGrantOutcome DataZoneClient::CreateSubscriptionGrant(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription-grants");
   };
 
-  return CreateSubscriptionGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSubscriptionGrantOutcome(result.GetResultWithOwnership())
+                            : CreateSubscriptionGrantOutcome(std::move(result.GetError()));
 }
 
 CreateSubscriptionRequestOutcome DataZoneClient::CreateSubscriptionRequest(const CreateSubscriptionRequestRequest& request) const {
@@ -1099,7 +1161,9 @@ CreateSubscriptionRequestOutcome DataZoneClient::CreateSubscriptionRequest(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription-requests");
   };
 
-  return CreateSubscriptionRequestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSubscriptionRequestOutcome(result.GetResultWithOwnership())
+                            : CreateSubscriptionRequestOutcome(std::move(result.GetError()));
 }
 
 CreateSubscriptionTargetOutcome DataZoneClient::CreateSubscriptionTarget(const CreateSubscriptionTargetRequest& request) const {
@@ -1123,7 +1187,9 @@ CreateSubscriptionTargetOutcome DataZoneClient::CreateSubscriptionTarget(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription-targets");
   };
 
-  return CreateSubscriptionTargetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSubscriptionTargetOutcome(result.GetResultWithOwnership())
+                            : CreateSubscriptionTargetOutcome(std::move(result.GetError()));
 }
 
 CreateUserProfileOutcome DataZoneClient::CreateUserProfile(const CreateUserProfileRequest& request) const {
@@ -1140,7 +1206,9 @@ CreateUserProfileOutcome DataZoneClient::CreateUserProfile(const CreateUserProfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/user-profiles");
   };
 
-  return CreateUserProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserProfileOutcome(result.GetResultWithOwnership())
+                            : CreateUserProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountPoolOutcome DataZoneClient::DeleteAccountPool(const DeleteAccountPoolRequest& request) const {
@@ -1163,7 +1231,9 @@ DeleteAccountPoolOutcome DataZoneClient::DeleteAccountPool(const DeleteAccountPo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteAccountPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccountPoolOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountPoolOutcome(std::move(result.GetError()));
 }
 
 DeleteAssetOutcome DataZoneClient::DeleteAsset(const DeleteAssetRequest& request) const {
@@ -1186,7 +1256,8 @@ DeleteAssetOutcome DataZoneClient::DeleteAsset(const DeleteAssetRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssetOutcome(result.GetResultWithOwnership()) : DeleteAssetOutcome(std::move(result.GetError()));
 }
 
 DeleteAssetFilterOutcome DataZoneClient::DeleteAssetFilter(const DeleteAssetFilterRequest& request) const {
@@ -1216,7 +1287,9 @@ DeleteAssetFilterOutcome DataZoneClient::DeleteAssetFilter(const DeleteAssetFilt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteAssetFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssetFilterOutcome(result.GetResultWithOwnership())
+                            : DeleteAssetFilterOutcome(std::move(result.GetError()));
 }
 
 DeleteAssetTypeOutcome DataZoneClient::DeleteAssetType(const DeleteAssetTypeRequest& request) const {
@@ -1239,7 +1312,9 @@ DeleteAssetTypeOutcome DataZoneClient::DeleteAssetType(const DeleteAssetTypeRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteAssetTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssetTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteAssetTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectionOutcome DataZoneClient::DeleteConnection(const DeleteConnectionRequest& request) const {
@@ -1262,7 +1337,9 @@ DeleteConnectionOutcome DataZoneClient::DeleteConnection(const DeleteConnectionR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteDataExportConfigurationOutcome DataZoneClient::DeleteDataExportConfiguration(
@@ -1280,7 +1357,9 @@ DeleteDataExportConfigurationOutcome DataZoneClient::DeleteDataExportConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-export-configuration");
   };
 
-  return DeleteDataExportConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataExportConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteDataExportConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteDataProductOutcome DataZoneClient::DeleteDataProduct(const DeleteDataProductRequest& request) const {
@@ -1303,7 +1382,9 @@ DeleteDataProductOutcome DataZoneClient::DeleteDataProduct(const DeleteDataProdu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteDataProductOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataProductOutcome(result.GetResultWithOwnership())
+                            : DeleteDataProductOutcome(std::move(result.GetError()));
 }
 
 DeleteDataSourceOutcome DataZoneClient::DeleteDataSource(const DeleteDataSourceRequest& request) const {
@@ -1326,7 +1407,9 @@ DeleteDataSourceOutcome DataZoneClient::DeleteDataSource(const DeleteDataSourceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteDataSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainOutcome DataZoneClient::DeleteDomain(const DeleteDomainRequest& request) const {
@@ -1342,7 +1425,8 @@ DeleteDomainOutcome DataZoneClient::DeleteDomain(const DeleteDomainRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainUnitOutcome DataZoneClient::DeleteDomainUnit(const DeleteDomainUnitRequest& request) const {
@@ -1365,7 +1449,9 @@ DeleteDomainUnitOutcome DataZoneClient::DeleteDomainUnit(const DeleteDomainUnitR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteDomainUnitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainUnitOutcome(result.GetResultWithOwnership())
+                            : DeleteDomainUnitOutcome(std::move(result.GetError()));
 }
 
 DeleteEnvironmentOutcome DataZoneClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const {
@@ -1388,7 +1474,9 @@ DeleteEnvironmentOutcome DataZoneClient::DeleteEnvironment(const DeleteEnvironme
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEnvironmentOutcome(result.GetResultWithOwnership())
+                            : DeleteEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeleteEnvironmentActionOutcome DataZoneClient::DeleteEnvironmentAction(const DeleteEnvironmentActionRequest& request) const {
@@ -1418,7 +1506,9 @@ DeleteEnvironmentActionOutcome DataZoneClient::DeleteEnvironmentAction(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteEnvironmentActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEnvironmentActionOutcome(result.GetResultWithOwnership())
+                            : DeleteEnvironmentActionOutcome(std::move(result.GetError()));
 }
 
 DeleteEnvironmentBlueprintOutcome DataZoneClient::DeleteEnvironmentBlueprint(const DeleteEnvironmentBlueprintRequest& request) const {
@@ -1441,7 +1531,9 @@ DeleteEnvironmentBlueprintOutcome DataZoneClient::DeleteEnvironmentBlueprint(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteEnvironmentBlueprintOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEnvironmentBlueprintOutcome(result.GetResultWithOwnership())
+                            : DeleteEnvironmentBlueprintOutcome(std::move(result.GetError()));
 }
 
 DeleteEnvironmentBlueprintConfigurationOutcome DataZoneClient::DeleteEnvironmentBlueprintConfiguration(
@@ -1465,7 +1557,9 @@ DeleteEnvironmentBlueprintConfigurationOutcome DataZoneClient::DeleteEnvironment
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentBlueprintIdentifier());
   };
 
-  return DeleteEnvironmentBlueprintConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEnvironmentBlueprintConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteEnvironmentBlueprintConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteEnvironmentProfileOutcome DataZoneClient::DeleteEnvironmentProfile(const DeleteEnvironmentProfileRequest& request) const {
@@ -1488,7 +1582,9 @@ DeleteEnvironmentProfileOutcome DataZoneClient::DeleteEnvironmentProfile(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteEnvironmentProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEnvironmentProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteEnvironmentProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteFormTypeOutcome DataZoneClient::DeleteFormType(const DeleteFormTypeRequest& request) const {
@@ -1511,7 +1607,8 @@ DeleteFormTypeOutcome DataZoneClient::DeleteFormType(const DeleteFormTypeRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFormTypeIdentifier());
   };
 
-  return DeleteFormTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFormTypeOutcome(result.GetResultWithOwnership()) : DeleteFormTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteGlossaryOutcome DataZoneClient::DeleteGlossary(const DeleteGlossaryRequest& request) const {
@@ -1534,7 +1631,8 @@ DeleteGlossaryOutcome DataZoneClient::DeleteGlossary(const DeleteGlossaryRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteGlossaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGlossaryOutcome(result.GetResultWithOwnership()) : DeleteGlossaryOutcome(std::move(result.GetError()));
 }
 
 DeleteGlossaryTermOutcome DataZoneClient::DeleteGlossaryTerm(const DeleteGlossaryTermRequest& request) const {
@@ -1557,7 +1655,9 @@ DeleteGlossaryTermOutcome DataZoneClient::DeleteGlossaryTerm(const DeleteGlossar
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteGlossaryTermOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGlossaryTermOutcome(result.GetResultWithOwnership())
+                            : DeleteGlossaryTermOutcome(std::move(result.GetError()));
 }
 
 DeleteListingOutcome DataZoneClient::DeleteListing(const DeleteListingRequest& request) const {
@@ -1580,7 +1680,8 @@ DeleteListingOutcome DataZoneClient::DeleteListing(const DeleteListingRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteListingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteListingOutcome(result.GetResultWithOwnership()) : DeleteListingOutcome(std::move(result.GetError()));
 }
 
 DeleteProjectOutcome DataZoneClient::DeleteProject(const DeleteProjectRequest& request) const {
@@ -1603,7 +1704,8 @@ DeleteProjectOutcome DataZoneClient::DeleteProject(const DeleteProjectRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProjectOutcome(result.GetResultWithOwnership()) : DeleteProjectOutcome(std::move(result.GetError()));
 }
 
 DeleteProjectMembershipOutcome DataZoneClient::DeleteProjectMembership(const DeleteProjectMembershipRequest& request) const {
@@ -1627,7 +1729,9 @@ DeleteProjectMembershipOutcome DataZoneClient::DeleteProjectMembership(const Del
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteMembership");
   };
 
-  return DeleteProjectMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProjectMembershipOutcome(result.GetResultWithOwnership())
+                            : DeleteProjectMembershipOutcome(std::move(result.GetError()));
 }
 
 DeleteProjectProfileOutcome DataZoneClient::DeleteProjectProfile(const DeleteProjectProfileRequest& request) const {
@@ -1650,7 +1754,9 @@ DeleteProjectProfileOutcome DataZoneClient::DeleteProjectProfile(const DeletePro
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteProjectProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProjectProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteProjectProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleOutcome DataZoneClient::DeleteRule(const DeleteRuleRequest& request) const {
@@ -1673,7 +1779,8 @@ DeleteRuleOutcome DataZoneClient::DeleteRule(const DeleteRuleRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRuleOutcome(result.GetResultWithOwnership()) : DeleteRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteSubscriptionGrantOutcome DataZoneClient::DeleteSubscriptionGrant(const DeleteSubscriptionGrantRequest& request) const {
@@ -1696,7 +1803,9 @@ DeleteSubscriptionGrantOutcome DataZoneClient::DeleteSubscriptionGrant(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteSubscriptionGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSubscriptionGrantOutcome(result.GetResultWithOwnership())
+                            : DeleteSubscriptionGrantOutcome(std::move(result.GetError()));
 }
 
 DeleteSubscriptionRequestOutcome DataZoneClient::DeleteSubscriptionRequest(const DeleteSubscriptionRequestRequest& request) const {
@@ -1719,7 +1828,9 @@ DeleteSubscriptionRequestOutcome DataZoneClient::DeleteSubscriptionRequest(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteSubscriptionRequestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSubscriptionRequestOutcome(result.GetResultWithOwnership())
+                            : DeleteSubscriptionRequestOutcome(std::move(result.GetError()));
 }
 
 DeleteSubscriptionTargetOutcome DataZoneClient::DeleteSubscriptionTarget(const DeleteSubscriptionTargetRequest& request) const {
@@ -1749,7 +1860,9 @@ DeleteSubscriptionTargetOutcome DataZoneClient::DeleteSubscriptionTarget(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteSubscriptionTargetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSubscriptionTargetOutcome(result.GetResultWithOwnership())
+                            : DeleteSubscriptionTargetOutcome(std::move(result.GetError()));
 }
 
 DeleteTimeSeriesDataPointsOutcome DataZoneClient::DeleteTimeSeriesDataPoints(const DeleteTimeSeriesDataPointsRequest& request) const {
@@ -1785,7 +1898,9 @@ DeleteTimeSeriesDataPointsOutcome DataZoneClient::DeleteTimeSeriesDataPoints(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/time-series-data-points");
   };
 
-  return DeleteTimeSeriesDataPointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTimeSeriesDataPointsOutcome(result.GetResultWithOwnership())
+                            : DeleteTimeSeriesDataPointsOutcome(std::move(result.GetError()));
 }
 
 DisassociateEnvironmentRoleOutcome DataZoneClient::DisassociateEnvironmentRole(const DisassociateEnvironmentRoleRequest& request) const {
@@ -1815,7 +1930,9 @@ DisassociateEnvironmentRoleOutcome DataZoneClient::DisassociateEnvironmentRole(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentRoleArn());
   };
 
-  return DisassociateEnvironmentRoleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateEnvironmentRoleOutcome(result.GetResultWithOwnership())
+                            : DisassociateEnvironmentRoleOutcome(std::move(result.GetError()));
 }
 
 DisassociateGovernedTermsOutcome DataZoneClient::DisassociateGovernedTerms(const DisassociateGovernedTermsRequest& request) const {
@@ -1845,7 +1962,9 @@ DisassociateGovernedTermsOutcome DataZoneClient::DisassociateGovernedTerms(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-governed-terms");
   };
 
-  return DisassociateGovernedTermsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? DisassociateGovernedTermsOutcome(result.GetResultWithOwnership())
+                            : DisassociateGovernedTermsOutcome(std::move(result.GetError()));
 }
 
 GetAccountPoolOutcome DataZoneClient::GetAccountPool(const GetAccountPoolRequest& request) const {
@@ -1868,7 +1987,8 @@ GetAccountPoolOutcome DataZoneClient::GetAccountPool(const GetAccountPoolRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetAccountPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountPoolOutcome(result.GetResultWithOwnership()) : GetAccountPoolOutcome(std::move(result.GetError()));
 }
 
 GetAssetOutcome DataZoneClient::GetAsset(const GetAssetRequest& request) const {
@@ -1891,7 +2011,8 @@ GetAssetOutcome DataZoneClient::GetAsset(const GetAssetRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssetOutcome(result.GetResultWithOwnership()) : GetAssetOutcome(std::move(result.GetError()));
 }
 
 GetAssetFilterOutcome DataZoneClient::GetAssetFilter(const GetAssetFilterRequest& request) const {
@@ -1921,7 +2042,8 @@ GetAssetFilterOutcome DataZoneClient::GetAssetFilter(const GetAssetFilterRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetAssetFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssetFilterOutcome(result.GetResultWithOwnership()) : GetAssetFilterOutcome(std::move(result.GetError()));
 }
 
 GetAssetTypeOutcome DataZoneClient::GetAssetType(const GetAssetTypeRequest& request) const {
@@ -1944,7 +2066,8 @@ GetAssetTypeOutcome DataZoneClient::GetAssetType(const GetAssetTypeRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetAssetTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssetTypeOutcome(result.GetResultWithOwnership()) : GetAssetTypeOutcome(std::move(result.GetError()));
 }
 
 GetConnectionOutcome DataZoneClient::GetConnection(const GetConnectionRequest& request) const {
@@ -1967,7 +2090,8 @@ GetConnectionOutcome DataZoneClient::GetConnection(const GetConnectionRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectionOutcome(result.GetResultWithOwnership()) : GetConnectionOutcome(std::move(result.GetError()));
 }
 
 GetDataExportConfigurationOutcome DataZoneClient::GetDataExportConfiguration(const GetDataExportConfigurationRequest& request) const {
@@ -1984,7 +2108,9 @@ GetDataExportConfigurationOutcome DataZoneClient::GetDataExportConfiguration(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-export-configuration");
   };
 
-  return GetDataExportConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataExportConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetDataExportConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetDataProductOutcome DataZoneClient::GetDataProduct(const GetDataProductRequest& request) const {
@@ -2007,7 +2133,8 @@ GetDataProductOutcome DataZoneClient::GetDataProduct(const GetDataProductRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetDataProductOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataProductOutcome(result.GetResultWithOwnership()) : GetDataProductOutcome(std::move(result.GetError()));
 }
 
 GetDataSourceOutcome DataZoneClient::GetDataSource(const GetDataSourceRequest& request) const {
@@ -2030,7 +2157,8 @@ GetDataSourceOutcome DataZoneClient::GetDataSource(const GetDataSourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataSourceOutcome(result.GetResultWithOwnership()) : GetDataSourceOutcome(std::move(result.GetError()));
 }
 
 GetDataSourceRunOutcome DataZoneClient::GetDataSourceRun(const GetDataSourceRunRequest& request) const {
@@ -2053,7 +2181,9 @@ GetDataSourceRunOutcome DataZoneClient::GetDataSourceRun(const GetDataSourceRunR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetDataSourceRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataSourceRunOutcome(result.GetResultWithOwnership())
+                            : GetDataSourceRunOutcome(std::move(result.GetError()));
 }
 
 GetDomainOutcome DataZoneClient::GetDomain(const GetDomainRequest& request) const {
@@ -2069,7 +2199,8 @@ GetDomainOutcome DataZoneClient::GetDomain(const GetDomainRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainOutcome(result.GetResultWithOwnership()) : GetDomainOutcome(std::move(result.GetError()));
 }
 
 GetDomainUnitOutcome DataZoneClient::GetDomainUnit(const GetDomainUnitRequest& request) const {
@@ -2092,7 +2223,8 @@ GetDomainUnitOutcome DataZoneClient::GetDomainUnit(const GetDomainUnitRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetDomainUnitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainUnitOutcome(result.GetResultWithOwnership()) : GetDomainUnitOutcome(std::move(result.GetError()));
 }
 
 GetEnvironmentOutcome DataZoneClient::GetEnvironment(const GetEnvironmentRequest& request) const {
@@ -2115,7 +2247,8 @@ GetEnvironmentOutcome DataZoneClient::GetEnvironment(const GetEnvironmentRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEnvironmentOutcome(result.GetResultWithOwnership()) : GetEnvironmentOutcome(std::move(result.GetError()));
 }
 
 GetEnvironmentActionOutcome DataZoneClient::GetEnvironmentAction(const GetEnvironmentActionRequest& request) const {
@@ -2145,7 +2278,9 @@ GetEnvironmentActionOutcome DataZoneClient::GetEnvironmentAction(const GetEnviro
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetEnvironmentActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEnvironmentActionOutcome(result.GetResultWithOwnership())
+                            : GetEnvironmentActionOutcome(std::move(result.GetError()));
 }
 
 GetEnvironmentBlueprintOutcome DataZoneClient::GetEnvironmentBlueprint(const GetEnvironmentBlueprintRequest& request) const {
@@ -2168,7 +2303,9 @@ GetEnvironmentBlueprintOutcome DataZoneClient::GetEnvironmentBlueprint(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetEnvironmentBlueprintOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEnvironmentBlueprintOutcome(result.GetResultWithOwnership())
+                            : GetEnvironmentBlueprintOutcome(std::move(result.GetError()));
 }
 
 GetEnvironmentBlueprintConfigurationOutcome DataZoneClient::GetEnvironmentBlueprintConfiguration(
@@ -2192,7 +2329,9 @@ GetEnvironmentBlueprintConfigurationOutcome DataZoneClient::GetEnvironmentBluepr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentBlueprintIdentifier());
   };
 
-  return GetEnvironmentBlueprintConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEnvironmentBlueprintConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetEnvironmentBlueprintConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetEnvironmentCredentialsOutcome DataZoneClient::GetEnvironmentCredentials(const GetEnvironmentCredentialsRequest& request) const {
@@ -2216,7 +2355,9 @@ GetEnvironmentCredentialsOutcome DataZoneClient::GetEnvironmentCredentials(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/credentials");
   };
 
-  return GetEnvironmentCredentialsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEnvironmentCredentialsOutcome(result.GetResultWithOwnership())
+                            : GetEnvironmentCredentialsOutcome(std::move(result.GetError()));
 }
 
 GetEnvironmentProfileOutcome DataZoneClient::GetEnvironmentProfile(const GetEnvironmentProfileRequest& request) const {
@@ -2239,7 +2380,9 @@ GetEnvironmentProfileOutcome DataZoneClient::GetEnvironmentProfile(const GetEnvi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetEnvironmentProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEnvironmentProfileOutcome(result.GetResultWithOwnership())
+                            : GetEnvironmentProfileOutcome(std::move(result.GetError()));
 }
 
 GetFormTypeOutcome DataZoneClient::GetFormType(const GetFormTypeRequest& request) const {
@@ -2262,7 +2405,8 @@ GetFormTypeOutcome DataZoneClient::GetFormType(const GetFormTypeRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFormTypeIdentifier());
   };
 
-  return GetFormTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFormTypeOutcome(result.GetResultWithOwnership()) : GetFormTypeOutcome(std::move(result.GetError()));
 }
 
 GetGlossaryOutcome DataZoneClient::GetGlossary(const GetGlossaryRequest& request) const {
@@ -2285,7 +2429,8 @@ GetGlossaryOutcome DataZoneClient::GetGlossary(const GetGlossaryRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetGlossaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGlossaryOutcome(result.GetResultWithOwnership()) : GetGlossaryOutcome(std::move(result.GetError()));
 }
 
 GetGlossaryTermOutcome DataZoneClient::GetGlossaryTerm(const GetGlossaryTermRequest& request) const {
@@ -2308,7 +2453,9 @@ GetGlossaryTermOutcome DataZoneClient::GetGlossaryTerm(const GetGlossaryTermRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetGlossaryTermOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGlossaryTermOutcome(result.GetResultWithOwnership())
+                            : GetGlossaryTermOutcome(std::move(result.GetError()));
 }
 
 GetGroupProfileOutcome DataZoneClient::GetGroupProfile(const GetGroupProfileRequest& request) const {
@@ -2331,7 +2478,9 @@ GetGroupProfileOutcome DataZoneClient::GetGroupProfile(const GetGroupProfileRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupIdentifier());
   };
 
-  return GetGroupProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGroupProfileOutcome(result.GetResultWithOwnership())
+                            : GetGroupProfileOutcome(std::move(result.GetError()));
 }
 
 GetIamPortalLoginUrlOutcome DataZoneClient::GetIamPortalLoginUrl(const GetIamPortalLoginUrlRequest& request) const {
@@ -2348,7 +2497,9 @@ GetIamPortalLoginUrlOutcome DataZoneClient::GetIamPortalLoginUrl(const GetIamPor
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-portal-login-url");
   };
 
-  return GetIamPortalLoginUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIamPortalLoginUrlOutcome(result.GetResultWithOwnership())
+                            : GetIamPortalLoginUrlOutcome(std::move(result.GetError()));
 }
 
 GetJobRunOutcome DataZoneClient::GetJobRun(const GetJobRunRequest& request) const {
@@ -2371,7 +2522,8 @@ GetJobRunOutcome DataZoneClient::GetJobRun(const GetJobRunRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetJobRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobRunOutcome(result.GetResultWithOwnership()) : GetJobRunOutcome(std::move(result.GetError()));
 }
 
 GetLineageEventOutcome DataZoneClient::GetLineageEvent(const GetLineageEventRequest& request) const {
@@ -2409,8 +2561,9 @@ GetLineageEventOutcome DataZoneClient::GetLineageEvent(const GetLineageEventRequ
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
         endpointResolutionOutcome.GetResult().AddPathSegments("/lineage/events/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
-        return GetLineageEventOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetLineageEventOutcome(result.GetResultWithOwnership())
+                                  : GetLineageEventOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2437,7 +2590,8 @@ GetLineageNodeOutcome DataZoneClient::GetLineageNode(const GetLineageNodeRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetLineageNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLineageNodeOutcome(result.GetResultWithOwnership()) : GetLineageNodeOutcome(std::move(result.GetError()));
 }
 
 GetListingOutcome DataZoneClient::GetListing(const GetListingRequest& request) const {
@@ -2460,7 +2614,8 @@ GetListingOutcome DataZoneClient::GetListing(const GetListingRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetListingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetListingOutcome(result.GetResultWithOwnership()) : GetListingOutcome(std::move(result.GetError()));
 }
 
 GetMetadataGenerationRunOutcome DataZoneClient::GetMetadataGenerationRun(const GetMetadataGenerationRunRequest& request) const {
@@ -2483,7 +2638,9 @@ GetMetadataGenerationRunOutcome DataZoneClient::GetMetadataGenerationRun(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetMetadataGenerationRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMetadataGenerationRunOutcome(result.GetResultWithOwnership())
+                            : GetMetadataGenerationRunOutcome(std::move(result.GetError()));
 }
 
 GetProjectOutcome DataZoneClient::GetProject(const GetProjectRequest& request) const {
@@ -2506,7 +2663,8 @@ GetProjectOutcome DataZoneClient::GetProject(const GetProjectRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProjectOutcome(result.GetResultWithOwnership()) : GetProjectOutcome(std::move(result.GetError()));
 }
 
 GetProjectProfileOutcome DataZoneClient::GetProjectProfile(const GetProjectProfileRequest& request) const {
@@ -2529,7 +2687,9 @@ GetProjectProfileOutcome DataZoneClient::GetProjectProfile(const GetProjectProfi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetProjectProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProjectProfileOutcome(result.GetResultWithOwnership())
+                            : GetProjectProfileOutcome(std::move(result.GetError()));
 }
 
 GetRuleOutcome DataZoneClient::GetRule(const GetRuleRequest& request) const {
@@ -2552,7 +2712,8 @@ GetRuleOutcome DataZoneClient::GetRule(const GetRuleRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRuleOutcome(result.GetResultWithOwnership()) : GetRuleOutcome(std::move(result.GetError()));
 }
 
 GetSubscriptionOutcome DataZoneClient::GetSubscription(const GetSubscriptionRequest& request) const {
@@ -2575,7 +2736,9 @@ GetSubscriptionOutcome DataZoneClient::GetSubscription(const GetSubscriptionRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSubscriptionOutcome(result.GetResultWithOwnership())
+                            : GetSubscriptionOutcome(std::move(result.GetError()));
 }
 
 GetSubscriptionGrantOutcome DataZoneClient::GetSubscriptionGrant(const GetSubscriptionGrantRequest& request) const {
@@ -2598,7 +2761,9 @@ GetSubscriptionGrantOutcome DataZoneClient::GetSubscriptionGrant(const GetSubscr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetSubscriptionGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSubscriptionGrantOutcome(result.GetResultWithOwnership())
+                            : GetSubscriptionGrantOutcome(std::move(result.GetError()));
 }
 
 GetSubscriptionRequestDetailsOutcome DataZoneClient::GetSubscriptionRequestDetails(
@@ -2622,7 +2787,9 @@ GetSubscriptionRequestDetailsOutcome DataZoneClient::GetSubscriptionRequestDetai
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetSubscriptionRequestDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSubscriptionRequestDetailsOutcome(result.GetResultWithOwnership())
+                            : GetSubscriptionRequestDetailsOutcome(std::move(result.GetError()));
 }
 
 GetSubscriptionTargetOutcome DataZoneClient::GetSubscriptionTarget(const GetSubscriptionTargetRequest& request) const {
@@ -2652,7 +2819,9 @@ GetSubscriptionTargetOutcome DataZoneClient::GetSubscriptionTarget(const GetSubs
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetSubscriptionTargetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSubscriptionTargetOutcome(result.GetResultWithOwnership())
+                            : GetSubscriptionTargetOutcome(std::move(result.GetError()));
 }
 
 GetTimeSeriesDataPointOutcome DataZoneClient::GetTimeSeriesDataPoint(const GetTimeSeriesDataPointRequest& request) const {
@@ -2694,7 +2863,9 @@ GetTimeSeriesDataPointOutcome DataZoneClient::GetTimeSeriesDataPoint(const GetTi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetTimeSeriesDataPointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTimeSeriesDataPointOutcome(result.GetResultWithOwnership())
+                            : GetTimeSeriesDataPointOutcome(std::move(result.GetError()));
 }
 
 GetUserProfileOutcome DataZoneClient::GetUserProfile(const GetUserProfileRequest& request) const {
@@ -2717,7 +2888,8 @@ GetUserProfileOutcome DataZoneClient::GetUserProfile(const GetUserProfileRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserIdentifier());
   };
 
-  return GetUserProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUserProfileOutcome(result.GetResultWithOwnership()) : GetUserProfileOutcome(std::move(result.GetError()));
 }
 
 ListAccountPoolsOutcome DataZoneClient::ListAccountPools(const ListAccountPoolsRequest& request) const {
@@ -2734,7 +2906,9 @@ ListAccountPoolsOutcome DataZoneClient::ListAccountPools(const ListAccountPoolsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/account-pools");
   };
 
-  return ListAccountPoolsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccountPoolsOutcome(result.GetResultWithOwnership())
+                            : ListAccountPoolsOutcome(std::move(result.GetError()));
 }
 
 ListAccountsInAccountPoolOutcome DataZoneClient::ListAccountsInAccountPool(const ListAccountsInAccountPoolRequest& request) const {
@@ -2758,7 +2932,9 @@ ListAccountsInAccountPoolOutcome DataZoneClient::ListAccountsInAccountPool(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/accounts");
   };
 
-  return ListAccountsInAccountPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccountsInAccountPoolOutcome(result.GetResultWithOwnership())
+                            : ListAccountsInAccountPoolOutcome(std::move(result.GetError()));
 }
 
 ListAssetFiltersOutcome DataZoneClient::ListAssetFilters(const ListAssetFiltersRequest& request) const {
@@ -2782,7 +2958,9 @@ ListAssetFiltersOutcome DataZoneClient::ListAssetFilters(const ListAssetFiltersR
     endpointResolutionOutcome.GetResult().AddPathSegments("/filters");
   };
 
-  return ListAssetFiltersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetFiltersOutcome(result.GetResultWithOwnership())
+                            : ListAssetFiltersOutcome(std::move(result.GetError()));
 }
 
 ListAssetRevisionsOutcome DataZoneClient::ListAssetRevisions(const ListAssetRevisionsRequest& request) const {
@@ -2806,7 +2984,9 @@ ListAssetRevisionsOutcome DataZoneClient::ListAssetRevisions(const ListAssetRevi
     endpointResolutionOutcome.GetResult().AddPathSegments("/revisions");
   };
 
-  return ListAssetRevisionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetRevisionsOutcome(result.GetResultWithOwnership())
+                            : ListAssetRevisionsOutcome(std::move(result.GetError()));
 }
 
 ListConnectionsOutcome DataZoneClient::ListConnections(const ListConnectionsRequest& request) const {
@@ -2823,7 +3003,9 @@ ListConnectionsOutcome DataZoneClient::ListConnections(const ListConnectionsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/connections");
   };
 
-  return ListConnectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConnectionsOutcome(result.GetResultWithOwnership())
+                            : ListConnectionsOutcome(std::move(result.GetError()));
 }
 
 ListDataProductRevisionsOutcome DataZoneClient::ListDataProductRevisions(const ListDataProductRevisionsRequest& request) const {
@@ -2847,7 +3029,9 @@ ListDataProductRevisionsOutcome DataZoneClient::ListDataProductRevisions(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/revisions");
   };
 
-  return ListDataProductRevisionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataProductRevisionsOutcome(result.GetResultWithOwnership())
+                            : ListDataProductRevisionsOutcome(std::move(result.GetError()));
 }
 
 ListDataSourceRunActivitiesOutcome DataZoneClient::ListDataSourceRunActivities(const ListDataSourceRunActivitiesRequest& request) const {
@@ -2871,7 +3055,9 @@ ListDataSourceRunActivitiesOutcome DataZoneClient::ListDataSourceRunActivities(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/activities");
   };
 
-  return ListDataSourceRunActivitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSourceRunActivitiesOutcome(result.GetResultWithOwnership())
+                            : ListDataSourceRunActivitiesOutcome(std::move(result.GetError()));
 }
 
 ListDataSourceRunsOutcome DataZoneClient::ListDataSourceRuns(const ListDataSourceRunsRequest& request) const {
@@ -2895,7 +3081,9 @@ ListDataSourceRunsOutcome DataZoneClient::ListDataSourceRuns(const ListDataSourc
     endpointResolutionOutcome.GetResult().AddPathSegments("/runs");
   };
 
-  return ListDataSourceRunsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSourceRunsOutcome(result.GetResultWithOwnership())
+                            : ListDataSourceRunsOutcome(std::move(result.GetError()));
 }
 
 ListDataSourcesOutcome DataZoneClient::ListDataSources(const ListDataSourcesRequest& request) const {
@@ -2917,7 +3105,9 @@ ListDataSourcesOutcome DataZoneClient::ListDataSources(const ListDataSourcesRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-sources");
   };
 
-  return ListDataSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSourcesOutcome(result.GetResultWithOwnership())
+                            : ListDataSourcesOutcome(std::move(result.GetError()));
 }
 
 ListDomainUnitsForParentOutcome DataZoneClient::ListDomainUnitsForParent(const ListDomainUnitsForParentRequest& request) const {
@@ -2939,7 +3129,9 @@ ListDomainUnitsForParentOutcome DataZoneClient::ListDomainUnitsForParent(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/domain-units");
   };
 
-  return ListDomainUnitsForParentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainUnitsForParentOutcome(result.GetResultWithOwnership())
+                            : ListDomainUnitsForParentOutcome(std::move(result.GetError()));
 }
 
 ListDomainsOutcome DataZoneClient::ListDomains(const ListDomainsRequest& request) const {
@@ -2948,7 +3140,8 @@ ListDomainsOutcome DataZoneClient::ListDomains(const ListDomainsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains");
   };
 
-  return ListDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainsOutcome(result.GetResultWithOwnership()) : ListDomainsOutcome(std::move(result.GetError()));
 }
 
 ListEntityOwnersOutcome DataZoneClient::ListEntityOwners(const ListEntityOwnersRequest& request) const {
@@ -2978,7 +3171,9 @@ ListEntityOwnersOutcome DataZoneClient::ListEntityOwners(const ListEntityOwnersR
     endpointResolutionOutcome.GetResult().AddPathSegments("/owners");
   };
 
-  return ListEntityOwnersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEntityOwnersOutcome(result.GetResultWithOwnership())
+                            : ListEntityOwnersOutcome(std::move(result.GetError()));
 }
 
 ListEnvironmentActionsOutcome DataZoneClient::ListEnvironmentActions(const ListEnvironmentActionsRequest& request) const {
@@ -3002,7 +3197,9 @@ ListEnvironmentActionsOutcome DataZoneClient::ListEnvironmentActions(const ListE
     endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
   };
 
-  return ListEnvironmentActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEnvironmentActionsOutcome(result.GetResultWithOwnership())
+                            : ListEnvironmentActionsOutcome(std::move(result.GetError()));
 }
 
 ListEnvironmentBlueprintConfigurationsOutcome DataZoneClient::ListEnvironmentBlueprintConfigurations(
@@ -3020,7 +3217,9 @@ ListEnvironmentBlueprintConfigurationsOutcome DataZoneClient::ListEnvironmentBlu
     endpointResolutionOutcome.GetResult().AddPathSegments("/environment-blueprint-configurations");
   };
 
-  return ListEnvironmentBlueprintConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEnvironmentBlueprintConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListEnvironmentBlueprintConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListEnvironmentBlueprintsOutcome DataZoneClient::ListEnvironmentBlueprints(const ListEnvironmentBlueprintsRequest& request) const {
@@ -3037,7 +3236,9 @@ ListEnvironmentBlueprintsOutcome DataZoneClient::ListEnvironmentBlueprints(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/environment-blueprints");
   };
 
-  return ListEnvironmentBlueprintsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEnvironmentBlueprintsOutcome(result.GetResultWithOwnership())
+                            : ListEnvironmentBlueprintsOutcome(std::move(result.GetError()));
 }
 
 ListEnvironmentProfilesOutcome DataZoneClient::ListEnvironmentProfiles(const ListEnvironmentProfilesRequest& request) const {
@@ -3054,7 +3255,9 @@ ListEnvironmentProfilesOutcome DataZoneClient::ListEnvironmentProfiles(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/environment-profiles");
   };
 
-  return ListEnvironmentProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEnvironmentProfilesOutcome(result.GetResultWithOwnership())
+                            : ListEnvironmentProfilesOutcome(std::move(result.GetError()));
 }
 
 ListEnvironmentsOutcome DataZoneClient::ListEnvironments(const ListEnvironmentsRequest& request) const {
@@ -3076,7 +3279,9 @@ ListEnvironmentsOutcome DataZoneClient::ListEnvironments(const ListEnvironmentsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
   };
 
-  return ListEnvironmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : ListEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 ListJobRunsOutcome DataZoneClient::ListJobRuns(const ListJobRunsRequest& request) const {
@@ -3100,7 +3305,8 @@ ListJobRunsOutcome DataZoneClient::ListJobRuns(const ListJobRunsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/runs");
   };
 
-  return ListJobRunsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobRunsOutcome(result.GetResultWithOwnership()) : ListJobRunsOutcome(std::move(result.GetError()));
 }
 
 ListLineageEventsOutcome DataZoneClient::ListLineageEvents(const ListLineageEventsRequest& request) const {
@@ -3117,7 +3323,9 @@ ListLineageEventsOutcome DataZoneClient::ListLineageEvents(const ListLineageEven
     endpointResolutionOutcome.GetResult().AddPathSegments("/lineage/events");
   };
 
-  return ListLineageEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLineageEventsOutcome(result.GetResultWithOwnership())
+                            : ListLineageEventsOutcome(std::move(result.GetError()));
 }
 
 ListLineageNodeHistoryOutcome DataZoneClient::ListLineageNodeHistory(const ListLineageNodeHistoryRequest& request) const {
@@ -3141,7 +3349,9 @@ ListLineageNodeHistoryOutcome DataZoneClient::ListLineageNodeHistory(const ListL
     endpointResolutionOutcome.GetResult().AddPathSegments("/history");
   };
 
-  return ListLineageNodeHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLineageNodeHistoryOutcome(result.GetResultWithOwnership())
+                            : ListLineageNodeHistoryOutcome(std::move(result.GetError()));
 }
 
 ListMetadataGenerationRunsOutcome DataZoneClient::ListMetadataGenerationRuns(const ListMetadataGenerationRunsRequest& request) const {
@@ -3158,7 +3368,9 @@ ListMetadataGenerationRunsOutcome DataZoneClient::ListMetadataGenerationRuns(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata-generation-runs");
   };
 
-  return ListMetadataGenerationRunsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMetadataGenerationRunsOutcome(result.GetResultWithOwnership())
+                            : ListMetadataGenerationRunsOutcome(std::move(result.GetError()));
 }
 
 ListNotificationsOutcome DataZoneClient::ListNotifications(const ListNotificationsRequest& request) const {
@@ -3180,7 +3392,9 @@ ListNotificationsOutcome DataZoneClient::ListNotifications(const ListNotificatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/notifications");
   };
 
-  return ListNotificationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNotificationsOutcome(result.GetResultWithOwnership())
+                            : ListNotificationsOutcome(std::move(result.GetError()));
 }
 
 ListPolicyGrantsOutcome DataZoneClient::ListPolicyGrants(const ListPolicyGrantsRequest& request) const {
@@ -3215,7 +3429,9 @@ ListPolicyGrantsOutcome DataZoneClient::ListPolicyGrants(const ListPolicyGrantsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/grants");
   };
 
-  return ListPolicyGrantsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPolicyGrantsOutcome(result.GetResultWithOwnership())
+                            : ListPolicyGrantsOutcome(std::move(result.GetError()));
 }
 
 ListProjectMembershipsOutcome DataZoneClient::ListProjectMemberships(const ListProjectMembershipsRequest& request) const {
@@ -3239,7 +3455,9 @@ ListProjectMembershipsOutcome DataZoneClient::ListProjectMemberships(const ListP
     endpointResolutionOutcome.GetResult().AddPathSegments("/memberships");
   };
 
-  return ListProjectMembershipsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProjectMembershipsOutcome(result.GetResultWithOwnership())
+                            : ListProjectMembershipsOutcome(std::move(result.GetError()));
 }
 
 ListProjectProfilesOutcome DataZoneClient::ListProjectProfiles(const ListProjectProfilesRequest& request) const {
@@ -3256,7 +3474,9 @@ ListProjectProfilesOutcome DataZoneClient::ListProjectProfiles(const ListProject
     endpointResolutionOutcome.GetResult().AddPathSegments("/project-profiles");
   };
 
-  return ListProjectProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProjectProfilesOutcome(result.GetResultWithOwnership())
+                            : ListProjectProfilesOutcome(std::move(result.GetError()));
 }
 
 ListProjectsOutcome DataZoneClient::ListProjects(const ListProjectsRequest& request) const {
@@ -3273,7 +3493,8 @@ ListProjectsOutcome DataZoneClient::ListProjects(const ListProjectsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/projects");
   };
 
-  return ListProjectsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProjectsOutcome(result.GetResultWithOwnership()) : ListProjectsOutcome(std::move(result.GetError()));
 }
 
 ListRulesOutcome DataZoneClient::ListRules(const ListRulesRequest& request) const {
@@ -3302,7 +3523,8 @@ ListRulesOutcome DataZoneClient::ListRules(const ListRulesRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetIdentifier());
   };
 
-  return ListRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRulesOutcome(result.GetResultWithOwnership()) : ListRulesOutcome(std::move(result.GetError()));
 }
 
 ListSubscriptionGrantsOutcome DataZoneClient::ListSubscriptionGrants(const ListSubscriptionGrantsRequest& request) const {
@@ -3319,7 +3541,9 @@ ListSubscriptionGrantsOutcome DataZoneClient::ListSubscriptionGrants(const ListS
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription-grants");
   };
 
-  return ListSubscriptionGrantsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSubscriptionGrantsOutcome(result.GetResultWithOwnership())
+                            : ListSubscriptionGrantsOutcome(std::move(result.GetError()));
 }
 
 ListSubscriptionRequestsOutcome DataZoneClient::ListSubscriptionRequests(const ListSubscriptionRequestsRequest& request) const {
@@ -3336,7 +3560,9 @@ ListSubscriptionRequestsOutcome DataZoneClient::ListSubscriptionRequests(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription-requests");
   };
 
-  return ListSubscriptionRequestsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSubscriptionRequestsOutcome(result.GetResultWithOwnership())
+                            : ListSubscriptionRequestsOutcome(std::move(result.GetError()));
 }
 
 ListSubscriptionTargetsOutcome DataZoneClient::ListSubscriptionTargets(const ListSubscriptionTargetsRequest& request) const {
@@ -3360,7 +3586,9 @@ ListSubscriptionTargetsOutcome DataZoneClient::ListSubscriptionTargets(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription-targets");
   };
 
-  return ListSubscriptionTargetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSubscriptionTargetsOutcome(result.GetResultWithOwnership())
+                            : ListSubscriptionTargetsOutcome(std::move(result.GetError()));
 }
 
 ListSubscriptionsOutcome DataZoneClient::ListSubscriptions(const ListSubscriptionsRequest& request) const {
@@ -3377,7 +3605,9 @@ ListSubscriptionsOutcome DataZoneClient::ListSubscriptions(const ListSubscriptio
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
   };
 
-  return ListSubscriptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DataZoneClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -3393,7 +3623,9 @@ ListTagsForResourceOutcome DataZoneClient::ListTagsForResource(const ListTagsFor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTimeSeriesDataPointsOutcome DataZoneClient::ListTimeSeriesDataPoints(const ListTimeSeriesDataPointsRequest& request) const {
@@ -3429,7 +3661,9 @@ ListTimeSeriesDataPointsOutcome DataZoneClient::ListTimeSeriesDataPoints(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/time-series-data-points");
   };
 
-  return ListTimeSeriesDataPointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTimeSeriesDataPointsOutcome(result.GetResultWithOwnership())
+                            : ListTimeSeriesDataPointsOutcome(std::move(result.GetError()));
 }
 
 PostLineageEventOutcome DataZoneClient::PostLineageEvent(const PostLineageEventRequest& request) const {
@@ -3446,7 +3680,9 @@ PostLineageEventOutcome DataZoneClient::PostLineageEvent(const PostLineageEventR
     endpointResolutionOutcome.GetResult().AddPathSegments("/lineage/events");
   };
 
-  return PostLineageEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PostLineageEventOutcome(result.GetResultWithOwnership())
+                            : PostLineageEventOutcome(std::move(result.GetError()));
 }
 
 PostTimeSeriesDataPointsOutcome DataZoneClient::PostTimeSeriesDataPoints(const PostTimeSeriesDataPointsRequest& request) const {
@@ -3477,7 +3713,9 @@ PostTimeSeriesDataPointsOutcome DataZoneClient::PostTimeSeriesDataPoints(const P
     endpointResolutionOutcome.GetResult().AddPathSegments("/time-series-data-points");
   };
 
-  return PostTimeSeriesDataPointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PostTimeSeriesDataPointsOutcome(result.GetResultWithOwnership())
+                            : PostTimeSeriesDataPointsOutcome(std::move(result.GetError()));
 }
 
 PutDataExportConfigurationOutcome DataZoneClient::PutDataExportConfiguration(const PutDataExportConfigurationRequest& request) const {
@@ -3494,7 +3732,9 @@ PutDataExportConfigurationOutcome DataZoneClient::PutDataExportConfiguration(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-export-configuration");
   };
 
-  return PutDataExportConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDataExportConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutDataExportConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutEnvironmentBlueprintConfigurationOutcome DataZoneClient::PutEnvironmentBlueprintConfiguration(
@@ -3518,7 +3758,9 @@ PutEnvironmentBlueprintConfigurationOutcome DataZoneClient::PutEnvironmentBluepr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentBlueprintIdentifier());
   };
 
-  return PutEnvironmentBlueprintConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutEnvironmentBlueprintConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutEnvironmentBlueprintConfigurationOutcome(std::move(result.GetError()));
 }
 
 QueryGraphOutcome DataZoneClient::QueryGraph(const QueryGraphRequest& request) const {
@@ -3535,7 +3777,8 @@ QueryGraphOutcome DataZoneClient::QueryGraph(const QueryGraphRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/graph/query");
   };
 
-  return QueryGraphOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? QueryGraphOutcome(result.GetResultWithOwnership()) : QueryGraphOutcome(std::move(result.GetError()));
 }
 
 RejectPredictionsOutcome DataZoneClient::RejectPredictions(const RejectPredictionsRequest& request) const {
@@ -3559,7 +3802,9 @@ RejectPredictionsOutcome DataZoneClient::RejectPredictions(const RejectPredictio
     endpointResolutionOutcome.GetResult().AddPathSegments("/reject-predictions");
   };
 
-  return RejectPredictionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RejectPredictionsOutcome(result.GetResultWithOwnership())
+                            : RejectPredictionsOutcome(std::move(result.GetError()));
 }
 
 RejectSubscriptionRequestOutcome DataZoneClient::RejectSubscriptionRequest(const RejectSubscriptionRequestRequest& request) const {
@@ -3583,7 +3828,9 @@ RejectSubscriptionRequestOutcome DataZoneClient::RejectSubscriptionRequest(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/reject");
   };
 
-  return RejectSubscriptionRequestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RejectSubscriptionRequestOutcome(result.GetResultWithOwnership())
+                            : RejectSubscriptionRequestOutcome(std::move(result.GetError()));
 }
 
 RemoveEntityOwnerOutcome DataZoneClient::RemoveEntityOwner(const RemoveEntityOwnerRequest& request) const {
@@ -3613,7 +3860,9 @@ RemoveEntityOwnerOutcome DataZoneClient::RemoveEntityOwner(const RemoveEntityOwn
     endpointResolutionOutcome.GetResult().AddPathSegments("/removeOwner");
   };
 
-  return RemoveEntityOwnerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveEntityOwnerOutcome(result.GetResultWithOwnership())
+                            : RemoveEntityOwnerOutcome(std::move(result.GetError()));
 }
 
 RemovePolicyGrantOutcome DataZoneClient::RemovePolicyGrant(const RemovePolicyGrantRequest& request) const {
@@ -3643,7 +3892,9 @@ RemovePolicyGrantOutcome DataZoneClient::RemovePolicyGrant(const RemovePolicyGra
     endpointResolutionOutcome.GetResult().AddPathSegments("/removeGrant");
   };
 
-  return RemovePolicyGrantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemovePolicyGrantOutcome(result.GetResultWithOwnership())
+                            : RemovePolicyGrantOutcome(std::move(result.GetError()));
 }
 
 RevokeSubscriptionOutcome DataZoneClient::RevokeSubscription(const RevokeSubscriptionRequest& request) const {
@@ -3667,7 +3918,9 @@ RevokeSubscriptionOutcome DataZoneClient::RevokeSubscription(const RevokeSubscri
     endpointResolutionOutcome.GetResult().AddPathSegments("/revoke");
   };
 
-  return RevokeSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RevokeSubscriptionOutcome(result.GetResultWithOwnership())
+                            : RevokeSubscriptionOutcome(std::move(result.GetError()));
 }
 
 SearchOutcome DataZoneClient::Search(const SearchRequest& request) const {
@@ -3684,7 +3937,8 @@ SearchOutcome DataZoneClient::Search(const SearchRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/search");
   };
 
-  return SearchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchOutcome(result.GetResultWithOwnership()) : SearchOutcome(std::move(result.GetError()));
 }
 
 SearchGroupProfilesOutcome DataZoneClient::SearchGroupProfiles(const SearchGroupProfilesRequest& request) const {
@@ -3701,7 +3955,9 @@ SearchGroupProfilesOutcome DataZoneClient::SearchGroupProfiles(const SearchGroup
     endpointResolutionOutcome.GetResult().AddPathSegments("/search-group-profiles");
   };
 
-  return SearchGroupProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchGroupProfilesOutcome(result.GetResultWithOwnership())
+                            : SearchGroupProfilesOutcome(std::move(result.GetError()));
 }
 
 SearchListingsOutcome DataZoneClient::SearchListings(const SearchListingsRequest& request) const {
@@ -3718,7 +3974,8 @@ SearchListingsOutcome DataZoneClient::SearchListings(const SearchListingsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/listings/search");
   };
 
-  return SearchListingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchListingsOutcome(result.GetResultWithOwnership()) : SearchListingsOutcome(std::move(result.GetError()));
 }
 
 SearchTypesOutcome DataZoneClient::SearchTypes(const SearchTypesRequest& request) const {
@@ -3735,7 +3992,8 @@ SearchTypesOutcome DataZoneClient::SearchTypes(const SearchTypesRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/types-search");
   };
 
-  return SearchTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchTypesOutcome(result.GetResultWithOwnership()) : SearchTypesOutcome(std::move(result.GetError()));
 }
 
 SearchUserProfilesOutcome DataZoneClient::SearchUserProfiles(const SearchUserProfilesRequest& request) const {
@@ -3752,7 +4010,9 @@ SearchUserProfilesOutcome DataZoneClient::SearchUserProfiles(const SearchUserPro
     endpointResolutionOutcome.GetResult().AddPathSegments("/search-user-profiles");
   };
 
-  return SearchUserProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchUserProfilesOutcome(result.GetResultWithOwnership())
+                            : SearchUserProfilesOutcome(std::move(result.GetError()));
 }
 
 StartDataSourceRunOutcome DataZoneClient::StartDataSourceRun(const StartDataSourceRunRequest& request) const {
@@ -3776,7 +4036,9 @@ StartDataSourceRunOutcome DataZoneClient::StartDataSourceRun(const StartDataSour
     endpointResolutionOutcome.GetResult().AddPathSegments("/runs");
   };
 
-  return StartDataSourceRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDataSourceRunOutcome(result.GetResultWithOwnership())
+                            : StartDataSourceRunOutcome(std::move(result.GetError()));
 }
 
 StartMetadataGenerationRunOutcome DataZoneClient::StartMetadataGenerationRun(const StartMetadataGenerationRunRequest& request) const {
@@ -3793,7 +4055,9 @@ StartMetadataGenerationRunOutcome DataZoneClient::StartMetadataGenerationRun(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata-generation-runs");
   };
 
-  return StartMetadataGenerationRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMetadataGenerationRunOutcome(result.GetResultWithOwnership())
+                            : StartMetadataGenerationRunOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome DataZoneClient::TagResource(const TagResourceRequest& request) const {
@@ -3809,7 +4073,8 @@ TagResourceOutcome DataZoneClient::TagResource(const TagResourceRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome DataZoneClient::UntagResource(const UntagResourceRequest& request) const {
@@ -3830,7 +4095,8 @@ UntagResourceOutcome DataZoneClient::UntagResource(const UntagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountPoolOutcome DataZoneClient::UpdateAccountPool(const UpdateAccountPoolRequest& request) const {
@@ -3853,7 +4119,9 @@ UpdateAccountPoolOutcome DataZoneClient::UpdateAccountPool(const UpdateAccountPo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateAccountPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAccountPoolOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountPoolOutcome(std::move(result.GetError()));
 }
 
 UpdateAssetFilterOutcome DataZoneClient::UpdateAssetFilter(const UpdateAssetFilterRequest& request) const {
@@ -3883,7 +4151,9 @@ UpdateAssetFilterOutcome DataZoneClient::UpdateAssetFilter(const UpdateAssetFilt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateAssetFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAssetFilterOutcome(result.GetResultWithOwnership())
+                            : UpdateAssetFilterOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectionOutcome DataZoneClient::UpdateConnection(const UpdateConnectionRequest& request) const {
@@ -3906,7 +4176,9 @@ UpdateConnectionOutcome DataZoneClient::UpdateConnection(const UpdateConnectionR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateConnectionOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectionOutcome(std::move(result.GetError()));
 }
 
 UpdateDataSourceOutcome DataZoneClient::UpdateDataSource(const UpdateDataSourceRequest& request) const {
@@ -3929,7 +4201,9 @@ UpdateDataSourceOutcome DataZoneClient::UpdateDataSource(const UpdateDataSourceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDataSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateDataSourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainOutcome DataZoneClient::UpdateDomain(const UpdateDomainRequest& request) const {
@@ -3945,7 +4219,8 @@ UpdateDomainOutcome DataZoneClient::UpdateDomain(const UpdateDomainRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDomainOutcome(result.GetResultWithOwnership()) : UpdateDomainOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainUnitOutcome DataZoneClient::UpdateDomainUnit(const UpdateDomainUnitRequest& request) const {
@@ -3968,7 +4243,9 @@ UpdateDomainUnitOutcome DataZoneClient::UpdateDomainUnit(const UpdateDomainUnitR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateDomainUnitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDomainUnitOutcome(result.GetResultWithOwnership())
+                            : UpdateDomainUnitOutcome(std::move(result.GetError()));
 }
 
 UpdateEnvironmentOutcome DataZoneClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const {
@@ -3991,7 +4268,9 @@ UpdateEnvironmentOutcome DataZoneClient::UpdateEnvironment(const UpdateEnvironme
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEnvironmentOutcome(result.GetResultWithOwnership())
+                            : UpdateEnvironmentOutcome(std::move(result.GetError()));
 }
 
 UpdateEnvironmentActionOutcome DataZoneClient::UpdateEnvironmentAction(const UpdateEnvironmentActionRequest& request) const {
@@ -4021,7 +4300,9 @@ UpdateEnvironmentActionOutcome DataZoneClient::UpdateEnvironmentAction(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateEnvironmentActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEnvironmentActionOutcome(result.GetResultWithOwnership())
+                            : UpdateEnvironmentActionOutcome(std::move(result.GetError()));
 }
 
 UpdateEnvironmentBlueprintOutcome DataZoneClient::UpdateEnvironmentBlueprint(const UpdateEnvironmentBlueprintRequest& request) const {
@@ -4044,7 +4325,9 @@ UpdateEnvironmentBlueprintOutcome DataZoneClient::UpdateEnvironmentBlueprint(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateEnvironmentBlueprintOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEnvironmentBlueprintOutcome(result.GetResultWithOwnership())
+                            : UpdateEnvironmentBlueprintOutcome(std::move(result.GetError()));
 }
 
 UpdateEnvironmentProfileOutcome DataZoneClient::UpdateEnvironmentProfile(const UpdateEnvironmentProfileRequest& request) const {
@@ -4067,7 +4350,9 @@ UpdateEnvironmentProfileOutcome DataZoneClient::UpdateEnvironmentProfile(const U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateEnvironmentProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateEnvironmentProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateEnvironmentProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateGlossaryOutcome DataZoneClient::UpdateGlossary(const UpdateGlossaryRequest& request) const {
@@ -4090,7 +4375,8 @@ UpdateGlossaryOutcome DataZoneClient::UpdateGlossary(const UpdateGlossaryRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateGlossaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateGlossaryOutcome(result.GetResultWithOwnership()) : UpdateGlossaryOutcome(std::move(result.GetError()));
 }
 
 UpdateGlossaryTermOutcome DataZoneClient::UpdateGlossaryTerm(const UpdateGlossaryTermRequest& request) const {
@@ -4113,7 +4399,9 @@ UpdateGlossaryTermOutcome DataZoneClient::UpdateGlossaryTerm(const UpdateGlossar
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateGlossaryTermOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateGlossaryTermOutcome(result.GetResultWithOwnership())
+                            : UpdateGlossaryTermOutcome(std::move(result.GetError()));
 }
 
 UpdateGroupProfileOutcome DataZoneClient::UpdateGroupProfile(const UpdateGroupProfileRequest& request) const {
@@ -4136,7 +4424,9 @@ UpdateGroupProfileOutcome DataZoneClient::UpdateGroupProfile(const UpdateGroupPr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupIdentifier());
   };
 
-  return UpdateGroupProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateGroupProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateGroupProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateProjectOutcome DataZoneClient::UpdateProject(const UpdateProjectRequest& request) const {
@@ -4159,7 +4449,8 @@ UpdateProjectOutcome DataZoneClient::UpdateProject(const UpdateProjectRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateProjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateProjectOutcome(result.GetResultWithOwnership()) : UpdateProjectOutcome(std::move(result.GetError()));
 }
 
 UpdateProjectProfileOutcome DataZoneClient::UpdateProjectProfile(const UpdateProjectProfileRequest& request) const {
@@ -4182,7 +4473,9 @@ UpdateProjectProfileOutcome DataZoneClient::UpdateProjectProfile(const UpdatePro
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateProjectProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateProjectProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateProjectProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateRootDomainUnitOwnerOutcome DataZoneClient::UpdateRootDomainUnitOwner(const UpdateRootDomainUnitOwnerRequest& request) const {
@@ -4199,7 +4492,9 @@ UpdateRootDomainUnitOwnerOutcome DataZoneClient::UpdateRootDomainUnitOwner(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/root-domain-unit-owner");
   };
 
-  return UpdateRootDomainUnitOwnerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRootDomainUnitOwnerOutcome(result.GetResultWithOwnership())
+                            : UpdateRootDomainUnitOwnerOutcome(std::move(result.GetError()));
 }
 
 UpdateRuleOutcome DataZoneClient::UpdateRule(const UpdateRuleRequest& request) const {
@@ -4222,7 +4517,8 @@ UpdateRuleOutcome DataZoneClient::UpdateRule(const UpdateRuleRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRuleOutcome(result.GetResultWithOwnership()) : UpdateRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateSubscriptionGrantStatusOutcome DataZoneClient::UpdateSubscriptionGrantStatus(
@@ -4253,7 +4549,9 @@ UpdateSubscriptionGrantStatusOutcome DataZoneClient::UpdateSubscriptionGrantStat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetIdentifier());
   };
 
-  return UpdateSubscriptionGrantStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSubscriptionGrantStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateSubscriptionGrantStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateSubscriptionRequestOutcome DataZoneClient::UpdateSubscriptionRequest(const UpdateSubscriptionRequestRequest& request) const {
@@ -4276,7 +4574,9 @@ UpdateSubscriptionRequestOutcome DataZoneClient::UpdateSubscriptionRequest(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateSubscriptionRequestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSubscriptionRequestOutcome(result.GetResultWithOwnership())
+                            : UpdateSubscriptionRequestOutcome(std::move(result.GetError()));
 }
 
 UpdateSubscriptionTargetOutcome DataZoneClient::UpdateSubscriptionTarget(const UpdateSubscriptionTargetRequest& request) const {
@@ -4306,7 +4606,9 @@ UpdateSubscriptionTargetOutcome DataZoneClient::UpdateSubscriptionTarget(const U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateSubscriptionTargetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSubscriptionTargetOutcome(result.GetResultWithOwnership())
+                            : UpdateSubscriptionTargetOutcome(std::move(result.GetError()));
 }
 
 UpdateUserProfileOutcome DataZoneClient::UpdateUserProfile(const UpdateUserProfileRequest& request) const {
@@ -4329,5 +4631,7 @@ UpdateUserProfileOutcome DataZoneClient::UpdateUserProfile(const UpdateUserProfi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserIdentifier());
   };
 
-  return UpdateUserProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateUserProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateUserProfileOutcome(std::move(result.GetError()));
 }

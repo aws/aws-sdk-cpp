@@ -243,7 +243,9 @@ AssociateHostedZoneOutcome Route53GlobalResolverClient::AssociateHostedZone(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
   };
 
-  return AssociateHostedZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateHostedZoneOutcome(result.GetResultWithOwnership())
+                            : AssociateHostedZoneOutcome(std::move(result.GetError()));
 }
 
 BatchCreateFirewallRuleOutcome Route53GlobalResolverClient::BatchCreateFirewallRule(const BatchCreateFirewallRuleRequest& request) const {
@@ -252,7 +254,9 @@ BatchCreateFirewallRuleOutcome Route53GlobalResolverClient::BatchCreateFirewallR
     endpointResolutionOutcome.GetResult().AddPathSegments("/firewall-rules/batch-create");
   };
 
-  return BatchCreateFirewallRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : BatchCreateFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteFirewallRuleOutcome Route53GlobalResolverClient::BatchDeleteFirewallRule(const BatchDeleteFirewallRuleRequest& request) const {
@@ -261,7 +265,9 @@ BatchDeleteFirewallRuleOutcome Route53GlobalResolverClient::BatchDeleteFirewallR
     endpointResolutionOutcome.GetResult().AddPathSegments("/firewall-rules/batch-delete");
   };
 
-  return BatchDeleteFirewallRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateFirewallRuleOutcome Route53GlobalResolverClient::BatchUpdateFirewallRule(const BatchUpdateFirewallRuleRequest& request) const {
@@ -270,7 +276,9 @@ BatchUpdateFirewallRuleOutcome Route53GlobalResolverClient::BatchUpdateFirewallR
     endpointResolutionOutcome.GetResult().AddPathSegments("/firewall-rules/batch-update");
   };
 
-  return BatchUpdateFirewallRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 CreateAccessSourceOutcome Route53GlobalResolverClient::CreateAccessSource(const CreateAccessSourceRequest& request) const {
@@ -279,7 +287,9 @@ CreateAccessSourceOutcome Route53GlobalResolverClient::CreateAccessSource(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-sources");
   };
 
-  return CreateAccessSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessSourceOutcome(result.GetResultWithOwnership())
+                            : CreateAccessSourceOutcome(std::move(result.GetError()));
 }
 
 CreateAccessTokenOutcome Route53GlobalResolverClient::CreateAccessToken(const CreateAccessTokenRequest& request) const {
@@ -295,7 +305,9 @@ CreateAccessTokenOutcome Route53GlobalResolverClient::CreateAccessToken(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDnsViewId());
   };
 
-  return CreateAccessTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessTokenOutcome(result.GetResultWithOwnership())
+                            : CreateAccessTokenOutcome(std::move(result.GetError()));
 }
 
 CreateDNSViewOutcome Route53GlobalResolverClient::CreateDNSView(const CreateDNSViewRequest& request) const {
@@ -311,7 +323,8 @@ CreateDNSViewOutcome Route53GlobalResolverClient::CreateDNSView(const CreateDNSV
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGlobalResolverId());
   };
 
-  return CreateDNSViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDNSViewOutcome(result.GetResultWithOwnership()) : CreateDNSViewOutcome(std::move(result.GetError()));
 }
 
 CreateFirewallDomainListOutcome Route53GlobalResolverClient::CreateFirewallDomainList(
@@ -328,7 +341,9 @@ CreateFirewallDomainListOutcome Route53GlobalResolverClient::CreateFirewallDomai
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGlobalResolverId());
   };
 
-  return CreateFirewallDomainListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFirewallDomainListOutcome(result.GetResultWithOwnership())
+                            : CreateFirewallDomainListOutcome(std::move(result.GetError()));
 }
 
 CreateFirewallRuleOutcome Route53GlobalResolverClient::CreateFirewallRule(const CreateFirewallRuleRequest& request) const {
@@ -337,7 +352,9 @@ CreateFirewallRuleOutcome Route53GlobalResolverClient::CreateFirewallRule(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/firewall-rules");
   };
 
-  return CreateFirewallRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : CreateFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 CreateGlobalResolverOutcome Route53GlobalResolverClient::CreateGlobalResolver(const CreateGlobalResolverRequest& request) const {
@@ -346,7 +363,9 @@ CreateGlobalResolverOutcome Route53GlobalResolverClient::CreateGlobalResolver(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/global-resolver");
   };
 
-  return CreateGlobalResolverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGlobalResolverOutcome(result.GetResultWithOwnership())
+                            : CreateGlobalResolverOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessSourceOutcome Route53GlobalResolverClient::DeleteAccessSource(const DeleteAccessSourceRequest& request) const {
@@ -362,7 +381,9 @@ DeleteAccessSourceOutcome Route53GlobalResolverClient::DeleteAccessSource(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessSourceId());
   };
 
-  return DeleteAccessSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessTokenOutcome Route53GlobalResolverClient::DeleteAccessToken(const DeleteAccessTokenRequest& request) const {
@@ -378,7 +399,9 @@ DeleteAccessTokenOutcome Route53GlobalResolverClient::DeleteAccessToken(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessTokenId());
   };
 
-  return DeleteAccessTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessTokenOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessTokenOutcome(std::move(result.GetError()));
 }
 
 DeleteDNSViewOutcome Route53GlobalResolverClient::DeleteDNSView(const DeleteDNSViewRequest& request) const {
@@ -394,7 +417,8 @@ DeleteDNSViewOutcome Route53GlobalResolverClient::DeleteDNSView(const DeleteDNSV
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDnsViewId());
   };
 
-  return DeleteDNSViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDNSViewOutcome(result.GetResultWithOwnership()) : DeleteDNSViewOutcome(std::move(result.GetError()));
 }
 
 DeleteFirewallDomainListOutcome Route53GlobalResolverClient::DeleteFirewallDomainList(
@@ -411,7 +435,9 @@ DeleteFirewallDomainListOutcome Route53GlobalResolverClient::DeleteFirewallDomai
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFirewallDomainListId());
   };
 
-  return DeleteFirewallDomainListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFirewallDomainListOutcome(result.GetResultWithOwnership())
+                            : DeleteFirewallDomainListOutcome(std::move(result.GetError()));
 }
 
 DeleteFirewallRuleOutcome Route53GlobalResolverClient::DeleteFirewallRule(const DeleteFirewallRuleRequest& request) const {
@@ -427,7 +453,9 @@ DeleteFirewallRuleOutcome Route53GlobalResolverClient::DeleteFirewallRule(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFirewallRuleId());
   };
 
-  return DeleteFirewallRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteGlobalResolverOutcome Route53GlobalResolverClient::DeleteGlobalResolver(const DeleteGlobalResolverRequest& request) const {
@@ -443,7 +471,9 @@ DeleteGlobalResolverOutcome Route53GlobalResolverClient::DeleteGlobalResolver(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGlobalResolverId());
   };
 
-  return DeleteGlobalResolverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGlobalResolverOutcome(result.GetResultWithOwnership())
+                            : DeleteGlobalResolverOutcome(std::move(result.GetError()));
 }
 
 DisableDNSViewOutcome Route53GlobalResolverClient::DisableDNSView(const DisableDNSViewRequest& request) const {
@@ -460,7 +490,8 @@ DisableDNSViewOutcome Route53GlobalResolverClient::DisableDNSView(const DisableD
     endpointResolutionOutcome.GetResult().AddPathSegments("/disable");
   };
 
-  return DisableDNSViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? DisableDNSViewOutcome(result.GetResultWithOwnership()) : DisableDNSViewOutcome(std::move(result.GetError()));
 }
 
 DisassociateHostedZoneOutcome Route53GlobalResolverClient::DisassociateHostedZone(const DisassociateHostedZoneRequest& request) const {
@@ -484,7 +515,9 @@ DisassociateHostedZoneOutcome Route53GlobalResolverClient::DisassociateHostedZon
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
   };
 
-  return DisassociateHostedZoneOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateHostedZoneOutcome(result.GetResultWithOwnership())
+                            : DisassociateHostedZoneOutcome(std::move(result.GetError()));
 }
 
 EnableDNSViewOutcome Route53GlobalResolverClient::EnableDNSView(const EnableDNSViewRequest& request) const {
@@ -501,7 +534,8 @@ EnableDNSViewOutcome Route53GlobalResolverClient::EnableDNSView(const EnableDNSV
     endpointResolutionOutcome.GetResult().AddPathSegments("/enable");
   };
 
-  return EnableDNSViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? EnableDNSViewOutcome(result.GetResultWithOwnership()) : EnableDNSViewOutcome(std::move(result.GetError()));
 }
 
 GetAccessSourceOutcome Route53GlobalResolverClient::GetAccessSource(const GetAccessSourceRequest& request) const {
@@ -517,7 +551,9 @@ GetAccessSourceOutcome Route53GlobalResolverClient::GetAccessSource(const GetAcc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessSourceId());
   };
 
-  return GetAccessSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessSourceOutcome(result.GetResultWithOwnership())
+                            : GetAccessSourceOutcome(std::move(result.GetError()));
 }
 
 GetAccessTokenOutcome Route53GlobalResolverClient::GetAccessToken(const GetAccessTokenRequest& request) const {
@@ -533,7 +569,8 @@ GetAccessTokenOutcome Route53GlobalResolverClient::GetAccessToken(const GetAcces
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessTokenId());
   };
 
-  return GetAccessTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessTokenOutcome(result.GetResultWithOwnership()) : GetAccessTokenOutcome(std::move(result.GetError()));
 }
 
 GetDNSViewOutcome Route53GlobalResolverClient::GetDNSView(const GetDNSViewRequest& request) const {
@@ -549,7 +586,8 @@ GetDNSViewOutcome Route53GlobalResolverClient::GetDNSView(const GetDNSViewReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDnsViewId());
   };
 
-  return GetDNSViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDNSViewOutcome(result.GetResultWithOwnership()) : GetDNSViewOutcome(std::move(result.GetError()));
 }
 
 GetFirewallDomainListOutcome Route53GlobalResolverClient::GetFirewallDomainList(const GetFirewallDomainListRequest& request) const {
@@ -565,7 +603,9 @@ GetFirewallDomainListOutcome Route53GlobalResolverClient::GetFirewallDomainList(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFirewallDomainListId());
   };
 
-  return GetFirewallDomainListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFirewallDomainListOutcome(result.GetResultWithOwnership())
+                            : GetFirewallDomainListOutcome(std::move(result.GetError()));
 }
 
 GetFirewallRuleOutcome Route53GlobalResolverClient::GetFirewallRule(const GetFirewallRuleRequest& request) const {
@@ -581,7 +621,9 @@ GetFirewallRuleOutcome Route53GlobalResolverClient::GetFirewallRule(const GetFir
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFirewallRuleId());
   };
 
-  return GetFirewallRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : GetFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 GetGlobalResolverOutcome Route53GlobalResolverClient::GetGlobalResolver(const GetGlobalResolverRequest& request) const {
@@ -597,7 +639,9 @@ GetGlobalResolverOutcome Route53GlobalResolverClient::GetGlobalResolver(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGlobalResolverId());
   };
 
-  return GetGlobalResolverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGlobalResolverOutcome(result.GetResultWithOwnership())
+                            : GetGlobalResolverOutcome(std::move(result.GetError()));
 }
 
 GetHostedZoneAssociationOutcome Route53GlobalResolverClient::GetHostedZoneAssociation(
@@ -614,7 +658,9 @@ GetHostedZoneAssociationOutcome Route53GlobalResolverClient::GetHostedZoneAssoci
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneAssociationId());
   };
 
-  return GetHostedZoneAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetHostedZoneAssociationOutcome(result.GetResultWithOwnership())
+                            : GetHostedZoneAssociationOutcome(std::move(result.GetError()));
 }
 
 GetManagedFirewallDomainListOutcome Route53GlobalResolverClient::GetManagedFirewallDomainList(
@@ -632,7 +678,9 @@ GetManagedFirewallDomainListOutcome Route53GlobalResolverClient::GetManagedFirew
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagedFirewallDomainListId());
   };
 
-  return GetManagedFirewallDomainListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetManagedFirewallDomainListOutcome(result.GetResultWithOwnership())
+                            : GetManagedFirewallDomainListOutcome(std::move(result.GetError()));
 }
 
 ImportFirewallDomainsOutcome Route53GlobalResolverClient::ImportFirewallDomains(const ImportFirewallDomainsRequest& request) const {
@@ -649,7 +697,9 @@ ImportFirewallDomainsOutcome Route53GlobalResolverClient::ImportFirewallDomains(
     endpointResolutionOutcome.GetResult().AddPathSegments("/domains/s3_file_url");
   };
 
-  return ImportFirewallDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? ImportFirewallDomainsOutcome(result.GetResultWithOwnership())
+                            : ImportFirewallDomainsOutcome(std::move(result.GetError()));
 }
 
 ListAccessSourcesOutcome Route53GlobalResolverClient::ListAccessSources(const ListAccessSourcesRequest& request) const {
@@ -658,7 +708,9 @@ ListAccessSourcesOutcome Route53GlobalResolverClient::ListAccessSources(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-sources");
   };
 
-  return ListAccessSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessSourcesOutcome(result.GetResultWithOwnership())
+                            : ListAccessSourcesOutcome(std::move(result.GetError()));
 }
 
 ListAccessTokensOutcome Route53GlobalResolverClient::ListAccessTokens(const ListAccessTokensRequest& request) const {
@@ -674,7 +726,9 @@ ListAccessTokensOutcome Route53GlobalResolverClient::ListAccessTokens(const List
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDnsViewId());
   };
 
-  return ListAccessTokensOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessTokensOutcome(result.GetResultWithOwnership())
+                            : ListAccessTokensOutcome(std::move(result.GetError()));
 }
 
 ListDNSViewsOutcome Route53GlobalResolverClient::ListDNSViews(const ListDNSViewsRequest& request) const {
@@ -690,7 +744,8 @@ ListDNSViewsOutcome Route53GlobalResolverClient::ListDNSViews(const ListDNSViews
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGlobalResolverId());
   };
 
-  return ListDNSViewsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDNSViewsOutcome(result.GetResultWithOwnership()) : ListDNSViewsOutcome(std::move(result.GetError()));
 }
 
 ListFirewallDomainListsOutcome Route53GlobalResolverClient::ListFirewallDomainLists(const ListFirewallDomainListsRequest& request) const {
@@ -699,7 +754,9 @@ ListFirewallDomainListsOutcome Route53GlobalResolverClient::ListFirewallDomainLi
     endpointResolutionOutcome.GetResult().AddPathSegments("/firewall-domain-lists");
   };
 
-  return ListFirewallDomainListsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFirewallDomainListsOutcome(result.GetResultWithOwnership())
+                            : ListFirewallDomainListsOutcome(std::move(result.GetError()));
 }
 
 ListFirewallDomainsOutcome Route53GlobalResolverClient::ListFirewallDomains(const ListFirewallDomainsRequest& request) const {
@@ -716,7 +773,9 @@ ListFirewallDomainsOutcome Route53GlobalResolverClient::ListFirewallDomains(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/domains");
   };
 
-  return ListFirewallDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFirewallDomainsOutcome(result.GetResultWithOwnership())
+                            : ListFirewallDomainsOutcome(std::move(result.GetError()));
 }
 
 ListFirewallRulesOutcome Route53GlobalResolverClient::ListFirewallRules(const ListFirewallRulesRequest& request) const {
@@ -731,7 +790,9 @@ ListFirewallRulesOutcome Route53GlobalResolverClient::ListFirewallRules(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/firewall-rules");
   };
 
-  return ListFirewallRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFirewallRulesOutcome(result.GetResultWithOwnership())
+                            : ListFirewallRulesOutcome(std::move(result.GetError()));
 }
 
 ListGlobalResolversOutcome Route53GlobalResolverClient::ListGlobalResolvers(const ListGlobalResolversRequest& request) const {
@@ -740,7 +801,9 @@ ListGlobalResolversOutcome Route53GlobalResolverClient::ListGlobalResolvers(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/global-resolver");
   };
 
-  return ListGlobalResolversOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGlobalResolversOutcome(result.GetResultWithOwnership())
+                            : ListGlobalResolversOutcome(std::move(result.GetError()));
 }
 
 ListHostedZoneAssociationsOutcome Route53GlobalResolverClient::ListHostedZoneAssociations(
@@ -758,7 +821,9 @@ ListHostedZoneAssociationsOutcome Route53GlobalResolverClient::ListHostedZoneAss
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetResourceArn());
   };
 
-  return ListHostedZoneAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHostedZoneAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListHostedZoneAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListManagedFirewallDomainListsOutcome Route53GlobalResolverClient::ListManagedFirewallDomainLists(
@@ -776,7 +841,9 @@ ListManagedFirewallDomainListsOutcome Route53GlobalResolverClient::ListManagedFi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagedFirewallDomainListType());
   };
 
-  return ListManagedFirewallDomainListsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListManagedFirewallDomainListsOutcome(result.GetResultWithOwnership())
+                            : ListManagedFirewallDomainListsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome Route53GlobalResolverClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -785,7 +852,9 @@ ListTagsForResourceOutcome Route53GlobalResolverClient::ListTagsForResource(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-all-tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome Route53GlobalResolverClient::TagResource(const TagResourceRequest& request) const {
@@ -794,7 +863,8 @@ TagResourceOutcome Route53GlobalResolverClient::TagResource(const TagResourceReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/tag-resource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome Route53GlobalResolverClient::UntagResource(const UntagResourceRequest& request) const {
@@ -803,7 +873,8 @@ UntagResourceOutcome Route53GlobalResolverClient::UntagResource(const UntagResou
     endpointResolutionOutcome.GetResult().AddPathSegments("/untag-resource");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccessSourceOutcome Route53GlobalResolverClient::UpdateAccessSource(const UpdateAccessSourceRequest& request) const {
@@ -819,7 +890,9 @@ UpdateAccessSourceOutcome Route53GlobalResolverClient::UpdateAccessSource(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessSourceId());
   };
 
-  return UpdateAccessSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAccessSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateAccessSourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccessTokenOutcome Route53GlobalResolverClient::UpdateAccessToken(const UpdateAccessTokenRequest& request) const {
@@ -835,7 +908,9 @@ UpdateAccessTokenOutcome Route53GlobalResolverClient::UpdateAccessToken(const Up
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessTokenId());
   };
 
-  return UpdateAccessTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAccessTokenOutcome(result.GetResultWithOwnership())
+                            : UpdateAccessTokenOutcome(std::move(result.GetError()));
 }
 
 UpdateDNSViewOutcome Route53GlobalResolverClient::UpdateDNSView(const UpdateDNSViewRequest& request) const {
@@ -851,7 +926,8 @@ UpdateDNSViewOutcome Route53GlobalResolverClient::UpdateDNSView(const UpdateDNSV
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDnsViewId());
   };
 
-  return UpdateDNSViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDNSViewOutcome(result.GetResultWithOwnership()) : UpdateDNSViewOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallDomainsOutcome Route53GlobalResolverClient::UpdateFirewallDomains(const UpdateFirewallDomainsRequest& request) const {
@@ -868,7 +944,9 @@ UpdateFirewallDomainsOutcome Route53GlobalResolverClient::UpdateFirewallDomains(
     endpointResolutionOutcome.GetResult().AddPathSegments("/domains");
   };
 
-  return UpdateFirewallDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFirewallDomainsOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallDomainsOutcome(std::move(result.GetError()));
 }
 
 UpdateFirewallRuleOutcome Route53GlobalResolverClient::UpdateFirewallRule(const UpdateFirewallRuleRequest& request) const {
@@ -884,7 +962,9 @@ UpdateFirewallRuleOutcome Route53GlobalResolverClient::UpdateFirewallRule(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFirewallRuleId());
   };
 
-  return UpdateFirewallRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFirewallRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateFirewallRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateGlobalResolverOutcome Route53GlobalResolverClient::UpdateGlobalResolver(const UpdateGlobalResolverRequest& request) const {
@@ -900,7 +980,9 @@ UpdateGlobalResolverOutcome Route53GlobalResolverClient::UpdateGlobalResolver(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGlobalResolverId());
   };
 
-  return UpdateGlobalResolverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateGlobalResolverOutcome(result.GetResultWithOwnership())
+                            : UpdateGlobalResolverOutcome(std::move(result.GetError()));
 }
 
 UpdateHostedZoneAssociationOutcome Route53GlobalResolverClient::UpdateHostedZoneAssociation(
@@ -917,5 +999,7 @@ UpdateHostedZoneAssociationOutcome Route53GlobalResolverClient::UpdateHostedZone
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneAssociationId());
   };
 
-  return UpdateHostedZoneAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateHostedZoneAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateHostedZoneAssociationOutcome(std::move(result.GetError()));
 }

@@ -262,7 +262,8 @@ AssociateApiOutcome AppSyncClient::AssociateApi(const AssociateApiRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/apiassociation");
   };
 
-  return AssociateApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateApiOutcome(result.GetResultWithOwnership()) : AssociateApiOutcome(std::move(result.GetError()));
 }
 
 AssociateMergedGraphqlApiOutcome AppSyncClient::AssociateMergedGraphqlApi(const AssociateMergedGraphqlApiRequest& request) const {
@@ -279,7 +280,9 @@ AssociateMergedGraphqlApiOutcome AppSyncClient::AssociateMergedGraphqlApi(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/mergedApiAssociations");
   };
 
-  return AssociateMergedGraphqlApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateMergedGraphqlApiOutcome(result.GetResultWithOwnership())
+                            : AssociateMergedGraphqlApiOutcome(std::move(result.GetError()));
 }
 
 AssociateSourceGraphqlApiOutcome AppSyncClient::AssociateSourceGraphqlApi(const AssociateSourceGraphqlApiRequest& request) const {
@@ -296,7 +299,9 @@ AssociateSourceGraphqlApiOutcome AppSyncClient::AssociateSourceGraphqlApi(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/sourceApiAssociations");
   };
 
-  return AssociateSourceGraphqlApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSourceGraphqlApiOutcome(result.GetResultWithOwnership())
+                            : AssociateSourceGraphqlApiOutcome(std::move(result.GetError()));
 }
 
 CreateApiOutcome AppSyncClient::CreateApi(const CreateApiRequest& request) const {
@@ -305,7 +310,8 @@ CreateApiOutcome AppSyncClient::CreateApi(const CreateApiRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/apis");
   };
 
-  return CreateApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApiOutcome(result.GetResultWithOwnership()) : CreateApiOutcome(std::move(result.GetError()));
 }
 
 CreateApiCacheOutcome AppSyncClient::CreateApiCache(const CreateApiCacheRequest& request) const {
@@ -322,7 +328,8 @@ CreateApiCacheOutcome AppSyncClient::CreateApiCache(const CreateApiCacheRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/ApiCaches");
   };
 
-  return CreateApiCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApiCacheOutcome(result.GetResultWithOwnership()) : CreateApiCacheOutcome(std::move(result.GetError()));
 }
 
 CreateApiKeyOutcome AppSyncClient::CreateApiKey(const CreateApiKeyRequest& request) const {
@@ -339,7 +346,8 @@ CreateApiKeyOutcome AppSyncClient::CreateApiKey(const CreateApiKeyRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/apikeys");
   };
 
-  return CreateApiKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApiKeyOutcome(result.GetResultWithOwnership()) : CreateApiKeyOutcome(std::move(result.GetError()));
 }
 
 CreateChannelNamespaceOutcome AppSyncClient::CreateChannelNamespace(const CreateChannelNamespaceRequest& request) const {
@@ -356,7 +364,9 @@ CreateChannelNamespaceOutcome AppSyncClient::CreateChannelNamespace(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/channelNamespaces");
   };
 
-  return CreateChannelNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChannelNamespaceOutcome(result.GetResultWithOwnership())
+                            : CreateChannelNamespaceOutcome(std::move(result.GetError()));
 }
 
 CreateDataSourceOutcome AppSyncClient::CreateDataSource(const CreateDataSourceRequest& request) const {
@@ -373,7 +383,9 @@ CreateDataSourceOutcome AppSyncClient::CreateDataSource(const CreateDataSourceRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasources");
   };
 
-  return CreateDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataSourceOutcome(result.GetResultWithOwnership())
+                            : CreateDataSourceOutcome(std::move(result.GetError()));
 }
 
 CreateDomainNameOutcome AppSyncClient::CreateDomainName(const CreateDomainNameRequest& request) const {
@@ -382,7 +394,9 @@ CreateDomainNameOutcome AppSyncClient::CreateDomainName(const CreateDomainNameRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/domainnames");
   };
 
-  return CreateDomainNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainNameOutcome(result.GetResultWithOwnership())
+                            : CreateDomainNameOutcome(std::move(result.GetError()));
 }
 
 CreateFunctionOutcome AppSyncClient::CreateFunction(const CreateFunctionRequest& request) const {
@@ -399,7 +413,8 @@ CreateFunctionOutcome AppSyncClient::CreateFunction(const CreateFunctionRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/functions");
   };
 
-  return CreateFunctionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFunctionOutcome(result.GetResultWithOwnership()) : CreateFunctionOutcome(std::move(result.GetError()));
 }
 
 CreateGraphqlApiOutcome AppSyncClient::CreateGraphqlApi(const CreateGraphqlApiRequest& request) const {
@@ -408,7 +423,9 @@ CreateGraphqlApiOutcome AppSyncClient::CreateGraphqlApi(const CreateGraphqlApiRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/apis");
   };
 
-  return CreateGraphqlApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGraphqlApiOutcome(result.GetResultWithOwnership())
+                            : CreateGraphqlApiOutcome(std::move(result.GetError()));
 }
 
 CreateResolverOutcome AppSyncClient::CreateResolver(const CreateResolverRequest& request) const {
@@ -432,7 +449,8 @@ CreateResolverOutcome AppSyncClient::CreateResolver(const CreateResolverRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/resolvers");
   };
 
-  return CreateResolverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResolverOutcome(result.GetResultWithOwnership()) : CreateResolverOutcome(std::move(result.GetError()));
 }
 
 CreateTypeOutcome AppSyncClient::CreateType(const CreateTypeRequest& request) const {
@@ -449,7 +467,8 @@ CreateTypeOutcome AppSyncClient::CreateType(const CreateTypeRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/types");
   };
 
-  return CreateTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTypeOutcome(result.GetResultWithOwnership()) : CreateTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteApiOutcome AppSyncClient::DeleteApi(const DeleteApiRequest& request) const {
@@ -465,7 +484,8 @@ DeleteApiOutcome AppSyncClient::DeleteApi(const DeleteApiRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiId());
   };
 
-  return DeleteApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApiOutcome(result.GetResultWithOwnership()) : DeleteApiOutcome(std::move(result.GetError()));
 }
 
 DeleteApiCacheOutcome AppSyncClient::DeleteApiCache(const DeleteApiCacheRequest& request) const {
@@ -482,7 +502,8 @@ DeleteApiCacheOutcome AppSyncClient::DeleteApiCache(const DeleteApiCacheRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/ApiCaches");
   };
 
-  return DeleteApiCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApiCacheOutcome(result.GetResultWithOwnership()) : DeleteApiCacheOutcome(std::move(result.GetError()));
 }
 
 DeleteApiKeyOutcome AppSyncClient::DeleteApiKey(const DeleteApiKeyRequest& request) const {
@@ -505,7 +526,8 @@ DeleteApiKeyOutcome AppSyncClient::DeleteApiKey(const DeleteApiKeyRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteApiKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApiKeyOutcome(result.GetResultWithOwnership()) : DeleteApiKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelNamespaceOutcome AppSyncClient::DeleteChannelNamespace(const DeleteChannelNamespaceRequest& request) const {
@@ -528,7 +550,9 @@ DeleteChannelNamespaceOutcome AppSyncClient::DeleteChannelNamespace(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteChannelNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChannelNamespaceOutcome(result.GetResultWithOwnership())
+                            : DeleteChannelNamespaceOutcome(std::move(result.GetError()));
 }
 
 DeleteDataSourceOutcome AppSyncClient::DeleteDataSource(const DeleteDataSourceRequest& request) const {
@@ -551,7 +575,9 @@ DeleteDataSourceOutcome AppSyncClient::DeleteDataSource(const DeleteDataSourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteDataSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainNameOutcome AppSyncClient::DeleteDomainName(const DeleteDomainNameRequest& request) const {
@@ -567,7 +593,9 @@ DeleteDomainNameOutcome AppSyncClient::DeleteDomainName(const DeleteDomainNameRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return DeleteDomainNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainNameOutcome(result.GetResultWithOwnership())
+                            : DeleteDomainNameOutcome(std::move(result.GetError()));
 }
 
 DeleteFunctionOutcome AppSyncClient::DeleteFunction(const DeleteFunctionRequest& request) const {
@@ -590,7 +618,8 @@ DeleteFunctionOutcome AppSyncClient::DeleteFunction(const DeleteFunctionRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionId());
   };
 
-  return DeleteFunctionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFunctionOutcome(result.GetResultWithOwnership()) : DeleteFunctionOutcome(std::move(result.GetError()));
 }
 
 DeleteGraphqlApiOutcome AppSyncClient::DeleteGraphqlApi(const DeleteGraphqlApiRequest& request) const {
@@ -606,7 +635,9 @@ DeleteGraphqlApiOutcome AppSyncClient::DeleteGraphqlApi(const DeleteGraphqlApiRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiId());
   };
 
-  return DeleteGraphqlApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGraphqlApiOutcome(result.GetResultWithOwnership())
+                            : DeleteGraphqlApiOutcome(std::move(result.GetError()));
 }
 
 DeleteResolverOutcome AppSyncClient::DeleteResolver(const DeleteResolverRequest& request) const {
@@ -636,7 +667,8 @@ DeleteResolverOutcome AppSyncClient::DeleteResolver(const DeleteResolverRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFieldName());
   };
 
-  return DeleteResolverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResolverOutcome(result.GetResultWithOwnership()) : DeleteResolverOutcome(std::move(result.GetError()));
 }
 
 DeleteTypeOutcome AppSyncClient::DeleteType(const DeleteTypeRequest& request) const {
@@ -659,7 +691,8 @@ DeleteTypeOutcome AppSyncClient::DeleteType(const DeleteTypeRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTypeName());
   };
 
-  return DeleteTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTypeOutcome(result.GetResultWithOwnership()) : DeleteTypeOutcome(std::move(result.GetError()));
 }
 
 DisassociateApiOutcome AppSyncClient::DisassociateApi(const DisassociateApiRequest& request) const {
@@ -676,7 +709,9 @@ DisassociateApiOutcome AppSyncClient::DisassociateApi(const DisassociateApiReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/apiassociation");
   };
 
-  return DisassociateApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateApiOutcome(result.GetResultWithOwnership())
+                            : DisassociateApiOutcome(std::move(result.GetError()));
 }
 
 DisassociateMergedGraphqlApiOutcome AppSyncClient::DisassociateMergedGraphqlApi(const DisassociateMergedGraphqlApiRequest& request) const {
@@ -699,7 +734,9 @@ DisassociateMergedGraphqlApiOutcome AppSyncClient::DisassociateMergedGraphqlApi(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
   };
 
-  return DisassociateMergedGraphqlApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateMergedGraphqlApiOutcome(result.GetResultWithOwnership())
+                            : DisassociateMergedGraphqlApiOutcome(std::move(result.GetError()));
 }
 
 DisassociateSourceGraphqlApiOutcome AppSyncClient::DisassociateSourceGraphqlApi(const DisassociateSourceGraphqlApiRequest& request) const {
@@ -722,7 +759,9 @@ DisassociateSourceGraphqlApiOutcome AppSyncClient::DisassociateSourceGraphqlApi(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
   };
 
-  return DisassociateSourceGraphqlApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateSourceGraphqlApiOutcome(result.GetResultWithOwnership())
+                            : DisassociateSourceGraphqlApiOutcome(std::move(result.GetError()));
 }
 
 EvaluateCodeOutcome AppSyncClient::EvaluateCode(const EvaluateCodeRequest& request) const {
@@ -731,7 +770,8 @@ EvaluateCodeOutcome AppSyncClient::EvaluateCode(const EvaluateCodeRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/dataplane-evaluatecode");
   };
 
-  return EvaluateCodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EvaluateCodeOutcome(result.GetResultWithOwnership()) : EvaluateCodeOutcome(std::move(result.GetError()));
 }
 
 EvaluateMappingTemplateOutcome AppSyncClient::EvaluateMappingTemplate(const EvaluateMappingTemplateRequest& request) const {
@@ -740,7 +780,9 @@ EvaluateMappingTemplateOutcome AppSyncClient::EvaluateMappingTemplate(const Eval
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/dataplane-evaluatetemplate");
   };
 
-  return EvaluateMappingTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EvaluateMappingTemplateOutcome(result.GetResultWithOwnership())
+                            : EvaluateMappingTemplateOutcome(std::move(result.GetError()));
 }
 
 FlushApiCacheOutcome AppSyncClient::FlushApiCache(const FlushApiCacheRequest& request) const {
@@ -757,7 +799,8 @@ FlushApiCacheOutcome AppSyncClient::FlushApiCache(const FlushApiCacheRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/FlushCache");
   };
 
-  return FlushApiCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? FlushApiCacheOutcome(result.GetResultWithOwnership()) : FlushApiCacheOutcome(std::move(result.GetError()));
 }
 
 GetApiOutcome AppSyncClient::GetApi(const GetApiRequest& request) const {
@@ -773,7 +816,8 @@ GetApiOutcome AppSyncClient::GetApi(const GetApiRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiId());
   };
 
-  return GetApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApiOutcome(result.GetResultWithOwnership()) : GetApiOutcome(std::move(result.GetError()));
 }
 
 GetApiAssociationOutcome AppSyncClient::GetApiAssociation(const GetApiAssociationRequest& request) const {
@@ -790,7 +834,9 @@ GetApiAssociationOutcome AppSyncClient::GetApiAssociation(const GetApiAssociatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/apiassociation");
   };
 
-  return GetApiAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApiAssociationOutcome(result.GetResultWithOwnership())
+                            : GetApiAssociationOutcome(std::move(result.GetError()));
 }
 
 GetApiCacheOutcome AppSyncClient::GetApiCache(const GetApiCacheRequest& request) const {
@@ -807,7 +853,8 @@ GetApiCacheOutcome AppSyncClient::GetApiCache(const GetApiCacheRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/ApiCaches");
   };
 
-  return GetApiCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApiCacheOutcome(result.GetResultWithOwnership()) : GetApiCacheOutcome(std::move(result.GetError()));
 }
 
 GetChannelNamespaceOutcome AppSyncClient::GetChannelNamespace(const GetChannelNamespaceRequest& request) const {
@@ -830,7 +877,9 @@ GetChannelNamespaceOutcome AppSyncClient::GetChannelNamespace(const GetChannelNa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetChannelNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChannelNamespaceOutcome(result.GetResultWithOwnership())
+                            : GetChannelNamespaceOutcome(std::move(result.GetError()));
 }
 
 GetDataSourceOutcome AppSyncClient::GetDataSource(const GetDataSourceRequest& request) const {
@@ -853,7 +902,8 @@ GetDataSourceOutcome AppSyncClient::GetDataSource(const GetDataSourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataSourceOutcome(result.GetResultWithOwnership()) : GetDataSourceOutcome(std::move(result.GetError()));
 }
 
 GetDataSourceIntrospectionOutcome AppSyncClient::GetDataSourceIntrospection(const GetDataSourceIntrospectionRequest& request) const {
@@ -869,7 +919,9 @@ GetDataSourceIntrospectionOutcome AppSyncClient::GetDataSourceIntrospection(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntrospectionId());
   };
 
-  return GetDataSourceIntrospectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataSourceIntrospectionOutcome(result.GetResultWithOwnership())
+                            : GetDataSourceIntrospectionOutcome(std::move(result.GetError()));
 }
 
 GetDomainNameOutcome AppSyncClient::GetDomainName(const GetDomainNameRequest& request) const {
@@ -885,7 +937,8 @@ GetDomainNameOutcome AppSyncClient::GetDomainName(const GetDomainNameRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return GetDomainNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainNameOutcome(result.GetResultWithOwnership()) : GetDomainNameOutcome(std::move(result.GetError()));
 }
 
 GetFunctionOutcome AppSyncClient::GetFunction(const GetFunctionRequest& request) const {
@@ -908,7 +961,8 @@ GetFunctionOutcome AppSyncClient::GetFunction(const GetFunctionRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionId());
   };
 
-  return GetFunctionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFunctionOutcome(result.GetResultWithOwnership()) : GetFunctionOutcome(std::move(result.GetError()));
 }
 
 GetGraphqlApiOutcome AppSyncClient::GetGraphqlApi(const GetGraphqlApiRequest& request) const {
@@ -924,7 +978,8 @@ GetGraphqlApiOutcome AppSyncClient::GetGraphqlApi(const GetGraphqlApiRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiId());
   };
 
-  return GetGraphqlApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGraphqlApiOutcome(result.GetResultWithOwnership()) : GetGraphqlApiOutcome(std::move(result.GetError()));
 }
 
 GetGraphqlApiEnvironmentVariablesOutcome AppSyncClient::GetGraphqlApiEnvironmentVariables(
@@ -942,7 +997,9 @@ GetGraphqlApiEnvironmentVariablesOutcome AppSyncClient::GetGraphqlApiEnvironment
     endpointResolutionOutcome.GetResult().AddPathSegments("/environmentVariables");
   };
 
-  return GetGraphqlApiEnvironmentVariablesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGraphqlApiEnvironmentVariablesOutcome(result.GetResultWithOwnership())
+                            : GetGraphqlApiEnvironmentVariablesOutcome(std::move(result.GetError()));
 }
 
 GetIntrospectionSchemaOutcome AppSyncClient::GetIntrospectionSchema(const GetIntrospectionSchemaRequest& request) const {
@@ -979,8 +1036,9 @@ GetIntrospectionSchemaOutcome AppSyncClient::GetIntrospectionSchema(const GetInt
         endpointResolutionOutcome.GetResult().AddPathSegments("/v1/apis/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/schema");
-        return GetIntrospectionSchemaOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetIntrospectionSchemaOutcome(result.GetResultWithOwnership())
+                                  : GetIntrospectionSchemaOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1014,7 +1072,8 @@ GetResolverOutcome AppSyncClient::GetResolver(const GetResolverRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFieldName());
   };
 
-  return GetResolverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResolverOutcome(result.GetResultWithOwnership()) : GetResolverOutcome(std::move(result.GetError()));
 }
 
 GetSchemaCreationStatusOutcome AppSyncClient::GetSchemaCreationStatus(const GetSchemaCreationStatusRequest& request) const {
@@ -1031,7 +1090,9 @@ GetSchemaCreationStatusOutcome AppSyncClient::GetSchemaCreationStatus(const GetS
     endpointResolutionOutcome.GetResult().AddPathSegments("/schemacreation");
   };
 
-  return GetSchemaCreationStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSchemaCreationStatusOutcome(result.GetResultWithOwnership())
+                            : GetSchemaCreationStatusOutcome(std::move(result.GetError()));
 }
 
 GetSourceApiAssociationOutcome AppSyncClient::GetSourceApiAssociation(const GetSourceApiAssociationRequest& request) const {
@@ -1054,7 +1115,9 @@ GetSourceApiAssociationOutcome AppSyncClient::GetSourceApiAssociation(const GetS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
   };
 
-  return GetSourceApiAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSourceApiAssociationOutcome(result.GetResultWithOwnership())
+                            : GetSourceApiAssociationOutcome(std::move(result.GetError()));
 }
 
 GetTypeOutcome AppSyncClient::GetType(const GetTypeRequest& request) const {
@@ -1082,7 +1145,8 @@ GetTypeOutcome AppSyncClient::GetType(const GetTypeRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTypeName());
   };
 
-  return GetTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTypeOutcome(result.GetResultWithOwnership()) : GetTypeOutcome(std::move(result.GetError()));
 }
 
 ListApiKeysOutcome AppSyncClient::ListApiKeys(const ListApiKeysRequest& request) const {
@@ -1099,7 +1163,8 @@ ListApiKeysOutcome AppSyncClient::ListApiKeys(const ListApiKeysRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/apikeys");
   };
 
-  return ListApiKeysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApiKeysOutcome(result.GetResultWithOwnership()) : ListApiKeysOutcome(std::move(result.GetError()));
 }
 
 ListApisOutcome AppSyncClient::ListApis(const ListApisRequest& request) const {
@@ -1108,7 +1173,8 @@ ListApisOutcome AppSyncClient::ListApis(const ListApisRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/apis");
   };
 
-  return ListApisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApisOutcome(result.GetResultWithOwnership()) : ListApisOutcome(std::move(result.GetError()));
 }
 
 ListChannelNamespacesOutcome AppSyncClient::ListChannelNamespaces(const ListChannelNamespacesRequest& request) const {
@@ -1125,7 +1191,9 @@ ListChannelNamespacesOutcome AppSyncClient::ListChannelNamespaces(const ListChan
     endpointResolutionOutcome.GetResult().AddPathSegments("/channelNamespaces");
   };
 
-  return ListChannelNamespacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelNamespacesOutcome(result.GetResultWithOwnership())
+                            : ListChannelNamespacesOutcome(std::move(result.GetError()));
 }
 
 ListDataSourcesOutcome AppSyncClient::ListDataSources(const ListDataSourcesRequest& request) const {
@@ -1142,7 +1210,9 @@ ListDataSourcesOutcome AppSyncClient::ListDataSources(const ListDataSourcesReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasources");
   };
 
-  return ListDataSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSourcesOutcome(result.GetResultWithOwnership())
+                            : ListDataSourcesOutcome(std::move(result.GetError()));
 }
 
 ListDomainNamesOutcome AppSyncClient::ListDomainNames(const ListDomainNamesRequest& request) const {
@@ -1151,7 +1221,9 @@ ListDomainNamesOutcome AppSyncClient::ListDomainNames(const ListDomainNamesReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/domainnames");
   };
 
-  return ListDomainNamesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainNamesOutcome(result.GetResultWithOwnership())
+                            : ListDomainNamesOutcome(std::move(result.GetError()));
 }
 
 ListFunctionsOutcome AppSyncClient::ListFunctions(const ListFunctionsRequest& request) const {
@@ -1168,7 +1240,8 @@ ListFunctionsOutcome AppSyncClient::ListFunctions(const ListFunctionsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/functions");
   };
 
-  return ListFunctionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFunctionsOutcome(result.GetResultWithOwnership()) : ListFunctionsOutcome(std::move(result.GetError()));
 }
 
 ListGraphqlApisOutcome AppSyncClient::ListGraphqlApis(const ListGraphqlApisRequest& request) const {
@@ -1177,7 +1250,9 @@ ListGraphqlApisOutcome AppSyncClient::ListGraphqlApis(const ListGraphqlApisReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/apis");
   };
 
-  return ListGraphqlApisOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGraphqlApisOutcome(result.GetResultWithOwnership())
+                            : ListGraphqlApisOutcome(std::move(result.GetError()));
 }
 
 ListResolversOutcome AppSyncClient::ListResolvers(const ListResolversRequest& request) const {
@@ -1201,7 +1276,8 @@ ListResolversOutcome AppSyncClient::ListResolvers(const ListResolversRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/resolvers");
   };
 
-  return ListResolversOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResolversOutcome(result.GetResultWithOwnership()) : ListResolversOutcome(std::move(result.GetError()));
 }
 
 ListResolversByFunctionOutcome AppSyncClient::ListResolversByFunction(const ListResolversByFunctionRequest& request) const {
@@ -1225,7 +1301,9 @@ ListResolversByFunctionOutcome AppSyncClient::ListResolversByFunction(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/resolvers");
   };
 
-  return ListResolversByFunctionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResolversByFunctionOutcome(result.GetResultWithOwnership())
+                            : ListResolversByFunctionOutcome(std::move(result.GetError()));
 }
 
 ListSourceApiAssociationsOutcome AppSyncClient::ListSourceApiAssociations(const ListSourceApiAssociationsRequest& request) const {
@@ -1242,7 +1320,9 @@ ListSourceApiAssociationsOutcome AppSyncClient::ListSourceApiAssociations(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/sourceApiAssociations");
   };
 
-  return ListSourceApiAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSourceApiAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListSourceApiAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AppSyncClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1258,7 +1338,9 @@ ListTagsForResourceOutcome AppSyncClient::ListTagsForResource(const ListTagsForR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTypesOutcome AppSyncClient::ListTypes(const ListTypesRequest& request) const {
@@ -1280,7 +1362,8 @@ ListTypesOutcome AppSyncClient::ListTypes(const ListTypesRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/types");
   };
 
-  return ListTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTypesOutcome(result.GetResultWithOwnership()) : ListTypesOutcome(std::move(result.GetError()));
 }
 
 ListTypesByAssociationOutcome AppSyncClient::ListTypesByAssociation(const ListTypesByAssociationRequest& request) const {
@@ -1309,7 +1392,9 @@ ListTypesByAssociationOutcome AppSyncClient::ListTypesByAssociation(const ListTy
     endpointResolutionOutcome.GetResult().AddPathSegments("/types");
   };
 
-  return ListTypesByAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTypesByAssociationOutcome(result.GetResultWithOwnership())
+                            : ListTypesByAssociationOutcome(std::move(result.GetError()));
 }
 
 PutGraphqlApiEnvironmentVariablesOutcome AppSyncClient::PutGraphqlApiEnvironmentVariables(
@@ -1327,7 +1412,9 @@ PutGraphqlApiEnvironmentVariablesOutcome AppSyncClient::PutGraphqlApiEnvironment
     endpointResolutionOutcome.GetResult().AddPathSegments("/environmentVariables");
   };
 
-  return PutGraphqlApiEnvironmentVariablesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutGraphqlApiEnvironmentVariablesOutcome(result.GetResultWithOwnership())
+                            : PutGraphqlApiEnvironmentVariablesOutcome(std::move(result.GetError()));
 }
 
 StartDataSourceIntrospectionOutcome AppSyncClient::StartDataSourceIntrospection(const StartDataSourceIntrospectionRequest& request) const {
@@ -1336,7 +1423,9 @@ StartDataSourceIntrospectionOutcome AppSyncClient::StartDataSourceIntrospection(
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datasources/introspections");
   };
 
-  return StartDataSourceIntrospectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDataSourceIntrospectionOutcome(result.GetResultWithOwnership())
+                            : StartDataSourceIntrospectionOutcome(std::move(result.GetError()));
 }
 
 StartSchemaCreationOutcome AppSyncClient::StartSchemaCreation(const StartSchemaCreationRequest& request) const {
@@ -1353,7 +1442,9 @@ StartSchemaCreationOutcome AppSyncClient::StartSchemaCreation(const StartSchemaC
     endpointResolutionOutcome.GetResult().AddPathSegments("/schemacreation");
   };
 
-  return StartSchemaCreationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSchemaCreationOutcome(result.GetResultWithOwnership())
+                            : StartSchemaCreationOutcome(std::move(result.GetError()));
 }
 
 StartSchemaMergeOutcome AppSyncClient::StartSchemaMerge(const StartSchemaMergeRequest& request) const {
@@ -1377,7 +1468,9 @@ StartSchemaMergeOutcome AppSyncClient::StartSchemaMerge(const StartSchemaMergeRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/merge");
   };
 
-  return StartSchemaMergeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSchemaMergeOutcome(result.GetResultWithOwnership())
+                            : StartSchemaMergeOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AppSyncClient::TagResource(const TagResourceRequest& request) const {
@@ -1393,7 +1486,8 @@ TagResourceOutcome AppSyncClient::TagResource(const TagResourceRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AppSyncClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1414,7 +1508,8 @@ UntagResourceOutcome AppSyncClient::UntagResource(const UntagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApiOutcome AppSyncClient::UpdateApi(const UpdateApiRequest& request) const {
@@ -1430,7 +1525,8 @@ UpdateApiOutcome AppSyncClient::UpdateApi(const UpdateApiRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiId());
   };
 
-  return UpdateApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApiOutcome(result.GetResultWithOwnership()) : UpdateApiOutcome(std::move(result.GetError()));
 }
 
 UpdateApiCacheOutcome AppSyncClient::UpdateApiCache(const UpdateApiCacheRequest& request) const {
@@ -1447,7 +1543,8 @@ UpdateApiCacheOutcome AppSyncClient::UpdateApiCache(const UpdateApiCacheRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/ApiCaches/update");
   };
 
-  return UpdateApiCacheOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApiCacheOutcome(result.GetResultWithOwnership()) : UpdateApiCacheOutcome(std::move(result.GetError()));
 }
 
 UpdateApiKeyOutcome AppSyncClient::UpdateApiKey(const UpdateApiKeyRequest& request) const {
@@ -1470,7 +1567,8 @@ UpdateApiKeyOutcome AppSyncClient::UpdateApiKey(const UpdateApiKeyRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateApiKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApiKeyOutcome(result.GetResultWithOwnership()) : UpdateApiKeyOutcome(std::move(result.GetError()));
 }
 
 UpdateChannelNamespaceOutcome AppSyncClient::UpdateChannelNamespace(const UpdateChannelNamespaceRequest& request) const {
@@ -1493,7 +1591,9 @@ UpdateChannelNamespaceOutcome AppSyncClient::UpdateChannelNamespace(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateChannelNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateChannelNamespaceOutcome(result.GetResultWithOwnership())
+                            : UpdateChannelNamespaceOutcome(std::move(result.GetError()));
 }
 
 UpdateDataSourceOutcome AppSyncClient::UpdateDataSource(const UpdateDataSourceRequest& request) const {
@@ -1516,7 +1616,9 @@ UpdateDataSourceOutcome AppSyncClient::UpdateDataSource(const UpdateDataSourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateDataSourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainNameOutcome AppSyncClient::UpdateDomainName(const UpdateDomainNameRequest& request) const {
@@ -1532,7 +1634,9 @@ UpdateDomainNameOutcome AppSyncClient::UpdateDomainName(const UpdateDomainNameRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return UpdateDomainNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDomainNameOutcome(result.GetResultWithOwnership())
+                            : UpdateDomainNameOutcome(std::move(result.GetError()));
 }
 
 UpdateFunctionOutcome AppSyncClient::UpdateFunction(const UpdateFunctionRequest& request) const {
@@ -1555,7 +1659,8 @@ UpdateFunctionOutcome AppSyncClient::UpdateFunction(const UpdateFunctionRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionId());
   };
 
-  return UpdateFunctionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFunctionOutcome(result.GetResultWithOwnership()) : UpdateFunctionOutcome(std::move(result.GetError()));
 }
 
 UpdateGraphqlApiOutcome AppSyncClient::UpdateGraphqlApi(const UpdateGraphqlApiRequest& request) const {
@@ -1571,7 +1676,9 @@ UpdateGraphqlApiOutcome AppSyncClient::UpdateGraphqlApi(const UpdateGraphqlApiRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiId());
   };
 
-  return UpdateGraphqlApiOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGraphqlApiOutcome(result.GetResultWithOwnership())
+                            : UpdateGraphqlApiOutcome(std::move(result.GetError()));
 }
 
 UpdateResolverOutcome AppSyncClient::UpdateResolver(const UpdateResolverRequest& request) const {
@@ -1601,7 +1708,8 @@ UpdateResolverOutcome AppSyncClient::UpdateResolver(const UpdateResolverRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFieldName());
   };
 
-  return UpdateResolverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResolverOutcome(result.GetResultWithOwnership()) : UpdateResolverOutcome(std::move(result.GetError()));
 }
 
 UpdateSourceApiAssociationOutcome AppSyncClient::UpdateSourceApiAssociation(const UpdateSourceApiAssociationRequest& request) const {
@@ -1624,7 +1732,9 @@ UpdateSourceApiAssociationOutcome AppSyncClient::UpdateSourceApiAssociation(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
   };
 
-  return UpdateSourceApiAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSourceApiAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateSourceApiAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateTypeOutcome AppSyncClient::UpdateType(const UpdateTypeRequest& request) const {
@@ -1647,5 +1757,6 @@ UpdateTypeOutcome AppSyncClient::UpdateType(const UpdateTypeRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTypeName());
   };
 
-  return UpdateTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTypeOutcome(result.GetResultWithOwnership()) : UpdateTypeOutcome(std::move(result.GetError()));
 }

@@ -251,352 +251,500 @@ SSOAdminClient::InvokeOperationOutcome SSOAdminClient::InvokeServiceOperation(co
 }
 
 AddRegionOutcome SSOAdminClient::AddRegion(const AddRegionRequest& request) const {
-  return AddRegionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddRegionOutcome(result.GetResultWithOwnership()) : AddRegionOutcome(std::move(result.GetError()));
 }
 
 AttachCustomerManagedPolicyReferenceToPermissionSetOutcome SSOAdminClient::AttachCustomerManagedPolicyReferenceToPermissionSet(
     const AttachCustomerManagedPolicyReferenceToPermissionSetRequest& request) const {
-  return AttachCustomerManagedPolicyReferenceToPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachCustomerManagedPolicyReferenceToPermissionSetOutcome(result.GetResultWithOwnership())
+                            : AttachCustomerManagedPolicyReferenceToPermissionSetOutcome(std::move(result.GetError()));
 }
 
 AttachManagedPolicyToPermissionSetOutcome SSOAdminClient::AttachManagedPolicyToPermissionSet(
     const AttachManagedPolicyToPermissionSetRequest& request) const {
-  return AttachManagedPolicyToPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachManagedPolicyToPermissionSetOutcome(result.GetResultWithOwnership())
+                            : AttachManagedPolicyToPermissionSetOutcome(std::move(result.GetError()));
 }
 
 CreateAccountAssignmentOutcome SSOAdminClient::CreateAccountAssignment(const CreateAccountAssignmentRequest& request) const {
-  return CreateAccountAssignmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccountAssignmentOutcome(result.GetResultWithOwnership())
+                            : CreateAccountAssignmentOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome SSOAdminClient::CreateApplication(const CreateApplicationRequest& request) const {
-  return CreateApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationAssignmentOutcome SSOAdminClient::CreateApplicationAssignment(const CreateApplicationAssignmentRequest& request) const {
-  return CreateApplicationAssignmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationAssignmentOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationAssignmentOutcome(std::move(result.GetError()));
 }
 
 CreateInstanceOutcome SSOAdminClient::CreateInstance(const CreateInstanceRequest& request) const {
-  return CreateInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInstanceOutcome(result.GetResultWithOwnership()) : CreateInstanceOutcome(std::move(result.GetError()));
 }
 
 CreateInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::CreateInstanceAccessControlAttributeConfiguration(
     const CreateInstanceAccessControlAttributeConfigurationRequest& request) const {
-  return CreateInstanceAccessControlAttributeConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInstanceAccessControlAttributeConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateInstanceAccessControlAttributeConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreatePermissionSetOutcome SSOAdminClient::CreatePermissionSet(const CreatePermissionSetRequest& request) const {
-  return CreatePermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePermissionSetOutcome(result.GetResultWithOwnership())
+                            : CreatePermissionSetOutcome(std::move(result.GetError()));
 }
 
 CreateTrustedTokenIssuerOutcome SSOAdminClient::CreateTrustedTokenIssuer(const CreateTrustedTokenIssuerRequest& request) const {
-  return CreateTrustedTokenIssuerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrustedTokenIssuerOutcome(result.GetResultWithOwnership())
+                            : CreateTrustedTokenIssuerOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountAssignmentOutcome SSOAdminClient::DeleteAccountAssignment(const DeleteAccountAssignmentRequest& request) const {
-  return DeleteAccountAssignmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAccountAssignmentOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountAssignmentOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome SSOAdminClient::DeleteApplication(const DeleteApplicationRequest& request) const {
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationAccessScopeOutcome SSOAdminClient::DeleteApplicationAccessScope(const DeleteApplicationAccessScopeRequest& request) const {
-  return DeleteApplicationAccessScopeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationAccessScopeOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationAccessScopeOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationAssignmentOutcome SSOAdminClient::DeleteApplicationAssignment(const DeleteApplicationAssignmentRequest& request) const {
-  return DeleteApplicationAssignmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationAssignmentOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationAssignmentOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationAuthenticationMethodOutcome SSOAdminClient::DeleteApplicationAuthenticationMethod(
     const DeleteApplicationAuthenticationMethodRequest& request) const {
-  return DeleteApplicationAuthenticationMethodOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationAuthenticationMethodOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationAuthenticationMethodOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationGrantOutcome SSOAdminClient::DeleteApplicationGrant(const DeleteApplicationGrantRequest& request) const {
-  return DeleteApplicationGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationGrantOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationGrantOutcome(std::move(result.GetError()));
 }
 
 DeleteInlinePolicyFromPermissionSetOutcome SSOAdminClient::DeleteInlinePolicyFromPermissionSet(
     const DeleteInlinePolicyFromPermissionSetRequest& request) const {
-  return DeleteInlinePolicyFromPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInlinePolicyFromPermissionSetOutcome(result.GetResultWithOwnership())
+                            : DeleteInlinePolicyFromPermissionSetOutcome(std::move(result.GetError()));
 }
 
 DeleteInstanceOutcome SSOAdminClient::DeleteInstance(const DeleteInstanceRequest& request) const {
-  return DeleteInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInstanceOutcome(result.GetResultWithOwnership()) : DeleteInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::DeleteInstanceAccessControlAttributeConfiguration(
     const DeleteInstanceAccessControlAttributeConfigurationRequest& request) const {
-  return DeleteInstanceAccessControlAttributeConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInstanceAccessControlAttributeConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteInstanceAccessControlAttributeConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeletePermissionSetOutcome SSOAdminClient::DeletePermissionSet(const DeletePermissionSetRequest& request) const {
-  return DeletePermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePermissionSetOutcome(result.GetResultWithOwnership())
+                            : DeletePermissionSetOutcome(std::move(result.GetError()));
 }
 
 DeletePermissionsBoundaryFromPermissionSetOutcome SSOAdminClient::DeletePermissionsBoundaryFromPermissionSet(
     const DeletePermissionsBoundaryFromPermissionSetRequest& request) const {
-  return DeletePermissionsBoundaryFromPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePermissionsBoundaryFromPermissionSetOutcome(result.GetResultWithOwnership())
+                            : DeletePermissionsBoundaryFromPermissionSetOutcome(std::move(result.GetError()));
 }
 
 DeleteTrustedTokenIssuerOutcome SSOAdminClient::DeleteTrustedTokenIssuer(const DeleteTrustedTokenIssuerRequest& request) const {
-  return DeleteTrustedTokenIssuerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTrustedTokenIssuerOutcome(result.GetResultWithOwnership())
+                            : DeleteTrustedTokenIssuerOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountAssignmentCreationStatusOutcome SSOAdminClient::DescribeAccountAssignmentCreationStatus(
     const DescribeAccountAssignmentCreationStatusRequest& request) const {
-  return DescribeAccountAssignmentCreationStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountAssignmentCreationStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountAssignmentCreationStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountAssignmentDeletionStatusOutcome SSOAdminClient::DescribeAccountAssignmentDeletionStatus(
     const DescribeAccountAssignmentDeletionStatusRequest& request) const {
-  return DescribeAccountAssignmentDeletionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountAssignmentDeletionStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountAssignmentDeletionStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationOutcome SSOAdminClient::DescribeApplication(const DescribeApplicationRequest& request) const {
-  return DescribeApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationAssignmentOutcome SSOAdminClient::DescribeApplicationAssignment(
     const DescribeApplicationAssignmentRequest& request) const {
-  return DescribeApplicationAssignmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationAssignmentOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationAssignmentOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationProviderOutcome SSOAdminClient::DescribeApplicationProvider(const DescribeApplicationProviderRequest& request) const {
-  return DescribeApplicationProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationProviderOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationProviderOutcome(std::move(result.GetError()));
 }
 
 DescribeInstanceOutcome SSOAdminClient::DescribeInstance(const DescribeInstanceRequest& request) const {
-  return DescribeInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInstanceOutcome(result.GetResultWithOwnership())
+                            : DescribeInstanceOutcome(std::move(result.GetError()));
 }
 
 DescribeInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::DescribeInstanceAccessControlAttributeConfiguration(
     const DescribeInstanceAccessControlAttributeConfigurationRequest& request) const {
-  return DescribeInstanceAccessControlAttributeConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInstanceAccessControlAttributeConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeInstanceAccessControlAttributeConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribePermissionSetOutcome SSOAdminClient::DescribePermissionSet(const DescribePermissionSetRequest& request) const {
-  return DescribePermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePermissionSetOutcome(result.GetResultWithOwnership())
+                            : DescribePermissionSetOutcome(std::move(result.GetError()));
 }
 
 DescribePermissionSetProvisioningStatusOutcome SSOAdminClient::DescribePermissionSetProvisioningStatus(
     const DescribePermissionSetProvisioningStatusRequest& request) const {
-  return DescribePermissionSetProvisioningStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePermissionSetProvisioningStatusOutcome(result.GetResultWithOwnership())
+                            : DescribePermissionSetProvisioningStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeRegionOutcome SSOAdminClient::DescribeRegion(const DescribeRegionRequest& request) const {
-  return DescribeRegionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRegionOutcome(result.GetResultWithOwnership()) : DescribeRegionOutcome(std::move(result.GetError()));
 }
 
 DescribeTrustedTokenIssuerOutcome SSOAdminClient::DescribeTrustedTokenIssuer(const DescribeTrustedTokenIssuerRequest& request) const {
-  return DescribeTrustedTokenIssuerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrustedTokenIssuerOutcome(result.GetResultWithOwnership())
+                            : DescribeTrustedTokenIssuerOutcome(std::move(result.GetError()));
 }
 
 DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome SSOAdminClient::DetachCustomerManagedPolicyReferenceFromPermissionSet(
     const DetachCustomerManagedPolicyReferenceFromPermissionSetRequest& request) const {
-  return DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome(result.GetResultWithOwnership())
+                            : DetachCustomerManagedPolicyReferenceFromPermissionSetOutcome(std::move(result.GetError()));
 }
 
 DetachManagedPolicyFromPermissionSetOutcome SSOAdminClient::DetachManagedPolicyFromPermissionSet(
     const DetachManagedPolicyFromPermissionSetRequest& request) const {
-  return DetachManagedPolicyFromPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachManagedPolicyFromPermissionSetOutcome(result.GetResultWithOwnership())
+                            : DetachManagedPolicyFromPermissionSetOutcome(std::move(result.GetError()));
 }
 
 GetApplicationAccessScopeOutcome SSOAdminClient::GetApplicationAccessScope(const GetApplicationAccessScopeRequest& request) const {
-  return GetApplicationAccessScopeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetApplicationAccessScopeOutcome(result.GetResultWithOwnership())
+                            : GetApplicationAccessScopeOutcome(std::move(result.GetError()));
 }
 
 GetApplicationAssignmentConfigurationOutcome SSOAdminClient::GetApplicationAssignmentConfiguration(
     const GetApplicationAssignmentConfigurationRequest& request) const {
-  return GetApplicationAssignmentConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetApplicationAssignmentConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetApplicationAssignmentConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetApplicationAuthenticationMethodOutcome SSOAdminClient::GetApplicationAuthenticationMethod(
     const GetApplicationAuthenticationMethodRequest& request) const {
-  return GetApplicationAuthenticationMethodOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetApplicationAuthenticationMethodOutcome(result.GetResultWithOwnership())
+                            : GetApplicationAuthenticationMethodOutcome(std::move(result.GetError()));
 }
 
 GetApplicationGrantOutcome SSOAdminClient::GetApplicationGrant(const GetApplicationGrantRequest& request) const {
-  return GetApplicationGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetApplicationGrantOutcome(result.GetResultWithOwnership())
+                            : GetApplicationGrantOutcome(std::move(result.GetError()));
 }
 
 GetApplicationSessionConfigurationOutcome SSOAdminClient::GetApplicationSessionConfiguration(
     const GetApplicationSessionConfigurationRequest& request) const {
-  return GetApplicationSessionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetApplicationSessionConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetApplicationSessionConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetInlinePolicyForPermissionSetOutcome SSOAdminClient::GetInlinePolicyForPermissionSet(
     const GetInlinePolicyForPermissionSetRequest& request) const {
-  return GetInlinePolicyForPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInlinePolicyForPermissionSetOutcome(result.GetResultWithOwnership())
+                            : GetInlinePolicyForPermissionSetOutcome(std::move(result.GetError()));
 }
 
 GetPermissionsBoundaryForPermissionSetOutcome SSOAdminClient::GetPermissionsBoundaryForPermissionSet(
     const GetPermissionsBoundaryForPermissionSetRequest& request) const {
-  return GetPermissionsBoundaryForPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPermissionsBoundaryForPermissionSetOutcome(result.GetResultWithOwnership())
+                            : GetPermissionsBoundaryForPermissionSetOutcome(std::move(result.GetError()));
 }
 
 ListAccountAssignmentCreationStatusOutcome SSOAdminClient::ListAccountAssignmentCreationStatus(
     const ListAccountAssignmentCreationStatusRequest& request) const {
-  return ListAccountAssignmentCreationStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountAssignmentCreationStatusOutcome(result.GetResultWithOwnership())
+                            : ListAccountAssignmentCreationStatusOutcome(std::move(result.GetError()));
 }
 
 ListAccountAssignmentDeletionStatusOutcome SSOAdminClient::ListAccountAssignmentDeletionStatus(
     const ListAccountAssignmentDeletionStatusRequest& request) const {
-  return ListAccountAssignmentDeletionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountAssignmentDeletionStatusOutcome(result.GetResultWithOwnership())
+                            : ListAccountAssignmentDeletionStatusOutcome(std::move(result.GetError()));
 }
 
 ListAccountAssignmentsOutcome SSOAdminClient::ListAccountAssignments(const ListAccountAssignmentsRequest& request) const {
-  return ListAccountAssignmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountAssignmentsOutcome(result.GetResultWithOwnership())
+                            : ListAccountAssignmentsOutcome(std::move(result.GetError()));
 }
 
 ListAccountAssignmentsForPrincipalOutcome SSOAdminClient::ListAccountAssignmentsForPrincipal(
     const ListAccountAssignmentsForPrincipalRequest& request) const {
-  return ListAccountAssignmentsForPrincipalOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountAssignmentsForPrincipalOutcome(result.GetResultWithOwnership())
+                            : ListAccountAssignmentsForPrincipalOutcome(std::move(result.GetError()));
 }
 
 ListAccountsForProvisionedPermissionSetOutcome SSOAdminClient::ListAccountsForProvisionedPermissionSet(
     const ListAccountsForProvisionedPermissionSetRequest& request) const {
-  return ListAccountsForProvisionedPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountsForProvisionedPermissionSetOutcome(result.GetResultWithOwnership())
+                            : ListAccountsForProvisionedPermissionSetOutcome(std::move(result.GetError()));
 }
 
 ListApplicationAccessScopesOutcome SSOAdminClient::ListApplicationAccessScopes(const ListApplicationAccessScopesRequest& request) const {
-  return ListApplicationAccessScopesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationAccessScopesOutcome(result.GetResultWithOwnership())
+                            : ListApplicationAccessScopesOutcome(std::move(result.GetError()));
 }
 
 ListApplicationAssignmentsOutcome SSOAdminClient::ListApplicationAssignments(const ListApplicationAssignmentsRequest& request) const {
-  return ListApplicationAssignmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationAssignmentsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationAssignmentsOutcome(std::move(result.GetError()));
 }
 
 ListApplicationAssignmentsForPrincipalOutcome SSOAdminClient::ListApplicationAssignmentsForPrincipal(
     const ListApplicationAssignmentsForPrincipalRequest& request) const {
-  return ListApplicationAssignmentsForPrincipalOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationAssignmentsForPrincipalOutcome(result.GetResultWithOwnership())
+                            : ListApplicationAssignmentsForPrincipalOutcome(std::move(result.GetError()));
 }
 
 ListApplicationAuthenticationMethodsOutcome SSOAdminClient::ListApplicationAuthenticationMethods(
     const ListApplicationAuthenticationMethodsRequest& request) const {
-  return ListApplicationAuthenticationMethodsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationAuthenticationMethodsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationAuthenticationMethodsOutcome(std::move(result.GetError()));
 }
 
 ListApplicationGrantsOutcome SSOAdminClient::ListApplicationGrants(const ListApplicationGrantsRequest& request) const {
-  return ListApplicationGrantsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationGrantsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationGrantsOutcome(std::move(result.GetError()));
 }
 
 ListApplicationProvidersOutcome SSOAdminClient::ListApplicationProviders(const ListApplicationProvidersRequest& request) const {
-  return ListApplicationProvidersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationProvidersOutcome(result.GetResultWithOwnership())
+                            : ListApplicationProvidersOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome SSOAdminClient::ListApplications(const ListApplicationsRequest& request) const {
-  return ListApplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListCustomerManagedPolicyReferencesInPermissionSetOutcome SSOAdminClient::ListCustomerManagedPolicyReferencesInPermissionSet(
     const ListCustomerManagedPolicyReferencesInPermissionSetRequest& request) const {
-  return ListCustomerManagedPolicyReferencesInPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomerManagedPolicyReferencesInPermissionSetOutcome(result.GetResultWithOwnership())
+                            : ListCustomerManagedPolicyReferencesInPermissionSetOutcome(std::move(result.GetError()));
 }
 
 ListInstancesOutcome SSOAdminClient::ListInstances(const ListInstancesRequest& request) const {
-  return ListInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInstancesOutcome(result.GetResultWithOwnership()) : ListInstancesOutcome(std::move(result.GetError()));
 }
 
 ListManagedPoliciesInPermissionSetOutcome SSOAdminClient::ListManagedPoliciesInPermissionSet(
     const ListManagedPoliciesInPermissionSetRequest& request) const {
-  return ListManagedPoliciesInPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListManagedPoliciesInPermissionSetOutcome(result.GetResultWithOwnership())
+                            : ListManagedPoliciesInPermissionSetOutcome(std::move(result.GetError()));
 }
 
 ListPermissionSetProvisioningStatusOutcome SSOAdminClient::ListPermissionSetProvisioningStatus(
     const ListPermissionSetProvisioningStatusRequest& request) const {
-  return ListPermissionSetProvisioningStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPermissionSetProvisioningStatusOutcome(result.GetResultWithOwnership())
+                            : ListPermissionSetProvisioningStatusOutcome(std::move(result.GetError()));
 }
 
 ListPermissionSetsOutcome SSOAdminClient::ListPermissionSets(const ListPermissionSetsRequest& request) const {
-  return ListPermissionSetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPermissionSetsOutcome(result.GetResultWithOwnership())
+                            : ListPermissionSetsOutcome(std::move(result.GetError()));
 }
 
 ListPermissionSetsProvisionedToAccountOutcome SSOAdminClient::ListPermissionSetsProvisionedToAccount(
     const ListPermissionSetsProvisionedToAccountRequest& request) const {
-  return ListPermissionSetsProvisionedToAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPermissionSetsProvisionedToAccountOutcome(result.GetResultWithOwnership())
+                            : ListPermissionSetsProvisionedToAccountOutcome(std::move(result.GetError()));
 }
 
 ListRegionsOutcome SSOAdminClient::ListRegions(const ListRegionsRequest& request) const {
-  return ListRegionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRegionsOutcome(result.GetResultWithOwnership()) : ListRegionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SSOAdminClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTrustedTokenIssuersOutcome SSOAdminClient::ListTrustedTokenIssuers(const ListTrustedTokenIssuersRequest& request) const {
-  return ListTrustedTokenIssuersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrustedTokenIssuersOutcome(result.GetResultWithOwnership())
+                            : ListTrustedTokenIssuersOutcome(std::move(result.GetError()));
 }
 
 ProvisionPermissionSetOutcome SSOAdminClient::ProvisionPermissionSet(const ProvisionPermissionSetRequest& request) const {
-  return ProvisionPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ProvisionPermissionSetOutcome(result.GetResultWithOwnership())
+                            : ProvisionPermissionSetOutcome(std::move(result.GetError()));
 }
 
 PutApplicationAccessScopeOutcome SSOAdminClient::PutApplicationAccessScope(const PutApplicationAccessScopeRequest& request) const {
-  return PutApplicationAccessScopeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutApplicationAccessScopeOutcome(result.GetResultWithOwnership())
+                            : PutApplicationAccessScopeOutcome(std::move(result.GetError()));
 }
 
 PutApplicationAssignmentConfigurationOutcome SSOAdminClient::PutApplicationAssignmentConfiguration(
     const PutApplicationAssignmentConfigurationRequest& request) const {
-  return PutApplicationAssignmentConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutApplicationAssignmentConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutApplicationAssignmentConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutApplicationAuthenticationMethodOutcome SSOAdminClient::PutApplicationAuthenticationMethod(
     const PutApplicationAuthenticationMethodRequest& request) const {
-  return PutApplicationAuthenticationMethodOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutApplicationAuthenticationMethodOutcome(result.GetResultWithOwnership())
+                            : PutApplicationAuthenticationMethodOutcome(std::move(result.GetError()));
 }
 
 PutApplicationGrantOutcome SSOAdminClient::PutApplicationGrant(const PutApplicationGrantRequest& request) const {
-  return PutApplicationGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutApplicationGrantOutcome(result.GetResultWithOwnership())
+                            : PutApplicationGrantOutcome(std::move(result.GetError()));
 }
 
 PutApplicationSessionConfigurationOutcome SSOAdminClient::PutApplicationSessionConfiguration(
     const PutApplicationSessionConfigurationRequest& request) const {
-  return PutApplicationSessionConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutApplicationSessionConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutApplicationSessionConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutInlinePolicyToPermissionSetOutcome SSOAdminClient::PutInlinePolicyToPermissionSet(
     const PutInlinePolicyToPermissionSetRequest& request) const {
-  return PutInlinePolicyToPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutInlinePolicyToPermissionSetOutcome(result.GetResultWithOwnership())
+                            : PutInlinePolicyToPermissionSetOutcome(std::move(result.GetError()));
 }
 
 PutPermissionsBoundaryToPermissionSetOutcome SSOAdminClient::PutPermissionsBoundaryToPermissionSet(
     const PutPermissionsBoundaryToPermissionSetRequest& request) const {
-  return PutPermissionsBoundaryToPermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutPermissionsBoundaryToPermissionSetOutcome(result.GetResultWithOwnership())
+                            : PutPermissionsBoundaryToPermissionSetOutcome(std::move(result.GetError()));
 }
 
 RemoveRegionOutcome SSOAdminClient::RemoveRegion(const RemoveRegionRequest& request) const {
-  return RemoveRegionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveRegionOutcome(result.GetResultWithOwnership()) : RemoveRegionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SSOAdminClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SSOAdminClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome SSOAdminClient::UpdateApplication(const UpdateApplicationRequest& request) const {
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateInstanceOutcome SSOAdminClient::UpdateInstance(const UpdateInstanceRequest& request) const {
-  return UpdateInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInstanceOutcome(result.GetResultWithOwnership()) : UpdateInstanceOutcome(std::move(result.GetError()));
 }
 
 UpdateInstanceAccessControlAttributeConfigurationOutcome SSOAdminClient::UpdateInstanceAccessControlAttributeConfiguration(
     const UpdateInstanceAccessControlAttributeConfigurationRequest& request) const {
-  return UpdateInstanceAccessControlAttributeConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInstanceAccessControlAttributeConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateInstanceAccessControlAttributeConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdatePermissionSetOutcome SSOAdminClient::UpdatePermissionSet(const UpdatePermissionSetRequest& request) const {
-  return UpdatePermissionSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePermissionSetOutcome(result.GetResultWithOwnership())
+                            : UpdatePermissionSetOutcome(std::move(result.GetError()));
 }
 
 UpdateTrustedTokenIssuerOutcome SSOAdminClient::UpdateTrustedTokenIssuer(const UpdateTrustedTokenIssuerRequest& request) const {
-  return UpdateTrustedTokenIssuerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTrustedTokenIssuerOutcome(result.GetResultWithOwnership())
+                            : UpdateTrustedTokenIssuerOutcome(std::move(result.GetError()));
 }

@@ -184,50 +184,72 @@ FirehoseClient::InvokeOperationOutcome FirehoseClient::InvokeServiceOperation(co
 }
 
 CreateDeliveryStreamOutcome FirehoseClient::CreateDeliveryStream(const CreateDeliveryStreamRequest& request) const {
-  return CreateDeliveryStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeliveryStreamOutcome(result.GetResultWithOwnership())
+                            : CreateDeliveryStreamOutcome(std::move(result.GetError()));
 }
 
 DeleteDeliveryStreamOutcome FirehoseClient::DeleteDeliveryStream(const DeleteDeliveryStreamRequest& request) const {
-  return DeleteDeliveryStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDeliveryStreamOutcome(result.GetResultWithOwnership())
+                            : DeleteDeliveryStreamOutcome(std::move(result.GetError()));
 }
 
 DescribeDeliveryStreamOutcome FirehoseClient::DescribeDeliveryStream(const DescribeDeliveryStreamRequest& request) const {
-  return DescribeDeliveryStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDeliveryStreamOutcome(result.GetResultWithOwnership())
+                            : DescribeDeliveryStreamOutcome(std::move(result.GetError()));
 }
 
 ListDeliveryStreamsOutcome FirehoseClient::ListDeliveryStreams(const ListDeliveryStreamsRequest& request) const {
-  return ListDeliveryStreamsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDeliveryStreamsOutcome(result.GetResultWithOwnership())
+                            : ListDeliveryStreamsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForDeliveryStreamOutcome FirehoseClient::ListTagsForDeliveryStream(const ListTagsForDeliveryStreamRequest& request) const {
-  return ListTagsForDeliveryStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForDeliveryStreamOutcome(result.GetResultWithOwnership())
+                            : ListTagsForDeliveryStreamOutcome(std::move(result.GetError()));
 }
 
 PutRecordOutcome FirehoseClient::PutRecord(const PutRecordRequest& request) const {
-  return PutRecordOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRecordOutcome(result.GetResultWithOwnership()) : PutRecordOutcome(std::move(result.GetError()));
 }
 
 PutRecordBatchOutcome FirehoseClient::PutRecordBatch(const PutRecordBatchRequest& request) const {
-  return PutRecordBatchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRecordBatchOutcome(result.GetResultWithOwnership()) : PutRecordBatchOutcome(std::move(result.GetError()));
 }
 
 StartDeliveryStreamEncryptionOutcome FirehoseClient::StartDeliveryStreamEncryption(
     const StartDeliveryStreamEncryptionRequest& request) const {
-  return StartDeliveryStreamEncryptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDeliveryStreamEncryptionOutcome(result.GetResultWithOwnership())
+                            : StartDeliveryStreamEncryptionOutcome(std::move(result.GetError()));
 }
 
 StopDeliveryStreamEncryptionOutcome FirehoseClient::StopDeliveryStreamEncryption(const StopDeliveryStreamEncryptionRequest& request) const {
-  return StopDeliveryStreamEncryptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopDeliveryStreamEncryptionOutcome(result.GetResultWithOwnership())
+                            : StopDeliveryStreamEncryptionOutcome(std::move(result.GetError()));
 }
 
 TagDeliveryStreamOutcome FirehoseClient::TagDeliveryStream(const TagDeliveryStreamRequest& request) const {
-  return TagDeliveryStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagDeliveryStreamOutcome(result.GetResultWithOwnership())
+                            : TagDeliveryStreamOutcome(std::move(result.GetError()));
 }
 
 UntagDeliveryStreamOutcome FirehoseClient::UntagDeliveryStream(const UntagDeliveryStreamRequest& request) const {
-  return UntagDeliveryStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagDeliveryStreamOutcome(result.GetResultWithOwnership())
+                            : UntagDeliveryStreamOutcome(std::move(result.GetError()));
 }
 
 UpdateDestinationOutcome FirehoseClient::UpdateDestination(const UpdateDestinationRequest& request) const {
-  return UpdateDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateDestinationOutcome(std::move(result.GetError()));
 }

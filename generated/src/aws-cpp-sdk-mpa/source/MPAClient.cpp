@@ -207,7 +207,8 @@ CancelSessionOutcome MPAClient::CancelSession(const CancelSessionRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionArn());
   };
 
-  return CancelSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CancelSessionOutcome(result.GetResultWithOwnership()) : CancelSessionOutcome(std::move(result.GetError()));
 }
 
 CreateApprovalTeamOutcome MPAClient::CreateApprovalTeam(const CreateApprovalTeamRequest& request) const {
@@ -216,7 +217,9 @@ CreateApprovalTeamOutcome MPAClient::CreateApprovalTeam(const CreateApprovalTeam
     endpointResolutionOutcome.GetResult().AddPathSegments("/approval-teams");
   };
 
-  return CreateApprovalTeamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApprovalTeamOutcome(result.GetResultWithOwnership())
+                            : CreateApprovalTeamOutcome(std::move(result.GetError()));
 }
 
 CreateIdentitySourceOutcome MPAClient::CreateIdentitySource(const CreateIdentitySourceRequest& request) const {
@@ -225,7 +228,9 @@ CreateIdentitySourceOutcome MPAClient::CreateIdentitySource(const CreateIdentity
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-sources");
   };
 
-  return CreateIdentitySourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIdentitySourceOutcome(result.GetResultWithOwnership())
+                            : CreateIdentitySourceOutcome(std::move(result.GetError()));
 }
 
 DeleteIdentitySourceOutcome MPAClient::DeleteIdentitySource(const DeleteIdentitySourceRequest& request) const {
@@ -241,7 +246,9 @@ DeleteIdentitySourceOutcome MPAClient::DeleteIdentitySource(const DeleteIdentity
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentitySourceArn());
   };
 
-  return DeleteIdentitySourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIdentitySourceOutcome(result.GetResultWithOwnership())
+                            : DeleteIdentitySourceOutcome(std::move(result.GetError()));
 }
 
 DeleteInactiveApprovalTeamVersionOutcome MPAClient::DeleteInactiveApprovalTeamVersion(
@@ -264,7 +271,9 @@ DeleteInactiveApprovalTeamVersionOutcome MPAClient::DeleteInactiveApprovalTeamVe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
   };
 
-  return DeleteInactiveApprovalTeamVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInactiveApprovalTeamVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteInactiveApprovalTeamVersionOutcome(std::move(result.GetError()));
 }
 
 GetApprovalTeamOutcome MPAClient::GetApprovalTeam(const GetApprovalTeamRequest& request) const {
@@ -280,7 +289,9 @@ GetApprovalTeamOutcome MPAClient::GetApprovalTeam(const GetApprovalTeamRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetApprovalTeamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApprovalTeamOutcome(result.GetResultWithOwnership())
+                            : GetApprovalTeamOutcome(std::move(result.GetError()));
 }
 
 GetIdentitySourceOutcome MPAClient::GetIdentitySource(const GetIdentitySourceRequest& request) const {
@@ -296,7 +307,9 @@ GetIdentitySourceOutcome MPAClient::GetIdentitySource(const GetIdentitySourceReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentitySourceArn());
   };
 
-  return GetIdentitySourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIdentitySourceOutcome(result.GetResultWithOwnership())
+                            : GetIdentitySourceOutcome(std::move(result.GetError()));
 }
 
 GetPolicyVersionOutcome MPAClient::GetPolicyVersion(const GetPolicyVersionRequest& request) const {
@@ -312,7 +325,9 @@ GetPolicyVersionOutcome MPAClient::GetPolicyVersion(const GetPolicyVersionReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyVersionArn());
   };
 
-  return GetPolicyVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPolicyVersionOutcome(result.GetResultWithOwnership())
+                            : GetPolicyVersionOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome MPAClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
@@ -321,7 +336,9 @@ GetResourcePolicyOutcome MPAClient::GetResourcePolicy(const GetResourcePolicyReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetResourcePolicy");
   };
 
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 GetSessionOutcome MPAClient::GetSession(const GetSessionRequest& request) const {
@@ -337,7 +354,8 @@ GetSessionOutcome MPAClient::GetSession(const GetSessionRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionArn());
   };
 
-  return GetSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
 }
 
 ListApprovalTeamsOutcome MPAClient::ListApprovalTeams(const ListApprovalTeamsRequest& request) const {
@@ -349,7 +367,9 @@ ListApprovalTeamsOutcome MPAClient::ListApprovalTeams(const ListApprovalTeamsReq
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListApprovalTeamsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApprovalTeamsOutcome(result.GetResultWithOwnership())
+                            : ListApprovalTeamsOutcome(std::move(result.GetError()));
 }
 
 ListIdentitySourcesOutcome MPAClient::ListIdentitySources(const ListIdentitySourcesRequest& request) const {
@@ -361,7 +381,9 @@ ListIdentitySourcesOutcome MPAClient::ListIdentitySources(const ListIdentitySour
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListIdentitySourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIdentitySourcesOutcome(result.GetResultWithOwnership())
+                            : ListIdentitySourcesOutcome(std::move(result.GetError()));
 }
 
 ListPoliciesOutcome MPAClient::ListPolicies(const ListPoliciesRequest& request) const {
@@ -373,7 +395,8 @@ ListPoliciesOutcome MPAClient::ListPolicies(const ListPoliciesRequest& request) 
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPoliciesOutcome(result.GetResultWithOwnership()) : ListPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListPolicyVersionsOutcome MPAClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const {
@@ -393,7 +416,9 @@ ListPolicyVersionsOutcome MPAClient::ListPolicyVersions(const ListPolicyVersions
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListPolicyVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPolicyVersionsOutcome(result.GetResultWithOwnership())
+                            : ListPolicyVersionsOutcome(std::move(result.GetError()));
 }
 
 ListResourcePoliciesOutcome MPAClient::ListResourcePolicies(const ListResourcePoliciesRequest& request) const {
@@ -413,7 +438,9 @@ ListResourcePoliciesOutcome MPAClient::ListResourcePolicies(const ListResourcePo
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListResourcePoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcePoliciesOutcome(result.GetResultWithOwnership())
+                            : ListResourcePoliciesOutcome(std::move(result.GetError()));
 }
 
 ListSessionsOutcome MPAClient::ListSessions(const ListSessionsRequest& request) const {
@@ -433,7 +460,8 @@ ListSessionsOutcome MPAClient::ListSessions(const ListSessionsRequest& request) 
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MPAClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -449,7 +477,9 @@ ListTagsForResourceOutcome MPAClient::ListTagsForResource(const ListTagsForResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartActiveApprovalTeamDeletionOutcome MPAClient::StartActiveApprovalTeamDeletion(
@@ -469,7 +499,9 @@ StartActiveApprovalTeamDeletionOutcome MPAClient::StartActiveApprovalTeamDeletio
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return StartActiveApprovalTeamDeletionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartActiveApprovalTeamDeletionOutcome(result.GetResultWithOwnership())
+                            : StartActiveApprovalTeamDeletionOutcome(std::move(result.GetError()));
 }
 
 StartApprovalTeamBaselineOutcome MPAClient::StartApprovalTeamBaseline(const StartApprovalTeamBaselineRequest& request) const {
@@ -486,7 +518,9 @@ StartApprovalTeamBaselineOutcome MPAClient::StartApprovalTeamBaseline(const Star
     endpointResolutionOutcome.GetResult().AddPathSegments("/baseline");
   };
 
-  return StartApprovalTeamBaselineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartApprovalTeamBaselineOutcome(result.GetResultWithOwnership())
+                            : StartApprovalTeamBaselineOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MPAClient::TagResource(const TagResourceRequest& request) const {
@@ -502,7 +536,8 @@ TagResourceOutcome MPAClient::TagResource(const TagResourceRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MPAClient::UntagResource(const UntagResourceRequest& request) const {
@@ -518,7 +553,8 @@ UntagResourceOutcome MPAClient::UntagResource(const UntagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApprovalTeamOutcome MPAClient::UpdateApprovalTeam(const UpdateApprovalTeamRequest& request) const {
@@ -534,5 +570,7 @@ UpdateApprovalTeamOutcome MPAClient::UpdateApprovalTeam(const UpdateApprovalTeam
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UpdateApprovalTeamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateApprovalTeamOutcome(result.GetResultWithOwnership())
+                            : UpdateApprovalTeamOutcome(std::move(result.GetError()));
 }

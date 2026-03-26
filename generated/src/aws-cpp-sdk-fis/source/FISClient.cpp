@@ -204,7 +204,9 @@ CreateExperimentTemplateOutcome FISClient::CreateExperimentTemplate(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/experimentTemplates");
   };
 
-  return CreateExperimentTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExperimentTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateExperimentTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateTargetAccountConfigurationOutcome FISClient::CreateTargetAccountConfiguration(
@@ -228,7 +230,9 @@ CreateTargetAccountConfigurationOutcome FISClient::CreateTargetAccountConfigurat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountId());
   };
 
-  return CreateTargetAccountConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTargetAccountConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateTargetAccountConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteExperimentTemplateOutcome FISClient::DeleteExperimentTemplate(const DeleteExperimentTemplateRequest& request) const {
@@ -244,7 +248,9 @@ DeleteExperimentTemplateOutcome FISClient::DeleteExperimentTemplate(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteExperimentTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteExperimentTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteExperimentTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteTargetAccountConfigurationOutcome FISClient::DeleteTargetAccountConfiguration(
@@ -268,7 +274,9 @@ DeleteTargetAccountConfigurationOutcome FISClient::DeleteTargetAccountConfigurat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountId());
   };
 
-  return DeleteTargetAccountConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTargetAccountConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteTargetAccountConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetActionOutcome FISClient::GetAction(const GetActionRequest& request) const {
@@ -284,7 +292,8 @@ GetActionOutcome FISClient::GetAction(const GetActionRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetActionOutcome(result.GetResultWithOwnership()) : GetActionOutcome(std::move(result.GetError()));
 }
 
 GetExperimentOutcome FISClient::GetExperiment(const GetExperimentRequest& request) const {
@@ -300,7 +309,8 @@ GetExperimentOutcome FISClient::GetExperiment(const GetExperimentRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetExperimentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExperimentOutcome(result.GetResultWithOwnership()) : GetExperimentOutcome(std::move(result.GetError()));
 }
 
 GetExperimentTargetAccountConfigurationOutcome FISClient::GetExperimentTargetAccountConfiguration(
@@ -324,7 +334,9 @@ GetExperimentTargetAccountConfigurationOutcome FISClient::GetExperimentTargetAcc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountId());
   };
 
-  return GetExperimentTargetAccountConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExperimentTargetAccountConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetExperimentTargetAccountConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetExperimentTemplateOutcome FISClient::GetExperimentTemplate(const GetExperimentTemplateRequest& request) const {
@@ -340,7 +352,9 @@ GetExperimentTemplateOutcome FISClient::GetExperimentTemplate(const GetExperimen
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetExperimentTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExperimentTemplateOutcome(result.GetResultWithOwnership())
+                            : GetExperimentTemplateOutcome(std::move(result.GetError()));
 }
 
 GetSafetyLeverOutcome FISClient::GetSafetyLever(const GetSafetyLeverRequest& request) const {
@@ -356,7 +370,8 @@ GetSafetyLeverOutcome FISClient::GetSafetyLever(const GetSafetyLeverRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetSafetyLeverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSafetyLeverOutcome(result.GetResultWithOwnership()) : GetSafetyLeverOutcome(std::move(result.GetError()));
 }
 
 GetTargetAccountConfigurationOutcome FISClient::GetTargetAccountConfiguration(const GetTargetAccountConfigurationRequest& request) const {
@@ -379,7 +394,9 @@ GetTargetAccountConfigurationOutcome FISClient::GetTargetAccountConfiguration(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountId());
   };
 
-  return GetTargetAccountConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTargetAccountConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetTargetAccountConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetTargetResourceTypeOutcome FISClient::GetTargetResourceType(const GetTargetResourceTypeRequest& request) const {
@@ -395,7 +412,9 @@ GetTargetResourceTypeOutcome FISClient::GetTargetResourceType(const GetTargetRes
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceType());
   };
 
-  return GetTargetResourceTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTargetResourceTypeOutcome(result.GetResultWithOwnership())
+                            : GetTargetResourceTypeOutcome(std::move(result.GetError()));
 }
 
 ListActionsOutcome FISClient::ListActions(const ListActionsRequest& request) const {
@@ -404,7 +423,8 @@ ListActionsOutcome FISClient::ListActions(const ListActionsRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
   };
 
-  return ListActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListActionsOutcome(result.GetResultWithOwnership()) : ListActionsOutcome(std::move(result.GetError()));
 }
 
 ListExperimentResolvedTargetsOutcome FISClient::ListExperimentResolvedTargets(const ListExperimentResolvedTargetsRequest& request) const {
@@ -421,7 +441,9 @@ ListExperimentResolvedTargetsOutcome FISClient::ListExperimentResolvedTargets(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/resolvedTargets");
   };
 
-  return ListExperimentResolvedTargetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExperimentResolvedTargetsOutcome(result.GetResultWithOwnership())
+                            : ListExperimentResolvedTargetsOutcome(std::move(result.GetError()));
 }
 
 ListExperimentTargetAccountConfigurationsOutcome FISClient::ListExperimentTargetAccountConfigurations(
@@ -439,7 +461,9 @@ ListExperimentTargetAccountConfigurationsOutcome FISClient::ListExperimentTarget
     endpointResolutionOutcome.GetResult().AddPathSegments("/targetAccountConfigurations");
   };
 
-  return ListExperimentTargetAccountConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExperimentTargetAccountConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListExperimentTargetAccountConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListExperimentTemplatesOutcome FISClient::ListExperimentTemplates(const ListExperimentTemplatesRequest& request) const {
@@ -448,7 +472,9 @@ ListExperimentTemplatesOutcome FISClient::ListExperimentTemplates(const ListExpe
     endpointResolutionOutcome.GetResult().AddPathSegments("/experimentTemplates");
   };
 
-  return ListExperimentTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExperimentTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListExperimentTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListExperimentsOutcome FISClient::ListExperiments(const ListExperimentsRequest& request) const {
@@ -457,7 +483,9 @@ ListExperimentsOutcome FISClient::ListExperiments(const ListExperimentsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/experiments");
   };
 
-  return ListExperimentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExperimentsOutcome(result.GetResultWithOwnership())
+                            : ListExperimentsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome FISClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -473,7 +501,9 @@ ListTagsForResourceOutcome FISClient::ListTagsForResource(const ListTagsForResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTargetAccountConfigurationsOutcome FISClient::ListTargetAccountConfigurations(
@@ -491,7 +521,9 @@ ListTargetAccountConfigurationsOutcome FISClient::ListTargetAccountConfiguration
     endpointResolutionOutcome.GetResult().AddPathSegments("/targetAccountConfigurations");
   };
 
-  return ListTargetAccountConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTargetAccountConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListTargetAccountConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListTargetResourceTypesOutcome FISClient::ListTargetResourceTypes(const ListTargetResourceTypesRequest& request) const {
@@ -500,7 +532,9 @@ ListTargetResourceTypesOutcome FISClient::ListTargetResourceTypes(const ListTarg
     endpointResolutionOutcome.GetResult().AddPathSegments("/targetResourceTypes");
   };
 
-  return ListTargetResourceTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTargetResourceTypesOutcome(result.GetResultWithOwnership())
+                            : ListTargetResourceTypesOutcome(std::move(result.GetError()));
 }
 
 StartExperimentOutcome FISClient::StartExperiment(const StartExperimentRequest& request) const {
@@ -509,7 +543,9 @@ StartExperimentOutcome FISClient::StartExperiment(const StartExperimentRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/experiments");
   };
 
-  return StartExperimentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartExperimentOutcome(result.GetResultWithOwnership())
+                            : StartExperimentOutcome(std::move(result.GetError()));
 }
 
 StopExperimentOutcome FISClient::StopExperiment(const StopExperimentRequest& request) const {
@@ -525,7 +561,8 @@ StopExperimentOutcome FISClient::StopExperiment(const StopExperimentRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return StopExperimentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? StopExperimentOutcome(result.GetResultWithOwnership()) : StopExperimentOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome FISClient::TagResource(const TagResourceRequest& request) const {
@@ -541,7 +578,8 @@ TagResourceOutcome FISClient::TagResource(const TagResourceRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome FISClient::UntagResource(const UntagResourceRequest& request) const {
@@ -557,7 +595,8 @@ UntagResourceOutcome FISClient::UntagResource(const UntagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateExperimentTemplateOutcome FISClient::UpdateExperimentTemplate(const UpdateExperimentTemplateRequest& request) const {
@@ -573,7 +612,9 @@ UpdateExperimentTemplateOutcome FISClient::UpdateExperimentTemplate(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateExperimentTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateExperimentTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateExperimentTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateSafetyLeverStateOutcome FISClient::UpdateSafetyLeverState(const UpdateSafetyLeverStateRequest& request) const {
@@ -590,7 +631,9 @@ UpdateSafetyLeverStateOutcome FISClient::UpdateSafetyLeverState(const UpdateSafe
     endpointResolutionOutcome.GetResult().AddPathSegments("/state");
   };
 
-  return UpdateSafetyLeverStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSafetyLeverStateOutcome(result.GetResultWithOwnership())
+                            : UpdateSafetyLeverStateOutcome(std::move(result.GetError()));
 }
 
 UpdateTargetAccountConfigurationOutcome FISClient::UpdateTargetAccountConfiguration(
@@ -614,5 +657,7 @@ UpdateTargetAccountConfigurationOutcome FISClient::UpdateTargetAccountConfigurat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccountId());
   };
 
-  return UpdateTargetAccountConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateTargetAccountConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateTargetAccountConfigurationOutcome(std::move(result.GetError()));
 }

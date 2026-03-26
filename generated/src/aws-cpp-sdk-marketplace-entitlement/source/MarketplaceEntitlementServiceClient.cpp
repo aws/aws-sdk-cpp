@@ -183,5 +183,7 @@ MarketplaceEntitlementServiceClient::InvokeOperationOutcome MarketplaceEntitleme
 }
 
 GetEntitlementsOutcome MarketplaceEntitlementServiceClient::GetEntitlements(const GetEntitlementsRequest& request) const {
-  return GetEntitlementsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEntitlementsOutcome(result.GetResultWithOwnership())
+                            : GetEntitlementsOutcome(std::move(result.GetError()));
 }

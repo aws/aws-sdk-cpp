@@ -230,7 +230,9 @@ CancelGremlinQueryOutcome NeptunedataClient::CancelGremlinQuery(const CancelGrem
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
   };
 
-  return CancelGremlinQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelGremlinQueryOutcome(result.GetResultWithOwnership())
+                            : CancelGremlinQueryOutcome(std::move(result.GetError()));
 }
 
 CancelLoaderJobOutcome NeptunedataClient::CancelLoaderJob(const CancelLoaderJobRequest& request) const {
@@ -246,7 +248,9 @@ CancelLoaderJobOutcome NeptunedataClient::CancelLoaderJob(const CancelLoaderJobR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLoadId());
   };
 
-  return CancelLoaderJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelLoaderJobOutcome(result.GetResultWithOwnership())
+                            : CancelLoaderJobOutcome(std::move(result.GetError()));
 }
 
 CancelMLDataProcessingJobOutcome NeptunedataClient::CancelMLDataProcessingJob(const CancelMLDataProcessingJobRequest& request) const {
@@ -262,7 +266,9 @@ CancelMLDataProcessingJobOutcome NeptunedataClient::CancelMLDataProcessingJob(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return CancelMLDataProcessingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelMLDataProcessingJobOutcome(result.GetResultWithOwnership())
+                            : CancelMLDataProcessingJobOutcome(std::move(result.GetError()));
 }
 
 CancelMLModelTrainingJobOutcome NeptunedataClient::CancelMLModelTrainingJob(const CancelMLModelTrainingJobRequest& request) const {
@@ -278,7 +284,9 @@ CancelMLModelTrainingJobOutcome NeptunedataClient::CancelMLModelTrainingJob(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return CancelMLModelTrainingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelMLModelTrainingJobOutcome(result.GetResultWithOwnership())
+                            : CancelMLModelTrainingJobOutcome(std::move(result.GetError()));
 }
 
 CancelMLModelTransformJobOutcome NeptunedataClient::CancelMLModelTransformJob(const CancelMLModelTransformJobRequest& request) const {
@@ -294,7 +302,9 @@ CancelMLModelTransformJobOutcome NeptunedataClient::CancelMLModelTransformJob(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return CancelMLModelTransformJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelMLModelTransformJobOutcome(result.GetResultWithOwnership())
+                            : CancelMLModelTransformJobOutcome(std::move(result.GetError()));
 }
 
 CancelOpenCypherQueryOutcome NeptunedataClient::CancelOpenCypherQuery(const CancelOpenCypherQueryRequest& request) const {
@@ -310,7 +320,9 @@ CancelOpenCypherQueryOutcome NeptunedataClient::CancelOpenCypherQuery(const Canc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
   };
 
-  return CancelOpenCypherQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelOpenCypherQueryOutcome(result.GetResultWithOwnership())
+                            : CancelOpenCypherQueryOutcome(std::move(result.GetError()));
 }
 
 CreateMLEndpointOutcome NeptunedataClient::CreateMLEndpoint(const CreateMLEndpointRequest& request) const {
@@ -319,7 +331,9 @@ CreateMLEndpointOutcome NeptunedataClient::CreateMLEndpoint(const CreateMLEndpoi
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml/endpoints");
   };
 
-  return CreateMLEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMLEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateMLEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteMLEndpointOutcome NeptunedataClient::DeleteMLEndpoint(const DeleteMLEndpointRequest& request) const {
@@ -335,7 +349,9 @@ DeleteMLEndpointOutcome NeptunedataClient::DeleteMLEndpoint(const DeleteMLEndpoi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteMLEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMLEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteMLEndpointOutcome(std::move(result.GetError()));
 }
 
 DeletePropertygraphStatisticsOutcome NeptunedataClient::DeletePropertygraphStatistics(
@@ -345,7 +361,9 @@ DeletePropertygraphStatisticsOutcome NeptunedataClient::DeletePropertygraphStati
     endpointResolutionOutcome.GetResult().AddPathSegments("/propertygraph/statistics");
   };
 
-  return DeletePropertygraphStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePropertygraphStatisticsOutcome(result.GetResultWithOwnership())
+                            : DeletePropertygraphStatisticsOutcome(std::move(result.GetError()));
 }
 
 DeleteSparqlStatisticsOutcome NeptunedataClient::DeleteSparqlStatistics(const DeleteSparqlStatisticsRequest& request) const {
@@ -354,7 +372,9 @@ DeleteSparqlStatisticsOutcome NeptunedataClient::DeleteSparqlStatistics(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/sparql/statistics");
   };
 
-  return DeleteSparqlStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSparqlStatisticsOutcome(result.GetResultWithOwnership())
+                            : DeleteSparqlStatisticsOutcome(std::move(result.GetError()));
 }
 
 ExecuteFastResetOutcome NeptunedataClient::ExecuteFastReset(const ExecuteFastResetRequest& request) const {
@@ -363,7 +383,9 @@ ExecuteFastResetOutcome NeptunedataClient::ExecuteFastReset(const ExecuteFastRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/system");
   };
 
-  return ExecuteFastResetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteFastResetOutcome(result.GetResultWithOwnership())
+                            : ExecuteFastResetOutcome(std::move(result.GetError()));
 }
 
 ExecuteGremlinExplainQueryOutcome NeptunedataClient::ExecuteGremlinExplainQuery(const ExecuteGremlinExplainQueryRequest& request) const {
@@ -388,8 +410,9 @@ ExecuteGremlinExplainQueryOutcome NeptunedataClient::ExecuteGremlinExplainQuery(
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteGremlinExplainQuery, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/gremlin/explain");
-        return ExecuteGremlinExplainQueryOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ExecuteGremlinExplainQueryOutcome(result.GetResultWithOwnership())
+                                  : ExecuteGremlinExplainQueryOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -418,8 +441,9 @@ ExecuteGremlinProfileQueryOutcome NeptunedataClient::ExecuteGremlinProfileQuery(
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteGremlinProfileQuery, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/gremlin/profile");
-        return ExecuteGremlinProfileQueryOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ExecuteGremlinProfileQueryOutcome(result.GetResultWithOwnership())
+                                  : ExecuteGremlinProfileQueryOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -432,7 +456,9 @@ ExecuteGremlinQueryOutcome NeptunedataClient::ExecuteGremlinQuery(const ExecuteG
     endpointResolutionOutcome.GetResult().AddPathSegments("/gremlin");
   };
 
-  return ExecuteGremlinQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteGremlinQueryOutcome(result.GetResultWithOwnership())
+                            : ExecuteGremlinQueryOutcome(std::move(result.GetError()));
 }
 
 ExecuteOpenCypherExplainQueryOutcome NeptunedataClient::ExecuteOpenCypherExplainQuery(
@@ -458,8 +484,9 @@ ExecuteOpenCypherExplainQueryOutcome NeptunedataClient::ExecuteOpenCypherExplain
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteOpenCypherExplainQuery, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/opencypher/explain");
-        return ExecuteOpenCypherExplainQueryOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? ExecuteOpenCypherExplainQueryOutcome(result.GetResultWithOwnership())
+                                  : ExecuteOpenCypherExplainQueryOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -472,7 +499,9 @@ ExecuteOpenCypherQueryOutcome NeptunedataClient::ExecuteOpenCypherQuery(const Ex
     endpointResolutionOutcome.GetResult().AddPathSegments("/opencypher");
   };
 
-  return ExecuteOpenCypherQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteOpenCypherQueryOutcome(result.GetResultWithOwnership())
+                            : ExecuteOpenCypherQueryOutcome(std::move(result.GetError()));
 }
 
 GetEngineStatusOutcome NeptunedataClient::GetEngineStatus(const GetEngineStatusRequest& request) const {
@@ -481,7 +510,9 @@ GetEngineStatusOutcome NeptunedataClient::GetEngineStatus(const GetEngineStatusR
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return GetEngineStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEngineStatusOutcome(result.GetResultWithOwnership())
+                            : GetEngineStatusOutcome(std::move(result.GetError()));
 }
 
 GetGremlinQueryStatusOutcome NeptunedataClient::GetGremlinQueryStatus(const GetGremlinQueryStatusRequest& request) const {
@@ -497,7 +528,9 @@ GetGremlinQueryStatusOutcome NeptunedataClient::GetGremlinQueryStatus(const GetG
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
   };
 
-  return GetGremlinQueryStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGremlinQueryStatusOutcome(result.GetResultWithOwnership())
+                            : GetGremlinQueryStatusOutcome(std::move(result.GetError()));
 }
 
 GetLoaderJobStatusOutcome NeptunedataClient::GetLoaderJobStatus(const GetLoaderJobStatusRequest& request) const {
@@ -513,7 +546,9 @@ GetLoaderJobStatusOutcome NeptunedataClient::GetLoaderJobStatus(const GetLoaderJ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLoadId());
   };
 
-  return GetLoaderJobStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLoaderJobStatusOutcome(result.GetResultWithOwnership())
+                            : GetLoaderJobStatusOutcome(std::move(result.GetError()));
 }
 
 GetMLDataProcessingJobOutcome NeptunedataClient::GetMLDataProcessingJob(const GetMLDataProcessingJobRequest& request) const {
@@ -529,7 +564,9 @@ GetMLDataProcessingJobOutcome NeptunedataClient::GetMLDataProcessingJob(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetMLDataProcessingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMLDataProcessingJobOutcome(result.GetResultWithOwnership())
+                            : GetMLDataProcessingJobOutcome(std::move(result.GetError()));
 }
 
 GetMLEndpointOutcome NeptunedataClient::GetMLEndpoint(const GetMLEndpointRequest& request) const {
@@ -545,7 +582,8 @@ GetMLEndpointOutcome NeptunedataClient::GetMLEndpoint(const GetMLEndpointRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetMLEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMLEndpointOutcome(result.GetResultWithOwnership()) : GetMLEndpointOutcome(std::move(result.GetError()));
 }
 
 GetMLModelTrainingJobOutcome NeptunedataClient::GetMLModelTrainingJob(const GetMLModelTrainingJobRequest& request) const {
@@ -561,7 +599,9 @@ GetMLModelTrainingJobOutcome NeptunedataClient::GetMLModelTrainingJob(const GetM
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetMLModelTrainingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMLModelTrainingJobOutcome(result.GetResultWithOwnership())
+                            : GetMLModelTrainingJobOutcome(std::move(result.GetError()));
 }
 
 GetMLModelTransformJobOutcome NeptunedataClient::GetMLModelTransformJob(const GetMLModelTransformJobRequest& request) const {
@@ -577,7 +617,9 @@ GetMLModelTransformJobOutcome NeptunedataClient::GetMLModelTransformJob(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetMLModelTransformJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMLModelTransformJobOutcome(result.GetResultWithOwnership())
+                            : GetMLModelTransformJobOutcome(std::move(result.GetError()));
 }
 
 GetOpenCypherQueryStatusOutcome NeptunedataClient::GetOpenCypherQueryStatus(const GetOpenCypherQueryStatusRequest& request) const {
@@ -593,7 +635,9 @@ GetOpenCypherQueryStatusOutcome NeptunedataClient::GetOpenCypherQueryStatus(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
   };
 
-  return GetOpenCypherQueryStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOpenCypherQueryStatusOutcome(result.GetResultWithOwnership())
+                            : GetOpenCypherQueryStatusOutcome(std::move(result.GetError()));
 }
 
 GetPropertygraphStatisticsOutcome NeptunedataClient::GetPropertygraphStatistics(const GetPropertygraphStatisticsRequest& request) const {
@@ -602,7 +646,9 @@ GetPropertygraphStatisticsOutcome NeptunedataClient::GetPropertygraphStatistics(
     endpointResolutionOutcome.GetResult().AddPathSegments("/propertygraph/statistics");
   };
 
-  return GetPropertygraphStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPropertygraphStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetPropertygraphStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetPropertygraphStreamOutcome NeptunedataClient::GetPropertygraphStream(const GetPropertygraphStreamRequest& request) const {
@@ -611,7 +657,9 @@ GetPropertygraphStreamOutcome NeptunedataClient::GetPropertygraphStream(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegments("/propertygraph/stream");
   };
 
-  return GetPropertygraphStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPropertygraphStreamOutcome(result.GetResultWithOwnership())
+                            : GetPropertygraphStreamOutcome(std::move(result.GetError()));
 }
 
 GetPropertygraphSummaryOutcome NeptunedataClient::GetPropertygraphSummary(const GetPropertygraphSummaryRequest& request) const {
@@ -620,7 +668,9 @@ GetPropertygraphSummaryOutcome NeptunedataClient::GetPropertygraphSummary(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/propertygraph/statistics/summary");
   };
 
-  return GetPropertygraphSummaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPropertygraphSummaryOutcome(result.GetResultWithOwnership())
+                            : GetPropertygraphSummaryOutcome(std::move(result.GetError()));
 }
 
 GetRDFGraphSummaryOutcome NeptunedataClient::GetRDFGraphSummary(const GetRDFGraphSummaryRequest& request) const {
@@ -629,7 +679,9 @@ GetRDFGraphSummaryOutcome NeptunedataClient::GetRDFGraphSummary(const GetRDFGrap
     endpointResolutionOutcome.GetResult().AddPathSegments("/rdf/statistics/summary");
   };
 
-  return GetRDFGraphSummaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRDFGraphSummaryOutcome(result.GetResultWithOwnership())
+                            : GetRDFGraphSummaryOutcome(std::move(result.GetError()));
 }
 
 GetSparqlStatisticsOutcome NeptunedataClient::GetSparqlStatistics(const GetSparqlStatisticsRequest& request) const {
@@ -638,7 +690,9 @@ GetSparqlStatisticsOutcome NeptunedataClient::GetSparqlStatistics(const GetSparq
     endpointResolutionOutcome.GetResult().AddPathSegments("/sparql/statistics");
   };
 
-  return GetSparqlStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSparqlStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetSparqlStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetSparqlStreamOutcome NeptunedataClient::GetSparqlStream(const GetSparqlStreamRequest& request) const {
@@ -647,7 +701,9 @@ GetSparqlStreamOutcome NeptunedataClient::GetSparqlStream(const GetSparqlStreamR
     endpointResolutionOutcome.GetResult().AddPathSegments("/sparql/stream");
   };
 
-  return GetSparqlStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSparqlStreamOutcome(result.GetResultWithOwnership())
+                            : GetSparqlStreamOutcome(std::move(result.GetError()));
 }
 
 ListGremlinQueriesOutcome NeptunedataClient::ListGremlinQueries(const ListGremlinQueriesRequest& request) const {
@@ -656,7 +712,9 @@ ListGremlinQueriesOutcome NeptunedataClient::ListGremlinQueries(const ListGremli
     endpointResolutionOutcome.GetResult().AddPathSegments("/gremlin/status");
   };
 
-  return ListGremlinQueriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGremlinQueriesOutcome(result.GetResultWithOwnership())
+                            : ListGremlinQueriesOutcome(std::move(result.GetError()));
 }
 
 ListLoaderJobsOutcome NeptunedataClient::ListLoaderJobs(const ListLoaderJobsRequest& request) const {
@@ -665,7 +723,8 @@ ListLoaderJobsOutcome NeptunedataClient::ListLoaderJobs(const ListLoaderJobsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/loader");
   };
 
-  return ListLoaderJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLoaderJobsOutcome(result.GetResultWithOwnership()) : ListLoaderJobsOutcome(std::move(result.GetError()));
 }
 
 ListMLDataProcessingJobsOutcome NeptunedataClient::ListMLDataProcessingJobs(const ListMLDataProcessingJobsRequest& request) const {
@@ -674,7 +733,9 @@ ListMLDataProcessingJobsOutcome NeptunedataClient::ListMLDataProcessingJobs(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml/dataprocessing");
   };
 
-  return ListMLDataProcessingJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMLDataProcessingJobsOutcome(result.GetResultWithOwnership())
+                            : ListMLDataProcessingJobsOutcome(std::move(result.GetError()));
 }
 
 ListMLEndpointsOutcome NeptunedataClient::ListMLEndpoints(const ListMLEndpointsRequest& request) const {
@@ -683,7 +744,9 @@ ListMLEndpointsOutcome NeptunedataClient::ListMLEndpoints(const ListMLEndpointsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml/endpoints");
   };
 
-  return ListMLEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMLEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListMLEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListMLModelTrainingJobsOutcome NeptunedataClient::ListMLModelTrainingJobs(const ListMLModelTrainingJobsRequest& request) const {
@@ -692,7 +755,9 @@ ListMLModelTrainingJobsOutcome NeptunedataClient::ListMLModelTrainingJobs(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltraining");
   };
 
-  return ListMLModelTrainingJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMLModelTrainingJobsOutcome(result.GetResultWithOwnership())
+                            : ListMLModelTrainingJobsOutcome(std::move(result.GetError()));
 }
 
 ListMLModelTransformJobsOutcome NeptunedataClient::ListMLModelTransformJobs(const ListMLModelTransformJobsRequest& request) const {
@@ -701,7 +766,9 @@ ListMLModelTransformJobsOutcome NeptunedataClient::ListMLModelTransformJobs(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltransform");
   };
 
-  return ListMLModelTransformJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMLModelTransformJobsOutcome(result.GetResultWithOwnership())
+                            : ListMLModelTransformJobsOutcome(std::move(result.GetError()));
 }
 
 ListOpenCypherQueriesOutcome NeptunedataClient::ListOpenCypherQueries(const ListOpenCypherQueriesRequest& request) const {
@@ -710,7 +777,9 @@ ListOpenCypherQueriesOutcome NeptunedataClient::ListOpenCypherQueries(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/opencypher/status");
   };
 
-  return ListOpenCypherQueriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOpenCypherQueriesOutcome(result.GetResultWithOwnership())
+                            : ListOpenCypherQueriesOutcome(std::move(result.GetError()));
 }
 
 ManagePropertygraphStatisticsOutcome NeptunedataClient::ManagePropertygraphStatistics(
@@ -720,7 +789,9 @@ ManagePropertygraphStatisticsOutcome NeptunedataClient::ManagePropertygraphStati
     endpointResolutionOutcome.GetResult().AddPathSegments("/propertygraph/statistics");
   };
 
-  return ManagePropertygraphStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ManagePropertygraphStatisticsOutcome(result.GetResultWithOwnership())
+                            : ManagePropertygraphStatisticsOutcome(std::move(result.GetError()));
 }
 
 ManageSparqlStatisticsOutcome NeptunedataClient::ManageSparqlStatistics(const ManageSparqlStatisticsRequest& request) const {
@@ -729,7 +800,9 @@ ManageSparqlStatisticsOutcome NeptunedataClient::ManageSparqlStatistics(const Ma
     endpointResolutionOutcome.GetResult().AddPathSegments("/sparql/statistics");
   };
 
-  return ManageSparqlStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ManageSparqlStatisticsOutcome(result.GetResultWithOwnership())
+                            : ManageSparqlStatisticsOutcome(std::move(result.GetError()));
 }
 
 StartLoaderJobOutcome NeptunedataClient::StartLoaderJob(const StartLoaderJobRequest& request) const {
@@ -738,7 +811,8 @@ StartLoaderJobOutcome NeptunedataClient::StartLoaderJob(const StartLoaderJobRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/loader");
   };
 
-  return StartLoaderJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartLoaderJobOutcome(result.GetResultWithOwnership()) : StartLoaderJobOutcome(std::move(result.GetError()));
 }
 
 StartMLDataProcessingJobOutcome NeptunedataClient::StartMLDataProcessingJob(const StartMLDataProcessingJobRequest& request) const {
@@ -747,7 +821,9 @@ StartMLDataProcessingJobOutcome NeptunedataClient::StartMLDataProcessingJob(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml/dataprocessing");
   };
 
-  return StartMLDataProcessingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMLDataProcessingJobOutcome(result.GetResultWithOwnership())
+                            : StartMLDataProcessingJobOutcome(std::move(result.GetError()));
 }
 
 StartMLModelTrainingJobOutcome NeptunedataClient::StartMLModelTrainingJob(const StartMLModelTrainingJobRequest& request) const {
@@ -756,7 +832,9 @@ StartMLModelTrainingJobOutcome NeptunedataClient::StartMLModelTrainingJob(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltraining");
   };
 
-  return StartMLModelTrainingJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMLModelTrainingJobOutcome(result.GetResultWithOwnership())
+                            : StartMLModelTrainingJobOutcome(std::move(result.GetError()));
 }
 
 StartMLModelTransformJobOutcome NeptunedataClient::StartMLModelTransformJob(const StartMLModelTransformJobRequest& request) const {
@@ -765,5 +843,7 @@ StartMLModelTransformJobOutcome NeptunedataClient::StartMLModelTransformJob(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml/modeltransform");
   };
 
-  return StartMLModelTransformJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMLModelTransformJobOutcome(result.GetResultWithOwnership())
+                            : StartMLModelTransformJobOutcome(std::move(result.GetError()));
 }

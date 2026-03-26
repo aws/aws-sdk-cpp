@@ -134,414 +134,592 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 DescribeTrainingPlanExtensionHistoryOutcome SageMakerClient::DescribeTrainingPlanExtensionHistory(
     const DescribeTrainingPlanExtensionHistoryRequest& request) const {
-  return DescribeTrainingPlanExtensionHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrainingPlanExtensionHistoryOutcome(result.GetResultWithOwnership())
+                            : DescribeTrainingPlanExtensionHistoryOutcome(std::move(result.GetError()));
 }
 
 DescribeTransformJobOutcome SageMakerClient::DescribeTransformJob(const DescribeTransformJobRequest& request) const {
-  return DescribeTransformJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTransformJobOutcome(result.GetResultWithOwnership())
+                            : DescribeTransformJobOutcome(std::move(result.GetError()));
 }
 
 DescribeTrialOutcome SageMakerClient::DescribeTrial(const DescribeTrialRequest& request) const {
-  return DescribeTrialOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrialOutcome(result.GetResultWithOwnership()) : DescribeTrialOutcome(std::move(result.GetError()));
 }
 
 DescribeTrialComponentOutcome SageMakerClient::DescribeTrialComponent(const DescribeTrialComponentRequest& request) const {
-  return DescribeTrialComponentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrialComponentOutcome(result.GetResultWithOwnership())
+                            : DescribeTrialComponentOutcome(std::move(result.GetError()));
 }
 
 DescribeUserProfileOutcome SageMakerClient::DescribeUserProfile(const DescribeUserProfileRequest& request) const {
-  return DescribeUserProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUserProfileOutcome(result.GetResultWithOwnership())
+                            : DescribeUserProfileOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkforceOutcome SageMakerClient::DescribeWorkforce(const DescribeWorkforceRequest& request) const {
-  return DescribeWorkforceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkforceOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkforceOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkteamOutcome SageMakerClient::DescribeWorkteam(const DescribeWorkteamRequest& request) const {
-  return DescribeWorkteamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkteamOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkteamOutcome(std::move(result.GetError()));
 }
 
 DetachClusterNodeVolumeOutcome SageMakerClient::DetachClusterNodeVolume(const DetachClusterNodeVolumeRequest& request) const {
-  return DetachClusterNodeVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachClusterNodeVolumeOutcome(result.GetResultWithOwnership())
+                            : DetachClusterNodeVolumeOutcome(std::move(result.GetError()));
 }
 
 DisableSagemakerServicecatalogPortfolioOutcome SageMakerClient::DisableSagemakerServicecatalogPortfolio(
     const DisableSagemakerServicecatalogPortfolioRequest& request) const {
-  return DisableSagemakerServicecatalogPortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableSagemakerServicecatalogPortfolioOutcome(result.GetResultWithOwnership())
+                            : DisableSagemakerServicecatalogPortfolioOutcome(std::move(result.GetError()));
 }
 
 DisassociateTrialComponentOutcome SageMakerClient::DisassociateTrialComponent(const DisassociateTrialComponentRequest& request) const {
-  return DisassociateTrialComponentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateTrialComponentOutcome(result.GetResultWithOwnership())
+                            : DisassociateTrialComponentOutcome(std::move(result.GetError()));
 }
 
 EnableSagemakerServicecatalogPortfolioOutcome SageMakerClient::EnableSagemakerServicecatalogPortfolio(
     const EnableSagemakerServicecatalogPortfolioRequest& request) const {
-  return EnableSagemakerServicecatalogPortfolioOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableSagemakerServicecatalogPortfolioOutcome(result.GetResultWithOwnership())
+                            : EnableSagemakerServicecatalogPortfolioOutcome(std::move(result.GetError()));
 }
 
 ExtendTrainingPlanOutcome SageMakerClient::ExtendTrainingPlan(const ExtendTrainingPlanRequest& request) const {
-  return ExtendTrainingPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExtendTrainingPlanOutcome(result.GetResultWithOwnership())
+                            : ExtendTrainingPlanOutcome(std::move(result.GetError()));
 }
 
 GetDeviceFleetReportOutcome SageMakerClient::GetDeviceFleetReport(const GetDeviceFleetReportRequest& request) const {
-  return GetDeviceFleetReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDeviceFleetReportOutcome(result.GetResultWithOwnership())
+                            : GetDeviceFleetReportOutcome(std::move(result.GetError()));
 }
 
 GetLineageGroupPolicyOutcome SageMakerClient::GetLineageGroupPolicy(const GetLineageGroupPolicyRequest& request) const {
-  return GetLineageGroupPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLineageGroupPolicyOutcome(result.GetResultWithOwnership())
+                            : GetLineageGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 GetModelPackageGroupPolicyOutcome SageMakerClient::GetModelPackageGroupPolicy(const GetModelPackageGroupPolicyRequest& request) const {
-  return GetModelPackageGroupPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetModelPackageGroupPolicyOutcome(result.GetResultWithOwnership())
+                            : GetModelPackageGroupPolicyOutcome(std::move(result.GetError()));
 }
 
 GetSagemakerServicecatalogPortfolioStatusOutcome SageMakerClient::GetSagemakerServicecatalogPortfolioStatus(
     const GetSagemakerServicecatalogPortfolioStatusRequest& request) const {
-  return GetSagemakerServicecatalogPortfolioStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSagemakerServicecatalogPortfolioStatusOutcome(result.GetResultWithOwnership())
+                            : GetSagemakerServicecatalogPortfolioStatusOutcome(std::move(result.GetError()));
 }
 
 GetScalingConfigurationRecommendationOutcome SageMakerClient::GetScalingConfigurationRecommendation(
     const GetScalingConfigurationRecommendationRequest& request) const {
-  return GetScalingConfigurationRecommendationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetScalingConfigurationRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetScalingConfigurationRecommendationOutcome(std::move(result.GetError()));
 }
 
 GetSearchSuggestionsOutcome SageMakerClient::GetSearchSuggestions(const GetSearchSuggestionsRequest& request) const {
-  return GetSearchSuggestionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSearchSuggestionsOutcome(result.GetResultWithOwnership())
+                            : GetSearchSuggestionsOutcome(std::move(result.GetError()));
 }
 
 ImportHubContentOutcome SageMakerClient::ImportHubContent(const ImportHubContentRequest& request) const {
-  return ImportHubContentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportHubContentOutcome(result.GetResultWithOwnership())
+                            : ImportHubContentOutcome(std::move(result.GetError()));
 }
 
 ListActionsOutcome SageMakerClient::ListActions(const ListActionsRequest& request) const {
-  return ListActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListActionsOutcome(result.GetResultWithOwnership()) : ListActionsOutcome(std::move(result.GetError()));
 }
 
 ListAlgorithmsOutcome SageMakerClient::ListAlgorithms(const ListAlgorithmsRequest& request) const {
-  return ListAlgorithmsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAlgorithmsOutcome(result.GetResultWithOwnership()) : ListAlgorithmsOutcome(std::move(result.GetError()));
 }
 
 ListAliasesOutcome SageMakerClient::ListAliases(const ListAliasesRequest& request) const {
-  return ListAliasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAliasesOutcome(result.GetResultWithOwnership()) : ListAliasesOutcome(std::move(result.GetError()));
 }
 
 ListAppImageConfigsOutcome SageMakerClient::ListAppImageConfigs(const ListAppImageConfigsRequest& request) const {
-  return ListAppImageConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppImageConfigsOutcome(result.GetResultWithOwnership())
+                            : ListAppImageConfigsOutcome(std::move(result.GetError()));
 }
 
 ListAppsOutcome SageMakerClient::ListApps(const ListAppsRequest& request) const {
-  return ListAppsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppsOutcome(result.GetResultWithOwnership()) : ListAppsOutcome(std::move(result.GetError()));
 }
 
 ListArtifactsOutcome SageMakerClient::ListArtifacts(const ListArtifactsRequest& request) const {
-  return ListArtifactsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListArtifactsOutcome(result.GetResultWithOwnership()) : ListArtifactsOutcome(std::move(result.GetError()));
 }
 
 ListAssociationsOutcome SageMakerClient::ListAssociations(const ListAssociationsRequest& request) const {
-  return ListAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListAutoMLJobsOutcome SageMakerClient::ListAutoMLJobs(const ListAutoMLJobsRequest& request) const {
-  return ListAutoMLJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutoMLJobsOutcome(result.GetResultWithOwnership()) : ListAutoMLJobsOutcome(std::move(result.GetError()));
 }
 
 ListCandidatesForAutoMLJobOutcome SageMakerClient::ListCandidatesForAutoMLJob(const ListCandidatesForAutoMLJobRequest& request) const {
-  return ListCandidatesForAutoMLJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCandidatesForAutoMLJobOutcome(result.GetResultWithOwnership())
+                            : ListCandidatesForAutoMLJobOutcome(std::move(result.GetError()));
 }
 
 ListClusterEventsOutcome SageMakerClient::ListClusterEvents(const ListClusterEventsRequest& request) const {
-  return ListClusterEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClusterEventsOutcome(result.GetResultWithOwnership())
+                            : ListClusterEventsOutcome(std::move(result.GetError()));
 }
 
 ListClusterNodesOutcome SageMakerClient::ListClusterNodes(const ListClusterNodesRequest& request) const {
-  return ListClusterNodesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClusterNodesOutcome(result.GetResultWithOwnership())
+                            : ListClusterNodesOutcome(std::move(result.GetError()));
 }
 
 ListClusterSchedulerConfigsOutcome SageMakerClient::ListClusterSchedulerConfigs(const ListClusterSchedulerConfigsRequest& request) const {
-  return ListClusterSchedulerConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClusterSchedulerConfigsOutcome(result.GetResultWithOwnership())
+                            : ListClusterSchedulerConfigsOutcome(std::move(result.GetError()));
 }
 
 ListClustersOutcome SageMakerClient::ListClusters(const ListClustersRequest& request) const {
-  return ListClustersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClustersOutcome(result.GetResultWithOwnership()) : ListClustersOutcome(std::move(result.GetError()));
 }
 
 ListCodeRepositoriesOutcome SageMakerClient::ListCodeRepositories(const ListCodeRepositoriesRequest& request) const {
-  return ListCodeRepositoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCodeRepositoriesOutcome(result.GetResultWithOwnership())
+                            : ListCodeRepositoriesOutcome(std::move(result.GetError()));
 }
 
 ListCompilationJobsOutcome SageMakerClient::ListCompilationJobs(const ListCompilationJobsRequest& request) const {
-  return ListCompilationJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCompilationJobsOutcome(result.GetResultWithOwnership())
+                            : ListCompilationJobsOutcome(std::move(result.GetError()));
 }
 
 ListComputeQuotasOutcome SageMakerClient::ListComputeQuotas(const ListComputeQuotasRequest& request) const {
-  return ListComputeQuotasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComputeQuotasOutcome(result.GetResultWithOwnership())
+                            : ListComputeQuotasOutcome(std::move(result.GetError()));
 }
 
 ListContextsOutcome SageMakerClient::ListContexts(const ListContextsRequest& request) const {
-  return ListContextsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContextsOutcome(result.GetResultWithOwnership()) : ListContextsOutcome(std::move(result.GetError()));
 }
 
 ListDataQualityJobDefinitionsOutcome SageMakerClient::ListDataQualityJobDefinitions(
     const ListDataQualityJobDefinitionsRequest& request) const {
-  return ListDataQualityJobDefinitionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataQualityJobDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListDataQualityJobDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListDeviceFleetsOutcome SageMakerClient::ListDeviceFleets(const ListDeviceFleetsRequest& request) const {
-  return ListDeviceFleetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDeviceFleetsOutcome(result.GetResultWithOwnership())
+                            : ListDeviceFleetsOutcome(std::move(result.GetError()));
 }
 
 ListDevicesOutcome SageMakerClient::ListDevices(const ListDevicesRequest& request) const {
-  return ListDevicesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDevicesOutcome(result.GetResultWithOwnership()) : ListDevicesOutcome(std::move(result.GetError()));
 }
 
 ListDomainsOutcome SageMakerClient::ListDomains(const ListDomainsRequest& request) const {
-  return ListDomainsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDomainsOutcome(result.GetResultWithOwnership()) : ListDomainsOutcome(std::move(result.GetError()));
 }
 
 ListEdgeDeploymentPlansOutcome SageMakerClient::ListEdgeDeploymentPlans(const ListEdgeDeploymentPlansRequest& request) const {
-  return ListEdgeDeploymentPlansOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEdgeDeploymentPlansOutcome(result.GetResultWithOwnership())
+                            : ListEdgeDeploymentPlansOutcome(std::move(result.GetError()));
 }
 
 ListEdgePackagingJobsOutcome SageMakerClient::ListEdgePackagingJobs(const ListEdgePackagingJobsRequest& request) const {
-  return ListEdgePackagingJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEdgePackagingJobsOutcome(result.GetResultWithOwnership())
+                            : ListEdgePackagingJobsOutcome(std::move(result.GetError()));
 }
 
 ListEndpointConfigsOutcome SageMakerClient::ListEndpointConfigs(const ListEndpointConfigsRequest& request) const {
-  return ListEndpointConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEndpointConfigsOutcome(result.GetResultWithOwnership())
+                            : ListEndpointConfigsOutcome(std::move(result.GetError()));
 }
 
 ListEndpointsOutcome SageMakerClient::ListEndpoints(const ListEndpointsRequest& request) const {
-  return ListEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEndpointsOutcome(result.GetResultWithOwnership()) : ListEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListExperimentsOutcome SageMakerClient::ListExperiments(const ListExperimentsRequest& request) const {
-  return ListExperimentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExperimentsOutcome(result.GetResultWithOwnership())
+                            : ListExperimentsOutcome(std::move(result.GetError()));
 }
 
 ListFeatureGroupsOutcome SageMakerClient::ListFeatureGroups(const ListFeatureGroupsRequest& request) const {
-  return ListFeatureGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFeatureGroupsOutcome(result.GetResultWithOwnership())
+                            : ListFeatureGroupsOutcome(std::move(result.GetError()));
 }
 
 ListFlowDefinitionsOutcome SageMakerClient::ListFlowDefinitions(const ListFlowDefinitionsRequest& request) const {
-  return ListFlowDefinitionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFlowDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListFlowDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListHubContentVersionsOutcome SageMakerClient::ListHubContentVersions(const ListHubContentVersionsRequest& request) const {
-  return ListHubContentVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHubContentVersionsOutcome(result.GetResultWithOwnership())
+                            : ListHubContentVersionsOutcome(std::move(result.GetError()));
 }
 
 ListHubContentsOutcome SageMakerClient::ListHubContents(const ListHubContentsRequest& request) const {
-  return ListHubContentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHubContentsOutcome(result.GetResultWithOwnership())
+                            : ListHubContentsOutcome(std::move(result.GetError()));
 }
 
 ListHubsOutcome SageMakerClient::ListHubs(const ListHubsRequest& request) const {
-  return ListHubsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHubsOutcome(result.GetResultWithOwnership()) : ListHubsOutcome(std::move(result.GetError()));
 }
 
 ListHumanTaskUisOutcome SageMakerClient::ListHumanTaskUis(const ListHumanTaskUisRequest& request) const {
-  return ListHumanTaskUisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHumanTaskUisOutcome(result.GetResultWithOwnership())
+                            : ListHumanTaskUisOutcome(std::move(result.GetError()));
 }
 
 ListHyperParameterTuningJobsOutcome SageMakerClient::ListHyperParameterTuningJobs(
     const ListHyperParameterTuningJobsRequest& request) const {
-  return ListHyperParameterTuningJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHyperParameterTuningJobsOutcome(result.GetResultWithOwnership())
+                            : ListHyperParameterTuningJobsOutcome(std::move(result.GetError()));
 }
 
 ListImageVersionsOutcome SageMakerClient::ListImageVersions(const ListImageVersionsRequest& request) const {
-  return ListImageVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImageVersionsOutcome(result.GetResultWithOwnership())
+                            : ListImageVersionsOutcome(std::move(result.GetError()));
 }
 
 ListImagesOutcome SageMakerClient::ListImages(const ListImagesRequest& request) const {
-  return ListImagesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImagesOutcome(result.GetResultWithOwnership()) : ListImagesOutcome(std::move(result.GetError()));
 }
 
 ListInferenceComponentsOutcome SageMakerClient::ListInferenceComponents(const ListInferenceComponentsRequest& request) const {
-  return ListInferenceComponentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInferenceComponentsOutcome(result.GetResultWithOwnership())
+                            : ListInferenceComponentsOutcome(std::move(result.GetError()));
 }
 
 ListInferenceExperimentsOutcome SageMakerClient::ListInferenceExperiments(const ListInferenceExperimentsRequest& request) const {
-  return ListInferenceExperimentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInferenceExperimentsOutcome(result.GetResultWithOwnership())
+                            : ListInferenceExperimentsOutcome(std::move(result.GetError()));
 }
 
 ListInferenceRecommendationsJobStepsOutcome SageMakerClient::ListInferenceRecommendationsJobSteps(
     const ListInferenceRecommendationsJobStepsRequest& request) const {
-  return ListInferenceRecommendationsJobStepsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInferenceRecommendationsJobStepsOutcome(result.GetResultWithOwnership())
+                            : ListInferenceRecommendationsJobStepsOutcome(std::move(result.GetError()));
 }
 
 ListInferenceRecommendationsJobsOutcome SageMakerClient::ListInferenceRecommendationsJobs(
     const ListInferenceRecommendationsJobsRequest& request) const {
-  return ListInferenceRecommendationsJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInferenceRecommendationsJobsOutcome(result.GetResultWithOwnership())
+                            : ListInferenceRecommendationsJobsOutcome(std::move(result.GetError()));
 }
 
 ListLabelingJobsOutcome SageMakerClient::ListLabelingJobs(const ListLabelingJobsRequest& request) const {
-  return ListLabelingJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLabelingJobsOutcome(result.GetResultWithOwnership())
+                            : ListLabelingJobsOutcome(std::move(result.GetError()));
 }
 
 ListLabelingJobsForWorkteamOutcome SageMakerClient::ListLabelingJobsForWorkteam(const ListLabelingJobsForWorkteamRequest& request) const {
-  return ListLabelingJobsForWorkteamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLabelingJobsForWorkteamOutcome(result.GetResultWithOwnership())
+                            : ListLabelingJobsForWorkteamOutcome(std::move(result.GetError()));
 }
 
 ListLineageGroupsOutcome SageMakerClient::ListLineageGroups(const ListLineageGroupsRequest& request) const {
-  return ListLineageGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLineageGroupsOutcome(result.GetResultWithOwnership())
+                            : ListLineageGroupsOutcome(std::move(result.GetError()));
 }
 
 ListMlflowAppsOutcome SageMakerClient::ListMlflowApps(const ListMlflowAppsRequest& request) const {
-  return ListMlflowAppsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMlflowAppsOutcome(result.GetResultWithOwnership()) : ListMlflowAppsOutcome(std::move(result.GetError()));
 }
 
 ListMlflowTrackingServersOutcome SageMakerClient::ListMlflowTrackingServers(const ListMlflowTrackingServersRequest& request) const {
-  return ListMlflowTrackingServersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMlflowTrackingServersOutcome(result.GetResultWithOwnership())
+                            : ListMlflowTrackingServersOutcome(std::move(result.GetError()));
 }
 
 ListModelBiasJobDefinitionsOutcome SageMakerClient::ListModelBiasJobDefinitions(const ListModelBiasJobDefinitionsRequest& request) const {
-  return ListModelBiasJobDefinitionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelBiasJobDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListModelBiasJobDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListModelCardExportJobsOutcome SageMakerClient::ListModelCardExportJobs(const ListModelCardExportJobsRequest& request) const {
-  return ListModelCardExportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelCardExportJobsOutcome(result.GetResultWithOwnership())
+                            : ListModelCardExportJobsOutcome(std::move(result.GetError()));
 }
 
 ListModelCardVersionsOutcome SageMakerClient::ListModelCardVersions(const ListModelCardVersionsRequest& request) const {
-  return ListModelCardVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelCardVersionsOutcome(result.GetResultWithOwnership())
+                            : ListModelCardVersionsOutcome(std::move(result.GetError()));
 }
 
 ListModelCardsOutcome SageMakerClient::ListModelCards(const ListModelCardsRequest& request) const {
-  return ListModelCardsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelCardsOutcome(result.GetResultWithOwnership()) : ListModelCardsOutcome(std::move(result.GetError()));
 }
 
 ListModelExplainabilityJobDefinitionsOutcome SageMakerClient::ListModelExplainabilityJobDefinitions(
     const ListModelExplainabilityJobDefinitionsRequest& request) const {
-  return ListModelExplainabilityJobDefinitionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelExplainabilityJobDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListModelExplainabilityJobDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListModelMetadataOutcome SageMakerClient::ListModelMetadata(const ListModelMetadataRequest& request) const {
-  return ListModelMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelMetadataOutcome(result.GetResultWithOwnership())
+                            : ListModelMetadataOutcome(std::move(result.GetError()));
 }
 
 ListModelPackageGroupsOutcome SageMakerClient::ListModelPackageGroups(const ListModelPackageGroupsRequest& request) const {
-  return ListModelPackageGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelPackageGroupsOutcome(result.GetResultWithOwnership())
+                            : ListModelPackageGroupsOutcome(std::move(result.GetError()));
 }
 
 ListModelPackagesOutcome SageMakerClient::ListModelPackages(const ListModelPackagesRequest& request) const {
-  return ListModelPackagesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelPackagesOutcome(result.GetResultWithOwnership())
+                            : ListModelPackagesOutcome(std::move(result.GetError()));
 }
 
 ListModelQualityJobDefinitionsOutcome SageMakerClient::ListModelQualityJobDefinitions(
     const ListModelQualityJobDefinitionsRequest& request) const {
-  return ListModelQualityJobDefinitionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelQualityJobDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListModelQualityJobDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListModelsOutcome SageMakerClient::ListModels(const ListModelsRequest& request) const {
-  return ListModelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelsOutcome(result.GetResultWithOwnership()) : ListModelsOutcome(std::move(result.GetError()));
 }
 
 ListMonitoringAlertHistoryOutcome SageMakerClient::ListMonitoringAlertHistory(const ListMonitoringAlertHistoryRequest& request) const {
-  return ListMonitoringAlertHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMonitoringAlertHistoryOutcome(result.GetResultWithOwnership())
+                            : ListMonitoringAlertHistoryOutcome(std::move(result.GetError()));
 }
 
 ListMonitoringAlertsOutcome SageMakerClient::ListMonitoringAlerts(const ListMonitoringAlertsRequest& request) const {
-  return ListMonitoringAlertsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMonitoringAlertsOutcome(result.GetResultWithOwnership())
+                            : ListMonitoringAlertsOutcome(std::move(result.GetError()));
 }
 
 ListMonitoringExecutionsOutcome SageMakerClient::ListMonitoringExecutions(const ListMonitoringExecutionsRequest& request) const {
-  return ListMonitoringExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMonitoringExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListMonitoringExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListMonitoringSchedulesOutcome SageMakerClient::ListMonitoringSchedules(const ListMonitoringSchedulesRequest& request) const {
-  return ListMonitoringSchedulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMonitoringSchedulesOutcome(result.GetResultWithOwnership())
+                            : ListMonitoringSchedulesOutcome(std::move(result.GetError()));
 }
 
 ListNotebookInstanceLifecycleConfigsOutcome SageMakerClient::ListNotebookInstanceLifecycleConfigs(
     const ListNotebookInstanceLifecycleConfigsRequest& request) const {
-  return ListNotebookInstanceLifecycleConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNotebookInstanceLifecycleConfigsOutcome(result.GetResultWithOwnership())
+                            : ListNotebookInstanceLifecycleConfigsOutcome(std::move(result.GetError()));
 }
 
 ListNotebookInstancesOutcome SageMakerClient::ListNotebookInstances(const ListNotebookInstancesRequest& request) const {
-  return ListNotebookInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNotebookInstancesOutcome(result.GetResultWithOwnership())
+                            : ListNotebookInstancesOutcome(std::move(result.GetError()));
 }
 
 ListOptimizationJobsOutcome SageMakerClient::ListOptimizationJobs(const ListOptimizationJobsRequest& request) const {
-  return ListOptimizationJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOptimizationJobsOutcome(result.GetResultWithOwnership())
+                            : ListOptimizationJobsOutcome(std::move(result.GetError()));
 }
 
 ListPartnerAppsOutcome SageMakerClient::ListPartnerApps(const ListPartnerAppsRequest& request) const {
-  return ListPartnerAppsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPartnerAppsOutcome(result.GetResultWithOwnership())
+                            : ListPartnerAppsOutcome(std::move(result.GetError()));
 }
 
 ListPipelineExecutionStepsOutcome SageMakerClient::ListPipelineExecutionSteps(const ListPipelineExecutionStepsRequest& request) const {
-  return ListPipelineExecutionStepsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPipelineExecutionStepsOutcome(result.GetResultWithOwnership())
+                            : ListPipelineExecutionStepsOutcome(std::move(result.GetError()));
 }
 
 ListPipelineExecutionsOutcome SageMakerClient::ListPipelineExecutions(const ListPipelineExecutionsRequest& request) const {
-  return ListPipelineExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPipelineExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListPipelineExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListPipelineParametersForExecutionOutcome SageMakerClient::ListPipelineParametersForExecution(
     const ListPipelineParametersForExecutionRequest& request) const {
-  return ListPipelineParametersForExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPipelineParametersForExecutionOutcome(result.GetResultWithOwnership())
+                            : ListPipelineParametersForExecutionOutcome(std::move(result.GetError()));
 }
 
 ListPipelineVersionsOutcome SageMakerClient::ListPipelineVersions(const ListPipelineVersionsRequest& request) const {
-  return ListPipelineVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPipelineVersionsOutcome(result.GetResultWithOwnership())
+                            : ListPipelineVersionsOutcome(std::move(result.GetError()));
 }
 
 ListPipelinesOutcome SageMakerClient::ListPipelines(const ListPipelinesRequest& request) const {
-  return ListPipelinesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPipelinesOutcome(result.GetResultWithOwnership()) : ListPipelinesOutcome(std::move(result.GetError()));
 }
 
 ListProcessingJobsOutcome SageMakerClient::ListProcessingJobs(const ListProcessingJobsRequest& request) const {
-  return ListProcessingJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProcessingJobsOutcome(result.GetResultWithOwnership())
+                            : ListProcessingJobsOutcome(std::move(result.GetError()));
 }
 
 ListProjectsOutcome SageMakerClient::ListProjects(const ListProjectsRequest& request) const {
-  return ListProjectsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProjectsOutcome(result.GetResultWithOwnership()) : ListProjectsOutcome(std::move(result.GetError()));
 }
 
 ListResourceCatalogsOutcome SageMakerClient::ListResourceCatalogs(const ListResourceCatalogsRequest& request) const {
-  return ListResourceCatalogsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceCatalogsOutcome(result.GetResultWithOwnership())
+                            : ListResourceCatalogsOutcome(std::move(result.GetError()));
 }
 
 ListSpacesOutcome SageMakerClient::ListSpaces(const ListSpacesRequest& request) const {
-  return ListSpacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSpacesOutcome(result.GetResultWithOwnership()) : ListSpacesOutcome(std::move(result.GetError()));
 }
 
 ListStageDevicesOutcome SageMakerClient::ListStageDevices(const ListStageDevicesRequest& request) const {
-  return ListStageDevicesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStageDevicesOutcome(result.GetResultWithOwnership())
+                            : ListStageDevicesOutcome(std::move(result.GetError()));
 }
 
 ListStudioLifecycleConfigsOutcome SageMakerClient::ListStudioLifecycleConfigs(const ListStudioLifecycleConfigsRequest& request) const {
-  return ListStudioLifecycleConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStudioLifecycleConfigsOutcome(result.GetResultWithOwnership())
+                            : ListStudioLifecycleConfigsOutcome(std::move(result.GetError()));
 }
 
 ListSubscribedWorkteamsOutcome SageMakerClient::ListSubscribedWorkteams(const ListSubscribedWorkteamsRequest& request) const {
-  return ListSubscribedWorkteamsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSubscribedWorkteamsOutcome(result.GetResultWithOwnership())
+                            : ListSubscribedWorkteamsOutcome(std::move(result.GetError()));
 }
 
 ListTagsOutcome SageMakerClient::ListTags(const ListTagsRequest& request) const {
-  return ListTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsOutcome(result.GetResultWithOwnership()) : ListTagsOutcome(std::move(result.GetError()));
 }
 
 ListTrainingJobsOutcome SageMakerClient::ListTrainingJobs(const ListTrainingJobsRequest& request) const {
-  return ListTrainingJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrainingJobsOutcome(result.GetResultWithOwnership())
+                            : ListTrainingJobsOutcome(std::move(result.GetError()));
 }
 
 ListTrainingJobsForHyperParameterTuningJobOutcome SageMakerClient::ListTrainingJobsForHyperParameterTuningJob(
     const ListTrainingJobsForHyperParameterTuningJobRequest& request) const {
-  return ListTrainingJobsForHyperParameterTuningJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrainingJobsForHyperParameterTuningJobOutcome(result.GetResultWithOwnership())
+                            : ListTrainingJobsForHyperParameterTuningJobOutcome(std::move(result.GetError()));
 }
 
 ListTrainingPlansOutcome SageMakerClient::ListTrainingPlans(const ListTrainingPlansRequest& request) const {
-  return ListTrainingPlansOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrainingPlansOutcome(result.GetResultWithOwnership())
+                            : ListTrainingPlansOutcome(std::move(result.GetError()));
 }
 
 ListTransformJobsOutcome SageMakerClient::ListTransformJobs(const ListTransformJobsRequest& request) const {
-  return ListTransformJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTransformJobsOutcome(result.GetResultWithOwnership())
+                            : ListTransformJobsOutcome(std::move(result.GetError()));
 }
 
 ListTrialComponentsOutcome SageMakerClient::ListTrialComponents(const ListTrialComponentsRequest& request) const {
-  return ListTrialComponentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrialComponentsOutcome(result.GetResultWithOwnership())
+                            : ListTrialComponentsOutcome(std::move(result.GetError()));
 }
 
 ListTrialsOutcome SageMakerClient::ListTrials(const ListTrialsRequest& request) const {
-  return ListTrialsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrialsOutcome(result.GetResultWithOwnership()) : ListTrialsOutcome(std::move(result.GetError()));
 }

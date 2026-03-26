@@ -192,7 +192,9 @@ GetIceServerConfigOutcome KinesisVideoSignalingChannelsClient::GetIceServerConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/get-ice-server-config");
   };
 
-  return GetIceServerConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIceServerConfigOutcome(result.GetResultWithOwnership())
+                            : GetIceServerConfigOutcome(std::move(result.GetError()));
 }
 
 SendAlexaOfferToMasterOutcome KinesisVideoSignalingChannelsClient::SendAlexaOfferToMaster(
@@ -202,5 +204,7 @@ SendAlexaOfferToMasterOutcome KinesisVideoSignalingChannelsClient::SendAlexaOffe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/send-alexa-offer-to-master");
   };
 
-  return SendAlexaOfferToMasterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendAlexaOfferToMasterOutcome(result.GetResultWithOwnership())
+                            : SendAlexaOfferToMasterOutcome(std::move(result.GetError()));
 }

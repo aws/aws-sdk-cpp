@@ -197,7 +197,9 @@ CreateChatTokenOutcome IvschatClient::CreateChatToken(const CreateChatTokenReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateChatToken");
   };
 
-  return CreateChatTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChatTokenOutcome(result.GetResultWithOwnership())
+                            : CreateChatTokenOutcome(std::move(result.GetError()));
 }
 
 CreateLoggingConfigurationOutcome IvschatClient::CreateLoggingConfiguration(const CreateLoggingConfigurationRequest& request) const {
@@ -206,7 +208,9 @@ CreateLoggingConfigurationOutcome IvschatClient::CreateLoggingConfiguration(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateLoggingConfiguration");
   };
 
-  return CreateLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateRoomOutcome IvschatClient::CreateRoom(const CreateRoomRequest& request) const {
@@ -215,7 +219,8 @@ CreateRoomOutcome IvschatClient::CreateRoom(const CreateRoomRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateRoom");
   };
 
-  return CreateRoomOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRoomOutcome(result.GetResultWithOwnership()) : CreateRoomOutcome(std::move(result.GetError()));
 }
 
 DeleteLoggingConfigurationOutcome IvschatClient::DeleteLoggingConfiguration(const DeleteLoggingConfigurationRequest& request) const {
@@ -224,7 +229,9 @@ DeleteLoggingConfigurationOutcome IvschatClient::DeleteLoggingConfiguration(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLoggingConfiguration");
   };
 
-  return DeleteLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteMessageOutcome IvschatClient::DeleteMessage(const DeleteMessageRequest& request) const {
@@ -233,7 +240,8 @@ DeleteMessageOutcome IvschatClient::DeleteMessage(const DeleteMessageRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteMessage");
   };
 
-  return DeleteMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMessageOutcome(result.GetResultWithOwnership()) : DeleteMessageOutcome(std::move(result.GetError()));
 }
 
 DeleteRoomOutcome IvschatClient::DeleteRoom(const DeleteRoomRequest& request) const {
@@ -242,7 +250,8 @@ DeleteRoomOutcome IvschatClient::DeleteRoom(const DeleteRoomRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteRoom");
   };
 
-  return DeleteRoomOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRoomOutcome(result.GetResultWithOwnership()) : DeleteRoomOutcome(std::move(result.GetError()));
 }
 
 DisconnectUserOutcome IvschatClient::DisconnectUser(const DisconnectUserRequest& request) const {
@@ -251,7 +260,8 @@ DisconnectUserOutcome IvschatClient::DisconnectUser(const DisconnectUserRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/DisconnectUser");
   };
 
-  return DisconnectUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisconnectUserOutcome(result.GetResultWithOwnership()) : DisconnectUserOutcome(std::move(result.GetError()));
 }
 
 GetLoggingConfigurationOutcome IvschatClient::GetLoggingConfiguration(const GetLoggingConfigurationRequest& request) const {
@@ -260,7 +270,9 @@ GetLoggingConfigurationOutcome IvschatClient::GetLoggingConfiguration(const GetL
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetLoggingConfiguration");
   };
 
-  return GetLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetRoomOutcome IvschatClient::GetRoom(const GetRoomRequest& request) const {
@@ -269,7 +281,8 @@ GetRoomOutcome IvschatClient::GetRoom(const GetRoomRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetRoom");
   };
 
-  return GetRoomOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRoomOutcome(result.GetResultWithOwnership()) : GetRoomOutcome(std::move(result.GetError()));
 }
 
 ListLoggingConfigurationsOutcome IvschatClient::ListLoggingConfigurations(const ListLoggingConfigurationsRequest& request) const {
@@ -278,7 +291,9 @@ ListLoggingConfigurationsOutcome IvschatClient::ListLoggingConfigurations(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListLoggingConfigurations");
   };
 
-  return ListLoggingConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLoggingConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListLoggingConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListRoomsOutcome IvschatClient::ListRooms(const ListRoomsRequest& request) const {
@@ -287,7 +302,8 @@ ListRoomsOutcome IvschatClient::ListRooms(const ListRoomsRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListRooms");
   };
 
-  return ListRoomsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRoomsOutcome(result.GetResultWithOwnership()) : ListRoomsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome IvschatClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -303,7 +319,9 @@ ListTagsForResourceOutcome IvschatClient::ListTagsForResource(const ListTagsForR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 SendEventOutcome IvschatClient::SendEvent(const SendEventRequest& request) const {
@@ -312,7 +330,8 @@ SendEventOutcome IvschatClient::SendEvent(const SendEventRequest& request) const
     endpointResolutionOutcome.GetResult().AddPathSegments("/SendEvent");
   };
 
-  return SendEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendEventOutcome(result.GetResultWithOwnership()) : SendEventOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome IvschatClient::TagResource(const TagResourceRequest& request) const {
@@ -328,7 +347,8 @@ TagResourceOutcome IvschatClient::TagResource(const TagResourceRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome IvschatClient::UntagResource(const UntagResourceRequest& request) const {
@@ -349,7 +369,8 @@ UntagResourceOutcome IvschatClient::UntagResource(const UntagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateLoggingConfigurationOutcome IvschatClient::UpdateLoggingConfiguration(const UpdateLoggingConfigurationRequest& request) const {
@@ -358,7 +379,9 @@ UpdateLoggingConfigurationOutcome IvschatClient::UpdateLoggingConfiguration(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLoggingConfiguration");
   };
 
-  return UpdateLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateRoomOutcome IvschatClient::UpdateRoom(const UpdateRoomRequest& request) const {
@@ -367,5 +390,6 @@ UpdateRoomOutcome IvschatClient::UpdateRoom(const UpdateRoomRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateRoom");
   };
 
-  return UpdateRoomOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoomOutcome(result.GetResultWithOwnership()) : UpdateRoomOutcome(std::move(result.GetError()));
 }

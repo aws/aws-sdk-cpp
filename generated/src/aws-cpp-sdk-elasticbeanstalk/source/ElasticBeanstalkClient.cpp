@@ -244,205 +244,298 @@ ElasticBeanstalkClient::InvokeOperationOutcome ElasticBeanstalkClient::InvokeSer
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AbortEnvironmentUpdateOutcome ElasticBeanstalkClient::AbortEnvironmentUpdate(const AbortEnvironmentUpdateRequest& request) const {
-  return AbortEnvironmentUpdateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AbortEnvironmentUpdateOutcome(result.GetResultWithOwnership())
+                            : AbortEnvironmentUpdateOutcome(std::move(result.GetError()));
 }
 
 ApplyEnvironmentManagedActionOutcome ElasticBeanstalkClient::ApplyEnvironmentManagedAction(
     const ApplyEnvironmentManagedActionRequest& request) const {
-  return ApplyEnvironmentManagedActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ApplyEnvironmentManagedActionOutcome(result.GetResultWithOwnership())
+                            : ApplyEnvironmentManagedActionOutcome(std::move(result.GetError()));
 }
 
 AssociateEnvironmentOperationsRoleOutcome ElasticBeanstalkClient::AssociateEnvironmentOperationsRole(
     const AssociateEnvironmentOperationsRoleRequest& request) const {
-  return AssociateEnvironmentOperationsRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateEnvironmentOperationsRoleOutcome(result.GetResultWithOwnership())
+                            : AssociateEnvironmentOperationsRoleOutcome(std::move(result.GetError()));
 }
 
 CheckDNSAvailabilityOutcome ElasticBeanstalkClient::CheckDNSAvailability(const CheckDNSAvailabilityRequest& request) const {
-  return CheckDNSAvailabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckDNSAvailabilityOutcome(result.GetResultWithOwnership())
+                            : CheckDNSAvailabilityOutcome(std::move(result.GetError()));
 }
 
 ComposeEnvironmentsOutcome ElasticBeanstalkClient::ComposeEnvironments(const ComposeEnvironmentsRequest& request) const {
-  return ComposeEnvironmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ComposeEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : ComposeEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome ElasticBeanstalkClient::CreateApplication(const CreateApplicationRequest& request) const {
-  return CreateApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationVersionOutcome ElasticBeanstalkClient::CreateApplicationVersion(const CreateApplicationVersionRequest& request) const {
-  return CreateApplicationVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationVersionOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationVersionOutcome(std::move(result.GetError()));
 }
 
 CreateConfigurationTemplateOutcome ElasticBeanstalkClient::CreateConfigurationTemplate(
     const CreateConfigurationTemplateRequest& request) const {
-  return CreateConfigurationTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateEnvironmentOutcome ElasticBeanstalkClient::CreateEnvironment(const CreateEnvironmentRequest& request) const {
-  return CreateEnvironmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEnvironmentOutcome(result.GetResultWithOwnership())
+                            : CreateEnvironmentOutcome(std::move(result.GetError()));
 }
 
 CreatePlatformVersionOutcome ElasticBeanstalkClient::CreatePlatformVersion(const CreatePlatformVersionRequest& request) const {
-  return CreatePlatformVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePlatformVersionOutcome(result.GetResultWithOwnership())
+                            : CreatePlatformVersionOutcome(std::move(result.GetError()));
 }
 
 CreateStorageLocationOutcome ElasticBeanstalkClient::CreateStorageLocation(const CreateStorageLocationRequest& request) const {
-  return CreateStorageLocationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStorageLocationOutcome(result.GetResultWithOwnership())
+                            : CreateStorageLocationOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome ElasticBeanstalkClient::DeleteApplication(const DeleteApplicationRequest& request) const {
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationVersionOutcome ElasticBeanstalkClient::DeleteApplicationVersion(const DeleteApplicationVersionRequest& request) const {
-  return DeleteApplicationVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteApplicationVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationTemplateOutcome ElasticBeanstalkClient::DeleteConfigurationTemplate(
     const DeleteConfigurationTemplateRequest& request) const {
-  return DeleteConfigurationTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteEnvironmentConfigurationOutcome ElasticBeanstalkClient::DeleteEnvironmentConfiguration(
     const DeleteEnvironmentConfigurationRequest& request) const {
-  return DeleteEnvironmentConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEnvironmentConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteEnvironmentConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeletePlatformVersionOutcome ElasticBeanstalkClient::DeletePlatformVersion(const DeletePlatformVersionRequest& request) const {
-  return DeletePlatformVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePlatformVersionOutcome(result.GetResultWithOwnership())
+                            : DeletePlatformVersionOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountAttributesOutcome ElasticBeanstalkClient::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const {
-  return DescribeAccountAttributesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountAttributesOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountAttributesOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationVersionsOutcome ElasticBeanstalkClient::DescribeApplicationVersions(
     const DescribeApplicationVersionsRequest& request) const {
-  return DescribeApplicationVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeApplicationsOutcome ElasticBeanstalkClient::DescribeApplications(const DescribeApplicationsRequest& request) const {
-  return DescribeApplicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeApplicationsOutcome(result.GetResultWithOwnership())
+                            : DescribeApplicationsOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationOptionsOutcome ElasticBeanstalkClient::DescribeConfigurationOptions(
     const DescribeConfigurationOptionsRequest& request) const {
-  return DescribeConfigurationOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConfigurationOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationSettingsOutcome ElasticBeanstalkClient::DescribeConfigurationSettings(
     const DescribeConfigurationSettingsRequest& request) const {
-  return DescribeConfigurationSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConfigurationSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeEnvironmentHealthOutcome ElasticBeanstalkClient::DescribeEnvironmentHealth(const DescribeEnvironmentHealthRequest& request) const {
-  return DescribeEnvironmentHealthOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEnvironmentHealthOutcome(result.GetResultWithOwnership())
+                            : DescribeEnvironmentHealthOutcome(std::move(result.GetError()));
 }
 
 DescribeEnvironmentManagedActionHistoryOutcome ElasticBeanstalkClient::DescribeEnvironmentManagedActionHistory(
     const DescribeEnvironmentManagedActionHistoryRequest& request) const {
-  return DescribeEnvironmentManagedActionHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEnvironmentManagedActionHistoryOutcome(result.GetResultWithOwnership())
+                            : DescribeEnvironmentManagedActionHistoryOutcome(std::move(result.GetError()));
 }
 
 DescribeEnvironmentManagedActionsOutcome ElasticBeanstalkClient::DescribeEnvironmentManagedActions(
     const DescribeEnvironmentManagedActionsRequest& request) const {
-  return DescribeEnvironmentManagedActionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEnvironmentManagedActionsOutcome(result.GetResultWithOwnership())
+                            : DescribeEnvironmentManagedActionsOutcome(std::move(result.GetError()));
 }
 
 DescribeEnvironmentResourcesOutcome ElasticBeanstalkClient::DescribeEnvironmentResources(
     const DescribeEnvironmentResourcesRequest& request) const {
-  return DescribeEnvironmentResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEnvironmentResourcesOutcome(result.GetResultWithOwnership())
+                            : DescribeEnvironmentResourcesOutcome(std::move(result.GetError()));
 }
 
 DescribeEnvironmentsOutcome ElasticBeanstalkClient::DescribeEnvironments(const DescribeEnvironmentsRequest& request) const {
-  return DescribeEnvironmentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : DescribeEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 DescribeEventsOutcome ElasticBeanstalkClient::DescribeEvents(const DescribeEventsRequest& request) const {
-  return DescribeEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEventsOutcome(result.GetResultWithOwnership()) : DescribeEventsOutcome(std::move(result.GetError()));
 }
 
 DescribeInstancesHealthOutcome ElasticBeanstalkClient::DescribeInstancesHealth(const DescribeInstancesHealthRequest& request) const {
-  return DescribeInstancesHealthOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInstancesHealthOutcome(result.GetResultWithOwnership())
+                            : DescribeInstancesHealthOutcome(std::move(result.GetError()));
 }
 
 DescribePlatformVersionOutcome ElasticBeanstalkClient::DescribePlatformVersion(const DescribePlatformVersionRequest& request) const {
-  return DescribePlatformVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePlatformVersionOutcome(result.GetResultWithOwnership())
+                            : DescribePlatformVersionOutcome(std::move(result.GetError()));
 }
 
 DisassociateEnvironmentOperationsRoleOutcome ElasticBeanstalkClient::DisassociateEnvironmentOperationsRole(
     const DisassociateEnvironmentOperationsRoleRequest& request) const {
-  return DisassociateEnvironmentOperationsRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateEnvironmentOperationsRoleOutcome(result.GetResultWithOwnership())
+                            : DisassociateEnvironmentOperationsRoleOutcome(std::move(result.GetError()));
 }
 
 ListAvailableSolutionStacksOutcome ElasticBeanstalkClient::ListAvailableSolutionStacks(
     const ListAvailableSolutionStacksRequest& request) const {
-  return ListAvailableSolutionStacksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAvailableSolutionStacksOutcome(result.GetResultWithOwnership())
+                            : ListAvailableSolutionStacksOutcome(std::move(result.GetError()));
 }
 
 ListPlatformBranchesOutcome ElasticBeanstalkClient::ListPlatformBranches(const ListPlatformBranchesRequest& request) const {
-  return ListPlatformBranchesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPlatformBranchesOutcome(result.GetResultWithOwnership())
+                            : ListPlatformBranchesOutcome(std::move(result.GetError()));
 }
 
 ListPlatformVersionsOutcome ElasticBeanstalkClient::ListPlatformVersions(const ListPlatformVersionsRequest& request) const {
-  return ListPlatformVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPlatformVersionsOutcome(result.GetResultWithOwnership())
+                            : ListPlatformVersionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ElasticBeanstalkClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RebuildEnvironmentOutcome ElasticBeanstalkClient::RebuildEnvironment(const RebuildEnvironmentRequest& request) const {
-  return RebuildEnvironmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RebuildEnvironmentOutcome(result.GetResultWithOwnership())
+                            : RebuildEnvironmentOutcome(std::move(result.GetError()));
 }
 
 RequestEnvironmentInfoOutcome ElasticBeanstalkClient::RequestEnvironmentInfo(const RequestEnvironmentInfoRequest& request) const {
-  return RequestEnvironmentInfoOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RequestEnvironmentInfoOutcome(result.GetResultWithOwnership())
+                            : RequestEnvironmentInfoOutcome(std::move(result.GetError()));
 }
 
 RestartAppServerOutcome ElasticBeanstalkClient::RestartAppServer(const RestartAppServerRequest& request) const {
-  return RestartAppServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestartAppServerOutcome(result.GetResultWithOwnership())
+                            : RestartAppServerOutcome(std::move(result.GetError()));
 }
 
 RetrieveEnvironmentInfoOutcome ElasticBeanstalkClient::RetrieveEnvironmentInfo(const RetrieveEnvironmentInfoRequest& request) const {
-  return RetrieveEnvironmentInfoOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetrieveEnvironmentInfoOutcome(result.GetResultWithOwnership())
+                            : RetrieveEnvironmentInfoOutcome(std::move(result.GetError()));
 }
 
 SwapEnvironmentCNAMEsOutcome ElasticBeanstalkClient::SwapEnvironmentCNAMEs(const SwapEnvironmentCNAMEsRequest& request) const {
-  return SwapEnvironmentCNAMEsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SwapEnvironmentCNAMEsOutcome(result.GetResultWithOwnership())
+                            : SwapEnvironmentCNAMEsOutcome(std::move(result.GetError()));
 }
 
 TerminateEnvironmentOutcome ElasticBeanstalkClient::TerminateEnvironment(const TerminateEnvironmentRequest& request) const {
-  return TerminateEnvironmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateEnvironmentOutcome(result.GetResultWithOwnership())
+                            : TerminateEnvironmentOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome ElasticBeanstalkClient::UpdateApplication(const UpdateApplicationRequest& request) const {
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationResourceLifecycleOutcome ElasticBeanstalkClient::UpdateApplicationResourceLifecycle(
     const UpdateApplicationResourceLifecycleRequest& request) const {
-  return UpdateApplicationResourceLifecycleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationResourceLifecycleOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationResourceLifecycleOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationVersionOutcome ElasticBeanstalkClient::UpdateApplicationVersion(const UpdateApplicationVersionRequest& request) const {
-  return UpdateApplicationVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationTemplateOutcome ElasticBeanstalkClient::UpdateConfigurationTemplate(
     const UpdateConfigurationTemplateRequest& request) const {
-  return UpdateConfigurationTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateEnvironmentOutcome ElasticBeanstalkClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const {
-  return UpdateEnvironmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEnvironmentOutcome(result.GetResultWithOwnership())
+                            : UpdateEnvironmentOutcome(std::move(result.GetError()));
 }
 
 UpdateTagsForResourceOutcome ElasticBeanstalkClient::UpdateTagsForResource(const UpdateTagsForResourceRequest& request) const {
-  return UpdateTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : UpdateTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ValidateConfigurationSettingsOutcome ElasticBeanstalkClient::ValidateConfigurationSettings(
     const ValidateConfigurationSettingsRequest& request) const {
-  return ValidateConfigurationSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidateConfigurationSettingsOutcome(result.GetResultWithOwnership())
+                            : ValidateConfigurationSettingsOutcome(std::move(result.GetError()));
 }

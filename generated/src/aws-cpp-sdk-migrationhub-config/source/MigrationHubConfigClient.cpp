@@ -181,18 +181,25 @@ MigrationHubConfigClient::InvokeOperationOutcome MigrationHubConfigClient::Invok
 }
 
 CreateHomeRegionControlOutcome MigrationHubConfigClient::CreateHomeRegionControl(const CreateHomeRegionControlRequest& request) const {
-  return CreateHomeRegionControlOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHomeRegionControlOutcome(result.GetResultWithOwnership())
+                            : CreateHomeRegionControlOutcome(std::move(result.GetError()));
 }
 
 DeleteHomeRegionControlOutcome MigrationHubConfigClient::DeleteHomeRegionControl(const DeleteHomeRegionControlRequest& request) const {
-  return DeleteHomeRegionControlOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteHomeRegionControlOutcome(result.GetResultWithOwnership())
+                            : DeleteHomeRegionControlOutcome(std::move(result.GetError()));
 }
 
 DescribeHomeRegionControlsOutcome MigrationHubConfigClient::DescribeHomeRegionControls(
     const DescribeHomeRegionControlsRequest& request) const {
-  return DescribeHomeRegionControlsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeHomeRegionControlsOutcome(result.GetResultWithOwnership())
+                            : DescribeHomeRegionControlsOutcome(std::move(result.GetError()));
 }
 
 GetHomeRegionOutcome MigrationHubConfigClient::GetHomeRegion(const GetHomeRegionRequest& request) const {
-  return GetHomeRegionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetHomeRegionOutcome(result.GetResultWithOwnership()) : GetHomeRegionOutcome(std::move(result.GetError()));
 }

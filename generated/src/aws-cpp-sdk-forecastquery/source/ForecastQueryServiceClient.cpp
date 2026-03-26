@@ -183,9 +183,12 @@ ForecastQueryServiceClient::InvokeOperationOutcome ForecastQueryServiceClient::I
 }
 
 QueryForecastOutcome ForecastQueryServiceClient::QueryForecast(const QueryForecastRequest& request) const {
-  return QueryForecastOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? QueryForecastOutcome(result.GetResultWithOwnership()) : QueryForecastOutcome(std::move(result.GetError()));
 }
 
 QueryWhatIfForecastOutcome ForecastQueryServiceClient::QueryWhatIfForecast(const QueryWhatIfForecastRequest& request) const {
-  return QueryWhatIfForecastOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? QueryWhatIfForecastOutcome(result.GetResultWithOwnership())
+                            : QueryWhatIfForecastOutcome(std::move(result.GetError()));
 }

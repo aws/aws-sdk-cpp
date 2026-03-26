@@ -199,96 +199,136 @@ CognitoIdentityClient::InvokeOperationOutcome CognitoIdentityClient::InvokeServi
 }
 
 CreateIdentityPoolOutcome CognitoIdentityClient::CreateIdentityPool(const CreateIdentityPoolRequest& request) const {
-  return CreateIdentityPoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIdentityPoolOutcome(result.GetResultWithOwnership())
+                            : CreateIdentityPoolOutcome(std::move(result.GetError()));
 }
 
 DeleteIdentitiesOutcome CognitoIdentityClient::DeleteIdentities(const DeleteIdentitiesRequest& request) const {
-  return DeleteIdentitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIdentitiesOutcome(result.GetResultWithOwnership())
+                            : DeleteIdentitiesOutcome(std::move(result.GetError()));
 }
 
 DeleteIdentityPoolOutcome CognitoIdentityClient::DeleteIdentityPool(const DeleteIdentityPoolRequest& request) const {
-  return DeleteIdentityPoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIdentityPoolOutcome(result.GetResultWithOwnership())
+                            : DeleteIdentityPoolOutcome(std::move(result.GetError()));
 }
 
 DescribeIdentityOutcome CognitoIdentityClient::DescribeIdentity(const DescribeIdentityRequest& request) const {
-  return DescribeIdentityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIdentityOutcome(result.GetResultWithOwnership())
+                            : DescribeIdentityOutcome(std::move(result.GetError()));
 }
 
 DescribeIdentityPoolOutcome CognitoIdentityClient::DescribeIdentityPool(const DescribeIdentityPoolRequest& request) const {
-  return DescribeIdentityPoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIdentityPoolOutcome(result.GetResultWithOwnership())
+                            : DescribeIdentityPoolOutcome(std::move(result.GetError()));
 }
 
 GetCredentialsForIdentityOutcome CognitoIdentityClient::GetCredentialsForIdentity(const GetCredentialsForIdentityRequest& request) const {
-  return GetCredentialsForIdentityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCredentialsForIdentityOutcome(result.GetResultWithOwnership())
+                            : GetCredentialsForIdentityOutcome(std::move(result.GetError()));
 }
 
 GetIdOutcome CognitoIdentityClient::GetId(const GetIdRequest& request) const {
-  return GetIdOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIdOutcome(result.GetResultWithOwnership()) : GetIdOutcome(std::move(result.GetError()));
 }
 
 GetIdentityPoolRolesOutcome CognitoIdentityClient::GetIdentityPoolRoles(const GetIdentityPoolRolesRequest& request) const {
-  return GetIdentityPoolRolesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIdentityPoolRolesOutcome(result.GetResultWithOwnership())
+                            : GetIdentityPoolRolesOutcome(std::move(result.GetError()));
 }
 
 GetOpenIdTokenOutcome CognitoIdentityClient::GetOpenIdToken(const GetOpenIdTokenRequest& request) const {
-  return GetOpenIdTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOpenIdTokenOutcome(result.GetResultWithOwnership()) : GetOpenIdTokenOutcome(std::move(result.GetError()));
 }
 
 GetOpenIdTokenForDeveloperIdentityOutcome CognitoIdentityClient::GetOpenIdTokenForDeveloperIdentity(
     const GetOpenIdTokenForDeveloperIdentityRequest& request) const {
-  return GetOpenIdTokenForDeveloperIdentityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOpenIdTokenForDeveloperIdentityOutcome(result.GetResultWithOwnership())
+                            : GetOpenIdTokenForDeveloperIdentityOutcome(std::move(result.GetError()));
 }
 
 GetPrincipalTagAttributeMapOutcome CognitoIdentityClient::GetPrincipalTagAttributeMap(
     const GetPrincipalTagAttributeMapRequest& request) const {
-  return GetPrincipalTagAttributeMapOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPrincipalTagAttributeMapOutcome(result.GetResultWithOwnership())
+                            : GetPrincipalTagAttributeMapOutcome(std::move(result.GetError()));
 }
 
 ListIdentitiesOutcome CognitoIdentityClient::ListIdentities(const ListIdentitiesRequest& request) const {
-  return ListIdentitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIdentitiesOutcome(result.GetResultWithOwnership()) : ListIdentitiesOutcome(std::move(result.GetError()));
 }
 
 ListIdentityPoolsOutcome CognitoIdentityClient::ListIdentityPools(const ListIdentityPoolsRequest& request) const {
-  return ListIdentityPoolsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIdentityPoolsOutcome(result.GetResultWithOwnership())
+                            : ListIdentityPoolsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CognitoIdentityClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 LookupDeveloperIdentityOutcome CognitoIdentityClient::LookupDeveloperIdentity(const LookupDeveloperIdentityRequest& request) const {
-  return LookupDeveloperIdentityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? LookupDeveloperIdentityOutcome(result.GetResultWithOwnership())
+                            : LookupDeveloperIdentityOutcome(std::move(result.GetError()));
 }
 
 MergeDeveloperIdentitiesOutcome CognitoIdentityClient::MergeDeveloperIdentities(const MergeDeveloperIdentitiesRequest& request) const {
-  return MergeDeveloperIdentitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MergeDeveloperIdentitiesOutcome(result.GetResultWithOwnership())
+                            : MergeDeveloperIdentitiesOutcome(std::move(result.GetError()));
 }
 
 SetIdentityPoolRolesOutcome CognitoIdentityClient::SetIdentityPoolRoles(const SetIdentityPoolRolesRequest& request) const {
-  return SetIdentityPoolRolesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetIdentityPoolRolesOutcome(result.GetResultWithOwnership())
+                            : SetIdentityPoolRolesOutcome(std::move(result.GetError()));
 }
 
 SetPrincipalTagAttributeMapOutcome CognitoIdentityClient::SetPrincipalTagAttributeMap(
     const SetPrincipalTagAttributeMapRequest& request) const {
-  return SetPrincipalTagAttributeMapOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetPrincipalTagAttributeMapOutcome(result.GetResultWithOwnership())
+                            : SetPrincipalTagAttributeMapOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CognitoIdentityClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UnlinkDeveloperIdentityOutcome CognitoIdentityClient::UnlinkDeveloperIdentity(const UnlinkDeveloperIdentityRequest& request) const {
-  return UnlinkDeveloperIdentityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnlinkDeveloperIdentityOutcome(result.GetResultWithOwnership())
+                            : UnlinkDeveloperIdentityOutcome(std::move(result.GetError()));
 }
 
 UnlinkIdentityOutcome CognitoIdentityClient::UnlinkIdentity(const UnlinkIdentityRequest& request) const {
-  return UnlinkIdentityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnlinkIdentityOutcome(result.GetResultWithOwnership()) : UnlinkIdentityOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CognitoIdentityClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateIdentityPoolOutcome CognitoIdentityClient::UpdateIdentityPool(const UpdateIdentityPoolRequest& request) const {
-  return UpdateIdentityPoolOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIdentityPoolOutcome(result.GetResultWithOwnership())
+                            : UpdateIdentityPoolOutcome(std::move(result.GetError()));
 }

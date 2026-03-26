@@ -199,7 +199,8 @@ CreateScheduleOutcome SchedulerClient::CreateSchedule(const CreateScheduleReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return CreateScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScheduleOutcome(result.GetResultWithOwnership()) : CreateScheduleOutcome(std::move(result.GetError()));
 }
 
 CreateScheduleGroupOutcome SchedulerClient::CreateScheduleGroup(const CreateScheduleGroupRequest& request) const {
@@ -215,7 +216,9 @@ CreateScheduleGroupOutcome SchedulerClient::CreateScheduleGroup(const CreateSche
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return CreateScheduleGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScheduleGroupOutcome(result.GetResultWithOwnership())
+                            : CreateScheduleGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteScheduleOutcome SchedulerClient::DeleteSchedule(const DeleteScheduleRequest& request) const {
@@ -231,7 +234,8 @@ DeleteScheduleOutcome SchedulerClient::DeleteSchedule(const DeleteScheduleReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteScheduleOutcome(result.GetResultWithOwnership()) : DeleteScheduleOutcome(std::move(result.GetError()));
 }
 
 DeleteScheduleGroupOutcome SchedulerClient::DeleteScheduleGroup(const DeleteScheduleGroupRequest& request) const {
@@ -247,7 +251,9 @@ DeleteScheduleGroupOutcome SchedulerClient::DeleteScheduleGroup(const DeleteSche
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteScheduleGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteScheduleGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteScheduleGroupOutcome(std::move(result.GetError()));
 }
 
 GetScheduleOutcome SchedulerClient::GetSchedule(const GetScheduleRequest& request) const {
@@ -263,7 +269,8 @@ GetScheduleOutcome SchedulerClient::GetSchedule(const GetScheduleRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetScheduleOutcome(result.GetResultWithOwnership()) : GetScheduleOutcome(std::move(result.GetError()));
 }
 
 GetScheduleGroupOutcome SchedulerClient::GetScheduleGroup(const GetScheduleGroupRequest& request) const {
@@ -279,7 +286,9 @@ GetScheduleGroupOutcome SchedulerClient::GetScheduleGroup(const GetScheduleGroup
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetScheduleGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetScheduleGroupOutcome(result.GetResultWithOwnership())
+                            : GetScheduleGroupOutcome(std::move(result.GetError()));
 }
 
 ListScheduleGroupsOutcome SchedulerClient::ListScheduleGroups(const ListScheduleGroupsRequest& request) const {
@@ -288,7 +297,9 @@ ListScheduleGroupsOutcome SchedulerClient::ListScheduleGroups(const ListSchedule
     endpointResolutionOutcome.GetResult().AddPathSegments("/schedule-groups");
   };
 
-  return ListScheduleGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListScheduleGroupsOutcome(result.GetResultWithOwnership())
+                            : ListScheduleGroupsOutcome(std::move(result.GetError()));
 }
 
 ListSchedulesOutcome SchedulerClient::ListSchedules(const ListSchedulesRequest& request) const {
@@ -297,7 +308,8 @@ ListSchedulesOutcome SchedulerClient::ListSchedules(const ListSchedulesRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/schedules");
   };
 
-  return ListSchedulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSchedulesOutcome(result.GetResultWithOwnership()) : ListSchedulesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SchedulerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -313,7 +325,9 @@ ListTagsForResourceOutcome SchedulerClient::ListTagsForResource(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SchedulerClient::TagResource(const TagResourceRequest& request) const {
@@ -329,7 +343,8 @@ TagResourceOutcome SchedulerClient::TagResource(const TagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SchedulerClient::UntagResource(const UntagResourceRequest& request) const {
@@ -350,7 +365,8 @@ UntagResourceOutcome SchedulerClient::UntagResource(const UntagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateScheduleOutcome SchedulerClient::UpdateSchedule(const UpdateScheduleRequest& request) const {
@@ -366,5 +382,6 @@ UpdateScheduleOutcome SchedulerClient::UpdateSchedule(const UpdateScheduleReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateScheduleOutcome(result.GetResultWithOwnership()) : UpdateScheduleOutcome(std::move(result.GetError()));
 }

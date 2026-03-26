@@ -1386,7 +1386,9 @@ AbortMultipartUploadOutcome S3CrtClient::AbortMultipartUpload(const AbortMultipa
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
   };
 
-  return AbortMultipartUploadOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? AbortMultipartUploadOutcome(result.GetResultWithOwnership())
+                            : AbortMultipartUploadOutcome(std::move(result.GetError()));
 }
 
 CompleteMultipartUploadOutcome S3CrtClient::CompleteMultipartUpload(const CompleteMultipartUploadRequest& request) const {
@@ -1411,8 +1413,9 @@ CompleteMultipartUploadOutcome S3CrtClient::CompleteMultipartUpload(const Comple
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
   };
 
-  return CompleteMultipartUploadOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CompleteMultipartUploadOutcome(result.GetResultWithOwnership())
+                            : CompleteMultipartUploadOutcome(std::move(result.GetError()));
 }
 
 CreateBucketOutcome S3CrtClient::CreateBucket(const CreateBucketRequest& request) const {
@@ -1424,7 +1427,8 @@ CreateBucketOutcome S3CrtClient::CreateBucket(const CreateBucketRequest& request
 
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) { (void)endpointResolutionOutcome; };
 
-  return CreateBucketOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateBucketOutcome(result.GetResultWithOwnership()) : CreateBucketOutcome(std::move(result.GetError()));
 }
 
 CreateBucketMetadataConfigurationOutcome S3CrtClient::CreateBucketMetadataConfiguration(
@@ -1442,8 +1446,9 @@ CreateBucketMetadataConfigurationOutcome S3CrtClient::CreateBucketMetadataConfig
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return CreateBucketMetadataConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBucketMetadataConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateBucketMetadataConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateBucketMetadataTableConfigurationOutcome S3CrtClient::CreateBucketMetadataTableConfiguration(
@@ -1461,8 +1466,9 @@ CreateBucketMetadataTableConfigurationOutcome S3CrtClient::CreateBucketMetadataT
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return CreateBucketMetadataTableConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBucketMetadataTableConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateBucketMetadataTableConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateMultipartUploadOutcome S3CrtClient::CreateMultipartUpload(const CreateMultipartUploadRequest& request) const {
@@ -1485,7 +1491,9 @@ CreateMultipartUploadOutcome S3CrtClient::CreateMultipartUpload(const CreateMult
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return CreateMultipartUploadOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMultipartUploadOutcome(result.GetResultWithOwnership())
+                            : CreateMultipartUploadOutcome(std::move(result.GetError()));
 }
 
 CreateSessionOutcome S3CrtClient::CreateSession(const CreateSessionRequest& request) const {
@@ -1502,7 +1510,8 @@ CreateSessionOutcome S3CrtClient::CreateSession(const CreateSessionRequest& requ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return CreateSessionOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? CreateSessionOutcome(result.GetResultWithOwnership()) : CreateSessionOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketOutcome S3CrtClient::DeleteBucket(const DeleteBucketRequest& request) const {
@@ -1514,7 +1523,8 @@ DeleteBucketOutcome S3CrtClient::DeleteBucket(const DeleteBucketRequest& request
 
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) { (void)endpointResolutionOutcome; };
 
-  return DeleteBucketOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketOutcome(result.GetResultWithOwnership()) : DeleteBucketOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketAnalyticsConfigurationOutcome S3CrtClient::DeleteBucketAnalyticsConfiguration(
@@ -1537,8 +1547,9 @@ DeleteBucketAnalyticsConfigurationOutcome S3CrtClient::DeleteBucketAnalyticsConf
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketAnalyticsConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketAnalyticsConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketAnalyticsConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketCorsOutcome S3CrtClient::DeleteBucketCors(const DeleteBucketCorsRequest& request) const {
@@ -1555,7 +1566,9 @@ DeleteBucketCorsOutcome S3CrtClient::DeleteBucketCors(const DeleteBucketCorsRequ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketCorsOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketCorsOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketCorsOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketEncryptionOutcome S3CrtClient::DeleteBucketEncryption(const DeleteBucketEncryptionRequest& request) const {
@@ -1572,8 +1585,9 @@ DeleteBucketEncryptionOutcome S3CrtClient::DeleteBucketEncryption(const DeleteBu
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketEncryptionOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketEncryptionOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketEncryptionOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketIntelligentTieringConfigurationOutcome S3CrtClient::DeleteBucketIntelligentTieringConfiguration(
@@ -1596,8 +1610,9 @@ DeleteBucketIntelligentTieringConfigurationOutcome S3CrtClient::DeleteBucketInte
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketIntelligentTieringConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketIntelligentTieringConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketIntelligentTieringConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketInventoryConfigurationOutcome S3CrtClient::DeleteBucketInventoryConfiguration(
@@ -1620,8 +1635,9 @@ DeleteBucketInventoryConfigurationOutcome S3CrtClient::DeleteBucketInventoryConf
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketInventoryConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketInventoryConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketInventoryConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketLifecycleOutcome S3CrtClient::DeleteBucketLifecycle(const DeleteBucketLifecycleRequest& request) const {
@@ -1638,8 +1654,9 @@ DeleteBucketLifecycleOutcome S3CrtClient::DeleteBucketLifecycle(const DeleteBuck
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketLifecycleOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketLifecycleOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketLifecycleOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketMetadataConfigurationOutcome S3CrtClient::DeleteBucketMetadataConfiguration(
@@ -1657,8 +1674,9 @@ DeleteBucketMetadataConfigurationOutcome S3CrtClient::DeleteBucketMetadataConfig
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketMetadataConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketMetadataConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketMetadataConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketMetadataTableConfigurationOutcome S3CrtClient::DeleteBucketMetadataTableConfiguration(
@@ -1676,8 +1694,9 @@ DeleteBucketMetadataTableConfigurationOutcome S3CrtClient::DeleteBucketMetadataT
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketMetadataTableConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketMetadataTableConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketMetadataTableConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketMetricsConfigurationOutcome S3CrtClient::DeleteBucketMetricsConfiguration(
@@ -1700,8 +1719,9 @@ DeleteBucketMetricsConfigurationOutcome S3CrtClient::DeleteBucketMetricsConfigur
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketMetricsConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketMetricsConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketMetricsConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketOwnershipControlsOutcome S3CrtClient::DeleteBucketOwnershipControls(const DeleteBucketOwnershipControlsRequest& request) const {
@@ -1718,8 +1738,9 @@ DeleteBucketOwnershipControlsOutcome S3CrtClient::DeleteBucketOwnershipControls(
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketOwnershipControlsOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketOwnershipControlsOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketOwnershipControlsOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketPolicyOutcome S3CrtClient::DeleteBucketPolicy(const DeleteBucketPolicyRequest& request) const {
@@ -1736,7 +1757,9 @@ DeleteBucketPolicyOutcome S3CrtClient::DeleteBucketPolicy(const DeleteBucketPoli
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketPolicyOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketReplicationOutcome S3CrtClient::DeleteBucketReplication(const DeleteBucketReplicationRequest& request) const {
@@ -1753,8 +1776,9 @@ DeleteBucketReplicationOutcome S3CrtClient::DeleteBucketReplication(const Delete
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketReplicationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketReplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketReplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketTaggingOutcome S3CrtClient::DeleteBucketTagging(const DeleteBucketTaggingRequest& request) const {
@@ -1771,7 +1795,9 @@ DeleteBucketTaggingOutcome S3CrtClient::DeleteBucketTagging(const DeleteBucketTa
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketTaggingOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketTaggingOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketTaggingOutcome(std::move(result.GetError()));
 }
 
 DeleteBucketWebsiteOutcome S3CrtClient::DeleteBucketWebsite(const DeleteBucketWebsiteRequest& request) const {
@@ -1788,7 +1814,9 @@ DeleteBucketWebsiteOutcome S3CrtClient::DeleteBucketWebsite(const DeleteBucketWe
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteBucketWebsiteOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBucketWebsiteOutcome(result.GetResultWithOwnership())
+                            : DeleteBucketWebsiteOutcome(std::move(result.GetError()));
 }
 
 DeleteObjectOutcome S3CrtClient::DeleteObject(const DeleteObjectRequest& request) const {
@@ -1808,7 +1836,8 @@ DeleteObjectOutcome S3CrtClient::DeleteObject(const DeleteObjectRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
   };
 
-  return DeleteObjectOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteObjectOutcome(result.GetResultWithOwnership()) : DeleteObjectOutcome(std::move(result.GetError()));
 }
 
 DeleteObjectTaggingOutcome S3CrtClient::DeleteObjectTagging(const DeleteObjectTaggingRequest& request) const {
@@ -1831,7 +1860,9 @@ DeleteObjectTaggingOutcome S3CrtClient::DeleteObjectTagging(const DeleteObjectTa
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteObjectTaggingOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteObjectTaggingOutcome(result.GetResultWithOwnership())
+                            : DeleteObjectTaggingOutcome(std::move(result.GetError()));
 }
 
 DeleteObjectsOutcome S3CrtClient::DeleteObjects(const DeleteObjectsRequest& request) const {
@@ -1848,7 +1879,8 @@ DeleteObjectsOutcome S3CrtClient::DeleteObjects(const DeleteObjectsRequest& requ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeleteObjectsOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteObjectsOutcome(result.GetResultWithOwnership()) : DeleteObjectsOutcome(std::move(result.GetError()));
 }
 
 DeletePublicAccessBlockOutcome S3CrtClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const {
@@ -1865,8 +1897,9 @@ DeletePublicAccessBlockOutcome S3CrtClient::DeletePublicAccessBlock(const Delete
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return DeletePublicAccessBlockOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePublicAccessBlockOutcome(result.GetResultWithOwnership())
+                            : DeletePublicAccessBlockOutcome(std::move(result.GetError()));
 }
 
 GetBucketAbacOutcome S3CrtClient::GetBucketAbac(const GetBucketAbacRequest& request) const {
@@ -1883,7 +1916,8 @@ GetBucketAbacOutcome S3CrtClient::GetBucketAbac(const GetBucketAbacRequest& requ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketAbacOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketAbacOutcome(result.GetResultWithOwnership()) : GetBucketAbacOutcome(std::move(result.GetError()));
 }
 
 GetBucketAccelerateConfigurationOutcome S3CrtClient::GetBucketAccelerateConfiguration(
@@ -1901,8 +1935,9 @@ GetBucketAccelerateConfigurationOutcome S3CrtClient::GetBucketAccelerateConfigur
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketAccelerateConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketAccelerateConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetBucketAccelerateConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetBucketAclOutcome S3CrtClient::GetBucketAcl(const GetBucketAclRequest& request) const {
@@ -1919,7 +1954,8 @@ GetBucketAclOutcome S3CrtClient::GetBucketAcl(const GetBucketAclRequest& request
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketAclOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketAclOutcome(result.GetResultWithOwnership()) : GetBucketAclOutcome(std::move(result.GetError()));
 }
 
 GetBucketAnalyticsConfigurationOutcome S3CrtClient::GetBucketAnalyticsConfiguration(
@@ -1942,8 +1978,9 @@ GetBucketAnalyticsConfigurationOutcome S3CrtClient::GetBucketAnalyticsConfigurat
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketAnalyticsConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketAnalyticsConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetBucketAnalyticsConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetBucketCorsOutcome S3CrtClient::GetBucketCors(const GetBucketCorsRequest& request) const {
@@ -1960,7 +1997,8 @@ GetBucketCorsOutcome S3CrtClient::GetBucketCors(const GetBucketCorsRequest& requ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketCorsOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketCorsOutcome(result.GetResultWithOwnership()) : GetBucketCorsOutcome(std::move(result.GetError()));
 }
 
 GetBucketEncryptionOutcome S3CrtClient::GetBucketEncryption(const GetBucketEncryptionRequest& request) const {
@@ -1977,7 +2015,9 @@ GetBucketEncryptionOutcome S3CrtClient::GetBucketEncryption(const GetBucketEncry
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketEncryptionOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketEncryptionOutcome(result.GetResultWithOwnership())
+                            : GetBucketEncryptionOutcome(std::move(result.GetError()));
 }
 
 GetBucketIntelligentTieringConfigurationOutcome S3CrtClient::GetBucketIntelligentTieringConfiguration(
@@ -2000,8 +2040,9 @@ GetBucketIntelligentTieringConfigurationOutcome S3CrtClient::GetBucketIntelligen
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketIntelligentTieringConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketIntelligentTieringConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetBucketIntelligentTieringConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetBucketInventoryConfigurationOutcome S3CrtClient::GetBucketInventoryConfiguration(
@@ -2024,8 +2065,9 @@ GetBucketInventoryConfigurationOutcome S3CrtClient::GetBucketInventoryConfigurat
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketInventoryConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketInventoryConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetBucketInventoryConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetBucketLifecycleConfigurationOutcome S3CrtClient::GetBucketLifecycleConfiguration(
@@ -2043,8 +2085,9 @@ GetBucketLifecycleConfigurationOutcome S3CrtClient::GetBucketLifecycleConfigurat
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketLifecycleConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketLifecycleConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetBucketLifecycleConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetBucketLocationOutcome S3CrtClient::GetBucketLocation(const GetBucketLocationRequest& request) const {
@@ -2061,7 +2104,9 @@ GetBucketLocationOutcome S3CrtClient::GetBucketLocation(const GetBucketLocationR
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketLocationOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketLocationOutcome(result.GetResultWithOwnership())
+                            : GetBucketLocationOutcome(std::move(result.GetError()));
 }
 
 GetBucketLoggingOutcome S3CrtClient::GetBucketLogging(const GetBucketLoggingRequest& request) const {
@@ -2078,7 +2123,9 @@ GetBucketLoggingOutcome S3CrtClient::GetBucketLogging(const GetBucketLoggingRequ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketLoggingOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketLoggingOutcome(result.GetResultWithOwnership())
+                            : GetBucketLoggingOutcome(std::move(result.GetError()));
 }
 
 GetBucketMetadataConfigurationOutcome S3CrtClient::GetBucketMetadataConfiguration(
@@ -2096,8 +2143,9 @@ GetBucketMetadataConfigurationOutcome S3CrtClient::GetBucketMetadataConfiguratio
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketMetadataConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketMetadataConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetBucketMetadataConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetBucketMetadataTableConfigurationOutcome S3CrtClient::GetBucketMetadataTableConfiguration(
@@ -2115,8 +2163,9 @@ GetBucketMetadataTableConfigurationOutcome S3CrtClient::GetBucketMetadataTableCo
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketMetadataTableConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketMetadataTableConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetBucketMetadataTableConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetBucketMetricsConfigurationOutcome S3CrtClient::GetBucketMetricsConfiguration(const GetBucketMetricsConfigurationRequest& request) const {
@@ -2138,8 +2187,9 @@ GetBucketMetricsConfigurationOutcome S3CrtClient::GetBucketMetricsConfiguration(
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketMetricsConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketMetricsConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetBucketMetricsConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetBucketNotificationConfigurationOutcome S3CrtClient::GetBucketNotificationConfiguration(
@@ -2157,8 +2207,9 @@ GetBucketNotificationConfigurationOutcome S3CrtClient::GetBucketNotificationConf
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketNotificationConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetBucketNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetBucketOwnershipControlsOutcome S3CrtClient::GetBucketOwnershipControls(const GetBucketOwnershipControlsRequest& request) const {
@@ -2175,8 +2226,9 @@ GetBucketOwnershipControlsOutcome S3CrtClient::GetBucketOwnershipControls(const 
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketOwnershipControlsOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketOwnershipControlsOutcome(result.GetResultWithOwnership())
+                            : GetBucketOwnershipControlsOutcome(std::move(result.GetError()));
 }
 
 GetBucketPolicyOutcome S3CrtClient::GetBucketPolicy(const GetBucketPolicyRequest& request) const {
@@ -2214,8 +2266,9 @@ GetBucketPolicyOutcome S3CrtClient::GetBucketPolicy(const GetBucketPolicyRequest
           ServiceSpecificParameters serviceSpecificParameters{params};
           return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
         }());
-        return GetBucketPolicyOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetBucketPolicyOutcome(result.GetResultWithOwnership())
+                                  : GetBucketPolicyOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2236,7 +2289,9 @@ GetBucketPolicyStatusOutcome S3CrtClient::GetBucketPolicyStatus(const GetBucketP
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketPolicyStatusOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketPolicyStatusOutcome(result.GetResultWithOwnership())
+                            : GetBucketPolicyStatusOutcome(std::move(result.GetError()));
 }
 
 GetBucketReplicationOutcome S3CrtClient::GetBucketReplication(const GetBucketReplicationRequest& request) const {
@@ -2253,7 +2308,9 @@ GetBucketReplicationOutcome S3CrtClient::GetBucketReplication(const GetBucketRep
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketReplicationOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketReplicationOutcome(result.GetResultWithOwnership())
+                            : GetBucketReplicationOutcome(std::move(result.GetError()));
 }
 
 GetBucketRequestPaymentOutcome S3CrtClient::GetBucketRequestPayment(const GetBucketRequestPaymentRequest& request) const {
@@ -2270,7 +2327,9 @@ GetBucketRequestPaymentOutcome S3CrtClient::GetBucketRequestPayment(const GetBuc
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketRequestPaymentOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketRequestPaymentOutcome(result.GetResultWithOwnership())
+                            : GetBucketRequestPaymentOutcome(std::move(result.GetError()));
 }
 
 GetBucketTaggingOutcome S3CrtClient::GetBucketTagging(const GetBucketTaggingRequest& request) const {
@@ -2287,7 +2346,9 @@ GetBucketTaggingOutcome S3CrtClient::GetBucketTagging(const GetBucketTaggingRequ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketTaggingOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketTaggingOutcome(result.GetResultWithOwnership())
+                            : GetBucketTaggingOutcome(std::move(result.GetError()));
 }
 
 GetBucketVersioningOutcome S3CrtClient::GetBucketVersioning(const GetBucketVersioningRequest& request) const {
@@ -2304,7 +2365,9 @@ GetBucketVersioningOutcome S3CrtClient::GetBucketVersioning(const GetBucketVersi
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketVersioningOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketVersioningOutcome(result.GetResultWithOwnership())
+                            : GetBucketVersioningOutcome(std::move(result.GetError()));
 }
 
 GetBucketWebsiteOutcome S3CrtClient::GetBucketWebsite(const GetBucketWebsiteRequest& request) const {
@@ -2321,7 +2384,9 @@ GetBucketWebsiteOutcome S3CrtClient::GetBucketWebsite(const GetBucketWebsiteRequ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetBucketWebsiteOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBucketWebsiteOutcome(result.GetResultWithOwnership())
+                            : GetBucketWebsiteOutcome(std::move(result.GetError()));
 }
 
 GetObjectAclOutcome S3CrtClient::GetObjectAcl(const GetObjectAclRequest& request) const {
@@ -2344,7 +2409,8 @@ GetObjectAclOutcome S3CrtClient::GetObjectAcl(const GetObjectAclRequest& request
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetObjectAclOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetObjectAclOutcome(result.GetResultWithOwnership()) : GetObjectAclOutcome(std::move(result.GetError()));
 }
 
 GetObjectAttributesOutcome S3CrtClient::GetObjectAttributes(const GetObjectAttributesRequest& request) const {
@@ -2372,7 +2438,9 @@ GetObjectAttributesOutcome S3CrtClient::GetObjectAttributes(const GetObjectAttri
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetObjectAttributesOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetObjectAttributesOutcome(result.GetResultWithOwnership())
+                            : GetObjectAttributesOutcome(std::move(result.GetError()));
 }
 
 GetObjectLegalHoldOutcome S3CrtClient::GetObjectLegalHold(const GetObjectLegalHoldRequest& request) const {
@@ -2395,7 +2463,9 @@ GetObjectLegalHoldOutcome S3CrtClient::GetObjectLegalHold(const GetObjectLegalHo
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetObjectLegalHoldOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetObjectLegalHoldOutcome(result.GetResultWithOwnership())
+                            : GetObjectLegalHoldOutcome(std::move(result.GetError()));
 }
 
 GetObjectLockConfigurationOutcome S3CrtClient::GetObjectLockConfiguration(const GetObjectLockConfigurationRequest& request) const {
@@ -2412,8 +2482,9 @@ GetObjectLockConfigurationOutcome S3CrtClient::GetObjectLockConfiguration(const 
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetObjectLockConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetObjectLockConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetObjectLockConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetObjectRetentionOutcome S3CrtClient::GetObjectRetention(const GetObjectRetentionRequest& request) const {
@@ -2436,7 +2507,9 @@ GetObjectRetentionOutcome S3CrtClient::GetObjectRetention(const GetObjectRetenti
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetObjectRetentionOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetObjectRetentionOutcome(result.GetResultWithOwnership())
+                            : GetObjectRetentionOutcome(std::move(result.GetError()));
 }
 
 GetObjectTaggingOutcome S3CrtClient::GetObjectTagging(const GetObjectTaggingRequest& request) const {
@@ -2459,7 +2532,9 @@ GetObjectTaggingOutcome S3CrtClient::GetObjectTagging(const GetObjectTaggingRequ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetObjectTaggingOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetObjectTaggingOutcome(result.GetResultWithOwnership())
+                            : GetObjectTaggingOutcome(std::move(result.GetError()));
 }
 
 GetObjectTorrentOutcome S3CrtClient::GetObjectTorrent(const GetObjectTorrentRequest& request) const {
@@ -2503,8 +2578,9 @@ GetObjectTorrentOutcome S3CrtClient::GetObjectTorrent(const GetObjectTorrentRequ
           ServiceSpecificParameters serviceSpecificParameters{params};
           return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
         }());
-        return GetObjectTorrentOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetObjectTorrentOutcome(result.GetResultWithOwnership())
+                                  : GetObjectTorrentOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -2525,7 +2601,9 @@ GetPublicAccessBlockOutcome S3CrtClient::GetPublicAccessBlock(const GetPublicAcc
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetPublicAccessBlockOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPublicAccessBlockOutcome(result.GetResultWithOwnership())
+                            : GetPublicAccessBlockOutcome(std::move(result.GetError()));
 }
 
 HeadBucketOutcome S3CrtClient::HeadBucket(const HeadBucketRequest& request) const {
@@ -2537,7 +2615,8 @@ HeadBucketOutcome S3CrtClient::HeadBucket(const HeadBucketRequest& request) cons
 
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) { (void)endpointResolutionOutcome; };
 
-  return HeadBucketOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_HEAD)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_HEAD);
+  return result.IsSuccess() ? HeadBucketOutcome(result.GetResultWithOwnership()) : HeadBucketOutcome(std::move(result.GetError()));
 }
 
 HeadObjectOutcome S3CrtClient::HeadObject(const HeadObjectRequest& request) const {
@@ -2557,7 +2636,8 @@ HeadObjectOutcome S3CrtClient::HeadObject(const HeadObjectRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
   };
 
-  return HeadObjectOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_HEAD)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_HEAD);
+  return result.IsSuccess() ? HeadObjectOutcome(result.GetResultWithOwnership()) : HeadObjectOutcome(std::move(result.GetError()));
 }
 
 ListBucketAnalyticsConfigurationsOutcome S3CrtClient::ListBucketAnalyticsConfigurations(
@@ -2575,8 +2655,9 @@ ListBucketAnalyticsConfigurationsOutcome S3CrtClient::ListBucketAnalyticsConfigu
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListBucketAnalyticsConfigurationsOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBucketAnalyticsConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListBucketAnalyticsConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListBucketIntelligentTieringConfigurationsOutcome S3CrtClient::ListBucketIntelligentTieringConfigurations(
@@ -2594,8 +2675,9 @@ ListBucketIntelligentTieringConfigurationsOutcome S3CrtClient::ListBucketIntelli
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListBucketIntelligentTieringConfigurationsOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBucketIntelligentTieringConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListBucketIntelligentTieringConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListBucketInventoryConfigurationsOutcome S3CrtClient::ListBucketInventoryConfigurations(
@@ -2613,8 +2695,9 @@ ListBucketInventoryConfigurationsOutcome S3CrtClient::ListBucketInventoryConfigu
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListBucketInventoryConfigurationsOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBucketInventoryConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListBucketInventoryConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListBucketMetricsConfigurationsOutcome S3CrtClient::ListBucketMetricsConfigurations(
@@ -2632,20 +2715,24 @@ ListBucketMetricsConfigurationsOutcome S3CrtClient::ListBucketMetricsConfigurati
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListBucketMetricsConfigurationsOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBucketMetricsConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListBucketMetricsConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListBucketsOutcome S3CrtClient::ListBuckets(const ListBucketsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) { (void)endpointResolutionOutcome; };
 
-  return ListBucketsOutcome{InvokeServiceOperation(request, uriResolver, "", Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, "", Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBucketsOutcome(result.GetResultWithOwnership()) : ListBucketsOutcome(std::move(result.GetError()));
 }
 
 ListDirectoryBucketsOutcome S3CrtClient::ListDirectoryBuckets(const ListDirectoryBucketsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) { (void)endpointResolutionOutcome; };
 
-  return ListDirectoryBucketsOutcome{InvokeServiceOperation(request, uriResolver, "", Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, "", Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDirectoryBucketsOutcome(result.GetResultWithOwnership())
+                            : ListDirectoryBucketsOutcome(std::move(result.GetError()));
 }
 
 ListMultipartUploadsOutcome S3CrtClient::ListMultipartUploads(const ListMultipartUploadsRequest& request) const {
@@ -2662,7 +2749,9 @@ ListMultipartUploadsOutcome S3CrtClient::ListMultipartUploads(const ListMultipar
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListMultipartUploadsOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMultipartUploadsOutcome(result.GetResultWithOwnership())
+                            : ListMultipartUploadsOutcome(std::move(result.GetError()));
 }
 
 ListObjectVersionsOutcome S3CrtClient::ListObjectVersions(const ListObjectVersionsRequest& request) const {
@@ -2679,7 +2768,9 @@ ListObjectVersionsOutcome S3CrtClient::ListObjectVersions(const ListObjectVersio
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListObjectVersionsOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListObjectVersionsOutcome(result.GetResultWithOwnership())
+                            : ListObjectVersionsOutcome(std::move(result.GetError()));
 }
 
 ListObjectsOutcome S3CrtClient::ListObjects(const ListObjectsRequest& request) const {
@@ -2691,7 +2782,8 @@ ListObjectsOutcome S3CrtClient::ListObjects(const ListObjectsRequest& request) c
 
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) { (void)endpointResolutionOutcome; };
 
-  return ListObjectsOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListObjectsOutcome(result.GetResultWithOwnership()) : ListObjectsOutcome(std::move(result.GetError()));
 }
 
 ListObjectsV2Outcome S3CrtClient::ListObjectsV2(const ListObjectsV2Request& request) const {
@@ -2708,7 +2800,8 @@ ListObjectsV2Outcome S3CrtClient::ListObjectsV2(const ListObjectsV2Request& requ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListObjectsV2Outcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListObjectsV2Outcome(result.GetResultWithOwnership()) : ListObjectsV2Outcome(std::move(result.GetError()));
 }
 
 ListPartsOutcome S3CrtClient::ListParts(const ListPartsRequest& request) const {
@@ -2733,7 +2826,8 @@ ListPartsOutcome S3CrtClient::ListParts(const ListPartsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
   };
 
-  return ListPartsOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPartsOutcome(result.GetResultWithOwnership()) : ListPartsOutcome(std::move(result.GetError()));
 }
 
 PutBucketAbacOutcome S3CrtClient::PutBucketAbac(const PutBucketAbacRequest& request) const {
@@ -2750,7 +2844,8 @@ PutBucketAbacOutcome S3CrtClient::PutBucketAbac(const PutBucketAbacRequest& requ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketAbacOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketAbacOutcome(result.GetResultWithOwnership()) : PutBucketAbacOutcome(std::move(result.GetError()));
 }
 
 PutBucketAccelerateConfigurationOutcome S3CrtClient::PutBucketAccelerateConfiguration(
@@ -2768,8 +2863,9 @@ PutBucketAccelerateConfigurationOutcome S3CrtClient::PutBucketAccelerateConfigur
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketAccelerateConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketAccelerateConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutBucketAccelerateConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutBucketAclOutcome S3CrtClient::PutBucketAcl(const PutBucketAclRequest& request) const {
@@ -2786,7 +2882,8 @@ PutBucketAclOutcome S3CrtClient::PutBucketAcl(const PutBucketAclRequest& request
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketAclOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketAclOutcome(result.GetResultWithOwnership()) : PutBucketAclOutcome(std::move(result.GetError()));
 }
 
 PutBucketAnalyticsConfigurationOutcome S3CrtClient::PutBucketAnalyticsConfiguration(
@@ -2809,8 +2906,9 @@ PutBucketAnalyticsConfigurationOutcome S3CrtClient::PutBucketAnalyticsConfigurat
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketAnalyticsConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketAnalyticsConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutBucketAnalyticsConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutBucketCorsOutcome S3CrtClient::PutBucketCors(const PutBucketCorsRequest& request) const {
@@ -2827,7 +2925,8 @@ PutBucketCorsOutcome S3CrtClient::PutBucketCors(const PutBucketCorsRequest& requ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketCorsOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketCorsOutcome(result.GetResultWithOwnership()) : PutBucketCorsOutcome(std::move(result.GetError()));
 }
 
 PutBucketEncryptionOutcome S3CrtClient::PutBucketEncryption(const PutBucketEncryptionRequest& request) const {
@@ -2844,7 +2943,9 @@ PutBucketEncryptionOutcome S3CrtClient::PutBucketEncryption(const PutBucketEncry
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketEncryptionOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketEncryptionOutcome(result.GetResultWithOwnership())
+                            : PutBucketEncryptionOutcome(std::move(result.GetError()));
 }
 
 PutBucketIntelligentTieringConfigurationOutcome S3CrtClient::PutBucketIntelligentTieringConfiguration(
@@ -2867,8 +2968,9 @@ PutBucketIntelligentTieringConfigurationOutcome S3CrtClient::PutBucketIntelligen
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketIntelligentTieringConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketIntelligentTieringConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutBucketIntelligentTieringConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutBucketInventoryConfigurationOutcome S3CrtClient::PutBucketInventoryConfiguration(
@@ -2891,8 +2993,9 @@ PutBucketInventoryConfigurationOutcome S3CrtClient::PutBucketInventoryConfigurat
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketInventoryConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketInventoryConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutBucketInventoryConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutBucketLifecycleConfigurationOutcome S3CrtClient::PutBucketLifecycleConfiguration(
@@ -2910,8 +3013,9 @@ PutBucketLifecycleConfigurationOutcome S3CrtClient::PutBucketLifecycleConfigurat
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketLifecycleConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketLifecycleConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutBucketLifecycleConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutBucketLoggingOutcome S3CrtClient::PutBucketLogging(const PutBucketLoggingRequest& request) const {
@@ -2928,7 +3032,9 @@ PutBucketLoggingOutcome S3CrtClient::PutBucketLogging(const PutBucketLoggingRequ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketLoggingOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketLoggingOutcome(result.GetResultWithOwnership())
+                            : PutBucketLoggingOutcome(std::move(result.GetError()));
 }
 
 PutBucketMetricsConfigurationOutcome S3CrtClient::PutBucketMetricsConfiguration(const PutBucketMetricsConfigurationRequest& request) const {
@@ -2950,8 +3056,9 @@ PutBucketMetricsConfigurationOutcome S3CrtClient::PutBucketMetricsConfiguration(
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketMetricsConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketMetricsConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutBucketMetricsConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutBucketNotificationConfigurationOutcome S3CrtClient::PutBucketNotificationConfiguration(
@@ -2969,8 +3076,9 @@ PutBucketNotificationConfigurationOutcome S3CrtClient::PutBucketNotificationConf
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketNotificationConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutBucketNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutBucketOwnershipControlsOutcome S3CrtClient::PutBucketOwnershipControls(const PutBucketOwnershipControlsRequest& request) const {
@@ -2987,8 +3095,9 @@ PutBucketOwnershipControlsOutcome S3CrtClient::PutBucketOwnershipControls(const 
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketOwnershipControlsOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketOwnershipControlsOutcome(result.GetResultWithOwnership())
+                            : PutBucketOwnershipControlsOutcome(std::move(result.GetError()));
 }
 
 PutBucketPolicyOutcome S3CrtClient::PutBucketPolicy(const PutBucketPolicyRequest& request) const {
@@ -3005,7 +3114,9 @@ PutBucketPolicyOutcome S3CrtClient::PutBucketPolicy(const PutBucketPolicyRequest
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketPolicyOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketPolicyOutcome(result.GetResultWithOwnership())
+                            : PutBucketPolicyOutcome(std::move(result.GetError()));
 }
 
 PutBucketReplicationOutcome S3CrtClient::PutBucketReplication(const PutBucketReplicationRequest& request) const {
@@ -3022,7 +3133,9 @@ PutBucketReplicationOutcome S3CrtClient::PutBucketReplication(const PutBucketRep
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketReplicationOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketReplicationOutcome(result.GetResultWithOwnership())
+                            : PutBucketReplicationOutcome(std::move(result.GetError()));
 }
 
 PutBucketRequestPaymentOutcome S3CrtClient::PutBucketRequestPayment(const PutBucketRequestPaymentRequest& request) const {
@@ -3039,7 +3152,9 @@ PutBucketRequestPaymentOutcome S3CrtClient::PutBucketRequestPayment(const PutBuc
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketRequestPaymentOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketRequestPaymentOutcome(result.GetResultWithOwnership())
+                            : PutBucketRequestPaymentOutcome(std::move(result.GetError()));
 }
 
 PutBucketTaggingOutcome S3CrtClient::PutBucketTagging(const PutBucketTaggingRequest& request) const {
@@ -3056,7 +3171,9 @@ PutBucketTaggingOutcome S3CrtClient::PutBucketTagging(const PutBucketTaggingRequ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketTaggingOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketTaggingOutcome(result.GetResultWithOwnership())
+                            : PutBucketTaggingOutcome(std::move(result.GetError()));
 }
 
 PutBucketVersioningOutcome S3CrtClient::PutBucketVersioning(const PutBucketVersioningRequest& request) const {
@@ -3073,7 +3190,9 @@ PutBucketVersioningOutcome S3CrtClient::PutBucketVersioning(const PutBucketVersi
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketVersioningOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketVersioningOutcome(result.GetResultWithOwnership())
+                            : PutBucketVersioningOutcome(std::move(result.GetError()));
 }
 
 PutBucketWebsiteOutcome S3CrtClient::PutBucketWebsite(const PutBucketWebsiteRequest& request) const {
@@ -3090,7 +3209,9 @@ PutBucketWebsiteOutcome S3CrtClient::PutBucketWebsite(const PutBucketWebsiteRequ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutBucketWebsiteOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBucketWebsiteOutcome(result.GetResultWithOwnership())
+                            : PutBucketWebsiteOutcome(std::move(result.GetError()));
 }
 
 PutObjectAclOutcome S3CrtClient::PutObjectAcl(const PutObjectAclRequest& request) const {
@@ -3113,7 +3234,8 @@ PutObjectAclOutcome S3CrtClient::PutObjectAcl(const PutObjectAclRequest& request
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutObjectAclOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutObjectAclOutcome(result.GetResultWithOwnership()) : PutObjectAclOutcome(std::move(result.GetError()));
 }
 
 PutObjectLegalHoldOutcome S3CrtClient::PutObjectLegalHold(const PutObjectLegalHoldRequest& request) const {
@@ -3136,7 +3258,9 @@ PutObjectLegalHoldOutcome S3CrtClient::PutObjectLegalHold(const PutObjectLegalHo
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutObjectLegalHoldOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutObjectLegalHoldOutcome(result.GetResultWithOwnership())
+                            : PutObjectLegalHoldOutcome(std::move(result.GetError()));
 }
 
 PutObjectLockConfigurationOutcome S3CrtClient::PutObjectLockConfiguration(const PutObjectLockConfigurationRequest& request) const {
@@ -3153,8 +3277,9 @@ PutObjectLockConfigurationOutcome S3CrtClient::PutObjectLockConfiguration(const 
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutObjectLockConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutObjectLockConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutObjectLockConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutObjectRetentionOutcome S3CrtClient::PutObjectRetention(const PutObjectRetentionRequest& request) const {
@@ -3177,7 +3302,9 @@ PutObjectRetentionOutcome S3CrtClient::PutObjectRetention(const PutObjectRetenti
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutObjectRetentionOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutObjectRetentionOutcome(result.GetResultWithOwnership())
+                            : PutObjectRetentionOutcome(std::move(result.GetError()));
 }
 
 PutObjectTaggingOutcome S3CrtClient::PutObjectTagging(const PutObjectTaggingRequest& request) const {
@@ -3200,7 +3327,9 @@ PutObjectTaggingOutcome S3CrtClient::PutObjectTagging(const PutObjectTaggingRequ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutObjectTaggingOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutObjectTaggingOutcome(result.GetResultWithOwnership())
+                            : PutObjectTaggingOutcome(std::move(result.GetError()));
 }
 
 PutPublicAccessBlockOutcome S3CrtClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const {
@@ -3217,7 +3346,9 @@ PutPublicAccessBlockOutcome S3CrtClient::PutPublicAccessBlock(const PutPublicAcc
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return PutPublicAccessBlockOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutPublicAccessBlockOutcome(result.GetResultWithOwnership())
+                            : PutPublicAccessBlockOutcome(std::move(result.GetError()));
 }
 
 RenameObjectOutcome S3CrtClient::RenameObject(const RenameObjectRequest& request) const {
@@ -3245,7 +3376,8 @@ RenameObjectOutcome S3CrtClient::RenameObject(const RenameObjectRequest& request
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return RenameObjectOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RenameObjectOutcome(result.GetResultWithOwnership()) : RenameObjectOutcome(std::move(result.GetError()));
 }
 
 RestoreObjectOutcome S3CrtClient::RestoreObject(const RestoreObjectRequest& request) const {
@@ -3268,7 +3400,8 @@ RestoreObjectOutcome S3CrtClient::RestoreObject(const RestoreObjectRequest& requ
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return RestoreObjectOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreObjectOutcome(result.GetResultWithOwnership()) : RestoreObjectOutcome(std::move(result.GetError()));
 }
 
 SelectObjectContentOutcome S3CrtClient::SelectObjectContent(SelectObjectContentRequest& request) const {
@@ -3316,8 +3449,9 @@ SelectObjectContentOutcome S3CrtClient::SelectObjectContent(SelectObjectContentR
           request.GetEventStreamDecoder().Reset();
           return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder());
         });
-        return SelectObjectContentOutcome(
-            MakeRequestWithEventStream(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithEventStream(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? SelectObjectContentOutcome(result.GetResultWithOwnership())
+                                  : SelectObjectContentOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -3339,8 +3473,9 @@ UpdateBucketMetadataInventoryTableConfigurationOutcome S3CrtClient::UpdateBucket
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return UpdateBucketMetadataInventoryTableConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBucketMetadataInventoryTableConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateBucketMetadataInventoryTableConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateBucketMetadataJournalTableConfigurationOutcome S3CrtClient::UpdateBucketMetadataJournalTableConfiguration(
@@ -3358,8 +3493,9 @@ UpdateBucketMetadataJournalTableConfigurationOutcome S3CrtClient::UpdateBucketMe
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return UpdateBucketMetadataJournalTableConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBucketMetadataJournalTableConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateBucketMetadataJournalTableConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateObjectEncryptionOutcome S3CrtClient::UpdateObjectEncryption(const UpdateObjectEncryptionRequest& request) const {
@@ -3382,7 +3518,9 @@ UpdateObjectEncryptionOutcome S3CrtClient::UpdateObjectEncryption(const UpdateOb
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return UpdateObjectEncryptionOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateObjectEncryptionOutcome(result.GetResultWithOwnership())
+                            : UpdateObjectEncryptionOutcome(std::move(result.GetError()));
 }
 
 UploadPartOutcome S3CrtClient::UploadPart(const UploadPartRequest& request) const {
@@ -3412,7 +3550,8 @@ UploadPartOutcome S3CrtClient::UploadPart(const UploadPartRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
   };
 
-  return UploadPartOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UploadPartOutcome(result.GetResultWithOwnership()) : UploadPartOutcome(std::move(result.GetError()));
 }
 
 UploadPartCopyOutcome S3CrtClient::UploadPartCopy(const UploadPartCopyRequest& request) const {
@@ -3447,7 +3586,8 @@ UploadPartCopyOutcome S3CrtClient::UploadPartCopy(const UploadPartCopyRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
   };
 
-  return UploadPartCopyOutcome{InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, request.GetBucket(), Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UploadPartCopyOutcome(result.GetResultWithOwnership()) : UploadPartCopyOutcome(std::move(result.GetError()));
 }
 
 WriteGetObjectResponseOutcome S3CrtClient::WriteGetObjectResponse(const WriteGetObjectResponseRequest& request) const {
@@ -3467,7 +3607,9 @@ WriteGetObjectResponseOutcome S3CrtClient::WriteGetObjectResponse(const WriteGet
     endpointResolutionOutcome.GetResult().AddPathSegments("/WriteGetObjectResponse");
   };
 
-  return WriteGetObjectResponseOutcome{InvokeServiceOperation(request, uriResolver, "", Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, "", Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? WriteGetObjectResponseOutcome(result.GetResultWithOwnership())
+                            : WriteGetObjectResponseOutcome(std::move(result.GetError()));
 }
 
 #include <aws/core/utils/HashingUtils.h>

@@ -191,7 +191,9 @@ CreateSavingsPlanOutcome SavingsPlansClient::CreateSavingsPlan(const CreateSavin
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateSavingsPlan");
   };
 
-  return CreateSavingsPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSavingsPlanOutcome(result.GetResultWithOwnership())
+                            : CreateSavingsPlanOutcome(std::move(result.GetError()));
 }
 
 DeleteQueuedSavingsPlanOutcome SavingsPlansClient::DeleteQueuedSavingsPlan(const DeleteQueuedSavingsPlanRequest& request) const {
@@ -200,7 +202,9 @@ DeleteQueuedSavingsPlanOutcome SavingsPlansClient::DeleteQueuedSavingsPlan(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteQueuedSavingsPlan");
   };
 
-  return DeleteQueuedSavingsPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteQueuedSavingsPlanOutcome(result.GetResultWithOwnership())
+                            : DeleteQueuedSavingsPlanOutcome(std::move(result.GetError()));
 }
 
 DescribeSavingsPlanRatesOutcome SavingsPlansClient::DescribeSavingsPlanRates(const DescribeSavingsPlanRatesRequest& request) const {
@@ -209,7 +213,9 @@ DescribeSavingsPlanRatesOutcome SavingsPlansClient::DescribeSavingsPlanRates(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeSavingsPlanRates");
   };
 
-  return DescribeSavingsPlanRatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSavingsPlanRatesOutcome(result.GetResultWithOwnership())
+                            : DescribeSavingsPlanRatesOutcome(std::move(result.GetError()));
 }
 
 DescribeSavingsPlansOutcome SavingsPlansClient::DescribeSavingsPlans(const DescribeSavingsPlansRequest& request) const {
@@ -218,7 +224,9 @@ DescribeSavingsPlansOutcome SavingsPlansClient::DescribeSavingsPlans(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeSavingsPlans");
   };
 
-  return DescribeSavingsPlansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSavingsPlansOutcome(result.GetResultWithOwnership())
+                            : DescribeSavingsPlansOutcome(std::move(result.GetError()));
 }
 
 DescribeSavingsPlansOfferingRatesOutcome SavingsPlansClient::DescribeSavingsPlansOfferingRates(
@@ -228,7 +236,9 @@ DescribeSavingsPlansOfferingRatesOutcome SavingsPlansClient::DescribeSavingsPlan
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeSavingsPlansOfferingRates");
   };
 
-  return DescribeSavingsPlansOfferingRatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSavingsPlansOfferingRatesOutcome(result.GetResultWithOwnership())
+                            : DescribeSavingsPlansOfferingRatesOutcome(std::move(result.GetError()));
 }
 
 DescribeSavingsPlansOfferingsOutcome SavingsPlansClient::DescribeSavingsPlansOfferings(
@@ -238,7 +248,9 @@ DescribeSavingsPlansOfferingsOutcome SavingsPlansClient::DescribeSavingsPlansOff
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeSavingsPlansOfferings");
   };
 
-  return DescribeSavingsPlansOfferingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSavingsPlansOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeSavingsPlansOfferingsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SavingsPlansClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -247,7 +259,9 @@ ListTagsForResourceOutcome SavingsPlansClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTagsForResource");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ReturnSavingsPlanOutcome SavingsPlansClient::ReturnSavingsPlan(const ReturnSavingsPlanRequest& request) const {
@@ -256,7 +270,9 @@ ReturnSavingsPlanOutcome SavingsPlansClient::ReturnSavingsPlan(const ReturnSavin
     endpointResolutionOutcome.GetResult().AddPathSegments("/ReturnSavingsPlan");
   };
 
-  return ReturnSavingsPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReturnSavingsPlanOutcome(result.GetResultWithOwnership())
+                            : ReturnSavingsPlanOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SavingsPlansClient::TagResource(const TagResourceRequest& request) const {
@@ -265,7 +281,8 @@ TagResourceOutcome SavingsPlansClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/TagResource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SavingsPlansClient::UntagResource(const UntagResourceRequest& request) const {
@@ -274,5 +291,6 @@ UntagResourceOutcome SavingsPlansClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/UntagResource");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

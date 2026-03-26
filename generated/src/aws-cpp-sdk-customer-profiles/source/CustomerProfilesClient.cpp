@@ -295,7 +295,8 @@ AddProfileKeyOutcome CustomerProfilesClient::AddProfileKey(const AddProfileKeyRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/keys");
   };
 
-  return AddProfileKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddProfileKeyOutcome(result.GetResultWithOwnership()) : AddProfileKeyOutcome(std::move(result.GetError()));
 }
 
 BatchGetCalculatedAttributeForProfileOutcome CustomerProfilesClient::BatchGetCalculatedAttributeForProfile(
@@ -320,7 +321,9 @@ BatchGetCalculatedAttributeForProfileOutcome CustomerProfilesClient::BatchGetCal
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-get-for-profiles");
   };
 
-  return BatchGetCalculatedAttributeForProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCalculatedAttributeForProfileOutcome(result.GetResultWithOwnership())
+                            : BatchGetCalculatedAttributeForProfileOutcome(std::move(result.GetError()));
 }
 
 BatchGetProfileOutcome CustomerProfilesClient::BatchGetProfile(const BatchGetProfileRequest& request) const {
@@ -337,7 +340,9 @@ BatchGetProfileOutcome CustomerProfilesClient::BatchGetProfile(const BatchGetPro
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-get-profiles");
   };
 
-  return BatchGetProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetProfileOutcome(result.GetResultWithOwnership())
+                            : BatchGetProfileOutcome(std::move(result.GetError()));
 }
 
 CreateCalculatedAttributeDefinitionOutcome CustomerProfilesClient::CreateCalculatedAttributeDefinition(
@@ -361,7 +366,9 @@ CreateCalculatedAttributeDefinitionOutcome CustomerProfilesClient::CreateCalcula
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCalculatedAttributeName());
   };
 
-  return CreateCalculatedAttributeDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCalculatedAttributeDefinitionOutcome(result.GetResultWithOwnership())
+                            : CreateCalculatedAttributeDefinitionOutcome(std::move(result.GetError()));
 }
 
 CreateDomainOutcome CustomerProfilesClient::CreateDomain(const CreateDomainRequest& request) const {
@@ -377,7 +384,8 @@ CreateDomainOutcome CustomerProfilesClient::CreateDomain(const CreateDomainReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return CreateDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainOutcome(result.GetResultWithOwnership()) : CreateDomainOutcome(std::move(result.GetError()));
 }
 
 CreateDomainLayoutOutcome CustomerProfilesClient::CreateDomainLayout(const CreateDomainLayoutRequest& request) const {
@@ -400,7 +408,9 @@ CreateDomainLayoutOutcome CustomerProfilesClient::CreateDomainLayout(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLayoutDefinitionName());
   };
 
-  return CreateDomainLayoutOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainLayoutOutcome(result.GetResultWithOwnership())
+                            : CreateDomainLayoutOutcome(std::move(result.GetError()));
 }
 
 CreateEventStreamOutcome CustomerProfilesClient::CreateEventStream(const CreateEventStreamRequest& request) const {
@@ -423,7 +433,9 @@ CreateEventStreamOutcome CustomerProfilesClient::CreateEventStream(const CreateE
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventStreamName());
   };
 
-  return CreateEventStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventStreamOutcome(result.GetResultWithOwnership())
+                            : CreateEventStreamOutcome(std::move(result.GetError()));
 }
 
 CreateEventTriggerOutcome CustomerProfilesClient::CreateEventTrigger(const CreateEventTriggerRequest& request) const {
@@ -446,7 +458,9 @@ CreateEventTriggerOutcome CustomerProfilesClient::CreateEventTrigger(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventTriggerName());
   };
 
-  return CreateEventTriggerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventTriggerOutcome(result.GetResultWithOwnership())
+                            : CreateEventTriggerOutcome(std::move(result.GetError()));
 }
 
 CreateIntegrationWorkflowOutcome CustomerProfilesClient::CreateIntegrationWorkflow(const CreateIntegrationWorkflowRequest& request) const {
@@ -463,7 +477,9 @@ CreateIntegrationWorkflowOutcome CustomerProfilesClient::CreateIntegrationWorkfl
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflows/integrations");
   };
 
-  return CreateIntegrationWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIntegrationWorkflowOutcome(result.GetResultWithOwnership())
+                            : CreateIntegrationWorkflowOutcome(std::move(result.GetError()));
 }
 
 CreateProfileOutcome CustomerProfilesClient::CreateProfile(const CreateProfileRequest& request) const {
@@ -480,7 +496,8 @@ CreateProfileOutcome CustomerProfilesClient::CreateProfile(const CreateProfileRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles");
   };
 
-  return CreateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProfileOutcome(result.GetResultWithOwnership()) : CreateProfileOutcome(std::move(result.GetError()));
 }
 
 CreateRecommenderOutcome CustomerProfilesClient::CreateRecommender(const CreateRecommenderRequest& request) const {
@@ -503,7 +520,9 @@ CreateRecommenderOutcome CustomerProfilesClient::CreateRecommender(const CreateR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
   };
 
-  return CreateRecommenderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecommenderOutcome(result.GetResultWithOwnership())
+                            : CreateRecommenderOutcome(std::move(result.GetError()));
 }
 
 CreateRecommenderFilterOutcome CustomerProfilesClient::CreateRecommenderFilter(const CreateRecommenderFilterRequest& request) const {
@@ -526,7 +545,9 @@ CreateRecommenderFilterOutcome CustomerProfilesClient::CreateRecommenderFilter(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderFilterName());
   };
 
-  return CreateRecommenderFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRecommenderFilterOutcome(result.GetResultWithOwnership())
+                            : CreateRecommenderFilterOutcome(std::move(result.GetError()));
 }
 
 CreateSegmentDefinitionOutcome CustomerProfilesClient::CreateSegmentDefinition(const CreateSegmentDefinitionRequest& request) const {
@@ -549,7 +570,9 @@ CreateSegmentDefinitionOutcome CustomerProfilesClient::CreateSegmentDefinition(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegmentDefinitionName());
   };
 
-  return CreateSegmentDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSegmentDefinitionOutcome(result.GetResultWithOwnership())
+                            : CreateSegmentDefinitionOutcome(std::move(result.GetError()));
 }
 
 CreateSegmentEstimateOutcome CustomerProfilesClient::CreateSegmentEstimate(const CreateSegmentEstimateRequest& request) const {
@@ -566,7 +589,9 @@ CreateSegmentEstimateOutcome CustomerProfilesClient::CreateSegmentEstimate(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/segment-estimates");
   };
 
-  return CreateSegmentEstimateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSegmentEstimateOutcome(result.GetResultWithOwnership())
+                            : CreateSegmentEstimateOutcome(std::move(result.GetError()));
 }
 
 CreateSegmentSnapshotOutcome CustomerProfilesClient::CreateSegmentSnapshot(const CreateSegmentSnapshotRequest& request) const {
@@ -590,7 +615,9 @@ CreateSegmentSnapshotOutcome CustomerProfilesClient::CreateSegmentSnapshot(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/snapshots");
   };
 
-  return CreateSegmentSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSegmentSnapshotOutcome(result.GetResultWithOwnership())
+                            : CreateSegmentSnapshotOutcome(std::move(result.GetError()));
 }
 
 CreateUploadJobOutcome CustomerProfilesClient::CreateUploadJob(const CreateUploadJobRequest& request) const {
@@ -607,7 +634,9 @@ CreateUploadJobOutcome CustomerProfilesClient::CreateUploadJob(const CreateUploa
     endpointResolutionOutcome.GetResult().AddPathSegments("/upload-jobs");
   };
 
-  return CreateUploadJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUploadJobOutcome(result.GetResultWithOwnership())
+                            : CreateUploadJobOutcome(std::move(result.GetError()));
 }
 
 DeleteCalculatedAttributeDefinitionOutcome CustomerProfilesClient::DeleteCalculatedAttributeDefinition(
@@ -631,7 +660,9 @@ DeleteCalculatedAttributeDefinitionOutcome CustomerProfilesClient::DeleteCalcula
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCalculatedAttributeName());
   };
 
-  return DeleteCalculatedAttributeDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCalculatedAttributeDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteCalculatedAttributeDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainOutcome CustomerProfilesClient::DeleteDomain(const DeleteDomainRequest& request) const {
@@ -647,7 +678,8 @@ DeleteDomainOutcome CustomerProfilesClient::DeleteDomain(const DeleteDomainReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return DeleteDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainLayoutOutcome CustomerProfilesClient::DeleteDomainLayout(const DeleteDomainLayoutRequest& request) const {
@@ -670,7 +702,9 @@ DeleteDomainLayoutOutcome CustomerProfilesClient::DeleteDomainLayout(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLayoutDefinitionName());
   };
 
-  return DeleteDomainLayoutOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainLayoutOutcome(result.GetResultWithOwnership())
+                            : DeleteDomainLayoutOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainObjectTypeOutcome CustomerProfilesClient::DeleteDomainObjectType(const DeleteDomainObjectTypeRequest& request) const {
@@ -693,7 +727,9 @@ DeleteDomainObjectTypeOutcome CustomerProfilesClient::DeleteDomainObjectType(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
   };
 
-  return DeleteDomainObjectTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainObjectTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteDomainObjectTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteEventStreamOutcome CustomerProfilesClient::DeleteEventStream(const DeleteEventStreamRequest& request) const {
@@ -716,7 +752,9 @@ DeleteEventStreamOutcome CustomerProfilesClient::DeleteEventStream(const DeleteE
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventStreamName());
   };
 
-  return DeleteEventStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventStreamOutcome(result.GetResultWithOwnership())
+                            : DeleteEventStreamOutcome(std::move(result.GetError()));
 }
 
 DeleteEventTriggerOutcome CustomerProfilesClient::DeleteEventTrigger(const DeleteEventTriggerRequest& request) const {
@@ -739,7 +777,9 @@ DeleteEventTriggerOutcome CustomerProfilesClient::DeleteEventTrigger(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventTriggerName());
   };
 
-  return DeleteEventTriggerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventTriggerOutcome(result.GetResultWithOwnership())
+                            : DeleteEventTriggerOutcome(std::move(result.GetError()));
 }
 
 DeleteIntegrationOutcome CustomerProfilesClient::DeleteIntegration(const DeleteIntegrationRequest& request) const {
@@ -756,7 +796,9 @@ DeleteIntegrationOutcome CustomerProfilesClient::DeleteIntegration(const DeleteI
     endpointResolutionOutcome.GetResult().AddPathSegments("/integrations/delete");
   };
 
-  return DeleteIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIntegrationOutcome(result.GetResultWithOwnership())
+                            : DeleteIntegrationOutcome(std::move(result.GetError()));
 }
 
 DeleteProfileOutcome CustomerProfilesClient::DeleteProfile(const DeleteProfileRequest& request) const {
@@ -773,7 +815,8 @@ DeleteProfileOutcome CustomerProfilesClient::DeleteProfile(const DeleteProfileRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/delete");
   };
 
-  return DeleteProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProfileOutcome(result.GetResultWithOwnership()) : DeleteProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteProfileKeyOutcome CustomerProfilesClient::DeleteProfileKey(const DeleteProfileKeyRequest& request) const {
@@ -790,7 +833,9 @@ DeleteProfileKeyOutcome CustomerProfilesClient::DeleteProfileKey(const DeletePro
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/keys/delete");
   };
 
-  return DeleteProfileKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProfileKeyOutcome(result.GetResultWithOwnership())
+                            : DeleteProfileKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteProfileObjectOutcome CustomerProfilesClient::DeleteProfileObject(const DeleteProfileObjectRequest& request) const {
@@ -807,7 +852,9 @@ DeleteProfileObjectOutcome CustomerProfilesClient::DeleteProfileObject(const Del
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/objects/delete");
   };
 
-  return DeleteProfileObjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProfileObjectOutcome(result.GetResultWithOwnership())
+                            : DeleteProfileObjectOutcome(std::move(result.GetError()));
 }
 
 DeleteProfileObjectTypeOutcome CustomerProfilesClient::DeleteProfileObjectType(const DeleteProfileObjectTypeRequest& request) const {
@@ -830,7 +877,9 @@ DeleteProfileObjectTypeOutcome CustomerProfilesClient::DeleteProfileObjectType(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
   };
 
-  return DeleteProfileObjectTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProfileObjectTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteProfileObjectTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteRecommenderOutcome CustomerProfilesClient::DeleteRecommender(const DeleteRecommenderRequest& request) const {
@@ -853,7 +902,9 @@ DeleteRecommenderOutcome CustomerProfilesClient::DeleteRecommender(const DeleteR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
   };
 
-  return DeleteRecommenderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRecommenderOutcome(result.GetResultWithOwnership())
+                            : DeleteRecommenderOutcome(std::move(result.GetError()));
 }
 
 DeleteRecommenderFilterOutcome CustomerProfilesClient::DeleteRecommenderFilter(const DeleteRecommenderFilterRequest& request) const {
@@ -876,7 +927,9 @@ DeleteRecommenderFilterOutcome CustomerProfilesClient::DeleteRecommenderFilter(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderFilterName());
   };
 
-  return DeleteRecommenderFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRecommenderFilterOutcome(result.GetResultWithOwnership())
+                            : DeleteRecommenderFilterOutcome(std::move(result.GetError()));
 }
 
 DeleteSegmentDefinitionOutcome CustomerProfilesClient::DeleteSegmentDefinition(const DeleteSegmentDefinitionRequest& request) const {
@@ -899,7 +952,9 @@ DeleteSegmentDefinitionOutcome CustomerProfilesClient::DeleteSegmentDefinition(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegmentDefinitionName());
   };
 
-  return DeleteSegmentDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSegmentDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteSegmentDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowOutcome CustomerProfilesClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const {
@@ -922,7 +977,8 @@ DeleteWorkflowOutcome CustomerProfilesClient::DeleteWorkflow(const DeleteWorkflo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowId());
   };
 
-  return DeleteWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkflowOutcome(result.GetResultWithOwnership()) : DeleteWorkflowOutcome(std::move(result.GetError()));
 }
 
 DetectProfileObjectTypeOutcome CustomerProfilesClient::DetectProfileObjectType(const DetectProfileObjectTypeRequest& request) const {
@@ -939,7 +995,9 @@ DetectProfileObjectTypeOutcome CustomerProfilesClient::DetectProfileObjectType(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/detect/object-types");
   };
 
-  return DetectProfileObjectTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectProfileObjectTypeOutcome(result.GetResultWithOwnership())
+                            : DetectProfileObjectTypeOutcome(std::move(result.GetError()));
 }
 
 GetAutoMergingPreviewOutcome CustomerProfilesClient::GetAutoMergingPreview(const GetAutoMergingPreviewRequest& request) const {
@@ -956,7 +1014,9 @@ GetAutoMergingPreviewOutcome CustomerProfilesClient::GetAutoMergingPreview(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-resolution-jobs/auto-merging-preview");
   };
 
-  return GetAutoMergingPreviewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAutoMergingPreviewOutcome(result.GetResultWithOwnership())
+                            : GetAutoMergingPreviewOutcome(std::move(result.GetError()));
 }
 
 GetCalculatedAttributeDefinitionOutcome CustomerProfilesClient::GetCalculatedAttributeDefinition(
@@ -980,7 +1040,9 @@ GetCalculatedAttributeDefinitionOutcome CustomerProfilesClient::GetCalculatedAtt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCalculatedAttributeName());
   };
 
-  return GetCalculatedAttributeDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCalculatedAttributeDefinitionOutcome(result.GetResultWithOwnership())
+                            : GetCalculatedAttributeDefinitionOutcome(std::move(result.GetError()));
 }
 
 GetCalculatedAttributeForProfileOutcome CustomerProfilesClient::GetCalculatedAttributeForProfile(
@@ -1011,7 +1073,9 @@ GetCalculatedAttributeForProfileOutcome CustomerProfilesClient::GetCalculatedAtt
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCalculatedAttributeName());
   };
 
-  return GetCalculatedAttributeForProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCalculatedAttributeForProfileOutcome(result.GetResultWithOwnership())
+                            : GetCalculatedAttributeForProfileOutcome(std::move(result.GetError()));
 }
 
 GetDomainOutcome CustomerProfilesClient::GetDomain(const GetDomainRequest& request) const {
@@ -1027,7 +1091,8 @@ GetDomainOutcome CustomerProfilesClient::GetDomain(const GetDomainRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return GetDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainOutcome(result.GetResultWithOwnership()) : GetDomainOutcome(std::move(result.GetError()));
 }
 
 GetDomainLayoutOutcome CustomerProfilesClient::GetDomainLayout(const GetDomainLayoutRequest& request) const {
@@ -1050,7 +1115,9 @@ GetDomainLayoutOutcome CustomerProfilesClient::GetDomainLayout(const GetDomainLa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLayoutDefinitionName());
   };
 
-  return GetDomainLayoutOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainLayoutOutcome(result.GetResultWithOwnership())
+                            : GetDomainLayoutOutcome(std::move(result.GetError()));
 }
 
 GetDomainObjectTypeOutcome CustomerProfilesClient::GetDomainObjectType(const GetDomainObjectTypeRequest& request) const {
@@ -1073,7 +1140,9 @@ GetDomainObjectTypeOutcome CustomerProfilesClient::GetDomainObjectType(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
   };
 
-  return GetDomainObjectTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainObjectTypeOutcome(result.GetResultWithOwnership())
+                            : GetDomainObjectTypeOutcome(std::move(result.GetError()));
 }
 
 GetEventStreamOutcome CustomerProfilesClient::GetEventStream(const GetEventStreamRequest& request) const {
@@ -1096,7 +1165,8 @@ GetEventStreamOutcome CustomerProfilesClient::GetEventStream(const GetEventStrea
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventStreamName());
   };
 
-  return GetEventStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventStreamOutcome(result.GetResultWithOwnership()) : GetEventStreamOutcome(std::move(result.GetError()));
 }
 
 GetEventTriggerOutcome CustomerProfilesClient::GetEventTrigger(const GetEventTriggerRequest& request) const {
@@ -1119,7 +1189,9 @@ GetEventTriggerOutcome CustomerProfilesClient::GetEventTrigger(const GetEventTri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventTriggerName());
   };
 
-  return GetEventTriggerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventTriggerOutcome(result.GetResultWithOwnership())
+                            : GetEventTriggerOutcome(std::move(result.GetError()));
 }
 
 GetIdentityResolutionJobOutcome CustomerProfilesClient::GetIdentityResolutionJob(const GetIdentityResolutionJobRequest& request) const {
@@ -1142,7 +1214,9 @@ GetIdentityResolutionJobOutcome CustomerProfilesClient::GetIdentityResolutionJob
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetIdentityResolutionJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIdentityResolutionJobOutcome(result.GetResultWithOwnership())
+                            : GetIdentityResolutionJobOutcome(std::move(result.GetError()));
 }
 
 GetIntegrationOutcome CustomerProfilesClient::GetIntegration(const GetIntegrationRequest& request) const {
@@ -1159,7 +1233,8 @@ GetIntegrationOutcome CustomerProfilesClient::GetIntegration(const GetIntegratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/integrations");
   };
 
-  return GetIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIntegrationOutcome(result.GetResultWithOwnership()) : GetIntegrationOutcome(std::move(result.GetError()));
 }
 
 GetMatchesOutcome CustomerProfilesClient::GetMatches(const GetMatchesRequest& request) const {
@@ -1176,7 +1251,8 @@ GetMatchesOutcome CustomerProfilesClient::GetMatches(const GetMatchesRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/matches");
   };
 
-  return GetMatchesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMatchesOutcome(result.GetResultWithOwnership()) : GetMatchesOutcome(std::move(result.GetError()));
 }
 
 GetObjectTypeAttributeStatisticsOutcome CustomerProfilesClient::GetObjectTypeAttributeStatistics(
@@ -1208,7 +1284,9 @@ GetObjectTypeAttributeStatisticsOutcome CustomerProfilesClient::GetObjectTypeAtt
     endpointResolutionOutcome.GetResult().AddPathSegments("/statistics");
   };
 
-  return GetObjectTypeAttributeStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetObjectTypeAttributeStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetObjectTypeAttributeStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetProfileHistoryRecordOutcome CustomerProfilesClient::GetProfileHistoryRecord(const GetProfileHistoryRecordRequest& request) const {
@@ -1238,7 +1316,9 @@ GetProfileHistoryRecordOutcome CustomerProfilesClient::GetProfileHistoryRecord(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetProfileHistoryRecordOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProfileHistoryRecordOutcome(result.GetResultWithOwnership())
+                            : GetProfileHistoryRecordOutcome(std::move(result.GetError()));
 }
 
 GetProfileObjectTypeOutcome CustomerProfilesClient::GetProfileObjectType(const GetProfileObjectTypeRequest& request) const {
@@ -1261,7 +1341,9 @@ GetProfileObjectTypeOutcome CustomerProfilesClient::GetProfileObjectType(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
   };
 
-  return GetProfileObjectTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProfileObjectTypeOutcome(result.GetResultWithOwnership())
+                            : GetProfileObjectTypeOutcome(std::move(result.GetError()));
 }
 
 GetProfileObjectTypeTemplateOutcome CustomerProfilesClient::GetProfileObjectTypeTemplate(
@@ -1278,7 +1360,9 @@ GetProfileObjectTypeTemplateOutcome CustomerProfilesClient::GetProfileObjectType
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateId());
   };
 
-  return GetProfileObjectTypeTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProfileObjectTypeTemplateOutcome(result.GetResultWithOwnership())
+                            : GetProfileObjectTypeTemplateOutcome(std::move(result.GetError()));
 }
 
 GetProfileRecommendationsOutcome CustomerProfilesClient::GetProfileRecommendations(const GetProfileRecommendationsRequest& request) const {
@@ -1302,7 +1386,9 @@ GetProfileRecommendationsOutcome CustomerProfilesClient::GetProfileRecommendatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations");
   };
 
-  return GetProfileRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetProfileRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetProfileRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetRecommenderOutcome CustomerProfilesClient::GetRecommender(const GetRecommenderRequest& request) const {
@@ -1325,7 +1411,8 @@ GetRecommenderOutcome CustomerProfilesClient::GetRecommender(const GetRecommende
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
   };
 
-  return GetRecommenderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecommenderOutcome(result.GetResultWithOwnership()) : GetRecommenderOutcome(std::move(result.GetError()));
 }
 
 GetRecommenderFilterOutcome CustomerProfilesClient::GetRecommenderFilter(const GetRecommenderFilterRequest& request) const {
@@ -1348,7 +1435,9 @@ GetRecommenderFilterOutcome CustomerProfilesClient::GetRecommenderFilter(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderFilterName());
   };
 
-  return GetRecommenderFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecommenderFilterOutcome(result.GetResultWithOwnership())
+                            : GetRecommenderFilterOutcome(std::move(result.GetError()));
 }
 
 GetSegmentDefinitionOutcome CustomerProfilesClient::GetSegmentDefinition(const GetSegmentDefinitionRequest& request) const {
@@ -1371,7 +1460,9 @@ GetSegmentDefinitionOutcome CustomerProfilesClient::GetSegmentDefinition(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegmentDefinitionName());
   };
 
-  return GetSegmentDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSegmentDefinitionOutcome(result.GetResultWithOwnership())
+                            : GetSegmentDefinitionOutcome(std::move(result.GetError()));
 }
 
 GetSegmentEstimateOutcome CustomerProfilesClient::GetSegmentEstimate(const GetSegmentEstimateRequest& request) const {
@@ -1394,7 +1485,9 @@ GetSegmentEstimateOutcome CustomerProfilesClient::GetSegmentEstimate(const GetSe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEstimateId());
   };
 
-  return GetSegmentEstimateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSegmentEstimateOutcome(result.GetResultWithOwnership())
+                            : GetSegmentEstimateOutcome(std::move(result.GetError()));
 }
 
 GetSegmentMembershipOutcome CustomerProfilesClient::GetSegmentMembership(const GetSegmentMembershipRequest& request) const {
@@ -1418,7 +1511,9 @@ GetSegmentMembershipOutcome CustomerProfilesClient::GetSegmentMembership(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/membership");
   };
 
-  return GetSegmentMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSegmentMembershipOutcome(result.GetResultWithOwnership())
+                            : GetSegmentMembershipOutcome(std::move(result.GetError()));
 }
 
 GetSegmentSnapshotOutcome CustomerProfilesClient::GetSegmentSnapshot(const GetSegmentSnapshotRequest& request) const {
@@ -1448,7 +1543,9 @@ GetSegmentSnapshotOutcome CustomerProfilesClient::GetSegmentSnapshot(const GetSe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSnapshotId());
   };
 
-  return GetSegmentSnapshotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSegmentSnapshotOutcome(result.GetResultWithOwnership())
+                            : GetSegmentSnapshotOutcome(std::move(result.GetError()));
 }
 
 GetSimilarProfilesOutcome CustomerProfilesClient::GetSimilarProfiles(const GetSimilarProfilesRequest& request) const {
@@ -1465,7 +1562,9 @@ GetSimilarProfilesOutcome CustomerProfilesClient::GetSimilarProfiles(const GetSi
     endpointResolutionOutcome.GetResult().AddPathSegments("/matches");
   };
 
-  return GetSimilarProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSimilarProfilesOutcome(result.GetResultWithOwnership())
+                            : GetSimilarProfilesOutcome(std::move(result.GetError()));
 }
 
 GetUploadJobOutcome CustomerProfilesClient::GetUploadJob(const GetUploadJobRequest& request) const {
@@ -1488,7 +1587,8 @@ GetUploadJobOutcome CustomerProfilesClient::GetUploadJob(const GetUploadJobReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetUploadJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUploadJobOutcome(result.GetResultWithOwnership()) : GetUploadJobOutcome(std::move(result.GetError()));
 }
 
 GetUploadJobPathOutcome CustomerProfilesClient::GetUploadJobPath(const GetUploadJobPathRequest& request) const {
@@ -1512,7 +1612,9 @@ GetUploadJobPathOutcome CustomerProfilesClient::GetUploadJobPath(const GetUpload
     endpointResolutionOutcome.GetResult().AddPathSegments("/path");
   };
 
-  return GetUploadJobPathOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUploadJobPathOutcome(result.GetResultWithOwnership())
+                            : GetUploadJobPathOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowOutcome CustomerProfilesClient::GetWorkflow(const GetWorkflowRequest& request) const {
@@ -1535,7 +1637,8 @@ GetWorkflowOutcome CustomerProfilesClient::GetWorkflow(const GetWorkflowRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkflowId());
   };
 
-  return GetWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowOutcome(result.GetResultWithOwnership()) : GetWorkflowOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowStepsOutcome CustomerProfilesClient::GetWorkflowSteps(const GetWorkflowStepsRequest& request) const {
@@ -1559,7 +1662,9 @@ GetWorkflowStepsOutcome CustomerProfilesClient::GetWorkflowSteps(const GetWorkfl
     endpointResolutionOutcome.GetResult().AddPathSegments("/steps");
   };
 
-  return GetWorkflowStepsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowStepsOutcome(result.GetResultWithOwnership())
+                            : GetWorkflowStepsOutcome(std::move(result.GetError()));
 }
 
 ListAccountIntegrationsOutcome CustomerProfilesClient::ListAccountIntegrations(const ListAccountIntegrationsRequest& request) const {
@@ -1568,7 +1673,9 @@ ListAccountIntegrationsOutcome CustomerProfilesClient::ListAccountIntegrations(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/integrations");
   };
 
-  return ListAccountIntegrationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountIntegrationsOutcome(result.GetResultWithOwnership())
+                            : ListAccountIntegrationsOutcome(std::move(result.GetError()));
 }
 
 ListCalculatedAttributeDefinitionsOutcome CustomerProfilesClient::ListCalculatedAttributeDefinitions(
@@ -1586,7 +1693,9 @@ ListCalculatedAttributeDefinitionsOutcome CustomerProfilesClient::ListCalculated
     endpointResolutionOutcome.GetResult().AddPathSegments("/calculated-attributes");
   };
 
-  return ListCalculatedAttributeDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCalculatedAttributeDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListCalculatedAttributeDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListCalculatedAttributesForProfileOutcome CustomerProfilesClient::ListCalculatedAttributesForProfile(
@@ -1611,7 +1720,9 @@ ListCalculatedAttributesForProfileOutcome CustomerProfilesClient::ListCalculated
     endpointResolutionOutcome.GetResult().AddPathSegments("/calculated-attributes");
   };
 
-  return ListCalculatedAttributesForProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCalculatedAttributesForProfileOutcome(result.GetResultWithOwnership())
+                            : ListCalculatedAttributesForProfileOutcome(std::move(result.GetError()));
 }
 
 ListDomainLayoutsOutcome CustomerProfilesClient::ListDomainLayouts(const ListDomainLayoutsRequest& request) const {
@@ -1628,7 +1739,9 @@ ListDomainLayoutsOutcome CustomerProfilesClient::ListDomainLayouts(const ListDom
     endpointResolutionOutcome.GetResult().AddPathSegments("/layouts");
   };
 
-  return ListDomainLayoutsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainLayoutsOutcome(result.GetResultWithOwnership())
+                            : ListDomainLayoutsOutcome(std::move(result.GetError()));
 }
 
 ListDomainObjectTypesOutcome CustomerProfilesClient::ListDomainObjectTypes(const ListDomainObjectTypesRequest& request) const {
@@ -1645,7 +1758,9 @@ ListDomainObjectTypesOutcome CustomerProfilesClient::ListDomainObjectTypes(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/domain-object-types");
   };
 
-  return ListDomainObjectTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainObjectTypesOutcome(result.GetResultWithOwnership())
+                            : ListDomainObjectTypesOutcome(std::move(result.GetError()));
 }
 
 ListDomainsOutcome CustomerProfilesClient::ListDomains(const ListDomainsRequest& request) const {
@@ -1654,7 +1769,8 @@ ListDomainsOutcome CustomerProfilesClient::ListDomains(const ListDomainsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/domains");
   };
 
-  return ListDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainsOutcome(result.GetResultWithOwnership()) : ListDomainsOutcome(std::move(result.GetError()));
 }
 
 ListEventStreamsOutcome CustomerProfilesClient::ListEventStreams(const ListEventStreamsRequest& request) const {
@@ -1671,7 +1787,9 @@ ListEventStreamsOutcome CustomerProfilesClient::ListEventStreams(const ListEvent
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-streams");
   };
 
-  return ListEventStreamsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEventStreamsOutcome(result.GetResultWithOwnership())
+                            : ListEventStreamsOutcome(std::move(result.GetError()));
 }
 
 ListEventTriggersOutcome CustomerProfilesClient::ListEventTriggers(const ListEventTriggersRequest& request) const {
@@ -1688,7 +1806,9 @@ ListEventTriggersOutcome CustomerProfilesClient::ListEventTriggers(const ListEve
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-triggers");
   };
 
-  return ListEventTriggersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEventTriggersOutcome(result.GetResultWithOwnership())
+                            : ListEventTriggersOutcome(std::move(result.GetError()));
 }
 
 ListIdentityResolutionJobsOutcome CustomerProfilesClient::ListIdentityResolutionJobs(
@@ -1706,7 +1826,9 @@ ListIdentityResolutionJobsOutcome CustomerProfilesClient::ListIdentityResolution
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-resolution-jobs");
   };
 
-  return ListIdentityResolutionJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIdentityResolutionJobsOutcome(result.GetResultWithOwnership())
+                            : ListIdentityResolutionJobsOutcome(std::move(result.GetError()));
 }
 
 ListIntegrationsOutcome CustomerProfilesClient::ListIntegrations(const ListIntegrationsRequest& request) const {
@@ -1723,7 +1845,9 @@ ListIntegrationsOutcome CustomerProfilesClient::ListIntegrations(const ListInteg
     endpointResolutionOutcome.GetResult().AddPathSegments("/integrations");
   };
 
-  return ListIntegrationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIntegrationsOutcome(result.GetResultWithOwnership())
+                            : ListIntegrationsOutcome(std::move(result.GetError()));
 }
 
 ListObjectTypeAttributeValuesOutcome CustomerProfilesClient::ListObjectTypeAttributeValues(
@@ -1755,7 +1879,9 @@ ListObjectTypeAttributeValuesOutcome CustomerProfilesClient::ListObjectTypeAttri
     endpointResolutionOutcome.GetResult().AddPathSegments("/values");
   };
 
-  return ListObjectTypeAttributeValuesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListObjectTypeAttributeValuesOutcome(result.GetResultWithOwnership())
+                            : ListObjectTypeAttributeValuesOutcome(std::move(result.GetError()));
 }
 
 ListObjectTypeAttributesOutcome CustomerProfilesClient::ListObjectTypeAttributes(const ListObjectTypeAttributesRequest& request) const {
@@ -1779,7 +1905,9 @@ ListObjectTypeAttributesOutcome CustomerProfilesClient::ListObjectTypeAttributes
     endpointResolutionOutcome.GetResult().AddPathSegments("/attributes");
   };
 
-  return ListObjectTypeAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListObjectTypeAttributesOutcome(result.GetResultWithOwnership())
+                            : ListObjectTypeAttributesOutcome(std::move(result.GetError()));
 }
 
 ListProfileAttributeValuesOutcome CustomerProfilesClient::ListProfileAttributeValues(
@@ -1804,7 +1932,9 @@ ListProfileAttributeValuesOutcome CustomerProfilesClient::ListProfileAttributeVa
     endpointResolutionOutcome.GetResult().AddPathSegments("/values");
   };
 
-  return ListProfileAttributeValuesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfileAttributeValuesOutcome(result.GetResultWithOwnership())
+                            : ListProfileAttributeValuesOutcome(std::move(result.GetError()));
 }
 
 ListProfileHistoryRecordsOutcome CustomerProfilesClient::ListProfileHistoryRecords(const ListProfileHistoryRecordsRequest& request) const {
@@ -1821,7 +1951,9 @@ ListProfileHistoryRecordsOutcome CustomerProfilesClient::ListProfileHistoryRecor
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/history-records");
   };
 
-  return ListProfileHistoryRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProfileHistoryRecordsOutcome(result.GetResultWithOwnership())
+                            : ListProfileHistoryRecordsOutcome(std::move(result.GetError()));
 }
 
 ListProfileObjectTypeTemplatesOutcome CustomerProfilesClient::ListProfileObjectTypeTemplates(
@@ -1831,7 +1963,9 @@ ListProfileObjectTypeTemplatesOutcome CustomerProfilesClient::ListProfileObjectT
     endpointResolutionOutcome.GetResult().AddPathSegments("/templates");
   };
 
-  return ListProfileObjectTypeTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfileObjectTypeTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListProfileObjectTypeTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListProfileObjectTypesOutcome CustomerProfilesClient::ListProfileObjectTypes(const ListProfileObjectTypesRequest& request) const {
@@ -1848,7 +1982,9 @@ ListProfileObjectTypesOutcome CustomerProfilesClient::ListProfileObjectTypes(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/object-types");
   };
 
-  return ListProfileObjectTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfileObjectTypesOutcome(result.GetResultWithOwnership())
+                            : ListProfileObjectTypesOutcome(std::move(result.GetError()));
 }
 
 ListProfileObjectsOutcome CustomerProfilesClient::ListProfileObjects(const ListProfileObjectsRequest& request) const {
@@ -1865,7 +2001,9 @@ ListProfileObjectsOutcome CustomerProfilesClient::ListProfileObjects(const ListP
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/objects");
   };
 
-  return ListProfileObjectsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProfileObjectsOutcome(result.GetResultWithOwnership())
+                            : ListProfileObjectsOutcome(std::move(result.GetError()));
 }
 
 ListRecommenderFiltersOutcome CustomerProfilesClient::ListRecommenderFilters(const ListRecommenderFiltersRequest& request) const {
@@ -1882,7 +2020,9 @@ ListRecommenderFiltersOutcome CustomerProfilesClient::ListRecommenderFilters(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/recommender-filters");
   };
 
-  return ListRecommenderFiltersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommenderFiltersOutcome(result.GetResultWithOwnership())
+                            : ListRecommenderFiltersOutcome(std::move(result.GetError()));
 }
 
 ListRecommenderRecipesOutcome CustomerProfilesClient::ListRecommenderRecipes(const ListRecommenderRecipesRequest& request) const {
@@ -1891,7 +2031,9 @@ ListRecommenderRecipesOutcome CustomerProfilesClient::ListRecommenderRecipes(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/recommender-recipes");
   };
 
-  return ListRecommenderRecipesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommenderRecipesOutcome(result.GetResultWithOwnership())
+                            : ListRecommenderRecipesOutcome(std::move(result.GetError()));
 }
 
 ListRecommendersOutcome CustomerProfilesClient::ListRecommenders(const ListRecommendersRequest& request) const {
@@ -1908,7 +2050,9 @@ ListRecommendersOutcome CustomerProfilesClient::ListRecommenders(const ListRecom
     endpointResolutionOutcome.GetResult().AddPathSegments("/recommenders");
   };
 
-  return ListRecommendersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommendersOutcome(result.GetResultWithOwnership())
+                            : ListRecommendersOutcome(std::move(result.GetError()));
 }
 
 ListRuleBasedMatchesOutcome CustomerProfilesClient::ListRuleBasedMatches(const ListRuleBasedMatchesRequest& request) const {
@@ -1925,7 +2069,9 @@ ListRuleBasedMatchesOutcome CustomerProfilesClient::ListRuleBasedMatches(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/ruleBasedMatches");
   };
 
-  return ListRuleBasedMatchesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRuleBasedMatchesOutcome(result.GetResultWithOwnership())
+                            : ListRuleBasedMatchesOutcome(std::move(result.GetError()));
 }
 
 ListSegmentDefinitionsOutcome CustomerProfilesClient::ListSegmentDefinitions(const ListSegmentDefinitionsRequest& request) const {
@@ -1942,7 +2088,9 @@ ListSegmentDefinitionsOutcome CustomerProfilesClient::ListSegmentDefinitions(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/segment-definitions");
   };
 
-  return ListSegmentDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSegmentDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListSegmentDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CustomerProfilesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1958,7 +2106,9 @@ ListTagsForResourceOutcome CustomerProfilesClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListUploadJobsOutcome CustomerProfilesClient::ListUploadJobs(const ListUploadJobsRequest& request) const {
@@ -1975,7 +2125,8 @@ ListUploadJobsOutcome CustomerProfilesClient::ListUploadJobs(const ListUploadJob
     endpointResolutionOutcome.GetResult().AddPathSegments("/upload-jobs");
   };
 
-  return ListUploadJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListUploadJobsOutcome(result.GetResultWithOwnership()) : ListUploadJobsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowsOutcome CustomerProfilesClient::ListWorkflows(const ListWorkflowsRequest& request) const {
@@ -1992,7 +2143,8 @@ ListWorkflowsOutcome CustomerProfilesClient::ListWorkflows(const ListWorkflowsRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/workflows");
   };
 
-  return ListWorkflowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowsOutcome(result.GetResultWithOwnership()) : ListWorkflowsOutcome(std::move(result.GetError()));
 }
 
 MergeProfilesOutcome CustomerProfilesClient::MergeProfiles(const MergeProfilesRequest& request) const {
@@ -2009,7 +2161,8 @@ MergeProfilesOutcome CustomerProfilesClient::MergeProfiles(const MergeProfilesRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/objects/merge");
   };
 
-  return MergeProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? MergeProfilesOutcome(result.GetResultWithOwnership()) : MergeProfilesOutcome(std::move(result.GetError()));
 }
 
 PutDomainObjectTypeOutcome CustomerProfilesClient::PutDomainObjectType(const PutDomainObjectTypeRequest& request) const {
@@ -2032,7 +2185,9 @@ PutDomainObjectTypeOutcome CustomerProfilesClient::PutDomainObjectType(const Put
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
   };
 
-  return PutDomainObjectTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDomainObjectTypeOutcome(result.GetResultWithOwnership())
+                            : PutDomainObjectTypeOutcome(std::move(result.GetError()));
 }
 
 PutIntegrationOutcome CustomerProfilesClient::PutIntegration(const PutIntegrationRequest& request) const {
@@ -2049,7 +2204,8 @@ PutIntegrationOutcome CustomerProfilesClient::PutIntegration(const PutIntegratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/integrations");
   };
 
-  return PutIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutIntegrationOutcome(result.GetResultWithOwnership()) : PutIntegrationOutcome(std::move(result.GetError()));
 }
 
 PutProfileObjectOutcome CustomerProfilesClient::PutProfileObject(const PutProfileObjectRequest& request) const {
@@ -2066,7 +2222,9 @@ PutProfileObjectOutcome CustomerProfilesClient::PutProfileObject(const PutProfil
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/objects");
   };
 
-  return PutProfileObjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutProfileObjectOutcome(result.GetResultWithOwnership())
+                            : PutProfileObjectOutcome(std::move(result.GetError()));
 }
 
 PutProfileObjectTypeOutcome CustomerProfilesClient::PutProfileObjectType(const PutProfileObjectTypeRequest& request) const {
@@ -2089,7 +2247,9 @@ PutProfileObjectTypeOutcome CustomerProfilesClient::PutProfileObjectType(const P
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetObjectTypeName());
   };
 
-  return PutProfileObjectTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutProfileObjectTypeOutcome(result.GetResultWithOwnership())
+                            : PutProfileObjectTypeOutcome(std::move(result.GetError()));
 }
 
 SearchProfilesOutcome CustomerProfilesClient::SearchProfiles(const SearchProfilesRequest& request) const {
@@ -2106,7 +2266,8 @@ SearchProfilesOutcome CustomerProfilesClient::SearchProfiles(const SearchProfile
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/search");
   };
 
-  return SearchProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchProfilesOutcome(result.GetResultWithOwnership()) : SearchProfilesOutcome(std::move(result.GetError()));
 }
 
 StartRecommenderOutcome CustomerProfilesClient::StartRecommender(const StartRecommenderRequest& request) const {
@@ -2130,7 +2291,9 @@ StartRecommenderOutcome CustomerProfilesClient::StartRecommender(const StartReco
     endpointResolutionOutcome.GetResult().AddPathSegments("/start");
   };
 
-  return StartRecommenderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartRecommenderOutcome(result.GetResultWithOwnership())
+                            : StartRecommenderOutcome(std::move(result.GetError()));
 }
 
 StartUploadJobOutcome CustomerProfilesClient::StartUploadJob(const StartUploadJobRequest& request) const {
@@ -2153,7 +2316,8 @@ StartUploadJobOutcome CustomerProfilesClient::StartUploadJob(const StartUploadJo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return StartUploadJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartUploadJobOutcome(result.GetResultWithOwnership()) : StartUploadJobOutcome(std::move(result.GetError()));
 }
 
 StopRecommenderOutcome CustomerProfilesClient::StopRecommender(const StopRecommenderRequest& request) const {
@@ -2177,7 +2341,9 @@ StopRecommenderOutcome CustomerProfilesClient::StopRecommender(const StopRecomme
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopRecommenderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StopRecommenderOutcome(result.GetResultWithOwnership())
+                            : StopRecommenderOutcome(std::move(result.GetError()));
 }
 
 StopUploadJobOutcome CustomerProfilesClient::StopUploadJob(const StopUploadJobRequest& request) const {
@@ -2201,7 +2367,8 @@ StopUploadJobOutcome CustomerProfilesClient::StopUploadJob(const StopUploadJobRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopUploadJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StopUploadJobOutcome(result.GetResultWithOwnership()) : StopUploadJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CustomerProfilesClient::TagResource(const TagResourceRequest& request) const {
@@ -2217,7 +2384,8 @@ TagResourceOutcome CustomerProfilesClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CustomerProfilesClient::UntagResource(const UntagResourceRequest& request) const {
@@ -2238,7 +2406,8 @@ UntagResourceOutcome CustomerProfilesClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCalculatedAttributeDefinitionOutcome CustomerProfilesClient::UpdateCalculatedAttributeDefinition(
@@ -2262,7 +2431,9 @@ UpdateCalculatedAttributeDefinitionOutcome CustomerProfilesClient::UpdateCalcula
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCalculatedAttributeName());
   };
 
-  return UpdateCalculatedAttributeDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCalculatedAttributeDefinitionOutcome(result.GetResultWithOwnership())
+                            : UpdateCalculatedAttributeDefinitionOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainOutcome CustomerProfilesClient::UpdateDomain(const UpdateDomainRequest& request) const {
@@ -2278,7 +2449,8 @@ UpdateDomainOutcome CustomerProfilesClient::UpdateDomain(const UpdateDomainReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   };
 
-  return UpdateDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDomainOutcome(result.GetResultWithOwnership()) : UpdateDomainOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainLayoutOutcome CustomerProfilesClient::UpdateDomainLayout(const UpdateDomainLayoutRequest& request) const {
@@ -2301,7 +2473,9 @@ UpdateDomainLayoutOutcome CustomerProfilesClient::UpdateDomainLayout(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLayoutDefinitionName());
   };
 
-  return UpdateDomainLayoutOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDomainLayoutOutcome(result.GetResultWithOwnership())
+                            : UpdateDomainLayoutOutcome(std::move(result.GetError()));
 }
 
 UpdateEventTriggerOutcome CustomerProfilesClient::UpdateEventTrigger(const UpdateEventTriggerRequest& request) const {
@@ -2324,7 +2498,9 @@ UpdateEventTriggerOutcome CustomerProfilesClient::UpdateEventTrigger(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventTriggerName());
   };
 
-  return UpdateEventTriggerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEventTriggerOutcome(result.GetResultWithOwnership())
+                            : UpdateEventTriggerOutcome(std::move(result.GetError()));
 }
 
 UpdateProfileOutcome CustomerProfilesClient::UpdateProfile(const UpdateProfileRequest& request) const {
@@ -2341,7 +2517,8 @@ UpdateProfileOutcome CustomerProfilesClient::UpdateProfile(const UpdateProfileRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles");
   };
 
-  return UpdateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateProfileOutcome(result.GetResultWithOwnership()) : UpdateProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateRecommenderOutcome CustomerProfilesClient::UpdateRecommender(const UpdateRecommenderRequest& request) const {
@@ -2364,5 +2541,7 @@ UpdateRecommenderOutcome CustomerProfilesClient::UpdateRecommender(const UpdateR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommenderName());
   };
 
-  return UpdateRecommenderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRecommenderOutcome(result.GetResultWithOwnership())
+                            : UpdateRecommenderOutcome(std::move(result.GetError()));
 }

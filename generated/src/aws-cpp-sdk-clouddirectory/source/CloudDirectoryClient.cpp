@@ -253,7 +253,9 @@ AddFacetToObjectOutcome CloudDirectoryClient::AddFacetToObject(const AddFacetToO
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/facets");
   };
 
-  return AddFacetToObjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AddFacetToObjectOutcome(result.GetResultWithOwnership())
+                            : AddFacetToObjectOutcome(std::move(result.GetError()));
 }
 
 ApplySchemaOutcome CloudDirectoryClient::ApplySchema(const ApplySchemaRequest& request) const {
@@ -268,7 +270,8 @@ ApplySchemaOutcome CloudDirectoryClient::ApplySchema(const ApplySchemaRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/apply");
   };
 
-  return ApplySchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ApplySchemaOutcome(result.GetResultWithOwnership()) : ApplySchemaOutcome(std::move(result.GetError()));
 }
 
 AttachObjectOutcome CloudDirectoryClient::AttachObject(const AttachObjectRequest& request) const {
@@ -283,7 +286,8 @@ AttachObjectOutcome CloudDirectoryClient::AttachObject(const AttachObjectRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/attach");
   };
 
-  return AttachObjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AttachObjectOutcome(result.GetResultWithOwnership()) : AttachObjectOutcome(std::move(result.GetError()));
 }
 
 AttachPolicyOutcome CloudDirectoryClient::AttachPolicy(const AttachPolicyRequest& request) const {
@@ -298,7 +302,8 @@ AttachPolicyOutcome CloudDirectoryClient::AttachPolicy(const AttachPolicyRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/policy/attach");
   };
 
-  return AttachPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AttachPolicyOutcome(result.GetResultWithOwnership()) : AttachPolicyOutcome(std::move(result.GetError()));
 }
 
 AttachToIndexOutcome CloudDirectoryClient::AttachToIndex(const AttachToIndexRequest& request) const {
@@ -313,7 +318,8 @@ AttachToIndexOutcome CloudDirectoryClient::AttachToIndex(const AttachToIndexRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/index/attach");
   };
 
-  return AttachToIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AttachToIndexOutcome(result.GetResultWithOwnership()) : AttachToIndexOutcome(std::move(result.GetError()));
 }
 
 AttachTypedLinkOutcome CloudDirectoryClient::AttachTypedLink(const AttachTypedLinkRequest& request) const {
@@ -328,7 +334,9 @@ AttachTypedLinkOutcome CloudDirectoryClient::AttachTypedLink(const AttachTypedLi
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/attach");
   };
 
-  return AttachTypedLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AttachTypedLinkOutcome(result.GetResultWithOwnership())
+                            : AttachTypedLinkOutcome(std::move(result.GetError()));
 }
 
 BatchReadOutcome CloudDirectoryClient::BatchRead(const BatchReadRequest& request) const {
@@ -343,7 +351,8 @@ BatchReadOutcome CloudDirectoryClient::BatchRead(const BatchReadRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/batchread");
   };
 
-  return BatchReadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchReadOutcome(result.GetResultWithOwnership()) : BatchReadOutcome(std::move(result.GetError()));
 }
 
 BatchWriteOutcome CloudDirectoryClient::BatchWrite(const BatchWriteRequest& request) const {
@@ -358,7 +367,8 @@ BatchWriteOutcome CloudDirectoryClient::BatchWrite(const BatchWriteRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/batchwrite");
   };
 
-  return BatchWriteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchWriteOutcome(result.GetResultWithOwnership()) : BatchWriteOutcome(std::move(result.GetError()));
 }
 
 CreateDirectoryOutcome CloudDirectoryClient::CreateDirectory(const CreateDirectoryRequest& request) const {
@@ -373,7 +383,9 @@ CreateDirectoryOutcome CloudDirectoryClient::CreateDirectory(const CreateDirecto
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/directory/create");
   };
 
-  return CreateDirectoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateDirectoryOutcome(result.GetResultWithOwnership())
+                            : CreateDirectoryOutcome(std::move(result.GetError()));
 }
 
 CreateFacetOutcome CloudDirectoryClient::CreateFacet(const CreateFacetRequest& request) const {
@@ -388,7 +400,8 @@ CreateFacetOutcome CloudDirectoryClient::CreateFacet(const CreateFacetRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/facet/create");
   };
 
-  return CreateFacetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateFacetOutcome(result.GetResultWithOwnership()) : CreateFacetOutcome(std::move(result.GetError()));
 }
 
 CreateIndexOutcome CloudDirectoryClient::CreateIndex(const CreateIndexRequest& request) const {
@@ -403,7 +416,8 @@ CreateIndexOutcome CloudDirectoryClient::CreateIndex(const CreateIndexRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/index");
   };
 
-  return CreateIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateIndexOutcome(result.GetResultWithOwnership()) : CreateIndexOutcome(std::move(result.GetError()));
 }
 
 CreateObjectOutcome CloudDirectoryClient::CreateObject(const CreateObjectRequest& request) const {
@@ -418,7 +432,8 @@ CreateObjectOutcome CloudDirectoryClient::CreateObject(const CreateObjectRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object");
   };
 
-  return CreateObjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateObjectOutcome(result.GetResultWithOwnership()) : CreateObjectOutcome(std::move(result.GetError()));
 }
 
 CreateSchemaOutcome CloudDirectoryClient::CreateSchema(const CreateSchemaRequest& request) const {
@@ -427,7 +442,8 @@ CreateSchemaOutcome CloudDirectoryClient::CreateSchema(const CreateSchemaRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/create");
   };
 
-  return CreateSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateSchemaOutcome(result.GetResultWithOwnership()) : CreateSchemaOutcome(std::move(result.GetError()));
 }
 
 CreateTypedLinkFacetOutcome CloudDirectoryClient::CreateTypedLinkFacet(const CreateTypedLinkFacetRequest& request) const {
@@ -442,7 +458,9 @@ CreateTypedLinkFacetOutcome CloudDirectoryClient::CreateTypedLinkFacet(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet/create");
   };
 
-  return CreateTypedLinkFacetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateTypedLinkFacetOutcome(result.GetResultWithOwnership())
+                            : CreateTypedLinkFacetOutcome(std::move(result.GetError()));
 }
 
 DeleteDirectoryOutcome CloudDirectoryClient::DeleteDirectory(const DeleteDirectoryRequest& request) const {
@@ -457,7 +475,9 @@ DeleteDirectoryOutcome CloudDirectoryClient::DeleteDirectory(const DeleteDirecto
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/directory");
   };
 
-  return DeleteDirectoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DeleteDirectoryOutcome(result.GetResultWithOwnership())
+                            : DeleteDirectoryOutcome(std::move(result.GetError()));
 }
 
 DeleteFacetOutcome CloudDirectoryClient::DeleteFacet(const DeleteFacetRequest& request) const {
@@ -472,7 +492,8 @@ DeleteFacetOutcome CloudDirectoryClient::DeleteFacet(const DeleteFacetRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/facet/delete");
   };
 
-  return DeleteFacetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DeleteFacetOutcome(result.GetResultWithOwnership()) : DeleteFacetOutcome(std::move(result.GetError()));
 }
 
 DeleteObjectOutcome CloudDirectoryClient::DeleteObject(const DeleteObjectRequest& request) const {
@@ -487,7 +508,8 @@ DeleteObjectOutcome CloudDirectoryClient::DeleteObject(const DeleteObjectRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/delete");
   };
 
-  return DeleteObjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DeleteObjectOutcome(result.GetResultWithOwnership()) : DeleteObjectOutcome(std::move(result.GetError()));
 }
 
 DeleteSchemaOutcome CloudDirectoryClient::DeleteSchema(const DeleteSchemaRequest& request) const {
@@ -502,7 +524,8 @@ DeleteSchemaOutcome CloudDirectoryClient::DeleteSchema(const DeleteSchemaRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema");
   };
 
-  return DeleteSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DeleteSchemaOutcome(result.GetResultWithOwnership()) : DeleteSchemaOutcome(std::move(result.GetError()));
 }
 
 DeleteTypedLinkFacetOutcome CloudDirectoryClient::DeleteTypedLinkFacet(const DeleteTypedLinkFacetRequest& request) const {
@@ -517,7 +540,9 @@ DeleteTypedLinkFacetOutcome CloudDirectoryClient::DeleteTypedLinkFacet(const Del
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet/delete");
   };
 
-  return DeleteTypedLinkFacetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DeleteTypedLinkFacetOutcome(result.GetResultWithOwnership())
+                            : DeleteTypedLinkFacetOutcome(std::move(result.GetError()));
 }
 
 DetachFromIndexOutcome CloudDirectoryClient::DetachFromIndex(const DetachFromIndexRequest& request) const {
@@ -532,7 +557,9 @@ DetachFromIndexOutcome CloudDirectoryClient::DetachFromIndex(const DetachFromInd
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/index/detach");
   };
 
-  return DetachFromIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DetachFromIndexOutcome(result.GetResultWithOwnership())
+                            : DetachFromIndexOutcome(std::move(result.GetError()));
 }
 
 DetachObjectOutcome CloudDirectoryClient::DetachObject(const DetachObjectRequest& request) const {
@@ -547,7 +574,8 @@ DetachObjectOutcome CloudDirectoryClient::DetachObject(const DetachObjectRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/detach");
   };
 
-  return DetachObjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DetachObjectOutcome(result.GetResultWithOwnership()) : DetachObjectOutcome(std::move(result.GetError()));
 }
 
 DetachPolicyOutcome CloudDirectoryClient::DetachPolicy(const DetachPolicyRequest& request) const {
@@ -562,7 +590,8 @@ DetachPolicyOutcome CloudDirectoryClient::DetachPolicy(const DetachPolicyRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/policy/detach");
   };
 
-  return DetachPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DetachPolicyOutcome(result.GetResultWithOwnership()) : DetachPolicyOutcome(std::move(result.GetError()));
 }
 
 DetachTypedLinkOutcome CloudDirectoryClient::DetachTypedLink(const DetachTypedLinkRequest& request) const {
@@ -577,7 +606,9 @@ DetachTypedLinkOutcome CloudDirectoryClient::DetachTypedLink(const DetachTypedLi
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/detach");
   };
 
-  return DetachTypedLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DetachTypedLinkOutcome(result.GetResultWithOwnership())
+                            : DetachTypedLinkOutcome(std::move(result.GetError()));
 }
 
 DisableDirectoryOutcome CloudDirectoryClient::DisableDirectory(const DisableDirectoryRequest& request) const {
@@ -592,7 +623,9 @@ DisableDirectoryOutcome CloudDirectoryClient::DisableDirectory(const DisableDire
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/directory/disable");
   };
 
-  return DisableDirectoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DisableDirectoryOutcome(result.GetResultWithOwnership())
+                            : DisableDirectoryOutcome(std::move(result.GetError()));
 }
 
 EnableDirectoryOutcome CloudDirectoryClient::EnableDirectory(const EnableDirectoryRequest& request) const {
@@ -607,7 +640,9 @@ EnableDirectoryOutcome CloudDirectoryClient::EnableDirectory(const EnableDirecto
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/directory/enable");
   };
 
-  return EnableDirectoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? EnableDirectoryOutcome(result.GetResultWithOwnership())
+                            : EnableDirectoryOutcome(std::move(result.GetError()));
 }
 
 GetAppliedSchemaVersionOutcome CloudDirectoryClient::GetAppliedSchemaVersion(const GetAppliedSchemaVersionRequest& request) const {
@@ -616,7 +651,9 @@ GetAppliedSchemaVersionOutcome CloudDirectoryClient::GetAppliedSchemaVersion(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/getappliedschema");
   };
 
-  return GetAppliedSchemaVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAppliedSchemaVersionOutcome(result.GetResultWithOwnership())
+                            : GetAppliedSchemaVersionOutcome(std::move(result.GetError()));
 }
 
 GetDirectoryOutcome CloudDirectoryClient::GetDirectory(const GetDirectoryRequest& request) const {
@@ -631,7 +668,8 @@ GetDirectoryOutcome CloudDirectoryClient::GetDirectory(const GetDirectoryRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/directory/get");
   };
 
-  return GetDirectoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDirectoryOutcome(result.GetResultWithOwnership()) : GetDirectoryOutcome(std::move(result.GetError()));
 }
 
 GetFacetOutcome CloudDirectoryClient::GetFacet(const GetFacetRequest& request) const {
@@ -646,7 +684,8 @@ GetFacetOutcome CloudDirectoryClient::GetFacet(const GetFacetRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/facet");
   };
 
-  return GetFacetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFacetOutcome(result.GetResultWithOwnership()) : GetFacetOutcome(std::move(result.GetError()));
 }
 
 GetLinkAttributesOutcome CloudDirectoryClient::GetLinkAttributes(const GetLinkAttributesRequest& request) const {
@@ -661,7 +700,9 @@ GetLinkAttributesOutcome CloudDirectoryClient::GetLinkAttributes(const GetLinkAt
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/attributes/get");
   };
 
-  return GetLinkAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLinkAttributesOutcome(result.GetResultWithOwnership())
+                            : GetLinkAttributesOutcome(std::move(result.GetError()));
 }
 
 GetObjectAttributesOutcome CloudDirectoryClient::GetObjectAttributes(const GetObjectAttributesRequest& request) const {
@@ -676,7 +717,9 @@ GetObjectAttributesOutcome CloudDirectoryClient::GetObjectAttributes(const GetOb
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/attributes/get");
   };
 
-  return GetObjectAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetObjectAttributesOutcome(result.GetResultWithOwnership())
+                            : GetObjectAttributesOutcome(std::move(result.GetError()));
 }
 
 GetObjectInformationOutcome CloudDirectoryClient::GetObjectInformation(const GetObjectInformationRequest& request) const {
@@ -691,7 +734,9 @@ GetObjectInformationOutcome CloudDirectoryClient::GetObjectInformation(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/information");
   };
 
-  return GetObjectInformationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetObjectInformationOutcome(result.GetResultWithOwnership())
+                            : GetObjectInformationOutcome(std::move(result.GetError()));
 }
 
 GetSchemaAsJsonOutcome CloudDirectoryClient::GetSchemaAsJson(const GetSchemaAsJsonRequest& request) const {
@@ -706,7 +751,9 @@ GetSchemaAsJsonOutcome CloudDirectoryClient::GetSchemaAsJson(const GetSchemaAsJs
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/json");
   };
 
-  return GetSchemaAsJsonOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSchemaAsJsonOutcome(result.GetResultWithOwnership())
+                            : GetSchemaAsJsonOutcome(std::move(result.GetError()));
 }
 
 GetTypedLinkFacetInformationOutcome CloudDirectoryClient::GetTypedLinkFacetInformation(
@@ -722,7 +769,9 @@ GetTypedLinkFacetInformationOutcome CloudDirectoryClient::GetTypedLinkFacetInfor
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet/get");
   };
 
-  return GetTypedLinkFacetInformationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTypedLinkFacetInformationOutcome(result.GetResultWithOwnership())
+                            : GetTypedLinkFacetInformationOutcome(std::move(result.GetError()));
 }
 
 ListAppliedSchemaArnsOutcome CloudDirectoryClient::ListAppliedSchemaArns(const ListAppliedSchemaArnsRequest& request) const {
@@ -731,7 +780,9 @@ ListAppliedSchemaArnsOutcome CloudDirectoryClient::ListAppliedSchemaArns(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/applied");
   };
 
-  return ListAppliedSchemaArnsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAppliedSchemaArnsOutcome(result.GetResultWithOwnership())
+                            : ListAppliedSchemaArnsOutcome(std::move(result.GetError()));
 }
 
 ListAttachedIndicesOutcome CloudDirectoryClient::ListAttachedIndices(const ListAttachedIndicesRequest& request) const {
@@ -746,7 +797,9 @@ ListAttachedIndicesOutcome CloudDirectoryClient::ListAttachedIndices(const ListA
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/indices");
   };
 
-  return ListAttachedIndicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAttachedIndicesOutcome(result.GetResultWithOwnership())
+                            : ListAttachedIndicesOutcome(std::move(result.GetError()));
 }
 
 ListDevelopmentSchemaArnsOutcome CloudDirectoryClient::ListDevelopmentSchemaArns(const ListDevelopmentSchemaArnsRequest& request) const {
@@ -755,7 +808,9 @@ ListDevelopmentSchemaArnsOutcome CloudDirectoryClient::ListDevelopmentSchemaArns
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/development");
   };
 
-  return ListDevelopmentSchemaArnsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDevelopmentSchemaArnsOutcome(result.GetResultWithOwnership())
+                            : ListDevelopmentSchemaArnsOutcome(std::move(result.GetError()));
 }
 
 ListDirectoriesOutcome CloudDirectoryClient::ListDirectories(const ListDirectoriesRequest& request) const {
@@ -764,7 +819,9 @@ ListDirectoriesOutcome CloudDirectoryClient::ListDirectories(const ListDirectori
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/directory/list");
   };
 
-  return ListDirectoriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDirectoriesOutcome(result.GetResultWithOwnership())
+                            : ListDirectoriesOutcome(std::move(result.GetError()));
 }
 
 ListFacetAttributesOutcome CloudDirectoryClient::ListFacetAttributes(const ListFacetAttributesRequest& request) const {
@@ -779,7 +836,9 @@ ListFacetAttributesOutcome CloudDirectoryClient::ListFacetAttributes(const ListF
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/facet/attributes");
   };
 
-  return ListFacetAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFacetAttributesOutcome(result.GetResultWithOwnership())
+                            : ListFacetAttributesOutcome(std::move(result.GetError()));
 }
 
 ListFacetNamesOutcome CloudDirectoryClient::ListFacetNames(const ListFacetNamesRequest& request) const {
@@ -794,7 +853,8 @@ ListFacetNamesOutcome CloudDirectoryClient::ListFacetNames(const ListFacetNamesR
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/facet/list");
   };
 
-  return ListFacetNamesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFacetNamesOutcome(result.GetResultWithOwnership()) : ListFacetNamesOutcome(std::move(result.GetError()));
 }
 
 ListIncomingTypedLinksOutcome CloudDirectoryClient::ListIncomingTypedLinks(const ListIncomingTypedLinksRequest& request) const {
@@ -809,7 +869,9 @@ ListIncomingTypedLinksOutcome CloudDirectoryClient::ListIncomingTypedLinks(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/incoming");
   };
 
-  return ListIncomingTypedLinksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIncomingTypedLinksOutcome(result.GetResultWithOwnership())
+                            : ListIncomingTypedLinksOutcome(std::move(result.GetError()));
 }
 
 ListIndexOutcome CloudDirectoryClient::ListIndex(const ListIndexRequest& request) const {
@@ -824,7 +886,8 @@ ListIndexOutcome CloudDirectoryClient::ListIndex(const ListIndexRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/index/targets");
   };
 
-  return ListIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIndexOutcome(result.GetResultWithOwnership()) : ListIndexOutcome(std::move(result.GetError()));
 }
 
 ListManagedSchemaArnsOutcome CloudDirectoryClient::ListManagedSchemaArns(const ListManagedSchemaArnsRequest& request) const {
@@ -833,7 +896,9 @@ ListManagedSchemaArnsOutcome CloudDirectoryClient::ListManagedSchemaArns(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/managed");
   };
 
-  return ListManagedSchemaArnsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListManagedSchemaArnsOutcome(result.GetResultWithOwnership())
+                            : ListManagedSchemaArnsOutcome(std::move(result.GetError()));
 }
 
 ListObjectAttributesOutcome CloudDirectoryClient::ListObjectAttributes(const ListObjectAttributesRequest& request) const {
@@ -848,7 +913,9 @@ ListObjectAttributesOutcome CloudDirectoryClient::ListObjectAttributes(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/attributes");
   };
 
-  return ListObjectAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListObjectAttributesOutcome(result.GetResultWithOwnership())
+                            : ListObjectAttributesOutcome(std::move(result.GetError()));
 }
 
 ListObjectChildrenOutcome CloudDirectoryClient::ListObjectChildren(const ListObjectChildrenRequest& request) const {
@@ -863,7 +930,9 @@ ListObjectChildrenOutcome CloudDirectoryClient::ListObjectChildren(const ListObj
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/children");
   };
 
-  return ListObjectChildrenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListObjectChildrenOutcome(result.GetResultWithOwnership())
+                            : ListObjectChildrenOutcome(std::move(result.GetError()));
 }
 
 ListObjectParentPathsOutcome CloudDirectoryClient::ListObjectParentPaths(const ListObjectParentPathsRequest& request) const {
@@ -878,7 +947,9 @@ ListObjectParentPathsOutcome CloudDirectoryClient::ListObjectParentPaths(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/parentpaths");
   };
 
-  return ListObjectParentPathsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListObjectParentPathsOutcome(result.GetResultWithOwnership())
+                            : ListObjectParentPathsOutcome(std::move(result.GetError()));
 }
 
 ListObjectParentsOutcome CloudDirectoryClient::ListObjectParents(const ListObjectParentsRequest& request) const {
@@ -893,7 +964,9 @@ ListObjectParentsOutcome CloudDirectoryClient::ListObjectParents(const ListObjec
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/parent");
   };
 
-  return ListObjectParentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListObjectParentsOutcome(result.GetResultWithOwnership())
+                            : ListObjectParentsOutcome(std::move(result.GetError()));
 }
 
 ListObjectPoliciesOutcome CloudDirectoryClient::ListObjectPolicies(const ListObjectPoliciesRequest& request) const {
@@ -908,7 +981,9 @@ ListObjectPoliciesOutcome CloudDirectoryClient::ListObjectPolicies(const ListObj
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/policy");
   };
 
-  return ListObjectPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListObjectPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListObjectPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListOutgoingTypedLinksOutcome CloudDirectoryClient::ListOutgoingTypedLinks(const ListOutgoingTypedLinksRequest& request) const {
@@ -923,7 +998,9 @@ ListOutgoingTypedLinksOutcome CloudDirectoryClient::ListOutgoingTypedLinks(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/outgoing");
   };
 
-  return ListOutgoingTypedLinksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOutgoingTypedLinksOutcome(result.GetResultWithOwnership())
+                            : ListOutgoingTypedLinksOutcome(std::move(result.GetError()));
 }
 
 ListPolicyAttachmentsOutcome CloudDirectoryClient::ListPolicyAttachments(const ListPolicyAttachmentsRequest& request) const {
@@ -938,7 +1015,9 @@ ListPolicyAttachmentsOutcome CloudDirectoryClient::ListPolicyAttachments(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/policy/attachment");
   };
 
-  return ListPolicyAttachmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPolicyAttachmentsOutcome(result.GetResultWithOwnership())
+                            : ListPolicyAttachmentsOutcome(std::move(result.GetError()));
 }
 
 ListPublishedSchemaArnsOutcome CloudDirectoryClient::ListPublishedSchemaArns(const ListPublishedSchemaArnsRequest& request) const {
@@ -947,7 +1026,9 @@ ListPublishedSchemaArnsOutcome CloudDirectoryClient::ListPublishedSchemaArns(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/published");
   };
 
-  return ListPublishedSchemaArnsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPublishedSchemaArnsOutcome(result.GetResultWithOwnership())
+                            : ListPublishedSchemaArnsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CloudDirectoryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -956,7 +1037,9 @@ ListTagsForResourceOutcome CloudDirectoryClient::ListTagsForResource(const ListT
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTypedLinkFacetAttributesOutcome CloudDirectoryClient::ListTypedLinkFacetAttributes(
@@ -972,7 +1055,9 @@ ListTypedLinkFacetAttributesOutcome CloudDirectoryClient::ListTypedLinkFacetAttr
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet/attributes");
   };
 
-  return ListTypedLinkFacetAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTypedLinkFacetAttributesOutcome(result.GetResultWithOwnership())
+                            : ListTypedLinkFacetAttributesOutcome(std::move(result.GetError()));
 }
 
 ListTypedLinkFacetNamesOutcome CloudDirectoryClient::ListTypedLinkFacetNames(const ListTypedLinkFacetNamesRequest& request) const {
@@ -987,7 +1072,9 @@ ListTypedLinkFacetNamesOutcome CloudDirectoryClient::ListTypedLinkFacetNames(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet/list");
   };
 
-  return ListTypedLinkFacetNamesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTypedLinkFacetNamesOutcome(result.GetResultWithOwnership())
+                            : ListTypedLinkFacetNamesOutcome(std::move(result.GetError()));
 }
 
 LookupPolicyOutcome CloudDirectoryClient::LookupPolicy(const LookupPolicyRequest& request) const {
@@ -1002,7 +1089,8 @@ LookupPolicyOutcome CloudDirectoryClient::LookupPolicy(const LookupPolicyRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/policy/lookup");
   };
 
-  return LookupPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? LookupPolicyOutcome(result.GetResultWithOwnership()) : LookupPolicyOutcome(std::move(result.GetError()));
 }
 
 PublishSchemaOutcome CloudDirectoryClient::PublishSchema(const PublishSchemaRequest& request) const {
@@ -1017,7 +1105,8 @@ PublishSchemaOutcome CloudDirectoryClient::PublishSchema(const PublishSchemaRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/publish");
   };
 
-  return PublishSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PublishSchemaOutcome(result.GetResultWithOwnership()) : PublishSchemaOutcome(std::move(result.GetError()));
 }
 
 PutSchemaFromJsonOutcome CloudDirectoryClient::PutSchemaFromJson(const PutSchemaFromJsonRequest& request) const {
@@ -1032,7 +1121,9 @@ PutSchemaFromJsonOutcome CloudDirectoryClient::PutSchemaFromJson(const PutSchema
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/json");
   };
 
-  return PutSchemaFromJsonOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutSchemaFromJsonOutcome(result.GetResultWithOwnership())
+                            : PutSchemaFromJsonOutcome(std::move(result.GetError()));
 }
 
 RemoveFacetFromObjectOutcome CloudDirectoryClient::RemoveFacetFromObject(const RemoveFacetFromObjectRequest& request) const {
@@ -1047,7 +1138,9 @@ RemoveFacetFromObjectOutcome CloudDirectoryClient::RemoveFacetFromObject(const R
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/facets/delete");
   };
 
-  return RemoveFacetFromObjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RemoveFacetFromObjectOutcome(result.GetResultWithOwnership())
+                            : RemoveFacetFromObjectOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CloudDirectoryClient::TagResource(const TagResourceRequest& request) const {
@@ -1056,7 +1149,8 @@ TagResourceOutcome CloudDirectoryClient::TagResource(const TagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/tags/add");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CloudDirectoryClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1065,7 +1159,8 @@ UntagResourceOutcome CloudDirectoryClient::UntagResource(const UntagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/tags/remove");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateFacetOutcome CloudDirectoryClient::UpdateFacet(const UpdateFacetRequest& request) const {
@@ -1080,7 +1175,8 @@ UpdateFacetOutcome CloudDirectoryClient::UpdateFacet(const UpdateFacetRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/facet");
   };
 
-  return UpdateFacetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFacetOutcome(result.GetResultWithOwnership()) : UpdateFacetOutcome(std::move(result.GetError()));
 }
 
 UpdateLinkAttributesOutcome CloudDirectoryClient::UpdateLinkAttributes(const UpdateLinkAttributesRequest& request) const {
@@ -1095,7 +1191,9 @@ UpdateLinkAttributesOutcome CloudDirectoryClient::UpdateLinkAttributes(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/attributes/update");
   };
 
-  return UpdateLinkAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLinkAttributesOutcome(result.GetResultWithOwnership())
+                            : UpdateLinkAttributesOutcome(std::move(result.GetError()));
 }
 
 UpdateObjectAttributesOutcome CloudDirectoryClient::UpdateObjectAttributes(const UpdateObjectAttributesRequest& request) const {
@@ -1110,7 +1208,9 @@ UpdateObjectAttributesOutcome CloudDirectoryClient::UpdateObjectAttributes(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/object/update");
   };
 
-  return UpdateObjectAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateObjectAttributesOutcome(result.GetResultWithOwnership())
+                            : UpdateObjectAttributesOutcome(std::move(result.GetError()));
 }
 
 UpdateSchemaOutcome CloudDirectoryClient::UpdateSchema(const UpdateSchemaRequest& request) const {
@@ -1125,7 +1225,8 @@ UpdateSchemaOutcome CloudDirectoryClient::UpdateSchema(const UpdateSchemaRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/update");
   };
 
-  return UpdateSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSchemaOutcome(result.GetResultWithOwnership()) : UpdateSchemaOutcome(std::move(result.GetError()));
 }
 
 UpdateTypedLinkFacetOutcome CloudDirectoryClient::UpdateTypedLinkFacet(const UpdateTypedLinkFacetRequest& request) const {
@@ -1140,7 +1241,9 @@ UpdateTypedLinkFacetOutcome CloudDirectoryClient::UpdateTypedLinkFacet(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet");
   };
 
-  return UpdateTypedLinkFacetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTypedLinkFacetOutcome(result.GetResultWithOwnership())
+                            : UpdateTypedLinkFacetOutcome(std::move(result.GetError()));
 }
 
 UpgradeAppliedSchemaOutcome CloudDirectoryClient::UpgradeAppliedSchema(const UpgradeAppliedSchemaRequest& request) const {
@@ -1149,7 +1252,9 @@ UpgradeAppliedSchemaOutcome CloudDirectoryClient::UpgradeAppliedSchema(const Upg
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/upgradeapplied");
   };
 
-  return UpgradeAppliedSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpgradeAppliedSchemaOutcome(result.GetResultWithOwnership())
+                            : UpgradeAppliedSchemaOutcome(std::move(result.GetError()));
 }
 
 UpgradePublishedSchemaOutcome CloudDirectoryClient::UpgradePublishedSchema(const UpgradePublishedSchemaRequest& request) const {
@@ -1158,5 +1263,7 @@ UpgradePublishedSchemaOutcome CloudDirectoryClient::UpgradePublishedSchema(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/amazonclouddirectory/2017-01-11/schema/upgradepublished");
   };
 
-  return UpgradePublishedSchemaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpgradePublishedSchemaOutcome(result.GetResultWithOwnership())
+                            : UpgradePublishedSchemaOutcome(std::move(result.GetError()));
 }

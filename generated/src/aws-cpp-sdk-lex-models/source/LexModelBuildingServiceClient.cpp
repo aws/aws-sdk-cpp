@@ -239,7 +239,9 @@ CreateBotVersionOutcome LexModelBuildingServiceClient::CreateBotVersion(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return CreateBotVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBotVersionOutcome(result.GetResultWithOwnership())
+                            : CreateBotVersionOutcome(std::move(result.GetError()));
 }
 
 CreateIntentVersionOutcome LexModelBuildingServiceClient::CreateIntentVersion(const CreateIntentVersionRequest& request) const {
@@ -256,7 +258,9 @@ CreateIntentVersionOutcome LexModelBuildingServiceClient::CreateIntentVersion(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return CreateIntentVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIntentVersionOutcome(result.GetResultWithOwnership())
+                            : CreateIntentVersionOutcome(std::move(result.GetError()));
 }
 
 CreateSlotTypeVersionOutcome LexModelBuildingServiceClient::CreateSlotTypeVersion(const CreateSlotTypeVersionRequest& request) const {
@@ -273,7 +277,9 @@ CreateSlotTypeVersionOutcome LexModelBuildingServiceClient::CreateSlotTypeVersio
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return CreateSlotTypeVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSlotTypeVersionOutcome(result.GetResultWithOwnership())
+                            : CreateSlotTypeVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteBotOutcome LexModelBuildingServiceClient::DeleteBot(const DeleteBotRequest& request) const {
@@ -289,7 +295,8 @@ DeleteBotOutcome LexModelBuildingServiceClient::DeleteBot(const DeleteBotRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotOutcome(result.GetResultWithOwnership()) : DeleteBotOutcome(std::move(result.GetError()));
 }
 
 DeleteBotAliasOutcome LexModelBuildingServiceClient::DeleteBotAlias(const DeleteBotAliasRequest& request) const {
@@ -312,7 +319,8 @@ DeleteBotAliasOutcome LexModelBuildingServiceClient::DeleteBotAlias(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteBotAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotAliasOutcome(result.GetResultWithOwnership()) : DeleteBotAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteBotChannelAssociationOutcome LexModelBuildingServiceClient::DeleteBotChannelAssociation(
@@ -343,7 +351,9 @@ DeleteBotChannelAssociationOutcome LexModelBuildingServiceClient::DeleteBotChann
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteBotChannelAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotChannelAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteBotChannelAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteBotVersionOutcome LexModelBuildingServiceClient::DeleteBotVersion(const DeleteBotVersionRequest& request) const {
@@ -366,7 +376,9 @@ DeleteBotVersionOutcome LexModelBuildingServiceClient::DeleteBotVersion(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
   };
 
-  return DeleteBotVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteBotVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteIntentOutcome LexModelBuildingServiceClient::DeleteIntent(const DeleteIntentRequest& request) const {
@@ -382,7 +394,8 @@ DeleteIntentOutcome LexModelBuildingServiceClient::DeleteIntent(const DeleteInte
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteIntentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIntentOutcome(result.GetResultWithOwnership()) : DeleteIntentOutcome(std::move(result.GetError()));
 }
 
 DeleteIntentVersionOutcome LexModelBuildingServiceClient::DeleteIntentVersion(const DeleteIntentVersionRequest& request) const {
@@ -405,7 +418,9 @@ DeleteIntentVersionOutcome LexModelBuildingServiceClient::DeleteIntentVersion(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
   };
 
-  return DeleteIntentVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIntentVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteIntentVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteSlotTypeOutcome LexModelBuildingServiceClient::DeleteSlotType(const DeleteSlotTypeRequest& request) const {
@@ -421,7 +436,8 @@ DeleteSlotTypeOutcome LexModelBuildingServiceClient::DeleteSlotType(const Delete
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteSlotTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSlotTypeOutcome(result.GetResultWithOwnership()) : DeleteSlotTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteSlotTypeVersionOutcome LexModelBuildingServiceClient::DeleteSlotTypeVersion(const DeleteSlotTypeVersionRequest& request) const {
@@ -444,7 +460,9 @@ DeleteSlotTypeVersionOutcome LexModelBuildingServiceClient::DeleteSlotTypeVersio
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
   };
 
-  return DeleteSlotTypeVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSlotTypeVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteSlotTypeVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteUtterancesOutcome LexModelBuildingServiceClient::DeleteUtterances(const DeleteUtterancesRequest& request) const {
@@ -467,7 +485,9 @@ DeleteUtterancesOutcome LexModelBuildingServiceClient::DeleteUtterances(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return DeleteUtterancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUtterancesOutcome(result.GetResultWithOwnership())
+                            : DeleteUtterancesOutcome(std::move(result.GetError()));
 }
 
 GetBotOutcome LexModelBuildingServiceClient::GetBot(const GetBotRequest& request) const {
@@ -490,7 +510,8 @@ GetBotOutcome LexModelBuildingServiceClient::GetBot(const GetBotRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionOrAlias());
   };
 
-  return GetBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotOutcome(result.GetResultWithOwnership()) : GetBotOutcome(std::move(result.GetError()));
 }
 
 GetBotAliasOutcome LexModelBuildingServiceClient::GetBotAlias(const GetBotAliasRequest& request) const {
@@ -513,7 +534,8 @@ GetBotAliasOutcome LexModelBuildingServiceClient::GetBotAlias(const GetBotAliasR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetBotAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotAliasOutcome(result.GetResultWithOwnership()) : GetBotAliasOutcome(std::move(result.GetError()));
 }
 
 GetBotAliasesOutcome LexModelBuildingServiceClient::GetBotAliases(const GetBotAliasesRequest& request) const {
@@ -530,7 +552,8 @@ GetBotAliasesOutcome LexModelBuildingServiceClient::GetBotAliases(const GetBotAl
     endpointResolutionOutcome.GetResult().AddPathSegments("/aliases/");
   };
 
-  return GetBotAliasesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotAliasesOutcome(result.GetResultWithOwnership()) : GetBotAliasesOutcome(std::move(result.GetError()));
 }
 
 GetBotChannelAssociationOutcome LexModelBuildingServiceClient::GetBotChannelAssociation(
@@ -561,7 +584,9 @@ GetBotChannelAssociationOutcome LexModelBuildingServiceClient::GetBotChannelAsso
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetBotChannelAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotChannelAssociationOutcome(result.GetResultWithOwnership())
+                            : GetBotChannelAssociationOutcome(std::move(result.GetError()));
 }
 
 GetBotChannelAssociationsOutcome LexModelBuildingServiceClient::GetBotChannelAssociations(
@@ -586,7 +611,9 @@ GetBotChannelAssociationsOutcome LexModelBuildingServiceClient::GetBotChannelAss
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/");
   };
 
-  return GetBotChannelAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotChannelAssociationsOutcome(result.GetResultWithOwnership())
+                            : GetBotChannelAssociationsOutcome(std::move(result.GetError()));
 }
 
 GetBotVersionsOutcome LexModelBuildingServiceClient::GetBotVersions(const GetBotVersionsRequest& request) const {
@@ -603,7 +630,8 @@ GetBotVersionsOutcome LexModelBuildingServiceClient::GetBotVersions(const GetBot
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
   };
 
-  return GetBotVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotVersionsOutcome(result.GetResultWithOwnership()) : GetBotVersionsOutcome(std::move(result.GetError()));
 }
 
 GetBotsOutcome LexModelBuildingServiceClient::GetBots(const GetBotsRequest& request) const {
@@ -612,7 +640,8 @@ GetBotsOutcome LexModelBuildingServiceClient::GetBots(const GetBotsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
   };
 
-  return GetBotsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotsOutcome(result.GetResultWithOwnership()) : GetBotsOutcome(std::move(result.GetError()));
 }
 
 GetBuiltinIntentOutcome LexModelBuildingServiceClient::GetBuiltinIntent(const GetBuiltinIntentRequest& request) const {
@@ -628,7 +657,9 @@ GetBuiltinIntentOutcome LexModelBuildingServiceClient::GetBuiltinIntent(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSignature());
   };
 
-  return GetBuiltinIntentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBuiltinIntentOutcome(result.GetResultWithOwnership())
+                            : GetBuiltinIntentOutcome(std::move(result.GetError()));
 }
 
 GetBuiltinIntentsOutcome LexModelBuildingServiceClient::GetBuiltinIntents(const GetBuiltinIntentsRequest& request) const {
@@ -637,7 +668,9 @@ GetBuiltinIntentsOutcome LexModelBuildingServiceClient::GetBuiltinIntents(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/builtins/intents/");
   };
 
-  return GetBuiltinIntentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBuiltinIntentsOutcome(result.GetResultWithOwnership())
+                            : GetBuiltinIntentsOutcome(std::move(result.GetError()));
 }
 
 GetBuiltinSlotTypesOutcome LexModelBuildingServiceClient::GetBuiltinSlotTypes(const GetBuiltinSlotTypesRequest& request) const {
@@ -646,7 +679,9 @@ GetBuiltinSlotTypesOutcome LexModelBuildingServiceClient::GetBuiltinSlotTypes(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/builtins/slottypes/");
   };
 
-  return GetBuiltinSlotTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBuiltinSlotTypesOutcome(result.GetResultWithOwnership())
+                            : GetBuiltinSlotTypesOutcome(std::move(result.GetError()));
 }
 
 GetExportOutcome LexModelBuildingServiceClient::GetExport(const GetExportRequest& request) const {
@@ -676,7 +711,8 @@ GetExportOutcome LexModelBuildingServiceClient::GetExport(const GetExportRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/exports/");
   };
 
-  return GetExportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExportOutcome(result.GetResultWithOwnership()) : GetExportOutcome(std::move(result.GetError()));
 }
 
 GetImportOutcome LexModelBuildingServiceClient::GetImport(const GetImportRequest& request) const {
@@ -692,7 +728,8 @@ GetImportOutcome LexModelBuildingServiceClient::GetImport(const GetImportRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetImportId());
   };
 
-  return GetImportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImportOutcome(result.GetResultWithOwnership()) : GetImportOutcome(std::move(result.GetError()));
 }
 
 GetIntentOutcome LexModelBuildingServiceClient::GetIntent(const GetIntentRequest& request) const {
@@ -715,7 +752,8 @@ GetIntentOutcome LexModelBuildingServiceClient::GetIntent(const GetIntentRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
   };
 
-  return GetIntentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIntentOutcome(result.GetResultWithOwnership()) : GetIntentOutcome(std::move(result.GetError()));
 }
 
 GetIntentVersionsOutcome LexModelBuildingServiceClient::GetIntentVersions(const GetIntentVersionsRequest& request) const {
@@ -732,7 +770,9 @@ GetIntentVersionsOutcome LexModelBuildingServiceClient::GetIntentVersions(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
   };
 
-  return GetIntentVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIntentVersionsOutcome(result.GetResultWithOwnership())
+                            : GetIntentVersionsOutcome(std::move(result.GetError()));
 }
 
 GetIntentsOutcome LexModelBuildingServiceClient::GetIntents(const GetIntentsRequest& request) const {
@@ -741,7 +781,8 @@ GetIntentsOutcome LexModelBuildingServiceClient::GetIntents(const GetIntentsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/intents/");
   };
 
-  return GetIntentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIntentsOutcome(result.GetResultWithOwnership()) : GetIntentsOutcome(std::move(result.GetError()));
 }
 
 GetMigrationOutcome LexModelBuildingServiceClient::GetMigration(const GetMigrationRequest& request) const {
@@ -757,7 +798,8 @@ GetMigrationOutcome LexModelBuildingServiceClient::GetMigration(const GetMigrati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMigrationId());
   };
 
-  return GetMigrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMigrationOutcome(result.GetResultWithOwnership()) : GetMigrationOutcome(std::move(result.GetError()));
 }
 
 GetMigrationsOutcome LexModelBuildingServiceClient::GetMigrations(const GetMigrationsRequest& request) const {
@@ -766,7 +808,8 @@ GetMigrationsOutcome LexModelBuildingServiceClient::GetMigrations(const GetMigra
     endpointResolutionOutcome.GetResult().AddPathSegments("/migrations");
   };
 
-  return GetMigrationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMigrationsOutcome(result.GetResultWithOwnership()) : GetMigrationsOutcome(std::move(result.GetError()));
 }
 
 GetSlotTypeOutcome LexModelBuildingServiceClient::GetSlotType(const GetSlotTypeRequest& request) const {
@@ -789,7 +832,8 @@ GetSlotTypeOutcome LexModelBuildingServiceClient::GetSlotType(const GetSlotTypeR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersion());
   };
 
-  return GetSlotTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSlotTypeOutcome(result.GetResultWithOwnership()) : GetSlotTypeOutcome(std::move(result.GetError()));
 }
 
 GetSlotTypeVersionsOutcome LexModelBuildingServiceClient::GetSlotTypeVersions(const GetSlotTypeVersionsRequest& request) const {
@@ -806,7 +850,9 @@ GetSlotTypeVersionsOutcome LexModelBuildingServiceClient::GetSlotTypeVersions(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
   };
 
-  return GetSlotTypeVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSlotTypeVersionsOutcome(result.GetResultWithOwnership())
+                            : GetSlotTypeVersionsOutcome(std::move(result.GetError()));
 }
 
 GetSlotTypesOutcome LexModelBuildingServiceClient::GetSlotTypes(const GetSlotTypesRequest& request) const {
@@ -815,7 +861,8 @@ GetSlotTypesOutcome LexModelBuildingServiceClient::GetSlotTypes(const GetSlotTyp
     endpointResolutionOutcome.GetResult().AddPathSegments("/slottypes/");
   };
 
-  return GetSlotTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSlotTypesOutcome(result.GetResultWithOwnership()) : GetSlotTypesOutcome(std::move(result.GetError()));
 }
 
 GetUtterancesViewOutcome LexModelBuildingServiceClient::GetUtterancesView(const GetUtterancesViewRequest& request) const {
@@ -845,7 +892,9 @@ GetUtterancesViewOutcome LexModelBuildingServiceClient::GetUtterancesView(const 
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetUtterancesViewOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUtterancesViewOutcome(result.GetResultWithOwnership())
+                            : GetUtterancesViewOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome LexModelBuildingServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -861,7 +910,9 @@ ListTagsForResourceOutcome LexModelBuildingServiceClient::ListTagsForResource(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutBotOutcome LexModelBuildingServiceClient::PutBot(const PutBotRequest& request) const {
@@ -878,7 +929,8 @@ PutBotOutcome LexModelBuildingServiceClient::PutBot(const PutBotRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions/$LATEST");
   };
 
-  return PutBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBotOutcome(result.GetResultWithOwnership()) : PutBotOutcome(std::move(result.GetError()));
 }
 
 PutBotAliasOutcome LexModelBuildingServiceClient::PutBotAlias(const PutBotAliasRequest& request) const {
@@ -901,7 +953,8 @@ PutBotAliasOutcome LexModelBuildingServiceClient::PutBotAlias(const PutBotAliasR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return PutBotAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutBotAliasOutcome(result.GetResultWithOwnership()) : PutBotAliasOutcome(std::move(result.GetError()));
 }
 
 PutIntentOutcome LexModelBuildingServiceClient::PutIntent(const PutIntentRequest& request) const {
@@ -918,7 +971,8 @@ PutIntentOutcome LexModelBuildingServiceClient::PutIntent(const PutIntentRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions/$LATEST");
   };
 
-  return PutIntentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutIntentOutcome(result.GetResultWithOwnership()) : PutIntentOutcome(std::move(result.GetError()));
 }
 
 PutSlotTypeOutcome LexModelBuildingServiceClient::PutSlotType(const PutSlotTypeRequest& request) const {
@@ -935,7 +989,8 @@ PutSlotTypeOutcome LexModelBuildingServiceClient::PutSlotType(const PutSlotTypeR
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions/$LATEST");
   };
 
-  return PutSlotTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutSlotTypeOutcome(result.GetResultWithOwnership()) : PutSlotTypeOutcome(std::move(result.GetError()));
 }
 
 StartImportOutcome LexModelBuildingServiceClient::StartImport(const StartImportRequest& request) const {
@@ -944,7 +999,8 @@ StartImportOutcome LexModelBuildingServiceClient::StartImport(const StartImportR
     endpointResolutionOutcome.GetResult().AddPathSegments("/imports/");
   };
 
-  return StartImportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartImportOutcome(result.GetResultWithOwnership()) : StartImportOutcome(std::move(result.GetError()));
 }
 
 StartMigrationOutcome LexModelBuildingServiceClient::StartMigration(const StartMigrationRequest& request) const {
@@ -953,7 +1009,8 @@ StartMigrationOutcome LexModelBuildingServiceClient::StartMigration(const StartM
     endpointResolutionOutcome.GetResult().AddPathSegments("/migrations");
   };
 
-  return StartMigrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMigrationOutcome(result.GetResultWithOwnership()) : StartMigrationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome LexModelBuildingServiceClient::TagResource(const TagResourceRequest& request) const {
@@ -969,7 +1026,8 @@ TagResourceOutcome LexModelBuildingServiceClient::TagResource(const TagResourceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome LexModelBuildingServiceClient::UntagResource(const UntagResourceRequest& request) const {
@@ -990,5 +1048,6 @@ UntagResourceOutcome LexModelBuildingServiceClient::UntagResource(const UntagRes
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

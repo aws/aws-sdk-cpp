@@ -201,120 +201,166 @@ VoiceIDClient::InvokeOperationOutcome VoiceIDClient::InvokeServiceOperation(cons
 }
 
 AssociateFraudsterOutcome VoiceIDClient::AssociateFraudster(const AssociateFraudsterRequest& request) const {
-  return AssociateFraudsterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateFraudsterOutcome(result.GetResultWithOwnership())
+                            : AssociateFraudsterOutcome(std::move(result.GetError()));
 }
 
 CreateDomainOutcome VoiceIDClient::CreateDomain(const CreateDomainRequest& request) const {
-  return CreateDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainOutcome(result.GetResultWithOwnership()) : CreateDomainOutcome(std::move(result.GetError()));
 }
 
 CreateWatchlistOutcome VoiceIDClient::CreateWatchlist(const CreateWatchlistRequest& request) const {
-  return CreateWatchlistOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWatchlistOutcome(result.GetResultWithOwnership())
+                            : CreateWatchlistOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainOutcome VoiceIDClient::DeleteDomain(const DeleteDomainRequest& request) const {
-  return DeleteDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }
 
 DeleteFraudsterOutcome VoiceIDClient::DeleteFraudster(const DeleteFraudsterRequest& request) const {
-  return DeleteFraudsterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFraudsterOutcome(result.GetResultWithOwnership())
+                            : DeleteFraudsterOutcome(std::move(result.GetError()));
 }
 
 DeleteSpeakerOutcome VoiceIDClient::DeleteSpeaker(const DeleteSpeakerRequest& request) const {
-  return DeleteSpeakerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSpeakerOutcome(result.GetResultWithOwnership()) : DeleteSpeakerOutcome(std::move(result.GetError()));
 }
 
 DeleteWatchlistOutcome VoiceIDClient::DeleteWatchlist(const DeleteWatchlistRequest& request) const {
-  return DeleteWatchlistOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWatchlistOutcome(result.GetResultWithOwnership())
+                            : DeleteWatchlistOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainOutcome VoiceIDClient::DescribeDomain(const DescribeDomainRequest& request) const {
-  return DescribeDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDomainOutcome(result.GetResultWithOwnership()) : DescribeDomainOutcome(std::move(result.GetError()));
 }
 
 DescribeFraudsterOutcome VoiceIDClient::DescribeFraudster(const DescribeFraudsterRequest& request) const {
-  return DescribeFraudsterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFraudsterOutcome(result.GetResultWithOwnership())
+                            : DescribeFraudsterOutcome(std::move(result.GetError()));
 }
 
 DescribeFraudsterRegistrationJobOutcome VoiceIDClient::DescribeFraudsterRegistrationJob(
     const DescribeFraudsterRegistrationJobRequest& request) const {
-  return DescribeFraudsterRegistrationJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFraudsterRegistrationJobOutcome(result.GetResultWithOwnership())
+                            : DescribeFraudsterRegistrationJobOutcome(std::move(result.GetError()));
 }
 
 DescribeSpeakerOutcome VoiceIDClient::DescribeSpeaker(const DescribeSpeakerRequest& request) const {
-  return DescribeSpeakerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSpeakerOutcome(result.GetResultWithOwnership())
+                            : DescribeSpeakerOutcome(std::move(result.GetError()));
 }
 
 DescribeSpeakerEnrollmentJobOutcome VoiceIDClient::DescribeSpeakerEnrollmentJob(const DescribeSpeakerEnrollmentJobRequest& request) const {
-  return DescribeSpeakerEnrollmentJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSpeakerEnrollmentJobOutcome(result.GetResultWithOwnership())
+                            : DescribeSpeakerEnrollmentJobOutcome(std::move(result.GetError()));
 }
 
 DescribeWatchlistOutcome VoiceIDClient::DescribeWatchlist(const DescribeWatchlistRequest& request) const {
-  return DescribeWatchlistOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWatchlistOutcome(result.GetResultWithOwnership())
+                            : DescribeWatchlistOutcome(std::move(result.GetError()));
 }
 
 DisassociateFraudsterOutcome VoiceIDClient::DisassociateFraudster(const DisassociateFraudsterRequest& request) const {
-  return DisassociateFraudsterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFraudsterOutcome(result.GetResultWithOwnership())
+                            : DisassociateFraudsterOutcome(std::move(result.GetError()));
 }
 
 EvaluateSessionOutcome VoiceIDClient::EvaluateSession(const EvaluateSessionRequest& request) const {
-  return EvaluateSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EvaluateSessionOutcome(result.GetResultWithOwnership())
+                            : EvaluateSessionOutcome(std::move(result.GetError()));
 }
 
 ListDomainsOutcome VoiceIDClient::ListDomains(const ListDomainsRequest& request) const {
-  return ListDomainsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDomainsOutcome(result.GetResultWithOwnership()) : ListDomainsOutcome(std::move(result.GetError()));
 }
 
 ListFraudsterRegistrationJobsOutcome VoiceIDClient::ListFraudsterRegistrationJobs(
     const ListFraudsterRegistrationJobsRequest& request) const {
-  return ListFraudsterRegistrationJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFraudsterRegistrationJobsOutcome(result.GetResultWithOwnership())
+                            : ListFraudsterRegistrationJobsOutcome(std::move(result.GetError()));
 }
 
 ListFraudstersOutcome VoiceIDClient::ListFraudsters(const ListFraudstersRequest& request) const {
-  return ListFraudstersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFraudstersOutcome(result.GetResultWithOwnership()) : ListFraudstersOutcome(std::move(result.GetError()));
 }
 
 ListSpeakerEnrollmentJobsOutcome VoiceIDClient::ListSpeakerEnrollmentJobs(const ListSpeakerEnrollmentJobsRequest& request) const {
-  return ListSpeakerEnrollmentJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSpeakerEnrollmentJobsOutcome(result.GetResultWithOwnership())
+                            : ListSpeakerEnrollmentJobsOutcome(std::move(result.GetError()));
 }
 
 ListSpeakersOutcome VoiceIDClient::ListSpeakers(const ListSpeakersRequest& request) const {
-  return ListSpeakersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSpeakersOutcome(result.GetResultWithOwnership()) : ListSpeakersOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome VoiceIDClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWatchlistsOutcome VoiceIDClient::ListWatchlists(const ListWatchlistsRequest& request) const {
-  return ListWatchlistsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWatchlistsOutcome(result.GetResultWithOwnership()) : ListWatchlistsOutcome(std::move(result.GetError()));
 }
 
 OptOutSpeakerOutcome VoiceIDClient::OptOutSpeaker(const OptOutSpeakerRequest& request) const {
-  return OptOutSpeakerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? OptOutSpeakerOutcome(result.GetResultWithOwnership()) : OptOutSpeakerOutcome(std::move(result.GetError()));
 }
 
 StartFraudsterRegistrationJobOutcome VoiceIDClient::StartFraudsterRegistrationJob(
     const StartFraudsterRegistrationJobRequest& request) const {
-  return StartFraudsterRegistrationJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFraudsterRegistrationJobOutcome(result.GetResultWithOwnership())
+                            : StartFraudsterRegistrationJobOutcome(std::move(result.GetError()));
 }
 
 StartSpeakerEnrollmentJobOutcome VoiceIDClient::StartSpeakerEnrollmentJob(const StartSpeakerEnrollmentJobRequest& request) const {
-  return StartSpeakerEnrollmentJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSpeakerEnrollmentJobOutcome(result.GetResultWithOwnership())
+                            : StartSpeakerEnrollmentJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome VoiceIDClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome VoiceIDClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainOutcome VoiceIDClient::UpdateDomain(const UpdateDomainRequest& request) const {
-  return UpdateDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDomainOutcome(result.GetResultWithOwnership()) : UpdateDomainOutcome(std::move(result.GetError()));
 }
 
 UpdateWatchlistOutcome VoiceIDClient::UpdateWatchlist(const UpdateWatchlistRequest& request) const {
-  return UpdateWatchlistOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWatchlistOutcome(result.GetResultWithOwnership())
+                            : UpdateWatchlistOutcome(std::move(result.GetError()));
 }

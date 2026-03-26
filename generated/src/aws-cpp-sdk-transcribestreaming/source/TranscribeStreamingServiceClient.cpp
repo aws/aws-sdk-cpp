@@ -205,7 +205,9 @@ GetMedicalScribeStreamOutcome TranscribeStreamingServiceClient::GetMedicalScribe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return GetMedicalScribeStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMedicalScribeStreamOutcome(result.GetResultWithOwnership())
+                            : GetMedicalScribeStreamOutcome(std::move(result.GetError()));
 }
 
 void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsync(

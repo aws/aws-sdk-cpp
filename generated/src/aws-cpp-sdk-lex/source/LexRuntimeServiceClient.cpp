@@ -214,7 +214,8 @@ DeleteSessionOutcome LexRuntimeServiceClient::DeleteSession(const DeleteSessionR
     endpointResolutionOutcome.GetResult().AddPathSegments("/session");
   };
 
-  return DeleteSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSessionOutcome(result.GetResultWithOwnership()) : DeleteSessionOutcome(std::move(result.GetError()));
 }
 
 GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& request) const {
@@ -245,7 +246,8 @@ GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/session/");
   };
 
-  return GetSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
 }
 
 PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest& request) const {
@@ -291,8 +293,8 @@ PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest
         endpointResolutionOutcome.GetResult().AddPathSegments("/user/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/content");
-        return PostContentOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? PostContentOutcome(result.GetResultWithOwnership()) : PostContentOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -327,7 +329,8 @@ PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/text");
   };
 
-  return PostTextOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PostTextOutcome(result.GetResultWithOwnership()) : PostTextOutcome(std::move(result.GetError()));
 }
 
 PutSessionOutcome LexRuntimeServiceClient::PutSession(const PutSessionRequest& request) const {
@@ -373,8 +376,8 @@ PutSessionOutcome LexRuntimeServiceClient::PutSession(const PutSessionRequest& r
         endpointResolutionOutcome.GetResult().AddPathSegments("/user/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
         endpointResolutionOutcome.GetResult().AddPathSegments("/session");
-        return PutSessionOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? PutSessionOutcome(result.GetResultWithOwnership()) : PutSessionOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

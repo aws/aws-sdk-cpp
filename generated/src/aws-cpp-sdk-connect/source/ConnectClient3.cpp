@@ -112,7 +112,8 @@ TagResourceOutcome ConnectClient::TagResource(const TagResourceRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TransferContactOutcome ConnectClient::TransferContact(const TransferContactRequest& request) const {
@@ -121,7 +122,9 @@ TransferContactOutcome ConnectClient::TransferContact(const TransferContactReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/contact/transfer");
   };
 
-  return TransferContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TransferContactOutcome(result.GetResultWithOwnership())
+                            : TransferContactOutcome(std::move(result.GetError()));
 }
 
 UntagContactOutcome ConnectClient::UntagContact(const UntagContactRequest& request) const {
@@ -148,7 +151,8 @@ UntagContactOutcome ConnectClient::UntagContact(const UntagContactRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
   };
 
-  return UntagContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagContactOutcome(result.GetResultWithOwnership()) : UntagContactOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ConnectClient::UntagResource(const UntagResourceRequest& request) const {
@@ -169,7 +173,8 @@ UntagResourceOutcome ConnectClient::UntagResource(const UntagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAgentStatusOutcome ConnectClient::UpdateAgentStatus(const UpdateAgentStatusRequest& request) const {
@@ -191,7 +196,9 @@ UpdateAgentStatusOutcome ConnectClient::UpdateAgentStatus(const UpdateAgentStatu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentStatusId());
   };
 
-  return UpdateAgentStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAgentStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateAgentStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateAuthenticationProfileOutcome ConnectClient::UpdateAuthenticationProfile(const UpdateAuthenticationProfileRequest& request) const {
@@ -213,7 +220,9 @@ UpdateAuthenticationProfileOutcome ConnectClient::UpdateAuthenticationProfile(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAuthenticationProfileId());
   };
 
-  return UpdateAuthenticationProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAuthenticationProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateAuthenticationProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateContactOutcome ConnectClient::UpdateContact(const UpdateContactRequest& request) const {
@@ -235,7 +244,8 @@ UpdateContactOutcome ConnectClient::UpdateContact(const UpdateContactRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
   };
 
-  return UpdateContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactOutcome(result.GetResultWithOwnership()) : UpdateContactOutcome(std::move(result.GetError()));
 }
 
 UpdateContactAttributesOutcome ConnectClient::UpdateContactAttributes(const UpdateContactAttributesRequest& request) const {
@@ -244,7 +254,9 @@ UpdateContactAttributesOutcome ConnectClient::UpdateContactAttributes(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/contact/attributes");
   };
 
-  return UpdateContactAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactAttributesOutcome(result.GetResultWithOwnership())
+                            : UpdateContactAttributesOutcome(std::move(result.GetError()));
 }
 
 UpdateContactEvaluationOutcome ConnectClient::UpdateContactEvaluation(const UpdateContactEvaluationRequest& request) const {
@@ -266,7 +278,9 @@ UpdateContactEvaluationOutcome ConnectClient::UpdateContactEvaluation(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluationId());
   };
 
-  return UpdateContactEvaluationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactEvaluationOutcome(result.GetResultWithOwnership())
+                            : UpdateContactEvaluationOutcome(std::move(result.GetError()));
 }
 
 UpdateContactFlowContentOutcome ConnectClient::UpdateContactFlowContent(const UpdateContactFlowContentRequest& request) const {
@@ -289,7 +303,9 @@ UpdateContactFlowContentOutcome ConnectClient::UpdateContactFlowContent(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/content");
   };
 
-  return UpdateContactFlowContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactFlowContentOutcome(result.GetResultWithOwnership())
+                            : UpdateContactFlowContentOutcome(std::move(result.GetError()));
 }
 
 UpdateContactFlowMetadataOutcome ConnectClient::UpdateContactFlowMetadata(const UpdateContactFlowMetadataRequest& request) const {
@@ -312,7 +328,9 @@ UpdateContactFlowMetadataOutcome ConnectClient::UpdateContactFlowMetadata(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return UpdateContactFlowMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactFlowMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateContactFlowMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateContactFlowModuleAliasOutcome ConnectClient::UpdateContactFlowModuleAlias(const UpdateContactFlowModuleAliasRequest& request) const {
@@ -341,7 +359,9 @@ UpdateContactFlowModuleAliasOutcome ConnectClient::UpdateContactFlowModuleAlias(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAliasId());
   };
 
-  return UpdateContactFlowModuleAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactFlowModuleAliasOutcome(result.GetResultWithOwnership())
+                            : UpdateContactFlowModuleAliasOutcome(std::move(result.GetError()));
 }
 
 UpdateContactFlowModuleContentOutcome ConnectClient::UpdateContactFlowModuleContent(
@@ -365,7 +385,9 @@ UpdateContactFlowModuleContentOutcome ConnectClient::UpdateContactFlowModuleCont
     endpointResolutionOutcome.GetResult().AddPathSegments("/content");
   };
 
-  return UpdateContactFlowModuleContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactFlowModuleContentOutcome(result.GetResultWithOwnership())
+                            : UpdateContactFlowModuleContentOutcome(std::move(result.GetError()));
 }
 
 UpdateContactFlowModuleMetadataOutcome ConnectClient::UpdateContactFlowModuleMetadata(
@@ -389,7 +411,9 @@ UpdateContactFlowModuleMetadataOutcome ConnectClient::UpdateContactFlowModuleMet
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return UpdateContactFlowModuleMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactFlowModuleMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateContactFlowModuleMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateContactFlowNameOutcome ConnectClient::UpdateContactFlowName(const UpdateContactFlowNameRequest& request) const {
@@ -412,7 +436,9 @@ UpdateContactFlowNameOutcome ConnectClient::UpdateContactFlowName(const UpdateCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/name");
   };
 
-  return UpdateContactFlowNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactFlowNameOutcome(result.GetResultWithOwnership())
+                            : UpdateContactFlowNameOutcome(std::move(result.GetError()));
 }
 
 UpdateContactRoutingDataOutcome ConnectClient::UpdateContactRoutingData(const UpdateContactRoutingDataRequest& request) const {
@@ -435,7 +461,9 @@ UpdateContactRoutingDataOutcome ConnectClient::UpdateContactRoutingData(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/routing-data");
   };
 
-  return UpdateContactRoutingDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactRoutingDataOutcome(result.GetResultWithOwnership())
+                            : UpdateContactRoutingDataOutcome(std::move(result.GetError()));
 }
 
 UpdateContactScheduleOutcome ConnectClient::UpdateContactSchedule(const UpdateContactScheduleRequest& request) const {
@@ -444,7 +472,9 @@ UpdateContactScheduleOutcome ConnectClient::UpdateContactSchedule(const UpdateCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/contact/schedule");
   };
 
-  return UpdateContactScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactScheduleOutcome(result.GetResultWithOwnership())
+                            : UpdateContactScheduleOutcome(std::move(result.GetError()));
 }
 
 UpdateDataTableAttributeOutcome ConnectClient::UpdateDataTableAttribute(const UpdateDataTableAttributeRequest& request) const {
@@ -473,7 +503,9 @@ UpdateDataTableAttributeOutcome ConnectClient::UpdateDataTableAttribute(const Up
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttributeName());
   };
 
-  return UpdateDataTableAttributeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataTableAttributeOutcome(result.GetResultWithOwnership())
+                            : UpdateDataTableAttributeOutcome(std::move(result.GetError()));
 }
 
 UpdateDataTableMetadataOutcome ConnectClient::UpdateDataTableMetadata(const UpdateDataTableMetadataRequest& request) const {
@@ -495,7 +527,9 @@ UpdateDataTableMetadataOutcome ConnectClient::UpdateDataTableMetadata(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataTableId());
   };
 
-  return UpdateDataTableMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataTableMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateDataTableMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateDataTablePrimaryValuesOutcome ConnectClient::UpdateDataTablePrimaryValues(const UpdateDataTablePrimaryValuesRequest& request) const {
@@ -518,7 +552,9 @@ UpdateDataTablePrimaryValuesOutcome ConnectClient::UpdateDataTablePrimaryValues(
     endpointResolutionOutcome.GetResult().AddPathSegments("/values/update-primary");
   };
 
-  return UpdateDataTablePrimaryValuesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataTablePrimaryValuesOutcome(result.GetResultWithOwnership())
+                            : UpdateDataTablePrimaryValuesOutcome(std::move(result.GetError()));
 }
 
 UpdateEmailAddressMetadataOutcome ConnectClient::UpdateEmailAddressMetadata(const UpdateEmailAddressMetadataRequest& request) const {
@@ -540,7 +576,9 @@ UpdateEmailAddressMetadataOutcome ConnectClient::UpdateEmailAddressMetadata(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailAddressId());
   };
 
-  return UpdateEmailAddressMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEmailAddressMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateEmailAddressMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateEvaluationFormOutcome ConnectClient::UpdateEvaluationForm(const UpdateEvaluationFormRequest& request) const {
@@ -562,7 +600,9 @@ UpdateEvaluationFormOutcome ConnectClient::UpdateEvaluationForm(const UpdateEval
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluationFormId());
   };
 
-  return UpdateEvaluationFormOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEvaluationFormOutcome(result.GetResultWithOwnership())
+                            : UpdateEvaluationFormOutcome(std::move(result.GetError()));
 }
 
 UpdateHoursOfOperationOutcome ConnectClient::UpdateHoursOfOperation(const UpdateHoursOfOperationRequest& request) const {
@@ -584,7 +624,9 @@ UpdateHoursOfOperationOutcome ConnectClient::UpdateHoursOfOperation(const Update
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationId());
   };
 
-  return UpdateHoursOfOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHoursOfOperationOutcome(result.GetResultWithOwnership())
+                            : UpdateHoursOfOperationOutcome(std::move(result.GetError()));
 }
 
 UpdateHoursOfOperationOverrideOutcome ConnectClient::UpdateHoursOfOperationOverride(
@@ -614,7 +656,9 @@ UpdateHoursOfOperationOverrideOutcome ConnectClient::UpdateHoursOfOperationOverr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationOverrideId());
   };
 
-  return UpdateHoursOfOperationOverrideOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHoursOfOperationOverrideOutcome(result.GetResultWithOwnership())
+                            : UpdateHoursOfOperationOverrideOutcome(std::move(result.GetError()));
 }
 
 UpdateInstanceAttributeOutcome ConnectClient::UpdateInstanceAttribute(const UpdateInstanceAttributeRequest& request) const {
@@ -638,7 +682,9 @@ UpdateInstanceAttributeOutcome ConnectClient::UpdateInstanceAttribute(const Upda
         InstanceAttributeTypeMapper::GetNameForInstanceAttributeType(request.GetAttributeType()));
   };
 
-  return UpdateInstanceAttributeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInstanceAttributeOutcome(result.GetResultWithOwnership())
+                            : UpdateInstanceAttributeOutcome(std::move(result.GetError()));
 }
 
 UpdateInstanceStorageConfigOutcome ConnectClient::UpdateInstanceStorageConfig(const UpdateInstanceStorageConfigRequest& request) const {
@@ -666,7 +712,9 @@ UpdateInstanceStorageConfigOutcome ConnectClient::UpdateInstanceStorageConfig(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
   };
 
-  return UpdateInstanceStorageConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateInstanceStorageConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateInstanceStorageConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateNotificationContentOutcome ConnectClient::UpdateNotificationContent(const UpdateNotificationContentRequest& request) const {
@@ -688,7 +736,9 @@ UpdateNotificationContentOutcome ConnectClient::UpdateNotificationContent(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNotificationId());
   };
 
-  return UpdateNotificationContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNotificationContentOutcome(result.GetResultWithOwnership())
+                            : UpdateNotificationContentOutcome(std::move(result.GetError()));
 }
 
 UpdateParticipantAuthenticationOutcome ConnectClient::UpdateParticipantAuthentication(
@@ -698,7 +748,9 @@ UpdateParticipantAuthenticationOutcome ConnectClient::UpdateParticipantAuthentic
     endpointResolutionOutcome.GetResult().AddPathSegments("/contact/update-participant-authentication");
   };
 
-  return UpdateParticipantAuthenticationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateParticipantAuthenticationOutcome(result.GetResultWithOwnership())
+                            : UpdateParticipantAuthenticationOutcome(std::move(result.GetError()));
 }
 
 UpdateParticipantRoleConfigOutcome ConnectClient::UpdateParticipantRoleConfig(const UpdateParticipantRoleConfigRequest& request) const {
@@ -720,7 +772,9 @@ UpdateParticipantRoleConfigOutcome ConnectClient::UpdateParticipantRoleConfig(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
   };
 
-  return UpdateParticipantRoleConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateParticipantRoleConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateParticipantRoleConfigOutcome(std::move(result.GetError()));
 }
 
 UpdatePhoneNumberOutcome ConnectClient::UpdatePhoneNumber(const UpdatePhoneNumberRequest& request) const {
@@ -736,7 +790,9 @@ UpdatePhoneNumberOutcome ConnectClient::UpdatePhoneNumber(const UpdatePhoneNumbe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
   };
 
-  return UpdatePhoneNumberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePhoneNumberOutcome(result.GetResultWithOwnership())
+                            : UpdatePhoneNumberOutcome(std::move(result.GetError()));
 }
 
 UpdatePhoneNumberMetadataOutcome ConnectClient::UpdatePhoneNumberMetadata(const UpdatePhoneNumberMetadataRequest& request) const {
@@ -753,7 +809,9 @@ UpdatePhoneNumberMetadataOutcome ConnectClient::UpdatePhoneNumberMetadata(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return UpdatePhoneNumberMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePhoneNumberMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdatePhoneNumberMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdatePredefinedAttributeOutcome ConnectClient::UpdatePredefinedAttribute(const UpdatePredefinedAttributeRequest& request) const {
@@ -775,7 +833,9 @@ UpdatePredefinedAttributeOutcome ConnectClient::UpdatePredefinedAttribute(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdatePredefinedAttributeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePredefinedAttributeOutcome(result.GetResultWithOwnership())
+                            : UpdatePredefinedAttributeOutcome(std::move(result.GetError()));
 }
 
 UpdatePromptOutcome ConnectClient::UpdatePrompt(const UpdatePromptRequest& request) const {
@@ -797,7 +857,8 @@ UpdatePromptOutcome ConnectClient::UpdatePrompt(const UpdatePromptRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPromptId());
   };
 
-  return UpdatePromptOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePromptOutcome(result.GetResultWithOwnership()) : UpdatePromptOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueHoursOfOperationOutcome ConnectClient::UpdateQueueHoursOfOperation(const UpdateQueueHoursOfOperationRequest& request) const {
@@ -820,7 +881,9 @@ UpdateQueueHoursOfOperationOutcome ConnectClient::UpdateQueueHoursOfOperation(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/hours-of-operation");
   };
 
-  return UpdateQueueHoursOfOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQueueHoursOfOperationOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueHoursOfOperationOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueMaxContactsOutcome ConnectClient::UpdateQueueMaxContacts(const UpdateQueueMaxContactsRequest& request) const {
@@ -843,7 +906,9 @@ UpdateQueueMaxContactsOutcome ConnectClient::UpdateQueueMaxContacts(const Update
     endpointResolutionOutcome.GetResult().AddPathSegments("/max-contacts");
   };
 
-  return UpdateQueueMaxContactsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQueueMaxContactsOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueMaxContactsOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueNameOutcome ConnectClient::UpdateQueueName(const UpdateQueueNameRequest& request) const {
@@ -866,7 +931,9 @@ UpdateQueueNameOutcome ConnectClient::UpdateQueueName(const UpdateQueueNameReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/name");
   };
 
-  return UpdateQueueNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQueueNameOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueNameOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueOutboundCallerConfigOutcome ConnectClient::UpdateQueueOutboundCallerConfig(
@@ -890,7 +957,9 @@ UpdateQueueOutboundCallerConfigOutcome ConnectClient::UpdateQueueOutboundCallerC
     endpointResolutionOutcome.GetResult().AddPathSegments("/outbound-caller-config");
   };
 
-  return UpdateQueueOutboundCallerConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQueueOutboundCallerConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueOutboundCallerConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueOutboundEmailConfigOutcome ConnectClient::UpdateQueueOutboundEmailConfig(
@@ -914,7 +983,9 @@ UpdateQueueOutboundEmailConfigOutcome ConnectClient::UpdateQueueOutboundEmailCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/outbound-email-config");
   };
 
-  return UpdateQueueOutboundEmailConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQueueOutboundEmailConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueOutboundEmailConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueStatusOutcome ConnectClient::UpdateQueueStatus(const UpdateQueueStatusRequest& request) const {
@@ -937,7 +1008,9 @@ UpdateQueueStatusOutcome ConnectClient::UpdateQueueStatus(const UpdateQueueStatu
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return UpdateQueueStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQueueStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateQuickConnectConfigOutcome ConnectClient::UpdateQuickConnectConfig(const UpdateQuickConnectConfigRequest& request) const {
@@ -960,7 +1033,9 @@ UpdateQuickConnectConfigOutcome ConnectClient::UpdateQuickConnectConfig(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return UpdateQuickConnectConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQuickConnectConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateQuickConnectConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateQuickConnectNameOutcome ConnectClient::UpdateQuickConnectName(const UpdateQuickConnectNameRequest& request) const {
@@ -983,7 +1058,9 @@ UpdateQuickConnectNameOutcome ConnectClient::UpdateQuickConnectName(const Update
     endpointResolutionOutcome.GetResult().AddPathSegments("/name");
   };
 
-  return UpdateQuickConnectNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQuickConnectNameOutcome(result.GetResultWithOwnership())
+                            : UpdateQuickConnectNameOutcome(std::move(result.GetError()));
 }
 
 UpdateRoutingProfileAgentAvailabilityTimerOutcome ConnectClient::UpdateRoutingProfileAgentAvailabilityTimer(
@@ -1007,7 +1084,9 @@ UpdateRoutingProfileAgentAvailabilityTimerOutcome ConnectClient::UpdateRoutingPr
     endpointResolutionOutcome.GetResult().AddPathSegments("/agent-availability-timer");
   };
 
-  return UpdateRoutingProfileAgentAvailabilityTimerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoutingProfileAgentAvailabilityTimerOutcome(result.GetResultWithOwnership())
+                            : UpdateRoutingProfileAgentAvailabilityTimerOutcome(std::move(result.GetError()));
 }
 
 UpdateRoutingProfileConcurrencyOutcome ConnectClient::UpdateRoutingProfileConcurrency(
@@ -1031,7 +1110,9 @@ UpdateRoutingProfileConcurrencyOutcome ConnectClient::UpdateRoutingProfileConcur
     endpointResolutionOutcome.GetResult().AddPathSegments("/concurrency");
   };
 
-  return UpdateRoutingProfileConcurrencyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoutingProfileConcurrencyOutcome(result.GetResultWithOwnership())
+                            : UpdateRoutingProfileConcurrencyOutcome(std::move(result.GetError()));
 }
 
 UpdateRoutingProfileDefaultOutboundQueueOutcome ConnectClient::UpdateRoutingProfileDefaultOutboundQueue(
@@ -1055,7 +1136,9 @@ UpdateRoutingProfileDefaultOutboundQueueOutcome ConnectClient::UpdateRoutingProf
     endpointResolutionOutcome.GetResult().AddPathSegments("/default-outbound-queue");
   };
 
-  return UpdateRoutingProfileDefaultOutboundQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoutingProfileDefaultOutboundQueueOutcome(result.GetResultWithOwnership())
+                            : UpdateRoutingProfileDefaultOutboundQueueOutcome(std::move(result.GetError()));
 }
 
 UpdateRoutingProfileNameOutcome ConnectClient::UpdateRoutingProfileName(const UpdateRoutingProfileNameRequest& request) const {
@@ -1078,7 +1161,9 @@ UpdateRoutingProfileNameOutcome ConnectClient::UpdateRoutingProfileName(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/name");
   };
 
-  return UpdateRoutingProfileNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoutingProfileNameOutcome(result.GetResultWithOwnership())
+                            : UpdateRoutingProfileNameOutcome(std::move(result.GetError()));
 }
 
 UpdateRoutingProfileQueuesOutcome ConnectClient::UpdateRoutingProfileQueues(const UpdateRoutingProfileQueuesRequest& request) const {
@@ -1101,7 +1186,9 @@ UpdateRoutingProfileQueuesOutcome ConnectClient::UpdateRoutingProfileQueues(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/queues");
   };
 
-  return UpdateRoutingProfileQueuesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoutingProfileQueuesOutcome(result.GetResultWithOwnership())
+                            : UpdateRoutingProfileQueuesOutcome(std::move(result.GetError()));
 }
 
 UpdateRuleOutcome ConnectClient::UpdateRule(const UpdateRuleRequest& request) const {
@@ -1123,7 +1210,8 @@ UpdateRuleOutcome ConnectClient::UpdateRule(const UpdateRuleRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
   };
 
-  return UpdateRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRuleOutcome(result.GetResultWithOwnership()) : UpdateRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateSecurityProfileOutcome ConnectClient::UpdateSecurityProfile(const UpdateSecurityProfileRequest& request) const {
@@ -1145,7 +1233,9 @@ UpdateSecurityProfileOutcome ConnectClient::UpdateSecurityProfile(const UpdateSe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSecurityProfileId());
   };
 
-  return UpdateSecurityProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSecurityProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateSecurityProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateTaskTemplateOutcome ConnectClient::UpdateTaskTemplate(const UpdateTaskTemplateRequest& request) const {
@@ -1168,7 +1258,9 @@ UpdateTaskTemplateOutcome ConnectClient::UpdateTaskTemplate(const UpdateTaskTemp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskTemplateId());
   };
 
-  return UpdateTaskTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTaskTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateTaskTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateTestCaseOutcome ConnectClient::UpdateTestCase(const UpdateTestCaseRequest& request) const {
@@ -1190,7 +1282,8 @@ UpdateTestCaseOutcome ConnectClient::UpdateTestCase(const UpdateTestCaseRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTestCaseId());
   };
 
-  return UpdateTestCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTestCaseOutcome(result.GetResultWithOwnership()) : UpdateTestCaseOutcome(std::move(result.GetError()));
 }
 
 UpdateTrafficDistributionOutcome ConnectClient::UpdateTrafficDistribution(const UpdateTrafficDistributionRequest& request) const {
@@ -1206,7 +1299,9 @@ UpdateTrafficDistributionOutcome ConnectClient::UpdateTrafficDistribution(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateTrafficDistributionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTrafficDistributionOutcome(result.GetResultWithOwnership())
+                            : UpdateTrafficDistributionOutcome(std::move(result.GetError()));
 }
 
 UpdateUserConfigOutcome ConnectClient::UpdateUserConfig(const UpdateUserConfigRequest& request) const {
@@ -1229,7 +1324,9 @@ UpdateUserConfigOutcome ConnectClient::UpdateUserConfig(const UpdateUserConfigRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return UpdateUserConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateUserConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateUserHierarchyOutcome ConnectClient::UpdateUserHierarchy(const UpdateUserHierarchyRequest& request) const {
@@ -1252,7 +1349,9 @@ UpdateUserHierarchyOutcome ConnectClient::UpdateUserHierarchy(const UpdateUserHi
     endpointResolutionOutcome.GetResult().AddPathSegments("/hierarchy");
   };
 
-  return UpdateUserHierarchyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserHierarchyOutcome(result.GetResultWithOwnership())
+                            : UpdateUserHierarchyOutcome(std::move(result.GetError()));
 }
 
 UpdateUserHierarchyGroupNameOutcome ConnectClient::UpdateUserHierarchyGroupName(const UpdateUserHierarchyGroupNameRequest& request) const {
@@ -1275,7 +1374,9 @@ UpdateUserHierarchyGroupNameOutcome ConnectClient::UpdateUserHierarchyGroupName(
     endpointResolutionOutcome.GetResult().AddPathSegments("/name");
   };
 
-  return UpdateUserHierarchyGroupNameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserHierarchyGroupNameOutcome(result.GetResultWithOwnership())
+                            : UpdateUserHierarchyGroupNameOutcome(std::move(result.GetError()));
 }
 
 UpdateUserHierarchyStructureOutcome ConnectClient::UpdateUserHierarchyStructure(const UpdateUserHierarchyStructureRequest& request) const {
@@ -1291,7 +1392,9 @@ UpdateUserHierarchyStructureOutcome ConnectClient::UpdateUserHierarchyStructure(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return UpdateUserHierarchyStructureOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserHierarchyStructureOutcome(result.GetResultWithOwnership())
+                            : UpdateUserHierarchyStructureOutcome(std::move(result.GetError()));
 }
 
 UpdateUserIdentityInfoOutcome ConnectClient::UpdateUserIdentityInfo(const UpdateUserIdentityInfoRequest& request) const {
@@ -1314,7 +1417,9 @@ UpdateUserIdentityInfoOutcome ConnectClient::UpdateUserIdentityInfo(const Update
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-info");
   };
 
-  return UpdateUserIdentityInfoOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserIdentityInfoOutcome(result.GetResultWithOwnership())
+                            : UpdateUserIdentityInfoOutcome(std::move(result.GetError()));
 }
 
 UpdateUserNotificationStatusOutcome ConnectClient::UpdateUserNotificationStatus(const UpdateUserNotificationStatusRequest& request) const {
@@ -1343,7 +1448,9 @@ UpdateUserNotificationStatusOutcome ConnectClient::UpdateUserNotificationStatus(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNotificationId());
   };
 
-  return UpdateUserNotificationStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserNotificationStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateUserNotificationStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateUserPhoneConfigOutcome ConnectClient::UpdateUserPhoneConfig(const UpdateUserPhoneConfigRequest& request) const {
@@ -1366,7 +1473,9 @@ UpdateUserPhoneConfigOutcome ConnectClient::UpdateUserPhoneConfig(const UpdateUs
     endpointResolutionOutcome.GetResult().AddPathSegments("/phone-config");
   };
 
-  return UpdateUserPhoneConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserPhoneConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateUserPhoneConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateUserProficienciesOutcome ConnectClient::UpdateUserProficiencies(const UpdateUserProficienciesRequest& request) const {
@@ -1389,7 +1498,9 @@ UpdateUserProficienciesOutcome ConnectClient::UpdateUserProficiencies(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/proficiencies");
   };
 
-  return UpdateUserProficienciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserProficienciesOutcome(result.GetResultWithOwnership())
+                            : UpdateUserProficienciesOutcome(std::move(result.GetError()));
 }
 
 UpdateUserRoutingProfileOutcome ConnectClient::UpdateUserRoutingProfile(const UpdateUserRoutingProfileRequest& request) const {
@@ -1412,7 +1523,9 @@ UpdateUserRoutingProfileOutcome ConnectClient::UpdateUserRoutingProfile(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/routing-profile");
   };
 
-  return UpdateUserRoutingProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserRoutingProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateUserRoutingProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateUserSecurityProfilesOutcome ConnectClient::UpdateUserSecurityProfiles(const UpdateUserSecurityProfilesRequest& request) const {
@@ -1435,7 +1548,9 @@ UpdateUserSecurityProfilesOutcome ConnectClient::UpdateUserSecurityProfiles(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/security-profiles");
   };
 
-  return UpdateUserSecurityProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserSecurityProfilesOutcome(result.GetResultWithOwnership())
+                            : UpdateUserSecurityProfilesOutcome(std::move(result.GetError()));
 }
 
 UpdateViewContentOutcome ConnectClient::UpdateViewContent(const UpdateViewContentRequest& request) const {
@@ -1457,7 +1572,9 @@ UpdateViewContentOutcome ConnectClient::UpdateViewContent(const UpdateViewConten
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetViewId());
   };
 
-  return UpdateViewContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateViewContentOutcome(result.GetResultWithOwnership())
+                            : UpdateViewContentOutcome(std::move(result.GetError()));
 }
 
 UpdateViewMetadataOutcome ConnectClient::UpdateViewMetadata(const UpdateViewMetadataRequest& request) const {
@@ -1480,7 +1597,9 @@ UpdateViewMetadataOutcome ConnectClient::UpdateViewMetadata(const UpdateViewMeta
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return UpdateViewMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateViewMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateViewMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspaceMetadataOutcome ConnectClient::UpdateWorkspaceMetadata(const UpdateWorkspaceMetadataRequest& request) const {
@@ -1503,7 +1622,9 @@ UpdateWorkspaceMetadataOutcome ConnectClient::UpdateWorkspaceMetadata(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return UpdateWorkspaceMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkspaceMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspacePageOutcome ConnectClient::UpdateWorkspacePage(const UpdateWorkspacePageRequest& request) const {
@@ -1532,7 +1653,9 @@ UpdateWorkspacePageOutcome ConnectClient::UpdateWorkspacePage(const UpdateWorksp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPage());
   };
 
-  return UpdateWorkspacePageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkspacePageOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspacePageOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspaceThemeOutcome ConnectClient::UpdateWorkspaceTheme(const UpdateWorkspaceThemeRequest& request) const {
@@ -1555,7 +1678,9 @@ UpdateWorkspaceThemeOutcome ConnectClient::UpdateWorkspaceTheme(const UpdateWork
     endpointResolutionOutcome.GetResult().AddPathSegments("/theme");
   };
 
-  return UpdateWorkspaceThemeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkspaceThemeOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceThemeOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspaceVisibilityOutcome ConnectClient::UpdateWorkspaceVisibility(const UpdateWorkspaceVisibilityRequest& request) const {
@@ -1578,5 +1703,7 @@ UpdateWorkspaceVisibilityOutcome ConnectClient::UpdateWorkspaceVisibility(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/visibility");
   };
 
-  return UpdateWorkspaceVisibilityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkspaceVisibilityOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceVisibilityOutcome(std::move(result.GetError()));
 }

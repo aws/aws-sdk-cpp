@@ -227,7 +227,9 @@ AssociateSourceNetworkStackOutcome DrsClient::AssociateSourceNetworkStack(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/AssociateSourceNetworkStack");
   };
 
-  return AssociateSourceNetworkStackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSourceNetworkStackOutcome(result.GetResultWithOwnership())
+                            : AssociateSourceNetworkStackOutcome(std::move(result.GetError()));
 }
 
 CreateExtendedSourceServerOutcome DrsClient::CreateExtendedSourceServer(const CreateExtendedSourceServerRequest& request) const {
@@ -236,7 +238,9 @@ CreateExtendedSourceServerOutcome DrsClient::CreateExtendedSourceServer(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateExtendedSourceServer");
   };
 
-  return CreateExtendedSourceServerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExtendedSourceServerOutcome(result.GetResultWithOwnership())
+                            : CreateExtendedSourceServerOutcome(std::move(result.GetError()));
 }
 
 CreateLaunchConfigurationTemplateOutcome DrsClient::CreateLaunchConfigurationTemplate(
@@ -246,7 +250,9 @@ CreateLaunchConfigurationTemplateOutcome DrsClient::CreateLaunchConfigurationTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateLaunchConfigurationTemplate");
   };
 
-  return CreateLaunchConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLaunchConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateLaunchConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateReplicationConfigurationTemplateOutcome DrsClient::CreateReplicationConfigurationTemplate(
@@ -256,7 +262,9 @@ CreateReplicationConfigurationTemplateOutcome DrsClient::CreateReplicationConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateReplicationConfigurationTemplate");
   };
 
-  return CreateReplicationConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReplicationConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateReplicationConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateSourceNetworkOutcome DrsClient::CreateSourceNetwork(const CreateSourceNetworkRequest& request) const {
@@ -265,7 +273,9 @@ CreateSourceNetworkOutcome DrsClient::CreateSourceNetwork(const CreateSourceNetw
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateSourceNetwork");
   };
 
-  return CreateSourceNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSourceNetworkOutcome(result.GetResultWithOwnership())
+                            : CreateSourceNetworkOutcome(std::move(result.GetError()));
 }
 
 DeleteJobOutcome DrsClient::DeleteJob(const DeleteJobRequest& request) const {
@@ -274,7 +284,8 @@ DeleteJobOutcome DrsClient::DeleteJob(const DeleteJobRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteJob");
   };
 
-  return DeleteJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteJobOutcome(result.GetResultWithOwnership()) : DeleteJobOutcome(std::move(result.GetError()));
 }
 
 DeleteLaunchActionOutcome DrsClient::DeleteLaunchAction(const DeleteLaunchActionRequest& request) const {
@@ -283,7 +294,9 @@ DeleteLaunchActionOutcome DrsClient::DeleteLaunchAction(const DeleteLaunchAction
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLaunchAction");
   };
 
-  return DeleteLaunchActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLaunchActionOutcome(result.GetResultWithOwnership())
+                            : DeleteLaunchActionOutcome(std::move(result.GetError()));
 }
 
 DeleteLaunchConfigurationTemplateOutcome DrsClient::DeleteLaunchConfigurationTemplate(
@@ -293,7 +306,9 @@ DeleteLaunchConfigurationTemplateOutcome DrsClient::DeleteLaunchConfigurationTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLaunchConfigurationTemplate");
   };
 
-  return DeleteLaunchConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLaunchConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteLaunchConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteRecoveryInstanceOutcome DrsClient::DeleteRecoveryInstance(const DeleteRecoveryInstanceRequest& request) const {
@@ -302,7 +317,9 @@ DeleteRecoveryInstanceOutcome DrsClient::DeleteRecoveryInstance(const DeleteReco
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteRecoveryInstance");
   };
 
-  return DeleteRecoveryInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRecoveryInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteRecoveryInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicationConfigurationTemplateOutcome DrsClient::DeleteReplicationConfigurationTemplate(
@@ -312,7 +329,9 @@ DeleteReplicationConfigurationTemplateOutcome DrsClient::DeleteReplicationConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteReplicationConfigurationTemplate");
   };
 
-  return DeleteReplicationConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteReplicationConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteReplicationConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteSourceNetworkOutcome DrsClient::DeleteSourceNetwork(const DeleteSourceNetworkRequest& request) const {
@@ -321,7 +340,9 @@ DeleteSourceNetworkOutcome DrsClient::DeleteSourceNetwork(const DeleteSourceNetw
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteSourceNetwork");
   };
 
-  return DeleteSourceNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSourceNetworkOutcome(result.GetResultWithOwnership())
+                            : DeleteSourceNetworkOutcome(std::move(result.GetError()));
 }
 
 DeleteSourceServerOutcome DrsClient::DeleteSourceServer(const DeleteSourceServerRequest& request) const {
@@ -330,7 +351,9 @@ DeleteSourceServerOutcome DrsClient::DeleteSourceServer(const DeleteSourceServer
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteSourceServer");
   };
 
-  return DeleteSourceServerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSourceServerOutcome(result.GetResultWithOwnership())
+                            : DeleteSourceServerOutcome(std::move(result.GetError()));
 }
 
 DescribeJobLogItemsOutcome DrsClient::DescribeJobLogItems(const DescribeJobLogItemsRequest& request) const {
@@ -339,7 +362,9 @@ DescribeJobLogItemsOutcome DrsClient::DescribeJobLogItems(const DescribeJobLogIt
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeJobLogItems");
   };
 
-  return DescribeJobLogItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeJobLogItemsOutcome(result.GetResultWithOwnership())
+                            : DescribeJobLogItemsOutcome(std::move(result.GetError()));
 }
 
 DescribeJobsOutcome DrsClient::DescribeJobs(const DescribeJobsRequest& request) const {
@@ -348,7 +373,8 @@ DescribeJobsOutcome DrsClient::DescribeJobs(const DescribeJobsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeJobs");
   };
 
-  return DescribeJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeJobsOutcome(result.GetResultWithOwnership()) : DescribeJobsOutcome(std::move(result.GetError()));
 }
 
 DescribeLaunchConfigurationTemplatesOutcome DrsClient::DescribeLaunchConfigurationTemplates(
@@ -358,7 +384,9 @@ DescribeLaunchConfigurationTemplatesOutcome DrsClient::DescribeLaunchConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeLaunchConfigurationTemplates");
   };
 
-  return DescribeLaunchConfigurationTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLaunchConfigurationTemplatesOutcome(result.GetResultWithOwnership())
+                            : DescribeLaunchConfigurationTemplatesOutcome(std::move(result.GetError()));
 }
 
 DescribeRecoveryInstancesOutcome DrsClient::DescribeRecoveryInstances(const DescribeRecoveryInstancesRequest& request) const {
@@ -367,7 +395,9 @@ DescribeRecoveryInstancesOutcome DrsClient::DescribeRecoveryInstances(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeRecoveryInstances");
   };
 
-  return DescribeRecoveryInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRecoveryInstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeRecoveryInstancesOutcome(std::move(result.GetError()));
 }
 
 DescribeRecoverySnapshotsOutcome DrsClient::DescribeRecoverySnapshots(const DescribeRecoverySnapshotsRequest& request) const {
@@ -376,7 +406,9 @@ DescribeRecoverySnapshotsOutcome DrsClient::DescribeRecoverySnapshots(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeRecoverySnapshots");
   };
 
-  return DescribeRecoverySnapshotsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRecoverySnapshotsOutcome(result.GetResultWithOwnership())
+                            : DescribeRecoverySnapshotsOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicationConfigurationTemplatesOutcome DrsClient::DescribeReplicationConfigurationTemplates(
@@ -386,7 +418,9 @@ DescribeReplicationConfigurationTemplatesOutcome DrsClient::DescribeReplicationC
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeReplicationConfigurationTemplates");
   };
 
-  return DescribeReplicationConfigurationTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationConfigurationTemplatesOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationConfigurationTemplatesOutcome(std::move(result.GetError()));
 }
 
 DescribeSourceNetworksOutcome DrsClient::DescribeSourceNetworks(const DescribeSourceNetworksRequest& request) const {
@@ -395,7 +429,9 @@ DescribeSourceNetworksOutcome DrsClient::DescribeSourceNetworks(const DescribeSo
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeSourceNetworks");
   };
 
-  return DescribeSourceNetworksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSourceNetworksOutcome(result.GetResultWithOwnership())
+                            : DescribeSourceNetworksOutcome(std::move(result.GetError()));
 }
 
 DescribeSourceServersOutcome DrsClient::DescribeSourceServers(const DescribeSourceServersRequest& request) const {
@@ -404,7 +440,9 @@ DescribeSourceServersOutcome DrsClient::DescribeSourceServers(const DescribeSour
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeSourceServers");
   };
 
-  return DescribeSourceServersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSourceServersOutcome(result.GetResultWithOwnership())
+                            : DescribeSourceServersOutcome(std::move(result.GetError()));
 }
 
 DisconnectRecoveryInstanceOutcome DrsClient::DisconnectRecoveryInstance(const DisconnectRecoveryInstanceRequest& request) const {
@@ -413,7 +451,9 @@ DisconnectRecoveryInstanceOutcome DrsClient::DisconnectRecoveryInstance(const Di
     endpointResolutionOutcome.GetResult().AddPathSegments("/DisconnectRecoveryInstance");
   };
 
-  return DisconnectRecoveryInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisconnectRecoveryInstanceOutcome(result.GetResultWithOwnership())
+                            : DisconnectRecoveryInstanceOutcome(std::move(result.GetError()));
 }
 
 DisconnectSourceServerOutcome DrsClient::DisconnectSourceServer(const DisconnectSourceServerRequest& request) const {
@@ -422,7 +462,9 @@ DisconnectSourceServerOutcome DrsClient::DisconnectSourceServer(const Disconnect
     endpointResolutionOutcome.GetResult().AddPathSegments("/DisconnectSourceServer");
   };
 
-  return DisconnectSourceServerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisconnectSourceServerOutcome(result.GetResultWithOwnership())
+                            : DisconnectSourceServerOutcome(std::move(result.GetError()));
 }
 
 ExportSourceNetworkCfnTemplateOutcome DrsClient::ExportSourceNetworkCfnTemplate(
@@ -432,7 +474,9 @@ ExportSourceNetworkCfnTemplateOutcome DrsClient::ExportSourceNetworkCfnTemplate(
     endpointResolutionOutcome.GetResult().AddPathSegments("/ExportSourceNetworkCfnTemplate");
   };
 
-  return ExportSourceNetworkCfnTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportSourceNetworkCfnTemplateOutcome(result.GetResultWithOwnership())
+                            : ExportSourceNetworkCfnTemplateOutcome(std::move(result.GetError()));
 }
 
 GetFailbackReplicationConfigurationOutcome DrsClient::GetFailbackReplicationConfiguration(
@@ -442,7 +486,9 @@ GetFailbackReplicationConfigurationOutcome DrsClient::GetFailbackReplicationConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetFailbackReplicationConfiguration");
   };
 
-  return GetFailbackReplicationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFailbackReplicationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetFailbackReplicationConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetLaunchConfigurationOutcome DrsClient::GetLaunchConfiguration(const GetLaunchConfigurationRequest& request) const {
@@ -451,7 +497,9 @@ GetLaunchConfigurationOutcome DrsClient::GetLaunchConfiguration(const GetLaunchC
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetLaunchConfiguration");
   };
 
-  return GetLaunchConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLaunchConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetLaunchConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetReplicationConfigurationOutcome DrsClient::GetReplicationConfiguration(const GetReplicationConfigurationRequest& request) const {
@@ -460,7 +508,9 @@ GetReplicationConfigurationOutcome DrsClient::GetReplicationConfiguration(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetReplicationConfiguration");
   };
 
-  return GetReplicationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetReplicationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetReplicationConfigurationOutcome(std::move(result.GetError()));
 }
 
 InitializeServiceOutcome DrsClient::InitializeService(const InitializeServiceRequest& request) const {
@@ -469,7 +519,9 @@ InitializeServiceOutcome DrsClient::InitializeService(const InitializeServiceReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/InitializeService");
   };
 
-  return InitializeServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InitializeServiceOutcome(result.GetResultWithOwnership())
+                            : InitializeServiceOutcome(std::move(result.GetError()));
 }
 
 ListExtensibleSourceServersOutcome DrsClient::ListExtensibleSourceServers(const ListExtensibleSourceServersRequest& request) const {
@@ -478,7 +530,9 @@ ListExtensibleSourceServersOutcome DrsClient::ListExtensibleSourceServers(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListExtensibleSourceServers");
   };
 
-  return ListExtensibleSourceServersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExtensibleSourceServersOutcome(result.GetResultWithOwnership())
+                            : ListExtensibleSourceServersOutcome(std::move(result.GetError()));
 }
 
 ListLaunchActionsOutcome DrsClient::ListLaunchActions(const ListLaunchActionsRequest& request) const {
@@ -487,7 +541,9 @@ ListLaunchActionsOutcome DrsClient::ListLaunchActions(const ListLaunchActionsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListLaunchActions");
   };
 
-  return ListLaunchActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLaunchActionsOutcome(result.GetResultWithOwnership())
+                            : ListLaunchActionsOutcome(std::move(result.GetError()));
 }
 
 ListStagingAccountsOutcome DrsClient::ListStagingAccounts(const ListStagingAccountsRequest& request) const {
@@ -496,7 +552,9 @@ ListStagingAccountsOutcome DrsClient::ListStagingAccounts(const ListStagingAccou
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListStagingAccounts");
   };
 
-  return ListStagingAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStagingAccountsOutcome(result.GetResultWithOwnership())
+                            : ListStagingAccountsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DrsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -512,7 +570,9 @@ ListTagsForResourceOutcome DrsClient::ListTagsForResource(const ListTagsForResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutLaunchActionOutcome DrsClient::PutLaunchAction(const PutLaunchActionRequest& request) const {
@@ -521,7 +581,9 @@ PutLaunchActionOutcome DrsClient::PutLaunchAction(const PutLaunchActionRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutLaunchAction");
   };
 
-  return PutLaunchActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutLaunchActionOutcome(result.GetResultWithOwnership())
+                            : PutLaunchActionOutcome(std::move(result.GetError()));
 }
 
 ReverseReplicationOutcome DrsClient::ReverseReplication(const ReverseReplicationRequest& request) const {
@@ -530,7 +592,9 @@ ReverseReplicationOutcome DrsClient::ReverseReplication(const ReverseReplication
     endpointResolutionOutcome.GetResult().AddPathSegments("/ReverseReplication");
   };
 
-  return ReverseReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReverseReplicationOutcome(result.GetResultWithOwnership())
+                            : ReverseReplicationOutcome(std::move(result.GetError()));
 }
 
 StartFailbackLaunchOutcome DrsClient::StartFailbackLaunch(const StartFailbackLaunchRequest& request) const {
@@ -539,7 +603,9 @@ StartFailbackLaunchOutcome DrsClient::StartFailbackLaunch(const StartFailbackLau
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartFailbackLaunch");
   };
 
-  return StartFailbackLaunchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFailbackLaunchOutcome(result.GetResultWithOwnership())
+                            : StartFailbackLaunchOutcome(std::move(result.GetError()));
 }
 
 StartRecoveryOutcome DrsClient::StartRecovery(const StartRecoveryRequest& request) const {
@@ -548,7 +614,8 @@ StartRecoveryOutcome DrsClient::StartRecovery(const StartRecoveryRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartRecovery");
   };
 
-  return StartRecoveryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRecoveryOutcome(result.GetResultWithOwnership()) : StartRecoveryOutcome(std::move(result.GetError()));
 }
 
 StartReplicationOutcome DrsClient::StartReplication(const StartReplicationRequest& request) const {
@@ -557,7 +624,9 @@ StartReplicationOutcome DrsClient::StartReplication(const StartReplicationReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartReplication");
   };
 
-  return StartReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReplicationOutcome(result.GetResultWithOwnership())
+                            : StartReplicationOutcome(std::move(result.GetError()));
 }
 
 StartSourceNetworkRecoveryOutcome DrsClient::StartSourceNetworkRecovery(const StartSourceNetworkRecoveryRequest& request) const {
@@ -566,7 +635,9 @@ StartSourceNetworkRecoveryOutcome DrsClient::StartSourceNetworkRecovery(const St
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartSourceNetworkRecovery");
   };
 
-  return StartSourceNetworkRecoveryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSourceNetworkRecoveryOutcome(result.GetResultWithOwnership())
+                            : StartSourceNetworkRecoveryOutcome(std::move(result.GetError()));
 }
 
 StartSourceNetworkReplicationOutcome DrsClient::StartSourceNetworkReplication(const StartSourceNetworkReplicationRequest& request) const {
@@ -575,7 +646,9 @@ StartSourceNetworkReplicationOutcome DrsClient::StartSourceNetworkReplication(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartSourceNetworkReplication");
   };
 
-  return StartSourceNetworkReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSourceNetworkReplicationOutcome(result.GetResultWithOwnership())
+                            : StartSourceNetworkReplicationOutcome(std::move(result.GetError()));
 }
 
 StopFailbackOutcome DrsClient::StopFailback(const StopFailbackRequest& request) const {
@@ -584,7 +657,8 @@ StopFailbackOutcome DrsClient::StopFailback(const StopFailbackRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/StopFailback");
   };
 
-  return StopFailbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopFailbackOutcome(result.GetResultWithOwnership()) : StopFailbackOutcome(std::move(result.GetError()));
 }
 
 StopReplicationOutcome DrsClient::StopReplication(const StopReplicationRequest& request) const {
@@ -593,7 +667,9 @@ StopReplicationOutcome DrsClient::StopReplication(const StopReplicationRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/StopReplication");
   };
 
-  return StopReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopReplicationOutcome(result.GetResultWithOwnership())
+                            : StopReplicationOutcome(std::move(result.GetError()));
 }
 
 StopSourceNetworkReplicationOutcome DrsClient::StopSourceNetworkReplication(const StopSourceNetworkReplicationRequest& request) const {
@@ -602,7 +678,9 @@ StopSourceNetworkReplicationOutcome DrsClient::StopSourceNetworkReplication(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/StopSourceNetworkReplication");
   };
 
-  return StopSourceNetworkReplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopSourceNetworkReplicationOutcome(result.GetResultWithOwnership())
+                            : StopSourceNetworkReplicationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome DrsClient::TagResource(const TagResourceRequest& request) const {
@@ -618,7 +696,8 @@ TagResourceOutcome DrsClient::TagResource(const TagResourceRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TerminateRecoveryInstancesOutcome DrsClient::TerminateRecoveryInstances(const TerminateRecoveryInstancesRequest& request) const {
@@ -627,7 +706,9 @@ TerminateRecoveryInstancesOutcome DrsClient::TerminateRecoveryInstances(const Te
     endpointResolutionOutcome.GetResult().AddPathSegments("/TerminateRecoveryInstances");
   };
 
-  return TerminateRecoveryInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateRecoveryInstancesOutcome(result.GetResultWithOwnership())
+                            : TerminateRecoveryInstancesOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome DrsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -648,7 +729,8 @@ UntagResourceOutcome DrsClient::UntagResource(const UntagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateFailbackReplicationConfigurationOutcome DrsClient::UpdateFailbackReplicationConfiguration(
@@ -658,7 +740,9 @@ UpdateFailbackReplicationConfigurationOutcome DrsClient::UpdateFailbackReplicati
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateFailbackReplicationConfiguration");
   };
 
-  return UpdateFailbackReplicationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFailbackReplicationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateFailbackReplicationConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateLaunchConfigurationOutcome DrsClient::UpdateLaunchConfiguration(const UpdateLaunchConfigurationRequest& request) const {
@@ -667,7 +751,9 @@ UpdateLaunchConfigurationOutcome DrsClient::UpdateLaunchConfiguration(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLaunchConfiguration");
   };
 
-  return UpdateLaunchConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLaunchConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateLaunchConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateLaunchConfigurationTemplateOutcome DrsClient::UpdateLaunchConfigurationTemplate(
@@ -677,7 +763,9 @@ UpdateLaunchConfigurationTemplateOutcome DrsClient::UpdateLaunchConfigurationTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLaunchConfigurationTemplate");
   };
 
-  return UpdateLaunchConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLaunchConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateLaunchConfigurationTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateReplicationConfigurationOutcome DrsClient::UpdateReplicationConfiguration(
@@ -687,7 +775,9 @@ UpdateReplicationConfigurationOutcome DrsClient::UpdateReplicationConfiguration(
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateReplicationConfiguration");
   };
 
-  return UpdateReplicationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateReplicationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateReplicationConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateReplicationConfigurationTemplateOutcome DrsClient::UpdateReplicationConfigurationTemplate(
@@ -697,5 +787,7 @@ UpdateReplicationConfigurationTemplateOutcome DrsClient::UpdateReplicationConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateReplicationConfigurationTemplate");
   };
 
-  return UpdateReplicationConfigurationTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateReplicationConfigurationTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateReplicationConfigurationTemplateOutcome(std::move(result.GetError()));
 }

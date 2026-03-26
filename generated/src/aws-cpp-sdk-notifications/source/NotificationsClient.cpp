@@ -227,7 +227,9 @@ AssociateChannelOutcome NotificationsClient::AssociateChannel(const AssociateCha
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return AssociateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateChannelOutcome(result.GetResultWithOwnership())
+                            : AssociateChannelOutcome(std::move(result.GetError()));
 }
 
 AssociateManagedNotificationAccountContactOutcome NotificationsClient::AssociateManagedNotificationAccountContact(
@@ -245,7 +247,9 @@ AssociateManagedNotificationAccountContactOutcome NotificationsClient::Associate
         AccountContactTypeMapper::GetNameForAccountContactType(request.GetContactIdentifier()));
   };
 
-  return AssociateManagedNotificationAccountContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateManagedNotificationAccountContactOutcome(result.GetResultWithOwnership())
+                            : AssociateManagedNotificationAccountContactOutcome(std::move(result.GetError()));
 }
 
 AssociateManagedNotificationAdditionalChannelOutcome NotificationsClient::AssociateManagedNotificationAdditionalChannel(
@@ -262,8 +266,9 @@ AssociateManagedNotificationAdditionalChannelOutcome NotificationsClient::Associ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   };
 
-  return AssociateManagedNotificationAdditionalChannelOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateManagedNotificationAdditionalChannelOutcome(result.GetResultWithOwnership())
+                            : AssociateManagedNotificationAdditionalChannelOutcome(std::move(result.GetError()));
 }
 
 AssociateOrganizationalUnitOutcome NotificationsClient::AssociateOrganizationalUnit(
@@ -280,7 +285,9 @@ AssociateOrganizationalUnitOutcome NotificationsClient::AssociateOrganizationalU
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationalUnitId());
   };
 
-  return AssociateOrganizationalUnitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateOrganizationalUnitOutcome(result.GetResultWithOwnership())
+                            : AssociateOrganizationalUnitOutcome(std::move(result.GetError()));
 }
 
 CreateEventRuleOutcome NotificationsClient::CreateEventRule(const CreateEventRuleRequest& request) const {
@@ -289,7 +296,9 @@ CreateEventRuleOutcome NotificationsClient::CreateEventRule(const CreateEventRul
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-rules");
   };
 
-  return CreateEventRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventRuleOutcome(result.GetResultWithOwnership())
+                            : CreateEventRuleOutcome(std::move(result.GetError()));
 }
 
 CreateNotificationConfigurationOutcome NotificationsClient::CreateNotificationConfiguration(
@@ -299,7 +308,9 @@ CreateNotificationConfigurationOutcome NotificationsClient::CreateNotificationCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configurations");
   };
 
-  return CreateNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteEventRuleOutcome NotificationsClient::DeleteEventRule(const DeleteEventRuleRequest& request) const {
@@ -315,7 +326,9 @@ DeleteEventRuleOutcome NotificationsClient::DeleteEventRule(const DeleteEventRul
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteEventRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteEventRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteNotificationConfigurationOutcome NotificationsClient::DeleteNotificationConfiguration(
@@ -332,7 +345,9 @@ DeleteNotificationConfigurationOutcome NotificationsClient::DeleteNotificationCo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeregisterNotificationHubOutcome NotificationsClient::DeregisterNotificationHub(const DeregisterNotificationHubRequest& request) const {
@@ -348,7 +363,9 @@ DeregisterNotificationHubOutcome NotificationsClient::DeregisterNotificationHub(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNotificationHubRegion());
   };
 
-  return DeregisterNotificationHubOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeregisterNotificationHubOutcome(result.GetResultWithOwnership())
+                            : DeregisterNotificationHubOutcome(std::move(result.GetError()));
 }
 
 DisableNotificationsAccessForOrganizationOutcome NotificationsClient::DisableNotificationsAccessForOrganization(
@@ -358,7 +375,9 @@ DisableNotificationsAccessForOrganizationOutcome NotificationsClient::DisableNot
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/access");
   };
 
-  return DisableNotificationsAccessForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisableNotificationsAccessForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DisableNotificationsAccessForOrganizationOutcome(std::move(result.GetError()));
 }
 
 DisassociateChannelOutcome NotificationsClient::DisassociateChannel(const DisassociateChannelRequest& request) const {
@@ -374,7 +393,9 @@ DisassociateChannelOutcome NotificationsClient::DisassociateChannel(const Disass
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DisassociateChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateChannelOutcome(result.GetResultWithOwnership())
+                            : DisassociateChannelOutcome(std::move(result.GetError()));
 }
 
 DisassociateManagedNotificationAccountContactOutcome NotificationsClient::DisassociateManagedNotificationAccountContact(
@@ -392,8 +413,9 @@ DisassociateManagedNotificationAccountContactOutcome NotificationsClient::Disass
         AccountContactTypeMapper::GetNameForAccountContactType(request.GetContactIdentifier()));
   };
 
-  return DisassociateManagedNotificationAccountContactOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DisassociateManagedNotificationAccountContactOutcome(result.GetResultWithOwnership())
+                            : DisassociateManagedNotificationAccountContactOutcome(std::move(result.GetError()));
 }
 
 DisassociateManagedNotificationAdditionalChannelOutcome NotificationsClient::DisassociateManagedNotificationAdditionalChannel(
@@ -410,8 +432,9 @@ DisassociateManagedNotificationAdditionalChannelOutcome NotificationsClient::Dis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelArn());
   };
 
-  return DisassociateManagedNotificationAdditionalChannelOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DisassociateManagedNotificationAdditionalChannelOutcome(result.GetResultWithOwnership())
+                            : DisassociateManagedNotificationAdditionalChannelOutcome(std::move(result.GetError()));
 }
 
 DisassociateOrganizationalUnitOutcome NotificationsClient::DisassociateOrganizationalUnit(
@@ -428,7 +451,9 @@ DisassociateOrganizationalUnitOutcome NotificationsClient::DisassociateOrganizat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOrganizationalUnitId());
   };
 
-  return DisassociateOrganizationalUnitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateOrganizationalUnitOutcome(result.GetResultWithOwnership())
+                            : DisassociateOrganizationalUnitOutcome(std::move(result.GetError()));
 }
 
 EnableNotificationsAccessForOrganizationOutcome NotificationsClient::EnableNotificationsAccessForOrganization(
@@ -438,7 +463,9 @@ EnableNotificationsAccessForOrganizationOutcome NotificationsClient::EnableNotif
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/access");
   };
 
-  return EnableNotificationsAccessForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableNotificationsAccessForOrganizationOutcome(result.GetResultWithOwnership())
+                            : EnableNotificationsAccessForOrganizationOutcome(std::move(result.GetError()));
 }
 
 GetEventRuleOutcome NotificationsClient::GetEventRule(const GetEventRuleRequest& request) const {
@@ -454,7 +481,8 @@ GetEventRuleOutcome NotificationsClient::GetEventRule(const GetEventRuleRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetEventRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventRuleOutcome(result.GetResultWithOwnership()) : GetEventRuleOutcome(std::move(result.GetError()));
 }
 
 GetManagedNotificationChildEventOutcome NotificationsClient::GetManagedNotificationChildEvent(
@@ -471,7 +499,9 @@ GetManagedNotificationChildEventOutcome NotificationsClient::GetManagedNotificat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetManagedNotificationChildEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetManagedNotificationChildEventOutcome(result.GetResultWithOwnership())
+                            : GetManagedNotificationChildEventOutcome(std::move(result.GetError()));
 }
 
 GetManagedNotificationConfigurationOutcome NotificationsClient::GetManagedNotificationConfiguration(
@@ -488,7 +518,9 @@ GetManagedNotificationConfigurationOutcome NotificationsClient::GetManagedNotifi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetManagedNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetManagedNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetManagedNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetManagedNotificationEventOutcome NotificationsClient::GetManagedNotificationEvent(
@@ -505,7 +537,9 @@ GetManagedNotificationEventOutcome NotificationsClient::GetManagedNotificationEv
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetManagedNotificationEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetManagedNotificationEventOutcome(result.GetResultWithOwnership())
+                            : GetManagedNotificationEventOutcome(std::move(result.GetError()));
 }
 
 GetNotificationConfigurationOutcome NotificationsClient::GetNotificationConfiguration(
@@ -522,7 +556,9 @@ GetNotificationConfigurationOutcome NotificationsClient::GetNotificationConfigur
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetNotificationEventOutcome NotificationsClient::GetNotificationEvent(const GetNotificationEventRequest& request) const {
@@ -538,7 +574,9 @@ GetNotificationEventOutcome NotificationsClient::GetNotificationEvent(const GetN
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetNotificationEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNotificationEventOutcome(result.GetResultWithOwnership())
+                            : GetNotificationEventOutcome(std::move(result.GetError()));
 }
 
 GetNotificationsAccessForOrganizationOutcome NotificationsClient::GetNotificationsAccessForOrganization(
@@ -548,7 +586,9 @@ GetNotificationsAccessForOrganizationOutcome NotificationsClient::GetNotificatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/access");
   };
 
-  return GetNotificationsAccessForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNotificationsAccessForOrganizationOutcome(result.GetResultWithOwnership())
+                            : GetNotificationsAccessForOrganizationOutcome(std::move(result.GetError()));
 }
 
 ListChannelsOutcome NotificationsClient::ListChannels(const ListChannelsRequest& request) const {
@@ -563,7 +603,8 @@ ListChannelsOutcome NotificationsClient::ListChannels(const ListChannelsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels");
   };
 
-  return ListChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
 }
 
 ListEventRulesOutcome NotificationsClient::ListEventRules(const ListEventRulesRequest& request) const {
@@ -578,7 +619,8 @@ ListEventRulesOutcome NotificationsClient::ListEventRules(const ListEventRulesRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-rules");
   };
 
-  return ListEventRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEventRulesOutcome(result.GetResultWithOwnership()) : ListEventRulesOutcome(std::move(result.GetError()));
 }
 
 ListManagedNotificationChannelAssociationsOutcome NotificationsClient::ListManagedNotificationChannelAssociations(
@@ -595,7 +637,9 @@ ListManagedNotificationChannelAssociationsOutcome NotificationsClient::ListManag
     endpointResolutionOutcome.GetResult().AddPathSegments("/channels/list-managed-notification-channel-associations");
   };
 
-  return ListManagedNotificationChannelAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListManagedNotificationChannelAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListManagedNotificationChannelAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListManagedNotificationChildEventsOutcome NotificationsClient::ListManagedNotificationChildEvents(
@@ -613,7 +657,9 @@ ListManagedNotificationChildEventsOutcome NotificationsClient::ListManagedNotifi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAggregateManagedNotificationEventArn());
   };
 
-  return ListManagedNotificationChildEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListManagedNotificationChildEventsOutcome(result.GetResultWithOwnership())
+                            : ListManagedNotificationChildEventsOutcome(std::move(result.GetError()));
 }
 
 ListManagedNotificationConfigurationsOutcome NotificationsClient::ListManagedNotificationConfigurations(
@@ -623,7 +669,9 @@ ListManagedNotificationConfigurationsOutcome NotificationsClient::ListManagedNot
     endpointResolutionOutcome.GetResult().AddPathSegments("/managed-notification-configurations");
   };
 
-  return ListManagedNotificationConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListManagedNotificationConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListManagedNotificationConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListManagedNotificationEventsOutcome NotificationsClient::ListManagedNotificationEvents(
@@ -633,7 +681,9 @@ ListManagedNotificationEventsOutcome NotificationsClient::ListManagedNotificatio
     endpointResolutionOutcome.GetResult().AddPathSegments("/managed-notification-events");
   };
 
-  return ListManagedNotificationEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListManagedNotificationEventsOutcome(result.GetResultWithOwnership())
+                            : ListManagedNotificationEventsOutcome(std::move(result.GetError()));
 }
 
 ListMemberAccountsOutcome NotificationsClient::ListMemberAccounts(const ListMemberAccountsRequest& request) const {
@@ -648,7 +698,9 @@ ListMemberAccountsOutcome NotificationsClient::ListMemberAccounts(const ListMemb
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-member-accounts");
   };
 
-  return ListMemberAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMemberAccountsOutcome(result.GetResultWithOwnership())
+                            : ListMemberAccountsOutcome(std::move(result.GetError()));
 }
 
 ListNotificationConfigurationsOutcome NotificationsClient::ListNotificationConfigurations(
@@ -658,7 +710,9 @@ ListNotificationConfigurationsOutcome NotificationsClient::ListNotificationConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-configurations");
   };
 
-  return ListNotificationConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNotificationConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListNotificationConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListNotificationEventsOutcome NotificationsClient::ListNotificationEvents(const ListNotificationEventsRequest& request) const {
@@ -667,7 +721,9 @@ ListNotificationEventsOutcome NotificationsClient::ListNotificationEvents(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-events");
   };
 
-  return ListNotificationEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNotificationEventsOutcome(result.GetResultWithOwnership())
+                            : ListNotificationEventsOutcome(std::move(result.GetError()));
 }
 
 ListNotificationHubsOutcome NotificationsClient::ListNotificationHubs(const ListNotificationHubsRequest& request) const {
@@ -676,7 +732,9 @@ ListNotificationHubsOutcome NotificationsClient::ListNotificationHubs(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-hubs");
   };
 
-  return ListNotificationHubsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNotificationHubsOutcome(result.GetResultWithOwnership())
+                            : ListNotificationHubsOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationalUnitsOutcome NotificationsClient::ListOrganizationalUnits(const ListOrganizationalUnitsRequest& request) const {
@@ -691,7 +749,9 @@ ListOrganizationalUnitsOutcome NotificationsClient::ListOrganizationalUnits(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/organizational-units");
   };
 
-  return ListOrganizationalUnitsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrganizationalUnitsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationalUnitsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome NotificationsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -707,7 +767,9 @@ ListTagsForResourceOutcome NotificationsClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterNotificationHubOutcome NotificationsClient::RegisterNotificationHub(const RegisterNotificationHubRequest& request) const {
@@ -716,7 +778,9 @@ RegisterNotificationHubOutcome NotificationsClient::RegisterNotificationHub(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification-hubs");
   };
 
-  return RegisterNotificationHubOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterNotificationHubOutcome(result.GetResultWithOwnership())
+                            : RegisterNotificationHubOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome NotificationsClient::TagResource(const TagResourceRequest& request) const {
@@ -732,7 +796,8 @@ TagResourceOutcome NotificationsClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome NotificationsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -753,7 +818,8 @@ UntagResourceOutcome NotificationsClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateEventRuleOutcome NotificationsClient::UpdateEventRule(const UpdateEventRuleRequest& request) const {
@@ -769,7 +835,9 @@ UpdateEventRuleOutcome NotificationsClient::UpdateEventRule(const UpdateEventRul
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UpdateEventRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEventRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateEventRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateNotificationConfigurationOutcome NotificationsClient::UpdateNotificationConfiguration(
@@ -786,5 +854,7 @@ UpdateNotificationConfigurationOutcome NotificationsClient::UpdateNotificationCo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UpdateNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateNotificationConfigurationOutcome(std::move(result.GetError()));
 }

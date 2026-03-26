@@ -209,7 +209,9 @@ BatchGetServiceLevelObjectiveBudgetReportOutcome ApplicationSignalsClient::Batch
     endpointResolutionOutcome.GetResult().AddPathSegments("/budget-report");
   };
 
-  return BatchGetServiceLevelObjectiveBudgetReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetServiceLevelObjectiveBudgetReportOutcome(result.GetResultWithOwnership())
+                            : BatchGetServiceLevelObjectiveBudgetReportOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateExclusionWindowsOutcome ApplicationSignalsClient::BatchUpdateExclusionWindows(
@@ -219,7 +221,9 @@ BatchUpdateExclusionWindowsOutcome ApplicationSignalsClient::BatchUpdateExclusio
     endpointResolutionOutcome.GetResult().AddPathSegments("/exclusion-windows");
   };
 
-  return BatchUpdateExclusionWindowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchUpdateExclusionWindowsOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateExclusionWindowsOutcome(std::move(result.GetError()));
 }
 
 CreateServiceLevelObjectiveOutcome ApplicationSignalsClient::CreateServiceLevelObjective(
@@ -229,7 +233,9 @@ CreateServiceLevelObjectiveOutcome ApplicationSignalsClient::CreateServiceLevelO
     endpointResolutionOutcome.GetResult().AddPathSegments("/slo");
   };
 
-  return CreateServiceLevelObjectiveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceLevelObjectiveOutcome(result.GetResultWithOwnership())
+                            : CreateServiceLevelObjectiveOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupingConfigurationOutcome ApplicationSignalsClient::DeleteGroupingConfiguration(
@@ -239,7 +245,9 @@ DeleteGroupingConfigurationOutcome ApplicationSignalsClient::DeleteGroupingConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/grouping-configuration");
   };
 
-  return DeleteGroupingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGroupingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteGroupingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceLevelObjectiveOutcome ApplicationSignalsClient::DeleteServiceLevelObjective(
@@ -256,7 +264,9 @@ DeleteServiceLevelObjectiveOutcome ApplicationSignalsClient::DeleteServiceLevelO
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteServiceLevelObjectiveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteServiceLevelObjectiveOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceLevelObjectiveOutcome(std::move(result.GetError()));
 }
 
 GetServiceOutcome ApplicationSignalsClient::GetService(const GetServiceRequest& request) const {
@@ -276,7 +286,8 @@ GetServiceOutcome ApplicationSignalsClient::GetService(const GetServiceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/service");
   };
 
-  return GetServiceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceOutcome(result.GetResultWithOwnership()) : GetServiceOutcome(std::move(result.GetError()));
 }
 
 GetServiceLevelObjectiveOutcome ApplicationSignalsClient::GetServiceLevelObjective(const GetServiceLevelObjectiveRequest& request) const {
@@ -292,7 +303,9 @@ GetServiceLevelObjectiveOutcome ApplicationSignalsClient::GetServiceLevelObjecti
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetServiceLevelObjectiveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServiceLevelObjectiveOutcome(result.GetResultWithOwnership())
+                            : GetServiceLevelObjectiveOutcome(std::move(result.GetError()));
 }
 
 ListAuditFindingsOutcome ApplicationSignalsClient::ListAuditFindings(const ListAuditFindingsRequest& request) const {
@@ -312,7 +325,9 @@ ListAuditFindingsOutcome ApplicationSignalsClient::ListAuditFindings(const ListA
     endpointResolutionOutcome.GetResult().AddPathSegments("/auditFindings");
   };
 
-  return ListAuditFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAuditFindingsOutcome(result.GetResultWithOwnership())
+                            : ListAuditFindingsOutcome(std::move(result.GetError()));
 }
 
 ListEntityEventsOutcome ApplicationSignalsClient::ListEntityEvents(const ListEntityEventsRequest& request) const {
@@ -321,7 +336,9 @@ ListEntityEventsOutcome ApplicationSignalsClient::ListEntityEvents(const ListEnt
     endpointResolutionOutcome.GetResult().AddPathSegments("/events");
   };
 
-  return ListEntityEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEntityEventsOutcome(result.GetResultWithOwnership())
+                            : ListEntityEventsOutcome(std::move(result.GetError()));
 }
 
 ListGroupingAttributeDefinitionsOutcome ApplicationSignalsClient::ListGroupingAttributeDefinitions(
@@ -331,7 +348,9 @@ ListGroupingAttributeDefinitionsOutcome ApplicationSignalsClient::ListGroupingAt
     endpointResolutionOutcome.GetResult().AddPathSegments("/grouping-attribute-definitions");
   };
 
-  return ListGroupingAttributeDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupingAttributeDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListGroupingAttributeDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListServiceDependenciesOutcome ApplicationSignalsClient::ListServiceDependencies(const ListServiceDependenciesRequest& request) const {
@@ -351,7 +370,9 @@ ListServiceDependenciesOutcome ApplicationSignalsClient::ListServiceDependencies
     endpointResolutionOutcome.GetResult().AddPathSegments("/service-dependencies");
   };
 
-  return ListServiceDependenciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceDependenciesOutcome(result.GetResultWithOwnership())
+                            : ListServiceDependenciesOutcome(std::move(result.GetError()));
 }
 
 ListServiceDependentsOutcome ApplicationSignalsClient::ListServiceDependents(const ListServiceDependentsRequest& request) const {
@@ -371,7 +392,9 @@ ListServiceDependentsOutcome ApplicationSignalsClient::ListServiceDependents(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/service-dependents");
   };
 
-  return ListServiceDependentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceDependentsOutcome(result.GetResultWithOwnership())
+                            : ListServiceDependentsOutcome(std::move(result.GetError()));
 }
 
 ListServiceLevelObjectiveExclusionWindowsOutcome ApplicationSignalsClient::ListServiceLevelObjectiveExclusionWindows(
@@ -389,7 +412,9 @@ ListServiceLevelObjectiveExclusionWindowsOutcome ApplicationSignalsClient::ListS
     endpointResolutionOutcome.GetResult().AddPathSegments("/exclusion-windows");
   };
 
-  return ListServiceLevelObjectiveExclusionWindowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListServiceLevelObjectiveExclusionWindowsOutcome(result.GetResultWithOwnership())
+                            : ListServiceLevelObjectiveExclusionWindowsOutcome(std::move(result.GetError()));
 }
 
 ListServiceLevelObjectivesOutcome ApplicationSignalsClient::ListServiceLevelObjectives(
@@ -399,7 +424,9 @@ ListServiceLevelObjectivesOutcome ApplicationSignalsClient::ListServiceLevelObje
     endpointResolutionOutcome.GetResult().AddPathSegments("/slos");
   };
 
-  return ListServiceLevelObjectivesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceLevelObjectivesOutcome(result.GetResultWithOwnership())
+                            : ListServiceLevelObjectivesOutcome(std::move(result.GetError()));
 }
 
 ListServiceOperationsOutcome ApplicationSignalsClient::ListServiceOperations(const ListServiceOperationsRequest& request) const {
@@ -419,7 +446,9 @@ ListServiceOperationsOutcome ApplicationSignalsClient::ListServiceOperations(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/service-operations");
   };
 
-  return ListServiceOperationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceOperationsOutcome(result.GetResultWithOwnership())
+                            : ListServiceOperationsOutcome(std::move(result.GetError()));
 }
 
 ListServiceStatesOutcome ApplicationSignalsClient::ListServiceStates(const ListServiceStatesRequest& request) const {
@@ -428,7 +457,9 @@ ListServiceStatesOutcome ApplicationSignalsClient::ListServiceStates(const ListS
     endpointResolutionOutcome.GetResult().AddPathSegments("/service/states");
   };
 
-  return ListServiceStatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceStatesOutcome(result.GetResultWithOwnership())
+                            : ListServiceStatesOutcome(std::move(result.GetError()));
 }
 
 ListServicesOutcome ApplicationSignalsClient::ListServices(const ListServicesRequest& request) const {
@@ -448,7 +479,8 @@ ListServicesOutcome ApplicationSignalsClient::ListServices(const ListServicesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/services");
   };
 
-  return ListServicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListServicesOutcome(result.GetResultWithOwnership()) : ListServicesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ApplicationSignalsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -463,7 +495,9 @@ ListTagsForResourceOutcome ApplicationSignalsClient::ListTagsForResource(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutGroupingConfigurationOutcome ApplicationSignalsClient::PutGroupingConfiguration(const PutGroupingConfigurationRequest& request) const {
@@ -472,7 +506,9 @@ PutGroupingConfigurationOutcome ApplicationSignalsClient::PutGroupingConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegments("/grouping-configuration");
   };
 
-  return PutGroupingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutGroupingConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutGroupingConfigurationOutcome(std::move(result.GetError()));
 }
 
 StartDiscoveryOutcome ApplicationSignalsClient::StartDiscovery(const StartDiscoveryRequest& request) const {
@@ -481,7 +517,8 @@ StartDiscoveryOutcome ApplicationSignalsClient::StartDiscovery(const StartDiscov
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-discovery");
   };
 
-  return StartDiscoveryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDiscoveryOutcome(result.GetResultWithOwnership()) : StartDiscoveryOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ApplicationSignalsClient::TagResource(const TagResourceRequest& request) const {
@@ -490,7 +527,8 @@ TagResourceOutcome ApplicationSignalsClient::TagResource(const TagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/tag-resource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ApplicationSignalsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -499,7 +537,8 @@ UntagResourceOutcome ApplicationSignalsClient::UntagResource(const UntagResource
     endpointResolutionOutcome.GetResult().AddPathSegments("/untag-resource");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceLevelObjectiveOutcome ApplicationSignalsClient::UpdateServiceLevelObjective(
@@ -516,5 +555,7 @@ UpdateServiceLevelObjectiveOutcome ApplicationSignalsClient::UpdateServiceLevelO
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateServiceLevelObjectiveOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateServiceLevelObjectiveOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceLevelObjectiveOutcome(std::move(result.GetError()));
 }

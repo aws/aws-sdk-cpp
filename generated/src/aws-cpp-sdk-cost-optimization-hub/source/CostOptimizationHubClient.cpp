@@ -185,34 +185,49 @@ CostOptimizationHubClient::InvokeOperationOutcome CostOptimizationHubClient::Inv
 }
 
 GetPreferencesOutcome CostOptimizationHubClient::GetPreferences(const GetPreferencesRequest& request) const {
-  return GetPreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPreferencesOutcome(result.GetResultWithOwnership()) : GetPreferencesOutcome(std::move(result.GetError()));
 }
 
 GetRecommendationOutcome CostOptimizationHubClient::GetRecommendation(const GetRecommendationRequest& request) const {
-  return GetRecommendationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetRecommendationOutcome(std::move(result.GetError()));
 }
 
 ListEfficiencyMetricsOutcome CostOptimizationHubClient::ListEfficiencyMetrics(const ListEfficiencyMetricsRequest& request) const {
-  return ListEfficiencyMetricsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEfficiencyMetricsOutcome(result.GetResultWithOwnership())
+                            : ListEfficiencyMetricsOutcome(std::move(result.GetError()));
 }
 
 ListEnrollmentStatusesOutcome CostOptimizationHubClient::ListEnrollmentStatuses(const ListEnrollmentStatusesRequest& request) const {
-  return ListEnrollmentStatusesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEnrollmentStatusesOutcome(result.GetResultWithOwnership())
+                            : ListEnrollmentStatusesOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationSummariesOutcome CostOptimizationHubClient::ListRecommendationSummaries(
     const ListRecommendationSummariesRequest& request) const {
-  return ListRecommendationSummariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecommendationSummariesOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationSummariesOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationsOutcome CostOptimizationHubClient::ListRecommendations(const ListRecommendationsRequest& request) const {
-  return ListRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationsOutcome(std::move(result.GetError()));
 }
 
 UpdateEnrollmentStatusOutcome CostOptimizationHubClient::UpdateEnrollmentStatus(const UpdateEnrollmentStatusRequest& request) const {
-  return UpdateEnrollmentStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEnrollmentStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateEnrollmentStatusOutcome(std::move(result.GetError()));
 }
 
 UpdatePreferencesOutcome CostOptimizationHubClient::UpdatePreferences(const UpdatePreferencesRequest& request) const {
-  return UpdatePreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePreferencesOutcome(result.GetResultWithOwnership())
+                            : UpdatePreferencesOutcome(std::move(result.GetError()));
 }

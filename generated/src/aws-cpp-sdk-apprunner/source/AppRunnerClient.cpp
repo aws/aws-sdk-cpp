@@ -209,160 +209,225 @@ AppRunnerClient::InvokeOperationOutcome AppRunnerClient::InvokeServiceOperation(
 }
 
 AssociateCustomDomainOutcome AppRunnerClient::AssociateCustomDomain(const AssociateCustomDomainRequest& request) const {
-  return AssociateCustomDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateCustomDomainOutcome(result.GetResultWithOwnership())
+                            : AssociateCustomDomainOutcome(std::move(result.GetError()));
 }
 
 CreateAutoScalingConfigurationOutcome AppRunnerClient::CreateAutoScalingConfiguration(
     const CreateAutoScalingConfigurationRequest& request) const {
-  return CreateAutoScalingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAutoScalingConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateAutoScalingConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateConnectionOutcome AppRunnerClient::CreateConnection(const CreateConnectionRequest& request) const {
-  return CreateConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateConnectionOutcome(std::move(result.GetError()));
 }
 
 CreateObservabilityConfigurationOutcome AppRunnerClient::CreateObservabilityConfiguration(
     const CreateObservabilityConfigurationRequest& request) const {
-  return CreateObservabilityConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateObservabilityConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateObservabilityConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateServiceOutcome AppRunnerClient::CreateService(const CreateServiceRequest& request) const {
-  return CreateServiceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServiceOutcome(result.GetResultWithOwnership()) : CreateServiceOutcome(std::move(result.GetError()));
 }
 
 CreateVpcConnectorOutcome AppRunnerClient::CreateVpcConnector(const CreateVpcConnectorRequest& request) const {
-  return CreateVpcConnectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVpcConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateVpcConnectorOutcome(std::move(result.GetError()));
 }
 
 CreateVpcIngressConnectionOutcome AppRunnerClient::CreateVpcIngressConnection(const CreateVpcIngressConnectionRequest& request) const {
-  return CreateVpcIngressConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVpcIngressConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateVpcIngressConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteAutoScalingConfigurationOutcome AppRunnerClient::DeleteAutoScalingConfiguration(
     const DeleteAutoScalingConfigurationRequest& request) const {
-  return DeleteAutoScalingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAutoScalingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteAutoScalingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectionOutcome AppRunnerClient::DeleteConnection(const DeleteConnectionRequest& request) const {
-  return DeleteConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteObservabilityConfigurationOutcome AppRunnerClient::DeleteObservabilityConfiguration(
     const DeleteObservabilityConfigurationRequest& request) const {
-  return DeleteObservabilityConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteObservabilityConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteObservabilityConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceOutcome AppRunnerClient::DeleteService(const DeleteServiceRequest& request) const {
-  return DeleteServiceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServiceOutcome(result.GetResultWithOwnership()) : DeleteServiceOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcConnectorOutcome AppRunnerClient::DeleteVpcConnector(const DeleteVpcConnectorRequest& request) const {
-  return DeleteVpcConnectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpcConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcIngressConnectionOutcome AppRunnerClient::DeleteVpcIngressConnection(const DeleteVpcIngressConnectionRequest& request) const {
-  return DeleteVpcIngressConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpcIngressConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcIngressConnectionOutcome(std::move(result.GetError()));
 }
 
 DescribeAutoScalingConfigurationOutcome AppRunnerClient::DescribeAutoScalingConfiguration(
     const DescribeAutoScalingConfigurationRequest& request) const {
-  return DescribeAutoScalingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAutoScalingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeAutoScalingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomDomainsOutcome AppRunnerClient::DescribeCustomDomains(const DescribeCustomDomainsRequest& request) const {
-  return DescribeCustomDomainsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCustomDomainsOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomDomainsOutcome(std::move(result.GetError()));
 }
 
 DescribeObservabilityConfigurationOutcome AppRunnerClient::DescribeObservabilityConfiguration(
     const DescribeObservabilityConfigurationRequest& request) const {
-  return DescribeObservabilityConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeObservabilityConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeObservabilityConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeServiceOutcome AppRunnerClient::DescribeService(const DescribeServiceRequest& request) const {
-  return DescribeServiceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServiceOutcome(result.GetResultWithOwnership())
+                            : DescribeServiceOutcome(std::move(result.GetError()));
 }
 
 DescribeVpcConnectorOutcome AppRunnerClient::DescribeVpcConnector(const DescribeVpcConnectorRequest& request) const {
-  return DescribeVpcConnectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeVpcConnectorOutcome(result.GetResultWithOwnership())
+                            : DescribeVpcConnectorOutcome(std::move(result.GetError()));
 }
 
 DescribeVpcIngressConnectionOutcome AppRunnerClient::DescribeVpcIngressConnection(
     const DescribeVpcIngressConnectionRequest& request) const {
-  return DescribeVpcIngressConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeVpcIngressConnectionOutcome(result.GetResultWithOwnership())
+                            : DescribeVpcIngressConnectionOutcome(std::move(result.GetError()));
 }
 
 DisassociateCustomDomainOutcome AppRunnerClient::DisassociateCustomDomain(const DisassociateCustomDomainRequest& request) const {
-  return DisassociateCustomDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateCustomDomainOutcome(result.GetResultWithOwnership())
+                            : DisassociateCustomDomainOutcome(std::move(result.GetError()));
 }
 
 ListAutoScalingConfigurationsOutcome AppRunnerClient::ListAutoScalingConfigurations(
     const ListAutoScalingConfigurationsRequest& request) const {
-  return ListAutoScalingConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAutoScalingConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListAutoScalingConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListConnectionsOutcome AppRunnerClient::ListConnections(const ListConnectionsRequest& request) const {
-  return ListConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectionsOutcome(result.GetResultWithOwnership())
+                            : ListConnectionsOutcome(std::move(result.GetError()));
 }
 
 ListObservabilityConfigurationsOutcome AppRunnerClient::ListObservabilityConfigurations(
     const ListObservabilityConfigurationsRequest& request) const {
-  return ListObservabilityConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListObservabilityConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListObservabilityConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListOperationsOutcome AppRunnerClient::ListOperations(const ListOperationsRequest& request) const {
-  return ListOperationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOperationsOutcome(result.GetResultWithOwnership()) : ListOperationsOutcome(std::move(result.GetError()));
 }
 
 ListServicesOutcome AppRunnerClient::ListServices(const ListServicesRequest& request) const {
-  return ListServicesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServicesOutcome(result.GetResultWithOwnership()) : ListServicesOutcome(std::move(result.GetError()));
 }
 
 ListServicesForAutoScalingConfigurationOutcome AppRunnerClient::ListServicesForAutoScalingConfiguration(
     const ListServicesForAutoScalingConfigurationRequest& request) const {
-  return ListServicesForAutoScalingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServicesForAutoScalingConfigurationOutcome(result.GetResultWithOwnership())
+                            : ListServicesForAutoScalingConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome AppRunnerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVpcConnectorsOutcome AppRunnerClient::ListVpcConnectors(const ListVpcConnectorsRequest& request) const {
-  return ListVpcConnectorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVpcConnectorsOutcome(result.GetResultWithOwnership())
+                            : ListVpcConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListVpcIngressConnectionsOutcome AppRunnerClient::ListVpcIngressConnections(const ListVpcIngressConnectionsRequest& request) const {
-  return ListVpcIngressConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVpcIngressConnectionsOutcome(result.GetResultWithOwnership())
+                            : ListVpcIngressConnectionsOutcome(std::move(result.GetError()));
 }
 
 PauseServiceOutcome AppRunnerClient::PauseService(const PauseServiceRequest& request) const {
-  return PauseServiceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PauseServiceOutcome(result.GetResultWithOwnership()) : PauseServiceOutcome(std::move(result.GetError()));
 }
 
 ResumeServiceOutcome AppRunnerClient::ResumeService(const ResumeServiceRequest& request) const {
-  return ResumeServiceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResumeServiceOutcome(result.GetResultWithOwnership()) : ResumeServiceOutcome(std::move(result.GetError()));
 }
 
 StartDeploymentOutcome AppRunnerClient::StartDeployment(const StartDeploymentRequest& request) const {
-  return StartDeploymentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDeploymentOutcome(result.GetResultWithOwnership())
+                            : StartDeploymentOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome AppRunnerClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome AppRunnerClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDefaultAutoScalingConfigurationOutcome AppRunnerClient::UpdateDefaultAutoScalingConfiguration(
     const UpdateDefaultAutoScalingConfigurationRequest& request) const {
-  return UpdateDefaultAutoScalingConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDefaultAutoScalingConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateDefaultAutoScalingConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceOutcome AppRunnerClient::UpdateService(const UpdateServiceRequest& request) const {
-  return UpdateServiceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServiceOutcome(result.GetResultWithOwnership()) : UpdateServiceOutcome(std::move(result.GetError()));
 }
 
 UpdateVpcIngressConnectionOutcome AppRunnerClient::UpdateVpcIngressConnection(const UpdateVpcIngressConnectionRequest& request) const {
-  return UpdateVpcIngressConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVpcIngressConnectionOutcome(result.GetResultWithOwnership())
+                            : UpdateVpcIngressConnectionOutcome(std::move(result.GetError()));
 }

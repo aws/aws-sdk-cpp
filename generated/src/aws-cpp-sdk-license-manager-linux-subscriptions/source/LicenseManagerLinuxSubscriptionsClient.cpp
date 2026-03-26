@@ -202,7 +202,9 @@ DeregisterSubscriptionProviderOutcome LicenseManagerLinuxSubscriptionsClient::De
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription/DeregisterSubscriptionProvider");
   };
 
-  return DeregisterSubscriptionProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterSubscriptionProviderOutcome(result.GetResultWithOwnership())
+                            : DeregisterSubscriptionProviderOutcome(std::move(result.GetError()));
 }
 
 GetRegisteredSubscriptionProviderOutcome LicenseManagerLinuxSubscriptionsClient::GetRegisteredSubscriptionProvider(
@@ -212,7 +214,9 @@ GetRegisteredSubscriptionProviderOutcome LicenseManagerLinuxSubscriptionsClient:
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription/GetRegisteredSubscriptionProvider");
   };
 
-  return GetRegisteredSubscriptionProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRegisteredSubscriptionProviderOutcome(result.GetResultWithOwnership())
+                            : GetRegisteredSubscriptionProviderOutcome(std::move(result.GetError()));
 }
 
 GetServiceSettingsOutcome LicenseManagerLinuxSubscriptionsClient::GetServiceSettings(const GetServiceSettingsRequest& request) const {
@@ -221,7 +225,9 @@ GetServiceSettingsOutcome LicenseManagerLinuxSubscriptionsClient::GetServiceSett
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription/GetServiceSettings");
   };
 
-  return GetServiceSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceSettingsOutcome(result.GetResultWithOwnership())
+                            : GetServiceSettingsOutcome(std::move(result.GetError()));
 }
 
 ListLinuxSubscriptionInstancesOutcome LicenseManagerLinuxSubscriptionsClient::ListLinuxSubscriptionInstances(
@@ -231,7 +237,9 @@ ListLinuxSubscriptionInstancesOutcome LicenseManagerLinuxSubscriptionsClient::Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription/ListLinuxSubscriptionInstances");
   };
 
-  return ListLinuxSubscriptionInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLinuxSubscriptionInstancesOutcome(result.GetResultWithOwnership())
+                            : ListLinuxSubscriptionInstancesOutcome(std::move(result.GetError()));
 }
 
 ListLinuxSubscriptionsOutcome LicenseManagerLinuxSubscriptionsClient::ListLinuxSubscriptions(
@@ -241,7 +249,9 @@ ListLinuxSubscriptionsOutcome LicenseManagerLinuxSubscriptionsClient::ListLinuxS
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription/ListLinuxSubscriptions");
   };
 
-  return ListLinuxSubscriptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLinuxSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListLinuxSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 ListRegisteredSubscriptionProvidersOutcome LicenseManagerLinuxSubscriptionsClient::ListRegisteredSubscriptionProviders(
@@ -251,7 +261,9 @@ ListRegisteredSubscriptionProvidersOutcome LicenseManagerLinuxSubscriptionsClien
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription/ListRegisteredSubscriptionProviders");
   };
 
-  return ListRegisteredSubscriptionProvidersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRegisteredSubscriptionProvidersOutcome(result.GetResultWithOwnership())
+                            : ListRegisteredSubscriptionProvidersOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome LicenseManagerLinuxSubscriptionsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -267,7 +279,9 @@ ListTagsForResourceOutcome LicenseManagerLinuxSubscriptionsClient::ListTagsForRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterSubscriptionProviderOutcome LicenseManagerLinuxSubscriptionsClient::RegisterSubscriptionProvider(
@@ -277,7 +291,9 @@ RegisterSubscriptionProviderOutcome LicenseManagerLinuxSubscriptionsClient::Regi
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription/RegisterSubscriptionProvider");
   };
 
-  return RegisterSubscriptionProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterSubscriptionProviderOutcome(result.GetResultWithOwnership())
+                            : RegisterSubscriptionProviderOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome LicenseManagerLinuxSubscriptionsClient::TagResource(const TagResourceRequest& request) const {
@@ -293,7 +309,8 @@ TagResourceOutcome LicenseManagerLinuxSubscriptionsClient::TagResource(const Tag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome LicenseManagerLinuxSubscriptionsClient::UntagResource(const UntagResourceRequest& request) const {
@@ -314,7 +331,8 @@ UntagResourceOutcome LicenseManagerLinuxSubscriptionsClient::UntagResource(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceSettingsOutcome LicenseManagerLinuxSubscriptionsClient::UpdateServiceSettings(
@@ -324,5 +342,7 @@ UpdateServiceSettingsOutcome LicenseManagerLinuxSubscriptionsClient::UpdateServi
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscription/UpdateServiceSettings");
   };
 
-  return UpdateServiceSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServiceSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceSettingsOutcome(std::move(result.GetError()));
 }

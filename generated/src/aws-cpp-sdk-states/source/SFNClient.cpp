@@ -207,151 +207,213 @@ SFNClient::InvokeOperationOutcome SFNClient::InvokeServiceOperation(const Amazon
 }
 
 CreateActivityOutcome SFNClient::CreateActivity(const CreateActivityRequest& request) const {
-  return CreateActivityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateActivityOutcome(result.GetResultWithOwnership()) : CreateActivityOutcome(std::move(result.GetError()));
 }
 
 CreateStateMachineOutcome SFNClient::CreateStateMachine(const CreateStateMachineRequest& request) const {
-  return CreateStateMachineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStateMachineOutcome(result.GetResultWithOwnership())
+                            : CreateStateMachineOutcome(std::move(result.GetError()));
 }
 
 CreateStateMachineAliasOutcome SFNClient::CreateStateMachineAlias(const CreateStateMachineAliasRequest& request) const {
-  return CreateStateMachineAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStateMachineAliasOutcome(result.GetResultWithOwnership())
+                            : CreateStateMachineAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteActivityOutcome SFNClient::DeleteActivity(const DeleteActivityRequest& request) const {
-  return DeleteActivityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteActivityOutcome(result.GetResultWithOwnership()) : DeleteActivityOutcome(std::move(result.GetError()));
 }
 
 DeleteStateMachineOutcome SFNClient::DeleteStateMachine(const DeleteStateMachineRequest& request) const {
-  return DeleteStateMachineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStateMachineOutcome(result.GetResultWithOwnership())
+                            : DeleteStateMachineOutcome(std::move(result.GetError()));
 }
 
 DeleteStateMachineAliasOutcome SFNClient::DeleteStateMachineAlias(const DeleteStateMachineAliasRequest& request) const {
-  return DeleteStateMachineAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStateMachineAliasOutcome(result.GetResultWithOwnership())
+                            : DeleteStateMachineAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteStateMachineVersionOutcome SFNClient::DeleteStateMachineVersion(const DeleteStateMachineVersionRequest& request) const {
-  return DeleteStateMachineVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStateMachineVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteStateMachineVersionOutcome(std::move(result.GetError()));
 }
 
 DescribeActivityOutcome SFNClient::DescribeActivity(const DescribeActivityRequest& request) const {
-  return DescribeActivityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeActivityOutcome(result.GetResultWithOwnership())
+                            : DescribeActivityOutcome(std::move(result.GetError()));
 }
 
 DescribeExecutionOutcome SFNClient::DescribeExecution(const DescribeExecutionRequest& request) const {
-  return DescribeExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribeExecutionOutcome(std::move(result.GetError()));
 }
 
 DescribeMapRunOutcome SFNClient::DescribeMapRun(const DescribeMapRunRequest& request) const {
-  return DescribeMapRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMapRunOutcome(result.GetResultWithOwnership()) : DescribeMapRunOutcome(std::move(result.GetError()));
 }
 
 DescribeStateMachineOutcome SFNClient::DescribeStateMachine(const DescribeStateMachineRequest& request) const {
-  return DescribeStateMachineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStateMachineOutcome(result.GetResultWithOwnership())
+                            : DescribeStateMachineOutcome(std::move(result.GetError()));
 }
 
 DescribeStateMachineAliasOutcome SFNClient::DescribeStateMachineAlias(const DescribeStateMachineAliasRequest& request) const {
-  return DescribeStateMachineAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStateMachineAliasOutcome(result.GetResultWithOwnership())
+                            : DescribeStateMachineAliasOutcome(std::move(result.GetError()));
 }
 
 DescribeStateMachineForExecutionOutcome SFNClient::DescribeStateMachineForExecution(
     const DescribeStateMachineForExecutionRequest& request) const {
-  return DescribeStateMachineForExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStateMachineForExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribeStateMachineForExecutionOutcome(std::move(result.GetError()));
 }
 
 GetActivityTaskOutcome SFNClient::GetActivityTask(const GetActivityTaskRequest& request) const {
-  return GetActivityTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetActivityTaskOutcome(result.GetResultWithOwnership())
+                            : GetActivityTaskOutcome(std::move(result.GetError()));
 }
 
 GetExecutionHistoryOutcome SFNClient::GetExecutionHistory(const GetExecutionHistoryRequest& request) const {
-  return GetExecutionHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetExecutionHistoryOutcome(result.GetResultWithOwnership())
+                            : GetExecutionHistoryOutcome(std::move(result.GetError()));
 }
 
 ListActivitiesOutcome SFNClient::ListActivities(const ListActivitiesRequest& request) const {
-  return ListActivitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListActivitiesOutcome(result.GetResultWithOwnership()) : ListActivitiesOutcome(std::move(result.GetError()));
 }
 
 ListExecutionsOutcome SFNClient::ListExecutions(const ListExecutionsRequest& request) const {
-  return ListExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExecutionsOutcome(result.GetResultWithOwnership()) : ListExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListMapRunsOutcome SFNClient::ListMapRuns(const ListMapRunsRequest& request) const {
-  return ListMapRunsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMapRunsOutcome(result.GetResultWithOwnership()) : ListMapRunsOutcome(std::move(result.GetError()));
 }
 
 ListStateMachineAliasesOutcome SFNClient::ListStateMachineAliases(const ListStateMachineAliasesRequest& request) const {
-  return ListStateMachineAliasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStateMachineAliasesOutcome(result.GetResultWithOwnership())
+                            : ListStateMachineAliasesOutcome(std::move(result.GetError()));
 }
 
 ListStateMachineVersionsOutcome SFNClient::ListStateMachineVersions(const ListStateMachineVersionsRequest& request) const {
-  return ListStateMachineVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStateMachineVersionsOutcome(result.GetResultWithOwnership())
+                            : ListStateMachineVersionsOutcome(std::move(result.GetError()));
 }
 
 ListStateMachinesOutcome SFNClient::ListStateMachines(const ListStateMachinesRequest& request) const {
-  return ListStateMachinesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStateMachinesOutcome(result.GetResultWithOwnership())
+                            : ListStateMachinesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SFNClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PublishStateMachineVersionOutcome SFNClient::PublishStateMachineVersion(const PublishStateMachineVersionRequest& request) const {
-  return PublishStateMachineVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishStateMachineVersionOutcome(result.GetResultWithOwnership())
+                            : PublishStateMachineVersionOutcome(std::move(result.GetError()));
 }
 
 RedriveExecutionOutcome SFNClient::RedriveExecution(const RedriveExecutionRequest& request) const {
-  return RedriveExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RedriveExecutionOutcome(result.GetResultWithOwnership())
+                            : RedriveExecutionOutcome(std::move(result.GetError()));
 }
 
 SendTaskFailureOutcome SFNClient::SendTaskFailure(const SendTaskFailureRequest& request) const {
-  return SendTaskFailureOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendTaskFailureOutcome(result.GetResultWithOwnership())
+                            : SendTaskFailureOutcome(std::move(result.GetError()));
 }
 
 SendTaskHeartbeatOutcome SFNClient::SendTaskHeartbeat(const SendTaskHeartbeatRequest& request) const {
-  return SendTaskHeartbeatOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendTaskHeartbeatOutcome(result.GetResultWithOwnership())
+                            : SendTaskHeartbeatOutcome(std::move(result.GetError()));
 }
 
 SendTaskSuccessOutcome SFNClient::SendTaskSuccess(const SendTaskSuccessRequest& request) const {
-  return SendTaskSuccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendTaskSuccessOutcome(result.GetResultWithOwnership())
+                            : SendTaskSuccessOutcome(std::move(result.GetError()));
 }
 
 StartExecutionOutcome SFNClient::StartExecution(const StartExecutionRequest& request) const {
-  return StartExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartExecutionOutcome(result.GetResultWithOwnership()) : StartExecutionOutcome(std::move(result.GetError()));
 }
 
 StartSyncExecutionOutcome SFNClient::StartSyncExecution(const StartSyncExecutionRequest& request) const {
-  return StartSyncExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSyncExecutionOutcome(result.GetResultWithOwnership())
+                            : StartSyncExecutionOutcome(std::move(result.GetError()));
 }
 
 StopExecutionOutcome SFNClient::StopExecution(const StopExecutionRequest& request) const {
-  return StopExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopExecutionOutcome(result.GetResultWithOwnership()) : StopExecutionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SFNClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestStateOutcome SFNClient::TestState(const TestStateRequest& request) const {
-  return TestStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestStateOutcome(result.GetResultWithOwnership()) : TestStateOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SFNClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateMapRunOutcome SFNClient::UpdateMapRun(const UpdateMapRunRequest& request) const {
-  return UpdateMapRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMapRunOutcome(result.GetResultWithOwnership()) : UpdateMapRunOutcome(std::move(result.GetError()));
 }
 
 UpdateStateMachineOutcome SFNClient::UpdateStateMachine(const UpdateStateMachineRequest& request) const {
-  return UpdateStateMachineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStateMachineOutcome(result.GetResultWithOwnership())
+                            : UpdateStateMachineOutcome(std::move(result.GetError()));
 }
 
 UpdateStateMachineAliasOutcome SFNClient::UpdateStateMachineAlias(const UpdateStateMachineAliasRequest& request) const {
-  return UpdateStateMachineAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStateMachineAliasOutcome(result.GetResultWithOwnership())
+                            : UpdateStateMachineAliasOutcome(std::move(result.GetError()));
 }
 
 ValidateStateMachineDefinitionOutcome SFNClient::ValidateStateMachineDefinition(
     const ValidateStateMachineDefinitionRequest& request) const {
-  return ValidateStateMachineDefinitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidateStateMachineDefinitionOutcome(result.GetResultWithOwnership())
+                            : ValidateStateMachineDefinitionOutcome(std::move(result.GetError()));
 }
