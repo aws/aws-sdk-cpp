@@ -9,6 +9,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/SecureMemory.h>
 namespace Aws
 {
     namespace Auth
@@ -98,6 +99,50 @@ namespace Aws
                   m_expiration(expiration),
                   m_accountId(accountId) {}
 
+            /**
+             * Destructor that securely clears sensitive credential data from memory.
+             */
+            ~AWSCredentials()
+            {
+                // Securely clear sensitive credential data
+                if (!m_secretKey.empty())
+                {
+                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_secretKey.data()), m_secretKey.size());
+                }
+                if (!m_sessionToken.empty())
+                {
+                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_sessionToken.data()), m_sessionToken.size());
+                }
+            }
+
+            /**
+             * Copy assignment operator that securely clears old credential data before assignment.
+             */
+            AWSCredentials& operator=(const AWSCredentials& other)
+            {
+                if (this != &other)
+                {
+                    // Clear old sensitive data before overwriting
+                    if (!m_secretKey.empty())
+                    {
+                        Aws::Utils::Memory::SecureClear(const_cast<char*>(m_secretKey.data()), m_secretKey.size());
+                    }
+                    if (!m_sessionToken.empty())
+                    {
+                        Aws::Utils::Memory::SecureClear(const_cast<char*>(m_sessionToken.data()), m_sessionToken.size());
+                    }
+                    
+                    // Copy all members
+                    m_accessKeyId = other.m_accessKeyId;
+                    m_secretKey = other.m_secretKey;
+                    m_sessionToken = other.m_sessionToken;
+                    m_expiration = other.m_expiration;
+                    m_accountId = other.m_accountId;
+                    m_context = other.m_context;
+                }
+                return *this;
+            }
+
             bool operator == (const AWSCredentials& other) const
             {
                 return m_accessKeyId  == other.m_accessKeyId
@@ -184,6 +229,11 @@ namespace Aws
              */
             inline void SetAWSSecretKey(const Aws::String& secretKey)
             {
+                // Clear old value before setting new one
+                if (!m_secretKey.empty())
+                {
+                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_secretKey.data()), m_secretKey.size());
+                }
                 m_secretKey = secretKey;
             }
 
@@ -192,6 +242,11 @@ namespace Aws
              */
             inline void SetSessionToken(const Aws::String& sessionToken)
             {
+                // Clear old value before setting new one
+                if (!m_sessionToken.empty())
+                {
+                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_sessionToken.data()), m_sessionToken.size());
+                }
                 m_sessionToken = sessionToken;
             }
 
@@ -217,6 +272,11 @@ namespace Aws
              */
             inline void SetAWSSecretKey(const char* secretKey)
             {
+                // Clear old value before setting new one
+                if (!m_secretKey.empty())
+                {
+                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_secretKey.data()), m_secretKey.size());
+                }
                 m_secretKey = secretKey;
             }
 
@@ -225,6 +285,11 @@ namespace Aws
              */
             inline void SetSessionToken(const char* sessionToken)
             {
+                // Clear old value before setting new one
+                if (!m_sessionToken.empty())
+                {
+                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_sessionToken.data()), m_sessionToken.size());
+                }
                 m_sessionToken = sessionToken;
             }
 
