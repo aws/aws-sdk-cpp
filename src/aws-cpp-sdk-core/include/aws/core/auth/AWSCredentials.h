@@ -9,7 +9,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/SecureMemory.h>
+#include <aws/core/platform/Security.h>
 namespace Aws
 {
     namespace Auth
@@ -133,11 +133,11 @@ namespace Aws
                 // Securely clear sensitive credential data
                 if (!m_secretKey.empty())
                 {
-                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_secretKey.data()), m_secretKey.size());
+                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_secretKey[0]), m_secretKey.size());
                 }
                 if (!m_sessionToken.empty())
                 {
-                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_sessionToken.data()), m_sessionToken.size());
+                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_sessionToken[0]), m_sessionToken.size());
                 }
             }
 
@@ -151,11 +151,11 @@ namespace Aws
                     // Clear old sensitive data before overwriting
                     if (!m_secretKey.empty())
                     {
-                        Aws::Utils::Memory::SecureClear(const_cast<char*>(m_secretKey.data()), m_secretKey.size());
+                        Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_secretKey[0]), m_secretKey.size());
                     }
                     if (!m_sessionToken.empty())
                     {
-                        Aws::Utils::Memory::SecureClear(const_cast<char*>(m_sessionToken.data()), m_sessionToken.size());
+                        Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_sessionToken[0]), m_sessionToken.size());
                     }
                     
                     // Copy all members
@@ -179,11 +179,11 @@ namespace Aws
                     // Clear old sensitive data before overwriting
                     if (!m_secretKey.empty())
                     {
-                        Aws::Utils::Memory::SecureClear(const_cast<char*>(m_secretKey.data()), m_secretKey.size());
+                        Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_secretKey[0]), m_secretKey.size());
                     }
                     if (!m_sessionToken.empty())
                     {
-                        Aws::Utils::Memory::SecureClear(const_cast<char*>(m_sessionToken.data()), m_sessionToken.size());
+                        Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_sessionToken[0]), m_sessionToken.size());
                     }
                     
                     // Move all members
@@ -286,7 +286,7 @@ namespace Aws
                 // Clear old value before setting new one
                 if (!m_secretKey.empty())
                 {
-                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_secretKey.data()), m_secretKey.size());
+                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_secretKey[0]), m_secretKey.size());
                 }
                 m_secretKey = secretKey;
             }
@@ -299,7 +299,7 @@ namespace Aws
                 // Clear old value before setting new one
                 if (!m_sessionToken.empty())
                 {
-                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_sessionToken.data()), m_sessionToken.size());
+                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_sessionToken[0]), m_sessionToken.size());
                 }
                 m_sessionToken = sessionToken;
             }
@@ -329,7 +329,7 @@ namespace Aws
                 // Clear old value before setting new one
                 if (!m_secretKey.empty())
                 {
-                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_secretKey.data()), m_secretKey.size());
+                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_secretKey[0]), m_secretKey.size());
                 }
                 m_secretKey = secretKey;
             }
@@ -342,7 +342,7 @@ namespace Aws
                 // Clear old value before setting new one
                 if (!m_sessionToken.empty())
                 {
-                    Aws::Utils::Memory::SecureClear(const_cast<char*>(m_sessionToken.data()), m_sessionToken.size());
+                    Aws::Security::SecureMemClear(reinterpret_cast<unsigned char*>(&m_sessionToken[0]), m_sessionToken.size());
                 }
                 m_sessionToken = sessionToken;
             }
