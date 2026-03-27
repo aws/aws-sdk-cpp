@@ -227,186 +227,272 @@ OpenSearchServerlessClient::InvokeOperationOutcome OpenSearchServerlessClient::I
 }
 
 BatchGetCollectionOutcome OpenSearchServerlessClient::BatchGetCollection(const BatchGetCollectionRequest& request) const {
-  return BatchGetCollectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCollectionOutcome(result.GetResultWithOwnership())
+                            : BatchGetCollectionOutcome(std::move(result.GetError()));
 }
 
 BatchGetCollectionGroupOutcome OpenSearchServerlessClient::BatchGetCollectionGroup(const BatchGetCollectionGroupRequest& request) const {
-  return BatchGetCollectionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCollectionGroupOutcome(result.GetResultWithOwnership())
+                            : BatchGetCollectionGroupOutcome(std::move(result.GetError()));
 }
 
 BatchGetEffectiveLifecyclePolicyOutcome OpenSearchServerlessClient::BatchGetEffectiveLifecyclePolicy(
     const BatchGetEffectiveLifecyclePolicyRequest& request) const {
-  return BatchGetEffectiveLifecyclePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetEffectiveLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : BatchGetEffectiveLifecyclePolicyOutcome(std::move(result.GetError()));
 }
 
 BatchGetLifecyclePolicyOutcome OpenSearchServerlessClient::BatchGetLifecyclePolicy(const BatchGetLifecyclePolicyRequest& request) const {
-  return BatchGetLifecyclePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : BatchGetLifecyclePolicyOutcome(std::move(result.GetError()));
 }
 
 BatchGetVpcEndpointOutcome OpenSearchServerlessClient::BatchGetVpcEndpoint(const BatchGetVpcEndpointRequest& request) const {
-  return BatchGetVpcEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetVpcEndpointOutcome(result.GetResultWithOwnership())
+                            : BatchGetVpcEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateAccessPolicyOutcome OpenSearchServerlessClient::CreateAccessPolicy(const CreateAccessPolicyRequest& request) const {
-  return CreateAccessPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 CreateCollectionOutcome OpenSearchServerlessClient::CreateCollection(const CreateCollectionRequest& request) const {
-  return CreateCollectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCollectionOutcome(result.GetResultWithOwnership())
+                            : CreateCollectionOutcome(std::move(result.GetError()));
 }
 
 CreateCollectionGroupOutcome OpenSearchServerlessClient::CreateCollectionGroup(const CreateCollectionGroupRequest& request) const {
-  return CreateCollectionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCollectionGroupOutcome(result.GetResultWithOwnership())
+                            : CreateCollectionGroupOutcome(std::move(result.GetError()));
 }
 
 CreateIndexOutcome OpenSearchServerlessClient::CreateIndex(const CreateIndexRequest& request) const {
-  return CreateIndexOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIndexOutcome(result.GetResultWithOwnership()) : CreateIndexOutcome(std::move(result.GetError()));
 }
 
 CreateLifecyclePolicyOutcome OpenSearchServerlessClient::CreateLifecyclePolicy(const CreateLifecyclePolicyRequest& request) const {
-  return CreateLifecyclePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : CreateLifecyclePolicyOutcome(std::move(result.GetError()));
 }
 
 CreateSecurityConfigOutcome OpenSearchServerlessClient::CreateSecurityConfig(const CreateSecurityConfigRequest& request) const {
-  return CreateSecurityConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSecurityConfigOutcome(result.GetResultWithOwnership())
+                            : CreateSecurityConfigOutcome(std::move(result.GetError()));
 }
 
 CreateSecurityPolicyOutcome OpenSearchServerlessClient::CreateSecurityPolicy(const CreateSecurityPolicyRequest& request) const {
-  return CreateSecurityPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSecurityPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateSecurityPolicyOutcome(std::move(result.GetError()));
 }
 
 CreateVpcEndpointOutcome OpenSearchServerlessClient::CreateVpcEndpoint(const CreateVpcEndpointRequest& request) const {
-  return CreateVpcEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVpcEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateVpcEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessPolicyOutcome OpenSearchServerlessClient::DeleteAccessPolicy(const DeleteAccessPolicyRequest& request) const {
-  return DeleteAccessPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteCollectionOutcome OpenSearchServerlessClient::DeleteCollection(const DeleteCollectionRequest& request) const {
-  return DeleteCollectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCollectionOutcome(result.GetResultWithOwnership())
+                            : DeleteCollectionOutcome(std::move(result.GetError()));
 }
 
 DeleteCollectionGroupOutcome OpenSearchServerlessClient::DeleteCollectionGroup(const DeleteCollectionGroupRequest& request) const {
-  return DeleteCollectionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCollectionGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteCollectionGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteIndexOutcome OpenSearchServerlessClient::DeleteIndex(const DeleteIndexRequest& request) const {
-  return DeleteIndexOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIndexOutcome(result.GetResultWithOwnership()) : DeleteIndexOutcome(std::move(result.GetError()));
 }
 
 DeleteLifecyclePolicyOutcome OpenSearchServerlessClient::DeleteLifecyclePolicy(const DeleteLifecyclePolicyRequest& request) const {
-  return DeleteLifecyclePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteLifecyclePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteSecurityConfigOutcome OpenSearchServerlessClient::DeleteSecurityConfig(const DeleteSecurityConfigRequest& request) const {
-  return DeleteSecurityConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSecurityConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteSecurityConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteSecurityPolicyOutcome OpenSearchServerlessClient::DeleteSecurityPolicy(const DeleteSecurityPolicyRequest& request) const {
-  return DeleteSecurityPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSecurityPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteSecurityPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcEndpointOutcome OpenSearchServerlessClient::DeleteVpcEndpoint(const DeleteVpcEndpointRequest& request) const {
-  return DeleteVpcEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVpcEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcEndpointOutcome(std::move(result.GetError()));
 }
 
 GetAccessPolicyOutcome OpenSearchServerlessClient::GetAccessPolicy(const GetAccessPolicyRequest& request) const {
-  return GetAccessPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : GetAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 GetAccountSettingsOutcome OpenSearchServerlessClient::GetAccountSettings(const GetAccountSettingsRequest& request) const {
-  return GetAccountSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : GetAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 GetIndexOutcome OpenSearchServerlessClient::GetIndex(const GetIndexRequest& request) const {
-  return GetIndexOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIndexOutcome(result.GetResultWithOwnership()) : GetIndexOutcome(std::move(result.GetError()));
 }
 
 GetPoliciesStatsOutcome OpenSearchServerlessClient::GetPoliciesStats(const GetPoliciesStatsRequest& request) const {
-  return GetPoliciesStatsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPoliciesStatsOutcome(result.GetResultWithOwnership())
+                            : GetPoliciesStatsOutcome(std::move(result.GetError()));
 }
 
 GetSecurityConfigOutcome OpenSearchServerlessClient::GetSecurityConfig(const GetSecurityConfigRequest& request) const {
-  return GetSecurityConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSecurityConfigOutcome(result.GetResultWithOwnership())
+                            : GetSecurityConfigOutcome(std::move(result.GetError()));
 }
 
 GetSecurityPolicyOutcome OpenSearchServerlessClient::GetSecurityPolicy(const GetSecurityPolicyRequest& request) const {
-  return GetSecurityPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSecurityPolicyOutcome(result.GetResultWithOwnership())
+                            : GetSecurityPolicyOutcome(std::move(result.GetError()));
 }
 
 ListAccessPoliciesOutcome OpenSearchServerlessClient::ListAccessPolicies(const ListAccessPoliciesRequest& request) const {
-  return ListAccessPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccessPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListAccessPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListCollectionGroupsOutcome OpenSearchServerlessClient::ListCollectionGroups(const ListCollectionGroupsRequest& request) const {
-  return ListCollectionGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCollectionGroupsOutcome(result.GetResultWithOwnership())
+                            : ListCollectionGroupsOutcome(std::move(result.GetError()));
 }
 
 ListCollectionsOutcome OpenSearchServerlessClient::ListCollections(const ListCollectionsRequest& request) const {
-  return ListCollectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCollectionsOutcome(result.GetResultWithOwnership())
+                            : ListCollectionsOutcome(std::move(result.GetError()));
 }
 
 ListLifecyclePoliciesOutcome OpenSearchServerlessClient::ListLifecyclePolicies(const ListLifecyclePoliciesRequest& request) const {
-  return ListLifecyclePoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLifecyclePoliciesOutcome(result.GetResultWithOwnership())
+                            : ListLifecyclePoliciesOutcome(std::move(result.GetError()));
 }
 
 ListSecurityConfigsOutcome OpenSearchServerlessClient::ListSecurityConfigs(const ListSecurityConfigsRequest& request) const {
-  return ListSecurityConfigsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSecurityConfigsOutcome(result.GetResultWithOwnership())
+                            : ListSecurityConfigsOutcome(std::move(result.GetError()));
 }
 
 ListSecurityPoliciesOutcome OpenSearchServerlessClient::ListSecurityPolicies(const ListSecurityPoliciesRequest& request) const {
-  return ListSecurityPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSecurityPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListSecurityPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome OpenSearchServerlessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVpcEndpointsOutcome OpenSearchServerlessClient::ListVpcEndpoints(const ListVpcEndpointsRequest& request) const {
-  return ListVpcEndpointsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVpcEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListVpcEndpointsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome OpenSearchServerlessClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome OpenSearchServerlessClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccessPolicyOutcome OpenSearchServerlessClient::UpdateAccessPolicy(const UpdateAccessPolicyRequest& request) const {
-  return UpdateAccessPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountSettingsOutcome OpenSearchServerlessClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const {
-  return UpdateAccountSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateCollectionOutcome OpenSearchServerlessClient::UpdateCollection(const UpdateCollectionRequest& request) const {
-  return UpdateCollectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCollectionOutcome(result.GetResultWithOwnership())
+                            : UpdateCollectionOutcome(std::move(result.GetError()));
 }
 
 UpdateCollectionGroupOutcome OpenSearchServerlessClient::UpdateCollectionGroup(const UpdateCollectionGroupRequest& request) const {
-  return UpdateCollectionGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCollectionGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateCollectionGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateIndexOutcome OpenSearchServerlessClient::UpdateIndex(const UpdateIndexRequest& request) const {
-  return UpdateIndexOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIndexOutcome(result.GetResultWithOwnership()) : UpdateIndexOutcome(std::move(result.GetError()));
 }
 
 UpdateLifecyclePolicyOutcome OpenSearchServerlessClient::UpdateLifecyclePolicy(const UpdateLifecyclePolicyRequest& request) const {
-  return UpdateLifecyclePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateLifecyclePolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateSecurityConfigOutcome OpenSearchServerlessClient::UpdateSecurityConfig(const UpdateSecurityConfigRequest& request) const {
-  return UpdateSecurityConfigOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSecurityConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateSecurityConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateSecurityPolicyOutcome OpenSearchServerlessClient::UpdateSecurityPolicy(const UpdateSecurityPolicyRequest& request) const {
-  return UpdateSecurityPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSecurityPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateSecurityPolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateVpcEndpointOutcome OpenSearchServerlessClient::UpdateVpcEndpoint(const UpdateVpcEndpointRequest& request) const {
-  return UpdateVpcEndpointOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateVpcEndpointOutcome(result.GetResultWithOwnership())
+                            : UpdateVpcEndpointOutcome(std::move(result.GetError()));
 }

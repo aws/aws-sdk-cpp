@@ -216,7 +216,9 @@ ActivateSubscriptionOutcome ConnectHealthClient::ActivateSubscription(const Acti
     endpointResolutionOutcome.GetResult().AddPathSegments("/activate");
   };
 
-  return ActivateSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateSubscriptionOutcome(result.GetResultWithOwnership())
+                            : ActivateSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateDomainOutcome ConnectHealthClient::CreateDomain(const CreateDomainRequest& request) const {
@@ -225,7 +227,8 @@ CreateDomainOutcome ConnectHealthClient::CreateDomain(const CreateDomainRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/domain");
   };
 
-  return CreateDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainOutcome(result.GetResultWithOwnership()) : CreateDomainOutcome(std::move(result.GetError()));
 }
 
 CreateSubscriptionOutcome ConnectHealthClient::CreateSubscription(const CreateSubscriptionRequest& request) const {
@@ -242,7 +245,9 @@ CreateSubscriptionOutcome ConnectHealthClient::CreateSubscription(const CreateSu
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
   };
 
-  return CreateSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeactivateSubscriptionOutcome ConnectHealthClient::DeactivateSubscription(const DeactivateSubscriptionRequest& request) const {
@@ -266,7 +271,9 @@ DeactivateSubscriptionOutcome ConnectHealthClient::DeactivateSubscription(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/deactivate");
   };
 
-  return DeactivateSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeactivateSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeactivateSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainOutcome ConnectHealthClient::DeleteDomain(const DeleteDomainRequest& request) const {
@@ -282,7 +289,8 @@ DeleteDomainOutcome ConnectHealthClient::DeleteDomain(const DeleteDomainRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
   };
 
-  return DeleteDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }
 
 GetDomainOutcome ConnectHealthClient::GetDomain(const GetDomainRequest& request) const {
@@ -298,7 +306,8 @@ GetDomainOutcome ConnectHealthClient::GetDomain(const GetDomainRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
   };
 
-  return GetDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainOutcome(result.GetResultWithOwnership()) : GetDomainOutcome(std::move(result.GetError()));
 }
 
 GetMedicalScribeListeningSessionOutcome ConnectHealthClient::GetMedicalScribeListeningSession(
@@ -329,7 +338,9 @@ GetMedicalScribeListeningSessionOutcome ConnectHealthClient::GetMedicalScribeLis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return GetMedicalScribeListeningSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMedicalScribeListeningSessionOutcome(result.GetResultWithOwnership())
+                            : GetMedicalScribeListeningSessionOutcome(std::move(result.GetError()));
 }
 
 GetPatientInsightsJobOutcome ConnectHealthClient::GetPatientInsightsJob(const GetPatientInsightsJobRequest& request) const {
@@ -352,7 +363,9 @@ GetPatientInsightsJobOutcome ConnectHealthClient::GetPatientInsightsJob(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetPatientInsightsJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPatientInsightsJobOutcome(result.GetResultWithOwnership())
+                            : GetPatientInsightsJobOutcome(std::move(result.GetError()));
 }
 
 GetSubscriptionOutcome ConnectHealthClient::GetSubscription(const GetSubscriptionRequest& request) const {
@@ -375,7 +388,9 @@ GetSubscriptionOutcome ConnectHealthClient::GetSubscription(const GetSubscriptio
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSubscriptionId());
   };
 
-  return GetSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSubscriptionOutcome(result.GetResultWithOwnership())
+                            : GetSubscriptionOutcome(std::move(result.GetError()));
 }
 
 ListDomainsOutcome ConnectHealthClient::ListDomains(const ListDomainsRequest& request) const {
@@ -384,7 +399,8 @@ ListDomainsOutcome ConnectHealthClient::ListDomains(const ListDomainsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/domain");
   };
 
-  return ListDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainsOutcome(result.GetResultWithOwnership()) : ListDomainsOutcome(std::move(result.GetError()));
 }
 
 ListSubscriptionsOutcome ConnectHealthClient::ListSubscriptions(const ListSubscriptionsRequest& request) const {
@@ -401,7 +417,9 @@ ListSubscriptionsOutcome ConnectHealthClient::ListSubscriptions(const ListSubscr
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
   };
 
-  return ListSubscriptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ConnectHealthClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -417,7 +435,9 @@ ListTagsForResourceOutcome ConnectHealthClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 void ConnectHealthClient::StartMedicalScribeListeningSessionAsync(
@@ -524,7 +544,9 @@ StartPatientInsightsJobOutcome ConnectHealthClient::StartPatientInsightsJob(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/patient-insights-job");
   };
 
-  return StartPatientInsightsJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartPatientInsightsJobOutcome(result.GetResultWithOwnership())
+                            : StartPatientInsightsJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ConnectHealthClient::TagResource(const TagResourceRequest& request) const {
@@ -540,7 +562,8 @@ TagResourceOutcome ConnectHealthClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ConnectHealthClient::UntagResource(const UntagResourceRequest& request) const {
@@ -561,5 +584,6 @@ UntagResourceOutcome ConnectHealthClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

@@ -285,7 +285,9 @@ AcceptAdministratorInvitationOutcome SecurityHubClient::AcceptAdministratorInvit
     endpointResolutionOutcome.GetResult().AddPathSegments("/administrator");
   };
 
-  return AcceptAdministratorInvitationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptAdministratorInvitationOutcome(result.GetResultWithOwnership())
+                            : AcceptAdministratorInvitationOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteAutomationRulesOutcome SecurityHubClient::BatchDeleteAutomationRules(const BatchDeleteAutomationRulesRequest& request) const {
@@ -294,7 +296,9 @@ BatchDeleteAutomationRulesOutcome SecurityHubClient::BatchDeleteAutomationRules(
     endpointResolutionOutcome.GetResult().AddPathSegments("/automationrules/delete");
   };
 
-  return BatchDeleteAutomationRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteAutomationRulesOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteAutomationRulesOutcome(std::move(result.GetError()));
 }
 
 BatchDisableStandardsOutcome SecurityHubClient::BatchDisableStandards(const BatchDisableStandardsRequest& request) const {
@@ -303,7 +307,9 @@ BatchDisableStandardsOutcome SecurityHubClient::BatchDisableStandards(const Batc
     endpointResolutionOutcome.GetResult().AddPathSegments("/standards/deregister");
   };
 
-  return BatchDisableStandardsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisableStandardsOutcome(result.GetResultWithOwnership())
+                            : BatchDisableStandardsOutcome(std::move(result.GetError()));
 }
 
 BatchEnableStandardsOutcome SecurityHubClient::BatchEnableStandards(const BatchEnableStandardsRequest& request) const {
@@ -312,7 +318,9 @@ BatchEnableStandardsOutcome SecurityHubClient::BatchEnableStandards(const BatchE
     endpointResolutionOutcome.GetResult().AddPathSegments("/standards/register");
   };
 
-  return BatchEnableStandardsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchEnableStandardsOutcome(result.GetResultWithOwnership())
+                            : BatchEnableStandardsOutcome(std::move(result.GetError()));
 }
 
 BatchGetAutomationRulesOutcome SecurityHubClient::BatchGetAutomationRules(const BatchGetAutomationRulesRequest& request) const {
@@ -321,7 +329,9 @@ BatchGetAutomationRulesOutcome SecurityHubClient::BatchGetAutomationRules(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/automationrules/get");
   };
 
-  return BatchGetAutomationRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetAutomationRulesOutcome(result.GetResultWithOwnership())
+                            : BatchGetAutomationRulesOutcome(std::move(result.GetError()));
 }
 
 BatchGetConfigurationPolicyAssociationsOutcome SecurityHubClient::BatchGetConfigurationPolicyAssociations(
@@ -331,7 +341,9 @@ BatchGetConfigurationPolicyAssociationsOutcome SecurityHubClient::BatchGetConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/configurationPolicyAssociation/batchget");
   };
 
-  return BatchGetConfigurationPolicyAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetConfigurationPolicyAssociationsOutcome(result.GetResultWithOwnership())
+                            : BatchGetConfigurationPolicyAssociationsOutcome(std::move(result.GetError()));
 }
 
 BatchGetSecurityControlsOutcome SecurityHubClient::BatchGetSecurityControls(const BatchGetSecurityControlsRequest& request) const {
@@ -340,7 +352,9 @@ BatchGetSecurityControlsOutcome SecurityHubClient::BatchGetSecurityControls(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/securityControls/batchGet");
   };
 
-  return BatchGetSecurityControlsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetSecurityControlsOutcome(result.GetResultWithOwnership())
+                            : BatchGetSecurityControlsOutcome(std::move(result.GetError()));
 }
 
 BatchGetStandardsControlAssociationsOutcome SecurityHubClient::BatchGetStandardsControlAssociations(
@@ -350,7 +364,9 @@ BatchGetStandardsControlAssociationsOutcome SecurityHubClient::BatchGetStandards
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations/batchGet");
   };
 
-  return BatchGetStandardsControlAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetStandardsControlAssociationsOutcome(result.GetResultWithOwnership())
+                            : BatchGetStandardsControlAssociationsOutcome(std::move(result.GetError()));
 }
 
 BatchImportFindingsOutcome SecurityHubClient::BatchImportFindings(const BatchImportFindingsRequest& request) const {
@@ -359,7 +375,9 @@ BatchImportFindingsOutcome SecurityHubClient::BatchImportFindings(const BatchImp
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/import");
   };
 
-  return BatchImportFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchImportFindingsOutcome(result.GetResultWithOwnership())
+                            : BatchImportFindingsOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateAutomationRulesOutcome SecurityHubClient::BatchUpdateAutomationRules(const BatchUpdateAutomationRulesRequest& request) const {
@@ -368,7 +386,9 @@ BatchUpdateAutomationRulesOutcome SecurityHubClient::BatchUpdateAutomationRules(
     endpointResolutionOutcome.GetResult().AddPathSegments("/automationrules/update");
   };
 
-  return BatchUpdateAutomationRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchUpdateAutomationRulesOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateAutomationRulesOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateFindingsOutcome SecurityHubClient::BatchUpdateFindings(const BatchUpdateFindingsRequest& request) const {
@@ -377,7 +397,9 @@ BatchUpdateFindingsOutcome SecurityHubClient::BatchUpdateFindings(const BatchUpd
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/batchupdate");
   };
 
-  return BatchUpdateFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchUpdateFindingsOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateFindingsOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateFindingsV2Outcome SecurityHubClient::BatchUpdateFindingsV2(const BatchUpdateFindingsV2Request& request) const {
@@ -386,7 +408,9 @@ BatchUpdateFindingsV2Outcome SecurityHubClient::BatchUpdateFindingsV2(const Batc
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingsv2/batchupdatev2");
   };
 
-  return BatchUpdateFindingsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchUpdateFindingsV2Outcome(result.GetResultWithOwnership())
+                            : BatchUpdateFindingsV2Outcome(std::move(result.GetError()));
 }
 
 BatchUpdateStandardsControlAssociationsOutcome SecurityHubClient::BatchUpdateStandardsControlAssociations(
@@ -396,7 +420,9 @@ BatchUpdateStandardsControlAssociationsOutcome SecurityHubClient::BatchUpdateSta
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return BatchUpdateStandardsControlAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchUpdateStandardsControlAssociationsOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateStandardsControlAssociationsOutcome(std::move(result.GetError()));
 }
 
 CreateActionTargetOutcome SecurityHubClient::CreateActionTarget(const CreateActionTargetRequest& request) const {
@@ -405,7 +431,9 @@ CreateActionTargetOutcome SecurityHubClient::CreateActionTarget(const CreateActi
     endpointResolutionOutcome.GetResult().AddPathSegments("/actionTargets");
   };
 
-  return CreateActionTargetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateActionTargetOutcome(result.GetResultWithOwnership())
+                            : CreateActionTargetOutcome(std::move(result.GetError()));
 }
 
 CreateAggregatorV2Outcome SecurityHubClient::CreateAggregatorV2(const CreateAggregatorV2Request& request) const {
@@ -414,7 +442,9 @@ CreateAggregatorV2Outcome SecurityHubClient::CreateAggregatorV2(const CreateAggr
     endpointResolutionOutcome.GetResult().AddPathSegments("/aggregatorv2/create");
   };
 
-  return CreateAggregatorV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAggregatorV2Outcome(result.GetResultWithOwnership())
+                            : CreateAggregatorV2Outcome(std::move(result.GetError()));
 }
 
 CreateAutomationRuleOutcome SecurityHubClient::CreateAutomationRule(const CreateAutomationRuleRequest& request) const {
@@ -423,7 +453,9 @@ CreateAutomationRuleOutcome SecurityHubClient::CreateAutomationRule(const Create
     endpointResolutionOutcome.GetResult().AddPathSegments("/automationrules/create");
   };
 
-  return CreateAutomationRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAutomationRuleOutcome(result.GetResultWithOwnership())
+                            : CreateAutomationRuleOutcome(std::move(result.GetError()));
 }
 
 CreateAutomationRuleV2Outcome SecurityHubClient::CreateAutomationRuleV2(const CreateAutomationRuleV2Request& request) const {
@@ -432,7 +464,9 @@ CreateAutomationRuleV2Outcome SecurityHubClient::CreateAutomationRuleV2(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/automationrulesv2/create");
   };
 
-  return CreateAutomationRuleV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAutomationRuleV2Outcome(result.GetResultWithOwnership())
+                            : CreateAutomationRuleV2Outcome(std::move(result.GetError()));
 }
 
 CreateConfigurationPolicyOutcome SecurityHubClient::CreateConfigurationPolicy(const CreateConfigurationPolicyRequest& request) const {
@@ -441,7 +475,9 @@ CreateConfigurationPolicyOutcome SecurityHubClient::CreateConfigurationPolicy(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/configurationPolicy/create");
   };
 
-  return CreateConfigurationPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationPolicyOutcome(std::move(result.GetError()));
 }
 
 CreateConnectorV2Outcome SecurityHubClient::CreateConnectorV2(const CreateConnectorV2Request& request) const {
@@ -450,7 +486,9 @@ CreateConnectorV2Outcome SecurityHubClient::CreateConnectorV2(const CreateConnec
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectorsv2");
   };
 
-  return CreateConnectorV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectorV2Outcome(result.GetResultWithOwnership())
+                            : CreateConnectorV2Outcome(std::move(result.GetError()));
 }
 
 CreateFindingAggregatorOutcome SecurityHubClient::CreateFindingAggregator(const CreateFindingAggregatorRequest& request) const {
@@ -459,7 +497,9 @@ CreateFindingAggregatorOutcome SecurityHubClient::CreateFindingAggregator(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingAggregator/create");
   };
 
-  return CreateFindingAggregatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFindingAggregatorOutcome(result.GetResultWithOwnership())
+                            : CreateFindingAggregatorOutcome(std::move(result.GetError()));
 }
 
 CreateInsightOutcome SecurityHubClient::CreateInsight(const CreateInsightRequest& request) const {
@@ -468,7 +508,8 @@ CreateInsightOutcome SecurityHubClient::CreateInsight(const CreateInsightRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights");
   };
 
-  return CreateInsightOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInsightOutcome(result.GetResultWithOwnership()) : CreateInsightOutcome(std::move(result.GetError()));
 }
 
 CreateMembersOutcome SecurityHubClient::CreateMembers(const CreateMembersRequest& request) const {
@@ -477,7 +518,8 @@ CreateMembersOutcome SecurityHubClient::CreateMembers(const CreateMembersRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/members");
   };
 
-  return CreateMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMembersOutcome(result.GetResultWithOwnership()) : CreateMembersOutcome(std::move(result.GetError()));
 }
 
 CreateTicketV2Outcome SecurityHubClient::CreateTicketV2(const CreateTicketV2Request& request) const {
@@ -486,7 +528,8 @@ CreateTicketV2Outcome SecurityHubClient::CreateTicketV2(const CreateTicketV2Requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/ticketsv2");
   };
 
-  return CreateTicketV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTicketV2Outcome(result.GetResultWithOwnership()) : CreateTicketV2Outcome(std::move(result.GetError()));
 }
 
 DeclineInvitationsOutcome SecurityHubClient::DeclineInvitations(const DeclineInvitationsRequest& request) const {
@@ -495,7 +538,9 @@ DeclineInvitationsOutcome SecurityHubClient::DeclineInvitations(const DeclineInv
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations/decline");
   };
 
-  return DeclineInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeclineInvitationsOutcome(result.GetResultWithOwnership())
+                            : DeclineInvitationsOutcome(std::move(result.GetError()));
 }
 
 DeleteActionTargetOutcome SecurityHubClient::DeleteActionTarget(const DeleteActionTargetRequest& request) const {
@@ -511,7 +556,9 @@ DeleteActionTargetOutcome SecurityHubClient::DeleteActionTarget(const DeleteActi
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetActionTargetArn());
   };
 
-  return DeleteActionTargetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteActionTargetOutcome(result.GetResultWithOwnership())
+                            : DeleteActionTargetOutcome(std::move(result.GetError()));
 }
 
 DeleteAggregatorV2Outcome SecurityHubClient::DeleteAggregatorV2(const DeleteAggregatorV2Request& request) const {
@@ -527,7 +574,9 @@ DeleteAggregatorV2Outcome SecurityHubClient::DeleteAggregatorV2(const DeleteAggr
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetAggregatorV2Arn());
   };
 
-  return DeleteAggregatorV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAggregatorV2Outcome(result.GetResultWithOwnership())
+                            : DeleteAggregatorV2Outcome(std::move(result.GetError()));
 }
 
 DeleteAutomationRuleV2Outcome SecurityHubClient::DeleteAutomationRuleV2(const DeleteAutomationRuleV2Request& request) const {
@@ -543,7 +592,9 @@ DeleteAutomationRuleV2Outcome SecurityHubClient::DeleteAutomationRuleV2(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteAutomationRuleV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAutomationRuleV2Outcome(result.GetResultWithOwnership())
+                            : DeleteAutomationRuleV2Outcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationPolicyOutcome SecurityHubClient::DeleteConfigurationPolicy(const DeleteConfigurationPolicyRequest& request) const {
@@ -559,7 +610,9 @@ DeleteConfigurationPolicyOutcome SecurityHubClient::DeleteConfigurationPolicy(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return DeleteConfigurationPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectorV2Outcome SecurityHubClient::DeleteConnectorV2(const DeleteConnectorV2Request& request) const {
@@ -575,7 +628,9 @@ DeleteConnectorV2Outcome SecurityHubClient::DeleteConnectorV2(const DeleteConnec
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetConnectorId());
   };
 
-  return DeleteConnectorV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectorV2Outcome(result.GetResultWithOwnership())
+                            : DeleteConnectorV2Outcome(std::move(result.GetError()));
 }
 
 DeleteFindingAggregatorOutcome SecurityHubClient::DeleteFindingAggregator(const DeleteFindingAggregatorRequest& request) const {
@@ -591,7 +646,9 @@ DeleteFindingAggregatorOutcome SecurityHubClient::DeleteFindingAggregator(const 
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetFindingAggregatorArn());
   };
 
-  return DeleteFindingAggregatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFindingAggregatorOutcome(result.GetResultWithOwnership())
+                            : DeleteFindingAggregatorOutcome(std::move(result.GetError()));
 }
 
 DeleteInsightOutcome SecurityHubClient::DeleteInsight(const DeleteInsightRequest& request) const {
@@ -607,7 +664,8 @@ DeleteInsightOutcome SecurityHubClient::DeleteInsight(const DeleteInsightRequest
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetInsightArn());
   };
 
-  return DeleteInsightOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInsightOutcome(result.GetResultWithOwnership()) : DeleteInsightOutcome(std::move(result.GetError()));
 }
 
 DeleteInvitationsOutcome SecurityHubClient::DeleteInvitations(const DeleteInvitationsRequest& request) const {
@@ -616,7 +674,9 @@ DeleteInvitationsOutcome SecurityHubClient::DeleteInvitations(const DeleteInvita
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations/delete");
   };
 
-  return DeleteInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInvitationsOutcome(result.GetResultWithOwnership())
+                            : DeleteInvitationsOutcome(std::move(result.GetError()));
 }
 
 DeleteMembersOutcome SecurityHubClient::DeleteMembers(const DeleteMembersRequest& request) const {
@@ -625,7 +685,8 @@ DeleteMembersOutcome SecurityHubClient::DeleteMembers(const DeleteMembersRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/members/delete");
   };
 
-  return DeleteMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMembersOutcome(result.GetResultWithOwnership()) : DeleteMembersOutcome(std::move(result.GetError()));
 }
 
 DescribeActionTargetsOutcome SecurityHubClient::DescribeActionTargets(const DescribeActionTargetsRequest& request) const {
@@ -634,7 +695,9 @@ DescribeActionTargetsOutcome SecurityHubClient::DescribeActionTargets(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegments("/actionTargets/get");
   };
 
-  return DescribeActionTargetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeActionTargetsOutcome(result.GetResultWithOwnership())
+                            : DescribeActionTargetsOutcome(std::move(result.GetError()));
 }
 
 DescribeHubOutcome SecurityHubClient::DescribeHub(const DescribeHubRequest& request) const {
@@ -643,7 +706,8 @@ DescribeHubOutcome SecurityHubClient::DescribeHub(const DescribeHubRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/accounts");
   };
 
-  return DescribeHubOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeHubOutcome(result.GetResultWithOwnership()) : DescribeHubOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationConfigurationOutcome SecurityHubClient::DescribeOrganizationConfiguration(
@@ -653,7 +717,9 @@ DescribeOrganizationConfigurationOutcome SecurityHubClient::DescribeOrganization
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/configuration");
   };
 
-  return DescribeOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeProductsOutcome SecurityHubClient::DescribeProducts(const DescribeProductsRequest& request) const {
@@ -662,7 +728,9 @@ DescribeProductsOutcome SecurityHubClient::DescribeProducts(const DescribeProduc
     endpointResolutionOutcome.GetResult().AddPathSegments("/products");
   };
 
-  return DescribeProductsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeProductsOutcome(result.GetResultWithOwnership())
+                            : DescribeProductsOutcome(std::move(result.GetError()));
 }
 
 DescribeProductsV2Outcome SecurityHubClient::DescribeProductsV2(const DescribeProductsV2Request& request) const {
@@ -671,7 +739,9 @@ DescribeProductsV2Outcome SecurityHubClient::DescribeProductsV2(const DescribePr
     endpointResolutionOutcome.GetResult().AddPathSegments("/productsV2");
   };
 
-  return DescribeProductsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeProductsV2Outcome(result.GetResultWithOwnership())
+                            : DescribeProductsV2Outcome(std::move(result.GetError()));
 }
 
 DescribeSecurityHubV2Outcome SecurityHubClient::DescribeSecurityHubV2(const DescribeSecurityHubV2Request& request) const {
@@ -680,7 +750,9 @@ DescribeSecurityHubV2Outcome SecurityHubClient::DescribeSecurityHubV2(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegments("/hubv2");
   };
 
-  return DescribeSecurityHubV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSecurityHubV2Outcome(result.GetResultWithOwnership())
+                            : DescribeSecurityHubV2Outcome(std::move(result.GetError()));
 }
 
 DescribeStandardsOutcome SecurityHubClient::DescribeStandards(const DescribeStandardsRequest& request) const {
@@ -689,7 +761,9 @@ DescribeStandardsOutcome SecurityHubClient::DescribeStandards(const DescribeStan
     endpointResolutionOutcome.GetResult().AddPathSegments("/standards");
   };
 
-  return DescribeStandardsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeStandardsOutcome(result.GetResultWithOwnership())
+                            : DescribeStandardsOutcome(std::move(result.GetError()));
 }
 
 DescribeStandardsControlsOutcome SecurityHubClient::DescribeStandardsControls(const DescribeStandardsControlsRequest& request) const {
@@ -705,7 +779,9 @@ DescribeStandardsControlsOutcome SecurityHubClient::DescribeStandardsControls(co
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetStandardsSubscriptionArn());
   };
 
-  return DescribeStandardsControlsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeStandardsControlsOutcome(result.GetResultWithOwnership())
+                            : DescribeStandardsControlsOutcome(std::move(result.GetError()));
 }
 
 DisableImportFindingsForProductOutcome SecurityHubClient::DisableImportFindingsForProduct(
@@ -722,7 +798,9 @@ DisableImportFindingsForProductOutcome SecurityHubClient::DisableImportFindingsF
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetProductSubscriptionArn());
   };
 
-  return DisableImportFindingsForProductOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisableImportFindingsForProductOutcome(result.GetResultWithOwnership())
+                            : DisableImportFindingsForProductOutcome(std::move(result.GetError()));
 }
 
 DisableOrganizationAdminAccountOutcome SecurityHubClient::DisableOrganizationAdminAccount(
@@ -732,7 +810,9 @@ DisableOrganizationAdminAccountOutcome SecurityHubClient::DisableOrganizationAdm
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/admin/disable");
   };
 
-  return DisableOrganizationAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : DisableOrganizationAdminAccountOutcome(std::move(result.GetError()));
 }
 
 DisableSecurityHubOutcome SecurityHubClient::DisableSecurityHub(const DisableSecurityHubRequest& request) const {
@@ -741,7 +821,9 @@ DisableSecurityHubOutcome SecurityHubClient::DisableSecurityHub(const DisableSec
     endpointResolutionOutcome.GetResult().AddPathSegments("/accounts");
   };
 
-  return DisableSecurityHubOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisableSecurityHubOutcome(result.GetResultWithOwnership())
+                            : DisableSecurityHubOutcome(std::move(result.GetError()));
 }
 
 DisableSecurityHubV2Outcome SecurityHubClient::DisableSecurityHubV2(const DisableSecurityHubV2Request& request) const {
@@ -750,7 +832,9 @@ DisableSecurityHubV2Outcome SecurityHubClient::DisableSecurityHubV2(const Disabl
     endpointResolutionOutcome.GetResult().AddPathSegments("/hubv2");
   };
 
-  return DisableSecurityHubV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisableSecurityHubV2Outcome(result.GetResultWithOwnership())
+                            : DisableSecurityHubV2Outcome(std::move(result.GetError()));
 }
 
 DisassociateFromAdministratorAccountOutcome SecurityHubClient::DisassociateFromAdministratorAccount(
@@ -760,7 +844,9 @@ DisassociateFromAdministratorAccountOutcome SecurityHubClient::DisassociateFromA
     endpointResolutionOutcome.GetResult().AddPathSegments("/administrator/disassociate");
   };
 
-  return DisassociateFromAdministratorAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFromAdministratorAccountOutcome(result.GetResultWithOwnership())
+                            : DisassociateFromAdministratorAccountOutcome(std::move(result.GetError()));
 }
 
 DisassociateMembersOutcome SecurityHubClient::DisassociateMembers(const DisassociateMembersRequest& request) const {
@@ -769,7 +855,9 @@ DisassociateMembersOutcome SecurityHubClient::DisassociateMembers(const Disassoc
     endpointResolutionOutcome.GetResult().AddPathSegments("/members/disassociate");
   };
 
-  return DisassociateMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateMembersOutcome(result.GetResultWithOwnership())
+                            : DisassociateMembersOutcome(std::move(result.GetError()));
 }
 
 EnableImportFindingsForProductOutcome SecurityHubClient::EnableImportFindingsForProduct(
@@ -779,7 +867,9 @@ EnableImportFindingsForProductOutcome SecurityHubClient::EnableImportFindingsFor
     endpointResolutionOutcome.GetResult().AddPathSegments("/productSubscriptions");
   };
 
-  return EnableImportFindingsForProductOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableImportFindingsForProductOutcome(result.GetResultWithOwnership())
+                            : EnableImportFindingsForProductOutcome(std::move(result.GetError()));
 }
 
 EnableOrganizationAdminAccountOutcome SecurityHubClient::EnableOrganizationAdminAccount(
@@ -789,7 +879,9 @@ EnableOrganizationAdminAccountOutcome SecurityHubClient::EnableOrganizationAdmin
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/admin/enable");
   };
 
-  return EnableOrganizationAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : EnableOrganizationAdminAccountOutcome(std::move(result.GetError()));
 }
 
 EnableSecurityHubOutcome SecurityHubClient::EnableSecurityHub(const EnableSecurityHubRequest& request) const {
@@ -798,7 +890,9 @@ EnableSecurityHubOutcome SecurityHubClient::EnableSecurityHub(const EnableSecuri
     endpointResolutionOutcome.GetResult().AddPathSegments("/accounts");
   };
 
-  return EnableSecurityHubOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableSecurityHubOutcome(result.GetResultWithOwnership())
+                            : EnableSecurityHubOutcome(std::move(result.GetError()));
 }
 
 EnableSecurityHubV2Outcome SecurityHubClient::EnableSecurityHubV2(const EnableSecurityHubV2Request& request) const {
@@ -807,7 +901,9 @@ EnableSecurityHubV2Outcome SecurityHubClient::EnableSecurityHubV2(const EnableSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/hubv2");
   };
 
-  return EnableSecurityHubV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableSecurityHubV2Outcome(result.GetResultWithOwnership())
+                            : EnableSecurityHubV2Outcome(std::move(result.GetError()));
 }
 
 GetAdministratorAccountOutcome SecurityHubClient::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const {
@@ -816,7 +912,9 @@ GetAdministratorAccountOutcome SecurityHubClient::GetAdministratorAccount(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/administrator");
   };
 
-  return GetAdministratorAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAdministratorAccountOutcome(result.GetResultWithOwnership())
+                            : GetAdministratorAccountOutcome(std::move(result.GetError()));
 }
 
 GetAggregatorV2Outcome SecurityHubClient::GetAggregatorV2(const GetAggregatorV2Request& request) const {
@@ -832,7 +930,9 @@ GetAggregatorV2Outcome SecurityHubClient::GetAggregatorV2(const GetAggregatorV2R
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetAggregatorV2Arn());
   };
 
-  return GetAggregatorV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAggregatorV2Outcome(result.GetResultWithOwnership())
+                            : GetAggregatorV2Outcome(std::move(result.GetError()));
 }
 
 GetAutomationRuleV2Outcome SecurityHubClient::GetAutomationRuleV2(const GetAutomationRuleV2Request& request) const {
@@ -848,7 +948,9 @@ GetAutomationRuleV2Outcome SecurityHubClient::GetAutomationRuleV2(const GetAutom
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetAutomationRuleV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAutomationRuleV2Outcome(result.GetResultWithOwnership())
+                            : GetAutomationRuleV2Outcome(std::move(result.GetError()));
 }
 
 GetConfigurationPolicyOutcome SecurityHubClient::GetConfigurationPolicy(const GetConfigurationPolicyRequest& request) const {
@@ -864,7 +966,9 @@ GetConfigurationPolicyOutcome SecurityHubClient::GetConfigurationPolicy(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetConfigurationPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationPolicyOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationPolicyOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationPolicyAssociationOutcome SecurityHubClient::GetConfigurationPolicyAssociation(
@@ -874,7 +978,9 @@ GetConfigurationPolicyAssociationOutcome SecurityHubClient::GetConfigurationPoli
     endpointResolutionOutcome.GetResult().AddPathSegments("/configurationPolicyAssociation/get");
   };
 
-  return GetConfigurationPolicyAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConfigurationPolicyAssociationOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationPolicyAssociationOutcome(std::move(result.GetError()));
 }
 
 GetConnectorV2Outcome SecurityHubClient::GetConnectorV2(const GetConnectorV2Request& request) const {
@@ -890,7 +996,8 @@ GetConnectorV2Outcome SecurityHubClient::GetConnectorV2(const GetConnectorV2Requ
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetConnectorId());
   };
 
-  return GetConnectorV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectorV2Outcome(result.GetResultWithOwnership()) : GetConnectorV2Outcome(std::move(result.GetError()));
 }
 
 GetEnabledStandardsOutcome SecurityHubClient::GetEnabledStandards(const GetEnabledStandardsRequest& request) const {
@@ -899,7 +1006,9 @@ GetEnabledStandardsOutcome SecurityHubClient::GetEnabledStandards(const GetEnabl
     endpointResolutionOutcome.GetResult().AddPathSegments("/standards/get");
   };
 
-  return GetEnabledStandardsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEnabledStandardsOutcome(result.GetResultWithOwnership())
+                            : GetEnabledStandardsOutcome(std::move(result.GetError()));
 }
 
 GetFindingAggregatorOutcome SecurityHubClient::GetFindingAggregator(const GetFindingAggregatorRequest& request) const {
@@ -915,7 +1024,9 @@ GetFindingAggregatorOutcome SecurityHubClient::GetFindingAggregator(const GetFin
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetFindingAggregatorArn());
   };
 
-  return GetFindingAggregatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFindingAggregatorOutcome(result.GetResultWithOwnership())
+                            : GetFindingAggregatorOutcome(std::move(result.GetError()));
 }
 
 GetFindingHistoryOutcome SecurityHubClient::GetFindingHistory(const GetFindingHistoryRequest& request) const {
@@ -924,7 +1035,9 @@ GetFindingHistoryOutcome SecurityHubClient::GetFindingHistory(const GetFindingHi
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingHistory/get");
   };
 
-  return GetFindingHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFindingHistoryOutcome(result.GetResultWithOwnership())
+                            : GetFindingHistoryOutcome(std::move(result.GetError()));
 }
 
 GetFindingStatisticsV2Outcome SecurityHubClient::GetFindingStatisticsV2(const GetFindingStatisticsV2Request& request) const {
@@ -933,7 +1046,9 @@ GetFindingStatisticsV2Outcome SecurityHubClient::GetFindingStatisticsV2(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingsv2/statistics");
   };
 
-  return GetFindingStatisticsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFindingStatisticsV2Outcome(result.GetResultWithOwnership())
+                            : GetFindingStatisticsV2Outcome(std::move(result.GetError()));
 }
 
 GetFindingsOutcome SecurityHubClient::GetFindings(const GetFindingsRequest& request) const {
@@ -942,7 +1057,8 @@ GetFindingsOutcome SecurityHubClient::GetFindings(const GetFindingsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings");
   };
 
-  return GetFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFindingsOutcome(result.GetResultWithOwnership()) : GetFindingsOutcome(std::move(result.GetError()));
 }
 
 GetFindingsTrendsV2Outcome SecurityHubClient::GetFindingsTrendsV2(const GetFindingsTrendsV2Request& request) const {
@@ -951,7 +1067,9 @@ GetFindingsTrendsV2Outcome SecurityHubClient::GetFindingsTrendsV2(const GetFindi
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingsTrendsv2");
   };
 
-  return GetFindingsTrendsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFindingsTrendsV2Outcome(result.GetResultWithOwnership())
+                            : GetFindingsTrendsV2Outcome(std::move(result.GetError()));
 }
 
 GetFindingsV2Outcome SecurityHubClient::GetFindingsV2(const GetFindingsV2Request& request) const {
@@ -960,7 +1078,8 @@ GetFindingsV2Outcome SecurityHubClient::GetFindingsV2(const GetFindingsV2Request
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingsv2");
   };
 
-  return GetFindingsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFindingsV2Outcome(result.GetResultWithOwnership()) : GetFindingsV2Outcome(std::move(result.GetError()));
 }
 
 GetInsightResultsOutcome SecurityHubClient::GetInsightResults(const GetInsightResultsRequest& request) const {
@@ -976,7 +1095,9 @@ GetInsightResultsOutcome SecurityHubClient::GetInsightResults(const GetInsightRe
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetInsightArn());
   };
 
-  return GetInsightResultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInsightResultsOutcome(result.GetResultWithOwnership())
+                            : GetInsightResultsOutcome(std::move(result.GetError()));
 }
 
 GetInsightsOutcome SecurityHubClient::GetInsights(const GetInsightsRequest& request) const {
@@ -985,7 +1106,8 @@ GetInsightsOutcome SecurityHubClient::GetInsights(const GetInsightsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights/get");
   };
 
-  return GetInsightsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInsightsOutcome(result.GetResultWithOwnership()) : GetInsightsOutcome(std::move(result.GetError()));
 }
 
 GetInvitationsCountOutcome SecurityHubClient::GetInvitationsCount(const GetInvitationsCountRequest& request) const {
@@ -994,7 +1116,9 @@ GetInvitationsCountOutcome SecurityHubClient::GetInvitationsCount(const GetInvit
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations/count");
   };
 
-  return GetInvitationsCountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInvitationsCountOutcome(result.GetResultWithOwnership())
+                            : GetInvitationsCountOutcome(std::move(result.GetError()));
 }
 
 GetMembersOutcome SecurityHubClient::GetMembers(const GetMembersRequest& request) const {
@@ -1003,7 +1127,8 @@ GetMembersOutcome SecurityHubClient::GetMembers(const GetMembersRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/members/get");
   };
 
-  return GetMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMembersOutcome(result.GetResultWithOwnership()) : GetMembersOutcome(std::move(result.GetError()));
 }
 
 GetResourcesStatisticsV2Outcome SecurityHubClient::GetResourcesStatisticsV2(const GetResourcesStatisticsV2Request& request) const {
@@ -1012,7 +1137,9 @@ GetResourcesStatisticsV2Outcome SecurityHubClient::GetResourcesStatisticsV2(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/resourcesv2/statistics");
   };
 
-  return GetResourcesStatisticsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcesStatisticsV2Outcome(result.GetResultWithOwnership())
+                            : GetResourcesStatisticsV2Outcome(std::move(result.GetError()));
 }
 
 GetResourcesTrendsV2Outcome SecurityHubClient::GetResourcesTrendsV2(const GetResourcesTrendsV2Request& request) const {
@@ -1021,7 +1148,9 @@ GetResourcesTrendsV2Outcome SecurityHubClient::GetResourcesTrendsV2(const GetRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/resourcesTrendsv2");
   };
 
-  return GetResourcesTrendsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcesTrendsV2Outcome(result.GetResultWithOwnership())
+                            : GetResourcesTrendsV2Outcome(std::move(result.GetError()));
 }
 
 GetResourcesV2Outcome SecurityHubClient::GetResourcesV2(const GetResourcesV2Request& request) const {
@@ -1030,7 +1159,8 @@ GetResourcesV2Outcome SecurityHubClient::GetResourcesV2(const GetResourcesV2Requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/resourcesv2");
   };
 
-  return GetResourcesV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcesV2Outcome(result.GetResultWithOwnership()) : GetResourcesV2Outcome(std::move(result.GetError()));
 }
 
 GetSecurityControlDefinitionOutcome SecurityHubClient::GetSecurityControlDefinition(
@@ -1046,7 +1176,9 @@ GetSecurityControlDefinitionOutcome SecurityHubClient::GetSecurityControlDefinit
     endpointResolutionOutcome.GetResult().AddPathSegments("/securityControl/definition");
   };
 
-  return GetSecurityControlDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSecurityControlDefinitionOutcome(result.GetResultWithOwnership())
+                            : GetSecurityControlDefinitionOutcome(std::move(result.GetError()));
 }
 
 InviteMembersOutcome SecurityHubClient::InviteMembers(const InviteMembersRequest& request) const {
@@ -1055,7 +1187,8 @@ InviteMembersOutcome SecurityHubClient::InviteMembers(const InviteMembersRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/members/invite");
   };
 
-  return InviteMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InviteMembersOutcome(result.GetResultWithOwnership()) : InviteMembersOutcome(std::move(result.GetError()));
 }
 
 ListAggregatorsV2Outcome SecurityHubClient::ListAggregatorsV2(const ListAggregatorsV2Request& request) const {
@@ -1064,7 +1197,9 @@ ListAggregatorsV2Outcome SecurityHubClient::ListAggregatorsV2(const ListAggregat
     endpointResolutionOutcome.GetResult().AddPathSegments("/aggregatorv2/list");
   };
 
-  return ListAggregatorsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAggregatorsV2Outcome(result.GetResultWithOwnership())
+                            : ListAggregatorsV2Outcome(std::move(result.GetError()));
 }
 
 ListAutomationRulesOutcome SecurityHubClient::ListAutomationRules(const ListAutomationRulesRequest& request) const {
@@ -1073,7 +1208,9 @@ ListAutomationRulesOutcome SecurityHubClient::ListAutomationRules(const ListAuto
     endpointResolutionOutcome.GetResult().AddPathSegments("/automationrules/list");
   };
 
-  return ListAutomationRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAutomationRulesOutcome(result.GetResultWithOwnership())
+                            : ListAutomationRulesOutcome(std::move(result.GetError()));
 }
 
 ListAutomationRulesV2Outcome SecurityHubClient::ListAutomationRulesV2(const ListAutomationRulesV2Request& request) const {
@@ -1082,7 +1219,9 @@ ListAutomationRulesV2Outcome SecurityHubClient::ListAutomationRulesV2(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/automationrulesv2/list");
   };
 
-  return ListAutomationRulesV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAutomationRulesV2Outcome(result.GetResultWithOwnership())
+                            : ListAutomationRulesV2Outcome(std::move(result.GetError()));
 }
 
 ListConfigurationPoliciesOutcome SecurityHubClient::ListConfigurationPolicies(const ListConfigurationPoliciesRequest& request) const {
@@ -1091,7 +1230,9 @@ ListConfigurationPoliciesOutcome SecurityHubClient::ListConfigurationPolicies(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/configurationPolicy/list");
   };
 
-  return ListConfigurationPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigurationPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationPolicyAssociationsOutcome SecurityHubClient::ListConfigurationPolicyAssociations(
@@ -1101,7 +1242,9 @@ ListConfigurationPolicyAssociationsOutcome SecurityHubClient::ListConfigurationP
     endpointResolutionOutcome.GetResult().AddPathSegments("/configurationPolicyAssociation/list");
   };
 
-  return ListConfigurationPolicyAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConfigurationPolicyAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationPolicyAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListConnectorsV2Outcome SecurityHubClient::ListConnectorsV2(const ListConnectorsV2Request& request) const {
@@ -1110,7 +1253,9 @@ ListConnectorsV2Outcome SecurityHubClient::ListConnectorsV2(const ListConnectors
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectorsv2");
   };
 
-  return ListConnectorsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConnectorsV2Outcome(result.GetResultWithOwnership())
+                            : ListConnectorsV2Outcome(std::move(result.GetError()));
 }
 
 ListEnabledProductsForImportOutcome SecurityHubClient::ListEnabledProductsForImport(
@@ -1120,7 +1265,9 @@ ListEnabledProductsForImportOutcome SecurityHubClient::ListEnabledProductsForImp
     endpointResolutionOutcome.GetResult().AddPathSegments("/productSubscriptions");
   };
 
-  return ListEnabledProductsForImportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEnabledProductsForImportOutcome(result.GetResultWithOwnership())
+                            : ListEnabledProductsForImportOutcome(std::move(result.GetError()));
 }
 
 ListFindingAggregatorsOutcome SecurityHubClient::ListFindingAggregators(const ListFindingAggregatorsRequest& request) const {
@@ -1129,7 +1276,9 @@ ListFindingAggregatorsOutcome SecurityHubClient::ListFindingAggregators(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingAggregator/list");
   };
 
-  return ListFindingAggregatorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFindingAggregatorsOutcome(result.GetResultWithOwnership())
+                            : ListFindingAggregatorsOutcome(std::move(result.GetError()));
 }
 
 ListInvitationsOutcome SecurityHubClient::ListInvitations(const ListInvitationsRequest& request) const {
@@ -1138,7 +1287,9 @@ ListInvitationsOutcome SecurityHubClient::ListInvitations(const ListInvitationsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations");
   };
 
-  return ListInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInvitationsOutcome(result.GetResultWithOwnership())
+                            : ListInvitationsOutcome(std::move(result.GetError()));
 }
 
 ListMembersOutcome SecurityHubClient::ListMembers(const ListMembersRequest& request) const {
@@ -1147,7 +1298,8 @@ ListMembersOutcome SecurityHubClient::ListMembers(const ListMembersRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/members");
   };
 
-  return ListMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMembersOutcome(result.GetResultWithOwnership()) : ListMembersOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationAdminAccountsOutcome SecurityHubClient::ListOrganizationAdminAccounts(
@@ -1157,7 +1309,9 @@ ListOrganizationAdminAccountsOutcome SecurityHubClient::ListOrganizationAdminAcc
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/admin");
   };
 
-  return ListOrganizationAdminAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrganizationAdminAccountsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationAdminAccountsOutcome(std::move(result.GetError()));
 }
 
 ListSecurityControlDefinitionsOutcome SecurityHubClient::ListSecurityControlDefinitions(
@@ -1167,7 +1321,9 @@ ListSecurityControlDefinitionsOutcome SecurityHubClient::ListSecurityControlDefi
     endpointResolutionOutcome.GetResult().AddPathSegments("/securityControls/definitions");
   };
 
-  return ListSecurityControlDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSecurityControlDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListSecurityControlDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListStandardsControlAssociationsOutcome SecurityHubClient::ListStandardsControlAssociations(
@@ -1183,7 +1339,9 @@ ListStandardsControlAssociationsOutcome SecurityHubClient::ListStandardsControlA
     endpointResolutionOutcome.GetResult().AddPathSegments("/associations");
   };
 
-  return ListStandardsControlAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStandardsControlAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListStandardsControlAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SecurityHubClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1199,7 +1357,9 @@ ListTagsForResourceOutcome SecurityHubClient::ListTagsForResource(const ListTags
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterConnectorV2Outcome SecurityHubClient::RegisterConnectorV2(const RegisterConnectorV2Request& request) const {
@@ -1208,7 +1368,9 @@ RegisterConnectorV2Outcome SecurityHubClient::RegisterConnectorV2(const Register
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectorsv2/register");
   };
 
-  return RegisterConnectorV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterConnectorV2Outcome(result.GetResultWithOwnership())
+                            : RegisterConnectorV2Outcome(std::move(result.GetError()));
 }
 
 StartConfigurationPolicyAssociationOutcome SecurityHubClient::StartConfigurationPolicyAssociation(
@@ -1218,7 +1380,9 @@ StartConfigurationPolicyAssociationOutcome SecurityHubClient::StartConfiguration
     endpointResolutionOutcome.GetResult().AddPathSegments("/configurationPolicyAssociation/associate");
   };
 
-  return StartConfigurationPolicyAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartConfigurationPolicyAssociationOutcome(result.GetResultWithOwnership())
+                            : StartConfigurationPolicyAssociationOutcome(std::move(result.GetError()));
 }
 
 StartConfigurationPolicyDisassociationOutcome SecurityHubClient::StartConfigurationPolicyDisassociation(
@@ -1228,7 +1392,9 @@ StartConfigurationPolicyDisassociationOutcome SecurityHubClient::StartConfigurat
     endpointResolutionOutcome.GetResult().AddPathSegments("/configurationPolicyAssociation/disassociate");
   };
 
-  return StartConfigurationPolicyDisassociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartConfigurationPolicyDisassociationOutcome(result.GetResultWithOwnership())
+                            : StartConfigurationPolicyDisassociationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SecurityHubClient::TagResource(const TagResourceRequest& request) const {
@@ -1244,7 +1410,8 @@ TagResourceOutcome SecurityHubClient::TagResource(const TagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SecurityHubClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1265,7 +1432,8 @@ UntagResourceOutcome SecurityHubClient::UntagResource(const UntagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateActionTargetOutcome SecurityHubClient::UpdateActionTarget(const UpdateActionTargetRequest& request) const {
@@ -1281,7 +1449,9 @@ UpdateActionTargetOutcome SecurityHubClient::UpdateActionTarget(const UpdateActi
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetActionTargetArn());
   };
 
-  return UpdateActionTargetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateActionTargetOutcome(result.GetResultWithOwnership())
+                            : UpdateActionTargetOutcome(std::move(result.GetError()));
 }
 
 UpdateAggregatorV2Outcome SecurityHubClient::UpdateAggregatorV2(const UpdateAggregatorV2Request& request) const {
@@ -1297,7 +1467,9 @@ UpdateAggregatorV2Outcome SecurityHubClient::UpdateAggregatorV2(const UpdateAggr
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetAggregatorV2Arn());
   };
 
-  return UpdateAggregatorV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAggregatorV2Outcome(result.GetResultWithOwnership())
+                            : UpdateAggregatorV2Outcome(std::move(result.GetError()));
 }
 
 UpdateAutomationRuleV2Outcome SecurityHubClient::UpdateAutomationRuleV2(const UpdateAutomationRuleV2Request& request) const {
@@ -1313,7 +1485,9 @@ UpdateAutomationRuleV2Outcome SecurityHubClient::UpdateAutomationRuleV2(const Up
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateAutomationRuleV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAutomationRuleV2Outcome(result.GetResultWithOwnership())
+                            : UpdateAutomationRuleV2Outcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationPolicyOutcome SecurityHubClient::UpdateConfigurationPolicy(const UpdateConfigurationPolicyRequest& request) const {
@@ -1329,7 +1503,9 @@ UpdateConfigurationPolicyOutcome SecurityHubClient::UpdateConfigurationPolicy(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return UpdateConfigurationPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateConfigurationPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationPolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectorV2Outcome SecurityHubClient::UpdateConnectorV2(const UpdateConnectorV2Request& request) const {
@@ -1345,7 +1521,9 @@ UpdateConnectorV2Outcome SecurityHubClient::UpdateConnectorV2(const UpdateConnec
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetConnectorId());
   };
 
-  return UpdateConnectorV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateConnectorV2Outcome(result.GetResultWithOwnership())
+                            : UpdateConnectorV2Outcome(std::move(result.GetError()));
 }
 
 UpdateFindingAggregatorOutcome SecurityHubClient::UpdateFindingAggregator(const UpdateFindingAggregatorRequest& request) const {
@@ -1354,7 +1532,9 @@ UpdateFindingAggregatorOutcome SecurityHubClient::UpdateFindingAggregator(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingAggregator/update");
   };
 
-  return UpdateFindingAggregatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFindingAggregatorOutcome(result.GetResultWithOwnership())
+                            : UpdateFindingAggregatorOutcome(std::move(result.GetError()));
 }
 
 UpdateFindingsOutcome SecurityHubClient::UpdateFindings(const UpdateFindingsRequest& request) const {
@@ -1363,7 +1543,8 @@ UpdateFindingsOutcome SecurityHubClient::UpdateFindings(const UpdateFindingsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings");
   };
 
-  return UpdateFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFindingsOutcome(result.GetResultWithOwnership()) : UpdateFindingsOutcome(std::move(result.GetError()));
 }
 
 UpdateInsightOutcome SecurityHubClient::UpdateInsight(const UpdateInsightRequest& request) const {
@@ -1379,7 +1560,8 @@ UpdateInsightOutcome SecurityHubClient::UpdateInsight(const UpdateInsightRequest
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetInsightArn());
   };
 
-  return UpdateInsightOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateInsightOutcome(result.GetResultWithOwnership()) : UpdateInsightOutcome(std::move(result.GetError()));
 }
 
 UpdateOrganizationConfigurationOutcome SecurityHubClient::UpdateOrganizationConfiguration(
@@ -1389,7 +1571,9 @@ UpdateOrganizationConfigurationOutcome SecurityHubClient::UpdateOrganizationConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/organization/configuration");
   };
 
-  return UpdateOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateOrganizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateSecurityControlOutcome SecurityHubClient::UpdateSecurityControl(const UpdateSecurityControlRequest& request) const {
@@ -1398,7 +1582,9 @@ UpdateSecurityControlOutcome SecurityHubClient::UpdateSecurityControl(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/securityControl/update");
   };
 
-  return UpdateSecurityControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSecurityControlOutcome(result.GetResultWithOwnership())
+                            : UpdateSecurityControlOutcome(std::move(result.GetError()));
 }
 
 UpdateSecurityHubConfigurationOutcome SecurityHubClient::UpdateSecurityHubConfiguration(
@@ -1408,7 +1594,9 @@ UpdateSecurityHubConfigurationOutcome SecurityHubClient::UpdateSecurityHubConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/accounts");
   };
 
-  return UpdateSecurityHubConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSecurityHubConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateSecurityHubConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateStandardsControlOutcome SecurityHubClient::UpdateStandardsControl(const UpdateStandardsControlRequest& request) const {
@@ -1424,5 +1612,7 @@ UpdateStandardsControlOutcome SecurityHubClient::UpdateStandardsControl(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetStandardsControlArn());
   };
 
-  return UpdateStandardsControlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateStandardsControlOutcome(result.GetResultWithOwnership())
+                            : UpdateStandardsControlOutcome(std::move(result.GetError()));
 }

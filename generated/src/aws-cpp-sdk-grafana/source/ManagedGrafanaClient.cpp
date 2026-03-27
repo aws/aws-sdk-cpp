@@ -220,7 +220,9 @@ AssociateLicenseOutcome ManagedGrafanaClient::AssociateLicense(const AssociateLi
     endpointResolutionOutcome.GetResult().AddPathSegment(LicenseTypeMapper::GetNameForLicenseType(request.GetLicenseType()));
   };
 
-  return AssociateLicenseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateLicenseOutcome(result.GetResultWithOwnership())
+                            : AssociateLicenseOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspaceOutcome ManagedGrafanaClient::CreateWorkspace(const CreateWorkspaceRequest& request) const {
@@ -229,7 +231,9 @@ CreateWorkspaceOutcome ManagedGrafanaClient::CreateWorkspace(const CreateWorkspa
     endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces");
   };
 
-  return CreateWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspaceOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspaceOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspaceApiKeyOutcome ManagedGrafanaClient::CreateWorkspaceApiKey(const CreateWorkspaceApiKeyRequest& request) const {
@@ -246,7 +250,9 @@ CreateWorkspaceApiKeyOutcome ManagedGrafanaClient::CreateWorkspaceApiKey(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/apikeys");
   };
 
-  return CreateWorkspaceApiKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspaceApiKeyOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspaceApiKeyOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspaceServiceAccountOutcome ManagedGrafanaClient::CreateWorkspaceServiceAccount(
@@ -264,7 +270,9 @@ CreateWorkspaceServiceAccountOutcome ManagedGrafanaClient::CreateWorkspaceServic
     endpointResolutionOutcome.GetResult().AddPathSegments("/serviceaccounts");
   };
 
-  return CreateWorkspaceServiceAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspaceServiceAccountOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspaceServiceAccountOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspaceServiceAccountTokenOutcome ManagedGrafanaClient::CreateWorkspaceServiceAccountToken(
@@ -289,7 +297,9 @@ CreateWorkspaceServiceAccountTokenOutcome ManagedGrafanaClient::CreateWorkspaceS
     endpointResolutionOutcome.GetResult().AddPathSegments("/tokens");
   };
 
-  return CreateWorkspaceServiceAccountTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspaceServiceAccountTokenOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspaceServiceAccountTokenOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkspaceOutcome ManagedGrafanaClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const {
@@ -305,7 +315,9 @@ DeleteWorkspaceOutcome ManagedGrafanaClient::DeleteWorkspace(const DeleteWorkspa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   };
 
-  return DeleteWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkspaceOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkspaceOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkspaceApiKeyOutcome ManagedGrafanaClient::DeleteWorkspaceApiKey(const DeleteWorkspaceApiKeyRequest& request) const {
@@ -328,7 +340,9 @@ DeleteWorkspaceApiKeyOutcome ManagedGrafanaClient::DeleteWorkspaceApiKey(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyName());
   };
 
-  return DeleteWorkspaceApiKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkspaceApiKeyOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkspaceApiKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkspaceServiceAccountOutcome ManagedGrafanaClient::DeleteWorkspaceServiceAccount(
@@ -352,7 +366,9 @@ DeleteWorkspaceServiceAccountOutcome ManagedGrafanaClient::DeleteWorkspaceServic
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServiceAccountId());
   };
 
-  return DeleteWorkspaceServiceAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkspaceServiceAccountOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkspaceServiceAccountOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkspaceServiceAccountTokenOutcome ManagedGrafanaClient::DeleteWorkspaceServiceAccountToken(
@@ -383,7 +399,9 @@ DeleteWorkspaceServiceAccountTokenOutcome ManagedGrafanaClient::DeleteWorkspaceS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTokenId());
   };
 
-  return DeleteWorkspaceServiceAccountTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkspaceServiceAccountTokenOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkspaceServiceAccountTokenOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspaceOutcome ManagedGrafanaClient::DescribeWorkspace(const DescribeWorkspaceRequest& request) const {
@@ -399,7 +417,9 @@ DescribeWorkspaceOutcome ManagedGrafanaClient::DescribeWorkspace(const DescribeW
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   };
 
-  return DescribeWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeWorkspaceOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspaceAuthenticationOutcome ManagedGrafanaClient::DescribeWorkspaceAuthentication(
@@ -417,7 +437,9 @@ DescribeWorkspaceAuthenticationOutcome ManagedGrafanaClient::DescribeWorkspaceAu
     endpointResolutionOutcome.GetResult().AddPathSegments("/authentication");
   };
 
-  return DescribeWorkspaceAuthenticationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeWorkspaceAuthenticationOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceAuthenticationOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspaceConfigurationOutcome ManagedGrafanaClient::DescribeWorkspaceConfiguration(
@@ -435,7 +457,9 @@ DescribeWorkspaceConfigurationOutcome ManagedGrafanaClient::DescribeWorkspaceCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return DescribeWorkspaceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeWorkspaceConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceConfigurationOutcome(std::move(result.GetError()));
 }
 
 DisassociateLicenseOutcome ManagedGrafanaClient::DisassociateLicense(const DisassociateLicenseRequest& request) const {
@@ -458,7 +482,9 @@ DisassociateLicenseOutcome ManagedGrafanaClient::DisassociateLicense(const Disas
     endpointResolutionOutcome.GetResult().AddPathSegment(LicenseTypeMapper::GetNameForLicenseType(request.GetLicenseType()));
   };
 
-  return DisassociateLicenseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateLicenseOutcome(result.GetResultWithOwnership())
+                            : DisassociateLicenseOutcome(std::move(result.GetError()));
 }
 
 ListPermissionsOutcome ManagedGrafanaClient::ListPermissions(const ListPermissionsRequest& request) const {
@@ -475,7 +501,9 @@ ListPermissionsOutcome ManagedGrafanaClient::ListPermissions(const ListPermissio
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return ListPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPermissionsOutcome(result.GetResultWithOwnership())
+                            : ListPermissionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ManagedGrafanaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -491,7 +519,9 @@ ListTagsForResourceOutcome ManagedGrafanaClient::ListTagsForResource(const ListT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVersionsOutcome ManagedGrafanaClient::ListVersions(const ListVersionsRequest& request) const {
@@ -500,7 +530,8 @@ ListVersionsOutcome ManagedGrafanaClient::ListVersions(const ListVersionsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVersionsOutcome(result.GetResultWithOwnership()) : ListVersionsOutcome(std::move(result.GetError()));
 }
 
 ListWorkspaceServiceAccountTokensOutcome ManagedGrafanaClient::ListWorkspaceServiceAccountTokens(
@@ -525,7 +556,9 @@ ListWorkspaceServiceAccountTokensOutcome ManagedGrafanaClient::ListWorkspaceServ
     endpointResolutionOutcome.GetResult().AddPathSegments("/tokens");
   };
 
-  return ListWorkspaceServiceAccountTokensOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkspaceServiceAccountTokensOutcome(result.GetResultWithOwnership())
+                            : ListWorkspaceServiceAccountTokensOutcome(std::move(result.GetError()));
 }
 
 ListWorkspaceServiceAccountsOutcome ManagedGrafanaClient::ListWorkspaceServiceAccounts(
@@ -543,7 +576,9 @@ ListWorkspaceServiceAccountsOutcome ManagedGrafanaClient::ListWorkspaceServiceAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/serviceaccounts");
   };
 
-  return ListWorkspaceServiceAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkspaceServiceAccountsOutcome(result.GetResultWithOwnership())
+                            : ListWorkspaceServiceAccountsOutcome(std::move(result.GetError()));
 }
 
 ListWorkspacesOutcome ManagedGrafanaClient::ListWorkspaces(const ListWorkspacesRequest& request) const {
@@ -552,7 +587,8 @@ ListWorkspacesOutcome ManagedGrafanaClient::ListWorkspaces(const ListWorkspacesR
     endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces");
   };
 
-  return ListWorkspacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkspacesOutcome(result.GetResultWithOwnership()) : ListWorkspacesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ManagedGrafanaClient::TagResource(const TagResourceRequest& request) const {
@@ -568,7 +604,8 @@ TagResourceOutcome ManagedGrafanaClient::TagResource(const TagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ManagedGrafanaClient::UntagResource(const UntagResourceRequest& request) const {
@@ -589,7 +626,8 @@ UntagResourceOutcome ManagedGrafanaClient::UntagResource(const UntagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdatePermissionsOutcome ManagedGrafanaClient::UpdatePermissions(const UpdatePermissionsRequest& request) const {
@@ -606,7 +644,9 @@ UpdatePermissionsOutcome ManagedGrafanaClient::UpdatePermissions(const UpdatePer
     endpointResolutionOutcome.GetResult().AddPathSegments("/permissions");
   };
 
-  return UpdatePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdatePermissionsOutcome(result.GetResultWithOwnership())
+                            : UpdatePermissionsOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspaceOutcome ManagedGrafanaClient::UpdateWorkspace(const UpdateWorkspaceRequest& request) const {
@@ -622,7 +662,9 @@ UpdateWorkspaceOutcome ManagedGrafanaClient::UpdateWorkspace(const UpdateWorkspa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   };
 
-  return UpdateWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateWorkspaceOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspaceAuthenticationOutcome ManagedGrafanaClient::UpdateWorkspaceAuthentication(
@@ -640,7 +682,9 @@ UpdateWorkspaceAuthenticationOutcome ManagedGrafanaClient::UpdateWorkspaceAuthen
     endpointResolutionOutcome.GetResult().AddPathSegments("/authentication");
   };
 
-  return UpdateWorkspaceAuthenticationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkspaceAuthenticationOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceAuthenticationOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspaceConfigurationOutcome ManagedGrafanaClient::UpdateWorkspaceConfiguration(
@@ -658,5 +702,7 @@ UpdateWorkspaceConfigurationOutcome ManagedGrafanaClient::UpdateWorkspaceConfigu
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return UpdateWorkspaceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateWorkspaceConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceConfigurationOutcome(std::move(result.GetError()));
 }

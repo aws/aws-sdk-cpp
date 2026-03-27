@@ -199,7 +199,9 @@ CreateSuiteDefinitionOutcome IoTDeviceAdvisorClient::CreateSuiteDefinition(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/suiteDefinitions");
   };
 
-  return CreateSuiteDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSuiteDefinitionOutcome(result.GetResultWithOwnership())
+                            : CreateSuiteDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeleteSuiteDefinitionOutcome IoTDeviceAdvisorClient::DeleteSuiteDefinition(const DeleteSuiteDefinitionRequest& request) const {
@@ -215,7 +217,9 @@ DeleteSuiteDefinitionOutcome IoTDeviceAdvisorClient::DeleteSuiteDefinition(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSuiteDefinitionId());
   };
 
-  return DeleteSuiteDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSuiteDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteSuiteDefinitionOutcome(std::move(result.GetError()));
 }
 
 GetEndpointOutcome IoTDeviceAdvisorClient::GetEndpoint(const GetEndpointRequest& request) const {
@@ -224,7 +228,8 @@ GetEndpointOutcome IoTDeviceAdvisorClient::GetEndpoint(const GetEndpointRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/endpoint");
   };
 
-  return GetEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEndpointOutcome(result.GetResultWithOwnership()) : GetEndpointOutcome(std::move(result.GetError()));
 }
 
 GetSuiteDefinitionOutcome IoTDeviceAdvisorClient::GetSuiteDefinition(const GetSuiteDefinitionRequest& request) const {
@@ -240,7 +245,9 @@ GetSuiteDefinitionOutcome IoTDeviceAdvisorClient::GetSuiteDefinition(const GetSu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSuiteDefinitionId());
   };
 
-  return GetSuiteDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSuiteDefinitionOutcome(result.GetResultWithOwnership())
+                            : GetSuiteDefinitionOutcome(std::move(result.GetError()));
 }
 
 GetSuiteRunOutcome IoTDeviceAdvisorClient::GetSuiteRun(const GetSuiteRunRequest& request) const {
@@ -263,7 +270,8 @@ GetSuiteRunOutcome IoTDeviceAdvisorClient::GetSuiteRun(const GetSuiteRunRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSuiteRunId());
   };
 
-  return GetSuiteRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSuiteRunOutcome(result.GetResultWithOwnership()) : GetSuiteRunOutcome(std::move(result.GetError()));
 }
 
 GetSuiteRunReportOutcome IoTDeviceAdvisorClient::GetSuiteRunReport(const GetSuiteRunReportRequest& request) const {
@@ -287,7 +295,9 @@ GetSuiteRunReportOutcome IoTDeviceAdvisorClient::GetSuiteRunReport(const GetSuit
     endpointResolutionOutcome.GetResult().AddPathSegments("/report");
   };
 
-  return GetSuiteRunReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSuiteRunReportOutcome(result.GetResultWithOwnership())
+                            : GetSuiteRunReportOutcome(std::move(result.GetError()));
 }
 
 ListSuiteDefinitionsOutcome IoTDeviceAdvisorClient::ListSuiteDefinitions(const ListSuiteDefinitionsRequest& request) const {
@@ -296,7 +306,9 @@ ListSuiteDefinitionsOutcome IoTDeviceAdvisorClient::ListSuiteDefinitions(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/suiteDefinitions");
   };
 
-  return ListSuiteDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSuiteDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListSuiteDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListSuiteRunsOutcome IoTDeviceAdvisorClient::ListSuiteRuns(const ListSuiteRunsRequest& request) const {
@@ -305,7 +317,8 @@ ListSuiteRunsOutcome IoTDeviceAdvisorClient::ListSuiteRuns(const ListSuiteRunsRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/suiteRuns");
   };
 
-  return ListSuiteRunsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSuiteRunsOutcome(result.GetResultWithOwnership()) : ListSuiteRunsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome IoTDeviceAdvisorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -321,7 +334,9 @@ ListTagsForResourceOutcome IoTDeviceAdvisorClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartSuiteRunOutcome IoTDeviceAdvisorClient::StartSuiteRun(const StartSuiteRunRequest& request) const {
@@ -338,7 +353,8 @@ StartSuiteRunOutcome IoTDeviceAdvisorClient::StartSuiteRun(const StartSuiteRunRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/suiteRuns");
   };
 
-  return StartSuiteRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSuiteRunOutcome(result.GetResultWithOwnership()) : StartSuiteRunOutcome(std::move(result.GetError()));
 }
 
 StopSuiteRunOutcome IoTDeviceAdvisorClient::StopSuiteRun(const StopSuiteRunRequest& request) const {
@@ -362,7 +378,8 @@ StopSuiteRunOutcome IoTDeviceAdvisorClient::StopSuiteRun(const StopSuiteRunReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopSuiteRunOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopSuiteRunOutcome(result.GetResultWithOwnership()) : StopSuiteRunOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome IoTDeviceAdvisorClient::TagResource(const TagResourceRequest& request) const {
@@ -378,7 +395,8 @@ TagResourceOutcome IoTDeviceAdvisorClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome IoTDeviceAdvisorClient::UntagResource(const UntagResourceRequest& request) const {
@@ -399,7 +417,8 @@ UntagResourceOutcome IoTDeviceAdvisorClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateSuiteDefinitionOutcome IoTDeviceAdvisorClient::UpdateSuiteDefinition(const UpdateSuiteDefinitionRequest& request) const {
@@ -415,5 +434,7 @@ UpdateSuiteDefinitionOutcome IoTDeviceAdvisorClient::UpdateSuiteDefinition(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSuiteDefinitionId());
   };
 
-  return UpdateSuiteDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSuiteDefinitionOutcome(result.GetResultWithOwnership())
+                            : UpdateSuiteDefinitionOutcome(std::move(result.GetError()));
 }

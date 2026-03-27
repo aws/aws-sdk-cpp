@@ -252,7 +252,9 @@ AssociateTrackerConsumerOutcome LocationServiceClient::AssociateTrackerConsumer(
     endpointResolutionOutcome.GetResult().AddPathSegments("/consumers");
   };
 
-  return AssociateTrackerConsumerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateTrackerConsumerOutcome(result.GetResultWithOwnership())
+                            : AssociateTrackerConsumerOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteDevicePositionHistoryOutcome LocationServiceClient::BatchDeleteDevicePositionHistory(
@@ -270,7 +272,9 @@ BatchDeleteDevicePositionHistoryOutcome LocationServiceClient::BatchDeleteDevice
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-positions");
   };
 
-  return BatchDeleteDevicePositionHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteDevicePositionHistoryOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteDevicePositionHistoryOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteGeofenceOutcome LocationServiceClient::BatchDeleteGeofence(const BatchDeleteGeofenceRequest& request) const {
@@ -287,7 +291,9 @@ BatchDeleteGeofenceOutcome LocationServiceClient::BatchDeleteGeofence(const Batc
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-geofences");
   };
 
-  return BatchDeleteGeofenceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteGeofenceOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteGeofenceOutcome(std::move(result.GetError()));
 }
 
 BatchEvaluateGeofencesOutcome LocationServiceClient::BatchEvaluateGeofences(const BatchEvaluateGeofencesRequest& request) const {
@@ -304,7 +310,9 @@ BatchEvaluateGeofencesOutcome LocationServiceClient::BatchEvaluateGeofences(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/positions");
   };
 
-  return BatchEvaluateGeofencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchEvaluateGeofencesOutcome(result.GetResultWithOwnership())
+                            : BatchEvaluateGeofencesOutcome(std::move(result.GetError()));
 }
 
 BatchGetDevicePositionOutcome LocationServiceClient::BatchGetDevicePosition(const BatchGetDevicePositionRequest& request) const {
@@ -321,7 +329,9 @@ BatchGetDevicePositionOutcome LocationServiceClient::BatchGetDevicePosition(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-positions");
   };
 
-  return BatchGetDevicePositionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetDevicePositionOutcome(result.GetResultWithOwnership())
+                            : BatchGetDevicePositionOutcome(std::move(result.GetError()));
 }
 
 BatchPutGeofenceOutcome LocationServiceClient::BatchPutGeofence(const BatchPutGeofenceRequest& request) const {
@@ -338,7 +348,9 @@ BatchPutGeofenceOutcome LocationServiceClient::BatchPutGeofence(const BatchPutGe
     endpointResolutionOutcome.GetResult().AddPathSegments("/put-geofences");
   };
 
-  return BatchPutGeofenceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchPutGeofenceOutcome(result.GetResultWithOwnership())
+                            : BatchPutGeofenceOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateDevicePositionOutcome LocationServiceClient::BatchUpdateDevicePosition(const BatchUpdateDevicePositionRequest& request) const {
@@ -355,7 +367,9 @@ BatchUpdateDevicePositionOutcome LocationServiceClient::BatchUpdateDevicePositio
     endpointResolutionOutcome.GetResult().AddPathSegments("/positions");
   };
 
-  return BatchUpdateDevicePositionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateDevicePositionOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateDevicePositionOutcome(std::move(result.GetError()));
 }
 
 CalculateRouteOutcome LocationServiceClient::CalculateRoute(const CalculateRouteRequest& request) const {
@@ -372,7 +386,8 @@ CalculateRouteOutcome LocationServiceClient::CalculateRoute(const CalculateRoute
     endpointResolutionOutcome.GetResult().AddPathSegments("/calculate/route");
   };
 
-  return CalculateRouteOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CalculateRouteOutcome(result.GetResultWithOwnership()) : CalculateRouteOutcome(std::move(result.GetError()));
 }
 
 CalculateRouteMatrixOutcome LocationServiceClient::CalculateRouteMatrix(const CalculateRouteMatrixRequest& request) const {
@@ -389,7 +404,9 @@ CalculateRouteMatrixOutcome LocationServiceClient::CalculateRouteMatrix(const Ca
     endpointResolutionOutcome.GetResult().AddPathSegments("/calculate/route-matrix");
   };
 
-  return CalculateRouteMatrixOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CalculateRouteMatrixOutcome(result.GetResultWithOwnership())
+                            : CalculateRouteMatrixOutcome(std::move(result.GetError()));
 }
 
 CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(const CreateGeofenceCollectionRequest& request) const {
@@ -398,7 +415,9 @@ CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(
     endpointResolutionOutcome.GetResult().AddPathSegments("/geofencing/v0/collections");
   };
 
-  return CreateGeofenceCollectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGeofenceCollectionOutcome(result.GetResultWithOwnership())
+                            : CreateGeofenceCollectionOutcome(std::move(result.GetError()));
 }
 
 CreateKeyOutcome LocationServiceClient::CreateKey(const CreateKeyRequest& request) const {
@@ -407,7 +426,8 @@ CreateKeyOutcome LocationServiceClient::CreateKey(const CreateKeyRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/keys");
   };
 
-  return CreateKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKeyOutcome(result.GetResultWithOwnership()) : CreateKeyOutcome(std::move(result.GetError()));
 }
 
 CreateMapOutcome LocationServiceClient::CreateMap(const CreateMapRequest& request) const {
@@ -416,7 +436,8 @@ CreateMapOutcome LocationServiceClient::CreateMap(const CreateMapRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/maps/v0/maps");
   };
 
-  return CreateMapOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMapOutcome(result.GetResultWithOwnership()) : CreateMapOutcome(std::move(result.GetError()));
 }
 
 CreatePlaceIndexOutcome LocationServiceClient::CreatePlaceIndex(const CreatePlaceIndexRequest& request) const {
@@ -425,7 +446,9 @@ CreatePlaceIndexOutcome LocationServiceClient::CreatePlaceIndex(const CreatePlac
     endpointResolutionOutcome.GetResult().AddPathSegments("/places/v0/indexes");
   };
 
-  return CreatePlaceIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePlaceIndexOutcome(result.GetResultWithOwnership())
+                            : CreatePlaceIndexOutcome(std::move(result.GetError()));
 }
 
 CreateRouteCalculatorOutcome LocationServiceClient::CreateRouteCalculator(const CreateRouteCalculatorRequest& request) const {
@@ -434,7 +457,9 @@ CreateRouteCalculatorOutcome LocationServiceClient::CreateRouteCalculator(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/routes/v0/calculators");
   };
 
-  return CreateRouteCalculatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRouteCalculatorOutcome(result.GetResultWithOwnership())
+                            : CreateRouteCalculatorOutcome(std::move(result.GetError()));
 }
 
 CreateTrackerOutcome LocationServiceClient::CreateTracker(const CreateTrackerRequest& request) const {
@@ -443,7 +468,8 @@ CreateTrackerOutcome LocationServiceClient::CreateTracker(const CreateTrackerReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/trackers");
   };
 
-  return CreateTrackerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrackerOutcome(result.GetResultWithOwnership()) : CreateTrackerOutcome(std::move(result.GetError()));
 }
 
 DeleteGeofenceCollectionOutcome LocationServiceClient::DeleteGeofenceCollection(const DeleteGeofenceCollectionRequest& request) const {
@@ -459,7 +485,9 @@ DeleteGeofenceCollectionOutcome LocationServiceClient::DeleteGeofenceCollection(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionName());
   };
 
-  return DeleteGeofenceCollectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGeofenceCollectionOutcome(result.GetResultWithOwnership())
+                            : DeleteGeofenceCollectionOutcome(std::move(result.GetError()));
 }
 
 DeleteKeyOutcome LocationServiceClient::DeleteKey(const DeleteKeyRequest& request) const {
@@ -475,7 +503,8 @@ DeleteKeyOutcome LocationServiceClient::DeleteKey(const DeleteKeyRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyName());
   };
 
-  return DeleteKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKeyOutcome(result.GetResultWithOwnership()) : DeleteKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteMapOutcome LocationServiceClient::DeleteMap(const DeleteMapRequest& request) const {
@@ -491,7 +520,8 @@ DeleteMapOutcome LocationServiceClient::DeleteMap(const DeleteMapRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMapName());
   };
 
-  return DeleteMapOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMapOutcome(result.GetResultWithOwnership()) : DeleteMapOutcome(std::move(result.GetError()));
 }
 
 DeletePlaceIndexOutcome LocationServiceClient::DeletePlaceIndex(const DeletePlaceIndexRequest& request) const {
@@ -507,7 +537,9 @@ DeletePlaceIndexOutcome LocationServiceClient::DeletePlaceIndex(const DeletePlac
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
   };
 
-  return DeletePlaceIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePlaceIndexOutcome(result.GetResultWithOwnership())
+                            : DeletePlaceIndexOutcome(std::move(result.GetError()));
 }
 
 DeleteRouteCalculatorOutcome LocationServiceClient::DeleteRouteCalculator(const DeleteRouteCalculatorRequest& request) const {
@@ -523,7 +555,9 @@ DeleteRouteCalculatorOutcome LocationServiceClient::DeleteRouteCalculator(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCalculatorName());
   };
 
-  return DeleteRouteCalculatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRouteCalculatorOutcome(result.GetResultWithOwnership())
+                            : DeleteRouteCalculatorOutcome(std::move(result.GetError()));
 }
 
 DeleteTrackerOutcome LocationServiceClient::DeleteTracker(const DeleteTrackerRequest& request) const {
@@ -539,7 +573,8 @@ DeleteTrackerOutcome LocationServiceClient::DeleteTracker(const DeleteTrackerReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrackerName());
   };
 
-  return DeleteTrackerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTrackerOutcome(result.GetResultWithOwnership()) : DeleteTrackerOutcome(std::move(result.GetError()));
 }
 
 DescribeGeofenceCollectionOutcome LocationServiceClient::DescribeGeofenceCollection(
@@ -556,7 +591,9 @@ DescribeGeofenceCollectionOutcome LocationServiceClient::DescribeGeofenceCollect
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionName());
   };
 
-  return DescribeGeofenceCollectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeGeofenceCollectionOutcome(result.GetResultWithOwnership())
+                            : DescribeGeofenceCollectionOutcome(std::move(result.GetError()));
 }
 
 DescribeKeyOutcome LocationServiceClient::DescribeKey(const DescribeKeyRequest& request) const {
@@ -572,7 +609,8 @@ DescribeKeyOutcome LocationServiceClient::DescribeKey(const DescribeKeyRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyName());
   };
 
-  return DescribeKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeKeyOutcome(result.GetResultWithOwnership()) : DescribeKeyOutcome(std::move(result.GetError()));
 }
 
 DescribeMapOutcome LocationServiceClient::DescribeMap(const DescribeMapRequest& request) const {
@@ -588,7 +626,8 @@ DescribeMapOutcome LocationServiceClient::DescribeMap(const DescribeMapRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMapName());
   };
 
-  return DescribeMapOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeMapOutcome(result.GetResultWithOwnership()) : DescribeMapOutcome(std::move(result.GetError()));
 }
 
 DescribePlaceIndexOutcome LocationServiceClient::DescribePlaceIndex(const DescribePlaceIndexRequest& request) const {
@@ -604,7 +643,9 @@ DescribePlaceIndexOutcome LocationServiceClient::DescribePlaceIndex(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
   };
 
-  return DescribePlaceIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePlaceIndexOutcome(result.GetResultWithOwnership())
+                            : DescribePlaceIndexOutcome(std::move(result.GetError()));
 }
 
 DescribeRouteCalculatorOutcome LocationServiceClient::DescribeRouteCalculator(const DescribeRouteCalculatorRequest& request) const {
@@ -620,7 +661,9 @@ DescribeRouteCalculatorOutcome LocationServiceClient::DescribeRouteCalculator(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCalculatorName());
   };
 
-  return DescribeRouteCalculatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRouteCalculatorOutcome(result.GetResultWithOwnership())
+                            : DescribeRouteCalculatorOutcome(std::move(result.GetError()));
 }
 
 DescribeTrackerOutcome LocationServiceClient::DescribeTracker(const DescribeTrackerRequest& request) const {
@@ -636,7 +679,9 @@ DescribeTrackerOutcome LocationServiceClient::DescribeTracker(const DescribeTrac
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrackerName());
   };
 
-  return DescribeTrackerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeTrackerOutcome(result.GetResultWithOwnership())
+                            : DescribeTrackerOutcome(std::move(result.GetError()));
 }
 
 DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerConsumer(
@@ -660,7 +705,9 @@ DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerCon
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConsumerArn());
   };
 
-  return DisassociateTrackerConsumerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateTrackerConsumerOutcome(result.GetResultWithOwnership())
+                            : DisassociateTrackerConsumerOutcome(std::move(result.GetError()));
 }
 
 ForecastGeofenceEventsOutcome LocationServiceClient::ForecastGeofenceEvents(const ForecastGeofenceEventsRequest& request) const {
@@ -677,7 +724,9 @@ ForecastGeofenceEventsOutcome LocationServiceClient::ForecastGeofenceEvents(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/forecast-geofence-events");
   };
 
-  return ForecastGeofenceEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ForecastGeofenceEventsOutcome(result.GetResultWithOwnership())
+                            : ForecastGeofenceEventsOutcome(std::move(result.GetError()));
 }
 
 GetDevicePositionOutcome LocationServiceClient::GetDevicePosition(const GetDevicePositionRequest& request) const {
@@ -701,7 +750,9 @@ GetDevicePositionOutcome LocationServiceClient::GetDevicePosition(const GetDevic
     endpointResolutionOutcome.GetResult().AddPathSegments("/positions/latest");
   };
 
-  return GetDevicePositionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDevicePositionOutcome(result.GetResultWithOwnership())
+                            : GetDevicePositionOutcome(std::move(result.GetError()));
 }
 
 GetDevicePositionHistoryOutcome LocationServiceClient::GetDevicePositionHistory(const GetDevicePositionHistoryRequest& request) const {
@@ -725,7 +776,9 @@ GetDevicePositionHistoryOutcome LocationServiceClient::GetDevicePositionHistory(
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-positions");
   };
 
-  return GetDevicePositionHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDevicePositionHistoryOutcome(result.GetResultWithOwnership())
+                            : GetDevicePositionHistoryOutcome(std::move(result.GetError()));
 }
 
 GetGeofenceOutcome LocationServiceClient::GetGeofence(const GetGeofenceRequest& request) const {
@@ -748,7 +801,8 @@ GetGeofenceOutcome LocationServiceClient::GetGeofence(const GetGeofenceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGeofenceId());
   };
 
-  return GetGeofenceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGeofenceOutcome(result.GetResultWithOwnership()) : GetGeofenceOutcome(std::move(result.GetError()));
 }
 
 GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsRequest& request) const {
@@ -794,8 +848,9 @@ GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsReques
         endpointResolutionOutcome.GetResult().AddPathSegments("/glyphs/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFontStack());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFontUnicodeRange());
-        return GetMapGlyphsOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetMapGlyphsOutcome(result.GetResultWithOwnership())
+                                  : GetMapGlyphsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -839,8 +894,9 @@ GetMapSpritesOutcome LocationServiceClient::GetMapSprites(const GetMapSpritesReq
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMapName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/sprites/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFileName());
-        return GetMapSpritesOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetMapSpritesOutcome(result.GetResultWithOwnership())
+                                  : GetMapSpritesOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -878,8 +934,9 @@ GetMapStyleDescriptorOutcome LocationServiceClient::GetMapStyleDescriptor(const 
         endpointResolutionOutcome.GetResult().AddPathSegments("/maps/v0/maps/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMapName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/style-descriptor");
-        return GetMapStyleDescriptorOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetMapStyleDescriptorOutcome(result.GetResultWithOwnership())
+                                  : GetMapStyleDescriptorOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -935,8 +992,8 @@ GetMapTileOutcome LocationServiceClient::GetMapTile(const GetMapTileRequest& req
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetZ());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetX());
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetY());
-        return GetMapTileOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetMapTileOutcome(result.GetResultWithOwnership()) : GetMapTileOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -963,7 +1020,8 @@ GetPlaceOutcome LocationServiceClient::GetPlace(const GetPlaceRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPlaceId());
   };
 
-  return GetPlaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPlaceOutcome(result.GetResultWithOwnership()) : GetPlaceOutcome(std::move(result.GetError()));
 }
 
 ListDevicePositionsOutcome LocationServiceClient::ListDevicePositions(const ListDevicePositionsRequest& request) const {
@@ -980,7 +1038,9 @@ ListDevicePositionsOutcome LocationServiceClient::ListDevicePositions(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-positions");
   };
 
-  return ListDevicePositionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDevicePositionsOutcome(result.GetResultWithOwnership())
+                            : ListDevicePositionsOutcome(std::move(result.GetError()));
 }
 
 ListGeofenceCollectionsOutcome LocationServiceClient::ListGeofenceCollections(const ListGeofenceCollectionsRequest& request) const {
@@ -989,7 +1049,9 @@ ListGeofenceCollectionsOutcome LocationServiceClient::ListGeofenceCollections(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/geofencing/v0/list-collections");
   };
 
-  return ListGeofenceCollectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGeofenceCollectionsOutcome(result.GetResultWithOwnership())
+                            : ListGeofenceCollectionsOutcome(std::move(result.GetError()));
 }
 
 ListGeofencesOutcome LocationServiceClient::ListGeofences(const ListGeofencesRequest& request) const {
@@ -1006,7 +1068,8 @@ ListGeofencesOutcome LocationServiceClient::ListGeofences(const ListGeofencesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-geofences");
   };
 
-  return ListGeofencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGeofencesOutcome(result.GetResultWithOwnership()) : ListGeofencesOutcome(std::move(result.GetError()));
 }
 
 ListKeysOutcome LocationServiceClient::ListKeys(const ListKeysRequest& request) const {
@@ -1015,7 +1078,8 @@ ListKeysOutcome LocationServiceClient::ListKeys(const ListKeysRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata/v0/list-keys");
   };
 
-  return ListKeysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListKeysOutcome(result.GetResultWithOwnership()) : ListKeysOutcome(std::move(result.GetError()));
 }
 
 ListMapsOutcome LocationServiceClient::ListMaps(const ListMapsRequest& request) const {
@@ -1024,7 +1088,8 @@ ListMapsOutcome LocationServiceClient::ListMaps(const ListMapsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/maps/v0/list-maps");
   };
 
-  return ListMapsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMapsOutcome(result.GetResultWithOwnership()) : ListMapsOutcome(std::move(result.GetError()));
 }
 
 ListPlaceIndexesOutcome LocationServiceClient::ListPlaceIndexes(const ListPlaceIndexesRequest& request) const {
@@ -1033,7 +1098,9 @@ ListPlaceIndexesOutcome LocationServiceClient::ListPlaceIndexes(const ListPlaceI
     endpointResolutionOutcome.GetResult().AddPathSegments("/places/v0/list-indexes");
   };
 
-  return ListPlaceIndexesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPlaceIndexesOutcome(result.GetResultWithOwnership())
+                            : ListPlaceIndexesOutcome(std::move(result.GetError()));
 }
 
 ListRouteCalculatorsOutcome LocationServiceClient::ListRouteCalculators(const ListRouteCalculatorsRequest& request) const {
@@ -1042,7 +1109,9 @@ ListRouteCalculatorsOutcome LocationServiceClient::ListRouteCalculators(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/routes/v0/list-calculators");
   };
 
-  return ListRouteCalculatorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRouteCalculatorsOutcome(result.GetResultWithOwnership())
+                            : ListRouteCalculatorsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome LocationServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1058,7 +1127,9 @@ ListTagsForResourceOutcome LocationServiceClient::ListTagsForResource(const List
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTrackerConsumersOutcome LocationServiceClient::ListTrackerConsumers(const ListTrackerConsumersRequest& request) const {
@@ -1075,7 +1146,9 @@ ListTrackerConsumersOutcome LocationServiceClient::ListTrackerConsumers(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-consumers");
   };
 
-  return ListTrackerConsumersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrackerConsumersOutcome(result.GetResultWithOwnership())
+                            : ListTrackerConsumersOutcome(std::move(result.GetError()));
 }
 
 ListTrackersOutcome LocationServiceClient::ListTrackers(const ListTrackersRequest& request) const {
@@ -1084,7 +1157,8 @@ ListTrackersOutcome LocationServiceClient::ListTrackers(const ListTrackersReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/tracking/v0/list-trackers");
   };
 
-  return ListTrackersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrackersOutcome(result.GetResultWithOwnership()) : ListTrackersOutcome(std::move(result.GetError()));
 }
 
 PutGeofenceOutcome LocationServiceClient::PutGeofence(const PutGeofenceRequest& request) const {
@@ -1107,7 +1181,8 @@ PutGeofenceOutcome LocationServiceClient::PutGeofence(const PutGeofenceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGeofenceId());
   };
 
-  return PutGeofenceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutGeofenceOutcome(result.GetResultWithOwnership()) : PutGeofenceOutcome(std::move(result.GetError()));
 }
 
 SearchPlaceIndexForPositionOutcome LocationServiceClient::SearchPlaceIndexForPosition(
@@ -1125,7 +1200,9 @@ SearchPlaceIndexForPositionOutcome LocationServiceClient::SearchPlaceIndexForPos
     endpointResolutionOutcome.GetResult().AddPathSegments("/search/position");
   };
 
-  return SearchPlaceIndexForPositionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchPlaceIndexForPositionOutcome(result.GetResultWithOwnership())
+                            : SearchPlaceIndexForPositionOutcome(std::move(result.GetError()));
 }
 
 SearchPlaceIndexForSuggestionsOutcome LocationServiceClient::SearchPlaceIndexForSuggestions(
@@ -1143,7 +1220,9 @@ SearchPlaceIndexForSuggestionsOutcome LocationServiceClient::SearchPlaceIndexFor
     endpointResolutionOutcome.GetResult().AddPathSegments("/search/suggestions");
   };
 
-  return SearchPlaceIndexForSuggestionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchPlaceIndexForSuggestionsOutcome(result.GetResultWithOwnership())
+                            : SearchPlaceIndexForSuggestionsOutcome(std::move(result.GetError()));
 }
 
 SearchPlaceIndexForTextOutcome LocationServiceClient::SearchPlaceIndexForText(const SearchPlaceIndexForTextRequest& request) const {
@@ -1160,7 +1239,9 @@ SearchPlaceIndexForTextOutcome LocationServiceClient::SearchPlaceIndexForText(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/search/text");
   };
 
-  return SearchPlaceIndexForTextOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchPlaceIndexForTextOutcome(result.GetResultWithOwnership())
+                            : SearchPlaceIndexForTextOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome LocationServiceClient::TagResource(const TagResourceRequest& request) const {
@@ -1176,7 +1257,8 @@ TagResourceOutcome LocationServiceClient::TagResource(const TagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome LocationServiceClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1197,7 +1279,8 @@ UntagResourceOutcome LocationServiceClient::UntagResource(const UntagResourceReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateGeofenceCollectionOutcome LocationServiceClient::UpdateGeofenceCollection(const UpdateGeofenceCollectionRequest& request) const {
@@ -1213,7 +1296,9 @@ UpdateGeofenceCollectionOutcome LocationServiceClient::UpdateGeofenceCollection(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollectionName());
   };
 
-  return UpdateGeofenceCollectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateGeofenceCollectionOutcome(result.GetResultWithOwnership())
+                            : UpdateGeofenceCollectionOutcome(std::move(result.GetError()));
 }
 
 UpdateKeyOutcome LocationServiceClient::UpdateKey(const UpdateKeyRequest& request) const {
@@ -1229,7 +1314,8 @@ UpdateKeyOutcome LocationServiceClient::UpdateKey(const UpdateKeyRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyName());
   };
 
-  return UpdateKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateKeyOutcome(result.GetResultWithOwnership()) : UpdateKeyOutcome(std::move(result.GetError()));
 }
 
 UpdateMapOutcome LocationServiceClient::UpdateMap(const UpdateMapRequest& request) const {
@@ -1245,7 +1331,8 @@ UpdateMapOutcome LocationServiceClient::UpdateMap(const UpdateMapRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMapName());
   };
 
-  return UpdateMapOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMapOutcome(result.GetResultWithOwnership()) : UpdateMapOutcome(std::move(result.GetError()));
 }
 
 UpdatePlaceIndexOutcome LocationServiceClient::UpdatePlaceIndex(const UpdatePlaceIndexRequest& request) const {
@@ -1261,7 +1348,9 @@ UpdatePlaceIndexOutcome LocationServiceClient::UpdatePlaceIndex(const UpdatePlac
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
   };
 
-  return UpdatePlaceIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdatePlaceIndexOutcome(result.GetResultWithOwnership())
+                            : UpdatePlaceIndexOutcome(std::move(result.GetError()));
 }
 
 UpdateRouteCalculatorOutcome LocationServiceClient::UpdateRouteCalculator(const UpdateRouteCalculatorRequest& request) const {
@@ -1277,7 +1366,9 @@ UpdateRouteCalculatorOutcome LocationServiceClient::UpdateRouteCalculator(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCalculatorName());
   };
 
-  return UpdateRouteCalculatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateRouteCalculatorOutcome(result.GetResultWithOwnership())
+                            : UpdateRouteCalculatorOutcome(std::move(result.GetError()));
 }
 
 UpdateTrackerOutcome LocationServiceClient::UpdateTracker(const UpdateTrackerRequest& request) const {
@@ -1293,7 +1384,8 @@ UpdateTrackerOutcome LocationServiceClient::UpdateTracker(const UpdateTrackerReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrackerName());
   };
 
-  return UpdateTrackerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateTrackerOutcome(result.GetResultWithOwnership()) : UpdateTrackerOutcome(std::move(result.GetError()));
 }
 
 VerifyDevicePositionOutcome LocationServiceClient::VerifyDevicePosition(const VerifyDevicePositionRequest& request) const {
@@ -1310,5 +1402,7 @@ VerifyDevicePositionOutcome LocationServiceClient::VerifyDevicePosition(const Ve
     endpointResolutionOutcome.GetResult().AddPathSegments("/positions/verify");
   };
 
-  return VerifyDevicePositionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyDevicePositionOutcome(result.GetResultWithOwnership())
+                            : VerifyDevicePositionOutcome(std::move(result.GetError()));
 }

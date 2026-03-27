@@ -222,7 +222,8 @@ AcceptLinkOutcome RTBFabricClient::AcceptLink(const AcceptLinkRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/accept");
   };
 
-  return AcceptLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptLinkOutcome(result.GetResultWithOwnership()) : AcceptLinkOutcome(std::move(result.GetError()));
 }
 
 CreateInboundExternalLinkOutcome RTBFabricClient::CreateInboundExternalLink(const CreateInboundExternalLinkRequest& request) const {
@@ -239,7 +240,9 @@ CreateInboundExternalLinkOutcome RTBFabricClient::CreateInboundExternalLink(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/inbound-external-link");
   };
 
-  return CreateInboundExternalLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInboundExternalLinkOutcome(result.GetResultWithOwnership())
+                            : CreateInboundExternalLinkOutcome(std::move(result.GetError()));
 }
 
 CreateLinkOutcome RTBFabricClient::CreateLink(const CreateLinkRequest& request) const {
@@ -256,7 +259,8 @@ CreateLinkOutcome RTBFabricClient::CreateLink(const CreateLinkRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-link");
   };
 
-  return CreateLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLinkOutcome(result.GetResultWithOwnership()) : CreateLinkOutcome(std::move(result.GetError()));
 }
 
 CreateOutboundExternalLinkOutcome RTBFabricClient::CreateOutboundExternalLink(const CreateOutboundExternalLinkRequest& request) const {
@@ -273,7 +277,9 @@ CreateOutboundExternalLinkOutcome RTBFabricClient::CreateOutboundExternalLink(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/outbound-external-link");
   };
 
-  return CreateOutboundExternalLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOutboundExternalLinkOutcome(result.GetResultWithOwnership())
+                            : CreateOutboundExternalLinkOutcome(std::move(result.GetError()));
 }
 
 CreateRequesterGatewayOutcome RTBFabricClient::CreateRequesterGateway(const CreateRequesterGatewayRequest& request) const {
@@ -282,7 +288,9 @@ CreateRequesterGatewayOutcome RTBFabricClient::CreateRequesterGateway(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/requester-gateway");
   };
 
-  return CreateRequesterGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRequesterGatewayOutcome(result.GetResultWithOwnership())
+                            : CreateRequesterGatewayOutcome(std::move(result.GetError()));
 }
 
 CreateResponderGatewayOutcome RTBFabricClient::CreateResponderGateway(const CreateResponderGatewayRequest& request) const {
@@ -291,7 +299,9 @@ CreateResponderGatewayOutcome RTBFabricClient::CreateResponderGateway(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegments("/responder-gateway");
   };
 
-  return CreateResponderGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResponderGatewayOutcome(result.GetResultWithOwnership())
+                            : CreateResponderGatewayOutcome(std::move(result.GetError()));
 }
 
 DeleteInboundExternalLinkOutcome RTBFabricClient::DeleteInboundExternalLink(const DeleteInboundExternalLinkRequest& request) const {
@@ -314,7 +324,9 @@ DeleteInboundExternalLinkOutcome RTBFabricClient::DeleteInboundExternalLink(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
   };
 
-  return DeleteInboundExternalLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInboundExternalLinkOutcome(result.GetResultWithOwnership())
+                            : DeleteInboundExternalLinkOutcome(std::move(result.GetError()));
 }
 
 DeleteLinkOutcome RTBFabricClient::DeleteLink(const DeleteLinkRequest& request) const {
@@ -337,7 +349,8 @@ DeleteLinkOutcome RTBFabricClient::DeleteLink(const DeleteLinkRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
   };
 
-  return DeleteLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLinkOutcome(result.GetResultWithOwnership()) : DeleteLinkOutcome(std::move(result.GetError()));
 }
 
 DeleteOutboundExternalLinkOutcome RTBFabricClient::DeleteOutboundExternalLink(const DeleteOutboundExternalLinkRequest& request) const {
@@ -360,7 +373,9 @@ DeleteOutboundExternalLinkOutcome RTBFabricClient::DeleteOutboundExternalLink(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
   };
 
-  return DeleteOutboundExternalLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteOutboundExternalLinkOutcome(result.GetResultWithOwnership())
+                            : DeleteOutboundExternalLinkOutcome(std::move(result.GetError()));
 }
 
 DeleteRequesterGatewayOutcome RTBFabricClient::DeleteRequesterGateway(const DeleteRequesterGatewayRequest& request) const {
@@ -376,7 +391,9 @@ DeleteRequesterGatewayOutcome RTBFabricClient::DeleteRequesterGateway(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
   };
 
-  return DeleteRequesterGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRequesterGatewayOutcome(result.GetResultWithOwnership())
+                            : DeleteRequesterGatewayOutcome(std::move(result.GetError()));
 }
 
 DeleteResponderGatewayOutcome RTBFabricClient::DeleteResponderGateway(const DeleteResponderGatewayRequest& request) const {
@@ -392,7 +409,9 @@ DeleteResponderGatewayOutcome RTBFabricClient::DeleteResponderGateway(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
   };
 
-  return DeleteResponderGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResponderGatewayOutcome(result.GetResultWithOwnership())
+                            : DeleteResponderGatewayOutcome(std::move(result.GetError()));
 }
 
 GetInboundExternalLinkOutcome RTBFabricClient::GetInboundExternalLink(const GetInboundExternalLinkRequest& request) const {
@@ -415,7 +434,9 @@ GetInboundExternalLinkOutcome RTBFabricClient::GetInboundExternalLink(const GetI
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
   };
 
-  return GetInboundExternalLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInboundExternalLinkOutcome(result.GetResultWithOwnership())
+                            : GetInboundExternalLinkOutcome(std::move(result.GetError()));
 }
 
 GetLinkOutcome RTBFabricClient::GetLink(const GetLinkRequest& request) const {
@@ -438,7 +459,8 @@ GetLinkOutcome RTBFabricClient::GetLink(const GetLinkRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
   };
 
-  return GetLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLinkOutcome(result.GetResultWithOwnership()) : GetLinkOutcome(std::move(result.GetError()));
 }
 
 GetOutboundExternalLinkOutcome RTBFabricClient::GetOutboundExternalLink(const GetOutboundExternalLinkRequest& request) const {
@@ -461,7 +483,9 @@ GetOutboundExternalLinkOutcome RTBFabricClient::GetOutboundExternalLink(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
   };
 
-  return GetOutboundExternalLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOutboundExternalLinkOutcome(result.GetResultWithOwnership())
+                            : GetOutboundExternalLinkOutcome(std::move(result.GetError()));
 }
 
 GetRequesterGatewayOutcome RTBFabricClient::GetRequesterGateway(const GetRequesterGatewayRequest& request) const {
@@ -477,7 +501,9 @@ GetRequesterGatewayOutcome RTBFabricClient::GetRequesterGateway(const GetRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
   };
 
-  return GetRequesterGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRequesterGatewayOutcome(result.GetResultWithOwnership())
+                            : GetRequesterGatewayOutcome(std::move(result.GetError()));
 }
 
 GetResponderGatewayOutcome RTBFabricClient::GetResponderGateway(const GetResponderGatewayRequest& request) const {
@@ -493,7 +519,9 @@ GetResponderGatewayOutcome RTBFabricClient::GetResponderGateway(const GetRespond
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayId());
   };
 
-  return GetResponderGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResponderGatewayOutcome(result.GetResultWithOwnership())
+                            : GetResponderGatewayOutcome(std::move(result.GetError()));
 }
 
 ListLinksOutcome RTBFabricClient::ListLinks(const ListLinksRequest& request) const {
@@ -510,7 +538,8 @@ ListLinksOutcome RTBFabricClient::ListLinks(const ListLinksRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/links/");
   };
 
-  return ListLinksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLinksOutcome(result.GetResultWithOwnership()) : ListLinksOutcome(std::move(result.GetError()));
 }
 
 ListRequesterGatewaysOutcome RTBFabricClient::ListRequesterGateways(const ListRequesterGatewaysRequest& request) const {
@@ -519,7 +548,9 @@ ListRequesterGatewaysOutcome RTBFabricClient::ListRequesterGateways(const ListRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/requester-gateways");
   };
 
-  return ListRequesterGatewaysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRequesterGatewaysOutcome(result.GetResultWithOwnership())
+                            : ListRequesterGatewaysOutcome(std::move(result.GetError()));
 }
 
 ListResponderGatewaysOutcome RTBFabricClient::ListResponderGateways(const ListResponderGatewaysRequest& request) const {
@@ -528,7 +559,9 @@ ListResponderGatewaysOutcome RTBFabricClient::ListResponderGateways(const ListRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/responder-gateways");
   };
 
-  return ListResponderGatewaysOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResponderGatewaysOutcome(result.GetResultWithOwnership())
+                            : ListResponderGatewaysOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome RTBFabricClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -544,7 +577,9 @@ ListTagsForResourceOutcome RTBFabricClient::ListTagsForResource(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RejectLinkOutcome RTBFabricClient::RejectLink(const RejectLinkRequest& request) const {
@@ -568,7 +603,8 @@ RejectLinkOutcome RTBFabricClient::RejectLink(const RejectLinkRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/reject");
   };
 
-  return RejectLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectLinkOutcome(result.GetResultWithOwnership()) : RejectLinkOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome RTBFabricClient::TagResource(const TagResourceRequest& request) const {
@@ -584,7 +620,8 @@ TagResourceOutcome RTBFabricClient::TagResource(const TagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome RTBFabricClient::UntagResource(const UntagResourceRequest& request) const {
@@ -605,7 +642,8 @@ UntagResourceOutcome RTBFabricClient::UntagResource(const UntagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateLinkOutcome RTBFabricClient::UpdateLink(const UpdateLinkRequest& request) const {
@@ -628,7 +666,8 @@ UpdateLinkOutcome RTBFabricClient::UpdateLink(const UpdateLinkRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLinkId());
   };
 
-  return UpdateLinkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateLinkOutcome(result.GetResultWithOwnership()) : UpdateLinkOutcome(std::move(result.GetError()));
 }
 
 UpdateLinkModuleFlowOutcome RTBFabricClient::UpdateLinkModuleFlow(const UpdateLinkModuleFlowRequest& request) const {
@@ -652,7 +691,9 @@ UpdateLinkModuleFlowOutcome RTBFabricClient::UpdateLinkModuleFlow(const UpdateLi
     endpointResolutionOutcome.GetResult().AddPathSegments("/module-flow");
   };
 
-  return UpdateLinkModuleFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLinkModuleFlowOutcome(result.GetResultWithOwnership())
+                            : UpdateLinkModuleFlowOutcome(std::move(result.GetError()));
 }
 
 UpdateRequesterGatewayOutcome RTBFabricClient::UpdateRequesterGateway(const UpdateRequesterGatewayRequest& request) const {
@@ -669,7 +710,9 @@ UpdateRequesterGatewayOutcome RTBFabricClient::UpdateRequesterGateway(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/update");
   };
 
-  return UpdateRequesterGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRequesterGatewayOutcome(result.GetResultWithOwnership())
+                            : UpdateRequesterGatewayOutcome(std::move(result.GetError()));
 }
 
 UpdateResponderGatewayOutcome RTBFabricClient::UpdateResponderGateway(const UpdateResponderGatewayRequest& request) const {
@@ -686,5 +729,7 @@ UpdateResponderGatewayOutcome RTBFabricClient::UpdateResponderGateway(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegments("/update");
   };
 
-  return UpdateResponderGatewayOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResponderGatewayOutcome(result.GetResultWithOwnership())
+                            : UpdateResponderGatewayOutcome(std::move(result.GetError()));
 }

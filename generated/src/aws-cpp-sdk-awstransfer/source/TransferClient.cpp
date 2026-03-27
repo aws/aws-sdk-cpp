@@ -243,285 +243,388 @@ TransferClient::InvokeOperationOutcome TransferClient::InvokeServiceOperation(co
 }
 
 CreateAccessOutcome TransferClient::CreateAccess(const CreateAccessRequest& request) const {
-  return CreateAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessOutcome(result.GetResultWithOwnership()) : CreateAccessOutcome(std::move(result.GetError()));
 }
 
 CreateAgreementOutcome TransferClient::CreateAgreement(const CreateAgreementRequest& request) const {
-  return CreateAgreementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAgreementOutcome(result.GetResultWithOwnership())
+                            : CreateAgreementOutcome(std::move(result.GetError()));
 }
 
 CreateConnectorOutcome TransferClient::CreateConnector(const CreateConnectorRequest& request) const {
-  return CreateConnectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateConnectorOutcome(std::move(result.GetError()));
 }
 
 CreateProfileOutcome TransferClient::CreateProfile(const CreateProfileRequest& request) const {
-  return CreateProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProfileOutcome(result.GetResultWithOwnership()) : CreateProfileOutcome(std::move(result.GetError()));
 }
 
 CreateServerOutcome TransferClient::CreateServer(const CreateServerRequest& request) const {
-  return CreateServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateServerOutcome(result.GetResultWithOwnership()) : CreateServerOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome TransferClient::CreateUser(const CreateUserRequest& request) const {
-  return CreateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 CreateWebAppOutcome TransferClient::CreateWebApp(const CreateWebAppRequest& request) const {
-  return CreateWebAppOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWebAppOutcome(result.GetResultWithOwnership()) : CreateWebAppOutcome(std::move(result.GetError()));
 }
 
 CreateWorkflowOutcome TransferClient::CreateWorkflow(const CreateWorkflowRequest& request) const {
-  return CreateWorkflowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkflowOutcome(result.GetResultWithOwnership()) : CreateWorkflowOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessOutcome TransferClient::DeleteAccess(const DeleteAccessRequest& request) const {
-  return DeleteAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAccessOutcome(result.GetResultWithOwnership()) : DeleteAccessOutcome(std::move(result.GetError()));
 }
 
 DeleteAgreementOutcome TransferClient::DeleteAgreement(const DeleteAgreementRequest& request) const {
-  return DeleteAgreementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAgreementOutcome(result.GetResultWithOwnership())
+                            : DeleteAgreementOutcome(std::move(result.GetError()));
 }
 
 DeleteCertificateOutcome TransferClient::DeleteCertificate(const DeleteCertificateRequest& request) const {
-  return DeleteCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCertificateOutcome(result.GetResultWithOwnership())
+                            : DeleteCertificateOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectorOutcome TransferClient::DeleteConnector(const DeleteConnectorRequest& request) const {
-  return DeleteConnectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteHostKeyOutcome TransferClient::DeleteHostKey(const DeleteHostKeyRequest& request) const {
-  return DeleteHostKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteHostKeyOutcome(result.GetResultWithOwnership()) : DeleteHostKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteProfileOutcome TransferClient::DeleteProfile(const DeleteProfileRequest& request) const {
-  return DeleteProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProfileOutcome(result.GetResultWithOwnership()) : DeleteProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteServerOutcome TransferClient::DeleteServer(const DeleteServerRequest& request) const {
-  return DeleteServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServerOutcome(result.GetResultWithOwnership()) : DeleteServerOutcome(std::move(result.GetError()));
 }
 
 DeleteSshPublicKeyOutcome TransferClient::DeleteSshPublicKey(const DeleteSshPublicKeyRequest& request) const {
-  return DeleteSshPublicKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSshPublicKeyOutcome(result.GetResultWithOwnership())
+                            : DeleteSshPublicKeyOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome TransferClient::DeleteUser(const DeleteUserRequest& request) const {
-  return DeleteUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DeleteWebAppOutcome TransferClient::DeleteWebApp(const DeleteWebAppRequest& request) const {
-  return DeleteWebAppOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWebAppOutcome(result.GetResultWithOwnership()) : DeleteWebAppOutcome(std::move(result.GetError()));
 }
 
 DeleteWebAppCustomizationOutcome TransferClient::DeleteWebAppCustomization(const DeleteWebAppCustomizationRequest& request) const {
-  return DeleteWebAppCustomizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWebAppCustomizationOutcome(result.GetResultWithOwnership())
+                            : DeleteWebAppCustomizationOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowOutcome TransferClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const {
-  return DeleteWorkflowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWorkflowOutcome(result.GetResultWithOwnership()) : DeleteWorkflowOutcome(std::move(result.GetError()));
 }
 
 DescribeAccessOutcome TransferClient::DescribeAccess(const DescribeAccessRequest& request) const {
-  return DescribeAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccessOutcome(result.GetResultWithOwnership()) : DescribeAccessOutcome(std::move(result.GetError()));
 }
 
 DescribeAgreementOutcome TransferClient::DescribeAgreement(const DescribeAgreementRequest& request) const {
-  return DescribeAgreementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAgreementOutcome(result.GetResultWithOwnership())
+                            : DescribeAgreementOutcome(std::move(result.GetError()));
 }
 
 DescribeCertificateOutcome TransferClient::DescribeCertificate(const DescribeCertificateRequest& request) const {
-  return DescribeCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCertificateOutcome(result.GetResultWithOwnership())
+                            : DescribeCertificateOutcome(std::move(result.GetError()));
 }
 
 DescribeConnectorOutcome TransferClient::DescribeConnector(const DescribeConnectorRequest& request) const {
-  return DescribeConnectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConnectorOutcome(result.GetResultWithOwnership())
+                            : DescribeConnectorOutcome(std::move(result.GetError()));
 }
 
 DescribeExecutionOutcome TransferClient::DescribeExecution(const DescribeExecutionRequest& request) const {
-  return DescribeExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribeExecutionOutcome(std::move(result.GetError()));
 }
 
 DescribeHostKeyOutcome TransferClient::DescribeHostKey(const DescribeHostKeyRequest& request) const {
-  return DescribeHostKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeHostKeyOutcome(result.GetResultWithOwnership())
+                            : DescribeHostKeyOutcome(std::move(result.GetError()));
 }
 
 DescribeProfileOutcome TransferClient::DescribeProfile(const DescribeProfileRequest& request) const {
-  return DescribeProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProfileOutcome(result.GetResultWithOwnership())
+                            : DescribeProfileOutcome(std::move(result.GetError()));
 }
 
 DescribeSecurityPolicyOutcome TransferClient::DescribeSecurityPolicy(const DescribeSecurityPolicyRequest& request) const {
-  return DescribeSecurityPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSecurityPolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeSecurityPolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeServerOutcome TransferClient::DescribeServer(const DescribeServerRequest& request) const {
-  return DescribeServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServerOutcome(result.GetResultWithOwnership()) : DescribeServerOutcome(std::move(result.GetError()));
 }
 
 DescribeUserOutcome TransferClient::DescribeUser(const DescribeUserRequest& request) const {
-  return DescribeUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUserOutcome(result.GetResultWithOwnership()) : DescribeUserOutcome(std::move(result.GetError()));
 }
 
 DescribeWebAppOutcome TransferClient::DescribeWebApp(const DescribeWebAppRequest& request) const {
-  return DescribeWebAppOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWebAppOutcome(result.GetResultWithOwnership()) : DescribeWebAppOutcome(std::move(result.GetError()));
 }
 
 DescribeWebAppCustomizationOutcome TransferClient::DescribeWebAppCustomization(const DescribeWebAppCustomizationRequest& request) const {
-  return DescribeWebAppCustomizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWebAppCustomizationOutcome(result.GetResultWithOwnership())
+                            : DescribeWebAppCustomizationOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkflowOutcome TransferClient::DescribeWorkflow(const DescribeWorkflowRequest& request) const {
-  return DescribeWorkflowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkflowOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkflowOutcome(std::move(result.GetError()));
 }
 
 ImportCertificateOutcome TransferClient::ImportCertificate(const ImportCertificateRequest& request) const {
-  return ImportCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportCertificateOutcome(result.GetResultWithOwnership())
+                            : ImportCertificateOutcome(std::move(result.GetError()));
 }
 
 ImportHostKeyOutcome TransferClient::ImportHostKey(const ImportHostKeyRequest& request) const {
-  return ImportHostKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportHostKeyOutcome(result.GetResultWithOwnership()) : ImportHostKeyOutcome(std::move(result.GetError()));
 }
 
 ImportSshPublicKeyOutcome TransferClient::ImportSshPublicKey(const ImportSshPublicKeyRequest& request) const {
-  return ImportSshPublicKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportSshPublicKeyOutcome(result.GetResultWithOwnership())
+                            : ImportSshPublicKeyOutcome(std::move(result.GetError()));
 }
 
 ListAccessesOutcome TransferClient::ListAccesses(const ListAccessesRequest& request) const {
-  return ListAccessesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccessesOutcome(result.GetResultWithOwnership()) : ListAccessesOutcome(std::move(result.GetError()));
 }
 
 ListAgreementsOutcome TransferClient::ListAgreements(const ListAgreementsRequest& request) const {
-  return ListAgreementsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAgreementsOutcome(result.GetResultWithOwnership()) : ListAgreementsOutcome(std::move(result.GetError()));
 }
 
 ListCertificatesOutcome TransferClient::ListCertificates(const ListCertificatesRequest& request) const {
-  return ListCertificatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCertificatesOutcome(result.GetResultWithOwnership())
+                            : ListCertificatesOutcome(std::move(result.GetError()));
 }
 
 ListConnectorsOutcome TransferClient::ListConnectors(const ListConnectorsRequest& request) const {
-  return ListConnectorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectorsOutcome(result.GetResultWithOwnership()) : ListConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListExecutionsOutcome TransferClient::ListExecutions(const ListExecutionsRequest& request) const {
-  return ListExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExecutionsOutcome(result.GetResultWithOwnership()) : ListExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListFileTransferResultsOutcome TransferClient::ListFileTransferResults(const ListFileTransferResultsRequest& request) const {
-  return ListFileTransferResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFileTransferResultsOutcome(result.GetResultWithOwnership())
+                            : ListFileTransferResultsOutcome(std::move(result.GetError()));
 }
 
 ListHostKeysOutcome TransferClient::ListHostKeys(const ListHostKeysRequest& request) const {
-  return ListHostKeysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHostKeysOutcome(result.GetResultWithOwnership()) : ListHostKeysOutcome(std::move(result.GetError()));
 }
 
 ListProfilesOutcome TransferClient::ListProfiles(const ListProfilesRequest& request) const {
-  return ListProfilesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProfilesOutcome(result.GetResultWithOwnership()) : ListProfilesOutcome(std::move(result.GetError()));
 }
 
 ListSecurityPoliciesOutcome TransferClient::ListSecurityPolicies(const ListSecurityPoliciesRequest& request) const {
-  return ListSecurityPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSecurityPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListSecurityPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListServersOutcome TransferClient::ListServers(const ListServersRequest& request) const {
-  return ListServersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServersOutcome(result.GetResultWithOwnership()) : ListServersOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome TransferClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListUsersOutcome TransferClient::ListUsers(const ListUsersRequest& request) const {
-  return ListUsersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUsersOutcome(result.GetResultWithOwnership()) : ListUsersOutcome(std::move(result.GetError()));
 }
 
 ListWebAppsOutcome TransferClient::ListWebApps(const ListWebAppsRequest& request) const {
-  return ListWebAppsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWebAppsOutcome(result.GetResultWithOwnership()) : ListWebAppsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowsOutcome TransferClient::ListWorkflows(const ListWorkflowsRequest& request) const {
-  return ListWorkflowsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowsOutcome(result.GetResultWithOwnership()) : ListWorkflowsOutcome(std::move(result.GetError()));
 }
 
 SendWorkflowStepStateOutcome TransferClient::SendWorkflowStepState(const SendWorkflowStepStateRequest& request) const {
-  return SendWorkflowStepStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendWorkflowStepStateOutcome(result.GetResultWithOwnership())
+                            : SendWorkflowStepStateOutcome(std::move(result.GetError()));
 }
 
 StartDirectoryListingOutcome TransferClient::StartDirectoryListing(const StartDirectoryListingRequest& request) const {
-  return StartDirectoryListingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDirectoryListingOutcome(result.GetResultWithOwnership())
+                            : StartDirectoryListingOutcome(std::move(result.GetError()));
 }
 
 StartFileTransferOutcome TransferClient::StartFileTransfer(const StartFileTransferRequest& request) const {
-  return StartFileTransferOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFileTransferOutcome(result.GetResultWithOwnership())
+                            : StartFileTransferOutcome(std::move(result.GetError()));
 }
 
 StartRemoteDeleteOutcome TransferClient::StartRemoteDelete(const StartRemoteDeleteRequest& request) const {
-  return StartRemoteDeleteOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRemoteDeleteOutcome(result.GetResultWithOwnership())
+                            : StartRemoteDeleteOutcome(std::move(result.GetError()));
 }
 
 StartRemoteMoveOutcome TransferClient::StartRemoteMove(const StartRemoteMoveRequest& request) const {
-  return StartRemoteMoveOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRemoteMoveOutcome(result.GetResultWithOwnership())
+                            : StartRemoteMoveOutcome(std::move(result.GetError()));
 }
 
 StartServerOutcome TransferClient::StartServer(const StartServerRequest& request) const {
-  return StartServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartServerOutcome(result.GetResultWithOwnership()) : StartServerOutcome(std::move(result.GetError()));
 }
 
 StopServerOutcome TransferClient::StopServer(const StopServerRequest& request) const {
-  return StopServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopServerOutcome(result.GetResultWithOwnership()) : StopServerOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome TransferClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestConnectionOutcome TransferClient::TestConnection(const TestConnectionRequest& request) const {
-  return TestConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestConnectionOutcome(result.GetResultWithOwnership()) : TestConnectionOutcome(std::move(result.GetError()));
 }
 
 TestIdentityProviderOutcome TransferClient::TestIdentityProvider(const TestIdentityProviderRequest& request) const {
-  return TestIdentityProviderOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestIdentityProviderOutcome(result.GetResultWithOwnership())
+                            : TestIdentityProviderOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome TransferClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccessOutcome TransferClient::UpdateAccess(const UpdateAccessRequest& request) const {
-  return UpdateAccessOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccessOutcome(result.GetResultWithOwnership()) : UpdateAccessOutcome(std::move(result.GetError()));
 }
 
 UpdateAgreementOutcome TransferClient::UpdateAgreement(const UpdateAgreementRequest& request) const {
-  return UpdateAgreementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAgreementOutcome(result.GetResultWithOwnership())
+                            : UpdateAgreementOutcome(std::move(result.GetError()));
 }
 
 UpdateCertificateOutcome TransferClient::UpdateCertificate(const UpdateCertificateRequest& request) const {
-  return UpdateCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCertificateOutcome(result.GetResultWithOwnership())
+                            : UpdateCertificateOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectorOutcome TransferClient::UpdateConnector(const UpdateConnectorRequest& request) const {
-  return UpdateConnectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateConnectorOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectorOutcome(std::move(result.GetError()));
 }
 
 UpdateHostKeyOutcome TransferClient::UpdateHostKey(const UpdateHostKeyRequest& request) const {
-  return UpdateHostKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHostKeyOutcome(result.GetResultWithOwnership()) : UpdateHostKeyOutcome(std::move(result.GetError()));
 }
 
 UpdateProfileOutcome TransferClient::UpdateProfile(const UpdateProfileRequest& request) const {
-  return UpdateProfileOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateProfileOutcome(result.GetResultWithOwnership()) : UpdateProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateServerOutcome TransferClient::UpdateServer(const UpdateServerRequest& request) const {
-  return UpdateServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServerOutcome(result.GetResultWithOwnership()) : UpdateServerOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome TransferClient::UpdateUser(const UpdateUserRequest& request) const {
-  return UpdateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }
 
 UpdateWebAppOutcome TransferClient::UpdateWebApp(const UpdateWebAppRequest& request) const {
-  return UpdateWebAppOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWebAppOutcome(result.GetResultWithOwnership()) : UpdateWebAppOutcome(std::move(result.GetError()));
 }
 
 UpdateWebAppCustomizationOutcome TransferClient::UpdateWebAppCustomization(const UpdateWebAppCustomizationRequest& request) const {
-  return UpdateWebAppCustomizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWebAppCustomizationOutcome(result.GetResultWithOwnership())
+                            : UpdateWebAppCustomizationOutcome(std::move(result.GetError()));
 }

@@ -198,7 +198,9 @@ GetRoleCredentialsOutcome SSOClient::GetRoleCredentials(const GetRoleCredentials
     endpointResolutionOutcome.GetResult().AddPathSegments("/federation/credentials");
   };
 
-  return GetRoleCredentialsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRoleCredentialsOutcome(result.GetResultWithOwnership())
+                            : GetRoleCredentialsOutcome(std::move(result.GetError()));
 }
 
 ListAccountRolesOutcome SSOClient::ListAccountRoles(const ListAccountRolesRequest& request) const {
@@ -218,7 +220,9 @@ ListAccountRolesOutcome SSOClient::ListAccountRoles(const ListAccountRolesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/assignment/roles");
   };
 
-  return ListAccountRolesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccountRolesOutcome(result.GetResultWithOwnership())
+                            : ListAccountRolesOutcome(std::move(result.GetError()));
 }
 
 ListAccountsOutcome SSOClient::ListAccounts(const ListAccountsRequest& request) const {
@@ -233,7 +237,8 @@ ListAccountsOutcome SSOClient::ListAccounts(const ListAccountsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/assignment/accounts");
   };
 
-  return ListAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccountsOutcome(result.GetResultWithOwnership()) : ListAccountsOutcome(std::move(result.GetError()));
 }
 
 LogoutOutcome SSOClient::Logout(const LogoutRequest& request) const {
@@ -248,5 +253,6 @@ LogoutOutcome SSOClient::Logout(const LogoutRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/logout");
   };
 
-  return LogoutOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? LogoutOutcome(result.GetResultWithOwnership()) : LogoutOutcome(std::move(result.GetError()));
 }

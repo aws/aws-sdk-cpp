@@ -195,97 +195,138 @@ ACMPCAClient::InvokeOperationOutcome ACMPCAClient::InvokeServiceOperation(const 
 }
 
 CreateCertificateAuthorityOutcome ACMPCAClient::CreateCertificateAuthority(const CreateCertificateAuthorityRequest& request) const {
-  return CreateCertificateAuthorityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCertificateAuthorityOutcome(result.GetResultWithOwnership())
+                            : CreateCertificateAuthorityOutcome(std::move(result.GetError()));
 }
 
 CreateCertificateAuthorityAuditReportOutcome ACMPCAClient::CreateCertificateAuthorityAuditReport(
     const CreateCertificateAuthorityAuditReportRequest& request) const {
-  return CreateCertificateAuthorityAuditReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCertificateAuthorityAuditReportOutcome(result.GetResultWithOwnership())
+                            : CreateCertificateAuthorityAuditReportOutcome(std::move(result.GetError()));
 }
 
 CreatePermissionOutcome ACMPCAClient::CreatePermission(const CreatePermissionRequest& request) const {
-  return CreatePermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePermissionOutcome(result.GetResultWithOwnership())
+                            : CreatePermissionOutcome(std::move(result.GetError()));
 }
 
 DeleteCertificateAuthorityOutcome ACMPCAClient::DeleteCertificateAuthority(const DeleteCertificateAuthorityRequest& request) const {
-  return DeleteCertificateAuthorityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCertificateAuthorityOutcome(result.GetResultWithOwnership())
+                            : DeleteCertificateAuthorityOutcome(std::move(result.GetError()));
 }
 
 DeletePermissionOutcome ACMPCAClient::DeletePermission(const DeletePermissionRequest& request) const {
-  return DeletePermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePermissionOutcome(result.GetResultWithOwnership())
+                            : DeletePermissionOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyOutcome ACMPCAClient::DeletePolicy(const DeletePolicyRequest& request) const {
-  return DeletePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePolicyOutcome(result.GetResultWithOwnership()) : DeletePolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeCertificateAuthorityOutcome ACMPCAClient::DescribeCertificateAuthority(const DescribeCertificateAuthorityRequest& request) const {
-  return DescribeCertificateAuthorityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCertificateAuthorityOutcome(result.GetResultWithOwnership())
+                            : DescribeCertificateAuthorityOutcome(std::move(result.GetError()));
 }
 
 DescribeCertificateAuthorityAuditReportOutcome ACMPCAClient::DescribeCertificateAuthorityAuditReport(
     const DescribeCertificateAuthorityAuditReportRequest& request) const {
-  return DescribeCertificateAuthorityAuditReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCertificateAuthorityAuditReportOutcome(result.GetResultWithOwnership())
+                            : DescribeCertificateAuthorityAuditReportOutcome(std::move(result.GetError()));
 }
 
 GetCertificateOutcome ACMPCAClient::GetCertificate(const GetCertificateRequest& request) const {
-  return GetCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCertificateOutcome(result.GetResultWithOwnership()) : GetCertificateOutcome(std::move(result.GetError()));
 }
 
 GetCertificateAuthorityCertificateOutcome ACMPCAClient::GetCertificateAuthorityCertificate(
     const GetCertificateAuthorityCertificateRequest& request) const {
-  return GetCertificateAuthorityCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCertificateAuthorityCertificateOutcome(result.GetResultWithOwnership())
+                            : GetCertificateAuthorityCertificateOutcome(std::move(result.GetError()));
 }
 
 GetCertificateAuthorityCsrOutcome ACMPCAClient::GetCertificateAuthorityCsr(const GetCertificateAuthorityCsrRequest& request) const {
-  return GetCertificateAuthorityCsrOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCertificateAuthorityCsrOutcome(result.GetResultWithOwnership())
+                            : GetCertificateAuthorityCsrOutcome(std::move(result.GetError()));
 }
 
 GetPolicyOutcome ACMPCAClient::GetPolicy(const GetPolicyRequest& request) const {
-  return GetPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPolicyOutcome(result.GetResultWithOwnership()) : GetPolicyOutcome(std::move(result.GetError()));
 }
 
 ImportCertificateAuthorityCertificateOutcome ACMPCAClient::ImportCertificateAuthorityCertificate(
     const ImportCertificateAuthorityCertificateRequest& request) const {
-  return ImportCertificateAuthorityCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportCertificateAuthorityCertificateOutcome(result.GetResultWithOwnership())
+                            : ImportCertificateAuthorityCertificateOutcome(std::move(result.GetError()));
 }
 
 IssueCertificateOutcome ACMPCAClient::IssueCertificate(const IssueCertificateRequest& request) const {
-  return IssueCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? IssueCertificateOutcome(result.GetResultWithOwnership())
+                            : IssueCertificateOutcome(std::move(result.GetError()));
 }
 
 ListCertificateAuthoritiesOutcome ACMPCAClient::ListCertificateAuthorities(const ListCertificateAuthoritiesRequest& request) const {
-  return ListCertificateAuthoritiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCertificateAuthoritiesOutcome(result.GetResultWithOwnership())
+                            : ListCertificateAuthoritiesOutcome(std::move(result.GetError()));
 }
 
 ListPermissionsOutcome ACMPCAClient::ListPermissions(const ListPermissionsRequest& request) const {
-  return ListPermissionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPermissionsOutcome(result.GetResultWithOwnership())
+                            : ListPermissionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsOutcome ACMPCAClient::ListTags(const ListTagsRequest& request) const {
-  return ListTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsOutcome(result.GetResultWithOwnership()) : ListTagsOutcome(std::move(result.GetError()));
 }
 
 PutPolicyOutcome ACMPCAClient::PutPolicy(const PutPolicyRequest& request) const {
-  return PutPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutPolicyOutcome(result.GetResultWithOwnership()) : PutPolicyOutcome(std::move(result.GetError()));
 }
 
 RestoreCertificateAuthorityOutcome ACMPCAClient::RestoreCertificateAuthority(const RestoreCertificateAuthorityRequest& request) const {
-  return RestoreCertificateAuthorityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreCertificateAuthorityOutcome(result.GetResultWithOwnership())
+                            : RestoreCertificateAuthorityOutcome(std::move(result.GetError()));
 }
 
 RevokeCertificateOutcome ACMPCAClient::RevokeCertificate(const RevokeCertificateRequest& request) const {
-  return RevokeCertificateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeCertificateOutcome(result.GetResultWithOwnership())
+                            : RevokeCertificateOutcome(std::move(result.GetError()));
 }
 
 TagCertificateAuthorityOutcome ACMPCAClient::TagCertificateAuthority(const TagCertificateAuthorityRequest& request) const {
-  return TagCertificateAuthorityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagCertificateAuthorityOutcome(result.GetResultWithOwnership())
+                            : TagCertificateAuthorityOutcome(std::move(result.GetError()));
 }
 
 UntagCertificateAuthorityOutcome ACMPCAClient::UntagCertificateAuthority(const UntagCertificateAuthorityRequest& request) const {
-  return UntagCertificateAuthorityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagCertificateAuthorityOutcome(result.GetResultWithOwnership())
+                            : UntagCertificateAuthorityOutcome(std::move(result.GetError()));
 }
 
 UpdateCertificateAuthorityOutcome ACMPCAClient::UpdateCertificateAuthority(const UpdateCertificateAuthorityRequest& request) const {
-  return UpdateCertificateAuthorityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCertificateAuthorityOutcome(result.GetResultWithOwnership())
+                            : UpdateCertificateAuthorityOutcome(std::move(result.GetError()));
 }

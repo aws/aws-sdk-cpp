@@ -204,110 +204,156 @@ CodeStarconnectionsClient::InvokeOperationOutcome CodeStarconnectionsClient::Inv
 }
 
 CreateConnectionOutcome CodeStarconnectionsClient::CreateConnection(const CreateConnectionRequest& request) const {
-  return CreateConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateConnectionOutcome(std::move(result.GetError()));
 }
 
 CreateHostOutcome CodeStarconnectionsClient::CreateHost(const CreateHostRequest& request) const {
-  return CreateHostOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHostOutcome(result.GetResultWithOwnership()) : CreateHostOutcome(std::move(result.GetError()));
 }
 
 CreateRepositoryLinkOutcome CodeStarconnectionsClient::CreateRepositoryLink(const CreateRepositoryLinkRequest& request) const {
-  return CreateRepositoryLinkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRepositoryLinkOutcome(result.GetResultWithOwnership())
+                            : CreateRepositoryLinkOutcome(std::move(result.GetError()));
 }
 
 CreateSyncConfigurationOutcome CodeStarconnectionsClient::CreateSyncConfiguration(const CreateSyncConfigurationRequest& request) const {
-  return CreateSyncConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSyncConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateSyncConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectionOutcome CodeStarconnectionsClient::DeleteConnection(const DeleteConnectionRequest& request) const {
-  return DeleteConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteHostOutcome CodeStarconnectionsClient::DeleteHost(const DeleteHostRequest& request) const {
-  return DeleteHostOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteHostOutcome(result.GetResultWithOwnership()) : DeleteHostOutcome(std::move(result.GetError()));
 }
 
 DeleteRepositoryLinkOutcome CodeStarconnectionsClient::DeleteRepositoryLink(const DeleteRepositoryLinkRequest& request) const {
-  return DeleteRepositoryLinkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRepositoryLinkOutcome(result.GetResultWithOwnership())
+                            : DeleteRepositoryLinkOutcome(std::move(result.GetError()));
 }
 
 DeleteSyncConfigurationOutcome CodeStarconnectionsClient::DeleteSyncConfiguration(const DeleteSyncConfigurationRequest& request) const {
-  return DeleteSyncConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSyncConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteSyncConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetConnectionOutcome CodeStarconnectionsClient::GetConnection(const GetConnectionRequest& request) const {
-  return GetConnectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConnectionOutcome(result.GetResultWithOwnership()) : GetConnectionOutcome(std::move(result.GetError()));
 }
 
 GetHostOutcome CodeStarconnectionsClient::GetHost(const GetHostRequest& request) const {
-  return GetHostOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetHostOutcome(result.GetResultWithOwnership()) : GetHostOutcome(std::move(result.GetError()));
 }
 
 GetRepositoryLinkOutcome CodeStarconnectionsClient::GetRepositoryLink(const GetRepositoryLinkRequest& request) const {
-  return GetRepositoryLinkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRepositoryLinkOutcome(result.GetResultWithOwnership())
+                            : GetRepositoryLinkOutcome(std::move(result.GetError()));
 }
 
 GetRepositorySyncStatusOutcome CodeStarconnectionsClient::GetRepositorySyncStatus(const GetRepositorySyncStatusRequest& request) const {
-  return GetRepositorySyncStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRepositorySyncStatusOutcome(result.GetResultWithOwnership())
+                            : GetRepositorySyncStatusOutcome(std::move(result.GetError()));
 }
 
 GetResourceSyncStatusOutcome CodeStarconnectionsClient::GetResourceSyncStatus(const GetResourceSyncStatusRequest& request) const {
-  return GetResourceSyncStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceSyncStatusOutcome(result.GetResultWithOwnership())
+                            : GetResourceSyncStatusOutcome(std::move(result.GetError()));
 }
 
 GetSyncBlockerSummaryOutcome CodeStarconnectionsClient::GetSyncBlockerSummary(const GetSyncBlockerSummaryRequest& request) const {
-  return GetSyncBlockerSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSyncBlockerSummaryOutcome(result.GetResultWithOwnership())
+                            : GetSyncBlockerSummaryOutcome(std::move(result.GetError()));
 }
 
 GetSyncConfigurationOutcome CodeStarconnectionsClient::GetSyncConfiguration(const GetSyncConfigurationRequest& request) const {
-  return GetSyncConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSyncConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetSyncConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListConnectionsOutcome CodeStarconnectionsClient::ListConnections(const ListConnectionsRequest& request) const {
-  return ListConnectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectionsOutcome(result.GetResultWithOwnership())
+                            : ListConnectionsOutcome(std::move(result.GetError()));
 }
 
 ListHostsOutcome CodeStarconnectionsClient::ListHosts(const ListHostsRequest& request) const {
-  return ListHostsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHostsOutcome(result.GetResultWithOwnership()) : ListHostsOutcome(std::move(result.GetError()));
 }
 
 ListRepositoryLinksOutcome CodeStarconnectionsClient::ListRepositoryLinks(const ListRepositoryLinksRequest& request) const {
-  return ListRepositoryLinksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRepositoryLinksOutcome(result.GetResultWithOwnership())
+                            : ListRepositoryLinksOutcome(std::move(result.GetError()));
 }
 
 ListRepositorySyncDefinitionsOutcome CodeStarconnectionsClient::ListRepositorySyncDefinitions(
     const ListRepositorySyncDefinitionsRequest& request) const {
-  return ListRepositorySyncDefinitionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRepositorySyncDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListRepositorySyncDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListSyncConfigurationsOutcome CodeStarconnectionsClient::ListSyncConfigurations(const ListSyncConfigurationsRequest& request) const {
-  return ListSyncConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSyncConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListSyncConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CodeStarconnectionsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CodeStarconnectionsClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CodeStarconnectionsClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateHostOutcome CodeStarconnectionsClient::UpdateHost(const UpdateHostRequest& request) const {
-  return UpdateHostOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHostOutcome(result.GetResultWithOwnership()) : UpdateHostOutcome(std::move(result.GetError()));
 }
 
 UpdateRepositoryLinkOutcome CodeStarconnectionsClient::UpdateRepositoryLink(const UpdateRepositoryLinkRequest& request) const {
-  return UpdateRepositoryLinkOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRepositoryLinkOutcome(result.GetResultWithOwnership())
+                            : UpdateRepositoryLinkOutcome(std::move(result.GetError()));
 }
 
 UpdateSyncBlockerOutcome CodeStarconnectionsClient::UpdateSyncBlocker(const UpdateSyncBlockerRequest& request) const {
-  return UpdateSyncBlockerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSyncBlockerOutcome(result.GetResultWithOwnership())
+                            : UpdateSyncBlockerOutcome(std::move(result.GetError()));
 }
 
 UpdateSyncConfigurationOutcome CodeStarconnectionsClient::UpdateSyncConfiguration(const UpdateSyncConfigurationRequest& request) const {
-  return UpdateSyncConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSyncConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateSyncConfigurationOutcome(std::move(result.GetError()));
 }

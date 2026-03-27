@@ -279,254 +279,368 @@ CloudWatchLogsClient::InvokeOperationOutcome CloudWatchLogsClient::InvokeService
 }
 
 AssociateKmsKeyOutcome CloudWatchLogsClient::AssociateKmsKey(const AssociateKmsKeyRequest& request) const {
-  return AssociateKmsKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateKmsKeyOutcome(result.GetResultWithOwnership())
+                            : AssociateKmsKeyOutcome(std::move(result.GetError()));
 }
 
 AssociateSourceToS3TableIntegrationOutcome CloudWatchLogsClient::AssociateSourceToS3TableIntegration(
     const AssociateSourceToS3TableIntegrationRequest& request) const {
-  return AssociateSourceToS3TableIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSourceToS3TableIntegrationOutcome(result.GetResultWithOwnership())
+                            : AssociateSourceToS3TableIntegrationOutcome(std::move(result.GetError()));
 }
 
 CancelExportTaskOutcome CloudWatchLogsClient::CancelExportTask(const CancelExportTaskRequest& request) const {
-  return CancelExportTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelExportTaskOutcome(result.GetResultWithOwnership())
+                            : CancelExportTaskOutcome(std::move(result.GetError()));
 }
 
 CancelImportTaskOutcome CloudWatchLogsClient::CancelImportTask(const CancelImportTaskRequest& request) const {
-  return CancelImportTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelImportTaskOutcome(result.GetResultWithOwnership())
+                            : CancelImportTaskOutcome(std::move(result.GetError()));
 }
 
 CreateDeliveryOutcome CloudWatchLogsClient::CreateDelivery(const CreateDeliveryRequest& request) const {
-  return CreateDeliveryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeliveryOutcome(result.GetResultWithOwnership()) : CreateDeliveryOutcome(std::move(result.GetError()));
 }
 
 CreateExportTaskOutcome CloudWatchLogsClient::CreateExportTask(const CreateExportTaskRequest& request) const {
-  return CreateExportTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExportTaskOutcome(result.GetResultWithOwnership())
+                            : CreateExportTaskOutcome(std::move(result.GetError()));
 }
 
 CreateImportTaskOutcome CloudWatchLogsClient::CreateImportTask(const CreateImportTaskRequest& request) const {
-  return CreateImportTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateImportTaskOutcome(result.GetResultWithOwnership())
+                            : CreateImportTaskOutcome(std::move(result.GetError()));
 }
 
 CreateLogAnomalyDetectorOutcome CloudWatchLogsClient::CreateLogAnomalyDetector(const CreateLogAnomalyDetectorRequest& request) const {
-  return CreateLogAnomalyDetectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLogAnomalyDetectorOutcome(result.GetResultWithOwnership())
+                            : CreateLogAnomalyDetectorOutcome(std::move(result.GetError()));
 }
 
 CreateLogGroupOutcome CloudWatchLogsClient::CreateLogGroup(const CreateLogGroupRequest& request) const {
-  return CreateLogGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLogGroupOutcome(result.GetResultWithOwnership()) : CreateLogGroupOutcome(std::move(result.GetError()));
 }
 
 CreateLogStreamOutcome CloudWatchLogsClient::CreateLogStream(const CreateLogStreamRequest& request) const {
-  return CreateLogStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLogStreamOutcome(result.GetResultWithOwnership())
+                            : CreateLogStreamOutcome(std::move(result.GetError()));
 }
 
 CreateScheduledQueryOutcome CloudWatchLogsClient::CreateScheduledQuery(const CreateScheduledQueryRequest& request) const {
-  return CreateScheduledQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScheduledQueryOutcome(result.GetResultWithOwnership())
+                            : CreateScheduledQueryOutcome(std::move(result.GetError()));
 }
 
 DeleteAccountPolicyOutcome CloudWatchLogsClient::DeleteAccountPolicy(const DeleteAccountPolicyRequest& request) const {
-  return DeleteAccountPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAccountPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteAccountPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteDataProtectionPolicyOutcome CloudWatchLogsClient::DeleteDataProtectionPolicy(const DeleteDataProtectionPolicyRequest& request) const {
-  return DeleteDataProtectionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataProtectionPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteDataProtectionPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteDeliveryOutcome CloudWatchLogsClient::DeleteDelivery(const DeleteDeliveryRequest& request) const {
-  return DeleteDeliveryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDeliveryOutcome(result.GetResultWithOwnership()) : DeleteDeliveryOutcome(std::move(result.GetError()));
 }
 
 DeleteDeliveryDestinationOutcome CloudWatchLogsClient::DeleteDeliveryDestination(const DeleteDeliveryDestinationRequest& request) const {
-  return DeleteDeliveryDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDeliveryDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteDeliveryDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteDeliveryDestinationPolicyOutcome CloudWatchLogsClient::DeleteDeliveryDestinationPolicy(
     const DeleteDeliveryDestinationPolicyRequest& request) const {
-  return DeleteDeliveryDestinationPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDeliveryDestinationPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteDeliveryDestinationPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteDeliverySourceOutcome CloudWatchLogsClient::DeleteDeliverySource(const DeleteDeliverySourceRequest& request) const {
-  return DeleteDeliverySourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDeliverySourceOutcome(result.GetResultWithOwnership())
+                            : DeleteDeliverySourceOutcome(std::move(result.GetError()));
 }
 
 DeleteDestinationOutcome CloudWatchLogsClient::DeleteDestination(const DeleteDestinationRequest& request) const {
-  return DeleteDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteIndexPolicyOutcome CloudWatchLogsClient::DeleteIndexPolicy(const DeleteIndexPolicyRequest& request) const {
-  return DeleteIndexPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIndexPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteIndexPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteIntegrationOutcome CloudWatchLogsClient::DeleteIntegration(const DeleteIntegrationRequest& request) const {
-  return DeleteIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIntegrationOutcome(result.GetResultWithOwnership())
+                            : DeleteIntegrationOutcome(std::move(result.GetError()));
 }
 
 DeleteLogAnomalyDetectorOutcome CloudWatchLogsClient::DeleteLogAnomalyDetector(const DeleteLogAnomalyDetectorRequest& request) const {
-  return DeleteLogAnomalyDetectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLogAnomalyDetectorOutcome(result.GetResultWithOwnership())
+                            : DeleteLogAnomalyDetectorOutcome(std::move(result.GetError()));
 }
 
 DeleteLogGroupOutcome CloudWatchLogsClient::DeleteLogGroup(const DeleteLogGroupRequest& request) const {
-  return DeleteLogGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLogGroupOutcome(result.GetResultWithOwnership()) : DeleteLogGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteLogStreamOutcome CloudWatchLogsClient::DeleteLogStream(const DeleteLogStreamRequest& request) const {
-  return DeleteLogStreamOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLogStreamOutcome(result.GetResultWithOwnership())
+                            : DeleteLogStreamOutcome(std::move(result.GetError()));
 }
 
 DeleteMetricFilterOutcome CloudWatchLogsClient::DeleteMetricFilter(const DeleteMetricFilterRequest& request) const {
-  return DeleteMetricFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMetricFilterOutcome(result.GetResultWithOwnership())
+                            : DeleteMetricFilterOutcome(std::move(result.GetError()));
 }
 
 DeleteQueryDefinitionOutcome CloudWatchLogsClient::DeleteQueryDefinition(const DeleteQueryDefinitionRequest& request) const {
-  return DeleteQueryDefinitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteQueryDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteQueryDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome CloudWatchLogsClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteRetentionPolicyOutcome CloudWatchLogsClient::DeleteRetentionPolicy(const DeleteRetentionPolicyRequest& request) const {
-  return DeleteRetentionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRetentionPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteRetentionPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteScheduledQueryOutcome CloudWatchLogsClient::DeleteScheduledQuery(const DeleteScheduledQueryRequest& request) const {
-  return DeleteScheduledQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteScheduledQueryOutcome(result.GetResultWithOwnership())
+                            : DeleteScheduledQueryOutcome(std::move(result.GetError()));
 }
 
 DeleteSubscriptionFilterOutcome CloudWatchLogsClient::DeleteSubscriptionFilter(const DeleteSubscriptionFilterRequest& request) const {
-  return DeleteSubscriptionFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSubscriptionFilterOutcome(result.GetResultWithOwnership())
+                            : DeleteSubscriptionFilterOutcome(std::move(result.GetError()));
 }
 
 DeleteTransformerOutcome CloudWatchLogsClient::DeleteTransformer(const DeleteTransformerRequest& request) const {
-  return DeleteTransformerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTransformerOutcome(result.GetResultWithOwnership())
+                            : DeleteTransformerOutcome(std::move(result.GetError()));
 }
 
 DescribeAccountPoliciesOutcome CloudWatchLogsClient::DescribeAccountPolicies(const DescribeAccountPoliciesRequest& request) const {
-  return DescribeAccountPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountPoliciesOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountPoliciesOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationTemplatesOutcome CloudWatchLogsClient::DescribeConfigurationTemplates(
     const DescribeConfigurationTemplatesRequest& request) const {
-  return DescribeConfigurationTemplatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeConfigurationTemplatesOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationTemplatesOutcome(std::move(result.GetError()));
 }
 
 DescribeDeliveriesOutcome CloudWatchLogsClient::DescribeDeliveries(const DescribeDeliveriesRequest& request) const {
-  return DescribeDeliveriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDeliveriesOutcome(result.GetResultWithOwnership())
+                            : DescribeDeliveriesOutcome(std::move(result.GetError()));
 }
 
 DescribeDeliveryDestinationsOutcome CloudWatchLogsClient::DescribeDeliveryDestinations(
     const DescribeDeliveryDestinationsRequest& request) const {
-  return DescribeDeliveryDestinationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDeliveryDestinationsOutcome(result.GetResultWithOwnership())
+                            : DescribeDeliveryDestinationsOutcome(std::move(result.GetError()));
 }
 
 DescribeDeliverySourcesOutcome CloudWatchLogsClient::DescribeDeliverySources(const DescribeDeliverySourcesRequest& request) const {
-  return DescribeDeliverySourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDeliverySourcesOutcome(result.GetResultWithOwnership())
+                            : DescribeDeliverySourcesOutcome(std::move(result.GetError()));
 }
 
 DescribeDestinationsOutcome CloudWatchLogsClient::DescribeDestinations(const DescribeDestinationsRequest& request) const {
-  return DescribeDestinationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDestinationsOutcome(result.GetResultWithOwnership())
+                            : DescribeDestinationsOutcome(std::move(result.GetError()));
 }
 
 DescribeExportTasksOutcome CloudWatchLogsClient::DescribeExportTasks(const DescribeExportTasksRequest& request) const {
-  return DescribeExportTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExportTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeExportTasksOutcome(std::move(result.GetError()));
 }
 
 DescribeFieldIndexesOutcome CloudWatchLogsClient::DescribeFieldIndexes(const DescribeFieldIndexesRequest& request) const {
-  return DescribeFieldIndexesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeFieldIndexesOutcome(result.GetResultWithOwnership())
+                            : DescribeFieldIndexesOutcome(std::move(result.GetError()));
 }
 
 DescribeImportTaskBatchesOutcome CloudWatchLogsClient::DescribeImportTaskBatches(const DescribeImportTaskBatchesRequest& request) const {
-  return DescribeImportTaskBatchesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeImportTaskBatchesOutcome(result.GetResultWithOwnership())
+                            : DescribeImportTaskBatchesOutcome(std::move(result.GetError()));
 }
 
 DescribeImportTasksOutcome CloudWatchLogsClient::DescribeImportTasks(const DescribeImportTasksRequest& request) const {
-  return DescribeImportTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeImportTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeImportTasksOutcome(std::move(result.GetError()));
 }
 
 DescribeIndexPoliciesOutcome CloudWatchLogsClient::DescribeIndexPolicies(const DescribeIndexPoliciesRequest& request) const {
-  return DescribeIndexPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIndexPoliciesOutcome(result.GetResultWithOwnership())
+                            : DescribeIndexPoliciesOutcome(std::move(result.GetError()));
 }
 
 DescribeLogGroupsOutcome CloudWatchLogsClient::DescribeLogGroups(const DescribeLogGroupsRequest& request) const {
-  return DescribeLogGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLogGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribeLogGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribeLogStreamsOutcome CloudWatchLogsClient::DescribeLogStreams(const DescribeLogStreamsRequest& request) const {
-  return DescribeLogStreamsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLogStreamsOutcome(result.GetResultWithOwnership())
+                            : DescribeLogStreamsOutcome(std::move(result.GetError()));
 }
 
 DescribeMetricFiltersOutcome CloudWatchLogsClient::DescribeMetricFilters(const DescribeMetricFiltersRequest& request) const {
-  return DescribeMetricFiltersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetricFiltersOutcome(result.GetResultWithOwnership())
+                            : DescribeMetricFiltersOutcome(std::move(result.GetError()));
 }
 
 DescribeQueriesOutcome CloudWatchLogsClient::DescribeQueries(const DescribeQueriesRequest& request) const {
-  return DescribeQueriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeQueriesOutcome(result.GetResultWithOwnership())
+                            : DescribeQueriesOutcome(std::move(result.GetError()));
 }
 
 DescribeQueryDefinitionsOutcome CloudWatchLogsClient::DescribeQueryDefinitions(const DescribeQueryDefinitionsRequest& request) const {
-  return DescribeQueryDefinitionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeQueryDefinitionsOutcome(result.GetResultWithOwnership())
+                            : DescribeQueryDefinitionsOutcome(std::move(result.GetError()));
 }
 
 DescribeResourcePoliciesOutcome CloudWatchLogsClient::DescribeResourcePolicies(const DescribeResourcePoliciesRequest& request) const {
-  return DescribeResourcePoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResourcePoliciesOutcome(result.GetResultWithOwnership())
+                            : DescribeResourcePoliciesOutcome(std::move(result.GetError()));
 }
 
 DescribeSubscriptionFiltersOutcome CloudWatchLogsClient::DescribeSubscriptionFilters(
     const DescribeSubscriptionFiltersRequest& request) const {
-  return DescribeSubscriptionFiltersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSubscriptionFiltersOutcome(result.GetResultWithOwnership())
+                            : DescribeSubscriptionFiltersOutcome(std::move(result.GetError()));
 }
 
 DisassociateKmsKeyOutcome CloudWatchLogsClient::DisassociateKmsKey(const DisassociateKmsKeyRequest& request) const {
-  return DisassociateKmsKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateKmsKeyOutcome(result.GetResultWithOwnership())
+                            : DisassociateKmsKeyOutcome(std::move(result.GetError()));
 }
 
 DisassociateSourceFromS3TableIntegrationOutcome CloudWatchLogsClient::DisassociateSourceFromS3TableIntegration(
     const DisassociateSourceFromS3TableIntegrationRequest& request) const {
-  return DisassociateSourceFromS3TableIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateSourceFromS3TableIntegrationOutcome(result.GetResultWithOwnership())
+                            : DisassociateSourceFromS3TableIntegrationOutcome(std::move(result.GetError()));
 }
 
 FilterLogEventsOutcome CloudWatchLogsClient::FilterLogEvents(const FilterLogEventsRequest& request) const {
-  return FilterLogEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? FilterLogEventsOutcome(result.GetResultWithOwnership())
+                            : FilterLogEventsOutcome(std::move(result.GetError()));
 }
 
 GetDataProtectionPolicyOutcome CloudWatchLogsClient::GetDataProtectionPolicy(const GetDataProtectionPolicyRequest& request) const {
-  return GetDataProtectionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataProtectionPolicyOutcome(result.GetResultWithOwnership())
+                            : GetDataProtectionPolicyOutcome(std::move(result.GetError()));
 }
 
 GetDeliveryOutcome CloudWatchLogsClient::GetDelivery(const GetDeliveryRequest& request) const {
-  return GetDeliveryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDeliveryOutcome(result.GetResultWithOwnership()) : GetDeliveryOutcome(std::move(result.GetError()));
 }
 
 GetDeliveryDestinationOutcome CloudWatchLogsClient::GetDeliveryDestination(const GetDeliveryDestinationRequest& request) const {
-  return GetDeliveryDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDeliveryDestinationOutcome(result.GetResultWithOwnership())
+                            : GetDeliveryDestinationOutcome(std::move(result.GetError()));
 }
 
 GetDeliveryDestinationPolicyOutcome CloudWatchLogsClient::GetDeliveryDestinationPolicy(
     const GetDeliveryDestinationPolicyRequest& request) const {
-  return GetDeliveryDestinationPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDeliveryDestinationPolicyOutcome(result.GetResultWithOwnership())
+                            : GetDeliveryDestinationPolicyOutcome(std::move(result.GetError()));
 }
 
 GetDeliverySourceOutcome CloudWatchLogsClient::GetDeliverySource(const GetDeliverySourceRequest& request) const {
-  return GetDeliverySourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDeliverySourceOutcome(result.GetResultWithOwnership())
+                            : GetDeliverySourceOutcome(std::move(result.GetError()));
 }
 
 GetIntegrationOutcome CloudWatchLogsClient::GetIntegration(const GetIntegrationRequest& request) const {
-  return GetIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIntegrationOutcome(result.GetResultWithOwnership()) : GetIntegrationOutcome(std::move(result.GetError()));
 }
 
 GetLogAnomalyDetectorOutcome CloudWatchLogsClient::GetLogAnomalyDetector(const GetLogAnomalyDetectorRequest& request) const {
-  return GetLogAnomalyDetectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLogAnomalyDetectorOutcome(result.GetResultWithOwnership())
+                            : GetLogAnomalyDetectorOutcome(std::move(result.GetError()));
 }
 
 GetLogEventsOutcome CloudWatchLogsClient::GetLogEvents(const GetLogEventsRequest& request) const {
-  return GetLogEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLogEventsOutcome(result.GetResultWithOwnership()) : GetLogEventsOutcome(std::move(result.GetError()));
 }
 
 GetLogFieldsOutcome CloudWatchLogsClient::GetLogFields(const GetLogFieldsRequest& request) const {
-  return GetLogFieldsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLogFieldsOutcome(result.GetResultWithOwnership()) : GetLogFieldsOutcome(std::move(result.GetError()));
 }
 
 GetLogGroupFieldsOutcome CloudWatchLogsClient::GetLogGroupFields(const GetLogGroupFieldsRequest& request) const {
-  return GetLogGroupFieldsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLogGroupFieldsOutcome(result.GetResultWithOwnership())
+                            : GetLogGroupFieldsOutcome(std::move(result.GetError()));
 }
 
 GetLogObjectOutcome CloudWatchLogsClient::GetLogObject(GetLogObjectRequest& request) const {
@@ -564,7 +678,9 @@ GetLogObjectOutcome CloudWatchLogsClient::GetLogObject(GetLogObjectRequest& requ
             }
           });
         }
-        return GetLogObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetLogObjectOutcome(result.GetResultWithOwnership())
+                                  : GetLogObjectOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -572,136 +688,191 @@ GetLogObjectOutcome CloudWatchLogsClient::GetLogObject(GetLogObjectRequest& requ
 }
 
 GetLogRecordOutcome CloudWatchLogsClient::GetLogRecord(const GetLogRecordRequest& request) const {
-  return GetLogRecordOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLogRecordOutcome(result.GetResultWithOwnership()) : GetLogRecordOutcome(std::move(result.GetError()));
 }
 
 GetQueryResultsOutcome CloudWatchLogsClient::GetQueryResults(const GetQueryResultsRequest& request) const {
-  return GetQueryResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQueryResultsOutcome(result.GetResultWithOwnership())
+                            : GetQueryResultsOutcome(std::move(result.GetError()));
 }
 
 GetScheduledQueryOutcome CloudWatchLogsClient::GetScheduledQuery(const GetScheduledQueryRequest& request) const {
-  return GetScheduledQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetScheduledQueryOutcome(result.GetResultWithOwnership())
+                            : GetScheduledQueryOutcome(std::move(result.GetError()));
 }
 
 GetScheduledQueryHistoryOutcome CloudWatchLogsClient::GetScheduledQueryHistory(const GetScheduledQueryHistoryRequest& request) const {
-  return GetScheduledQueryHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetScheduledQueryHistoryOutcome(result.GetResultWithOwnership())
+                            : GetScheduledQueryHistoryOutcome(std::move(result.GetError()));
 }
 
 GetTransformerOutcome CloudWatchLogsClient::GetTransformer(const GetTransformerRequest& request) const {
-  return GetTransformerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTransformerOutcome(result.GetResultWithOwnership()) : GetTransformerOutcome(std::move(result.GetError()));
 }
 
 ListAggregateLogGroupSummariesOutcome CloudWatchLogsClient::ListAggregateLogGroupSummaries(
     const ListAggregateLogGroupSummariesRequest& request) const {
-  return ListAggregateLogGroupSummariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAggregateLogGroupSummariesOutcome(result.GetResultWithOwnership())
+                            : ListAggregateLogGroupSummariesOutcome(std::move(result.GetError()));
 }
 
 ListAnomaliesOutcome CloudWatchLogsClient::ListAnomalies(const ListAnomaliesRequest& request) const {
-  return ListAnomaliesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAnomaliesOutcome(result.GetResultWithOwnership()) : ListAnomaliesOutcome(std::move(result.GetError()));
 }
 
 ListIntegrationsOutcome CloudWatchLogsClient::ListIntegrations(const ListIntegrationsRequest& request) const {
-  return ListIntegrationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIntegrationsOutcome(result.GetResultWithOwnership())
+                            : ListIntegrationsOutcome(std::move(result.GetError()));
 }
 
 ListLogAnomalyDetectorsOutcome CloudWatchLogsClient::ListLogAnomalyDetectors(const ListLogAnomalyDetectorsRequest& request) const {
-  return ListLogAnomalyDetectorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLogAnomalyDetectorsOutcome(result.GetResultWithOwnership())
+                            : ListLogAnomalyDetectorsOutcome(std::move(result.GetError()));
 }
 
 ListLogGroupsOutcome CloudWatchLogsClient::ListLogGroups(const ListLogGroupsRequest& request) const {
-  return ListLogGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLogGroupsOutcome(result.GetResultWithOwnership()) : ListLogGroupsOutcome(std::move(result.GetError()));
 }
 
 ListLogGroupsForQueryOutcome CloudWatchLogsClient::ListLogGroupsForQuery(const ListLogGroupsForQueryRequest& request) const {
-  return ListLogGroupsForQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLogGroupsForQueryOutcome(result.GetResultWithOwnership())
+                            : ListLogGroupsForQueryOutcome(std::move(result.GetError()));
 }
 
 ListScheduledQueriesOutcome CloudWatchLogsClient::ListScheduledQueries(const ListScheduledQueriesRequest& request) const {
-  return ListScheduledQueriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListScheduledQueriesOutcome(result.GetResultWithOwnership())
+                            : ListScheduledQueriesOutcome(std::move(result.GetError()));
 }
 
 ListSourcesForS3TableIntegrationOutcome CloudWatchLogsClient::ListSourcesForS3TableIntegration(
     const ListSourcesForS3TableIntegrationRequest& request) const {
-  return ListSourcesForS3TableIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSourcesForS3TableIntegrationOutcome(result.GetResultWithOwnership())
+                            : ListSourcesForS3TableIntegrationOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CloudWatchLogsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutAccountPolicyOutcome CloudWatchLogsClient::PutAccountPolicy(const PutAccountPolicyRequest& request) const {
-  return PutAccountPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAccountPolicyOutcome(result.GetResultWithOwnership())
+                            : PutAccountPolicyOutcome(std::move(result.GetError()));
 }
 
 PutBearerTokenAuthenticationOutcome CloudWatchLogsClient::PutBearerTokenAuthentication(
     const PutBearerTokenAuthenticationRequest& request) const {
-  return PutBearerTokenAuthenticationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutBearerTokenAuthenticationOutcome(result.GetResultWithOwnership())
+                            : PutBearerTokenAuthenticationOutcome(std::move(result.GetError()));
 }
 
 PutDataProtectionPolicyOutcome CloudWatchLogsClient::PutDataProtectionPolicy(const PutDataProtectionPolicyRequest& request) const {
-  return PutDataProtectionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDataProtectionPolicyOutcome(result.GetResultWithOwnership())
+                            : PutDataProtectionPolicyOutcome(std::move(result.GetError()));
 }
 
 PutDeliveryDestinationOutcome CloudWatchLogsClient::PutDeliveryDestination(const PutDeliveryDestinationRequest& request) const {
-  return PutDeliveryDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDeliveryDestinationOutcome(result.GetResultWithOwnership())
+                            : PutDeliveryDestinationOutcome(std::move(result.GetError()));
 }
 
 PutDeliveryDestinationPolicyOutcome CloudWatchLogsClient::PutDeliveryDestinationPolicy(
     const PutDeliveryDestinationPolicyRequest& request) const {
-  return PutDeliveryDestinationPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDeliveryDestinationPolicyOutcome(result.GetResultWithOwnership())
+                            : PutDeliveryDestinationPolicyOutcome(std::move(result.GetError()));
 }
 
 PutDeliverySourceOutcome CloudWatchLogsClient::PutDeliverySource(const PutDeliverySourceRequest& request) const {
-  return PutDeliverySourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDeliverySourceOutcome(result.GetResultWithOwnership())
+                            : PutDeliverySourceOutcome(std::move(result.GetError()));
 }
 
 PutDestinationOutcome CloudWatchLogsClient::PutDestination(const PutDestinationRequest& request) const {
-  return PutDestinationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDestinationOutcome(result.GetResultWithOwnership()) : PutDestinationOutcome(std::move(result.GetError()));
 }
 
 PutDestinationPolicyOutcome CloudWatchLogsClient::PutDestinationPolicy(const PutDestinationPolicyRequest& request) const {
-  return PutDestinationPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDestinationPolicyOutcome(result.GetResultWithOwnership())
+                            : PutDestinationPolicyOutcome(std::move(result.GetError()));
 }
 
 PutIndexPolicyOutcome CloudWatchLogsClient::PutIndexPolicy(const PutIndexPolicyRequest& request) const {
-  return PutIndexPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutIndexPolicyOutcome(result.GetResultWithOwnership()) : PutIndexPolicyOutcome(std::move(result.GetError()));
 }
 
 PutIntegrationOutcome CloudWatchLogsClient::PutIntegration(const PutIntegrationRequest& request) const {
-  return PutIntegrationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutIntegrationOutcome(result.GetResultWithOwnership()) : PutIntegrationOutcome(std::move(result.GetError()));
 }
 
 PutLogEventsOutcome CloudWatchLogsClient::PutLogEvents(const PutLogEventsRequest& request) const {
-  return PutLogEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutLogEventsOutcome(result.GetResultWithOwnership()) : PutLogEventsOutcome(std::move(result.GetError()));
 }
 
 PutLogGroupDeletionProtectionOutcome CloudWatchLogsClient::PutLogGroupDeletionProtection(
     const PutLogGroupDeletionProtectionRequest& request) const {
-  return PutLogGroupDeletionProtectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutLogGroupDeletionProtectionOutcome(result.GetResultWithOwnership())
+                            : PutLogGroupDeletionProtectionOutcome(std::move(result.GetError()));
 }
 
 PutMetricFilterOutcome CloudWatchLogsClient::PutMetricFilter(const PutMetricFilterRequest& request) const {
-  return PutMetricFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutMetricFilterOutcome(result.GetResultWithOwnership())
+                            : PutMetricFilterOutcome(std::move(result.GetError()));
 }
 
 PutQueryDefinitionOutcome CloudWatchLogsClient::PutQueryDefinition(const PutQueryDefinitionRequest& request) const {
-  return PutQueryDefinitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutQueryDefinitionOutcome(result.GetResultWithOwnership())
+                            : PutQueryDefinitionOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome CloudWatchLogsClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 PutRetentionPolicyOutcome CloudWatchLogsClient::PutRetentionPolicy(const PutRetentionPolicyRequest& request) const {
-  return PutRetentionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRetentionPolicyOutcome(result.GetResultWithOwnership())
+                            : PutRetentionPolicyOutcome(std::move(result.GetError()));
 }
 
 PutSubscriptionFilterOutcome CloudWatchLogsClient::PutSubscriptionFilter(const PutSubscriptionFilterRequest& request) const {
-  return PutSubscriptionFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutSubscriptionFilterOutcome(result.GetResultWithOwnership())
+                            : PutSubscriptionFilterOutcome(std::move(result.GetError()));
 }
 
 PutTransformerOutcome CloudWatchLogsClient::PutTransformer(const PutTransformerRequest& request) const {
-  return PutTransformerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutTransformerOutcome(result.GetResultWithOwnership()) : PutTransformerOutcome(std::move(result.GetError()));
 }
 
 StartLiveTailOutcome CloudWatchLogsClient::StartLiveTail(StartLiveTailRequest& request) const {
@@ -739,7 +910,9 @@ StartLiveTailOutcome CloudWatchLogsClient::StartLiveTail(StartLiveTailRequest& r
             }
           });
         }
-        return StartLiveTailOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? StartLiveTailOutcome(result.GetResultWithOwnership())
+                                  : StartLiveTailOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -747,42 +920,57 @@ StartLiveTailOutcome CloudWatchLogsClient::StartLiveTail(StartLiveTailRequest& r
 }
 
 StartQueryOutcome CloudWatchLogsClient::StartQuery(const StartQueryRequest& request) const {
-  return StartQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQueryOutcome(result.GetResultWithOwnership()) : StartQueryOutcome(std::move(result.GetError()));
 }
 
 StopQueryOutcome CloudWatchLogsClient::StopQuery(const StopQueryRequest& request) const {
-  return StopQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopQueryOutcome(result.GetResultWithOwnership()) : StopQueryOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CloudWatchLogsClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestMetricFilterOutcome CloudWatchLogsClient::TestMetricFilter(const TestMetricFilterRequest& request) const {
-  return TestMetricFilterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestMetricFilterOutcome(result.GetResultWithOwnership())
+                            : TestMetricFilterOutcome(std::move(result.GetError()));
 }
 
 TestTransformerOutcome CloudWatchLogsClient::TestTransformer(const TestTransformerRequest& request) const {
-  return TestTransformerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestTransformerOutcome(result.GetResultWithOwnership())
+                            : TestTransformerOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CloudWatchLogsClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAnomalyOutcome CloudWatchLogsClient::UpdateAnomaly(const UpdateAnomalyRequest& request) const {
-  return UpdateAnomalyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAnomalyOutcome(result.GetResultWithOwnership()) : UpdateAnomalyOutcome(std::move(result.GetError()));
 }
 
 UpdateDeliveryConfigurationOutcome CloudWatchLogsClient::UpdateDeliveryConfiguration(
     const UpdateDeliveryConfigurationRequest& request) const {
-  return UpdateDeliveryConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDeliveryConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateDeliveryConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateLogAnomalyDetectorOutcome CloudWatchLogsClient::UpdateLogAnomalyDetector(const UpdateLogAnomalyDetectorRequest& request) const {
-  return UpdateLogAnomalyDetectorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLogAnomalyDetectorOutcome(result.GetResultWithOwnership())
+                            : UpdateLogAnomalyDetectorOutcome(std::move(result.GetError()));
 }
 
 UpdateScheduledQueryOutcome CloudWatchLogsClient::UpdateScheduledQuery(const UpdateScheduledQueryRequest& request) const {
-  return UpdateScheduledQueryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateScheduledQueryOutcome(result.GetResultWithOwnership())
+                            : UpdateScheduledQueryOutcome(std::move(result.GetError()));
 }

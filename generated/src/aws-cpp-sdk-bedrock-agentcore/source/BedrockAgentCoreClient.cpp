@@ -233,7 +233,9 @@ BatchCreateMemoryRecordsOutcome BedrockAgentCoreClient::BatchCreateMemoryRecords
     endpointResolutionOutcome.GetResult().AddPathSegments("/memoryRecords/batchCreate");
   };
 
-  return BatchCreateMemoryRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateMemoryRecordsOutcome(result.GetResultWithOwnership())
+                            : BatchCreateMemoryRecordsOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteMemoryRecordsOutcome BedrockAgentCoreClient::BatchDeleteMemoryRecords(const BatchDeleteMemoryRecordsRequest& request) const {
@@ -250,7 +252,9 @@ BatchDeleteMemoryRecordsOutcome BedrockAgentCoreClient::BatchDeleteMemoryRecords
     endpointResolutionOutcome.GetResult().AddPathSegments("/memoryRecords/batchDelete");
   };
 
-  return BatchDeleteMemoryRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteMemoryRecordsOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteMemoryRecordsOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateMemoryRecordsOutcome BedrockAgentCoreClient::BatchUpdateMemoryRecords(const BatchUpdateMemoryRecordsRequest& request) const {
@@ -267,7 +271,9 @@ BatchUpdateMemoryRecordsOutcome BedrockAgentCoreClient::BatchUpdateMemoryRecords
     endpointResolutionOutcome.GetResult().AddPathSegments("/memoryRecords/batchUpdate");
   };
 
-  return BatchUpdateMemoryRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchUpdateMemoryRecordsOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateMemoryRecordsOutcome(std::move(result.GetError()));
 }
 
 CompleteResourceTokenAuthOutcome BedrockAgentCoreClient::CompleteResourceTokenAuth(const CompleteResourceTokenAuthRequest& request) const {
@@ -276,7 +282,9 @@ CompleteResourceTokenAuthOutcome BedrockAgentCoreClient::CompleteResourceTokenAu
     endpointResolutionOutcome.GetResult().AddPathSegments("/identities/CompleteResourceTokenAuth");
   };
 
-  return CompleteResourceTokenAuthOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CompleteResourceTokenAuthOutcome(result.GetResultWithOwnership())
+                            : CompleteResourceTokenAuthOutcome(std::move(result.GetError()));
 }
 
 CreateEventOutcome BedrockAgentCoreClient::CreateEvent(const CreateEventRequest& request) const {
@@ -293,7 +301,8 @@ CreateEventOutcome BedrockAgentCoreClient::CreateEvent(const CreateEventRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/events");
   };
 
-  return CreateEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventOutcome(result.GetResultWithOwnership()) : CreateEventOutcome(std::move(result.GetError()));
 }
 
 DeleteEventOutcome BedrockAgentCoreClient::DeleteEvent(const DeleteEventRequest& request) const {
@@ -330,7 +339,8 @@ DeleteEventOutcome BedrockAgentCoreClient::DeleteEvent(const DeleteEventRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventId());
   };
 
-  return DeleteEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventOutcome(result.GetResultWithOwnership()) : DeleteEventOutcome(std::move(result.GetError()));
 }
 
 DeleteMemoryRecordOutcome BedrockAgentCoreClient::DeleteMemoryRecord(const DeleteMemoryRecordRequest& request) const {
@@ -353,7 +363,9 @@ DeleteMemoryRecordOutcome BedrockAgentCoreClient::DeleteMemoryRecord(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemoryRecordId());
   };
 
-  return DeleteMemoryRecordOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMemoryRecordOutcome(result.GetResultWithOwnership())
+                            : DeleteMemoryRecordOutcome(std::move(result.GetError()));
 }
 
 EvaluateOutcome BedrockAgentCoreClient::Evaluate(const EvaluateRequest& request) const {
@@ -369,7 +381,8 @@ EvaluateOutcome BedrockAgentCoreClient::Evaluate(const EvaluateRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvaluatorId());
   };
 
-  return EvaluateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EvaluateOutcome(result.GetResultWithOwnership()) : EvaluateOutcome(std::move(result.GetError()));
 }
 
 GetAgentCardOutcome BedrockAgentCoreClient::GetAgentCard(const GetAgentCardRequest& request) const {
@@ -386,7 +399,8 @@ GetAgentCardOutcome BedrockAgentCoreClient::GetAgentCard(const GetAgentCardReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/invocations/.well-known/agent-card.json");
   };
 
-  return GetAgentCardOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAgentCardOutcome(result.GetResultWithOwnership()) : GetAgentCardOutcome(std::move(result.GetError()));
 }
 
 GetBrowserSessionOutcome BedrockAgentCoreClient::GetBrowserSession(const GetBrowserSessionRequest& request) const {
@@ -408,7 +422,9 @@ GetBrowserSessionOutcome BedrockAgentCoreClient::GetBrowserSession(const GetBrow
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/get");
   };
 
-  return GetBrowserSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBrowserSessionOutcome(result.GetResultWithOwnership())
+                            : GetBrowserSessionOutcome(std::move(result.GetError()));
 }
 
 GetCodeInterpreterSessionOutcome BedrockAgentCoreClient::GetCodeInterpreterSession(const GetCodeInterpreterSessionRequest& request) const {
@@ -430,7 +446,9 @@ GetCodeInterpreterSessionOutcome BedrockAgentCoreClient::GetCodeInterpreterSessi
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/get");
   };
 
-  return GetCodeInterpreterSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCodeInterpreterSessionOutcome(result.GetResultWithOwnership())
+                            : GetCodeInterpreterSessionOutcome(std::move(result.GetError()));
 }
 
 GetEventOutcome BedrockAgentCoreClient::GetEvent(const GetEventRequest& request) const {
@@ -467,7 +485,8 @@ GetEventOutcome BedrockAgentCoreClient::GetEvent(const GetEventRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventId());
   };
 
-  return GetEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventOutcome(result.GetResultWithOwnership()) : GetEventOutcome(std::move(result.GetError()));
 }
 
 GetMemoryRecordOutcome BedrockAgentCoreClient::GetMemoryRecord(const GetMemoryRecordRequest& request) const {
@@ -490,7 +509,9 @@ GetMemoryRecordOutcome BedrockAgentCoreClient::GetMemoryRecord(const GetMemoryRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemoryRecordId());
   };
 
-  return GetMemoryRecordOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMemoryRecordOutcome(result.GetResultWithOwnership())
+                            : GetMemoryRecordOutcome(std::move(result.GetError()));
 }
 
 GetResourceApiKeyOutcome BedrockAgentCoreClient::GetResourceApiKey(const GetResourceApiKeyRequest& request) const {
@@ -499,7 +520,9 @@ GetResourceApiKeyOutcome BedrockAgentCoreClient::GetResourceApiKey(const GetReso
     endpointResolutionOutcome.GetResult().AddPathSegments("/identities/api-key");
   };
 
-  return GetResourceApiKeyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceApiKeyOutcome(result.GetResultWithOwnership())
+                            : GetResourceApiKeyOutcome(std::move(result.GetError()));
 }
 
 GetResourceOauth2TokenOutcome BedrockAgentCoreClient::GetResourceOauth2Token(const GetResourceOauth2TokenRequest& request) const {
@@ -508,7 +531,9 @@ GetResourceOauth2TokenOutcome BedrockAgentCoreClient::GetResourceOauth2Token(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/identities/oauth2/token");
   };
 
-  return GetResourceOauth2TokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceOauth2TokenOutcome(result.GetResultWithOwnership())
+                            : GetResourceOauth2TokenOutcome(std::move(result.GetError()));
 }
 
 GetWorkloadAccessTokenOutcome BedrockAgentCoreClient::GetWorkloadAccessToken(const GetWorkloadAccessTokenRequest& request) const {
@@ -517,7 +542,9 @@ GetWorkloadAccessTokenOutcome BedrockAgentCoreClient::GetWorkloadAccessToken(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/identities/GetWorkloadAccessToken");
   };
 
-  return GetWorkloadAccessTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkloadAccessTokenOutcome(result.GetResultWithOwnership())
+                            : GetWorkloadAccessTokenOutcome(std::move(result.GetError()));
 }
 
 GetWorkloadAccessTokenForJWTOutcome BedrockAgentCoreClient::GetWorkloadAccessTokenForJWT(
@@ -527,7 +554,9 @@ GetWorkloadAccessTokenForJWTOutcome BedrockAgentCoreClient::GetWorkloadAccessTok
     endpointResolutionOutcome.GetResult().AddPathSegments("/identities/GetWorkloadAccessTokenForJWT");
   };
 
-  return GetWorkloadAccessTokenForJWTOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkloadAccessTokenForJWTOutcome(result.GetResultWithOwnership())
+                            : GetWorkloadAccessTokenForJWTOutcome(std::move(result.GetError()));
 }
 
 GetWorkloadAccessTokenForUserIdOutcome BedrockAgentCoreClient::GetWorkloadAccessTokenForUserId(
@@ -537,7 +566,9 @@ GetWorkloadAccessTokenForUserIdOutcome BedrockAgentCoreClient::GetWorkloadAccess
     endpointResolutionOutcome.GetResult().AddPathSegments("/identities/GetWorkloadAccessTokenForUserId");
   };
 
-  return GetWorkloadAccessTokenForUserIdOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkloadAccessTokenForUserIdOutcome(result.GetResultWithOwnership())
+                            : GetWorkloadAccessTokenForUserIdOutcome(std::move(result.GetError()));
 }
 
 InvokeAgentRuntimeOutcome BedrockAgentCoreClient::InvokeAgentRuntime(const InvokeAgentRuntimeRequest& request) const {
@@ -569,8 +600,9 @@ InvokeAgentRuntimeOutcome BedrockAgentCoreClient::InvokeAgentRuntime(const Invok
         endpointResolutionOutcome.GetResult().AddPathSegments("/runtimes/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentRuntimeArn());
         endpointResolutionOutcome.GetResult().AddPathSegments("/invocations");
-        return InvokeAgentRuntimeOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? InvokeAgentRuntimeOutcome(result.GetResultWithOwnership())
+                                  : InvokeAgentRuntimeOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -618,8 +650,9 @@ InvokeAgentRuntimeCommandOutcome BedrockAgentCoreClient::InvokeAgentRuntimeComma
             }
           });
         }
-        return InvokeAgentRuntimeCommandOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? InvokeAgentRuntimeCommandOutcome(result.GetResultWithOwnership())
+                                  : InvokeAgentRuntimeCommandOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -667,7 +700,9 @@ InvokeCodeInterpreterOutcome BedrockAgentCoreClient::InvokeCodeInterpreter(Invok
             }
           });
         }
-        return InvokeCodeInterpreterOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? InvokeCodeInterpreterOutcome(result.GetResultWithOwnership())
+                                  : InvokeCodeInterpreterOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -688,7 +723,8 @@ ListActorsOutcome BedrockAgentCoreClient::ListActors(const ListActorsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/actors");
   };
 
-  return ListActorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListActorsOutcome(result.GetResultWithOwnership()) : ListActorsOutcome(std::move(result.GetError()));
 }
 
 ListBrowserSessionsOutcome BedrockAgentCoreClient::ListBrowserSessions(const ListBrowserSessionsRequest& request) const {
@@ -705,7 +741,9 @@ ListBrowserSessionsOutcome BedrockAgentCoreClient::ListBrowserSessions(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/list");
   };
 
-  return ListBrowserSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBrowserSessionsOutcome(result.GetResultWithOwnership())
+                            : ListBrowserSessionsOutcome(std::move(result.GetError()));
 }
 
 ListCodeInterpreterSessionsOutcome BedrockAgentCoreClient::ListCodeInterpreterSessions(
@@ -723,7 +761,9 @@ ListCodeInterpreterSessionsOutcome BedrockAgentCoreClient::ListCodeInterpreterSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/list");
   };
 
-  return ListCodeInterpreterSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCodeInterpreterSessionsOutcome(result.GetResultWithOwnership())
+                            : ListCodeInterpreterSessionsOutcome(std::move(result.GetError()));
 }
 
 ListEventsOutcome BedrockAgentCoreClient::ListEvents(const ListEventsRequest& request) const {
@@ -753,7 +793,8 @@ ListEventsOutcome BedrockAgentCoreClient::ListEvents(const ListEventsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return ListEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEventsOutcome(result.GetResultWithOwnership()) : ListEventsOutcome(std::move(result.GetError()));
 }
 
 ListMemoryExtractionJobsOutcome BedrockAgentCoreClient::ListMemoryExtractionJobs(const ListMemoryExtractionJobsRequest& request) const {
@@ -770,7 +811,9 @@ ListMemoryExtractionJobsOutcome BedrockAgentCoreClient::ListMemoryExtractionJobs
     endpointResolutionOutcome.GetResult().AddPathSegments("/extractionJobs");
   };
 
-  return ListMemoryExtractionJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMemoryExtractionJobsOutcome(result.GetResultWithOwnership())
+                            : ListMemoryExtractionJobsOutcome(std::move(result.GetError()));
 }
 
 ListMemoryRecordsOutcome BedrockAgentCoreClient::ListMemoryRecords(const ListMemoryRecordsRequest& request) const {
@@ -787,7 +830,9 @@ ListMemoryRecordsOutcome BedrockAgentCoreClient::ListMemoryRecords(const ListMem
     endpointResolutionOutcome.GetResult().AddPathSegments("/memoryRecords");
   };
 
-  return ListMemoryRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMemoryRecordsOutcome(result.GetResultWithOwnership())
+                            : ListMemoryRecordsOutcome(std::move(result.GetError()));
 }
 
 ListSessionsOutcome BedrockAgentCoreClient::ListSessions(const ListSessionsRequest& request) const {
@@ -811,7 +856,8 @@ ListSessionsOutcome BedrockAgentCoreClient::ListSessions(const ListSessionsReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
   };
 
-  return ListSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
 }
 
 RetrieveMemoryRecordsOutcome BedrockAgentCoreClient::RetrieveMemoryRecords(const RetrieveMemoryRecordsRequest& request) const {
@@ -828,7 +874,9 @@ RetrieveMemoryRecordsOutcome BedrockAgentCoreClient::RetrieveMemoryRecords(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/retrieve");
   };
 
-  return RetrieveMemoryRecordsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetrieveMemoryRecordsOutcome(result.GetResultWithOwnership())
+                            : RetrieveMemoryRecordsOutcome(std::move(result.GetError()));
 }
 
 SaveBrowserSessionProfileOutcome BedrockAgentCoreClient::SaveBrowserSessionProfile(const SaveBrowserSessionProfileRequest& request) const {
@@ -845,7 +893,9 @@ SaveBrowserSessionProfileOutcome BedrockAgentCoreClient::SaveBrowserSessionProfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/save");
   };
 
-  return SaveBrowserSessionProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? SaveBrowserSessionProfileOutcome(result.GetResultWithOwnership())
+                            : SaveBrowserSessionProfileOutcome(std::move(result.GetError()));
 }
 
 StartBrowserSessionOutcome BedrockAgentCoreClient::StartBrowserSession(const StartBrowserSessionRequest& request) const {
@@ -862,7 +912,9 @@ StartBrowserSessionOutcome BedrockAgentCoreClient::StartBrowserSession(const Sta
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/start");
   };
 
-  return StartBrowserSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartBrowserSessionOutcome(result.GetResultWithOwnership())
+                            : StartBrowserSessionOutcome(std::move(result.GetError()));
 }
 
 StartCodeInterpreterSessionOutcome BedrockAgentCoreClient::StartCodeInterpreterSession(
@@ -880,7 +932,9 @@ StartCodeInterpreterSessionOutcome BedrockAgentCoreClient::StartCodeInterpreterS
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/start");
   };
 
-  return StartCodeInterpreterSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartCodeInterpreterSessionOutcome(result.GetResultWithOwnership())
+                            : StartCodeInterpreterSessionOutcome(std::move(result.GetError()));
 }
 
 StartMemoryExtractionJobOutcome BedrockAgentCoreClient::StartMemoryExtractionJob(const StartMemoryExtractionJobRequest& request) const {
@@ -897,7 +951,9 @@ StartMemoryExtractionJobOutcome BedrockAgentCoreClient::StartMemoryExtractionJob
     endpointResolutionOutcome.GetResult().AddPathSegments("/extractionJobs/start");
   };
 
-  return StartMemoryExtractionJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMemoryExtractionJobOutcome(result.GetResultWithOwnership())
+                            : StartMemoryExtractionJobOutcome(std::move(result.GetError()));
 }
 
 StopBrowserSessionOutcome BedrockAgentCoreClient::StopBrowserSession(const StopBrowserSessionRequest& request) const {
@@ -919,7 +975,9 @@ StopBrowserSessionOutcome BedrockAgentCoreClient::StopBrowserSession(const StopB
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/stop");
   };
 
-  return StopBrowserSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StopBrowserSessionOutcome(result.GetResultWithOwnership())
+                            : StopBrowserSessionOutcome(std::move(result.GetError()));
 }
 
 StopCodeInterpreterSessionOutcome BedrockAgentCoreClient::StopCodeInterpreterSession(
@@ -942,7 +1000,9 @@ StopCodeInterpreterSessionOutcome BedrockAgentCoreClient::StopCodeInterpreterSes
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/stop");
   };
 
-  return StopCodeInterpreterSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StopCodeInterpreterSessionOutcome(result.GetResultWithOwnership())
+                            : StopCodeInterpreterSessionOutcome(std::move(result.GetError()));
 }
 
 StopRuntimeSessionOutcome BedrockAgentCoreClient::StopRuntimeSession(const StopRuntimeSessionRequest& request) const {
@@ -964,7 +1024,9 @@ StopRuntimeSessionOutcome BedrockAgentCoreClient::StopRuntimeSession(const StopR
     endpointResolutionOutcome.GetResult().AddPathSegments("/stopruntimesession");
   };
 
-  return StopRuntimeSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopRuntimeSessionOutcome(result.GetResultWithOwnership())
+                            : StopRuntimeSessionOutcome(std::move(result.GetError()));
 }
 
 UpdateBrowserStreamOutcome BedrockAgentCoreClient::UpdateBrowserStream(const UpdateBrowserStreamRequest& request) const {
@@ -986,5 +1048,7 @@ UpdateBrowserStreamOutcome BedrockAgentCoreClient::UpdateBrowserStream(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/streams/update");
   };
 
-  return UpdateBrowserStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBrowserStreamOutcome(result.GetResultWithOwnership())
+                            : UpdateBrowserStreamOutcome(std::move(result.GetError()));
 }

@@ -254,7 +254,9 @@ CancelTrainedModelOutcome CleanRoomsMLClient::CancelTrainedModel(const CancelTra
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainedModelArn());
   };
 
-  return CancelTrainedModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? CancelTrainedModelOutcome(result.GetResultWithOwnership())
+                            : CancelTrainedModelOutcome(std::move(result.GetError()));
 }
 
 CancelTrainedModelInferenceJobOutcome CleanRoomsMLClient::CancelTrainedModelInferenceJob(
@@ -278,7 +280,9 @@ CancelTrainedModelInferenceJobOutcome CleanRoomsMLClient::CancelTrainedModelInfe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainedModelInferenceJobArn());
   };
 
-  return CancelTrainedModelInferenceJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? CancelTrainedModelInferenceJobOutcome(result.GetResultWithOwnership())
+                            : CancelTrainedModelInferenceJobOutcome(std::move(result.GetError()));
 }
 
 CreateAudienceModelOutcome CleanRoomsMLClient::CreateAudienceModel(const CreateAudienceModelRequest& request) const {
@@ -287,7 +291,9 @@ CreateAudienceModelOutcome CleanRoomsMLClient::CreateAudienceModel(const CreateA
     endpointResolutionOutcome.GetResult().AddPathSegments("/audience-model");
   };
 
-  return CreateAudienceModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAudienceModelOutcome(result.GetResultWithOwnership())
+                            : CreateAudienceModelOutcome(std::move(result.GetError()));
 }
 
 CreateConfiguredAudienceModelOutcome CleanRoomsMLClient::CreateConfiguredAudienceModel(
@@ -297,7 +303,9 @@ CreateConfiguredAudienceModelOutcome CleanRoomsMLClient::CreateConfiguredAudienc
     endpointResolutionOutcome.GetResult().AddPathSegments("/configured-audience-model");
   };
 
-  return CreateConfiguredAudienceModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfiguredAudienceModelOutcome(result.GetResultWithOwnership())
+                            : CreateConfiguredAudienceModelOutcome(std::move(result.GetError()));
 }
 
 CreateConfiguredModelAlgorithmOutcome CleanRoomsMLClient::CreateConfiguredModelAlgorithm(
@@ -307,7 +315,9 @@ CreateConfiguredModelAlgorithmOutcome CleanRoomsMLClient::CreateConfiguredModelA
     endpointResolutionOutcome.GetResult().AddPathSegments("/configured-model-algorithms");
   };
 
-  return CreateConfiguredModelAlgorithmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfiguredModelAlgorithmOutcome(result.GetResultWithOwnership())
+                            : CreateConfiguredModelAlgorithmOutcome(std::move(result.GetError()));
 }
 
 CreateConfiguredModelAlgorithmAssociationOutcome CleanRoomsMLClient::CreateConfiguredModelAlgorithmAssociation(
@@ -325,7 +335,9 @@ CreateConfiguredModelAlgorithmAssociationOutcome CleanRoomsMLClient::CreateConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/configured-model-algorithm-associations");
   };
 
-  return CreateConfiguredModelAlgorithmAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfiguredModelAlgorithmAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateConfiguredModelAlgorithmAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateMLInputChannelOutcome CleanRoomsMLClient::CreateMLInputChannel(const CreateMLInputChannelRequest& request) const {
@@ -342,7 +354,9 @@ CreateMLInputChannelOutcome CleanRoomsMLClient::CreateMLInputChannel(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml-input-channels");
   };
 
-  return CreateMLInputChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMLInputChannelOutcome(result.GetResultWithOwnership())
+                            : CreateMLInputChannelOutcome(std::move(result.GetError()));
 }
 
 CreateTrainedModelOutcome CleanRoomsMLClient::CreateTrainedModel(const CreateTrainedModelRequest& request) const {
@@ -359,7 +373,9 @@ CreateTrainedModelOutcome CleanRoomsMLClient::CreateTrainedModel(const CreateTra
     endpointResolutionOutcome.GetResult().AddPathSegments("/trained-models");
   };
 
-  return CreateTrainedModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrainedModelOutcome(result.GetResultWithOwnership())
+                            : CreateTrainedModelOutcome(std::move(result.GetError()));
 }
 
 CreateTrainingDatasetOutcome CleanRoomsMLClient::CreateTrainingDataset(const CreateTrainingDatasetRequest& request) const {
@@ -368,7 +384,9 @@ CreateTrainingDatasetOutcome CleanRoomsMLClient::CreateTrainingDataset(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/training-dataset");
   };
 
-  return CreateTrainingDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrainingDatasetOutcome(result.GetResultWithOwnership())
+                            : CreateTrainingDatasetOutcome(std::move(result.GetError()));
 }
 
 DeleteAudienceGenerationJobOutcome CleanRoomsMLClient::DeleteAudienceGenerationJob(
@@ -385,7 +403,9 @@ DeleteAudienceGenerationJobOutcome CleanRoomsMLClient::DeleteAudienceGenerationJ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAudienceGenerationJobArn());
   };
 
-  return DeleteAudienceGenerationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAudienceGenerationJobOutcome(result.GetResultWithOwnership())
+                            : DeleteAudienceGenerationJobOutcome(std::move(result.GetError()));
 }
 
 DeleteAudienceModelOutcome CleanRoomsMLClient::DeleteAudienceModel(const DeleteAudienceModelRequest& request) const {
@@ -401,7 +421,9 @@ DeleteAudienceModelOutcome CleanRoomsMLClient::DeleteAudienceModel(const DeleteA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAudienceModelArn());
   };
 
-  return DeleteAudienceModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAudienceModelOutcome(result.GetResultWithOwnership())
+                            : DeleteAudienceModelOutcome(std::move(result.GetError()));
 }
 
 DeleteConfiguredAudienceModelOutcome CleanRoomsMLClient::DeleteConfiguredAudienceModel(
@@ -418,7 +440,9 @@ DeleteConfiguredAudienceModelOutcome CleanRoomsMLClient::DeleteConfiguredAudienc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelArn());
   };
 
-  return DeleteConfiguredAudienceModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfiguredAudienceModelOutcome(result.GetResultWithOwnership())
+                            : DeleteConfiguredAudienceModelOutcome(std::move(result.GetError()));
 }
 
 DeleteConfiguredAudienceModelPolicyOutcome CleanRoomsMLClient::DeleteConfiguredAudienceModelPolicy(
@@ -436,7 +460,9 @@ DeleteConfiguredAudienceModelPolicyOutcome CleanRoomsMLClient::DeleteConfiguredA
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteConfiguredAudienceModelPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfiguredAudienceModelPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteConfiguredAudienceModelPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteConfiguredModelAlgorithmOutcome CleanRoomsMLClient::DeleteConfiguredModelAlgorithm(
@@ -453,7 +479,9 @@ DeleteConfiguredModelAlgorithmOutcome CleanRoomsMLClient::DeleteConfiguredModelA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredModelAlgorithmArn());
   };
 
-  return DeleteConfiguredModelAlgorithmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfiguredModelAlgorithmOutcome(result.GetResultWithOwnership())
+                            : DeleteConfiguredModelAlgorithmOutcome(std::move(result.GetError()));
 }
 
 DeleteConfiguredModelAlgorithmAssociationOutcome CleanRoomsMLClient::DeleteConfiguredModelAlgorithmAssociation(
@@ -478,7 +506,9 @@ DeleteConfiguredModelAlgorithmAssociationOutcome CleanRoomsMLClient::DeleteConfi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredModelAlgorithmAssociationArn());
   };
 
-  return DeleteConfiguredModelAlgorithmAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfiguredModelAlgorithmAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteConfiguredModelAlgorithmAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteMLConfigurationOutcome CleanRoomsMLClient::DeleteMLConfiguration(const DeleteMLConfigurationRequest& request) const {
@@ -495,7 +525,9 @@ DeleteMLConfigurationOutcome CleanRoomsMLClient::DeleteMLConfiguration(const Del
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml-configurations");
   };
 
-  return DeleteMLConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMLConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteMLConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteMLInputChannelDataOutcome CleanRoomsMLClient::DeleteMLInputChannelData(const DeleteMLInputChannelDataRequest& request) const {
@@ -518,7 +550,9 @@ DeleteMLInputChannelDataOutcome CleanRoomsMLClient::DeleteMLInputChannelData(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMlInputChannelArn());
   };
 
-  return DeleteMLInputChannelDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMLInputChannelDataOutcome(result.GetResultWithOwnership())
+                            : DeleteMLInputChannelDataOutcome(std::move(result.GetError()));
 }
 
 DeleteTrainedModelOutputOutcome CleanRoomsMLClient::DeleteTrainedModelOutput(const DeleteTrainedModelOutputRequest& request) const {
@@ -541,7 +575,9 @@ DeleteTrainedModelOutputOutcome CleanRoomsMLClient::DeleteTrainedModelOutput(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainedModelArn());
   };
 
-  return DeleteTrainedModelOutputOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTrainedModelOutputOutcome(result.GetResultWithOwnership())
+                            : DeleteTrainedModelOutputOutcome(std::move(result.GetError()));
 }
 
 DeleteTrainingDatasetOutcome CleanRoomsMLClient::DeleteTrainingDataset(const DeleteTrainingDatasetRequest& request) const {
@@ -557,7 +593,9 @@ DeleteTrainingDatasetOutcome CleanRoomsMLClient::DeleteTrainingDataset(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainingDatasetArn());
   };
 
-  return DeleteTrainingDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTrainingDatasetOutcome(result.GetResultWithOwnership())
+                            : DeleteTrainingDatasetOutcome(std::move(result.GetError()));
 }
 
 GetAudienceGenerationJobOutcome CleanRoomsMLClient::GetAudienceGenerationJob(const GetAudienceGenerationJobRequest& request) const {
@@ -573,7 +611,9 @@ GetAudienceGenerationJobOutcome CleanRoomsMLClient::GetAudienceGenerationJob(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAudienceGenerationJobArn());
   };
 
-  return GetAudienceGenerationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAudienceGenerationJobOutcome(result.GetResultWithOwnership())
+                            : GetAudienceGenerationJobOutcome(std::move(result.GetError()));
 }
 
 GetAudienceModelOutcome CleanRoomsMLClient::GetAudienceModel(const GetAudienceModelRequest& request) const {
@@ -589,7 +629,9 @@ GetAudienceModelOutcome CleanRoomsMLClient::GetAudienceModel(const GetAudienceMo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAudienceModelArn());
   };
 
-  return GetAudienceModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAudienceModelOutcome(result.GetResultWithOwnership())
+                            : GetAudienceModelOutcome(std::move(result.GetError()));
 }
 
 GetCollaborationConfiguredModelAlgorithmAssociationOutcome CleanRoomsMLClient::GetCollaborationConfiguredModelAlgorithmAssociation(
@@ -615,8 +657,9 @@ GetCollaborationConfiguredModelAlgorithmAssociationOutcome CleanRoomsMLClient::G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredModelAlgorithmAssociationArn());
   };
 
-  return GetCollaborationConfiguredModelAlgorithmAssociationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCollaborationConfiguredModelAlgorithmAssociationOutcome(result.GetResultWithOwnership())
+                            : GetCollaborationConfiguredModelAlgorithmAssociationOutcome(std::move(result.GetError()));
 }
 
 GetCollaborationMLInputChannelOutcome CleanRoomsMLClient::GetCollaborationMLInputChannel(
@@ -640,7 +683,9 @@ GetCollaborationMLInputChannelOutcome CleanRoomsMLClient::GetCollaborationMLInpu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMlInputChannelArn());
   };
 
-  return GetCollaborationMLInputChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCollaborationMLInputChannelOutcome(result.GetResultWithOwnership())
+                            : GetCollaborationMLInputChannelOutcome(std::move(result.GetError()));
 }
 
 GetCollaborationTrainedModelOutcome CleanRoomsMLClient::GetCollaborationTrainedModel(
@@ -664,7 +709,9 @@ GetCollaborationTrainedModelOutcome CleanRoomsMLClient::GetCollaborationTrainedM
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainedModelArn());
   };
 
-  return GetCollaborationTrainedModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCollaborationTrainedModelOutcome(result.GetResultWithOwnership())
+                            : GetCollaborationTrainedModelOutcome(std::move(result.GetError()));
 }
 
 GetConfiguredAudienceModelOutcome CleanRoomsMLClient::GetConfiguredAudienceModel(const GetConfiguredAudienceModelRequest& request) const {
@@ -680,7 +727,9 @@ GetConfiguredAudienceModelOutcome CleanRoomsMLClient::GetConfiguredAudienceModel
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelArn());
   };
 
-  return GetConfiguredAudienceModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfiguredAudienceModelOutcome(result.GetResultWithOwnership())
+                            : GetConfiguredAudienceModelOutcome(std::move(result.GetError()));
 }
 
 GetConfiguredAudienceModelPolicyOutcome CleanRoomsMLClient::GetConfiguredAudienceModelPolicy(
@@ -698,7 +747,9 @@ GetConfiguredAudienceModelPolicyOutcome CleanRoomsMLClient::GetConfiguredAudienc
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetConfiguredAudienceModelPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfiguredAudienceModelPolicyOutcome(result.GetResultWithOwnership())
+                            : GetConfiguredAudienceModelPolicyOutcome(std::move(result.GetError()));
 }
 
 GetConfiguredModelAlgorithmOutcome CleanRoomsMLClient::GetConfiguredModelAlgorithm(
@@ -715,7 +766,9 @@ GetConfiguredModelAlgorithmOutcome CleanRoomsMLClient::GetConfiguredModelAlgorit
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredModelAlgorithmArn());
   };
 
-  return GetConfiguredModelAlgorithmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfiguredModelAlgorithmOutcome(result.GetResultWithOwnership())
+                            : GetConfiguredModelAlgorithmOutcome(std::move(result.GetError()));
 }
 
 GetConfiguredModelAlgorithmAssociationOutcome CleanRoomsMLClient::GetConfiguredModelAlgorithmAssociation(
@@ -740,7 +793,9 @@ GetConfiguredModelAlgorithmAssociationOutcome CleanRoomsMLClient::GetConfiguredM
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredModelAlgorithmAssociationArn());
   };
 
-  return GetConfiguredModelAlgorithmAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfiguredModelAlgorithmAssociationOutcome(result.GetResultWithOwnership())
+                            : GetConfiguredModelAlgorithmAssociationOutcome(std::move(result.GetError()));
 }
 
 GetMLConfigurationOutcome CleanRoomsMLClient::GetMLConfiguration(const GetMLConfigurationRequest& request) const {
@@ -757,7 +812,9 @@ GetMLConfigurationOutcome CleanRoomsMLClient::GetMLConfiguration(const GetMLConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml-configurations");
   };
 
-  return GetMLConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMLConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetMLConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetMLInputChannelOutcome CleanRoomsMLClient::GetMLInputChannel(const GetMLInputChannelRequest& request) const {
@@ -780,7 +837,9 @@ GetMLInputChannelOutcome CleanRoomsMLClient::GetMLInputChannel(const GetMLInputC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMlInputChannelArn());
   };
 
-  return GetMLInputChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMLInputChannelOutcome(result.GetResultWithOwnership())
+                            : GetMLInputChannelOutcome(std::move(result.GetError()));
 }
 
 GetTrainedModelOutcome CleanRoomsMLClient::GetTrainedModel(const GetTrainedModelRequest& request) const {
@@ -803,7 +862,9 @@ GetTrainedModelOutcome CleanRoomsMLClient::GetTrainedModel(const GetTrainedModel
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainedModelArn());
   };
 
-  return GetTrainedModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrainedModelOutcome(result.GetResultWithOwnership())
+                            : GetTrainedModelOutcome(std::move(result.GetError()));
 }
 
 GetTrainedModelInferenceJobOutcome CleanRoomsMLClient::GetTrainedModelInferenceJob(
@@ -827,7 +888,9 @@ GetTrainedModelInferenceJobOutcome CleanRoomsMLClient::GetTrainedModelInferenceJ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainedModelInferenceJobArn());
   };
 
-  return GetTrainedModelInferenceJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrainedModelInferenceJobOutcome(result.GetResultWithOwnership())
+                            : GetTrainedModelInferenceJobOutcome(std::move(result.GetError()));
 }
 
 GetTrainingDatasetOutcome CleanRoomsMLClient::GetTrainingDataset(const GetTrainingDatasetRequest& request) const {
@@ -843,7 +906,9 @@ GetTrainingDatasetOutcome CleanRoomsMLClient::GetTrainingDataset(const GetTraini
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrainingDatasetArn());
   };
 
-  return GetTrainingDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrainingDatasetOutcome(result.GetResultWithOwnership())
+                            : GetTrainingDatasetOutcome(std::move(result.GetError()));
 }
 
 ListAudienceExportJobsOutcome CleanRoomsMLClient::ListAudienceExportJobs(const ListAudienceExportJobsRequest& request) const {
@@ -852,7 +917,9 @@ ListAudienceExportJobsOutcome CleanRoomsMLClient::ListAudienceExportJobs(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/audience-export-job");
   };
 
-  return ListAudienceExportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAudienceExportJobsOutcome(result.GetResultWithOwnership())
+                            : ListAudienceExportJobsOutcome(std::move(result.GetError()));
 }
 
 ListAudienceGenerationJobsOutcome CleanRoomsMLClient::ListAudienceGenerationJobs(const ListAudienceGenerationJobsRequest& request) const {
@@ -861,7 +928,9 @@ ListAudienceGenerationJobsOutcome CleanRoomsMLClient::ListAudienceGenerationJobs
     endpointResolutionOutcome.GetResult().AddPathSegments("/audience-generation-job");
   };
 
-  return ListAudienceGenerationJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAudienceGenerationJobsOutcome(result.GetResultWithOwnership())
+                            : ListAudienceGenerationJobsOutcome(std::move(result.GetError()));
 }
 
 ListAudienceModelsOutcome CleanRoomsMLClient::ListAudienceModels(const ListAudienceModelsRequest& request) const {
@@ -870,7 +939,9 @@ ListAudienceModelsOutcome CleanRoomsMLClient::ListAudienceModels(const ListAudie
     endpointResolutionOutcome.GetResult().AddPathSegments("/audience-model");
   };
 
-  return ListAudienceModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAudienceModelsOutcome(result.GetResultWithOwnership())
+                            : ListAudienceModelsOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationConfiguredModelAlgorithmAssociationsOutcome CleanRoomsMLClient::ListCollaborationConfiguredModelAlgorithmAssociations(
@@ -888,8 +959,9 @@ ListCollaborationConfiguredModelAlgorithmAssociationsOutcome CleanRoomsMLClient:
     endpointResolutionOutcome.GetResult().AddPathSegments("/configured-model-algorithm-associations");
   };
 
-  return ListCollaborationConfiguredModelAlgorithmAssociationsOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationConfiguredModelAlgorithmAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationConfiguredModelAlgorithmAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationMLInputChannelsOutcome CleanRoomsMLClient::ListCollaborationMLInputChannels(
@@ -907,7 +979,9 @@ ListCollaborationMLInputChannelsOutcome CleanRoomsMLClient::ListCollaborationMLI
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml-input-channels");
   };
 
-  return ListCollaborationMLInputChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationMLInputChannelsOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationMLInputChannelsOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationTrainedModelExportJobsOutcome CleanRoomsMLClient::ListCollaborationTrainedModelExportJobs(
@@ -932,7 +1006,9 @@ ListCollaborationTrainedModelExportJobsOutcome CleanRoomsMLClient::ListCollabora
     endpointResolutionOutcome.GetResult().AddPathSegments("/export-jobs");
   };
 
-  return ListCollaborationTrainedModelExportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationTrainedModelExportJobsOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationTrainedModelExportJobsOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationTrainedModelInferenceJobsOutcome CleanRoomsMLClient::ListCollaborationTrainedModelInferenceJobs(
@@ -950,7 +1026,9 @@ ListCollaborationTrainedModelInferenceJobsOutcome CleanRoomsMLClient::ListCollab
     endpointResolutionOutcome.GetResult().AddPathSegments("/trained-model-inference-jobs");
   };
 
-  return ListCollaborationTrainedModelInferenceJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationTrainedModelInferenceJobsOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationTrainedModelInferenceJobsOutcome(std::move(result.GetError()));
 }
 
 ListCollaborationTrainedModelsOutcome CleanRoomsMLClient::ListCollaborationTrainedModels(
@@ -968,7 +1046,9 @@ ListCollaborationTrainedModelsOutcome CleanRoomsMLClient::ListCollaborationTrain
     endpointResolutionOutcome.GetResult().AddPathSegments("/trained-models");
   };
 
-  return ListCollaborationTrainedModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCollaborationTrainedModelsOutcome(result.GetResultWithOwnership())
+                            : ListCollaborationTrainedModelsOutcome(std::move(result.GetError()));
 }
 
 ListConfiguredAudienceModelsOutcome CleanRoomsMLClient::ListConfiguredAudienceModels(
@@ -978,7 +1058,9 @@ ListConfiguredAudienceModelsOutcome CleanRoomsMLClient::ListConfiguredAudienceMo
     endpointResolutionOutcome.GetResult().AddPathSegments("/configured-audience-model");
   };
 
-  return ListConfiguredAudienceModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfiguredAudienceModelsOutcome(result.GetResultWithOwnership())
+                            : ListConfiguredAudienceModelsOutcome(std::move(result.GetError()));
 }
 
 ListConfiguredModelAlgorithmAssociationsOutcome CleanRoomsMLClient::ListConfiguredModelAlgorithmAssociations(
@@ -996,7 +1078,9 @@ ListConfiguredModelAlgorithmAssociationsOutcome CleanRoomsMLClient::ListConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/configured-model-algorithm-associations");
   };
 
-  return ListConfiguredModelAlgorithmAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfiguredModelAlgorithmAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListConfiguredModelAlgorithmAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListConfiguredModelAlgorithmsOutcome CleanRoomsMLClient::ListConfiguredModelAlgorithms(
@@ -1006,7 +1090,9 @@ ListConfiguredModelAlgorithmsOutcome CleanRoomsMLClient::ListConfiguredModelAlgo
     endpointResolutionOutcome.GetResult().AddPathSegments("/configured-model-algorithms");
   };
 
-  return ListConfiguredModelAlgorithmsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfiguredModelAlgorithmsOutcome(result.GetResultWithOwnership())
+                            : ListConfiguredModelAlgorithmsOutcome(std::move(result.GetError()));
 }
 
 ListMLInputChannelsOutcome CleanRoomsMLClient::ListMLInputChannels(const ListMLInputChannelsRequest& request) const {
@@ -1023,7 +1109,9 @@ ListMLInputChannelsOutcome CleanRoomsMLClient::ListMLInputChannels(const ListMLI
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml-input-channels");
   };
 
-  return ListMLInputChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMLInputChannelsOutcome(result.GetResultWithOwnership())
+                            : ListMLInputChannelsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CleanRoomsMLClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1039,7 +1127,9 @@ ListTagsForResourceOutcome CleanRoomsMLClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTrainedModelInferenceJobsOutcome CleanRoomsMLClient::ListTrainedModelInferenceJobs(
@@ -1057,7 +1147,9 @@ ListTrainedModelInferenceJobsOutcome CleanRoomsMLClient::ListTrainedModelInferen
     endpointResolutionOutcome.GetResult().AddPathSegments("/trained-model-inference-jobs");
   };
 
-  return ListTrainedModelInferenceJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrainedModelInferenceJobsOutcome(result.GetResultWithOwnership())
+                            : ListTrainedModelInferenceJobsOutcome(std::move(result.GetError()));
 }
 
 ListTrainedModelVersionsOutcome CleanRoomsMLClient::ListTrainedModelVersions(const ListTrainedModelVersionsRequest& request) const {
@@ -1081,7 +1173,9 @@ ListTrainedModelVersionsOutcome CleanRoomsMLClient::ListTrainedModelVersions(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListTrainedModelVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrainedModelVersionsOutcome(result.GetResultWithOwnership())
+                            : ListTrainedModelVersionsOutcome(std::move(result.GetError()));
 }
 
 ListTrainedModelsOutcome CleanRoomsMLClient::ListTrainedModels(const ListTrainedModelsRequest& request) const {
@@ -1098,7 +1192,9 @@ ListTrainedModelsOutcome CleanRoomsMLClient::ListTrainedModels(const ListTrained
     endpointResolutionOutcome.GetResult().AddPathSegments("/trained-models");
   };
 
-  return ListTrainedModelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrainedModelsOutcome(result.GetResultWithOwnership())
+                            : ListTrainedModelsOutcome(std::move(result.GetError()));
 }
 
 ListTrainingDatasetsOutcome CleanRoomsMLClient::ListTrainingDatasets(const ListTrainingDatasetsRequest& request) const {
@@ -1107,7 +1203,9 @@ ListTrainingDatasetsOutcome CleanRoomsMLClient::ListTrainingDatasets(const ListT
     endpointResolutionOutcome.GetResult().AddPathSegments("/training-dataset");
   };
 
-  return ListTrainingDatasetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrainingDatasetsOutcome(result.GetResultWithOwnership())
+                            : ListTrainingDatasetsOutcome(std::move(result.GetError()));
 }
 
 PutConfiguredAudienceModelPolicyOutcome CleanRoomsMLClient::PutConfiguredAudienceModelPolicy(
@@ -1125,7 +1223,9 @@ PutConfiguredAudienceModelPolicyOutcome CleanRoomsMLClient::PutConfiguredAudienc
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutConfiguredAudienceModelPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfiguredAudienceModelPolicyOutcome(result.GetResultWithOwnership())
+                            : PutConfiguredAudienceModelPolicyOutcome(std::move(result.GetError()));
 }
 
 PutMLConfigurationOutcome CleanRoomsMLClient::PutMLConfiguration(const PutMLConfigurationRequest& request) const {
@@ -1142,7 +1242,9 @@ PutMLConfigurationOutcome CleanRoomsMLClient::PutMLConfiguration(const PutMLConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/ml-configurations");
   };
 
-  return PutMLConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutMLConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutMLConfigurationOutcome(std::move(result.GetError()));
 }
 
 StartAudienceExportJobOutcome CleanRoomsMLClient::StartAudienceExportJob(const StartAudienceExportJobRequest& request) const {
@@ -1151,7 +1253,9 @@ StartAudienceExportJobOutcome CleanRoomsMLClient::StartAudienceExportJob(const S
     endpointResolutionOutcome.GetResult().AddPathSegments("/audience-export-job");
   };
 
-  return StartAudienceExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAudienceExportJobOutcome(result.GetResultWithOwnership())
+                            : StartAudienceExportJobOutcome(std::move(result.GetError()));
 }
 
 StartAudienceGenerationJobOutcome CleanRoomsMLClient::StartAudienceGenerationJob(const StartAudienceGenerationJobRequest& request) const {
@@ -1160,7 +1264,9 @@ StartAudienceGenerationJobOutcome CleanRoomsMLClient::StartAudienceGenerationJob
     endpointResolutionOutcome.GetResult().AddPathSegments("/audience-generation-job");
   };
 
-  return StartAudienceGenerationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAudienceGenerationJobOutcome(result.GetResultWithOwnership())
+                            : StartAudienceGenerationJobOutcome(std::move(result.GetError()));
 }
 
 StartTrainedModelExportJobOutcome CleanRoomsMLClient::StartTrainedModelExportJob(const StartTrainedModelExportJobRequest& request) const {
@@ -1184,7 +1290,9 @@ StartTrainedModelExportJobOutcome CleanRoomsMLClient::StartTrainedModelExportJob
     endpointResolutionOutcome.GetResult().AddPathSegments("/export-jobs");
   };
 
-  return StartTrainedModelExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTrainedModelExportJobOutcome(result.GetResultWithOwnership())
+                            : StartTrainedModelExportJobOutcome(std::move(result.GetError()));
 }
 
 StartTrainedModelInferenceJobOutcome CleanRoomsMLClient::StartTrainedModelInferenceJob(
@@ -1202,7 +1310,9 @@ StartTrainedModelInferenceJobOutcome CleanRoomsMLClient::StartTrainedModelInfere
     endpointResolutionOutcome.GetResult().AddPathSegments("/trained-model-inference-jobs");
   };
 
-  return StartTrainedModelInferenceJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTrainedModelInferenceJobOutcome(result.GetResultWithOwnership())
+                            : StartTrainedModelInferenceJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CleanRoomsMLClient::TagResource(const TagResourceRequest& request) const {
@@ -1218,7 +1328,8 @@ TagResourceOutcome CleanRoomsMLClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CleanRoomsMLClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1239,7 +1350,8 @@ UntagResourceOutcome CleanRoomsMLClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateConfiguredAudienceModelOutcome CleanRoomsMLClient::UpdateConfiguredAudienceModel(
@@ -1256,5 +1368,7 @@ UpdateConfiguredAudienceModelOutcome CleanRoomsMLClient::UpdateConfiguredAudienc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfiguredAudienceModelArn());
   };
 
-  return UpdateConfiguredAudienceModelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateConfiguredAudienceModelOutcome(result.GetResultWithOwnership())
+                            : UpdateConfiguredAudienceModelOutcome(std::move(result.GetError()));
 }

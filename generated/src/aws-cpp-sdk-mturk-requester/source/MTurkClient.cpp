@@ -211,161 +211,231 @@ MTurkClient::InvokeOperationOutcome MTurkClient::InvokeServiceOperation(const Am
 }
 
 AcceptQualificationRequestOutcome MTurkClient::AcceptQualificationRequest(const AcceptQualificationRequestRequest& request) const {
-  return AcceptQualificationRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptQualificationRequestOutcome(result.GetResultWithOwnership())
+                            : AcceptQualificationRequestOutcome(std::move(result.GetError()));
 }
 
 ApproveAssignmentOutcome MTurkClient::ApproveAssignment(const ApproveAssignmentRequest& request) const {
-  return ApproveAssignmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ApproveAssignmentOutcome(result.GetResultWithOwnership())
+                            : ApproveAssignmentOutcome(std::move(result.GetError()));
 }
 
 AssociateQualificationWithWorkerOutcome MTurkClient::AssociateQualificationWithWorker(
     const AssociateQualificationWithWorkerRequest& request) const {
-  return AssociateQualificationWithWorkerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateQualificationWithWorkerOutcome(result.GetResultWithOwnership())
+                            : AssociateQualificationWithWorkerOutcome(std::move(result.GetError()));
 }
 
 CreateAdditionalAssignmentsForHITOutcome MTurkClient::CreateAdditionalAssignmentsForHIT(
     const CreateAdditionalAssignmentsForHITRequest& request) const {
-  return CreateAdditionalAssignmentsForHITOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAdditionalAssignmentsForHITOutcome(result.GetResultWithOwnership())
+                            : CreateAdditionalAssignmentsForHITOutcome(std::move(result.GetError()));
 }
 
 CreateHITOutcome MTurkClient::CreateHIT(const CreateHITRequest& request) const {
-  return CreateHITOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHITOutcome(result.GetResultWithOwnership()) : CreateHITOutcome(std::move(result.GetError()));
 }
 
 CreateHITTypeOutcome MTurkClient::CreateHITType(const CreateHITTypeRequest& request) const {
-  return CreateHITTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHITTypeOutcome(result.GetResultWithOwnership()) : CreateHITTypeOutcome(std::move(result.GetError()));
 }
 
 CreateHITWithHITTypeOutcome MTurkClient::CreateHITWithHITType(const CreateHITWithHITTypeRequest& request) const {
-  return CreateHITWithHITTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateHITWithHITTypeOutcome(result.GetResultWithOwnership())
+                            : CreateHITWithHITTypeOutcome(std::move(result.GetError()));
 }
 
 CreateQualificationTypeOutcome MTurkClient::CreateQualificationType(const CreateQualificationTypeRequest& request) const {
-  return CreateQualificationTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQualificationTypeOutcome(result.GetResultWithOwnership())
+                            : CreateQualificationTypeOutcome(std::move(result.GetError()));
 }
 
 CreateWorkerBlockOutcome MTurkClient::CreateWorkerBlock(const CreateWorkerBlockRequest& request) const {
-  return CreateWorkerBlockOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkerBlockOutcome(result.GetResultWithOwnership())
+                            : CreateWorkerBlockOutcome(std::move(result.GetError()));
 }
 
 DeleteHITOutcome MTurkClient::DeleteHIT(const DeleteHITRequest& request) const {
-  return DeleteHITOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteHITOutcome(result.GetResultWithOwnership()) : DeleteHITOutcome(std::move(result.GetError()));
 }
 
 DeleteQualificationTypeOutcome MTurkClient::DeleteQualificationType(const DeleteQualificationTypeRequest& request) const {
-  return DeleteQualificationTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteQualificationTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteQualificationTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkerBlockOutcome MTurkClient::DeleteWorkerBlock(const DeleteWorkerBlockRequest& request) const {
-  return DeleteWorkerBlockOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWorkerBlockOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkerBlockOutcome(std::move(result.GetError()));
 }
 
 DisassociateQualificationFromWorkerOutcome MTurkClient::DisassociateQualificationFromWorker(
     const DisassociateQualificationFromWorkerRequest& request) const {
-  return DisassociateQualificationFromWorkerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateQualificationFromWorkerOutcome(result.GetResultWithOwnership())
+                            : DisassociateQualificationFromWorkerOutcome(std::move(result.GetError()));
 }
 
 GetAccountBalanceOutcome MTurkClient::GetAccountBalance(const GetAccountBalanceRequest& request) const {
-  return GetAccountBalanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountBalanceOutcome(result.GetResultWithOwnership())
+                            : GetAccountBalanceOutcome(std::move(result.GetError()));
 }
 
 GetAssignmentOutcome MTurkClient::GetAssignment(const GetAssignmentRequest& request) const {
-  return GetAssignmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAssignmentOutcome(result.GetResultWithOwnership()) : GetAssignmentOutcome(std::move(result.GetError()));
 }
 
 GetFileUploadURLOutcome MTurkClient::GetFileUploadURL(const GetFileUploadURLRequest& request) const {
-  return GetFileUploadURLOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFileUploadURLOutcome(result.GetResultWithOwnership())
+                            : GetFileUploadURLOutcome(std::move(result.GetError()));
 }
 
 GetHITOutcome MTurkClient::GetHIT(const GetHITRequest& request) const {
-  return GetHITOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetHITOutcome(result.GetResultWithOwnership()) : GetHITOutcome(std::move(result.GetError()));
 }
 
 GetQualificationScoreOutcome MTurkClient::GetQualificationScore(const GetQualificationScoreRequest& request) const {
-  return GetQualificationScoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQualificationScoreOutcome(result.GetResultWithOwnership())
+                            : GetQualificationScoreOutcome(std::move(result.GetError()));
 }
 
 GetQualificationTypeOutcome MTurkClient::GetQualificationType(const GetQualificationTypeRequest& request) const {
-  return GetQualificationTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQualificationTypeOutcome(result.GetResultWithOwnership())
+                            : GetQualificationTypeOutcome(std::move(result.GetError()));
 }
 
 ListAssignmentsForHITOutcome MTurkClient::ListAssignmentsForHIT(const ListAssignmentsForHITRequest& request) const {
-  return ListAssignmentsForHITOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssignmentsForHITOutcome(result.GetResultWithOwnership())
+                            : ListAssignmentsForHITOutcome(std::move(result.GetError()));
 }
 
 ListBonusPaymentsOutcome MTurkClient::ListBonusPayments(const ListBonusPaymentsRequest& request) const {
-  return ListBonusPaymentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBonusPaymentsOutcome(result.GetResultWithOwnership())
+                            : ListBonusPaymentsOutcome(std::move(result.GetError()));
 }
 
 ListHITsOutcome MTurkClient::ListHITs(const ListHITsRequest& request) const {
-  return ListHITsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHITsOutcome(result.GetResultWithOwnership()) : ListHITsOutcome(std::move(result.GetError()));
 }
 
 ListHITsForQualificationTypeOutcome MTurkClient::ListHITsForQualificationType(const ListHITsForQualificationTypeRequest& request) const {
-  return ListHITsForQualificationTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHITsForQualificationTypeOutcome(result.GetResultWithOwnership())
+                            : ListHITsForQualificationTypeOutcome(std::move(result.GetError()));
 }
 
 ListQualificationRequestsOutcome MTurkClient::ListQualificationRequests(const ListQualificationRequestsRequest& request) const {
-  return ListQualificationRequestsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListQualificationRequestsOutcome(result.GetResultWithOwnership())
+                            : ListQualificationRequestsOutcome(std::move(result.GetError()));
 }
 
 ListQualificationTypesOutcome MTurkClient::ListQualificationTypes(const ListQualificationTypesRequest& request) const {
-  return ListQualificationTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListQualificationTypesOutcome(result.GetResultWithOwnership())
+                            : ListQualificationTypesOutcome(std::move(result.GetError()));
 }
 
 ListReviewPolicyResultsForHITOutcome MTurkClient::ListReviewPolicyResultsForHIT(const ListReviewPolicyResultsForHITRequest& request) const {
-  return ListReviewPolicyResultsForHITOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReviewPolicyResultsForHITOutcome(result.GetResultWithOwnership())
+                            : ListReviewPolicyResultsForHITOutcome(std::move(result.GetError()));
 }
 
 ListReviewableHITsOutcome MTurkClient::ListReviewableHITs(const ListReviewableHITsRequest& request) const {
-  return ListReviewableHITsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReviewableHITsOutcome(result.GetResultWithOwnership())
+                            : ListReviewableHITsOutcome(std::move(result.GetError()));
 }
 
 ListWorkerBlocksOutcome MTurkClient::ListWorkerBlocks(const ListWorkerBlocksRequest& request) const {
-  return ListWorkerBlocksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkerBlocksOutcome(result.GetResultWithOwnership())
+                            : ListWorkerBlocksOutcome(std::move(result.GetError()));
 }
 
 ListWorkersWithQualificationTypeOutcome MTurkClient::ListWorkersWithQualificationType(
     const ListWorkersWithQualificationTypeRequest& request) const {
-  return ListWorkersWithQualificationTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkersWithQualificationTypeOutcome(result.GetResultWithOwnership())
+                            : ListWorkersWithQualificationTypeOutcome(std::move(result.GetError()));
 }
 
 NotifyWorkersOutcome MTurkClient::NotifyWorkers(const NotifyWorkersRequest& request) const {
-  return NotifyWorkersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? NotifyWorkersOutcome(result.GetResultWithOwnership()) : NotifyWorkersOutcome(std::move(result.GetError()));
 }
 
 RejectAssignmentOutcome MTurkClient::RejectAssignment(const RejectAssignmentRequest& request) const {
-  return RejectAssignmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectAssignmentOutcome(result.GetResultWithOwnership())
+                            : RejectAssignmentOutcome(std::move(result.GetError()));
 }
 
 RejectQualificationRequestOutcome MTurkClient::RejectQualificationRequest(const RejectQualificationRequestRequest& request) const {
-  return RejectQualificationRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectQualificationRequestOutcome(result.GetResultWithOwnership())
+                            : RejectQualificationRequestOutcome(std::move(result.GetError()));
 }
 
 SendBonusOutcome MTurkClient::SendBonus(const SendBonusRequest& request) const {
-  return SendBonusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendBonusOutcome(result.GetResultWithOwnership()) : SendBonusOutcome(std::move(result.GetError()));
 }
 
 SendTestEventNotificationOutcome MTurkClient::SendTestEventNotification(const SendTestEventNotificationRequest& request) const {
-  return SendTestEventNotificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendTestEventNotificationOutcome(result.GetResultWithOwnership())
+                            : SendTestEventNotificationOutcome(std::move(result.GetError()));
 }
 
 UpdateExpirationForHITOutcome MTurkClient::UpdateExpirationForHIT(const UpdateExpirationForHITRequest& request) const {
-  return UpdateExpirationForHITOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateExpirationForHITOutcome(result.GetResultWithOwnership())
+                            : UpdateExpirationForHITOutcome(std::move(result.GetError()));
 }
 
 UpdateHITReviewStatusOutcome MTurkClient::UpdateHITReviewStatus(const UpdateHITReviewStatusRequest& request) const {
-  return UpdateHITReviewStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHITReviewStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateHITReviewStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateHITTypeOfHITOutcome MTurkClient::UpdateHITTypeOfHIT(const UpdateHITTypeOfHITRequest& request) const {
-  return UpdateHITTypeOfHITOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHITTypeOfHITOutcome(result.GetResultWithOwnership())
+                            : UpdateHITTypeOfHITOutcome(std::move(result.GetError()));
 }
 
 UpdateNotificationSettingsOutcome MTurkClient::UpdateNotificationSettings(const UpdateNotificationSettingsRequest& request) const {
-  return UpdateNotificationSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNotificationSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateNotificationSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateQualificationTypeOutcome MTurkClient::UpdateQualificationType(const UpdateQualificationTypeRequest& request) const {
-  return UpdateQualificationTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateQualificationTypeOutcome(result.GetResultWithOwnership())
+                            : UpdateQualificationTypeOutcome(std::move(result.GetError()));
 }

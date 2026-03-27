@@ -177,21 +177,31 @@ FreeTierClient::InvokeOperationOutcome FreeTierClient::InvokeServiceOperation(co
 }
 
 GetAccountActivityOutcome FreeTierClient::GetAccountActivity(const GetAccountActivityRequest& request) const {
-  return GetAccountActivityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountActivityOutcome(result.GetResultWithOwnership())
+                            : GetAccountActivityOutcome(std::move(result.GetError()));
 }
 
 GetAccountPlanStateOutcome FreeTierClient::GetAccountPlanState(const GetAccountPlanStateRequest& request) const {
-  return GetAccountPlanStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountPlanStateOutcome(result.GetResultWithOwnership())
+                            : GetAccountPlanStateOutcome(std::move(result.GetError()));
 }
 
 GetFreeTierUsageOutcome FreeTierClient::GetFreeTierUsage(const GetFreeTierUsageRequest& request) const {
-  return GetFreeTierUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFreeTierUsageOutcome(result.GetResultWithOwnership())
+                            : GetFreeTierUsageOutcome(std::move(result.GetError()));
 }
 
 ListAccountActivitiesOutcome FreeTierClient::ListAccountActivities(const ListAccountActivitiesRequest& request) const {
-  return ListAccountActivitiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountActivitiesOutcome(result.GetResultWithOwnership())
+                            : ListAccountActivitiesOutcome(std::move(result.GetError()));
 }
 
 UpgradeAccountPlanOutcome FreeTierClient::UpgradeAccountPlan(const UpgradeAccountPlanRequest& request) const {
-  return UpgradeAccountPlanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpgradeAccountPlanOutcome(result.GetResultWithOwnership())
+                            : UpgradeAccountPlanOutcome(std::move(result.GetError()));
 }

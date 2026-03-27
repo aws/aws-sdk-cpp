@@ -282,7 +282,9 @@ AddLayerVersionPermissionOutcome LambdaClient::AddLayerVersionPermission(const A
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return AddLayerVersionPermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddLayerVersionPermissionOutcome(result.GetResultWithOwnership())
+                            : AddLayerVersionPermissionOutcome(std::move(result.GetError()));
 }
 
 AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& request) const {
@@ -299,7 +301,8 @@ AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return AddPermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddPermissionOutcome(result.GetResultWithOwnership()) : AddPermissionOutcome(std::move(result.GetError()));
 }
 
 CheckpointDurableExecutionOutcome LambdaClient::CheckpointDurableExecution(const CheckpointDurableExecutionRequest& request) const {
@@ -316,7 +319,9 @@ CheckpointDurableExecutionOutcome LambdaClient::CheckpointDurableExecution(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/checkpoint");
   };
 
-  return CheckpointDurableExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckpointDurableExecutionOutcome(result.GetResultWithOwnership())
+                            : CheckpointDurableExecutionOutcome(std::move(result.GetError()));
 }
 
 CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) const {
@@ -333,7 +338,8 @@ CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/aliases");
   };
 
-  return CreateAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAliasOutcome(result.GetResultWithOwnership()) : CreateAliasOutcome(std::move(result.GetError()));
 }
 
 CreateCapacityProviderOutcome LambdaClient::CreateCapacityProvider(const CreateCapacityProviderRequest& request) const {
@@ -342,7 +348,9 @@ CreateCapacityProviderOutcome LambdaClient::CreateCapacityProvider(const CreateC
     endpointResolutionOutcome.GetResult().AddPathSegments("/2025-11-30/capacity-providers");
   };
 
-  return CreateCapacityProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCapacityProviderOutcome(result.GetResultWithOwnership())
+                            : CreateCapacityProviderOutcome(std::move(result.GetError()));
 }
 
 CreateCodeSigningConfigOutcome LambdaClient::CreateCodeSigningConfig(const CreateCodeSigningConfigRequest& request) const {
@@ -351,7 +359,9 @@ CreateCodeSigningConfigOutcome LambdaClient::CreateCodeSigningConfig(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-04-22/code-signing-configs");
   };
 
-  return CreateCodeSigningConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCodeSigningConfigOutcome(result.GetResultWithOwnership())
+                            : CreateCodeSigningConfigOutcome(std::move(result.GetError()));
 }
 
 CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const CreateEventSourceMappingRequest& request) const {
@@ -360,7 +370,9 @@ CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-03-31/event-source-mappings");
   };
 
-  return CreateEventSourceMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEventSourceMappingOutcome(result.GetResultWithOwnership())
+                            : CreateEventSourceMappingOutcome(std::move(result.GetError()));
 }
 
 CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& request) const {
@@ -369,7 +381,8 @@ CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-03-31/functions");
   };
 
-  return CreateFunctionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFunctionOutcome(result.GetResultWithOwnership()) : CreateFunctionOutcome(std::move(result.GetError()));
 }
 
 CreateFunctionUrlConfigOutcome LambdaClient::CreateFunctionUrlConfig(const CreateFunctionUrlConfigRequest& request) const {
@@ -386,7 +399,9 @@ CreateFunctionUrlConfigOutcome LambdaClient::CreateFunctionUrlConfig(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/url");
   };
 
-  return CreateFunctionUrlConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFunctionUrlConfigOutcome(result.GetResultWithOwnership())
+                            : CreateFunctionUrlConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) const {
@@ -409,7 +424,8 @@ DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAliasOutcome(result.GetResultWithOwnership()) : DeleteAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteCapacityProviderOutcome LambdaClient::DeleteCapacityProvider(const DeleteCapacityProviderRequest& request) const {
@@ -425,7 +441,9 @@ DeleteCapacityProviderOutcome LambdaClient::DeleteCapacityProvider(const DeleteC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapacityProviderName());
   };
 
-  return DeleteCapacityProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCapacityProviderOutcome(result.GetResultWithOwnership())
+                            : DeleteCapacityProviderOutcome(std::move(result.GetError()));
 }
 
 DeleteCodeSigningConfigOutcome LambdaClient::DeleteCodeSigningConfig(const DeleteCodeSigningConfigRequest& request) const {
@@ -441,7 +459,9 @@ DeleteCodeSigningConfigOutcome LambdaClient::DeleteCodeSigningConfig(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCodeSigningConfigArn());
   };
 
-  return DeleteCodeSigningConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCodeSigningConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteCodeSigningConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const DeleteEventSourceMappingRequest& request) const {
@@ -457,7 +477,9 @@ DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUUID());
   };
 
-  return DeleteEventSourceMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEventSourceMappingOutcome(result.GetResultWithOwnership())
+                            : DeleteEventSourceMappingOutcome(std::move(result.GetError()));
 }
 
 DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& request) const {
@@ -473,7 +495,8 @@ DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
   };
 
-  return DeleteFunctionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFunctionOutcome(result.GetResultWithOwnership()) : DeleteFunctionOutcome(std::move(result.GetError()));
 }
 
 DeleteFunctionCodeSigningConfigOutcome LambdaClient::DeleteFunctionCodeSigningConfig(
@@ -491,7 +514,9 @@ DeleteFunctionCodeSigningConfigOutcome LambdaClient::DeleteFunctionCodeSigningCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/code-signing-config");
   };
 
-  return DeleteFunctionCodeSigningConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFunctionCodeSigningConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteFunctionCodeSigningConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const DeleteFunctionConcurrencyRequest& request) const {
@@ -508,7 +533,9 @@ DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/concurrency");
   };
 
-  return DeleteFunctionConcurrencyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFunctionConcurrencyOutcome(result.GetResultWithOwnership())
+                            : DeleteFunctionConcurrencyOutcome(std::move(result.GetError()));
 }
 
 DeleteFunctionEventInvokeConfigOutcome LambdaClient::DeleteFunctionEventInvokeConfig(
@@ -526,7 +553,9 @@ DeleteFunctionEventInvokeConfigOutcome LambdaClient::DeleteFunctionEventInvokeCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-invoke-config");
   };
 
-  return DeleteFunctionEventInvokeConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFunctionEventInvokeConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteFunctionEventInvokeConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteFunctionUrlConfigOutcome LambdaClient::DeleteFunctionUrlConfig(const DeleteFunctionUrlConfigRequest& request) const {
@@ -543,7 +572,9 @@ DeleteFunctionUrlConfigOutcome LambdaClient::DeleteFunctionUrlConfig(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegments("/url");
   };
 
-  return DeleteFunctionUrlConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFunctionUrlConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteFunctionUrlConfigOutcome(std::move(result.GetError()));
 }
 
 DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVersionRequest& request) const {
@@ -566,7 +597,9 @@ DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVers
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionNumber());
   };
 
-  return DeleteLayerVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLayerVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteLayerVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurrencyConfig(
@@ -589,7 +622,9 @@ DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurr
     endpointResolutionOutcome.GetResult().AddPathSegments("/provisioned-concurrency");
   };
 
-  return DeleteProvisionedConcurrencyConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProvisionedConcurrencyConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteProvisionedConcurrencyConfigOutcome(std::move(result.GetError()));
 }
 
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const {
@@ -598,7 +633,9 @@ GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSetti
     endpointResolutionOutcome.GetResult().AddPathSegments("/2016-08-19/account-settings");
   };
 
-  return GetAccountSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : GetAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const {
@@ -621,7 +658,8 @@ GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAliasOutcome(result.GetResultWithOwnership()) : GetAliasOutcome(std::move(result.GetError()));
 }
 
 GetCapacityProviderOutcome LambdaClient::GetCapacityProvider(const GetCapacityProviderRequest& request) const {
@@ -637,7 +675,9 @@ GetCapacityProviderOutcome LambdaClient::GetCapacityProvider(const GetCapacityPr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapacityProviderName());
   };
 
-  return GetCapacityProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCapacityProviderOutcome(result.GetResultWithOwnership())
+                            : GetCapacityProviderOutcome(std::move(result.GetError()));
 }
 
 GetCodeSigningConfigOutcome LambdaClient::GetCodeSigningConfig(const GetCodeSigningConfigRequest& request) const {
@@ -653,7 +693,9 @@ GetCodeSigningConfigOutcome LambdaClient::GetCodeSigningConfig(const GetCodeSign
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCodeSigningConfigArn());
   };
 
-  return GetCodeSigningConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCodeSigningConfigOutcome(result.GetResultWithOwnership())
+                            : GetCodeSigningConfigOutcome(std::move(result.GetError()));
 }
 
 GetDurableExecutionOutcome LambdaClient::GetDurableExecution(const GetDurableExecutionRequest& request) const {
@@ -669,7 +711,9 @@ GetDurableExecutionOutcome LambdaClient::GetDurableExecution(const GetDurableExe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDurableExecutionArn());
   };
 
-  return GetDurableExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDurableExecutionOutcome(result.GetResultWithOwnership())
+                            : GetDurableExecutionOutcome(std::move(result.GetError()));
 }
 
 GetDurableExecutionHistoryOutcome LambdaClient::GetDurableExecutionHistory(const GetDurableExecutionHistoryRequest& request) const {
@@ -686,7 +730,9 @@ GetDurableExecutionHistoryOutcome LambdaClient::GetDurableExecutionHistory(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/history");
   };
 
-  return GetDurableExecutionHistoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDurableExecutionHistoryOutcome(result.GetResultWithOwnership())
+                            : GetDurableExecutionHistoryOutcome(std::move(result.GetError()));
 }
 
 GetDurableExecutionStateOutcome LambdaClient::GetDurableExecutionState(const GetDurableExecutionStateRequest& request) const {
@@ -708,7 +754,9 @@ GetDurableExecutionStateOutcome LambdaClient::GetDurableExecutionState(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/state");
   };
 
-  return GetDurableExecutionStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDurableExecutionStateOutcome(result.GetResultWithOwnership())
+                            : GetDurableExecutionStateOutcome(std::move(result.GetError()));
 }
 
 GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventSourceMappingRequest& request) const {
@@ -724,7 +772,9 @@ GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUUID());
   };
 
-  return GetEventSourceMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEventSourceMappingOutcome(result.GetResultWithOwnership())
+                            : GetEventSourceMappingOutcome(std::move(result.GetError()));
 }
 
 GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) const {
@@ -740,7 +790,8 @@ GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
   };
 
-  return GetFunctionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFunctionOutcome(result.GetResultWithOwnership()) : GetFunctionOutcome(std::move(result.GetError()));
 }
 
 GetFunctionCodeSigningConfigOutcome LambdaClient::GetFunctionCodeSigningConfig(const GetFunctionCodeSigningConfigRequest& request) const {
@@ -757,7 +808,9 @@ GetFunctionCodeSigningConfigOutcome LambdaClient::GetFunctionCodeSigningConfig(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/code-signing-config");
   };
 
-  return GetFunctionCodeSigningConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFunctionCodeSigningConfigOutcome(result.GetResultWithOwnership())
+                            : GetFunctionCodeSigningConfigOutcome(std::move(result.GetError()));
 }
 
 GetFunctionConcurrencyOutcome LambdaClient::GetFunctionConcurrency(const GetFunctionConcurrencyRequest& request) const {
@@ -774,7 +827,9 @@ GetFunctionConcurrencyOutcome LambdaClient::GetFunctionConcurrency(const GetFunc
     endpointResolutionOutcome.GetResult().AddPathSegments("/concurrency");
   };
 
-  return GetFunctionConcurrencyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFunctionConcurrencyOutcome(result.GetResultWithOwnership())
+                            : GetFunctionConcurrencyOutcome(std::move(result.GetError()));
 }
 
 GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const GetFunctionConfigurationRequest& request) const {
@@ -791,7 +846,9 @@ GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return GetFunctionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFunctionConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetFunctionConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetFunctionEventInvokeConfigOutcome LambdaClient::GetFunctionEventInvokeConfig(const GetFunctionEventInvokeConfigRequest& request) const {
@@ -808,7 +865,9 @@ GetFunctionEventInvokeConfigOutcome LambdaClient::GetFunctionEventInvokeConfig(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-invoke-config");
   };
 
-  return GetFunctionEventInvokeConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFunctionEventInvokeConfigOutcome(result.GetResultWithOwnership())
+                            : GetFunctionEventInvokeConfigOutcome(std::move(result.GetError()));
 }
 
 GetFunctionRecursionConfigOutcome LambdaClient::GetFunctionRecursionConfig(const GetFunctionRecursionConfigRequest& request) const {
@@ -825,7 +884,9 @@ GetFunctionRecursionConfigOutcome LambdaClient::GetFunctionRecursionConfig(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/recursion-config");
   };
 
-  return GetFunctionRecursionConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFunctionRecursionConfigOutcome(result.GetResultWithOwnership())
+                            : GetFunctionRecursionConfigOutcome(std::move(result.GetError()));
 }
 
 GetFunctionScalingConfigOutcome LambdaClient::GetFunctionScalingConfig(const GetFunctionScalingConfigRequest& request) const {
@@ -847,7 +908,9 @@ GetFunctionScalingConfigOutcome LambdaClient::GetFunctionScalingConfig(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/function-scaling-config");
   };
 
-  return GetFunctionScalingConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFunctionScalingConfigOutcome(result.GetResultWithOwnership())
+                            : GetFunctionScalingConfigOutcome(std::move(result.GetError()));
 }
 
 GetFunctionUrlConfigOutcome LambdaClient::GetFunctionUrlConfig(const GetFunctionUrlConfigRequest& request) const {
@@ -864,7 +927,9 @@ GetFunctionUrlConfigOutcome LambdaClient::GetFunctionUrlConfig(const GetFunction
     endpointResolutionOutcome.GetResult().AddPathSegments("/url");
   };
 
-  return GetFunctionUrlConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFunctionUrlConfigOutcome(result.GetResultWithOwnership())
+                            : GetFunctionUrlConfigOutcome(std::move(result.GetError()));
 }
 
 GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionRequest& request) const {
@@ -887,7 +952,9 @@ GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionNumber());
   };
 
-  return GetLayerVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLayerVersionOutcome(result.GetResultWithOwnership())
+                            : GetLayerVersionOutcome(std::move(result.GetError()));
 }
 
 GetLayerVersionByArnOutcome LambdaClient::GetLayerVersionByArn(const GetLayerVersionByArnRequest& request) const {
@@ -905,7 +972,9 @@ GetLayerVersionByArnOutcome LambdaClient::GetLayerVersionByArn(const GetLayerVer
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return GetLayerVersionByArnOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLayerVersionByArnOutcome(result.GetResultWithOwnership())
+                            : GetLayerVersionByArnOutcome(std::move(result.GetError()));
 }
 
 GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerVersionPolicyRequest& request) const {
@@ -929,7 +998,9 @@ GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerV
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetLayerVersionPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLayerVersionPolicyOutcome(result.GetResultWithOwnership())
+                            : GetLayerVersionPolicyOutcome(std::move(result.GetError()));
 }
 
 GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const {
@@ -946,7 +1017,8 @@ GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPolicyOutcome(result.GetResultWithOwnership()) : GetPolicyOutcome(std::move(result.GetError()));
 }
 
 GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyConfig(
@@ -969,7 +1041,9 @@ GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/provisioned-concurrency");
   };
 
-  return GetProvisionedConcurrencyConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProvisionedConcurrencyConfigOutcome(result.GetResultWithOwnership())
+                            : GetProvisionedConcurrencyConfigOutcome(std::move(result.GetError()));
 }
 
 GetRuntimeManagementConfigOutcome LambdaClient::GetRuntimeManagementConfig(const GetRuntimeManagementConfigRequest& request) const {
@@ -986,7 +1060,9 @@ GetRuntimeManagementConfigOutcome LambdaClient::GetRuntimeManagementConfig(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/runtime-management-config");
   };
 
-  return GetRuntimeManagementConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRuntimeManagementConfigOutcome(result.GetResultWithOwnership())
+                            : GetRuntimeManagementConfigOutcome(std::move(result.GetError()));
 }
 
 InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const {
@@ -1018,8 +1094,8 @@ InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const {
         endpointResolutionOutcome.GetResult().AddPathSegments("/2015-03-31/functions/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/invocations");
-        return InvokeOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? InvokeOutcome(result.GetResultWithOwnership()) : InvokeOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1067,8 +1143,9 @@ InvokeWithResponseStreamOutcome LambdaClient::InvokeWithResponseStream(InvokeWit
             }
           });
         }
-        return InvokeWithResponseStreamOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? InvokeWithResponseStreamOutcome(result.GetResultWithOwnership())
+                                  : InvokeWithResponseStreamOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1089,7 +1166,8 @@ ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/aliases");
   };
 
-  return ListAliasesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAliasesOutcome(result.GetResultWithOwnership()) : ListAliasesOutcome(std::move(result.GetError()));
 }
 
 ListCapacityProvidersOutcome LambdaClient::ListCapacityProviders(const ListCapacityProvidersRequest& request) const {
@@ -1098,7 +1176,9 @@ ListCapacityProvidersOutcome LambdaClient::ListCapacityProviders(const ListCapac
     endpointResolutionOutcome.GetResult().AddPathSegments("/2025-11-30/capacity-providers");
   };
 
-  return ListCapacityProvidersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCapacityProvidersOutcome(result.GetResultWithOwnership())
+                            : ListCapacityProvidersOutcome(std::move(result.GetError()));
 }
 
 ListCodeSigningConfigsOutcome LambdaClient::ListCodeSigningConfigs(const ListCodeSigningConfigsRequest& request) const {
@@ -1107,7 +1187,9 @@ ListCodeSigningConfigsOutcome LambdaClient::ListCodeSigningConfigs(const ListCod
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-04-22/code-signing-configs");
   };
 
-  return ListCodeSigningConfigsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCodeSigningConfigsOutcome(result.GetResultWithOwnership())
+                            : ListCodeSigningConfigsOutcome(std::move(result.GetError()));
 }
 
 ListDurableExecutionsByFunctionOutcome LambdaClient::ListDurableExecutionsByFunction(
@@ -1125,7 +1207,9 @@ ListDurableExecutionsByFunctionOutcome LambdaClient::ListDurableExecutionsByFunc
     endpointResolutionOutcome.GetResult().AddPathSegments("/durable-executions");
   };
 
-  return ListDurableExecutionsByFunctionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDurableExecutionsByFunctionOutcome(result.GetResultWithOwnership())
+                            : ListDurableExecutionsByFunctionOutcome(std::move(result.GetError()));
 }
 
 ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListEventSourceMappingsRequest& request) const {
@@ -1134,7 +1218,9 @@ ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListE
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-03-31/event-source-mappings");
   };
 
-  return ListEventSourceMappingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEventSourceMappingsOutcome(result.GetResultWithOwnership())
+                            : ListEventSourceMappingsOutcome(std::move(result.GetError()));
 }
 
 ListFunctionEventInvokeConfigsOutcome LambdaClient::ListFunctionEventInvokeConfigs(
@@ -1152,7 +1238,9 @@ ListFunctionEventInvokeConfigsOutcome LambdaClient::ListFunctionEventInvokeConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-invoke-config/list");
   };
 
-  return ListFunctionEventInvokeConfigsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFunctionEventInvokeConfigsOutcome(result.GetResultWithOwnership())
+                            : ListFunctionEventInvokeConfigsOutcome(std::move(result.GetError()));
 }
 
 ListFunctionUrlConfigsOutcome LambdaClient::ListFunctionUrlConfigs(const ListFunctionUrlConfigsRequest& request) const {
@@ -1169,7 +1257,9 @@ ListFunctionUrlConfigsOutcome LambdaClient::ListFunctionUrlConfigs(const ListFun
     endpointResolutionOutcome.GetResult().AddPathSegments("/urls");
   };
 
-  return ListFunctionUrlConfigsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFunctionUrlConfigsOutcome(result.GetResultWithOwnership())
+                            : ListFunctionUrlConfigsOutcome(std::move(result.GetError()));
 }
 
 ListFunctionVersionsByCapacityProviderOutcome LambdaClient::ListFunctionVersionsByCapacityProvider(
@@ -1187,7 +1277,9 @@ ListFunctionVersionsByCapacityProviderOutcome LambdaClient::ListFunctionVersions
     endpointResolutionOutcome.GetResult().AddPathSegments("/function-versions");
   };
 
-  return ListFunctionVersionsByCapacityProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFunctionVersionsByCapacityProviderOutcome(result.GetResultWithOwnership())
+                            : ListFunctionVersionsByCapacityProviderOutcome(std::move(result.GetError()));
 }
 
 ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& request) const {
@@ -1196,7 +1288,8 @@ ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/2015-03-31/functions");
   };
 
-  return ListFunctionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFunctionsOutcome(result.GetResultWithOwnership()) : ListFunctionsOutcome(std::move(result.GetError()));
 }
 
 ListFunctionsByCodeSigningConfigOutcome LambdaClient::ListFunctionsByCodeSigningConfig(
@@ -1214,7 +1307,9 @@ ListFunctionsByCodeSigningConfigOutcome LambdaClient::ListFunctionsByCodeSigning
     endpointResolutionOutcome.GetResult().AddPathSegments("/functions");
   };
 
-  return ListFunctionsByCodeSigningConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFunctionsByCodeSigningConfigOutcome(result.GetResultWithOwnership())
+                            : ListFunctionsByCodeSigningConfigOutcome(std::move(result.GetError()));
 }
 
 ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersionsRequest& request) const {
@@ -1231,7 +1326,9 @@ ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersions
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListLayerVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLayerVersionsOutcome(result.GetResultWithOwnership())
+                            : ListLayerVersionsOutcome(std::move(result.GetError()));
 }
 
 ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) const {
@@ -1240,7 +1337,8 @@ ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/2018-10-31/layers");
   };
 
-  return ListLayersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLayersOutcome(result.GetResultWithOwnership()) : ListLayersOutcome(std::move(result.GetError()));
 }
 
 ListProvisionedConcurrencyConfigsOutcome LambdaClient::ListProvisionedConcurrencyConfigs(
@@ -1261,7 +1359,9 @@ ListProvisionedConcurrencyConfigsOutcome LambdaClient::ListProvisionedConcurrenc
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ListProvisionedConcurrencyConfigsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProvisionedConcurrencyConfigsOutcome(result.GetResultWithOwnership())
+                            : ListProvisionedConcurrencyConfigsOutcome(std::move(result.GetError()));
 }
 
 ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const {
@@ -1277,7 +1377,8 @@ ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResource());
   };
 
-  return ListTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsOutcome(result.GetResultWithOwnership()) : ListTagsOutcome(std::move(result.GetError()));
 }
 
 ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVersionsByFunctionRequest& request) const {
@@ -1294,7 +1395,9 @@ ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVer
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListVersionsByFunctionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVersionsByFunctionOutcome(result.GetResultWithOwnership())
+                            : ListVersionsByFunctionOutcome(std::move(result.GetError()));
 }
 
 PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerVersionRequest& request) const {
@@ -1311,7 +1414,9 @@ PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerV
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return PublishLayerVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishLayerVersionOutcome(result.GetResultWithOwnership())
+                            : PublishLayerVersionOutcome(std::move(result.GetError()));
 }
 
 PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& request) const {
@@ -1328,7 +1433,8 @@ PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return PublishVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishVersionOutcome(result.GetResultWithOwnership()) : PublishVersionOutcome(std::move(result.GetError()));
 }
 
 PutFunctionCodeSigningConfigOutcome LambdaClient::PutFunctionCodeSigningConfig(const PutFunctionCodeSigningConfigRequest& request) const {
@@ -1345,7 +1451,9 @@ PutFunctionCodeSigningConfigOutcome LambdaClient::PutFunctionCodeSigningConfig(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/code-signing-config");
   };
 
-  return PutFunctionCodeSigningConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutFunctionCodeSigningConfigOutcome(result.GetResultWithOwnership())
+                            : PutFunctionCodeSigningConfigOutcome(std::move(result.GetError()));
 }
 
 PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunctionConcurrencyRequest& request) const {
@@ -1362,7 +1470,9 @@ PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunc
     endpointResolutionOutcome.GetResult().AddPathSegments("/concurrency");
   };
 
-  return PutFunctionConcurrencyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutFunctionConcurrencyOutcome(result.GetResultWithOwnership())
+                            : PutFunctionConcurrencyOutcome(std::move(result.GetError()));
 }
 
 PutFunctionEventInvokeConfigOutcome LambdaClient::PutFunctionEventInvokeConfig(const PutFunctionEventInvokeConfigRequest& request) const {
@@ -1379,7 +1489,9 @@ PutFunctionEventInvokeConfigOutcome LambdaClient::PutFunctionEventInvokeConfig(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-invoke-config");
   };
 
-  return PutFunctionEventInvokeConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutFunctionEventInvokeConfigOutcome(result.GetResultWithOwnership())
+                            : PutFunctionEventInvokeConfigOutcome(std::move(result.GetError()));
 }
 
 PutFunctionRecursionConfigOutcome LambdaClient::PutFunctionRecursionConfig(const PutFunctionRecursionConfigRequest& request) const {
@@ -1396,7 +1508,9 @@ PutFunctionRecursionConfigOutcome LambdaClient::PutFunctionRecursionConfig(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/recursion-config");
   };
 
-  return PutFunctionRecursionConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutFunctionRecursionConfigOutcome(result.GetResultWithOwnership())
+                            : PutFunctionRecursionConfigOutcome(std::move(result.GetError()));
 }
 
 PutFunctionScalingConfigOutcome LambdaClient::PutFunctionScalingConfig(const PutFunctionScalingConfigRequest& request) const {
@@ -1418,7 +1532,9 @@ PutFunctionScalingConfigOutcome LambdaClient::PutFunctionScalingConfig(const Put
     endpointResolutionOutcome.GetResult().AddPathSegments("/function-scaling-config");
   };
 
-  return PutFunctionScalingConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutFunctionScalingConfigOutcome(result.GetResultWithOwnership())
+                            : PutFunctionScalingConfigOutcome(std::move(result.GetError()));
 }
 
 PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyConfig(
@@ -1441,7 +1557,9 @@ PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/provisioned-concurrency");
   };
 
-  return PutProvisionedConcurrencyConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutProvisionedConcurrencyConfigOutcome(result.GetResultWithOwnership())
+                            : PutProvisionedConcurrencyConfigOutcome(std::move(result.GetError()));
 }
 
 PutRuntimeManagementConfigOutcome LambdaClient::PutRuntimeManagementConfig(const PutRuntimeManagementConfigRequest& request) const {
@@ -1458,7 +1576,9 @@ PutRuntimeManagementConfigOutcome LambdaClient::PutRuntimeManagementConfig(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/runtime-management-config");
   };
 
-  return PutRuntimeManagementConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutRuntimeManagementConfigOutcome(result.GetResultWithOwnership())
+                            : PutRuntimeManagementConfigOutcome(std::move(result.GetError()));
 }
 
 RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(const RemoveLayerVersionPermissionRequest& request) const {
@@ -1488,7 +1608,9 @@ RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
   };
 
-  return RemoveLayerVersionPermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveLayerVersionPermissionOutcome(result.GetResultWithOwnership())
+                            : RemoveLayerVersionPermissionOutcome(std::move(result.GetError()));
 }
 
 RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionRequest& request) const {
@@ -1511,7 +1633,9 @@ RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
   };
 
-  return RemovePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemovePermissionOutcome(result.GetResultWithOwnership())
+                            : RemovePermissionOutcome(std::move(result.GetError()));
 }
 
 SendDurableExecutionCallbackFailureOutcome LambdaClient::SendDurableExecutionCallbackFailure(
@@ -1529,7 +1653,9 @@ SendDurableExecutionCallbackFailureOutcome LambdaClient::SendDurableExecutionCal
     endpointResolutionOutcome.GetResult().AddPathSegments("/fail");
   };
 
-  return SendDurableExecutionCallbackFailureOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendDurableExecutionCallbackFailureOutcome(result.GetResultWithOwnership())
+                            : SendDurableExecutionCallbackFailureOutcome(std::move(result.GetError()));
 }
 
 SendDurableExecutionCallbackHeartbeatOutcome LambdaClient::SendDurableExecutionCallbackHeartbeat(
@@ -1547,7 +1673,9 @@ SendDurableExecutionCallbackHeartbeatOutcome LambdaClient::SendDurableExecutionC
     endpointResolutionOutcome.GetResult().AddPathSegments("/heartbeat");
   };
 
-  return SendDurableExecutionCallbackHeartbeatOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendDurableExecutionCallbackHeartbeatOutcome(result.GetResultWithOwnership())
+                            : SendDurableExecutionCallbackHeartbeatOutcome(std::move(result.GetError()));
 }
 
 SendDurableExecutionCallbackSuccessOutcome LambdaClient::SendDurableExecutionCallbackSuccess(
@@ -1565,7 +1693,9 @@ SendDurableExecutionCallbackSuccessOutcome LambdaClient::SendDurableExecutionCal
     endpointResolutionOutcome.GetResult().AddPathSegments("/succeed");
   };
 
-  return SendDurableExecutionCallbackSuccessOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendDurableExecutionCallbackSuccessOutcome(result.GetResultWithOwnership())
+                            : SendDurableExecutionCallbackSuccessOutcome(std::move(result.GetError()));
 }
 
 StopDurableExecutionOutcome LambdaClient::StopDurableExecution(const StopDurableExecutionRequest& request) const {
@@ -1582,7 +1712,9 @@ StopDurableExecutionOutcome LambdaClient::StopDurableExecution(const StopDurable
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
   };
 
-  return StopDurableExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopDurableExecutionOutcome(result.GetResultWithOwnership())
+                            : StopDurableExecutionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) const {
@@ -1598,7 +1730,8 @@ TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResource());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1619,7 +1752,8 @@ UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResource());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) const {
@@ -1642,7 +1776,8 @@ UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAliasOutcome(result.GetResultWithOwnership()) : UpdateAliasOutcome(std::move(result.GetError()));
 }
 
 UpdateCapacityProviderOutcome LambdaClient::UpdateCapacityProvider(const UpdateCapacityProviderRequest& request) const {
@@ -1658,7 +1793,9 @@ UpdateCapacityProviderOutcome LambdaClient::UpdateCapacityProvider(const UpdateC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapacityProviderName());
   };
 
-  return UpdateCapacityProviderOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCapacityProviderOutcome(result.GetResultWithOwnership())
+                            : UpdateCapacityProviderOutcome(std::move(result.GetError()));
 }
 
 UpdateCodeSigningConfigOutcome LambdaClient::UpdateCodeSigningConfig(const UpdateCodeSigningConfigRequest& request) const {
@@ -1674,7 +1811,9 @@ UpdateCodeSigningConfigOutcome LambdaClient::UpdateCodeSigningConfig(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCodeSigningConfigArn());
   };
 
-  return UpdateCodeSigningConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCodeSigningConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateCodeSigningConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const UpdateEventSourceMappingRequest& request) const {
@@ -1690,7 +1829,9 @@ UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUUID());
   };
 
-  return UpdateEventSourceMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEventSourceMappingOutcome(result.GetResultWithOwnership())
+                            : UpdateEventSourceMappingOutcome(std::move(result.GetError()));
 }
 
 UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionCodeRequest& request) const {
@@ -1707,7 +1848,9 @@ UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionC
     endpointResolutionOutcome.GetResult().AddPathSegments("/code");
   };
 
-  return UpdateFunctionCodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFunctionCodeOutcome(result.GetResultWithOwnership())
+                            : UpdateFunctionCodeOutcome(std::move(result.GetError()));
 }
 
 UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(const UpdateFunctionConfigurationRequest& request) const {
@@ -1724,7 +1867,9 @@ UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return UpdateFunctionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFunctionConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateFunctionConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateFunctionEventInvokeConfigOutcome LambdaClient::UpdateFunctionEventInvokeConfig(
@@ -1742,7 +1887,9 @@ UpdateFunctionEventInvokeConfigOutcome LambdaClient::UpdateFunctionEventInvokeCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-invoke-config");
   };
 
-  return UpdateFunctionEventInvokeConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFunctionEventInvokeConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateFunctionEventInvokeConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateFunctionUrlConfigOutcome LambdaClient::UpdateFunctionUrlConfig(const UpdateFunctionUrlConfigRequest& request) const {
@@ -1759,5 +1906,7 @@ UpdateFunctionUrlConfigOutcome LambdaClient::UpdateFunctionUrlConfig(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/url");
   };
 
-  return UpdateFunctionUrlConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFunctionUrlConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateFunctionUrlConfigOutcome(std::move(result.GetError()));
 }

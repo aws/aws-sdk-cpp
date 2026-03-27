@@ -213,7 +213,9 @@ BatchGetMemberAccountDetailsOutcome SecurityIRClient::BatchGetMemberAccountDetai
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-member-details");
   };
 
-  return BatchGetMemberAccountDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetMemberAccountDetailsOutcome(result.GetResultWithOwnership())
+                            : BatchGetMemberAccountDetailsOutcome(std::move(result.GetError()));
 }
 
 CancelMembershipOutcome SecurityIRClient::CancelMembership(const CancelMembershipRequest& request) const {
@@ -229,7 +231,9 @@ CancelMembershipOutcome SecurityIRClient::CancelMembership(const CancelMembershi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipId());
   };
 
-  return CancelMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CancelMembershipOutcome(result.GetResultWithOwnership())
+                            : CancelMembershipOutcome(std::move(result.GetError()));
 }
 
 CloseCaseOutcome SecurityIRClient::CloseCase(const CloseCaseRequest& request) const {
@@ -246,7 +250,8 @@ CloseCaseOutcome SecurityIRClient::CloseCase(const CloseCaseRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/close-case");
   };
 
-  return CloseCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CloseCaseOutcome(result.GetResultWithOwnership()) : CloseCaseOutcome(std::move(result.GetError()));
 }
 
 CreateCaseOutcome SecurityIRClient::CreateCase(const CreateCaseRequest& request) const {
@@ -255,7 +260,8 @@ CreateCaseOutcome SecurityIRClient::CreateCase(const CreateCaseRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/create-case");
   };
 
-  return CreateCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCaseOutcome(result.GetResultWithOwnership()) : CreateCaseOutcome(std::move(result.GetError()));
 }
 
 CreateCaseCommentOutcome SecurityIRClient::CreateCaseComment(const CreateCaseCommentRequest& request) const {
@@ -272,7 +278,9 @@ CreateCaseCommentOutcome SecurityIRClient::CreateCaseComment(const CreateCaseCom
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-comment");
   };
 
-  return CreateCaseCommentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCaseCommentOutcome(result.GetResultWithOwnership())
+                            : CreateCaseCommentOutcome(std::move(result.GetError()));
 }
 
 CreateMembershipOutcome SecurityIRClient::CreateMembership(const CreateMembershipRequest& request) const {
@@ -281,7 +289,9 @@ CreateMembershipOutcome SecurityIRClient::CreateMembership(const CreateMembershi
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/membership");
   };
 
-  return CreateMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMembershipOutcome(result.GetResultWithOwnership())
+                            : CreateMembershipOutcome(std::move(result.GetError()));
 }
 
 GetCaseOutcome SecurityIRClient::GetCase(const GetCaseRequest& request) const {
@@ -298,7 +308,8 @@ GetCaseOutcome SecurityIRClient::GetCase(const GetCaseRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-case");
   };
 
-  return GetCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCaseOutcome(result.GetResultWithOwnership()) : GetCaseOutcome(std::move(result.GetError()));
 }
 
 GetCaseAttachmentDownloadUrlOutcome SecurityIRClient::GetCaseAttachmentDownloadUrl(
@@ -322,7 +333,9 @@ GetCaseAttachmentDownloadUrlOutcome SecurityIRClient::GetCaseAttachmentDownloadU
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return GetCaseAttachmentDownloadUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCaseAttachmentDownloadUrlOutcome(result.GetResultWithOwnership())
+                            : GetCaseAttachmentDownloadUrlOutcome(std::move(result.GetError()));
 }
 
 GetCaseAttachmentUploadUrlOutcome SecurityIRClient::GetCaseAttachmentUploadUrl(const GetCaseAttachmentUploadUrlRequest& request) const {
@@ -339,7 +352,9 @@ GetCaseAttachmentUploadUrlOutcome SecurityIRClient::GetCaseAttachmentUploadUrl(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-presigned-url");
   };
 
-  return GetCaseAttachmentUploadUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCaseAttachmentUploadUrlOutcome(result.GetResultWithOwnership())
+                            : GetCaseAttachmentUploadUrlOutcome(std::move(result.GetError()));
 }
 
 GetMembershipOutcome SecurityIRClient::GetMembership(const GetMembershipRequest& request) const {
@@ -355,7 +370,8 @@ GetMembershipOutcome SecurityIRClient::GetMembership(const GetMembershipRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipId());
   };
 
-  return GetMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMembershipOutcome(result.GetResultWithOwnership()) : GetMembershipOutcome(std::move(result.GetError()));
 }
 
 ListCaseEditsOutcome SecurityIRClient::ListCaseEdits(const ListCaseEditsRequest& request) const {
@@ -372,7 +388,8 @@ ListCaseEditsOutcome SecurityIRClient::ListCaseEdits(const ListCaseEditsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-case-edits");
   };
 
-  return ListCaseEditsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCaseEditsOutcome(result.GetResultWithOwnership()) : ListCaseEditsOutcome(std::move(result.GetError()));
 }
 
 ListCasesOutcome SecurityIRClient::ListCases(const ListCasesRequest& request) const {
@@ -381,7 +398,8 @@ ListCasesOutcome SecurityIRClient::ListCases(const ListCasesRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/list-cases");
   };
 
-  return ListCasesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCasesOutcome(result.GetResultWithOwnership()) : ListCasesOutcome(std::move(result.GetError()));
 }
 
 ListCommentsOutcome SecurityIRClient::ListComments(const ListCommentsRequest& request) const {
@@ -398,7 +416,8 @@ ListCommentsOutcome SecurityIRClient::ListComments(const ListCommentsRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-comments");
   };
 
-  return ListCommentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCommentsOutcome(result.GetResultWithOwnership()) : ListCommentsOutcome(std::move(result.GetError()));
 }
 
 ListInvestigationsOutcome SecurityIRClient::ListInvestigations(const ListInvestigationsRequest& request) const {
@@ -415,7 +434,9 @@ ListInvestigationsOutcome SecurityIRClient::ListInvestigations(const ListInvesti
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-investigations");
   };
 
-  return ListInvestigationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInvestigationsOutcome(result.GetResultWithOwnership())
+                            : ListInvestigationsOutcome(std::move(result.GetError()));
 }
 
 ListMembershipsOutcome SecurityIRClient::ListMemberships(const ListMembershipsRequest& request) const {
@@ -424,7 +445,9 @@ ListMembershipsOutcome SecurityIRClient::ListMemberships(const ListMembershipsRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/memberships");
   };
 
-  return ListMembershipsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMembershipsOutcome(result.GetResultWithOwnership())
+                            : ListMembershipsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SecurityIRClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -440,7 +463,9 @@ ListTagsForResourceOutcome SecurityIRClient::ListTagsForResource(const ListTagsF
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 SendFeedbackOutcome SecurityIRClient::SendFeedback(const SendFeedbackRequest& request) const {
@@ -464,7 +489,8 @@ SendFeedbackOutcome SecurityIRClient::SendFeedback(const SendFeedbackRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/send-feedback");
   };
 
-  return SendFeedbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendFeedbackOutcome(result.GetResultWithOwnership()) : SendFeedbackOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SecurityIRClient::TagResource(const TagResourceRequest& request) const {
@@ -480,7 +506,8 @@ TagResourceOutcome SecurityIRClient::TagResource(const TagResourceRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SecurityIRClient::UntagResource(const UntagResourceRequest& request) const {
@@ -501,7 +528,8 @@ UntagResourceOutcome SecurityIRClient::UntagResource(const UntagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCaseOutcome SecurityIRClient::UpdateCase(const UpdateCaseRequest& request) const {
@@ -518,7 +546,8 @@ UpdateCaseOutcome SecurityIRClient::UpdateCase(const UpdateCaseRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-case");
   };
 
-  return UpdateCaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCaseOutcome(result.GetResultWithOwnership()) : UpdateCaseOutcome(std::move(result.GetError()));
 }
 
 UpdateCaseCommentOutcome SecurityIRClient::UpdateCaseComment(const UpdateCaseCommentRequest& request) const {
@@ -541,7 +570,9 @@ UpdateCaseCommentOutcome SecurityIRClient::UpdateCaseComment(const UpdateCaseCom
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCommentId());
   };
 
-  return UpdateCaseCommentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCaseCommentOutcome(result.GetResultWithOwnership())
+                            : UpdateCaseCommentOutcome(std::move(result.GetError()));
 }
 
 UpdateCaseStatusOutcome SecurityIRClient::UpdateCaseStatus(const UpdateCaseStatusRequest& request) const {
@@ -558,7 +589,9 @@ UpdateCaseStatusOutcome SecurityIRClient::UpdateCaseStatus(const UpdateCaseStatu
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-case-status");
   };
 
-  return UpdateCaseStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCaseStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateCaseStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateMembershipOutcome SecurityIRClient::UpdateMembership(const UpdateMembershipRequest& request) const {
@@ -575,7 +608,9 @@ UpdateMembershipOutcome SecurityIRClient::UpdateMembership(const UpdateMembershi
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-membership");
   };
 
-  return UpdateMembershipOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateMembershipOutcome(result.GetResultWithOwnership())
+                            : UpdateMembershipOutcome(std::move(result.GetError()));
 }
 
 UpdateResolverTypeOutcome SecurityIRClient::UpdateResolverType(const UpdateResolverTypeRequest& request) const {
@@ -592,5 +627,7 @@ UpdateResolverTypeOutcome SecurityIRClient::UpdateResolverType(const UpdateResol
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-resolver-type");
   };
 
-  return UpdateResolverTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResolverTypeOutcome(result.GetResultWithOwnership())
+                            : UpdateResolverTypeOutcome(std::move(result.GetError()));
 }

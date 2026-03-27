@@ -218,7 +218,9 @@ AddNotificationChannelsOutcome CodeGuruProfilerClient::AddNotificationChannels(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/notificationConfiguration");
   };
 
-  return AddNotificationChannelsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddNotificationChannelsOutcome(result.GetResultWithOwnership())
+                            : AddNotificationChannelsOutcome(std::move(result.GetError()));
 }
 
 BatchGetFrameMetricDataOutcome CodeGuruProfilerClient::BatchGetFrameMetricData(const BatchGetFrameMetricDataRequest& request) const {
@@ -235,7 +237,9 @@ BatchGetFrameMetricDataOutcome CodeGuruProfilerClient::BatchGetFrameMetricData(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/frames/-/metrics");
   };
 
-  return BatchGetFrameMetricDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetFrameMetricDataOutcome(result.GetResultWithOwnership())
+                            : BatchGetFrameMetricDataOutcome(std::move(result.GetError()));
 }
 
 ConfigureAgentOutcome CodeGuruProfilerClient::ConfigureAgent(const ConfigureAgentRequest& request) const {
@@ -252,7 +256,8 @@ ConfigureAgentOutcome CodeGuruProfilerClient::ConfigureAgent(const ConfigureAgen
     endpointResolutionOutcome.GetResult().AddPathSegments("/configureAgent");
   };
 
-  return ConfigureAgentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConfigureAgentOutcome(result.GetResultWithOwnership()) : ConfigureAgentOutcome(std::move(result.GetError()));
 }
 
 CreateProfilingGroupOutcome CodeGuruProfilerClient::CreateProfilingGroup(const CreateProfilingGroupRequest& request) const {
@@ -267,7 +272,9 @@ CreateProfilingGroupOutcome CodeGuruProfilerClient::CreateProfilingGroup(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/profilingGroups");
   };
 
-  return CreateProfilingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProfilingGroupOutcome(result.GetResultWithOwnership())
+                            : CreateProfilingGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteProfilingGroupOutcome CodeGuruProfilerClient::DeleteProfilingGroup(const DeleteProfilingGroupRequest& request) const {
@@ -283,7 +290,9 @@ DeleteProfilingGroupOutcome CodeGuruProfilerClient::DeleteProfilingGroup(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfilingGroupName());
   };
 
-  return DeleteProfilingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProfilingGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteProfilingGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeProfilingGroupOutcome CodeGuruProfilerClient::DescribeProfilingGroup(const DescribeProfilingGroupRequest& request) const {
@@ -299,7 +308,9 @@ DescribeProfilingGroupOutcome CodeGuruProfilerClient::DescribeProfilingGroup(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfilingGroupName());
   };
 
-  return DescribeProfilingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeProfilingGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeProfilingGroupOutcome(std::move(result.GetError()));
 }
 
 GetFindingsReportAccountSummaryOutcome CodeGuruProfilerClient::GetFindingsReportAccountSummary(
@@ -309,7 +320,9 @@ GetFindingsReportAccountSummaryOutcome CodeGuruProfilerClient::GetFindingsReport
     endpointResolutionOutcome.GetResult().AddPathSegments("/internal/findingsReports");
   };
 
-  return GetFindingsReportAccountSummaryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFindingsReportAccountSummaryOutcome(result.GetResultWithOwnership())
+                            : GetFindingsReportAccountSummaryOutcome(std::move(result.GetError()));
 }
 
 GetNotificationConfigurationOutcome CodeGuruProfilerClient::GetNotificationConfiguration(
@@ -327,7 +340,9 @@ GetNotificationConfigurationOutcome CodeGuruProfilerClient::GetNotificationConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/notificationConfiguration");
   };
 
-  return GetNotificationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNotificationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetNotificationConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetPolicyOutcome CodeGuruProfilerClient::GetPolicy(const GetPolicyRequest& request) const {
@@ -344,7 +359,8 @@ GetPolicyOutcome CodeGuruProfilerClient::GetPolicy(const GetPolicyRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPolicyOutcome(result.GetResultWithOwnership()) : GetPolicyOutcome(std::move(result.GetError()));
 }
 
 GetProfileOutcome CodeGuruProfilerClient::GetProfile(const GetProfileRequest& request) const {
@@ -376,8 +392,8 @@ GetProfileOutcome CodeGuruProfilerClient::GetProfile(const GetProfileRequest& re
         endpointResolutionOutcome.GetResult().AddPathSegments("/profilingGroups/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfilingGroupName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/profile");
-        return GetProfileOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetProfileOutcome(result.GetResultWithOwnership()) : GetProfileOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -408,7 +424,9 @@ GetRecommendationsOutcome CodeGuruProfilerClient::GetRecommendations(const GetRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations");
   };
 
-  return GetRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListFindingsReportsOutcome CodeGuruProfilerClient::ListFindingsReports(const ListFindingsReportsRequest& request) const {
@@ -435,7 +453,9 @@ ListFindingsReportsOutcome CodeGuruProfilerClient::ListFindingsReports(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingsReports");
   };
 
-  return ListFindingsReportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFindingsReportsOutcome(result.GetResultWithOwnership())
+                            : ListFindingsReportsOutcome(std::move(result.GetError()));
 }
 
 ListProfileTimesOutcome CodeGuruProfilerClient::ListProfileTimes(const ListProfileTimesRequest& request) const {
@@ -467,7 +487,9 @@ ListProfileTimesOutcome CodeGuruProfilerClient::ListProfileTimes(const ListProfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/profileTimes");
   };
 
-  return ListProfileTimesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfileTimesOutcome(result.GetResultWithOwnership())
+                            : ListProfileTimesOutcome(std::move(result.GetError()));
 }
 
 ListProfilingGroupsOutcome CodeGuruProfilerClient::ListProfilingGroups(const ListProfilingGroupsRequest& request) const {
@@ -476,7 +498,9 @@ ListProfilingGroupsOutcome CodeGuruProfilerClient::ListProfilingGroups(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/profilingGroups");
   };
 
-  return ListProfilingGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfilingGroupsOutcome(result.GetResultWithOwnership())
+                            : ListProfilingGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CodeGuruProfilerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -492,7 +516,9 @@ ListTagsForResourceOutcome CodeGuruProfilerClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PostAgentProfileOutcome CodeGuruProfilerClient::PostAgentProfile(const PostAgentProfileRequest& request) const {
@@ -509,7 +535,9 @@ PostAgentProfileOutcome CodeGuruProfilerClient::PostAgentProfile(const PostAgent
     endpointResolutionOutcome.GetResult().AddPathSegments("/agentProfile");
   };
 
-  return PostAgentProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PostAgentProfileOutcome(result.GetResultWithOwnership())
+                            : PostAgentProfileOutcome(std::move(result.GetError()));
 }
 
 PutPermissionOutcome CodeGuruProfilerClient::PutPermission(const PutPermissionRequest& request) const {
@@ -532,7 +560,8 @@ PutPermissionOutcome CodeGuruProfilerClient::PutPermission(const PutPermissionRe
     endpointResolutionOutcome.GetResult().AddPathSegment(ActionGroupMapper::GetNameForActionGroup(request.GetActionGroup()));
   };
 
-  return PutPermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutPermissionOutcome(result.GetResultWithOwnership()) : PutPermissionOutcome(std::move(result.GetError()));
 }
 
 RemoveNotificationChannelOutcome CodeGuruProfilerClient::RemoveNotificationChannel(const RemoveNotificationChannelRequest& request) const {
@@ -555,7 +584,9 @@ RemoveNotificationChannelOutcome CodeGuruProfilerClient::RemoveNotificationChann
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelId());
   };
 
-  return RemoveNotificationChannelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemoveNotificationChannelOutcome(result.GetResultWithOwnership())
+                            : RemoveNotificationChannelOutcome(std::move(result.GetError()));
 }
 
 RemovePermissionOutcome CodeGuruProfilerClient::RemovePermission(const RemovePermissionRequest& request) const {
@@ -583,7 +614,9 @@ RemovePermissionOutcome CodeGuruProfilerClient::RemovePermission(const RemovePer
     endpointResolutionOutcome.GetResult().AddPathSegment(ActionGroupMapper::GetNameForActionGroup(request.GetActionGroup()));
   };
 
-  return RemovePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RemovePermissionOutcome(result.GetResultWithOwnership())
+                            : RemovePermissionOutcome(std::move(result.GetError()));
 }
 
 SubmitFeedbackOutcome CodeGuruProfilerClient::SubmitFeedback(const SubmitFeedbackRequest& request) const {
@@ -607,7 +640,8 @@ SubmitFeedbackOutcome CodeGuruProfilerClient::SubmitFeedback(const SubmitFeedbac
     endpointResolutionOutcome.GetResult().AddPathSegments("/feedback");
   };
 
-  return SubmitFeedbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SubmitFeedbackOutcome(result.GetResultWithOwnership()) : SubmitFeedbackOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CodeGuruProfilerClient::TagResource(const TagResourceRequest& request) const {
@@ -623,7 +657,8 @@ TagResourceOutcome CodeGuruProfilerClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CodeGuruProfilerClient::UntagResource(const UntagResourceRequest& request) const {
@@ -644,7 +679,8 @@ UntagResourceOutcome CodeGuruProfilerClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateProfilingGroupOutcome CodeGuruProfilerClient::UpdateProfilingGroup(const UpdateProfilingGroupRequest& request) const {
@@ -660,5 +696,7 @@ UpdateProfilingGroupOutcome CodeGuruProfilerClient::UpdateProfilingGroup(const U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfilingGroupName());
   };
 
-  return UpdateProfilingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateProfilingGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateProfilingGroupOutcome(std::move(result.GetError()));
 }

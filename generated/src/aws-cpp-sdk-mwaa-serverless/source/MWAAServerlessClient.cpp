@@ -188,61 +188,83 @@ MWAAServerlessClient::InvokeOperationOutcome MWAAServerlessClient::InvokeService
 }
 
 CreateWorkflowOutcome MWAAServerlessClient::CreateWorkflow(const CreateWorkflowRequest& request) const {
-  return CreateWorkflowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkflowOutcome(result.GetResultWithOwnership()) : CreateWorkflowOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowOutcome MWAAServerlessClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const {
-  return DeleteWorkflowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWorkflowOutcome(result.GetResultWithOwnership()) : DeleteWorkflowOutcome(std::move(result.GetError()));
 }
 
 GetTaskInstanceOutcome MWAAServerlessClient::GetTaskInstance(const GetTaskInstanceRequest& request) const {
-  return GetTaskInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTaskInstanceOutcome(result.GetResultWithOwnership())
+                            : GetTaskInstanceOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowOutcome MWAAServerlessClient::GetWorkflow(const GetWorkflowRequest& request) const {
-  return GetWorkflowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkflowOutcome(result.GetResultWithOwnership()) : GetWorkflowOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowRunOutcome MWAAServerlessClient::GetWorkflowRun(const GetWorkflowRunRequest& request) const {
-  return GetWorkflowRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkflowRunOutcome(result.GetResultWithOwnership()) : GetWorkflowRunOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MWAAServerlessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTaskInstancesOutcome MWAAServerlessClient::ListTaskInstances(const ListTaskInstancesRequest& request) const {
-  return ListTaskInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTaskInstancesOutcome(result.GetResultWithOwnership())
+                            : ListTaskInstancesOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowRunsOutcome MWAAServerlessClient::ListWorkflowRuns(const ListWorkflowRunsRequest& request) const {
-  return ListWorkflowRunsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowRunsOutcome(result.GetResultWithOwnership())
+                            : ListWorkflowRunsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowVersionsOutcome MWAAServerlessClient::ListWorkflowVersions(const ListWorkflowVersionsRequest& request) const {
-  return ListWorkflowVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowVersionsOutcome(result.GetResultWithOwnership())
+                            : ListWorkflowVersionsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowsOutcome MWAAServerlessClient::ListWorkflows(const ListWorkflowsRequest& request) const {
-  return ListWorkflowsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowsOutcome(result.GetResultWithOwnership()) : ListWorkflowsOutcome(std::move(result.GetError()));
 }
 
 StartWorkflowRunOutcome MWAAServerlessClient::StartWorkflowRun(const StartWorkflowRunRequest& request) const {
-  return StartWorkflowRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartWorkflowRunOutcome(result.GetResultWithOwnership())
+                            : StartWorkflowRunOutcome(std::move(result.GetError()));
 }
 
 StopWorkflowRunOutcome MWAAServerlessClient::StopWorkflowRun(const StopWorkflowRunRequest& request) const {
-  return StopWorkflowRunOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopWorkflowRunOutcome(result.GetResultWithOwnership())
+                            : StopWorkflowRunOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MWAAServerlessClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MWAAServerlessClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkflowOutcome MWAAServerlessClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const {
-  return UpdateWorkflowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkflowOutcome(result.GetResultWithOwnership()) : UpdateWorkflowOutcome(std::move(result.GetError()));
 }

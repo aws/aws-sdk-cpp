@@ -200,7 +200,9 @@ AssociateProfileOutcome Route53ProfilesClient::AssociateProfile(const AssociateP
     endpointResolutionOutcome.GetResult().AddPathSegments("/profileassociation");
   };
 
-  return AssociateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateProfileOutcome(result.GetResultWithOwnership())
+                            : AssociateProfileOutcome(std::move(result.GetError()));
 }
 
 AssociateResourceToProfileOutcome Route53ProfilesClient::AssociateResourceToProfile(
@@ -210,7 +212,9 @@ AssociateResourceToProfileOutcome Route53ProfilesClient::AssociateResourceToProf
     endpointResolutionOutcome.GetResult().AddPathSegments("/profileresourceassociation");
   };
 
-  return AssociateResourceToProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateResourceToProfileOutcome(result.GetResultWithOwnership())
+                            : AssociateResourceToProfileOutcome(std::move(result.GetError()));
 }
 
 CreateProfileOutcome Route53ProfilesClient::CreateProfile(const CreateProfileRequest& request) const {
@@ -219,7 +223,8 @@ CreateProfileOutcome Route53ProfilesClient::CreateProfile(const CreateProfileReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/profile");
   };
 
-  return CreateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProfileOutcome(result.GetResultWithOwnership()) : CreateProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteProfileOutcome Route53ProfilesClient::DeleteProfile(const DeleteProfileRequest& request) const {
@@ -235,7 +240,8 @@ DeleteProfileOutcome Route53ProfilesClient::DeleteProfile(const DeleteProfileReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileId());
   };
 
-  return DeleteProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProfileOutcome(result.GetResultWithOwnership()) : DeleteProfileOutcome(std::move(result.GetError()));
 }
 
 DisassociateProfileOutcome Route53ProfilesClient::DisassociateProfile(const DisassociateProfileRequest& request) const {
@@ -258,7 +264,9 @@ DisassociateProfileOutcome Route53ProfilesClient::DisassociateProfile(const Disa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceId());
   };
 
-  return DisassociateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateProfileOutcome(result.GetResultWithOwnership())
+                            : DisassociateProfileOutcome(std::move(result.GetError()));
 }
 
 DisassociateResourceFromProfileOutcome Route53ProfilesClient::DisassociateResourceFromProfile(
@@ -283,7 +291,9 @@ DisassociateResourceFromProfileOutcome Route53ProfilesClient::DisassociateResour
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return DisassociateResourceFromProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateResourceFromProfileOutcome(result.GetResultWithOwnership())
+                            : DisassociateResourceFromProfileOutcome(std::move(result.GetError()));
 }
 
 GetProfileOutcome Route53ProfilesClient::GetProfile(const GetProfileRequest& request) const {
@@ -299,7 +309,8 @@ GetProfileOutcome Route53ProfilesClient::GetProfile(const GetProfileRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileId());
   };
 
-  return GetProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProfileOutcome(result.GetResultWithOwnership()) : GetProfileOutcome(std::move(result.GetError()));
 }
 
 GetProfileAssociationOutcome Route53ProfilesClient::GetProfileAssociation(const GetProfileAssociationRequest& request) const {
@@ -315,7 +326,9 @@ GetProfileAssociationOutcome Route53ProfilesClient::GetProfileAssociation(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileAssociationId());
   };
 
-  return GetProfileAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProfileAssociationOutcome(result.GetResultWithOwnership())
+                            : GetProfileAssociationOutcome(std::move(result.GetError()));
 }
 
 GetProfileResourceAssociationOutcome Route53ProfilesClient::GetProfileResourceAssociation(
@@ -332,7 +345,9 @@ GetProfileResourceAssociationOutcome Route53ProfilesClient::GetProfileResourceAs
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileResourceAssociationId());
   };
 
-  return GetProfileResourceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProfileResourceAssociationOutcome(result.GetResultWithOwnership())
+                            : GetProfileResourceAssociationOutcome(std::move(result.GetError()));
 }
 
 ListProfileAssociationsOutcome Route53ProfilesClient::ListProfileAssociations(const ListProfileAssociationsRequest& request) const {
@@ -341,7 +356,9 @@ ListProfileAssociationsOutcome Route53ProfilesClient::ListProfileAssociations(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/profileassociations");
   };
 
-  return ListProfileAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfileAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListProfileAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListProfileResourceAssociationsOutcome Route53ProfilesClient::ListProfileResourceAssociations(
@@ -358,7 +375,9 @@ ListProfileResourceAssociationsOutcome Route53ProfilesClient::ListProfileResourc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileId());
   };
 
-  return ListProfileResourceAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfileResourceAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListProfileResourceAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListProfilesOutcome Route53ProfilesClient::ListProfiles(const ListProfilesRequest& request) const {
@@ -367,7 +386,8 @@ ListProfilesOutcome Route53ProfilesClient::ListProfiles(const ListProfilesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles");
   };
 
-  return ListProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfilesOutcome(result.GetResultWithOwnership()) : ListProfilesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome Route53ProfilesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -383,7 +403,9 @@ ListTagsForResourceOutcome Route53ProfilesClient::ListTagsForResource(const List
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome Route53ProfilesClient::TagResource(const TagResourceRequest& request) const {
@@ -399,7 +421,8 @@ TagResourceOutcome Route53ProfilesClient::TagResource(const TagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome Route53ProfilesClient::UntagResource(const UntagResourceRequest& request) const {
@@ -420,7 +443,8 @@ UntagResourceOutcome Route53ProfilesClient::UntagResource(const UntagResourceReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateProfileResourceAssociationOutcome Route53ProfilesClient::UpdateProfileResourceAssociation(
@@ -437,5 +461,7 @@ UpdateProfileResourceAssociationOutcome Route53ProfilesClient::UpdateProfileReso
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileResourceAssociationId());
   };
 
-  return UpdateProfileResourceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateProfileResourceAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateProfileResourceAssociationOutcome(std::move(result.GetError()));
 }

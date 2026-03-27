@@ -179,10 +179,14 @@ EC2InstanceConnectClient::InvokeOperationOutcome EC2InstanceConnectClient::Invok
 }
 
 SendSSHPublicKeyOutcome EC2InstanceConnectClient::SendSSHPublicKey(const SendSSHPublicKeyRequest& request) const {
-  return SendSSHPublicKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendSSHPublicKeyOutcome(result.GetResultWithOwnership())
+                            : SendSSHPublicKeyOutcome(std::move(result.GetError()));
 }
 
 SendSerialConsoleSSHPublicKeyOutcome EC2InstanceConnectClient::SendSerialConsoleSSHPublicKey(
     const SendSerialConsoleSSHPublicKeyRequest& request) const {
-  return SendSerialConsoleSSHPublicKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendSerialConsoleSSHPublicKeyOutcome(result.GetResultWithOwnership())
+                            : SendSerialConsoleSSHPublicKeyOutcome(std::move(result.GetError()));
 }

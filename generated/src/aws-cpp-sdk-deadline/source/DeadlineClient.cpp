@@ -307,7 +307,9 @@ AssociateMemberToFarmOutcome DeadlineClient::AssociateMemberToFarm(const Associa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
   };
 
-  return AssociateMemberToFarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateMemberToFarmOutcome(result.GetResultWithOwnership())
+                            : AssociateMemberToFarmOutcome(std::move(result.GetError()));
 }
 
 AssociateMemberToFleetOutcome DeadlineClient::AssociateMemberToFleet(const AssociateMemberToFleetRequest& request) const {
@@ -337,7 +339,9 @@ AssociateMemberToFleetOutcome DeadlineClient::AssociateMemberToFleet(const Assoc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
   };
 
-  return AssociateMemberToFleetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateMemberToFleetOutcome(result.GetResultWithOwnership())
+                            : AssociateMemberToFleetOutcome(std::move(result.GetError()));
 }
 
 AssociateMemberToJobOutcome DeadlineClient::AssociateMemberToJob(const AssociateMemberToJobRequest& request) const {
@@ -374,7 +378,9 @@ AssociateMemberToJobOutcome DeadlineClient::AssociateMemberToJob(const Associate
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
   };
 
-  return AssociateMemberToJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateMemberToJobOutcome(result.GetResultWithOwnership())
+                            : AssociateMemberToJobOutcome(std::move(result.GetError()));
 }
 
 AssociateMemberToQueueOutcome DeadlineClient::AssociateMemberToQueue(const AssociateMemberToQueueRequest& request) const {
@@ -404,7 +410,9 @@ AssociateMemberToQueueOutcome DeadlineClient::AssociateMemberToQueue(const Assoc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
   };
 
-  return AssociateMemberToQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateMemberToQueueOutcome(result.GetResultWithOwnership())
+                            : AssociateMemberToQueueOutcome(std::move(result.GetError()));
 }
 
 AssumeFleetRoleForReadOutcome DeadlineClient::AssumeFleetRoleForRead(const AssumeFleetRoleForReadRequest& request) const {
@@ -428,7 +436,9 @@ AssumeFleetRoleForReadOutcome DeadlineClient::AssumeFleetRoleForRead(const Assum
     endpointResolutionOutcome.GetResult().AddPathSegments("/read-roles");
   };
 
-  return AssumeFleetRoleForReadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? AssumeFleetRoleForReadOutcome(result.GetResultWithOwnership())
+                            : AssumeFleetRoleForReadOutcome(std::move(result.GetError()));
 }
 
 AssumeFleetRoleForWorkerOutcome DeadlineClient::AssumeFleetRoleForWorker(const AssumeFleetRoleForWorkerRequest& request) const {
@@ -459,7 +469,9 @@ AssumeFleetRoleForWorkerOutcome DeadlineClient::AssumeFleetRoleForWorker(const A
     endpointResolutionOutcome.GetResult().AddPathSegments("/fleet-roles");
   };
 
-  return AssumeFleetRoleForWorkerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? AssumeFleetRoleForWorkerOutcome(result.GetResultWithOwnership())
+                            : AssumeFleetRoleForWorkerOutcome(std::move(result.GetError()));
 }
 
 AssumeQueueRoleForReadOutcome DeadlineClient::AssumeQueueRoleForRead(const AssumeQueueRoleForReadRequest& request) const {
@@ -483,7 +495,9 @@ AssumeQueueRoleForReadOutcome DeadlineClient::AssumeQueueRoleForRead(const Assum
     endpointResolutionOutcome.GetResult().AddPathSegments("/read-roles");
   };
 
-  return AssumeQueueRoleForReadOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? AssumeQueueRoleForReadOutcome(result.GetResultWithOwnership())
+                            : AssumeQueueRoleForReadOutcome(std::move(result.GetError()));
 }
 
 AssumeQueueRoleForUserOutcome DeadlineClient::AssumeQueueRoleForUser(const AssumeQueueRoleForUserRequest& request) const {
@@ -507,7 +521,9 @@ AssumeQueueRoleForUserOutcome DeadlineClient::AssumeQueueRoleForUser(const Assum
     endpointResolutionOutcome.GetResult().AddPathSegments("/user-roles");
   };
 
-  return AssumeQueueRoleForUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? AssumeQueueRoleForUserOutcome(result.GetResultWithOwnership())
+                            : AssumeQueueRoleForUserOutcome(std::move(result.GetError()));
 }
 
 AssumeQueueRoleForWorkerOutcome DeadlineClient::AssumeQueueRoleForWorker(const AssumeQueueRoleForWorkerRequest& request) const {
@@ -543,7 +559,9 @@ AssumeQueueRoleForWorkerOutcome DeadlineClient::AssumeQueueRoleForWorker(const A
     endpointResolutionOutcome.GetResult().AddPathSegments("/queue-roles");
   };
 
-  return AssumeQueueRoleForWorkerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? AssumeQueueRoleForWorkerOutcome(result.GetResultWithOwnership())
+                            : AssumeQueueRoleForWorkerOutcome(std::move(result.GetError()));
 }
 
 BatchGetJobEntityOutcome DeadlineClient::BatchGetJobEntity(const BatchGetJobEntityRequest& request) const {
@@ -574,7 +592,9 @@ BatchGetJobEntityOutcome DeadlineClient::BatchGetJobEntity(const BatchGetJobEnti
     endpointResolutionOutcome.GetResult().AddPathSegments("/batchGetJobEntity");
   };
 
-  return BatchGetJobEntityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetJobEntityOutcome(result.GetResultWithOwnership())
+                            : BatchGetJobEntityOutcome(std::move(result.GetError()));
 }
 
 CopyJobTemplateOutcome DeadlineClient::CopyJobTemplate(const CopyJobTemplateRequest& request) const {
@@ -605,7 +625,9 @@ CopyJobTemplateOutcome DeadlineClient::CopyJobTemplate(const CopyJobTemplateRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/template");
   };
 
-  return CopyJobTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyJobTemplateOutcome(result.GetResultWithOwnership())
+                            : CopyJobTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateBudgetOutcome DeadlineClient::CreateBudget(const CreateBudgetRequest& request) const {
@@ -622,7 +644,8 @@ CreateBudgetOutcome DeadlineClient::CreateBudget(const CreateBudgetRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/budgets");
   };
 
-  return CreateBudgetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBudgetOutcome(result.GetResultWithOwnership()) : CreateBudgetOutcome(std::move(result.GetError()));
 }
 
 CreateFarmOutcome DeadlineClient::CreateFarm(const CreateFarmRequest& request) const {
@@ -631,7 +654,8 @@ CreateFarmOutcome DeadlineClient::CreateFarm(const CreateFarmRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms");
   };
 
-  return CreateFarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFarmOutcome(result.GetResultWithOwnership()) : CreateFarmOutcome(std::move(result.GetError()));
 }
 
 CreateFleetOutcome DeadlineClient::CreateFleet(const CreateFleetRequest& request) const {
@@ -648,7 +672,8 @@ CreateFleetOutcome DeadlineClient::CreateFleet(const CreateFleetRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/fleets");
   };
 
-  return CreateFleetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFleetOutcome(result.GetResultWithOwnership()) : CreateFleetOutcome(std::move(result.GetError()));
 }
 
 CreateJobOutcome DeadlineClient::CreateJob(const CreateJobRequest& request) const {
@@ -672,7 +697,8 @@ CreateJobOutcome DeadlineClient::CreateJob(const CreateJobRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return CreateJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobOutcome(result.GetResultWithOwnership()) : CreateJobOutcome(std::move(result.GetError()));
 }
 
 CreateLicenseEndpointOutcome DeadlineClient::CreateLicenseEndpoint(const CreateLicenseEndpointRequest& request) const {
@@ -681,7 +707,9 @@ CreateLicenseEndpointOutcome DeadlineClient::CreateLicenseEndpoint(const CreateL
     endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints");
   };
 
-  return CreateLicenseEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLicenseEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateLicenseEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateLimitOutcome DeadlineClient::CreateLimit(const CreateLimitRequest& request) const {
@@ -698,7 +726,8 @@ CreateLimitOutcome DeadlineClient::CreateLimit(const CreateLimitRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/limits");
   };
 
-  return CreateLimitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLimitOutcome(result.GetResultWithOwnership()) : CreateLimitOutcome(std::move(result.GetError()));
 }
 
 CreateMonitorOutcome DeadlineClient::CreateMonitor(const CreateMonitorRequest& request) const {
@@ -707,7 +736,8 @@ CreateMonitorOutcome DeadlineClient::CreateMonitor(const CreateMonitorRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors");
   };
 
-  return CreateMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMonitorOutcome(result.GetResultWithOwnership()) : CreateMonitorOutcome(std::move(result.GetError()));
 }
 
 CreateQueueOutcome DeadlineClient::CreateQueue(const CreateQueueRequest& request) const {
@@ -724,7 +754,8 @@ CreateQueueOutcome DeadlineClient::CreateQueue(const CreateQueueRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/queues");
   };
 
-  return CreateQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQueueOutcome(result.GetResultWithOwnership()) : CreateQueueOutcome(std::move(result.GetError()));
 }
 
 CreateQueueEnvironmentOutcome DeadlineClient::CreateQueueEnvironment(const CreateQueueEnvironmentRequest& request) const {
@@ -748,7 +779,9 @@ CreateQueueEnvironmentOutcome DeadlineClient::CreateQueueEnvironment(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
   };
 
-  return CreateQueueEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQueueEnvironmentOutcome(result.GetResultWithOwnership())
+                            : CreateQueueEnvironmentOutcome(std::move(result.GetError()));
 }
 
 CreateQueueFleetAssociationOutcome DeadlineClient::CreateQueueFleetAssociation(const CreateQueueFleetAssociationRequest& request) const {
@@ -765,7 +798,9 @@ CreateQueueFleetAssociationOutcome DeadlineClient::CreateQueueFleetAssociation(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations");
   };
 
-  return CreateQueueFleetAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateQueueFleetAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateQueueFleetAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateQueueLimitAssociationOutcome DeadlineClient::CreateQueueLimitAssociation(const CreateQueueLimitAssociationRequest& request) const {
@@ -782,7 +817,9 @@ CreateQueueLimitAssociationOutcome DeadlineClient::CreateQueueLimitAssociation(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations");
   };
 
-  return CreateQueueLimitAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateQueueLimitAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateQueueLimitAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateStorageProfileOutcome DeadlineClient::CreateStorageProfile(const CreateStorageProfileRequest& request) const {
@@ -799,7 +836,9 @@ CreateStorageProfileOutcome DeadlineClient::CreateStorageProfile(const CreateSto
     endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles");
   };
 
-  return CreateStorageProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStorageProfileOutcome(result.GetResultWithOwnership())
+                            : CreateStorageProfileOutcome(std::move(result.GetError()));
 }
 
 CreateWorkerOutcome DeadlineClient::CreateWorker(const CreateWorkerRequest& request) const {
@@ -823,7 +862,8 @@ CreateWorkerOutcome DeadlineClient::CreateWorker(const CreateWorkerRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/workers");
   };
 
-  return CreateWorkerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkerOutcome(result.GetResultWithOwnership()) : CreateWorkerOutcome(std::move(result.GetError()));
 }
 
 DeleteBudgetOutcome DeadlineClient::DeleteBudget(const DeleteBudgetRequest& request) const {
@@ -846,7 +886,8 @@ DeleteBudgetOutcome DeadlineClient::DeleteBudget(const DeleteBudgetRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBudgetId());
   };
 
-  return DeleteBudgetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBudgetOutcome(result.GetResultWithOwnership()) : DeleteBudgetOutcome(std::move(result.GetError()));
 }
 
 DeleteFarmOutcome DeadlineClient::DeleteFarm(const DeleteFarmRequest& request) const {
@@ -862,7 +903,8 @@ DeleteFarmOutcome DeadlineClient::DeleteFarm(const DeleteFarmRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
   };
 
-  return DeleteFarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFarmOutcome(result.GetResultWithOwnership()) : DeleteFarmOutcome(std::move(result.GetError()));
 }
 
 DeleteFleetOutcome DeadlineClient::DeleteFleet(const DeleteFleetRequest& request) const {
@@ -885,7 +927,8 @@ DeleteFleetOutcome DeadlineClient::DeleteFleet(const DeleteFleetRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
   };
 
-  return DeleteFleetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFleetOutcome(result.GetResultWithOwnership()) : DeleteFleetOutcome(std::move(result.GetError()));
 }
 
 DeleteLicenseEndpointOutcome DeadlineClient::DeleteLicenseEndpoint(const DeleteLicenseEndpointRequest& request) const {
@@ -901,7 +944,9 @@ DeleteLicenseEndpointOutcome DeadlineClient::DeleteLicenseEndpoint(const DeleteL
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
   };
 
-  return DeleteLicenseEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLicenseEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteLicenseEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteLimitOutcome DeadlineClient::DeleteLimit(const DeleteLimitRequest& request) const {
@@ -924,7 +969,8 @@ DeleteLimitOutcome DeadlineClient::DeleteLimit(const DeleteLimitRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
   };
 
-  return DeleteLimitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLimitOutcome(result.GetResultWithOwnership()) : DeleteLimitOutcome(std::move(result.GetError()));
 }
 
 DeleteMeteredProductOutcome DeadlineClient::DeleteMeteredProduct(const DeleteMeteredProductRequest& request) const {
@@ -947,7 +993,9 @@ DeleteMeteredProductOutcome DeadlineClient::DeleteMeteredProduct(const DeleteMet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProductId());
   };
 
-  return DeleteMeteredProductOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMeteredProductOutcome(result.GetResultWithOwnership())
+                            : DeleteMeteredProductOutcome(std::move(result.GetError()));
 }
 
 DeleteMonitorOutcome DeadlineClient::DeleteMonitor(const DeleteMonitorRequest& request) const {
@@ -963,7 +1011,8 @@ DeleteMonitorOutcome DeadlineClient::DeleteMonitor(const DeleteMonitorRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorId());
   };
 
-  return DeleteMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMonitorOutcome(result.GetResultWithOwnership()) : DeleteMonitorOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueOutcome DeadlineClient::DeleteQueue(const DeleteQueueRequest& request) const {
@@ -986,7 +1035,8 @@ DeleteQueueOutcome DeadlineClient::DeleteQueue(const DeleteQueueRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
   };
 
-  return DeleteQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueueOutcome(result.GetResultWithOwnership()) : DeleteQueueOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueEnvironmentOutcome DeadlineClient::DeleteQueueEnvironment(const DeleteQueueEnvironmentRequest& request) const {
@@ -1016,7 +1066,9 @@ DeleteQueueEnvironmentOutcome DeadlineClient::DeleteQueueEnvironment(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueEnvironmentId());
   };
 
-  return DeleteQueueEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueueEnvironmentOutcome(result.GetResultWithOwnership())
+                            : DeleteQueueEnvironmentOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueFleetAssociationOutcome DeadlineClient::DeleteQueueFleetAssociation(const DeleteQueueFleetAssociationRequest& request) const {
@@ -1045,7 +1097,9 @@ DeleteQueueFleetAssociationOutcome DeadlineClient::DeleteQueueFleetAssociation(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
   };
 
-  return DeleteQueueFleetAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueueFleetAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteQueueFleetAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteQueueLimitAssociationOutcome DeadlineClient::DeleteQueueLimitAssociation(const DeleteQueueLimitAssociationRequest& request) const {
@@ -1074,7 +1128,9 @@ DeleteQueueLimitAssociationOutcome DeadlineClient::DeleteQueueLimitAssociation(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
   };
 
-  return DeleteQueueLimitAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueueLimitAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteQueueLimitAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteStorageProfileOutcome DeadlineClient::DeleteStorageProfile(const DeleteStorageProfileRequest& request) const {
@@ -1097,7 +1153,9 @@ DeleteStorageProfileOutcome DeadlineClient::DeleteStorageProfile(const DeleteSto
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
   };
 
-  return DeleteStorageProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteStorageProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteStorageProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkerOutcome DeadlineClient::DeleteWorker(const DeleteWorkerRequest& request) const {
@@ -1127,7 +1185,8 @@ DeleteWorkerOutcome DeadlineClient::DeleteWorker(const DeleteWorkerRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
   };
 
-  return DeleteWorkerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkerOutcome(result.GetResultWithOwnership()) : DeleteWorkerOutcome(std::move(result.GetError()));
 }
 
 DisassociateMemberFromFarmOutcome DeadlineClient::DisassociateMemberFromFarm(const DisassociateMemberFromFarmRequest& request) const {
@@ -1150,7 +1209,9 @@ DisassociateMemberFromFarmOutcome DeadlineClient::DisassociateMemberFromFarm(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
   };
 
-  return DisassociateMemberFromFarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateMemberFromFarmOutcome(result.GetResultWithOwnership())
+                            : DisassociateMemberFromFarmOutcome(std::move(result.GetError()));
 }
 
 DisassociateMemberFromFleetOutcome DeadlineClient::DisassociateMemberFromFleet(const DisassociateMemberFromFleetRequest& request) const {
@@ -1180,7 +1241,9 @@ DisassociateMemberFromFleetOutcome DeadlineClient::DisassociateMemberFromFleet(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
   };
 
-  return DisassociateMemberFromFleetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateMemberFromFleetOutcome(result.GetResultWithOwnership())
+                            : DisassociateMemberFromFleetOutcome(std::move(result.GetError()));
 }
 
 DisassociateMemberFromJobOutcome DeadlineClient::DisassociateMemberFromJob(const DisassociateMemberFromJobRequest& request) const {
@@ -1217,7 +1280,9 @@ DisassociateMemberFromJobOutcome DeadlineClient::DisassociateMemberFromJob(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
   };
 
-  return DisassociateMemberFromJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateMemberFromJobOutcome(result.GetResultWithOwnership())
+                            : DisassociateMemberFromJobOutcome(std::move(result.GetError()));
 }
 
 DisassociateMemberFromQueueOutcome DeadlineClient::DisassociateMemberFromQueue(const DisassociateMemberFromQueueRequest& request) const {
@@ -1247,7 +1312,9 @@ DisassociateMemberFromQueueOutcome DeadlineClient::DisassociateMemberFromQueue(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
   };
 
-  return DisassociateMemberFromQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateMemberFromQueueOutcome(result.GetResultWithOwnership())
+                            : DisassociateMemberFromQueueOutcome(std::move(result.GetError()));
 }
 
 GetBudgetOutcome DeadlineClient::GetBudget(const GetBudgetRequest& request) const {
@@ -1270,7 +1337,8 @@ GetBudgetOutcome DeadlineClient::GetBudget(const GetBudgetRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBudgetId());
   };
 
-  return GetBudgetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBudgetOutcome(result.GetResultWithOwnership()) : GetBudgetOutcome(std::move(result.GetError()));
 }
 
 GetFarmOutcome DeadlineClient::GetFarm(const GetFarmRequest& request) const {
@@ -1286,7 +1354,8 @@ GetFarmOutcome DeadlineClient::GetFarm(const GetFarmRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
   };
 
-  return GetFarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFarmOutcome(result.GetResultWithOwnership()) : GetFarmOutcome(std::move(result.GetError()));
 }
 
 GetFleetOutcome DeadlineClient::GetFleet(const GetFleetRequest& request) const {
@@ -1309,7 +1378,8 @@ GetFleetOutcome DeadlineClient::GetFleet(const GetFleetRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
   };
 
-  return GetFleetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFleetOutcome(result.GetResultWithOwnership()) : GetFleetOutcome(std::move(result.GetError()));
 }
 
 GetJobOutcome DeadlineClient::GetJob(const GetJobRequest& request) const {
@@ -1339,7 +1409,8 @@ GetJobOutcome DeadlineClient::GetJob(const GetJobRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobOutcome(result.GetResultWithOwnership()) : GetJobOutcome(std::move(result.GetError()));
 }
 
 GetLicenseEndpointOutcome DeadlineClient::GetLicenseEndpoint(const GetLicenseEndpointRequest& request) const {
@@ -1355,7 +1426,9 @@ GetLicenseEndpointOutcome DeadlineClient::GetLicenseEndpoint(const GetLicenseEnd
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLicenseEndpointId());
   };
 
-  return GetLicenseEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLicenseEndpointOutcome(result.GetResultWithOwnership())
+                            : GetLicenseEndpointOutcome(std::move(result.GetError()));
 }
 
 GetLimitOutcome DeadlineClient::GetLimit(const GetLimitRequest& request) const {
@@ -1378,7 +1451,8 @@ GetLimitOutcome DeadlineClient::GetLimit(const GetLimitRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
   };
 
-  return GetLimitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLimitOutcome(result.GetResultWithOwnership()) : GetLimitOutcome(std::move(result.GetError()));
 }
 
 GetMonitorOutcome DeadlineClient::GetMonitor(const GetMonitorRequest& request) const {
@@ -1394,7 +1468,8 @@ GetMonitorOutcome DeadlineClient::GetMonitor(const GetMonitorRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorId());
   };
 
-  return GetMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMonitorOutcome(result.GetResultWithOwnership()) : GetMonitorOutcome(std::move(result.GetError()));
 }
 
 GetQueueOutcome DeadlineClient::GetQueue(const GetQueueRequest& request) const {
@@ -1417,7 +1492,8 @@ GetQueueOutcome DeadlineClient::GetQueue(const GetQueueRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
   };
 
-  return GetQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueueOutcome(result.GetResultWithOwnership()) : GetQueueOutcome(std::move(result.GetError()));
 }
 
 GetQueueEnvironmentOutcome DeadlineClient::GetQueueEnvironment(const GetQueueEnvironmentRequest& request) const {
@@ -1447,7 +1523,9 @@ GetQueueEnvironmentOutcome DeadlineClient::GetQueueEnvironment(const GetQueueEnv
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueEnvironmentId());
   };
 
-  return GetQueueEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueueEnvironmentOutcome(result.GetResultWithOwnership())
+                            : GetQueueEnvironmentOutcome(std::move(result.GetError()));
 }
 
 GetQueueFleetAssociationOutcome DeadlineClient::GetQueueFleetAssociation(const GetQueueFleetAssociationRequest& request) const {
@@ -1476,7 +1554,9 @@ GetQueueFleetAssociationOutcome DeadlineClient::GetQueueFleetAssociation(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
   };
 
-  return GetQueueFleetAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueueFleetAssociationOutcome(result.GetResultWithOwnership())
+                            : GetQueueFleetAssociationOutcome(std::move(result.GetError()));
 }
 
 GetQueueLimitAssociationOutcome DeadlineClient::GetQueueLimitAssociation(const GetQueueLimitAssociationRequest& request) const {
@@ -1505,7 +1585,9 @@ GetQueueLimitAssociationOutcome DeadlineClient::GetQueueLimitAssociation(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
   };
 
-  return GetQueueLimitAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueueLimitAssociationOutcome(result.GetResultWithOwnership())
+                            : GetQueueLimitAssociationOutcome(std::move(result.GetError()));
 }
 
 GetSessionOutcome DeadlineClient::GetSession(const GetSessionRequest& request) const {
@@ -1542,7 +1624,8 @@ GetSessionOutcome DeadlineClient::GetSession(const GetSessionRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return GetSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
 }
 
 GetSessionActionOutcome DeadlineClient::GetSessionAction(const GetSessionActionRequest& request) const {
@@ -1579,7 +1662,9 @@ GetSessionActionOutcome DeadlineClient::GetSessionAction(const GetSessionActionR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionActionId());
   };
 
-  return GetSessionActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionActionOutcome(result.GetResultWithOwnership())
+                            : GetSessionActionOutcome(std::move(result.GetError()));
 }
 
 GetSessionsStatisticsAggregationOutcome DeadlineClient::GetSessionsStatisticsAggregation(
@@ -1602,7 +1687,9 @@ GetSessionsStatisticsAggregationOutcome DeadlineClient::GetSessionsStatisticsAgg
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions-statistics-aggregation");
   };
 
-  return GetSessionsStatisticsAggregationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionsStatisticsAggregationOutcome(result.GetResultWithOwnership())
+                            : GetSessionsStatisticsAggregationOutcome(std::move(result.GetError()));
 }
 
 GetStepOutcome DeadlineClient::GetStep(const GetStepRequest& request) const {
@@ -1639,7 +1726,8 @@ GetStepOutcome DeadlineClient::GetStep(const GetStepRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
   };
 
-  return GetStepOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStepOutcome(result.GetResultWithOwnership()) : GetStepOutcome(std::move(result.GetError()));
 }
 
 GetStorageProfileOutcome DeadlineClient::GetStorageProfile(const GetStorageProfileRequest& request) const {
@@ -1662,7 +1750,9 @@ GetStorageProfileOutcome DeadlineClient::GetStorageProfile(const GetStorageProfi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
   };
 
-  return GetStorageProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStorageProfileOutcome(result.GetResultWithOwnership())
+                            : GetStorageProfileOutcome(std::move(result.GetError()));
 }
 
 GetStorageProfileForQueueOutcome DeadlineClient::GetStorageProfileForQueue(const GetStorageProfileForQueueRequest& request) const {
@@ -1692,7 +1782,9 @@ GetStorageProfileForQueueOutcome DeadlineClient::GetStorageProfileForQueue(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
   };
 
-  return GetStorageProfileForQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStorageProfileForQueueOutcome(result.GetResultWithOwnership())
+                            : GetStorageProfileForQueueOutcome(std::move(result.GetError()));
 }
 
 GetTaskOutcome DeadlineClient::GetTask(const GetTaskRequest& request) const {
@@ -1736,7 +1828,8 @@ GetTaskOutcome DeadlineClient::GetTask(const GetTaskRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
   };
 
-  return GetTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTaskOutcome(result.GetResultWithOwnership()) : GetTaskOutcome(std::move(result.GetError()));
 }
 
 GetWorkerOutcome DeadlineClient::GetWorker(const GetWorkerRequest& request) const {
@@ -1766,7 +1859,8 @@ GetWorkerOutcome DeadlineClient::GetWorker(const GetWorkerRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
   };
 
-  return GetWorkerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkerOutcome(result.GetResultWithOwnership()) : GetWorkerOutcome(std::move(result.GetError()));
 }
 
 ListAvailableMeteredProductsOutcome DeadlineClient::ListAvailableMeteredProducts(const ListAvailableMeteredProductsRequest& request) const {
@@ -1775,7 +1869,9 @@ ListAvailableMeteredProductsOutcome DeadlineClient::ListAvailableMeteredProducts
     endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/metered-products");
   };
 
-  return ListAvailableMeteredProductsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAvailableMeteredProductsOutcome(result.GetResultWithOwnership())
+                            : ListAvailableMeteredProductsOutcome(std::move(result.GetError()));
 }
 
 ListBudgetsOutcome DeadlineClient::ListBudgets(const ListBudgetsRequest& request) const {
@@ -1792,7 +1888,8 @@ ListBudgetsOutcome DeadlineClient::ListBudgets(const ListBudgetsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/budgets");
   };
 
-  return ListBudgetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBudgetsOutcome(result.GetResultWithOwnership()) : ListBudgetsOutcome(std::move(result.GetError()));
 }
 
 ListFarmMembersOutcome DeadlineClient::ListFarmMembers(const ListFarmMembersRequest& request) const {
@@ -1809,7 +1906,9 @@ ListFarmMembersOutcome DeadlineClient::ListFarmMembers(const ListFarmMembersRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/members");
   };
 
-  return ListFarmMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFarmMembersOutcome(result.GetResultWithOwnership())
+                            : ListFarmMembersOutcome(std::move(result.GetError()));
 }
 
 ListFarmsOutcome DeadlineClient::ListFarms(const ListFarmsRequest& request) const {
@@ -1818,7 +1917,8 @@ ListFarmsOutcome DeadlineClient::ListFarms(const ListFarmsRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/farms");
   };
 
-  return ListFarmsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFarmsOutcome(result.GetResultWithOwnership()) : ListFarmsOutcome(std::move(result.GetError()));
 }
 
 ListFleetMembersOutcome DeadlineClient::ListFleetMembers(const ListFleetMembersRequest& request) const {
@@ -1842,7 +1942,9 @@ ListFleetMembersOutcome DeadlineClient::ListFleetMembers(const ListFleetMembersR
     endpointResolutionOutcome.GetResult().AddPathSegments("/members");
   };
 
-  return ListFleetMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFleetMembersOutcome(result.GetResultWithOwnership())
+                            : ListFleetMembersOutcome(std::move(result.GetError()));
 }
 
 ListFleetsOutcome DeadlineClient::ListFleets(const ListFleetsRequest& request) const {
@@ -1859,7 +1961,8 @@ ListFleetsOutcome DeadlineClient::ListFleets(const ListFleetsRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/fleets");
   };
 
-  return ListFleetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFleetsOutcome(result.GetResultWithOwnership()) : ListFleetsOutcome(std::move(result.GetError()));
 }
 
 ListJobMembersOutcome DeadlineClient::ListJobMembers(const ListJobMembersRequest& request) const {
@@ -1890,7 +1993,8 @@ ListJobMembersOutcome DeadlineClient::ListJobMembers(const ListJobMembersRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/members");
   };
 
-  return ListJobMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobMembersOutcome(result.GetResultWithOwnership()) : ListJobMembersOutcome(std::move(result.GetError()));
 }
 
 ListJobParameterDefinitionsOutcome DeadlineClient::ListJobParameterDefinitions(const ListJobParameterDefinitionsRequest& request) const {
@@ -1921,7 +2025,9 @@ ListJobParameterDefinitionsOutcome DeadlineClient::ListJobParameterDefinitions(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/parameter-definitions");
   };
 
-  return ListJobParameterDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobParameterDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListJobParameterDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListJobsOutcome DeadlineClient::ListJobs(const ListJobsRequest& request) const {
@@ -1945,7 +2051,8 @@ ListJobsOutcome DeadlineClient::ListJobs(const ListJobsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return ListJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
 }
 
 ListLicenseEndpointsOutcome DeadlineClient::ListLicenseEndpoints(const ListLicenseEndpointsRequest& request) const {
@@ -1954,7 +2061,9 @@ ListLicenseEndpointsOutcome DeadlineClient::ListLicenseEndpoints(const ListLicen
     endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/license-endpoints");
   };
 
-  return ListLicenseEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLicenseEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListLicenseEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListLimitsOutcome DeadlineClient::ListLimits(const ListLimitsRequest& request) const {
@@ -1971,7 +2080,8 @@ ListLimitsOutcome DeadlineClient::ListLimits(const ListLimitsRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/limits");
   };
 
-  return ListLimitsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLimitsOutcome(result.GetResultWithOwnership()) : ListLimitsOutcome(std::move(result.GetError()));
 }
 
 ListMeteredProductsOutcome DeadlineClient::ListMeteredProducts(const ListMeteredProductsRequest& request) const {
@@ -1988,7 +2098,9 @@ ListMeteredProductsOutcome DeadlineClient::ListMeteredProducts(const ListMetered
     endpointResolutionOutcome.GetResult().AddPathSegments("/metered-products");
   };
 
-  return ListMeteredProductsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMeteredProductsOutcome(result.GetResultWithOwnership())
+                            : ListMeteredProductsOutcome(std::move(result.GetError()));
 }
 
 ListMonitorsOutcome DeadlineClient::ListMonitors(const ListMonitorsRequest& request) const {
@@ -1997,7 +2109,8 @@ ListMonitorsOutcome DeadlineClient::ListMonitors(const ListMonitorsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/monitors");
   };
 
-  return ListMonitorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMonitorsOutcome(result.GetResultWithOwnership()) : ListMonitorsOutcome(std::move(result.GetError()));
 }
 
 ListQueueEnvironmentsOutcome DeadlineClient::ListQueueEnvironments(const ListQueueEnvironmentsRequest& request) const {
@@ -2021,7 +2134,9 @@ ListQueueEnvironmentsOutcome DeadlineClient::ListQueueEnvironments(const ListQue
     endpointResolutionOutcome.GetResult().AddPathSegments("/environments");
   };
 
-  return ListQueueEnvironmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueueEnvironmentsOutcome(result.GetResultWithOwnership())
+                            : ListQueueEnvironmentsOutcome(std::move(result.GetError()));
 }
 
 ListQueueFleetAssociationsOutcome DeadlineClient::ListQueueFleetAssociations(const ListQueueFleetAssociationsRequest& request) const {
@@ -2038,7 +2153,9 @@ ListQueueFleetAssociationsOutcome DeadlineClient::ListQueueFleetAssociations(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/queue-fleet-associations");
   };
 
-  return ListQueueFleetAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueueFleetAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListQueueFleetAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListQueueLimitAssociationsOutcome DeadlineClient::ListQueueLimitAssociations(const ListQueueLimitAssociationsRequest& request) const {
@@ -2055,7 +2172,9 @@ ListQueueLimitAssociationsOutcome DeadlineClient::ListQueueLimitAssociations(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/queue-limit-associations");
   };
 
-  return ListQueueLimitAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueueLimitAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListQueueLimitAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListQueueMembersOutcome DeadlineClient::ListQueueMembers(const ListQueueMembersRequest& request) const {
@@ -2079,7 +2198,9 @@ ListQueueMembersOutcome DeadlineClient::ListQueueMembers(const ListQueueMembersR
     endpointResolutionOutcome.GetResult().AddPathSegments("/members");
   };
 
-  return ListQueueMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueueMembersOutcome(result.GetResultWithOwnership())
+                            : ListQueueMembersOutcome(std::move(result.GetError()));
 }
 
 ListQueuesOutcome DeadlineClient::ListQueues(const ListQueuesRequest& request) const {
@@ -2096,7 +2217,8 @@ ListQueuesOutcome DeadlineClient::ListQueues(const ListQueuesRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/queues");
   };
 
-  return ListQueuesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListQueuesOutcome(result.GetResultWithOwnership()) : ListQueuesOutcome(std::move(result.GetError()));
 }
 
 ListSessionActionsOutcome DeadlineClient::ListSessionActions(const ListSessionActionsRequest& request) const {
@@ -2127,7 +2249,9 @@ ListSessionActionsOutcome DeadlineClient::ListSessionActions(const ListSessionAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/session-actions");
   };
 
-  return ListSessionActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSessionActionsOutcome(result.GetResultWithOwnership())
+                            : ListSessionActionsOutcome(std::move(result.GetError()));
 }
 
 ListSessionsOutcome DeadlineClient::ListSessions(const ListSessionsRequest& request) const {
@@ -2158,7 +2282,8 @@ ListSessionsOutcome DeadlineClient::ListSessions(const ListSessionsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
   };
 
-  return ListSessionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
 }
 
 ListSessionsForWorkerOutcome DeadlineClient::ListSessionsForWorker(const ListSessionsForWorkerRequest& request) const {
@@ -2189,7 +2314,9 @@ ListSessionsForWorkerOutcome DeadlineClient::ListSessionsForWorker(const ListSes
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
   };
 
-  return ListSessionsForWorkerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSessionsForWorkerOutcome(result.GetResultWithOwnership())
+                            : ListSessionsForWorkerOutcome(std::move(result.GetError()));
 }
 
 ListStepConsumersOutcome DeadlineClient::ListStepConsumers(const ListStepConsumersRequest& request) const {
@@ -2227,7 +2354,9 @@ ListStepConsumersOutcome DeadlineClient::ListStepConsumers(const ListStepConsume
     endpointResolutionOutcome.GetResult().AddPathSegments("/consumers");
   };
 
-  return ListStepConsumersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStepConsumersOutcome(result.GetResultWithOwnership())
+                            : ListStepConsumersOutcome(std::move(result.GetError()));
 }
 
 ListStepDependenciesOutcome DeadlineClient::ListStepDependencies(const ListStepDependenciesRequest& request) const {
@@ -2265,7 +2394,9 @@ ListStepDependenciesOutcome DeadlineClient::ListStepDependencies(const ListStepD
     endpointResolutionOutcome.GetResult().AddPathSegments("/dependencies");
   };
 
-  return ListStepDependenciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStepDependenciesOutcome(result.GetResultWithOwnership())
+                            : ListStepDependenciesOutcome(std::move(result.GetError()));
 }
 
 ListStepsOutcome DeadlineClient::ListSteps(const ListStepsRequest& request) const {
@@ -2296,7 +2427,8 @@ ListStepsOutcome DeadlineClient::ListSteps(const ListStepsRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/steps");
   };
 
-  return ListStepsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStepsOutcome(result.GetResultWithOwnership()) : ListStepsOutcome(std::move(result.GetError()));
 }
 
 ListStorageProfilesOutcome DeadlineClient::ListStorageProfiles(const ListStorageProfilesRequest& request) const {
@@ -2313,7 +2445,9 @@ ListStorageProfilesOutcome DeadlineClient::ListStorageProfiles(const ListStorage
     endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles");
   };
 
-  return ListStorageProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStorageProfilesOutcome(result.GetResultWithOwnership())
+                            : ListStorageProfilesOutcome(std::move(result.GetError()));
 }
 
 ListStorageProfilesForQueueOutcome DeadlineClient::ListStorageProfilesForQueue(const ListStorageProfilesForQueueRequest& request) const {
@@ -2337,7 +2471,9 @@ ListStorageProfilesForQueueOutcome DeadlineClient::ListStorageProfilesForQueue(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/storage-profiles");
   };
 
-  return ListStorageProfilesForQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStorageProfilesForQueueOutcome(result.GetResultWithOwnership())
+                            : ListStorageProfilesForQueueOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome DeadlineClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -2353,7 +2489,9 @@ ListTagsForResourceOutcome DeadlineClient::ListTagsForResource(const ListTagsFor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTasksOutcome DeadlineClient::ListTasks(const ListTasksRequest& request) const {
@@ -2391,7 +2529,8 @@ ListTasksOutcome DeadlineClient::ListTasks(const ListTasksRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/tasks");
   };
 
-  return ListTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTasksOutcome(result.GetResultWithOwnership()) : ListTasksOutcome(std::move(result.GetError()));
 }
 
 ListWorkersOutcome DeadlineClient::ListWorkers(const ListWorkersRequest& request) const {
@@ -2415,7 +2554,8 @@ ListWorkersOutcome DeadlineClient::ListWorkers(const ListWorkersRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/workers");
   };
 
-  return ListWorkersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkersOutcome(result.GetResultWithOwnership()) : ListWorkersOutcome(std::move(result.GetError()));
 }
 
 PutMeteredProductOutcome DeadlineClient::PutMeteredProduct(const PutMeteredProductRequest& request) const {
@@ -2438,7 +2578,9 @@ PutMeteredProductOutcome DeadlineClient::PutMeteredProduct(const PutMeteredProdu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProductId());
   };
 
-  return PutMeteredProductOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutMeteredProductOutcome(result.GetResultWithOwnership())
+                            : PutMeteredProductOutcome(std::move(result.GetError()));
 }
 
 SearchJobsOutcome DeadlineClient::SearchJobs(const SearchJobsRequest& request) const {
@@ -2455,7 +2597,8 @@ SearchJobsOutcome DeadlineClient::SearchJobs(const SearchJobsRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/search/jobs");
   };
 
-  return SearchJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchJobsOutcome(result.GetResultWithOwnership()) : SearchJobsOutcome(std::move(result.GetError()));
 }
 
 SearchStepsOutcome DeadlineClient::SearchSteps(const SearchStepsRequest& request) const {
@@ -2472,7 +2615,8 @@ SearchStepsOutcome DeadlineClient::SearchSteps(const SearchStepsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/search/steps");
   };
 
-  return SearchStepsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchStepsOutcome(result.GetResultWithOwnership()) : SearchStepsOutcome(std::move(result.GetError()));
 }
 
 SearchTasksOutcome DeadlineClient::SearchTasks(const SearchTasksRequest& request) const {
@@ -2489,7 +2633,8 @@ SearchTasksOutcome DeadlineClient::SearchTasks(const SearchTasksRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/search/tasks");
   };
 
-  return SearchTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchTasksOutcome(result.GetResultWithOwnership()) : SearchTasksOutcome(std::move(result.GetError()));
 }
 
 SearchWorkersOutcome DeadlineClient::SearchWorkers(const SearchWorkersRequest& request) const {
@@ -2506,7 +2651,8 @@ SearchWorkersOutcome DeadlineClient::SearchWorkers(const SearchWorkersRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/search/workers");
   };
 
-  return SearchWorkersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchWorkersOutcome(result.GetResultWithOwnership()) : SearchWorkersOutcome(std::move(result.GetError()));
 }
 
 StartSessionsStatisticsAggregationOutcome DeadlineClient::StartSessionsStatisticsAggregation(
@@ -2524,7 +2670,9 @@ StartSessionsStatisticsAggregationOutcome DeadlineClient::StartSessionsStatistic
     endpointResolutionOutcome.GetResult().AddPathSegments("/sessions-statistics-aggregation");
   };
 
-  return StartSessionsStatisticsAggregationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSessionsStatisticsAggregationOutcome(result.GetResultWithOwnership())
+                            : StartSessionsStatisticsAggregationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome DeadlineClient::TagResource(const TagResourceRequest& request) const {
@@ -2540,7 +2688,8 @@ TagResourceOutcome DeadlineClient::TagResource(const TagResourceRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome DeadlineClient::UntagResource(const UntagResourceRequest& request) const {
@@ -2561,7 +2710,8 @@ UntagResourceOutcome DeadlineClient::UntagResource(const UntagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBudgetOutcome DeadlineClient::UpdateBudget(const UpdateBudgetRequest& request) const {
@@ -2584,7 +2734,8 @@ UpdateBudgetOutcome DeadlineClient::UpdateBudget(const UpdateBudgetRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBudgetId());
   };
 
-  return UpdateBudgetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateBudgetOutcome(result.GetResultWithOwnership()) : UpdateBudgetOutcome(std::move(result.GetError()));
 }
 
 UpdateFarmOutcome DeadlineClient::UpdateFarm(const UpdateFarmRequest& request) const {
@@ -2600,7 +2751,8 @@ UpdateFarmOutcome DeadlineClient::UpdateFarm(const UpdateFarmRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFarmId());
   };
 
-  return UpdateFarmOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFarmOutcome(result.GetResultWithOwnership()) : UpdateFarmOutcome(std::move(result.GetError()));
 }
 
 UpdateFleetOutcome DeadlineClient::UpdateFleet(const UpdateFleetRequest& request) const {
@@ -2623,7 +2775,8 @@ UpdateFleetOutcome DeadlineClient::UpdateFleet(const UpdateFleetRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
   };
 
-  return UpdateFleetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFleetOutcome(result.GetResultWithOwnership()) : UpdateFleetOutcome(std::move(result.GetError()));
 }
 
 UpdateJobOutcome DeadlineClient::UpdateJob(const UpdateJobRequest& request) const {
@@ -2653,7 +2806,8 @@ UpdateJobOutcome DeadlineClient::UpdateJob(const UpdateJobRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return UpdateJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateJobOutcome(result.GetResultWithOwnership()) : UpdateJobOutcome(std::move(result.GetError()));
 }
 
 UpdateLimitOutcome DeadlineClient::UpdateLimit(const UpdateLimitRequest& request) const {
@@ -2676,7 +2830,8 @@ UpdateLimitOutcome DeadlineClient::UpdateLimit(const UpdateLimitRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
   };
 
-  return UpdateLimitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateLimitOutcome(result.GetResultWithOwnership()) : UpdateLimitOutcome(std::move(result.GetError()));
 }
 
 UpdateMonitorOutcome DeadlineClient::UpdateMonitor(const UpdateMonitorRequest& request) const {
@@ -2692,7 +2847,8 @@ UpdateMonitorOutcome DeadlineClient::UpdateMonitor(const UpdateMonitorRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorId());
   };
 
-  return UpdateMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMonitorOutcome(result.GetResultWithOwnership()) : UpdateMonitorOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueOutcome DeadlineClient::UpdateQueue(const UpdateQueueRequest& request) const {
@@ -2715,7 +2871,8 @@ UpdateQueueOutcome DeadlineClient::UpdateQueue(const UpdateQueueRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
   };
 
-  return UpdateQueueOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateQueueOutcome(result.GetResultWithOwnership()) : UpdateQueueOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueEnvironmentOutcome DeadlineClient::UpdateQueueEnvironment(const UpdateQueueEnvironmentRequest& request) const {
@@ -2745,7 +2902,9 @@ UpdateQueueEnvironmentOutcome DeadlineClient::UpdateQueueEnvironment(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueEnvironmentId());
   };
 
-  return UpdateQueueEnvironmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateQueueEnvironmentOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueEnvironmentOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueFleetAssociationOutcome DeadlineClient::UpdateQueueFleetAssociation(const UpdateQueueFleetAssociationRequest& request) const {
@@ -2774,7 +2933,9 @@ UpdateQueueFleetAssociationOutcome DeadlineClient::UpdateQueueFleetAssociation(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFleetId());
   };
 
-  return UpdateQueueFleetAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateQueueFleetAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueFleetAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateQueueLimitAssociationOutcome DeadlineClient::UpdateQueueLimitAssociation(const UpdateQueueLimitAssociationRequest& request) const {
@@ -2803,7 +2964,9 @@ UpdateQueueLimitAssociationOutcome DeadlineClient::UpdateQueueLimitAssociation(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLimitId());
   };
 
-  return UpdateQueueLimitAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateQueueLimitAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateQueueLimitAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateSessionOutcome DeadlineClient::UpdateSession(const UpdateSessionRequest& request) const {
@@ -2840,7 +3003,8 @@ UpdateSessionOutcome DeadlineClient::UpdateSession(const UpdateSessionRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
   };
 
-  return UpdateSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSessionOutcome(result.GetResultWithOwnership()) : UpdateSessionOutcome(std::move(result.GetError()));
 }
 
 UpdateStepOutcome DeadlineClient::UpdateStep(const UpdateStepRequest& request) const {
@@ -2877,7 +3041,8 @@ UpdateStepOutcome DeadlineClient::UpdateStep(const UpdateStepRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStepId());
   };
 
-  return UpdateStepOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateStepOutcome(result.GetResultWithOwnership()) : UpdateStepOutcome(std::move(result.GetError()));
 }
 
 UpdateStorageProfileOutcome DeadlineClient::UpdateStorageProfile(const UpdateStorageProfileRequest& request) const {
@@ -2900,7 +3065,9 @@ UpdateStorageProfileOutcome DeadlineClient::UpdateStorageProfile(const UpdateSto
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStorageProfileId());
   };
 
-  return UpdateStorageProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateStorageProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateStorageProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateTaskOutcome DeadlineClient::UpdateTask(const UpdateTaskRequest& request) const {
@@ -2944,7 +3111,8 @@ UpdateTaskOutcome DeadlineClient::UpdateTask(const UpdateTaskRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
   };
 
-  return UpdateTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateTaskOutcome(result.GetResultWithOwnership()) : UpdateTaskOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkerOutcome DeadlineClient::UpdateWorker(const UpdateWorkerRequest& request) const {
@@ -2974,7 +3142,8 @@ UpdateWorkerOutcome DeadlineClient::UpdateWorker(const UpdateWorkerRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkerId());
   };
 
-  return UpdateWorkerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateWorkerOutcome(result.GetResultWithOwnership()) : UpdateWorkerOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkerScheduleOutcome DeadlineClient::UpdateWorkerSchedule(const UpdateWorkerScheduleRequest& request) const {
@@ -3005,5 +3174,7 @@ UpdateWorkerScheduleOutcome DeadlineClient::UpdateWorkerSchedule(const UpdateWor
     endpointResolutionOutcome.GetResult().AddPathSegments("/schedule");
   };
 
-  return UpdateWorkerScheduleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateWorkerScheduleOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkerScheduleOutcome(std::move(result.GetError()));
 }

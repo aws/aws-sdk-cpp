@@ -188,68 +188,97 @@ SupportClient::InvokeOperationOutcome SupportClient::InvokeServiceOperation(cons
 }
 
 AddAttachmentsToSetOutcome SupportClient::AddAttachmentsToSet(const AddAttachmentsToSetRequest& request) const {
-  return AddAttachmentsToSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddAttachmentsToSetOutcome(result.GetResultWithOwnership())
+                            : AddAttachmentsToSetOutcome(std::move(result.GetError()));
 }
 
 AddCommunicationToCaseOutcome SupportClient::AddCommunicationToCase(const AddCommunicationToCaseRequest& request) const {
-  return AddCommunicationToCaseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddCommunicationToCaseOutcome(result.GetResultWithOwnership())
+                            : AddCommunicationToCaseOutcome(std::move(result.GetError()));
 }
 
 CreateCaseOutcome SupportClient::CreateCase(const CreateCaseRequest& request) const {
-  return CreateCaseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCaseOutcome(result.GetResultWithOwnership()) : CreateCaseOutcome(std::move(result.GetError()));
 }
 
 DescribeAttachmentOutcome SupportClient::DescribeAttachment(const DescribeAttachmentRequest& request) const {
-  return DescribeAttachmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAttachmentOutcome(result.GetResultWithOwnership())
+                            : DescribeAttachmentOutcome(std::move(result.GetError()));
 }
 
 DescribeCasesOutcome SupportClient::DescribeCases(const DescribeCasesRequest& request) const {
-  return DescribeCasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCasesOutcome(result.GetResultWithOwnership()) : DescribeCasesOutcome(std::move(result.GetError()));
 }
 
 DescribeCommunicationsOutcome SupportClient::DescribeCommunications(const DescribeCommunicationsRequest& request) const {
-  return DescribeCommunicationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCommunicationsOutcome(result.GetResultWithOwnership())
+                            : DescribeCommunicationsOutcome(std::move(result.GetError()));
 }
 
 DescribeCreateCaseOptionsOutcome SupportClient::DescribeCreateCaseOptions(const DescribeCreateCaseOptionsRequest& request) const {
-  return DescribeCreateCaseOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCreateCaseOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeCreateCaseOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeServicesOutcome SupportClient::DescribeServices(const DescribeServicesRequest& request) const {
-  return DescribeServicesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServicesOutcome(result.GetResultWithOwnership())
+                            : DescribeServicesOutcome(std::move(result.GetError()));
 }
 
 DescribeSeverityLevelsOutcome SupportClient::DescribeSeverityLevels(const DescribeSeverityLevelsRequest& request) const {
-  return DescribeSeverityLevelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSeverityLevelsOutcome(result.GetResultWithOwnership())
+                            : DescribeSeverityLevelsOutcome(std::move(result.GetError()));
 }
 
 DescribeSupportedLanguagesOutcome SupportClient::DescribeSupportedLanguages(const DescribeSupportedLanguagesRequest& request) const {
-  return DescribeSupportedLanguagesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSupportedLanguagesOutcome(result.GetResultWithOwnership())
+                            : DescribeSupportedLanguagesOutcome(std::move(result.GetError()));
 }
 
 DescribeTrustedAdvisorCheckRefreshStatusesOutcome SupportClient::DescribeTrustedAdvisorCheckRefreshStatuses(
     const DescribeTrustedAdvisorCheckRefreshStatusesRequest& request) const {
-  return DescribeTrustedAdvisorCheckRefreshStatusesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrustedAdvisorCheckRefreshStatusesOutcome(result.GetResultWithOwnership())
+                            : DescribeTrustedAdvisorCheckRefreshStatusesOutcome(std::move(result.GetError()));
 }
 
 DescribeTrustedAdvisorCheckResultOutcome SupportClient::DescribeTrustedAdvisorCheckResult(
     const DescribeTrustedAdvisorCheckResultRequest& request) const {
-  return DescribeTrustedAdvisorCheckResultOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrustedAdvisorCheckResultOutcome(result.GetResultWithOwnership())
+                            : DescribeTrustedAdvisorCheckResultOutcome(std::move(result.GetError()));
 }
 
 DescribeTrustedAdvisorCheckSummariesOutcome SupportClient::DescribeTrustedAdvisorCheckSummaries(
     const DescribeTrustedAdvisorCheckSummariesRequest& request) const {
-  return DescribeTrustedAdvisorCheckSummariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrustedAdvisorCheckSummariesOutcome(result.GetResultWithOwnership())
+                            : DescribeTrustedAdvisorCheckSummariesOutcome(std::move(result.GetError()));
 }
 
 DescribeTrustedAdvisorChecksOutcome SupportClient::DescribeTrustedAdvisorChecks(const DescribeTrustedAdvisorChecksRequest& request) const {
-  return DescribeTrustedAdvisorChecksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTrustedAdvisorChecksOutcome(result.GetResultWithOwnership())
+                            : DescribeTrustedAdvisorChecksOutcome(std::move(result.GetError()));
 }
 
 RefreshTrustedAdvisorCheckOutcome SupportClient::RefreshTrustedAdvisorCheck(const RefreshTrustedAdvisorCheckRequest& request) const {
-  return RefreshTrustedAdvisorCheckOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RefreshTrustedAdvisorCheckOutcome(result.GetResultWithOwnership())
+                            : RefreshTrustedAdvisorCheckOutcome(std::move(result.GetError()));
 }
 
 ResolveCaseOutcome SupportClient::ResolveCase(const ResolveCaseRequest& request) const {
-  return ResolveCaseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResolveCaseOutcome(result.GetResultWithOwnership()) : ResolveCaseOutcome(std::move(result.GetError()));
 }

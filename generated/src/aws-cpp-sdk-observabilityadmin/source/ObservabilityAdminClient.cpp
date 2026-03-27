@@ -226,7 +226,9 @@ CreateCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::CreateC
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateCentralizationRuleForOrganization");
   };
 
-  return CreateCentralizationRuleForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCentralizationRuleForOrganizationOutcome(result.GetResultWithOwnership())
+                            : CreateCentralizationRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
 CreateS3TableIntegrationOutcome ObservabilityAdminClient::CreateS3TableIntegration(const CreateS3TableIntegrationRequest& request) const {
@@ -235,7 +237,9 @@ CreateS3TableIntegrationOutcome ObservabilityAdminClient::CreateS3TableIntegrati
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateS3TableIntegration");
   };
 
-  return CreateS3TableIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateS3TableIntegrationOutcome(result.GetResultWithOwnership())
+                            : CreateS3TableIntegrationOutcome(std::move(result.GetError()));
 }
 
 CreateTelemetryPipelineOutcome ObservabilityAdminClient::CreateTelemetryPipeline(const CreateTelemetryPipelineRequest& request) const {
@@ -244,7 +248,9 @@ CreateTelemetryPipelineOutcome ObservabilityAdminClient::CreateTelemetryPipeline
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateTelemetryPipeline");
   };
 
-  return CreateTelemetryPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTelemetryPipelineOutcome(result.GetResultWithOwnership())
+                            : CreateTelemetryPipelineOutcome(std::move(result.GetError()));
 }
 
 CreateTelemetryRuleOutcome ObservabilityAdminClient::CreateTelemetryRule(const CreateTelemetryRuleRequest& request) const {
@@ -253,7 +259,9 @@ CreateTelemetryRuleOutcome ObservabilityAdminClient::CreateTelemetryRule(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateTelemetryRule");
   };
 
-  return CreateTelemetryRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTelemetryRuleOutcome(result.GetResultWithOwnership())
+                            : CreateTelemetryRuleOutcome(std::move(result.GetError()));
 }
 
 CreateTelemetryRuleForOrganizationOutcome ObservabilityAdminClient::CreateTelemetryRuleForOrganization(
@@ -263,7 +271,9 @@ CreateTelemetryRuleForOrganizationOutcome ObservabilityAdminClient::CreateTeleme
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateTelemetryRuleForOrganization");
   };
 
-  return CreateTelemetryRuleForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTelemetryRuleForOrganizationOutcome(result.GetResultWithOwnership())
+                            : CreateTelemetryRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
 DeleteCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::DeleteCentralizationRuleForOrganization(
@@ -273,7 +283,9 @@ DeleteCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::DeleteC
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteCentralizationRuleForOrganization");
   };
 
-  return DeleteCentralizationRuleForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCentralizationRuleForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DeleteCentralizationRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
 DeleteS3TableIntegrationOutcome ObservabilityAdminClient::DeleteS3TableIntegration(const DeleteS3TableIntegrationRequest& request) const {
@@ -282,7 +294,9 @@ DeleteS3TableIntegrationOutcome ObservabilityAdminClient::DeleteS3TableIntegrati
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteS3TableIntegration");
   };
 
-  return DeleteS3TableIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteS3TableIntegrationOutcome(result.GetResultWithOwnership())
+                            : DeleteS3TableIntegrationOutcome(std::move(result.GetError()));
 }
 
 DeleteTelemetryPipelineOutcome ObservabilityAdminClient::DeleteTelemetryPipeline(const DeleteTelemetryPipelineRequest& request) const {
@@ -291,7 +305,9 @@ DeleteTelemetryPipelineOutcome ObservabilityAdminClient::DeleteTelemetryPipeline
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteTelemetryPipeline");
   };
 
-  return DeleteTelemetryPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTelemetryPipelineOutcome(result.GetResultWithOwnership())
+                            : DeleteTelemetryPipelineOutcome(std::move(result.GetError()));
 }
 
 DeleteTelemetryRuleOutcome ObservabilityAdminClient::DeleteTelemetryRule(const DeleteTelemetryRuleRequest& request) const {
@@ -300,7 +316,9 @@ DeleteTelemetryRuleOutcome ObservabilityAdminClient::DeleteTelemetryRule(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteTelemetryRule");
   };
 
-  return DeleteTelemetryRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTelemetryRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteTelemetryRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteTelemetryRuleForOrganizationOutcome ObservabilityAdminClient::DeleteTelemetryRuleForOrganization(
@@ -310,7 +328,9 @@ DeleteTelemetryRuleForOrganizationOutcome ObservabilityAdminClient::DeleteTeleme
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteTelemetryRuleForOrganization");
   };
 
-  return DeleteTelemetryRuleForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTelemetryRuleForOrganizationOutcome(result.GetResultWithOwnership())
+                            : DeleteTelemetryRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
 GetCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::GetCentralizationRuleForOrganization(
@@ -320,7 +340,9 @@ GetCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::GetCentral
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetCentralizationRuleForOrganization");
   };
 
-  return GetCentralizationRuleForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCentralizationRuleForOrganizationOutcome(result.GetResultWithOwnership())
+                            : GetCentralizationRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
 GetS3TableIntegrationOutcome ObservabilityAdminClient::GetS3TableIntegration(const GetS3TableIntegrationRequest& request) const {
@@ -329,7 +351,9 @@ GetS3TableIntegrationOutcome ObservabilityAdminClient::GetS3TableIntegration(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetS3TableIntegration");
   };
 
-  return GetS3TableIntegrationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetS3TableIntegrationOutcome(result.GetResultWithOwnership())
+                            : GetS3TableIntegrationOutcome(std::move(result.GetError()));
 }
 
 GetTelemetryEnrichmentStatusOutcome ObservabilityAdminClient::GetTelemetryEnrichmentStatus(
@@ -339,7 +363,9 @@ GetTelemetryEnrichmentStatusOutcome ObservabilityAdminClient::GetTelemetryEnrich
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTelemetryEnrichmentStatus");
   };
 
-  return GetTelemetryEnrichmentStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTelemetryEnrichmentStatusOutcome(result.GetResultWithOwnership())
+                            : GetTelemetryEnrichmentStatusOutcome(std::move(result.GetError()));
 }
 
 GetTelemetryEvaluationStatusOutcome ObservabilityAdminClient::GetTelemetryEvaluationStatus(
@@ -349,7 +375,9 @@ GetTelemetryEvaluationStatusOutcome ObservabilityAdminClient::GetTelemetryEvalua
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTelemetryEvaluationStatus");
   };
 
-  return GetTelemetryEvaluationStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTelemetryEvaluationStatusOutcome(result.GetResultWithOwnership())
+                            : GetTelemetryEvaluationStatusOutcome(std::move(result.GetError()));
 }
 
 GetTelemetryEvaluationStatusForOrganizationOutcome ObservabilityAdminClient::GetTelemetryEvaluationStatusForOrganization(
@@ -359,7 +387,9 @@ GetTelemetryEvaluationStatusForOrganizationOutcome ObservabilityAdminClient::Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTelemetryEvaluationStatusForOrganization");
   };
 
-  return GetTelemetryEvaluationStatusForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTelemetryEvaluationStatusForOrganizationOutcome(result.GetResultWithOwnership())
+                            : GetTelemetryEvaluationStatusForOrganizationOutcome(std::move(result.GetError()));
 }
 
 GetTelemetryPipelineOutcome ObservabilityAdminClient::GetTelemetryPipeline(const GetTelemetryPipelineRequest& request) const {
@@ -368,7 +398,9 @@ GetTelemetryPipelineOutcome ObservabilityAdminClient::GetTelemetryPipeline(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTelemetryPipeline");
   };
 
-  return GetTelemetryPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTelemetryPipelineOutcome(result.GetResultWithOwnership())
+                            : GetTelemetryPipelineOutcome(std::move(result.GetError()));
 }
 
 GetTelemetryRuleOutcome ObservabilityAdminClient::GetTelemetryRule(const GetTelemetryRuleRequest& request) const {
@@ -377,7 +409,9 @@ GetTelemetryRuleOutcome ObservabilityAdminClient::GetTelemetryRule(const GetTele
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTelemetryRule");
   };
 
-  return GetTelemetryRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTelemetryRuleOutcome(result.GetResultWithOwnership())
+                            : GetTelemetryRuleOutcome(std::move(result.GetError()));
 }
 
 GetTelemetryRuleForOrganizationOutcome ObservabilityAdminClient::GetTelemetryRuleForOrganization(
@@ -387,7 +421,9 @@ GetTelemetryRuleForOrganizationOutcome ObservabilityAdminClient::GetTelemetryRul
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTelemetryRuleForOrganization");
   };
 
-  return GetTelemetryRuleForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTelemetryRuleForOrganizationOutcome(result.GetResultWithOwnership())
+                            : GetTelemetryRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
 ListCentralizationRulesForOrganizationOutcome ObservabilityAdminClient::ListCentralizationRulesForOrganization(
@@ -397,7 +433,9 @@ ListCentralizationRulesForOrganizationOutcome ObservabilityAdminClient::ListCent
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListCentralizationRulesForOrganization");
   };
 
-  return ListCentralizationRulesForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCentralizationRulesForOrganizationOutcome(result.GetResultWithOwnership())
+                            : ListCentralizationRulesForOrganizationOutcome(std::move(result.GetError()));
 }
 
 ListResourceTelemetryOutcome ObservabilityAdminClient::ListResourceTelemetry(const ListResourceTelemetryRequest& request) const {
@@ -406,7 +444,9 @@ ListResourceTelemetryOutcome ObservabilityAdminClient::ListResourceTelemetry(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListResourceTelemetry");
   };
 
-  return ListResourceTelemetryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceTelemetryOutcome(result.GetResultWithOwnership())
+                            : ListResourceTelemetryOutcome(std::move(result.GetError()));
 }
 
 ListResourceTelemetryForOrganizationOutcome ObservabilityAdminClient::ListResourceTelemetryForOrganization(
@@ -416,7 +456,9 @@ ListResourceTelemetryForOrganizationOutcome ObservabilityAdminClient::ListResour
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListResourceTelemetryForOrganization");
   };
 
-  return ListResourceTelemetryForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceTelemetryForOrganizationOutcome(result.GetResultWithOwnership())
+                            : ListResourceTelemetryForOrganizationOutcome(std::move(result.GetError()));
 }
 
 ListS3TableIntegrationsOutcome ObservabilityAdminClient::ListS3TableIntegrations(const ListS3TableIntegrationsRequest& request) const {
@@ -425,7 +467,9 @@ ListS3TableIntegrationsOutcome ObservabilityAdminClient::ListS3TableIntegrations
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListS3TableIntegrations");
   };
 
-  return ListS3TableIntegrationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListS3TableIntegrationsOutcome(result.GetResultWithOwnership())
+                            : ListS3TableIntegrationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ObservabilityAdminClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -434,7 +478,9 @@ ListTagsForResourceOutcome ObservabilityAdminClient::ListTagsForResource(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTagsForResource");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTelemetryPipelinesOutcome ObservabilityAdminClient::ListTelemetryPipelines(const ListTelemetryPipelinesRequest& request) const {
@@ -443,7 +489,9 @@ ListTelemetryPipelinesOutcome ObservabilityAdminClient::ListTelemetryPipelines(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTelemetryPipelines");
   };
 
-  return ListTelemetryPipelinesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTelemetryPipelinesOutcome(result.GetResultWithOwnership())
+                            : ListTelemetryPipelinesOutcome(std::move(result.GetError()));
 }
 
 ListTelemetryRulesOutcome ObservabilityAdminClient::ListTelemetryRules(const ListTelemetryRulesRequest& request) const {
@@ -452,7 +500,9 @@ ListTelemetryRulesOutcome ObservabilityAdminClient::ListTelemetryRules(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTelemetryRules");
   };
 
-  return ListTelemetryRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTelemetryRulesOutcome(result.GetResultWithOwnership())
+                            : ListTelemetryRulesOutcome(std::move(result.GetError()));
 }
 
 ListTelemetryRulesForOrganizationOutcome ObservabilityAdminClient::ListTelemetryRulesForOrganization(
@@ -462,7 +512,9 @@ ListTelemetryRulesForOrganizationOutcome ObservabilityAdminClient::ListTelemetry
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTelemetryRulesForOrganization");
   };
 
-  return ListTelemetryRulesForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTelemetryRulesForOrganizationOutcome(result.GetResultWithOwnership())
+                            : ListTelemetryRulesForOrganizationOutcome(std::move(result.GetError()));
 }
 
 StartTelemetryEnrichmentOutcome ObservabilityAdminClient::StartTelemetryEnrichment(const StartTelemetryEnrichmentRequest& request) const {
@@ -471,7 +523,9 @@ StartTelemetryEnrichmentOutcome ObservabilityAdminClient::StartTelemetryEnrichme
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartTelemetryEnrichment");
   };
 
-  return StartTelemetryEnrichmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTelemetryEnrichmentOutcome(result.GetResultWithOwnership())
+                            : StartTelemetryEnrichmentOutcome(std::move(result.GetError()));
 }
 
 StartTelemetryEvaluationOutcome ObservabilityAdminClient::StartTelemetryEvaluation(const StartTelemetryEvaluationRequest& request) const {
@@ -480,7 +534,9 @@ StartTelemetryEvaluationOutcome ObservabilityAdminClient::StartTelemetryEvaluati
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartTelemetryEvaluation");
   };
 
-  return StartTelemetryEvaluationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTelemetryEvaluationOutcome(result.GetResultWithOwnership())
+                            : StartTelemetryEvaluationOutcome(std::move(result.GetError()));
 }
 
 StartTelemetryEvaluationForOrganizationOutcome ObservabilityAdminClient::StartTelemetryEvaluationForOrganization(
@@ -490,7 +546,9 @@ StartTelemetryEvaluationForOrganizationOutcome ObservabilityAdminClient::StartTe
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartTelemetryEvaluationForOrganization");
   };
 
-  return StartTelemetryEvaluationForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTelemetryEvaluationForOrganizationOutcome(result.GetResultWithOwnership())
+                            : StartTelemetryEvaluationForOrganizationOutcome(std::move(result.GetError()));
 }
 
 StopTelemetryEnrichmentOutcome ObservabilityAdminClient::StopTelemetryEnrichment(const StopTelemetryEnrichmentRequest& request) const {
@@ -499,7 +557,9 @@ StopTelemetryEnrichmentOutcome ObservabilityAdminClient::StopTelemetryEnrichment
     endpointResolutionOutcome.GetResult().AddPathSegments("/StopTelemetryEnrichment");
   };
 
-  return StopTelemetryEnrichmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopTelemetryEnrichmentOutcome(result.GetResultWithOwnership())
+                            : StopTelemetryEnrichmentOutcome(std::move(result.GetError()));
 }
 
 StopTelemetryEvaluationOutcome ObservabilityAdminClient::StopTelemetryEvaluation(const StopTelemetryEvaluationRequest& request) const {
@@ -508,7 +568,9 @@ StopTelemetryEvaluationOutcome ObservabilityAdminClient::StopTelemetryEvaluation
     endpointResolutionOutcome.GetResult().AddPathSegments("/StopTelemetryEvaluation");
   };
 
-  return StopTelemetryEvaluationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopTelemetryEvaluationOutcome(result.GetResultWithOwnership())
+                            : StopTelemetryEvaluationOutcome(std::move(result.GetError()));
 }
 
 StopTelemetryEvaluationForOrganizationOutcome ObservabilityAdminClient::StopTelemetryEvaluationForOrganization(
@@ -518,7 +580,9 @@ StopTelemetryEvaluationForOrganizationOutcome ObservabilityAdminClient::StopTele
     endpointResolutionOutcome.GetResult().AddPathSegments("/StopTelemetryEvaluationForOrganization");
   };
 
-  return StopTelemetryEvaluationForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopTelemetryEvaluationForOrganizationOutcome(result.GetResultWithOwnership())
+                            : StopTelemetryEvaluationForOrganizationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ObservabilityAdminClient::TagResource(const TagResourceRequest& request) const {
@@ -527,7 +591,8 @@ TagResourceOutcome ObservabilityAdminClient::TagResource(const TagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/TagResource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestTelemetryPipelineOutcome ObservabilityAdminClient::TestTelemetryPipeline(const TestTelemetryPipelineRequest& request) const {
@@ -536,7 +601,9 @@ TestTelemetryPipelineOutcome ObservabilityAdminClient::TestTelemetryPipeline(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/TestTelemetryPipeline");
   };
 
-  return TestTelemetryPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestTelemetryPipelineOutcome(result.GetResultWithOwnership())
+                            : TestTelemetryPipelineOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ObservabilityAdminClient::UntagResource(const UntagResourceRequest& request) const {
@@ -545,7 +612,8 @@ UntagResourceOutcome ObservabilityAdminClient::UntagResource(const UntagResource
     endpointResolutionOutcome.GetResult().AddPathSegments("/UntagResource");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::UpdateCentralizationRuleForOrganization(
@@ -555,7 +623,9 @@ UpdateCentralizationRuleForOrganizationOutcome ObservabilityAdminClient::UpdateC
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateCentralizationRuleForOrganization");
   };
 
-  return UpdateCentralizationRuleForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCentralizationRuleForOrganizationOutcome(result.GetResultWithOwnership())
+                            : UpdateCentralizationRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
 UpdateTelemetryPipelineOutcome ObservabilityAdminClient::UpdateTelemetryPipeline(const UpdateTelemetryPipelineRequest& request) const {
@@ -564,7 +634,9 @@ UpdateTelemetryPipelineOutcome ObservabilityAdminClient::UpdateTelemetryPipeline
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateTelemetryPipeline");
   };
 
-  return UpdateTelemetryPipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTelemetryPipelineOutcome(result.GetResultWithOwnership())
+                            : UpdateTelemetryPipelineOutcome(std::move(result.GetError()));
 }
 
 UpdateTelemetryRuleOutcome ObservabilityAdminClient::UpdateTelemetryRule(const UpdateTelemetryRuleRequest& request) const {
@@ -573,7 +645,9 @@ UpdateTelemetryRuleOutcome ObservabilityAdminClient::UpdateTelemetryRule(const U
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateTelemetryRule");
   };
 
-  return UpdateTelemetryRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTelemetryRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateTelemetryRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateTelemetryRuleForOrganizationOutcome ObservabilityAdminClient::UpdateTelemetryRuleForOrganization(
@@ -583,7 +657,9 @@ UpdateTelemetryRuleForOrganizationOutcome ObservabilityAdminClient::UpdateTeleme
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateTelemetryRuleForOrganization");
   };
 
-  return UpdateTelemetryRuleForOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTelemetryRuleForOrganizationOutcome(result.GetResultWithOwnership())
+                            : UpdateTelemetryRuleForOrganizationOutcome(std::move(result.GetError()));
 }
 
 ValidateTelemetryPipelineConfigurationOutcome ObservabilityAdminClient::ValidateTelemetryPipelineConfiguration(
@@ -593,5 +669,7 @@ ValidateTelemetryPipelineConfigurationOutcome ObservabilityAdminClient::Validate
     endpointResolutionOutcome.GetResult().AddPathSegments("/ValidateTelemetryPipelineConfiguration");
   };
 
-  return ValidateTelemetryPipelineConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidateTelemetryPipelineConfigurationOutcome(result.GetResultWithOwnership())
+                            : ValidateTelemetryPipelineConfigurationOutcome(std::move(result.GetError()));
 }

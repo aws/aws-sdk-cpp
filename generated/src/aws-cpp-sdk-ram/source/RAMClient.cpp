@@ -213,7 +213,9 @@ AcceptResourceShareInvitationOutcome RAMClient::AcceptResourceShareInvitation(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/acceptresourceshareinvitation");
   };
 
-  return AcceptResourceShareInvitationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptResourceShareInvitationOutcome(result.GetResultWithOwnership())
+                            : AcceptResourceShareInvitationOutcome(std::move(result.GetError()));
 }
 
 AssociateResourceShareOutcome RAMClient::AssociateResourceShare(const AssociateResourceShareRequest& request) const {
@@ -222,7 +224,9 @@ AssociateResourceShareOutcome RAMClient::AssociateResourceShare(const AssociateR
     endpointResolutionOutcome.GetResult().AddPathSegments("/associateresourceshare");
   };
 
-  return AssociateResourceShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateResourceShareOutcome(result.GetResultWithOwnership())
+                            : AssociateResourceShareOutcome(std::move(result.GetError()));
 }
 
 AssociateResourceSharePermissionOutcome RAMClient::AssociateResourceSharePermission(
@@ -232,7 +236,9 @@ AssociateResourceSharePermissionOutcome RAMClient::AssociateResourceSharePermiss
     endpointResolutionOutcome.GetResult().AddPathSegments("/associateresourcesharepermission");
   };
 
-  return AssociateResourceSharePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateResourceSharePermissionOutcome(result.GetResultWithOwnership())
+                            : AssociateResourceSharePermissionOutcome(std::move(result.GetError()));
 }
 
 CreatePermissionOutcome RAMClient::CreatePermission(const CreatePermissionRequest& request) const {
@@ -241,7 +247,9 @@ CreatePermissionOutcome RAMClient::CreatePermission(const CreatePermissionReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/createpermission");
   };
 
-  return CreatePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePermissionOutcome(result.GetResultWithOwnership())
+                            : CreatePermissionOutcome(std::move(result.GetError()));
 }
 
 CreatePermissionVersionOutcome RAMClient::CreatePermissionVersion(const CreatePermissionVersionRequest& request) const {
@@ -250,7 +258,9 @@ CreatePermissionVersionOutcome RAMClient::CreatePermissionVersion(const CreatePe
     endpointResolutionOutcome.GetResult().AddPathSegments("/createpermissionversion");
   };
 
-  return CreatePermissionVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePermissionVersionOutcome(result.GetResultWithOwnership())
+                            : CreatePermissionVersionOutcome(std::move(result.GetError()));
 }
 
 CreateResourceShareOutcome RAMClient::CreateResourceShare(const CreateResourceShareRequest& request) const {
@@ -259,7 +269,9 @@ CreateResourceShareOutcome RAMClient::CreateResourceShare(const CreateResourceSh
     endpointResolutionOutcome.GetResult().AddPathSegments("/createresourceshare");
   };
 
-  return CreateResourceShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceShareOutcome(result.GetResultWithOwnership())
+                            : CreateResourceShareOutcome(std::move(result.GetError()));
 }
 
 DeletePermissionOutcome RAMClient::DeletePermission(const DeletePermissionRequest& request) const {
@@ -274,7 +286,9 @@ DeletePermissionOutcome RAMClient::DeletePermission(const DeletePermissionReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/deletepermission");
   };
 
-  return DeletePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePermissionOutcome(result.GetResultWithOwnership())
+                            : DeletePermissionOutcome(std::move(result.GetError()));
 }
 
 DeletePermissionVersionOutcome RAMClient::DeletePermissionVersion(const DeletePermissionVersionRequest& request) const {
@@ -294,7 +308,9 @@ DeletePermissionVersionOutcome RAMClient::DeletePermissionVersion(const DeletePe
     endpointResolutionOutcome.GetResult().AddPathSegments("/deletepermissionversion");
   };
 
-  return DeletePermissionVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePermissionVersionOutcome(result.GetResultWithOwnership())
+                            : DeletePermissionVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceShareOutcome RAMClient::DeleteResourceShare(const DeleteResourceShareRequest& request) const {
@@ -309,7 +325,9 @@ DeleteResourceShareOutcome RAMClient::DeleteResourceShare(const DeleteResourceSh
     endpointResolutionOutcome.GetResult().AddPathSegments("/deleteresourceshare");
   };
 
-  return DeleteResourceShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourceShareOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceShareOutcome(std::move(result.GetError()));
 }
 
 DisassociateResourceShareOutcome RAMClient::DisassociateResourceShare(const DisassociateResourceShareRequest& request) const {
@@ -318,7 +336,9 @@ DisassociateResourceShareOutcome RAMClient::DisassociateResourceShare(const Disa
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociateresourceshare");
   };
 
-  return DisassociateResourceShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateResourceShareOutcome(result.GetResultWithOwnership())
+                            : DisassociateResourceShareOutcome(std::move(result.GetError()));
 }
 
 DisassociateResourceSharePermissionOutcome RAMClient::DisassociateResourceSharePermission(
@@ -328,7 +348,9 @@ DisassociateResourceSharePermissionOutcome RAMClient::DisassociateResourceShareP
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociateresourcesharepermission");
   };
 
-  return DisassociateResourceSharePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateResourceSharePermissionOutcome(result.GetResultWithOwnership())
+                            : DisassociateResourceSharePermissionOutcome(std::move(result.GetError()));
 }
 
 EnableSharingWithAwsOrganizationOutcome RAMClient::EnableSharingWithAwsOrganization(
@@ -338,7 +360,9 @@ EnableSharingWithAwsOrganizationOutcome RAMClient::EnableSharingWithAwsOrganizat
     endpointResolutionOutcome.GetResult().AddPathSegments("/enablesharingwithawsorganization");
   };
 
-  return EnableSharingWithAwsOrganizationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableSharingWithAwsOrganizationOutcome(result.GetResultWithOwnership())
+                            : EnableSharingWithAwsOrganizationOutcome(std::move(result.GetError()));
 }
 
 GetPermissionOutcome RAMClient::GetPermission(const GetPermissionRequest& request) const {
@@ -347,7 +371,8 @@ GetPermissionOutcome RAMClient::GetPermission(const GetPermissionRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/getpermission");
   };
 
-  return GetPermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPermissionOutcome(result.GetResultWithOwnership()) : GetPermissionOutcome(std::move(result.GetError()));
 }
 
 GetResourcePoliciesOutcome RAMClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const {
@@ -356,7 +381,9 @@ GetResourcePoliciesOutcome RAMClient::GetResourcePolicies(const GetResourcePolic
     endpointResolutionOutcome.GetResult().AddPathSegments("/getresourcepolicies");
   };
 
-  return GetResourcePoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePoliciesOutcome(result.GetResultWithOwnership())
+                            : GetResourcePoliciesOutcome(std::move(result.GetError()));
 }
 
 GetResourceShareAssociationsOutcome RAMClient::GetResourceShareAssociations(const GetResourceShareAssociationsRequest& request) const {
@@ -365,7 +392,9 @@ GetResourceShareAssociationsOutcome RAMClient::GetResourceShareAssociations(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/getresourceshareassociations");
   };
 
-  return GetResourceShareAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceShareAssociationsOutcome(result.GetResultWithOwnership())
+                            : GetResourceShareAssociationsOutcome(std::move(result.GetError()));
 }
 
 GetResourceShareInvitationsOutcome RAMClient::GetResourceShareInvitations(const GetResourceShareInvitationsRequest& request) const {
@@ -374,7 +403,9 @@ GetResourceShareInvitationsOutcome RAMClient::GetResourceShareInvitations(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/getresourceshareinvitations");
   };
 
-  return GetResourceShareInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceShareInvitationsOutcome(result.GetResultWithOwnership())
+                            : GetResourceShareInvitationsOutcome(std::move(result.GetError()));
 }
 
 GetResourceSharesOutcome RAMClient::GetResourceShares(const GetResourceSharesRequest& request) const {
@@ -383,7 +414,9 @@ GetResourceSharesOutcome RAMClient::GetResourceShares(const GetResourceSharesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/getresourceshares");
   };
 
-  return GetResourceSharesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceSharesOutcome(result.GetResultWithOwnership())
+                            : GetResourceSharesOutcome(std::move(result.GetError()));
 }
 
 ListPendingInvitationResourcesOutcome RAMClient::ListPendingInvitationResources(
@@ -393,7 +426,9 @@ ListPendingInvitationResourcesOutcome RAMClient::ListPendingInvitationResources(
     endpointResolutionOutcome.GetResult().AddPathSegments("/listpendinginvitationresources");
   };
 
-  return ListPendingInvitationResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPendingInvitationResourcesOutcome(result.GetResultWithOwnership())
+                            : ListPendingInvitationResourcesOutcome(std::move(result.GetError()));
 }
 
 ListPermissionAssociationsOutcome RAMClient::ListPermissionAssociations(const ListPermissionAssociationsRequest& request) const {
@@ -402,7 +437,9 @@ ListPermissionAssociationsOutcome RAMClient::ListPermissionAssociations(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/listpermissionassociations");
   };
 
-  return ListPermissionAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPermissionAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListPermissionAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListPermissionVersionsOutcome RAMClient::ListPermissionVersions(const ListPermissionVersionsRequest& request) const {
@@ -411,7 +448,9 @@ ListPermissionVersionsOutcome RAMClient::ListPermissionVersions(const ListPermis
     endpointResolutionOutcome.GetResult().AddPathSegments("/listpermissionversions");
   };
 
-  return ListPermissionVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPermissionVersionsOutcome(result.GetResultWithOwnership())
+                            : ListPermissionVersionsOutcome(std::move(result.GetError()));
 }
 
 ListPermissionsOutcome RAMClient::ListPermissions(const ListPermissionsRequest& request) const {
@@ -420,7 +459,9 @@ ListPermissionsOutcome RAMClient::ListPermissions(const ListPermissionsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/listpermissions");
   };
 
-  return ListPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPermissionsOutcome(result.GetResultWithOwnership())
+                            : ListPermissionsOutcome(std::move(result.GetError()));
 }
 
 ListPrincipalsOutcome RAMClient::ListPrincipals(const ListPrincipalsRequest& request) const {
@@ -429,7 +470,8 @@ ListPrincipalsOutcome RAMClient::ListPrincipals(const ListPrincipalsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/listprincipals");
   };
 
-  return ListPrincipalsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPrincipalsOutcome(result.GetResultWithOwnership()) : ListPrincipalsOutcome(std::move(result.GetError()));
 }
 
 ListReplacePermissionAssociationsWorkOutcome RAMClient::ListReplacePermissionAssociationsWork(
@@ -439,7 +481,9 @@ ListReplacePermissionAssociationsWorkOutcome RAMClient::ListReplacePermissionAss
     endpointResolutionOutcome.GetResult().AddPathSegments("/listreplacepermissionassociationswork");
   };
 
-  return ListReplacePermissionAssociationsWorkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReplacePermissionAssociationsWorkOutcome(result.GetResultWithOwnership())
+                            : ListReplacePermissionAssociationsWorkOutcome(std::move(result.GetError()));
 }
 
 ListResourceSharePermissionsOutcome RAMClient::ListResourceSharePermissions(const ListResourceSharePermissionsRequest& request) const {
@@ -448,7 +492,9 @@ ListResourceSharePermissionsOutcome RAMClient::ListResourceSharePermissions(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/listresourcesharepermissions");
   };
 
-  return ListResourceSharePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceSharePermissionsOutcome(result.GetResultWithOwnership())
+                            : ListResourceSharePermissionsOutcome(std::move(result.GetError()));
 }
 
 ListResourceTypesOutcome RAMClient::ListResourceTypes(const ListResourceTypesRequest& request) const {
@@ -457,7 +503,9 @@ ListResourceTypesOutcome RAMClient::ListResourceTypes(const ListResourceTypesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/listresourcetypes");
   };
 
-  return ListResourceTypesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceTypesOutcome(result.GetResultWithOwnership())
+                            : ListResourceTypesOutcome(std::move(result.GetError()));
 }
 
 ListResourcesOutcome RAMClient::ListResources(const ListResourcesRequest& request) const {
@@ -466,7 +514,8 @@ ListResourcesOutcome RAMClient::ListResources(const ListResourcesRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/listresources");
   };
 
-  return ListResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcesOutcome(result.GetResultWithOwnership()) : ListResourcesOutcome(std::move(result.GetError()));
 }
 
 ListSourceAssociationsOutcome RAMClient::ListSourceAssociations(const ListSourceAssociationsRequest& request) const {
@@ -475,7 +524,9 @@ ListSourceAssociationsOutcome RAMClient::ListSourceAssociations(const ListSource
     endpointResolutionOutcome.GetResult().AddPathSegments("/listsourceassociations");
   };
 
-  return ListSourceAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSourceAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListSourceAssociationsOutcome(std::move(result.GetError()));
 }
 
 PromotePermissionCreatedFromPolicyOutcome RAMClient::PromotePermissionCreatedFromPolicy(
@@ -485,7 +536,9 @@ PromotePermissionCreatedFromPolicyOutcome RAMClient::PromotePermissionCreatedFro
     endpointResolutionOutcome.GetResult().AddPathSegments("/promotepermissioncreatedfrompolicy");
   };
 
-  return PromotePermissionCreatedFromPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PromotePermissionCreatedFromPolicyOutcome(result.GetResultWithOwnership())
+                            : PromotePermissionCreatedFromPolicyOutcome(std::move(result.GetError()));
 }
 
 PromoteResourceShareCreatedFromPolicyOutcome RAMClient::PromoteResourceShareCreatedFromPolicy(
@@ -501,7 +554,9 @@ PromoteResourceShareCreatedFromPolicyOutcome RAMClient::PromoteResourceShareCrea
     endpointResolutionOutcome.GetResult().AddPathSegments("/promoteresourcesharecreatedfrompolicy");
   };
 
-  return PromoteResourceShareCreatedFromPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PromoteResourceShareCreatedFromPolicyOutcome(result.GetResultWithOwnership())
+                            : PromoteResourceShareCreatedFromPolicyOutcome(std::move(result.GetError()));
 }
 
 RejectResourceShareInvitationOutcome RAMClient::RejectResourceShareInvitation(const RejectResourceShareInvitationRequest& request) const {
@@ -510,7 +565,9 @@ RejectResourceShareInvitationOutcome RAMClient::RejectResourceShareInvitation(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/rejectresourceshareinvitation");
   };
 
-  return RejectResourceShareInvitationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectResourceShareInvitationOutcome(result.GetResultWithOwnership())
+                            : RejectResourceShareInvitationOutcome(std::move(result.GetError()));
 }
 
 ReplacePermissionAssociationsOutcome RAMClient::ReplacePermissionAssociations(const ReplacePermissionAssociationsRequest& request) const {
@@ -519,7 +576,9 @@ ReplacePermissionAssociationsOutcome RAMClient::ReplacePermissionAssociations(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/replacepermissionassociations");
   };
 
-  return ReplacePermissionAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReplacePermissionAssociationsOutcome(result.GetResultWithOwnership())
+                            : ReplacePermissionAssociationsOutcome(std::move(result.GetError()));
 }
 
 SetDefaultPermissionVersionOutcome RAMClient::SetDefaultPermissionVersion(const SetDefaultPermissionVersionRequest& request) const {
@@ -528,7 +587,9 @@ SetDefaultPermissionVersionOutcome RAMClient::SetDefaultPermissionVersion(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/setdefaultpermissionversion");
   };
 
-  return SetDefaultPermissionVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetDefaultPermissionVersionOutcome(result.GetResultWithOwnership())
+                            : SetDefaultPermissionVersionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome RAMClient::TagResource(const TagResourceRequest& request) const {
@@ -537,7 +598,8 @@ TagResourceOutcome RAMClient::TagResource(const TagResourceRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/tagresource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome RAMClient::UntagResource(const UntagResourceRequest& request) const {
@@ -546,7 +608,8 @@ UntagResourceOutcome RAMClient::UntagResource(const UntagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/untagresource");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceShareOutcome RAMClient::UpdateResourceShare(const UpdateResourceShareRequest& request) const {
@@ -555,5 +618,7 @@ UpdateResourceShareOutcome RAMClient::UpdateResourceShare(const UpdateResourceSh
     endpointResolutionOutcome.GetResult().AddPathSegments("/updateresourceshare");
   };
 
-  return UpdateResourceShareOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResourceShareOutcome(result.GetResultWithOwnership())
+                            : UpdateResourceShareOutcome(std::move(result.GetError()));
 }

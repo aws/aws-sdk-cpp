@@ -188,5 +188,6 @@ PutAuditEventsOutcome CloudTrailDataClient::PutAuditEvents(const PutAuditEventsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutAuditEvents");
   };
 
-  return PutAuditEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAuditEventsOutcome(result.GetResultWithOwnership()) : PutAuditEventsOutcome(std::move(result.GetError()));
 }

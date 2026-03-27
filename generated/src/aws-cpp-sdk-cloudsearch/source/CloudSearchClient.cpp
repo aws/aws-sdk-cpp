@@ -218,107 +218,156 @@ CloudSearchClient::InvokeOperationOutcome CloudSearchClient::InvokeServiceOperat
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 BuildSuggestersOutcome CloudSearchClient::BuildSuggesters(const BuildSuggestersRequest& request) const {
-  return BuildSuggestersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BuildSuggestersOutcome(result.GetResultWithOwnership())
+                            : BuildSuggestersOutcome(std::move(result.GetError()));
 }
 
 CreateDomainOutcome CloudSearchClient::CreateDomain(const CreateDomainRequest& request) const {
-  return CreateDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainOutcome(result.GetResultWithOwnership()) : CreateDomainOutcome(std::move(result.GetError()));
 }
 
 DefineAnalysisSchemeOutcome CloudSearchClient::DefineAnalysisScheme(const DefineAnalysisSchemeRequest& request) const {
-  return DefineAnalysisSchemeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DefineAnalysisSchemeOutcome(result.GetResultWithOwnership())
+                            : DefineAnalysisSchemeOutcome(std::move(result.GetError()));
 }
 
 DefineExpressionOutcome CloudSearchClient::DefineExpression(const DefineExpressionRequest& request) const {
-  return DefineExpressionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DefineExpressionOutcome(result.GetResultWithOwnership())
+                            : DefineExpressionOutcome(std::move(result.GetError()));
 }
 
 DefineIndexFieldOutcome CloudSearchClient::DefineIndexField(const DefineIndexFieldRequest& request) const {
-  return DefineIndexFieldOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DefineIndexFieldOutcome(result.GetResultWithOwnership())
+                            : DefineIndexFieldOutcome(std::move(result.GetError()));
 }
 
 DefineSuggesterOutcome CloudSearchClient::DefineSuggester(const DefineSuggesterRequest& request) const {
-  return DefineSuggesterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DefineSuggesterOutcome(result.GetResultWithOwnership())
+                            : DefineSuggesterOutcome(std::move(result.GetError()));
 }
 
 DeleteAnalysisSchemeOutcome CloudSearchClient::DeleteAnalysisScheme(const DeleteAnalysisSchemeRequest& request) const {
-  return DeleteAnalysisSchemeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAnalysisSchemeOutcome(result.GetResultWithOwnership())
+                            : DeleteAnalysisSchemeOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainOutcome CloudSearchClient::DeleteDomain(const DeleteDomainRequest& request) const {
-  return DeleteDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }
 
 DeleteExpressionOutcome CloudSearchClient::DeleteExpression(const DeleteExpressionRequest& request) const {
-  return DeleteExpressionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteExpressionOutcome(result.GetResultWithOwnership())
+                            : DeleteExpressionOutcome(std::move(result.GetError()));
 }
 
 DeleteIndexFieldOutcome CloudSearchClient::DeleteIndexField(const DeleteIndexFieldRequest& request) const {
-  return DeleteIndexFieldOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIndexFieldOutcome(result.GetResultWithOwnership())
+                            : DeleteIndexFieldOutcome(std::move(result.GetError()));
 }
 
 DeleteSuggesterOutcome CloudSearchClient::DeleteSuggester(const DeleteSuggesterRequest& request) const {
-  return DeleteSuggesterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSuggesterOutcome(result.GetResultWithOwnership())
+                            : DeleteSuggesterOutcome(std::move(result.GetError()));
 }
 
 DescribeAnalysisSchemesOutcome CloudSearchClient::DescribeAnalysisSchemes(const DescribeAnalysisSchemesRequest& request) const {
-  return DescribeAnalysisSchemesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAnalysisSchemesOutcome(result.GetResultWithOwnership())
+                            : DescribeAnalysisSchemesOutcome(std::move(result.GetError()));
 }
 
 DescribeAvailabilityOptionsOutcome CloudSearchClient::DescribeAvailabilityOptions(const DescribeAvailabilityOptionsRequest& request) const {
-  return DescribeAvailabilityOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAvailabilityOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeAvailabilityOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainEndpointOptionsOutcome CloudSearchClient::DescribeDomainEndpointOptions(
     const DescribeDomainEndpointOptionsRequest& request) const {
-  return DescribeDomainEndpointOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDomainEndpointOptionsOutcome(result.GetResultWithOwnership())
+                            : DescribeDomainEndpointOptionsOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainsOutcome CloudSearchClient::DescribeDomains(const DescribeDomainsRequest& request) const {
-  return DescribeDomainsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDomainsOutcome(result.GetResultWithOwnership())
+                            : DescribeDomainsOutcome(std::move(result.GetError()));
 }
 
 DescribeExpressionsOutcome CloudSearchClient::DescribeExpressions(const DescribeExpressionsRequest& request) const {
-  return DescribeExpressionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExpressionsOutcome(result.GetResultWithOwnership())
+                            : DescribeExpressionsOutcome(std::move(result.GetError()));
 }
 
 DescribeIndexFieldsOutcome CloudSearchClient::DescribeIndexFields(const DescribeIndexFieldsRequest& request) const {
-  return DescribeIndexFieldsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIndexFieldsOutcome(result.GetResultWithOwnership())
+                            : DescribeIndexFieldsOutcome(std::move(result.GetError()));
 }
 
 DescribeScalingParametersOutcome CloudSearchClient::DescribeScalingParameters(const DescribeScalingParametersRequest& request) const {
-  return DescribeScalingParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeScalingParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeScalingParametersOutcome(std::move(result.GetError()));
 }
 
 DescribeServiceAccessPoliciesOutcome CloudSearchClient::DescribeServiceAccessPolicies(
     const DescribeServiceAccessPoliciesRequest& request) const {
-  return DescribeServiceAccessPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeServiceAccessPoliciesOutcome(result.GetResultWithOwnership())
+                            : DescribeServiceAccessPoliciesOutcome(std::move(result.GetError()));
 }
 
 DescribeSuggestersOutcome CloudSearchClient::DescribeSuggesters(const DescribeSuggestersRequest& request) const {
-  return DescribeSuggestersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSuggestersOutcome(result.GetResultWithOwnership())
+                            : DescribeSuggestersOutcome(std::move(result.GetError()));
 }
 
 IndexDocumentsOutcome CloudSearchClient::IndexDocuments(const IndexDocumentsRequest& request) const {
-  return IndexDocumentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? IndexDocumentsOutcome(result.GetResultWithOwnership()) : IndexDocumentsOutcome(std::move(result.GetError()));
 }
 
 ListDomainNamesOutcome CloudSearchClient::ListDomainNames(const ListDomainNamesRequest& request) const {
-  return ListDomainNamesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDomainNamesOutcome(result.GetResultWithOwnership())
+                            : ListDomainNamesOutcome(std::move(result.GetError()));
 }
 
 UpdateAvailabilityOptionsOutcome CloudSearchClient::UpdateAvailabilityOptions(const UpdateAvailabilityOptionsRequest& request) const {
-  return UpdateAvailabilityOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAvailabilityOptionsOutcome(result.GetResultWithOwnership())
+                            : UpdateAvailabilityOptionsOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainEndpointOptionsOutcome CloudSearchClient::UpdateDomainEndpointOptions(const UpdateDomainEndpointOptionsRequest& request) const {
-  return UpdateDomainEndpointOptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDomainEndpointOptionsOutcome(result.GetResultWithOwnership())
+                            : UpdateDomainEndpointOptionsOutcome(std::move(result.GetError()));
 }
 
 UpdateScalingParametersOutcome CloudSearchClient::UpdateScalingParameters(const UpdateScalingParametersRequest& request) const {
-  return UpdateScalingParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateScalingParametersOutcome(result.GetResultWithOwnership())
+                            : UpdateScalingParametersOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceAccessPoliciesOutcome CloudSearchClient::UpdateServiceAccessPolicies(const UpdateServiceAccessPoliciesRequest& request) const {
-  return UpdateServiceAccessPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServiceAccessPoliciesOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceAccessPoliciesOutcome(std::move(result.GetError()));
 }

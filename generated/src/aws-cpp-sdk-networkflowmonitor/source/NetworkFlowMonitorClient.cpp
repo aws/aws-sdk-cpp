@@ -210,7 +210,8 @@ CreateMonitorOutcome NetworkFlowMonitorClient::CreateMonitor(const CreateMonitor
     endpointResolutionOutcome.GetResult().AddPathSegments("/monitors");
   };
 
-  return CreateMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMonitorOutcome(result.GetResultWithOwnership()) : CreateMonitorOutcome(std::move(result.GetError()));
 }
 
 CreateScopeOutcome NetworkFlowMonitorClient::CreateScope(const CreateScopeRequest& request) const {
@@ -219,7 +220,8 @@ CreateScopeOutcome NetworkFlowMonitorClient::CreateScope(const CreateScopeReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/scopes");
   };
 
-  return CreateScopeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScopeOutcome(result.GetResultWithOwnership()) : CreateScopeOutcome(std::move(result.GetError()));
 }
 
 DeleteMonitorOutcome NetworkFlowMonitorClient::DeleteMonitor(const DeleteMonitorRequest& request) const {
@@ -235,7 +237,8 @@ DeleteMonitorOutcome NetworkFlowMonitorClient::DeleteMonitor(const DeleteMonitor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
   };
 
-  return DeleteMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMonitorOutcome(result.GetResultWithOwnership()) : DeleteMonitorOutcome(std::move(result.GetError()));
 }
 
 DeleteScopeOutcome NetworkFlowMonitorClient::DeleteScope(const DeleteScopeRequest& request) const {
@@ -251,7 +254,8 @@ DeleteScopeOutcome NetworkFlowMonitorClient::DeleteScope(const DeleteScopeReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScopeId());
   };
 
-  return DeleteScopeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteScopeOutcome(result.GetResultWithOwnership()) : DeleteScopeOutcome(std::move(result.GetError()));
 }
 
 GetMonitorOutcome NetworkFlowMonitorClient::GetMonitor(const GetMonitorRequest& request) const {
@@ -267,7 +271,8 @@ GetMonitorOutcome NetworkFlowMonitorClient::GetMonitor(const GetMonitorRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
   };
 
-  return GetMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMonitorOutcome(result.GetResultWithOwnership()) : GetMonitorOutcome(std::move(result.GetError()));
 }
 
 GetQueryResultsMonitorTopContributorsOutcome NetworkFlowMonitorClient::GetQueryResultsMonitorTopContributors(
@@ -292,7 +297,9 @@ GetQueryResultsMonitorTopContributorsOutcome NetworkFlowMonitorClient::GetQueryR
     endpointResolutionOutcome.GetResult().AddPathSegments("/results");
   };
 
-  return GetQueryResultsMonitorTopContributorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryResultsMonitorTopContributorsOutcome(result.GetResultWithOwnership())
+                            : GetQueryResultsMonitorTopContributorsOutcome(std::move(result.GetError()));
 }
 
 GetQueryResultsWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::GetQueryResultsWorkloadInsightsTopContributors(
@@ -317,8 +324,9 @@ GetQueryResultsWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::
     endpointResolutionOutcome.GetResult().AddPathSegments("/results");
   };
 
-  return GetQueryResultsWorkloadInsightsTopContributorsOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryResultsWorkloadInsightsTopContributorsOutcome(result.GetResultWithOwnership())
+                            : GetQueryResultsWorkloadInsightsTopContributorsOutcome(std::move(result.GetError()));
 }
 
 GetQueryResultsWorkloadInsightsTopContributorsDataOutcome NetworkFlowMonitorClient::GetQueryResultsWorkloadInsightsTopContributorsData(
@@ -343,8 +351,9 @@ GetQueryResultsWorkloadInsightsTopContributorsDataOutcome NetworkFlowMonitorClie
     endpointResolutionOutcome.GetResult().AddPathSegments("/results");
   };
 
-  return GetQueryResultsWorkloadInsightsTopContributorsDataOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryResultsWorkloadInsightsTopContributorsDataOutcome(result.GetResultWithOwnership())
+                            : GetQueryResultsWorkloadInsightsTopContributorsDataOutcome(std::move(result.GetError()));
 }
 
 GetQueryStatusMonitorTopContributorsOutcome NetworkFlowMonitorClient::GetQueryStatusMonitorTopContributors(
@@ -369,7 +378,9 @@ GetQueryStatusMonitorTopContributorsOutcome NetworkFlowMonitorClient::GetQuerySt
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return GetQueryStatusMonitorTopContributorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryStatusMonitorTopContributorsOutcome(result.GetResultWithOwnership())
+                            : GetQueryStatusMonitorTopContributorsOutcome(std::move(result.GetError()));
 }
 
 GetQueryStatusWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::GetQueryStatusWorkloadInsightsTopContributors(
@@ -394,8 +405,9 @@ GetQueryStatusWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::G
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return GetQueryStatusWorkloadInsightsTopContributorsOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryStatusWorkloadInsightsTopContributorsOutcome(result.GetResultWithOwnership())
+                            : GetQueryStatusWorkloadInsightsTopContributorsOutcome(std::move(result.GetError()));
 }
 
 GetQueryStatusWorkloadInsightsTopContributorsDataOutcome NetworkFlowMonitorClient::GetQueryStatusWorkloadInsightsTopContributorsData(
@@ -420,8 +432,9 @@ GetQueryStatusWorkloadInsightsTopContributorsDataOutcome NetworkFlowMonitorClien
     endpointResolutionOutcome.GetResult().AddPathSegments("/status");
   };
 
-  return GetQueryStatusWorkloadInsightsTopContributorsDataOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQueryStatusWorkloadInsightsTopContributorsDataOutcome(result.GetResultWithOwnership())
+                            : GetQueryStatusWorkloadInsightsTopContributorsDataOutcome(std::move(result.GetError()));
 }
 
 GetScopeOutcome NetworkFlowMonitorClient::GetScope(const GetScopeRequest& request) const {
@@ -437,7 +450,8 @@ GetScopeOutcome NetworkFlowMonitorClient::GetScope(const GetScopeRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScopeId());
   };
 
-  return GetScopeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetScopeOutcome(result.GetResultWithOwnership()) : GetScopeOutcome(std::move(result.GetError()));
 }
 
 ListMonitorsOutcome NetworkFlowMonitorClient::ListMonitors(const ListMonitorsRequest& request) const {
@@ -446,7 +460,8 @@ ListMonitorsOutcome NetworkFlowMonitorClient::ListMonitors(const ListMonitorsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/monitors");
   };
 
-  return ListMonitorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMonitorsOutcome(result.GetResultWithOwnership()) : ListMonitorsOutcome(std::move(result.GetError()));
 }
 
 ListScopesOutcome NetworkFlowMonitorClient::ListScopes(const ListScopesRequest& request) const {
@@ -455,7 +470,8 @@ ListScopesOutcome NetworkFlowMonitorClient::ListScopes(const ListScopesRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/scopes");
   };
 
-  return ListScopesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListScopesOutcome(result.GetResultWithOwnership()) : ListScopesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome NetworkFlowMonitorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -471,7 +487,9 @@ ListTagsForResourceOutcome NetworkFlowMonitorClient::ListTagsForResource(const L
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartQueryMonitorTopContributorsOutcome NetworkFlowMonitorClient::StartQueryMonitorTopContributors(
@@ -489,7 +507,9 @@ StartQueryMonitorTopContributorsOutcome NetworkFlowMonitorClient::StartQueryMoni
     endpointResolutionOutcome.GetResult().AddPathSegments("/topContributorsQueries");
   };
 
-  return StartQueryMonitorTopContributorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQueryMonitorTopContributorsOutcome(result.GetResultWithOwnership())
+                            : StartQueryMonitorTopContributorsOutcome(std::move(result.GetError()));
 }
 
 StartQueryWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::StartQueryWorkloadInsightsTopContributors(
@@ -507,7 +527,9 @@ StartQueryWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::Start
     endpointResolutionOutcome.GetResult().AddPathSegments("/topContributorsQueries");
   };
 
-  return StartQueryWorkloadInsightsTopContributorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQueryWorkloadInsightsTopContributorsOutcome(result.GetResultWithOwnership())
+                            : StartQueryWorkloadInsightsTopContributorsOutcome(std::move(result.GetError()));
 }
 
 StartQueryWorkloadInsightsTopContributorsDataOutcome NetworkFlowMonitorClient::StartQueryWorkloadInsightsTopContributorsData(
@@ -525,8 +547,9 @@ StartQueryWorkloadInsightsTopContributorsDataOutcome NetworkFlowMonitorClient::S
     endpointResolutionOutcome.GetResult().AddPathSegments("/topContributorsDataQueries");
   };
 
-  return StartQueryWorkloadInsightsTopContributorsDataOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQueryWorkloadInsightsTopContributorsDataOutcome(result.GetResultWithOwnership())
+                            : StartQueryWorkloadInsightsTopContributorsDataOutcome(std::move(result.GetError()));
 }
 
 StopQueryMonitorTopContributorsOutcome NetworkFlowMonitorClient::StopQueryMonitorTopContributors(
@@ -550,7 +573,9 @@ StopQueryMonitorTopContributorsOutcome NetworkFlowMonitorClient::StopQueryMonito
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
   };
 
-  return StopQueryMonitorTopContributorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? StopQueryMonitorTopContributorsOutcome(result.GetResultWithOwnership())
+                            : StopQueryMonitorTopContributorsOutcome(std::move(result.GetError()));
 }
 
 StopQueryWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::StopQueryWorkloadInsightsTopContributors(
@@ -574,7 +599,9 @@ StopQueryWorkloadInsightsTopContributorsOutcome NetworkFlowMonitorClient::StopQu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
   };
 
-  return StopQueryWorkloadInsightsTopContributorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? StopQueryWorkloadInsightsTopContributorsOutcome(result.GetResultWithOwnership())
+                            : StopQueryWorkloadInsightsTopContributorsOutcome(std::move(result.GetError()));
 }
 
 StopQueryWorkloadInsightsTopContributorsDataOutcome NetworkFlowMonitorClient::StopQueryWorkloadInsightsTopContributorsData(
@@ -598,8 +625,9 @@ StopQueryWorkloadInsightsTopContributorsDataOutcome NetworkFlowMonitorClient::St
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueryId());
   };
 
-  return StopQueryWorkloadInsightsTopContributorsDataOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? StopQueryWorkloadInsightsTopContributorsDataOutcome(result.GetResultWithOwnership())
+                            : StopQueryWorkloadInsightsTopContributorsDataOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome NetworkFlowMonitorClient::TagResource(const TagResourceRequest& request) const {
@@ -615,7 +643,8 @@ TagResourceOutcome NetworkFlowMonitorClient::TagResource(const TagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome NetworkFlowMonitorClient::UntagResource(const UntagResourceRequest& request) const {
@@ -636,7 +665,8 @@ UntagResourceOutcome NetworkFlowMonitorClient::UntagResource(const UntagResource
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateMonitorOutcome NetworkFlowMonitorClient::UpdateMonitor(const UpdateMonitorRequest& request) const {
@@ -652,7 +682,8 @@ UpdateMonitorOutcome NetworkFlowMonitorClient::UpdateMonitor(const UpdateMonitor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
   };
 
-  return UpdateMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMonitorOutcome(result.GetResultWithOwnership()) : UpdateMonitorOutcome(std::move(result.GetError()));
 }
 
 UpdateScopeOutcome NetworkFlowMonitorClient::UpdateScope(const UpdateScopeRequest& request) const {
@@ -668,5 +699,6 @@ UpdateScopeOutcome NetworkFlowMonitorClient::UpdateScope(const UpdateScopeReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScopeId());
   };
 
-  return UpdateScopeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateScopeOutcome(result.GetResultWithOwnership()) : UpdateScopeOutcome(std::move(result.GetError()));
 }

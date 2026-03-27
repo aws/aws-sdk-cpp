@@ -232,7 +232,9 @@ BatchCreateUserOutcome WickrClient::BatchCreateUser(const BatchCreateUserRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   };
 
-  return BatchCreateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateUserOutcome(result.GetResultWithOwnership())
+                            : BatchCreateUserOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteUserOutcome WickrClient::BatchDeleteUser(const BatchDeleteUserRequest& request) const {
@@ -249,7 +251,9 @@ BatchDeleteUserOutcome WickrClient::BatchDeleteUser(const BatchDeleteUserRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/users/batch-delete");
   };
 
-  return BatchDeleteUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteUserOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteUserOutcome(std::move(result.GetError()));
 }
 
 BatchLookupUserUnameOutcome WickrClient::BatchLookupUserUname(const BatchLookupUserUnameRequest& request) const {
@@ -266,7 +270,9 @@ BatchLookupUserUnameOutcome WickrClient::BatchLookupUserUname(const BatchLookupU
     endpointResolutionOutcome.GetResult().AddPathSegments("/users/uname-lookup");
   };
 
-  return BatchLookupUserUnameOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchLookupUserUnameOutcome(result.GetResultWithOwnership())
+                            : BatchLookupUserUnameOutcome(std::move(result.GetError()));
 }
 
 BatchReinviteUserOutcome WickrClient::BatchReinviteUser(const BatchReinviteUserRequest& request) const {
@@ -283,7 +289,9 @@ BatchReinviteUserOutcome WickrClient::BatchReinviteUser(const BatchReinviteUserR
     endpointResolutionOutcome.GetResult().AddPathSegments("/users/re-invite");
   };
 
-  return BatchReinviteUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchReinviteUserOutcome(result.GetResultWithOwnership())
+                            : BatchReinviteUserOutcome(std::move(result.GetError()));
 }
 
 BatchResetDevicesForUserOutcome WickrClient::BatchResetDevicesForUser(const BatchResetDevicesForUserRequest& request) const {
@@ -307,7 +315,9 @@ BatchResetDevicesForUserOutcome WickrClient::BatchResetDevicesForUser(const Batc
     endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
   };
 
-  return BatchResetDevicesForUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchResetDevicesForUserOutcome(result.GetResultWithOwnership())
+                            : BatchResetDevicesForUserOutcome(std::move(result.GetError()));
 }
 
 BatchToggleUserSuspendStatusOutcome WickrClient::BatchToggleUserSuspendStatus(const BatchToggleUserSuspendStatusRequest& request) const {
@@ -329,7 +339,9 @@ BatchToggleUserSuspendStatusOutcome WickrClient::BatchToggleUserSuspendStatus(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/users/toggleSuspend");
   };
 
-  return BatchToggleUserSuspendStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchToggleUserSuspendStatusOutcome(result.GetResultWithOwnership())
+                            : BatchToggleUserSuspendStatusOutcome(std::move(result.GetError()));
 }
 
 CreateBotOutcome WickrClient::CreateBot(const CreateBotRequest& request) const {
@@ -346,7 +358,8 @@ CreateBotOutcome WickrClient::CreateBot(const CreateBotRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/bots");
   };
 
-  return CreateBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBotOutcome(result.GetResultWithOwnership()) : CreateBotOutcome(std::move(result.GetError()));
 }
 
 CreateDataRetentionBotOutcome WickrClient::CreateDataRetentionBot(const CreateDataRetentionBotRequest& request) const {
@@ -363,7 +376,9 @@ CreateDataRetentionBotOutcome WickrClient::CreateDataRetentionBot(const CreateDa
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
   };
 
-  return CreateDataRetentionBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataRetentionBotOutcome(result.GetResultWithOwnership())
+                            : CreateDataRetentionBotOutcome(std::move(result.GetError()));
 }
 
 CreateDataRetentionBotChallengeOutcome WickrClient::CreateDataRetentionBotChallenge(
@@ -381,7 +396,9 @@ CreateDataRetentionBotChallengeOutcome WickrClient::CreateDataRetentionBotChalle
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots/challenge");
   };
 
-  return CreateDataRetentionBotChallengeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataRetentionBotChallengeOutcome(result.GetResultWithOwnership())
+                            : CreateDataRetentionBotChallengeOutcome(std::move(result.GetError()));
 }
 
 CreateNetworkOutcome WickrClient::CreateNetwork(const CreateNetworkRequest& request) const {
@@ -390,7 +407,8 @@ CreateNetworkOutcome WickrClient::CreateNetwork(const CreateNetworkRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/networks");
   };
 
-  return CreateNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNetworkOutcome(result.GetResultWithOwnership()) : CreateNetworkOutcome(std::move(result.GetError()));
 }
 
 CreateSecurityGroupOutcome WickrClient::CreateSecurityGroup(const CreateSecurityGroupRequest& request) const {
@@ -407,7 +425,9 @@ CreateSecurityGroupOutcome WickrClient::CreateSecurityGroup(const CreateSecurity
     endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups");
   };
 
-  return CreateSecurityGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : CreateSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteBotOutcome WickrClient::DeleteBot(const DeleteBotRequest& request) const {
@@ -430,7 +450,8 @@ DeleteBotOutcome WickrClient::DeleteBot(const DeleteBotRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
   };
 
-  return DeleteBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBotOutcome(result.GetResultWithOwnership()) : DeleteBotOutcome(std::move(result.GetError()));
 }
 
 DeleteDataRetentionBotOutcome WickrClient::DeleteDataRetentionBot(const DeleteDataRetentionBotRequest& request) const {
@@ -447,7 +468,9 @@ DeleteDataRetentionBotOutcome WickrClient::DeleteDataRetentionBot(const DeleteDa
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
   };
 
-  return DeleteDataRetentionBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataRetentionBotOutcome(result.GetResultWithOwnership())
+                            : DeleteDataRetentionBotOutcome(std::move(result.GetError()));
 }
 
 DeleteNetworkOutcome WickrClient::DeleteNetwork(const DeleteNetworkRequest& request) const {
@@ -463,7 +486,8 @@ DeleteNetworkOutcome WickrClient::DeleteNetwork(const DeleteNetworkRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
   };
 
-  return DeleteNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNetworkOutcome(result.GetResultWithOwnership()) : DeleteNetworkOutcome(std::move(result.GetError()));
 }
 
 DeleteSecurityGroupOutcome WickrClient::DeleteSecurityGroup(const DeleteSecurityGroupRequest& request) const {
@@ -486,7 +510,9 @@ DeleteSecurityGroupOutcome WickrClient::DeleteSecurityGroup(const DeleteSecurity
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupId());
   };
 
-  return DeleteSecurityGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 GetBotOutcome WickrClient::GetBot(const GetBotRequest& request) const {
@@ -509,7 +535,8 @@ GetBotOutcome WickrClient::GetBot(const GetBotRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
   };
 
-  return GetBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotOutcome(result.GetResultWithOwnership()) : GetBotOutcome(std::move(result.GetError()));
 }
 
 GetBotsCountOutcome WickrClient::GetBotsCount(const GetBotsCountRequest& request) const {
@@ -526,7 +553,8 @@ GetBotsCountOutcome WickrClient::GetBotsCount(const GetBotsCountRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/bots/count");
   };
 
-  return GetBotsCountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBotsCountOutcome(result.GetResultWithOwnership()) : GetBotsCountOutcome(std::move(result.GetError()));
 }
 
 GetDataRetentionBotOutcome WickrClient::GetDataRetentionBot(const GetDataRetentionBotRequest& request) const {
@@ -543,7 +571,9 @@ GetDataRetentionBotOutcome WickrClient::GetDataRetentionBot(const GetDataRetenti
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
   };
 
-  return GetDataRetentionBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataRetentionBotOutcome(result.GetResultWithOwnership())
+                            : GetDataRetentionBotOutcome(std::move(result.GetError()));
 }
 
 GetGuestUserHistoryCountOutcome WickrClient::GetGuestUserHistoryCount(const GetGuestUserHistoryCountRequest& request) const {
@@ -560,7 +590,9 @@ GetGuestUserHistoryCountOutcome WickrClient::GetGuestUserHistoryCount(const GetG
     endpointResolutionOutcome.GetResult().AddPathSegments("/guest-users/count");
   };
 
-  return GetGuestUserHistoryCountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGuestUserHistoryCountOutcome(result.GetResultWithOwnership())
+                            : GetGuestUserHistoryCountOutcome(std::move(result.GetError()));
 }
 
 GetNetworkOutcome WickrClient::GetNetwork(const GetNetworkRequest& request) const {
@@ -576,7 +608,8 @@ GetNetworkOutcome WickrClient::GetNetwork(const GetNetworkRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
   };
 
-  return GetNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNetworkOutcome(result.GetResultWithOwnership()) : GetNetworkOutcome(std::move(result.GetError()));
 }
 
 GetNetworkSettingsOutcome WickrClient::GetNetworkSettings(const GetNetworkSettingsRequest& request) const {
@@ -593,7 +626,9 @@ GetNetworkSettingsOutcome WickrClient::GetNetworkSettings(const GetNetworkSettin
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return GetNetworkSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNetworkSettingsOutcome(result.GetResultWithOwnership())
+                            : GetNetworkSettingsOutcome(std::move(result.GetError()));
 }
 
 GetOidcInfoOutcome WickrClient::GetOidcInfo(const GetOidcInfoRequest& request) const {
@@ -610,7 +645,8 @@ GetOidcInfoOutcome WickrClient::GetOidcInfo(const GetOidcInfoRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/oidc");
   };
 
-  return GetOidcInfoOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOidcInfoOutcome(result.GetResultWithOwnership()) : GetOidcInfoOutcome(std::move(result.GetError()));
 }
 
 GetOpentdfConfigOutcome WickrClient::GetOpentdfConfig(const GetOpentdfConfigRequest& request) const {
@@ -627,7 +663,9 @@ GetOpentdfConfigOutcome WickrClient::GetOpentdfConfig(const GetOpentdfConfigRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/tdf");
   };
 
-  return GetOpentdfConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOpentdfConfigOutcome(result.GetResultWithOwnership())
+                            : GetOpentdfConfigOutcome(std::move(result.GetError()));
 }
 
 GetSecurityGroupOutcome WickrClient::GetSecurityGroup(const GetSecurityGroupRequest& request) const {
@@ -650,7 +688,9 @@ GetSecurityGroupOutcome WickrClient::GetSecurityGroup(const GetSecurityGroupRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupId());
   };
 
-  return GetSecurityGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : GetSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 GetUserOutcome WickrClient::GetUser(const GetUserRequest& request) const {
@@ -673,7 +713,8 @@ GetUserOutcome WickrClient::GetUser(const GetUserRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return GetUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUserOutcome(result.GetResultWithOwnership()) : GetUserOutcome(std::move(result.GetError()));
 }
 
 GetUsersCountOutcome WickrClient::GetUsersCount(const GetUsersCountRequest& request) const {
@@ -690,7 +731,8 @@ GetUsersCountOutcome WickrClient::GetUsersCount(const GetUsersCountRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/users/count");
   };
 
-  return GetUsersCountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUsersCountOutcome(result.GetResultWithOwnership()) : GetUsersCountOutcome(std::move(result.GetError()));
 }
 
 ListBlockedGuestUsersOutcome WickrClient::ListBlockedGuestUsers(const ListBlockedGuestUsersRequest& request) const {
@@ -707,7 +749,9 @@ ListBlockedGuestUsersOutcome WickrClient::ListBlockedGuestUsers(const ListBlocke
     endpointResolutionOutcome.GetResult().AddPathSegments("/guest-users/blocklist");
   };
 
-  return ListBlockedGuestUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBlockedGuestUsersOutcome(result.GetResultWithOwnership())
+                            : ListBlockedGuestUsersOutcome(std::move(result.GetError()));
 }
 
 ListBotsOutcome WickrClient::ListBots(const ListBotsRequest& request) const {
@@ -724,7 +768,8 @@ ListBotsOutcome WickrClient::ListBots(const ListBotsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/bots");
   };
 
-  return ListBotsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBotsOutcome(result.GetResultWithOwnership()) : ListBotsOutcome(std::move(result.GetError()));
 }
 
 ListDevicesForUserOutcome WickrClient::ListDevicesForUser(const ListDevicesForUserRequest& request) const {
@@ -748,7 +793,9 @@ ListDevicesForUserOutcome WickrClient::ListDevicesForUser(const ListDevicesForUs
     endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
   };
 
-  return ListDevicesForUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDevicesForUserOutcome(result.GetResultWithOwnership())
+                            : ListDevicesForUserOutcome(std::move(result.GetError()));
 }
 
 ListGuestUsersOutcome WickrClient::ListGuestUsers(const ListGuestUsersRequest& request) const {
@@ -765,7 +812,8 @@ ListGuestUsersOutcome WickrClient::ListGuestUsers(const ListGuestUsersRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/guest-users");
   };
 
-  return ListGuestUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGuestUsersOutcome(result.GetResultWithOwnership()) : ListGuestUsersOutcome(std::move(result.GetError()));
 }
 
 ListNetworksOutcome WickrClient::ListNetworks(const ListNetworksRequest& request) const {
@@ -774,7 +822,8 @@ ListNetworksOutcome WickrClient::ListNetworks(const ListNetworksRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/networks");
   };
 
-  return ListNetworksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNetworksOutcome(result.GetResultWithOwnership()) : ListNetworksOutcome(std::move(result.GetError()));
 }
 
 ListSecurityGroupUsersOutcome WickrClient::ListSecurityGroupUsers(const ListSecurityGroupUsersRequest& request) const {
@@ -798,7 +847,9 @@ ListSecurityGroupUsersOutcome WickrClient::ListSecurityGroupUsers(const ListSecu
     endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   };
 
-  return ListSecurityGroupUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSecurityGroupUsersOutcome(result.GetResultWithOwnership())
+                            : ListSecurityGroupUsersOutcome(std::move(result.GetError()));
 }
 
 ListSecurityGroupsOutcome WickrClient::ListSecurityGroups(const ListSecurityGroupsRequest& request) const {
@@ -815,7 +866,9 @@ ListSecurityGroupsOutcome WickrClient::ListSecurityGroups(const ListSecurityGrou
     endpointResolutionOutcome.GetResult().AddPathSegments("/security-groups");
   };
 
-  return ListSecurityGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSecurityGroupsOutcome(result.GetResultWithOwnership())
+                            : ListSecurityGroupsOutcome(std::move(result.GetError()));
 }
 
 ListUsersOutcome WickrClient::ListUsers(const ListUsersRequest& request) const {
@@ -832,7 +885,8 @@ ListUsersOutcome WickrClient::ListUsers(const ListUsersRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   };
 
-  return ListUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListUsersOutcome(result.GetResultWithOwnership()) : ListUsersOutcome(std::move(result.GetError()));
 }
 
 RegisterOidcConfigOutcome WickrClient::RegisterOidcConfig(const RegisterOidcConfigRequest& request) const {
@@ -849,7 +903,9 @@ RegisterOidcConfigOutcome WickrClient::RegisterOidcConfig(const RegisterOidcConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/oidc/save");
   };
 
-  return RegisterOidcConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterOidcConfigOutcome(result.GetResultWithOwnership())
+                            : RegisterOidcConfigOutcome(std::move(result.GetError()));
 }
 
 RegisterOidcConfigTestOutcome WickrClient::RegisterOidcConfigTest(const RegisterOidcConfigTestRequest& request) const {
@@ -866,7 +922,9 @@ RegisterOidcConfigTestOutcome WickrClient::RegisterOidcConfigTest(const Register
     endpointResolutionOutcome.GetResult().AddPathSegments("/oidc/test");
   };
 
-  return RegisterOidcConfigTestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterOidcConfigTestOutcome(result.GetResultWithOwnership())
+                            : RegisterOidcConfigTestOutcome(std::move(result.GetError()));
 }
 
 RegisterOpentdfConfigOutcome WickrClient::RegisterOpentdfConfig(const RegisterOpentdfConfigRequest& request) const {
@@ -883,7 +941,9 @@ RegisterOpentdfConfigOutcome WickrClient::RegisterOpentdfConfig(const RegisterOp
     endpointResolutionOutcome.GetResult().AddPathSegments("/tdf");
   };
 
-  return RegisterOpentdfConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterOpentdfConfigOutcome(result.GetResultWithOwnership())
+                            : RegisterOpentdfConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateBotOutcome WickrClient::UpdateBot(const UpdateBotRequest& request) const {
@@ -906,7 +966,8 @@ UpdateBotOutcome WickrClient::UpdateBot(const UpdateBotRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
   };
 
-  return UpdateBotOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateBotOutcome(result.GetResultWithOwnership()) : UpdateBotOutcome(std::move(result.GetError()));
 }
 
 UpdateDataRetentionOutcome WickrClient::UpdateDataRetention(const UpdateDataRetentionRequest& request) const {
@@ -923,7 +984,9 @@ UpdateDataRetentionOutcome WickrClient::UpdateDataRetention(const UpdateDataRete
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-retention-bots");
   };
 
-  return UpdateDataRetentionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDataRetentionOutcome(result.GetResultWithOwnership())
+                            : UpdateDataRetentionOutcome(std::move(result.GetError()));
 }
 
 UpdateGuestUserOutcome WickrClient::UpdateGuestUser(const UpdateGuestUserRequest& request) const {
@@ -946,7 +1009,9 @@ UpdateGuestUserOutcome WickrClient::UpdateGuestUser(const UpdateGuestUserRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUsernameHash());
   };
 
-  return UpdateGuestUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateGuestUserOutcome(result.GetResultWithOwnership())
+                            : UpdateGuestUserOutcome(std::move(result.GetError()));
 }
 
 UpdateNetworkOutcome WickrClient::UpdateNetwork(const UpdateNetworkRequest& request) const {
@@ -962,7 +1027,8 @@ UpdateNetworkOutcome WickrClient::UpdateNetwork(const UpdateNetworkRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
   };
 
-  return UpdateNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateNetworkOutcome(result.GetResultWithOwnership()) : UpdateNetworkOutcome(std::move(result.GetError()));
 }
 
 UpdateNetworkSettingsOutcome WickrClient::UpdateNetworkSettings(const UpdateNetworkSettingsRequest& request) const {
@@ -979,7 +1045,9 @@ UpdateNetworkSettingsOutcome WickrClient::UpdateNetworkSettings(const UpdateNetw
     endpointResolutionOutcome.GetResult().AddPathSegments("/settings");
   };
 
-  return UpdateNetworkSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateNetworkSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateNetworkSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateSecurityGroupOutcome WickrClient::UpdateSecurityGroup(const UpdateSecurityGroupRequest& request) const {
@@ -1002,7 +1070,9 @@ UpdateSecurityGroupOutcome WickrClient::UpdateSecurityGroup(const UpdateSecurity
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupId());
   };
 
-  return UpdateSecurityGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSecurityGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateSecurityGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome WickrClient::UpdateUser(const UpdateUserRequest& request) const {
@@ -1019,5 +1089,6 @@ UpdateUserOutcome WickrClient::UpdateUser(const UpdateUserRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   };
 
-  return UpdateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }

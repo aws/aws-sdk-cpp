@@ -257,7 +257,9 @@ AssociateAccessPolicyOutcome EKSClient::AssociateAccessPolicy(const AssociateAcc
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-policies");
   };
 
-  return AssociateAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : AssociateAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 AssociateEncryptionConfigOutcome EKSClient::AssociateEncryptionConfig(const AssociateEncryptionConfigRequest& request) const {
@@ -274,7 +276,9 @@ AssociateEncryptionConfigOutcome EKSClient::AssociateEncryptionConfig(const Asso
     endpointResolutionOutcome.GetResult().AddPathSegments("/encryption-config/associate");
   };
 
-  return AssociateEncryptionConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateEncryptionConfigOutcome(result.GetResultWithOwnership())
+                            : AssociateEncryptionConfigOutcome(std::move(result.GetError()));
 }
 
 AssociateIdentityProviderConfigOutcome EKSClient::AssociateIdentityProviderConfig(
@@ -292,7 +296,9 @@ AssociateIdentityProviderConfigOutcome EKSClient::AssociateIdentityProviderConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-provider-configs/associate");
   };
 
-  return AssociateIdentityProviderConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateIdentityProviderConfigOutcome(result.GetResultWithOwnership())
+                            : AssociateIdentityProviderConfigOutcome(std::move(result.GetError()));
 }
 
 CreateAccessEntryOutcome EKSClient::CreateAccessEntry(const CreateAccessEntryRequest& request) const {
@@ -309,7 +315,9 @@ CreateAccessEntryOutcome EKSClient::CreateAccessEntry(const CreateAccessEntryReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-entries");
   };
 
-  return CreateAccessEntryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessEntryOutcome(result.GetResultWithOwnership())
+                            : CreateAccessEntryOutcome(std::move(result.GetError()));
 }
 
 CreateAddonOutcome EKSClient::CreateAddon(const CreateAddonRequest& request) const {
@@ -326,7 +334,8 @@ CreateAddonOutcome EKSClient::CreateAddon(const CreateAddonRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/addons");
   };
 
-  return CreateAddonOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAddonOutcome(result.GetResultWithOwnership()) : CreateAddonOutcome(std::move(result.GetError()));
 }
 
 CreateCapabilityOutcome EKSClient::CreateCapability(const CreateCapabilityRequest& request) const {
@@ -343,7 +352,9 @@ CreateCapabilityOutcome EKSClient::CreateCapability(const CreateCapabilityReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/capabilities");
   };
 
-  return CreateCapabilityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCapabilityOutcome(result.GetResultWithOwnership())
+                            : CreateCapabilityOutcome(std::move(result.GetError()));
 }
 
 CreateClusterOutcome EKSClient::CreateCluster(const CreateClusterRequest& request) const {
@@ -352,7 +363,8 @@ CreateClusterOutcome EKSClient::CreateCluster(const CreateClusterRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/clusters");
   };
 
-  return CreateClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
 }
 
 CreateEksAnywhereSubscriptionOutcome EKSClient::CreateEksAnywhereSubscription(const CreateEksAnywhereSubscriptionRequest& request) const {
@@ -361,7 +373,9 @@ CreateEksAnywhereSubscriptionOutcome EKSClient::CreateEksAnywhereSubscription(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/eks-anywhere-subscriptions");
   };
 
-  return CreateEksAnywhereSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEksAnywhereSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateEksAnywhereSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateFargateProfileOutcome EKSClient::CreateFargateProfile(const CreateFargateProfileRequest& request) const {
@@ -378,7 +392,9 @@ CreateFargateProfileOutcome EKSClient::CreateFargateProfile(const CreateFargateP
     endpointResolutionOutcome.GetResult().AddPathSegments("/fargate-profiles");
   };
 
-  return CreateFargateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFargateProfileOutcome(result.GetResultWithOwnership())
+                            : CreateFargateProfileOutcome(std::move(result.GetError()));
 }
 
 CreateNodegroupOutcome EKSClient::CreateNodegroup(const CreateNodegroupRequest& request) const {
@@ -395,7 +411,9 @@ CreateNodegroupOutcome EKSClient::CreateNodegroup(const CreateNodegroupRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/node-groups");
   };
 
-  return CreateNodegroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNodegroupOutcome(result.GetResultWithOwnership())
+                            : CreateNodegroupOutcome(std::move(result.GetError()));
 }
 
 CreatePodIdentityAssociationOutcome EKSClient::CreatePodIdentityAssociation(const CreatePodIdentityAssociationRequest& request) const {
@@ -412,7 +430,9 @@ CreatePodIdentityAssociationOutcome EKSClient::CreatePodIdentityAssociation(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/pod-identity-associations");
   };
 
-  return CreatePodIdentityAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePodIdentityAssociationOutcome(result.GetResultWithOwnership())
+                            : CreatePodIdentityAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessEntryOutcome EKSClient::DeleteAccessEntry(const DeleteAccessEntryRequest& request) const {
@@ -435,7 +455,9 @@ DeleteAccessEntryOutcome EKSClient::DeleteAccessEntry(const DeleteAccessEntryReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalArn());
   };
 
-  return DeleteAccessEntryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessEntryOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessEntryOutcome(std::move(result.GetError()));
 }
 
 DeleteAddonOutcome EKSClient::DeleteAddon(const DeleteAddonRequest& request) const {
@@ -458,7 +480,8 @@ DeleteAddonOutcome EKSClient::DeleteAddon(const DeleteAddonRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAddonName());
   };
 
-  return DeleteAddonOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAddonOutcome(result.GetResultWithOwnership()) : DeleteAddonOutcome(std::move(result.GetError()));
 }
 
 DeleteCapabilityOutcome EKSClient::DeleteCapability(const DeleteCapabilityRequest& request) const {
@@ -481,7 +504,9 @@ DeleteCapabilityOutcome EKSClient::DeleteCapability(const DeleteCapabilityReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapabilityName());
   };
 
-  return DeleteCapabilityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCapabilityOutcome(result.GetResultWithOwnership())
+                            : DeleteCapabilityOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterOutcome EKSClient::DeleteCluster(const DeleteClusterRequest& request) const {
@@ -497,7 +522,8 @@ DeleteClusterOutcome EKSClient::DeleteCluster(const DeleteClusterRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteClusterOutcome(result.GetResultWithOwnership()) : DeleteClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteEksAnywhereSubscriptionOutcome EKSClient::DeleteEksAnywhereSubscription(const DeleteEksAnywhereSubscriptionRequest& request) const {
@@ -513,7 +539,9 @@ DeleteEksAnywhereSubscriptionOutcome EKSClient::DeleteEksAnywhereSubscription(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteEksAnywhereSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEksAnywhereSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteEksAnywhereSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteFargateProfileOutcome EKSClient::DeleteFargateProfile(const DeleteFargateProfileRequest& request) const {
@@ -536,7 +564,9 @@ DeleteFargateProfileOutcome EKSClient::DeleteFargateProfile(const DeleteFargateP
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFargateProfileName());
   };
 
-  return DeleteFargateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFargateProfileOutcome(result.GetResultWithOwnership())
+                            : DeleteFargateProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteNodegroupOutcome EKSClient::DeleteNodegroup(const DeleteNodegroupRequest& request) const {
@@ -559,7 +589,9 @@ DeleteNodegroupOutcome EKSClient::DeleteNodegroup(const DeleteNodegroupRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNodegroupName());
   };
 
-  return DeleteNodegroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNodegroupOutcome(result.GetResultWithOwnership())
+                            : DeleteNodegroupOutcome(std::move(result.GetError()));
 }
 
 DeletePodIdentityAssociationOutcome EKSClient::DeletePodIdentityAssociation(const DeletePodIdentityAssociationRequest& request) const {
@@ -582,7 +614,9 @@ DeletePodIdentityAssociationOutcome EKSClient::DeletePodIdentityAssociation(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
   };
 
-  return DeletePodIdentityAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePodIdentityAssociationOutcome(result.GetResultWithOwnership())
+                            : DeletePodIdentityAssociationOutcome(std::move(result.GetError()));
 }
 
 DeregisterClusterOutcome EKSClient::DeregisterCluster(const DeregisterClusterRequest& request) const {
@@ -598,7 +632,9 @@ DeregisterClusterOutcome EKSClient::DeregisterCluster(const DeregisterClusterReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeregisterClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeregisterClusterOutcome(result.GetResultWithOwnership())
+                            : DeregisterClusterOutcome(std::move(result.GetError()));
 }
 
 DescribeAccessEntryOutcome EKSClient::DescribeAccessEntry(const DescribeAccessEntryRequest& request) const {
@@ -621,7 +657,9 @@ DescribeAccessEntryOutcome EKSClient::DescribeAccessEntry(const DescribeAccessEn
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalArn());
   };
 
-  return DescribeAccessEntryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAccessEntryOutcome(result.GetResultWithOwnership())
+                            : DescribeAccessEntryOutcome(std::move(result.GetError()));
 }
 
 DescribeAddonOutcome EKSClient::DescribeAddon(const DescribeAddonRequest& request) const {
@@ -644,7 +682,8 @@ DescribeAddonOutcome EKSClient::DescribeAddon(const DescribeAddonRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAddonName());
   };
 
-  return DescribeAddonOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAddonOutcome(result.GetResultWithOwnership()) : DescribeAddonOutcome(std::move(result.GetError()));
 }
 
 DescribeAddonConfigurationOutcome EKSClient::DescribeAddonConfiguration(const DescribeAddonConfigurationRequest& request) const {
@@ -664,7 +703,9 @@ DescribeAddonConfigurationOutcome EKSClient::DescribeAddonConfiguration(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/addons/configuration-schemas");
   };
 
-  return DescribeAddonConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAddonConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeAddonConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeAddonVersionsOutcome EKSClient::DescribeAddonVersions(const DescribeAddonVersionsRequest& request) const {
@@ -673,7 +714,9 @@ DescribeAddonVersionsOutcome EKSClient::DescribeAddonVersions(const DescribeAddo
     endpointResolutionOutcome.GetResult().AddPathSegments("/addons/supported-versions");
   };
 
-  return DescribeAddonVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAddonVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeAddonVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeCapabilityOutcome EKSClient::DescribeCapability(const DescribeCapabilityRequest& request) const {
@@ -696,7 +739,9 @@ DescribeCapabilityOutcome EKSClient::DescribeCapability(const DescribeCapability
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapabilityName());
   };
 
-  return DescribeCapabilityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeCapabilityOutcome(result.GetResultWithOwnership())
+                            : DescribeCapabilityOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterOutcome EKSClient::DescribeCluster(const DescribeClusterRequest& request) const {
@@ -712,7 +757,9 @@ DescribeClusterOutcome EKSClient::DescribeCluster(const DescribeClusterRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DescribeClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeClusterOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterVersionsOutcome EKSClient::DescribeClusterVersions(const DescribeClusterVersionsRequest& request) const {
@@ -721,7 +768,9 @@ DescribeClusterVersionsOutcome EKSClient::DescribeClusterVersions(const Describe
     endpointResolutionOutcome.GetResult().AddPathSegments("/cluster-versions");
   };
 
-  return DescribeClusterVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeClusterVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeEksAnywhereSubscriptionOutcome EKSClient::DescribeEksAnywhereSubscription(
@@ -738,7 +787,9 @@ DescribeEksAnywhereSubscriptionOutcome EKSClient::DescribeEksAnywhereSubscriptio
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribeEksAnywhereSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeEksAnywhereSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DescribeEksAnywhereSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DescribeFargateProfileOutcome EKSClient::DescribeFargateProfile(const DescribeFargateProfileRequest& request) const {
@@ -761,7 +812,9 @@ DescribeFargateProfileOutcome EKSClient::DescribeFargateProfile(const DescribeFa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFargateProfileName());
   };
 
-  return DescribeFargateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFargateProfileOutcome(result.GetResultWithOwnership())
+                            : DescribeFargateProfileOutcome(std::move(result.GetError()));
 }
 
 DescribeIdentityProviderConfigOutcome EKSClient::DescribeIdentityProviderConfig(
@@ -779,7 +832,9 @@ DescribeIdentityProviderConfigOutcome EKSClient::DescribeIdentityProviderConfig(
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-provider-configs/describe");
   };
 
-  return DescribeIdentityProviderConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIdentityProviderConfigOutcome(result.GetResultWithOwnership())
+                            : DescribeIdentityProviderConfigOutcome(std::move(result.GetError()));
 }
 
 DescribeInsightOutcome EKSClient::DescribeInsight(const DescribeInsightRequest& request) const {
@@ -802,7 +857,9 @@ DescribeInsightOutcome EKSClient::DescribeInsight(const DescribeInsightRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribeInsightOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeInsightOutcome(result.GetResultWithOwnership())
+                            : DescribeInsightOutcome(std::move(result.GetError()));
 }
 
 DescribeInsightsRefreshOutcome EKSClient::DescribeInsightsRefresh(const DescribeInsightsRefreshRequest& request) const {
@@ -819,7 +876,9 @@ DescribeInsightsRefreshOutcome EKSClient::DescribeInsightsRefresh(const Describe
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights-refresh");
   };
 
-  return DescribeInsightsRefreshOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeInsightsRefreshOutcome(result.GetResultWithOwnership())
+                            : DescribeInsightsRefreshOutcome(std::move(result.GetError()));
 }
 
 DescribeNodegroupOutcome EKSClient::DescribeNodegroup(const DescribeNodegroupRequest& request) const {
@@ -842,7 +901,9 @@ DescribeNodegroupOutcome EKSClient::DescribeNodegroup(const DescribeNodegroupReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNodegroupName());
   };
 
-  return DescribeNodegroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeNodegroupOutcome(result.GetResultWithOwnership())
+                            : DescribeNodegroupOutcome(std::move(result.GetError()));
 }
 
 DescribePodIdentityAssociationOutcome EKSClient::DescribePodIdentityAssociation(
@@ -866,7 +927,9 @@ DescribePodIdentityAssociationOutcome EKSClient::DescribePodIdentityAssociation(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
   };
 
-  return DescribePodIdentityAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePodIdentityAssociationOutcome(result.GetResultWithOwnership())
+                            : DescribePodIdentityAssociationOutcome(std::move(result.GetError()));
 }
 
 DescribeUpdateOutcome EKSClient::DescribeUpdate(const DescribeUpdateRequest& request) const {
@@ -889,7 +952,8 @@ DescribeUpdateOutcome EKSClient::DescribeUpdate(const DescribeUpdateRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUpdateId());
   };
 
-  return DescribeUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeUpdateOutcome(result.GetResultWithOwnership()) : DescribeUpdateOutcome(std::move(result.GetError()));
 }
 
 DisassociateAccessPolicyOutcome EKSClient::DisassociateAccessPolicy(const DisassociateAccessPolicyRequest& request) const {
@@ -919,7 +983,9 @@ DisassociateAccessPolicyOutcome EKSClient::DisassociateAccessPolicy(const Disass
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyArn());
   };
 
-  return DisassociateAccessPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateAccessPolicyOutcome(result.GetResultWithOwnership())
+                            : DisassociateAccessPolicyOutcome(std::move(result.GetError()));
 }
 
 DisassociateIdentityProviderConfigOutcome EKSClient::DisassociateIdentityProviderConfig(
@@ -937,7 +1003,9 @@ DisassociateIdentityProviderConfigOutcome EKSClient::DisassociateIdentityProvide
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-provider-configs/disassociate");
   };
 
-  return DisassociateIdentityProviderConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateIdentityProviderConfigOutcome(result.GetResultWithOwnership())
+                            : DisassociateIdentityProviderConfigOutcome(std::move(result.GetError()));
 }
 
 ListAccessEntriesOutcome EKSClient::ListAccessEntries(const ListAccessEntriesRequest& request) const {
@@ -954,7 +1022,9 @@ ListAccessEntriesOutcome EKSClient::ListAccessEntries(const ListAccessEntriesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-entries");
   };
 
-  return ListAccessEntriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessEntriesOutcome(result.GetResultWithOwnership())
+                            : ListAccessEntriesOutcome(std::move(result.GetError()));
 }
 
 ListAccessPoliciesOutcome EKSClient::ListAccessPolicies(const ListAccessPoliciesRequest& request) const {
@@ -963,7 +1033,9 @@ ListAccessPoliciesOutcome EKSClient::ListAccessPolicies(const ListAccessPolicies
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-policies");
   };
 
-  return ListAccessPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListAccessPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListAddonsOutcome EKSClient::ListAddons(const ListAddonsRequest& request) const {
@@ -980,7 +1052,8 @@ ListAddonsOutcome EKSClient::ListAddons(const ListAddonsRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/addons");
   };
 
-  return ListAddonsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAddonsOutcome(result.GetResultWithOwnership()) : ListAddonsOutcome(std::move(result.GetError()));
 }
 
 ListAssociatedAccessPoliciesOutcome EKSClient::ListAssociatedAccessPolicies(const ListAssociatedAccessPoliciesRequest& request) const {
@@ -1004,7 +1077,9 @@ ListAssociatedAccessPoliciesOutcome EKSClient::ListAssociatedAccessPolicies(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/access-policies");
   };
 
-  return ListAssociatedAccessPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssociatedAccessPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListAssociatedAccessPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListCapabilitiesOutcome EKSClient::ListCapabilities(const ListCapabilitiesRequest& request) const {
@@ -1021,7 +1096,9 @@ ListCapabilitiesOutcome EKSClient::ListCapabilities(const ListCapabilitiesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/capabilities");
   };
 
-  return ListCapabilitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCapabilitiesOutcome(result.GetResultWithOwnership())
+                            : ListCapabilitiesOutcome(std::move(result.GetError()));
 }
 
 ListClustersOutcome EKSClient::ListClusters(const ListClustersRequest& request) const {
@@ -1030,7 +1107,8 @@ ListClustersOutcome EKSClient::ListClusters(const ListClustersRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/clusters");
   };
 
-  return ListClustersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClustersOutcome(result.GetResultWithOwnership()) : ListClustersOutcome(std::move(result.GetError()));
 }
 
 ListEksAnywhereSubscriptionsOutcome EKSClient::ListEksAnywhereSubscriptions(const ListEksAnywhereSubscriptionsRequest& request) const {
@@ -1039,7 +1117,9 @@ ListEksAnywhereSubscriptionsOutcome EKSClient::ListEksAnywhereSubscriptions(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/eks-anywhere-subscriptions");
   };
 
-  return ListEksAnywhereSubscriptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEksAnywhereSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListEksAnywhereSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 ListFargateProfilesOutcome EKSClient::ListFargateProfiles(const ListFargateProfilesRequest& request) const {
@@ -1056,7 +1136,9 @@ ListFargateProfilesOutcome EKSClient::ListFargateProfiles(const ListFargateProfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/fargate-profiles");
   };
 
-  return ListFargateProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFargateProfilesOutcome(result.GetResultWithOwnership())
+                            : ListFargateProfilesOutcome(std::move(result.GetError()));
 }
 
 ListIdentityProviderConfigsOutcome EKSClient::ListIdentityProviderConfigs(const ListIdentityProviderConfigsRequest& request) const {
@@ -1073,7 +1155,9 @@ ListIdentityProviderConfigsOutcome EKSClient::ListIdentityProviderConfigs(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/identity-provider-configs");
   };
 
-  return ListIdentityProviderConfigsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIdentityProviderConfigsOutcome(result.GetResultWithOwnership())
+                            : ListIdentityProviderConfigsOutcome(std::move(result.GetError()));
 }
 
 ListInsightsOutcome EKSClient::ListInsights(const ListInsightsRequest& request) const {
@@ -1090,7 +1174,8 @@ ListInsightsOutcome EKSClient::ListInsights(const ListInsightsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights");
   };
 
-  return ListInsightsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInsightsOutcome(result.GetResultWithOwnership()) : ListInsightsOutcome(std::move(result.GetError()));
 }
 
 ListNodegroupsOutcome EKSClient::ListNodegroups(const ListNodegroupsRequest& request) const {
@@ -1107,7 +1192,8 @@ ListNodegroupsOutcome EKSClient::ListNodegroups(const ListNodegroupsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/node-groups");
   };
 
-  return ListNodegroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNodegroupsOutcome(result.GetResultWithOwnership()) : ListNodegroupsOutcome(std::move(result.GetError()));
 }
 
 ListPodIdentityAssociationsOutcome EKSClient::ListPodIdentityAssociations(const ListPodIdentityAssociationsRequest& request) const {
@@ -1124,7 +1210,9 @@ ListPodIdentityAssociationsOutcome EKSClient::ListPodIdentityAssociations(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/pod-identity-associations");
   };
 
-  return ListPodIdentityAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPodIdentityAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListPodIdentityAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome EKSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1140,7 +1228,9 @@ ListTagsForResourceOutcome EKSClient::ListTagsForResource(const ListTagsForResou
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListUpdatesOutcome EKSClient::ListUpdates(const ListUpdatesRequest& request) const {
@@ -1157,7 +1247,8 @@ ListUpdatesOutcome EKSClient::ListUpdates(const ListUpdatesRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/updates");
   };
 
-  return ListUpdatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListUpdatesOutcome(result.GetResultWithOwnership()) : ListUpdatesOutcome(std::move(result.GetError()));
 }
 
 RegisterClusterOutcome EKSClient::RegisterCluster(const RegisterClusterRequest& request) const {
@@ -1166,7 +1257,9 @@ RegisterClusterOutcome EKSClient::RegisterCluster(const RegisterClusterRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/cluster-registrations");
   };
 
-  return RegisterClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterClusterOutcome(result.GetResultWithOwnership())
+                            : RegisterClusterOutcome(std::move(result.GetError()));
 }
 
 StartInsightsRefreshOutcome EKSClient::StartInsightsRefresh(const StartInsightsRefreshRequest& request) const {
@@ -1183,7 +1276,9 @@ StartInsightsRefreshOutcome EKSClient::StartInsightsRefresh(const StartInsightsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/insights-refresh");
   };
 
-  return StartInsightsRefreshOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartInsightsRefreshOutcome(result.GetResultWithOwnership())
+                            : StartInsightsRefreshOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome EKSClient::TagResource(const TagResourceRequest& request) const {
@@ -1199,7 +1294,8 @@ TagResourceOutcome EKSClient::TagResource(const TagResourceRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome EKSClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1220,7 +1316,8 @@ UntagResourceOutcome EKSClient::UntagResource(const UntagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAccessEntryOutcome EKSClient::UpdateAccessEntry(const UpdateAccessEntryRequest& request) const {
@@ -1243,7 +1340,9 @@ UpdateAccessEntryOutcome EKSClient::UpdateAccessEntry(const UpdateAccessEntryReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalArn());
   };
 
-  return UpdateAccessEntryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccessEntryOutcome(result.GetResultWithOwnership())
+                            : UpdateAccessEntryOutcome(std::move(result.GetError()));
 }
 
 UpdateAddonOutcome EKSClient::UpdateAddon(const UpdateAddonRequest& request) const {
@@ -1267,7 +1366,8 @@ UpdateAddonOutcome EKSClient::UpdateAddon(const UpdateAddonRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/update");
   };
 
-  return UpdateAddonOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAddonOutcome(result.GetResultWithOwnership()) : UpdateAddonOutcome(std::move(result.GetError()));
 }
 
 UpdateCapabilityOutcome EKSClient::UpdateCapability(const UpdateCapabilityRequest& request) const {
@@ -1290,7 +1390,9 @@ UpdateCapabilityOutcome EKSClient::UpdateCapability(const UpdateCapabilityReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapabilityName());
   };
 
-  return UpdateCapabilityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCapabilityOutcome(result.GetResultWithOwnership())
+                            : UpdateCapabilityOutcome(std::move(result.GetError()));
 }
 
 UpdateClusterConfigOutcome EKSClient::UpdateClusterConfig(const UpdateClusterConfigRequest& request) const {
@@ -1307,7 +1409,9 @@ UpdateClusterConfigOutcome EKSClient::UpdateClusterConfig(const UpdateClusterCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-config");
   };
 
-  return UpdateClusterConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateClusterConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateClusterConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateClusterVersionOutcome EKSClient::UpdateClusterVersion(const UpdateClusterVersionRequest& request) const {
@@ -1324,7 +1428,9 @@ UpdateClusterVersionOutcome EKSClient::UpdateClusterVersion(const UpdateClusterV
     endpointResolutionOutcome.GetResult().AddPathSegments("/updates");
   };
 
-  return UpdateClusterVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateClusterVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateClusterVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateEksAnywhereSubscriptionOutcome EKSClient::UpdateEksAnywhereSubscription(const UpdateEksAnywhereSubscriptionRequest& request) const {
@@ -1340,7 +1446,9 @@ UpdateEksAnywhereSubscriptionOutcome EKSClient::UpdateEksAnywhereSubscription(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateEksAnywhereSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEksAnywhereSubscriptionOutcome(result.GetResultWithOwnership())
+                            : UpdateEksAnywhereSubscriptionOutcome(std::move(result.GetError()));
 }
 
 UpdateNodegroupConfigOutcome EKSClient::UpdateNodegroupConfig(const UpdateNodegroupConfigRequest& request) const {
@@ -1364,7 +1472,9 @@ UpdateNodegroupConfigOutcome EKSClient::UpdateNodegroupConfig(const UpdateNodegr
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-config");
   };
 
-  return UpdateNodegroupConfigOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNodegroupConfigOutcome(result.GetResultWithOwnership())
+                            : UpdateNodegroupConfigOutcome(std::move(result.GetError()));
 }
 
 UpdateNodegroupVersionOutcome EKSClient::UpdateNodegroupVersion(const UpdateNodegroupVersionRequest& request) const {
@@ -1388,7 +1498,9 @@ UpdateNodegroupVersionOutcome EKSClient::UpdateNodegroupVersion(const UpdateNode
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-version");
   };
 
-  return UpdateNodegroupVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNodegroupVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateNodegroupVersionOutcome(std::move(result.GetError()));
 }
 
 UpdatePodIdentityAssociationOutcome EKSClient::UpdatePodIdentityAssociation(const UpdatePodIdentityAssociationRequest& request) const {
@@ -1411,5 +1523,7 @@ UpdatePodIdentityAssociationOutcome EKSClient::UpdatePodIdentityAssociation(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
   };
 
-  return UpdatePodIdentityAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePodIdentityAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdatePodIdentityAssociationOutcome(std::move(result.GetError()));
 }

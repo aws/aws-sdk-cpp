@@ -242,7 +242,9 @@ AddLFTagsToResourceOutcome LakeFormationClient::AddLFTagsToResource(const AddLFT
     endpointResolutionOutcome.GetResult().AddPathSegments("/AddLFTagsToResource");
   };
 
-  return AddLFTagsToResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddLFTagsToResourceOutcome(result.GetResultWithOwnership())
+                            : AddLFTagsToResourceOutcome(std::move(result.GetError()));
 }
 
 AssumeDecoratedRoleWithSAMLOutcome LakeFormationClient::AssumeDecoratedRoleWithSAML(
@@ -252,7 +254,9 @@ AssumeDecoratedRoleWithSAMLOutcome LakeFormationClient::AssumeDecoratedRoleWithS
     endpointResolutionOutcome.GetResult().AddPathSegments("/AssumeDecoratedRoleWithSAML");
   };
 
-  return AssumeDecoratedRoleWithSAMLOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssumeDecoratedRoleWithSAMLOutcome(result.GetResultWithOwnership())
+                            : AssumeDecoratedRoleWithSAMLOutcome(std::move(result.GetError()));
 }
 
 BatchGrantPermissionsOutcome LakeFormationClient::BatchGrantPermissions(const BatchGrantPermissionsRequest& request) const {
@@ -261,7 +265,9 @@ BatchGrantPermissionsOutcome LakeFormationClient::BatchGrantPermissions(const Ba
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchGrantPermissions");
   };
 
-  return BatchGrantPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGrantPermissionsOutcome(result.GetResultWithOwnership())
+                            : BatchGrantPermissionsOutcome(std::move(result.GetError()));
 }
 
 BatchRevokePermissionsOutcome LakeFormationClient::BatchRevokePermissions(const BatchRevokePermissionsRequest& request) const {
@@ -270,7 +276,9 @@ BatchRevokePermissionsOutcome LakeFormationClient::BatchRevokePermissions(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/BatchRevokePermissions");
   };
 
-  return BatchRevokePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchRevokePermissionsOutcome(result.GetResultWithOwnership())
+                            : BatchRevokePermissionsOutcome(std::move(result.GetError()));
 }
 
 CancelTransactionOutcome LakeFormationClient::CancelTransaction(const CancelTransactionRequest& request) const {
@@ -279,7 +287,9 @@ CancelTransactionOutcome LakeFormationClient::CancelTransaction(const CancelTran
     endpointResolutionOutcome.GetResult().AddPathSegments("/CancelTransaction");
   };
 
-  return CancelTransactionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelTransactionOutcome(result.GetResultWithOwnership())
+                            : CancelTransactionOutcome(std::move(result.GetError()));
 }
 
 CommitTransactionOutcome LakeFormationClient::CommitTransaction(const CommitTransactionRequest& request) const {
@@ -288,7 +298,9 @@ CommitTransactionOutcome LakeFormationClient::CommitTransaction(const CommitTran
     endpointResolutionOutcome.GetResult().AddPathSegments("/CommitTransaction");
   };
 
-  return CommitTransactionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CommitTransactionOutcome(result.GetResultWithOwnership())
+                            : CommitTransactionOutcome(std::move(result.GetError()));
 }
 
 CreateDataCellsFilterOutcome LakeFormationClient::CreateDataCellsFilter(const CreateDataCellsFilterRequest& request) const {
@@ -297,7 +309,9 @@ CreateDataCellsFilterOutcome LakeFormationClient::CreateDataCellsFilter(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateDataCellsFilter");
   };
 
-  return CreateDataCellsFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataCellsFilterOutcome(result.GetResultWithOwnership())
+                            : CreateDataCellsFilterOutcome(std::move(result.GetError()));
 }
 
 CreateLFTagOutcome LakeFormationClient::CreateLFTag(const CreateLFTagRequest& request) const {
@@ -306,7 +320,8 @@ CreateLFTagOutcome LakeFormationClient::CreateLFTag(const CreateLFTagRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateLFTag");
   };
 
-  return CreateLFTagOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLFTagOutcome(result.GetResultWithOwnership()) : CreateLFTagOutcome(std::move(result.GetError()));
 }
 
 CreateLFTagExpressionOutcome LakeFormationClient::CreateLFTagExpression(const CreateLFTagExpressionRequest& request) const {
@@ -315,7 +330,9 @@ CreateLFTagExpressionOutcome LakeFormationClient::CreateLFTagExpression(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateLFTagExpression");
   };
 
-  return CreateLFTagExpressionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLFTagExpressionOutcome(result.GetResultWithOwnership())
+                            : CreateLFTagExpressionOutcome(std::move(result.GetError()));
 }
 
 CreateLakeFormationIdentityCenterConfigurationOutcome LakeFormationClient::CreateLakeFormationIdentityCenterConfiguration(
@@ -325,8 +342,9 @@ CreateLakeFormationIdentityCenterConfigurationOutcome LakeFormationClient::Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateLakeFormationIdentityCenterConfiguration");
   };
 
-  return CreateLakeFormationIdentityCenterConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLakeFormationIdentityCenterConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateLakeFormationIdentityCenterConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateLakeFormationOptInOutcome LakeFormationClient::CreateLakeFormationOptIn(const CreateLakeFormationOptInRequest& request) const {
@@ -335,7 +353,9 @@ CreateLakeFormationOptInOutcome LakeFormationClient::CreateLakeFormationOptIn(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateLakeFormationOptIn");
   };
 
-  return CreateLakeFormationOptInOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLakeFormationOptInOutcome(result.GetResultWithOwnership())
+                            : CreateLakeFormationOptInOutcome(std::move(result.GetError()));
 }
 
 DeleteDataCellsFilterOutcome LakeFormationClient::DeleteDataCellsFilter(const DeleteDataCellsFilterRequest& request) const {
@@ -344,7 +364,9 @@ DeleteDataCellsFilterOutcome LakeFormationClient::DeleteDataCellsFilter(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteDataCellsFilter");
   };
 
-  return DeleteDataCellsFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataCellsFilterOutcome(result.GetResultWithOwnership())
+                            : DeleteDataCellsFilterOutcome(std::move(result.GetError()));
 }
 
 DeleteLFTagOutcome LakeFormationClient::DeleteLFTag(const DeleteLFTagRequest& request) const {
@@ -353,7 +375,8 @@ DeleteLFTagOutcome LakeFormationClient::DeleteLFTag(const DeleteLFTagRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLFTag");
   };
 
-  return DeleteLFTagOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLFTagOutcome(result.GetResultWithOwnership()) : DeleteLFTagOutcome(std::move(result.GetError()));
 }
 
 DeleteLFTagExpressionOutcome LakeFormationClient::DeleteLFTagExpression(const DeleteLFTagExpressionRequest& request) const {
@@ -362,7 +385,9 @@ DeleteLFTagExpressionOutcome LakeFormationClient::DeleteLFTagExpression(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLFTagExpression");
   };
 
-  return DeleteLFTagExpressionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLFTagExpressionOutcome(result.GetResultWithOwnership())
+                            : DeleteLFTagExpressionOutcome(std::move(result.GetError()));
 }
 
 DeleteLakeFormationIdentityCenterConfigurationOutcome LakeFormationClient::DeleteLakeFormationIdentityCenterConfiguration(
@@ -372,8 +397,9 @@ DeleteLakeFormationIdentityCenterConfigurationOutcome LakeFormationClient::Delet
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLakeFormationIdentityCenterConfiguration");
   };
 
-  return DeleteLakeFormationIdentityCenterConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLakeFormationIdentityCenterConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteLakeFormationIdentityCenterConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteLakeFormationOptInOutcome LakeFormationClient::DeleteLakeFormationOptIn(const DeleteLakeFormationOptInRequest& request) const {
@@ -382,7 +408,9 @@ DeleteLakeFormationOptInOutcome LakeFormationClient::DeleteLakeFormationOptIn(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLakeFormationOptIn");
   };
 
-  return DeleteLakeFormationOptInOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLakeFormationOptInOutcome(result.GetResultWithOwnership())
+                            : DeleteLakeFormationOptInOutcome(std::move(result.GetError()));
 }
 
 DeleteObjectsOnCancelOutcome LakeFormationClient::DeleteObjectsOnCancel(const DeleteObjectsOnCancelRequest& request) const {
@@ -391,7 +419,9 @@ DeleteObjectsOnCancelOutcome LakeFormationClient::DeleteObjectsOnCancel(const De
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteObjectsOnCancel");
   };
 
-  return DeleteObjectsOnCancelOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteObjectsOnCancelOutcome(result.GetResultWithOwnership())
+                            : DeleteObjectsOnCancelOutcome(std::move(result.GetError()));
 }
 
 DeregisterResourceOutcome LakeFormationClient::DeregisterResource(const DeregisterResourceRequest& request) const {
@@ -400,7 +430,9 @@ DeregisterResourceOutcome LakeFormationClient::DeregisterResource(const Deregist
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeregisterResource");
   };
 
-  return DeregisterResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterResourceOutcome(result.GetResultWithOwnership())
+                            : DeregisterResourceOutcome(std::move(result.GetError()));
 }
 
 DescribeLakeFormationIdentityCenterConfigurationOutcome LakeFormationClient::DescribeLakeFormationIdentityCenterConfiguration(
@@ -410,8 +442,9 @@ DescribeLakeFormationIdentityCenterConfigurationOutcome LakeFormationClient::Des
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeLakeFormationIdentityCenterConfiguration");
   };
 
-  return DescribeLakeFormationIdentityCenterConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeLakeFormationIdentityCenterConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeLakeFormationIdentityCenterConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeResourceOutcome LakeFormationClient::DescribeResource(const DescribeResourceRequest& request) const {
@@ -420,7 +453,9 @@ DescribeResourceOutcome LakeFormationClient::DescribeResource(const DescribeReso
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeResource");
   };
 
-  return DescribeResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResourceOutcome(result.GetResultWithOwnership())
+                            : DescribeResourceOutcome(std::move(result.GetError()));
 }
 
 DescribeTransactionOutcome LakeFormationClient::DescribeTransaction(const DescribeTransactionRequest& request) const {
@@ -429,7 +464,9 @@ DescribeTransactionOutcome LakeFormationClient::DescribeTransaction(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeTransaction");
   };
 
-  return DescribeTransactionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTransactionOutcome(result.GetResultWithOwnership())
+                            : DescribeTransactionOutcome(std::move(result.GetError()));
 }
 
 ExtendTransactionOutcome LakeFormationClient::ExtendTransaction(const ExtendTransactionRequest& request) const {
@@ -438,7 +475,9 @@ ExtendTransactionOutcome LakeFormationClient::ExtendTransaction(const ExtendTran
     endpointResolutionOutcome.GetResult().AddPathSegments("/ExtendTransaction");
   };
 
-  return ExtendTransactionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExtendTransactionOutcome(result.GetResultWithOwnership())
+                            : ExtendTransactionOutcome(std::move(result.GetError()));
 }
 
 GetDataCellsFilterOutcome LakeFormationClient::GetDataCellsFilter(const GetDataCellsFilterRequest& request) const {
@@ -447,7 +486,9 @@ GetDataCellsFilterOutcome LakeFormationClient::GetDataCellsFilter(const GetDataC
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetDataCellsFilter");
   };
 
-  return GetDataCellsFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataCellsFilterOutcome(result.GetResultWithOwnership())
+                            : GetDataCellsFilterOutcome(std::move(result.GetError()));
 }
 
 GetDataLakePrincipalOutcome LakeFormationClient::GetDataLakePrincipal(const GetDataLakePrincipalRequest& request) const {
@@ -456,7 +497,9 @@ GetDataLakePrincipalOutcome LakeFormationClient::GetDataLakePrincipal(const GetD
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetDataLakePrincipal");
   };
 
-  return GetDataLakePrincipalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataLakePrincipalOutcome(result.GetResultWithOwnership())
+                            : GetDataLakePrincipalOutcome(std::move(result.GetError()));
 }
 
 GetDataLakeSettingsOutcome LakeFormationClient::GetDataLakeSettings(const GetDataLakeSettingsRequest& request) const {
@@ -465,7 +508,9 @@ GetDataLakeSettingsOutcome LakeFormationClient::GetDataLakeSettings(const GetDat
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetDataLakeSettings");
   };
 
-  return GetDataLakeSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataLakeSettingsOutcome(result.GetResultWithOwnership())
+                            : GetDataLakeSettingsOutcome(std::move(result.GetError()));
 }
 
 GetEffectivePermissionsForPathOutcome LakeFormationClient::GetEffectivePermissionsForPath(
@@ -475,7 +520,9 @@ GetEffectivePermissionsForPathOutcome LakeFormationClient::GetEffectivePermissio
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetEffectivePermissionsForPath");
   };
 
-  return GetEffectivePermissionsForPathOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEffectivePermissionsForPathOutcome(result.GetResultWithOwnership())
+                            : GetEffectivePermissionsForPathOutcome(std::move(result.GetError()));
 }
 
 GetLFTagOutcome LakeFormationClient::GetLFTag(const GetLFTagRequest& request) const {
@@ -484,7 +531,8 @@ GetLFTagOutcome LakeFormationClient::GetLFTag(const GetLFTagRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetLFTag");
   };
 
-  return GetLFTagOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLFTagOutcome(result.GetResultWithOwnership()) : GetLFTagOutcome(std::move(result.GetError()));
 }
 
 GetLFTagExpressionOutcome LakeFormationClient::GetLFTagExpression(const GetLFTagExpressionRequest& request) const {
@@ -493,7 +541,9 @@ GetLFTagExpressionOutcome LakeFormationClient::GetLFTagExpression(const GetLFTag
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetLFTagExpression");
   };
 
-  return GetLFTagExpressionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLFTagExpressionOutcome(result.GetResultWithOwnership())
+                            : GetLFTagExpressionOutcome(std::move(result.GetError()));
 }
 
 GetQueryStateOutcome LakeFormationClient::GetQueryState(const GetQueryStateRequest& request) const {
@@ -502,7 +552,8 @@ GetQueryStateOutcome LakeFormationClient::GetQueryState(const GetQueryStateReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetQueryState");
   };
 
-  return GetQueryStateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQueryStateOutcome(result.GetResultWithOwnership()) : GetQueryStateOutcome(std::move(result.GetError()));
 }
 
 GetQueryStatisticsOutcome LakeFormationClient::GetQueryStatistics(const GetQueryStatisticsRequest& request) const {
@@ -511,7 +562,9 @@ GetQueryStatisticsOutcome LakeFormationClient::GetQueryStatistics(const GetQuery
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetQueryStatistics");
   };
 
-  return GetQueryStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQueryStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetQueryStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetResourceLFTagsOutcome LakeFormationClient::GetResourceLFTags(const GetResourceLFTagsRequest& request) const {
@@ -520,7 +573,9 @@ GetResourceLFTagsOutcome LakeFormationClient::GetResourceLFTags(const GetResourc
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetResourceLFTags");
   };
 
-  return GetResourceLFTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourceLFTagsOutcome(result.GetResultWithOwnership())
+                            : GetResourceLFTagsOutcome(std::move(result.GetError()));
 }
 
 GetTableObjectsOutcome LakeFormationClient::GetTableObjects(const GetTableObjectsRequest& request) const {
@@ -529,7 +584,9 @@ GetTableObjectsOutcome LakeFormationClient::GetTableObjects(const GetTableObject
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTableObjects");
   };
 
-  return GetTableObjectsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTableObjectsOutcome(result.GetResultWithOwnership())
+                            : GetTableObjectsOutcome(std::move(result.GetError()));
 }
 
 GetTemporaryDataLocationCredentialsOutcome LakeFormationClient::GetTemporaryDataLocationCredentials(
@@ -539,7 +596,9 @@ GetTemporaryDataLocationCredentialsOutcome LakeFormationClient::GetTemporaryData
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTemporaryDataLocationCredentials");
   };
 
-  return GetTemporaryDataLocationCredentialsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTemporaryDataLocationCredentialsOutcome(result.GetResultWithOwnership())
+                            : GetTemporaryDataLocationCredentialsOutcome(std::move(result.GetError()));
 }
 
 GetTemporaryGluePartitionCredentialsOutcome LakeFormationClient::GetTemporaryGluePartitionCredentials(
@@ -549,7 +608,9 @@ GetTemporaryGluePartitionCredentialsOutcome LakeFormationClient::GetTemporaryGlu
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTemporaryGluePartitionCredentials");
   };
 
-  return GetTemporaryGluePartitionCredentialsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTemporaryGluePartitionCredentialsOutcome(result.GetResultWithOwnership())
+                            : GetTemporaryGluePartitionCredentialsOutcome(std::move(result.GetError()));
 }
 
 GetTemporaryGlueTableCredentialsOutcome LakeFormationClient::GetTemporaryGlueTableCredentials(
@@ -559,7 +620,9 @@ GetTemporaryGlueTableCredentialsOutcome LakeFormationClient::GetTemporaryGlueTab
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetTemporaryGlueTableCredentials");
   };
 
-  return GetTemporaryGlueTableCredentialsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTemporaryGlueTableCredentialsOutcome(result.GetResultWithOwnership())
+                            : GetTemporaryGlueTableCredentialsOutcome(std::move(result.GetError()));
 }
 
 GetWorkUnitResultsOutcome LakeFormationClient::GetWorkUnitResults(const GetWorkUnitResultsRequest& request) const {
@@ -586,8 +649,9 @@ GetWorkUnitResultsOutcome LakeFormationClient::GetWorkUnitResults(const GetWorkU
         auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("data-");
         AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetWorkUnitResultsOutcome(addPrefixErr.value()));
         endpointResolutionOutcome.GetResult().AddPathSegments("/GetWorkUnitResults");
-        return GetWorkUnitResultsOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? GetWorkUnitResultsOutcome(result.GetResultWithOwnership())
+                                  : GetWorkUnitResultsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -600,7 +664,8 @@ GetWorkUnitsOutcome LakeFormationClient::GetWorkUnits(const GetWorkUnitsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetWorkUnits");
   };
 
-  return GetWorkUnitsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkUnitsOutcome(result.GetResultWithOwnership()) : GetWorkUnitsOutcome(std::move(result.GetError()));
 }
 
 GrantPermissionsOutcome LakeFormationClient::GrantPermissions(const GrantPermissionsRequest& request) const {
@@ -609,7 +674,9 @@ GrantPermissionsOutcome LakeFormationClient::GrantPermissions(const GrantPermiss
     endpointResolutionOutcome.GetResult().AddPathSegments("/GrantPermissions");
   };
 
-  return GrantPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GrantPermissionsOutcome(result.GetResultWithOwnership())
+                            : GrantPermissionsOutcome(std::move(result.GetError()));
 }
 
 ListDataCellsFilterOutcome LakeFormationClient::ListDataCellsFilter(const ListDataCellsFilterRequest& request) const {
@@ -618,7 +685,9 @@ ListDataCellsFilterOutcome LakeFormationClient::ListDataCellsFilter(const ListDa
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListDataCellsFilter");
   };
 
-  return ListDataCellsFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataCellsFilterOutcome(result.GetResultWithOwnership())
+                            : ListDataCellsFilterOutcome(std::move(result.GetError()));
 }
 
 ListLFTagExpressionsOutcome LakeFormationClient::ListLFTagExpressions(const ListLFTagExpressionsRequest& request) const {
@@ -627,7 +696,9 @@ ListLFTagExpressionsOutcome LakeFormationClient::ListLFTagExpressions(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListLFTagExpressions");
   };
 
-  return ListLFTagExpressionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLFTagExpressionsOutcome(result.GetResultWithOwnership())
+                            : ListLFTagExpressionsOutcome(std::move(result.GetError()));
 }
 
 ListLFTagsOutcome LakeFormationClient::ListLFTags(const ListLFTagsRequest& request) const {
@@ -636,7 +707,8 @@ ListLFTagsOutcome LakeFormationClient::ListLFTags(const ListLFTagsRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListLFTags");
   };
 
-  return ListLFTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLFTagsOutcome(result.GetResultWithOwnership()) : ListLFTagsOutcome(std::move(result.GetError()));
 }
 
 ListLakeFormationOptInsOutcome LakeFormationClient::ListLakeFormationOptIns(const ListLakeFormationOptInsRequest& request) const {
@@ -645,7 +717,9 @@ ListLakeFormationOptInsOutcome LakeFormationClient::ListLakeFormationOptIns(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListLakeFormationOptIns");
   };
 
-  return ListLakeFormationOptInsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLakeFormationOptInsOutcome(result.GetResultWithOwnership())
+                            : ListLakeFormationOptInsOutcome(std::move(result.GetError()));
 }
 
 ListPermissionsOutcome LakeFormationClient::ListPermissions(const ListPermissionsRequest& request) const {
@@ -654,7 +728,9 @@ ListPermissionsOutcome LakeFormationClient::ListPermissions(const ListPermission
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListPermissions");
   };
 
-  return ListPermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPermissionsOutcome(result.GetResultWithOwnership())
+                            : ListPermissionsOutcome(std::move(result.GetError()));
 }
 
 ListResourcesOutcome LakeFormationClient::ListResources(const ListResourcesRequest& request) const {
@@ -663,7 +739,8 @@ ListResourcesOutcome LakeFormationClient::ListResources(const ListResourcesReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListResources");
   };
 
-  return ListResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcesOutcome(result.GetResultWithOwnership()) : ListResourcesOutcome(std::move(result.GetError()));
 }
 
 ListTableStorageOptimizersOutcome LakeFormationClient::ListTableStorageOptimizers(const ListTableStorageOptimizersRequest& request) const {
@@ -672,7 +749,9 @@ ListTableStorageOptimizersOutcome LakeFormationClient::ListTableStorageOptimizer
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTableStorageOptimizers");
   };
 
-  return ListTableStorageOptimizersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTableStorageOptimizersOutcome(result.GetResultWithOwnership())
+                            : ListTableStorageOptimizersOutcome(std::move(result.GetError()));
 }
 
 ListTransactionsOutcome LakeFormationClient::ListTransactions(const ListTransactionsRequest& request) const {
@@ -681,7 +760,9 @@ ListTransactionsOutcome LakeFormationClient::ListTransactions(const ListTransact
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTransactions");
   };
 
-  return ListTransactionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTransactionsOutcome(result.GetResultWithOwnership())
+                            : ListTransactionsOutcome(std::move(result.GetError()));
 }
 
 PutDataLakeSettingsOutcome LakeFormationClient::PutDataLakeSettings(const PutDataLakeSettingsRequest& request) const {
@@ -690,7 +771,9 @@ PutDataLakeSettingsOutcome LakeFormationClient::PutDataLakeSettings(const PutDat
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutDataLakeSettings");
   };
 
-  return PutDataLakeSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutDataLakeSettingsOutcome(result.GetResultWithOwnership())
+                            : PutDataLakeSettingsOutcome(std::move(result.GetError()));
 }
 
 RegisterResourceOutcome LakeFormationClient::RegisterResource(const RegisterResourceRequest& request) const {
@@ -699,7 +782,9 @@ RegisterResourceOutcome LakeFormationClient::RegisterResource(const RegisterReso
     endpointResolutionOutcome.GetResult().AddPathSegments("/RegisterResource");
   };
 
-  return RegisterResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterResourceOutcome(result.GetResultWithOwnership())
+                            : RegisterResourceOutcome(std::move(result.GetError()));
 }
 
 RemoveLFTagsFromResourceOutcome LakeFormationClient::RemoveLFTagsFromResource(const RemoveLFTagsFromResourceRequest& request) const {
@@ -708,7 +793,9 @@ RemoveLFTagsFromResourceOutcome LakeFormationClient::RemoveLFTagsFromResource(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/RemoveLFTagsFromResource");
   };
 
-  return RemoveLFTagsFromResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveLFTagsFromResourceOutcome(result.GetResultWithOwnership())
+                            : RemoveLFTagsFromResourceOutcome(std::move(result.GetError()));
 }
 
 RevokePermissionsOutcome LakeFormationClient::RevokePermissions(const RevokePermissionsRequest& request) const {
@@ -717,7 +804,9 @@ RevokePermissionsOutcome LakeFormationClient::RevokePermissions(const RevokePerm
     endpointResolutionOutcome.GetResult().AddPathSegments("/RevokePermissions");
   };
 
-  return RevokePermissionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokePermissionsOutcome(result.GetResultWithOwnership())
+                            : RevokePermissionsOutcome(std::move(result.GetError()));
 }
 
 SearchDatabasesByLFTagsOutcome LakeFormationClient::SearchDatabasesByLFTags(const SearchDatabasesByLFTagsRequest& request) const {
@@ -726,7 +815,9 @@ SearchDatabasesByLFTagsOutcome LakeFormationClient::SearchDatabasesByLFTags(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/SearchDatabasesByLFTags");
   };
 
-  return SearchDatabasesByLFTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchDatabasesByLFTagsOutcome(result.GetResultWithOwnership())
+                            : SearchDatabasesByLFTagsOutcome(std::move(result.GetError()));
 }
 
 SearchTablesByLFTagsOutcome LakeFormationClient::SearchTablesByLFTags(const SearchTablesByLFTagsRequest& request) const {
@@ -735,7 +826,9 @@ SearchTablesByLFTagsOutcome LakeFormationClient::SearchTablesByLFTags(const Sear
     endpointResolutionOutcome.GetResult().AddPathSegments("/SearchTablesByLFTags");
   };
 
-  return SearchTablesByLFTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchTablesByLFTagsOutcome(result.GetResultWithOwnership())
+                            : SearchTablesByLFTagsOutcome(std::move(result.GetError()));
 }
 
 StartQueryPlanningOutcome LakeFormationClient::StartQueryPlanning(const StartQueryPlanningRequest& request) const {
@@ -744,7 +837,9 @@ StartQueryPlanningOutcome LakeFormationClient::StartQueryPlanning(const StartQue
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartQueryPlanning");
   };
 
-  return StartQueryPlanningOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQueryPlanningOutcome(result.GetResultWithOwnership())
+                            : StartQueryPlanningOutcome(std::move(result.GetError()));
 }
 
 StartTransactionOutcome LakeFormationClient::StartTransaction(const StartTransactionRequest& request) const {
@@ -753,7 +848,9 @@ StartTransactionOutcome LakeFormationClient::StartTransaction(const StartTransac
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartTransaction");
   };
 
-  return StartTransactionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTransactionOutcome(result.GetResultWithOwnership())
+                            : StartTransactionOutcome(std::move(result.GetError()));
 }
 
 UpdateDataCellsFilterOutcome LakeFormationClient::UpdateDataCellsFilter(const UpdateDataCellsFilterRequest& request) const {
@@ -762,7 +859,9 @@ UpdateDataCellsFilterOutcome LakeFormationClient::UpdateDataCellsFilter(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateDataCellsFilter");
   };
 
-  return UpdateDataCellsFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDataCellsFilterOutcome(result.GetResultWithOwnership())
+                            : UpdateDataCellsFilterOutcome(std::move(result.GetError()));
 }
 
 UpdateLFTagOutcome LakeFormationClient::UpdateLFTag(const UpdateLFTagRequest& request) const {
@@ -771,7 +870,8 @@ UpdateLFTagOutcome LakeFormationClient::UpdateLFTag(const UpdateLFTagRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLFTag");
   };
 
-  return UpdateLFTagOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLFTagOutcome(result.GetResultWithOwnership()) : UpdateLFTagOutcome(std::move(result.GetError()));
 }
 
 UpdateLFTagExpressionOutcome LakeFormationClient::UpdateLFTagExpression(const UpdateLFTagExpressionRequest& request) const {
@@ -780,7 +880,9 @@ UpdateLFTagExpressionOutcome LakeFormationClient::UpdateLFTagExpression(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLFTagExpression");
   };
 
-  return UpdateLFTagExpressionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLFTagExpressionOutcome(result.GetResultWithOwnership())
+                            : UpdateLFTagExpressionOutcome(std::move(result.GetError()));
 }
 
 UpdateLakeFormationIdentityCenterConfigurationOutcome LakeFormationClient::UpdateLakeFormationIdentityCenterConfiguration(
@@ -790,8 +892,9 @@ UpdateLakeFormationIdentityCenterConfigurationOutcome LakeFormationClient::Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLakeFormationIdentityCenterConfiguration");
   };
 
-  return UpdateLakeFormationIdentityCenterConfigurationOutcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateLakeFormationIdentityCenterConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateLakeFormationIdentityCenterConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceOutcome LakeFormationClient::UpdateResource(const UpdateResourceRequest& request) const {
@@ -800,7 +903,8 @@ UpdateResourceOutcome LakeFormationClient::UpdateResource(const UpdateResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateResource");
   };
 
-  return UpdateResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResourceOutcome(result.GetResultWithOwnership()) : UpdateResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateTableObjectsOutcome LakeFormationClient::UpdateTableObjects(const UpdateTableObjectsRequest& request) const {
@@ -809,7 +913,9 @@ UpdateTableObjectsOutcome LakeFormationClient::UpdateTableObjects(const UpdateTa
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateTableObjects");
   };
 
-  return UpdateTableObjectsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTableObjectsOutcome(result.GetResultWithOwnership())
+                            : UpdateTableObjectsOutcome(std::move(result.GetError()));
 }
 
 UpdateTableStorageOptimizerOutcome LakeFormationClient::UpdateTableStorageOptimizer(
@@ -819,5 +925,7 @@ UpdateTableStorageOptimizerOutcome LakeFormationClient::UpdateTableStorageOptimi
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateTableStorageOptimizer");
   };
 
-  return UpdateTableStorageOptimizerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTableStorageOptimizerOutcome(result.GetResultWithOwnership())
+                            : UpdateTableStorageOptimizerOutcome(std::move(result.GetError()));
 }

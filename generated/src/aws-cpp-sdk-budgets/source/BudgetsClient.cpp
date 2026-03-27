@@ -198,112 +198,158 @@ BudgetsClient::InvokeOperationOutcome BudgetsClient::InvokeServiceOperation(cons
 }
 
 CreateBudgetOutcome BudgetsClient::CreateBudget(const CreateBudgetRequest& request) const {
-  return CreateBudgetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBudgetOutcome(result.GetResultWithOwnership()) : CreateBudgetOutcome(std::move(result.GetError()));
 }
 
 CreateBudgetActionOutcome BudgetsClient::CreateBudgetAction(const CreateBudgetActionRequest& request) const {
-  return CreateBudgetActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBudgetActionOutcome(result.GetResultWithOwnership())
+                            : CreateBudgetActionOutcome(std::move(result.GetError()));
 }
 
 CreateNotificationOutcome BudgetsClient::CreateNotification(const CreateNotificationRequest& request) const {
-  return CreateNotificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNotificationOutcome(result.GetResultWithOwnership())
+                            : CreateNotificationOutcome(std::move(result.GetError()));
 }
 
 CreateSubscriberOutcome BudgetsClient::CreateSubscriber(const CreateSubscriberRequest& request) const {
-  return CreateSubscriberOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSubscriberOutcome(result.GetResultWithOwnership())
+                            : CreateSubscriberOutcome(std::move(result.GetError()));
 }
 
 DeleteBudgetOutcome BudgetsClient::DeleteBudget(const DeleteBudgetRequest& request) const {
-  return DeleteBudgetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBudgetOutcome(result.GetResultWithOwnership()) : DeleteBudgetOutcome(std::move(result.GetError()));
 }
 
 DeleteBudgetActionOutcome BudgetsClient::DeleteBudgetAction(const DeleteBudgetActionRequest& request) const {
-  return DeleteBudgetActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBudgetActionOutcome(result.GetResultWithOwnership())
+                            : DeleteBudgetActionOutcome(std::move(result.GetError()));
 }
 
 DeleteNotificationOutcome BudgetsClient::DeleteNotification(const DeleteNotificationRequest& request) const {
-  return DeleteNotificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNotificationOutcome(result.GetResultWithOwnership())
+                            : DeleteNotificationOutcome(std::move(result.GetError()));
 }
 
 DeleteSubscriberOutcome BudgetsClient::DeleteSubscriber(const DeleteSubscriberRequest& request) const {
-  return DeleteSubscriberOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSubscriberOutcome(result.GetResultWithOwnership())
+                            : DeleteSubscriberOutcome(std::move(result.GetError()));
 }
 
 DescribeBudgetOutcome BudgetsClient::DescribeBudget(const DescribeBudgetRequest& request) const {
-  return DescribeBudgetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBudgetOutcome(result.GetResultWithOwnership()) : DescribeBudgetOutcome(std::move(result.GetError()));
 }
 
 DescribeBudgetActionOutcome BudgetsClient::DescribeBudgetAction(const DescribeBudgetActionRequest& request) const {
-  return DescribeBudgetActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBudgetActionOutcome(result.GetResultWithOwnership())
+                            : DescribeBudgetActionOutcome(std::move(result.GetError()));
 }
 
 DescribeBudgetActionHistoriesOutcome BudgetsClient::DescribeBudgetActionHistories(
     const DescribeBudgetActionHistoriesRequest& request) const {
-  return DescribeBudgetActionHistoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBudgetActionHistoriesOutcome(result.GetResultWithOwnership())
+                            : DescribeBudgetActionHistoriesOutcome(std::move(result.GetError()));
 }
 
 DescribeBudgetActionsForAccountOutcome BudgetsClient::DescribeBudgetActionsForAccount(
     const DescribeBudgetActionsForAccountRequest& request) const {
-  return DescribeBudgetActionsForAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBudgetActionsForAccountOutcome(result.GetResultWithOwnership())
+                            : DescribeBudgetActionsForAccountOutcome(std::move(result.GetError()));
 }
 
 DescribeBudgetActionsForBudgetOutcome BudgetsClient::DescribeBudgetActionsForBudget(
     const DescribeBudgetActionsForBudgetRequest& request) const {
-  return DescribeBudgetActionsForBudgetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBudgetActionsForBudgetOutcome(result.GetResultWithOwnership())
+                            : DescribeBudgetActionsForBudgetOutcome(std::move(result.GetError()));
 }
 
 DescribeBudgetNotificationsForAccountOutcome BudgetsClient::DescribeBudgetNotificationsForAccount(
     const DescribeBudgetNotificationsForAccountRequest& request) const {
-  return DescribeBudgetNotificationsForAccountOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBudgetNotificationsForAccountOutcome(result.GetResultWithOwnership())
+                            : DescribeBudgetNotificationsForAccountOutcome(std::move(result.GetError()));
 }
 
 DescribeBudgetPerformanceHistoryOutcome BudgetsClient::DescribeBudgetPerformanceHistory(
     const DescribeBudgetPerformanceHistoryRequest& request) const {
-  return DescribeBudgetPerformanceHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBudgetPerformanceHistoryOutcome(result.GetResultWithOwnership())
+                            : DescribeBudgetPerformanceHistoryOutcome(std::move(result.GetError()));
 }
 
 DescribeBudgetsOutcome BudgetsClient::DescribeBudgets(const DescribeBudgetsRequest& request) const {
-  return DescribeBudgetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBudgetsOutcome(result.GetResultWithOwnership())
+                            : DescribeBudgetsOutcome(std::move(result.GetError()));
 }
 
 DescribeNotificationsForBudgetOutcome BudgetsClient::DescribeNotificationsForBudget(
     const DescribeNotificationsForBudgetRequest& request) const {
-  return DescribeNotificationsForBudgetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNotificationsForBudgetOutcome(result.GetResultWithOwnership())
+                            : DescribeNotificationsForBudgetOutcome(std::move(result.GetError()));
 }
 
 DescribeSubscribersForNotificationOutcome BudgetsClient::DescribeSubscribersForNotification(
     const DescribeSubscribersForNotificationRequest& request) const {
-  return DescribeSubscribersForNotificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSubscribersForNotificationOutcome(result.GetResultWithOwnership())
+                            : DescribeSubscribersForNotificationOutcome(std::move(result.GetError()));
 }
 
 ExecuteBudgetActionOutcome BudgetsClient::ExecuteBudgetAction(const ExecuteBudgetActionRequest& request) const {
-  return ExecuteBudgetActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExecuteBudgetActionOutcome(result.GetResultWithOwnership())
+                            : ExecuteBudgetActionOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome BudgetsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome BudgetsClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome BudgetsClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBudgetOutcome BudgetsClient::UpdateBudget(const UpdateBudgetRequest& request) const {
-  return UpdateBudgetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBudgetOutcome(result.GetResultWithOwnership()) : UpdateBudgetOutcome(std::move(result.GetError()));
 }
 
 UpdateBudgetActionOutcome BudgetsClient::UpdateBudgetAction(const UpdateBudgetActionRequest& request) const {
-  return UpdateBudgetActionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBudgetActionOutcome(result.GetResultWithOwnership())
+                            : UpdateBudgetActionOutcome(std::move(result.GetError()));
 }
 
 UpdateNotificationOutcome BudgetsClient::UpdateNotification(const UpdateNotificationRequest& request) const {
-  return UpdateNotificationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateNotificationOutcome(result.GetResultWithOwnership())
+                            : UpdateNotificationOutcome(std::move(result.GetError()));
 }
 
 UpdateSubscriberOutcome BudgetsClient::UpdateSubscriber(const UpdateSubscriberRequest& request) const {
-  return UpdateSubscriberOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSubscriberOutcome(result.GetResultWithOwnership())
+                            : UpdateSubscriberOutcome(std::move(result.GetError()));
 }

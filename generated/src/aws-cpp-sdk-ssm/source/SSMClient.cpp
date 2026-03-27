@@ -316,610 +316,879 @@ SSMClient::InvokeOperationOutcome SSMClient::InvokeServiceOperation(const Amazon
 }
 
 AddTagsToResourceOutcome SSMClient::AddTagsToResource(const AddTagsToResourceRequest& request) const {
-  return AddTagsToResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AddTagsToResourceOutcome(result.GetResultWithOwnership())
+                            : AddTagsToResourceOutcome(std::move(result.GetError()));
 }
 
 AssociateOpsItemRelatedItemOutcome SSMClient::AssociateOpsItemRelatedItem(const AssociateOpsItemRelatedItemRequest& request) const {
-  return AssociateOpsItemRelatedItemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateOpsItemRelatedItemOutcome(result.GetResultWithOwnership())
+                            : AssociateOpsItemRelatedItemOutcome(std::move(result.GetError()));
 }
 
 CancelCommandOutcome SSMClient::CancelCommand(const CancelCommandRequest& request) const {
-  return CancelCommandOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelCommandOutcome(result.GetResultWithOwnership()) : CancelCommandOutcome(std::move(result.GetError()));
 }
 
 CancelMaintenanceWindowExecutionOutcome SSMClient::CancelMaintenanceWindowExecution(
     const CancelMaintenanceWindowExecutionRequest& request) const {
-  return CancelMaintenanceWindowExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelMaintenanceWindowExecutionOutcome(result.GetResultWithOwnership())
+                            : CancelMaintenanceWindowExecutionOutcome(std::move(result.GetError()));
 }
 
 CreateActivationOutcome SSMClient::CreateActivation(const CreateActivationRequest& request) const {
-  return CreateActivationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateActivationOutcome(result.GetResultWithOwnership())
+                            : CreateActivationOutcome(std::move(result.GetError()));
 }
 
 CreateAssociationOutcome SSMClient::CreateAssociation(const CreateAssociationRequest& request) const {
-  return CreateAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateAssociationOutcome(std::move(result.GetError()));
 }
 
 CreateAssociationBatchOutcome SSMClient::CreateAssociationBatch(const CreateAssociationBatchRequest& request) const {
-  return CreateAssociationBatchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssociationBatchOutcome(result.GetResultWithOwnership())
+                            : CreateAssociationBatchOutcome(std::move(result.GetError()));
 }
 
 CreateDocumentOutcome SSMClient::CreateDocument(const CreateDocumentRequest& request) const {
-  return CreateDocumentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDocumentOutcome(result.GetResultWithOwnership()) : CreateDocumentOutcome(std::move(result.GetError()));
 }
 
 CreateMaintenanceWindowOutcome SSMClient::CreateMaintenanceWindow(const CreateMaintenanceWindowRequest& request) const {
-  return CreateMaintenanceWindowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMaintenanceWindowOutcome(result.GetResultWithOwnership())
+                            : CreateMaintenanceWindowOutcome(std::move(result.GetError()));
 }
 
 CreateOpsItemOutcome SSMClient::CreateOpsItem(const CreateOpsItemRequest& request) const {
-  return CreateOpsItemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOpsItemOutcome(result.GetResultWithOwnership()) : CreateOpsItemOutcome(std::move(result.GetError()));
 }
 
 CreateOpsMetadataOutcome SSMClient::CreateOpsMetadata(const CreateOpsMetadataRequest& request) const {
-  return CreateOpsMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOpsMetadataOutcome(result.GetResultWithOwnership())
+                            : CreateOpsMetadataOutcome(std::move(result.GetError()));
 }
 
 CreatePatchBaselineOutcome SSMClient::CreatePatchBaseline(const CreatePatchBaselineRequest& request) const {
-  return CreatePatchBaselineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePatchBaselineOutcome(result.GetResultWithOwnership())
+                            : CreatePatchBaselineOutcome(std::move(result.GetError()));
 }
 
 CreateResourceDataSyncOutcome SSMClient::CreateResourceDataSync(const CreateResourceDataSyncRequest& request) const {
-  return CreateResourceDataSyncOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceDataSyncOutcome(result.GetResultWithOwnership())
+                            : CreateResourceDataSyncOutcome(std::move(result.GetError()));
 }
 
 DeleteActivationOutcome SSMClient::DeleteActivation(const DeleteActivationRequest& request) const {
-  return DeleteActivationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteActivationOutcome(result.GetResultWithOwnership())
+                            : DeleteActivationOutcome(std::move(result.GetError()));
 }
 
 DeleteAssociationOutcome SSMClient::DeleteAssociation(const DeleteAssociationRequest& request) const {
-  return DeleteAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteDocumentOutcome SSMClient::DeleteDocument(const DeleteDocumentRequest& request) const {
-  return DeleteDocumentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDocumentOutcome(result.GetResultWithOwnership()) : DeleteDocumentOutcome(std::move(result.GetError()));
 }
 
 DeleteInventoryOutcome SSMClient::DeleteInventory(const DeleteInventoryRequest& request) const {
-  return DeleteInventoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInventoryOutcome(result.GetResultWithOwnership())
+                            : DeleteInventoryOutcome(std::move(result.GetError()));
 }
 
 DeleteMaintenanceWindowOutcome SSMClient::DeleteMaintenanceWindow(const DeleteMaintenanceWindowRequest& request) const {
-  return DeleteMaintenanceWindowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMaintenanceWindowOutcome(result.GetResultWithOwnership())
+                            : DeleteMaintenanceWindowOutcome(std::move(result.GetError()));
 }
 
 DeleteOpsItemOutcome SSMClient::DeleteOpsItem(const DeleteOpsItemRequest& request) const {
-  return DeleteOpsItemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOpsItemOutcome(result.GetResultWithOwnership()) : DeleteOpsItemOutcome(std::move(result.GetError()));
 }
 
 DeleteOpsMetadataOutcome SSMClient::DeleteOpsMetadata(const DeleteOpsMetadataRequest& request) const {
-  return DeleteOpsMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOpsMetadataOutcome(result.GetResultWithOwnership())
+                            : DeleteOpsMetadataOutcome(std::move(result.GetError()));
 }
 
 DeleteParameterOutcome SSMClient::DeleteParameter(const DeleteParameterRequest& request) const {
-  return DeleteParameterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteParameterOutcome(result.GetResultWithOwnership())
+                            : DeleteParameterOutcome(std::move(result.GetError()));
 }
 
 DeleteParametersOutcome SSMClient::DeleteParameters(const DeleteParametersRequest& request) const {
-  return DeleteParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteParametersOutcome(result.GetResultWithOwnership())
+                            : DeleteParametersOutcome(std::move(result.GetError()));
 }
 
 DeletePatchBaselineOutcome SSMClient::DeletePatchBaseline(const DeletePatchBaselineRequest& request) const {
-  return DeletePatchBaselineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePatchBaselineOutcome(result.GetResultWithOwnership())
+                            : DeletePatchBaselineOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceDataSyncOutcome SSMClient::DeleteResourceDataSync(const DeleteResourceDataSyncRequest& request) const {
-  return DeleteResourceDataSyncOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourceDataSyncOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceDataSyncOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome SSMClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeregisterManagedInstanceOutcome SSMClient::DeregisterManagedInstance(const DeregisterManagedInstanceRequest& request) const {
-  return DeregisterManagedInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterManagedInstanceOutcome(result.GetResultWithOwnership())
+                            : DeregisterManagedInstanceOutcome(std::move(result.GetError()));
 }
 
 DeregisterPatchBaselineForPatchGroupOutcome SSMClient::DeregisterPatchBaselineForPatchGroup(
     const DeregisterPatchBaselineForPatchGroupRequest& request) const {
-  return DeregisterPatchBaselineForPatchGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterPatchBaselineForPatchGroupOutcome(result.GetResultWithOwnership())
+                            : DeregisterPatchBaselineForPatchGroupOutcome(std::move(result.GetError()));
 }
 
 DeregisterTargetFromMaintenanceWindowOutcome SSMClient::DeregisterTargetFromMaintenanceWindow(
     const DeregisterTargetFromMaintenanceWindowRequest& request) const {
-  return DeregisterTargetFromMaintenanceWindowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterTargetFromMaintenanceWindowOutcome(result.GetResultWithOwnership())
+                            : DeregisterTargetFromMaintenanceWindowOutcome(std::move(result.GetError()));
 }
 
 DeregisterTaskFromMaintenanceWindowOutcome SSMClient::DeregisterTaskFromMaintenanceWindow(
     const DeregisterTaskFromMaintenanceWindowRequest& request) const {
-  return DeregisterTaskFromMaintenanceWindowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterTaskFromMaintenanceWindowOutcome(result.GetResultWithOwnership())
+                            : DeregisterTaskFromMaintenanceWindowOutcome(std::move(result.GetError()));
 }
 
 DescribeActivationsOutcome SSMClient::DescribeActivations(const DescribeActivationsRequest& request) const {
-  return DescribeActivationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeActivationsOutcome(result.GetResultWithOwnership())
+                            : DescribeActivationsOutcome(std::move(result.GetError()));
 }
 
 DescribeAssociationOutcome SSMClient::DescribeAssociation(const DescribeAssociationRequest& request) const {
-  return DescribeAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAssociationOutcome(result.GetResultWithOwnership())
+                            : DescribeAssociationOutcome(std::move(result.GetError()));
 }
 
 DescribeAssociationExecutionTargetsOutcome SSMClient::DescribeAssociationExecutionTargets(
     const DescribeAssociationExecutionTargetsRequest& request) const {
-  return DescribeAssociationExecutionTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAssociationExecutionTargetsOutcome(result.GetResultWithOwnership())
+                            : DescribeAssociationExecutionTargetsOutcome(std::move(result.GetError()));
 }
 
 DescribeAssociationExecutionsOutcome SSMClient::DescribeAssociationExecutions(const DescribeAssociationExecutionsRequest& request) const {
-  return DescribeAssociationExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAssociationExecutionsOutcome(result.GetResultWithOwnership())
+                            : DescribeAssociationExecutionsOutcome(std::move(result.GetError()));
 }
 
 DescribeAutomationExecutionsOutcome SSMClient::DescribeAutomationExecutions(const DescribeAutomationExecutionsRequest& request) const {
-  return DescribeAutomationExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAutomationExecutionsOutcome(result.GetResultWithOwnership())
+                            : DescribeAutomationExecutionsOutcome(std::move(result.GetError()));
 }
 
 DescribeAutomationStepExecutionsOutcome SSMClient::DescribeAutomationStepExecutions(
     const DescribeAutomationStepExecutionsRequest& request) const {
-  return DescribeAutomationStepExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAutomationStepExecutionsOutcome(result.GetResultWithOwnership())
+                            : DescribeAutomationStepExecutionsOutcome(std::move(result.GetError()));
 }
 
 DescribeAvailablePatchesOutcome SSMClient::DescribeAvailablePatches(const DescribeAvailablePatchesRequest& request) const {
-  return DescribeAvailablePatchesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAvailablePatchesOutcome(result.GetResultWithOwnership())
+                            : DescribeAvailablePatchesOutcome(std::move(result.GetError()));
 }
 
 DescribeDocumentOutcome SSMClient::DescribeDocument(const DescribeDocumentRequest& request) const {
-  return DescribeDocumentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDocumentOutcome(result.GetResultWithOwnership())
+                            : DescribeDocumentOutcome(std::move(result.GetError()));
 }
 
 DescribeDocumentPermissionOutcome SSMClient::DescribeDocumentPermission(const DescribeDocumentPermissionRequest& request) const {
-  return DescribeDocumentPermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDocumentPermissionOutcome(result.GetResultWithOwnership())
+                            : DescribeDocumentPermissionOutcome(std::move(result.GetError()));
 }
 
 DescribeEffectiveInstanceAssociationsOutcome SSMClient::DescribeEffectiveInstanceAssociations(
     const DescribeEffectiveInstanceAssociationsRequest& request) const {
-  return DescribeEffectiveInstanceAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEffectiveInstanceAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeEffectiveInstanceAssociationsOutcome(std::move(result.GetError()));
 }
 
 DescribeEffectivePatchesForPatchBaselineOutcome SSMClient::DescribeEffectivePatchesForPatchBaseline(
     const DescribeEffectivePatchesForPatchBaselineRequest& request) const {
-  return DescribeEffectivePatchesForPatchBaselineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEffectivePatchesForPatchBaselineOutcome(result.GetResultWithOwnership())
+                            : DescribeEffectivePatchesForPatchBaselineOutcome(std::move(result.GetError()));
 }
 
 DescribeInstanceAssociationsStatusOutcome SSMClient::DescribeInstanceAssociationsStatus(
     const DescribeInstanceAssociationsStatusRequest& request) const {
-  return DescribeInstanceAssociationsStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInstanceAssociationsStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeInstanceAssociationsStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeInstanceInformationOutcome SSMClient::DescribeInstanceInformation(const DescribeInstanceInformationRequest& request) const {
-  return DescribeInstanceInformationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInstanceInformationOutcome(result.GetResultWithOwnership())
+                            : DescribeInstanceInformationOutcome(std::move(result.GetError()));
 }
 
 DescribeInstancePatchStatesOutcome SSMClient::DescribeInstancePatchStates(const DescribeInstancePatchStatesRequest& request) const {
-  return DescribeInstancePatchStatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInstancePatchStatesOutcome(result.GetResultWithOwnership())
+                            : DescribeInstancePatchStatesOutcome(std::move(result.GetError()));
 }
 
 DescribeInstancePatchStatesForPatchGroupOutcome SSMClient::DescribeInstancePatchStatesForPatchGroup(
     const DescribeInstancePatchStatesForPatchGroupRequest& request) const {
-  return DescribeInstancePatchStatesForPatchGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInstancePatchStatesForPatchGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeInstancePatchStatesForPatchGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeInstancePatchesOutcome SSMClient::DescribeInstancePatches(const DescribeInstancePatchesRequest& request) const {
-  return DescribeInstancePatchesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInstancePatchesOutcome(result.GetResultWithOwnership())
+                            : DescribeInstancePatchesOutcome(std::move(result.GetError()));
 }
 
 DescribeInstancePropertiesOutcome SSMClient::DescribeInstanceProperties(const DescribeInstancePropertiesRequest& request) const {
-  return DescribeInstancePropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInstancePropertiesOutcome(result.GetResultWithOwnership())
+                            : DescribeInstancePropertiesOutcome(std::move(result.GetError()));
 }
 
 DescribeInventoryDeletionsOutcome SSMClient::DescribeInventoryDeletions(const DescribeInventoryDeletionsRequest& request) const {
-  return DescribeInventoryDeletionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInventoryDeletionsOutcome(result.GetResultWithOwnership())
+                            : DescribeInventoryDeletionsOutcome(std::move(result.GetError()));
 }
 
 DescribeMaintenanceWindowExecutionTaskInvocationsOutcome SSMClient::DescribeMaintenanceWindowExecutionTaskInvocations(
     const DescribeMaintenanceWindowExecutionTaskInvocationsRequest& request) const {
-  return DescribeMaintenanceWindowExecutionTaskInvocationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMaintenanceWindowExecutionTaskInvocationsOutcome(result.GetResultWithOwnership())
+                            : DescribeMaintenanceWindowExecutionTaskInvocationsOutcome(std::move(result.GetError()));
 }
 
 DescribeMaintenanceWindowExecutionTasksOutcome SSMClient::DescribeMaintenanceWindowExecutionTasks(
     const DescribeMaintenanceWindowExecutionTasksRequest& request) const {
-  return DescribeMaintenanceWindowExecutionTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMaintenanceWindowExecutionTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeMaintenanceWindowExecutionTasksOutcome(std::move(result.GetError()));
 }
 
 DescribeMaintenanceWindowExecutionsOutcome SSMClient::DescribeMaintenanceWindowExecutions(
     const DescribeMaintenanceWindowExecutionsRequest& request) const {
-  return DescribeMaintenanceWindowExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMaintenanceWindowExecutionsOutcome(result.GetResultWithOwnership())
+                            : DescribeMaintenanceWindowExecutionsOutcome(std::move(result.GetError()));
 }
 
 DescribeMaintenanceWindowScheduleOutcome SSMClient::DescribeMaintenanceWindowSchedule(
     const DescribeMaintenanceWindowScheduleRequest& request) const {
-  return DescribeMaintenanceWindowScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMaintenanceWindowScheduleOutcome(result.GetResultWithOwnership())
+                            : DescribeMaintenanceWindowScheduleOutcome(std::move(result.GetError()));
 }
 
 DescribeMaintenanceWindowTargetsOutcome SSMClient::DescribeMaintenanceWindowTargets(
     const DescribeMaintenanceWindowTargetsRequest& request) const {
-  return DescribeMaintenanceWindowTargetsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMaintenanceWindowTargetsOutcome(result.GetResultWithOwnership())
+                            : DescribeMaintenanceWindowTargetsOutcome(std::move(result.GetError()));
 }
 
 DescribeMaintenanceWindowTasksOutcome SSMClient::DescribeMaintenanceWindowTasks(
     const DescribeMaintenanceWindowTasksRequest& request) const {
-  return DescribeMaintenanceWindowTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMaintenanceWindowTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeMaintenanceWindowTasksOutcome(std::move(result.GetError()));
 }
 
 DescribeMaintenanceWindowsOutcome SSMClient::DescribeMaintenanceWindows(const DescribeMaintenanceWindowsRequest& request) const {
-  return DescribeMaintenanceWindowsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMaintenanceWindowsOutcome(result.GetResultWithOwnership())
+                            : DescribeMaintenanceWindowsOutcome(std::move(result.GetError()));
 }
 
 DescribeMaintenanceWindowsForTargetOutcome SSMClient::DescribeMaintenanceWindowsForTarget(
     const DescribeMaintenanceWindowsForTargetRequest& request) const {
-  return DescribeMaintenanceWindowsForTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMaintenanceWindowsForTargetOutcome(result.GetResultWithOwnership())
+                            : DescribeMaintenanceWindowsForTargetOutcome(std::move(result.GetError()));
 }
 
 DescribeOpsItemsOutcome SSMClient::DescribeOpsItems(const DescribeOpsItemsRequest& request) const {
-  return DescribeOpsItemsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOpsItemsOutcome(result.GetResultWithOwnership())
+                            : DescribeOpsItemsOutcome(std::move(result.GetError()));
 }
 
 DescribeParametersOutcome SSMClient::DescribeParameters(const DescribeParametersRequest& request) const {
-  return DescribeParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeParametersOutcome(result.GetResultWithOwnership())
+                            : DescribeParametersOutcome(std::move(result.GetError()));
 }
 
 DescribePatchBaselinesOutcome SSMClient::DescribePatchBaselines(const DescribePatchBaselinesRequest& request) const {
-  return DescribePatchBaselinesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePatchBaselinesOutcome(result.GetResultWithOwnership())
+                            : DescribePatchBaselinesOutcome(std::move(result.GetError()));
 }
 
 DescribePatchGroupStateOutcome SSMClient::DescribePatchGroupState(const DescribePatchGroupStateRequest& request) const {
-  return DescribePatchGroupStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePatchGroupStateOutcome(result.GetResultWithOwnership())
+                            : DescribePatchGroupStateOutcome(std::move(result.GetError()));
 }
 
 DescribePatchGroupsOutcome SSMClient::DescribePatchGroups(const DescribePatchGroupsRequest& request) const {
-  return DescribePatchGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePatchGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribePatchGroupsOutcome(std::move(result.GetError()));
 }
 
 DescribePatchPropertiesOutcome SSMClient::DescribePatchProperties(const DescribePatchPropertiesRequest& request) const {
-  return DescribePatchPropertiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePatchPropertiesOutcome(result.GetResultWithOwnership())
+                            : DescribePatchPropertiesOutcome(std::move(result.GetError()));
 }
 
 DescribeSessionsOutcome SSMClient::DescribeSessions(const DescribeSessionsRequest& request) const {
-  return DescribeSessionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSessionsOutcome(result.GetResultWithOwnership())
+                            : DescribeSessionsOutcome(std::move(result.GetError()));
 }
 
 DisassociateOpsItemRelatedItemOutcome SSMClient::DisassociateOpsItemRelatedItem(
     const DisassociateOpsItemRelatedItemRequest& request) const {
-  return DisassociateOpsItemRelatedItemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateOpsItemRelatedItemOutcome(result.GetResultWithOwnership())
+                            : DisassociateOpsItemRelatedItemOutcome(std::move(result.GetError()));
 }
 
 GetAccessTokenOutcome SSMClient::GetAccessToken(const GetAccessTokenRequest& request) const {
-  return GetAccessTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccessTokenOutcome(result.GetResultWithOwnership()) : GetAccessTokenOutcome(std::move(result.GetError()));
 }
 
 GetAutomationExecutionOutcome SSMClient::GetAutomationExecution(const GetAutomationExecutionRequest& request) const {
-  return GetAutomationExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAutomationExecutionOutcome(result.GetResultWithOwnership())
+                            : GetAutomationExecutionOutcome(std::move(result.GetError()));
 }
 
 GetCalendarStateOutcome SSMClient::GetCalendarState(const GetCalendarStateRequest& request) const {
-  return GetCalendarStateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCalendarStateOutcome(result.GetResultWithOwnership())
+                            : GetCalendarStateOutcome(std::move(result.GetError()));
 }
 
 GetCommandInvocationOutcome SSMClient::GetCommandInvocation(const GetCommandInvocationRequest& request) const {
-  return GetCommandInvocationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCommandInvocationOutcome(result.GetResultWithOwnership())
+                            : GetCommandInvocationOutcome(std::move(result.GetError()));
 }
 
 GetConnectionStatusOutcome SSMClient::GetConnectionStatus(const GetConnectionStatusRequest& request) const {
-  return GetConnectionStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConnectionStatusOutcome(result.GetResultWithOwnership())
+                            : GetConnectionStatusOutcome(std::move(result.GetError()));
 }
 
 GetDefaultPatchBaselineOutcome SSMClient::GetDefaultPatchBaseline(const GetDefaultPatchBaselineRequest& request) const {
-  return GetDefaultPatchBaselineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDefaultPatchBaselineOutcome(result.GetResultWithOwnership())
+                            : GetDefaultPatchBaselineOutcome(std::move(result.GetError()));
 }
 
 GetDeployablePatchSnapshotForInstanceOutcome SSMClient::GetDeployablePatchSnapshotForInstance(
     const GetDeployablePatchSnapshotForInstanceRequest& request) const {
-  return GetDeployablePatchSnapshotForInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDeployablePatchSnapshotForInstanceOutcome(result.GetResultWithOwnership())
+                            : GetDeployablePatchSnapshotForInstanceOutcome(std::move(result.GetError()));
 }
 
 GetDocumentOutcome SSMClient::GetDocument(const GetDocumentRequest& request) const {
-  return GetDocumentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDocumentOutcome(result.GetResultWithOwnership()) : GetDocumentOutcome(std::move(result.GetError()));
 }
 
 GetExecutionPreviewOutcome SSMClient::GetExecutionPreview(const GetExecutionPreviewRequest& request) const {
-  return GetExecutionPreviewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetExecutionPreviewOutcome(result.GetResultWithOwnership())
+                            : GetExecutionPreviewOutcome(std::move(result.GetError()));
 }
 
 GetInventoryOutcome SSMClient::GetInventory(const GetInventoryRequest& request) const {
-  return GetInventoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInventoryOutcome(result.GetResultWithOwnership()) : GetInventoryOutcome(std::move(result.GetError()));
 }
 
 GetInventorySchemaOutcome SSMClient::GetInventorySchema(const GetInventorySchemaRequest& request) const {
-  return GetInventorySchemaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetInventorySchemaOutcome(result.GetResultWithOwnership())
+                            : GetInventorySchemaOutcome(std::move(result.GetError()));
 }
 
 GetMaintenanceWindowOutcome SSMClient::GetMaintenanceWindow(const GetMaintenanceWindowRequest& request) const {
-  return GetMaintenanceWindowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMaintenanceWindowOutcome(result.GetResultWithOwnership())
+                            : GetMaintenanceWindowOutcome(std::move(result.GetError()));
 }
 
 GetMaintenanceWindowExecutionOutcome SSMClient::GetMaintenanceWindowExecution(const GetMaintenanceWindowExecutionRequest& request) const {
-  return GetMaintenanceWindowExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMaintenanceWindowExecutionOutcome(result.GetResultWithOwnership())
+                            : GetMaintenanceWindowExecutionOutcome(std::move(result.GetError()));
 }
 
 GetMaintenanceWindowExecutionTaskOutcome SSMClient::GetMaintenanceWindowExecutionTask(
     const GetMaintenanceWindowExecutionTaskRequest& request) const {
-  return GetMaintenanceWindowExecutionTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMaintenanceWindowExecutionTaskOutcome(result.GetResultWithOwnership())
+                            : GetMaintenanceWindowExecutionTaskOutcome(std::move(result.GetError()));
 }
 
 GetMaintenanceWindowExecutionTaskInvocationOutcome SSMClient::GetMaintenanceWindowExecutionTaskInvocation(
     const GetMaintenanceWindowExecutionTaskInvocationRequest& request) const {
-  return GetMaintenanceWindowExecutionTaskInvocationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMaintenanceWindowExecutionTaskInvocationOutcome(result.GetResultWithOwnership())
+                            : GetMaintenanceWindowExecutionTaskInvocationOutcome(std::move(result.GetError()));
 }
 
 GetMaintenanceWindowTaskOutcome SSMClient::GetMaintenanceWindowTask(const GetMaintenanceWindowTaskRequest& request) const {
-  return GetMaintenanceWindowTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMaintenanceWindowTaskOutcome(result.GetResultWithOwnership())
+                            : GetMaintenanceWindowTaskOutcome(std::move(result.GetError()));
 }
 
 GetOpsItemOutcome SSMClient::GetOpsItem(const GetOpsItemRequest& request) const {
-  return GetOpsItemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOpsItemOutcome(result.GetResultWithOwnership()) : GetOpsItemOutcome(std::move(result.GetError()));
 }
 
 GetOpsMetadataOutcome SSMClient::GetOpsMetadata(const GetOpsMetadataRequest& request) const {
-  return GetOpsMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOpsMetadataOutcome(result.GetResultWithOwnership()) : GetOpsMetadataOutcome(std::move(result.GetError()));
 }
 
 GetOpsSummaryOutcome SSMClient::GetOpsSummary(const GetOpsSummaryRequest& request) const {
-  return GetOpsSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOpsSummaryOutcome(result.GetResultWithOwnership()) : GetOpsSummaryOutcome(std::move(result.GetError()));
 }
 
 GetParameterOutcome SSMClient::GetParameter(const GetParameterRequest& request) const {
-  return GetParameterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetParameterOutcome(result.GetResultWithOwnership()) : GetParameterOutcome(std::move(result.GetError()));
 }
 
 GetParameterHistoryOutcome SSMClient::GetParameterHistory(const GetParameterHistoryRequest& request) const {
-  return GetParameterHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetParameterHistoryOutcome(result.GetResultWithOwnership())
+                            : GetParameterHistoryOutcome(std::move(result.GetError()));
 }
 
 GetParametersOutcome SSMClient::GetParameters(const GetParametersRequest& request) const {
-  return GetParametersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetParametersOutcome(result.GetResultWithOwnership()) : GetParametersOutcome(std::move(result.GetError()));
 }
 
 GetParametersByPathOutcome SSMClient::GetParametersByPath(const GetParametersByPathRequest& request) const {
-  return GetParametersByPathOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetParametersByPathOutcome(result.GetResultWithOwnership())
+                            : GetParametersByPathOutcome(std::move(result.GetError()));
 }
 
 GetPatchBaselineOutcome SSMClient::GetPatchBaseline(const GetPatchBaselineRequest& request) const {
-  return GetPatchBaselineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPatchBaselineOutcome(result.GetResultWithOwnership())
+                            : GetPatchBaselineOutcome(std::move(result.GetError()));
 }
 
 GetPatchBaselineForPatchGroupOutcome SSMClient::GetPatchBaselineForPatchGroup(const GetPatchBaselineForPatchGroupRequest& request) const {
-  return GetPatchBaselineForPatchGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPatchBaselineForPatchGroupOutcome(result.GetResultWithOwnership())
+                            : GetPatchBaselineForPatchGroupOutcome(std::move(result.GetError()));
 }
 
 GetResourcePoliciesOutcome SSMClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const {
-  return GetResourcePoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePoliciesOutcome(result.GetResultWithOwnership())
+                            : GetResourcePoliciesOutcome(std::move(result.GetError()));
 }
 
 GetServiceSettingOutcome SSMClient::GetServiceSetting(const GetServiceSettingRequest& request) const {
-  return GetServiceSettingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceSettingOutcome(result.GetResultWithOwnership())
+                            : GetServiceSettingOutcome(std::move(result.GetError()));
 }
 
 LabelParameterVersionOutcome SSMClient::LabelParameterVersion(const LabelParameterVersionRequest& request) const {
-  return LabelParameterVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? LabelParameterVersionOutcome(result.GetResultWithOwnership())
+                            : LabelParameterVersionOutcome(std::move(result.GetError()));
 }
 
 ListAssociationVersionsOutcome SSMClient::ListAssociationVersions(const ListAssociationVersionsRequest& request) const {
-  return ListAssociationVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssociationVersionsOutcome(result.GetResultWithOwnership())
+                            : ListAssociationVersionsOutcome(std::move(result.GetError()));
 }
 
 ListAssociationsOutcome SSMClient::ListAssociations(const ListAssociationsRequest& request) const {
-  return ListAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListCommandInvocationsOutcome SSMClient::ListCommandInvocations(const ListCommandInvocationsRequest& request) const {
-  return ListCommandInvocationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCommandInvocationsOutcome(result.GetResultWithOwnership())
+                            : ListCommandInvocationsOutcome(std::move(result.GetError()));
 }
 
 ListCommandsOutcome SSMClient::ListCommands(const ListCommandsRequest& request) const {
-  return ListCommandsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCommandsOutcome(result.GetResultWithOwnership()) : ListCommandsOutcome(std::move(result.GetError()));
 }
 
 ListComplianceItemsOutcome SSMClient::ListComplianceItems(const ListComplianceItemsRequest& request) const {
-  return ListComplianceItemsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComplianceItemsOutcome(result.GetResultWithOwnership())
+                            : ListComplianceItemsOutcome(std::move(result.GetError()));
 }
 
 ListComplianceSummariesOutcome SSMClient::ListComplianceSummaries(const ListComplianceSummariesRequest& request) const {
-  return ListComplianceSummariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComplianceSummariesOutcome(result.GetResultWithOwnership())
+                            : ListComplianceSummariesOutcome(std::move(result.GetError()));
 }
 
 ListDocumentMetadataHistoryOutcome SSMClient::ListDocumentMetadataHistory(const ListDocumentMetadataHistoryRequest& request) const {
-  return ListDocumentMetadataHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDocumentMetadataHistoryOutcome(result.GetResultWithOwnership())
+                            : ListDocumentMetadataHistoryOutcome(std::move(result.GetError()));
 }
 
 ListDocumentVersionsOutcome SSMClient::ListDocumentVersions(const ListDocumentVersionsRequest& request) const {
-  return ListDocumentVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDocumentVersionsOutcome(result.GetResultWithOwnership())
+                            : ListDocumentVersionsOutcome(std::move(result.GetError()));
 }
 
 ListDocumentsOutcome SSMClient::ListDocuments(const ListDocumentsRequest& request) const {
-  return ListDocumentsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDocumentsOutcome(result.GetResultWithOwnership()) : ListDocumentsOutcome(std::move(result.GetError()));
 }
 
 ListInventoryEntriesOutcome SSMClient::ListInventoryEntries(const ListInventoryEntriesRequest& request) const {
-  return ListInventoryEntriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInventoryEntriesOutcome(result.GetResultWithOwnership())
+                            : ListInventoryEntriesOutcome(std::move(result.GetError()));
 }
 
 ListNodesOutcome SSMClient::ListNodes(const ListNodesRequest& request) const {
-  return ListNodesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNodesOutcome(result.GetResultWithOwnership()) : ListNodesOutcome(std::move(result.GetError()));
 }
 
 ListNodesSummaryOutcome SSMClient::ListNodesSummary(const ListNodesSummaryRequest& request) const {
-  return ListNodesSummaryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNodesSummaryOutcome(result.GetResultWithOwnership())
+                            : ListNodesSummaryOutcome(std::move(result.GetError()));
 }
 
 ListOpsItemEventsOutcome SSMClient::ListOpsItemEvents(const ListOpsItemEventsRequest& request) const {
-  return ListOpsItemEventsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOpsItemEventsOutcome(result.GetResultWithOwnership())
+                            : ListOpsItemEventsOutcome(std::move(result.GetError()));
 }
 
 ListOpsItemRelatedItemsOutcome SSMClient::ListOpsItemRelatedItems(const ListOpsItemRelatedItemsRequest& request) const {
-  return ListOpsItemRelatedItemsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOpsItemRelatedItemsOutcome(result.GetResultWithOwnership())
+                            : ListOpsItemRelatedItemsOutcome(std::move(result.GetError()));
 }
 
 ListOpsMetadataOutcome SSMClient::ListOpsMetadata(const ListOpsMetadataRequest& request) const {
-  return ListOpsMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOpsMetadataOutcome(result.GetResultWithOwnership())
+                            : ListOpsMetadataOutcome(std::move(result.GetError()));
 }
 
 ListResourceComplianceSummariesOutcome SSMClient::ListResourceComplianceSummaries(
     const ListResourceComplianceSummariesRequest& request) const {
-  return ListResourceComplianceSummariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceComplianceSummariesOutcome(result.GetResultWithOwnership())
+                            : ListResourceComplianceSummariesOutcome(std::move(result.GetError()));
 }
 
 ListResourceDataSyncOutcome SSMClient::ListResourceDataSync(const ListResourceDataSyncRequest& request) const {
-  return ListResourceDataSyncOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceDataSyncOutcome(result.GetResultWithOwnership())
+                            : ListResourceDataSyncOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SSMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ModifyDocumentPermissionOutcome SSMClient::ModifyDocumentPermission(const ModifyDocumentPermissionRequest& request) const {
-  return ModifyDocumentPermissionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDocumentPermissionOutcome(result.GetResultWithOwnership())
+                            : ModifyDocumentPermissionOutcome(std::move(result.GetError()));
 }
 
 PutComplianceItemsOutcome SSMClient::PutComplianceItems(const PutComplianceItemsRequest& request) const {
-  return PutComplianceItemsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutComplianceItemsOutcome(result.GetResultWithOwnership())
+                            : PutComplianceItemsOutcome(std::move(result.GetError()));
 }
 
 PutInventoryOutcome SSMClient::PutInventory(const PutInventoryRequest& request) const {
-  return PutInventoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutInventoryOutcome(result.GetResultWithOwnership()) : PutInventoryOutcome(std::move(result.GetError()));
 }
 
 PutParameterOutcome SSMClient::PutParameter(const PutParameterRequest& request) const {
-  return PutParameterOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutParameterOutcome(result.GetResultWithOwnership()) : PutParameterOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome SSMClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 RegisterDefaultPatchBaselineOutcome SSMClient::RegisterDefaultPatchBaseline(const RegisterDefaultPatchBaselineRequest& request) const {
-  return RegisterDefaultPatchBaselineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterDefaultPatchBaselineOutcome(result.GetResultWithOwnership())
+                            : RegisterDefaultPatchBaselineOutcome(std::move(result.GetError()));
 }
 
 RegisterPatchBaselineForPatchGroupOutcome SSMClient::RegisterPatchBaselineForPatchGroup(
     const RegisterPatchBaselineForPatchGroupRequest& request) const {
-  return RegisterPatchBaselineForPatchGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterPatchBaselineForPatchGroupOutcome(result.GetResultWithOwnership())
+                            : RegisterPatchBaselineForPatchGroupOutcome(std::move(result.GetError()));
 }
 
 RegisterTargetWithMaintenanceWindowOutcome SSMClient::RegisterTargetWithMaintenanceWindow(
     const RegisterTargetWithMaintenanceWindowRequest& request) const {
-  return RegisterTargetWithMaintenanceWindowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterTargetWithMaintenanceWindowOutcome(result.GetResultWithOwnership())
+                            : RegisterTargetWithMaintenanceWindowOutcome(std::move(result.GetError()));
 }
 
 RegisterTaskWithMaintenanceWindowOutcome SSMClient::RegisterTaskWithMaintenanceWindow(
     const RegisterTaskWithMaintenanceWindowRequest& request) const {
-  return RegisterTaskWithMaintenanceWindowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterTaskWithMaintenanceWindowOutcome(result.GetResultWithOwnership())
+                            : RegisterTaskWithMaintenanceWindowOutcome(std::move(result.GetError()));
 }
 
 RemoveTagsFromResourceOutcome SSMClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const {
-  return RemoveTagsFromResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RemoveTagsFromResourceOutcome(result.GetResultWithOwnership())
+                            : RemoveTagsFromResourceOutcome(std::move(result.GetError()));
 }
 
 ResetServiceSettingOutcome SSMClient::ResetServiceSetting(const ResetServiceSettingRequest& request) const {
-  return ResetServiceSettingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetServiceSettingOutcome(result.GetResultWithOwnership())
+                            : ResetServiceSettingOutcome(std::move(result.GetError()));
 }
 
 ResumeSessionOutcome SSMClient::ResumeSession(const ResumeSessionRequest& request) const {
-  return ResumeSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResumeSessionOutcome(result.GetResultWithOwnership()) : ResumeSessionOutcome(std::move(result.GetError()));
 }
 
 SendAutomationSignalOutcome SSMClient::SendAutomationSignal(const SendAutomationSignalRequest& request) const {
-  return SendAutomationSignalOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendAutomationSignalOutcome(result.GetResultWithOwnership())
+                            : SendAutomationSignalOutcome(std::move(result.GetError()));
 }
 
 SendCommandOutcome SSMClient::SendCommand(const SendCommandRequest& request) const {
-  return SendCommandOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendCommandOutcome(result.GetResultWithOwnership()) : SendCommandOutcome(std::move(result.GetError()));
 }
 
 StartAccessRequestOutcome SSMClient::StartAccessRequest(const StartAccessRequestRequest& request) const {
-  return StartAccessRequestOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAccessRequestOutcome(result.GetResultWithOwnership())
+                            : StartAccessRequestOutcome(std::move(result.GetError()));
 }
 
 StartAssociationsOnceOutcome SSMClient::StartAssociationsOnce(const StartAssociationsOnceRequest& request) const {
-  return StartAssociationsOnceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAssociationsOnceOutcome(result.GetResultWithOwnership())
+                            : StartAssociationsOnceOutcome(std::move(result.GetError()));
 }
 
 StartAutomationExecutionOutcome SSMClient::StartAutomationExecution(const StartAutomationExecutionRequest& request) const {
-  return StartAutomationExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAutomationExecutionOutcome(result.GetResultWithOwnership())
+                            : StartAutomationExecutionOutcome(std::move(result.GetError()));
 }
 
 StartChangeRequestExecutionOutcome SSMClient::StartChangeRequestExecution(const StartChangeRequestExecutionRequest& request) const {
-  return StartChangeRequestExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartChangeRequestExecutionOutcome(result.GetResultWithOwnership())
+                            : StartChangeRequestExecutionOutcome(std::move(result.GetError()));
 }
 
 StartExecutionPreviewOutcome SSMClient::StartExecutionPreview(const StartExecutionPreviewRequest& request) const {
-  return StartExecutionPreviewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartExecutionPreviewOutcome(result.GetResultWithOwnership())
+                            : StartExecutionPreviewOutcome(std::move(result.GetError()));
 }
 
 StartSessionOutcome SSMClient::StartSession(const StartSessionRequest& request) const {
-  return StartSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSessionOutcome(result.GetResultWithOwnership()) : StartSessionOutcome(std::move(result.GetError()));
 }
 
 StopAutomationExecutionOutcome SSMClient::StopAutomationExecution(const StopAutomationExecutionRequest& request) const {
-  return StopAutomationExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopAutomationExecutionOutcome(result.GetResultWithOwnership())
+                            : StopAutomationExecutionOutcome(std::move(result.GetError()));
 }
 
 TerminateSessionOutcome SSMClient::TerminateSession(const TerminateSessionRequest& request) const {
-  return TerminateSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateSessionOutcome(result.GetResultWithOwnership())
+                            : TerminateSessionOutcome(std::move(result.GetError()));
 }
 
 UnlabelParameterVersionOutcome SSMClient::UnlabelParameterVersion(const UnlabelParameterVersionRequest& request) const {
-  return UnlabelParameterVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnlabelParameterVersionOutcome(result.GetResultWithOwnership())
+                            : UnlabelParameterVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateAssociationOutcome SSMClient::UpdateAssociation(const UpdateAssociationRequest& request) const {
-  return UpdateAssociationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateAssociationOutcome(std::move(result.GetError()));
 }
 
 UpdateAssociationStatusOutcome SSMClient::UpdateAssociationStatus(const UpdateAssociationStatusRequest& request) const {
-  return UpdateAssociationStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAssociationStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateAssociationStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateDocumentOutcome SSMClient::UpdateDocument(const UpdateDocumentRequest& request) const {
-  return UpdateDocumentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDocumentOutcome(result.GetResultWithOwnership()) : UpdateDocumentOutcome(std::move(result.GetError()));
 }
 
 UpdateDocumentDefaultVersionOutcome SSMClient::UpdateDocumentDefaultVersion(const UpdateDocumentDefaultVersionRequest& request) const {
-  return UpdateDocumentDefaultVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDocumentDefaultVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateDocumentDefaultVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateDocumentMetadataOutcome SSMClient::UpdateDocumentMetadata(const UpdateDocumentMetadataRequest& request) const {
-  return UpdateDocumentMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDocumentMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateDocumentMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdateMaintenanceWindowOutcome SSMClient::UpdateMaintenanceWindow(const UpdateMaintenanceWindowRequest& request) const {
-  return UpdateMaintenanceWindowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMaintenanceWindowOutcome(result.GetResultWithOwnership())
+                            : UpdateMaintenanceWindowOutcome(std::move(result.GetError()));
 }
 
 UpdateMaintenanceWindowTargetOutcome SSMClient::UpdateMaintenanceWindowTarget(const UpdateMaintenanceWindowTargetRequest& request) const {
-  return UpdateMaintenanceWindowTargetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMaintenanceWindowTargetOutcome(result.GetResultWithOwnership())
+                            : UpdateMaintenanceWindowTargetOutcome(std::move(result.GetError()));
 }
 
 UpdateMaintenanceWindowTaskOutcome SSMClient::UpdateMaintenanceWindowTask(const UpdateMaintenanceWindowTaskRequest& request) const {
-  return UpdateMaintenanceWindowTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMaintenanceWindowTaskOutcome(result.GetResultWithOwnership())
+                            : UpdateMaintenanceWindowTaskOutcome(std::move(result.GetError()));
 }
 
 UpdateManagedInstanceRoleOutcome SSMClient::UpdateManagedInstanceRole(const UpdateManagedInstanceRoleRequest& request) const {
-  return UpdateManagedInstanceRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateManagedInstanceRoleOutcome(result.GetResultWithOwnership())
+                            : UpdateManagedInstanceRoleOutcome(std::move(result.GetError()));
 }
 
 UpdateOpsItemOutcome SSMClient::UpdateOpsItem(const UpdateOpsItemRequest& request) const {
-  return UpdateOpsItemOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOpsItemOutcome(result.GetResultWithOwnership()) : UpdateOpsItemOutcome(std::move(result.GetError()));
 }
 
 UpdateOpsMetadataOutcome SSMClient::UpdateOpsMetadata(const UpdateOpsMetadataRequest& request) const {
-  return UpdateOpsMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateOpsMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateOpsMetadataOutcome(std::move(result.GetError()));
 }
 
 UpdatePatchBaselineOutcome SSMClient::UpdatePatchBaseline(const UpdatePatchBaselineRequest& request) const {
-  return UpdatePatchBaselineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePatchBaselineOutcome(result.GetResultWithOwnership())
+                            : UpdatePatchBaselineOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceDataSyncOutcome SSMClient::UpdateResourceDataSync(const UpdateResourceDataSyncRequest& request) const {
-  return UpdateResourceDataSyncOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResourceDataSyncOutcome(result.GetResultWithOwnership())
+                            : UpdateResourceDataSyncOutcome(std::move(result.GetError()));
 }
 
 UpdateServiceSettingOutcome SSMClient::UpdateServiceSetting(const UpdateServiceSettingRequest& request) const {
-  return UpdateServiceSettingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateServiceSettingOutcome(result.GetResultWithOwnership())
+                            : UpdateServiceSettingOutcome(std::move(result.GetError()));
 }

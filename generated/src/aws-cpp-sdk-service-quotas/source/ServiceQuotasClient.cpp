@@ -200,118 +200,167 @@ ServiceQuotasClient::InvokeOperationOutcome ServiceQuotasClient::InvokeServiceOp
 
 AssociateServiceQuotaTemplateOutcome ServiceQuotasClient::AssociateServiceQuotaTemplate(
     const AssociateServiceQuotaTemplateRequest& request) const {
-  return AssociateServiceQuotaTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateServiceQuotaTemplateOutcome(result.GetResultWithOwnership())
+                            : AssociateServiceQuotaTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateSupportCaseOutcome ServiceQuotasClient::CreateSupportCase(const CreateSupportCaseRequest& request) const {
-  return CreateSupportCaseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSupportCaseOutcome(result.GetResultWithOwnership())
+                            : CreateSupportCaseOutcome(std::move(result.GetError()));
 }
 
 DeleteServiceQuotaIncreaseRequestFromTemplateOutcome ServiceQuotasClient::DeleteServiceQuotaIncreaseRequestFromTemplate(
     const DeleteServiceQuotaIncreaseRequestFromTemplateRequest& request) const {
-  return DeleteServiceQuotaIncreaseRequestFromTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteServiceQuotaIncreaseRequestFromTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteServiceQuotaIncreaseRequestFromTemplateOutcome(std::move(result.GetError()));
 }
 
 DisassociateServiceQuotaTemplateOutcome ServiceQuotasClient::DisassociateServiceQuotaTemplate(
     const DisassociateServiceQuotaTemplateRequest& request) const {
-  return DisassociateServiceQuotaTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateServiceQuotaTemplateOutcome(result.GetResultWithOwnership())
+                            : DisassociateServiceQuotaTemplateOutcome(std::move(result.GetError()));
 }
 
 GetAWSDefaultServiceQuotaOutcome ServiceQuotasClient::GetAWSDefaultServiceQuota(const GetAWSDefaultServiceQuotaRequest& request) const {
-  return GetAWSDefaultServiceQuotaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAWSDefaultServiceQuotaOutcome(result.GetResultWithOwnership())
+                            : GetAWSDefaultServiceQuotaOutcome(std::move(result.GetError()));
 }
 
 GetAssociationForServiceQuotaTemplateOutcome ServiceQuotasClient::GetAssociationForServiceQuotaTemplate(
     const GetAssociationForServiceQuotaTemplateRequest& request) const {
-  return GetAssociationForServiceQuotaTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAssociationForServiceQuotaTemplateOutcome(result.GetResultWithOwnership())
+                            : GetAssociationForServiceQuotaTemplateOutcome(std::move(result.GetError()));
 }
 
 GetAutoManagementConfigurationOutcome ServiceQuotasClient::GetAutoManagementConfiguration(
     const GetAutoManagementConfigurationRequest& request) const {
-  return GetAutoManagementConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAutoManagementConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetAutoManagementConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetQuotaUtilizationReportOutcome ServiceQuotasClient::GetQuotaUtilizationReport(const GetQuotaUtilizationReportRequest& request) const {
-  return GetQuotaUtilizationReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetQuotaUtilizationReportOutcome(result.GetResultWithOwnership())
+                            : GetQuotaUtilizationReportOutcome(std::move(result.GetError()));
 }
 
 GetRequestedServiceQuotaChangeOutcome ServiceQuotasClient::GetRequestedServiceQuotaChange(
     const GetRequestedServiceQuotaChangeRequest& request) const {
-  return GetRequestedServiceQuotaChangeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRequestedServiceQuotaChangeOutcome(result.GetResultWithOwnership())
+                            : GetRequestedServiceQuotaChangeOutcome(std::move(result.GetError()));
 }
 
 GetServiceQuotaOutcome ServiceQuotasClient::GetServiceQuota(const GetServiceQuotaRequest& request) const {
-  return GetServiceQuotaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceQuotaOutcome(result.GetResultWithOwnership())
+                            : GetServiceQuotaOutcome(std::move(result.GetError()));
 }
 
 GetServiceQuotaIncreaseRequestFromTemplateOutcome ServiceQuotasClient::GetServiceQuotaIncreaseRequestFromTemplate(
     const GetServiceQuotaIncreaseRequestFromTemplateRequest& request) const {
-  return GetServiceQuotaIncreaseRequestFromTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetServiceQuotaIncreaseRequestFromTemplateOutcome(result.GetResultWithOwnership())
+                            : GetServiceQuotaIncreaseRequestFromTemplateOutcome(std::move(result.GetError()));
 }
 
 ListAWSDefaultServiceQuotasOutcome ServiceQuotasClient::ListAWSDefaultServiceQuotas(
     const ListAWSDefaultServiceQuotasRequest& request) const {
-  return ListAWSDefaultServiceQuotasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAWSDefaultServiceQuotasOutcome(result.GetResultWithOwnership())
+                            : ListAWSDefaultServiceQuotasOutcome(std::move(result.GetError()));
 }
 
 ListRequestedServiceQuotaChangeHistoryOutcome ServiceQuotasClient::ListRequestedServiceQuotaChangeHistory(
     const ListRequestedServiceQuotaChangeHistoryRequest& request) const {
-  return ListRequestedServiceQuotaChangeHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRequestedServiceQuotaChangeHistoryOutcome(result.GetResultWithOwnership())
+                            : ListRequestedServiceQuotaChangeHistoryOutcome(std::move(result.GetError()));
 }
 
 ListRequestedServiceQuotaChangeHistoryByQuotaOutcome ServiceQuotasClient::ListRequestedServiceQuotaChangeHistoryByQuota(
     const ListRequestedServiceQuotaChangeHistoryByQuotaRequest& request) const {
-  return ListRequestedServiceQuotaChangeHistoryByQuotaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRequestedServiceQuotaChangeHistoryByQuotaOutcome(result.GetResultWithOwnership())
+                            : ListRequestedServiceQuotaChangeHistoryByQuotaOutcome(std::move(result.GetError()));
 }
 
 ListServiceQuotaIncreaseRequestsInTemplateOutcome ServiceQuotasClient::ListServiceQuotaIncreaseRequestsInTemplate(
     const ListServiceQuotaIncreaseRequestsInTemplateRequest& request) const {
-  return ListServiceQuotaIncreaseRequestsInTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceQuotaIncreaseRequestsInTemplateOutcome(result.GetResultWithOwnership())
+                            : ListServiceQuotaIncreaseRequestsInTemplateOutcome(std::move(result.GetError()));
 }
 
 ListServiceQuotasOutcome ServiceQuotasClient::ListServiceQuotas(const ListServiceQuotasRequest& request) const {
-  return ListServiceQuotasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServiceQuotasOutcome(result.GetResultWithOwnership())
+                            : ListServiceQuotasOutcome(std::move(result.GetError()));
 }
 
 ListServicesOutcome ServiceQuotasClient::ListServices(const ListServicesRequest& request) const {
-  return ListServicesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListServicesOutcome(result.GetResultWithOwnership()) : ListServicesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ServiceQuotasClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutServiceQuotaIncreaseRequestIntoTemplateOutcome ServiceQuotasClient::PutServiceQuotaIncreaseRequestIntoTemplate(
     const PutServiceQuotaIncreaseRequestIntoTemplateRequest& request) const {
-  return PutServiceQuotaIncreaseRequestIntoTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutServiceQuotaIncreaseRequestIntoTemplateOutcome(result.GetResultWithOwnership())
+                            : PutServiceQuotaIncreaseRequestIntoTemplateOutcome(std::move(result.GetError()));
 }
 
 RequestServiceQuotaIncreaseOutcome ServiceQuotasClient::RequestServiceQuotaIncrease(
     const RequestServiceQuotaIncreaseRequest& request) const {
-  return RequestServiceQuotaIncreaseOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RequestServiceQuotaIncreaseOutcome(result.GetResultWithOwnership())
+                            : RequestServiceQuotaIncreaseOutcome(std::move(result.GetError()));
 }
 
 StartAutoManagementOutcome ServiceQuotasClient::StartAutoManagement(const StartAutoManagementRequest& request) const {
-  return StartAutoManagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAutoManagementOutcome(result.GetResultWithOwnership())
+                            : StartAutoManagementOutcome(std::move(result.GetError()));
 }
 
 StartQuotaUtilizationReportOutcome ServiceQuotasClient::StartQuotaUtilizationReport(
     const StartQuotaUtilizationReportRequest& request) const {
-  return StartQuotaUtilizationReportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartQuotaUtilizationReportOutcome(result.GetResultWithOwnership())
+                            : StartQuotaUtilizationReportOutcome(std::move(result.GetError()));
 }
 
 StopAutoManagementOutcome ServiceQuotasClient::StopAutoManagement(const StopAutoManagementRequest& request) const {
-  return StopAutoManagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopAutoManagementOutcome(result.GetResultWithOwnership())
+                            : StopAutoManagementOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ServiceQuotasClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ServiceQuotasClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAutoManagementOutcome ServiceQuotasClient::UpdateAutoManagement(const UpdateAutoManagementRequest& request) const {
-  return UpdateAutoManagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAutoManagementOutcome(result.GetResultWithOwnership())
+                            : UpdateAutoManagementOutcome(std::move(result.GetError()));
 }

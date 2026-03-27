@@ -188,7 +188,9 @@ GetAccountSettingsOutcome ArtifactClient::GetAccountSettings(const GetAccountSet
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/account-settings/get");
   };
 
-  return GetAccountSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : GetAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 GetReportOutcome ArtifactClient::GetReport(const GetReportRequest& request) const {
@@ -208,7 +210,8 @@ GetReportOutcome ArtifactClient::GetReport(const GetReportRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/report/get");
   };
 
-  return GetReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReportOutcome(result.GetResultWithOwnership()) : GetReportOutcome(std::move(result.GetError()));
 }
 
 GetReportMetadataOutcome ArtifactClient::GetReportMetadata(const GetReportMetadataRequest& request) const {
@@ -223,7 +226,9 @@ GetReportMetadataOutcome ArtifactClient::GetReportMetadata(const GetReportMetada
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/report/getMetadata");
   };
 
-  return GetReportMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReportMetadataOutcome(result.GetResultWithOwnership())
+                            : GetReportMetadataOutcome(std::move(result.GetError()));
 }
 
 GetTermForReportOutcome ArtifactClient::GetTermForReport(const GetTermForReportRequest& request) const {
@@ -238,7 +243,9 @@ GetTermForReportOutcome ArtifactClient::GetTermForReport(const GetTermForReportR
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/report/getTermForReport");
   };
 
-  return GetTermForReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTermForReportOutcome(result.GetResultWithOwnership())
+                            : GetTermForReportOutcome(std::move(result.GetError()));
 }
 
 ListCustomerAgreementsOutcome ArtifactClient::ListCustomerAgreements(const ListCustomerAgreementsRequest& request) const {
@@ -247,7 +254,9 @@ ListCustomerAgreementsOutcome ArtifactClient::ListCustomerAgreements(const ListC
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/customer-agreement/list");
   };
 
-  return ListCustomerAgreementsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCustomerAgreementsOutcome(result.GetResultWithOwnership())
+                            : ListCustomerAgreementsOutcome(std::move(result.GetError()));
 }
 
 ListReportVersionsOutcome ArtifactClient::ListReportVersions(const ListReportVersionsRequest& request) const {
@@ -262,7 +271,9 @@ ListReportVersionsOutcome ArtifactClient::ListReportVersions(const ListReportVer
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/report/listVersions");
   };
 
-  return ListReportVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReportVersionsOutcome(result.GetResultWithOwnership())
+                            : ListReportVersionsOutcome(std::move(result.GetError()));
 }
 
 ListReportsOutcome ArtifactClient::ListReports(const ListReportsRequest& request) const {
@@ -271,7 +282,8 @@ ListReportsOutcome ArtifactClient::ListReports(const ListReportsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/report/list");
   };
 
-  return ListReportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReportsOutcome(result.GetResultWithOwnership()) : ListReportsOutcome(std::move(result.GetError()));
 }
 
 PutAccountSettingsOutcome ArtifactClient::PutAccountSettings(const PutAccountSettingsRequest& request) const {
@@ -280,5 +292,7 @@ PutAccountSettingsOutcome ArtifactClient::PutAccountSettings(const PutAccountSet
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/account-settings/put");
   };
 
-  return PutAccountSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : PutAccountSettingsOutcome(std::move(result.GetError()));
 }

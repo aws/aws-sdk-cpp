@@ -264,388 +264,550 @@ WorkMailClient::InvokeOperationOutcome WorkMailClient::InvokeServiceOperation(co
 }
 
 AssociateDelegateToResourceOutcome WorkMailClient::AssociateDelegateToResource(const AssociateDelegateToResourceRequest& request) const {
-  return AssociateDelegateToResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateDelegateToResourceOutcome(result.GetResultWithOwnership())
+                            : AssociateDelegateToResourceOutcome(std::move(result.GetError()));
 }
 
 AssociateMemberToGroupOutcome WorkMailClient::AssociateMemberToGroup(const AssociateMemberToGroupRequest& request) const {
-  return AssociateMemberToGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateMemberToGroupOutcome(result.GetResultWithOwnership())
+                            : AssociateMemberToGroupOutcome(std::move(result.GetError()));
 }
 
 AssumeImpersonationRoleOutcome WorkMailClient::AssumeImpersonationRole(const AssumeImpersonationRoleRequest& request) const {
-  return AssumeImpersonationRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssumeImpersonationRoleOutcome(result.GetResultWithOwnership())
+                            : AssumeImpersonationRoleOutcome(std::move(result.GetError()));
 }
 
 CancelMailboxExportJobOutcome WorkMailClient::CancelMailboxExportJob(const CancelMailboxExportJobRequest& request) const {
-  return CancelMailboxExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelMailboxExportJobOutcome(result.GetResultWithOwnership())
+                            : CancelMailboxExportJobOutcome(std::move(result.GetError()));
 }
 
 CreateAliasOutcome WorkMailClient::CreateAlias(const CreateAliasRequest& request) const {
-  return CreateAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAliasOutcome(result.GetResultWithOwnership()) : CreateAliasOutcome(std::move(result.GetError()));
 }
 
 CreateAvailabilityConfigurationOutcome WorkMailClient::CreateAvailabilityConfiguration(
     const CreateAvailabilityConfigurationRequest& request) const {
-  return CreateAvailabilityConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAvailabilityConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateAvailabilityConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateGroupOutcome WorkMailClient::CreateGroup(const CreateGroupRequest& request) const {
-  return CreateGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGroupOutcome(result.GetResultWithOwnership()) : CreateGroupOutcome(std::move(result.GetError()));
 }
 
 CreateIdentityCenterApplicationOutcome WorkMailClient::CreateIdentityCenterApplication(
     const CreateIdentityCenterApplicationRequest& request) const {
-  return CreateIdentityCenterApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIdentityCenterApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateIdentityCenterApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateImpersonationRoleOutcome WorkMailClient::CreateImpersonationRole(const CreateImpersonationRoleRequest& request) const {
-  return CreateImpersonationRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateImpersonationRoleOutcome(result.GetResultWithOwnership())
+                            : CreateImpersonationRoleOutcome(std::move(result.GetError()));
 }
 
 CreateMobileDeviceAccessRuleOutcome WorkMailClient::CreateMobileDeviceAccessRule(const CreateMobileDeviceAccessRuleRequest& request) const {
-  return CreateMobileDeviceAccessRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMobileDeviceAccessRuleOutcome(result.GetResultWithOwnership())
+                            : CreateMobileDeviceAccessRuleOutcome(std::move(result.GetError()));
 }
 
 CreateOrganizationOutcome WorkMailClient::CreateOrganization(const CreateOrganizationRequest& request) const {
-  return CreateOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOrganizationOutcome(result.GetResultWithOwnership())
+                            : CreateOrganizationOutcome(std::move(result.GetError()));
 }
 
 CreateResourceOutcome WorkMailClient::CreateResource(const CreateResourceRequest& request) const {
-  return CreateResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceOutcome(result.GetResultWithOwnership()) : CreateResourceOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome WorkMailClient::CreateUser(const CreateUserRequest& request) const {
-  return CreateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessControlRuleOutcome WorkMailClient::DeleteAccessControlRule(const DeleteAccessControlRuleRequest& request) const {
-  return DeleteAccessControlRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAccessControlRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteAccessControlRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteAliasOutcome WorkMailClient::DeleteAlias(const DeleteAliasRequest& request) const {
-  return DeleteAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAliasOutcome(result.GetResultWithOwnership()) : DeleteAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteAvailabilityConfigurationOutcome WorkMailClient::DeleteAvailabilityConfiguration(
     const DeleteAvailabilityConfigurationRequest& request) const {
-  return DeleteAvailabilityConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAvailabilityConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteAvailabilityConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteEmailMonitoringConfigurationOutcome WorkMailClient::DeleteEmailMonitoringConfiguration(
     const DeleteEmailMonitoringConfigurationRequest& request) const {
-  return DeleteEmailMonitoringConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteEmailMonitoringConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteEmailMonitoringConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupOutcome WorkMailClient::DeleteGroup(const DeleteGroupRequest& request) const {
-  return DeleteGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGroupOutcome(result.GetResultWithOwnership()) : DeleteGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteIdentityCenterApplicationOutcome WorkMailClient::DeleteIdentityCenterApplication(
     const DeleteIdentityCenterApplicationRequest& request) const {
-  return DeleteIdentityCenterApplicationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIdentityCenterApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteIdentityCenterApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteIdentityProviderConfigurationOutcome WorkMailClient::DeleteIdentityProviderConfiguration(
     const DeleteIdentityProviderConfigurationRequest& request) const {
-  return DeleteIdentityProviderConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIdentityProviderConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteIdentityProviderConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteImpersonationRoleOutcome WorkMailClient::DeleteImpersonationRole(const DeleteImpersonationRoleRequest& request) const {
-  return DeleteImpersonationRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteImpersonationRoleOutcome(result.GetResultWithOwnership())
+                            : DeleteImpersonationRoleOutcome(std::move(result.GetError()));
 }
 
 DeleteMailboxPermissionsOutcome WorkMailClient::DeleteMailboxPermissions(const DeleteMailboxPermissionsRequest& request) const {
-  return DeleteMailboxPermissionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMailboxPermissionsOutcome(result.GetResultWithOwnership())
+                            : DeleteMailboxPermissionsOutcome(std::move(result.GetError()));
 }
 
 DeleteMobileDeviceAccessOverrideOutcome WorkMailClient::DeleteMobileDeviceAccessOverride(
     const DeleteMobileDeviceAccessOverrideRequest& request) const {
-  return DeleteMobileDeviceAccessOverrideOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMobileDeviceAccessOverrideOutcome(result.GetResultWithOwnership())
+                            : DeleteMobileDeviceAccessOverrideOutcome(std::move(result.GetError()));
 }
 
 DeleteMobileDeviceAccessRuleOutcome WorkMailClient::DeleteMobileDeviceAccessRule(const DeleteMobileDeviceAccessRuleRequest& request) const {
-  return DeleteMobileDeviceAccessRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMobileDeviceAccessRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteMobileDeviceAccessRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteOrganizationOutcome WorkMailClient::DeleteOrganization(const DeleteOrganizationRequest& request) const {
-  return DeleteOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteOrganizationOutcome(result.GetResultWithOwnership())
+                            : DeleteOrganizationOutcome(std::move(result.GetError()));
 }
 
 DeletePersonalAccessTokenOutcome WorkMailClient::DeletePersonalAccessToken(const DeletePersonalAccessTokenRequest& request) const {
-  return DeletePersonalAccessTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePersonalAccessTokenOutcome(result.GetResultWithOwnership())
+                            : DeletePersonalAccessTokenOutcome(std::move(result.GetError()));
 }
 
 DeleteResourceOutcome WorkMailClient::DeleteResource(const DeleteResourceRequest& request) const {
-  return DeleteResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourceOutcome(result.GetResultWithOwnership()) : DeleteResourceOutcome(std::move(result.GetError()));
 }
 
 DeleteRetentionPolicyOutcome WorkMailClient::DeleteRetentionPolicy(const DeleteRetentionPolicyRequest& request) const {
-  return DeleteRetentionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRetentionPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteRetentionPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome WorkMailClient::DeleteUser(const DeleteUserRequest& request) const {
-  return DeleteUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DeregisterFromWorkMailOutcome WorkMailClient::DeregisterFromWorkMail(const DeregisterFromWorkMailRequest& request) const {
-  return DeregisterFromWorkMailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterFromWorkMailOutcome(result.GetResultWithOwnership())
+                            : DeregisterFromWorkMailOutcome(std::move(result.GetError()));
 }
 
 DeregisterMailDomainOutcome WorkMailClient::DeregisterMailDomain(const DeregisterMailDomainRequest& request) const {
-  return DeregisterMailDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterMailDomainOutcome(result.GetResultWithOwnership())
+                            : DeregisterMailDomainOutcome(std::move(result.GetError()));
 }
 
 DescribeEmailMonitoringConfigurationOutcome WorkMailClient::DescribeEmailMonitoringConfiguration(
     const DescribeEmailMonitoringConfigurationRequest& request) const {
-  return DescribeEmailMonitoringConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEmailMonitoringConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeEmailMonitoringConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeEntityOutcome WorkMailClient::DescribeEntity(const DescribeEntityRequest& request) const {
-  return DescribeEntityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEntityOutcome(result.GetResultWithOwnership()) : DescribeEntityOutcome(std::move(result.GetError()));
 }
 
 DescribeGroupOutcome WorkMailClient::DescribeGroup(const DescribeGroupRequest& request) const {
-  return DescribeGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeGroupOutcome(result.GetResultWithOwnership()) : DescribeGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeIdentityProviderConfigurationOutcome WorkMailClient::DescribeIdentityProviderConfiguration(
     const DescribeIdentityProviderConfigurationRequest& request) const {
-  return DescribeIdentityProviderConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeIdentityProviderConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeIdentityProviderConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeInboundDmarcSettingsOutcome WorkMailClient::DescribeInboundDmarcSettings(const DescribeInboundDmarcSettingsRequest& request) const {
-  return DescribeInboundDmarcSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInboundDmarcSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeInboundDmarcSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeMailboxExportJobOutcome WorkMailClient::DescribeMailboxExportJob(const DescribeMailboxExportJobRequest& request) const {
-  return DescribeMailboxExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMailboxExportJobOutcome(result.GetResultWithOwnership())
+                            : DescribeMailboxExportJobOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationOutcome WorkMailClient::DescribeOrganization(const DescribeOrganizationRequest& request) const {
-  return DescribeOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOrganizationOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationOutcome(std::move(result.GetError()));
 }
 
 DescribeResourceOutcome WorkMailClient::DescribeResource(const DescribeResourceRequest& request) const {
-  return DescribeResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeResourceOutcome(result.GetResultWithOwnership())
+                            : DescribeResourceOutcome(std::move(result.GetError()));
 }
 
 DescribeUserOutcome WorkMailClient::DescribeUser(const DescribeUserRequest& request) const {
-  return DescribeUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeUserOutcome(result.GetResultWithOwnership()) : DescribeUserOutcome(std::move(result.GetError()));
 }
 
 DisassociateDelegateFromResourceOutcome WorkMailClient::DisassociateDelegateFromResource(
     const DisassociateDelegateFromResourceRequest& request) const {
-  return DisassociateDelegateFromResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateDelegateFromResourceOutcome(result.GetResultWithOwnership())
+                            : DisassociateDelegateFromResourceOutcome(std::move(result.GetError()));
 }
 
 DisassociateMemberFromGroupOutcome WorkMailClient::DisassociateMemberFromGroup(const DisassociateMemberFromGroupRequest& request) const {
-  return DisassociateMemberFromGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateMemberFromGroupOutcome(result.GetResultWithOwnership())
+                            : DisassociateMemberFromGroupOutcome(std::move(result.GetError()));
 }
 
 GetAccessControlEffectOutcome WorkMailClient::GetAccessControlEffect(const GetAccessControlEffectRequest& request) const {
-  return GetAccessControlEffectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccessControlEffectOutcome(result.GetResultWithOwnership())
+                            : GetAccessControlEffectOutcome(std::move(result.GetError()));
 }
 
 GetDefaultRetentionPolicyOutcome WorkMailClient::GetDefaultRetentionPolicy(const GetDefaultRetentionPolicyRequest& request) const {
-  return GetDefaultRetentionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDefaultRetentionPolicyOutcome(result.GetResultWithOwnership())
+                            : GetDefaultRetentionPolicyOutcome(std::move(result.GetError()));
 }
 
 GetImpersonationRoleOutcome WorkMailClient::GetImpersonationRole(const GetImpersonationRoleRequest& request) const {
-  return GetImpersonationRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetImpersonationRoleOutcome(result.GetResultWithOwnership())
+                            : GetImpersonationRoleOutcome(std::move(result.GetError()));
 }
 
 GetImpersonationRoleEffectOutcome WorkMailClient::GetImpersonationRoleEffect(const GetImpersonationRoleEffectRequest& request) const {
-  return GetImpersonationRoleEffectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetImpersonationRoleEffectOutcome(result.GetResultWithOwnership())
+                            : GetImpersonationRoleEffectOutcome(std::move(result.GetError()));
 }
 
 GetMailDomainOutcome WorkMailClient::GetMailDomain(const GetMailDomainRequest& request) const {
-  return GetMailDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMailDomainOutcome(result.GetResultWithOwnership()) : GetMailDomainOutcome(std::move(result.GetError()));
 }
 
 GetMailboxDetailsOutcome WorkMailClient::GetMailboxDetails(const GetMailboxDetailsRequest& request) const {
-  return GetMailboxDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMailboxDetailsOutcome(result.GetResultWithOwnership())
+                            : GetMailboxDetailsOutcome(std::move(result.GetError()));
 }
 
 GetMobileDeviceAccessEffectOutcome WorkMailClient::GetMobileDeviceAccessEffect(const GetMobileDeviceAccessEffectRequest& request) const {
-  return GetMobileDeviceAccessEffectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMobileDeviceAccessEffectOutcome(result.GetResultWithOwnership())
+                            : GetMobileDeviceAccessEffectOutcome(std::move(result.GetError()));
 }
 
 GetMobileDeviceAccessOverrideOutcome WorkMailClient::GetMobileDeviceAccessOverride(
     const GetMobileDeviceAccessOverrideRequest& request) const {
-  return GetMobileDeviceAccessOverrideOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMobileDeviceAccessOverrideOutcome(result.GetResultWithOwnership())
+                            : GetMobileDeviceAccessOverrideOutcome(std::move(result.GetError()));
 }
 
 GetPersonalAccessTokenMetadataOutcome WorkMailClient::GetPersonalAccessTokenMetadata(
     const GetPersonalAccessTokenMetadataRequest& request) const {
-  return GetPersonalAccessTokenMetadataOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPersonalAccessTokenMetadataOutcome(result.GetResultWithOwnership())
+                            : GetPersonalAccessTokenMetadataOutcome(std::move(result.GetError()));
 }
 
 ListAccessControlRulesOutcome WorkMailClient::ListAccessControlRules(const ListAccessControlRulesRequest& request) const {
-  return ListAccessControlRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccessControlRulesOutcome(result.GetResultWithOwnership())
+                            : ListAccessControlRulesOutcome(std::move(result.GetError()));
 }
 
 ListAliasesOutcome WorkMailClient::ListAliases(const ListAliasesRequest& request) const {
-  return ListAliasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAliasesOutcome(result.GetResultWithOwnership()) : ListAliasesOutcome(std::move(result.GetError()));
 }
 
 ListAvailabilityConfigurationsOutcome WorkMailClient::ListAvailabilityConfigurations(
     const ListAvailabilityConfigurationsRequest& request) const {
-  return ListAvailabilityConfigurationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAvailabilityConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListAvailabilityConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListGroupMembersOutcome WorkMailClient::ListGroupMembers(const ListGroupMembersRequest& request) const {
-  return ListGroupMembersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupMembersOutcome(result.GetResultWithOwnership())
+                            : ListGroupMembersOutcome(std::move(result.GetError()));
 }
 
 ListGroupsOutcome WorkMailClient::ListGroups(const ListGroupsRequest& request) const {
-  return ListGroupsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupsOutcome(result.GetResultWithOwnership()) : ListGroupsOutcome(std::move(result.GetError()));
 }
 
 ListGroupsForEntityOutcome WorkMailClient::ListGroupsForEntity(const ListGroupsForEntityRequest& request) const {
-  return ListGroupsForEntityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupsForEntityOutcome(result.GetResultWithOwnership())
+                            : ListGroupsForEntityOutcome(std::move(result.GetError()));
 }
 
 ListImpersonationRolesOutcome WorkMailClient::ListImpersonationRoles(const ListImpersonationRolesRequest& request) const {
-  return ListImpersonationRolesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImpersonationRolesOutcome(result.GetResultWithOwnership())
+                            : ListImpersonationRolesOutcome(std::move(result.GetError()));
 }
 
 ListMailDomainsOutcome WorkMailClient::ListMailDomains(const ListMailDomainsRequest& request) const {
-  return ListMailDomainsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMailDomainsOutcome(result.GetResultWithOwnership())
+                            : ListMailDomainsOutcome(std::move(result.GetError()));
 }
 
 ListMailboxExportJobsOutcome WorkMailClient::ListMailboxExportJobs(const ListMailboxExportJobsRequest& request) const {
-  return ListMailboxExportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMailboxExportJobsOutcome(result.GetResultWithOwnership())
+                            : ListMailboxExportJobsOutcome(std::move(result.GetError()));
 }
 
 ListMailboxPermissionsOutcome WorkMailClient::ListMailboxPermissions(const ListMailboxPermissionsRequest& request) const {
-  return ListMailboxPermissionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMailboxPermissionsOutcome(result.GetResultWithOwnership())
+                            : ListMailboxPermissionsOutcome(std::move(result.GetError()));
 }
 
 ListMobileDeviceAccessOverridesOutcome WorkMailClient::ListMobileDeviceAccessOverrides(
     const ListMobileDeviceAccessOverridesRequest& request) const {
-  return ListMobileDeviceAccessOverridesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMobileDeviceAccessOverridesOutcome(result.GetResultWithOwnership())
+                            : ListMobileDeviceAccessOverridesOutcome(std::move(result.GetError()));
 }
 
 ListMobileDeviceAccessRulesOutcome WorkMailClient::ListMobileDeviceAccessRules(const ListMobileDeviceAccessRulesRequest& request) const {
-  return ListMobileDeviceAccessRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMobileDeviceAccessRulesOutcome(result.GetResultWithOwnership())
+                            : ListMobileDeviceAccessRulesOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationsOutcome WorkMailClient::ListOrganizations(const ListOrganizationsRequest& request) const {
-  return ListOrganizationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOrganizationsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationsOutcome(std::move(result.GetError()));
 }
 
 ListPersonalAccessTokensOutcome WorkMailClient::ListPersonalAccessTokens(const ListPersonalAccessTokensRequest& request) const {
-  return ListPersonalAccessTokensOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPersonalAccessTokensOutcome(result.GetResultWithOwnership())
+                            : ListPersonalAccessTokensOutcome(std::move(result.GetError()));
 }
 
 ListResourceDelegatesOutcome WorkMailClient::ListResourceDelegates(const ListResourceDelegatesRequest& request) const {
-  return ListResourceDelegatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceDelegatesOutcome(result.GetResultWithOwnership())
+                            : ListResourceDelegatesOutcome(std::move(result.GetError()));
 }
 
 ListResourcesOutcome WorkMailClient::ListResources(const ListResourcesRequest& request) const {
-  return ListResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcesOutcome(result.GetResultWithOwnership()) : ListResourcesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome WorkMailClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListUsersOutcome WorkMailClient::ListUsers(const ListUsersRequest& request) const {
-  return ListUsersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUsersOutcome(result.GetResultWithOwnership()) : ListUsersOutcome(std::move(result.GetError()));
 }
 
 PutAccessControlRuleOutcome WorkMailClient::PutAccessControlRule(const PutAccessControlRuleRequest& request) const {
-  return PutAccessControlRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAccessControlRuleOutcome(result.GetResultWithOwnership())
+                            : PutAccessControlRuleOutcome(std::move(result.GetError()));
 }
 
 PutEmailMonitoringConfigurationOutcome WorkMailClient::PutEmailMonitoringConfiguration(
     const PutEmailMonitoringConfigurationRequest& request) const {
-  return PutEmailMonitoringConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEmailMonitoringConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutEmailMonitoringConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutIdentityProviderConfigurationOutcome WorkMailClient::PutIdentityProviderConfiguration(
     const PutIdentityProviderConfigurationRequest& request) const {
-  return PutIdentityProviderConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutIdentityProviderConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutIdentityProviderConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutInboundDmarcSettingsOutcome WorkMailClient::PutInboundDmarcSettings(const PutInboundDmarcSettingsRequest& request) const {
-  return PutInboundDmarcSettingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutInboundDmarcSettingsOutcome(result.GetResultWithOwnership())
+                            : PutInboundDmarcSettingsOutcome(std::move(result.GetError()));
 }
 
 PutMailboxPermissionsOutcome WorkMailClient::PutMailboxPermissions(const PutMailboxPermissionsRequest& request) const {
-  return PutMailboxPermissionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutMailboxPermissionsOutcome(result.GetResultWithOwnership())
+                            : PutMailboxPermissionsOutcome(std::move(result.GetError()));
 }
 
 PutMobileDeviceAccessOverrideOutcome WorkMailClient::PutMobileDeviceAccessOverride(
     const PutMobileDeviceAccessOverrideRequest& request) const {
-  return PutMobileDeviceAccessOverrideOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutMobileDeviceAccessOverrideOutcome(result.GetResultWithOwnership())
+                            : PutMobileDeviceAccessOverrideOutcome(std::move(result.GetError()));
 }
 
 PutRetentionPolicyOutcome WorkMailClient::PutRetentionPolicy(const PutRetentionPolicyRequest& request) const {
-  return PutRetentionPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRetentionPolicyOutcome(result.GetResultWithOwnership())
+                            : PutRetentionPolicyOutcome(std::move(result.GetError()));
 }
 
 RegisterMailDomainOutcome WorkMailClient::RegisterMailDomain(const RegisterMailDomainRequest& request) const {
-  return RegisterMailDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterMailDomainOutcome(result.GetResultWithOwnership())
+                            : RegisterMailDomainOutcome(std::move(result.GetError()));
 }
 
 RegisterToWorkMailOutcome WorkMailClient::RegisterToWorkMail(const RegisterToWorkMailRequest& request) const {
-  return RegisterToWorkMailOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterToWorkMailOutcome(result.GetResultWithOwnership())
+                            : RegisterToWorkMailOutcome(std::move(result.GetError()));
 }
 
 ResetPasswordOutcome WorkMailClient::ResetPassword(const ResetPasswordRequest& request) const {
-  return ResetPasswordOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetPasswordOutcome(result.GetResultWithOwnership()) : ResetPasswordOutcome(std::move(result.GetError()));
 }
 
 StartMailboxExportJobOutcome WorkMailClient::StartMailboxExportJob(const StartMailboxExportJobRequest& request) const {
-  return StartMailboxExportJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMailboxExportJobOutcome(result.GetResultWithOwnership())
+                            : StartMailboxExportJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome WorkMailClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestAvailabilityConfigurationOutcome WorkMailClient::TestAvailabilityConfiguration(
     const TestAvailabilityConfigurationRequest& request) const {
-  return TestAvailabilityConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestAvailabilityConfigurationOutcome(result.GetResultWithOwnership())
+                            : TestAvailabilityConfigurationOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome WorkMailClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAvailabilityConfigurationOutcome WorkMailClient::UpdateAvailabilityConfiguration(
     const UpdateAvailabilityConfigurationRequest& request) const {
-  return UpdateAvailabilityConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAvailabilityConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateAvailabilityConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateDefaultMailDomainOutcome WorkMailClient::UpdateDefaultMailDomain(const UpdateDefaultMailDomainRequest& request) const {
-  return UpdateDefaultMailDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDefaultMailDomainOutcome(result.GetResultWithOwnership())
+                            : UpdateDefaultMailDomainOutcome(std::move(result.GetError()));
 }
 
 UpdateGroupOutcome WorkMailClient::UpdateGroup(const UpdateGroupRequest& request) const {
-  return UpdateGroupOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGroupOutcome(result.GetResultWithOwnership()) : UpdateGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateImpersonationRoleOutcome WorkMailClient::UpdateImpersonationRole(const UpdateImpersonationRoleRequest& request) const {
-  return UpdateImpersonationRoleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateImpersonationRoleOutcome(result.GetResultWithOwnership())
+                            : UpdateImpersonationRoleOutcome(std::move(result.GetError()));
 }
 
 UpdateMailboxQuotaOutcome WorkMailClient::UpdateMailboxQuota(const UpdateMailboxQuotaRequest& request) const {
-  return UpdateMailboxQuotaOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMailboxQuotaOutcome(result.GetResultWithOwnership())
+                            : UpdateMailboxQuotaOutcome(std::move(result.GetError()));
 }
 
 UpdateMobileDeviceAccessRuleOutcome WorkMailClient::UpdateMobileDeviceAccessRule(const UpdateMobileDeviceAccessRuleRequest& request) const {
-  return UpdateMobileDeviceAccessRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMobileDeviceAccessRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateMobileDeviceAccessRuleOutcome(std::move(result.GetError()));
 }
 
 UpdatePrimaryEmailAddressOutcome WorkMailClient::UpdatePrimaryEmailAddress(const UpdatePrimaryEmailAddressRequest& request) const {
-  return UpdatePrimaryEmailAddressOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePrimaryEmailAddressOutcome(result.GetResultWithOwnership())
+                            : UpdatePrimaryEmailAddressOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceOutcome WorkMailClient::UpdateResource(const UpdateResourceRequest& request) const {
-  return UpdateResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateResourceOutcome(result.GetResultWithOwnership()) : UpdateResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome WorkMailClient::UpdateUser(const UpdateUserRequest& request) const {
-  return UpdateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }

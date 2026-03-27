@@ -209,7 +209,8 @@ ConfigureLogsOutcome MediaPackageVodClient::ConfigureLogs(const ConfigureLogsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/configure_logs");
   };
 
-  return ConfigureLogsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ConfigureLogsOutcome(result.GetResultWithOwnership()) : ConfigureLogsOutcome(std::move(result.GetError()));
 }
 
 CreateAssetOutcome MediaPackageVodClient::CreateAsset(const CreateAssetRequest& request) const {
@@ -218,7 +219,8 @@ CreateAssetOutcome MediaPackageVodClient::CreateAsset(const CreateAssetRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
   };
 
-  return CreateAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAssetOutcome(result.GetResultWithOwnership()) : CreateAssetOutcome(std::move(result.GetError()));
 }
 
 CreatePackagingConfigurationOutcome MediaPackageVodClient::CreatePackagingConfiguration(
@@ -228,7 +230,9 @@ CreatePackagingConfigurationOutcome MediaPackageVodClient::CreatePackagingConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/packaging_configurations");
   };
 
-  return CreatePackagingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePackagingConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreatePackagingConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreatePackagingGroupOutcome MediaPackageVodClient::CreatePackagingGroup(const CreatePackagingGroupRequest& request) const {
@@ -237,7 +241,9 @@ CreatePackagingGroupOutcome MediaPackageVodClient::CreatePackagingGroup(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/packaging_groups");
   };
 
-  return CreatePackagingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePackagingGroupOutcome(result.GetResultWithOwnership())
+                            : CreatePackagingGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteAssetOutcome MediaPackageVodClient::DeleteAsset(const DeleteAssetRequest& request) const {
@@ -253,7 +259,8 @@ DeleteAssetOutcome MediaPackageVodClient::DeleteAsset(const DeleteAssetRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAssetOutcome(result.GetResultWithOwnership()) : DeleteAssetOutcome(std::move(result.GetError()));
 }
 
 DeletePackagingConfigurationOutcome MediaPackageVodClient::DeletePackagingConfiguration(
@@ -270,7 +277,9 @@ DeletePackagingConfigurationOutcome MediaPackageVodClient::DeletePackagingConfig
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeletePackagingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePackagingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeletePackagingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeletePackagingGroupOutcome MediaPackageVodClient::DeletePackagingGroup(const DeletePackagingGroupRequest& request) const {
@@ -286,7 +295,9 @@ DeletePackagingGroupOutcome MediaPackageVodClient::DeletePackagingGroup(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeletePackagingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePackagingGroupOutcome(result.GetResultWithOwnership())
+                            : DeletePackagingGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeAssetOutcome MediaPackageVodClient::DescribeAsset(const DescribeAssetRequest& request) const {
@@ -302,7 +313,8 @@ DescribeAssetOutcome MediaPackageVodClient::DescribeAsset(const DescribeAssetReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribeAssetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAssetOutcome(result.GetResultWithOwnership()) : DescribeAssetOutcome(std::move(result.GetError()));
 }
 
 DescribePackagingConfigurationOutcome MediaPackageVodClient::DescribePackagingConfiguration(
@@ -319,7 +331,9 @@ DescribePackagingConfigurationOutcome MediaPackageVodClient::DescribePackagingCo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribePackagingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePackagingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribePackagingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribePackagingGroupOutcome MediaPackageVodClient::DescribePackagingGroup(const DescribePackagingGroupRequest& request) const {
@@ -335,7 +349,9 @@ DescribePackagingGroupOutcome MediaPackageVodClient::DescribePackagingGroup(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DescribePackagingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePackagingGroupOutcome(result.GetResultWithOwnership())
+                            : DescribePackagingGroupOutcome(std::move(result.GetError()));
 }
 
 ListAssetsOutcome MediaPackageVodClient::ListAssets(const ListAssetsRequest& request) const {
@@ -344,7 +360,8 @@ ListAssetsOutcome MediaPackageVodClient::ListAssets(const ListAssetsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
   };
 
-  return ListAssetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssetsOutcome(result.GetResultWithOwnership()) : ListAssetsOutcome(std::move(result.GetError()));
 }
 
 ListPackagingConfigurationsOutcome MediaPackageVodClient::ListPackagingConfigurations(
@@ -354,7 +371,9 @@ ListPackagingConfigurationsOutcome MediaPackageVodClient::ListPackagingConfigura
     endpointResolutionOutcome.GetResult().AddPathSegments("/packaging_configurations");
   };
 
-  return ListPackagingConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPackagingConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListPackagingConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListPackagingGroupsOutcome MediaPackageVodClient::ListPackagingGroups(const ListPackagingGroupsRequest& request) const {
@@ -363,7 +382,9 @@ ListPackagingGroupsOutcome MediaPackageVodClient::ListPackagingGroups(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/packaging_groups");
   };
 
-  return ListPackagingGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPackagingGroupsOutcome(result.GetResultWithOwnership())
+                            : ListPackagingGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome MediaPackageVodClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -379,7 +400,9 @@ ListTagsForResourceOutcome MediaPackageVodClient::ListTagsForResource(const List
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome MediaPackageVodClient::TagResource(const TagResourceRequest& request) const {
@@ -395,7 +418,8 @@ TagResourceOutcome MediaPackageVodClient::TagResource(const TagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome MediaPackageVodClient::UntagResource(const UntagResourceRequest& request) const {
@@ -416,7 +440,8 @@ UntagResourceOutcome MediaPackageVodClient::UntagResource(const UntagResourceReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdatePackagingGroupOutcome MediaPackageVodClient::UpdatePackagingGroup(const UpdatePackagingGroupRequest& request) const {
@@ -432,5 +457,7 @@ UpdatePackagingGroupOutcome MediaPackageVodClient::UpdatePackagingGroup(const Up
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdatePackagingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePackagingGroupOutcome(result.GetResultWithOwnership())
+                            : UpdatePackagingGroupOutcome(std::move(result.GetError()));
 }

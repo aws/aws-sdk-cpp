@@ -193,7 +193,9 @@ CreateConfigurationSetOutcome PinpointSMSVoiceClient::CreateConfigurationSet(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/sms-voice/configuration-sets");
   };
 
-  return CreateConfigurationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationSetOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationSetOutcome(std::move(result.GetError()));
 }
 
 CreateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::CreateConfigurationSetEventDestination(
@@ -211,7 +213,9 @@ CreateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::CreateConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-destinations");
   };
 
-  return CreateConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationSetOutcome PinpointSMSVoiceClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const {
@@ -227,7 +231,9 @@ DeleteConfigurationSetOutcome PinpointSMSVoiceClient::DeleteConfigurationSet(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationSetName());
   };
 
-  return DeleteConfigurationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationSetOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationSetOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::DeleteConfigurationSetEventDestination(
@@ -251,7 +257,9 @@ DeleteConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::DeleteConf
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventDestinationName());
   };
 
-  return DeleteConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationSetEventDestinationsOutcome PinpointSMSVoiceClient::GetConfigurationSetEventDestinations(
@@ -269,7 +277,9 @@ GetConfigurationSetEventDestinationsOutcome PinpointSMSVoiceClient::GetConfigura
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-destinations");
   };
 
-  return GetConfigurationSetEventDestinationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationSetEventDestinationsOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationSetEventDestinationsOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationSetsOutcome PinpointSMSVoiceClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const {
@@ -278,7 +288,9 @@ ListConfigurationSetsOutcome PinpointSMSVoiceClient::ListConfigurationSets(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/sms-voice/configuration-sets");
   };
 
-  return ListConfigurationSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigurationSetsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationSetsOutcome(std::move(result.GetError()));
 }
 
 SendVoiceMessageOutcome PinpointSMSVoiceClient::SendVoiceMessage(const SendVoiceMessageRequest& request) const {
@@ -287,7 +299,9 @@ SendVoiceMessageOutcome PinpointSMSVoiceClient::SendVoiceMessage(const SendVoice
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/sms-voice/voice/message");
   };
 
-  return SendVoiceMessageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendVoiceMessageOutcome(result.GetResultWithOwnership())
+                            : SendVoiceMessageOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::UpdateConfigurationSetEventDestination(
@@ -311,5 +325,7 @@ UpdateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::UpdateConf
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventDestinationName());
   };
 
-  return UpdateConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }

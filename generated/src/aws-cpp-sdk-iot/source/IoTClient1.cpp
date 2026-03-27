@@ -139,7 +139,9 @@ DescribeEncryptionConfigurationOutcome IoTClient::DescribeEncryptionConfiguratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/encryption-configuration");
   };
 
-  return DescribeEncryptionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeEncryptionConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeEncryptionConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeEndpointOutcome IoTClient::DescribeEndpoint(const DescribeEndpointRequest& request) const {
@@ -148,7 +150,9 @@ DescribeEndpointOutcome IoTClient::DescribeEndpoint(const DescribeEndpointReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/endpoint");
   };
 
-  return DescribeEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeEndpointOutcome(result.GetResultWithOwnership())
+                            : DescribeEndpointOutcome(std::move(result.GetError()));
 }
 
 DescribeEventConfigurationsOutcome IoTClient::DescribeEventConfigurations(const DescribeEventConfigurationsRequest& request) const {
@@ -157,7 +161,9 @@ DescribeEventConfigurationsOutcome IoTClient::DescribeEventConfigurations(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-configurations");
   };
 
-  return DescribeEventConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeEventConfigurationsOutcome(result.GetResultWithOwnership())
+                            : DescribeEventConfigurationsOutcome(std::move(result.GetError()));
 }
 
 DescribeFleetMetricOutcome IoTClient::DescribeFleetMetric(const DescribeFleetMetricRequest& request) const {
@@ -173,7 +179,9 @@ DescribeFleetMetricOutcome IoTClient::DescribeFleetMetric(const DescribeFleetMet
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMetricName());
   };
 
-  return DescribeFleetMetricOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFleetMetricOutcome(result.GetResultWithOwnership())
+                            : DescribeFleetMetricOutcome(std::move(result.GetError()));
 }
 
 DescribeIndexOutcome IoTClient::DescribeIndex(const DescribeIndexRequest& request) const {
@@ -189,7 +197,8 @@ DescribeIndexOutcome IoTClient::DescribeIndex(const DescribeIndexRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexName());
   };
 
-  return DescribeIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeIndexOutcome(result.GetResultWithOwnership()) : DescribeIndexOutcome(std::move(result.GetError()));
 }
 
 DescribeJobOutcome IoTClient::DescribeJob(const DescribeJobRequest& request) const {
@@ -205,7 +214,8 @@ DescribeJobOutcome IoTClient::DescribeJob(const DescribeJobRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DescribeJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeJobOutcome(result.GetResultWithOwnership()) : DescribeJobOutcome(std::move(result.GetError()));
 }
 
 DescribeJobExecutionOutcome IoTClient::DescribeJobExecution(const DescribeJobExecutionRequest& request) const {
@@ -228,7 +238,9 @@ DescribeJobExecutionOutcome IoTClient::DescribeJobExecution(const DescribeJobExe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DescribeJobExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeJobExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribeJobExecutionOutcome(std::move(result.GetError()));
 }
 
 DescribeJobTemplateOutcome IoTClient::DescribeJobTemplate(const DescribeJobTemplateRequest& request) const {
@@ -244,7 +256,9 @@ DescribeJobTemplateOutcome IoTClient::DescribeJobTemplate(const DescribeJobTempl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobTemplateId());
   };
 
-  return DescribeJobTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeJobTemplateOutcome(result.GetResultWithOwnership())
+                            : DescribeJobTemplateOutcome(std::move(result.GetError()));
 }
 
 DescribeManagedJobTemplateOutcome IoTClient::DescribeManagedJobTemplate(const DescribeManagedJobTemplateRequest& request) const {
@@ -260,7 +274,9 @@ DescribeManagedJobTemplateOutcome IoTClient::DescribeManagedJobTemplate(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateName());
   };
 
-  return DescribeManagedJobTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeManagedJobTemplateOutcome(result.GetResultWithOwnership())
+                            : DescribeManagedJobTemplateOutcome(std::move(result.GetError()));
 }
 
 DescribeMitigationActionOutcome IoTClient::DescribeMitigationAction(const DescribeMitigationActionRequest& request) const {
@@ -276,7 +292,9 @@ DescribeMitigationActionOutcome IoTClient::DescribeMitigationAction(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetActionName());
   };
 
-  return DescribeMitigationActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeMitigationActionOutcome(result.GetResultWithOwnership())
+                            : DescribeMitigationActionOutcome(std::move(result.GetError()));
 }
 
 DescribeProvisioningTemplateOutcome IoTClient::DescribeProvisioningTemplate(const DescribeProvisioningTemplateRequest& request) const {
@@ -292,7 +310,9 @@ DescribeProvisioningTemplateOutcome IoTClient::DescribeProvisioningTemplate(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateName());
   };
 
-  return DescribeProvisioningTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeProvisioningTemplateOutcome(result.GetResultWithOwnership())
+                            : DescribeProvisioningTemplateOutcome(std::move(result.GetError()));
 }
 
 DescribeProvisioningTemplateVersionOutcome IoTClient::DescribeProvisioningTemplateVersion(
@@ -316,7 +336,9 @@ DescribeProvisioningTemplateVersionOutcome IoTClient::DescribeProvisioningTempla
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
   };
 
-  return DescribeProvisioningTemplateVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeProvisioningTemplateVersionOutcome(result.GetResultWithOwnership())
+                            : DescribeProvisioningTemplateVersionOutcome(std::move(result.GetError()));
 }
 
 DescribeRoleAliasOutcome IoTClient::DescribeRoleAlias(const DescribeRoleAliasRequest& request) const {
@@ -332,7 +354,9 @@ DescribeRoleAliasOutcome IoTClient::DescribeRoleAlias(const DescribeRoleAliasReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRoleAlias());
   };
 
-  return DescribeRoleAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRoleAliasOutcome(result.GetResultWithOwnership())
+                            : DescribeRoleAliasOutcome(std::move(result.GetError()));
 }
 
 DescribeScheduledAuditOutcome IoTClient::DescribeScheduledAudit(const DescribeScheduledAuditRequest& request) const {
@@ -348,7 +372,9 @@ DescribeScheduledAuditOutcome IoTClient::DescribeScheduledAudit(const DescribeSc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScheduledAuditName());
   };
 
-  return DescribeScheduledAuditOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeScheduledAuditOutcome(result.GetResultWithOwnership())
+                            : DescribeScheduledAuditOutcome(std::move(result.GetError()));
 }
 
 DescribeSecurityProfileOutcome IoTClient::DescribeSecurityProfile(const DescribeSecurityProfileRequest& request) const {
@@ -364,7 +390,9 @@ DescribeSecurityProfileOutcome IoTClient::DescribeSecurityProfile(const Describe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSecurityProfileName());
   };
 
-  return DescribeSecurityProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeSecurityProfileOutcome(result.GetResultWithOwnership())
+                            : DescribeSecurityProfileOutcome(std::move(result.GetError()));
 }
 
 DescribeStreamOutcome IoTClient::DescribeStream(const DescribeStreamRequest& request) const {
@@ -380,7 +408,8 @@ DescribeStreamOutcome IoTClient::DescribeStream(const DescribeStreamRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamId());
   };
 
-  return DescribeStreamOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeStreamOutcome(result.GetResultWithOwnership()) : DescribeStreamOutcome(std::move(result.GetError()));
 }
 
 DescribeThingOutcome IoTClient::DescribeThing(const DescribeThingRequest& request) const {
@@ -396,7 +425,8 @@ DescribeThingOutcome IoTClient::DescribeThing(const DescribeThingRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThingName());
   };
 
-  return DescribeThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeThingOutcome(result.GetResultWithOwnership()) : DescribeThingOutcome(std::move(result.GetError()));
 }
 
 DescribeThingGroupOutcome IoTClient::DescribeThingGroup(const DescribeThingGroupRequest& request) const {
@@ -412,7 +442,9 @@ DescribeThingGroupOutcome IoTClient::DescribeThingGroup(const DescribeThingGroup
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThingGroupName());
   };
 
-  return DescribeThingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeThingGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeThingGroupOutcome(std::move(result.GetError()));
 }
 
 DescribeThingRegistrationTaskOutcome IoTClient::DescribeThingRegistrationTask(const DescribeThingRegistrationTaskRequest& request) const {
@@ -428,7 +460,9 @@ DescribeThingRegistrationTaskOutcome IoTClient::DescribeThingRegistrationTask(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
   };
 
-  return DescribeThingRegistrationTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeThingRegistrationTaskOutcome(result.GetResultWithOwnership())
+                            : DescribeThingRegistrationTaskOutcome(std::move(result.GetError()));
 }
 
 DescribeThingTypeOutcome IoTClient::DescribeThingType(const DescribeThingTypeRequest& request) const {
@@ -444,7 +478,9 @@ DescribeThingTypeOutcome IoTClient::DescribeThingType(const DescribeThingTypeReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThingTypeName());
   };
 
-  return DescribeThingTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeThingTypeOutcome(result.GetResultWithOwnership())
+                            : DescribeThingTypeOutcome(std::move(result.GetError()));
 }
 
 DetachPolicyOutcome IoTClient::DetachPolicy(const DetachPolicyRequest& request) const {
@@ -460,7 +496,8 @@ DetachPolicyOutcome IoTClient::DetachPolicy(const DetachPolicyRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyName());
   };
 
-  return DetachPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachPolicyOutcome(result.GetResultWithOwnership()) : DetachPolicyOutcome(std::move(result.GetError()));
 }
 
 DetachSecurityProfileOutcome IoTClient::DetachSecurityProfile(const DetachSecurityProfileRequest& request) const {
@@ -482,7 +519,9 @@ DetachSecurityProfileOutcome IoTClient::DetachSecurityProfile(const DetachSecuri
     endpointResolutionOutcome.GetResult().AddPathSegments("/targets");
   };
 
-  return DetachSecurityProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DetachSecurityProfileOutcome(result.GetResultWithOwnership())
+                            : DetachSecurityProfileOutcome(std::move(result.GetError()));
 }
 
 DetachThingPrincipalOutcome IoTClient::DetachThingPrincipal(const DetachThingPrincipalRequest& request) const {
@@ -504,7 +543,9 @@ DetachThingPrincipalOutcome IoTClient::DetachThingPrincipal(const DetachThingPri
     endpointResolutionOutcome.GetResult().AddPathSegments("/principals");
   };
 
-  return DetachThingPrincipalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DetachThingPrincipalOutcome(result.GetResultWithOwnership())
+                            : DetachThingPrincipalOutcome(std::move(result.GetError()));
 }
 
 DisableTopicRuleOutcome IoTClient::DisableTopicRule(const DisableTopicRuleRequest& request) const {
@@ -521,7 +562,9 @@ DisableTopicRuleOutcome IoTClient::DisableTopicRule(const DisableTopicRuleReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/disable");
   };
 
-  return DisableTopicRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableTopicRuleOutcome(result.GetResultWithOwnership())
+                            : DisableTopicRuleOutcome(std::move(result.GetError()));
 }
 
 DisassociateSbomFromPackageVersionOutcome IoTClient::DisassociateSbomFromPackageVersion(
@@ -546,7 +589,9 @@ DisassociateSbomFromPackageVersionOutcome IoTClient::DisassociateSbomFromPackage
     endpointResolutionOutcome.GetResult().AddPathSegments("/sbom");
   };
 
-  return DisassociateSbomFromPackageVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateSbomFromPackageVersionOutcome(result.GetResultWithOwnership())
+                            : DisassociateSbomFromPackageVersionOutcome(std::move(result.GetError()));
 }
 
 EnableTopicRuleOutcome IoTClient::EnableTopicRule(const EnableTopicRuleRequest& request) const {
@@ -563,7 +608,9 @@ EnableTopicRuleOutcome IoTClient::EnableTopicRule(const EnableTopicRuleRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/enable");
   };
 
-  return EnableTopicRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableTopicRuleOutcome(result.GetResultWithOwnership())
+                            : EnableTopicRuleOutcome(std::move(result.GetError()));
 }
 
 GetBehaviorModelTrainingSummariesOutcome IoTClient::GetBehaviorModelTrainingSummaries(
@@ -573,7 +620,9 @@ GetBehaviorModelTrainingSummariesOutcome IoTClient::GetBehaviorModelTrainingSumm
     endpointResolutionOutcome.GetResult().AddPathSegments("/behavior-model-training/summaries");
   };
 
-  return GetBehaviorModelTrainingSummariesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBehaviorModelTrainingSummariesOutcome(result.GetResultWithOwnership())
+                            : GetBehaviorModelTrainingSummariesOutcome(std::move(result.GetError()));
 }
 
 GetBucketsAggregationOutcome IoTClient::GetBucketsAggregation(const GetBucketsAggregationRequest& request) const {
@@ -582,7 +631,9 @@ GetBucketsAggregationOutcome IoTClient::GetBucketsAggregation(const GetBucketsAg
     endpointResolutionOutcome.GetResult().AddPathSegments("/indices/buckets");
   };
 
-  return GetBucketsAggregationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBucketsAggregationOutcome(result.GetResultWithOwnership())
+                            : GetBucketsAggregationOutcome(std::move(result.GetError()));
 }
 
 GetCardinalityOutcome IoTClient::GetCardinality(const GetCardinalityRequest& request) const {
@@ -591,7 +642,8 @@ GetCardinalityOutcome IoTClient::GetCardinality(const GetCardinalityRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/indices/cardinality");
   };
 
-  return GetCardinalityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCardinalityOutcome(result.GetResultWithOwnership()) : GetCardinalityOutcome(std::move(result.GetError()));
 }
 
 GetCommandOutcome IoTClient::GetCommand(const GetCommandRequest& request) const {
@@ -607,7 +659,8 @@ GetCommandOutcome IoTClient::GetCommand(const GetCommandRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCommandId());
   };
 
-  return GetCommandOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCommandOutcome(result.GetResultWithOwnership()) : GetCommandOutcome(std::move(result.GetError()));
 }
 
 GetCommandExecutionOutcome IoTClient::GetCommandExecution(const GetCommandExecutionRequest& request) const {
@@ -628,7 +681,9 @@ GetCommandExecutionOutcome IoTClient::GetCommandExecution(const GetCommandExecut
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionId());
   };
 
-  return GetCommandExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCommandExecutionOutcome(result.GetResultWithOwnership())
+                            : GetCommandExecutionOutcome(std::move(result.GetError()));
 }
 
 GetEffectivePoliciesOutcome IoTClient::GetEffectivePolicies(const GetEffectivePoliciesRequest& request) const {
@@ -637,7 +692,9 @@ GetEffectivePoliciesOutcome IoTClient::GetEffectivePolicies(const GetEffectivePo
     endpointResolutionOutcome.GetResult().AddPathSegments("/effective-policies");
   };
 
-  return GetEffectivePoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEffectivePoliciesOutcome(result.GetResultWithOwnership())
+                            : GetEffectivePoliciesOutcome(std::move(result.GetError()));
 }
 
 GetIndexingConfigurationOutcome IoTClient::GetIndexingConfiguration(const GetIndexingConfigurationRequest& request) const {
@@ -646,7 +703,9 @@ GetIndexingConfigurationOutcome IoTClient::GetIndexingConfiguration(const GetInd
     endpointResolutionOutcome.GetResult().AddPathSegments("/indexing/config");
   };
 
-  return GetIndexingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIndexingConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetIndexingConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetJobDocumentOutcome IoTClient::GetJobDocument(const GetJobDocumentRequest& request) const {
@@ -663,7 +722,8 @@ GetJobDocumentOutcome IoTClient::GetJobDocument(const GetJobDocumentRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/job-document");
   };
 
-  return GetJobDocumentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobDocumentOutcome(result.GetResultWithOwnership()) : GetJobDocumentOutcome(std::move(result.GetError()));
 }
 
 GetLoggingOptionsOutcome IoTClient::GetLoggingOptions(const GetLoggingOptionsRequest& request) const {
@@ -672,7 +732,9 @@ GetLoggingOptionsOutcome IoTClient::GetLoggingOptions(const GetLoggingOptionsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/loggingOptions");
   };
 
-  return GetLoggingOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLoggingOptionsOutcome(result.GetResultWithOwnership())
+                            : GetLoggingOptionsOutcome(std::move(result.GetError()));
 }
 
 GetOTAUpdateOutcome IoTClient::GetOTAUpdate(const GetOTAUpdateRequest& request) const {
@@ -688,7 +750,8 @@ GetOTAUpdateOutcome IoTClient::GetOTAUpdate(const GetOTAUpdateRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOtaUpdateId());
   };
 
-  return GetOTAUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOTAUpdateOutcome(result.GetResultWithOwnership()) : GetOTAUpdateOutcome(std::move(result.GetError()));
 }
 
 GetPackageOutcome IoTClient::GetPackage(const GetPackageRequest& request) const {
@@ -704,7 +767,8 @@ GetPackageOutcome IoTClient::GetPackage(const GetPackageRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageName());
   };
 
-  return GetPackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPackageOutcome(result.GetResultWithOwnership()) : GetPackageOutcome(std::move(result.GetError()));
 }
 
 GetPackageConfigurationOutcome IoTClient::GetPackageConfiguration(const GetPackageConfigurationRequest& request) const {
@@ -713,7 +777,9 @@ GetPackageConfigurationOutcome IoTClient::GetPackageConfiguration(const GetPacka
     endpointResolutionOutcome.GetResult().AddPathSegments("/package-configuration");
   };
 
-  return GetPackageConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPackageConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetPackageConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetPackageVersionOutcome IoTClient::GetPackageVersion(const GetPackageVersionRequest& request) const {
@@ -736,7 +802,9 @@ GetPackageVersionOutcome IoTClient::GetPackageVersion(const GetPackageVersionReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
   };
 
-  return GetPackageVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPackageVersionOutcome(result.GetResultWithOwnership())
+                            : GetPackageVersionOutcome(std::move(result.GetError()));
 }
 
 GetPercentilesOutcome IoTClient::GetPercentiles(const GetPercentilesRequest& request) const {
@@ -745,7 +813,8 @@ GetPercentilesOutcome IoTClient::GetPercentiles(const GetPercentilesRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/indices/percentiles");
   };
 
-  return GetPercentilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPercentilesOutcome(result.GetResultWithOwnership()) : GetPercentilesOutcome(std::move(result.GetError()));
 }
 
 GetPolicyOutcome IoTClient::GetPolicy(const GetPolicyRequest& request) const {
@@ -761,7 +830,8 @@ GetPolicyOutcome IoTClient::GetPolicy(const GetPolicyRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyName());
   };
 
-  return GetPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPolicyOutcome(result.GetResultWithOwnership()) : GetPolicyOutcome(std::move(result.GetError()));
 }
 
 GetPolicyVersionOutcome IoTClient::GetPolicyVersion(const GetPolicyVersionRequest& request) const {
@@ -784,7 +854,9 @@ GetPolicyVersionOutcome IoTClient::GetPolicyVersion(const GetPolicyVersionReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyVersionId());
   };
 
-  return GetPolicyVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPolicyVersionOutcome(result.GetResultWithOwnership())
+                            : GetPolicyVersionOutcome(std::move(result.GetError()));
 }
 
 GetRegistrationCodeOutcome IoTClient::GetRegistrationCode(const GetRegistrationCodeRequest& request) const {
@@ -793,7 +865,9 @@ GetRegistrationCodeOutcome IoTClient::GetRegistrationCode(const GetRegistrationC
     endpointResolutionOutcome.GetResult().AddPathSegments("/registrationcode");
   };
 
-  return GetRegistrationCodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRegistrationCodeOutcome(result.GetResultWithOwnership())
+                            : GetRegistrationCodeOutcome(std::move(result.GetError()));
 }
 
 GetStatisticsOutcome IoTClient::GetStatistics(const GetStatisticsRequest& request) const {
@@ -802,7 +876,8 @@ GetStatisticsOutcome IoTClient::GetStatistics(const GetStatisticsRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/indices/statistics");
   };
 
-  return GetStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetStatisticsOutcome(result.GetResultWithOwnership()) : GetStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetThingConnectivityDataOutcome IoTClient::GetThingConnectivityData(const GetThingConnectivityDataRequest& request) const {
@@ -819,7 +894,9 @@ GetThingConnectivityDataOutcome IoTClient::GetThingConnectivityData(const GetThi
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectivity-data");
   };
 
-  return GetThingConnectivityDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetThingConnectivityDataOutcome(result.GetResultWithOwnership())
+                            : GetThingConnectivityDataOutcome(std::move(result.GetError()));
 }
 
 GetTopicRuleOutcome IoTClient::GetTopicRule(const GetTopicRuleRequest& request) const {
@@ -835,7 +912,8 @@ GetTopicRuleOutcome IoTClient::GetTopicRule(const GetTopicRuleRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleName());
   };
 
-  return GetTopicRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTopicRuleOutcome(result.GetResultWithOwnership()) : GetTopicRuleOutcome(std::move(result.GetError()));
 }
 
 GetTopicRuleDestinationOutcome IoTClient::GetTopicRuleDestination(const GetTopicRuleDestinationRequest& request) const {
@@ -851,7 +929,9 @@ GetTopicRuleDestinationOutcome IoTClient::GetTopicRuleDestination(const GetTopic
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetArn());
   };
 
-  return GetTopicRuleDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTopicRuleDestinationOutcome(result.GetResultWithOwnership())
+                            : GetTopicRuleDestinationOutcome(std::move(result.GetError()));
 }
 
 GetV2LoggingOptionsOutcome IoTClient::GetV2LoggingOptions(const GetV2LoggingOptionsRequest& request) const {
@@ -860,7 +940,9 @@ GetV2LoggingOptionsOutcome IoTClient::GetV2LoggingOptions(const GetV2LoggingOpti
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2LoggingOptions");
   };
 
-  return GetV2LoggingOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetV2LoggingOptionsOutcome(result.GetResultWithOwnership())
+                            : GetV2LoggingOptionsOutcome(std::move(result.GetError()));
 }
 
 ListActiveViolationsOutcome IoTClient::ListActiveViolations(const ListActiveViolationsRequest& request) const {
@@ -869,7 +951,9 @@ ListActiveViolationsOutcome IoTClient::ListActiveViolations(const ListActiveViol
     endpointResolutionOutcome.GetResult().AddPathSegments("/active-violations");
   };
 
-  return ListActiveViolationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListActiveViolationsOutcome(result.GetResultWithOwnership())
+                            : ListActiveViolationsOutcome(std::move(result.GetError()));
 }
 
 ListAttachedPoliciesOutcome IoTClient::ListAttachedPolicies(const ListAttachedPoliciesRequest& request) const {
@@ -885,7 +969,9 @@ ListAttachedPoliciesOutcome IoTClient::ListAttachedPolicies(const ListAttachedPo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTarget());
   };
 
-  return ListAttachedPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAttachedPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListAttachedPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListAuditFindingsOutcome IoTClient::ListAuditFindings(const ListAuditFindingsRequest& request) const {
@@ -894,7 +980,9 @@ ListAuditFindingsOutcome IoTClient::ListAuditFindings(const ListAuditFindingsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/findings");
   };
 
-  return ListAuditFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAuditFindingsOutcome(result.GetResultWithOwnership())
+                            : ListAuditFindingsOutcome(std::move(result.GetError()));
 }
 
 ListAuditMitigationActionsExecutionsOutcome IoTClient::ListAuditMitigationActionsExecutions(
@@ -915,7 +1003,9 @@ ListAuditMitigationActionsExecutionsOutcome IoTClient::ListAuditMitigationAction
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/mitigationactions/executions");
   };
 
-  return ListAuditMitigationActionsExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAuditMitigationActionsExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListAuditMitigationActionsExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListAuditMitigationActionsTasksOutcome IoTClient::ListAuditMitigationActionsTasks(
@@ -936,7 +1026,9 @@ ListAuditMitigationActionsTasksOutcome IoTClient::ListAuditMitigationActionsTask
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/mitigationactions/tasks");
   };
 
-  return ListAuditMitigationActionsTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAuditMitigationActionsTasksOutcome(result.GetResultWithOwnership())
+                            : ListAuditMitigationActionsTasksOutcome(std::move(result.GetError()));
 }
 
 ListAuditSuppressionsOutcome IoTClient::ListAuditSuppressions(const ListAuditSuppressionsRequest& request) const {
@@ -945,7 +1037,9 @@ ListAuditSuppressionsOutcome IoTClient::ListAuditSuppressions(const ListAuditSup
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/suppressions/list");
   };
 
-  return ListAuditSuppressionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAuditSuppressionsOutcome(result.GetResultWithOwnership())
+                            : ListAuditSuppressionsOutcome(std::move(result.GetError()));
 }
 
 ListAuditTasksOutcome IoTClient::ListAuditTasks(const ListAuditTasksRequest& request) const {
@@ -965,7 +1059,8 @@ ListAuditTasksOutcome IoTClient::ListAuditTasks(const ListAuditTasksRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/tasks");
   };
 
-  return ListAuditTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAuditTasksOutcome(result.GetResultWithOwnership()) : ListAuditTasksOutcome(std::move(result.GetError()));
 }
 
 ListAuthorizersOutcome IoTClient::ListAuthorizers(const ListAuthorizersRequest& request) const {
@@ -974,7 +1069,9 @@ ListAuthorizersOutcome IoTClient::ListAuthorizers(const ListAuthorizersRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/authorizers/");
   };
 
-  return ListAuthorizersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAuthorizersOutcome(result.GetResultWithOwnership())
+                            : ListAuthorizersOutcome(std::move(result.GetError()));
 }
 
 ListBillingGroupsOutcome IoTClient::ListBillingGroups(const ListBillingGroupsRequest& request) const {
@@ -983,7 +1080,9 @@ ListBillingGroupsOutcome IoTClient::ListBillingGroups(const ListBillingGroupsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/billing-groups");
   };
 
-  return ListBillingGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBillingGroupsOutcome(result.GetResultWithOwnership())
+                            : ListBillingGroupsOutcome(std::move(result.GetError()));
 }
 
 ListCACertificatesOutcome IoTClient::ListCACertificates(const ListCACertificatesRequest& request) const {
@@ -992,7 +1091,9 @@ ListCACertificatesOutcome IoTClient::ListCACertificates(const ListCACertificates
     endpointResolutionOutcome.GetResult().AddPathSegments("/cacertificates");
   };
 
-  return ListCACertificatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCACertificatesOutcome(result.GetResultWithOwnership())
+                            : ListCACertificatesOutcome(std::move(result.GetError()));
 }
 
 ListCertificateProvidersOutcome IoTClient::ListCertificateProviders(const ListCertificateProvidersRequest& request) const {
@@ -1001,7 +1102,9 @@ ListCertificateProvidersOutcome IoTClient::ListCertificateProviders(const ListCe
     endpointResolutionOutcome.GetResult().AddPathSegments("/certificate-providers/");
   };
 
-  return ListCertificateProvidersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCertificateProvidersOutcome(result.GetResultWithOwnership())
+                            : ListCertificateProvidersOutcome(std::move(result.GetError()));
 }
 
 ListCertificatesOutcome IoTClient::ListCertificates(const ListCertificatesRequest& request) const {
@@ -1010,7 +1113,9 @@ ListCertificatesOutcome IoTClient::ListCertificates(const ListCertificatesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/certificates");
   };
 
-  return ListCertificatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCertificatesOutcome(result.GetResultWithOwnership())
+                            : ListCertificatesOutcome(std::move(result.GetError()));
 }
 
 ListCertificatesByCAOutcome IoTClient::ListCertificatesByCA(const ListCertificatesByCARequest& request) const {
@@ -1026,7 +1131,9 @@ ListCertificatesByCAOutcome IoTClient::ListCertificatesByCA(const ListCertificat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaCertificateId());
   };
 
-  return ListCertificatesByCAOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCertificatesByCAOutcome(result.GetResultWithOwnership())
+                            : ListCertificatesByCAOutcome(std::move(result.GetError()));
 }
 
 ListCommandExecutionsOutcome IoTClient::ListCommandExecutions(const ListCommandExecutionsRequest& request) const {
@@ -1035,7 +1142,9 @@ ListCommandExecutionsOutcome IoTClient::ListCommandExecutions(const ListCommandE
     endpointResolutionOutcome.GetResult().AddPathSegments("/command-executions");
   };
 
-  return ListCommandExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCommandExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListCommandExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListCommandsOutcome IoTClient::ListCommands(const ListCommandsRequest& request) const {
@@ -1044,7 +1153,8 @@ ListCommandsOutcome IoTClient::ListCommands(const ListCommandsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/commands");
   };
 
-  return ListCommandsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCommandsOutcome(result.GetResultWithOwnership()) : ListCommandsOutcome(std::move(result.GetError()));
 }
 
 ListCustomMetricsOutcome IoTClient::ListCustomMetrics(const ListCustomMetricsRequest& request) const {
@@ -1053,7 +1163,9 @@ ListCustomMetricsOutcome IoTClient::ListCustomMetrics(const ListCustomMetricsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-metrics");
   };
 
-  return ListCustomMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCustomMetricsOutcome(result.GetResultWithOwnership())
+                            : ListCustomMetricsOutcome(std::move(result.GetError()));
 }
 
 ListDetectMitigationActionsExecutionsOutcome IoTClient::ListDetectMitigationActionsExecutions(
@@ -1063,7 +1175,9 @@ ListDetectMitigationActionsExecutionsOutcome IoTClient::ListDetectMitigationActi
     endpointResolutionOutcome.GetResult().AddPathSegments("/detect/mitigationactions/executions");
   };
 
-  return ListDetectMitigationActionsExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDetectMitigationActionsExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListDetectMitigationActionsExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListDetectMitigationActionsTasksOutcome IoTClient::ListDetectMitigationActionsTasks(
@@ -1084,7 +1198,9 @@ ListDetectMitigationActionsTasksOutcome IoTClient::ListDetectMitigationActionsTa
     endpointResolutionOutcome.GetResult().AddPathSegments("/detect/mitigationactions/tasks");
   };
 
-  return ListDetectMitigationActionsTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDetectMitigationActionsTasksOutcome(result.GetResultWithOwnership())
+                            : ListDetectMitigationActionsTasksOutcome(std::move(result.GetError()));
 }
 
 ListDimensionsOutcome IoTClient::ListDimensions(const ListDimensionsRequest& request) const {
@@ -1093,7 +1209,8 @@ ListDimensionsOutcome IoTClient::ListDimensions(const ListDimensionsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/dimensions");
   };
 
-  return ListDimensionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDimensionsOutcome(result.GetResultWithOwnership()) : ListDimensionsOutcome(std::move(result.GetError()));
 }
 
 ListDomainConfigurationsOutcome IoTClient::ListDomainConfigurations(const ListDomainConfigurationsRequest& request) const {
@@ -1102,7 +1219,9 @@ ListDomainConfigurationsOutcome IoTClient::ListDomainConfigurations(const ListDo
     endpointResolutionOutcome.GetResult().AddPathSegments("/domainConfigurations");
   };
 
-  return ListDomainConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListDomainConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListFleetMetricsOutcome IoTClient::ListFleetMetrics(const ListFleetMetricsRequest& request) const {
@@ -1111,7 +1230,9 @@ ListFleetMetricsOutcome IoTClient::ListFleetMetrics(const ListFleetMetricsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/fleet-metrics");
   };
 
-  return ListFleetMetricsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFleetMetricsOutcome(result.GetResultWithOwnership())
+                            : ListFleetMetricsOutcome(std::move(result.GetError()));
 }
 
 ListIndicesOutcome IoTClient::ListIndices(const ListIndicesRequest& request) const {
@@ -1120,7 +1241,8 @@ ListIndicesOutcome IoTClient::ListIndices(const ListIndicesRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/indices");
   };
 
-  return ListIndicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIndicesOutcome(result.GetResultWithOwnership()) : ListIndicesOutcome(std::move(result.GetError()));
 }
 
 ListJobExecutionsForJobOutcome IoTClient::ListJobExecutionsForJob(const ListJobExecutionsForJobRequest& request) const {
@@ -1137,7 +1259,9 @@ ListJobExecutionsForJobOutcome IoTClient::ListJobExecutionsForJob(const ListJobE
     endpointResolutionOutcome.GetResult().AddPathSegments("/things");
   };
 
-  return ListJobExecutionsForJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobExecutionsForJobOutcome(result.GetResultWithOwnership())
+                            : ListJobExecutionsForJobOutcome(std::move(result.GetError()));
 }
 
 ListJobExecutionsForThingOutcome IoTClient::ListJobExecutionsForThing(const ListJobExecutionsForThingRequest& request) const {
@@ -1154,7 +1278,9 @@ ListJobExecutionsForThingOutcome IoTClient::ListJobExecutionsForThing(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return ListJobExecutionsForThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobExecutionsForThingOutcome(result.GetResultWithOwnership())
+                            : ListJobExecutionsForThingOutcome(std::move(result.GetError()));
 }
 
 ListJobTemplatesOutcome IoTClient::ListJobTemplates(const ListJobTemplatesRequest& request) const {
@@ -1163,7 +1289,9 @@ ListJobTemplatesOutcome IoTClient::ListJobTemplates(const ListJobTemplatesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/job-templates");
   };
 
-  return ListJobTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListJobTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListJobsOutcome IoTClient::ListJobs(const ListJobsRequest& request) const {
@@ -1172,7 +1300,8 @@ ListJobsOutcome IoTClient::ListJobs(const ListJobsRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return ListJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListJobsOutcome(result.GetResultWithOwnership()) : ListJobsOutcome(std::move(result.GetError()));
 }
 
 ListManagedJobTemplatesOutcome IoTClient::ListManagedJobTemplates(const ListManagedJobTemplatesRequest& request) const {
@@ -1181,7 +1310,9 @@ ListManagedJobTemplatesOutcome IoTClient::ListManagedJobTemplates(const ListMana
     endpointResolutionOutcome.GetResult().AddPathSegments("/managed-job-templates");
   };
 
-  return ListManagedJobTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListManagedJobTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListManagedJobTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListMetricValuesOutcome IoTClient::ListMetricValues(const ListMetricValuesRequest& request) const {
@@ -1211,7 +1342,9 @@ ListMetricValuesOutcome IoTClient::ListMetricValues(const ListMetricValuesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/metric-values");
   };
 
-  return ListMetricValuesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMetricValuesOutcome(result.GetResultWithOwnership())
+                            : ListMetricValuesOutcome(std::move(result.GetError()));
 }
 
 ListMitigationActionsOutcome IoTClient::ListMitigationActions(const ListMitigationActionsRequest& request) const {
@@ -1220,7 +1353,9 @@ ListMitigationActionsOutcome IoTClient::ListMitigationActions(const ListMitigati
     endpointResolutionOutcome.GetResult().AddPathSegments("/mitigationactions/actions");
   };
 
-  return ListMitigationActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMitigationActionsOutcome(result.GetResultWithOwnership())
+                            : ListMitigationActionsOutcome(std::move(result.GetError()));
 }
 
 ListOTAUpdatesOutcome IoTClient::ListOTAUpdates(const ListOTAUpdatesRequest& request) const {
@@ -1229,7 +1364,8 @@ ListOTAUpdatesOutcome IoTClient::ListOTAUpdates(const ListOTAUpdatesRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/otaUpdates");
   };
 
-  return ListOTAUpdatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOTAUpdatesOutcome(result.GetResultWithOwnership()) : ListOTAUpdatesOutcome(std::move(result.GetError()));
 }
 
 ListOutgoingCertificatesOutcome IoTClient::ListOutgoingCertificates(const ListOutgoingCertificatesRequest& request) const {
@@ -1238,7 +1374,9 @@ ListOutgoingCertificatesOutcome IoTClient::ListOutgoingCertificates(const ListOu
     endpointResolutionOutcome.GetResult().AddPathSegments("/certificates-out-going");
   };
 
-  return ListOutgoingCertificatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOutgoingCertificatesOutcome(result.GetResultWithOwnership())
+                            : ListOutgoingCertificatesOutcome(std::move(result.GetError()));
 }
 
 ListPackageVersionsOutcome IoTClient::ListPackageVersions(const ListPackageVersionsRequest& request) const {
@@ -1255,7 +1393,9 @@ ListPackageVersionsOutcome IoTClient::ListPackageVersions(const ListPackageVersi
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListPackageVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPackageVersionsOutcome(result.GetResultWithOwnership())
+                            : ListPackageVersionsOutcome(std::move(result.GetError()));
 }
 
 ListPackagesOutcome IoTClient::ListPackages(const ListPackagesRequest& request) const {
@@ -1264,7 +1404,8 @@ ListPackagesOutcome IoTClient::ListPackages(const ListPackagesRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/packages");
   };
 
-  return ListPackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPackagesOutcome(result.GetResultWithOwnership()) : ListPackagesOutcome(std::move(result.GetError()));
 }
 
 ListPoliciesOutcome IoTClient::ListPolicies(const ListPoliciesRequest& request) const {
@@ -1273,7 +1414,8 @@ ListPoliciesOutcome IoTClient::ListPolicies(const ListPoliciesRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/policies");
   };
 
-  return ListPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPoliciesOutcome(result.GetResultWithOwnership()) : ListPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListPolicyVersionsOutcome IoTClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const {
@@ -1290,7 +1432,9 @@ ListPolicyVersionsOutcome IoTClient::ListPolicyVersions(const ListPolicyVersions
     endpointResolutionOutcome.GetResult().AddPathSegments("/version");
   };
 
-  return ListPolicyVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPolicyVersionsOutcome(result.GetResultWithOwnership())
+                            : ListPolicyVersionsOutcome(std::move(result.GetError()));
 }
 
 ListPrincipalThingsOutcome IoTClient::ListPrincipalThings(const ListPrincipalThingsRequest& request) const {
@@ -1305,7 +1449,9 @@ ListPrincipalThingsOutcome IoTClient::ListPrincipalThings(const ListPrincipalThi
     endpointResolutionOutcome.GetResult().AddPathSegments("/principals/things");
   };
 
-  return ListPrincipalThingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPrincipalThingsOutcome(result.GetResultWithOwnership())
+                            : ListPrincipalThingsOutcome(std::move(result.GetError()));
 }
 
 ListPrincipalThingsV2Outcome IoTClient::ListPrincipalThingsV2(const ListPrincipalThingsV2Request& request) const {
@@ -1320,7 +1466,9 @@ ListPrincipalThingsV2Outcome IoTClient::ListPrincipalThingsV2(const ListPrincipa
     endpointResolutionOutcome.GetResult().AddPathSegments("/principals/things-v2");
   };
 
-  return ListPrincipalThingsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPrincipalThingsV2Outcome(result.GetResultWithOwnership())
+                            : ListPrincipalThingsV2Outcome(std::move(result.GetError()));
 }
 
 ListProvisioningTemplateVersionsOutcome IoTClient::ListProvisioningTemplateVersions(
@@ -1338,7 +1486,9 @@ ListProvisioningTemplateVersionsOutcome IoTClient::ListProvisioningTemplateVersi
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListProvisioningTemplateVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProvisioningTemplateVersionsOutcome(result.GetResultWithOwnership())
+                            : ListProvisioningTemplateVersionsOutcome(std::move(result.GetError()));
 }
 
 ListProvisioningTemplatesOutcome IoTClient::ListProvisioningTemplates(const ListProvisioningTemplatesRequest& request) const {
@@ -1347,7 +1497,9 @@ ListProvisioningTemplatesOutcome IoTClient::ListProvisioningTemplates(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/provisioning-templates");
   };
 
-  return ListProvisioningTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProvisioningTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListProvisioningTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListRelatedResourcesForAuditFindingOutcome IoTClient::ListRelatedResourcesForAuditFinding(
@@ -1363,7 +1515,9 @@ ListRelatedResourcesForAuditFindingOutcome IoTClient::ListRelatedResourcesForAud
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/relatedResources");
   };
 
-  return ListRelatedResourcesForAuditFindingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRelatedResourcesForAuditFindingOutcome(result.GetResultWithOwnership())
+                            : ListRelatedResourcesForAuditFindingOutcome(std::move(result.GetError()));
 }
 
 ListRoleAliasesOutcome IoTClient::ListRoleAliases(const ListRoleAliasesRequest& request) const {
@@ -1372,7 +1526,9 @@ ListRoleAliasesOutcome IoTClient::ListRoleAliases(const ListRoleAliasesRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/role-aliases");
   };
 
-  return ListRoleAliasesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRoleAliasesOutcome(result.GetResultWithOwnership())
+                            : ListRoleAliasesOutcome(std::move(result.GetError()));
 }
 
 ListSbomValidationResultsOutcome IoTClient::ListSbomValidationResults(const ListSbomValidationResultsRequest& request) const {
@@ -1396,7 +1552,9 @@ ListSbomValidationResultsOutcome IoTClient::ListSbomValidationResults(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/sbom-validation-results");
   };
 
-  return ListSbomValidationResultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSbomValidationResultsOutcome(result.GetResultWithOwnership())
+                            : ListSbomValidationResultsOutcome(std::move(result.GetError()));
 }
 
 ListScheduledAuditsOutcome IoTClient::ListScheduledAudits(const ListScheduledAuditsRequest& request) const {
@@ -1405,7 +1563,9 @@ ListScheduledAuditsOutcome IoTClient::ListScheduledAudits(const ListScheduledAud
     endpointResolutionOutcome.GetResult().AddPathSegments("/audit/scheduledaudits");
   };
 
-  return ListScheduledAuditsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListScheduledAuditsOutcome(result.GetResultWithOwnership())
+                            : ListScheduledAuditsOutcome(std::move(result.GetError()));
 }
 
 ListSecurityProfilesOutcome IoTClient::ListSecurityProfiles(const ListSecurityProfilesRequest& request) const {
@@ -1414,7 +1574,9 @@ ListSecurityProfilesOutcome IoTClient::ListSecurityProfiles(const ListSecurityPr
     endpointResolutionOutcome.GetResult().AddPathSegments("/security-profiles");
   };
 
-  return ListSecurityProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSecurityProfilesOutcome(result.GetResultWithOwnership())
+                            : ListSecurityProfilesOutcome(std::move(result.GetError()));
 }
 
 ListSecurityProfilesForTargetOutcome IoTClient::ListSecurityProfilesForTarget(const ListSecurityProfilesForTargetRequest& request) const {
@@ -1429,7 +1591,9 @@ ListSecurityProfilesForTargetOutcome IoTClient::ListSecurityProfilesForTarget(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/security-profiles-for-target");
   };
 
-  return ListSecurityProfilesForTargetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSecurityProfilesForTargetOutcome(result.GetResultWithOwnership())
+                            : ListSecurityProfilesForTargetOutcome(std::move(result.GetError()));
 }
 
 ListStreamsOutcome IoTClient::ListStreams(const ListStreamsRequest& request) const {
@@ -1438,7 +1602,8 @@ ListStreamsOutcome IoTClient::ListStreams(const ListStreamsRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/streams");
   };
 
-  return ListStreamsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStreamsOutcome(result.GetResultWithOwnership()) : ListStreamsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome IoTClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1453,7 +1618,9 @@ ListTagsForResourceOutcome IoTClient::ListTagsForResource(const ListTagsForResou
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTargetsForPolicyOutcome IoTClient::ListTargetsForPolicy(const ListTargetsForPolicyRequest& request) const {
@@ -1469,7 +1636,9 @@ ListTargetsForPolicyOutcome IoTClient::ListTargetsForPolicy(const ListTargetsFor
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyName());
   };
 
-  return ListTargetsForPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTargetsForPolicyOutcome(result.GetResultWithOwnership())
+                            : ListTargetsForPolicyOutcome(std::move(result.GetError()));
 }
 
 ListTargetsForSecurityProfileOutcome IoTClient::ListTargetsForSecurityProfile(const ListTargetsForSecurityProfileRequest& request) const {
@@ -1486,7 +1655,9 @@ ListTargetsForSecurityProfileOutcome IoTClient::ListTargetsForSecurityProfile(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/targets");
   };
 
-  return ListTargetsForSecurityProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTargetsForSecurityProfileOutcome(result.GetResultWithOwnership())
+                            : ListTargetsForSecurityProfileOutcome(std::move(result.GetError()));
 }
 
 ListThingGroupsOutcome IoTClient::ListThingGroups(const ListThingGroupsRequest& request) const {
@@ -1495,7 +1666,9 @@ ListThingGroupsOutcome IoTClient::ListThingGroups(const ListThingGroupsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/thing-groups");
   };
 
-  return ListThingGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListThingGroupsOutcome(result.GetResultWithOwnership())
+                            : ListThingGroupsOutcome(std::move(result.GetError()));
 }
 
 ListThingGroupsForThingOutcome IoTClient::ListThingGroupsForThing(const ListThingGroupsForThingRequest& request) const {
@@ -1512,7 +1685,9 @@ ListThingGroupsForThingOutcome IoTClient::ListThingGroupsForThing(const ListThin
     endpointResolutionOutcome.GetResult().AddPathSegments("/thing-groups");
   };
 
-  return ListThingGroupsForThingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListThingGroupsForThingOutcome(result.GetResultWithOwnership())
+                            : ListThingGroupsForThingOutcome(std::move(result.GetError()));
 }
 
 ListThingPrincipalsOutcome IoTClient::ListThingPrincipals(const ListThingPrincipalsRequest& request) const {
@@ -1529,5 +1704,7 @@ ListThingPrincipalsOutcome IoTClient::ListThingPrincipals(const ListThingPrincip
     endpointResolutionOutcome.GetResult().AddPathSegments("/principals");
   };
 
-  return ListThingPrincipalsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListThingPrincipalsOutcome(result.GetResultWithOwnership())
+                            : ListThingPrincipalsOutcome(std::move(result.GetError()));
 }

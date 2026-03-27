@@ -190,53 +190,74 @@ WorkspacesInstancesClient::InvokeOperationOutcome WorkspacesInstancesClient::Inv
 }
 
 AssociateVolumeOutcome WorkspacesInstancesClient::AssociateVolume(const AssociateVolumeRequest& request) const {
-  return AssociateVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateVolumeOutcome(result.GetResultWithOwnership())
+                            : AssociateVolumeOutcome(std::move(result.GetError()));
 }
 
 CreateVolumeOutcome WorkspacesInstancesClient::CreateVolume(const CreateVolumeRequest& request) const {
-  return CreateVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVolumeOutcome(result.GetResultWithOwnership()) : CreateVolumeOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspaceInstanceOutcome WorkspacesInstancesClient::CreateWorkspaceInstance(const CreateWorkspaceInstanceRequest& request) const {
-  return CreateWorkspaceInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspaceInstanceOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspaceInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteVolumeOutcome WorkspacesInstancesClient::DeleteVolume(const DeleteVolumeRequest& request) const {
-  return DeleteVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteVolumeOutcome(result.GetResultWithOwnership()) : DeleteVolumeOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkspaceInstanceOutcome WorkspacesInstancesClient::DeleteWorkspaceInstance(const DeleteWorkspaceInstanceRequest& request) const {
-  return DeleteWorkspaceInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWorkspaceInstanceOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkspaceInstanceOutcome(std::move(result.GetError()));
 }
 
 DisassociateVolumeOutcome WorkspacesInstancesClient::DisassociateVolume(const DisassociateVolumeRequest& request) const {
-  return DisassociateVolumeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateVolumeOutcome(result.GetResultWithOwnership())
+                            : DisassociateVolumeOutcome(std::move(result.GetError()));
 }
 
 GetWorkspaceInstanceOutcome WorkspacesInstancesClient::GetWorkspaceInstance(const GetWorkspaceInstanceRequest& request) const {
-  return GetWorkspaceInstanceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkspaceInstanceOutcome(result.GetResultWithOwnership())
+                            : GetWorkspaceInstanceOutcome(std::move(result.GetError()));
 }
 
 ListInstanceTypesOutcome WorkspacesInstancesClient::ListInstanceTypes(const ListInstanceTypesRequest& request) const {
-  return ListInstanceTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInstanceTypesOutcome(result.GetResultWithOwnership())
+                            : ListInstanceTypesOutcome(std::move(result.GetError()));
 }
 
 ListRegionsOutcome WorkspacesInstancesClient::ListRegions(const ListRegionsRequest& request) const {
-  return ListRegionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRegionsOutcome(result.GetResultWithOwnership()) : ListRegionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome WorkspacesInstancesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWorkspaceInstancesOutcome WorkspacesInstancesClient::ListWorkspaceInstances(const ListWorkspaceInstancesRequest& request) const {
-  return ListWorkspaceInstancesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkspaceInstancesOutcome(result.GetResultWithOwnership())
+                            : ListWorkspaceInstancesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome WorkspacesInstancesClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome WorkspacesInstancesClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

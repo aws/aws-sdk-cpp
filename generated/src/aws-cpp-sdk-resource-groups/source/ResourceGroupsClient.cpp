@@ -204,7 +204,9 @@ CancelTagSyncTaskOutcome ResourceGroupsClient::CancelTagSyncTask(const CancelTag
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel-tag-sync-task");
   };
 
-  return CancelTagSyncTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelTagSyncTaskOutcome(result.GetResultWithOwnership())
+                            : CancelTagSyncTaskOutcome(std::move(result.GetError()));
 }
 
 CreateGroupOutcome ResourceGroupsClient::CreateGroup(const CreateGroupRequest& request) const {
@@ -213,7 +215,8 @@ CreateGroupOutcome ResourceGroupsClient::CreateGroup(const CreateGroupRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/groups");
   };
 
-  return CreateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGroupOutcome(result.GetResultWithOwnership()) : CreateGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& request) const {
@@ -222,7 +225,8 @@ DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-group");
   };
 
-  return DeleteGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGroupOutcome(result.GetResultWithOwnership()) : DeleteGroupOutcome(std::move(result.GetError()));
 }
 
 GetAccountSettingsOutcome ResourceGroupsClient::GetAccountSettings(const GetAccountSettingsRequest& request) const {
@@ -231,7 +235,9 @@ GetAccountSettingsOutcome ResourceGroupsClient::GetAccountSettings(const GetAcco
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-account-settings");
   };
 
-  return GetAccountSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : GetAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) const {
@@ -240,7 +246,8 @@ GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-group");
   };
 
-  return GetGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGroupOutcome(result.GetResultWithOwnership()) : GetGroupOutcome(std::move(result.GetError()));
 }
 
 GetGroupConfigurationOutcome ResourceGroupsClient::GetGroupConfiguration(const GetGroupConfigurationRequest& request) const {
@@ -249,7 +256,9 @@ GetGroupConfigurationOutcome ResourceGroupsClient::GetGroupConfiguration(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-group-configuration");
   };
 
-  return GetGroupConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGroupConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetGroupConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequest& request) const {
@@ -258,7 +267,8 @@ GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-group-query");
   };
 
-  return GetGroupQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGroupQueryOutcome(result.GetResultWithOwnership()) : GetGroupQueryOutcome(std::move(result.GetError()));
 }
 
 GetTagSyncTaskOutcome ResourceGroupsClient::GetTagSyncTask(const GetTagSyncTaskRequest& request) const {
@@ -267,7 +277,8 @@ GetTagSyncTaskOutcome ResourceGroupsClient::GetTagSyncTask(const GetTagSyncTaskR
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-tag-sync-task");
   };
 
-  return GetTagSyncTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTagSyncTaskOutcome(result.GetResultWithOwnership()) : GetTagSyncTaskOutcome(std::move(result.GetError()));
 }
 
 GetTagsOutcome ResourceGroupsClient::GetTags(const GetTagsRequest& request) const {
@@ -284,7 +295,8 @@ GetTagsOutcome ResourceGroupsClient::GetTags(const GetTagsRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return GetTagsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTagsOutcome(result.GetResultWithOwnership()) : GetTagsOutcome(std::move(result.GetError()));
 }
 
 GroupResourcesOutcome ResourceGroupsClient::GroupResources(const GroupResourcesRequest& request) const {
@@ -293,7 +305,8 @@ GroupResourcesOutcome ResourceGroupsClient::GroupResources(const GroupResourcesR
     endpointResolutionOutcome.GetResult().AddPathSegments("/group-resources");
   };
 
-  return GroupResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GroupResourcesOutcome(result.GetResultWithOwnership()) : GroupResourcesOutcome(std::move(result.GetError()));
 }
 
 ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGroupResourcesRequest& request) const {
@@ -302,7 +315,9 @@ ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGro
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-group-resources");
   };
 
-  return ListGroupResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupResourcesOutcome(result.GetResultWithOwnership())
+                            : ListGroupResourcesOutcome(std::move(result.GetError()));
 }
 
 ListGroupingStatusesOutcome ResourceGroupsClient::ListGroupingStatuses(const ListGroupingStatusesRequest& request) const {
@@ -311,7 +326,9 @@ ListGroupingStatusesOutcome ResourceGroupsClient::ListGroupingStatuses(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-grouping-statuses");
   };
 
-  return ListGroupingStatusesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupingStatusesOutcome(result.GetResultWithOwnership())
+                            : ListGroupingStatusesOutcome(std::move(result.GetError()));
 }
 
 ListGroupsOutcome ResourceGroupsClient::ListGroups(const ListGroupsRequest& request) const {
@@ -320,7 +337,8 @@ ListGroupsOutcome ResourceGroupsClient::ListGroups(const ListGroupsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/groups-list");
   };
 
-  return ListGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGroupsOutcome(result.GetResultWithOwnership()) : ListGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTagSyncTasksOutcome ResourceGroupsClient::ListTagSyncTasks(const ListTagSyncTasksRequest& request) const {
@@ -329,7 +347,9 @@ ListTagSyncTasksOutcome ResourceGroupsClient::ListTagSyncTasks(const ListTagSync
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-tag-sync-tasks");
   };
 
-  return ListTagSyncTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagSyncTasksOutcome(result.GetResultWithOwnership())
+                            : ListTagSyncTasksOutcome(std::move(result.GetError()));
 }
 
 PutGroupConfigurationOutcome ResourceGroupsClient::PutGroupConfiguration(const PutGroupConfigurationRequest& request) const {
@@ -338,7 +358,9 @@ PutGroupConfigurationOutcome ResourceGroupsClient::PutGroupConfiguration(const P
     endpointResolutionOutcome.GetResult().AddPathSegments("/put-group-configuration");
   };
 
-  return PutGroupConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutGroupConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutGroupConfigurationOutcome(std::move(result.GetError()));
 }
 
 SearchResourcesOutcome ResourceGroupsClient::SearchResources(const SearchResourcesRequest& request) const {
@@ -347,7 +369,9 @@ SearchResourcesOutcome ResourceGroupsClient::SearchResources(const SearchResourc
     endpointResolutionOutcome.GetResult().AddPathSegments("/resources/search");
   };
 
-  return SearchResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchResourcesOutcome(result.GetResultWithOwnership())
+                            : SearchResourcesOutcome(std::move(result.GetError()));
 }
 
 StartTagSyncTaskOutcome ResourceGroupsClient::StartTagSyncTask(const StartTagSyncTaskRequest& request) const {
@@ -356,7 +380,9 @@ StartTagSyncTaskOutcome ResourceGroupsClient::StartTagSyncTask(const StartTagSyn
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-tag-sync-task");
   };
 
-  return StartTagSyncTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTagSyncTaskOutcome(result.GetResultWithOwnership())
+                            : StartTagSyncTaskOutcome(std::move(result.GetError()));
 }
 
 TagOutcome ResourceGroupsClient::Tag(const TagRequest& request) const {
@@ -373,7 +399,8 @@ TagOutcome ResourceGroupsClient::Tag(const TagRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return TagOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? TagOutcome(result.GetResultWithOwnership()) : TagOutcome(std::move(result.GetError()));
 }
 
 UngroupResourcesOutcome ResourceGroupsClient::UngroupResources(const UngroupResourcesRequest& request) const {
@@ -382,7 +409,9 @@ UngroupResourcesOutcome ResourceGroupsClient::UngroupResources(const UngroupReso
     endpointResolutionOutcome.GetResult().AddPathSegments("/ungroup-resources");
   };
 
-  return UngroupResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UngroupResourcesOutcome(result.GetResultWithOwnership())
+                            : UngroupResourcesOutcome(std::move(result.GetError()));
 }
 
 UntagOutcome ResourceGroupsClient::Untag(const UntagRequest& request) const {
@@ -399,7 +428,8 @@ UntagOutcome ResourceGroupsClient::Untag(const UntagRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   };
 
-  return UntagOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UntagOutcome(result.GetResultWithOwnership()) : UntagOutcome(std::move(result.GetError()));
 }
 
 UpdateAccountSettingsOutcome ResourceGroupsClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const {
@@ -408,7 +438,9 @@ UpdateAccountSettingsOutcome ResourceGroupsClient::UpdateAccountSettings(const U
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-account-settings");
   };
 
-  return UpdateAccountSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 UpdateGroupOutcome ResourceGroupsClient::UpdateGroup(const UpdateGroupRequest& request) const {
@@ -417,7 +449,8 @@ UpdateGroupOutcome ResourceGroupsClient::UpdateGroup(const UpdateGroupRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-group");
   };
 
-  return UpdateGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGroupOutcome(result.GetResultWithOwnership()) : UpdateGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateGroupQueryOutcome ResourceGroupsClient::UpdateGroupQuery(const UpdateGroupQueryRequest& request) const {
@@ -426,5 +459,7 @@ UpdateGroupQueryOutcome ResourceGroupsClient::UpdateGroupQuery(const UpdateGroup
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-group-query");
   };
 
-  return UpdateGroupQueryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGroupQueryOutcome(result.GetResultWithOwnership())
+                            : UpdateGroupQueryOutcome(std::move(result.GetError()));
 }

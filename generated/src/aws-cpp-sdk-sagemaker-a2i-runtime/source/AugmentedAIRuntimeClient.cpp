@@ -197,7 +197,9 @@ DeleteHumanLoopOutcome AugmentedAIRuntimeClient::DeleteHumanLoop(const DeleteHum
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHumanLoopName());
   };
 
-  return DeleteHumanLoopOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteHumanLoopOutcome(result.GetResultWithOwnership())
+                            : DeleteHumanLoopOutcome(std::move(result.GetError()));
 }
 
 DescribeHumanLoopOutcome AugmentedAIRuntimeClient::DescribeHumanLoop(const DescribeHumanLoopRequest& request) const {
@@ -213,7 +215,9 @@ DescribeHumanLoopOutcome AugmentedAIRuntimeClient::DescribeHumanLoop(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHumanLoopName());
   };
 
-  return DescribeHumanLoopOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeHumanLoopOutcome(result.GetResultWithOwnership())
+                            : DescribeHumanLoopOutcome(std::move(result.GetError()));
 }
 
 ListHumanLoopsOutcome AugmentedAIRuntimeClient::ListHumanLoops(const ListHumanLoopsRequest& request) const {
@@ -228,7 +232,8 @@ ListHumanLoopsOutcome AugmentedAIRuntimeClient::ListHumanLoops(const ListHumanLo
     endpointResolutionOutcome.GetResult().AddPathSegments("/human-loops");
   };
 
-  return ListHumanLoopsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHumanLoopsOutcome(result.GetResultWithOwnership()) : ListHumanLoopsOutcome(std::move(result.GetError()));
 }
 
 StartHumanLoopOutcome AugmentedAIRuntimeClient::StartHumanLoop(const StartHumanLoopRequest& request) const {
@@ -237,7 +242,8 @@ StartHumanLoopOutcome AugmentedAIRuntimeClient::StartHumanLoop(const StartHumanL
     endpointResolutionOutcome.GetResult().AddPathSegments("/human-loops");
   };
 
-  return StartHumanLoopOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartHumanLoopOutcome(result.GetResultWithOwnership()) : StartHumanLoopOutcome(std::move(result.GetError()));
 }
 
 StopHumanLoopOutcome AugmentedAIRuntimeClient::StopHumanLoop(const StopHumanLoopRequest& request) const {
@@ -246,5 +252,6 @@ StopHumanLoopOutcome AugmentedAIRuntimeClient::StopHumanLoop(const StopHumanLoop
     endpointResolutionOutcome.GetResult().AddPathSegments("/human-loops/stop");
   };
 
-  return StopHumanLoopOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopHumanLoopOutcome(result.GetResultWithOwnership()) : StopHumanLoopOutcome(std::move(result.GetError()));
 }

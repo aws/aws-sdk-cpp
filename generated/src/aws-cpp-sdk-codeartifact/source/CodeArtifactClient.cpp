@@ -248,7 +248,9 @@ AssociateExternalConnectionOutcome CodeArtifactClient::AssociateExternalConnecti
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/repository/external-connection");
   };
 
-  return AssociateExternalConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateExternalConnectionOutcome(result.GetResultWithOwnership())
+                            : AssociateExternalConnectionOutcome(std::move(result.GetError()));
 }
 
 CopyPackageVersionsOutcome CodeArtifactClient::CopyPackageVersions(const CopyPackageVersionsRequest& request) const {
@@ -283,7 +285,9 @@ CopyPackageVersionsOutcome CodeArtifactClient::CopyPackageVersions(const CopyPac
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package/versions/copy");
   };
 
-  return CopyPackageVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyPackageVersionsOutcome(result.GetResultWithOwnership())
+                            : CopyPackageVersionsOutcome(std::move(result.GetError()));
 }
 
 CreateDomainOutcome CodeArtifactClient::CreateDomain(const CreateDomainRequest& request) const {
@@ -298,7 +302,8 @@ CreateDomainOutcome CodeArtifactClient::CreateDomain(const CreateDomainRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/domain");
   };
 
-  return CreateDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDomainOutcome(result.GetResultWithOwnership()) : CreateDomainOutcome(std::move(result.GetError()));
 }
 
 CreatePackageGroupOutcome CodeArtifactClient::CreatePackageGroup(const CreatePackageGroupRequest& request) const {
@@ -313,7 +318,9 @@ CreatePackageGroupOutcome CodeArtifactClient::CreatePackageGroup(const CreatePac
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package-group");
   };
 
-  return CreatePackageGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePackageGroupOutcome(result.GetResultWithOwnership())
+                            : CreatePackageGroupOutcome(std::move(result.GetError()));
 }
 
 CreateRepositoryOutcome CodeArtifactClient::CreateRepository(const CreateRepositoryRequest& request) const {
@@ -333,7 +340,9 @@ CreateRepositoryOutcome CodeArtifactClient::CreateRepository(const CreateReposit
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/repository");
   };
 
-  return CreateRepositoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRepositoryOutcome(result.GetResultWithOwnership())
+                            : CreateRepositoryOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainOutcome CodeArtifactClient::DeleteDomain(const DeleteDomainRequest& request) const {
@@ -348,7 +357,8 @@ DeleteDomainOutcome CodeArtifactClient::DeleteDomain(const DeleteDomainRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/domain");
   };
 
-  return DeleteDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainPermissionsPolicyOutcome CodeArtifactClient::DeleteDomainPermissionsPolicy(
@@ -364,7 +374,9 @@ DeleteDomainPermissionsPolicyOutcome CodeArtifactClient::DeleteDomainPermissions
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/domain/permissions/policy");
   };
 
-  return DeleteDomainPermissionsPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDomainPermissionsPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteDomainPermissionsPolicyOutcome(std::move(result.GetError()));
 }
 
 DeletePackageOutcome CodeArtifactClient::DeletePackage(const DeletePackageRequest& request) const {
@@ -394,7 +406,8 @@ DeletePackageOutcome CodeArtifactClient::DeletePackage(const DeletePackageReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package");
   };
 
-  return DeletePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePackageOutcome(result.GetResultWithOwnership()) : DeletePackageOutcome(std::move(result.GetError()));
 }
 
 DeletePackageGroupOutcome CodeArtifactClient::DeletePackageGroup(const DeletePackageGroupRequest& request) const {
@@ -414,7 +427,9 @@ DeletePackageGroupOutcome CodeArtifactClient::DeletePackageGroup(const DeletePac
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package-group");
   };
 
-  return DeletePackageGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePackageGroupOutcome(result.GetResultWithOwnership())
+                            : DeletePackageGroupOutcome(std::move(result.GetError()));
 }
 
 DeletePackageVersionsOutcome CodeArtifactClient::DeletePackageVersions(const DeletePackageVersionsRequest& request) const {
@@ -444,7 +459,9 @@ DeletePackageVersionsOutcome CodeArtifactClient::DeletePackageVersions(const Del
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package/versions/delete");
   };
 
-  return DeletePackageVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePackageVersionsOutcome(result.GetResultWithOwnership())
+                            : DeletePackageVersionsOutcome(std::move(result.GetError()));
 }
 
 DeleteRepositoryOutcome CodeArtifactClient::DeleteRepository(const DeleteRepositoryRequest& request) const {
@@ -464,7 +481,9 @@ DeleteRepositoryOutcome CodeArtifactClient::DeleteRepository(const DeleteReposit
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/repository");
   };
 
-  return DeleteRepositoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRepositoryOutcome(result.GetResultWithOwnership())
+                            : DeleteRepositoryOutcome(std::move(result.GetError()));
 }
 
 DeleteRepositoryPermissionsPolicyOutcome CodeArtifactClient::DeleteRepositoryPermissionsPolicy(
@@ -485,7 +504,9 @@ DeleteRepositoryPermissionsPolicyOutcome CodeArtifactClient::DeleteRepositoryPer
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/repository/permissions/policies");
   };
 
-  return DeleteRepositoryPermissionsPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRepositoryPermissionsPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteRepositoryPermissionsPolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainOutcome CodeArtifactClient::DescribeDomain(const DescribeDomainRequest& request) const {
@@ -500,7 +521,8 @@ DescribeDomainOutcome CodeArtifactClient::DescribeDomain(const DescribeDomainReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/domain");
   };
 
-  return DescribeDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeDomainOutcome(result.GetResultWithOwnership()) : DescribeDomainOutcome(std::move(result.GetError()));
 }
 
 DescribePackageOutcome CodeArtifactClient::DescribePackage(const DescribePackageRequest& request) const {
@@ -530,7 +552,9 @@ DescribePackageOutcome CodeArtifactClient::DescribePackage(const DescribePackage
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package");
   };
 
-  return DescribePackageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePackageOutcome(result.GetResultWithOwnership())
+                            : DescribePackageOutcome(std::move(result.GetError()));
 }
 
 DescribePackageGroupOutcome CodeArtifactClient::DescribePackageGroup(const DescribePackageGroupRequest& request) const {
@@ -550,7 +574,9 @@ DescribePackageGroupOutcome CodeArtifactClient::DescribePackageGroup(const Descr
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package-group");
   };
 
-  return DescribePackageGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePackageGroupOutcome(result.GetResultWithOwnership())
+                            : DescribePackageGroupOutcome(std::move(result.GetError()));
 }
 
 DescribePackageVersionOutcome CodeArtifactClient::DescribePackageVersion(const DescribePackageVersionRequest& request) const {
@@ -585,7 +611,9 @@ DescribePackageVersionOutcome CodeArtifactClient::DescribePackageVersion(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package/version");
   };
 
-  return DescribePackageVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribePackageVersionOutcome(result.GetResultWithOwnership())
+                            : DescribePackageVersionOutcome(std::move(result.GetError()));
 }
 
 DescribeRepositoryOutcome CodeArtifactClient::DescribeRepository(const DescribeRepositoryRequest& request) const {
@@ -605,7 +633,9 @@ DescribeRepositoryOutcome CodeArtifactClient::DescribeRepository(const DescribeR
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/repository");
   };
 
-  return DescribeRepositoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRepositoryOutcome(result.GetResultWithOwnership())
+                            : DescribeRepositoryOutcome(std::move(result.GetError()));
 }
 
 DisassociateExternalConnectionOutcome CodeArtifactClient::DisassociateExternalConnection(
@@ -631,7 +661,9 @@ DisassociateExternalConnectionOutcome CodeArtifactClient::DisassociateExternalCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/repository/external-connection");
   };
 
-  return DisassociateExternalConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateExternalConnectionOutcome(result.GetResultWithOwnership())
+                            : DisassociateExternalConnectionOutcome(std::move(result.GetError()));
 }
 
 DisposePackageVersionsOutcome CodeArtifactClient::DisposePackageVersions(const DisposePackageVersionsRequest& request) const {
@@ -661,7 +693,9 @@ DisposePackageVersionsOutcome CodeArtifactClient::DisposePackageVersions(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package/versions/dispose");
   };
 
-  return DisposePackageVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisposePackageVersionsOutcome(result.GetResultWithOwnership())
+                            : DisposePackageVersionsOutcome(std::move(result.GetError()));
 }
 
 GetAssociatedPackageGroupOutcome CodeArtifactClient::GetAssociatedPackageGroup(const GetAssociatedPackageGroupRequest& request) const {
@@ -686,7 +720,9 @@ GetAssociatedPackageGroupOutcome CodeArtifactClient::GetAssociatedPackageGroup(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/get-associated-package-group");
   };
 
-  return GetAssociatedPackageGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAssociatedPackageGroupOutcome(result.GetResultWithOwnership())
+                            : GetAssociatedPackageGroupOutcome(std::move(result.GetError()));
 }
 
 GetAuthorizationTokenOutcome CodeArtifactClient::GetAuthorizationToken(const GetAuthorizationTokenRequest& request) const {
@@ -701,7 +737,9 @@ GetAuthorizationTokenOutcome CodeArtifactClient::GetAuthorizationToken(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/authorization-token");
   };
 
-  return GetAuthorizationTokenOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAuthorizationTokenOutcome(result.GetResultWithOwnership())
+                            : GetAuthorizationTokenOutcome(std::move(result.GetError()));
 }
 
 GetDomainPermissionsPolicyOutcome CodeArtifactClient::GetDomainPermissionsPolicy(const GetDomainPermissionsPolicyRequest& request) const {
@@ -716,7 +754,9 @@ GetDomainPermissionsPolicyOutcome CodeArtifactClient::GetDomainPermissionsPolicy
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/domain/permissions/policy");
   };
 
-  return GetDomainPermissionsPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainPermissionsPolicyOutcome(result.GetResultWithOwnership())
+                            : GetDomainPermissionsPolicyOutcome(std::move(result.GetError()));
 }
 
 GetPackageVersionAssetOutcome CodeArtifactClient::GetPackageVersionAsset(const GetPackageVersionAssetRequest& request) const {
@@ -771,8 +811,9 @@ GetPackageVersionAssetOutcome CodeArtifactClient::GetPackageVersionAsset(const G
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPackageVersionAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package/version/asset");
-        return GetPackageVersionAssetOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetPackageVersionAssetOutcome(result.GetResultWithOwnership())
+                                  : GetPackageVersionAssetOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -811,7 +852,9 @@ GetPackageVersionReadmeOutcome CodeArtifactClient::GetPackageVersionReadme(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package/version/readme");
   };
 
-  return GetPackageVersionReadmeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPackageVersionReadmeOutcome(result.GetResultWithOwnership())
+                            : GetPackageVersionReadmeOutcome(std::move(result.GetError()));
 }
 
 GetRepositoryEndpointOutcome CodeArtifactClient::GetRepositoryEndpoint(const GetRepositoryEndpointRequest& request) const {
@@ -836,7 +879,9 @@ GetRepositoryEndpointOutcome CodeArtifactClient::GetRepositoryEndpoint(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/repository/endpoint");
   };
 
-  return GetRepositoryEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRepositoryEndpointOutcome(result.GetResultWithOwnership())
+                            : GetRepositoryEndpointOutcome(std::move(result.GetError()));
 }
 
 GetRepositoryPermissionsPolicyOutcome CodeArtifactClient::GetRepositoryPermissionsPolicy(
@@ -857,7 +902,9 @@ GetRepositoryPermissionsPolicyOutcome CodeArtifactClient::GetRepositoryPermissio
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/repository/permissions/policy");
   };
 
-  return GetRepositoryPermissionsPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRepositoryPermissionsPolicyOutcome(result.GetResultWithOwnership())
+                            : GetRepositoryPermissionsPolicyOutcome(std::move(result.GetError()));
 }
 
 ListAllowedRepositoriesForGroupOutcome CodeArtifactClient::ListAllowedRepositoriesForGroup(
@@ -883,7 +930,9 @@ ListAllowedRepositoriesForGroupOutcome CodeArtifactClient::ListAllowedRepositori
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package-group-allowed-repositories");
   };
 
-  return ListAllowedRepositoriesForGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAllowedRepositoriesForGroupOutcome(result.GetResultWithOwnership())
+                            : ListAllowedRepositoriesForGroupOutcome(std::move(result.GetError()));
 }
 
 ListAssociatedPackagesOutcome CodeArtifactClient::ListAssociatedPackages(const ListAssociatedPackagesRequest& request) const {
@@ -903,7 +952,9 @@ ListAssociatedPackagesOutcome CodeArtifactClient::ListAssociatedPackages(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/list-associated-packages");
   };
 
-  return ListAssociatedPackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAssociatedPackagesOutcome(result.GetResultWithOwnership())
+                            : ListAssociatedPackagesOutcome(std::move(result.GetError()));
 }
 
 ListDomainsOutcome CodeArtifactClient::ListDomains(const ListDomainsRequest& request) const {
@@ -912,7 +963,8 @@ ListDomainsOutcome CodeArtifactClient::ListDomains(const ListDomainsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/domains");
   };
 
-  return ListDomainsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDomainsOutcome(result.GetResultWithOwnership()) : ListDomainsOutcome(std::move(result.GetError()));
 }
 
 ListPackageGroupsOutcome CodeArtifactClient::ListPackageGroups(const ListPackageGroupsRequest& request) const {
@@ -927,7 +979,9 @@ ListPackageGroupsOutcome CodeArtifactClient::ListPackageGroups(const ListPackage
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package-groups");
   };
 
-  return ListPackageGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPackageGroupsOutcome(result.GetResultWithOwnership())
+                            : ListPackageGroupsOutcome(std::move(result.GetError()));
 }
 
 ListPackageVersionAssetsOutcome CodeArtifactClient::ListPackageVersionAssets(const ListPackageVersionAssetsRequest& request) const {
@@ -962,7 +1016,9 @@ ListPackageVersionAssetsOutcome CodeArtifactClient::ListPackageVersionAssets(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package/version/assets");
   };
 
-  return ListPackageVersionAssetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPackageVersionAssetsOutcome(result.GetResultWithOwnership())
+                            : ListPackageVersionAssetsOutcome(std::move(result.GetError()));
 }
 
 ListPackageVersionDependenciesOutcome CodeArtifactClient::ListPackageVersionDependencies(
@@ -998,7 +1054,9 @@ ListPackageVersionDependenciesOutcome CodeArtifactClient::ListPackageVersionDepe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package/version/dependencies");
   };
 
-  return ListPackageVersionDependenciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPackageVersionDependenciesOutcome(result.GetResultWithOwnership())
+                            : ListPackageVersionDependenciesOutcome(std::move(result.GetError()));
 }
 
 ListPackageVersionsOutcome CodeArtifactClient::ListPackageVersions(const ListPackageVersionsRequest& request) const {
@@ -1028,7 +1086,9 @@ ListPackageVersionsOutcome CodeArtifactClient::ListPackageVersions(const ListPac
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package/versions");
   };
 
-  return ListPackageVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPackageVersionsOutcome(result.GetResultWithOwnership())
+                            : ListPackageVersionsOutcome(std::move(result.GetError()));
 }
 
 ListPackagesOutcome CodeArtifactClient::ListPackages(const ListPackagesRequest& request) const {
@@ -1048,7 +1108,8 @@ ListPackagesOutcome CodeArtifactClient::ListPackages(const ListPackagesRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/packages");
   };
 
-  return ListPackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPackagesOutcome(result.GetResultWithOwnership()) : ListPackagesOutcome(std::move(result.GetError()));
 }
 
 ListRepositoriesOutcome CodeArtifactClient::ListRepositories(const ListRepositoriesRequest& request) const {
@@ -1057,7 +1118,9 @@ ListRepositoriesOutcome CodeArtifactClient::ListRepositories(const ListRepositor
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/repositories");
   };
 
-  return ListRepositoriesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRepositoriesOutcome(result.GetResultWithOwnership())
+                            : ListRepositoriesOutcome(std::move(result.GetError()));
 }
 
 ListRepositoriesInDomainOutcome CodeArtifactClient::ListRepositoriesInDomain(const ListRepositoriesInDomainRequest& request) const {
@@ -1072,7 +1135,9 @@ ListRepositoriesInDomainOutcome CodeArtifactClient::ListRepositoriesInDomain(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/domain/repositories");
   };
 
-  return ListRepositoriesInDomainOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRepositoriesInDomainOutcome(result.GetResultWithOwnership())
+                            : ListRepositoriesInDomainOutcome(std::move(result.GetError()));
 }
 
 ListSubPackageGroupsOutcome CodeArtifactClient::ListSubPackageGroups(const ListSubPackageGroupsRequest& request) const {
@@ -1092,7 +1157,9 @@ ListSubPackageGroupsOutcome CodeArtifactClient::ListSubPackageGroups(const ListS
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package-groups/sub-groups");
   };
 
-  return ListSubPackageGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSubPackageGroupsOutcome(result.GetResultWithOwnership())
+                            : ListSubPackageGroupsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CodeArtifactClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1107,7 +1174,9 @@ ListTagsForResourceOutcome CodeArtifactClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PublishPackageVersionOutcome CodeArtifactClient::PublishPackageVersion(const PublishPackageVersionRequest& request) const {
@@ -1152,7 +1221,9 @@ PublishPackageVersionOutcome CodeArtifactClient::PublishPackageVersion(const Pub
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package/version/publish");
   };
 
-  return PublishPackageVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishPackageVersionOutcome(result.GetResultWithOwnership())
+                            : PublishPackageVersionOutcome(std::move(result.GetError()));
 }
 
 PutDomainPermissionsPolicyOutcome CodeArtifactClient::PutDomainPermissionsPolicy(const PutDomainPermissionsPolicyRequest& request) const {
@@ -1161,7 +1232,9 @@ PutDomainPermissionsPolicyOutcome CodeArtifactClient::PutDomainPermissionsPolicy
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/domain/permissions/policy");
   };
 
-  return PutDomainPermissionsPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDomainPermissionsPolicyOutcome(result.GetResultWithOwnership())
+                            : PutDomainPermissionsPolicyOutcome(std::move(result.GetError()));
 }
 
 PutPackageOriginConfigurationOutcome CodeArtifactClient::PutPackageOriginConfiguration(
@@ -1192,7 +1265,9 @@ PutPackageOriginConfigurationOutcome CodeArtifactClient::PutPackageOriginConfigu
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package");
   };
 
-  return PutPackageOriginConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutPackageOriginConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutPackageOriginConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutRepositoryPermissionsPolicyOutcome CodeArtifactClient::PutRepositoryPermissionsPolicy(
@@ -1213,7 +1288,9 @@ PutRepositoryPermissionsPolicyOutcome CodeArtifactClient::PutRepositoryPermissio
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/repository/permissions/policy");
   };
 
-  return PutRepositoryPermissionsPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutRepositoryPermissionsPolicyOutcome(result.GetResultWithOwnership())
+                            : PutRepositoryPermissionsPolicyOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CodeArtifactClient::TagResource(const TagResourceRequest& request) const {
@@ -1228,7 +1305,8 @@ TagResourceOutcome CodeArtifactClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/tag");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CodeArtifactClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1243,7 +1321,8 @@ UntagResourceOutcome CodeArtifactClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/untag");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdatePackageGroupOutcome CodeArtifactClient::UpdatePackageGroup(const UpdatePackageGroupRequest& request) const {
@@ -1258,7 +1337,9 @@ UpdatePackageGroupOutcome CodeArtifactClient::UpdatePackageGroup(const UpdatePac
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package-group");
   };
 
-  return UpdatePackageGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePackageGroupOutcome(result.GetResultWithOwnership())
+                            : UpdatePackageGroupOutcome(std::move(result.GetError()));
 }
 
 UpdatePackageGroupOriginConfigurationOutcome CodeArtifactClient::UpdatePackageGroupOriginConfiguration(
@@ -1279,7 +1360,9 @@ UpdatePackageGroupOriginConfigurationOutcome CodeArtifactClient::UpdatePackageGr
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package-group-origin-configuration");
   };
 
-  return UpdatePackageGroupOriginConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePackageGroupOriginConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdatePackageGroupOriginConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdatePackageVersionsStatusOutcome CodeArtifactClient::UpdatePackageVersionsStatus(
@@ -1310,7 +1393,9 @@ UpdatePackageVersionsStatusOutcome CodeArtifactClient::UpdatePackageVersionsStat
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/package/versions/update_status");
   };
 
-  return UpdatePackageVersionsStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePackageVersionsStatusOutcome(result.GetResultWithOwnership())
+                            : UpdatePackageVersionsStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateRepositoryOutcome CodeArtifactClient::UpdateRepository(const UpdateRepositoryRequest& request) const {
@@ -1330,5 +1415,7 @@ UpdateRepositoryOutcome CodeArtifactClient::UpdateRepository(const UpdateReposit
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/repository");
   };
 
-  return UpdateRepositoryOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRepositoryOutcome(result.GetResultWithOwnership())
+                            : UpdateRepositoryOutcome(std::move(result.GetError()));
 }

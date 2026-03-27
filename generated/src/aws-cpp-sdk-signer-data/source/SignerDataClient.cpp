@@ -207,5 +207,7 @@ GetRevocationStatusOutcome SignerDataClient::GetRevocationStatus(const GetRevoca
     endpointResolutionOutcome.GetResult().AddPathSegments("/revocations");
   };
 
-  return GetRevocationStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRevocationStatusOutcome(result.GetResultWithOwnership())
+                            : GetRevocationStatusOutcome(std::move(result.GetError()));
 }

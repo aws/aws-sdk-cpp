@@ -201,7 +201,8 @@ DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteLexiconOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLexiconOutcome(result.GetResultWithOwnership()) : DeleteLexiconOutcome(std::move(result.GetError()));
 }
 
 DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& request) const {
@@ -210,7 +211,8 @@ DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/voices");
   };
 
-  return DescribeVoicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeVoicesOutcome(result.GetResultWithOwnership()) : DescribeVoicesOutcome(std::move(result.GetError()));
 }
 
 GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) const {
@@ -226,7 +228,8 @@ GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetLexiconOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLexiconOutcome(result.GetResultWithOwnership()) : GetLexiconOutcome(std::move(result.GetError()));
 }
 
 GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeechSynthesisTaskRequest& request) const {
@@ -242,7 +245,9 @@ GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeec
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
   };
 
-  return GetSpeechSynthesisTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSpeechSynthesisTaskOutcome(result.GetResultWithOwnership())
+                            : GetSpeechSynthesisTaskOutcome(std::move(result.GetError()));
 }
 
 ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request) const {
@@ -251,7 +256,8 @@ ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/lexicons");
   };
 
-  return ListLexiconsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListLexiconsOutcome(result.GetResultWithOwnership()) : ListLexiconsOutcome(std::move(result.GetError()));
 }
 
 ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const ListSpeechSynthesisTasksRequest& request) const {
@@ -260,7 +266,9 @@ ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/synthesisTasks");
   };
 
-  return ListSpeechSynthesisTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSpeechSynthesisTasksOutcome(result.GetResultWithOwnership())
+                            : ListSpeechSynthesisTasksOutcome(std::move(result.GetError()));
 }
 
 PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) const {
@@ -276,7 +284,8 @@ PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return PutLexiconOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutLexiconOutcome(result.GetResultWithOwnership()) : PutLexiconOutcome(std::move(result.GetError()));
 }
 
 void PollyClient::StartSpeechSynthesisStreamAsync(Model::StartSpeechSynthesisStreamRequest& request,
@@ -350,7 +359,9 @@ StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const Star
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/synthesisTasks");
   };
 
-  return StartSpeechSynthesisTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSpeechSynthesisTaskOutcome(result.GetResultWithOwnership())
+                            : StartSpeechSynthesisTaskOutcome(std::move(result.GetError()));
 }
 
 SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequest& request) const {
@@ -375,8 +386,9 @@ SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequ
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SynthesizeSpeech, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/v1/speech");
-        return SynthesizeSpeechOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? SynthesizeSpeechOutcome(result.GetResultWithOwnership())
+                                  : SynthesizeSpeechOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

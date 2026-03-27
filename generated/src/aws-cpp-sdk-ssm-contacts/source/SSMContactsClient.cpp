@@ -211,157 +211,220 @@ SSMContactsClient::InvokeOperationOutcome SSMContactsClient::InvokeServiceOperat
 }
 
 AcceptPageOutcome SSMContactsClient::AcceptPage(const AcceptPageRequest& request) const {
-  return AcceptPageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptPageOutcome(result.GetResultWithOwnership()) : AcceptPageOutcome(std::move(result.GetError()));
 }
 
 ActivateContactChannelOutcome SSMContactsClient::ActivateContactChannel(const ActivateContactChannelRequest& request) const {
-  return ActivateContactChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ActivateContactChannelOutcome(result.GetResultWithOwnership())
+                            : ActivateContactChannelOutcome(std::move(result.GetError()));
 }
 
 CreateContactOutcome SSMContactsClient::CreateContact(const CreateContactRequest& request) const {
-  return CreateContactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateContactOutcome(result.GetResultWithOwnership()) : CreateContactOutcome(std::move(result.GetError()));
 }
 
 CreateContactChannelOutcome SSMContactsClient::CreateContactChannel(const CreateContactChannelRequest& request) const {
-  return CreateContactChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateContactChannelOutcome(result.GetResultWithOwnership())
+                            : CreateContactChannelOutcome(std::move(result.GetError()));
 }
 
 CreateRotationOutcome SSMContactsClient::CreateRotation(const CreateRotationRequest& request) const {
-  return CreateRotationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRotationOutcome(result.GetResultWithOwnership()) : CreateRotationOutcome(std::move(result.GetError()));
 }
 
 CreateRotationOverrideOutcome SSMContactsClient::CreateRotationOverride(const CreateRotationOverrideRequest& request) const {
-  return CreateRotationOverrideOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRotationOverrideOutcome(result.GetResultWithOwnership())
+                            : CreateRotationOverrideOutcome(std::move(result.GetError()));
 }
 
 DeactivateContactChannelOutcome SSMContactsClient::DeactivateContactChannel(const DeactivateContactChannelRequest& request) const {
-  return DeactivateContactChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeactivateContactChannelOutcome(result.GetResultWithOwnership())
+                            : DeactivateContactChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteContactOutcome SSMContactsClient::DeleteContact(const DeleteContactRequest& request) const {
-  return DeleteContactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteContactOutcome(result.GetResultWithOwnership()) : DeleteContactOutcome(std::move(result.GetError()));
 }
 
 DeleteContactChannelOutcome SSMContactsClient::DeleteContactChannel(const DeleteContactChannelRequest& request) const {
-  return DeleteContactChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteContactChannelOutcome(result.GetResultWithOwnership())
+                            : DeleteContactChannelOutcome(std::move(result.GetError()));
 }
 
 DeleteRotationOutcome SSMContactsClient::DeleteRotation(const DeleteRotationRequest& request) const {
-  return DeleteRotationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRotationOutcome(result.GetResultWithOwnership()) : DeleteRotationOutcome(std::move(result.GetError()));
 }
 
 DeleteRotationOverrideOutcome SSMContactsClient::DeleteRotationOverride(const DeleteRotationOverrideRequest& request) const {
-  return DeleteRotationOverrideOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRotationOverrideOutcome(result.GetResultWithOwnership())
+                            : DeleteRotationOverrideOutcome(std::move(result.GetError()));
 }
 
 DescribeEngagementOutcome SSMContactsClient::DescribeEngagement(const DescribeEngagementRequest& request) const {
-  return DescribeEngagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeEngagementOutcome(result.GetResultWithOwnership())
+                            : DescribeEngagementOutcome(std::move(result.GetError()));
 }
 
 DescribePageOutcome SSMContactsClient::DescribePage(const DescribePageRequest& request) const {
-  return DescribePageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePageOutcome(result.GetResultWithOwnership()) : DescribePageOutcome(std::move(result.GetError()));
 }
 
 GetContactOutcome SSMContactsClient::GetContact(const GetContactRequest& request) const {
-  return GetContactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetContactOutcome(result.GetResultWithOwnership()) : GetContactOutcome(std::move(result.GetError()));
 }
 
 GetContactChannelOutcome SSMContactsClient::GetContactChannel(const GetContactChannelRequest& request) const {
-  return GetContactChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetContactChannelOutcome(result.GetResultWithOwnership())
+                            : GetContactChannelOutcome(std::move(result.GetError()));
 }
 
 GetContactPolicyOutcome SSMContactsClient::GetContactPolicy(const GetContactPolicyRequest& request) const {
-  return GetContactPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetContactPolicyOutcome(result.GetResultWithOwnership())
+                            : GetContactPolicyOutcome(std::move(result.GetError()));
 }
 
 GetRotationOutcome SSMContactsClient::GetRotation(const GetRotationRequest& request) const {
-  return GetRotationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRotationOutcome(result.GetResultWithOwnership()) : GetRotationOutcome(std::move(result.GetError()));
 }
 
 GetRotationOverrideOutcome SSMContactsClient::GetRotationOverride(const GetRotationOverrideRequest& request) const {
-  return GetRotationOverrideOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRotationOverrideOutcome(result.GetResultWithOwnership())
+                            : GetRotationOverrideOutcome(std::move(result.GetError()));
 }
 
 ListContactChannelsOutcome SSMContactsClient::ListContactChannels(const ListContactChannelsRequest& request) const {
-  return ListContactChannelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContactChannelsOutcome(result.GetResultWithOwnership())
+                            : ListContactChannelsOutcome(std::move(result.GetError()));
 }
 
 ListContactsOutcome SSMContactsClient::ListContacts(const ListContactsRequest& request) const {
-  return ListContactsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContactsOutcome(result.GetResultWithOwnership()) : ListContactsOutcome(std::move(result.GetError()));
 }
 
 ListEngagementsOutcome SSMContactsClient::ListEngagements(const ListEngagementsRequest& request) const {
-  return ListEngagementsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListEngagementsOutcome(result.GetResultWithOwnership())
+                            : ListEngagementsOutcome(std::move(result.GetError()));
 }
 
 ListPageReceiptsOutcome SSMContactsClient::ListPageReceipts(const ListPageReceiptsRequest& request) const {
-  return ListPageReceiptsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPageReceiptsOutcome(result.GetResultWithOwnership())
+                            : ListPageReceiptsOutcome(std::move(result.GetError()));
 }
 
 ListPageResolutionsOutcome SSMContactsClient::ListPageResolutions(const ListPageResolutionsRequest& request) const {
-  return ListPageResolutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPageResolutionsOutcome(result.GetResultWithOwnership())
+                            : ListPageResolutionsOutcome(std::move(result.GetError()));
 }
 
 ListPagesByContactOutcome SSMContactsClient::ListPagesByContact(const ListPagesByContactRequest& request) const {
-  return ListPagesByContactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPagesByContactOutcome(result.GetResultWithOwnership())
+                            : ListPagesByContactOutcome(std::move(result.GetError()));
 }
 
 ListPagesByEngagementOutcome SSMContactsClient::ListPagesByEngagement(const ListPagesByEngagementRequest& request) const {
-  return ListPagesByEngagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPagesByEngagementOutcome(result.GetResultWithOwnership())
+                            : ListPagesByEngagementOutcome(std::move(result.GetError()));
 }
 
 ListPreviewRotationShiftsOutcome SSMContactsClient::ListPreviewRotationShifts(const ListPreviewRotationShiftsRequest& request) const {
-  return ListPreviewRotationShiftsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPreviewRotationShiftsOutcome(result.GetResultWithOwnership())
+                            : ListPreviewRotationShiftsOutcome(std::move(result.GetError()));
 }
 
 ListRotationOverridesOutcome SSMContactsClient::ListRotationOverrides(const ListRotationOverridesRequest& request) const {
-  return ListRotationOverridesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRotationOverridesOutcome(result.GetResultWithOwnership())
+                            : ListRotationOverridesOutcome(std::move(result.GetError()));
 }
 
 ListRotationShiftsOutcome SSMContactsClient::ListRotationShifts(const ListRotationShiftsRequest& request) const {
-  return ListRotationShiftsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRotationShiftsOutcome(result.GetResultWithOwnership())
+                            : ListRotationShiftsOutcome(std::move(result.GetError()));
 }
 
 ListRotationsOutcome SSMContactsClient::ListRotations(const ListRotationsRequest& request) const {
-  return ListRotationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRotationsOutcome(result.GetResultWithOwnership()) : ListRotationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SSMContactsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutContactPolicyOutcome SSMContactsClient::PutContactPolicy(const PutContactPolicyRequest& request) const {
-  return PutContactPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutContactPolicyOutcome(result.GetResultWithOwnership())
+                            : PutContactPolicyOutcome(std::move(result.GetError()));
 }
 
 SendActivationCodeOutcome SSMContactsClient::SendActivationCode(const SendActivationCodeRequest& request) const {
-  return SendActivationCodeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendActivationCodeOutcome(result.GetResultWithOwnership())
+                            : SendActivationCodeOutcome(std::move(result.GetError()));
 }
 
 StartEngagementOutcome SSMContactsClient::StartEngagement(const StartEngagementRequest& request) const {
-  return StartEngagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartEngagementOutcome(result.GetResultWithOwnership())
+                            : StartEngagementOutcome(std::move(result.GetError()));
 }
 
 StopEngagementOutcome SSMContactsClient::StopEngagement(const StopEngagementRequest& request) const {
-  return StopEngagementOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopEngagementOutcome(result.GetResultWithOwnership()) : StopEngagementOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SSMContactsClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SSMContactsClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateContactOutcome SSMContactsClient::UpdateContact(const UpdateContactRequest& request) const {
-  return UpdateContactOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactOutcome(result.GetResultWithOwnership()) : UpdateContactOutcome(std::move(result.GetError()));
 }
 
 UpdateContactChannelOutcome SSMContactsClient::UpdateContactChannel(const UpdateContactChannelRequest& request) const {
-  return UpdateContactChannelOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateContactChannelOutcome(result.GetResultWithOwnership())
+                            : UpdateContactChannelOutcome(std::move(result.GetError()));
 }
 
 UpdateRotationOutcome SSMContactsClient::UpdateRotation(const UpdateRotationRequest& request) const {
-  return UpdateRotationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRotationOutcome(result.GetResultWithOwnership()) : UpdateRotationOutcome(std::move(result.GetError()));
 }

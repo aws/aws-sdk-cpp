@@ -228,243 +228,352 @@ ECRClient::InvokeOperationOutcome ECRClient::InvokeServiceOperation(const Amazon
 }
 
 BatchCheckLayerAvailabilityOutcome ECRClient::BatchCheckLayerAvailability(const BatchCheckLayerAvailabilityRequest& request) const {
-  return BatchCheckLayerAvailabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCheckLayerAvailabilityOutcome(result.GetResultWithOwnership())
+                            : BatchCheckLayerAvailabilityOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteImageOutcome ECRClient::BatchDeleteImage(const BatchDeleteImageRequest& request) const {
-  return BatchDeleteImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteImageOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteImageOutcome(std::move(result.GetError()));
 }
 
 BatchGetImageOutcome ECRClient::BatchGetImage(const BatchGetImageRequest& request) const {
-  return BatchGetImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetImageOutcome(result.GetResultWithOwnership()) : BatchGetImageOutcome(std::move(result.GetError()));
 }
 
 BatchGetRepositoryScanningConfigurationOutcome ECRClient::BatchGetRepositoryScanningConfiguration(
     const BatchGetRepositoryScanningConfigurationRequest& request) const {
-  return BatchGetRepositoryScanningConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetRepositoryScanningConfigurationOutcome(result.GetResultWithOwnership())
+                            : BatchGetRepositoryScanningConfigurationOutcome(std::move(result.GetError()));
 }
 
 CompleteLayerUploadOutcome ECRClient::CompleteLayerUpload(const CompleteLayerUploadRequest& request) const {
-  return CompleteLayerUploadOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CompleteLayerUploadOutcome(result.GetResultWithOwnership())
+                            : CompleteLayerUploadOutcome(std::move(result.GetError()));
 }
 
 CreatePullThroughCacheRuleOutcome ECRClient::CreatePullThroughCacheRule(const CreatePullThroughCacheRuleRequest& request) const {
-  return CreatePullThroughCacheRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePullThroughCacheRuleOutcome(result.GetResultWithOwnership())
+                            : CreatePullThroughCacheRuleOutcome(std::move(result.GetError()));
 }
 
 CreateRepositoryOutcome ECRClient::CreateRepository(const CreateRepositoryRequest& request) const {
-  return CreateRepositoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRepositoryOutcome(result.GetResultWithOwnership())
+                            : CreateRepositoryOutcome(std::move(result.GetError()));
 }
 
 CreateRepositoryCreationTemplateOutcome ECRClient::CreateRepositoryCreationTemplate(
     const CreateRepositoryCreationTemplateRequest& request) const {
-  return CreateRepositoryCreationTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRepositoryCreationTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateRepositoryCreationTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteLifecyclePolicyOutcome ECRClient::DeleteLifecyclePolicy(const DeleteLifecyclePolicyRequest& request) const {
-  return DeleteLifecyclePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteLifecyclePolicyOutcome(std::move(result.GetError()));
 }
 
 DeletePullThroughCacheRuleOutcome ECRClient::DeletePullThroughCacheRule(const DeletePullThroughCacheRuleRequest& request) const {
-  return DeletePullThroughCacheRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePullThroughCacheRuleOutcome(result.GetResultWithOwnership())
+                            : DeletePullThroughCacheRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteRegistryPolicyOutcome ECRClient::DeleteRegistryPolicy(const DeleteRegistryPolicyRequest& request) const {
-  return DeleteRegistryPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRegistryPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteRegistryPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteRepositoryOutcome ECRClient::DeleteRepository(const DeleteRepositoryRequest& request) const {
-  return DeleteRepositoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRepositoryOutcome(result.GetResultWithOwnership())
+                            : DeleteRepositoryOutcome(std::move(result.GetError()));
 }
 
 DeleteRepositoryCreationTemplateOutcome ECRClient::DeleteRepositoryCreationTemplate(
     const DeleteRepositoryCreationTemplateRequest& request) const {
-  return DeleteRepositoryCreationTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRepositoryCreationTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteRepositoryCreationTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteRepositoryPolicyOutcome ECRClient::DeleteRepositoryPolicy(const DeleteRepositoryPolicyRequest& request) const {
-  return DeleteRepositoryPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRepositoryPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteRepositoryPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteSigningConfigurationOutcome ECRClient::DeleteSigningConfiguration(const DeleteSigningConfigurationRequest& request) const {
-  return DeleteSigningConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSigningConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteSigningConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeregisterPullTimeUpdateExclusionOutcome ECRClient::DeregisterPullTimeUpdateExclusion(
     const DeregisterPullTimeUpdateExclusionRequest& request) const {
-  return DeregisterPullTimeUpdateExclusionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterPullTimeUpdateExclusionOutcome(result.GetResultWithOwnership())
+                            : DeregisterPullTimeUpdateExclusionOutcome(std::move(result.GetError()));
 }
 
 DescribeImageReplicationStatusOutcome ECRClient::DescribeImageReplicationStatus(
     const DescribeImageReplicationStatusRequest& request) const {
-  return DescribeImageReplicationStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeImageReplicationStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeImageReplicationStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeImageScanFindingsOutcome ECRClient::DescribeImageScanFindings(const DescribeImageScanFindingsRequest& request) const {
-  return DescribeImageScanFindingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeImageScanFindingsOutcome(result.GetResultWithOwnership())
+                            : DescribeImageScanFindingsOutcome(std::move(result.GetError()));
 }
 
 DescribeImageSigningStatusOutcome ECRClient::DescribeImageSigningStatus(const DescribeImageSigningStatusRequest& request) const {
-  return DescribeImageSigningStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeImageSigningStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeImageSigningStatusOutcome(std::move(result.GetError()));
 }
 
 DescribeImagesOutcome ECRClient::DescribeImages(const DescribeImagesRequest& request) const {
-  return DescribeImagesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeImagesOutcome(result.GetResultWithOwnership()) : DescribeImagesOutcome(std::move(result.GetError()));
 }
 
 DescribePullThroughCacheRulesOutcome ECRClient::DescribePullThroughCacheRules(const DescribePullThroughCacheRulesRequest& request) const {
-  return DescribePullThroughCacheRulesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePullThroughCacheRulesOutcome(result.GetResultWithOwnership())
+                            : DescribePullThroughCacheRulesOutcome(std::move(result.GetError()));
 }
 
 DescribeRegistryOutcome ECRClient::DescribeRegistry(const DescribeRegistryRequest& request) const {
-  return DescribeRegistryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRegistryOutcome(result.GetResultWithOwnership())
+                            : DescribeRegistryOutcome(std::move(result.GetError()));
 }
 
 DescribeRepositoriesOutcome ECRClient::DescribeRepositories(const DescribeRepositoriesRequest& request) const {
-  return DescribeRepositoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRepositoriesOutcome(result.GetResultWithOwnership())
+                            : DescribeRepositoriesOutcome(std::move(result.GetError()));
 }
 
 DescribeRepositoryCreationTemplatesOutcome ECRClient::DescribeRepositoryCreationTemplates(
     const DescribeRepositoryCreationTemplatesRequest& request) const {
-  return DescribeRepositoryCreationTemplatesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRepositoryCreationTemplatesOutcome(result.GetResultWithOwnership())
+                            : DescribeRepositoryCreationTemplatesOutcome(std::move(result.GetError()));
 }
 
 GetAccountSettingOutcome ECRClient::GetAccountSetting(const GetAccountSettingRequest& request) const {
-  return GetAccountSettingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAccountSettingOutcome(result.GetResultWithOwnership())
+                            : GetAccountSettingOutcome(std::move(result.GetError()));
 }
 
 GetAuthorizationTokenOutcome ECRClient::GetAuthorizationToken(const GetAuthorizationTokenRequest& request) const {
-  return GetAuthorizationTokenOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAuthorizationTokenOutcome(result.GetResultWithOwnership())
+                            : GetAuthorizationTokenOutcome(std::move(result.GetError()));
 }
 
 GetDownloadUrlForLayerOutcome ECRClient::GetDownloadUrlForLayer(const GetDownloadUrlForLayerRequest& request) const {
-  return GetDownloadUrlForLayerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDownloadUrlForLayerOutcome(result.GetResultWithOwnership())
+                            : GetDownloadUrlForLayerOutcome(std::move(result.GetError()));
 }
 
 GetLifecyclePolicyOutcome ECRClient::GetLifecyclePolicy(const GetLifecyclePolicyRequest& request) const {
-  return GetLifecyclePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : GetLifecyclePolicyOutcome(std::move(result.GetError()));
 }
 
 GetLifecyclePolicyPreviewOutcome ECRClient::GetLifecyclePolicyPreview(const GetLifecyclePolicyPreviewRequest& request) const {
-  return GetLifecyclePolicyPreviewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLifecyclePolicyPreviewOutcome(result.GetResultWithOwnership())
+                            : GetLifecyclePolicyPreviewOutcome(std::move(result.GetError()));
 }
 
 GetRegistryPolicyOutcome ECRClient::GetRegistryPolicy(const GetRegistryPolicyRequest& request) const {
-  return GetRegistryPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRegistryPolicyOutcome(result.GetResultWithOwnership())
+                            : GetRegistryPolicyOutcome(std::move(result.GetError()));
 }
 
 GetRegistryScanningConfigurationOutcome ECRClient::GetRegistryScanningConfiguration(
     const GetRegistryScanningConfigurationRequest& request) const {
-  return GetRegistryScanningConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRegistryScanningConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetRegistryScanningConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetRepositoryPolicyOutcome ECRClient::GetRepositoryPolicy(const GetRepositoryPolicyRequest& request) const {
-  return GetRepositoryPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRepositoryPolicyOutcome(result.GetResultWithOwnership())
+                            : GetRepositoryPolicyOutcome(std::move(result.GetError()));
 }
 
 GetSigningConfigurationOutcome ECRClient::GetSigningConfiguration(const GetSigningConfigurationRequest& request) const {
-  return GetSigningConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSigningConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetSigningConfigurationOutcome(std::move(result.GetError()));
 }
 
 InitiateLayerUploadOutcome ECRClient::InitiateLayerUpload(const InitiateLayerUploadRequest& request) const {
-  return InitiateLayerUploadOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InitiateLayerUploadOutcome(result.GetResultWithOwnership())
+                            : InitiateLayerUploadOutcome(std::move(result.GetError()));
 }
 
 ListImageReferrersOutcome ECRClient::ListImageReferrers(const ListImageReferrersRequest& request) const {
-  return ListImageReferrersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImageReferrersOutcome(result.GetResultWithOwnership())
+                            : ListImageReferrersOutcome(std::move(result.GetError()));
 }
 
 ListImagesOutcome ECRClient::ListImages(const ListImagesRequest& request) const {
-  return ListImagesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImagesOutcome(result.GetResultWithOwnership()) : ListImagesOutcome(std::move(result.GetError()));
 }
 
 ListPullTimeUpdateExclusionsOutcome ECRClient::ListPullTimeUpdateExclusions(const ListPullTimeUpdateExclusionsRequest& request) const {
-  return ListPullTimeUpdateExclusionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPullTimeUpdateExclusionsOutcome(result.GetResultWithOwnership())
+                            : ListPullTimeUpdateExclusionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ECRClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutAccountSettingOutcome ECRClient::PutAccountSetting(const PutAccountSettingRequest& request) const {
-  return PutAccountSettingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAccountSettingOutcome(result.GetResultWithOwnership())
+                            : PutAccountSettingOutcome(std::move(result.GetError()));
 }
 
 PutImageOutcome ECRClient::PutImage(const PutImageRequest& request) const {
-  return PutImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutImageOutcome(result.GetResultWithOwnership()) : PutImageOutcome(std::move(result.GetError()));
 }
 
 PutImageScanningConfigurationOutcome ECRClient::PutImageScanningConfiguration(const PutImageScanningConfigurationRequest& request) const {
-  return PutImageScanningConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutImageScanningConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutImageScanningConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutImageTagMutabilityOutcome ECRClient::PutImageTagMutability(const PutImageTagMutabilityRequest& request) const {
-  return PutImageTagMutabilityOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutImageTagMutabilityOutcome(result.GetResultWithOwnership())
+                            : PutImageTagMutabilityOutcome(std::move(result.GetError()));
 }
 
 PutLifecyclePolicyOutcome ECRClient::PutLifecyclePolicy(const PutLifecyclePolicyRequest& request) const {
-  return PutLifecyclePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : PutLifecyclePolicyOutcome(std::move(result.GetError()));
 }
 
 PutRegistryPolicyOutcome ECRClient::PutRegistryPolicy(const PutRegistryPolicyRequest& request) const {
-  return PutRegistryPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRegistryPolicyOutcome(result.GetResultWithOwnership())
+                            : PutRegistryPolicyOutcome(std::move(result.GetError()));
 }
 
 PutRegistryScanningConfigurationOutcome ECRClient::PutRegistryScanningConfiguration(
     const PutRegistryScanningConfigurationRequest& request) const {
-  return PutRegistryScanningConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRegistryScanningConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutRegistryScanningConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutReplicationConfigurationOutcome ECRClient::PutReplicationConfiguration(const PutReplicationConfigurationRequest& request) const {
-  return PutReplicationConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutReplicationConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutReplicationConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutSigningConfigurationOutcome ECRClient::PutSigningConfiguration(const PutSigningConfigurationRequest& request) const {
-  return PutSigningConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutSigningConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutSigningConfigurationOutcome(std::move(result.GetError()));
 }
 
 RegisterPullTimeUpdateExclusionOutcome ECRClient::RegisterPullTimeUpdateExclusion(
     const RegisterPullTimeUpdateExclusionRequest& request) const {
-  return RegisterPullTimeUpdateExclusionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterPullTimeUpdateExclusionOutcome(result.GetResultWithOwnership())
+                            : RegisterPullTimeUpdateExclusionOutcome(std::move(result.GetError()));
 }
 
 SetRepositoryPolicyOutcome ECRClient::SetRepositoryPolicy(const SetRepositoryPolicyRequest& request) const {
-  return SetRepositoryPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SetRepositoryPolicyOutcome(result.GetResultWithOwnership())
+                            : SetRepositoryPolicyOutcome(std::move(result.GetError()));
 }
 
 StartImageScanOutcome ECRClient::StartImageScan(const StartImageScanRequest& request) const {
-  return StartImageScanOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartImageScanOutcome(result.GetResultWithOwnership()) : StartImageScanOutcome(std::move(result.GetError()));
 }
 
 StartLifecyclePolicyPreviewOutcome ECRClient::StartLifecyclePolicyPreview(const StartLifecyclePolicyPreviewRequest& request) const {
-  return StartLifecyclePolicyPreviewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartLifecyclePolicyPreviewOutcome(result.GetResultWithOwnership())
+                            : StartLifecyclePolicyPreviewOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ECRClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ECRClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateImageStorageClassOutcome ECRClient::UpdateImageStorageClass(const UpdateImageStorageClassRequest& request) const {
-  return UpdateImageStorageClassOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateImageStorageClassOutcome(result.GetResultWithOwnership())
+                            : UpdateImageStorageClassOutcome(std::move(result.GetError()));
 }
 
 UpdatePullThroughCacheRuleOutcome ECRClient::UpdatePullThroughCacheRule(const UpdatePullThroughCacheRuleRequest& request) const {
-  return UpdatePullThroughCacheRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePullThroughCacheRuleOutcome(result.GetResultWithOwnership())
+                            : UpdatePullThroughCacheRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateRepositoryCreationTemplateOutcome ECRClient::UpdateRepositoryCreationTemplate(
     const UpdateRepositoryCreationTemplateRequest& request) const {
-  return UpdateRepositoryCreationTemplateOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRepositoryCreationTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateRepositoryCreationTemplateOutcome(std::move(result.GetError()));
 }
 
 UploadLayerPartOutcome ECRClient::UploadLayerPart(const UploadLayerPartRequest& request) const {
-  return UploadLayerPartOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UploadLayerPartOutcome(result.GetResultWithOwnership())
+                            : UploadLayerPartOutcome(std::move(result.GetError()));
 }
 
 ValidatePullThroughCacheRuleOutcome ECRClient::ValidatePullThroughCacheRule(const ValidatePullThroughCacheRuleRequest& request) const {
-  return ValidatePullThroughCacheRuleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ValidatePullThroughCacheRuleOutcome(result.GetResultWithOwnership())
+                            : ValidatePullThroughCacheRuleOutcome(std::move(result.GetError()));
 }

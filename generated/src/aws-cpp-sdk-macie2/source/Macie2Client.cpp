@@ -261,7 +261,9 @@ AcceptInvitationOutcome Macie2Client::AcceptInvitation(const AcceptInvitationReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations/accept");
   };
 
-  return AcceptInvitationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AcceptInvitationOutcome(result.GetResultWithOwnership())
+                            : AcceptInvitationOutcome(std::move(result.GetError()));
 }
 
 BatchGetCustomDataIdentifiersOutcome Macie2Client::BatchGetCustomDataIdentifiers(
@@ -271,7 +273,9 @@ BatchGetCustomDataIdentifiersOutcome Macie2Client::BatchGetCustomDataIdentifiers
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-data-identifiers/get");
   };
 
-  return BatchGetCustomDataIdentifiersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetCustomDataIdentifiersOutcome(result.GetResultWithOwnership())
+                            : BatchGetCustomDataIdentifiersOutcome(std::move(result.GetError()));
 }
 
 BatchUpdateAutomatedDiscoveryAccountsOutcome Macie2Client::BatchUpdateAutomatedDiscoveryAccounts(
@@ -281,7 +285,9 @@ BatchUpdateAutomatedDiscoveryAccountsOutcome Macie2Client::BatchUpdateAutomatedD
     endpointResolutionOutcome.GetResult().AddPathSegments("/automated-discovery/accounts");
   };
 
-  return BatchUpdateAutomatedDiscoveryAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchUpdateAutomatedDiscoveryAccountsOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateAutomatedDiscoveryAccountsOutcome(std::move(result.GetError()));
 }
 
 CreateAllowListOutcome Macie2Client::CreateAllowList(const CreateAllowListRequest& request) const {
@@ -290,7 +296,9 @@ CreateAllowListOutcome Macie2Client::CreateAllowList(const CreateAllowListReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/allow-lists");
   };
 
-  return CreateAllowListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAllowListOutcome(result.GetResultWithOwnership())
+                            : CreateAllowListOutcome(std::move(result.GetError()));
 }
 
 CreateClassificationJobOutcome Macie2Client::CreateClassificationJob(const CreateClassificationJobRequest& request) const {
@@ -299,7 +307,9 @@ CreateClassificationJobOutcome Macie2Client::CreateClassificationJob(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return CreateClassificationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClassificationJobOutcome(result.GetResultWithOwnership())
+                            : CreateClassificationJobOutcome(std::move(result.GetError()));
 }
 
 CreateCustomDataIdentifierOutcome Macie2Client::CreateCustomDataIdentifier(const CreateCustomDataIdentifierRequest& request) const {
@@ -308,7 +318,9 @@ CreateCustomDataIdentifierOutcome Macie2Client::CreateCustomDataIdentifier(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-data-identifiers");
   };
 
-  return CreateCustomDataIdentifierOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomDataIdentifierOutcome(result.GetResultWithOwnership())
+                            : CreateCustomDataIdentifierOutcome(std::move(result.GetError()));
 }
 
 CreateFindingsFilterOutcome Macie2Client::CreateFindingsFilter(const CreateFindingsFilterRequest& request) const {
@@ -317,7 +329,9 @@ CreateFindingsFilterOutcome Macie2Client::CreateFindingsFilter(const CreateFindi
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingsfilters");
   };
 
-  return CreateFindingsFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFindingsFilterOutcome(result.GetResultWithOwnership())
+                            : CreateFindingsFilterOutcome(std::move(result.GetError()));
 }
 
 CreateInvitationsOutcome Macie2Client::CreateInvitations(const CreateInvitationsRequest& request) const {
@@ -326,7 +340,9 @@ CreateInvitationsOutcome Macie2Client::CreateInvitations(const CreateInvitations
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations");
   };
 
-  return CreateInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInvitationsOutcome(result.GetResultWithOwnership())
+                            : CreateInvitationsOutcome(std::move(result.GetError()));
 }
 
 CreateMemberOutcome Macie2Client::CreateMember(const CreateMemberRequest& request) const {
@@ -335,7 +351,8 @@ CreateMemberOutcome Macie2Client::CreateMember(const CreateMemberRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/members");
   };
 
-  return CreateMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMemberOutcome(result.GetResultWithOwnership()) : CreateMemberOutcome(std::move(result.GetError()));
 }
 
 CreateSampleFindingsOutcome Macie2Client::CreateSampleFindings(const CreateSampleFindingsRequest& request) const {
@@ -344,7 +361,9 @@ CreateSampleFindingsOutcome Macie2Client::CreateSampleFindings(const CreateSampl
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/sample");
   };
 
-  return CreateSampleFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSampleFindingsOutcome(result.GetResultWithOwnership())
+                            : CreateSampleFindingsOutcome(std::move(result.GetError()));
 }
 
 DeclineInvitationsOutcome Macie2Client::DeclineInvitations(const DeclineInvitationsRequest& request) const {
@@ -353,7 +372,9 @@ DeclineInvitationsOutcome Macie2Client::DeclineInvitations(const DeclineInvitati
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations/decline");
   };
 
-  return DeclineInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeclineInvitationsOutcome(result.GetResultWithOwnership())
+                            : DeclineInvitationsOutcome(std::move(result.GetError()));
 }
 
 DeleteAllowListOutcome Macie2Client::DeleteAllowList(const DeleteAllowListRequest& request) const {
@@ -369,7 +390,9 @@ DeleteAllowListOutcome Macie2Client::DeleteAllowList(const DeleteAllowListReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteAllowListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAllowListOutcome(result.GetResultWithOwnership())
+                            : DeleteAllowListOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomDataIdentifierOutcome Macie2Client::DeleteCustomDataIdentifier(const DeleteCustomDataIdentifierRequest& request) const {
@@ -385,7 +408,9 @@ DeleteCustomDataIdentifierOutcome Macie2Client::DeleteCustomDataIdentifier(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteCustomDataIdentifierOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCustomDataIdentifierOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomDataIdentifierOutcome(std::move(result.GetError()));
 }
 
 DeleteFindingsFilterOutcome Macie2Client::DeleteFindingsFilter(const DeleteFindingsFilterRequest& request) const {
@@ -401,7 +426,9 @@ DeleteFindingsFilterOutcome Macie2Client::DeleteFindingsFilter(const DeleteFindi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteFindingsFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFindingsFilterOutcome(result.GetResultWithOwnership())
+                            : DeleteFindingsFilterOutcome(std::move(result.GetError()));
 }
 
 DeleteInvitationsOutcome Macie2Client::DeleteInvitations(const DeleteInvitationsRequest& request) const {
@@ -410,7 +437,9 @@ DeleteInvitationsOutcome Macie2Client::DeleteInvitations(const DeleteInvitations
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations/delete");
   };
 
-  return DeleteInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteInvitationsOutcome(result.GetResultWithOwnership())
+                            : DeleteInvitationsOutcome(std::move(result.GetError()));
 }
 
 DeleteMemberOutcome Macie2Client::DeleteMember(const DeleteMemberRequest& request) const {
@@ -426,7 +455,8 @@ DeleteMemberOutcome Macie2Client::DeleteMember(const DeleteMemberRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMemberOutcome(result.GetResultWithOwnership()) : DeleteMemberOutcome(std::move(result.GetError()));
 }
 
 DescribeBucketsOutcome Macie2Client::DescribeBuckets(const DescribeBucketsRequest& request) const {
@@ -435,7 +465,9 @@ DescribeBucketsOutcome Macie2Client::DescribeBuckets(const DescribeBucketsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasources/s3");
   };
 
-  return DescribeBucketsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBucketsOutcome(result.GetResultWithOwnership())
+                            : DescribeBucketsOutcome(std::move(result.GetError()));
 }
 
 DescribeClassificationJobOutcome Macie2Client::DescribeClassificationJob(const DescribeClassificationJobRequest& request) const {
@@ -451,7 +483,9 @@ DescribeClassificationJobOutcome Macie2Client::DescribeClassificationJob(const D
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return DescribeClassificationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeClassificationJobOutcome(result.GetResultWithOwnership())
+                            : DescribeClassificationJobOutcome(std::move(result.GetError()));
 }
 
 DescribeOrganizationConfigurationOutcome Macie2Client::DescribeOrganizationConfiguration(
@@ -461,7 +495,9 @@ DescribeOrganizationConfigurationOutcome Macie2Client::DescribeOrganizationConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/admin/configuration");
   };
 
-  return DescribeOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeOrganizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DisableMacieOutcome Macie2Client::DisableMacie(const DisableMacieRequest& request) const {
@@ -470,7 +506,8 @@ DisableMacieOutcome Macie2Client::DisableMacie(const DisableMacieRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/macie");
   };
 
-  return DisableMacieOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisableMacieOutcome(result.GetResultWithOwnership()) : DisableMacieOutcome(std::move(result.GetError()));
 }
 
 DisableOrganizationAdminAccountOutcome Macie2Client::DisableOrganizationAdminAccount(
@@ -486,7 +523,9 @@ DisableOrganizationAdminAccountOutcome Macie2Client::DisableOrganizationAdminAcc
     endpointResolutionOutcome.GetResult().AddPathSegments("/admin");
   };
 
-  return DisableOrganizationAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisableOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : DisableOrganizationAdminAccountOutcome(std::move(result.GetError()));
 }
 
 DisassociateFromAdministratorAccountOutcome Macie2Client::DisassociateFromAdministratorAccount(
@@ -496,7 +535,9 @@ DisassociateFromAdministratorAccountOutcome Macie2Client::DisassociateFromAdmini
     endpointResolutionOutcome.GetResult().AddPathSegments("/administrator/disassociate");
   };
 
-  return DisassociateFromAdministratorAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFromAdministratorAccountOutcome(result.GetResultWithOwnership())
+                            : DisassociateFromAdministratorAccountOutcome(std::move(result.GetError()));
 }
 
 DisassociateFromMasterAccountOutcome Macie2Client::DisassociateFromMasterAccount(
@@ -506,7 +547,9 @@ DisassociateFromMasterAccountOutcome Macie2Client::DisassociateFromMasterAccount
     endpointResolutionOutcome.GetResult().AddPathSegments("/master/disassociate");
   };
 
-  return DisassociateFromMasterAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFromMasterAccountOutcome(result.GetResultWithOwnership())
+                            : DisassociateFromMasterAccountOutcome(std::move(result.GetError()));
 }
 
 DisassociateMemberOutcome Macie2Client::DisassociateMember(const DisassociateMemberRequest& request) const {
@@ -522,7 +565,9 @@ DisassociateMemberOutcome Macie2Client::DisassociateMember(const DisassociateMem
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DisassociateMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateMemberOutcome(result.GetResultWithOwnership())
+                            : DisassociateMemberOutcome(std::move(result.GetError()));
 }
 
 EnableMacieOutcome Macie2Client::EnableMacie(const EnableMacieRequest& request) const {
@@ -531,7 +576,8 @@ EnableMacieOutcome Macie2Client::EnableMacie(const EnableMacieRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/macie");
   };
 
-  return EnableMacieOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableMacieOutcome(result.GetResultWithOwnership()) : EnableMacieOutcome(std::move(result.GetError()));
 }
 
 EnableOrganizationAdminAccountOutcome Macie2Client::EnableOrganizationAdminAccount(
@@ -541,7 +587,9 @@ EnableOrganizationAdminAccountOutcome Macie2Client::EnableOrganizationAdminAccou
     endpointResolutionOutcome.GetResult().AddPathSegments("/admin");
   };
 
-  return EnableOrganizationAdminAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : EnableOrganizationAdminAccountOutcome(std::move(result.GetError()));
 }
 
 GetAdministratorAccountOutcome Macie2Client::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const {
@@ -550,7 +598,9 @@ GetAdministratorAccountOutcome Macie2Client::GetAdministratorAccount(const GetAd
     endpointResolutionOutcome.GetResult().AddPathSegments("/administrator");
   };
 
-  return GetAdministratorAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAdministratorAccountOutcome(result.GetResultWithOwnership())
+                            : GetAdministratorAccountOutcome(std::move(result.GetError()));
 }
 
 GetAllowListOutcome Macie2Client::GetAllowList(const GetAllowListRequest& request) const {
@@ -566,7 +616,8 @@ GetAllowListOutcome Macie2Client::GetAllowList(const GetAllowListRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetAllowListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAllowListOutcome(result.GetResultWithOwnership()) : GetAllowListOutcome(std::move(result.GetError()));
 }
 
 GetAutomatedDiscoveryConfigurationOutcome Macie2Client::GetAutomatedDiscoveryConfiguration(
@@ -576,7 +627,9 @@ GetAutomatedDiscoveryConfigurationOutcome Macie2Client::GetAutomatedDiscoveryCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/automated-discovery/configuration");
   };
 
-  return GetAutomatedDiscoveryConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAutomatedDiscoveryConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetAutomatedDiscoveryConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetBucketStatisticsOutcome Macie2Client::GetBucketStatistics(const GetBucketStatisticsRequest& request) const {
@@ -585,7 +638,9 @@ GetBucketStatisticsOutcome Macie2Client::GetBucketStatistics(const GetBucketStat
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasources/s3/statistics");
   };
 
-  return GetBucketStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBucketStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetBucketStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetClassificationExportConfigurationOutcome Macie2Client::GetClassificationExportConfiguration(
@@ -595,7 +650,9 @@ GetClassificationExportConfigurationOutcome Macie2Client::GetClassificationExpor
     endpointResolutionOutcome.GetResult().AddPathSegments("/classification-export-configuration");
   };
 
-  return GetClassificationExportConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetClassificationExportConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetClassificationExportConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetClassificationScopeOutcome Macie2Client::GetClassificationScope(const GetClassificationScopeRequest& request) const {
@@ -611,7 +668,9 @@ GetClassificationScopeOutcome Macie2Client::GetClassificationScope(const GetClas
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetClassificationScopeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetClassificationScopeOutcome(result.GetResultWithOwnership())
+                            : GetClassificationScopeOutcome(std::move(result.GetError()));
 }
 
 GetCustomDataIdentifierOutcome Macie2Client::GetCustomDataIdentifier(const GetCustomDataIdentifierRequest& request) const {
@@ -627,7 +686,9 @@ GetCustomDataIdentifierOutcome Macie2Client::GetCustomDataIdentifier(const GetCu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetCustomDataIdentifierOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCustomDataIdentifierOutcome(result.GetResultWithOwnership())
+                            : GetCustomDataIdentifierOutcome(std::move(result.GetError()));
 }
 
 GetFindingStatisticsOutcome Macie2Client::GetFindingStatistics(const GetFindingStatisticsRequest& request) const {
@@ -636,7 +697,9 @@ GetFindingStatisticsOutcome Macie2Client::GetFindingStatistics(const GetFindingS
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/statistics");
   };
 
-  return GetFindingStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFindingStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetFindingStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetFindingsOutcome Macie2Client::GetFindings(const GetFindingsRequest& request) const {
@@ -645,7 +708,8 @@ GetFindingsOutcome Macie2Client::GetFindings(const GetFindingsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings/describe");
   };
 
-  return GetFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFindingsOutcome(result.GetResultWithOwnership()) : GetFindingsOutcome(std::move(result.GetError()));
 }
 
 GetFindingsFilterOutcome Macie2Client::GetFindingsFilter(const GetFindingsFilterRequest& request) const {
@@ -661,7 +725,9 @@ GetFindingsFilterOutcome Macie2Client::GetFindingsFilter(const GetFindingsFilter
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetFindingsFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFindingsFilterOutcome(result.GetResultWithOwnership())
+                            : GetFindingsFilterOutcome(std::move(result.GetError()));
 }
 
 GetFindingsPublicationConfigurationOutcome Macie2Client::GetFindingsPublicationConfiguration(
@@ -671,7 +737,9 @@ GetFindingsPublicationConfigurationOutcome Macie2Client::GetFindingsPublicationC
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings-publication-configuration");
   };
 
-  return GetFindingsPublicationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFindingsPublicationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetFindingsPublicationConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetInvitationsCountOutcome Macie2Client::GetInvitationsCount(const GetInvitationsCountRequest& request) const {
@@ -680,7 +748,9 @@ GetInvitationsCountOutcome Macie2Client::GetInvitationsCount(const GetInvitation
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations/count");
   };
 
-  return GetInvitationsCountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInvitationsCountOutcome(result.GetResultWithOwnership())
+                            : GetInvitationsCountOutcome(std::move(result.GetError()));
 }
 
 GetMacieSessionOutcome Macie2Client::GetMacieSession(const GetMacieSessionRequest& request) const {
@@ -689,7 +759,9 @@ GetMacieSessionOutcome Macie2Client::GetMacieSession(const GetMacieSessionReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/macie");
   };
 
-  return GetMacieSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMacieSessionOutcome(result.GetResultWithOwnership())
+                            : GetMacieSessionOutcome(std::move(result.GetError()));
 }
 
 GetMasterAccountOutcome Macie2Client::GetMasterAccount(const GetMasterAccountRequest& request) const {
@@ -698,7 +770,9 @@ GetMasterAccountOutcome Macie2Client::GetMasterAccount(const GetMasterAccountReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/master");
   };
 
-  return GetMasterAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMasterAccountOutcome(result.GetResultWithOwnership())
+                            : GetMasterAccountOutcome(std::move(result.GetError()));
 }
 
 GetMemberOutcome Macie2Client::GetMember(const GetMemberRequest& request) const {
@@ -714,7 +788,8 @@ GetMemberOutcome Macie2Client::GetMember(const GetMemberRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMemberOutcome(result.GetResultWithOwnership()) : GetMemberOutcome(std::move(result.GetError()));
 }
 
 GetResourceProfileOutcome Macie2Client::GetResourceProfile(const GetResourceProfileRequest& request) const {
@@ -729,7 +804,9 @@ GetResourceProfileOutcome Macie2Client::GetResourceProfile(const GetResourceProf
     endpointResolutionOutcome.GetResult().AddPathSegments("/resource-profiles");
   };
 
-  return GetResourceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourceProfileOutcome(result.GetResultWithOwnership())
+                            : GetResourceProfileOutcome(std::move(result.GetError()));
 }
 
 GetRevealConfigurationOutcome Macie2Client::GetRevealConfiguration(const GetRevealConfigurationRequest& request) const {
@@ -738,7 +815,9 @@ GetRevealConfigurationOutcome Macie2Client::GetRevealConfiguration(const GetReve
     endpointResolutionOutcome.GetResult().AddPathSegments("/reveal-configuration");
   };
 
-  return GetRevealConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRevealConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetRevealConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetSensitiveDataOccurrencesOutcome Macie2Client::GetSensitiveDataOccurrences(const GetSensitiveDataOccurrencesRequest& request) const {
@@ -755,7 +834,9 @@ GetSensitiveDataOccurrencesOutcome Macie2Client::GetSensitiveDataOccurrences(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/reveal");
   };
 
-  return GetSensitiveDataOccurrencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSensitiveDataOccurrencesOutcome(result.GetResultWithOwnership())
+                            : GetSensitiveDataOccurrencesOutcome(std::move(result.GetError()));
 }
 
 GetSensitiveDataOccurrencesAvailabilityOutcome Macie2Client::GetSensitiveDataOccurrencesAvailability(
@@ -773,7 +854,9 @@ GetSensitiveDataOccurrencesAvailabilityOutcome Macie2Client::GetSensitiveDataOcc
     endpointResolutionOutcome.GetResult().AddPathSegments("/reveal/availability");
   };
 
-  return GetSensitiveDataOccurrencesAvailabilityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSensitiveDataOccurrencesAvailabilityOutcome(result.GetResultWithOwnership())
+                            : GetSensitiveDataOccurrencesAvailabilityOutcome(std::move(result.GetError()));
 }
 
 GetSensitivityInspectionTemplateOutcome Macie2Client::GetSensitivityInspectionTemplate(
@@ -790,7 +873,9 @@ GetSensitivityInspectionTemplateOutcome Macie2Client::GetSensitivityInspectionTe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetSensitivityInspectionTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSensitivityInspectionTemplateOutcome(result.GetResultWithOwnership())
+                            : GetSensitivityInspectionTemplateOutcome(std::move(result.GetError()));
 }
 
 GetUsageStatisticsOutcome Macie2Client::GetUsageStatistics(const GetUsageStatisticsRequest& request) const {
@@ -799,7 +884,9 @@ GetUsageStatisticsOutcome Macie2Client::GetUsageStatistics(const GetUsageStatist
     endpointResolutionOutcome.GetResult().AddPathSegments("/usage/statistics");
   };
 
-  return GetUsageStatisticsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetUsageStatisticsOutcome(result.GetResultWithOwnership())
+                            : GetUsageStatisticsOutcome(std::move(result.GetError()));
 }
 
 GetUsageTotalsOutcome Macie2Client::GetUsageTotals(const GetUsageTotalsRequest& request) const {
@@ -808,7 +895,8 @@ GetUsageTotalsOutcome Macie2Client::GetUsageTotals(const GetUsageTotalsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/usage");
   };
 
-  return GetUsageTotalsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUsageTotalsOutcome(result.GetResultWithOwnership()) : GetUsageTotalsOutcome(std::move(result.GetError()));
 }
 
 ListAllowListsOutcome Macie2Client::ListAllowLists(const ListAllowListsRequest& request) const {
@@ -817,7 +905,8 @@ ListAllowListsOutcome Macie2Client::ListAllowLists(const ListAllowListsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/allow-lists");
   };
 
-  return ListAllowListsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAllowListsOutcome(result.GetResultWithOwnership()) : ListAllowListsOutcome(std::move(result.GetError()));
 }
 
 ListAutomatedDiscoveryAccountsOutcome Macie2Client::ListAutomatedDiscoveryAccounts(
@@ -827,7 +916,9 @@ ListAutomatedDiscoveryAccountsOutcome Macie2Client::ListAutomatedDiscoveryAccoun
     endpointResolutionOutcome.GetResult().AddPathSegments("/automated-discovery/accounts");
   };
 
-  return ListAutomatedDiscoveryAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAutomatedDiscoveryAccountsOutcome(result.GetResultWithOwnership())
+                            : ListAutomatedDiscoveryAccountsOutcome(std::move(result.GetError()));
 }
 
 ListClassificationJobsOutcome Macie2Client::ListClassificationJobs(const ListClassificationJobsRequest& request) const {
@@ -836,7 +927,9 @@ ListClassificationJobsOutcome Macie2Client::ListClassificationJobs(const ListCla
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs/list");
   };
 
-  return ListClassificationJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClassificationJobsOutcome(result.GetResultWithOwnership())
+                            : ListClassificationJobsOutcome(std::move(result.GetError()));
 }
 
 ListClassificationScopesOutcome Macie2Client::ListClassificationScopes(const ListClassificationScopesRequest& request) const {
@@ -845,7 +938,9 @@ ListClassificationScopesOutcome Macie2Client::ListClassificationScopes(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/classification-scopes");
   };
 
-  return ListClassificationScopesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClassificationScopesOutcome(result.GetResultWithOwnership())
+                            : ListClassificationScopesOutcome(std::move(result.GetError()));
 }
 
 ListCustomDataIdentifiersOutcome Macie2Client::ListCustomDataIdentifiers(const ListCustomDataIdentifiersRequest& request) const {
@@ -854,7 +949,9 @@ ListCustomDataIdentifiersOutcome Macie2Client::ListCustomDataIdentifiers(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-data-identifiers/list");
   };
 
-  return ListCustomDataIdentifiersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomDataIdentifiersOutcome(result.GetResultWithOwnership())
+                            : ListCustomDataIdentifiersOutcome(std::move(result.GetError()));
 }
 
 ListFindingsOutcome Macie2Client::ListFindings(const ListFindingsRequest& request) const {
@@ -863,7 +960,8 @@ ListFindingsOutcome Macie2Client::ListFindings(const ListFindingsRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings");
   };
 
-  return ListFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFindingsOutcome(result.GetResultWithOwnership()) : ListFindingsOutcome(std::move(result.GetError()));
 }
 
 ListFindingsFiltersOutcome Macie2Client::ListFindingsFilters(const ListFindingsFiltersRequest& request) const {
@@ -872,7 +970,9 @@ ListFindingsFiltersOutcome Macie2Client::ListFindingsFilters(const ListFindingsF
     endpointResolutionOutcome.GetResult().AddPathSegments("/findingsfilters");
   };
 
-  return ListFindingsFiltersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFindingsFiltersOutcome(result.GetResultWithOwnership())
+                            : ListFindingsFiltersOutcome(std::move(result.GetError()));
 }
 
 ListInvitationsOutcome Macie2Client::ListInvitations(const ListInvitationsRequest& request) const {
@@ -881,7 +981,9 @@ ListInvitationsOutcome Macie2Client::ListInvitations(const ListInvitationsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations");
   };
 
-  return ListInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInvitationsOutcome(result.GetResultWithOwnership())
+                            : ListInvitationsOutcome(std::move(result.GetError()));
 }
 
 ListManagedDataIdentifiersOutcome Macie2Client::ListManagedDataIdentifiers(const ListManagedDataIdentifiersRequest& request) const {
@@ -890,7 +992,9 @@ ListManagedDataIdentifiersOutcome Macie2Client::ListManagedDataIdentifiers(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/managed-data-identifiers/list");
   };
 
-  return ListManagedDataIdentifiersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListManagedDataIdentifiersOutcome(result.GetResultWithOwnership())
+                            : ListManagedDataIdentifiersOutcome(std::move(result.GetError()));
 }
 
 ListMembersOutcome Macie2Client::ListMembers(const ListMembersRequest& request) const {
@@ -899,7 +1003,8 @@ ListMembersOutcome Macie2Client::ListMembers(const ListMembersRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/members");
   };
 
-  return ListMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMembersOutcome(result.GetResultWithOwnership()) : ListMembersOutcome(std::move(result.GetError()));
 }
 
 ListOrganizationAdminAccountsOutcome Macie2Client::ListOrganizationAdminAccounts(
@@ -909,7 +1014,9 @@ ListOrganizationAdminAccountsOutcome Macie2Client::ListOrganizationAdminAccounts
     endpointResolutionOutcome.GetResult().AddPathSegments("/admin");
   };
 
-  return ListOrganizationAdminAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOrganizationAdminAccountsOutcome(result.GetResultWithOwnership())
+                            : ListOrganizationAdminAccountsOutcome(std::move(result.GetError()));
 }
 
 ListResourceProfileArtifactsOutcome Macie2Client::ListResourceProfileArtifacts(const ListResourceProfileArtifactsRequest& request) const {
@@ -924,7 +1031,9 @@ ListResourceProfileArtifactsOutcome Macie2Client::ListResourceProfileArtifacts(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/resource-profiles/artifacts");
   };
 
-  return ListResourceProfileArtifactsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResourceProfileArtifactsOutcome(result.GetResultWithOwnership())
+                            : ListResourceProfileArtifactsOutcome(std::move(result.GetError()));
 }
 
 ListResourceProfileDetectionsOutcome Macie2Client::ListResourceProfileDetections(
@@ -940,7 +1049,9 @@ ListResourceProfileDetectionsOutcome Macie2Client::ListResourceProfileDetections
     endpointResolutionOutcome.GetResult().AddPathSegments("/resource-profiles/detections");
   };
 
-  return ListResourceProfileDetectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResourceProfileDetectionsOutcome(result.GetResultWithOwnership())
+                            : ListResourceProfileDetectionsOutcome(std::move(result.GetError()));
 }
 
 ListSensitivityInspectionTemplatesOutcome Macie2Client::ListSensitivityInspectionTemplates(
@@ -950,7 +1061,9 @@ ListSensitivityInspectionTemplatesOutcome Macie2Client::ListSensitivityInspectio
     endpointResolutionOutcome.GetResult().AddPathSegments("/templates/sensitivity-inspections");
   };
 
-  return ListSensitivityInspectionTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSensitivityInspectionTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListSensitivityInspectionTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome Macie2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -966,7 +1079,9 @@ ListTagsForResourceOutcome Macie2Client::ListTagsForResource(const ListTagsForRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutClassificationExportConfigurationOutcome Macie2Client::PutClassificationExportConfiguration(
@@ -976,7 +1091,9 @@ PutClassificationExportConfigurationOutcome Macie2Client::PutClassificationExpor
     endpointResolutionOutcome.GetResult().AddPathSegments("/classification-export-configuration");
   };
 
-  return PutClassificationExportConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutClassificationExportConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutClassificationExportConfigurationOutcome(std::move(result.GetError()));
 }
 
 PutFindingsPublicationConfigurationOutcome Macie2Client::PutFindingsPublicationConfiguration(
@@ -986,7 +1103,9 @@ PutFindingsPublicationConfigurationOutcome Macie2Client::PutFindingsPublicationC
     endpointResolutionOutcome.GetResult().AddPathSegments("/findings-publication-configuration");
   };
 
-  return PutFindingsPublicationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutFindingsPublicationConfigurationOutcome(result.GetResultWithOwnership())
+                            : PutFindingsPublicationConfigurationOutcome(std::move(result.GetError()));
 }
 
 SearchResourcesOutcome Macie2Client::SearchResources(const SearchResourcesRequest& request) const {
@@ -995,7 +1114,9 @@ SearchResourcesOutcome Macie2Client::SearchResources(const SearchResourcesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasources/search-resources");
   };
 
-  return SearchResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchResourcesOutcome(result.GetResultWithOwnership())
+                            : SearchResourcesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome Macie2Client::TagResource(const TagResourceRequest& request) const {
@@ -1011,7 +1132,8 @@ TagResourceOutcome Macie2Client::TagResource(const TagResourceRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestCustomDataIdentifierOutcome Macie2Client::TestCustomDataIdentifier(const TestCustomDataIdentifierRequest& request) const {
@@ -1020,7 +1142,9 @@ TestCustomDataIdentifierOutcome Macie2Client::TestCustomDataIdentifier(const Tes
     endpointResolutionOutcome.GetResult().AddPathSegments("/custom-data-identifiers/test");
   };
 
-  return TestCustomDataIdentifierOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestCustomDataIdentifierOutcome(result.GetResultWithOwnership())
+                            : TestCustomDataIdentifierOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome Macie2Client::UntagResource(const UntagResourceRequest& request) const {
@@ -1041,7 +1165,8 @@ UntagResourceOutcome Macie2Client::UntagResource(const UntagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAllowListOutcome Macie2Client::UpdateAllowList(const UpdateAllowListRequest& request) const {
@@ -1057,7 +1182,9 @@ UpdateAllowListOutcome Macie2Client::UpdateAllowList(const UpdateAllowListReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateAllowListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAllowListOutcome(result.GetResultWithOwnership())
+                            : UpdateAllowListOutcome(std::move(result.GetError()));
 }
 
 UpdateAutomatedDiscoveryConfigurationOutcome Macie2Client::UpdateAutomatedDiscoveryConfiguration(
@@ -1067,7 +1194,9 @@ UpdateAutomatedDiscoveryConfigurationOutcome Macie2Client::UpdateAutomatedDiscov
     endpointResolutionOutcome.GetResult().AddPathSegments("/automated-discovery/configuration");
   };
 
-  return UpdateAutomatedDiscoveryConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAutomatedDiscoveryConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateAutomatedDiscoveryConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateClassificationJobOutcome Macie2Client::UpdateClassificationJob(const UpdateClassificationJobRequest& request) const {
@@ -1083,7 +1212,9 @@ UpdateClassificationJobOutcome Macie2Client::UpdateClassificationJob(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return UpdateClassificationJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateClassificationJobOutcome(result.GetResultWithOwnership())
+                            : UpdateClassificationJobOutcome(std::move(result.GetError()));
 }
 
 UpdateClassificationScopeOutcome Macie2Client::UpdateClassificationScope(const UpdateClassificationScopeRequest& request) const {
@@ -1099,7 +1230,9 @@ UpdateClassificationScopeOutcome Macie2Client::UpdateClassificationScope(const U
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateClassificationScopeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateClassificationScopeOutcome(result.GetResultWithOwnership())
+                            : UpdateClassificationScopeOutcome(std::move(result.GetError()));
 }
 
 UpdateFindingsFilterOutcome Macie2Client::UpdateFindingsFilter(const UpdateFindingsFilterRequest& request) const {
@@ -1115,7 +1248,9 @@ UpdateFindingsFilterOutcome Macie2Client::UpdateFindingsFilter(const UpdateFindi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateFindingsFilterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateFindingsFilterOutcome(result.GetResultWithOwnership())
+                            : UpdateFindingsFilterOutcome(std::move(result.GetError()));
 }
 
 UpdateMacieSessionOutcome Macie2Client::UpdateMacieSession(const UpdateMacieSessionRequest& request) const {
@@ -1124,7 +1259,9 @@ UpdateMacieSessionOutcome Macie2Client::UpdateMacieSession(const UpdateMacieSess
     endpointResolutionOutcome.GetResult().AddPathSegments("/macie");
   };
 
-  return UpdateMacieSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMacieSessionOutcome(result.GetResultWithOwnership())
+                            : UpdateMacieSessionOutcome(std::move(result.GetError()));
 }
 
 UpdateMemberSessionOutcome Macie2Client::UpdateMemberSession(const UpdateMemberSessionRequest& request) const {
@@ -1140,7 +1277,9 @@ UpdateMemberSessionOutcome Macie2Client::UpdateMemberSession(const UpdateMemberS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateMemberSessionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMemberSessionOutcome(result.GetResultWithOwnership())
+                            : UpdateMemberSessionOutcome(std::move(result.GetError()));
 }
 
 UpdateOrganizationConfigurationOutcome Macie2Client::UpdateOrganizationConfiguration(
@@ -1150,7 +1289,9 @@ UpdateOrganizationConfigurationOutcome Macie2Client::UpdateOrganizationConfigura
     endpointResolutionOutcome.GetResult().AddPathSegments("/admin/configuration");
   };
 
-  return UpdateOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateOrganizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceProfileOutcome Macie2Client::UpdateResourceProfile(const UpdateResourceProfileRequest& request) const {
@@ -1165,7 +1306,9 @@ UpdateResourceProfileOutcome Macie2Client::UpdateResourceProfile(const UpdateRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/resource-profiles");
   };
 
-  return UpdateResourceProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateResourceProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateResourceProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceProfileDetectionsOutcome Macie2Client::UpdateResourceProfileDetections(
@@ -1181,7 +1324,9 @@ UpdateResourceProfileDetectionsOutcome Macie2Client::UpdateResourceProfileDetect
     endpointResolutionOutcome.GetResult().AddPathSegments("/resource-profiles/detections");
   };
 
-  return UpdateResourceProfileDetectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateResourceProfileDetectionsOutcome(result.GetResultWithOwnership())
+                            : UpdateResourceProfileDetectionsOutcome(std::move(result.GetError()));
 }
 
 UpdateRevealConfigurationOutcome Macie2Client::UpdateRevealConfiguration(const UpdateRevealConfigurationRequest& request) const {
@@ -1190,7 +1335,9 @@ UpdateRevealConfigurationOutcome Macie2Client::UpdateRevealConfiguration(const U
     endpointResolutionOutcome.GetResult().AddPathSegments("/reveal-configuration");
   };
 
-  return UpdateRevealConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRevealConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateRevealConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateSensitivityInspectionTemplateOutcome Macie2Client::UpdateSensitivityInspectionTemplate(
@@ -1207,5 +1354,7 @@ UpdateSensitivityInspectionTemplateOutcome Macie2Client::UpdateSensitivityInspec
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateSensitivityInspectionTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSensitivityInspectionTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateSensitivityInspectionTemplateOutcome(std::move(result.GetError()));
 }

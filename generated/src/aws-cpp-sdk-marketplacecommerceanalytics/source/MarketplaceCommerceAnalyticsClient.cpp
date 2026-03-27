@@ -182,5 +182,7 @@ MarketplaceCommerceAnalyticsClient::InvokeOperationOutcome MarketplaceCommerceAn
 }
 
 GenerateDataSetOutcome MarketplaceCommerceAnalyticsClient::GenerateDataSet(const GenerateDataSetRequest& request) const {
-  return GenerateDataSetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateDataSetOutcome(result.GetResultWithOwnership())
+                            : GenerateDataSetOutcome(std::move(result.GetError()));
 }

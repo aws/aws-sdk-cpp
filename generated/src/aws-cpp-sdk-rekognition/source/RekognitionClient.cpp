@@ -247,302 +247,432 @@ RekognitionClient::InvokeOperationOutcome RekognitionClient::InvokeServiceOperat
 }
 
 AssociateFacesOutcome RekognitionClient::AssociateFaces(const AssociateFacesRequest& request) const {
-  return AssociateFacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateFacesOutcome(result.GetResultWithOwnership()) : AssociateFacesOutcome(std::move(result.GetError()));
 }
 
 CompareFacesOutcome RekognitionClient::CompareFaces(const CompareFacesRequest& request) const {
-  return CompareFacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CompareFacesOutcome(result.GetResultWithOwnership()) : CompareFacesOutcome(std::move(result.GetError()));
 }
 
 CopyProjectVersionOutcome RekognitionClient::CopyProjectVersion(const CopyProjectVersionRequest& request) const {
-  return CopyProjectVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyProjectVersionOutcome(result.GetResultWithOwnership())
+                            : CopyProjectVersionOutcome(std::move(result.GetError()));
 }
 
 CreateCollectionOutcome RekognitionClient::CreateCollection(const CreateCollectionRequest& request) const {
-  return CreateCollectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCollectionOutcome(result.GetResultWithOwnership())
+                            : CreateCollectionOutcome(std::move(result.GetError()));
 }
 
 CreateDatasetOutcome RekognitionClient::CreateDataset(const CreateDatasetRequest& request) const {
-  return CreateDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDatasetOutcome(result.GetResultWithOwnership()) : CreateDatasetOutcome(std::move(result.GetError()));
 }
 
 CreateFaceLivenessSessionOutcome RekognitionClient::CreateFaceLivenessSession(const CreateFaceLivenessSessionRequest& request) const {
-  return CreateFaceLivenessSessionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFaceLivenessSessionOutcome(result.GetResultWithOwnership())
+                            : CreateFaceLivenessSessionOutcome(std::move(result.GetError()));
 }
 
 CreateProjectOutcome RekognitionClient::CreateProject(const CreateProjectRequest& request) const {
-  return CreateProjectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProjectOutcome(result.GetResultWithOwnership()) : CreateProjectOutcome(std::move(result.GetError()));
 }
 
 CreateProjectVersionOutcome RekognitionClient::CreateProjectVersion(const CreateProjectVersionRequest& request) const {
-  return CreateProjectVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProjectVersionOutcome(result.GetResultWithOwnership())
+                            : CreateProjectVersionOutcome(std::move(result.GetError()));
 }
 
 CreateStreamProcessorOutcome RekognitionClient::CreateStreamProcessor(const CreateStreamProcessorRequest& request) const {
-  return CreateStreamProcessorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamProcessorOutcome(result.GetResultWithOwnership())
+                            : CreateStreamProcessorOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome RekognitionClient::CreateUser(const CreateUserRequest& request) const {
-  return CreateUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 DeleteCollectionOutcome RekognitionClient::DeleteCollection(const DeleteCollectionRequest& request) const {
-  return DeleteCollectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCollectionOutcome(result.GetResultWithOwnership())
+                            : DeleteCollectionOutcome(std::move(result.GetError()));
 }
 
 DeleteDatasetOutcome RekognitionClient::DeleteDataset(const DeleteDatasetRequest& request) const {
-  return DeleteDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDatasetOutcome(result.GetResultWithOwnership()) : DeleteDatasetOutcome(std::move(result.GetError()));
 }
 
 DeleteFacesOutcome RekognitionClient::DeleteFaces(const DeleteFacesRequest& request) const {
-  return DeleteFacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFacesOutcome(result.GetResultWithOwnership()) : DeleteFacesOutcome(std::move(result.GetError()));
 }
 
 DeleteProjectOutcome RekognitionClient::DeleteProject(const DeleteProjectRequest& request) const {
-  return DeleteProjectOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProjectOutcome(result.GetResultWithOwnership()) : DeleteProjectOutcome(std::move(result.GetError()));
 }
 
 DeleteProjectPolicyOutcome RekognitionClient::DeleteProjectPolicy(const DeleteProjectPolicyRequest& request) const {
-  return DeleteProjectPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProjectPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteProjectPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteProjectVersionOutcome RekognitionClient::DeleteProjectVersion(const DeleteProjectVersionRequest& request) const {
-  return DeleteProjectVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteProjectVersionOutcome(result.GetResultWithOwnership())
+                            : DeleteProjectVersionOutcome(std::move(result.GetError()));
 }
 
 DeleteStreamProcessorOutcome RekognitionClient::DeleteStreamProcessor(const DeleteStreamProcessorRequest& request) const {
-  return DeleteStreamProcessorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteStreamProcessorOutcome(result.GetResultWithOwnership())
+                            : DeleteStreamProcessorOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome RekognitionClient::DeleteUser(const DeleteUserRequest& request) const {
-  return DeleteUserOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DescribeCollectionOutcome RekognitionClient::DescribeCollection(const DescribeCollectionRequest& request) const {
-  return DescribeCollectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCollectionOutcome(result.GetResultWithOwnership())
+                            : DescribeCollectionOutcome(std::move(result.GetError()));
 }
 
 DescribeDatasetOutcome RekognitionClient::DescribeDataset(const DescribeDatasetRequest& request) const {
-  return DescribeDatasetOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDatasetOutcome(result.GetResultWithOwnership())
+                            : DescribeDatasetOutcome(std::move(result.GetError()));
 }
 
 DescribeProjectVersionsOutcome RekognitionClient::DescribeProjectVersions(const DescribeProjectVersionsRequest& request) const {
-  return DescribeProjectVersionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProjectVersionsOutcome(result.GetResultWithOwnership())
+                            : DescribeProjectVersionsOutcome(std::move(result.GetError()));
 }
 
 DescribeProjectsOutcome RekognitionClient::DescribeProjects(const DescribeProjectsRequest& request) const {
-  return DescribeProjectsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeProjectsOutcome(result.GetResultWithOwnership())
+                            : DescribeProjectsOutcome(std::move(result.GetError()));
 }
 
 DescribeStreamProcessorOutcome RekognitionClient::DescribeStreamProcessor(const DescribeStreamProcessorRequest& request) const {
-  return DescribeStreamProcessorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeStreamProcessorOutcome(result.GetResultWithOwnership())
+                            : DescribeStreamProcessorOutcome(std::move(result.GetError()));
 }
 
 DetectCustomLabelsOutcome RekognitionClient::DetectCustomLabels(const DetectCustomLabelsRequest& request) const {
-  return DetectCustomLabelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectCustomLabelsOutcome(result.GetResultWithOwnership())
+                            : DetectCustomLabelsOutcome(std::move(result.GetError()));
 }
 
 DetectFacesOutcome RekognitionClient::DetectFaces(const DetectFacesRequest& request) const {
-  return DetectFacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectFacesOutcome(result.GetResultWithOwnership()) : DetectFacesOutcome(std::move(result.GetError()));
 }
 
 DetectLabelsOutcome RekognitionClient::DetectLabels(const DetectLabelsRequest& request) const {
-  return DetectLabelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectLabelsOutcome(result.GetResultWithOwnership()) : DetectLabelsOutcome(std::move(result.GetError()));
 }
 
 DetectModerationLabelsOutcome RekognitionClient::DetectModerationLabels(const DetectModerationLabelsRequest& request) const {
-  return DetectModerationLabelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectModerationLabelsOutcome(result.GetResultWithOwnership())
+                            : DetectModerationLabelsOutcome(std::move(result.GetError()));
 }
 
 DetectProtectiveEquipmentOutcome RekognitionClient::DetectProtectiveEquipment(const DetectProtectiveEquipmentRequest& request) const {
-  return DetectProtectiveEquipmentOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectProtectiveEquipmentOutcome(result.GetResultWithOwnership())
+                            : DetectProtectiveEquipmentOutcome(std::move(result.GetError()));
 }
 
 DetectTextOutcome RekognitionClient::DetectText(const DetectTextRequest& request) const {
-  return DetectTextOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetectTextOutcome(result.GetResultWithOwnership()) : DetectTextOutcome(std::move(result.GetError()));
 }
 
 DisassociateFacesOutcome RekognitionClient::DisassociateFaces(const DisassociateFacesRequest& request) const {
-  return DisassociateFacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFacesOutcome(result.GetResultWithOwnership())
+                            : DisassociateFacesOutcome(std::move(result.GetError()));
 }
 
 DistributeDatasetEntriesOutcome RekognitionClient::DistributeDatasetEntries(const DistributeDatasetEntriesRequest& request) const {
-  return DistributeDatasetEntriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DistributeDatasetEntriesOutcome(result.GetResultWithOwnership())
+                            : DistributeDatasetEntriesOutcome(std::move(result.GetError()));
 }
 
 GetCelebrityInfoOutcome RekognitionClient::GetCelebrityInfo(const GetCelebrityInfoRequest& request) const {
-  return GetCelebrityInfoOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCelebrityInfoOutcome(result.GetResultWithOwnership())
+                            : GetCelebrityInfoOutcome(std::move(result.GetError()));
 }
 
 GetCelebrityRecognitionOutcome RekognitionClient::GetCelebrityRecognition(const GetCelebrityRecognitionRequest& request) const {
-  return GetCelebrityRecognitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCelebrityRecognitionOutcome(result.GetResultWithOwnership())
+                            : GetCelebrityRecognitionOutcome(std::move(result.GetError()));
 }
 
 GetContentModerationOutcome RekognitionClient::GetContentModeration(const GetContentModerationRequest& request) const {
-  return GetContentModerationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetContentModerationOutcome(result.GetResultWithOwnership())
+                            : GetContentModerationOutcome(std::move(result.GetError()));
 }
 
 GetFaceDetectionOutcome RekognitionClient::GetFaceDetection(const GetFaceDetectionRequest& request) const {
-  return GetFaceDetectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFaceDetectionOutcome(result.GetResultWithOwnership())
+                            : GetFaceDetectionOutcome(std::move(result.GetError()));
 }
 
 GetFaceLivenessSessionResultsOutcome RekognitionClient::GetFaceLivenessSessionResults(
     const GetFaceLivenessSessionResultsRequest& request) const {
-  return GetFaceLivenessSessionResultsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFaceLivenessSessionResultsOutcome(result.GetResultWithOwnership())
+                            : GetFaceLivenessSessionResultsOutcome(std::move(result.GetError()));
 }
 
 GetFaceSearchOutcome RekognitionClient::GetFaceSearch(const GetFaceSearchRequest& request) const {
-  return GetFaceSearchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFaceSearchOutcome(result.GetResultWithOwnership()) : GetFaceSearchOutcome(std::move(result.GetError()));
 }
 
 GetLabelDetectionOutcome RekognitionClient::GetLabelDetection(const GetLabelDetectionRequest& request) const {
-  return GetLabelDetectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLabelDetectionOutcome(result.GetResultWithOwnership())
+                            : GetLabelDetectionOutcome(std::move(result.GetError()));
 }
 
 GetMediaAnalysisJobOutcome RekognitionClient::GetMediaAnalysisJob(const GetMediaAnalysisJobRequest& request) const {
-  return GetMediaAnalysisJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMediaAnalysisJobOutcome(result.GetResultWithOwnership())
+                            : GetMediaAnalysisJobOutcome(std::move(result.GetError()));
 }
 
 GetPersonTrackingOutcome RekognitionClient::GetPersonTracking(const GetPersonTrackingRequest& request) const {
-  return GetPersonTrackingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPersonTrackingOutcome(result.GetResultWithOwnership())
+                            : GetPersonTrackingOutcome(std::move(result.GetError()));
 }
 
 GetSegmentDetectionOutcome RekognitionClient::GetSegmentDetection(const GetSegmentDetectionRequest& request) const {
-  return GetSegmentDetectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSegmentDetectionOutcome(result.GetResultWithOwnership())
+                            : GetSegmentDetectionOutcome(std::move(result.GetError()));
 }
 
 GetTextDetectionOutcome RekognitionClient::GetTextDetection(const GetTextDetectionRequest& request) const {
-  return GetTextDetectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTextDetectionOutcome(result.GetResultWithOwnership())
+                            : GetTextDetectionOutcome(std::move(result.GetError()));
 }
 
 IndexFacesOutcome RekognitionClient::IndexFaces(const IndexFacesRequest& request) const {
-  return IndexFacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? IndexFacesOutcome(result.GetResultWithOwnership()) : IndexFacesOutcome(std::move(result.GetError()));
 }
 
 ListCollectionsOutcome RekognitionClient::ListCollections(const ListCollectionsRequest& request) const {
-  return ListCollectionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCollectionsOutcome(result.GetResultWithOwnership())
+                            : ListCollectionsOutcome(std::move(result.GetError()));
 }
 
 ListDatasetEntriesOutcome RekognitionClient::ListDatasetEntries(const ListDatasetEntriesRequest& request) const {
-  return ListDatasetEntriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasetEntriesOutcome(result.GetResultWithOwnership())
+                            : ListDatasetEntriesOutcome(std::move(result.GetError()));
 }
 
 ListDatasetLabelsOutcome RekognitionClient::ListDatasetLabels(const ListDatasetLabelsRequest& request) const {
-  return ListDatasetLabelsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatasetLabelsOutcome(result.GetResultWithOwnership())
+                            : ListDatasetLabelsOutcome(std::move(result.GetError()));
 }
 
 ListFacesOutcome RekognitionClient::ListFaces(const ListFacesRequest& request) const {
-  return ListFacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFacesOutcome(result.GetResultWithOwnership()) : ListFacesOutcome(std::move(result.GetError()));
 }
 
 ListMediaAnalysisJobsOutcome RekognitionClient::ListMediaAnalysisJobs(const ListMediaAnalysisJobsRequest& request) const {
-  return ListMediaAnalysisJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMediaAnalysisJobsOutcome(result.GetResultWithOwnership())
+                            : ListMediaAnalysisJobsOutcome(std::move(result.GetError()));
 }
 
 ListProjectPoliciesOutcome RekognitionClient::ListProjectPolicies(const ListProjectPoliciesRequest& request) const {
-  return ListProjectPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListProjectPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListProjectPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListStreamProcessorsOutcome RekognitionClient::ListStreamProcessors(const ListStreamProcessorsRequest& request) const {
-  return ListStreamProcessorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListStreamProcessorsOutcome(result.GetResultWithOwnership())
+                            : ListStreamProcessorsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome RekognitionClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListUsersOutcome RekognitionClient::ListUsers(const ListUsersRequest& request) const {
-  return ListUsersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListUsersOutcome(result.GetResultWithOwnership()) : ListUsersOutcome(std::move(result.GetError()));
 }
 
 PutProjectPolicyOutcome RekognitionClient::PutProjectPolicy(const PutProjectPolicyRequest& request) const {
-  return PutProjectPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutProjectPolicyOutcome(result.GetResultWithOwnership())
+                            : PutProjectPolicyOutcome(std::move(result.GetError()));
 }
 
 RecognizeCelebritiesOutcome RekognitionClient::RecognizeCelebrities(const RecognizeCelebritiesRequest& request) const {
-  return RecognizeCelebritiesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RecognizeCelebritiesOutcome(result.GetResultWithOwnership())
+                            : RecognizeCelebritiesOutcome(std::move(result.GetError()));
 }
 
 SearchFacesOutcome RekognitionClient::SearchFaces(const SearchFacesRequest& request) const {
-  return SearchFacesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchFacesOutcome(result.GetResultWithOwnership()) : SearchFacesOutcome(std::move(result.GetError()));
 }
 
 SearchFacesByImageOutcome RekognitionClient::SearchFacesByImage(const SearchFacesByImageRequest& request) const {
-  return SearchFacesByImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchFacesByImageOutcome(result.GetResultWithOwnership())
+                            : SearchFacesByImageOutcome(std::move(result.GetError()));
 }
 
 SearchUsersOutcome RekognitionClient::SearchUsers(const SearchUsersRequest& request) const {
-  return SearchUsersOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchUsersOutcome(result.GetResultWithOwnership()) : SearchUsersOutcome(std::move(result.GetError()));
 }
 
 SearchUsersByImageOutcome RekognitionClient::SearchUsersByImage(const SearchUsersByImageRequest& request) const {
-  return SearchUsersByImageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchUsersByImageOutcome(result.GetResultWithOwnership())
+                            : SearchUsersByImageOutcome(std::move(result.GetError()));
 }
 
 StartCelebrityRecognitionOutcome RekognitionClient::StartCelebrityRecognition(const StartCelebrityRecognitionRequest& request) const {
-  return StartCelebrityRecognitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCelebrityRecognitionOutcome(result.GetResultWithOwnership())
+                            : StartCelebrityRecognitionOutcome(std::move(result.GetError()));
 }
 
 StartContentModerationOutcome RekognitionClient::StartContentModeration(const StartContentModerationRequest& request) const {
-  return StartContentModerationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartContentModerationOutcome(result.GetResultWithOwnership())
+                            : StartContentModerationOutcome(std::move(result.GetError()));
 }
 
 StartFaceDetectionOutcome RekognitionClient::StartFaceDetection(const StartFaceDetectionRequest& request) const {
-  return StartFaceDetectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFaceDetectionOutcome(result.GetResultWithOwnership())
+                            : StartFaceDetectionOutcome(std::move(result.GetError()));
 }
 
 StartFaceSearchOutcome RekognitionClient::StartFaceSearch(const StartFaceSearchRequest& request) const {
-  return StartFaceSearchOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartFaceSearchOutcome(result.GetResultWithOwnership())
+                            : StartFaceSearchOutcome(std::move(result.GetError()));
 }
 
 StartLabelDetectionOutcome RekognitionClient::StartLabelDetection(const StartLabelDetectionRequest& request) const {
-  return StartLabelDetectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartLabelDetectionOutcome(result.GetResultWithOwnership())
+                            : StartLabelDetectionOutcome(std::move(result.GetError()));
 }
 
 StartMediaAnalysisJobOutcome RekognitionClient::StartMediaAnalysisJob(const StartMediaAnalysisJobRequest& request) const {
-  return StartMediaAnalysisJobOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMediaAnalysisJobOutcome(result.GetResultWithOwnership())
+                            : StartMediaAnalysisJobOutcome(std::move(result.GetError()));
 }
 
 StartPersonTrackingOutcome RekognitionClient::StartPersonTracking(const StartPersonTrackingRequest& request) const {
-  return StartPersonTrackingOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartPersonTrackingOutcome(result.GetResultWithOwnership())
+                            : StartPersonTrackingOutcome(std::move(result.GetError()));
 }
 
 StartProjectVersionOutcome RekognitionClient::StartProjectVersion(const StartProjectVersionRequest& request) const {
-  return StartProjectVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartProjectVersionOutcome(result.GetResultWithOwnership())
+                            : StartProjectVersionOutcome(std::move(result.GetError()));
 }
 
 StartSegmentDetectionOutcome RekognitionClient::StartSegmentDetection(const StartSegmentDetectionRequest& request) const {
-  return StartSegmentDetectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSegmentDetectionOutcome(result.GetResultWithOwnership())
+                            : StartSegmentDetectionOutcome(std::move(result.GetError()));
 }
 
 StartStreamProcessorOutcome RekognitionClient::StartStreamProcessor(const StartStreamProcessorRequest& request) const {
-  return StartStreamProcessorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartStreamProcessorOutcome(result.GetResultWithOwnership())
+                            : StartStreamProcessorOutcome(std::move(result.GetError()));
 }
 
 StartTextDetectionOutcome RekognitionClient::StartTextDetection(const StartTextDetectionRequest& request) const {
-  return StartTextDetectionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartTextDetectionOutcome(result.GetResultWithOwnership())
+                            : StartTextDetectionOutcome(std::move(result.GetError()));
 }
 
 StopProjectVersionOutcome RekognitionClient::StopProjectVersion(const StopProjectVersionRequest& request) const {
-  return StopProjectVersionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopProjectVersionOutcome(result.GetResultWithOwnership())
+                            : StopProjectVersionOutcome(std::move(result.GetError()));
 }
 
 StopStreamProcessorOutcome RekognitionClient::StopStreamProcessor(const StopStreamProcessorRequest& request) const {
-  return StopStreamProcessorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopStreamProcessorOutcome(result.GetResultWithOwnership())
+                            : StopStreamProcessorOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome RekognitionClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome RekognitionClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDatasetEntriesOutcome RekognitionClient::UpdateDatasetEntries(const UpdateDatasetEntriesRequest& request) const {
-  return UpdateDatasetEntriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDatasetEntriesOutcome(result.GetResultWithOwnership())
+                            : UpdateDatasetEntriesOutcome(std::move(result.GetError()));
 }
 
 UpdateStreamProcessorOutcome RekognitionClient::UpdateStreamProcessor(const UpdateStreamProcessorRequest& request) const {
-  return UpdateStreamProcessorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateStreamProcessorOutcome(result.GetResultWithOwnership())
+                            : UpdateStreamProcessorOutcome(std::move(result.GetError()));
 }

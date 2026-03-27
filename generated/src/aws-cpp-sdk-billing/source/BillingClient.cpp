@@ -184,50 +184,71 @@ BillingClient::InvokeOperationOutcome BillingClient::InvokeServiceOperation(cons
 }
 
 AssociateSourceViewsOutcome BillingClient::AssociateSourceViews(const AssociateSourceViewsRequest& request) const {
-  return AssociateSourceViewsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateSourceViewsOutcome(result.GetResultWithOwnership())
+                            : AssociateSourceViewsOutcome(std::move(result.GetError()));
 }
 
 CreateBillingViewOutcome BillingClient::CreateBillingView(const CreateBillingViewRequest& request) const {
-  return CreateBillingViewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBillingViewOutcome(result.GetResultWithOwnership())
+                            : CreateBillingViewOutcome(std::move(result.GetError()));
 }
 
 DeleteBillingViewOutcome BillingClient::DeleteBillingView(const DeleteBillingViewRequest& request) const {
-  return DeleteBillingViewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBillingViewOutcome(result.GetResultWithOwnership())
+                            : DeleteBillingViewOutcome(std::move(result.GetError()));
 }
 
 DisassociateSourceViewsOutcome BillingClient::DisassociateSourceViews(const DisassociateSourceViewsRequest& request) const {
-  return DisassociateSourceViewsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateSourceViewsOutcome(result.GetResultWithOwnership())
+                            : DisassociateSourceViewsOutcome(std::move(result.GetError()));
 }
 
 GetBillingViewOutcome BillingClient::GetBillingView(const GetBillingViewRequest& request) const {
-  return GetBillingViewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBillingViewOutcome(result.GetResultWithOwnership()) : GetBillingViewOutcome(std::move(result.GetError()));
 }
 
 GetResourcePolicyOutcome BillingClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const {
-  return GetResourcePolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 ListBillingViewsOutcome BillingClient::ListBillingViews(const ListBillingViewsRequest& request) const {
-  return ListBillingViewsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillingViewsOutcome(result.GetResultWithOwnership())
+                            : ListBillingViewsOutcome(std::move(result.GetError()));
 }
 
 ListSourceViewsForBillingViewOutcome BillingClient::ListSourceViewsForBillingView(
     const ListSourceViewsForBillingViewRequest& request) const {
-  return ListSourceViewsForBillingViewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSourceViewsForBillingViewOutcome(result.GetResultWithOwnership())
+                            : ListSourceViewsForBillingViewOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome BillingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome BillingClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome BillingClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBillingViewOutcome BillingClient::UpdateBillingView(const UpdateBillingViewRequest& request) const {
-  return UpdateBillingViewOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBillingViewOutcome(result.GetResultWithOwnership())
+                            : UpdateBillingViewOutcome(std::move(result.GetError()));
 }

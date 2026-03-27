@@ -194,7 +194,8 @@ DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
   };
 
-  return DeleteObjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteObjectOutcome(result.GetResultWithOwnership()) : DeleteObjectOutcome(std::move(result.GetError()));
 }
 
 DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectRequest& request) const {
@@ -209,7 +210,8 @@ DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectR
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
   };
 
-  return DescribeObjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_HEAD)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_HEAD);
+  return result.IsSuccess() ? DescribeObjectOutcome(result.GetResultWithOwnership()) : DescribeObjectOutcome(std::move(result.GetError()));
 }
 
 GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request) const {
@@ -239,8 +241,8 @@ GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
-        return GetObjectOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetObjectOutcome(result.GetResultWithOwnership()) : GetObjectOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -250,7 +252,8 @@ GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request
 ListItemsOutcome MediaStoreDataClient::ListItems(const ListItemsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) { (void)endpointResolutionOutcome; };
 
-  return ListItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListItemsOutcome(result.GetResultWithOwnership()) : ListItemsOutcome(std::move(result.GetError()));
 }
 
 PutObjectOutcome MediaStoreDataClient::PutObject(const PutObjectRequest& request) const {
@@ -265,5 +268,6 @@ PutObjectOutcome MediaStoreDataClient::PutObject(const PutObjectRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
   };
 
-  return PutObjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutObjectOutcome(result.GetResultWithOwnership()) : PutObjectOutcome(std::move(result.GetError()));
 }

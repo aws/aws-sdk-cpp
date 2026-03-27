@@ -247,7 +247,9 @@ BatchAssociateScramSecretOutcome KafkaClient::BatchAssociateScramSecret(const Ba
     endpointResolutionOutcome.GetResult().AddPathSegments("/scram-secrets");
   };
 
-  return BatchAssociateScramSecretOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAssociateScramSecretOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateScramSecretOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateScramSecretOutcome KafkaClient::BatchDisassociateScramSecret(const BatchDisassociateScramSecretRequest& request) const {
@@ -264,7 +266,9 @@ BatchDisassociateScramSecretOutcome KafkaClient::BatchDisassociateScramSecret(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/scram-secrets");
   };
 
-  return BatchDisassociateScramSecretOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? BatchDisassociateScramSecretOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateScramSecretOutcome(std::move(result.GetError()));
 }
 
 CreateClusterOutcome KafkaClient::CreateCluster(const CreateClusterRequest& request) const {
@@ -273,7 +277,8 @@ CreateClusterOutcome KafkaClient::CreateCluster(const CreateClusterRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters");
   };
 
-  return CreateClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
 }
 
 CreateClusterV2Outcome KafkaClient::CreateClusterV2(const CreateClusterV2Request& request) const {
@@ -282,7 +287,9 @@ CreateClusterV2Outcome KafkaClient::CreateClusterV2(const CreateClusterV2Request
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v2/clusters");
   };
 
-  return CreateClusterV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterV2Outcome(result.GetResultWithOwnership())
+                            : CreateClusterV2Outcome(std::move(result.GetError()));
 }
 
 CreateConfigurationOutcome KafkaClient::CreateConfiguration(const CreateConfigurationRequest& request) const {
@@ -291,7 +298,9 @@ CreateConfigurationOutcome KafkaClient::CreateConfiguration(const CreateConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/configurations");
   };
 
-  return CreateConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateReplicatorOutcome KafkaClient::CreateReplicator(const CreateReplicatorRequest& request) const {
@@ -300,7 +309,9 @@ CreateReplicatorOutcome KafkaClient::CreateReplicator(const CreateReplicatorRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/replication/v1/replicators");
   };
 
-  return CreateReplicatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateReplicatorOutcome(result.GetResultWithOwnership())
+                            : CreateReplicatorOutcome(std::move(result.GetError()));
 }
 
 CreateTopicOutcome KafkaClient::CreateTopic(const CreateTopicRequest& request) const {
@@ -317,7 +328,8 @@ CreateTopicOutcome KafkaClient::CreateTopic(const CreateTopicRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/topics");
   };
 
-  return CreateTopicOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTopicOutcome(result.GetResultWithOwnership()) : CreateTopicOutcome(std::move(result.GetError()));
 }
 
 CreateVpcConnectionOutcome KafkaClient::CreateVpcConnection(const CreateVpcConnectionRequest& request) const {
@@ -326,7 +338,9 @@ CreateVpcConnectionOutcome KafkaClient::CreateVpcConnection(const CreateVpcConne
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/vpc-connection");
   };
 
-  return CreateVpcConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVpcConnectionOutcome(result.GetResultWithOwnership())
+                            : CreateVpcConnectionOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterOutcome KafkaClient::DeleteCluster(const DeleteClusterRequest& request) const {
@@ -342,7 +356,8 @@ DeleteClusterOutcome KafkaClient::DeleteCluster(const DeleteClusterRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
   };
 
-  return DeleteClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteClusterOutcome(result.GetResultWithOwnership()) : DeleteClusterOutcome(std::move(result.GetError()));
 }
 
 DeleteClusterPolicyOutcome KafkaClient::DeleteClusterPolicy(const DeleteClusterPolicyRequest& request) const {
@@ -359,7 +374,9 @@ DeleteClusterPolicyOutcome KafkaClient::DeleteClusterPolicy(const DeleteClusterP
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteClusterPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteClusterPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteClusterPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationOutcome KafkaClient::DeleteConfiguration(const DeleteConfigurationRequest& request) const {
@@ -375,7 +392,9 @@ DeleteConfigurationOutcome KafkaClient::DeleteConfiguration(const DeleteConfigur
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteReplicatorOutcome KafkaClient::DeleteReplicator(const DeleteReplicatorRequest& request) const {
@@ -391,7 +410,9 @@ DeleteReplicatorOutcome KafkaClient::DeleteReplicator(const DeleteReplicatorRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReplicatorArn());
   };
 
-  return DeleteReplicatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteReplicatorOutcome(result.GetResultWithOwnership())
+                            : DeleteReplicatorOutcome(std::move(result.GetError()));
 }
 
 DeleteTopicOutcome KafkaClient::DeleteTopic(const DeleteTopicRequest& request) const {
@@ -414,7 +435,8 @@ DeleteTopicOutcome KafkaClient::DeleteTopic(const DeleteTopicRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopicName());
   };
 
-  return DeleteTopicOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTopicOutcome(result.GetResultWithOwnership()) : DeleteTopicOutcome(std::move(result.GetError()));
 }
 
 DeleteVpcConnectionOutcome KafkaClient::DeleteVpcConnection(const DeleteVpcConnectionRequest& request) const {
@@ -430,7 +452,9 @@ DeleteVpcConnectionOutcome KafkaClient::DeleteVpcConnection(const DeleteVpcConne
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteVpcConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVpcConnectionOutcome(result.GetResultWithOwnership())
+                            : DeleteVpcConnectionOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterOutcome KafkaClient::DescribeCluster(const DescribeClusterRequest& request) const {
@@ -446,7 +470,9 @@ DescribeClusterOutcome KafkaClient::DescribeCluster(const DescribeClusterRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
   };
 
-  return DescribeClusterOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeClusterOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterOperationOutcome KafkaClient::DescribeClusterOperation(const DescribeClusterOperationRequest& request) const {
@@ -462,7 +488,9 @@ DescribeClusterOperationOutcome KafkaClient::DescribeClusterOperation(const Desc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterOperationArn());
   };
 
-  return DescribeClusterOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeClusterOperationOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterOperationOutcome(std::move(result.GetError()));
 }
 
 DescribeClusterOperationV2Outcome KafkaClient::DescribeClusterOperationV2(const DescribeClusterOperationV2Request& request) const {
@@ -478,7 +506,9 @@ DescribeClusterOperationV2Outcome KafkaClient::DescribeClusterOperationV2(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterOperationArn());
   };
 
-  return DescribeClusterOperationV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeClusterOperationV2Outcome(result.GetResultWithOwnership())
+                            : DescribeClusterOperationV2Outcome(std::move(result.GetError()));
 }
 
 DescribeClusterV2Outcome KafkaClient::DescribeClusterV2(const DescribeClusterV2Request& request) const {
@@ -494,7 +524,9 @@ DescribeClusterV2Outcome KafkaClient::DescribeClusterV2(const DescribeClusterV2R
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
   };
 
-  return DescribeClusterV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeClusterV2Outcome(result.GetResultWithOwnership())
+                            : DescribeClusterV2Outcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationOutcome KafkaClient::DescribeConfiguration(const DescribeConfigurationRequest& request) const {
@@ -510,7 +542,9 @@ DescribeConfigurationOutcome KafkaClient::DescribeConfiguration(const DescribeCo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DescribeConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeConfigurationRevisionOutcome KafkaClient::DescribeConfigurationRevision(const DescribeConfigurationRevisionRequest& request) const {
@@ -533,7 +567,9 @@ DescribeConfigurationRevisionOutcome KafkaClient::DescribeConfigurationRevision(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRevision());
   };
 
-  return DescribeConfigurationRevisionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeConfigurationRevisionOutcome(result.GetResultWithOwnership())
+                            : DescribeConfigurationRevisionOutcome(std::move(result.GetError()));
 }
 
 DescribeReplicatorOutcome KafkaClient::DescribeReplicator(const DescribeReplicatorRequest& request) const {
@@ -549,7 +585,9 @@ DescribeReplicatorOutcome KafkaClient::DescribeReplicator(const DescribeReplicat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReplicatorArn());
   };
 
-  return DescribeReplicatorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeReplicatorOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicatorOutcome(std::move(result.GetError()));
 }
 
 DescribeTopicOutcome KafkaClient::DescribeTopic(const DescribeTopicRequest& request) const {
@@ -572,7 +610,8 @@ DescribeTopicOutcome KafkaClient::DescribeTopic(const DescribeTopicRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopicName());
   };
 
-  return DescribeTopicOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeTopicOutcome(result.GetResultWithOwnership()) : DescribeTopicOutcome(std::move(result.GetError()));
 }
 
 DescribeTopicPartitionsOutcome KafkaClient::DescribeTopicPartitions(const DescribeTopicPartitionsRequest& request) const {
@@ -596,7 +635,9 @@ DescribeTopicPartitionsOutcome KafkaClient::DescribeTopicPartitions(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegments("/partitions");
   };
 
-  return DescribeTopicPartitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeTopicPartitionsOutcome(result.GetResultWithOwnership())
+                            : DescribeTopicPartitionsOutcome(std::move(result.GetError()));
 }
 
 DescribeVpcConnectionOutcome KafkaClient::DescribeVpcConnection(const DescribeVpcConnectionRequest& request) const {
@@ -612,7 +653,9 @@ DescribeVpcConnectionOutcome KafkaClient::DescribeVpcConnection(const DescribeVp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DescribeVpcConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeVpcConnectionOutcome(result.GetResultWithOwnership())
+                            : DescribeVpcConnectionOutcome(std::move(result.GetError()));
 }
 
 GetBootstrapBrokersOutcome KafkaClient::GetBootstrapBrokers(const GetBootstrapBrokersRequest& request) const {
@@ -629,7 +672,9 @@ GetBootstrapBrokersOutcome KafkaClient::GetBootstrapBrokers(const GetBootstrapBr
     endpointResolutionOutcome.GetResult().AddPathSegments("/bootstrap-brokers");
   };
 
-  return GetBootstrapBrokersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBootstrapBrokersOutcome(result.GetResultWithOwnership())
+                            : GetBootstrapBrokersOutcome(std::move(result.GetError()));
 }
 
 GetClusterPolicyOutcome KafkaClient::GetClusterPolicy(const GetClusterPolicyRequest& request) const {
@@ -646,7 +691,9 @@ GetClusterPolicyOutcome KafkaClient::GetClusterPolicy(const GetClusterPolicyRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetClusterPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetClusterPolicyOutcome(result.GetResultWithOwnership())
+                            : GetClusterPolicyOutcome(std::move(result.GetError()));
 }
 
 GetCompatibleKafkaVersionsOutcome KafkaClient::GetCompatibleKafkaVersions(const GetCompatibleKafkaVersionsRequest& request) const {
@@ -655,7 +702,9 @@ GetCompatibleKafkaVersionsOutcome KafkaClient::GetCompatibleKafkaVersions(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/compatible-kafka-versions");
   };
 
-  return GetCompatibleKafkaVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCompatibleKafkaVersionsOutcome(result.GetResultWithOwnership())
+                            : GetCompatibleKafkaVersionsOutcome(std::move(result.GetError()));
 }
 
 ListClientVpcConnectionsOutcome KafkaClient::ListClientVpcConnections(const ListClientVpcConnectionsRequest& request) const {
@@ -672,7 +721,9 @@ ListClientVpcConnectionsOutcome KafkaClient::ListClientVpcConnections(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/client-vpc-connections");
   };
 
-  return ListClientVpcConnectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClientVpcConnectionsOutcome(result.GetResultWithOwnership())
+                            : ListClientVpcConnectionsOutcome(std::move(result.GetError()));
 }
 
 ListClusterOperationsOutcome KafkaClient::ListClusterOperations(const ListClusterOperationsRequest& request) const {
@@ -689,7 +740,9 @@ ListClusterOperationsOutcome KafkaClient::ListClusterOperations(const ListCluste
     endpointResolutionOutcome.GetResult().AddPathSegments("/operations");
   };
 
-  return ListClusterOperationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClusterOperationsOutcome(result.GetResultWithOwnership())
+                            : ListClusterOperationsOutcome(std::move(result.GetError()));
 }
 
 ListClusterOperationsV2Outcome KafkaClient::ListClusterOperationsV2(const ListClusterOperationsV2Request& request) const {
@@ -706,7 +759,9 @@ ListClusterOperationsV2Outcome KafkaClient::ListClusterOperationsV2(const ListCl
     endpointResolutionOutcome.GetResult().AddPathSegments("/operations");
   };
 
-  return ListClusterOperationsV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClusterOperationsV2Outcome(result.GetResultWithOwnership())
+                            : ListClusterOperationsV2Outcome(std::move(result.GetError()));
 }
 
 ListClustersOutcome KafkaClient::ListClusters(const ListClustersRequest& request) const {
@@ -715,7 +770,8 @@ ListClustersOutcome KafkaClient::ListClusters(const ListClustersRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/clusters");
   };
 
-  return ListClustersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClustersOutcome(result.GetResultWithOwnership()) : ListClustersOutcome(std::move(result.GetError()));
 }
 
 ListClustersV2Outcome KafkaClient::ListClustersV2(const ListClustersV2Request& request) const {
@@ -724,7 +780,8 @@ ListClustersV2Outcome KafkaClient::ListClustersV2(const ListClustersV2Request& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/v2/clusters");
   };
 
-  return ListClustersV2Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClustersV2Outcome(result.GetResultWithOwnership()) : ListClustersV2Outcome(std::move(result.GetError()));
 }
 
 ListConfigurationRevisionsOutcome KafkaClient::ListConfigurationRevisions(const ListConfigurationRevisionsRequest& request) const {
@@ -741,7 +798,9 @@ ListConfigurationRevisionsOutcome KafkaClient::ListConfigurationRevisions(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/revisions");
   };
 
-  return ListConfigurationRevisionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigurationRevisionsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationRevisionsOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationsOutcome KafkaClient::ListConfigurations(const ListConfigurationsRequest& request) const {
@@ -750,7 +809,9 @@ ListConfigurationsOutcome KafkaClient::ListConfigurations(const ListConfiguratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/configurations");
   };
 
-  return ListConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListKafkaVersionsOutcome KafkaClient::ListKafkaVersions(const ListKafkaVersionsRequest& request) const {
@@ -759,7 +820,9 @@ ListKafkaVersionsOutcome KafkaClient::ListKafkaVersions(const ListKafkaVersionsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/kafka-versions");
   };
 
-  return ListKafkaVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKafkaVersionsOutcome(result.GetResultWithOwnership())
+                            : ListKafkaVersionsOutcome(std::move(result.GetError()));
 }
 
 ListNodesOutcome KafkaClient::ListNodes(const ListNodesRequest& request) const {
@@ -776,7 +839,8 @@ ListNodesOutcome KafkaClient::ListNodes(const ListNodesRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodes");
   };
 
-  return ListNodesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNodesOutcome(result.GetResultWithOwnership()) : ListNodesOutcome(std::move(result.GetError()));
 }
 
 ListReplicatorsOutcome KafkaClient::ListReplicators(const ListReplicatorsRequest& request) const {
@@ -785,7 +849,9 @@ ListReplicatorsOutcome KafkaClient::ListReplicators(const ListReplicatorsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/replication/v1/replicators");
   };
 
-  return ListReplicatorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReplicatorsOutcome(result.GetResultWithOwnership())
+                            : ListReplicatorsOutcome(std::move(result.GetError()));
 }
 
 ListScramSecretsOutcome KafkaClient::ListScramSecrets(const ListScramSecretsRequest& request) const {
@@ -802,7 +868,9 @@ ListScramSecretsOutcome KafkaClient::ListScramSecrets(const ListScramSecretsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/scram-secrets");
   };
 
-  return ListScramSecretsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListScramSecretsOutcome(result.GetResultWithOwnership())
+                            : ListScramSecretsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome KafkaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -818,7 +886,9 @@ ListTagsForResourceOutcome KafkaClient::ListTagsForResource(const ListTagsForRes
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTopicsOutcome KafkaClient::ListTopics(const ListTopicsRequest& request) const {
@@ -835,7 +905,8 @@ ListTopicsOutcome KafkaClient::ListTopics(const ListTopicsRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/topics");
   };
 
-  return ListTopicsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTopicsOutcome(result.GetResultWithOwnership()) : ListTopicsOutcome(std::move(result.GetError()));
 }
 
 ListVpcConnectionsOutcome KafkaClient::ListVpcConnections(const ListVpcConnectionsRequest& request) const {
@@ -844,7 +915,9 @@ ListVpcConnectionsOutcome KafkaClient::ListVpcConnections(const ListVpcConnectio
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/vpc-connections");
   };
 
-  return ListVpcConnectionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVpcConnectionsOutcome(result.GetResultWithOwnership())
+                            : ListVpcConnectionsOutcome(std::move(result.GetError()));
 }
 
 PutClusterPolicyOutcome KafkaClient::PutClusterPolicy(const PutClusterPolicyRequest& request) const {
@@ -861,7 +934,9 @@ PutClusterPolicyOutcome KafkaClient::PutClusterPolicy(const PutClusterPolicyRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutClusterPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutClusterPolicyOutcome(result.GetResultWithOwnership())
+                            : PutClusterPolicyOutcome(std::move(result.GetError()));
 }
 
 RebootBrokerOutcome KafkaClient::RebootBroker(const RebootBrokerRequest& request) const {
@@ -878,7 +953,8 @@ RebootBrokerOutcome KafkaClient::RebootBroker(const RebootBrokerRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/reboot-broker");
   };
 
-  return RebootBrokerOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RebootBrokerOutcome(result.GetResultWithOwnership()) : RebootBrokerOutcome(std::move(result.GetError()));
 }
 
 RejectClientVpcConnectionOutcome KafkaClient::RejectClientVpcConnection(const RejectClientVpcConnectionRequest& request) const {
@@ -895,7 +971,9 @@ RejectClientVpcConnectionOutcome KafkaClient::RejectClientVpcConnection(const Re
     endpointResolutionOutcome.GetResult().AddPathSegments("/client-vpc-connection");
   };
 
-  return RejectClientVpcConnectionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RejectClientVpcConnectionOutcome(result.GetResultWithOwnership())
+                            : RejectClientVpcConnectionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome KafkaClient::TagResource(const TagResourceRequest& request) const {
@@ -911,7 +989,8 @@ TagResourceOutcome KafkaClient::TagResource(const TagResourceRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome KafkaClient::UntagResource(const UntagResourceRequest& request) const {
@@ -932,7 +1011,8 @@ UntagResourceOutcome KafkaClient::UntagResource(const UntagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBrokerCountOutcome KafkaClient::UpdateBrokerCount(const UpdateBrokerCountRequest& request) const {
@@ -949,7 +1029,9 @@ UpdateBrokerCountOutcome KafkaClient::UpdateBrokerCount(const UpdateBrokerCountR
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodes/count");
   };
 
-  return UpdateBrokerCountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBrokerCountOutcome(result.GetResultWithOwnership())
+                            : UpdateBrokerCountOutcome(std::move(result.GetError()));
 }
 
 UpdateBrokerStorageOutcome KafkaClient::UpdateBrokerStorage(const UpdateBrokerStorageRequest& request) const {
@@ -966,7 +1048,9 @@ UpdateBrokerStorageOutcome KafkaClient::UpdateBrokerStorage(const UpdateBrokerSt
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodes/storage");
   };
 
-  return UpdateBrokerStorageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBrokerStorageOutcome(result.GetResultWithOwnership())
+                            : UpdateBrokerStorageOutcome(std::move(result.GetError()));
 }
 
 UpdateBrokerTypeOutcome KafkaClient::UpdateBrokerType(const UpdateBrokerTypeRequest& request) const {
@@ -983,7 +1067,9 @@ UpdateBrokerTypeOutcome KafkaClient::UpdateBrokerType(const UpdateBrokerTypeRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodes/type");
   };
 
-  return UpdateBrokerTypeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateBrokerTypeOutcome(result.GetResultWithOwnership())
+                            : UpdateBrokerTypeOutcome(std::move(result.GetError()));
 }
 
 UpdateClusterConfigurationOutcome KafkaClient::UpdateClusterConfiguration(const UpdateClusterConfigurationRequest& request) const {
@@ -1000,7 +1086,9 @@ UpdateClusterConfigurationOutcome KafkaClient::UpdateClusterConfiguration(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return UpdateClusterConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateClusterConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateClusterConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateClusterKafkaVersionOutcome KafkaClient::UpdateClusterKafkaVersion(const UpdateClusterKafkaVersionRequest& request) const {
@@ -1017,7 +1105,9 @@ UpdateClusterKafkaVersionOutcome KafkaClient::UpdateClusterKafkaVersion(const Up
     endpointResolutionOutcome.GetResult().AddPathSegments("/version");
   };
 
-  return UpdateClusterKafkaVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateClusterKafkaVersionOutcome(result.GetResultWithOwnership())
+                            : UpdateClusterKafkaVersionOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationOutcome KafkaClient::UpdateConfiguration(const UpdateConfigurationRequest& request) const {
@@ -1033,7 +1123,9 @@ UpdateConfigurationOutcome KafkaClient::UpdateConfiguration(const UpdateConfigur
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return UpdateConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectivityOutcome KafkaClient::UpdateConnectivity(const UpdateConnectivityRequest& request) const {
@@ -1050,7 +1142,9 @@ UpdateConnectivityOutcome KafkaClient::UpdateConnectivity(const UpdateConnectivi
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectivity");
   };
 
-  return UpdateConnectivityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConnectivityOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectivityOutcome(std::move(result.GetError()));
 }
 
 UpdateMonitoringOutcome KafkaClient::UpdateMonitoring(const UpdateMonitoringRequest& request) const {
@@ -1067,7 +1161,9 @@ UpdateMonitoringOutcome KafkaClient::UpdateMonitoring(const UpdateMonitoringRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/monitoring");
   };
 
-  return UpdateMonitoringOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateMonitoringOutcome(result.GetResultWithOwnership())
+                            : UpdateMonitoringOutcome(std::move(result.GetError()));
 }
 
 UpdateRebalancingOutcome KafkaClient::UpdateRebalancing(const UpdateRebalancingRequest& request) const {
@@ -1084,7 +1180,9 @@ UpdateRebalancingOutcome KafkaClient::UpdateRebalancing(const UpdateRebalancingR
     endpointResolutionOutcome.GetResult().AddPathSegments("/rebalancing");
   };
 
-  return UpdateRebalancingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRebalancingOutcome(result.GetResultWithOwnership())
+                            : UpdateRebalancingOutcome(std::move(result.GetError()));
 }
 
 UpdateReplicationInfoOutcome KafkaClient::UpdateReplicationInfo(const UpdateReplicationInfoRequest& request) const {
@@ -1101,7 +1199,9 @@ UpdateReplicationInfoOutcome KafkaClient::UpdateReplicationInfo(const UpdateRepl
     endpointResolutionOutcome.GetResult().AddPathSegments("/replication-info");
   };
 
-  return UpdateReplicationInfoOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateReplicationInfoOutcome(result.GetResultWithOwnership())
+                            : UpdateReplicationInfoOutcome(std::move(result.GetError()));
 }
 
 UpdateSecurityOutcome KafkaClient::UpdateSecurity(const UpdateSecurityRequest& request) const {
@@ -1118,7 +1218,8 @@ UpdateSecurityOutcome KafkaClient::UpdateSecurity(const UpdateSecurityRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/security");
   };
 
-  return UpdateSecurityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSecurityOutcome(result.GetResultWithOwnership()) : UpdateSecurityOutcome(std::move(result.GetError()));
 }
 
 UpdateStorageOutcome KafkaClient::UpdateStorage(const UpdateStorageRequest& request) const {
@@ -1135,7 +1236,8 @@ UpdateStorageOutcome KafkaClient::UpdateStorage(const UpdateStorageRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/storage");
   };
 
-  return UpdateStorageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateStorageOutcome(result.GetResultWithOwnership()) : UpdateStorageOutcome(std::move(result.GetError()));
 }
 
 UpdateTopicOutcome KafkaClient::UpdateTopic(const UpdateTopicRequest& request) const {
@@ -1158,5 +1260,6 @@ UpdateTopicOutcome KafkaClient::UpdateTopic(const UpdateTopicRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTopicName());
   };
 
-  return UpdateTopicOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTopicOutcome(result.GetResultWithOwnership()) : UpdateTopicOutcome(std::move(result.GetError()));
 }

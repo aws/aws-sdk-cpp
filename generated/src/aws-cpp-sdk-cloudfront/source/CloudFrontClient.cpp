@@ -360,7 +360,9 @@ AssociateAlias2020_05_31Outcome CloudFrontClient::AssociateAlias2020_05_31(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-alias");
   };
 
-  return AssociateAlias2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateAlias2020_05_31Outcome(result.GetResultWithOwnership())
+                            : AssociateAlias2020_05_31Outcome(std::move(result.GetError()));
 }
 
 AssociateDistributionTenantWebACL2020_05_31Outcome CloudFrontClient::AssociateDistributionTenantWebACL2020_05_31(
@@ -378,7 +380,9 @@ AssociateDistributionTenantWebACL2020_05_31Outcome CloudFrontClient::AssociateDi
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-web-acl");
   };
 
-  return AssociateDistributionTenantWebACL2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateDistributionTenantWebACL2020_05_31Outcome(result.GetResultWithOwnership())
+                            : AssociateDistributionTenantWebACL2020_05_31Outcome(std::move(result.GetError()));
 }
 
 AssociateDistributionWebACL2020_05_31Outcome CloudFrontClient::AssociateDistributionWebACL2020_05_31(
@@ -396,7 +400,9 @@ AssociateDistributionWebACL2020_05_31Outcome CloudFrontClient::AssociateDistribu
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-web-acl");
   };
 
-  return AssociateDistributionWebACL2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateDistributionWebACL2020_05_31Outcome(result.GetResultWithOwnership())
+                            : AssociateDistributionWebACL2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CopyDistribution2020_05_31Outcome CloudFrontClient::CopyDistribution2020_05_31(const CopyDistribution2020_05_31Request& request) const {
@@ -413,7 +419,9 @@ CopyDistribution2020_05_31Outcome CloudFrontClient::CopyDistribution2020_05_31(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/copy");
   };
 
-  return CopyDistribution2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CopyDistribution2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CopyDistribution2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateAnycastIpList2020_05_31Outcome CloudFrontClient::CreateAnycastIpList2020_05_31(
@@ -423,7 +431,9 @@ CreateAnycastIpList2020_05_31Outcome CloudFrontClient::CreateAnycastIpList2020_0
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/anycast-ip-list");
   };
 
-  return CreateAnycastIpList2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAnycastIpList2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateAnycastIpList2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateCachePolicy2020_05_31Outcome CloudFrontClient::CreateCachePolicy2020_05_31(const CreateCachePolicy2020_05_31Request& request) const {
@@ -432,7 +442,9 @@ CreateCachePolicy2020_05_31Outcome CloudFrontClient::CreateCachePolicy2020_05_31
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/cache-policy");
   };
 
-  return CreateCachePolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCachePolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateCachePolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31(
@@ -442,8 +454,9 @@ CreateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::CreateCl
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-identity/cloudfront");
   };
 
-  return CreateCloudFrontOriginAccessIdentity2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCloudFrontOriginAccessIdentity2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateCloudFrontOriginAccessIdentity2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateConnectionFunction2020_05_31Outcome CloudFrontClient::CreateConnectionFunction2020_05_31(
@@ -453,7 +466,9 @@ CreateConnectionFunction2020_05_31Outcome CloudFrontClient::CreateConnectionFunc
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-function");
   };
 
-  return CreateConnectionFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectionFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateConnectionFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateConnectionGroup2020_05_31Outcome CloudFrontClient::CreateConnectionGroup2020_05_31(
@@ -463,7 +478,9 @@ CreateConnectionGroup2020_05_31Outcome CloudFrontClient::CreateConnectionGroup20
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-group");
   };
 
-  return CreateConnectionGroup2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectionGroup2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateConnectionGroup2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::CreateContinuousDeploymentPolicy2020_05_31(
@@ -473,7 +490,9 @@ CreateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::CreateContin
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy");
   };
 
-  return CreateContinuousDeploymentPolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateContinuousDeploymentPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateContinuousDeploymentPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateDistribution2020_05_31Outcome CloudFrontClient::CreateDistribution2020_05_31(
@@ -483,7 +502,9 @@ CreateDistribution2020_05_31Outcome CloudFrontClient::CreateDistribution2020_05_
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution");
   };
 
-  return CreateDistribution2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDistribution2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateDistribution2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateDistributionTenant2020_05_31Outcome CloudFrontClient::CreateDistributionTenant2020_05_31(
@@ -493,7 +514,9 @@ CreateDistributionTenant2020_05_31Outcome CloudFrontClient::CreateDistributionTe
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenant");
   };
 
-  return CreateDistributionTenant2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDistributionTenant2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateDistributionTenant2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateDistributionWithTags2020_05_31(
@@ -506,7 +529,9 @@ CreateDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateDistribution
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return CreateDistributionWithTags2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDistributionWithTags2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateDistributionWithTags2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::CreateFieldLevelEncryptionConfig2020_05_31(
@@ -516,7 +541,9 @@ CreateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::CreateFieldL
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption");
   };
 
-  return CreateFieldLevelEncryptionConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFieldLevelEncryptionConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateFieldLevelEncryptionConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31(
@@ -526,7 +553,9 @@ CreateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::CreateField
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption-profile");
   };
 
-  return CreateFieldLevelEncryptionProfile2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFieldLevelEncryptionProfile2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateFieldLevelEncryptionProfile2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateFunction2020_05_31Outcome CloudFrontClient::CreateFunction2020_05_31(const CreateFunction2020_05_31Request& request) const {
@@ -535,7 +564,9 @@ CreateFunction2020_05_31Outcome CloudFrontClient::CreateFunction2020_05_31(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/function");
   };
 
-  return CreateFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateInvalidation2020_05_31Outcome CloudFrontClient::CreateInvalidation2020_05_31(
@@ -553,7 +584,9 @@ CreateInvalidation2020_05_31Outcome CloudFrontClient::CreateInvalidation2020_05_
     endpointResolutionOutcome.GetResult().AddPathSegments("/invalidation");
   };
 
-  return CreateInvalidation2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInvalidation2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateInvalidation2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateInvalidationForDistributionTenant2020_05_31Outcome CloudFrontClient::CreateInvalidationForDistributionTenant2020_05_31(
@@ -571,8 +604,9 @@ CreateInvalidationForDistributionTenant2020_05_31Outcome CloudFrontClient::Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/invalidation");
   };
 
-  return CreateInvalidationForDistributionTenant2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInvalidationForDistributionTenant2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateInvalidationForDistributionTenant2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateKeyGroup2020_05_31Outcome CloudFrontClient::CreateKeyGroup2020_05_31(const CreateKeyGroup2020_05_31Request& request) const {
@@ -581,7 +615,9 @@ CreateKeyGroup2020_05_31Outcome CloudFrontClient::CreateKeyGroup2020_05_31(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-group");
   };
 
-  return CreateKeyGroup2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKeyGroup2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateKeyGroup2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateKeyValueStore2020_05_31Outcome CloudFrontClient::CreateKeyValueStore2020_05_31(
@@ -591,7 +627,9 @@ CreateKeyValueStore2020_05_31Outcome CloudFrontClient::CreateKeyValueStore2020_0
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store");
   };
 
-  return CreateKeyValueStore2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKeyValueStore2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateKeyValueStore2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateMonitoringSubscription2020_05_31Outcome CloudFrontClient::CreateMonitoringSubscription2020_05_31(
@@ -609,7 +647,9 @@ CreateMonitoringSubscription2020_05_31Outcome CloudFrontClient::CreateMonitoring
     endpointResolutionOutcome.GetResult().AddPathSegments("/monitoring-subscription");
   };
 
-  return CreateMonitoringSubscription2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMonitoringSubscription2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateMonitoringSubscription2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateOriginAccessControl2020_05_31Outcome CloudFrontClient::CreateOriginAccessControl2020_05_31(
@@ -619,7 +659,9 @@ CreateOriginAccessControl2020_05_31Outcome CloudFrontClient::CreateOriginAccessC
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-control");
   };
 
-  return CreateOriginAccessControl2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOriginAccessControl2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateOriginAccessControl2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::CreateOriginRequestPolicy2020_05_31(
@@ -629,7 +671,9 @@ CreateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::CreateOriginRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-request-policy");
   };
 
-  return CreateOriginRequestPolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateOriginRequestPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateOriginRequestPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreatePublicKey2020_05_31Outcome CloudFrontClient::CreatePublicKey2020_05_31(const CreatePublicKey2020_05_31Request& request) const {
@@ -638,7 +682,9 @@ CreatePublicKey2020_05_31Outcome CloudFrontClient::CreatePublicKey2020_05_31(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/public-key");
   };
 
-  return CreatePublicKey2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePublicKey2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreatePublicKey2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::CreateRealtimeLogConfig2020_05_31(
@@ -648,7 +694,9 @@ CreateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::CreateRealtimeLogConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/realtime-log-config");
   };
 
-  return CreateRealtimeLogConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRealtimeLogConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateRealtimeLogConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::CreateResponseHeadersPolicy2020_05_31(
@@ -658,7 +706,9 @@ CreateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::CreateResponseHea
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/response-headers-policy");
   };
 
-  return CreateResponseHeadersPolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResponseHeadersPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateResponseHeadersPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateStreamingDistribution2020_05_31Outcome CloudFrontClient::CreateStreamingDistribution2020_05_31(
@@ -668,7 +718,9 @@ CreateStreamingDistribution2020_05_31Outcome CloudFrontClient::CreateStreamingDi
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/streaming-distribution");
   };
 
-  return CreateStreamingDistribution2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamingDistribution2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateStreamingDistribution2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateStreamingDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateStreamingDistributionWithTags2020_05_31(
@@ -681,8 +733,9 @@ CreateStreamingDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateStr
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return CreateStreamingDistributionWithTags2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateStreamingDistributionWithTags2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateStreamingDistributionWithTags2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateTrustStore2020_05_31Outcome CloudFrontClient::CreateTrustStore2020_05_31(const CreateTrustStore2020_05_31Request& request) const {
@@ -691,7 +744,9 @@ CreateTrustStore2020_05_31Outcome CloudFrontClient::CreateTrustStore2020_05_31(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/trust-store");
   };
 
-  return CreateTrustStore2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrustStore2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateTrustStore2020_05_31Outcome(std::move(result.GetError()));
 }
 
 CreateVpcOrigin2020_05_31Outcome CloudFrontClient::CreateVpcOrigin2020_05_31(const CreateVpcOrigin2020_05_31Request& request) const {
@@ -700,7 +755,9 @@ CreateVpcOrigin2020_05_31Outcome CloudFrontClient::CreateVpcOrigin2020_05_31(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/vpc-origin");
   };
 
-  return CreateVpcOrigin2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateVpcOrigin2020_05_31Outcome(result.GetResultWithOwnership())
+                            : CreateVpcOrigin2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteAnycastIpList2020_05_31Outcome CloudFrontClient::DeleteAnycastIpList2020_05_31(
@@ -722,7 +779,9 @@ DeleteAnycastIpList2020_05_31Outcome CloudFrontClient::DeleteAnycastIpList2020_0
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteAnycastIpList2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAnycastIpList2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteAnycastIpList2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteCachePolicy2020_05_31Outcome CloudFrontClient::DeleteCachePolicy2020_05_31(const DeleteCachePolicy2020_05_31Request& request) const {
@@ -738,7 +797,9 @@ DeleteCachePolicy2020_05_31Outcome CloudFrontClient::DeleteCachePolicy2020_05_31
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteCachePolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCachePolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteCachePolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2020_05_31(
@@ -755,8 +816,9 @@ DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::DeleteCl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteConnectionFunction2020_05_31Outcome CloudFrontClient::DeleteConnectionFunction2020_05_31(
@@ -778,7 +840,9 @@ DeleteConnectionFunction2020_05_31Outcome CloudFrontClient::DeleteConnectionFunc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteConnectionFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectionFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteConnectionFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteConnectionGroup2020_05_31Outcome CloudFrontClient::DeleteConnectionGroup2020_05_31(
@@ -800,7 +864,9 @@ DeleteConnectionGroup2020_05_31Outcome CloudFrontClient::DeleteConnectionGroup20
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteConnectionGroup2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectionGroup2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteConnectionGroup2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::DeleteContinuousDeploymentPolicy2020_05_31(
@@ -817,8 +883,9 @@ DeleteContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::DeleteContin
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteContinuousDeploymentPolicy2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContinuousDeploymentPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteContinuousDeploymentPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteDistribution2020_05_31Outcome CloudFrontClient::DeleteDistribution2020_05_31(
@@ -835,7 +902,9 @@ DeleteDistribution2020_05_31Outcome CloudFrontClient::DeleteDistribution2020_05_
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteDistribution2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDistribution2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteDistribution2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteDistributionTenant2020_05_31Outcome CloudFrontClient::DeleteDistributionTenant2020_05_31(
@@ -857,7 +926,9 @@ DeleteDistributionTenant2020_05_31Outcome CloudFrontClient::DeleteDistributionTe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteDistributionTenant2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDistributionTenant2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteDistributionTenant2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::DeleteFieldLevelEncryptionConfig2020_05_31(
@@ -874,8 +945,9 @@ DeleteFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::DeleteFieldL
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteFieldLevelEncryptionConfig2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFieldLevelEncryptionConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteFieldLevelEncryptionConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31(
@@ -892,8 +964,9 @@ DeleteFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::DeleteField
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteFieldLevelEncryptionProfile2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFieldLevelEncryptionProfile2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteFieldLevelEncryptionProfile2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteFunction2020_05_31Outcome CloudFrontClient::DeleteFunction2020_05_31(const DeleteFunction2020_05_31Request& request) const {
@@ -914,7 +987,9 @@ DeleteFunction2020_05_31Outcome CloudFrontClient::DeleteFunction2020_05_31(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const DeleteKeyGroup2020_05_31Request& request) const {
@@ -930,7 +1005,9 @@ DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteKeyGroup2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKeyGroup2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteKeyGroup2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteKeyValueStore2020_05_31Outcome CloudFrontClient::DeleteKeyValueStore2020_05_31(
@@ -952,7 +1029,9 @@ DeleteKeyValueStore2020_05_31Outcome CloudFrontClient::DeleteKeyValueStore2020_0
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteKeyValueStore2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteKeyValueStore2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteKeyValueStore2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoringSubscription2020_05_31(
@@ -970,7 +1049,9 @@ DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoring
     endpointResolutionOutcome.GetResult().AddPathSegments("/monitoring-subscription");
   };
 
-  return DeleteMonitoringSubscription2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMonitoringSubscription2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteMonitoringSubscription2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteOriginAccessControl2020_05_31Outcome CloudFrontClient::DeleteOriginAccessControl2020_05_31(
@@ -987,7 +1068,9 @@ DeleteOriginAccessControl2020_05_31Outcome CloudFrontClient::DeleteOriginAccessC
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteOriginAccessControl2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteOriginAccessControl2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteOriginAccessControl2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteOriginRequestPolicy2020_05_31Outcome CloudFrontClient::DeleteOriginRequestPolicy2020_05_31(
@@ -1004,7 +1087,9 @@ DeleteOriginRequestPolicy2020_05_31Outcome CloudFrontClient::DeleteOriginRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteOriginRequestPolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteOriginRequestPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteOriginRequestPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeletePublicKey2020_05_31Outcome CloudFrontClient::DeletePublicKey2020_05_31(const DeletePublicKey2020_05_31Request& request) const {
@@ -1020,7 +1105,9 @@ DeletePublicKey2020_05_31Outcome CloudFrontClient::DeletePublicKey2020_05_31(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeletePublicKey2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePublicKey2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeletePublicKey2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteRealtimeLogConfig2020_05_31Outcome CloudFrontClient::DeleteRealtimeLogConfig2020_05_31(
@@ -1030,7 +1117,9 @@ DeleteRealtimeLogConfig2020_05_31Outcome CloudFrontClient::DeleteRealtimeLogConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/delete-realtime-log-config");
   };
 
-  return DeleteRealtimeLogConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRealtimeLogConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteRealtimeLogConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicy2020_05_31Outcome CloudFrontClient::DeleteResourcePolicy2020_05_31(
@@ -1040,7 +1129,9 @@ DeleteResourcePolicy2020_05_31Outcome CloudFrontClient::DeleteResourcePolicy2020
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/delete-resource-policy");
   };
 
-  return DeleteResourcePolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31(
@@ -1057,7 +1148,9 @@ DeleteResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::DeleteResponseHea
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteResponseHeadersPolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResponseHeadersPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteResponseHeadersPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteStreamingDistribution2020_05_31Outcome CloudFrontClient::DeleteStreamingDistribution2020_05_31(
@@ -1074,7 +1167,9 @@ DeleteStreamingDistribution2020_05_31Outcome CloudFrontClient::DeleteStreamingDi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteStreamingDistribution2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteStreamingDistribution2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteStreamingDistribution2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteTrustStore2020_05_31Outcome CloudFrontClient::DeleteTrustStore2020_05_31(const DeleteTrustStore2020_05_31Request& request) const {
@@ -1095,7 +1190,9 @@ DeleteTrustStore2020_05_31Outcome CloudFrontClient::DeleteTrustStore2020_05_31(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteTrustStore2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTrustStore2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteTrustStore2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DeleteVpcOrigin2020_05_31Outcome CloudFrontClient::DeleteVpcOrigin2020_05_31(const DeleteVpcOrigin2020_05_31Request& request) const {
@@ -1116,7 +1213,9 @@ DeleteVpcOrigin2020_05_31Outcome CloudFrontClient::DeleteVpcOrigin2020_05_31(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteVpcOrigin2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteVpcOrigin2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DeleteVpcOrigin2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DescribeConnectionFunction2020_05_31Outcome CloudFrontClient::DescribeConnectionFunction2020_05_31(
@@ -1134,7 +1233,9 @@ DescribeConnectionFunction2020_05_31Outcome CloudFrontClient::DescribeConnection
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe");
   };
 
-  return DescribeConnectionFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeConnectionFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DescribeConnectionFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DescribeFunction2020_05_31Outcome CloudFrontClient::DescribeFunction2020_05_31(const DescribeFunction2020_05_31Request& request) const {
@@ -1151,7 +1252,9 @@ DescribeFunction2020_05_31Outcome CloudFrontClient::DescribeFunction2020_05_31(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe");
   };
 
-  return DescribeFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DescribeFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DescribeKeyValueStore2020_05_31Outcome CloudFrontClient::DescribeKeyValueStore2020_05_31(
@@ -1168,7 +1271,9 @@ DescribeKeyValueStore2020_05_31Outcome CloudFrontClient::DescribeKeyValueStore20
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DescribeKeyValueStore2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeKeyValueStore2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DescribeKeyValueStore2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DisassociateDistributionTenantWebACL2020_05_31Outcome CloudFrontClient::DisassociateDistributionTenantWebACL2020_05_31(
@@ -1186,8 +1291,9 @@ DisassociateDistributionTenantWebACL2020_05_31Outcome CloudFrontClient::Disassoc
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-web-acl");
   };
 
-  return DisassociateDistributionTenantWebACL2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DisassociateDistributionTenantWebACL2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DisassociateDistributionTenantWebACL2020_05_31Outcome(std::move(result.GetError()));
 }
 
 DisassociateDistributionWebACL2020_05_31Outcome CloudFrontClient::DisassociateDistributionWebACL2020_05_31(
@@ -1205,7 +1311,9 @@ DisassociateDistributionWebACL2020_05_31Outcome CloudFrontClient::DisassociateDi
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-web-acl");
   };
 
-  return DisassociateDistributionWebACL2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DisassociateDistributionWebACL2020_05_31Outcome(result.GetResultWithOwnership())
+                            : DisassociateDistributionWebACL2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetAnycastIpList2020_05_31Outcome CloudFrontClient::GetAnycastIpList2020_05_31(const GetAnycastIpList2020_05_31Request& request) const {
@@ -1221,7 +1329,9 @@ GetAnycastIpList2020_05_31Outcome CloudFrontClient::GetAnycastIpList2020_05_31(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetAnycastIpList2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAnycastIpList2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetAnycastIpList2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetCachePolicy2020_05_31Outcome CloudFrontClient::GetCachePolicy2020_05_31(const GetCachePolicy2020_05_31Request& request) const {
@@ -1237,7 +1347,9 @@ GetCachePolicy2020_05_31Outcome CloudFrontClient::GetCachePolicy2020_05_31(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetCachePolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCachePolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetCachePolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetCachePolicyConfig2020_05_31Outcome CloudFrontClient::GetCachePolicyConfig2020_05_31(
@@ -1255,7 +1367,9 @@ GetCachePolicyConfig2020_05_31Outcome CloudFrontClient::GetCachePolicyConfig2020
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetCachePolicyConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCachePolicyConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetCachePolicyConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentity2020_05_31(
@@ -1272,7 +1386,9 @@ GetCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::GetCloudFro
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetCloudFrontOriginAccessIdentity2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCloudFrontOriginAccessIdentity2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetCloudFrontOriginAccessIdentity2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2020_05_31(
@@ -1290,8 +1406,9 @@ GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome CloudFrontClient::GetCl
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetConnectionFunction2020_05_31Outcome CloudFrontClient::GetConnectionFunction2020_05_31(
@@ -1323,8 +1440,9 @@ GetConnectionFunction2020_05_31Outcome CloudFrontClient::GetConnectionFunction20
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
-        return GetConnectionFunction2020_05_31Outcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetConnectionFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                                  : GetConnectionFunction2020_05_31Outcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1345,7 +1463,9 @@ GetConnectionGroup2020_05_31Outcome CloudFrontClient::GetConnectionGroup2020_05_
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetConnectionGroup2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectionGroup2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetConnectionGroup2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetConnectionGroupByRoutingEndpoint2020_05_31Outcome CloudFrontClient::GetConnectionGroupByRoutingEndpoint2020_05_31(
@@ -1361,8 +1481,9 @@ GetConnectionGroupByRoutingEndpoint2020_05_31Outcome CloudFrontClient::GetConnec
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-group");
   };
 
-  return GetConnectionGroupByRoutingEndpoint2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectionGroupByRoutingEndpoint2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetConnectionGroupByRoutingEndpoint2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::GetContinuousDeploymentPolicy2020_05_31(
@@ -1379,7 +1500,9 @@ GetContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::GetContinuousDe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetContinuousDeploymentPolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContinuousDeploymentPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetContinuousDeploymentPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetContinuousDeploymentPolicyConfig2020_05_31Outcome CloudFrontClient::GetContinuousDeploymentPolicyConfig2020_05_31(
@@ -1397,8 +1520,9 @@ GetContinuousDeploymentPolicyConfig2020_05_31Outcome CloudFrontClient::GetContin
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetContinuousDeploymentPolicyConfig2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContinuousDeploymentPolicyConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetContinuousDeploymentPolicyConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetDistribution2020_05_31Outcome CloudFrontClient::GetDistribution2020_05_31(const GetDistribution2020_05_31Request& request) const {
@@ -1414,7 +1538,9 @@ GetDistribution2020_05_31Outcome CloudFrontClient::GetDistribution2020_05_31(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetDistribution2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDistribution2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetDistribution2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetDistributionConfig2020_05_31Outcome CloudFrontClient::GetDistributionConfig2020_05_31(
@@ -1432,7 +1558,9 @@ GetDistributionConfig2020_05_31Outcome CloudFrontClient::GetDistributionConfig20
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetDistributionConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDistributionConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetDistributionConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetDistributionTenant2020_05_31Outcome CloudFrontClient::GetDistributionTenant2020_05_31(
@@ -1449,7 +1577,9 @@ GetDistributionTenant2020_05_31Outcome CloudFrontClient::GetDistributionTenant20
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetDistributionTenant2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDistributionTenant2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetDistributionTenant2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetDistributionTenantByDomain2020_05_31Outcome CloudFrontClient::GetDistributionTenantByDomain2020_05_31(
@@ -1465,7 +1595,9 @@ GetDistributionTenantByDomain2020_05_31Outcome CloudFrontClient::GetDistribution
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenant");
   };
 
-  return GetDistributionTenantByDomain2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDistributionTenantByDomain2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetDistributionTenantByDomain2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetFieldLevelEncryption2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryption2020_05_31(
@@ -1482,7 +1614,9 @@ GetFieldLevelEncryption2020_05_31Outcome CloudFrontClient::GetFieldLevelEncrypti
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetFieldLevelEncryption2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFieldLevelEncryption2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetFieldLevelEncryption2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionConfig2020_05_31(
@@ -1500,7 +1634,9 @@ GetFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEn
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetFieldLevelEncryptionConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFieldLevelEncryptionConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetFieldLevelEncryptionConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionProfile2020_05_31(
@@ -1517,7 +1653,9 @@ GetFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::GetFieldLevelE
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetFieldLevelEncryptionProfile2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFieldLevelEncryptionProfile2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetFieldLevelEncryptionProfile2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetFieldLevelEncryptionProfileConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31(
@@ -1535,8 +1673,9 @@ GetFieldLevelEncryptionProfileConfig2020_05_31Outcome CloudFrontClient::GetField
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetFieldLevelEncryptionProfileConfig2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFieldLevelEncryptionProfileConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetFieldLevelEncryptionProfileConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetFunction2020_05_31Outcome CloudFrontClient::GetFunction2020_05_31(const GetFunction2020_05_31Request& request) const {
@@ -1567,8 +1706,9 @@ GetFunction2020_05_31Outcome CloudFrontClient::GetFunction2020_05_31(const GetFu
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/function/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
-        return GetFunction2020_05_31Outcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                                  : GetFunction2020_05_31Outcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -1595,7 +1735,9 @@ GetInvalidation2020_05_31Outcome CloudFrontClient::GetInvalidation2020_05_31(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetInvalidation2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInvalidation2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetInvalidation2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetInvalidationForDistributionTenant2020_05_31Outcome CloudFrontClient::GetInvalidationForDistributionTenant2020_05_31(
@@ -1619,8 +1761,9 @@ GetInvalidationForDistributionTenant2020_05_31Outcome CloudFrontClient::GetInval
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetInvalidationForDistributionTenant2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInvalidationForDistributionTenant2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetInvalidationForDistributionTenant2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetKeyGroup2020_05_31Outcome CloudFrontClient::GetKeyGroup2020_05_31(const GetKeyGroup2020_05_31Request& request) const {
@@ -1636,7 +1779,9 @@ GetKeyGroup2020_05_31Outcome CloudFrontClient::GetKeyGroup2020_05_31(const GetKe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetKeyGroup2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKeyGroup2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetKeyGroup2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetKeyGroupConfig2020_05_31Outcome CloudFrontClient::GetKeyGroupConfig2020_05_31(const GetKeyGroupConfig2020_05_31Request& request) const {
@@ -1653,7 +1798,9 @@ GetKeyGroupConfig2020_05_31Outcome CloudFrontClient::GetKeyGroupConfig2020_05_31
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetKeyGroupConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetKeyGroupConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetKeyGroupConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetManagedCertificateDetails2020_05_31Outcome CloudFrontClient::GetManagedCertificateDetails2020_05_31(
@@ -1670,7 +1817,9 @@ GetManagedCertificateDetails2020_05_31Outcome CloudFrontClient::GetManagedCertif
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetManagedCertificateDetails2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetManagedCertificateDetails2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetManagedCertificateDetails2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetMonitoringSubscription2020_05_31Outcome CloudFrontClient::GetMonitoringSubscription2020_05_31(
@@ -1688,7 +1837,9 @@ GetMonitoringSubscription2020_05_31Outcome CloudFrontClient::GetMonitoringSubscr
     endpointResolutionOutcome.GetResult().AddPathSegments("/monitoring-subscription");
   };
 
-  return GetMonitoringSubscription2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMonitoringSubscription2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetMonitoringSubscription2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetOriginAccessControl2020_05_31Outcome CloudFrontClient::GetOriginAccessControl2020_05_31(
@@ -1705,7 +1856,9 @@ GetOriginAccessControl2020_05_31Outcome CloudFrontClient::GetOriginAccessControl
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetOriginAccessControl2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOriginAccessControl2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetOriginAccessControl2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetOriginAccessControlConfig2020_05_31Outcome CloudFrontClient::GetOriginAccessControlConfig2020_05_31(
@@ -1723,7 +1876,9 @@ GetOriginAccessControlConfig2020_05_31Outcome CloudFrontClient::GetOriginAccessC
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetOriginAccessControlConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOriginAccessControlConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetOriginAccessControlConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetOriginRequestPolicy2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicy2020_05_31(
@@ -1740,7 +1895,9 @@ GetOriginRequestPolicy2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicy
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetOriginRequestPolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOriginRequestPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetOriginRequestPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetOriginRequestPolicyConfig2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicyConfig2020_05_31(
@@ -1758,7 +1915,9 @@ GetOriginRequestPolicyConfig2020_05_31Outcome CloudFrontClient::GetOriginRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetOriginRequestPolicyConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetOriginRequestPolicyConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetOriginRequestPolicyConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetPublicKey2020_05_31Outcome CloudFrontClient::GetPublicKey2020_05_31(const GetPublicKey2020_05_31Request& request) const {
@@ -1774,7 +1933,9 @@ GetPublicKey2020_05_31Outcome CloudFrontClient::GetPublicKey2020_05_31(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetPublicKey2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPublicKey2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetPublicKey2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetPublicKeyConfig2020_05_31Outcome CloudFrontClient::GetPublicKeyConfig2020_05_31(
@@ -1792,7 +1953,9 @@ GetPublicKeyConfig2020_05_31Outcome CloudFrontClient::GetPublicKeyConfig2020_05_
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetPublicKeyConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPublicKeyConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetPublicKeyConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetRealtimeLogConfig2020_05_31Outcome CloudFrontClient::GetRealtimeLogConfig2020_05_31(
@@ -1802,7 +1965,9 @@ GetRealtimeLogConfig2020_05_31Outcome CloudFrontClient::GetRealtimeLogConfig2020
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/get-realtime-log-config");
   };
 
-  return GetRealtimeLogConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRealtimeLogConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetRealtimeLogConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetResourcePolicy2020_05_31Outcome CloudFrontClient::GetResourcePolicy2020_05_31(const GetResourcePolicy2020_05_31Request& request) const {
@@ -1811,7 +1976,9 @@ GetResourcePolicy2020_05_31Outcome CloudFrontClient::GetResourcePolicy2020_05_31
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/get-resource-policy");
   };
 
-  return GetResourcePolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetResourcePolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicy2020_05_31(
@@ -1828,7 +1995,9 @@ GetResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::GetResponseHeadersPo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetResponseHeadersPolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResponseHeadersPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetResponseHeadersPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetResponseHeadersPolicyConfig2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31(
@@ -1846,7 +2015,9 @@ GetResponseHeadersPolicyConfig2020_05_31Outcome CloudFrontClient::GetResponseHea
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetResponseHeadersPolicyConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResponseHeadersPolicyConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetResponseHeadersPolicyConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetStreamingDistribution2020_05_31Outcome CloudFrontClient::GetStreamingDistribution2020_05_31(
@@ -1863,7 +2034,9 @@ GetStreamingDistribution2020_05_31Outcome CloudFrontClient::GetStreamingDistribu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetStreamingDistribution2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStreamingDistribution2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetStreamingDistribution2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetStreamingDistributionConfig2020_05_31Outcome CloudFrontClient::GetStreamingDistributionConfig2020_05_31(
@@ -1881,7 +2054,9 @@ GetStreamingDistributionConfig2020_05_31Outcome CloudFrontClient::GetStreamingDi
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return GetStreamingDistributionConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStreamingDistributionConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetStreamingDistributionConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetTrustStore2020_05_31Outcome CloudFrontClient::GetTrustStore2020_05_31(const GetTrustStore2020_05_31Request& request) const {
@@ -1897,7 +2072,9 @@ GetTrustStore2020_05_31Outcome CloudFrontClient::GetTrustStore2020_05_31(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
   };
 
-  return GetTrustStore2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrustStore2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetTrustStore2020_05_31Outcome(std::move(result.GetError()));
 }
 
 GetVpcOrigin2020_05_31Outcome CloudFrontClient::GetVpcOrigin2020_05_31(const GetVpcOrigin2020_05_31Request& request) const {
@@ -1913,7 +2090,9 @@ GetVpcOrigin2020_05_31Outcome CloudFrontClient::GetVpcOrigin2020_05_31(const Get
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetVpcOrigin2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetVpcOrigin2020_05_31Outcome(result.GetResultWithOwnership())
+                            : GetVpcOrigin2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListAnycastIpLists2020_05_31Outcome CloudFrontClient::ListAnycastIpLists2020_05_31(
@@ -1923,7 +2102,9 @@ ListAnycastIpLists2020_05_31Outcome CloudFrontClient::ListAnycastIpLists2020_05_
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/anycast-ip-list");
   };
 
-  return ListAnycastIpLists2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAnycastIpLists2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListAnycastIpLists2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListCachePolicies2020_05_31Outcome CloudFrontClient::ListCachePolicies2020_05_31(const ListCachePolicies2020_05_31Request& request) const {
@@ -1932,7 +2113,9 @@ ListCachePolicies2020_05_31Outcome CloudFrontClient::ListCachePolicies2020_05_31
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/cache-policy");
   };
 
-  return ListCachePolicies2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCachePolicies2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListCachePolicies2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListCloudFrontOriginAccessIdentities2020_05_31Outcome CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31(
@@ -1942,8 +2125,9 @@ ListCloudFrontOriginAccessIdentities2020_05_31Outcome CloudFrontClient::ListClou
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-identity/cloudfront");
   };
 
-  return ListCloudFrontOriginAccessIdentities2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCloudFrontOriginAccessIdentities2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListCloudFrontOriginAccessIdentities2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListConflictingAliases2020_05_31Outcome CloudFrontClient::ListConflictingAliases2020_05_31(
@@ -1964,7 +2148,9 @@ ListConflictingAliases2020_05_31Outcome CloudFrontClient::ListConflictingAliases
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/conflicting-alias");
   };
 
-  return ListConflictingAliases2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConflictingAliases2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListConflictingAliases2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListConnectionFunctions2020_05_31Outcome CloudFrontClient::ListConnectionFunctions2020_05_31(
@@ -1974,7 +2160,9 @@ ListConnectionFunctions2020_05_31Outcome CloudFrontClient::ListConnectionFunctio
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-functions");
   };
 
-  return ListConnectionFunctions2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectionFunctions2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListConnectionFunctions2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListConnectionGroups2020_05_31Outcome CloudFrontClient::ListConnectionGroups2020_05_31(
@@ -1984,7 +2172,9 @@ ListConnectionGroups2020_05_31Outcome CloudFrontClient::ListConnectionGroups2020
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/connection-groups");
   };
 
-  return ListConnectionGroups2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConnectionGroups2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListConnectionGroups2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListContinuousDeploymentPolicies2020_05_31Outcome CloudFrontClient::ListContinuousDeploymentPolicies2020_05_31(
@@ -1994,7 +2184,9 @@ ListContinuousDeploymentPolicies2020_05_31Outcome CloudFrontClient::ListContinuo
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/continuous-deployment-policy");
   };
 
-  return ListContinuousDeploymentPolicies2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListContinuousDeploymentPolicies2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListContinuousDeploymentPolicies2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionTenants2020_05_31Outcome CloudFrontClient::ListDistributionTenants2020_05_31(
@@ -2004,7 +2196,9 @@ ListDistributionTenants2020_05_31Outcome CloudFrontClient::ListDistributionTenan
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenants");
   };
 
-  return ListDistributionTenants2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDistributionTenants2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionTenants2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionTenantsByCustomization2020_05_31Outcome CloudFrontClient::ListDistributionTenantsByCustomization2020_05_31(
@@ -2014,8 +2208,9 @@ ListDistributionTenantsByCustomization2020_05_31Outcome CloudFrontClient::ListDi
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution-tenants-by-customization");
   };
 
-  return ListDistributionTenantsByCustomization2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDistributionTenantsByCustomization2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionTenantsByCustomization2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributions2020_05_31Outcome CloudFrontClient::ListDistributions2020_05_31(const ListDistributions2020_05_31Request& request) const {
@@ -2024,7 +2219,9 @@ ListDistributions2020_05_31Outcome CloudFrontClient::ListDistributions2020_05_31
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution");
   };
 
-  return ListDistributions2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributions2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributions2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByAnycastIpListId2020_05_31Outcome CloudFrontClient::ListDistributionsByAnycastIpListId2020_05_31(
@@ -2041,7 +2238,9 @@ ListDistributionsByAnycastIpListId2020_05_31Outcome CloudFrontClient::ListDistri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnycastIpListId());
   };
 
-  return ListDistributionsByAnycastIpListId2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributionsByAnycastIpListId2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByAnycastIpListId2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByCachePolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByCachePolicyId2020_05_31(
@@ -2058,7 +2257,9 @@ ListDistributionsByCachePolicyId2020_05_31Outcome CloudFrontClient::ListDistribu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCachePolicyId());
   };
 
-  return ListDistributionsByCachePolicyId2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributionsByCachePolicyId2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByCachePolicyId2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByConnectionFunction2020_05_31Outcome CloudFrontClient::ListDistributionsByConnectionFunction2020_05_31(
@@ -2074,8 +2275,9 @@ ListDistributionsByConnectionFunction2020_05_31Outcome CloudFrontClient::ListDis
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByConnectionFunction");
   };
 
-  return ListDistributionsByConnectionFunction2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributionsByConnectionFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByConnectionFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByConnectionMode2020_05_31Outcome CloudFrontClient::ListDistributionsByConnectionMode2020_05_31(
@@ -2092,7 +2294,9 @@ ListDistributionsByConnectionMode2020_05_31Outcome CloudFrontClient::ListDistrib
     endpointResolutionOutcome.GetResult().AddPathSegment(ConnectionModeMapper::GetNameForConnectionMode(request.GetConnectionMode()));
   };
 
-  return ListDistributionsByConnectionMode2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributionsByConnectionMode2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByConnectionMode2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByKeyGroup2020_05_31Outcome CloudFrontClient::ListDistributionsByKeyGroup2020_05_31(
@@ -2109,7 +2313,9 @@ ListDistributionsByKeyGroup2020_05_31Outcome CloudFrontClient::ListDistributions
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyGroupId());
   };
 
-  return ListDistributionsByKeyGroup2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributionsByKeyGroup2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByKeyGroup2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByOriginRequestPolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31(
@@ -2126,8 +2332,9 @@ ListDistributionsByOriginRequestPolicyId2020_05_31Outcome CloudFrontClient::List
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOriginRequestPolicyId());
   };
 
-  return ListDistributionsByOriginRequestPolicyId2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributionsByOriginRequestPolicyId2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByOriginRequestPolicyId2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByOwnedResource2020_05_31Outcome CloudFrontClient::ListDistributionsByOwnedResource2020_05_31(
@@ -2144,7 +2351,9 @@ ListDistributionsByOwnedResource2020_05_31Outcome CloudFrontClient::ListDistribu
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListDistributionsByOwnedResource2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributionsByOwnedResource2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByOwnedResource2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByRealtimeLogConfig2020_05_31Outcome CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31(
@@ -2154,8 +2363,9 @@ ListDistributionsByRealtimeLogConfig2020_05_31Outcome CloudFrontClient::ListDist
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByRealtimeLogConfig");
   };
 
-  return ListDistributionsByRealtimeLogConfig2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDistributionsByRealtimeLogConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByRealtimeLogConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31(
@@ -2172,8 +2382,9 @@ ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome CloudFrontClient::Li
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResponseHeadersPolicyId());
   };
 
-  return ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByTrustStore2020_05_31Outcome CloudFrontClient::ListDistributionsByTrustStore2020_05_31(
@@ -2189,7 +2400,9 @@ ListDistributionsByTrustStore2020_05_31Outcome CloudFrontClient::ListDistributio
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distributionsByTrustStore");
   };
 
-  return ListDistributionsByTrustStore2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributionsByTrustStore2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByTrustStore2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByVpcOriginId2020_05_31Outcome CloudFrontClient::ListDistributionsByVpcOriginId2020_05_31(
@@ -2206,7 +2419,9 @@ ListDistributionsByVpcOriginId2020_05_31Outcome CloudFrontClient::ListDistributi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVpcOriginId());
   };
 
-  return ListDistributionsByVpcOriginId2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributionsByVpcOriginId2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByVpcOriginId2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDistributionsByWebACLId2020_05_31Outcome CloudFrontClient::ListDistributionsByWebACLId2020_05_31(
@@ -2223,7 +2438,9 @@ ListDistributionsByWebACLId2020_05_31Outcome CloudFrontClient::ListDistributions
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWebACLId());
   };
 
-  return ListDistributionsByWebACLId2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDistributionsByWebACLId2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDistributionsByWebACLId2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListDomainConflicts2020_05_31Outcome CloudFrontClient::ListDomainConflicts2020_05_31(
@@ -2233,7 +2450,9 @@ ListDomainConflicts2020_05_31Outcome CloudFrontClient::ListDomainConflicts2020_0
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/domain-conflicts");
   };
 
-  return ListDomainConflicts2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDomainConflicts2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListDomainConflicts2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListFieldLevelEncryptionConfigs2020_05_31Outcome CloudFrontClient::ListFieldLevelEncryptionConfigs2020_05_31(
@@ -2243,7 +2462,9 @@ ListFieldLevelEncryptionConfigs2020_05_31Outcome CloudFrontClient::ListFieldLeve
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption");
   };
 
-  return ListFieldLevelEncryptionConfigs2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFieldLevelEncryptionConfigs2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListFieldLevelEncryptionConfigs2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListFieldLevelEncryptionProfiles2020_05_31Outcome CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31(
@@ -2253,7 +2474,9 @@ ListFieldLevelEncryptionProfiles2020_05_31Outcome CloudFrontClient::ListFieldLev
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/field-level-encryption-profile");
   };
 
-  return ListFieldLevelEncryptionProfiles2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFieldLevelEncryptionProfiles2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListFieldLevelEncryptionProfiles2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListFunctions2020_05_31Outcome CloudFrontClient::ListFunctions2020_05_31(const ListFunctions2020_05_31Request& request) const {
@@ -2262,7 +2485,9 @@ ListFunctions2020_05_31Outcome CloudFrontClient::ListFunctions2020_05_31(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/function");
   };
 
-  return ListFunctions2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFunctions2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListFunctions2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListInvalidations2020_05_31Outcome CloudFrontClient::ListInvalidations2020_05_31(const ListInvalidations2020_05_31Request& request) const {
@@ -2279,7 +2504,9 @@ ListInvalidations2020_05_31Outcome CloudFrontClient::ListInvalidations2020_05_31
     endpointResolutionOutcome.GetResult().AddPathSegments("/invalidation");
   };
 
-  return ListInvalidations2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInvalidations2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListInvalidations2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListInvalidationsForDistributionTenant2020_05_31Outcome CloudFrontClient::ListInvalidationsForDistributionTenant2020_05_31(
@@ -2297,8 +2524,9 @@ ListInvalidationsForDistributionTenant2020_05_31Outcome CloudFrontClient::ListIn
     endpointResolutionOutcome.GetResult().AddPathSegments("/invalidation");
   };
 
-  return ListInvalidationsForDistributionTenant2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInvalidationsForDistributionTenant2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListInvalidationsForDistributionTenant2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListKeyGroups2020_05_31Outcome CloudFrontClient::ListKeyGroups2020_05_31(const ListKeyGroups2020_05_31Request& request) const {
@@ -2307,7 +2535,9 @@ ListKeyGroups2020_05_31Outcome CloudFrontClient::ListKeyGroups2020_05_31(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-group");
   };
 
-  return ListKeyGroups2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKeyGroups2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListKeyGroups2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListKeyValueStores2020_05_31Outcome CloudFrontClient::ListKeyValueStores2020_05_31(
@@ -2317,7 +2547,9 @@ ListKeyValueStores2020_05_31Outcome CloudFrontClient::ListKeyValueStores2020_05_
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/key-value-store");
   };
 
-  return ListKeyValueStores2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListKeyValueStores2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListKeyValueStores2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListOriginAccessControls2020_05_31Outcome CloudFrontClient::ListOriginAccessControls2020_05_31(
@@ -2327,7 +2559,9 @@ ListOriginAccessControls2020_05_31Outcome CloudFrontClient::ListOriginAccessCont
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-access-control");
   };
 
-  return ListOriginAccessControls2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOriginAccessControls2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListOriginAccessControls2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListOriginRequestPolicies2020_05_31Outcome CloudFrontClient::ListOriginRequestPolicies2020_05_31(
@@ -2337,7 +2571,9 @@ ListOriginRequestPolicies2020_05_31Outcome CloudFrontClient::ListOriginRequestPo
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/origin-request-policy");
   };
 
-  return ListOriginRequestPolicies2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListOriginRequestPolicies2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListOriginRequestPolicies2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListPublicKeys2020_05_31Outcome CloudFrontClient::ListPublicKeys2020_05_31(const ListPublicKeys2020_05_31Request& request) const {
@@ -2346,7 +2582,9 @@ ListPublicKeys2020_05_31Outcome CloudFrontClient::ListPublicKeys2020_05_31(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/public-key");
   };
 
-  return ListPublicKeys2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPublicKeys2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListPublicKeys2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListRealtimeLogConfigs2020_05_31Outcome CloudFrontClient::ListRealtimeLogConfigs2020_05_31(
@@ -2356,7 +2594,9 @@ ListRealtimeLogConfigs2020_05_31Outcome CloudFrontClient::ListRealtimeLogConfigs
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/realtime-log-config");
   };
 
-  return ListRealtimeLogConfigs2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRealtimeLogConfigs2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListRealtimeLogConfigs2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListResponseHeadersPolicies2020_05_31Outcome CloudFrontClient::ListResponseHeadersPolicies2020_05_31(
@@ -2366,7 +2606,9 @@ ListResponseHeadersPolicies2020_05_31Outcome CloudFrontClient::ListResponseHeade
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/response-headers-policy");
   };
 
-  return ListResponseHeadersPolicies2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResponseHeadersPolicies2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListResponseHeadersPolicies2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListStreamingDistributions2020_05_31Outcome CloudFrontClient::ListStreamingDistributions2020_05_31(
@@ -2376,7 +2618,9 @@ ListStreamingDistributions2020_05_31Outcome CloudFrontClient::ListStreamingDistr
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/streaming-distribution");
   };
 
-  return ListStreamingDistributions2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListStreamingDistributions2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListStreamingDistributions2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListTagsForResource2020_05_31Outcome CloudFrontClient::ListTagsForResource2020_05_31(
@@ -2392,7 +2636,9 @@ ListTagsForResource2020_05_31Outcome CloudFrontClient::ListTagsForResource2020_0
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/tagging");
   };
 
-  return ListTagsForResource2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResource2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListTagsForResource2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListTrustStores2020_05_31Outcome CloudFrontClient::ListTrustStores2020_05_31(const ListTrustStores2020_05_31Request& request) const {
@@ -2401,7 +2647,9 @@ ListTrustStores2020_05_31Outcome CloudFrontClient::ListTrustStores2020_05_31(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/trust-stores");
   };
 
-  return ListTrustStores2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrustStores2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListTrustStores2020_05_31Outcome(std::move(result.GetError()));
 }
 
 ListVpcOrigins2020_05_31Outcome CloudFrontClient::ListVpcOrigins2020_05_31(const ListVpcOrigins2020_05_31Request& request) const {
@@ -2410,7 +2658,9 @@ ListVpcOrigins2020_05_31Outcome CloudFrontClient::ListVpcOrigins2020_05_31(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/vpc-origin");
   };
 
-  return ListVpcOrigins2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListVpcOrigins2020_05_31Outcome(result.GetResultWithOwnership())
+                            : ListVpcOrigins2020_05_31Outcome(std::move(result.GetError()));
 }
 
 PublishConnectionFunction2020_05_31Outcome CloudFrontClient::PublishConnectionFunction2020_05_31(
@@ -2433,7 +2683,9 @@ PublishConnectionFunction2020_05_31Outcome CloudFrontClient::PublishConnectionFu
     endpointResolutionOutcome.GetResult().AddPathSegments("/publish");
   };
 
-  return PublishConnectionFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishConnectionFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : PublishConnectionFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 PublishFunction2020_05_31Outcome CloudFrontClient::PublishFunction2020_05_31(const PublishFunction2020_05_31Request& request) const {
@@ -2455,7 +2707,9 @@ PublishFunction2020_05_31Outcome CloudFrontClient::PublishFunction2020_05_31(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/publish");
   };
 
-  return PublishFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : PublishFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 PutResourcePolicy2020_05_31Outcome CloudFrontClient::PutResourcePolicy2020_05_31(const PutResourcePolicy2020_05_31Request& request) const {
@@ -2464,7 +2718,9 @@ PutResourcePolicy2020_05_31Outcome CloudFrontClient::PutResourcePolicy2020_05_31
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/put-resource-policy");
   };
 
-  return PutResourcePolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : PutResourcePolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagResource2020_05_31Request& request) const {
@@ -2482,7 +2738,9 @@ TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagRe
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return TagResource2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResource2020_05_31Outcome(result.GetResultWithOwnership())
+                            : TagResource2020_05_31Outcome(std::move(result.GetError()));
 }
 
 TestConnectionFunction2020_05_31Outcome CloudFrontClient::TestConnectionFunction2020_05_31(
@@ -2505,7 +2763,9 @@ TestConnectionFunction2020_05_31Outcome CloudFrontClient::TestConnectionFunction
     endpointResolutionOutcome.GetResult().AddPathSegments("/test");
   };
 
-  return TestConnectionFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestConnectionFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : TestConnectionFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 TestFunction2020_05_31Outcome CloudFrontClient::TestFunction2020_05_31(const TestFunction2020_05_31Request& request) const {
@@ -2527,7 +2787,9 @@ TestFunction2020_05_31Outcome CloudFrontClient::TestFunction2020_05_31(const Tes
     endpointResolutionOutcome.GetResult().AddPathSegments("/test");
   };
 
-  return TestFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : TestFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const UntagResource2020_05_31Request& request) const {
@@ -2545,7 +2807,9 @@ UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const U
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return UntagResource2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResource2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UntagResource2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateAnycastIpList2020_05_31Outcome CloudFrontClient::UpdateAnycastIpList2020_05_31(
@@ -2567,7 +2831,9 @@ UpdateAnycastIpList2020_05_31Outcome CloudFrontClient::UpdateAnycastIpList2020_0
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateAnycastIpList2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateAnycastIpList2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateAnycastIpList2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateCachePolicy2020_05_31Outcome CloudFrontClient::UpdateCachePolicy2020_05_31(const UpdateCachePolicy2020_05_31Request& request) const {
@@ -2583,7 +2849,9 @@ UpdateCachePolicy2020_05_31Outcome CloudFrontClient::UpdateCachePolicy2020_05_31
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateCachePolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCachePolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateCachePolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2020_05_31(
@@ -2601,8 +2869,9 @@ UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::UpdateCl
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateConnectionFunction2020_05_31Outcome CloudFrontClient::UpdateConnectionFunction2020_05_31(
@@ -2624,7 +2893,9 @@ UpdateConnectionFunction2020_05_31Outcome CloudFrontClient::UpdateConnectionFunc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateConnectionFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConnectionFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateConnectionFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateConnectionGroup2020_05_31Outcome CloudFrontClient::UpdateConnectionGroup2020_05_31(
@@ -2646,7 +2917,9 @@ UpdateConnectionGroup2020_05_31Outcome CloudFrontClient::UpdateConnectionGroup20
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateConnectionGroup2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConnectionGroup2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateConnectionGroup2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::UpdateContinuousDeploymentPolicy2020_05_31(
@@ -2663,7 +2936,9 @@ UpdateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::UpdateContin
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateContinuousDeploymentPolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateContinuousDeploymentPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateContinuousDeploymentPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateDistribution2020_05_31Outcome CloudFrontClient::UpdateDistribution2020_05_31(
@@ -2681,7 +2956,9 @@ UpdateDistribution2020_05_31Outcome CloudFrontClient::UpdateDistribution2020_05_
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return UpdateDistribution2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDistribution2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateDistribution2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateDistributionTenant2020_05_31Outcome CloudFrontClient::UpdateDistributionTenant2020_05_31(
@@ -2703,7 +2980,9 @@ UpdateDistributionTenant2020_05_31Outcome CloudFrontClient::UpdateDistributionTe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateDistributionTenant2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDistributionTenant2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateDistributionTenant2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateDistributionWithStagingConfig2020_05_31Outcome CloudFrontClient::UpdateDistributionWithStagingConfig2020_05_31(
@@ -2721,8 +3000,9 @@ UpdateDistributionWithStagingConfig2020_05_31Outcome CloudFrontClient::UpdateDis
     endpointResolutionOutcome.GetResult().AddPathSegments("/promote-staging-config");
   };
 
-  return UpdateDistributionWithStagingConfig2020_05_31Outcome{
-      InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDistributionWithStagingConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateDistributionWithStagingConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateDomainAssociation2020_05_31Outcome CloudFrontClient::UpdateDomainAssociation2020_05_31(
@@ -2732,7 +3012,9 @@ UpdateDomainAssociation2020_05_31Outcome CloudFrontClient::UpdateDomainAssociati
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/domain-association");
   };
 
-  return UpdateDomainAssociation2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateDomainAssociation2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateDomainAssociation2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::UpdateFieldLevelEncryptionConfig2020_05_31(
@@ -2750,7 +3032,9 @@ UpdateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::UpdateFieldL
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return UpdateFieldLevelEncryptionConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFieldLevelEncryptionConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateFieldLevelEncryptionConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31(
@@ -2768,7 +3052,9 @@ UpdateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::UpdateField
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return UpdateFieldLevelEncryptionProfile2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFieldLevelEncryptionProfile2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateFieldLevelEncryptionProfile2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateFunction2020_05_31Outcome CloudFrontClient::UpdateFunction2020_05_31(const UpdateFunction2020_05_31Request& request) const {
@@ -2789,7 +3075,9 @@ UpdateFunction2020_05_31Outcome CloudFrontClient::UpdateFunction2020_05_31(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateFunction2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFunction2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateFunction2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const UpdateKeyGroup2020_05_31Request& request) const {
@@ -2805,7 +3093,9 @@ UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateKeyGroup2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateKeyGroup2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateKeyGroup2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateKeyValueStore2020_05_31Outcome CloudFrontClient::UpdateKeyValueStore2020_05_31(
@@ -2827,7 +3117,9 @@ UpdateKeyValueStore2020_05_31Outcome CloudFrontClient::UpdateKeyValueStore2020_0
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateKeyValueStore2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateKeyValueStore2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateKeyValueStore2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateOriginAccessControl2020_05_31Outcome CloudFrontClient::UpdateOriginAccessControl2020_05_31(
@@ -2845,7 +3137,9 @@ UpdateOriginAccessControl2020_05_31Outcome CloudFrontClient::UpdateOriginAccessC
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return UpdateOriginAccessControl2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateOriginAccessControl2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateOriginAccessControl2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::UpdateOriginRequestPolicy2020_05_31(
@@ -2862,7 +3156,9 @@ UpdateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::UpdateOriginRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateOriginRequestPolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateOriginRequestPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateOriginRequestPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdatePublicKey2020_05_31Outcome CloudFrontClient::UpdatePublicKey2020_05_31(const UpdatePublicKey2020_05_31Request& request) const {
@@ -2879,7 +3175,9 @@ UpdatePublicKey2020_05_31Outcome CloudFrontClient::UpdatePublicKey2020_05_31(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return UpdatePublicKey2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePublicKey2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdatePublicKey2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::UpdateRealtimeLogConfig2020_05_31(
@@ -2889,7 +3187,9 @@ UpdateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::UpdateRealtimeLogConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/realtime-log-config");
   };
 
-  return UpdateRealtimeLogConfig2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRealtimeLogConfig2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateRealtimeLogConfig2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31(
@@ -2906,7 +3206,9 @@ UpdateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::UpdateResponseHea
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateResponseHeadersPolicy2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateResponseHeadersPolicy2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateResponseHeadersPolicy2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateStreamingDistribution2020_05_31Outcome CloudFrontClient::UpdateStreamingDistribution2020_05_31(
@@ -2924,7 +3226,9 @@ UpdateStreamingDistribution2020_05_31Outcome CloudFrontClient::UpdateStreamingDi
     endpointResolutionOutcome.GetResult().AddPathSegments("/config");
   };
 
-  return UpdateStreamingDistribution2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateStreamingDistribution2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateStreamingDistribution2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateTrustStore2020_05_31Outcome CloudFrontClient::UpdateTrustStore2020_05_31(const UpdateTrustStore2020_05_31Request& request) const {
@@ -2945,7 +3249,9 @@ UpdateTrustStore2020_05_31Outcome CloudFrontClient::UpdateTrustStore2020_05_31(c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateTrustStore2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateTrustStore2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateTrustStore2020_05_31Outcome(std::move(result.GetError()));
 }
 
 UpdateVpcOrigin2020_05_31Outcome CloudFrontClient::UpdateVpcOrigin2020_05_31(const UpdateVpcOrigin2020_05_31Request& request) const {
@@ -2966,7 +3272,9 @@ UpdateVpcOrigin2020_05_31Outcome CloudFrontClient::UpdateVpcOrigin2020_05_31(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateVpcOrigin2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateVpcOrigin2020_05_31Outcome(result.GetResultWithOwnership())
+                            : UpdateVpcOrigin2020_05_31Outcome(std::move(result.GetError()));
 }
 
 VerifyDnsConfiguration2020_05_31Outcome CloudFrontClient::VerifyDnsConfiguration2020_05_31(
@@ -2976,5 +3284,7 @@ VerifyDnsConfiguration2020_05_31Outcome CloudFrontClient::VerifyDnsConfiguration
     endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/verify-dns-configuration");
   };
 
-  return VerifyDnsConfiguration2020_05_31Outcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyDnsConfiguration2020_05_31Outcome(result.GetResultWithOwnership())
+                            : VerifyDnsConfiguration2020_05_31Outcome(std::move(result.GetError()));
 }

@@ -193,7 +193,8 @@ CreateMonitorOutcome NetworkMonitorClient::CreateMonitor(const CreateMonitorRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/monitors");
   };
 
-  return CreateMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMonitorOutcome(result.GetResultWithOwnership()) : CreateMonitorOutcome(std::move(result.GetError()));
 }
 
 CreateProbeOutcome NetworkMonitorClient::CreateProbe(const CreateProbeRequest& request) const {
@@ -210,7 +211,8 @@ CreateProbeOutcome NetworkMonitorClient::CreateProbe(const CreateProbeRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/probes");
   };
 
-  return CreateProbeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProbeOutcome(result.GetResultWithOwnership()) : CreateProbeOutcome(std::move(result.GetError()));
 }
 
 DeleteMonitorOutcome NetworkMonitorClient::DeleteMonitor(const DeleteMonitorRequest& request) const {
@@ -226,7 +228,8 @@ DeleteMonitorOutcome NetworkMonitorClient::DeleteMonitor(const DeleteMonitorRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
   };
 
-  return DeleteMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMonitorOutcome(result.GetResultWithOwnership()) : DeleteMonitorOutcome(std::move(result.GetError()));
 }
 
 DeleteProbeOutcome NetworkMonitorClient::DeleteProbe(const DeleteProbeRequest& request) const {
@@ -249,7 +252,8 @@ DeleteProbeOutcome NetworkMonitorClient::DeleteProbe(const DeleteProbeRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProbeId());
   };
 
-  return DeleteProbeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProbeOutcome(result.GetResultWithOwnership()) : DeleteProbeOutcome(std::move(result.GetError()));
 }
 
 GetMonitorOutcome NetworkMonitorClient::GetMonitor(const GetMonitorRequest& request) const {
@@ -265,7 +269,8 @@ GetMonitorOutcome NetworkMonitorClient::GetMonitor(const GetMonitorRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
   };
 
-  return GetMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMonitorOutcome(result.GetResultWithOwnership()) : GetMonitorOutcome(std::move(result.GetError()));
 }
 
 GetProbeOutcome NetworkMonitorClient::GetProbe(const GetProbeRequest& request) const {
@@ -288,7 +293,8 @@ GetProbeOutcome NetworkMonitorClient::GetProbe(const GetProbeRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProbeId());
   };
 
-  return GetProbeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProbeOutcome(result.GetResultWithOwnership()) : GetProbeOutcome(std::move(result.GetError()));
 }
 
 ListMonitorsOutcome NetworkMonitorClient::ListMonitors(const ListMonitorsRequest& request) const {
@@ -297,7 +303,8 @@ ListMonitorsOutcome NetworkMonitorClient::ListMonitors(const ListMonitorsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/monitors");
   };
 
-  return ListMonitorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMonitorsOutcome(result.GetResultWithOwnership()) : ListMonitorsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome NetworkMonitorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -313,7 +320,9 @@ ListTagsForResourceOutcome NetworkMonitorClient::ListTagsForResource(const ListT
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome NetworkMonitorClient::TagResource(const TagResourceRequest& request) const {
@@ -329,7 +338,8 @@ TagResourceOutcome NetworkMonitorClient::TagResource(const TagResourceRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome NetworkMonitorClient::UntagResource(const UntagResourceRequest& request) const {
@@ -350,7 +360,8 @@ UntagResourceOutcome NetworkMonitorClient::UntagResource(const UntagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateMonitorOutcome NetworkMonitorClient::UpdateMonitor(const UpdateMonitorRequest& request) const {
@@ -366,7 +377,8 @@ UpdateMonitorOutcome NetworkMonitorClient::UpdateMonitor(const UpdateMonitorRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMonitorName());
   };
 
-  return UpdateMonitorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMonitorOutcome(result.GetResultWithOwnership()) : UpdateMonitorOutcome(std::move(result.GetError()));
 }
 
 UpdateProbeOutcome NetworkMonitorClient::UpdateProbe(const UpdateProbeRequest& request) const {
@@ -389,5 +401,6 @@ UpdateProbeOutcome NetworkMonitorClient::UpdateProbe(const UpdateProbeRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProbeId());
   };
 
-  return UpdateProbeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateProbeOutcome(result.GetResultWithOwnership()) : UpdateProbeOutcome(std::move(result.GetError()));
 }

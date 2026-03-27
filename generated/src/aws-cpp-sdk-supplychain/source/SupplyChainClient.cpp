@@ -219,7 +219,9 @@ CreateBillOfMaterialsImportJobOutcome SupplyChainClient::CreateBillOfMaterialsIm
     endpointResolutionOutcome.GetResult().AddPathSegments("/bill-of-materials-import-jobs");
   };
 
-  return CreateBillOfMaterialsImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBillOfMaterialsImportJobOutcome(result.GetResultWithOwnership())
+                            : CreateBillOfMaterialsImportJobOutcome(std::move(result.GetError()));
 }
 
 CreateDataIntegrationFlowOutcome SupplyChainClient::CreateDataIntegrationFlow(const CreateDataIntegrationFlowRequest& request) const {
@@ -242,7 +244,9 @@ CreateDataIntegrationFlowOutcome SupplyChainClient::CreateDataIntegrationFlow(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return CreateDataIntegrationFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateDataIntegrationFlowOutcome(result.GetResultWithOwnership())
+                            : CreateDataIntegrationFlowOutcome(std::move(result.GetError()));
 }
 
 CreateDataLakeDatasetOutcome SupplyChainClient::CreateDataLakeDataset(const CreateDataLakeDatasetRequest& request) const {
@@ -272,7 +276,9 @@ CreateDataLakeDatasetOutcome SupplyChainClient::CreateDataLakeDataset(const Crea
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return CreateDataLakeDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateDataLakeDatasetOutcome(result.GetResultWithOwnership())
+                            : CreateDataLakeDatasetOutcome(std::move(result.GetError()));
 }
 
 CreateDataLakeNamespaceOutcome SupplyChainClient::CreateDataLakeNamespace(const CreateDataLakeNamespaceRequest& request) const {
@@ -295,7 +301,9 @@ CreateDataLakeNamespaceOutcome SupplyChainClient::CreateDataLakeNamespace(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return CreateDataLakeNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateDataLakeNamespaceOutcome(result.GetResultWithOwnership())
+                            : CreateDataLakeNamespaceOutcome(std::move(result.GetError()));
 }
 
 CreateInstanceOutcome SupplyChainClient::CreateInstance(const CreateInstanceRequest& request) const {
@@ -304,7 +312,8 @@ CreateInstanceOutcome SupplyChainClient::CreateInstance(const CreateInstanceRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/instance");
   };
 
-  return CreateInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateInstanceOutcome(result.GetResultWithOwnership()) : CreateInstanceOutcome(std::move(result.GetError()));
 }
 
 DeleteDataIntegrationFlowOutcome SupplyChainClient::DeleteDataIntegrationFlow(const DeleteDataIntegrationFlowRequest& request) const {
@@ -327,7 +336,9 @@ DeleteDataIntegrationFlowOutcome SupplyChainClient::DeleteDataIntegrationFlow(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteDataIntegrationFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataIntegrationFlowOutcome(result.GetResultWithOwnership())
+                            : DeleteDataIntegrationFlowOutcome(std::move(result.GetError()));
 }
 
 DeleteDataLakeDatasetOutcome SupplyChainClient::DeleteDataLakeDataset(const DeleteDataLakeDatasetRequest& request) const {
@@ -357,7 +368,9 @@ DeleteDataLakeDatasetOutcome SupplyChainClient::DeleteDataLakeDataset(const Dele
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteDataLakeDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataLakeDatasetOutcome(result.GetResultWithOwnership())
+                            : DeleteDataLakeDatasetOutcome(std::move(result.GetError()));
 }
 
 DeleteDataLakeNamespaceOutcome SupplyChainClient::DeleteDataLakeNamespace(const DeleteDataLakeNamespaceRequest& request) const {
@@ -380,7 +393,9 @@ DeleteDataLakeNamespaceOutcome SupplyChainClient::DeleteDataLakeNamespace(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteDataLakeNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataLakeNamespaceOutcome(result.GetResultWithOwnership())
+                            : DeleteDataLakeNamespaceOutcome(std::move(result.GetError()));
 }
 
 DeleteInstanceOutcome SupplyChainClient::DeleteInstance(const DeleteInstanceRequest& request) const {
@@ -396,7 +411,8 @@ DeleteInstanceOutcome SupplyChainClient::DeleteInstance(const DeleteInstanceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return DeleteInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInstanceOutcome(result.GetResultWithOwnership()) : DeleteInstanceOutcome(std::move(result.GetError()));
 }
 
 GetBillOfMaterialsImportJobOutcome SupplyChainClient::GetBillOfMaterialsImportJob(const GetBillOfMaterialsImportJobRequest& request) const {
@@ -419,7 +435,9 @@ GetBillOfMaterialsImportJobOutcome SupplyChainClient::GetBillOfMaterialsImportJo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetBillOfMaterialsImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBillOfMaterialsImportJobOutcome(result.GetResultWithOwnership())
+                            : GetBillOfMaterialsImportJobOutcome(std::move(result.GetError()));
 }
 
 GetDataIntegrationEventOutcome SupplyChainClient::GetDataIntegrationEvent(const GetDataIntegrationEventRequest& request) const {
@@ -442,7 +460,9 @@ GetDataIntegrationEventOutcome SupplyChainClient::GetDataIntegrationEvent(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventId());
   };
 
-  return GetDataIntegrationEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataIntegrationEventOutcome(result.GetResultWithOwnership())
+                            : GetDataIntegrationEventOutcome(std::move(result.GetError()));
 }
 
 GetDataIntegrationFlowOutcome SupplyChainClient::GetDataIntegrationFlow(const GetDataIntegrationFlowRequest& request) const {
@@ -465,7 +485,9 @@ GetDataIntegrationFlowOutcome SupplyChainClient::GetDataIntegrationFlow(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetDataIntegrationFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataIntegrationFlowOutcome(result.GetResultWithOwnership())
+                            : GetDataIntegrationFlowOutcome(std::move(result.GetError()));
 }
 
 GetDataIntegrationFlowExecutionOutcome SupplyChainClient::GetDataIntegrationFlowExecution(
@@ -496,7 +518,9 @@ GetDataIntegrationFlowExecutionOutcome SupplyChainClient::GetDataIntegrationFlow
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExecutionId());
   };
 
-  return GetDataIntegrationFlowExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataIntegrationFlowExecutionOutcome(result.GetResultWithOwnership())
+                            : GetDataIntegrationFlowExecutionOutcome(std::move(result.GetError()));
 }
 
 GetDataLakeDatasetOutcome SupplyChainClient::GetDataLakeDataset(const GetDataLakeDatasetRequest& request) const {
@@ -526,7 +550,9 @@ GetDataLakeDatasetOutcome SupplyChainClient::GetDataLakeDataset(const GetDataLak
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetDataLakeDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataLakeDatasetOutcome(result.GetResultWithOwnership())
+                            : GetDataLakeDatasetOutcome(std::move(result.GetError()));
 }
 
 GetDataLakeNamespaceOutcome SupplyChainClient::GetDataLakeNamespace(const GetDataLakeNamespaceRequest& request) const {
@@ -549,7 +575,9 @@ GetDataLakeNamespaceOutcome SupplyChainClient::GetDataLakeNamespace(const GetDat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return GetDataLakeNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataLakeNamespaceOutcome(result.GetResultWithOwnership())
+                            : GetDataLakeNamespaceOutcome(std::move(result.GetError()));
 }
 
 GetInstanceOutcome SupplyChainClient::GetInstance(const GetInstanceRequest& request) const {
@@ -565,7 +593,8 @@ GetInstanceOutcome SupplyChainClient::GetInstance(const GetInstanceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return GetInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInstanceOutcome(result.GetResultWithOwnership()) : GetInstanceOutcome(std::move(result.GetError()));
 }
 
 ListDataIntegrationEventsOutcome SupplyChainClient::ListDataIntegrationEvents(const ListDataIntegrationEventsRequest& request) const {
@@ -582,7 +611,9 @@ ListDataIntegrationEventsOutcome SupplyChainClient::ListDataIntegrationEvents(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-integration-events");
   };
 
-  return ListDataIntegrationEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataIntegrationEventsOutcome(result.GetResultWithOwnership())
+                            : ListDataIntegrationEventsOutcome(std::move(result.GetError()));
 }
 
 ListDataIntegrationFlowExecutionsOutcome SupplyChainClient::ListDataIntegrationFlowExecutions(
@@ -607,7 +638,9 @@ ListDataIntegrationFlowExecutionsOutcome SupplyChainClient::ListDataIntegrationF
     endpointResolutionOutcome.GetResult().AddPathSegments("/executions");
   };
 
-  return ListDataIntegrationFlowExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataIntegrationFlowExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListDataIntegrationFlowExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListDataIntegrationFlowsOutcome SupplyChainClient::ListDataIntegrationFlows(const ListDataIntegrationFlowsRequest& request) const {
@@ -624,7 +657,9 @@ ListDataIntegrationFlowsOutcome SupplyChainClient::ListDataIntegrationFlows(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-integration-flows");
   };
 
-  return ListDataIntegrationFlowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataIntegrationFlowsOutcome(result.GetResultWithOwnership())
+                            : ListDataIntegrationFlowsOutcome(std::move(result.GetError()));
 }
 
 ListDataLakeDatasetsOutcome SupplyChainClient::ListDataLakeDatasets(const ListDataLakeDatasetsRequest& request) const {
@@ -648,7 +683,9 @@ ListDataLakeDatasetsOutcome SupplyChainClient::ListDataLakeDatasets(const ListDa
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
   };
 
-  return ListDataLakeDatasetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataLakeDatasetsOutcome(result.GetResultWithOwnership())
+                            : ListDataLakeDatasetsOutcome(std::move(result.GetError()));
 }
 
 ListDataLakeNamespacesOutcome SupplyChainClient::ListDataLakeNamespaces(const ListDataLakeNamespacesRequest& request) const {
@@ -665,7 +702,9 @@ ListDataLakeNamespacesOutcome SupplyChainClient::ListDataLakeNamespaces(const Li
     endpointResolutionOutcome.GetResult().AddPathSegments("/namespaces");
   };
 
-  return ListDataLakeNamespacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataLakeNamespacesOutcome(result.GetResultWithOwnership())
+                            : ListDataLakeNamespacesOutcome(std::move(result.GetError()));
 }
 
 ListInstancesOutcome SupplyChainClient::ListInstances(const ListInstancesRequest& request) const {
@@ -674,7 +713,8 @@ ListInstancesOutcome SupplyChainClient::ListInstances(const ListInstancesRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/api/instance");
   };
 
-  return ListInstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInstancesOutcome(result.GetResultWithOwnership()) : ListInstancesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SupplyChainClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -690,7 +730,9 @@ ListTagsForResourceOutcome SupplyChainClient::ListTagsForResource(const ListTags
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 SendDataIntegrationEventOutcome SupplyChainClient::SendDataIntegrationEvent(const SendDataIntegrationEventRequest& request) const {
@@ -707,7 +749,9 @@ SendDataIntegrationEventOutcome SupplyChainClient::SendDataIntegrationEvent(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/data-integration-events");
   };
 
-  return SendDataIntegrationEventOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendDataIntegrationEventOutcome(result.GetResultWithOwnership())
+                            : SendDataIntegrationEventOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SupplyChainClient::TagResource(const TagResourceRequest& request) const {
@@ -723,7 +767,8 @@ TagResourceOutcome SupplyChainClient::TagResource(const TagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SupplyChainClient::UntagResource(const UntagResourceRequest& request) const {
@@ -744,7 +789,8 @@ UntagResourceOutcome SupplyChainClient::UntagResource(const UntagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDataIntegrationFlowOutcome SupplyChainClient::UpdateDataIntegrationFlow(const UpdateDataIntegrationFlowRequest& request) const {
@@ -767,7 +813,9 @@ UpdateDataIntegrationFlowOutcome SupplyChainClient::UpdateDataIntegrationFlow(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateDataIntegrationFlowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDataIntegrationFlowOutcome(result.GetResultWithOwnership())
+                            : UpdateDataIntegrationFlowOutcome(std::move(result.GetError()));
 }
 
 UpdateDataLakeDatasetOutcome SupplyChainClient::UpdateDataLakeDataset(const UpdateDataLakeDatasetRequest& request) const {
@@ -797,7 +845,9 @@ UpdateDataLakeDatasetOutcome SupplyChainClient::UpdateDataLakeDataset(const Upda
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateDataLakeDatasetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDataLakeDatasetOutcome(result.GetResultWithOwnership())
+                            : UpdateDataLakeDatasetOutcome(std::move(result.GetError()));
 }
 
 UpdateDataLakeNamespaceOutcome SupplyChainClient::UpdateDataLakeNamespace(const UpdateDataLakeNamespaceRequest& request) const {
@@ -820,7 +870,9 @@ UpdateDataLakeNamespaceOutcome SupplyChainClient::UpdateDataLakeNamespace(const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return UpdateDataLakeNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDataLakeNamespaceOutcome(result.GetResultWithOwnership())
+                            : UpdateDataLakeNamespaceOutcome(std::move(result.GetError()));
 }
 
 UpdateInstanceOutcome SupplyChainClient::UpdateInstance(const UpdateInstanceRequest& request) const {
@@ -836,5 +888,6 @@ UpdateInstanceOutcome SupplyChainClient::UpdateInstance(const UpdateInstanceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   };
 
-  return UpdateInstanceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateInstanceOutcome(result.GetResultWithOwnership()) : UpdateInstanceOutcome(std::move(result.GetError()));
 }

@@ -212,7 +212,9 @@ CreateAwsLogSourceOutcome SecurityLakeClient::CreateAwsLogSource(const CreateAws
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/logsources/aws");
   };
 
-  return CreateAwsLogSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAwsLogSourceOutcome(result.GetResultWithOwnership())
+                            : CreateAwsLogSourceOutcome(std::move(result.GetError()));
 }
 
 CreateCustomLogSourceOutcome SecurityLakeClient::CreateCustomLogSource(const CreateCustomLogSourceRequest& request) const {
@@ -221,7 +223,9 @@ CreateCustomLogSourceOutcome SecurityLakeClient::CreateCustomLogSource(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/logsources/custom");
   };
 
-  return CreateCustomLogSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomLogSourceOutcome(result.GetResultWithOwnership())
+                            : CreateCustomLogSourceOutcome(std::move(result.GetError()));
 }
 
 CreateDataLakeOutcome SecurityLakeClient::CreateDataLake(const CreateDataLakeRequest& request) const {
@@ -230,7 +234,8 @@ CreateDataLakeOutcome SecurityLakeClient::CreateDataLake(const CreateDataLakeReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake");
   };
 
-  return CreateDataLakeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataLakeOutcome(result.GetResultWithOwnership()) : CreateDataLakeOutcome(std::move(result.GetError()));
 }
 
 CreateDataLakeExceptionSubscriptionOutcome SecurityLakeClient::CreateDataLakeExceptionSubscription(
@@ -240,7 +245,9 @@ CreateDataLakeExceptionSubscriptionOutcome SecurityLakeClient::CreateDataLakeExc
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/exceptions/subscription");
   };
 
-  return CreateDataLakeExceptionSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataLakeExceptionSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateDataLakeExceptionSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateDataLakeOrganizationConfigurationOutcome SecurityLakeClient::CreateDataLakeOrganizationConfiguration(
@@ -250,7 +257,9 @@ CreateDataLakeOrganizationConfigurationOutcome SecurityLakeClient::CreateDataLak
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/organization/configuration");
   };
 
-  return CreateDataLakeOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataLakeOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateDataLakeOrganizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateSubscriberOutcome SecurityLakeClient::CreateSubscriber(const CreateSubscriberRequest& request) const {
@@ -259,7 +268,9 @@ CreateSubscriberOutcome SecurityLakeClient::CreateSubscriber(const CreateSubscri
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/subscribers");
   };
 
-  return CreateSubscriberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSubscriberOutcome(result.GetResultWithOwnership())
+                            : CreateSubscriberOutcome(std::move(result.GetError()));
 }
 
 CreateSubscriberNotificationOutcome SecurityLakeClient::CreateSubscriberNotification(
@@ -277,7 +288,9 @@ CreateSubscriberNotificationOutcome SecurityLakeClient::CreateSubscriberNotifica
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification");
   };
 
-  return CreateSubscriberNotificationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSubscriberNotificationOutcome(result.GetResultWithOwnership())
+                            : CreateSubscriberNotificationOutcome(std::move(result.GetError()));
 }
 
 DeleteAwsLogSourceOutcome SecurityLakeClient::DeleteAwsLogSource(const DeleteAwsLogSourceRequest& request) const {
@@ -286,7 +299,9 @@ DeleteAwsLogSourceOutcome SecurityLakeClient::DeleteAwsLogSource(const DeleteAws
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/logsources/aws/delete");
   };
 
-  return DeleteAwsLogSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAwsLogSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteAwsLogSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomLogSourceOutcome SecurityLakeClient::DeleteCustomLogSource(const DeleteCustomLogSourceRequest& request) const {
@@ -302,7 +317,9 @@ DeleteCustomLogSourceOutcome SecurityLakeClient::DeleteCustomLogSource(const Del
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSourceName());
   };
 
-  return DeleteCustomLogSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCustomLogSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomLogSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteDataLakeOutcome SecurityLakeClient::DeleteDataLake(const DeleteDataLakeRequest& request) const {
@@ -311,7 +328,8 @@ DeleteDataLakeOutcome SecurityLakeClient::DeleteDataLake(const DeleteDataLakeReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/delete");
   };
 
-  return DeleteDataLakeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataLakeOutcome(result.GetResultWithOwnership()) : DeleteDataLakeOutcome(std::move(result.GetError()));
 }
 
 DeleteDataLakeExceptionSubscriptionOutcome SecurityLakeClient::DeleteDataLakeExceptionSubscription(
@@ -321,7 +339,9 @@ DeleteDataLakeExceptionSubscriptionOutcome SecurityLakeClient::DeleteDataLakeExc
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/exceptions/subscription");
   };
 
-  return DeleteDataLakeExceptionSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataLakeExceptionSubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteDataLakeExceptionSubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteDataLakeOrganizationConfigurationOutcome SecurityLakeClient::DeleteDataLakeOrganizationConfiguration(
@@ -331,7 +351,9 @@ DeleteDataLakeOrganizationConfigurationOutcome SecurityLakeClient::DeleteDataLak
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/organization/configuration/delete");
   };
 
-  return DeleteDataLakeOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataLakeOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteDataLakeOrganizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteSubscriberOutcome SecurityLakeClient::DeleteSubscriber(const DeleteSubscriberRequest& request) const {
@@ -347,7 +369,9 @@ DeleteSubscriberOutcome SecurityLakeClient::DeleteSubscriber(const DeleteSubscri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSubscriberId());
   };
 
-  return DeleteSubscriberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSubscriberOutcome(result.GetResultWithOwnership())
+                            : DeleteSubscriberOutcome(std::move(result.GetError()));
 }
 
 DeleteSubscriberNotificationOutcome SecurityLakeClient::DeleteSubscriberNotification(
@@ -365,7 +389,9 @@ DeleteSubscriberNotificationOutcome SecurityLakeClient::DeleteSubscriberNotifica
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification");
   };
 
-  return DeleteSubscriberNotificationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSubscriberNotificationOutcome(result.GetResultWithOwnership())
+                            : DeleteSubscriberNotificationOutcome(std::move(result.GetError()));
 }
 
 DeregisterDataLakeDelegatedAdministratorOutcome SecurityLakeClient::DeregisterDataLakeDelegatedAdministrator(
@@ -375,7 +401,9 @@ DeregisterDataLakeDelegatedAdministratorOutcome SecurityLakeClient::DeregisterDa
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/delegate");
   };
 
-  return DeregisterDataLakeDelegatedAdministratorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeregisterDataLakeDelegatedAdministratorOutcome(result.GetResultWithOwnership())
+                            : DeregisterDataLakeDelegatedAdministratorOutcome(std::move(result.GetError()));
 }
 
 GetDataLakeExceptionSubscriptionOutcome SecurityLakeClient::GetDataLakeExceptionSubscription(
@@ -385,7 +413,9 @@ GetDataLakeExceptionSubscriptionOutcome SecurityLakeClient::GetDataLakeException
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/exceptions/subscription");
   };
 
-  return GetDataLakeExceptionSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataLakeExceptionSubscriptionOutcome(result.GetResultWithOwnership())
+                            : GetDataLakeExceptionSubscriptionOutcome(std::move(result.GetError()));
 }
 
 GetDataLakeOrganizationConfigurationOutcome SecurityLakeClient::GetDataLakeOrganizationConfiguration(
@@ -395,7 +425,9 @@ GetDataLakeOrganizationConfigurationOutcome SecurityLakeClient::GetDataLakeOrgan
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/organization/configuration");
   };
 
-  return GetDataLakeOrganizationConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataLakeOrganizationConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetDataLakeOrganizationConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetDataLakeSourcesOutcome SecurityLakeClient::GetDataLakeSources(const GetDataLakeSourcesRequest& request) const {
@@ -404,7 +436,9 @@ GetDataLakeSourcesOutcome SecurityLakeClient::GetDataLakeSources(const GetDataLa
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/sources");
   };
 
-  return GetDataLakeSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataLakeSourcesOutcome(result.GetResultWithOwnership())
+                            : GetDataLakeSourcesOutcome(std::move(result.GetError()));
 }
 
 GetSubscriberOutcome SecurityLakeClient::GetSubscriber(const GetSubscriberRequest& request) const {
@@ -420,7 +454,8 @@ GetSubscriberOutcome SecurityLakeClient::GetSubscriber(const GetSubscriberReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSubscriberId());
   };
 
-  return GetSubscriberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSubscriberOutcome(result.GetResultWithOwnership()) : GetSubscriberOutcome(std::move(result.GetError()));
 }
 
 ListDataLakeExceptionsOutcome SecurityLakeClient::ListDataLakeExceptions(const ListDataLakeExceptionsRequest& request) const {
@@ -429,7 +464,9 @@ ListDataLakeExceptionsOutcome SecurityLakeClient::ListDataLakeExceptions(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/exceptions");
   };
 
-  return ListDataLakeExceptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataLakeExceptionsOutcome(result.GetResultWithOwnership())
+                            : ListDataLakeExceptionsOutcome(std::move(result.GetError()));
 }
 
 ListDataLakesOutcome SecurityLakeClient::ListDataLakes(const ListDataLakesRequest& request) const {
@@ -438,7 +475,8 @@ ListDataLakesOutcome SecurityLakeClient::ListDataLakes(const ListDataLakesReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalakes");
   };
 
-  return ListDataLakesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataLakesOutcome(result.GetResultWithOwnership()) : ListDataLakesOutcome(std::move(result.GetError()));
 }
 
 ListLogSourcesOutcome SecurityLakeClient::ListLogSources(const ListLogSourcesRequest& request) const {
@@ -447,7 +485,8 @@ ListLogSourcesOutcome SecurityLakeClient::ListLogSources(const ListLogSourcesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/logsources/list");
   };
 
-  return ListLogSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLogSourcesOutcome(result.GetResultWithOwnership()) : ListLogSourcesOutcome(std::move(result.GetError()));
 }
 
 ListSubscribersOutcome SecurityLakeClient::ListSubscribers(const ListSubscribersRequest& request) const {
@@ -456,7 +495,9 @@ ListSubscribersOutcome SecurityLakeClient::ListSubscribers(const ListSubscribers
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/subscribers");
   };
 
-  return ListSubscribersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSubscribersOutcome(result.GetResultWithOwnership())
+                            : ListSubscribersOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SecurityLakeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -472,7 +513,9 @@ ListTagsForResourceOutcome SecurityLakeClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RegisterDataLakeDelegatedAdministratorOutcome SecurityLakeClient::RegisterDataLakeDelegatedAdministrator(
@@ -482,7 +525,9 @@ RegisterDataLakeDelegatedAdministratorOutcome SecurityLakeClient::RegisterDataLa
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/delegate");
   };
 
-  return RegisterDataLakeDelegatedAdministratorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterDataLakeDelegatedAdministratorOutcome(result.GetResultWithOwnership())
+                            : RegisterDataLakeDelegatedAdministratorOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SecurityLakeClient::TagResource(const TagResourceRequest& request) const {
@@ -498,7 +543,8 @@ TagResourceOutcome SecurityLakeClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SecurityLakeClient::UntagResource(const UntagResourceRequest& request) const {
@@ -519,7 +565,8 @@ UntagResourceOutcome SecurityLakeClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDataLakeOutcome SecurityLakeClient::UpdateDataLake(const UpdateDataLakeRequest& request) const {
@@ -528,7 +575,8 @@ UpdateDataLakeOutcome SecurityLakeClient::UpdateDataLake(const UpdateDataLakeReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake");
   };
 
-  return UpdateDataLakeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDataLakeOutcome(result.GetResultWithOwnership()) : UpdateDataLakeOutcome(std::move(result.GetError()));
 }
 
 UpdateDataLakeExceptionSubscriptionOutcome SecurityLakeClient::UpdateDataLakeExceptionSubscription(
@@ -538,7 +586,9 @@ UpdateDataLakeExceptionSubscriptionOutcome SecurityLakeClient::UpdateDataLakeExc
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/datalake/exceptions/subscription");
   };
 
-  return UpdateDataLakeExceptionSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDataLakeExceptionSubscriptionOutcome(result.GetResultWithOwnership())
+                            : UpdateDataLakeExceptionSubscriptionOutcome(std::move(result.GetError()));
 }
 
 UpdateSubscriberOutcome SecurityLakeClient::UpdateSubscriber(const UpdateSubscriberRequest& request) const {
@@ -554,7 +604,9 @@ UpdateSubscriberOutcome SecurityLakeClient::UpdateSubscriber(const UpdateSubscri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSubscriberId());
   };
 
-  return UpdateSubscriberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSubscriberOutcome(result.GetResultWithOwnership())
+                            : UpdateSubscriberOutcome(std::move(result.GetError()));
 }
 
 UpdateSubscriberNotificationOutcome SecurityLakeClient::UpdateSubscriberNotification(
@@ -572,5 +624,7 @@ UpdateSubscriberNotificationOutcome SecurityLakeClient::UpdateSubscriberNotifica
     endpointResolutionOutcome.GetResult().AddPathSegments("/notification");
   };
 
-  return UpdateSubscriberNotificationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSubscriberNotificationOutcome(result.GetResultWithOwnership())
+                            : UpdateSubscriberNotificationOutcome(std::move(result.GetError()));
 }

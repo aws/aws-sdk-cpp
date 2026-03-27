@@ -190,7 +190,9 @@ PutActionInteractionsOutcome PersonalizeEventsClient::PutActionInteractions(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/action-interactions");
   };
 
-  return PutActionInteractionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutActionInteractionsOutcome(result.GetResultWithOwnership())
+                            : PutActionInteractionsOutcome(std::move(result.GetError()));
 }
 
 PutActionsOutcome PersonalizeEventsClient::PutActions(const PutActionsRequest& request) const {
@@ -199,7 +201,8 @@ PutActionsOutcome PersonalizeEventsClient::PutActions(const PutActionsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
   };
 
-  return PutActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutActionsOutcome(result.GetResultWithOwnership()) : PutActionsOutcome(std::move(result.GetError()));
 }
 
 PutEventsOutcome PersonalizeEventsClient::PutEvents(const PutEventsRequest& request) const {
@@ -208,7 +211,8 @@ PutEventsOutcome PersonalizeEventsClient::PutEvents(const PutEventsRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/events");
   };
 
-  return PutEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutEventsOutcome(result.GetResultWithOwnership()) : PutEventsOutcome(std::move(result.GetError()));
 }
 
 PutItemsOutcome PersonalizeEventsClient::PutItems(const PutItemsRequest& request) const {
@@ -217,7 +221,8 @@ PutItemsOutcome PersonalizeEventsClient::PutItems(const PutItemsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/items");
   };
 
-  return PutItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutItemsOutcome(result.GetResultWithOwnership()) : PutItemsOutcome(std::move(result.GetError()));
 }
 
 PutUsersOutcome PersonalizeEventsClient::PutUsers(const PutUsersRequest& request) const {
@@ -226,5 +231,6 @@ PutUsersOutcome PersonalizeEventsClient::PutUsers(const PutUsersRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   };
 
-  return PutUsersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutUsersOutcome(result.GetResultWithOwnership()) : PutUsersOutcome(std::move(result.GetError()));
 }

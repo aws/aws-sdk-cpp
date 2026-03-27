@@ -220,209 +220,299 @@ CostExplorerClient::InvokeOperationOutcome CostExplorerClient::InvokeServiceOper
 }
 
 CreateAnomalyMonitorOutcome CostExplorerClient::CreateAnomalyMonitor(const CreateAnomalyMonitorRequest& request) const {
-  return CreateAnomalyMonitorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAnomalyMonitorOutcome(result.GetResultWithOwnership())
+                            : CreateAnomalyMonitorOutcome(std::move(result.GetError()));
 }
 
 CreateAnomalySubscriptionOutcome CostExplorerClient::CreateAnomalySubscription(const CreateAnomalySubscriptionRequest& request) const {
-  return CreateAnomalySubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAnomalySubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateAnomalySubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateCostCategoryDefinitionOutcome CostExplorerClient::CreateCostCategoryDefinition(
     const CreateCostCategoryDefinitionRequest& request) const {
-  return CreateCostCategoryDefinitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCostCategoryDefinitionOutcome(result.GetResultWithOwnership())
+                            : CreateCostCategoryDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeleteAnomalyMonitorOutcome CostExplorerClient::DeleteAnomalyMonitor(const DeleteAnomalyMonitorRequest& request) const {
-  return DeleteAnomalyMonitorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAnomalyMonitorOutcome(result.GetResultWithOwnership())
+                            : DeleteAnomalyMonitorOutcome(std::move(result.GetError()));
 }
 
 DeleteAnomalySubscriptionOutcome CostExplorerClient::DeleteAnomalySubscription(const DeleteAnomalySubscriptionRequest& request) const {
-  return DeleteAnomalySubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAnomalySubscriptionOutcome(result.GetResultWithOwnership())
+                            : DeleteAnomalySubscriptionOutcome(std::move(result.GetError()));
 }
 
 DeleteCostCategoryDefinitionOutcome CostExplorerClient::DeleteCostCategoryDefinition(
     const DeleteCostCategoryDefinitionRequest& request) const {
-  return DeleteCostCategoryDefinitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCostCategoryDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteCostCategoryDefinitionOutcome(std::move(result.GetError()));
 }
 
 DescribeCostCategoryDefinitionOutcome CostExplorerClient::DescribeCostCategoryDefinition(
     const DescribeCostCategoryDefinitionRequest& request) const {
-  return DescribeCostCategoryDefinitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCostCategoryDefinitionOutcome(result.GetResultWithOwnership())
+                            : DescribeCostCategoryDefinitionOutcome(std::move(result.GetError()));
 }
 
 GetAnomaliesOutcome CostExplorerClient::GetAnomalies(const GetAnomaliesRequest& request) const {
-  return GetAnomaliesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAnomaliesOutcome(result.GetResultWithOwnership()) : GetAnomaliesOutcome(std::move(result.GetError()));
 }
 
 GetAnomalyMonitorsOutcome CostExplorerClient::GetAnomalyMonitors(const GetAnomalyMonitorsRequest& request) const {
-  return GetAnomalyMonitorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAnomalyMonitorsOutcome(result.GetResultWithOwnership())
+                            : GetAnomalyMonitorsOutcome(std::move(result.GetError()));
 }
 
 GetAnomalySubscriptionsOutcome CostExplorerClient::GetAnomalySubscriptions(const GetAnomalySubscriptionsRequest& request) const {
-  return GetAnomalySubscriptionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAnomalySubscriptionsOutcome(result.GetResultWithOwnership())
+                            : GetAnomalySubscriptionsOutcome(std::move(result.GetError()));
 }
 
 GetApproximateUsageRecordsOutcome CostExplorerClient::GetApproximateUsageRecords(const GetApproximateUsageRecordsRequest& request) const {
-  return GetApproximateUsageRecordsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetApproximateUsageRecordsOutcome(result.GetResultWithOwnership())
+                            : GetApproximateUsageRecordsOutcome(std::move(result.GetError()));
 }
 
 GetCommitmentPurchaseAnalysisOutcome CostExplorerClient::GetCommitmentPurchaseAnalysis(
     const GetCommitmentPurchaseAnalysisRequest& request) const {
-  return GetCommitmentPurchaseAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCommitmentPurchaseAnalysisOutcome(result.GetResultWithOwnership())
+                            : GetCommitmentPurchaseAnalysisOutcome(std::move(result.GetError()));
 }
 
 GetCostAndUsageOutcome CostExplorerClient::GetCostAndUsage(const GetCostAndUsageRequest& request) const {
-  return GetCostAndUsageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCostAndUsageOutcome(result.GetResultWithOwnership())
+                            : GetCostAndUsageOutcome(std::move(result.GetError()));
 }
 
 GetCostAndUsageComparisonsOutcome CostExplorerClient::GetCostAndUsageComparisons(const GetCostAndUsageComparisonsRequest& request) const {
-  return GetCostAndUsageComparisonsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCostAndUsageComparisonsOutcome(result.GetResultWithOwnership())
+                            : GetCostAndUsageComparisonsOutcome(std::move(result.GetError()));
 }
 
 GetCostAndUsageWithResourcesOutcome CostExplorerClient::GetCostAndUsageWithResources(
     const GetCostAndUsageWithResourcesRequest& request) const {
-  return GetCostAndUsageWithResourcesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCostAndUsageWithResourcesOutcome(result.GetResultWithOwnership())
+                            : GetCostAndUsageWithResourcesOutcome(std::move(result.GetError()));
 }
 
 GetCostCategoriesOutcome CostExplorerClient::GetCostCategories(const GetCostCategoriesRequest& request) const {
-  return GetCostCategoriesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCostCategoriesOutcome(result.GetResultWithOwnership())
+                            : GetCostCategoriesOutcome(std::move(result.GetError()));
 }
 
 GetCostComparisonDriversOutcome CostExplorerClient::GetCostComparisonDrivers(const GetCostComparisonDriversRequest& request) const {
-  return GetCostComparisonDriversOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCostComparisonDriversOutcome(result.GetResultWithOwnership())
+                            : GetCostComparisonDriversOutcome(std::move(result.GetError()));
 }
 
 GetCostForecastOutcome CostExplorerClient::GetCostForecast(const GetCostForecastRequest& request) const {
-  return GetCostForecastOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCostForecastOutcome(result.GetResultWithOwnership())
+                            : GetCostForecastOutcome(std::move(result.GetError()));
 }
 
 GetDimensionValuesOutcome CostExplorerClient::GetDimensionValues(const GetDimensionValuesRequest& request) const {
-  return GetDimensionValuesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDimensionValuesOutcome(result.GetResultWithOwnership())
+                            : GetDimensionValuesOutcome(std::move(result.GetError()));
 }
 
 GetReservationCoverageOutcome CostExplorerClient::GetReservationCoverage(const GetReservationCoverageRequest& request) const {
-  return GetReservationCoverageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetReservationCoverageOutcome(result.GetResultWithOwnership())
+                            : GetReservationCoverageOutcome(std::move(result.GetError()));
 }
 
 GetReservationPurchaseRecommendationOutcome CostExplorerClient::GetReservationPurchaseRecommendation(
     const GetReservationPurchaseRecommendationRequest& request) const {
-  return GetReservationPurchaseRecommendationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetReservationPurchaseRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetReservationPurchaseRecommendationOutcome(std::move(result.GetError()));
 }
 
 GetReservationUtilizationOutcome CostExplorerClient::GetReservationUtilization(const GetReservationUtilizationRequest& request) const {
-  return GetReservationUtilizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetReservationUtilizationOutcome(result.GetResultWithOwnership())
+                            : GetReservationUtilizationOutcome(std::move(result.GetError()));
 }
 
 GetRightsizingRecommendationOutcome CostExplorerClient::GetRightsizingRecommendation(
     const GetRightsizingRecommendationRequest& request) const {
-  return GetRightsizingRecommendationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRightsizingRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetRightsizingRecommendationOutcome(std::move(result.GetError()));
 }
 
 GetSavingsPlanPurchaseRecommendationDetailsOutcome CostExplorerClient::GetSavingsPlanPurchaseRecommendationDetails(
     const GetSavingsPlanPurchaseRecommendationDetailsRequest& request) const {
-  return GetSavingsPlanPurchaseRecommendationDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSavingsPlanPurchaseRecommendationDetailsOutcome(result.GetResultWithOwnership())
+                            : GetSavingsPlanPurchaseRecommendationDetailsOutcome(std::move(result.GetError()));
 }
 
 GetSavingsPlansCoverageOutcome CostExplorerClient::GetSavingsPlansCoverage(const GetSavingsPlansCoverageRequest& request) const {
-  return GetSavingsPlansCoverageOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSavingsPlansCoverageOutcome(result.GetResultWithOwnership())
+                            : GetSavingsPlansCoverageOutcome(std::move(result.GetError()));
 }
 
 GetSavingsPlansPurchaseRecommendationOutcome CostExplorerClient::GetSavingsPlansPurchaseRecommendation(
     const GetSavingsPlansPurchaseRecommendationRequest& request) const {
-  return GetSavingsPlansPurchaseRecommendationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSavingsPlansPurchaseRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetSavingsPlansPurchaseRecommendationOutcome(std::move(result.GetError()));
 }
 
 GetSavingsPlansUtilizationOutcome CostExplorerClient::GetSavingsPlansUtilization(const GetSavingsPlansUtilizationRequest& request) const {
-  return GetSavingsPlansUtilizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSavingsPlansUtilizationOutcome(result.GetResultWithOwnership())
+                            : GetSavingsPlansUtilizationOutcome(std::move(result.GetError()));
 }
 
 GetSavingsPlansUtilizationDetailsOutcome CostExplorerClient::GetSavingsPlansUtilizationDetails(
     const GetSavingsPlansUtilizationDetailsRequest& request) const {
-  return GetSavingsPlansUtilizationDetailsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSavingsPlansUtilizationDetailsOutcome(result.GetResultWithOwnership())
+                            : GetSavingsPlansUtilizationDetailsOutcome(std::move(result.GetError()));
 }
 
 GetTagsOutcome CostExplorerClient::GetTags(const GetTagsRequest& request) const {
-  return GetTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTagsOutcome(result.GetResultWithOwnership()) : GetTagsOutcome(std::move(result.GetError()));
 }
 
 GetUsageForecastOutcome CostExplorerClient::GetUsageForecast(const GetUsageForecastRequest& request) const {
-  return GetUsageForecastOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetUsageForecastOutcome(result.GetResultWithOwnership())
+                            : GetUsageForecastOutcome(std::move(result.GetError()));
 }
 
 ListCommitmentPurchaseAnalysesOutcome CostExplorerClient::ListCommitmentPurchaseAnalyses(
     const ListCommitmentPurchaseAnalysesRequest& request) const {
-  return ListCommitmentPurchaseAnalysesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCommitmentPurchaseAnalysesOutcome(result.GetResultWithOwnership())
+                            : ListCommitmentPurchaseAnalysesOutcome(std::move(result.GetError()));
 }
 
 ListCostAllocationTagBackfillHistoryOutcome CostExplorerClient::ListCostAllocationTagBackfillHistory(
     const ListCostAllocationTagBackfillHistoryRequest& request) const {
-  return ListCostAllocationTagBackfillHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCostAllocationTagBackfillHistoryOutcome(result.GetResultWithOwnership())
+                            : ListCostAllocationTagBackfillHistoryOutcome(std::move(result.GetError()));
 }
 
 ListCostAllocationTagsOutcome CostExplorerClient::ListCostAllocationTags(const ListCostAllocationTagsRequest& request) const {
-  return ListCostAllocationTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCostAllocationTagsOutcome(result.GetResultWithOwnership())
+                            : ListCostAllocationTagsOutcome(std::move(result.GetError()));
 }
 
 ListCostCategoryDefinitionsOutcome CostExplorerClient::ListCostCategoryDefinitions(
     const ListCostCategoryDefinitionsRequest& request) const {
-  return ListCostCategoryDefinitionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCostCategoryDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListCostCategoryDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListCostCategoryResourceAssociationsOutcome CostExplorerClient::ListCostCategoryResourceAssociations(
     const ListCostCategoryResourceAssociationsRequest& request) const {
-  return ListCostCategoryResourceAssociationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCostCategoryResourceAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListCostCategoryResourceAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListSavingsPlansPurchaseRecommendationGenerationOutcome CostExplorerClient::ListSavingsPlansPurchaseRecommendationGeneration(
     const ListSavingsPlansPurchaseRecommendationGenerationRequest& request) const {
-  return ListSavingsPlansPurchaseRecommendationGenerationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSavingsPlansPurchaseRecommendationGenerationOutcome(result.GetResultWithOwnership())
+                            : ListSavingsPlansPurchaseRecommendationGenerationOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome CostExplorerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ProvideAnomalyFeedbackOutcome CostExplorerClient::ProvideAnomalyFeedback(const ProvideAnomalyFeedbackRequest& request) const {
-  return ProvideAnomalyFeedbackOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ProvideAnomalyFeedbackOutcome(result.GetResultWithOwnership())
+                            : ProvideAnomalyFeedbackOutcome(std::move(result.GetError()));
 }
 
 StartCommitmentPurchaseAnalysisOutcome CostExplorerClient::StartCommitmentPurchaseAnalysis(
     const StartCommitmentPurchaseAnalysisRequest& request) const {
-  return StartCommitmentPurchaseAnalysisOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCommitmentPurchaseAnalysisOutcome(result.GetResultWithOwnership())
+                            : StartCommitmentPurchaseAnalysisOutcome(std::move(result.GetError()));
 }
 
 StartCostAllocationTagBackfillOutcome CostExplorerClient::StartCostAllocationTagBackfill(
     const StartCostAllocationTagBackfillRequest& request) const {
-  return StartCostAllocationTagBackfillOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartCostAllocationTagBackfillOutcome(result.GetResultWithOwnership())
+                            : StartCostAllocationTagBackfillOutcome(std::move(result.GetError()));
 }
 
 StartSavingsPlansPurchaseRecommendationGenerationOutcome CostExplorerClient::StartSavingsPlansPurchaseRecommendationGeneration(
     const StartSavingsPlansPurchaseRecommendationGenerationRequest& request) const {
-  return StartSavingsPlansPurchaseRecommendationGenerationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSavingsPlansPurchaseRecommendationGenerationOutcome(result.GetResultWithOwnership())
+                            : StartSavingsPlansPurchaseRecommendationGenerationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome CostExplorerClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome CostExplorerClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAnomalyMonitorOutcome CostExplorerClient::UpdateAnomalyMonitor(const UpdateAnomalyMonitorRequest& request) const {
-  return UpdateAnomalyMonitorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAnomalyMonitorOutcome(result.GetResultWithOwnership())
+                            : UpdateAnomalyMonitorOutcome(std::move(result.GetError()));
 }
 
 UpdateAnomalySubscriptionOutcome CostExplorerClient::UpdateAnomalySubscription(const UpdateAnomalySubscriptionRequest& request) const {
-  return UpdateAnomalySubscriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAnomalySubscriptionOutcome(result.GetResultWithOwnership())
+                            : UpdateAnomalySubscriptionOutcome(std::move(result.GetError()));
 }
 
 UpdateCostAllocationTagsStatusOutcome CostExplorerClient::UpdateCostAllocationTagsStatus(
     const UpdateCostAllocationTagsStatusRequest& request) const {
-  return UpdateCostAllocationTagsStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCostAllocationTagsStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateCostAllocationTagsStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateCostCategoryDefinitionOutcome CostExplorerClient::UpdateCostCategoryDefinition(
     const UpdateCostCategoryDefinitionRequest& request) const {
-  return UpdateCostCategoryDefinitionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCostCategoryDefinitionOutcome(result.GetResultWithOwnership())
+                            : UpdateCostCategoryDefinitionOutcome(std::move(result.GetError()));
 }

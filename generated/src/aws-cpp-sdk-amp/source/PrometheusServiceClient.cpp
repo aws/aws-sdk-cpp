@@ -238,7 +238,9 @@ CreateAlertManagerDefinitionOutcome PrometheusServiceClient::CreateAlertManagerD
     endpointResolutionOutcome.GetResult().AddPathSegments("/alertmanager/definition");
   };
 
-  return CreateAlertManagerDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAlertManagerDefinitionOutcome(result.GetResultWithOwnership())
+                            : CreateAlertManagerDefinitionOutcome(std::move(result.GetError()));
 }
 
 CreateAnomalyDetectorOutcome PrometheusServiceClient::CreateAnomalyDetector(const CreateAnomalyDetectorRequest& request) const {
@@ -255,7 +257,9 @@ CreateAnomalyDetectorOutcome PrometheusServiceClient::CreateAnomalyDetector(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/anomalydetectors");
   };
 
-  return CreateAnomalyDetectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAnomalyDetectorOutcome(result.GetResultWithOwnership())
+                            : CreateAnomalyDetectorOutcome(std::move(result.GetError()));
 }
 
 CreateLoggingConfigurationOutcome PrometheusServiceClient::CreateLoggingConfiguration(
@@ -273,7 +277,9 @@ CreateLoggingConfigurationOutcome PrometheusServiceClient::CreateLoggingConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
   };
 
-  return CreateLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateQueryLoggingConfigurationOutcome PrometheusServiceClient::CreateQueryLoggingConfiguration(
@@ -291,7 +297,9 @@ CreateQueryLoggingConfigurationOutcome PrometheusServiceClient::CreateQueryLoggi
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging/query");
   };
 
-  return CreateQueryLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQueryLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateQueryLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateRuleGroupsNamespaceOutcome PrometheusServiceClient::CreateRuleGroupsNamespace(const CreateRuleGroupsNamespaceRequest& request) const {
@@ -308,7 +316,9 @@ CreateRuleGroupsNamespaceOutcome PrometheusServiceClient::CreateRuleGroupsNamesp
     endpointResolutionOutcome.GetResult().AddPathSegments("/rulegroupsnamespaces");
   };
 
-  return CreateRuleGroupsNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRuleGroupsNamespaceOutcome(result.GetResultWithOwnership())
+                            : CreateRuleGroupsNamespaceOutcome(std::move(result.GetError()));
 }
 
 CreateScraperOutcome PrometheusServiceClient::CreateScraper(const CreateScraperRequest& request) const {
@@ -317,7 +327,8 @@ CreateScraperOutcome PrometheusServiceClient::CreateScraper(const CreateScraperR
     endpointResolutionOutcome.GetResult().AddPathSegments("/scrapers");
   };
 
-  return CreateScraperOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScraperOutcome(result.GetResultWithOwnership()) : CreateScraperOutcome(std::move(result.GetError()));
 }
 
 CreateWorkspaceOutcome PrometheusServiceClient::CreateWorkspace(const CreateWorkspaceRequest& request) const {
@@ -326,7 +337,9 @@ CreateWorkspaceOutcome PrometheusServiceClient::CreateWorkspace(const CreateWork
     endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces");
   };
 
-  return CreateWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWorkspaceOutcome(result.GetResultWithOwnership())
+                            : CreateWorkspaceOutcome(std::move(result.GetError()));
 }
 
 DeleteAlertManagerDefinitionOutcome PrometheusServiceClient::DeleteAlertManagerDefinition(
@@ -344,7 +357,9 @@ DeleteAlertManagerDefinitionOutcome PrometheusServiceClient::DeleteAlertManagerD
     endpointResolutionOutcome.GetResult().AddPathSegments("/alertmanager/definition");
   };
 
-  return DeleteAlertManagerDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAlertManagerDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteAlertManagerDefinitionOutcome(std::move(result.GetError()));
 }
 
 DeleteAnomalyDetectorOutcome PrometheusServiceClient::DeleteAnomalyDetector(const DeleteAnomalyDetectorRequest& request) const {
@@ -367,7 +382,9 @@ DeleteAnomalyDetectorOutcome PrometheusServiceClient::DeleteAnomalyDetector(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnomalyDetectorId());
   };
 
-  return DeleteAnomalyDetectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAnomalyDetectorOutcome(result.GetResultWithOwnership())
+                            : DeleteAnomalyDetectorOutcome(std::move(result.GetError()));
 }
 
 DeleteLoggingConfigurationOutcome PrometheusServiceClient::DeleteLoggingConfiguration(
@@ -385,7 +402,9 @@ DeleteLoggingConfigurationOutcome PrometheusServiceClient::DeleteLoggingConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
   };
 
-  return DeleteLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteQueryLoggingConfigurationOutcome PrometheusServiceClient::DeleteQueryLoggingConfiguration(
@@ -403,7 +422,9 @@ DeleteQueryLoggingConfigurationOutcome PrometheusServiceClient::DeleteQueryLoggi
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging/query");
   };
 
-  return DeleteQueryLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteQueryLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteQueryLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome PrometheusServiceClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -420,7 +441,9 @@ DeleteResourcePolicyOutcome PrometheusServiceClient::DeleteResourcePolicy(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DeleteResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteRuleGroupsNamespaceOutcome PrometheusServiceClient::DeleteRuleGroupsNamespace(const DeleteRuleGroupsNamespaceRequest& request) const {
@@ -443,7 +466,9 @@ DeleteRuleGroupsNamespaceOutcome PrometheusServiceClient::DeleteRuleGroupsNamesp
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DeleteRuleGroupsNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRuleGroupsNamespaceOutcome(result.GetResultWithOwnership())
+                            : DeleteRuleGroupsNamespaceOutcome(std::move(result.GetError()));
 }
 
 DeleteScraperOutcome PrometheusServiceClient::DeleteScraper(const DeleteScraperRequest& request) const {
@@ -459,7 +484,8 @@ DeleteScraperOutcome PrometheusServiceClient::DeleteScraper(const DeleteScraperR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScraperId());
   };
 
-  return DeleteScraperOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteScraperOutcome(result.GetResultWithOwnership()) : DeleteScraperOutcome(std::move(result.GetError()));
 }
 
 DeleteScraperLoggingConfigurationOutcome PrometheusServiceClient::DeleteScraperLoggingConfiguration(
@@ -477,7 +503,9 @@ DeleteScraperLoggingConfigurationOutcome PrometheusServiceClient::DeleteScraperL
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging-configuration");
   };
 
-  return DeleteScraperLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteScraperLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteScraperLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkspaceOutcome PrometheusServiceClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const {
@@ -493,7 +521,9 @@ DeleteWorkspaceOutcome PrometheusServiceClient::DeleteWorkspace(const DeleteWork
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   };
 
-  return DeleteWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkspaceOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkspaceOutcome(std::move(result.GetError()));
 }
 
 DescribeAlertManagerDefinitionOutcome PrometheusServiceClient::DescribeAlertManagerDefinition(
@@ -511,7 +541,9 @@ DescribeAlertManagerDefinitionOutcome PrometheusServiceClient::DescribeAlertMana
     endpointResolutionOutcome.GetResult().AddPathSegments("/alertmanager/definition");
   };
 
-  return DescribeAlertManagerDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAlertManagerDefinitionOutcome(result.GetResultWithOwnership())
+                            : DescribeAlertManagerDefinitionOutcome(std::move(result.GetError()));
 }
 
 DescribeAnomalyDetectorOutcome PrometheusServiceClient::DescribeAnomalyDetector(const DescribeAnomalyDetectorRequest& request) const {
@@ -534,7 +566,9 @@ DescribeAnomalyDetectorOutcome PrometheusServiceClient::DescribeAnomalyDetector(
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnomalyDetectorId());
   };
 
-  return DescribeAnomalyDetectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAnomalyDetectorOutcome(result.GetResultWithOwnership())
+                            : DescribeAnomalyDetectorOutcome(std::move(result.GetError()));
 }
 
 DescribeLoggingConfigurationOutcome PrometheusServiceClient::DescribeLoggingConfiguration(
@@ -552,7 +586,9 @@ DescribeLoggingConfigurationOutcome PrometheusServiceClient::DescribeLoggingConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
   };
 
-  return DescribeLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeQueryLoggingConfigurationOutcome PrometheusServiceClient::DescribeQueryLoggingConfiguration(
@@ -570,7 +606,9 @@ DescribeQueryLoggingConfigurationOutcome PrometheusServiceClient::DescribeQueryL
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging/query");
   };
 
-  return DescribeQueryLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeQueryLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeQueryLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeResourcePolicyOutcome PrometheusServiceClient::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const {
@@ -587,7 +625,9 @@ DescribeResourcePolicyOutcome PrometheusServiceClient::DescribeResourcePolicy(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return DescribeResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : DescribeResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 DescribeRuleGroupsNamespaceOutcome PrometheusServiceClient::DescribeRuleGroupsNamespace(
@@ -611,7 +651,9 @@ DescribeRuleGroupsNamespaceOutcome PrometheusServiceClient::DescribeRuleGroupsNa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return DescribeRuleGroupsNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeRuleGroupsNamespaceOutcome(result.GetResultWithOwnership())
+                            : DescribeRuleGroupsNamespaceOutcome(std::move(result.GetError()));
 }
 
 DescribeScraperOutcome PrometheusServiceClient::DescribeScraper(const DescribeScraperRequest& request) const {
@@ -627,7 +669,9 @@ DescribeScraperOutcome PrometheusServiceClient::DescribeScraper(const DescribeSc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScraperId());
   };
 
-  return DescribeScraperOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeScraperOutcome(result.GetResultWithOwnership())
+                            : DescribeScraperOutcome(std::move(result.GetError()));
 }
 
 DescribeScraperLoggingConfigurationOutcome PrometheusServiceClient::DescribeScraperLoggingConfiguration(
@@ -645,7 +689,9 @@ DescribeScraperLoggingConfigurationOutcome PrometheusServiceClient::DescribeScra
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging-configuration");
   };
 
-  return DescribeScraperLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeScraperLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeScraperLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspaceOutcome PrometheusServiceClient::DescribeWorkspace(const DescribeWorkspaceRequest& request) const {
@@ -661,7 +707,9 @@ DescribeWorkspaceOutcome PrometheusServiceClient::DescribeWorkspace(const Descri
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
   };
 
-  return DescribeWorkspaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeWorkspaceOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkspaceConfigurationOutcome PrometheusServiceClient::DescribeWorkspaceConfiguration(
@@ -679,7 +727,9 @@ DescribeWorkspaceConfigurationOutcome PrometheusServiceClient::DescribeWorkspace
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return DescribeWorkspaceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeWorkspaceConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkspaceConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetDefaultScraperConfigurationOutcome PrometheusServiceClient::GetDefaultScraperConfiguration(
@@ -689,7 +739,9 @@ GetDefaultScraperConfigurationOutcome PrometheusServiceClient::GetDefaultScraper
     endpointResolutionOutcome.GetResult().AddPathSegments("/scraperconfiguration");
   };
 
-  return GetDefaultScraperConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDefaultScraperConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetDefaultScraperConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListAnomalyDetectorsOutcome PrometheusServiceClient::ListAnomalyDetectors(const ListAnomalyDetectorsRequest& request) const {
@@ -706,7 +758,9 @@ ListAnomalyDetectorsOutcome PrometheusServiceClient::ListAnomalyDetectors(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/anomalydetectors");
   };
 
-  return ListAnomalyDetectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAnomalyDetectorsOutcome(result.GetResultWithOwnership())
+                            : ListAnomalyDetectorsOutcome(std::move(result.GetError()));
 }
 
 ListRuleGroupsNamespacesOutcome PrometheusServiceClient::ListRuleGroupsNamespaces(const ListRuleGroupsNamespacesRequest& request) const {
@@ -723,7 +777,9 @@ ListRuleGroupsNamespacesOutcome PrometheusServiceClient::ListRuleGroupsNamespace
     endpointResolutionOutcome.GetResult().AddPathSegments("/rulegroupsnamespaces");
   };
 
-  return ListRuleGroupsNamespacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRuleGroupsNamespacesOutcome(result.GetResultWithOwnership())
+                            : ListRuleGroupsNamespacesOutcome(std::move(result.GetError()));
 }
 
 ListScrapersOutcome PrometheusServiceClient::ListScrapers(const ListScrapersRequest& request) const {
@@ -732,7 +788,8 @@ ListScrapersOutcome PrometheusServiceClient::ListScrapers(const ListScrapersRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/scrapers");
   };
 
-  return ListScrapersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListScrapersOutcome(result.GetResultWithOwnership()) : ListScrapersOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PrometheusServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -748,7 +805,9 @@ ListTagsForResourceOutcome PrometheusServiceClient::ListTagsForResource(const Li
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWorkspacesOutcome PrometheusServiceClient::ListWorkspaces(const ListWorkspacesRequest& request) const {
@@ -757,7 +816,8 @@ ListWorkspacesOutcome PrometheusServiceClient::ListWorkspaces(const ListWorkspac
     endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces");
   };
 
-  return ListWorkspacesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWorkspacesOutcome(result.GetResultWithOwnership()) : ListWorkspacesOutcome(std::move(result.GetError()));
 }
 
 PutAlertManagerDefinitionOutcome PrometheusServiceClient::PutAlertManagerDefinition(const PutAlertManagerDefinitionRequest& request) const {
@@ -774,7 +834,9 @@ PutAlertManagerDefinitionOutcome PrometheusServiceClient::PutAlertManagerDefinit
     endpointResolutionOutcome.GetResult().AddPathSegments("/alertmanager/definition");
   };
 
-  return PutAlertManagerDefinitionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAlertManagerDefinitionOutcome(result.GetResultWithOwnership())
+                            : PutAlertManagerDefinitionOutcome(std::move(result.GetError()));
 }
 
 PutAnomalyDetectorOutcome PrometheusServiceClient::PutAnomalyDetector(const PutAnomalyDetectorRequest& request) const {
@@ -797,7 +859,9 @@ PutAnomalyDetectorOutcome PrometheusServiceClient::PutAnomalyDetector(const PutA
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnomalyDetectorId());
   };
 
-  return PutAnomalyDetectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAnomalyDetectorOutcome(result.GetResultWithOwnership())
+                            : PutAnomalyDetectorOutcome(std::move(result.GetError()));
 }
 
 PutResourcePolicyOutcome PrometheusServiceClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const {
@@ -814,7 +878,9 @@ PutResourcePolicyOutcome PrometheusServiceClient::PutResourcePolicy(const PutRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return PutResourcePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
+                            : PutResourcePolicyOutcome(std::move(result.GetError()));
 }
 
 PutRuleGroupsNamespaceOutcome PrometheusServiceClient::PutRuleGroupsNamespace(const PutRuleGroupsNamespaceRequest& request) const {
@@ -837,7 +903,9 @@ PutRuleGroupsNamespaceOutcome PrometheusServiceClient::PutRuleGroupsNamespace(co
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetName());
   };
 
-  return PutRuleGroupsNamespaceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutRuleGroupsNamespaceOutcome(result.GetResultWithOwnership())
+                            : PutRuleGroupsNamespaceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PrometheusServiceClient::TagResource(const TagResourceRequest& request) const {
@@ -853,7 +921,8 @@ TagResourceOutcome PrometheusServiceClient::TagResource(const TagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PrometheusServiceClient::UntagResource(const UntagResourceRequest& request) const {
@@ -874,7 +943,8 @@ UntagResourceOutcome PrometheusServiceClient::UntagResource(const UntagResourceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateLoggingConfigurationOutcome PrometheusServiceClient::UpdateLoggingConfiguration(
@@ -892,7 +962,9 @@ UpdateLoggingConfigurationOutcome PrometheusServiceClient::UpdateLoggingConfigur
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
   };
 
-  return UpdateLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateQueryLoggingConfigurationOutcome PrometheusServiceClient::UpdateQueryLoggingConfiguration(
@@ -910,7 +982,9 @@ UpdateQueryLoggingConfigurationOutcome PrometheusServiceClient::UpdateQueryLoggi
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging/query");
   };
 
-  return UpdateQueryLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateQueryLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateQueryLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateScraperOutcome PrometheusServiceClient::UpdateScraper(const UpdateScraperRequest& request) const {
@@ -926,7 +1000,8 @@ UpdateScraperOutcome PrometheusServiceClient::UpdateScraper(const UpdateScraperR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScraperId());
   };
 
-  return UpdateScraperOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateScraperOutcome(result.GetResultWithOwnership()) : UpdateScraperOutcome(std::move(result.GetError()));
 }
 
 UpdateScraperLoggingConfigurationOutcome PrometheusServiceClient::UpdateScraperLoggingConfiguration(
@@ -944,7 +1019,9 @@ UpdateScraperLoggingConfigurationOutcome PrometheusServiceClient::UpdateScraperL
     endpointResolutionOutcome.GetResult().AddPathSegments("/logging-configuration");
   };
 
-  return UpdateScraperLoggingConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateScraperLoggingConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateScraperLoggingConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspaceAliasOutcome PrometheusServiceClient::UpdateWorkspaceAlias(const UpdateWorkspaceAliasRequest& request) const {
@@ -961,7 +1038,9 @@ UpdateWorkspaceAliasOutcome PrometheusServiceClient::UpdateWorkspaceAlias(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/alias");
   };
 
-  return UpdateWorkspaceAliasOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkspaceAliasOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceAliasOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkspaceConfigurationOutcome PrometheusServiceClient::UpdateWorkspaceConfiguration(
@@ -979,5 +1058,7 @@ UpdateWorkspaceConfigurationOutcome PrometheusServiceClient::UpdateWorkspaceConf
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
   };
 
-  return UpdateWorkspaceConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateWorkspaceConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceConfigurationOutcome(std::move(result.GetError()));
 }

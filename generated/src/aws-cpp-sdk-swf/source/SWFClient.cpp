@@ -209,158 +209,231 @@ SWFClient::InvokeOperationOutcome SWFClient::InvokeServiceOperation(const Amazon
 }
 
 CountClosedWorkflowExecutionsOutcome SWFClient::CountClosedWorkflowExecutions(const CountClosedWorkflowExecutionsRequest& request) const {
-  return CountClosedWorkflowExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CountClosedWorkflowExecutionsOutcome(result.GetResultWithOwnership())
+                            : CountClosedWorkflowExecutionsOutcome(std::move(result.GetError()));
 }
 
 CountOpenWorkflowExecutionsOutcome SWFClient::CountOpenWorkflowExecutions(const CountOpenWorkflowExecutionsRequest& request) const {
-  return CountOpenWorkflowExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CountOpenWorkflowExecutionsOutcome(result.GetResultWithOwnership())
+                            : CountOpenWorkflowExecutionsOutcome(std::move(result.GetError()));
 }
 
 CountPendingActivityTasksOutcome SWFClient::CountPendingActivityTasks(const CountPendingActivityTasksRequest& request) const {
-  return CountPendingActivityTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CountPendingActivityTasksOutcome(result.GetResultWithOwnership())
+                            : CountPendingActivityTasksOutcome(std::move(result.GetError()));
 }
 
 CountPendingDecisionTasksOutcome SWFClient::CountPendingDecisionTasks(const CountPendingDecisionTasksRequest& request) const {
-  return CountPendingDecisionTasksOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CountPendingDecisionTasksOutcome(result.GetResultWithOwnership())
+                            : CountPendingDecisionTasksOutcome(std::move(result.GetError()));
 }
 
 DeleteActivityTypeOutcome SWFClient::DeleteActivityType(const DeleteActivityTypeRequest& request) const {
-  return DeleteActivityTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteActivityTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteActivityTypeOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowTypeOutcome SWFClient::DeleteWorkflowType(const DeleteWorkflowTypeRequest& request) const {
-  return DeleteWorkflowTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteWorkflowTypeOutcome(result.GetResultWithOwnership())
+                            : DeleteWorkflowTypeOutcome(std::move(result.GetError()));
 }
 
 DeprecateActivityTypeOutcome SWFClient::DeprecateActivityType(const DeprecateActivityTypeRequest& request) const {
-  return DeprecateActivityTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeprecateActivityTypeOutcome(result.GetResultWithOwnership())
+                            : DeprecateActivityTypeOutcome(std::move(result.GetError()));
 }
 
 DeprecateDomainOutcome SWFClient::DeprecateDomain(const DeprecateDomainRequest& request) const {
-  return DeprecateDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeprecateDomainOutcome(result.GetResultWithOwnership())
+                            : DeprecateDomainOutcome(std::move(result.GetError()));
 }
 
 DeprecateWorkflowTypeOutcome SWFClient::DeprecateWorkflowType(const DeprecateWorkflowTypeRequest& request) const {
-  return DeprecateWorkflowTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeprecateWorkflowTypeOutcome(result.GetResultWithOwnership())
+                            : DeprecateWorkflowTypeOutcome(std::move(result.GetError()));
 }
 
 DescribeActivityTypeOutcome SWFClient::DescribeActivityType(const DescribeActivityTypeRequest& request) const {
-  return DescribeActivityTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeActivityTypeOutcome(result.GetResultWithOwnership())
+                            : DescribeActivityTypeOutcome(std::move(result.GetError()));
 }
 
 DescribeDomainOutcome SWFClient::DescribeDomain(const DescribeDomainRequest& request) const {
-  return DescribeDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDomainOutcome(result.GetResultWithOwnership()) : DescribeDomainOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkflowExecutionOutcome SWFClient::DescribeWorkflowExecution(const DescribeWorkflowExecutionRequest& request) const {
-  return DescribeWorkflowExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkflowExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkflowExecutionOutcome(std::move(result.GetError()));
 }
 
 DescribeWorkflowTypeOutcome SWFClient::DescribeWorkflowType(const DescribeWorkflowTypeRequest& request) const {
-  return DescribeWorkflowTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeWorkflowTypeOutcome(result.GetResultWithOwnership())
+                            : DescribeWorkflowTypeOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowExecutionHistoryOutcome SWFClient::GetWorkflowExecutionHistory(const GetWorkflowExecutionHistoryRequest& request) const {
-  return GetWorkflowExecutionHistoryOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetWorkflowExecutionHistoryOutcome(result.GetResultWithOwnership())
+                            : GetWorkflowExecutionHistoryOutcome(std::move(result.GetError()));
 }
 
 ListActivityTypesOutcome SWFClient::ListActivityTypes(const ListActivityTypesRequest& request) const {
-  return ListActivityTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListActivityTypesOutcome(result.GetResultWithOwnership())
+                            : ListActivityTypesOutcome(std::move(result.GetError()));
 }
 
 ListClosedWorkflowExecutionsOutcome SWFClient::ListClosedWorkflowExecutions(const ListClosedWorkflowExecutionsRequest& request) const {
-  return ListClosedWorkflowExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClosedWorkflowExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListClosedWorkflowExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListDomainsOutcome SWFClient::ListDomains(const ListDomainsRequest& request) const {
-  return ListDomainsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDomainsOutcome(result.GetResultWithOwnership()) : ListDomainsOutcome(std::move(result.GetError()));
 }
 
 ListOpenWorkflowExecutionsOutcome SWFClient::ListOpenWorkflowExecutions(const ListOpenWorkflowExecutionsRequest& request) const {
-  return ListOpenWorkflowExecutionsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOpenWorkflowExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListOpenWorkflowExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SWFClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowTypesOutcome SWFClient::ListWorkflowTypes(const ListWorkflowTypesRequest& request) const {
-  return ListWorkflowTypesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowTypesOutcome(result.GetResultWithOwnership())
+                            : ListWorkflowTypesOutcome(std::move(result.GetError()));
 }
 
 PollForActivityTaskOutcome SWFClient::PollForActivityTask(const PollForActivityTaskRequest& request) const {
-  return PollForActivityTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PollForActivityTaskOutcome(result.GetResultWithOwnership())
+                            : PollForActivityTaskOutcome(std::move(result.GetError()));
 }
 
 PollForDecisionTaskOutcome SWFClient::PollForDecisionTask(const PollForDecisionTaskRequest& request) const {
-  return PollForDecisionTaskOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PollForDecisionTaskOutcome(result.GetResultWithOwnership())
+                            : PollForDecisionTaskOutcome(std::move(result.GetError()));
 }
 
 RecordActivityTaskHeartbeatOutcome SWFClient::RecordActivityTaskHeartbeat(const RecordActivityTaskHeartbeatRequest& request) const {
-  return RecordActivityTaskHeartbeatOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RecordActivityTaskHeartbeatOutcome(result.GetResultWithOwnership())
+                            : RecordActivityTaskHeartbeatOutcome(std::move(result.GetError()));
 }
 
 RegisterActivityTypeOutcome SWFClient::RegisterActivityType(const RegisterActivityTypeRequest& request) const {
-  return RegisterActivityTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterActivityTypeOutcome(result.GetResultWithOwnership())
+                            : RegisterActivityTypeOutcome(std::move(result.GetError()));
 }
 
 RegisterDomainOutcome SWFClient::RegisterDomain(const RegisterDomainRequest& request) const {
-  return RegisterDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterDomainOutcome(result.GetResultWithOwnership()) : RegisterDomainOutcome(std::move(result.GetError()));
 }
 
 RegisterWorkflowTypeOutcome SWFClient::RegisterWorkflowType(const RegisterWorkflowTypeRequest& request) const {
-  return RegisterWorkflowTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterWorkflowTypeOutcome(result.GetResultWithOwnership())
+                            : RegisterWorkflowTypeOutcome(std::move(result.GetError()));
 }
 
 RequestCancelWorkflowExecutionOutcome SWFClient::RequestCancelWorkflowExecution(
     const RequestCancelWorkflowExecutionRequest& request) const {
-  return RequestCancelWorkflowExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RequestCancelWorkflowExecutionOutcome(result.GetResultWithOwnership())
+                            : RequestCancelWorkflowExecutionOutcome(std::move(result.GetError()));
 }
 
 RespondActivityTaskCanceledOutcome SWFClient::RespondActivityTaskCanceled(const RespondActivityTaskCanceledRequest& request) const {
-  return RespondActivityTaskCanceledOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RespondActivityTaskCanceledOutcome(result.GetResultWithOwnership())
+                            : RespondActivityTaskCanceledOutcome(std::move(result.GetError()));
 }
 
 RespondActivityTaskCompletedOutcome SWFClient::RespondActivityTaskCompleted(const RespondActivityTaskCompletedRequest& request) const {
-  return RespondActivityTaskCompletedOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RespondActivityTaskCompletedOutcome(result.GetResultWithOwnership())
+                            : RespondActivityTaskCompletedOutcome(std::move(result.GetError()));
 }
 
 RespondActivityTaskFailedOutcome SWFClient::RespondActivityTaskFailed(const RespondActivityTaskFailedRequest& request) const {
-  return RespondActivityTaskFailedOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RespondActivityTaskFailedOutcome(result.GetResultWithOwnership())
+                            : RespondActivityTaskFailedOutcome(std::move(result.GetError()));
 }
 
 RespondDecisionTaskCompletedOutcome SWFClient::RespondDecisionTaskCompleted(const RespondDecisionTaskCompletedRequest& request) const {
-  return RespondDecisionTaskCompletedOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RespondDecisionTaskCompletedOutcome(result.GetResultWithOwnership())
+                            : RespondDecisionTaskCompletedOutcome(std::move(result.GetError()));
 }
 
 SignalWorkflowExecutionOutcome SWFClient::SignalWorkflowExecution(const SignalWorkflowExecutionRequest& request) const {
-  return SignalWorkflowExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SignalWorkflowExecutionOutcome(result.GetResultWithOwnership())
+                            : SignalWorkflowExecutionOutcome(std::move(result.GetError()));
 }
 
 StartWorkflowExecutionOutcome SWFClient::StartWorkflowExecution(const StartWorkflowExecutionRequest& request) const {
-  return StartWorkflowExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartWorkflowExecutionOutcome(result.GetResultWithOwnership())
+                            : StartWorkflowExecutionOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SWFClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TerminateWorkflowExecutionOutcome SWFClient::TerminateWorkflowExecution(const TerminateWorkflowExecutionRequest& request) const {
-  return TerminateWorkflowExecutionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TerminateWorkflowExecutionOutcome(result.GetResultWithOwnership())
+                            : TerminateWorkflowExecutionOutcome(std::move(result.GetError()));
 }
 
 UndeprecateActivityTypeOutcome SWFClient::UndeprecateActivityType(const UndeprecateActivityTypeRequest& request) const {
-  return UndeprecateActivityTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UndeprecateActivityTypeOutcome(result.GetResultWithOwnership())
+                            : UndeprecateActivityTypeOutcome(std::move(result.GetError()));
 }
 
 UndeprecateDomainOutcome SWFClient::UndeprecateDomain(const UndeprecateDomainRequest& request) const {
-  return UndeprecateDomainOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UndeprecateDomainOutcome(result.GetResultWithOwnership())
+                            : UndeprecateDomainOutcome(std::move(result.GetError()));
 }
 
 UndeprecateWorkflowTypeOutcome SWFClient::UndeprecateWorkflowType(const UndeprecateWorkflowTypeRequest& request) const {
-  return UndeprecateWorkflowTypeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UndeprecateWorkflowTypeOutcome(result.GetResultWithOwnership())
+                            : UndeprecateWorkflowTypeOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SWFClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

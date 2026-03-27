@@ -206,135 +206,191 @@ ComputeOptimizerClient::InvokeOperationOutcome ComputeOptimizerClient::InvokeSer
 
 DeleteRecommendationPreferencesOutcome ComputeOptimizerClient::DeleteRecommendationPreferences(
     const DeleteRecommendationPreferencesRequest& request) const {
-  return DeleteRecommendationPreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRecommendationPreferencesOutcome(result.GetResultWithOwnership())
+                            : DeleteRecommendationPreferencesOutcome(std::move(result.GetError()));
 }
 
 DescribeRecommendationExportJobsOutcome ComputeOptimizerClient::DescribeRecommendationExportJobs(
     const DescribeRecommendationExportJobsRequest& request) const {
-  return DescribeRecommendationExportJobsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRecommendationExportJobsOutcome(result.GetResultWithOwnership())
+                            : DescribeRecommendationExportJobsOutcome(std::move(result.GetError()));
 }
 
 ExportAutoScalingGroupRecommendationsOutcome ComputeOptimizerClient::ExportAutoScalingGroupRecommendations(
     const ExportAutoScalingGroupRecommendationsRequest& request) const {
-  return ExportAutoScalingGroupRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportAutoScalingGroupRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ExportAutoScalingGroupRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ExportEBSVolumeRecommendationsOutcome ComputeOptimizerClient::ExportEBSVolumeRecommendations(
     const ExportEBSVolumeRecommendationsRequest& request) const {
-  return ExportEBSVolumeRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportEBSVolumeRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ExportEBSVolumeRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ExportEC2InstanceRecommendationsOutcome ComputeOptimizerClient::ExportEC2InstanceRecommendations(
     const ExportEC2InstanceRecommendationsRequest& request) const {
-  return ExportEC2InstanceRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportEC2InstanceRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ExportEC2InstanceRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ExportECSServiceRecommendationsOutcome ComputeOptimizerClient::ExportECSServiceRecommendations(
     const ExportECSServiceRecommendationsRequest& request) const {
-  return ExportECSServiceRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportECSServiceRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ExportECSServiceRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ExportIdleRecommendationsOutcome ComputeOptimizerClient::ExportIdleRecommendations(const ExportIdleRecommendationsRequest& request) const {
-  return ExportIdleRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportIdleRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ExportIdleRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ExportLambdaFunctionRecommendationsOutcome ComputeOptimizerClient::ExportLambdaFunctionRecommendations(
     const ExportLambdaFunctionRecommendationsRequest& request) const {
-  return ExportLambdaFunctionRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportLambdaFunctionRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ExportLambdaFunctionRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ExportLicenseRecommendationsOutcome ComputeOptimizerClient::ExportLicenseRecommendations(
     const ExportLicenseRecommendationsRequest& request) const {
-  return ExportLicenseRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportLicenseRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ExportLicenseRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ExportRDSDatabaseRecommendationsOutcome ComputeOptimizerClient::ExportRDSDatabaseRecommendations(
     const ExportRDSDatabaseRecommendationsRequest& request) const {
-  return ExportRDSDatabaseRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportRDSDatabaseRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ExportRDSDatabaseRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetAutoScalingGroupRecommendationsOutcome ComputeOptimizerClient::GetAutoScalingGroupRecommendations(
     const GetAutoScalingGroupRecommendationsRequest& request) const {
-  return GetAutoScalingGroupRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAutoScalingGroupRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetAutoScalingGroupRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetEBSVolumeRecommendationsOutcome ComputeOptimizerClient::GetEBSVolumeRecommendations(
     const GetEBSVolumeRecommendationsRequest& request) const {
-  return GetEBSVolumeRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEBSVolumeRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetEBSVolumeRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetEC2InstanceRecommendationsOutcome ComputeOptimizerClient::GetEC2InstanceRecommendations(
     const GetEC2InstanceRecommendationsRequest& request) const {
-  return GetEC2InstanceRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEC2InstanceRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetEC2InstanceRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetEC2RecommendationProjectedMetricsOutcome ComputeOptimizerClient::GetEC2RecommendationProjectedMetrics(
     const GetEC2RecommendationProjectedMetricsRequest& request) const {
-  return GetEC2RecommendationProjectedMetricsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEC2RecommendationProjectedMetricsOutcome(result.GetResultWithOwnership())
+                            : GetEC2RecommendationProjectedMetricsOutcome(std::move(result.GetError()));
 }
 
 GetECSServiceRecommendationProjectedMetricsOutcome ComputeOptimizerClient::GetECSServiceRecommendationProjectedMetrics(
     const GetECSServiceRecommendationProjectedMetricsRequest& request) const {
-  return GetECSServiceRecommendationProjectedMetricsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetECSServiceRecommendationProjectedMetricsOutcome(result.GetResultWithOwnership())
+                            : GetECSServiceRecommendationProjectedMetricsOutcome(std::move(result.GetError()));
 }
 
 GetECSServiceRecommendationsOutcome ComputeOptimizerClient::GetECSServiceRecommendations(
     const GetECSServiceRecommendationsRequest& request) const {
-  return GetECSServiceRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetECSServiceRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetECSServiceRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetEffectiveRecommendationPreferencesOutcome ComputeOptimizerClient::GetEffectiveRecommendationPreferences(
     const GetEffectiveRecommendationPreferencesRequest& request) const {
-  return GetEffectiveRecommendationPreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEffectiveRecommendationPreferencesOutcome(result.GetResultWithOwnership())
+                            : GetEffectiveRecommendationPreferencesOutcome(std::move(result.GetError()));
 }
 
 GetEnrollmentStatusOutcome ComputeOptimizerClient::GetEnrollmentStatus(const GetEnrollmentStatusRequest& request) const {
-  return GetEnrollmentStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEnrollmentStatusOutcome(result.GetResultWithOwnership())
+                            : GetEnrollmentStatusOutcome(std::move(result.GetError()));
 }
 
 GetEnrollmentStatusesForOrganizationOutcome ComputeOptimizerClient::GetEnrollmentStatusesForOrganization(
     const GetEnrollmentStatusesForOrganizationRequest& request) const {
-  return GetEnrollmentStatusesForOrganizationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEnrollmentStatusesForOrganizationOutcome(result.GetResultWithOwnership())
+                            : GetEnrollmentStatusesForOrganizationOutcome(std::move(result.GetError()));
 }
 
 GetIdleRecommendationsOutcome ComputeOptimizerClient::GetIdleRecommendations(const GetIdleRecommendationsRequest& request) const {
-  return GetIdleRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIdleRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetIdleRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetLambdaFunctionRecommendationsOutcome ComputeOptimizerClient::GetLambdaFunctionRecommendations(
     const GetLambdaFunctionRecommendationsRequest& request) const {
-  return GetLambdaFunctionRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLambdaFunctionRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetLambdaFunctionRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetLicenseRecommendationsOutcome ComputeOptimizerClient::GetLicenseRecommendations(const GetLicenseRecommendationsRequest& request) const {
-  return GetLicenseRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLicenseRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetLicenseRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetRDSDatabaseRecommendationProjectedMetricsOutcome ComputeOptimizerClient::GetRDSDatabaseRecommendationProjectedMetrics(
     const GetRDSDatabaseRecommendationProjectedMetricsRequest& request) const {
-  return GetRDSDatabaseRecommendationProjectedMetricsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRDSDatabaseRecommendationProjectedMetricsOutcome(result.GetResultWithOwnership())
+                            : GetRDSDatabaseRecommendationProjectedMetricsOutcome(std::move(result.GetError()));
 }
 
 GetRDSDatabaseRecommendationsOutcome ComputeOptimizerClient::GetRDSDatabaseRecommendations(
     const GetRDSDatabaseRecommendationsRequest& request) const {
-  return GetRDSDatabaseRecommendationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRDSDatabaseRecommendationsOutcome(result.GetResultWithOwnership())
+                            : GetRDSDatabaseRecommendationsOutcome(std::move(result.GetError()));
 }
 
 GetRecommendationPreferencesOutcome ComputeOptimizerClient::GetRecommendationPreferences(
     const GetRecommendationPreferencesRequest& request) const {
-  return GetRecommendationPreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecommendationPreferencesOutcome(result.GetResultWithOwnership())
+                            : GetRecommendationPreferencesOutcome(std::move(result.GetError()));
 }
 
 GetRecommendationSummariesOutcome ComputeOptimizerClient::GetRecommendationSummaries(
     const GetRecommendationSummariesRequest& request) const {
-  return GetRecommendationSummariesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRecommendationSummariesOutcome(result.GetResultWithOwnership())
+                            : GetRecommendationSummariesOutcome(std::move(result.GetError()));
 }
 
 PutRecommendationPreferencesOutcome ComputeOptimizerClient::PutRecommendationPreferences(
     const PutRecommendationPreferencesRequest& request) const {
-  return PutRecommendationPreferencesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRecommendationPreferencesOutcome(result.GetResultWithOwnership())
+                            : PutRecommendationPreferencesOutcome(std::move(result.GetError()));
 }
 
 UpdateEnrollmentStatusOutcome ComputeOptimizerClient::UpdateEnrollmentStatus(const UpdateEnrollmentStatusRequest& request) const {
-  return UpdateEnrollmentStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateEnrollmentStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateEnrollmentStatusOutcome(std::move(result.GetError()));
 }

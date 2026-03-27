@@ -203,7 +203,8 @@ AssociateFeedOutcome ElementalInferenceClient::AssociateFeed(const AssociateFeed
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate");
   };
 
-  return AssociateFeedOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateFeedOutcome(result.GetResultWithOwnership()) : AssociateFeedOutcome(std::move(result.GetError()));
 }
 
 CreateFeedOutcome ElementalInferenceClient::CreateFeed(const CreateFeedRequest& request) const {
@@ -212,7 +213,8 @@ CreateFeedOutcome ElementalInferenceClient::CreateFeed(const CreateFeedRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/feed");
   };
 
-  return CreateFeedOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFeedOutcome(result.GetResultWithOwnership()) : CreateFeedOutcome(std::move(result.GetError()));
 }
 
 DeleteFeedOutcome ElementalInferenceClient::DeleteFeed(const DeleteFeedRequest& request) const {
@@ -228,7 +230,8 @@ DeleteFeedOutcome ElementalInferenceClient::DeleteFeed(const DeleteFeedRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return DeleteFeedOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteFeedOutcome(result.GetResultWithOwnership()) : DeleteFeedOutcome(std::move(result.GetError()));
 }
 
 DisassociateFeedOutcome ElementalInferenceClient::DisassociateFeed(const DisassociateFeedRequest& request) const {
@@ -245,7 +248,9 @@ DisassociateFeedOutcome ElementalInferenceClient::DisassociateFeed(const Disasso
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate");
   };
 
-  return DisassociateFeedOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateFeedOutcome(result.GetResultWithOwnership())
+                            : DisassociateFeedOutcome(std::move(result.GetError()));
 }
 
 GetFeedOutcome ElementalInferenceClient::GetFeed(const GetFeedRequest& request) const {
@@ -261,7 +266,8 @@ GetFeedOutcome ElementalInferenceClient::GetFeed(const GetFeedRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return GetFeedOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFeedOutcome(result.GetResultWithOwnership()) : GetFeedOutcome(std::move(result.GetError()));
 }
 
 ListFeedsOutcome ElementalInferenceClient::ListFeeds(const ListFeedsRequest& request) const {
@@ -270,7 +276,8 @@ ListFeedsOutcome ElementalInferenceClient::ListFeeds(const ListFeedsRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/v1/feeds");
   };
 
-  return ListFeedsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFeedsOutcome(result.GetResultWithOwnership()) : ListFeedsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ElementalInferenceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -286,7 +293,9 @@ ListTagsForResourceOutcome ElementalInferenceClient::ListTagsForResource(const L
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ElementalInferenceClient::TagResource(const TagResourceRequest& request) const {
@@ -302,7 +311,8 @@ TagResourceOutcome ElementalInferenceClient::TagResource(const TagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ElementalInferenceClient::UntagResource(const UntagResourceRequest& request) const {
@@ -323,7 +333,8 @@ UntagResourceOutcome ElementalInferenceClient::UntagResource(const UntagResource
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateFeedOutcome ElementalInferenceClient::UpdateFeed(const UpdateFeedRequest& request) const {
@@ -339,5 +350,6 @@ UpdateFeedOutcome ElementalInferenceClient::UpdateFeed(const UpdateFeedRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   };
 
-  return UpdateFeedOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateFeedOutcome(result.GetResultWithOwnership()) : UpdateFeedOutcome(std::move(result.GetError()));
 }

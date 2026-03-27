@@ -200,7 +200,8 @@ GetSearchJobOutcome BackupSearchClient::GetSearchJob(const GetSearchJobRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSearchJobIdentifier());
   };
 
-  return GetSearchJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSearchJobOutcome(result.GetResultWithOwnership()) : GetSearchJobOutcome(std::move(result.GetError()));
 }
 
 GetSearchResultExportJobOutcome BackupSearchClient::GetSearchResultExportJob(const GetSearchResultExportJobRequest& request) const {
@@ -216,7 +217,9 @@ GetSearchResultExportJobOutcome BackupSearchClient::GetSearchResultExportJob(con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExportJobIdentifier());
   };
 
-  return GetSearchResultExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSearchResultExportJobOutcome(result.GetResultWithOwnership())
+                            : GetSearchResultExportJobOutcome(std::move(result.GetError()));
 }
 
 ListSearchJobBackupsOutcome BackupSearchClient::ListSearchJobBackups(const ListSearchJobBackupsRequest& request) const {
@@ -233,7 +236,9 @@ ListSearchJobBackupsOutcome BackupSearchClient::ListSearchJobBackups(const ListS
     endpointResolutionOutcome.GetResult().AddPathSegments("/backups");
   };
 
-  return ListSearchJobBackupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSearchJobBackupsOutcome(result.GetResultWithOwnership())
+                            : ListSearchJobBackupsOutcome(std::move(result.GetError()));
 }
 
 ListSearchJobResultsOutcome BackupSearchClient::ListSearchJobResults(const ListSearchJobResultsRequest& request) const {
@@ -250,7 +255,9 @@ ListSearchJobResultsOutcome BackupSearchClient::ListSearchJobResults(const ListS
     endpointResolutionOutcome.GetResult().AddPathSegments("/search-results");
   };
 
-  return ListSearchJobResultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSearchJobResultsOutcome(result.GetResultWithOwnership())
+                            : ListSearchJobResultsOutcome(std::move(result.GetError()));
 }
 
 ListSearchJobsOutcome BackupSearchClient::ListSearchJobs(const ListSearchJobsRequest& request) const {
@@ -259,7 +266,8 @@ ListSearchJobsOutcome BackupSearchClient::ListSearchJobs(const ListSearchJobsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/search-jobs");
   };
 
-  return ListSearchJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSearchJobsOutcome(result.GetResultWithOwnership()) : ListSearchJobsOutcome(std::move(result.GetError()));
 }
 
 ListSearchResultExportJobsOutcome BackupSearchClient::ListSearchResultExportJobs(const ListSearchResultExportJobsRequest& request) const {
@@ -268,7 +276,9 @@ ListSearchResultExportJobsOutcome BackupSearchClient::ListSearchResultExportJobs
     endpointResolutionOutcome.GetResult().AddPathSegments("/export-search-jobs");
   };
 
-  return ListSearchResultExportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSearchResultExportJobsOutcome(result.GetResultWithOwnership())
+                            : ListSearchResultExportJobsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome BackupSearchClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -284,7 +294,9 @@ ListTagsForResourceOutcome BackupSearchClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 StartSearchJobOutcome BackupSearchClient::StartSearchJob(const StartSearchJobRequest& request) const {
@@ -293,7 +305,8 @@ StartSearchJobOutcome BackupSearchClient::StartSearchJob(const StartSearchJobReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/search-jobs");
   };
 
-  return StartSearchJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartSearchJobOutcome(result.GetResultWithOwnership()) : StartSearchJobOutcome(std::move(result.GetError()));
 }
 
 StartSearchResultExportJobOutcome BackupSearchClient::StartSearchResultExportJob(const StartSearchResultExportJobRequest& request) const {
@@ -302,7 +315,9 @@ StartSearchResultExportJobOutcome BackupSearchClient::StartSearchResultExportJob
     endpointResolutionOutcome.GetResult().AddPathSegments("/export-search-jobs");
   };
 
-  return StartSearchResultExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartSearchResultExportJobOutcome(result.GetResultWithOwnership())
+                            : StartSearchResultExportJobOutcome(std::move(result.GetError()));
 }
 
 StopSearchJobOutcome BackupSearchClient::StopSearchJob(const StopSearchJobRequest& request) const {
@@ -319,7 +334,8 @@ StopSearchJobOutcome BackupSearchClient::StopSearchJob(const StopSearchJobReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/actions/cancel");
   };
 
-  return StopSearchJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StopSearchJobOutcome(result.GetResultWithOwnership()) : StopSearchJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome BackupSearchClient::TagResource(const TagResourceRequest& request) const {
@@ -335,7 +351,8 @@ TagResourceOutcome BackupSearchClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome BackupSearchClient::UntagResource(const UntagResourceRequest& request) const {
@@ -356,5 +373,6 @@ UntagResourceOutcome BackupSearchClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

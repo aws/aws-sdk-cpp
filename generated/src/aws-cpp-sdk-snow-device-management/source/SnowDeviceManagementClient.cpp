@@ -210,7 +210,8 @@ CancelTaskOutcome SnowDeviceManagementClient::CancelTask(const CancelTaskRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelTaskOutcome(result.GetResultWithOwnership()) : CancelTaskOutcome(std::move(result.GetError()));
 }
 
 CreateTaskOutcome SnowDeviceManagementClient::CreateTask(const CreateTaskRequest& request) const {
@@ -219,7 +220,8 @@ CreateTaskOutcome SnowDeviceManagementClient::CreateTask(const CreateTaskRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/task");
   };
 
-  return CreateTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTaskOutcome(result.GetResultWithOwnership()) : CreateTaskOutcome(std::move(result.GetError()));
 }
 
 DescribeDeviceOutcome SnowDeviceManagementClient::DescribeDevice(const DescribeDeviceRequest& request) const {
@@ -236,7 +238,8 @@ DescribeDeviceOutcome SnowDeviceManagementClient::DescribeDevice(const DescribeD
     endpointResolutionOutcome.GetResult().AddPathSegments("/describe");
   };
 
-  return DescribeDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDeviceOutcome(result.GetResultWithOwnership()) : DescribeDeviceOutcome(std::move(result.GetError()));
 }
 
 DescribeDeviceEc2InstancesOutcome SnowDeviceManagementClient::DescribeDeviceEc2Instances(
@@ -254,7 +257,9 @@ DescribeDeviceEc2InstancesOutcome SnowDeviceManagementClient::DescribeDeviceEc2I
     endpointResolutionOutcome.GetResult().AddPathSegments("/resources/ec2/describe");
   };
 
-  return DescribeDeviceEc2InstancesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDeviceEc2InstancesOutcome(result.GetResultWithOwnership())
+                            : DescribeDeviceEc2InstancesOutcome(std::move(result.GetError()));
 }
 
 DescribeExecutionOutcome SnowDeviceManagementClient::DescribeExecution(const DescribeExecutionRequest& request) const {
@@ -277,7 +282,9 @@ DescribeExecutionOutcome SnowDeviceManagementClient::DescribeExecution(const Des
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetManagedDeviceId());
   };
 
-  return DescribeExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeExecutionOutcome(result.GetResultWithOwnership())
+                            : DescribeExecutionOutcome(std::move(result.GetError()));
 }
 
 DescribeTaskOutcome SnowDeviceManagementClient::DescribeTask(const DescribeTaskRequest& request) const {
@@ -293,7 +300,8 @@ DescribeTaskOutcome SnowDeviceManagementClient::DescribeTask(const DescribeTaskR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTaskId());
   };
 
-  return DescribeTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeTaskOutcome(result.GetResultWithOwnership()) : DescribeTaskOutcome(std::move(result.GetError()));
 }
 
 ListDeviceResourcesOutcome SnowDeviceManagementClient::ListDeviceResources(const ListDeviceResourcesRequest& request) const {
@@ -310,7 +318,9 @@ ListDeviceResourcesOutcome SnowDeviceManagementClient::ListDeviceResources(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/resources");
   };
 
-  return ListDeviceResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDeviceResourcesOutcome(result.GetResultWithOwnership())
+                            : ListDeviceResourcesOutcome(std::move(result.GetError()));
 }
 
 ListDevicesOutcome SnowDeviceManagementClient::ListDevices(const ListDevicesRequest& request) const {
@@ -319,7 +329,8 @@ ListDevicesOutcome SnowDeviceManagementClient::ListDevices(const ListDevicesRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/managed-devices");
   };
 
-  return ListDevicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDevicesOutcome(result.GetResultWithOwnership()) : ListDevicesOutcome(std::move(result.GetError()));
 }
 
 ListExecutionsOutcome SnowDeviceManagementClient::ListExecutions(const ListExecutionsRequest& request) const {
@@ -334,7 +345,8 @@ ListExecutionsOutcome SnowDeviceManagementClient::ListExecutions(const ListExecu
     endpointResolutionOutcome.GetResult().AddPathSegments("/executions");
   };
 
-  return ListExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListExecutionsOutcome(result.GetResultWithOwnership()) : ListExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SnowDeviceManagementClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -350,7 +362,9 @@ ListTagsForResourceOutcome SnowDeviceManagementClient::ListTagsForResource(const
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTasksOutcome SnowDeviceManagementClient::ListTasks(const ListTasksRequest& request) const {
@@ -359,7 +373,8 @@ ListTasksOutcome SnowDeviceManagementClient::ListTasks(const ListTasksRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/tasks");
   };
 
-  return ListTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTasksOutcome(result.GetResultWithOwnership()) : ListTasksOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SnowDeviceManagementClient::TagResource(const TagResourceRequest& request) const {
@@ -375,7 +390,8 @@ TagResourceOutcome SnowDeviceManagementClient::TagResource(const TagResourceRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SnowDeviceManagementClient::UntagResource(const UntagResourceRequest& request) const {
@@ -396,5 +412,6 @@ UntagResourceOutcome SnowDeviceManagementClient::UntagResource(const UntagResour
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

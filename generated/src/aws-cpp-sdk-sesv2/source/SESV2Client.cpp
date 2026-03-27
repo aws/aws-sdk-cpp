@@ -292,7 +292,9 @@ BatchGetMetricDataOutcome SESV2Client::BatchGetMetricData(const BatchGetMetricDa
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/metrics/batch");
   };
 
-  return BatchGetMetricDataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetMetricDataOutcome(result.GetResultWithOwnership())
+                            : BatchGetMetricDataOutcome(std::move(result.GetError()));
 }
 
 CancelExportJobOutcome SESV2Client::CancelExportJob(const CancelExportJobRequest& request) const {
@@ -309,7 +311,9 @@ CancelExportJobOutcome SESV2Client::CancelExportJob(const CancelExportJobRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CancelExportJobOutcome(result.GetResultWithOwnership())
+                            : CancelExportJobOutcome(std::move(result.GetError()));
 }
 
 CreateConfigurationSetOutcome SESV2Client::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const {
@@ -318,7 +322,9 @@ CreateConfigurationSetOutcome SESV2Client::CreateConfigurationSet(const CreateCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/configuration-sets");
   };
 
-  return CreateConfigurationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationSetOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationSetOutcome(std::move(result.GetError()));
 }
 
 CreateConfigurationSetEventDestinationOutcome SESV2Client::CreateConfigurationSetEventDestination(
@@ -336,7 +342,9 @@ CreateConfigurationSetEventDestinationOutcome SESV2Client::CreateConfigurationSe
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-destinations");
   };
 
-  return CreateConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }
 
 CreateContactOutcome SESV2Client::CreateContact(const CreateContactRequest& request) const {
@@ -353,7 +361,8 @@ CreateContactOutcome SESV2Client::CreateContact(const CreateContactRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/contacts");
   };
 
-  return CreateContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateContactOutcome(result.GetResultWithOwnership()) : CreateContactOutcome(std::move(result.GetError()));
 }
 
 CreateContactListOutcome SESV2Client::CreateContactList(const CreateContactListRequest& request) const {
@@ -362,7 +371,9 @@ CreateContactListOutcome SESV2Client::CreateContactList(const CreateContactListR
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/contact-lists");
   };
 
-  return CreateContactListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateContactListOutcome(result.GetResultWithOwnership())
+                            : CreateContactListOutcome(std::move(result.GetError()));
 }
 
 CreateCustomVerificationEmailTemplateOutcome SESV2Client::CreateCustomVerificationEmailTemplate(
@@ -372,7 +383,9 @@ CreateCustomVerificationEmailTemplateOutcome SESV2Client::CreateCustomVerificati
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/custom-verification-email-templates");
   };
 
-  return CreateCustomVerificationEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomVerificationEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateCustomVerificationEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateDedicatedIpPoolOutcome SESV2Client::CreateDedicatedIpPool(const CreateDedicatedIpPoolRequest& request) const {
@@ -381,7 +394,9 @@ CreateDedicatedIpPoolOutcome SESV2Client::CreateDedicatedIpPool(const CreateDedi
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/dedicated-ip-pools");
   };
 
-  return CreateDedicatedIpPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDedicatedIpPoolOutcome(result.GetResultWithOwnership())
+                            : CreateDedicatedIpPoolOutcome(std::move(result.GetError()));
 }
 
 CreateDeliverabilityTestReportOutcome SESV2Client::CreateDeliverabilityTestReport(
@@ -391,7 +406,9 @@ CreateDeliverabilityTestReportOutcome SESV2Client::CreateDeliverabilityTestRepor
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/deliverability-dashboard/test");
   };
 
-  return CreateDeliverabilityTestReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeliverabilityTestReportOutcome(result.GetResultWithOwnership())
+                            : CreateDeliverabilityTestReportOutcome(std::move(result.GetError()));
 }
 
 CreateEmailIdentityOutcome SESV2Client::CreateEmailIdentity(const CreateEmailIdentityRequest& request) const {
@@ -400,7 +417,9 @@ CreateEmailIdentityOutcome SESV2Client::CreateEmailIdentity(const CreateEmailIde
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/identities");
   };
 
-  return CreateEmailIdentityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEmailIdentityOutcome(result.GetResultWithOwnership())
+                            : CreateEmailIdentityOutcome(std::move(result.GetError()));
 }
 
 CreateEmailIdentityPolicyOutcome SESV2Client::CreateEmailIdentityPolicy(const CreateEmailIdentityPolicyRequest& request) const {
@@ -423,7 +442,9 @@ CreateEmailIdentityPolicyOutcome SESV2Client::CreateEmailIdentityPolicy(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyName());
   };
 
-  return CreateEmailIdentityPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEmailIdentityPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateEmailIdentityPolicyOutcome(std::move(result.GetError()));
 }
 
 CreateEmailTemplateOutcome SESV2Client::CreateEmailTemplate(const CreateEmailTemplateRequest& request) const {
@@ -432,7 +453,9 @@ CreateEmailTemplateOutcome SESV2Client::CreateEmailTemplate(const CreateEmailTem
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/templates");
   };
 
-  return CreateEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : CreateEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 CreateExportJobOutcome SESV2Client::CreateExportJob(const CreateExportJobRequest& request) const {
@@ -441,7 +464,9 @@ CreateExportJobOutcome SESV2Client::CreateExportJob(const CreateExportJobRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/export-jobs");
   };
 
-  return CreateExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateExportJobOutcome(result.GetResultWithOwnership())
+                            : CreateExportJobOutcome(std::move(result.GetError()));
 }
 
 CreateImportJobOutcome SESV2Client::CreateImportJob(const CreateImportJobRequest& request) const {
@@ -450,7 +475,9 @@ CreateImportJobOutcome SESV2Client::CreateImportJob(const CreateImportJobRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/import-jobs");
   };
 
-  return CreateImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateImportJobOutcome(result.GetResultWithOwnership())
+                            : CreateImportJobOutcome(std::move(result.GetError()));
 }
 
 CreateMultiRegionEndpointOutcome SESV2Client::CreateMultiRegionEndpoint(const CreateMultiRegionEndpointRequest& request) const {
@@ -459,7 +486,9 @@ CreateMultiRegionEndpointOutcome SESV2Client::CreateMultiRegionEndpoint(const Cr
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/multi-region-endpoints");
   };
 
-  return CreateMultiRegionEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMultiRegionEndpointOutcome(result.GetResultWithOwnership())
+                            : CreateMultiRegionEndpointOutcome(std::move(result.GetError()));
 }
 
 CreateTenantOutcome SESV2Client::CreateTenant(const CreateTenantRequest& request) const {
@@ -468,7 +497,8 @@ CreateTenantOutcome SESV2Client::CreateTenant(const CreateTenantRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tenants");
   };
 
-  return CreateTenantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTenantOutcome(result.GetResultWithOwnership()) : CreateTenantOutcome(std::move(result.GetError()));
 }
 
 CreateTenantResourceAssociationOutcome SESV2Client::CreateTenantResourceAssociation(
@@ -478,7 +508,9 @@ CreateTenantResourceAssociationOutcome SESV2Client::CreateTenantResourceAssociat
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tenants/resources");
   };
 
-  return CreateTenantResourceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTenantResourceAssociationOutcome(result.GetResultWithOwnership())
+                            : CreateTenantResourceAssociationOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationSetOutcome SESV2Client::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const {
@@ -494,7 +526,9 @@ DeleteConfigurationSetOutcome SESV2Client::DeleteConfigurationSet(const DeleteCo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationSetName());
   };
 
-  return DeleteConfigurationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationSetOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationSetOutcome(std::move(result.GetError()));
 }
 
 DeleteConfigurationSetEventDestinationOutcome SESV2Client::DeleteConfigurationSetEventDestination(
@@ -518,7 +552,9 @@ DeleteConfigurationSetEventDestinationOutcome SESV2Client::DeleteConfigurationSe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventDestinationName());
   };
 
-  return DeleteConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteContactOutcome SESV2Client::DeleteContact(const DeleteContactRequest& request) const {
@@ -541,7 +577,8 @@ DeleteContactOutcome SESV2Client::DeleteContact(const DeleteContactRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailAddress());
   };
 
-  return DeleteContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContactOutcome(result.GetResultWithOwnership()) : DeleteContactOutcome(std::move(result.GetError()));
 }
 
 DeleteContactListOutcome SESV2Client::DeleteContactList(const DeleteContactListRequest& request) const {
@@ -557,7 +594,9 @@ DeleteContactListOutcome SESV2Client::DeleteContactList(const DeleteContactListR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactListName());
   };
 
-  return DeleteContactListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContactListOutcome(result.GetResultWithOwnership())
+                            : DeleteContactListOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomVerificationEmailTemplateOutcome SESV2Client::DeleteCustomVerificationEmailTemplate(
@@ -574,7 +613,9 @@ DeleteCustomVerificationEmailTemplateOutcome SESV2Client::DeleteCustomVerificati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateName());
   };
 
-  return DeleteCustomVerificationEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCustomVerificationEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomVerificationEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteDedicatedIpPoolOutcome SESV2Client::DeleteDedicatedIpPool(const DeleteDedicatedIpPoolRequest& request) const {
@@ -590,7 +631,9 @@ DeleteDedicatedIpPoolOutcome SESV2Client::DeleteDedicatedIpPool(const DeleteDedi
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPoolName());
   };
 
-  return DeleteDedicatedIpPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDedicatedIpPoolOutcome(result.GetResultWithOwnership())
+                            : DeleteDedicatedIpPoolOutcome(std::move(result.GetError()));
 }
 
 DeleteEmailIdentityOutcome SESV2Client::DeleteEmailIdentity(const DeleteEmailIdentityRequest& request) const {
@@ -606,7 +649,9 @@ DeleteEmailIdentityOutcome SESV2Client::DeleteEmailIdentity(const DeleteEmailIde
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailIdentity());
   };
 
-  return DeleteEmailIdentityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEmailIdentityOutcome(result.GetResultWithOwnership())
+                            : DeleteEmailIdentityOutcome(std::move(result.GetError()));
 }
 
 DeleteEmailIdentityPolicyOutcome SESV2Client::DeleteEmailIdentityPolicy(const DeleteEmailIdentityPolicyRequest& request) const {
@@ -629,7 +674,9 @@ DeleteEmailIdentityPolicyOutcome SESV2Client::DeleteEmailIdentityPolicy(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyName());
   };
 
-  return DeleteEmailIdentityPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEmailIdentityPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteEmailIdentityPolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteEmailTemplateOutcome SESV2Client::DeleteEmailTemplate(const DeleteEmailTemplateRequest& request) const {
@@ -645,7 +692,9 @@ DeleteEmailTemplateOutcome SESV2Client::DeleteEmailTemplate(const DeleteEmailTem
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateName());
   };
 
-  return DeleteEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : DeleteEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 DeleteMultiRegionEndpointOutcome SESV2Client::DeleteMultiRegionEndpoint(const DeleteMultiRegionEndpointRequest& request) const {
@@ -661,7 +710,9 @@ DeleteMultiRegionEndpointOutcome SESV2Client::DeleteMultiRegionEndpoint(const De
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointName());
   };
 
-  return DeleteMultiRegionEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMultiRegionEndpointOutcome(result.GetResultWithOwnership())
+                            : DeleteMultiRegionEndpointOutcome(std::move(result.GetError()));
 }
 
 DeleteSuppressedDestinationOutcome SESV2Client::DeleteSuppressedDestination(const DeleteSuppressedDestinationRequest& request) const {
@@ -677,7 +728,9 @@ DeleteSuppressedDestinationOutcome SESV2Client::DeleteSuppressedDestination(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailAddress());
   };
 
-  return DeleteSuppressedDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSuppressedDestinationOutcome(result.GetResultWithOwnership())
+                            : DeleteSuppressedDestinationOutcome(std::move(result.GetError()));
 }
 
 DeleteTenantOutcome SESV2Client::DeleteTenant(const DeleteTenantRequest& request) const {
@@ -686,7 +739,8 @@ DeleteTenantOutcome SESV2Client::DeleteTenant(const DeleteTenantRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tenants/delete");
   };
 
-  return DeleteTenantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTenantOutcome(result.GetResultWithOwnership()) : DeleteTenantOutcome(std::move(result.GetError()));
 }
 
 DeleteTenantResourceAssociationOutcome SESV2Client::DeleteTenantResourceAssociation(
@@ -696,7 +750,9 @@ DeleteTenantResourceAssociationOutcome SESV2Client::DeleteTenantResourceAssociat
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tenants/resources/delete");
   };
 
-  return DeleteTenantResourceAssociationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteTenantResourceAssociationOutcome(result.GetResultWithOwnership())
+                            : DeleteTenantResourceAssociationOutcome(std::move(result.GetError()));
 }
 
 GetAccountOutcome SESV2Client::GetAccount(const GetAccountRequest& request) const {
@@ -705,7 +761,8 @@ GetAccountOutcome SESV2Client::GetAccount(const GetAccountRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/account");
   };
 
-  return GetAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccountOutcome(result.GetResultWithOwnership()) : GetAccountOutcome(std::move(result.GetError()));
 }
 
 GetBlacklistReportsOutcome SESV2Client::GetBlacklistReports(const GetBlacklistReportsRequest& request) const {
@@ -720,7 +777,9 @@ GetBlacklistReportsOutcome SESV2Client::GetBlacklistReports(const GetBlacklistRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/deliverability-dashboard/blacklist-report");
   };
 
-  return GetBlacklistReportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBlacklistReportsOutcome(result.GetResultWithOwnership())
+                            : GetBlacklistReportsOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationSetOutcome SESV2Client::GetConfigurationSet(const GetConfigurationSetRequest& request) const {
@@ -736,7 +795,9 @@ GetConfigurationSetOutcome SESV2Client::GetConfigurationSet(const GetConfigurati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConfigurationSetName());
   };
 
-  return GetConfigurationSetOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationSetOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationSetOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationSetEventDestinationsOutcome SESV2Client::GetConfigurationSetEventDestinations(
@@ -754,7 +815,9 @@ GetConfigurationSetEventDestinationsOutcome SESV2Client::GetConfigurationSetEven
     endpointResolutionOutcome.GetResult().AddPathSegments("/event-destinations");
   };
 
-  return GetConfigurationSetEventDestinationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationSetEventDestinationsOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationSetEventDestinationsOutcome(std::move(result.GetError()));
 }
 
 GetContactOutcome SESV2Client::GetContact(const GetContactRequest& request) const {
@@ -777,7 +840,8 @@ GetContactOutcome SESV2Client::GetContact(const GetContactRequest& request) cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailAddress());
   };
 
-  return GetContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContactOutcome(result.GetResultWithOwnership()) : GetContactOutcome(std::move(result.GetError()));
 }
 
 GetContactListOutcome SESV2Client::GetContactList(const GetContactListRequest& request) const {
@@ -793,7 +857,8 @@ GetContactListOutcome SESV2Client::GetContactList(const GetContactListRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactListName());
   };
 
-  return GetContactListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContactListOutcome(result.GetResultWithOwnership()) : GetContactListOutcome(std::move(result.GetError()));
 }
 
 GetCustomVerificationEmailTemplateOutcome SESV2Client::GetCustomVerificationEmailTemplate(
@@ -810,7 +875,9 @@ GetCustomVerificationEmailTemplateOutcome SESV2Client::GetCustomVerificationEmai
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateName());
   };
 
-  return GetCustomVerificationEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCustomVerificationEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : GetCustomVerificationEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 GetDedicatedIpOutcome SESV2Client::GetDedicatedIp(const GetDedicatedIpRequest& request) const {
@@ -826,7 +893,8 @@ GetDedicatedIpOutcome SESV2Client::GetDedicatedIp(const GetDedicatedIpRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIp());
   };
 
-  return GetDedicatedIpOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDedicatedIpOutcome(result.GetResultWithOwnership()) : GetDedicatedIpOutcome(std::move(result.GetError()));
 }
 
 GetDedicatedIpPoolOutcome SESV2Client::GetDedicatedIpPool(const GetDedicatedIpPoolRequest& request) const {
@@ -842,7 +910,9 @@ GetDedicatedIpPoolOutcome SESV2Client::GetDedicatedIpPool(const GetDedicatedIpPo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPoolName());
   };
 
-  return GetDedicatedIpPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDedicatedIpPoolOutcome(result.GetResultWithOwnership())
+                            : GetDedicatedIpPoolOutcome(std::move(result.GetError()));
 }
 
 GetDedicatedIpsOutcome SESV2Client::GetDedicatedIps(const GetDedicatedIpsRequest& request) const {
@@ -851,7 +921,9 @@ GetDedicatedIpsOutcome SESV2Client::GetDedicatedIps(const GetDedicatedIpsRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/dedicated-ips");
   };
 
-  return GetDedicatedIpsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDedicatedIpsOutcome(result.GetResultWithOwnership())
+                            : GetDedicatedIpsOutcome(std::move(result.GetError()));
 }
 
 GetDeliverabilityDashboardOptionsOutcome SESV2Client::GetDeliverabilityDashboardOptions(
@@ -861,7 +933,9 @@ GetDeliverabilityDashboardOptionsOutcome SESV2Client::GetDeliverabilityDashboard
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/deliverability-dashboard");
   };
 
-  return GetDeliverabilityDashboardOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeliverabilityDashboardOptionsOutcome(result.GetResultWithOwnership())
+                            : GetDeliverabilityDashboardOptionsOutcome(std::move(result.GetError()));
 }
 
 GetDeliverabilityTestReportOutcome SESV2Client::GetDeliverabilityTestReport(const GetDeliverabilityTestReportRequest& request) const {
@@ -877,7 +951,9 @@ GetDeliverabilityTestReportOutcome SESV2Client::GetDeliverabilityTestReport(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReportId());
   };
 
-  return GetDeliverabilityTestReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeliverabilityTestReportOutcome(result.GetResultWithOwnership())
+                            : GetDeliverabilityTestReportOutcome(std::move(result.GetError()));
 }
 
 GetDomainDeliverabilityCampaignOutcome SESV2Client::GetDomainDeliverabilityCampaign(
@@ -894,7 +970,9 @@ GetDomainDeliverabilityCampaignOutcome SESV2Client::GetDomainDeliverabilityCampa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCampaignId());
   };
 
-  return GetDomainDeliverabilityCampaignOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainDeliverabilityCampaignOutcome(result.GetResultWithOwnership())
+                            : GetDomainDeliverabilityCampaignOutcome(std::move(result.GetError()));
 }
 
 GetDomainStatisticsReportOutcome SESV2Client::GetDomainStatisticsReport(const GetDomainStatisticsReportRequest& request) const {
@@ -920,7 +998,9 @@ GetDomainStatisticsReportOutcome SESV2Client::GetDomainStatisticsReport(const Ge
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomain());
   };
 
-  return GetDomainStatisticsReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDomainStatisticsReportOutcome(result.GetResultWithOwnership())
+                            : GetDomainStatisticsReportOutcome(std::move(result.GetError()));
 }
 
 GetEmailAddressInsightsOutcome SESV2Client::GetEmailAddressInsights(const GetEmailAddressInsightsRequest& request) const {
@@ -929,7 +1009,9 @@ GetEmailAddressInsightsOutcome SESV2Client::GetEmailAddressInsights(const GetEma
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/email-address-insights/");
   };
 
-  return GetEmailAddressInsightsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetEmailAddressInsightsOutcome(result.GetResultWithOwnership())
+                            : GetEmailAddressInsightsOutcome(std::move(result.GetError()));
 }
 
 GetEmailIdentityOutcome SESV2Client::GetEmailIdentity(const GetEmailIdentityRequest& request) const {
@@ -945,7 +1027,9 @@ GetEmailIdentityOutcome SESV2Client::GetEmailIdentity(const GetEmailIdentityRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailIdentity());
   };
 
-  return GetEmailIdentityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEmailIdentityOutcome(result.GetResultWithOwnership())
+                            : GetEmailIdentityOutcome(std::move(result.GetError()));
 }
 
 GetEmailIdentityPoliciesOutcome SESV2Client::GetEmailIdentityPolicies(const GetEmailIdentityPoliciesRequest& request) const {
@@ -962,7 +1046,9 @@ GetEmailIdentityPoliciesOutcome SESV2Client::GetEmailIdentityPolicies(const GetE
     endpointResolutionOutcome.GetResult().AddPathSegments("/policies");
   };
 
-  return GetEmailIdentityPoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEmailIdentityPoliciesOutcome(result.GetResultWithOwnership())
+                            : GetEmailIdentityPoliciesOutcome(std::move(result.GetError()));
 }
 
 GetEmailTemplateOutcome SESV2Client::GetEmailTemplate(const GetEmailTemplateRequest& request) const {
@@ -978,7 +1064,9 @@ GetEmailTemplateOutcome SESV2Client::GetEmailTemplate(const GetEmailTemplateRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateName());
   };
 
-  return GetEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : GetEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 GetExportJobOutcome SESV2Client::GetExportJob(const GetExportJobRequest& request) const {
@@ -994,7 +1082,8 @@ GetExportJobOutcome SESV2Client::GetExportJob(const GetExportJobRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetExportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetExportJobOutcome(result.GetResultWithOwnership()) : GetExportJobOutcome(std::move(result.GetError()));
 }
 
 GetImportJobOutcome SESV2Client::GetImportJob(const GetImportJobRequest& request) const {
@@ -1010,7 +1099,8 @@ GetImportJobOutcome SESV2Client::GetImportJob(const GetImportJobRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobId());
   };
 
-  return GetImportJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImportJobOutcome(result.GetResultWithOwnership()) : GetImportJobOutcome(std::move(result.GetError()));
 }
 
 GetMessageInsightsOutcome SESV2Client::GetMessageInsights(const GetMessageInsightsRequest& request) const {
@@ -1026,7 +1116,9 @@ GetMessageInsightsOutcome SESV2Client::GetMessageInsights(const GetMessageInsigh
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
   };
 
-  return GetMessageInsightsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMessageInsightsOutcome(result.GetResultWithOwnership())
+                            : GetMessageInsightsOutcome(std::move(result.GetError()));
 }
 
 GetMultiRegionEndpointOutcome SESV2Client::GetMultiRegionEndpoint(const GetMultiRegionEndpointRequest& request) const {
@@ -1042,7 +1134,9 @@ GetMultiRegionEndpointOutcome SESV2Client::GetMultiRegionEndpoint(const GetMulti
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointName());
   };
 
-  return GetMultiRegionEndpointOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMultiRegionEndpointOutcome(result.GetResultWithOwnership())
+                            : GetMultiRegionEndpointOutcome(std::move(result.GetError()));
 }
 
 GetReputationEntityOutcome SESV2Client::GetReputationEntity(const GetReputationEntityRequest& request) const {
@@ -1065,7 +1159,9 @@ GetReputationEntityOutcome SESV2Client::GetReputationEntity(const GetReputationE
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReputationEntityReference());
   };
 
-  return GetReputationEntityOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetReputationEntityOutcome(result.GetResultWithOwnership())
+                            : GetReputationEntityOutcome(std::move(result.GetError()));
 }
 
 GetSuppressedDestinationOutcome SESV2Client::GetSuppressedDestination(const GetSuppressedDestinationRequest& request) const {
@@ -1081,7 +1177,9 @@ GetSuppressedDestinationOutcome SESV2Client::GetSuppressedDestination(const GetS
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailAddress());
   };
 
-  return GetSuppressedDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSuppressedDestinationOutcome(result.GetResultWithOwnership())
+                            : GetSuppressedDestinationOutcome(std::move(result.GetError()));
 }
 
 GetTenantOutcome SESV2Client::GetTenant(const GetTenantRequest& request) const {
@@ -1090,7 +1188,8 @@ GetTenantOutcome SESV2Client::GetTenant(const GetTenantRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tenants/get");
   };
 
-  return GetTenantOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTenantOutcome(result.GetResultWithOwnership()) : GetTenantOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationSetsOutcome SESV2Client::ListConfigurationSets(const ListConfigurationSetsRequest& request) const {
@@ -1099,7 +1198,9 @@ ListConfigurationSetsOutcome SESV2Client::ListConfigurationSets(const ListConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/configuration-sets");
   };
 
-  return ListConfigurationSetsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConfigurationSetsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationSetsOutcome(std::move(result.GetError()));
 }
 
 ListContactListsOutcome SESV2Client::ListContactLists(const ListContactListsRequest& request) const {
@@ -1108,7 +1209,9 @@ ListContactListsOutcome SESV2Client::ListContactLists(const ListContactListsRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/contact-lists");
   };
 
-  return ListContactListsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListContactListsOutcome(result.GetResultWithOwnership())
+                            : ListContactListsOutcome(std::move(result.GetError()));
 }
 
 ListContactsOutcome SESV2Client::ListContacts(const ListContactsRequest& request) const {
@@ -1125,7 +1228,8 @@ ListContactsOutcome SESV2Client::ListContacts(const ListContactsRequest& request
     endpointResolutionOutcome.GetResult().AddPathSegments("/contacts/list");
   };
 
-  return ListContactsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContactsOutcome(result.GetResultWithOwnership()) : ListContactsOutcome(std::move(result.GetError()));
 }
 
 ListCustomVerificationEmailTemplatesOutcome SESV2Client::ListCustomVerificationEmailTemplates(
@@ -1135,7 +1239,9 @@ ListCustomVerificationEmailTemplatesOutcome SESV2Client::ListCustomVerificationE
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/custom-verification-email-templates");
   };
 
-  return ListCustomVerificationEmailTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCustomVerificationEmailTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListCustomVerificationEmailTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListDedicatedIpPoolsOutcome SESV2Client::ListDedicatedIpPools(const ListDedicatedIpPoolsRequest& request) const {
@@ -1144,7 +1250,9 @@ ListDedicatedIpPoolsOutcome SESV2Client::ListDedicatedIpPools(const ListDedicate
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/dedicated-ip-pools");
   };
 
-  return ListDedicatedIpPoolsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDedicatedIpPoolsOutcome(result.GetResultWithOwnership())
+                            : ListDedicatedIpPoolsOutcome(std::move(result.GetError()));
 }
 
 ListDeliverabilityTestReportsOutcome SESV2Client::ListDeliverabilityTestReports(const ListDeliverabilityTestReportsRequest& request) const {
@@ -1153,7 +1261,9 @@ ListDeliverabilityTestReportsOutcome SESV2Client::ListDeliverabilityTestReports(
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/deliverability-dashboard/test-reports");
   };
 
-  return ListDeliverabilityTestReportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDeliverabilityTestReportsOutcome(result.GetResultWithOwnership())
+                            : ListDeliverabilityTestReportsOutcome(std::move(result.GetError()));
 }
 
 ListDomainDeliverabilityCampaignsOutcome SESV2Client::ListDomainDeliverabilityCampaigns(
@@ -1181,7 +1291,9 @@ ListDomainDeliverabilityCampaignsOutcome SESV2Client::ListDomainDeliverabilityCa
     endpointResolutionOutcome.GetResult().AddPathSegments("/campaigns");
   };
 
-  return ListDomainDeliverabilityCampaignsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDomainDeliverabilityCampaignsOutcome(result.GetResultWithOwnership())
+                            : ListDomainDeliverabilityCampaignsOutcome(std::move(result.GetError()));
 }
 
 ListEmailIdentitiesOutcome SESV2Client::ListEmailIdentities(const ListEmailIdentitiesRequest& request) const {
@@ -1190,7 +1302,9 @@ ListEmailIdentitiesOutcome SESV2Client::ListEmailIdentities(const ListEmailIdent
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/identities");
   };
 
-  return ListEmailIdentitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEmailIdentitiesOutcome(result.GetResultWithOwnership())
+                            : ListEmailIdentitiesOutcome(std::move(result.GetError()));
 }
 
 ListEmailTemplatesOutcome SESV2Client::ListEmailTemplates(const ListEmailTemplatesRequest& request) const {
@@ -1199,7 +1313,9 @@ ListEmailTemplatesOutcome SESV2Client::ListEmailTemplates(const ListEmailTemplat
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/templates");
   };
 
-  return ListEmailTemplatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEmailTemplatesOutcome(result.GetResultWithOwnership())
+                            : ListEmailTemplatesOutcome(std::move(result.GetError()));
 }
 
 ListExportJobsOutcome SESV2Client::ListExportJobs(const ListExportJobsRequest& request) const {
@@ -1208,7 +1324,8 @@ ListExportJobsOutcome SESV2Client::ListExportJobs(const ListExportJobsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/list-export-jobs");
   };
 
-  return ListExportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListExportJobsOutcome(result.GetResultWithOwnership()) : ListExportJobsOutcome(std::move(result.GetError()));
 }
 
 ListImportJobsOutcome SESV2Client::ListImportJobs(const ListImportJobsRequest& request) const {
@@ -1217,7 +1334,8 @@ ListImportJobsOutcome SESV2Client::ListImportJobs(const ListImportJobsRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/import-jobs/list");
   };
 
-  return ListImportJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImportJobsOutcome(result.GetResultWithOwnership()) : ListImportJobsOutcome(std::move(result.GetError()));
 }
 
 ListMultiRegionEndpointsOutcome SESV2Client::ListMultiRegionEndpoints(const ListMultiRegionEndpointsRequest& request) const {
@@ -1226,7 +1344,9 @@ ListMultiRegionEndpointsOutcome SESV2Client::ListMultiRegionEndpoints(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/multi-region-endpoints");
   };
 
-  return ListMultiRegionEndpointsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMultiRegionEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListMultiRegionEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListRecommendationsOutcome SESV2Client::ListRecommendations(const ListRecommendationsRequest& request) const {
@@ -1235,7 +1355,9 @@ ListRecommendationsOutcome SESV2Client::ListRecommendations(const ListRecommenda
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/vdm/recommendations");
   };
 
-  return ListRecommendationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationsOutcome(std::move(result.GetError()));
 }
 
 ListReputationEntitiesOutcome SESV2Client::ListReputationEntities(const ListReputationEntitiesRequest& request) const {
@@ -1244,7 +1366,9 @@ ListReputationEntitiesOutcome SESV2Client::ListReputationEntities(const ListRepu
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/reputation/entities");
   };
 
-  return ListReputationEntitiesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReputationEntitiesOutcome(result.GetResultWithOwnership())
+                            : ListReputationEntitiesOutcome(std::move(result.GetError()));
 }
 
 ListResourceTenantsOutcome SESV2Client::ListResourceTenants(const ListResourceTenantsRequest& request) const {
@@ -1253,7 +1377,9 @@ ListResourceTenantsOutcome SESV2Client::ListResourceTenants(const ListResourceTe
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/resources/tenants/list");
   };
 
-  return ListResourceTenantsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceTenantsOutcome(result.GetResultWithOwnership())
+                            : ListResourceTenantsOutcome(std::move(result.GetError()));
 }
 
 ListSuppressedDestinationsOutcome SESV2Client::ListSuppressedDestinations(const ListSuppressedDestinationsRequest& request) const {
@@ -1262,7 +1388,9 @@ ListSuppressedDestinationsOutcome SESV2Client::ListSuppressedDestinations(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/suppression/addresses");
   };
 
-  return ListSuppressedDestinationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSuppressedDestinationsOutcome(result.GetResultWithOwnership())
+                            : ListSuppressedDestinationsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SESV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1277,7 +1405,9 @@ ListTagsForResourceOutcome SESV2Client::ListTagsForResource(const ListTagsForRes
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tags");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTenantResourcesOutcome SESV2Client::ListTenantResources(const ListTenantResourcesRequest& request) const {
@@ -1286,7 +1416,9 @@ ListTenantResourcesOutcome SESV2Client::ListTenantResources(const ListTenantReso
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tenants/resources/list");
   };
 
-  return ListTenantResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTenantResourcesOutcome(result.GetResultWithOwnership())
+                            : ListTenantResourcesOutcome(std::move(result.GetError()));
 }
 
 ListTenantsOutcome SESV2Client::ListTenants(const ListTenantsRequest& request) const {
@@ -1295,7 +1427,8 @@ ListTenantsOutcome SESV2Client::ListTenants(const ListTenantsRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tenants/list");
   };
 
-  return ListTenantsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTenantsOutcome(result.GetResultWithOwnership()) : ListTenantsOutcome(std::move(result.GetError()));
 }
 
 PutAccountDedicatedIpWarmupAttributesOutcome SESV2Client::PutAccountDedicatedIpWarmupAttributes(
@@ -1305,7 +1438,9 @@ PutAccountDedicatedIpWarmupAttributesOutcome SESV2Client::PutAccountDedicatedIpW
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/account/dedicated-ips/warmup");
   };
 
-  return PutAccountDedicatedIpWarmupAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccountDedicatedIpWarmupAttributesOutcome(result.GetResultWithOwnership())
+                            : PutAccountDedicatedIpWarmupAttributesOutcome(std::move(result.GetError()));
 }
 
 PutAccountDetailsOutcome SESV2Client::PutAccountDetails(const PutAccountDetailsRequest& request) const {
@@ -1314,7 +1449,9 @@ PutAccountDetailsOutcome SESV2Client::PutAccountDetails(const PutAccountDetailsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/account/details");
   };
 
-  return PutAccountDetailsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAccountDetailsOutcome(result.GetResultWithOwnership())
+                            : PutAccountDetailsOutcome(std::move(result.GetError()));
 }
 
 PutAccountSendingAttributesOutcome SESV2Client::PutAccountSendingAttributes(const PutAccountSendingAttributesRequest& request) const {
@@ -1323,7 +1460,9 @@ PutAccountSendingAttributesOutcome SESV2Client::PutAccountSendingAttributes(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/account/sending");
   };
 
-  return PutAccountSendingAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccountSendingAttributesOutcome(result.GetResultWithOwnership())
+                            : PutAccountSendingAttributesOutcome(std::move(result.GetError()));
 }
 
 PutAccountSuppressionAttributesOutcome SESV2Client::PutAccountSuppressionAttributes(
@@ -1333,7 +1472,9 @@ PutAccountSuppressionAttributesOutcome SESV2Client::PutAccountSuppressionAttribu
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/account/suppression");
   };
 
-  return PutAccountSuppressionAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccountSuppressionAttributesOutcome(result.GetResultWithOwnership())
+                            : PutAccountSuppressionAttributesOutcome(std::move(result.GetError()));
 }
 
 PutAccountVdmAttributesOutcome SESV2Client::PutAccountVdmAttributes(const PutAccountVdmAttributesRequest& request) const {
@@ -1342,7 +1483,9 @@ PutAccountVdmAttributesOutcome SESV2Client::PutAccountVdmAttributes(const PutAcc
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/account/vdm");
   };
 
-  return PutAccountVdmAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAccountVdmAttributesOutcome(result.GetResultWithOwnership())
+                            : PutAccountVdmAttributesOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetArchivingOptionsOutcome SESV2Client::PutConfigurationSetArchivingOptions(
@@ -1360,7 +1503,9 @@ PutConfigurationSetArchivingOptionsOutcome SESV2Client::PutConfigurationSetArchi
     endpointResolutionOutcome.GetResult().AddPathSegments("/archiving-options");
   };
 
-  return PutConfigurationSetArchivingOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationSetArchivingOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetArchivingOptionsOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetDeliveryOptionsOutcome SESV2Client::PutConfigurationSetDeliveryOptions(
@@ -1378,7 +1523,9 @@ PutConfigurationSetDeliveryOptionsOutcome SESV2Client::PutConfigurationSetDelive
     endpointResolutionOutcome.GetResult().AddPathSegments("/delivery-options");
   };
 
-  return PutConfigurationSetDeliveryOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationSetDeliveryOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetDeliveryOptionsOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetReputationOptionsOutcome SESV2Client::PutConfigurationSetReputationOptions(
@@ -1396,7 +1543,9 @@ PutConfigurationSetReputationOptionsOutcome SESV2Client::PutConfigurationSetRepu
     endpointResolutionOutcome.GetResult().AddPathSegments("/reputation-options");
   };
 
-  return PutConfigurationSetReputationOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationSetReputationOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetReputationOptionsOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetSendingOptionsOutcome SESV2Client::PutConfigurationSetSendingOptions(
@@ -1414,7 +1563,9 @@ PutConfigurationSetSendingOptionsOutcome SESV2Client::PutConfigurationSetSending
     endpointResolutionOutcome.GetResult().AddPathSegments("/sending");
   };
 
-  return PutConfigurationSetSendingOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationSetSendingOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetSendingOptionsOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetSuppressionOptionsOutcome SESV2Client::PutConfigurationSetSuppressionOptions(
@@ -1432,7 +1583,9 @@ PutConfigurationSetSuppressionOptionsOutcome SESV2Client::PutConfigurationSetSup
     endpointResolutionOutcome.GetResult().AddPathSegments("/suppression-options");
   };
 
-  return PutConfigurationSetSuppressionOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationSetSuppressionOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetSuppressionOptionsOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetTrackingOptionsOutcome SESV2Client::PutConfigurationSetTrackingOptions(
@@ -1450,7 +1603,9 @@ PutConfigurationSetTrackingOptionsOutcome SESV2Client::PutConfigurationSetTracki
     endpointResolutionOutcome.GetResult().AddPathSegments("/tracking-options");
   };
 
-  return PutConfigurationSetTrackingOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationSetTrackingOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetTrackingOptionsOutcome(std::move(result.GetError()));
 }
 
 PutConfigurationSetVdmOptionsOutcome SESV2Client::PutConfigurationSetVdmOptions(const PutConfigurationSetVdmOptionsRequest& request) const {
@@ -1467,7 +1622,9 @@ PutConfigurationSetVdmOptionsOutcome SESV2Client::PutConfigurationSetVdmOptions(
     endpointResolutionOutcome.GetResult().AddPathSegments("/vdm-options");
   };
 
-  return PutConfigurationSetVdmOptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutConfigurationSetVdmOptionsOutcome(result.GetResultWithOwnership())
+                            : PutConfigurationSetVdmOptionsOutcome(std::move(result.GetError()));
 }
 
 PutDedicatedIpInPoolOutcome SESV2Client::PutDedicatedIpInPool(const PutDedicatedIpInPoolRequest& request) const {
@@ -1484,7 +1641,9 @@ PutDedicatedIpInPoolOutcome SESV2Client::PutDedicatedIpInPool(const PutDedicated
     endpointResolutionOutcome.GetResult().AddPathSegments("/pool");
   };
 
-  return PutDedicatedIpInPoolOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDedicatedIpInPoolOutcome(result.GetResultWithOwnership())
+                            : PutDedicatedIpInPoolOutcome(std::move(result.GetError()));
 }
 
 PutDedicatedIpPoolScalingAttributesOutcome SESV2Client::PutDedicatedIpPoolScalingAttributes(
@@ -1502,7 +1661,9 @@ PutDedicatedIpPoolScalingAttributesOutcome SESV2Client::PutDedicatedIpPoolScalin
     endpointResolutionOutcome.GetResult().AddPathSegments("/scaling");
   };
 
-  return PutDedicatedIpPoolScalingAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDedicatedIpPoolScalingAttributesOutcome(result.GetResultWithOwnership())
+                            : PutDedicatedIpPoolScalingAttributesOutcome(std::move(result.GetError()));
 }
 
 PutDedicatedIpWarmupAttributesOutcome SESV2Client::PutDedicatedIpWarmupAttributes(
@@ -1520,7 +1681,9 @@ PutDedicatedIpWarmupAttributesOutcome SESV2Client::PutDedicatedIpWarmupAttribute
     endpointResolutionOutcome.GetResult().AddPathSegments("/warmup");
   };
 
-  return PutDedicatedIpWarmupAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDedicatedIpWarmupAttributesOutcome(result.GetResultWithOwnership())
+                            : PutDedicatedIpWarmupAttributesOutcome(std::move(result.GetError()));
 }
 
 PutDeliverabilityDashboardOptionOutcome SESV2Client::PutDeliverabilityDashboardOption(
@@ -1530,7 +1693,9 @@ PutDeliverabilityDashboardOptionOutcome SESV2Client::PutDeliverabilityDashboardO
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/deliverability-dashboard");
   };
 
-  return PutDeliverabilityDashboardOptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutDeliverabilityDashboardOptionOutcome(result.GetResultWithOwnership())
+                            : PutDeliverabilityDashboardOptionOutcome(std::move(result.GetError()));
 }
 
 PutEmailIdentityConfigurationSetAttributesOutcome SESV2Client::PutEmailIdentityConfigurationSetAttributes(
@@ -1548,7 +1713,9 @@ PutEmailIdentityConfigurationSetAttributesOutcome SESV2Client::PutEmailIdentityC
     endpointResolutionOutcome.GetResult().AddPathSegments("/configuration-set");
   };
 
-  return PutEmailIdentityConfigurationSetAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutEmailIdentityConfigurationSetAttributesOutcome(result.GetResultWithOwnership())
+                            : PutEmailIdentityConfigurationSetAttributesOutcome(std::move(result.GetError()));
 }
 
 PutEmailIdentityDkimAttributesOutcome SESV2Client::PutEmailIdentityDkimAttributes(
@@ -1566,7 +1733,9 @@ PutEmailIdentityDkimAttributesOutcome SESV2Client::PutEmailIdentityDkimAttribute
     endpointResolutionOutcome.GetResult().AddPathSegments("/dkim");
   };
 
-  return PutEmailIdentityDkimAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutEmailIdentityDkimAttributesOutcome(result.GetResultWithOwnership())
+                            : PutEmailIdentityDkimAttributesOutcome(std::move(result.GetError()));
 }
 
 PutEmailIdentityDkimSigningAttributesOutcome SESV2Client::PutEmailIdentityDkimSigningAttributes(
@@ -1584,7 +1753,9 @@ PutEmailIdentityDkimSigningAttributesOutcome SESV2Client::PutEmailIdentityDkimSi
     endpointResolutionOutcome.GetResult().AddPathSegments("/dkim/signing");
   };
 
-  return PutEmailIdentityDkimSigningAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutEmailIdentityDkimSigningAttributesOutcome(result.GetResultWithOwnership())
+                            : PutEmailIdentityDkimSigningAttributesOutcome(std::move(result.GetError()));
 }
 
 PutEmailIdentityFeedbackAttributesOutcome SESV2Client::PutEmailIdentityFeedbackAttributes(
@@ -1602,7 +1773,9 @@ PutEmailIdentityFeedbackAttributesOutcome SESV2Client::PutEmailIdentityFeedbackA
     endpointResolutionOutcome.GetResult().AddPathSegments("/feedback");
   };
 
-  return PutEmailIdentityFeedbackAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutEmailIdentityFeedbackAttributesOutcome(result.GetResultWithOwnership())
+                            : PutEmailIdentityFeedbackAttributesOutcome(std::move(result.GetError()));
 }
 
 PutEmailIdentityMailFromAttributesOutcome SESV2Client::PutEmailIdentityMailFromAttributes(
@@ -1620,7 +1793,9 @@ PutEmailIdentityMailFromAttributesOutcome SESV2Client::PutEmailIdentityMailFromA
     endpointResolutionOutcome.GetResult().AddPathSegments("/mail-from");
   };
 
-  return PutEmailIdentityMailFromAttributesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutEmailIdentityMailFromAttributesOutcome(result.GetResultWithOwnership())
+                            : PutEmailIdentityMailFromAttributesOutcome(std::move(result.GetError()));
 }
 
 PutSuppressedDestinationOutcome SESV2Client::PutSuppressedDestination(const PutSuppressedDestinationRequest& request) const {
@@ -1629,7 +1804,9 @@ PutSuppressedDestinationOutcome SESV2Client::PutSuppressedDestination(const PutS
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/suppression/addresses");
   };
 
-  return PutSuppressedDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutSuppressedDestinationOutcome(result.GetResultWithOwnership())
+                            : PutSuppressedDestinationOutcome(std::move(result.GetError()));
 }
 
 SendBulkEmailOutcome SESV2Client::SendBulkEmail(const SendBulkEmailRequest& request) const {
@@ -1638,7 +1815,8 @@ SendBulkEmailOutcome SESV2Client::SendBulkEmail(const SendBulkEmailRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/outbound-bulk-emails");
   };
 
-  return SendBulkEmailOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendBulkEmailOutcome(result.GetResultWithOwnership()) : SendBulkEmailOutcome(std::move(result.GetError()));
 }
 
 SendCustomVerificationEmailOutcome SESV2Client::SendCustomVerificationEmail(const SendCustomVerificationEmailRequest& request) const {
@@ -1647,7 +1825,9 @@ SendCustomVerificationEmailOutcome SESV2Client::SendCustomVerificationEmail(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/outbound-custom-verification-emails");
   };
 
-  return SendCustomVerificationEmailOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendCustomVerificationEmailOutcome(result.GetResultWithOwnership())
+                            : SendCustomVerificationEmailOutcome(std::move(result.GetError()));
 }
 
 SendEmailOutcome SESV2Client::SendEmail(const SendEmailRequest& request) const {
@@ -1656,7 +1836,8 @@ SendEmailOutcome SESV2Client::SendEmail(const SendEmailRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/outbound-emails");
   };
 
-  return SendEmailOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SendEmailOutcome(result.GetResultWithOwnership()) : SendEmailOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SESV2Client::TagResource(const TagResourceRequest& request) const {
@@ -1665,7 +1846,8 @@ TagResourceOutcome SESV2Client::TagResource(const TagResourceRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tags");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestRenderEmailTemplateOutcome SESV2Client::TestRenderEmailTemplate(const TestRenderEmailTemplateRequest& request) const {
@@ -1682,7 +1864,9 @@ TestRenderEmailTemplateOutcome SESV2Client::TestRenderEmailTemplate(const TestRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/render");
   };
 
-  return TestRenderEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestRenderEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : TestRenderEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SESV2Client::UntagResource(const UntagResourceRequest& request) const {
@@ -1702,7 +1886,8 @@ UntagResourceOutcome SESV2Client::UntagResource(const UntagResourceRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/tags");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateConfigurationSetEventDestinationOutcome SESV2Client::UpdateConfigurationSetEventDestination(
@@ -1726,7 +1911,9 @@ UpdateConfigurationSetEventDestinationOutcome SESV2Client::UpdateConfigurationSe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventDestinationName());
   };
 
-  return UpdateConfigurationSetEventDestinationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConfigurationSetEventDestinationOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationSetEventDestinationOutcome(std::move(result.GetError()));
 }
 
 UpdateContactOutcome SESV2Client::UpdateContact(const UpdateContactRequest& request) const {
@@ -1749,7 +1936,8 @@ UpdateContactOutcome SESV2Client::UpdateContact(const UpdateContactRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailAddress());
   };
 
-  return UpdateContactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateContactOutcome(result.GetResultWithOwnership()) : UpdateContactOutcome(std::move(result.GetError()));
 }
 
 UpdateContactListOutcome SESV2Client::UpdateContactList(const UpdateContactListRequest& request) const {
@@ -1765,7 +1953,9 @@ UpdateContactListOutcome SESV2Client::UpdateContactList(const UpdateContactListR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactListName());
   };
 
-  return UpdateContactListOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateContactListOutcome(result.GetResultWithOwnership())
+                            : UpdateContactListOutcome(std::move(result.GetError()));
 }
 
 UpdateCustomVerificationEmailTemplateOutcome SESV2Client::UpdateCustomVerificationEmailTemplate(
@@ -1782,7 +1972,9 @@ UpdateCustomVerificationEmailTemplateOutcome SESV2Client::UpdateCustomVerificati
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateName());
   };
 
-  return UpdateCustomVerificationEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateCustomVerificationEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateCustomVerificationEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateEmailIdentityPolicyOutcome SESV2Client::UpdateEmailIdentityPolicy(const UpdateEmailIdentityPolicyRequest& request) const {
@@ -1805,7 +1997,9 @@ UpdateEmailIdentityPolicyOutcome SESV2Client::UpdateEmailIdentityPolicy(const Up
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPolicyName());
   };
 
-  return UpdateEmailIdentityPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEmailIdentityPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateEmailIdentityPolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateEmailTemplateOutcome SESV2Client::UpdateEmailTemplate(const UpdateEmailTemplateRequest& request) const {
@@ -1821,7 +2015,9 @@ UpdateEmailTemplateOutcome SESV2Client::UpdateEmailTemplate(const UpdateEmailTem
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateName());
   };
 
-  return UpdateEmailTemplateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateEmailTemplateOutcome(result.GetResultWithOwnership())
+                            : UpdateEmailTemplateOutcome(std::move(result.GetError()));
 }
 
 UpdateReputationEntityCustomerManagedStatusOutcome SESV2Client::UpdateReputationEntityCustomerManagedStatus(
@@ -1846,7 +2042,9 @@ UpdateReputationEntityCustomerManagedStatusOutcome SESV2Client::UpdateReputation
     endpointResolutionOutcome.GetResult().AddPathSegments("/customer-managed-status");
   };
 
-  return UpdateReputationEntityCustomerManagedStatusOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateReputationEntityCustomerManagedStatusOutcome(result.GetResultWithOwnership())
+                            : UpdateReputationEntityCustomerManagedStatusOutcome(std::move(result.GetError()));
 }
 
 UpdateReputationEntityPolicyOutcome SESV2Client::UpdateReputationEntityPolicy(const UpdateReputationEntityPolicyRequest& request) const {
@@ -1870,5 +2068,7 @@ UpdateReputationEntityPolicyOutcome SESV2Client::UpdateReputationEntityPolicy(co
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return UpdateReputationEntityPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateReputationEntityPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateReputationEntityPolicyOutcome(std::move(result.GetError()));
 }

@@ -205,7 +205,8 @@ CancelJobOutcome BraketClient::CancelJob(const CancelJobRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CancelJobOutcome(result.GetResultWithOwnership()) : CancelJobOutcome(std::move(result.GetError()));
 }
 
 CancelQuantumTaskOutcome BraketClient::CancelQuantumTask(const CancelQuantumTaskRequest& request) const {
@@ -222,7 +223,9 @@ CancelQuantumTaskOutcome BraketClient::CancelQuantumTask(const CancelQuantumTask
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelQuantumTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CancelQuantumTaskOutcome(result.GetResultWithOwnership())
+                            : CancelQuantumTaskOutcome(std::move(result.GetError()));
 }
 
 CreateJobOutcome BraketClient::CreateJob(const CreateJobRequest& request) const {
@@ -231,7 +234,8 @@ CreateJobOutcome BraketClient::CreateJob(const CreateJobRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/job");
   };
 
-  return CreateJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateJobOutcome(result.GetResultWithOwnership()) : CreateJobOutcome(std::move(result.GetError()));
 }
 
 CreateQuantumTaskOutcome BraketClient::CreateQuantumTask(const CreateQuantumTaskRequest& request) const {
@@ -240,7 +244,9 @@ CreateQuantumTaskOutcome BraketClient::CreateQuantumTask(const CreateQuantumTask
     endpointResolutionOutcome.GetResult().AddPathSegments("/quantum-task");
   };
 
-  return CreateQuantumTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateQuantumTaskOutcome(result.GetResultWithOwnership())
+                            : CreateQuantumTaskOutcome(std::move(result.GetError()));
 }
 
 CreateSpendingLimitOutcome BraketClient::CreateSpendingLimit(const CreateSpendingLimitRequest& request) const {
@@ -249,7 +255,9 @@ CreateSpendingLimitOutcome BraketClient::CreateSpendingLimit(const CreateSpendin
     endpointResolutionOutcome.GetResult().AddPathSegments("/spending-limit");
   };
 
-  return CreateSpendingLimitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSpendingLimitOutcome(result.GetResultWithOwnership())
+                            : CreateSpendingLimitOutcome(std::move(result.GetError()));
 }
 
 DeleteSpendingLimitOutcome BraketClient::DeleteSpendingLimit(const DeleteSpendingLimitRequest& request) const {
@@ -266,7 +274,9 @@ DeleteSpendingLimitOutcome BraketClient::DeleteSpendingLimit(const DeleteSpendin
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete");
   };
 
-  return DeleteSpendingLimitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteSpendingLimitOutcome(result.GetResultWithOwnership())
+                            : DeleteSpendingLimitOutcome(std::move(result.GetError()));
 }
 
 GetDeviceOutcome BraketClient::GetDevice(const GetDeviceRequest& request) const {
@@ -282,7 +292,8 @@ GetDeviceOutcome BraketClient::GetDevice(const GetDeviceRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceArn());
   };
 
-  return GetDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeviceOutcome(result.GetResultWithOwnership()) : GetDeviceOutcome(std::move(result.GetError()));
 }
 
 GetJobOutcome BraketClient::GetJob(const GetJobRequest& request) const {
@@ -298,7 +309,8 @@ GetJobOutcome BraketClient::GetJob(const GetJobRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJobArn());
   };
 
-  return GetJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetJobOutcome(result.GetResultWithOwnership()) : GetJobOutcome(std::move(result.GetError()));
 }
 
 GetQuantumTaskOutcome BraketClient::GetQuantumTask(const GetQuantumTaskRequest& request) const {
@@ -314,7 +326,8 @@ GetQuantumTaskOutcome BraketClient::GetQuantumTask(const GetQuantumTaskRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuantumTaskArn());
   };
 
-  return GetQuantumTaskOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetQuantumTaskOutcome(result.GetResultWithOwnership()) : GetQuantumTaskOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome BraketClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -330,7 +343,9 @@ ListTagsForResourceOutcome BraketClient::ListTagsForResource(const ListTagsForRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 SearchDevicesOutcome BraketClient::SearchDevices(const SearchDevicesRequest& request) const {
@@ -339,7 +354,8 @@ SearchDevicesOutcome BraketClient::SearchDevices(const SearchDevicesRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
   };
 
-  return SearchDevicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchDevicesOutcome(result.GetResultWithOwnership()) : SearchDevicesOutcome(std::move(result.GetError()));
 }
 
 SearchJobsOutcome BraketClient::SearchJobs(const SearchJobsRequest& request) const {
@@ -348,7 +364,8 @@ SearchJobsOutcome BraketClient::SearchJobs(const SearchJobsRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/jobs");
   };
 
-  return SearchJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchJobsOutcome(result.GetResultWithOwnership()) : SearchJobsOutcome(std::move(result.GetError()));
 }
 
 SearchQuantumTasksOutcome BraketClient::SearchQuantumTasks(const SearchQuantumTasksRequest& request) const {
@@ -357,7 +374,9 @@ SearchQuantumTasksOutcome BraketClient::SearchQuantumTasks(const SearchQuantumTa
     endpointResolutionOutcome.GetResult().AddPathSegments("/quantum-tasks");
   };
 
-  return SearchQuantumTasksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchQuantumTasksOutcome(result.GetResultWithOwnership())
+                            : SearchQuantumTasksOutcome(std::move(result.GetError()));
 }
 
 SearchSpendingLimitsOutcome BraketClient::SearchSpendingLimits(const SearchSpendingLimitsRequest& request) const {
@@ -366,7 +385,9 @@ SearchSpendingLimitsOutcome BraketClient::SearchSpendingLimits(const SearchSpend
     endpointResolutionOutcome.GetResult().AddPathSegments("/spending-limits");
   };
 
-  return SearchSpendingLimitsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchSpendingLimitsOutcome(result.GetResultWithOwnership())
+                            : SearchSpendingLimitsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome BraketClient::TagResource(const TagResourceRequest& request) const {
@@ -382,7 +403,8 @@ TagResourceOutcome BraketClient::TagResource(const TagResourceRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome BraketClient::UntagResource(const UntagResourceRequest& request) const {
@@ -403,7 +425,8 @@ UntagResourceOutcome BraketClient::UntagResource(const UntagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateSpendingLimitOutcome BraketClient::UpdateSpendingLimit(const UpdateSpendingLimitRequest& request) const {
@@ -420,5 +443,7 @@ UpdateSpendingLimitOutcome BraketClient::UpdateSpendingLimit(const UpdateSpendin
     endpointResolutionOutcome.GetResult().AddPathSegments("/update");
   };
 
-  return UpdateSpendingLimitOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateSpendingLimitOutcome(result.GetResultWithOwnership())
+                            : UpdateSpendingLimitOutcome(std::move(result.GetError()));
 }

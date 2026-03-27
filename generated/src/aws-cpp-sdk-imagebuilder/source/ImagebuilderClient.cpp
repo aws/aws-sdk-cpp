@@ -258,7 +258,9 @@ CancelImageCreationOutcome ImagebuilderClient::CancelImageCreation(const CancelI
     endpointResolutionOutcome.GetResult().AddPathSegments("/CancelImageCreation");
   };
 
-  return CancelImageCreationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CancelImageCreationOutcome(result.GetResultWithOwnership())
+                            : CancelImageCreationOutcome(std::move(result.GetError()));
 }
 
 CancelLifecycleExecutionOutcome ImagebuilderClient::CancelLifecycleExecution(const CancelLifecycleExecutionRequest& request) const {
@@ -267,7 +269,9 @@ CancelLifecycleExecutionOutcome ImagebuilderClient::CancelLifecycleExecution(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/CancelLifecycleExecution");
   };
 
-  return CancelLifecycleExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CancelLifecycleExecutionOutcome(result.GetResultWithOwnership())
+                            : CancelLifecycleExecutionOutcome(std::move(result.GetError()));
 }
 
 CreateComponentOutcome ImagebuilderClient::CreateComponent(const CreateComponentRequest& request) const {
@@ -276,7 +280,9 @@ CreateComponentOutcome ImagebuilderClient::CreateComponent(const CreateComponent
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateComponent");
   };
 
-  return CreateComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateComponentOutcome(result.GetResultWithOwnership())
+                            : CreateComponentOutcome(std::move(result.GetError()));
 }
 
 CreateContainerRecipeOutcome ImagebuilderClient::CreateContainerRecipe(const CreateContainerRecipeRequest& request) const {
@@ -285,7 +291,9 @@ CreateContainerRecipeOutcome ImagebuilderClient::CreateContainerRecipe(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateContainerRecipe");
   };
 
-  return CreateContainerRecipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateContainerRecipeOutcome(result.GetResultWithOwnership())
+                            : CreateContainerRecipeOutcome(std::move(result.GetError()));
 }
 
 CreateDistributionConfigurationOutcome ImagebuilderClient::CreateDistributionConfiguration(
@@ -295,7 +303,9 @@ CreateDistributionConfigurationOutcome ImagebuilderClient::CreateDistributionCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateDistributionConfiguration");
   };
 
-  return CreateDistributionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateDistributionConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateDistributionConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateImageOutcome ImagebuilderClient::CreateImage(const CreateImageRequest& request) const {
@@ -304,7 +314,8 @@ CreateImageOutcome ImagebuilderClient::CreateImage(const CreateImageRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateImage");
   };
 
-  return CreateImageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateImageOutcome(result.GetResultWithOwnership()) : CreateImageOutcome(std::move(result.GetError()));
 }
 
 CreateImagePipelineOutcome ImagebuilderClient::CreateImagePipeline(const CreateImagePipelineRequest& request) const {
@@ -313,7 +324,9 @@ CreateImagePipelineOutcome ImagebuilderClient::CreateImagePipeline(const CreateI
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateImagePipeline");
   };
 
-  return CreateImagePipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateImagePipelineOutcome(result.GetResultWithOwnership())
+                            : CreateImagePipelineOutcome(std::move(result.GetError()));
 }
 
 CreateImageRecipeOutcome ImagebuilderClient::CreateImageRecipe(const CreateImageRecipeRequest& request) const {
@@ -322,7 +335,9 @@ CreateImageRecipeOutcome ImagebuilderClient::CreateImageRecipe(const CreateImage
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateImageRecipe");
   };
 
-  return CreateImageRecipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateImageRecipeOutcome(result.GetResultWithOwnership())
+                            : CreateImageRecipeOutcome(std::move(result.GetError()));
 }
 
 CreateInfrastructureConfigurationOutcome ImagebuilderClient::CreateInfrastructureConfiguration(
@@ -332,7 +347,9 @@ CreateInfrastructureConfigurationOutcome ImagebuilderClient::CreateInfrastructur
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateInfrastructureConfiguration");
   };
 
-  return CreateInfrastructureConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateInfrastructureConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateInfrastructureConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateLifecyclePolicyOutcome ImagebuilderClient::CreateLifecyclePolicy(const CreateLifecyclePolicyRequest& request) const {
@@ -341,7 +358,9 @@ CreateLifecyclePolicyOutcome ImagebuilderClient::CreateLifecyclePolicy(const Cre
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateLifecyclePolicy");
   };
 
-  return CreateLifecyclePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : CreateLifecyclePolicyOutcome(std::move(result.GetError()));
 }
 
 CreateWorkflowOutcome ImagebuilderClient::CreateWorkflow(const CreateWorkflowRequest& request) const {
@@ -350,7 +369,8 @@ CreateWorkflowOutcome ImagebuilderClient::CreateWorkflow(const CreateWorkflowReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/CreateWorkflow");
   };
 
-  return CreateWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? CreateWorkflowOutcome(result.GetResultWithOwnership()) : CreateWorkflowOutcome(std::move(result.GetError()));
 }
 
 DeleteComponentOutcome ImagebuilderClient::DeleteComponent(const DeleteComponentRequest& request) const {
@@ -365,7 +385,9 @@ DeleteComponentOutcome ImagebuilderClient::DeleteComponent(const DeleteComponent
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteComponent");
   };
 
-  return DeleteComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteComponentOutcome(result.GetResultWithOwnership())
+                            : DeleteComponentOutcome(std::move(result.GetError()));
 }
 
 DeleteContainerRecipeOutcome ImagebuilderClient::DeleteContainerRecipe(const DeleteContainerRecipeRequest& request) const {
@@ -380,7 +402,9 @@ DeleteContainerRecipeOutcome ImagebuilderClient::DeleteContainerRecipe(const Del
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteContainerRecipe");
   };
 
-  return DeleteContainerRecipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteContainerRecipeOutcome(result.GetResultWithOwnership())
+                            : DeleteContainerRecipeOutcome(std::move(result.GetError()));
 }
 
 DeleteDistributionConfigurationOutcome ImagebuilderClient::DeleteDistributionConfiguration(
@@ -396,7 +420,9 @@ DeleteDistributionConfigurationOutcome ImagebuilderClient::DeleteDistributionCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteDistributionConfiguration");
   };
 
-  return DeleteDistributionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDistributionConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteDistributionConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteImageOutcome ImagebuilderClient::DeleteImage(const DeleteImageRequest& request) const {
@@ -411,7 +437,8 @@ DeleteImageOutcome ImagebuilderClient::DeleteImage(const DeleteImageRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteImage");
   };
 
-  return DeleteImageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteImageOutcome(result.GetResultWithOwnership()) : DeleteImageOutcome(std::move(result.GetError()));
 }
 
 DeleteImagePipelineOutcome ImagebuilderClient::DeleteImagePipeline(const DeleteImagePipelineRequest& request) const {
@@ -426,7 +453,9 @@ DeleteImagePipelineOutcome ImagebuilderClient::DeleteImagePipeline(const DeleteI
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteImagePipeline");
   };
 
-  return DeleteImagePipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteImagePipelineOutcome(result.GetResultWithOwnership())
+                            : DeleteImagePipelineOutcome(std::move(result.GetError()));
 }
 
 DeleteImageRecipeOutcome ImagebuilderClient::DeleteImageRecipe(const DeleteImageRecipeRequest& request) const {
@@ -441,7 +470,9 @@ DeleteImageRecipeOutcome ImagebuilderClient::DeleteImageRecipe(const DeleteImage
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteImageRecipe");
   };
 
-  return DeleteImageRecipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteImageRecipeOutcome(result.GetResultWithOwnership())
+                            : DeleteImageRecipeOutcome(std::move(result.GetError()));
 }
 
 DeleteInfrastructureConfigurationOutcome ImagebuilderClient::DeleteInfrastructureConfiguration(
@@ -457,7 +488,9 @@ DeleteInfrastructureConfigurationOutcome ImagebuilderClient::DeleteInfrastructur
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteInfrastructureConfiguration");
   };
 
-  return DeleteInfrastructureConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteInfrastructureConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteInfrastructureConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteLifecyclePolicyOutcome ImagebuilderClient::DeleteLifecyclePolicy(const DeleteLifecyclePolicyRequest& request) const {
@@ -472,7 +505,9 @@ DeleteLifecyclePolicyOutcome ImagebuilderClient::DeleteLifecyclePolicy(const Del
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLifecyclePolicy");
   };
 
-  return DeleteLifecyclePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteLifecyclePolicyOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkflowOutcome ImagebuilderClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const {
@@ -487,7 +522,8 @@ DeleteWorkflowOutcome ImagebuilderClient::DeleteWorkflow(const DeleteWorkflowReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteWorkflow");
   };
 
-  return DeleteWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWorkflowOutcome(result.GetResultWithOwnership()) : DeleteWorkflowOutcome(std::move(result.GetError()));
 }
 
 DistributeImageOutcome ImagebuilderClient::DistributeImage(const DistributeImageRequest& request) const {
@@ -496,7 +532,9 @@ DistributeImageOutcome ImagebuilderClient::DistributeImage(const DistributeImage
     endpointResolutionOutcome.GetResult().AddPathSegments("/DistributeImage");
   };
 
-  return DistributeImageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DistributeImageOutcome(result.GetResultWithOwnership())
+                            : DistributeImageOutcome(std::move(result.GetError()));
 }
 
 GetComponentOutcome ImagebuilderClient::GetComponent(const GetComponentRequest& request) const {
@@ -511,7 +549,8 @@ GetComponentOutcome ImagebuilderClient::GetComponent(const GetComponentRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetComponent");
   };
 
-  return GetComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetComponentOutcome(result.GetResultWithOwnership()) : GetComponentOutcome(std::move(result.GetError()));
 }
 
 GetComponentPolicyOutcome ImagebuilderClient::GetComponentPolicy(const GetComponentPolicyRequest& request) const {
@@ -526,7 +565,9 @@ GetComponentPolicyOutcome ImagebuilderClient::GetComponentPolicy(const GetCompon
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetComponentPolicy");
   };
 
-  return GetComponentPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetComponentPolicyOutcome(result.GetResultWithOwnership())
+                            : GetComponentPolicyOutcome(std::move(result.GetError()));
 }
 
 GetContainerRecipeOutcome ImagebuilderClient::GetContainerRecipe(const GetContainerRecipeRequest& request) const {
@@ -541,7 +582,9 @@ GetContainerRecipeOutcome ImagebuilderClient::GetContainerRecipe(const GetContai
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetContainerRecipe");
   };
 
-  return GetContainerRecipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContainerRecipeOutcome(result.GetResultWithOwnership())
+                            : GetContainerRecipeOutcome(std::move(result.GetError()));
 }
 
 GetContainerRecipePolicyOutcome ImagebuilderClient::GetContainerRecipePolicy(const GetContainerRecipePolicyRequest& request) const {
@@ -556,7 +599,9 @@ GetContainerRecipePolicyOutcome ImagebuilderClient::GetContainerRecipePolicy(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetContainerRecipePolicy");
   };
 
-  return GetContainerRecipePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetContainerRecipePolicyOutcome(result.GetResultWithOwnership())
+                            : GetContainerRecipePolicyOutcome(std::move(result.GetError()));
 }
 
 GetDistributionConfigurationOutcome ImagebuilderClient::GetDistributionConfiguration(
@@ -572,7 +617,9 @@ GetDistributionConfigurationOutcome ImagebuilderClient::GetDistributionConfigura
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetDistributionConfiguration");
   };
 
-  return GetDistributionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDistributionConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetDistributionConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetImageOutcome ImagebuilderClient::GetImage(const GetImageRequest& request) const {
@@ -587,7 +634,8 @@ GetImageOutcome ImagebuilderClient::GetImage(const GetImageRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetImage");
   };
 
-  return GetImageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImageOutcome(result.GetResultWithOwnership()) : GetImageOutcome(std::move(result.GetError()));
 }
 
 GetImagePipelineOutcome ImagebuilderClient::GetImagePipeline(const GetImagePipelineRequest& request) const {
@@ -602,7 +650,9 @@ GetImagePipelineOutcome ImagebuilderClient::GetImagePipeline(const GetImagePipel
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetImagePipeline");
   };
 
-  return GetImagePipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImagePipelineOutcome(result.GetResultWithOwnership())
+                            : GetImagePipelineOutcome(std::move(result.GetError()));
 }
 
 GetImagePolicyOutcome ImagebuilderClient::GetImagePolicy(const GetImagePolicyRequest& request) const {
@@ -617,7 +667,8 @@ GetImagePolicyOutcome ImagebuilderClient::GetImagePolicy(const GetImagePolicyReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetImagePolicy");
   };
 
-  return GetImagePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImagePolicyOutcome(result.GetResultWithOwnership()) : GetImagePolicyOutcome(std::move(result.GetError()));
 }
 
 GetImageRecipeOutcome ImagebuilderClient::GetImageRecipe(const GetImageRecipeRequest& request) const {
@@ -632,7 +683,8 @@ GetImageRecipeOutcome ImagebuilderClient::GetImageRecipe(const GetImageRecipeReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetImageRecipe");
   };
 
-  return GetImageRecipeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImageRecipeOutcome(result.GetResultWithOwnership()) : GetImageRecipeOutcome(std::move(result.GetError()));
 }
 
 GetImageRecipePolicyOutcome ImagebuilderClient::GetImageRecipePolicy(const GetImageRecipePolicyRequest& request) const {
@@ -647,7 +699,9 @@ GetImageRecipePolicyOutcome ImagebuilderClient::GetImageRecipePolicy(const GetIm
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetImageRecipePolicy");
   };
 
-  return GetImageRecipePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetImageRecipePolicyOutcome(result.GetResultWithOwnership())
+                            : GetImageRecipePolicyOutcome(std::move(result.GetError()));
 }
 
 GetInfrastructureConfigurationOutcome ImagebuilderClient::GetInfrastructureConfiguration(
@@ -663,7 +717,9 @@ GetInfrastructureConfigurationOutcome ImagebuilderClient::GetInfrastructureConfi
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetInfrastructureConfiguration");
   };
 
-  return GetInfrastructureConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetInfrastructureConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetInfrastructureConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetLifecycleExecutionOutcome ImagebuilderClient::GetLifecycleExecution(const GetLifecycleExecutionRequest& request) const {
@@ -678,7 +734,9 @@ GetLifecycleExecutionOutcome ImagebuilderClient::GetLifecycleExecution(const Get
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetLifecycleExecution");
   };
 
-  return GetLifecycleExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLifecycleExecutionOutcome(result.GetResultWithOwnership())
+                            : GetLifecycleExecutionOutcome(std::move(result.GetError()));
 }
 
 GetLifecyclePolicyOutcome ImagebuilderClient::GetLifecyclePolicy(const GetLifecyclePolicyRequest& request) const {
@@ -693,7 +751,9 @@ GetLifecyclePolicyOutcome ImagebuilderClient::GetLifecyclePolicy(const GetLifecy
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetLifecyclePolicy");
   };
 
-  return GetLifecyclePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : GetLifecyclePolicyOutcome(std::move(result.GetError()));
 }
 
 GetMarketplaceResourceOutcome ImagebuilderClient::GetMarketplaceResource(const GetMarketplaceResourceRequest& request) const {
@@ -702,7 +762,9 @@ GetMarketplaceResourceOutcome ImagebuilderClient::GetMarketplaceResource(const G
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetMarketplaceResource");
   };
 
-  return GetMarketplaceResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMarketplaceResourceOutcome(result.GetResultWithOwnership())
+                            : GetMarketplaceResourceOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowOutcome ImagebuilderClient::GetWorkflow(const GetWorkflowRequest& request) const {
@@ -717,7 +779,8 @@ GetWorkflowOutcome ImagebuilderClient::GetWorkflow(const GetWorkflowRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetWorkflow");
   };
 
-  return GetWorkflowOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowOutcome(result.GetResultWithOwnership()) : GetWorkflowOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowExecutionOutcome ImagebuilderClient::GetWorkflowExecution(const GetWorkflowExecutionRequest& request) const {
@@ -732,7 +795,9 @@ GetWorkflowExecutionOutcome ImagebuilderClient::GetWorkflowExecution(const GetWo
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetWorkflowExecution");
   };
 
-  return GetWorkflowExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowExecutionOutcome(result.GetResultWithOwnership())
+                            : GetWorkflowExecutionOutcome(std::move(result.GetError()));
 }
 
 GetWorkflowStepExecutionOutcome ImagebuilderClient::GetWorkflowStepExecution(const GetWorkflowStepExecutionRequest& request) const {
@@ -747,7 +812,9 @@ GetWorkflowStepExecutionOutcome ImagebuilderClient::GetWorkflowStepExecution(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/GetWorkflowStepExecution");
   };
 
-  return GetWorkflowStepExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWorkflowStepExecutionOutcome(result.GetResultWithOwnership())
+                            : GetWorkflowStepExecutionOutcome(std::move(result.GetError()));
 }
 
 ImportComponentOutcome ImagebuilderClient::ImportComponent(const ImportComponentRequest& request) const {
@@ -756,7 +823,9 @@ ImportComponentOutcome ImagebuilderClient::ImportComponent(const ImportComponent
     endpointResolutionOutcome.GetResult().AddPathSegments("/ImportComponent");
   };
 
-  return ImportComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ImportComponentOutcome(result.GetResultWithOwnership())
+                            : ImportComponentOutcome(std::move(result.GetError()));
 }
 
 ImportDiskImageOutcome ImagebuilderClient::ImportDiskImage(const ImportDiskImageRequest& request) const {
@@ -765,7 +834,9 @@ ImportDiskImageOutcome ImagebuilderClient::ImportDiskImage(const ImportDiskImage
     endpointResolutionOutcome.GetResult().AddPathSegments("/ImportDiskImage");
   };
 
-  return ImportDiskImageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ImportDiskImageOutcome(result.GetResultWithOwnership())
+                            : ImportDiskImageOutcome(std::move(result.GetError()));
 }
 
 ImportVmImageOutcome ImagebuilderClient::ImportVmImage(const ImportVmImageRequest& request) const {
@@ -774,7 +845,8 @@ ImportVmImageOutcome ImagebuilderClient::ImportVmImage(const ImportVmImageReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/ImportVmImage");
   };
 
-  return ImportVmImageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ImportVmImageOutcome(result.GetResultWithOwnership()) : ImportVmImageOutcome(std::move(result.GetError()));
 }
 
 ListComponentBuildVersionsOutcome ImagebuilderClient::ListComponentBuildVersions(const ListComponentBuildVersionsRequest& request) const {
@@ -783,7 +855,9 @@ ListComponentBuildVersionsOutcome ImagebuilderClient::ListComponentBuildVersions
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListComponentBuildVersions");
   };
 
-  return ListComponentBuildVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComponentBuildVersionsOutcome(result.GetResultWithOwnership())
+                            : ListComponentBuildVersionsOutcome(std::move(result.GetError()));
 }
 
 ListComponentsOutcome ImagebuilderClient::ListComponents(const ListComponentsRequest& request) const {
@@ -792,7 +866,8 @@ ListComponentsOutcome ImagebuilderClient::ListComponents(const ListComponentsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListComponents");
   };
 
-  return ListComponentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComponentsOutcome(result.GetResultWithOwnership()) : ListComponentsOutcome(std::move(result.GetError()));
 }
 
 ListContainerRecipesOutcome ImagebuilderClient::ListContainerRecipes(const ListContainerRecipesRequest& request) const {
@@ -801,7 +876,9 @@ ListContainerRecipesOutcome ImagebuilderClient::ListContainerRecipes(const ListC
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListContainerRecipes");
   };
 
-  return ListContainerRecipesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContainerRecipesOutcome(result.GetResultWithOwnership())
+                            : ListContainerRecipesOutcome(std::move(result.GetError()));
 }
 
 ListDistributionConfigurationsOutcome ImagebuilderClient::ListDistributionConfigurations(
@@ -811,7 +888,9 @@ ListDistributionConfigurationsOutcome ImagebuilderClient::ListDistributionConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListDistributionConfigurations");
   };
 
-  return ListDistributionConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDistributionConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListDistributionConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListImageBuildVersionsOutcome ImagebuilderClient::ListImageBuildVersions(const ListImageBuildVersionsRequest& request) const {
@@ -820,7 +899,9 @@ ListImageBuildVersionsOutcome ImagebuilderClient::ListImageBuildVersions(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListImageBuildVersions");
   };
 
-  return ListImageBuildVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImageBuildVersionsOutcome(result.GetResultWithOwnership())
+                            : ListImageBuildVersionsOutcome(std::move(result.GetError()));
 }
 
 ListImagePackagesOutcome ImagebuilderClient::ListImagePackages(const ListImagePackagesRequest& request) const {
@@ -829,7 +910,9 @@ ListImagePackagesOutcome ImagebuilderClient::ListImagePackages(const ListImagePa
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListImagePackages");
   };
 
-  return ListImagePackagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImagePackagesOutcome(result.GetResultWithOwnership())
+                            : ListImagePackagesOutcome(std::move(result.GetError()));
 }
 
 ListImagePipelineImagesOutcome ImagebuilderClient::ListImagePipelineImages(const ListImagePipelineImagesRequest& request) const {
@@ -838,7 +921,9 @@ ListImagePipelineImagesOutcome ImagebuilderClient::ListImagePipelineImages(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListImagePipelineImages");
   };
 
-  return ListImagePipelineImagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImagePipelineImagesOutcome(result.GetResultWithOwnership())
+                            : ListImagePipelineImagesOutcome(std::move(result.GetError()));
 }
 
 ListImagePipelinesOutcome ImagebuilderClient::ListImagePipelines(const ListImagePipelinesRequest& request) const {
@@ -847,7 +932,9 @@ ListImagePipelinesOutcome ImagebuilderClient::ListImagePipelines(const ListImage
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListImagePipelines");
   };
 
-  return ListImagePipelinesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImagePipelinesOutcome(result.GetResultWithOwnership())
+                            : ListImagePipelinesOutcome(std::move(result.GetError()));
 }
 
 ListImageRecipesOutcome ImagebuilderClient::ListImageRecipes(const ListImageRecipesRequest& request) const {
@@ -856,7 +943,9 @@ ListImageRecipesOutcome ImagebuilderClient::ListImageRecipes(const ListImageReci
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListImageRecipes");
   };
 
-  return ListImageRecipesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImageRecipesOutcome(result.GetResultWithOwnership())
+                            : ListImageRecipesOutcome(std::move(result.GetError()));
 }
 
 ListImageScanFindingAggregationsOutcome ImagebuilderClient::ListImageScanFindingAggregations(
@@ -866,7 +955,9 @@ ListImageScanFindingAggregationsOutcome ImagebuilderClient::ListImageScanFinding
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListImageScanFindingAggregations");
   };
 
-  return ListImageScanFindingAggregationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImageScanFindingAggregationsOutcome(result.GetResultWithOwnership())
+                            : ListImageScanFindingAggregationsOutcome(std::move(result.GetError()));
 }
 
 ListImageScanFindingsOutcome ImagebuilderClient::ListImageScanFindings(const ListImageScanFindingsRequest& request) const {
@@ -875,7 +966,9 @@ ListImageScanFindingsOutcome ImagebuilderClient::ListImageScanFindings(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListImageScanFindings");
   };
 
-  return ListImageScanFindingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImageScanFindingsOutcome(result.GetResultWithOwnership())
+                            : ListImageScanFindingsOutcome(std::move(result.GetError()));
 }
 
 ListImagesOutcome ImagebuilderClient::ListImages(const ListImagesRequest& request) const {
@@ -884,7 +977,8 @@ ListImagesOutcome ImagebuilderClient::ListImages(const ListImagesRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListImages");
   };
 
-  return ListImagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListImagesOutcome(result.GetResultWithOwnership()) : ListImagesOutcome(std::move(result.GetError()));
 }
 
 ListInfrastructureConfigurationsOutcome ImagebuilderClient::ListInfrastructureConfigurations(
@@ -894,7 +988,9 @@ ListInfrastructureConfigurationsOutcome ImagebuilderClient::ListInfrastructureCo
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListInfrastructureConfigurations");
   };
 
-  return ListInfrastructureConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInfrastructureConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListInfrastructureConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListLifecycleExecutionResourcesOutcome ImagebuilderClient::ListLifecycleExecutionResources(
@@ -904,7 +1000,9 @@ ListLifecycleExecutionResourcesOutcome ImagebuilderClient::ListLifecycleExecutio
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListLifecycleExecutionResources");
   };
 
-  return ListLifecycleExecutionResourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLifecycleExecutionResourcesOutcome(result.GetResultWithOwnership())
+                            : ListLifecycleExecutionResourcesOutcome(std::move(result.GetError()));
 }
 
 ListLifecycleExecutionsOutcome ImagebuilderClient::ListLifecycleExecutions(const ListLifecycleExecutionsRequest& request) const {
@@ -913,7 +1011,9 @@ ListLifecycleExecutionsOutcome ImagebuilderClient::ListLifecycleExecutions(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListLifecycleExecutions");
   };
 
-  return ListLifecycleExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLifecycleExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListLifecycleExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListLifecyclePoliciesOutcome ImagebuilderClient::ListLifecyclePolicies(const ListLifecyclePoliciesRequest& request) const {
@@ -922,7 +1022,9 @@ ListLifecyclePoliciesOutcome ImagebuilderClient::ListLifecyclePolicies(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListLifecyclePolicies");
   };
 
-  return ListLifecyclePoliciesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListLifecyclePoliciesOutcome(result.GetResultWithOwnership())
+                            : ListLifecyclePoliciesOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ImagebuilderClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -938,7 +1040,9 @@ ListTagsForResourceOutcome ImagebuilderClient::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWaitingWorkflowStepsOutcome ImagebuilderClient::ListWaitingWorkflowSteps(const ListWaitingWorkflowStepsRequest& request) const {
@@ -947,7 +1051,9 @@ ListWaitingWorkflowStepsOutcome ImagebuilderClient::ListWaitingWorkflowSteps(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListWaitingWorkflowSteps");
   };
 
-  return ListWaitingWorkflowStepsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWaitingWorkflowStepsOutcome(result.GetResultWithOwnership())
+                            : ListWaitingWorkflowStepsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowBuildVersionsOutcome ImagebuilderClient::ListWorkflowBuildVersions(const ListWorkflowBuildVersionsRequest& request) const {
@@ -956,7 +1062,9 @@ ListWorkflowBuildVersionsOutcome ImagebuilderClient::ListWorkflowBuildVersions(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListWorkflowBuildVersions");
   };
 
-  return ListWorkflowBuildVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowBuildVersionsOutcome(result.GetResultWithOwnership())
+                            : ListWorkflowBuildVersionsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowExecutionsOutcome ImagebuilderClient::ListWorkflowExecutions(const ListWorkflowExecutionsRequest& request) const {
@@ -965,7 +1073,9 @@ ListWorkflowExecutionsOutcome ImagebuilderClient::ListWorkflowExecutions(const L
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListWorkflowExecutions");
   };
 
-  return ListWorkflowExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListWorkflowExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowStepExecutionsOutcome ImagebuilderClient::ListWorkflowStepExecutions(const ListWorkflowStepExecutionsRequest& request) const {
@@ -974,7 +1084,9 @@ ListWorkflowStepExecutionsOutcome ImagebuilderClient::ListWorkflowStepExecutions
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListWorkflowStepExecutions");
   };
 
-  return ListWorkflowStepExecutionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowStepExecutionsOutcome(result.GetResultWithOwnership())
+                            : ListWorkflowStepExecutionsOutcome(std::move(result.GetError()));
 }
 
 ListWorkflowsOutcome ImagebuilderClient::ListWorkflows(const ListWorkflowsRequest& request) const {
@@ -983,7 +1095,8 @@ ListWorkflowsOutcome ImagebuilderClient::ListWorkflows(const ListWorkflowsReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListWorkflows");
   };
 
-  return ListWorkflowsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListWorkflowsOutcome(result.GetResultWithOwnership()) : ListWorkflowsOutcome(std::move(result.GetError()));
 }
 
 PutComponentPolicyOutcome ImagebuilderClient::PutComponentPolicy(const PutComponentPolicyRequest& request) const {
@@ -992,7 +1105,9 @@ PutComponentPolicyOutcome ImagebuilderClient::PutComponentPolicy(const PutCompon
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutComponentPolicy");
   };
 
-  return PutComponentPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutComponentPolicyOutcome(result.GetResultWithOwnership())
+                            : PutComponentPolicyOutcome(std::move(result.GetError()));
 }
 
 PutContainerRecipePolicyOutcome ImagebuilderClient::PutContainerRecipePolicy(const PutContainerRecipePolicyRequest& request) const {
@@ -1001,7 +1116,9 @@ PutContainerRecipePolicyOutcome ImagebuilderClient::PutContainerRecipePolicy(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutContainerRecipePolicy");
   };
 
-  return PutContainerRecipePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutContainerRecipePolicyOutcome(result.GetResultWithOwnership())
+                            : PutContainerRecipePolicyOutcome(std::move(result.GetError()));
 }
 
 PutImagePolicyOutcome ImagebuilderClient::PutImagePolicy(const PutImagePolicyRequest& request) const {
@@ -1010,7 +1127,8 @@ PutImagePolicyOutcome ImagebuilderClient::PutImagePolicy(const PutImagePolicyReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutImagePolicy");
   };
 
-  return PutImagePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutImagePolicyOutcome(result.GetResultWithOwnership()) : PutImagePolicyOutcome(std::move(result.GetError()));
 }
 
 PutImageRecipePolicyOutcome ImagebuilderClient::PutImageRecipePolicy(const PutImageRecipePolicyRequest& request) const {
@@ -1019,7 +1137,9 @@ PutImageRecipePolicyOutcome ImagebuilderClient::PutImageRecipePolicy(const PutIm
     endpointResolutionOutcome.GetResult().AddPathSegments("/PutImageRecipePolicy");
   };
 
-  return PutImageRecipePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutImageRecipePolicyOutcome(result.GetResultWithOwnership())
+                            : PutImageRecipePolicyOutcome(std::move(result.GetError()));
 }
 
 RetryImageOutcome ImagebuilderClient::RetryImage(const RetryImageRequest& request) const {
@@ -1028,7 +1148,8 @@ RetryImageOutcome ImagebuilderClient::RetryImage(const RetryImageRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/RetryImage");
   };
 
-  return RetryImageOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RetryImageOutcome(result.GetResultWithOwnership()) : RetryImageOutcome(std::move(result.GetError()));
 }
 
 SendWorkflowStepActionOutcome ImagebuilderClient::SendWorkflowStepAction(const SendWorkflowStepActionRequest& request) const {
@@ -1037,7 +1158,9 @@ SendWorkflowStepActionOutcome ImagebuilderClient::SendWorkflowStepAction(const S
     endpointResolutionOutcome.GetResult().AddPathSegments("/SendWorkflowStepAction");
   };
 
-  return SendWorkflowStepActionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? SendWorkflowStepActionOutcome(result.GetResultWithOwnership())
+                            : SendWorkflowStepActionOutcome(std::move(result.GetError()));
 }
 
 StartImagePipelineExecutionOutcome ImagebuilderClient::StartImagePipelineExecution(
@@ -1047,7 +1170,9 @@ StartImagePipelineExecutionOutcome ImagebuilderClient::StartImagePipelineExecuti
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartImagePipelineExecution");
   };
 
-  return StartImagePipelineExecutionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartImagePipelineExecutionOutcome(result.GetResultWithOwnership())
+                            : StartImagePipelineExecutionOutcome(std::move(result.GetError()));
 }
 
 StartResourceStateUpdateOutcome ImagebuilderClient::StartResourceStateUpdate(const StartResourceStateUpdateRequest& request) const {
@@ -1056,7 +1181,9 @@ StartResourceStateUpdateOutcome ImagebuilderClient::StartResourceStateUpdate(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/StartResourceStateUpdate");
   };
 
-  return StartResourceStateUpdateOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? StartResourceStateUpdateOutcome(result.GetResultWithOwnership())
+                            : StartResourceStateUpdateOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ImagebuilderClient::TagResource(const TagResourceRequest& request) const {
@@ -1072,7 +1199,8 @@ TagResourceOutcome ImagebuilderClient::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ImagebuilderClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1093,7 +1221,8 @@ UntagResourceOutcome ImagebuilderClient::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateDistributionConfigurationOutcome ImagebuilderClient::UpdateDistributionConfiguration(
@@ -1103,7 +1232,9 @@ UpdateDistributionConfigurationOutcome ImagebuilderClient::UpdateDistributionCon
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateDistributionConfiguration");
   };
 
-  return UpdateDistributionConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDistributionConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateDistributionConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateImagePipelineOutcome ImagebuilderClient::UpdateImagePipeline(const UpdateImagePipelineRequest& request) const {
@@ -1112,7 +1243,9 @@ UpdateImagePipelineOutcome ImagebuilderClient::UpdateImagePipeline(const UpdateI
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateImagePipeline");
   };
 
-  return UpdateImagePipelineOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateImagePipelineOutcome(result.GetResultWithOwnership())
+                            : UpdateImagePipelineOutcome(std::move(result.GetError()));
 }
 
 UpdateInfrastructureConfigurationOutcome ImagebuilderClient::UpdateInfrastructureConfiguration(
@@ -1122,7 +1255,9 @@ UpdateInfrastructureConfigurationOutcome ImagebuilderClient::UpdateInfrastructur
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateInfrastructureConfiguration");
   };
 
-  return UpdateInfrastructureConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateInfrastructureConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateInfrastructureConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateLifecyclePolicyOutcome ImagebuilderClient::UpdateLifecyclePolicy(const UpdateLifecyclePolicyRequest& request) const {
@@ -1131,5 +1266,7 @@ UpdateLifecyclePolicyOutcome ImagebuilderClient::UpdateLifecyclePolicy(const Upd
     endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateLifecyclePolicy");
   };
 
-  return UpdateLifecyclePolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateLifecyclePolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateLifecyclePolicyOutcome(std::move(result.GetError()));
 }

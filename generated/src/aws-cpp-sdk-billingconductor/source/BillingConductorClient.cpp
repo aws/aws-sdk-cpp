@@ -217,7 +217,9 @@ AssociateAccountsOutcome BillingConductorClient::AssociateAccounts(const Associa
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-accounts");
   };
 
-  return AssociateAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateAccountsOutcome(result.GetResultWithOwnership())
+                            : AssociateAccountsOutcome(std::move(result.GetError()));
 }
 
 AssociatePricingRulesOutcome BillingConductorClient::AssociatePricingRules(const AssociatePricingRulesRequest& request) const {
@@ -226,7 +228,9 @@ AssociatePricingRulesOutcome BillingConductorClient::AssociatePricingRules(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/associate-pricing-rules");
   };
 
-  return AssociatePricingRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociatePricingRulesOutcome(result.GetResultWithOwnership())
+                            : AssociatePricingRulesOutcome(std::move(result.GetError()));
 }
 
 BatchAssociateResourcesToCustomLineItemOutcome BillingConductorClient::BatchAssociateResourcesToCustomLineItem(
@@ -236,7 +240,9 @@ BatchAssociateResourcesToCustomLineItemOutcome BillingConductorClient::BatchAsso
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-associate-resources-to-custom-line-item");
   };
 
-  return BatchAssociateResourcesToCustomLineItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchAssociateResourcesToCustomLineItemOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateResourcesToCustomLineItemOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateResourcesFromCustomLineItemOutcome BillingConductorClient::BatchDisassociateResourcesFromCustomLineItem(
@@ -246,7 +252,9 @@ BatchDisassociateResourcesFromCustomLineItemOutcome BillingConductorClient::Batc
     endpointResolutionOutcome.GetResult().AddPathSegments("/batch-disassociate-resources-from-custom-line-item");
   };
 
-  return BatchDisassociateResourcesFromCustomLineItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchDisassociateResourcesFromCustomLineItemOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateResourcesFromCustomLineItemOutcome(std::move(result.GetError()));
 }
 
 CreateBillingGroupOutcome BillingConductorClient::CreateBillingGroup(const CreateBillingGroupRequest& request) const {
@@ -255,7 +263,9 @@ CreateBillingGroupOutcome BillingConductorClient::CreateBillingGroup(const Creat
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-billing-group");
   };
 
-  return CreateBillingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateBillingGroupOutcome(result.GetResultWithOwnership())
+                            : CreateBillingGroupOutcome(std::move(result.GetError()));
 }
 
 CreateCustomLineItemOutcome BillingConductorClient::CreateCustomLineItem(const CreateCustomLineItemRequest& request) const {
@@ -264,7 +274,9 @@ CreateCustomLineItemOutcome BillingConductorClient::CreateCustomLineItem(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-custom-line-item");
   };
 
-  return CreateCustomLineItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomLineItemOutcome(result.GetResultWithOwnership())
+                            : CreateCustomLineItemOutcome(std::move(result.GetError()));
 }
 
 CreatePricingPlanOutcome BillingConductorClient::CreatePricingPlan(const CreatePricingPlanRequest& request) const {
@@ -273,7 +285,9 @@ CreatePricingPlanOutcome BillingConductorClient::CreatePricingPlan(const CreateP
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-pricing-plan");
   };
 
-  return CreatePricingPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePricingPlanOutcome(result.GetResultWithOwnership())
+                            : CreatePricingPlanOutcome(std::move(result.GetError()));
 }
 
 CreatePricingRuleOutcome BillingConductorClient::CreatePricingRule(const CreatePricingRuleRequest& request) const {
@@ -282,7 +296,9 @@ CreatePricingRuleOutcome BillingConductorClient::CreatePricingRule(const CreateP
     endpointResolutionOutcome.GetResult().AddPathSegments("/create-pricing-rule");
   };
 
-  return CreatePricingRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePricingRuleOutcome(result.GetResultWithOwnership())
+                            : CreatePricingRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteBillingGroupOutcome BillingConductorClient::DeleteBillingGroup(const DeleteBillingGroupRequest& request) const {
@@ -291,7 +307,9 @@ DeleteBillingGroupOutcome BillingConductorClient::DeleteBillingGroup(const Delet
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-billing-group");
   };
 
-  return DeleteBillingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteBillingGroupOutcome(result.GetResultWithOwnership())
+                            : DeleteBillingGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomLineItemOutcome BillingConductorClient::DeleteCustomLineItem(const DeleteCustomLineItemRequest& request) const {
@@ -300,7 +318,9 @@ DeleteCustomLineItemOutcome BillingConductorClient::DeleteCustomLineItem(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-custom-line-item");
   };
 
-  return DeleteCustomLineItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCustomLineItemOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomLineItemOutcome(std::move(result.GetError()));
 }
 
 DeletePricingPlanOutcome BillingConductorClient::DeletePricingPlan(const DeletePricingPlanRequest& request) const {
@@ -309,7 +329,9 @@ DeletePricingPlanOutcome BillingConductorClient::DeletePricingPlan(const DeleteP
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-pricing-plan");
   };
 
-  return DeletePricingPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePricingPlanOutcome(result.GetResultWithOwnership())
+                            : DeletePricingPlanOutcome(std::move(result.GetError()));
 }
 
 DeletePricingRuleOutcome BillingConductorClient::DeletePricingRule(const DeletePricingRuleRequest& request) const {
@@ -318,7 +340,9 @@ DeletePricingRuleOutcome BillingConductorClient::DeletePricingRule(const DeleteP
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-pricing-rule");
   };
 
-  return DeletePricingRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePricingRuleOutcome(result.GetResultWithOwnership())
+                            : DeletePricingRuleOutcome(std::move(result.GetError()));
 }
 
 DisassociateAccountsOutcome BillingConductorClient::DisassociateAccounts(const DisassociateAccountsRequest& request) const {
@@ -327,7 +351,9 @@ DisassociateAccountsOutcome BillingConductorClient::DisassociateAccounts(const D
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-accounts");
   };
 
-  return DisassociateAccountsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateAccountsOutcome(result.GetResultWithOwnership())
+                            : DisassociateAccountsOutcome(std::move(result.GetError()));
 }
 
 DisassociatePricingRulesOutcome BillingConductorClient::DisassociatePricingRules(const DisassociatePricingRulesRequest& request) const {
@@ -336,7 +362,9 @@ DisassociatePricingRulesOutcome BillingConductorClient::DisassociatePricingRules
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-pricing-rules");
   };
 
-  return DisassociatePricingRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DisassociatePricingRulesOutcome(result.GetResultWithOwnership())
+                            : DisassociatePricingRulesOutcome(std::move(result.GetError()));
 }
 
 GetBillingGroupCostReportOutcome BillingConductorClient::GetBillingGroupCostReport(const GetBillingGroupCostReportRequest& request) const {
@@ -345,7 +373,9 @@ GetBillingGroupCostReportOutcome BillingConductorClient::GetBillingGroupCostRepo
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-billing-group-cost-report");
   };
 
-  return GetBillingGroupCostReportOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBillingGroupCostReportOutcome(result.GetResultWithOwnership())
+                            : GetBillingGroupCostReportOutcome(std::move(result.GetError()));
 }
 
 ListAccountAssociationsOutcome BillingConductorClient::ListAccountAssociations(const ListAccountAssociationsRequest& request) const {
@@ -354,7 +384,9 @@ ListAccountAssociationsOutcome BillingConductorClient::ListAccountAssociations(c
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-account-associations");
   };
 
-  return ListAccountAssociationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAccountAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListAccountAssociationsOutcome(std::move(result.GetError()));
 }
 
 ListBillingGroupCostReportsOutcome BillingConductorClient::ListBillingGroupCostReports(
@@ -364,7 +396,9 @@ ListBillingGroupCostReportsOutcome BillingConductorClient::ListBillingGroupCostR
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-billing-group-cost-reports");
   };
 
-  return ListBillingGroupCostReportsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillingGroupCostReportsOutcome(result.GetResultWithOwnership())
+                            : ListBillingGroupCostReportsOutcome(std::move(result.GetError()));
 }
 
 ListBillingGroupsOutcome BillingConductorClient::ListBillingGroups(const ListBillingGroupsRequest& request) const {
@@ -373,7 +407,9 @@ ListBillingGroupsOutcome BillingConductorClient::ListBillingGroups(const ListBil
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-billing-groups");
   };
 
-  return ListBillingGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBillingGroupsOutcome(result.GetResultWithOwnership())
+                            : ListBillingGroupsOutcome(std::move(result.GetError()));
 }
 
 ListCustomLineItemVersionsOutcome BillingConductorClient::ListCustomLineItemVersions(
@@ -383,7 +419,9 @@ ListCustomLineItemVersionsOutcome BillingConductorClient::ListCustomLineItemVers
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-custom-line-item-versions");
   };
 
-  return ListCustomLineItemVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomLineItemVersionsOutcome(result.GetResultWithOwnership())
+                            : ListCustomLineItemVersionsOutcome(std::move(result.GetError()));
 }
 
 ListCustomLineItemsOutcome BillingConductorClient::ListCustomLineItems(const ListCustomLineItemsRequest& request) const {
@@ -392,7 +430,9 @@ ListCustomLineItemsOutcome BillingConductorClient::ListCustomLineItems(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-custom-line-items");
   };
 
-  return ListCustomLineItemsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomLineItemsOutcome(result.GetResultWithOwnership())
+                            : ListCustomLineItemsOutcome(std::move(result.GetError()));
 }
 
 ListPricingPlansOutcome BillingConductorClient::ListPricingPlans(const ListPricingPlansRequest& request) const {
@@ -401,7 +441,9 @@ ListPricingPlansOutcome BillingConductorClient::ListPricingPlans(const ListPrici
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-pricing-plans");
   };
 
-  return ListPricingPlansOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPricingPlansOutcome(result.GetResultWithOwnership())
+                            : ListPricingPlansOutcome(std::move(result.GetError()));
 }
 
 ListPricingPlansAssociatedWithPricingRuleOutcome BillingConductorClient::ListPricingPlansAssociatedWithPricingRule(
@@ -411,7 +453,9 @@ ListPricingPlansAssociatedWithPricingRuleOutcome BillingConductorClient::ListPri
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-pricing-plans-associated-with-pricing-rule");
   };
 
-  return ListPricingPlansAssociatedWithPricingRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPricingPlansAssociatedWithPricingRuleOutcome(result.GetResultWithOwnership())
+                            : ListPricingPlansAssociatedWithPricingRuleOutcome(std::move(result.GetError()));
 }
 
 ListPricingRulesOutcome BillingConductorClient::ListPricingRules(const ListPricingRulesRequest& request) const {
@@ -420,7 +464,9 @@ ListPricingRulesOutcome BillingConductorClient::ListPricingRules(const ListPrici
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-pricing-rules");
   };
 
-  return ListPricingRulesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPricingRulesOutcome(result.GetResultWithOwnership())
+                            : ListPricingRulesOutcome(std::move(result.GetError()));
 }
 
 ListPricingRulesAssociatedToPricingPlanOutcome BillingConductorClient::ListPricingRulesAssociatedToPricingPlan(
@@ -430,7 +476,9 @@ ListPricingRulesAssociatedToPricingPlanOutcome BillingConductorClient::ListPrici
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-pricing-rules-associated-to-pricing-plan");
   };
 
-  return ListPricingRulesAssociatedToPricingPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPricingRulesAssociatedToPricingPlanOutcome(result.GetResultWithOwnership())
+                            : ListPricingRulesAssociatedToPricingPlanOutcome(std::move(result.GetError()));
 }
 
 ListResourcesAssociatedToCustomLineItemOutcome BillingConductorClient::ListResourcesAssociatedToCustomLineItem(
@@ -440,7 +488,9 @@ ListResourcesAssociatedToCustomLineItemOutcome BillingConductorClient::ListResou
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-resources-associated-to-custom-line-item");
   };
 
-  return ListResourcesAssociatedToCustomLineItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourcesAssociatedToCustomLineItemOutcome(result.GetResultWithOwnership())
+                            : ListResourcesAssociatedToCustomLineItemOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome BillingConductorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -456,7 +506,9 @@ ListTagsForResourceOutcome BillingConductorClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome BillingConductorClient::TagResource(const TagResourceRequest& request) const {
@@ -472,7 +524,8 @@ TagResourceOutcome BillingConductorClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome BillingConductorClient::UntagResource(const UntagResourceRequest& request) const {
@@ -493,7 +546,8 @@ UntagResourceOutcome BillingConductorClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateBillingGroupOutcome BillingConductorClient::UpdateBillingGroup(const UpdateBillingGroupRequest& request) const {
@@ -502,7 +556,9 @@ UpdateBillingGroupOutcome BillingConductorClient::UpdateBillingGroup(const Updat
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-billing-group");
   };
 
-  return UpdateBillingGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateBillingGroupOutcome(result.GetResultWithOwnership())
+                            : UpdateBillingGroupOutcome(std::move(result.GetError()));
 }
 
 UpdateCustomLineItemOutcome BillingConductorClient::UpdateCustomLineItem(const UpdateCustomLineItemRequest& request) const {
@@ -511,7 +567,9 @@ UpdateCustomLineItemOutcome BillingConductorClient::UpdateCustomLineItem(const U
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-custom-line-item");
   };
 
-  return UpdateCustomLineItemOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCustomLineItemOutcome(result.GetResultWithOwnership())
+                            : UpdateCustomLineItemOutcome(std::move(result.GetError()));
 }
 
 UpdatePricingPlanOutcome BillingConductorClient::UpdatePricingPlan(const UpdatePricingPlanRequest& request) const {
@@ -520,7 +578,9 @@ UpdatePricingPlanOutcome BillingConductorClient::UpdatePricingPlan(const UpdateP
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-pricing-plan");
   };
 
-  return UpdatePricingPlanOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePricingPlanOutcome(result.GetResultWithOwnership())
+                            : UpdatePricingPlanOutcome(std::move(result.GetError()));
 }
 
 UpdatePricingRuleOutcome BillingConductorClient::UpdatePricingRule(const UpdatePricingRuleRequest& request) const {
@@ -529,5 +589,7 @@ UpdatePricingRuleOutcome BillingConductorClient::UpdatePricingRule(const UpdateP
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-pricing-rule");
   };
 
-  return UpdatePricingRuleOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePricingRuleOutcome(result.GetResultWithOwnership())
+                            : UpdatePricingRuleOutcome(std::move(result.GetError()));
 }

@@ -207,7 +207,9 @@ DeleteResourcePermissionOutcome SsmSapClient::DeleteResourcePermission(const Del
     endpointResolutionOutcome.GetResult().AddPathSegments("/delete-resource-permission");
   };
 
-  return DeleteResourcePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourcePermissionOutcome(result.GetResultWithOwnership())
+                            : DeleteResourcePermissionOutcome(std::move(result.GetError()));
 }
 
 DeregisterApplicationOutcome SsmSapClient::DeregisterApplication(const DeregisterApplicationRequest& request) const {
@@ -216,7 +218,9 @@ DeregisterApplicationOutcome SsmSapClient::DeregisterApplication(const Deregiste
     endpointResolutionOutcome.GetResult().AddPathSegments("/deregister-application");
   };
 
-  return DeregisterApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterApplicationOutcome(result.GetResultWithOwnership())
+                            : DeregisterApplicationOutcome(std::move(result.GetError()));
 }
 
 GetApplicationOutcome SsmSapClient::GetApplication(const GetApplicationRequest& request) const {
@@ -225,7 +229,8 @@ GetApplicationOutcome SsmSapClient::GetApplication(const GetApplicationRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-application");
   };
 
-  return GetApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetApplicationOutcome(result.GetResultWithOwnership()) : GetApplicationOutcome(std::move(result.GetError()));
 }
 
 GetComponentOutcome SsmSapClient::GetComponent(const GetComponentRequest& request) const {
@@ -234,7 +239,8 @@ GetComponentOutcome SsmSapClient::GetComponent(const GetComponentRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-component");
   };
 
-  return GetComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetComponentOutcome(result.GetResultWithOwnership()) : GetComponentOutcome(std::move(result.GetError()));
 }
 
 GetConfigurationCheckOperationOutcome SsmSapClient::GetConfigurationCheckOperation(
@@ -244,7 +250,9 @@ GetConfigurationCheckOperationOutcome SsmSapClient::GetConfigurationCheckOperati
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-configuration-check-operation");
   };
 
-  return GetConfigurationCheckOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetConfigurationCheckOperationOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationCheckOperationOutcome(std::move(result.GetError()));
 }
 
 GetDatabaseOutcome SsmSapClient::GetDatabase(const GetDatabaseRequest& request) const {
@@ -253,7 +261,8 @@ GetDatabaseOutcome SsmSapClient::GetDatabase(const GetDatabaseRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-database");
   };
 
-  return GetDatabaseOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDatabaseOutcome(result.GetResultWithOwnership()) : GetDatabaseOutcome(std::move(result.GetError()));
 }
 
 GetOperationOutcome SsmSapClient::GetOperation(const GetOperationRequest& request) const {
@@ -262,7 +271,8 @@ GetOperationOutcome SsmSapClient::GetOperation(const GetOperationRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-operation");
   };
 
-  return GetOperationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOperationOutcome(result.GetResultWithOwnership()) : GetOperationOutcome(std::move(result.GetError()));
 }
 
 GetResourcePermissionOutcome SsmSapClient::GetResourcePermission(const GetResourcePermissionRequest& request) const {
@@ -271,7 +281,9 @@ GetResourcePermissionOutcome SsmSapClient::GetResourcePermission(const GetResour
     endpointResolutionOutcome.GetResult().AddPathSegments("/get-resource-permission");
   };
 
-  return GetResourcePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePermissionOutcome(result.GetResultWithOwnership())
+                            : GetResourcePermissionOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome SsmSapClient::ListApplications(const ListApplicationsRequest& request) const {
@@ -280,7 +292,9 @@ ListApplicationsOutcome SsmSapClient::ListApplications(const ListApplicationsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-applications");
   };
 
-  return ListApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListComponentsOutcome SsmSapClient::ListComponents(const ListComponentsRequest& request) const {
@@ -289,7 +303,8 @@ ListComponentsOutcome SsmSapClient::ListComponents(const ListComponentsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-components");
   };
 
-  return ListComponentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListComponentsOutcome(result.GetResultWithOwnership()) : ListComponentsOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationCheckDefinitionsOutcome SsmSapClient::ListConfigurationCheckDefinitions(
@@ -299,7 +314,9 @@ ListConfigurationCheckDefinitionsOutcome SsmSapClient::ListConfigurationCheckDef
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-configuration-check-definitions");
   };
 
-  return ListConfigurationCheckDefinitionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConfigurationCheckDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationCheckDefinitionsOutcome(std::move(result.GetError()));
 }
 
 ListConfigurationCheckOperationsOutcome SsmSapClient::ListConfigurationCheckOperations(
@@ -309,7 +326,9 @@ ListConfigurationCheckOperationsOutcome SsmSapClient::ListConfigurationCheckOper
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-configuration-check-operations");
   };
 
-  return ListConfigurationCheckOperationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConfigurationCheckOperationsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationCheckOperationsOutcome(std::move(result.GetError()));
 }
 
 ListDatabasesOutcome SsmSapClient::ListDatabases(const ListDatabasesRequest& request) const {
@@ -318,7 +337,8 @@ ListDatabasesOutcome SsmSapClient::ListDatabases(const ListDatabasesRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-databases");
   };
 
-  return ListDatabasesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDatabasesOutcome(result.GetResultWithOwnership()) : ListDatabasesOutcome(std::move(result.GetError()));
 }
 
 ListOperationEventsOutcome SsmSapClient::ListOperationEvents(const ListOperationEventsRequest& request) const {
@@ -327,7 +347,9 @@ ListOperationEventsOutcome SsmSapClient::ListOperationEvents(const ListOperation
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-operation-events");
   };
 
-  return ListOperationEventsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOperationEventsOutcome(result.GetResultWithOwnership())
+                            : ListOperationEventsOutcome(std::move(result.GetError()));
 }
 
 ListOperationsOutcome SsmSapClient::ListOperations(const ListOperationsRequest& request) const {
@@ -336,7 +358,8 @@ ListOperationsOutcome SsmSapClient::ListOperations(const ListOperationsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-operations");
   };
 
-  return ListOperationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOperationsOutcome(result.GetResultWithOwnership()) : ListOperationsOutcome(std::move(result.GetError()));
 }
 
 ListSubCheckResultsOutcome SsmSapClient::ListSubCheckResults(const ListSubCheckResultsRequest& request) const {
@@ -345,7 +368,9 @@ ListSubCheckResultsOutcome SsmSapClient::ListSubCheckResults(const ListSubCheckR
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-sub-check-results");
   };
 
-  return ListSubCheckResultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSubCheckResultsOutcome(result.GetResultWithOwnership())
+                            : ListSubCheckResultsOutcome(std::move(result.GetError()));
 }
 
 ListSubCheckRuleResultsOutcome SsmSapClient::ListSubCheckRuleResults(const ListSubCheckRuleResultsRequest& request) const {
@@ -354,7 +379,9 @@ ListSubCheckRuleResultsOutcome SsmSapClient::ListSubCheckRuleResults(const ListS
     endpointResolutionOutcome.GetResult().AddPathSegments("/list-sub-check-rule-results");
   };
 
-  return ListSubCheckRuleResultsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSubCheckRuleResultsOutcome(result.GetResultWithOwnership())
+                            : ListSubCheckRuleResultsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome SsmSapClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -370,7 +397,9 @@ ListTagsForResourceOutcome SsmSapClient::ListTagsForResource(const ListTagsForRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 PutResourcePermissionOutcome SsmSapClient::PutResourcePermission(const PutResourcePermissionRequest& request) const {
@@ -379,7 +408,9 @@ PutResourcePermissionOutcome SsmSapClient::PutResourcePermission(const PutResour
     endpointResolutionOutcome.GetResult().AddPathSegments("/put-resource-permission");
   };
 
-  return PutResourcePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutResourcePermissionOutcome(result.GetResultWithOwnership())
+                            : PutResourcePermissionOutcome(std::move(result.GetError()));
 }
 
 RegisterApplicationOutcome SsmSapClient::RegisterApplication(const RegisterApplicationRequest& request) const {
@@ -388,7 +419,9 @@ RegisterApplicationOutcome SsmSapClient::RegisterApplication(const RegisterAppli
     endpointResolutionOutcome.GetResult().AddPathSegments("/register-application");
   };
 
-  return RegisterApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterApplicationOutcome(result.GetResultWithOwnership())
+                            : RegisterApplicationOutcome(std::move(result.GetError()));
 }
 
 StartApplicationOutcome SsmSapClient::StartApplication(const StartApplicationRequest& request) const {
@@ -397,7 +430,9 @@ StartApplicationOutcome SsmSapClient::StartApplication(const StartApplicationReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-application");
   };
 
-  return StartApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartApplicationOutcome(result.GetResultWithOwnership())
+                            : StartApplicationOutcome(std::move(result.GetError()));
 }
 
 StartApplicationRefreshOutcome SsmSapClient::StartApplicationRefresh(const StartApplicationRefreshRequest& request) const {
@@ -406,7 +441,9 @@ StartApplicationRefreshOutcome SsmSapClient::StartApplicationRefresh(const Start
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-application-refresh");
   };
 
-  return StartApplicationRefreshOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartApplicationRefreshOutcome(result.GetResultWithOwnership())
+                            : StartApplicationRefreshOutcome(std::move(result.GetError()));
 }
 
 StartConfigurationChecksOutcome SsmSapClient::StartConfigurationChecks(const StartConfigurationChecksRequest& request) const {
@@ -415,7 +452,9 @@ StartConfigurationChecksOutcome SsmSapClient::StartConfigurationChecks(const Sta
     endpointResolutionOutcome.GetResult().AddPathSegments("/start-configuration-checks");
   };
 
-  return StartConfigurationChecksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartConfigurationChecksOutcome(result.GetResultWithOwnership())
+                            : StartConfigurationChecksOutcome(std::move(result.GetError()));
 }
 
 StopApplicationOutcome SsmSapClient::StopApplication(const StopApplicationRequest& request) const {
@@ -424,7 +463,9 @@ StopApplicationOutcome SsmSapClient::StopApplication(const StopApplicationReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/stop-application");
   };
 
-  return StopApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopApplicationOutcome(result.GetResultWithOwnership())
+                            : StopApplicationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome SsmSapClient::TagResource(const TagResourceRequest& request) const {
@@ -440,7 +481,8 @@ TagResourceOutcome SsmSapClient::TagResource(const TagResourceRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome SsmSapClient::UntagResource(const UntagResourceRequest& request) const {
@@ -461,7 +503,8 @@ UntagResourceOutcome SsmSapClient::UntagResource(const UntagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationSettingsOutcome SsmSapClient::UpdateApplicationSettings(const UpdateApplicationSettingsRequest& request) const {
@@ -470,5 +513,7 @@ UpdateApplicationSettingsOutcome SsmSapClient::UpdateApplicationSettings(const U
     endpointResolutionOutcome.GetResult().AddPathSegments("/update-application-settings");
   };
 
-  return UpdateApplicationSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateApplicationSettingsOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationSettingsOutcome(std::move(result.GetError()));
 }

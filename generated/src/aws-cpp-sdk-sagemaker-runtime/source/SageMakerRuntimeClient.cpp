@@ -214,8 +214,9 @@ InvokeEndpointOutcome SageMakerRuntimeClient::InvokeEndpoint(const InvokeEndpoin
         endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointName());
         endpointResolutionOutcome.GetResult().AddPathSegments("/invocations");
-        return InvokeEndpointOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? InvokeEndpointOutcome(result.GetResultWithOwnership())
+                                  : InvokeEndpointOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -241,7 +242,9 @@ InvokeEndpointAsyncOutcome SageMakerRuntimeClient::InvokeEndpointAsync(const Inv
     endpointResolutionOutcome.GetResult().AddPathSegments("/async-invocations");
   };
 
-  return InvokeEndpointAsyncOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InvokeEndpointAsyncOutcome(result.GetResultWithOwnership())
+                            : InvokeEndpointAsyncOutcome(std::move(result.GetError()));
 }
 
 InvokeEndpointWithResponseStreamOutcome SageMakerRuntimeClient::InvokeEndpointWithResponseStream(
@@ -286,8 +289,9 @@ InvokeEndpointWithResponseStreamOutcome SageMakerRuntimeClient::InvokeEndpointWi
             }
           });
         }
-        return InvokeEndpointWithResponseStreamOutcome(
-            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? InvokeEndpointWithResponseStreamOutcome(result.GetResultWithOwnership())
+                                  : InvokeEndpointWithResponseStreamOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

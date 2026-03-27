@@ -209,8 +209,9 @@ GetRawMessageContentOutcome WorkMailMessageFlowClient::GetRawMessageContent(cons
                                     endpointResolutionOutcome.GetError().GetMessage());
         endpointResolutionOutcome.GetResult().AddPathSegments("/messages/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
-        return GetRawMessageContentOutcome(
-            MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
+        return result.IsSuccess() ? GetRawMessageContentOutcome(result.GetResultWithOwnership())
+                                  : GetRawMessageContentOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -230,5 +231,7 @@ PutRawMessageContentOutcome WorkMailMessageFlowClient::PutRawMessageContent(cons
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMessageId());
   };
 
-  return PutRawMessageContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutRawMessageContentOutcome(result.GetResultWithOwnership())
+                            : PutRawMessageContentOutcome(std::move(result.GetError()));
 }

@@ -223,215 +223,294 @@ KMSClient::InvokeOperationOutcome KMSClient::InvokeServiceOperation(const Amazon
 }
 
 CancelKeyDeletionOutcome KMSClient::CancelKeyDeletion(const CancelKeyDeletionRequest& request) const {
-  return CancelKeyDeletionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelKeyDeletionOutcome(result.GetResultWithOwnership())
+                            : CancelKeyDeletionOutcome(std::move(result.GetError()));
 }
 
 ConnectCustomKeyStoreOutcome KMSClient::ConnectCustomKeyStore(const ConnectCustomKeyStoreRequest& request) const {
-  return ConnectCustomKeyStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConnectCustomKeyStoreOutcome(result.GetResultWithOwnership())
+                            : ConnectCustomKeyStoreOutcome(std::move(result.GetError()));
 }
 
 CreateAliasOutcome KMSClient::CreateAlias(const CreateAliasRequest& request) const {
-  return CreateAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAliasOutcome(result.GetResultWithOwnership()) : CreateAliasOutcome(std::move(result.GetError()));
 }
 
 CreateCustomKeyStoreOutcome KMSClient::CreateCustomKeyStore(const CreateCustomKeyStoreRequest& request) const {
-  return CreateCustomKeyStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateCustomKeyStoreOutcome(result.GetResultWithOwnership())
+                            : CreateCustomKeyStoreOutcome(std::move(result.GetError()));
 }
 
 CreateGrantOutcome KMSClient::CreateGrant(const CreateGrantRequest& request) const {
-  return CreateGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGrantOutcome(result.GetResultWithOwnership()) : CreateGrantOutcome(std::move(result.GetError()));
 }
 
 CreateKeyOutcome KMSClient::CreateKey(const CreateKeyRequest& request) const {
-  return CreateKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateKeyOutcome(result.GetResultWithOwnership()) : CreateKeyOutcome(std::move(result.GetError()));
 }
 
 DecryptOutcome KMSClient::Decrypt(const DecryptRequest& request) const {
-  return DecryptOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DecryptOutcome(result.GetResultWithOwnership()) : DecryptOutcome(std::move(result.GetError()));
 }
 
 DeleteAliasOutcome KMSClient::DeleteAlias(const DeleteAliasRequest& request) const {
-  return DeleteAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAliasOutcome(result.GetResultWithOwnership()) : DeleteAliasOutcome(std::move(result.GetError()));
 }
 
 DeleteCustomKeyStoreOutcome KMSClient::DeleteCustomKeyStore(const DeleteCustomKeyStoreRequest& request) const {
-  return DeleteCustomKeyStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteCustomKeyStoreOutcome(result.GetResultWithOwnership())
+                            : DeleteCustomKeyStoreOutcome(std::move(result.GetError()));
 }
 
 DeleteImportedKeyMaterialOutcome KMSClient::DeleteImportedKeyMaterial(const DeleteImportedKeyMaterialRequest& request) const {
-  return DeleteImportedKeyMaterialOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteImportedKeyMaterialOutcome(result.GetResultWithOwnership())
+                            : DeleteImportedKeyMaterialOutcome(std::move(result.GetError()));
 }
 
 DeriveSharedSecretOutcome KMSClient::DeriveSharedSecret(const DeriveSharedSecretRequest& request) const {
-  return DeriveSharedSecretOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeriveSharedSecretOutcome(result.GetResultWithOwnership())
+                            : DeriveSharedSecretOutcome(std::move(result.GetError()));
 }
 
 DescribeCustomKeyStoresOutcome KMSClient::DescribeCustomKeyStores(const DescribeCustomKeyStoresRequest& request) const {
-  return DescribeCustomKeyStoresOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCustomKeyStoresOutcome(result.GetResultWithOwnership())
+                            : DescribeCustomKeyStoresOutcome(std::move(result.GetError()));
 }
 
 DescribeKeyOutcome KMSClient::DescribeKey(const DescribeKeyRequest& request) const {
-  return DescribeKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeKeyOutcome(result.GetResultWithOwnership()) : DescribeKeyOutcome(std::move(result.GetError()));
 }
 
 DisableKeyOutcome KMSClient::DisableKey(const DisableKeyRequest& request) const {
-  return DisableKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableKeyOutcome(result.GetResultWithOwnership()) : DisableKeyOutcome(std::move(result.GetError()));
 }
 
 DisableKeyRotationOutcome KMSClient::DisableKeyRotation(const DisableKeyRotationRequest& request) const {
-  return DisableKeyRotationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableKeyRotationOutcome(result.GetResultWithOwnership())
+                            : DisableKeyRotationOutcome(std::move(result.GetError()));
 }
 
 DisconnectCustomKeyStoreOutcome KMSClient::DisconnectCustomKeyStore(const DisconnectCustomKeyStoreRequest& request) const {
-  return DisconnectCustomKeyStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisconnectCustomKeyStoreOutcome(result.GetResultWithOwnership())
+                            : DisconnectCustomKeyStoreOutcome(std::move(result.GetError()));
 }
 
 EnableKeyOutcome KMSClient::EnableKey(const EnableKeyRequest& request) const {
-  return EnableKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableKeyOutcome(result.GetResultWithOwnership()) : EnableKeyOutcome(std::move(result.GetError()));
 }
 
 EnableKeyRotationOutcome KMSClient::EnableKeyRotation(const EnableKeyRotationRequest& request) const {
-  return EnableKeyRotationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableKeyRotationOutcome(result.GetResultWithOwnership())
+                            : EnableKeyRotationOutcome(std::move(result.GetError()));
 }
 
 EncryptOutcome KMSClient::Encrypt(const EncryptRequest& request) const {
-  return EncryptOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EncryptOutcome(result.GetResultWithOwnership()) : EncryptOutcome(std::move(result.GetError()));
 }
 
 GenerateDataKeyOutcome KMSClient::GenerateDataKey(const GenerateDataKeyRequest& request) const {
-  return GenerateDataKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateDataKeyOutcome(result.GetResultWithOwnership())
+                            : GenerateDataKeyOutcome(std::move(result.GetError()));
 }
 
 GenerateDataKeyPairOutcome KMSClient::GenerateDataKeyPair(const GenerateDataKeyPairRequest& request) const {
-  return GenerateDataKeyPairOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateDataKeyPairOutcome(result.GetResultWithOwnership())
+                            : GenerateDataKeyPairOutcome(std::move(result.GetError()));
 }
 
 GenerateDataKeyPairWithoutPlaintextOutcome KMSClient::GenerateDataKeyPairWithoutPlaintext(
     const GenerateDataKeyPairWithoutPlaintextRequest& request) const {
-  return GenerateDataKeyPairWithoutPlaintextOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateDataKeyPairWithoutPlaintextOutcome(result.GetResultWithOwnership())
+                            : GenerateDataKeyPairWithoutPlaintextOutcome(std::move(result.GetError()));
 }
 
 GenerateDataKeyWithoutPlaintextOutcome KMSClient::GenerateDataKeyWithoutPlaintext(
     const GenerateDataKeyWithoutPlaintextRequest& request) const {
-  return GenerateDataKeyWithoutPlaintextOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateDataKeyWithoutPlaintextOutcome(result.GetResultWithOwnership())
+                            : GenerateDataKeyWithoutPlaintextOutcome(std::move(result.GetError()));
 }
 
 GenerateMacOutcome KMSClient::GenerateMac(const GenerateMacRequest& request) const {
-  return GenerateMacOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateMacOutcome(result.GetResultWithOwnership()) : GenerateMacOutcome(std::move(result.GetError()));
 }
 
 GenerateRandomOutcome KMSClient::GenerateRandom(const GenerateRandomRequest& request) const {
-  return GenerateRandomOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GenerateRandomOutcome(result.GetResultWithOwnership()) : GenerateRandomOutcome(std::move(result.GetError()));
 }
 
 GetKeyPolicyOutcome KMSClient::GetKeyPolicy(const GetKeyPolicyRequest& request) const {
-  return GetKeyPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetKeyPolicyOutcome(result.GetResultWithOwnership()) : GetKeyPolicyOutcome(std::move(result.GetError()));
 }
 
 GetKeyRotationStatusOutcome KMSClient::GetKeyRotationStatus(const GetKeyRotationStatusRequest& request) const {
-  return GetKeyRotationStatusOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetKeyRotationStatusOutcome(result.GetResultWithOwnership())
+                            : GetKeyRotationStatusOutcome(std::move(result.GetError()));
 }
 
 GetParametersForImportOutcome KMSClient::GetParametersForImport(const GetParametersForImportRequest& request) const {
-  return GetParametersForImportOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetParametersForImportOutcome(result.GetResultWithOwnership())
+                            : GetParametersForImportOutcome(std::move(result.GetError()));
 }
 
 GetPublicKeyOutcome KMSClient::GetPublicKey(const GetPublicKeyRequest& request) const {
-  return GetPublicKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPublicKeyOutcome(result.GetResultWithOwnership()) : GetPublicKeyOutcome(std::move(result.GetError()));
 }
 
 ImportKeyMaterialOutcome KMSClient::ImportKeyMaterial(const ImportKeyMaterialRequest& request) const {
-  return ImportKeyMaterialOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportKeyMaterialOutcome(result.GetResultWithOwnership())
+                            : ImportKeyMaterialOutcome(std::move(result.GetError()));
 }
 
 ListAliasesOutcome KMSClient::ListAliases(const ListAliasesRequest& request) const {
-  return ListAliasesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAliasesOutcome(result.GetResultWithOwnership()) : ListAliasesOutcome(std::move(result.GetError()));
 }
 
 ListGrantsOutcome KMSClient::ListGrants(const ListGrantsRequest& request) const {
-  return ListGrantsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGrantsOutcome(result.GetResultWithOwnership()) : ListGrantsOutcome(std::move(result.GetError()));
 }
 
 ListKeyPoliciesOutcome KMSClient::ListKeyPolicies(const ListKeyPoliciesRequest& request) const {
-  return ListKeyPoliciesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListKeyPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListKeyPoliciesOutcome(std::move(result.GetError()));
 }
 
 ListKeyRotationsOutcome KMSClient::ListKeyRotations(const ListKeyRotationsRequest& request) const {
-  return ListKeyRotationsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListKeyRotationsOutcome(result.GetResultWithOwnership())
+                            : ListKeyRotationsOutcome(std::move(result.GetError()));
 }
 
 ListKeysOutcome KMSClient::ListKeys(const ListKeysRequest& request) const {
-  return ListKeysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListKeysOutcome(result.GetResultWithOwnership()) : ListKeysOutcome(std::move(result.GetError()));
 }
 
 ListResourceTagsOutcome KMSClient::ListResourceTags(const ListResourceTagsRequest& request) const {
-  return ListResourceTagsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListResourceTagsOutcome(result.GetResultWithOwnership())
+                            : ListResourceTagsOutcome(std::move(result.GetError()));
 }
 
 ListRetirableGrantsOutcome KMSClient::ListRetirableGrants(const ListRetirableGrantsRequest& request) const {
-  return ListRetirableGrantsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRetirableGrantsOutcome(result.GetResultWithOwnership())
+                            : ListRetirableGrantsOutcome(std::move(result.GetError()));
 }
 
 PutKeyPolicyOutcome KMSClient::PutKeyPolicy(const PutKeyPolicyRequest& request) const {
-  return PutKeyPolicyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutKeyPolicyOutcome(result.GetResultWithOwnership()) : PutKeyPolicyOutcome(std::move(result.GetError()));
 }
 
 ReEncryptOutcome KMSClient::ReEncrypt(const ReEncryptRequest& request) const {
-  return ReEncryptOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReEncryptOutcome(result.GetResultWithOwnership()) : ReEncryptOutcome(std::move(result.GetError()));
 }
 
 ReplicateKeyOutcome KMSClient::ReplicateKey(const ReplicateKeyRequest& request) const {
-  return ReplicateKeyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ReplicateKeyOutcome(result.GetResultWithOwnership()) : ReplicateKeyOutcome(std::move(result.GetError()));
 }
 
 RetireGrantOutcome KMSClient::RetireGrant(const RetireGrantRequest& request) const {
-  return RetireGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RetireGrantOutcome(result.GetResultWithOwnership()) : RetireGrantOutcome(std::move(result.GetError()));
 }
 
 RevokeGrantOutcome KMSClient::RevokeGrant(const RevokeGrantRequest& request) const {
-  return RevokeGrantOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeGrantOutcome(result.GetResultWithOwnership()) : RevokeGrantOutcome(std::move(result.GetError()));
 }
 
 RotateKeyOnDemandOutcome KMSClient::RotateKeyOnDemand(const RotateKeyOnDemandRequest& request) const {
-  return RotateKeyOnDemandOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RotateKeyOnDemandOutcome(result.GetResultWithOwnership())
+                            : RotateKeyOnDemandOutcome(std::move(result.GetError()));
 }
 
 ScheduleKeyDeletionOutcome KMSClient::ScheduleKeyDeletion(const ScheduleKeyDeletionRequest& request) const {
-  return ScheduleKeyDeletionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ScheduleKeyDeletionOutcome(result.GetResultWithOwnership())
+                            : ScheduleKeyDeletionOutcome(std::move(result.GetError()));
 }
 
 SignOutcome KMSClient::Sign(const SignRequest& request) const {
-  return SignOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SignOutcome(result.GetResultWithOwnership()) : SignOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome KMSClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome KMSClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateAliasOutcome KMSClient::UpdateAlias(const UpdateAliasRequest& request) const {
-  return UpdateAliasOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAliasOutcome(result.GetResultWithOwnership()) : UpdateAliasOutcome(std::move(result.GetError()));
 }
 
 UpdateCustomKeyStoreOutcome KMSClient::UpdateCustomKeyStore(const UpdateCustomKeyStoreRequest& request) const {
-  return UpdateCustomKeyStoreOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCustomKeyStoreOutcome(result.GetResultWithOwnership())
+                            : UpdateCustomKeyStoreOutcome(std::move(result.GetError()));
 }
 
 UpdateKeyDescriptionOutcome KMSClient::UpdateKeyDescription(const UpdateKeyDescriptionRequest& request) const {
-  return UpdateKeyDescriptionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateKeyDescriptionOutcome(result.GetResultWithOwnership())
+                            : UpdateKeyDescriptionOutcome(std::move(result.GetError()));
 }
 
 UpdatePrimaryRegionOutcome KMSClient::UpdatePrimaryRegion(const UpdatePrimaryRegionRequest& request) const {
-  return UpdatePrimaryRegionOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePrimaryRegionOutcome(result.GetResultWithOwnership())
+                            : UpdatePrimaryRegionOutcome(std::move(result.GetError()));
 }
 
 VerifyOutcome KMSClient::Verify(const VerifyRequest& request) const {
-  return VerifyOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyOutcome(result.GetResultWithOwnership()) : VerifyOutcome(std::move(result.GetError()));
 }
 
 VerifyMacOutcome KMSClient::VerifyMac(const VerifyMacRequest& request) const {
-  return VerifyMacOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VerifyMacOutcome(result.GetResultWithOwnership()) : VerifyMacOutcome(std::move(result.GetError()));
 }

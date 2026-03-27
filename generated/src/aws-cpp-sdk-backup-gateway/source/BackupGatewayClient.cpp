@@ -198,109 +198,152 @@ BackupGatewayClient::InvokeOperationOutcome BackupGatewayClient::InvokeServiceOp
 }
 
 AssociateGatewayToServerOutcome BackupGatewayClient::AssociateGatewayToServer(const AssociateGatewayToServerRequest& request) const {
-  return AssociateGatewayToServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateGatewayToServerOutcome(result.GetResultWithOwnership())
+                            : AssociateGatewayToServerOutcome(std::move(result.GetError()));
 }
 
 CreateGatewayOutcome BackupGatewayClient::CreateGateway(const CreateGatewayRequest& request) const {
-  return CreateGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGatewayOutcome(result.GetResultWithOwnership()) : CreateGatewayOutcome(std::move(result.GetError()));
 }
 
 DeleteGatewayOutcome BackupGatewayClient::DeleteGateway(const DeleteGatewayRequest& request) const {
-  return DeleteGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteGatewayOutcome(result.GetResultWithOwnership()) : DeleteGatewayOutcome(std::move(result.GetError()));
 }
 
 DeleteHypervisorOutcome BackupGatewayClient::DeleteHypervisor(const DeleteHypervisorRequest& request) const {
-  return DeleteHypervisorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteHypervisorOutcome(result.GetResultWithOwnership())
+                            : DeleteHypervisorOutcome(std::move(result.GetError()));
 }
 
 DisassociateGatewayFromServerOutcome BackupGatewayClient::DisassociateGatewayFromServer(
     const DisassociateGatewayFromServerRequest& request) const {
-  return DisassociateGatewayFromServerOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateGatewayFromServerOutcome(result.GetResultWithOwnership())
+                            : DisassociateGatewayFromServerOutcome(std::move(result.GetError()));
 }
 
 GetBandwidthRateLimitScheduleOutcome BackupGatewayClient::GetBandwidthRateLimitSchedule(
     const GetBandwidthRateLimitScheduleRequest& request) const {
-  return GetBandwidthRateLimitScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetBandwidthRateLimitScheduleOutcome(result.GetResultWithOwnership())
+                            : GetBandwidthRateLimitScheduleOutcome(std::move(result.GetError()));
 }
 
 GetGatewayOutcome BackupGatewayClient::GetGateway(const GetGatewayRequest& request) const {
-  return GetGatewayOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGatewayOutcome(result.GetResultWithOwnership()) : GetGatewayOutcome(std::move(result.GetError()));
 }
 
 GetHypervisorOutcome BackupGatewayClient::GetHypervisor(const GetHypervisorRequest& request) const {
-  return GetHypervisorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetHypervisorOutcome(result.GetResultWithOwnership()) : GetHypervisorOutcome(std::move(result.GetError()));
 }
 
 GetHypervisorPropertyMappingsOutcome BackupGatewayClient::GetHypervisorPropertyMappings(
     const GetHypervisorPropertyMappingsRequest& request) const {
-  return GetHypervisorPropertyMappingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetHypervisorPropertyMappingsOutcome(result.GetResultWithOwnership())
+                            : GetHypervisorPropertyMappingsOutcome(std::move(result.GetError()));
 }
 
 GetVirtualMachineOutcome BackupGatewayClient::GetVirtualMachine(const GetVirtualMachineRequest& request) const {
-  return GetVirtualMachineOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetVirtualMachineOutcome(result.GetResultWithOwnership())
+                            : GetVirtualMachineOutcome(std::move(result.GetError()));
 }
 
 ImportHypervisorConfigurationOutcome BackupGatewayClient::ImportHypervisorConfiguration(
     const ImportHypervisorConfigurationRequest& request) const {
-  return ImportHypervisorConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportHypervisorConfigurationOutcome(result.GetResultWithOwnership())
+                            : ImportHypervisorConfigurationOutcome(std::move(result.GetError()));
 }
 
 ListGatewaysOutcome BackupGatewayClient::ListGateways(const ListGatewaysRequest& request) const {
-  return ListGatewaysOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListGatewaysOutcome(result.GetResultWithOwnership()) : ListGatewaysOutcome(std::move(result.GetError()));
 }
 
 ListHypervisorsOutcome BackupGatewayClient::ListHypervisors(const ListHypervisorsRequest& request) const {
-  return ListHypervisorsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListHypervisorsOutcome(result.GetResultWithOwnership())
+                            : ListHypervisorsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome BackupGatewayClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListVirtualMachinesOutcome BackupGatewayClient::ListVirtualMachines(const ListVirtualMachinesRequest& request) const {
-  return ListVirtualMachinesOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListVirtualMachinesOutcome(result.GetResultWithOwnership())
+                            : ListVirtualMachinesOutcome(std::move(result.GetError()));
 }
 
 PutBandwidthRateLimitScheduleOutcome BackupGatewayClient::PutBandwidthRateLimitSchedule(
     const PutBandwidthRateLimitScheduleRequest& request) const {
-  return PutBandwidthRateLimitScheduleOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutBandwidthRateLimitScheduleOutcome(result.GetResultWithOwnership())
+                            : PutBandwidthRateLimitScheduleOutcome(std::move(result.GetError()));
 }
 
 PutHypervisorPropertyMappingsOutcome BackupGatewayClient::PutHypervisorPropertyMappings(
     const PutHypervisorPropertyMappingsRequest& request) const {
-  return PutHypervisorPropertyMappingsOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutHypervisorPropertyMappingsOutcome(result.GetResultWithOwnership())
+                            : PutHypervisorPropertyMappingsOutcome(std::move(result.GetError()));
 }
 
 PutMaintenanceStartTimeOutcome BackupGatewayClient::PutMaintenanceStartTime(const PutMaintenanceStartTimeRequest& request) const {
-  return PutMaintenanceStartTimeOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutMaintenanceStartTimeOutcome(result.GetResultWithOwnership())
+                            : PutMaintenanceStartTimeOutcome(std::move(result.GetError()));
 }
 
 StartVirtualMachinesMetadataSyncOutcome BackupGatewayClient::StartVirtualMachinesMetadataSync(
     const StartVirtualMachinesMetadataSyncRequest& request) const {
-  return StartVirtualMachinesMetadataSyncOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartVirtualMachinesMetadataSyncOutcome(result.GetResultWithOwnership())
+                            : StartVirtualMachinesMetadataSyncOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome BackupGatewayClient::TagResource(const TagResourceRequest& request) const {
-  return TagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 TestHypervisorConfigurationOutcome BackupGatewayClient::TestHypervisorConfiguration(
     const TestHypervisorConfigurationRequest& request) const {
-  return TestHypervisorConfigurationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TestHypervisorConfigurationOutcome(result.GetResultWithOwnership())
+                            : TestHypervisorConfigurationOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome BackupGatewayClient::UntagResource(const UntagResourceRequest& request) const {
-  return UntagResourceOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateGatewayInformationOutcome BackupGatewayClient::UpdateGatewayInformation(const UpdateGatewayInformationRequest& request) const {
-  return UpdateGatewayInformationOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGatewayInformationOutcome(result.GetResultWithOwnership())
+                            : UpdateGatewayInformationOutcome(std::move(result.GetError()));
 }
 
 UpdateGatewaySoftwareNowOutcome BackupGatewayClient::UpdateGatewaySoftwareNow(const UpdateGatewaySoftwareNowRequest& request) const {
-  return UpdateGatewaySoftwareNowOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateGatewaySoftwareNowOutcome(result.GetResultWithOwnership())
+                            : UpdateGatewaySoftwareNowOutcome(std::move(result.GetError()));
 }
 
 UpdateHypervisorOutcome BackupGatewayClient::UpdateHypervisor(const UpdateHypervisorRequest& request) const {
-  return UpdateHypervisorOutcome{InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateHypervisorOutcome(result.GetResultWithOwnership())
+                            : UpdateHypervisorOutcome(std::move(result.GetError()));
 }

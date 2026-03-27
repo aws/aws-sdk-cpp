@@ -212,7 +212,8 @@ CreateAccessorOutcome ManagedBlockchainClient::CreateAccessor(const CreateAccess
     endpointResolutionOutcome.GetResult().AddPathSegments("/accessors");
   };
 
-  return CreateAccessorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAccessorOutcome(result.GetResultWithOwnership()) : CreateAccessorOutcome(std::move(result.GetError()));
 }
 
 CreateMemberOutcome ManagedBlockchainClient::CreateMember(const CreateMemberRequest& request) const {
@@ -229,7 +230,8 @@ CreateMemberOutcome ManagedBlockchainClient::CreateMember(const CreateMemberRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/members");
   };
 
-  return CreateMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMemberOutcome(result.GetResultWithOwnership()) : CreateMemberOutcome(std::move(result.GetError()));
 }
 
 CreateNetworkOutcome ManagedBlockchainClient::CreateNetwork(const CreateNetworkRequest& request) const {
@@ -238,7 +240,8 @@ CreateNetworkOutcome ManagedBlockchainClient::CreateNetwork(const CreateNetworkR
     endpointResolutionOutcome.GetResult().AddPathSegments("/networks");
   };
 
-  return CreateNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNetworkOutcome(result.GetResultWithOwnership()) : CreateNetworkOutcome(std::move(result.GetError()));
 }
 
 CreateNodeOutcome ManagedBlockchainClient::CreateNode(const CreateNodeRequest& request) const {
@@ -255,7 +258,8 @@ CreateNodeOutcome ManagedBlockchainClient::CreateNode(const CreateNodeRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodes");
   };
 
-  return CreateNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNodeOutcome(result.GetResultWithOwnership()) : CreateNodeOutcome(std::move(result.GetError()));
 }
 
 CreateProposalOutcome ManagedBlockchainClient::CreateProposal(const CreateProposalRequest& request) const {
@@ -272,7 +276,8 @@ CreateProposalOutcome ManagedBlockchainClient::CreateProposal(const CreatePropos
     endpointResolutionOutcome.GetResult().AddPathSegments("/proposals");
   };
 
-  return CreateProposalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProposalOutcome(result.GetResultWithOwnership()) : CreateProposalOutcome(std::move(result.GetError()));
 }
 
 DeleteAccessorOutcome ManagedBlockchainClient::DeleteAccessor(const DeleteAccessorRequest& request) const {
@@ -288,7 +293,8 @@ DeleteAccessorOutcome ManagedBlockchainClient::DeleteAccessor(const DeleteAccess
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessorId());
   };
 
-  return DeleteAccessorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAccessorOutcome(result.GetResultWithOwnership()) : DeleteAccessorOutcome(std::move(result.GetError()));
 }
 
 DeleteMemberOutcome ManagedBlockchainClient::DeleteMember(const DeleteMemberRequest& request) const {
@@ -311,7 +317,8 @@ DeleteMemberOutcome ManagedBlockchainClient::DeleteMember(const DeleteMemberRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberId());
   };
 
-  return DeleteMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteMemberOutcome(result.GetResultWithOwnership()) : DeleteMemberOutcome(std::move(result.GetError()));
 }
 
 DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& request) const {
@@ -334,7 +341,8 @@ DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNodeId());
   };
 
-  return DeleteNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteNodeOutcome(result.GetResultWithOwnership()) : DeleteNodeOutcome(std::move(result.GetError()));
 }
 
 GetAccessorOutcome ManagedBlockchainClient::GetAccessor(const GetAccessorRequest& request) const {
@@ -350,7 +358,8 @@ GetAccessorOutcome ManagedBlockchainClient::GetAccessor(const GetAccessorRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAccessorId());
   };
 
-  return GetAccessorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAccessorOutcome(result.GetResultWithOwnership()) : GetAccessorOutcome(std::move(result.GetError()));
 }
 
 GetMemberOutcome ManagedBlockchainClient::GetMember(const GetMemberRequest& request) const {
@@ -373,7 +382,8 @@ GetMemberOutcome ManagedBlockchainClient::GetMember(const GetMemberRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberId());
   };
 
-  return GetMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMemberOutcome(result.GetResultWithOwnership()) : GetMemberOutcome(std::move(result.GetError()));
 }
 
 GetNetworkOutcome ManagedBlockchainClient::GetNetwork(const GetNetworkRequest& request) const {
@@ -389,7 +399,8 @@ GetNetworkOutcome ManagedBlockchainClient::GetNetwork(const GetNetworkRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNetworkId());
   };
 
-  return GetNetworkOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNetworkOutcome(result.GetResultWithOwnership()) : GetNetworkOutcome(std::move(result.GetError()));
 }
 
 GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) const {
@@ -412,7 +423,8 @@ GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) c
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNodeId());
   };
 
-  return GetNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetNodeOutcome(result.GetResultWithOwnership()) : GetNodeOutcome(std::move(result.GetError()));
 }
 
 GetProposalOutcome ManagedBlockchainClient::GetProposal(const GetProposalRequest& request) const {
@@ -435,7 +447,8 @@ GetProposalOutcome ManagedBlockchainClient::GetProposal(const GetProposalRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProposalId());
   };
 
-  return GetProposalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProposalOutcome(result.GetResultWithOwnership()) : GetProposalOutcome(std::move(result.GetError()));
 }
 
 ListAccessorsOutcome ManagedBlockchainClient::ListAccessors(const ListAccessorsRequest& request) const {
@@ -444,7 +457,8 @@ ListAccessorsOutcome ManagedBlockchainClient::ListAccessors(const ListAccessorsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/accessors");
   };
 
-  return ListAccessorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAccessorsOutcome(result.GetResultWithOwnership()) : ListAccessorsOutcome(std::move(result.GetError()));
 }
 
 ListInvitationsOutcome ManagedBlockchainClient::ListInvitations(const ListInvitationsRequest& request) const {
@@ -453,7 +467,9 @@ ListInvitationsOutcome ManagedBlockchainClient::ListInvitations(const ListInvita
     endpointResolutionOutcome.GetResult().AddPathSegments("/invitations");
   };
 
-  return ListInvitationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInvitationsOutcome(result.GetResultWithOwnership())
+                            : ListInvitationsOutcome(std::move(result.GetError()));
 }
 
 ListMembersOutcome ManagedBlockchainClient::ListMembers(const ListMembersRequest& request) const {
@@ -470,7 +486,8 @@ ListMembersOutcome ManagedBlockchainClient::ListMembers(const ListMembersRequest
     endpointResolutionOutcome.GetResult().AddPathSegments("/members");
   };
 
-  return ListMembersOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMembersOutcome(result.GetResultWithOwnership()) : ListMembersOutcome(std::move(result.GetError()));
 }
 
 ListNetworksOutcome ManagedBlockchainClient::ListNetworks(const ListNetworksRequest& request) const {
@@ -479,7 +496,8 @@ ListNetworksOutcome ManagedBlockchainClient::ListNetworks(const ListNetworksRequ
     endpointResolutionOutcome.GetResult().AddPathSegments("/networks");
   };
 
-  return ListNetworksOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNetworksOutcome(result.GetResultWithOwnership()) : ListNetworksOutcome(std::move(result.GetError()));
 }
 
 ListNodesOutcome ManagedBlockchainClient::ListNodes(const ListNodesRequest& request) const {
@@ -496,7 +514,8 @@ ListNodesOutcome ManagedBlockchainClient::ListNodes(const ListNodesRequest& requ
     endpointResolutionOutcome.GetResult().AddPathSegments("/nodes");
   };
 
-  return ListNodesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNodesOutcome(result.GetResultWithOwnership()) : ListNodesOutcome(std::move(result.GetError()));
 }
 
 ListProposalVotesOutcome ManagedBlockchainClient::ListProposalVotes(const ListProposalVotesRequest& request) const {
@@ -520,7 +539,9 @@ ListProposalVotesOutcome ManagedBlockchainClient::ListProposalVotes(const ListPr
     endpointResolutionOutcome.GetResult().AddPathSegments("/votes");
   };
 
-  return ListProposalVotesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProposalVotesOutcome(result.GetResultWithOwnership())
+                            : ListProposalVotesOutcome(std::move(result.GetError()));
 }
 
 ListProposalsOutcome ManagedBlockchainClient::ListProposals(const ListProposalsRequest& request) const {
@@ -537,7 +558,8 @@ ListProposalsOutcome ManagedBlockchainClient::ListProposals(const ListProposalsR
     endpointResolutionOutcome.GetResult().AddPathSegments("/proposals");
   };
 
-  return ListProposalsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProposalsOutcome(result.GetResultWithOwnership()) : ListProposalsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ManagedBlockchainClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -553,7 +575,9 @@ ListTagsForResourceOutcome ManagedBlockchainClient::ListTagsForResource(const Li
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 RejectInvitationOutcome ManagedBlockchainClient::RejectInvitation(const RejectInvitationRequest& request) const {
@@ -569,7 +593,9 @@ RejectInvitationOutcome ManagedBlockchainClient::RejectInvitation(const RejectIn
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInvitationId());
   };
 
-  return RejectInvitationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? RejectInvitationOutcome(result.GetResultWithOwnership())
+                            : RejectInvitationOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ManagedBlockchainClient::TagResource(const TagResourceRequest& request) const {
@@ -585,7 +611,8 @@ TagResourceOutcome ManagedBlockchainClient::TagResource(const TagResourceRequest
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome ManagedBlockchainClient::UntagResource(const UntagResourceRequest& request) const {
@@ -606,7 +633,8 @@ UntagResourceOutcome ManagedBlockchainClient::UntagResource(const UntagResourceR
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateMemberOutcome ManagedBlockchainClient::UpdateMember(const UpdateMemberRequest& request) const {
@@ -629,7 +657,8 @@ UpdateMemberOutcome ManagedBlockchainClient::UpdateMember(const UpdateMemberRequ
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberId());
   };
 
-  return UpdateMemberOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateMemberOutcome(result.GetResultWithOwnership()) : UpdateMemberOutcome(std::move(result.GetError()));
 }
 
 UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& request) const {
@@ -652,7 +681,8 @@ UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& r
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNodeId());
   };
 
-  return UpdateNodeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateNodeOutcome(result.GetResultWithOwnership()) : UpdateNodeOutcome(std::move(result.GetError()));
 }
 
 VoteOnProposalOutcome ManagedBlockchainClient::VoteOnProposal(const VoteOnProposalRequest& request) const {
@@ -676,5 +706,6 @@ VoteOnProposalOutcome ManagedBlockchainClient::VoteOnProposal(const VoteOnPropos
     endpointResolutionOutcome.GetResult().AddPathSegments("/votes");
   };
 
-  return VoteOnProposalOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? VoteOnProposalOutcome(result.GetResultWithOwnership()) : VoteOnProposalOutcome(std::move(result.GetError()));
 }

@@ -211,7 +211,9 @@ AssociateServiceRoleToAccountOutcome GreengrassV2Client::AssociateServiceRoleToA
     endpointResolutionOutcome.GetResult().AddPathSegments("/greengrass/servicerole");
   };
 
-  return AssociateServiceRoleToAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? AssociateServiceRoleToAccountOutcome(result.GetResultWithOwnership())
+                            : AssociateServiceRoleToAccountOutcome(std::move(result.GetError()));
 }
 
 BatchAssociateClientDeviceWithCoreDeviceOutcome GreengrassV2Client::BatchAssociateClientDeviceWithCoreDevice(
@@ -229,7 +231,9 @@ BatchAssociateClientDeviceWithCoreDeviceOutcome GreengrassV2Client::BatchAssocia
     endpointResolutionOutcome.GetResult().AddPathSegments("/associateClientDevices");
   };
 
-  return BatchAssociateClientDeviceWithCoreDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchAssociateClientDeviceWithCoreDeviceOutcome(result.GetResultWithOwnership())
+                            : BatchAssociateClientDeviceWithCoreDeviceOutcome(std::move(result.GetError()));
 }
 
 BatchDisassociateClientDeviceFromCoreDeviceOutcome GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDevice(
@@ -247,7 +251,9 @@ BatchDisassociateClientDeviceFromCoreDeviceOutcome GreengrassV2Client::BatchDisa
     endpointResolutionOutcome.GetResult().AddPathSegments("/disassociateClientDevices");
   };
 
-  return BatchDisassociateClientDeviceFromCoreDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisassociateClientDeviceFromCoreDeviceOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateClientDeviceFromCoreDeviceOutcome(std::move(result.GetError()));
 }
 
 CancelDeploymentOutcome GreengrassV2Client::CancelDeployment(const CancelDeploymentRequest& request) const {
@@ -264,7 +270,9 @@ CancelDeploymentOutcome GreengrassV2Client::CancelDeployment(const CancelDeploym
     endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
   };
 
-  return CancelDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelDeploymentOutcome(result.GetResultWithOwnership())
+                            : CancelDeploymentOutcome(std::move(result.GetError()));
 }
 
 CreateComponentVersionOutcome GreengrassV2Client::CreateComponentVersion(const CreateComponentVersionRequest& request) const {
@@ -273,7 +281,9 @@ CreateComponentVersionOutcome GreengrassV2Client::CreateComponentVersion(const C
     endpointResolutionOutcome.GetResult().AddPathSegments("/greengrass/v2/createComponentVersion");
   };
 
-  return CreateComponentVersionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateComponentVersionOutcome(result.GetResultWithOwnership())
+                            : CreateComponentVersionOutcome(std::move(result.GetError()));
 }
 
 CreateDeploymentOutcome GreengrassV2Client::CreateDeployment(const CreateDeploymentRequest& request) const {
@@ -282,7 +292,9 @@ CreateDeploymentOutcome GreengrassV2Client::CreateDeployment(const CreateDeploym
     endpointResolutionOutcome.GetResult().AddPathSegments("/greengrass/v2/deployments");
   };
 
-  return CreateDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDeploymentOutcome(result.GetResultWithOwnership())
+                            : CreateDeploymentOutcome(std::move(result.GetError()));
 }
 
 DeleteComponentOutcome GreengrassV2Client::DeleteComponent(const DeleteComponentRequest& request) const {
@@ -298,7 +310,9 @@ DeleteComponentOutcome GreengrassV2Client::DeleteComponent(const DeleteComponent
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return DeleteComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteComponentOutcome(result.GetResultWithOwnership())
+                            : DeleteComponentOutcome(std::move(result.GetError()));
 }
 
 DeleteCoreDeviceOutcome GreengrassV2Client::DeleteCoreDevice(const DeleteCoreDeviceRequest& request) const {
@@ -314,7 +328,9 @@ DeleteCoreDeviceOutcome GreengrassV2Client::DeleteCoreDevice(const DeleteCoreDev
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreDeviceThingName());
   };
 
-  return DeleteCoreDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCoreDeviceOutcome(result.GetResultWithOwnership())
+                            : DeleteCoreDeviceOutcome(std::move(result.GetError()));
 }
 
 DeleteDeploymentOutcome GreengrassV2Client::DeleteDeployment(const DeleteDeploymentRequest& request) const {
@@ -330,7 +346,9 @@ DeleteDeploymentOutcome GreengrassV2Client::DeleteDeployment(const DeleteDeploym
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentId());
   };
 
-  return DeleteDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDeploymentOutcome(result.GetResultWithOwnership())
+                            : DeleteDeploymentOutcome(std::move(result.GetError()));
 }
 
 DescribeComponentOutcome GreengrassV2Client::DescribeComponent(const DescribeComponentRequest& request) const {
@@ -347,7 +365,9 @@ DescribeComponentOutcome GreengrassV2Client::DescribeComponent(const DescribeCom
     endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
   };
 
-  return DescribeComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeComponentOutcome(result.GetResultWithOwnership())
+                            : DescribeComponentOutcome(std::move(result.GetError()));
 }
 
 DisassociateServiceRoleFromAccountOutcome GreengrassV2Client::DisassociateServiceRoleFromAccount(
@@ -357,7 +377,9 @@ DisassociateServiceRoleFromAccountOutcome GreengrassV2Client::DisassociateServic
     endpointResolutionOutcome.GetResult().AddPathSegments("/greengrass/servicerole");
   };
 
-  return DisassociateServiceRoleFromAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociateServiceRoleFromAccountOutcome(result.GetResultWithOwnership())
+                            : DisassociateServiceRoleFromAccountOutcome(std::move(result.GetError()));
 }
 
 GetComponentOutcome GreengrassV2Client::GetComponent(const GetComponentRequest& request) const {
@@ -373,7 +395,8 @@ GetComponentOutcome GreengrassV2Client::GetComponent(const GetComponentRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
   };
 
-  return GetComponentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetComponentOutcome(result.GetResultWithOwnership()) : GetComponentOutcome(std::move(result.GetError()));
 }
 
 GetComponentVersionArtifactOutcome GreengrassV2Client::GetComponentVersionArtifact(
@@ -397,7 +420,9 @@ GetComponentVersionArtifactOutcome GreengrassV2Client::GetComponentVersionArtifa
     endpointResolutionOutcome.GetResult().AddPathSegments(request.GetArtifactName());
   };
 
-  return GetComponentVersionArtifactOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetComponentVersionArtifactOutcome(result.GetResultWithOwnership())
+                            : GetComponentVersionArtifactOutcome(std::move(result.GetError()));
 }
 
 GetConnectivityInfoOutcome GreengrassV2Client::GetConnectivityInfo(const GetConnectivityInfoRequest& request) const {
@@ -414,7 +439,9 @@ GetConnectivityInfoOutcome GreengrassV2Client::GetConnectivityInfo(const GetConn
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectivityInfo");
   };
 
-  return GetConnectivityInfoOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectivityInfoOutcome(result.GetResultWithOwnership())
+                            : GetConnectivityInfoOutcome(std::move(result.GetError()));
 }
 
 GetCoreDeviceOutcome GreengrassV2Client::GetCoreDevice(const GetCoreDeviceRequest& request) const {
@@ -430,7 +457,8 @@ GetCoreDeviceOutcome GreengrassV2Client::GetCoreDevice(const GetCoreDeviceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCoreDeviceThingName());
   };
 
-  return GetCoreDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCoreDeviceOutcome(result.GetResultWithOwnership()) : GetCoreDeviceOutcome(std::move(result.GetError()));
 }
 
 GetDeploymentOutcome GreengrassV2Client::GetDeployment(const GetDeploymentRequest& request) const {
@@ -446,7 +474,8 @@ GetDeploymentOutcome GreengrassV2Client::GetDeployment(const GetDeploymentReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeploymentId());
   };
 
-  return GetDeploymentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDeploymentOutcome(result.GetResultWithOwnership()) : GetDeploymentOutcome(std::move(result.GetError()));
 }
 
 GetServiceRoleForAccountOutcome GreengrassV2Client::GetServiceRoleForAccount(const GetServiceRoleForAccountRequest& request) const {
@@ -455,7 +484,9 @@ GetServiceRoleForAccountOutcome GreengrassV2Client::GetServiceRoleForAccount(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/greengrass/servicerole");
   };
 
-  return GetServiceRoleForAccountOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetServiceRoleForAccountOutcome(result.GetResultWithOwnership())
+                            : GetServiceRoleForAccountOutcome(std::move(result.GetError()));
 }
 
 ListClientDevicesAssociatedWithCoreDeviceOutcome GreengrassV2Client::ListClientDevicesAssociatedWithCoreDevice(
@@ -473,7 +504,9 @@ ListClientDevicesAssociatedWithCoreDeviceOutcome GreengrassV2Client::ListClientD
     endpointResolutionOutcome.GetResult().AddPathSegments("/associatedClientDevices");
   };
 
-  return ListClientDevicesAssociatedWithCoreDeviceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListClientDevicesAssociatedWithCoreDeviceOutcome(result.GetResultWithOwnership())
+                            : ListClientDevicesAssociatedWithCoreDeviceOutcome(std::move(result.GetError()));
 }
 
 ListComponentVersionsOutcome GreengrassV2Client::ListComponentVersions(const ListComponentVersionsRequest& request) const {
@@ -490,7 +523,9 @@ ListComponentVersionsOutcome GreengrassV2Client::ListComponentVersions(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
   };
 
-  return ListComponentVersionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListComponentVersionsOutcome(result.GetResultWithOwnership())
+                            : ListComponentVersionsOutcome(std::move(result.GetError()));
 }
 
 ListComponentsOutcome GreengrassV2Client::ListComponents(const ListComponentsRequest& request) const {
@@ -499,7 +534,8 @@ ListComponentsOutcome GreengrassV2Client::ListComponents(const ListComponentsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/greengrass/v2/components");
   };
 
-  return ListComponentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListComponentsOutcome(result.GetResultWithOwnership()) : ListComponentsOutcome(std::move(result.GetError()));
 }
 
 ListCoreDevicesOutcome GreengrassV2Client::ListCoreDevices(const ListCoreDevicesRequest& request) const {
@@ -508,7 +544,9 @@ ListCoreDevicesOutcome GreengrassV2Client::ListCoreDevices(const ListCoreDevices
     endpointResolutionOutcome.GetResult().AddPathSegments("/greengrass/v2/coreDevices");
   };
 
-  return ListCoreDevicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCoreDevicesOutcome(result.GetResultWithOwnership())
+                            : ListCoreDevicesOutcome(std::move(result.GetError()));
 }
 
 ListDeploymentsOutcome GreengrassV2Client::ListDeployments(const ListDeploymentsRequest& request) const {
@@ -517,7 +555,9 @@ ListDeploymentsOutcome GreengrassV2Client::ListDeployments(const ListDeployments
     endpointResolutionOutcome.GetResult().AddPathSegments("/greengrass/v2/deployments");
   };
 
-  return ListDeploymentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDeploymentsOutcome(result.GetResultWithOwnership())
+                            : ListDeploymentsOutcome(std::move(result.GetError()));
 }
 
 ListEffectiveDeploymentsOutcome GreengrassV2Client::ListEffectiveDeployments(const ListEffectiveDeploymentsRequest& request) const {
@@ -534,7 +574,9 @@ ListEffectiveDeploymentsOutcome GreengrassV2Client::ListEffectiveDeployments(con
     endpointResolutionOutcome.GetResult().AddPathSegments("/effectiveDeployments");
   };
 
-  return ListEffectiveDeploymentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListEffectiveDeploymentsOutcome(result.GetResultWithOwnership())
+                            : ListEffectiveDeploymentsOutcome(std::move(result.GetError()));
 }
 
 ListInstalledComponentsOutcome GreengrassV2Client::ListInstalledComponents(const ListInstalledComponentsRequest& request) const {
@@ -551,7 +593,9 @@ ListInstalledComponentsOutcome GreengrassV2Client::ListInstalledComponents(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/installedComponents");
   };
 
-  return ListInstalledComponentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListInstalledComponentsOutcome(result.GetResultWithOwnership())
+                            : ListInstalledComponentsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome GreengrassV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -567,7 +611,9 @@ ListTagsForResourceOutcome GreengrassV2Client::ListTagsForResource(const ListTag
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ResolveComponentCandidatesOutcome GreengrassV2Client::ResolveComponentCandidates(const ResolveComponentCandidatesRequest& request) const {
@@ -576,7 +622,9 @@ ResolveComponentCandidatesOutcome GreengrassV2Client::ResolveComponentCandidates
     endpointResolutionOutcome.GetResult().AddPathSegments("/greengrass/v2/resolveComponentCandidates");
   };
 
-  return ResolveComponentCandidatesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResolveComponentCandidatesOutcome(result.GetResultWithOwnership())
+                            : ResolveComponentCandidatesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome GreengrassV2Client::TagResource(const TagResourceRequest& request) const {
@@ -592,7 +640,8 @@ TagResourceOutcome GreengrassV2Client::TagResource(const TagResourceRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome GreengrassV2Client::UntagResource(const UntagResourceRequest& request) const {
@@ -613,7 +662,8 @@ UntagResourceOutcome GreengrassV2Client::UntagResource(const UntagResourceReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectivityInfoOutcome GreengrassV2Client::UpdateConnectivityInfo(const UpdateConnectivityInfoRequest& request) const {
@@ -630,5 +680,7 @@ UpdateConnectivityInfoOutcome GreengrassV2Client::UpdateConnectivityInfo(const U
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectivityInfo");
   };
 
-  return UpdateConnectivityInfoOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConnectivityInfoOutcome(result.GetResultWithOwnership())
+                            : UpdateConnectivityInfoOutcome(std::move(result.GetError()));
 }

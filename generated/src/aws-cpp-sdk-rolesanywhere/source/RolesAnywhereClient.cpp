@@ -211,7 +211,8 @@ CreateProfileOutcome RolesAnywhereClient::CreateProfile(const CreateProfileReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles");
   };
 
-  return CreateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateProfileOutcome(result.GetResultWithOwnership()) : CreateProfileOutcome(std::move(result.GetError()));
 }
 
 CreateTrustAnchorOutcome RolesAnywhereClient::CreateTrustAnchor(const CreateTrustAnchorRequest& request) const {
@@ -220,7 +221,9 @@ CreateTrustAnchorOutcome RolesAnywhereClient::CreateTrustAnchor(const CreateTrus
     endpointResolutionOutcome.GetResult().AddPathSegments("/trustanchors");
   };
 
-  return CreateTrustAnchorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrustAnchorOutcome(result.GetResultWithOwnership())
+                            : CreateTrustAnchorOutcome(std::move(result.GetError()));
 }
 
 DeleteAttributeMappingOutcome RolesAnywhereClient::DeleteAttributeMapping(const DeleteAttributeMappingRequest& request) const {
@@ -242,7 +245,9 @@ DeleteAttributeMappingOutcome RolesAnywhereClient::DeleteAttributeMapping(const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/mappings");
   };
 
-  return DeleteAttributeMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAttributeMappingOutcome(result.GetResultWithOwnership())
+                            : DeleteAttributeMappingOutcome(std::move(result.GetError()));
 }
 
 DeleteCrlOutcome RolesAnywhereClient::DeleteCrl(const DeleteCrlRequest& request) const {
@@ -258,7 +263,8 @@ DeleteCrlOutcome RolesAnywhereClient::DeleteCrl(const DeleteCrlRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCrlId());
   };
 
-  return DeleteCrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteCrlOutcome(result.GetResultWithOwnership()) : DeleteCrlOutcome(std::move(result.GetError()));
 }
 
 DeleteProfileOutcome RolesAnywhereClient::DeleteProfile(const DeleteProfileRequest& request) const {
@@ -274,7 +280,8 @@ DeleteProfileOutcome RolesAnywhereClient::DeleteProfile(const DeleteProfileReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileId());
   };
 
-  return DeleteProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteProfileOutcome(result.GetResultWithOwnership()) : DeleteProfileOutcome(std::move(result.GetError()));
 }
 
 DeleteTrustAnchorOutcome RolesAnywhereClient::DeleteTrustAnchor(const DeleteTrustAnchorRequest& request) const {
@@ -290,7 +297,9 @@ DeleteTrustAnchorOutcome RolesAnywhereClient::DeleteTrustAnchor(const DeleteTrus
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrustAnchorId());
   };
 
-  return DeleteTrustAnchorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteTrustAnchorOutcome(result.GetResultWithOwnership())
+                            : DeleteTrustAnchorOutcome(std::move(result.GetError()));
 }
 
 DisableCrlOutcome RolesAnywhereClient::DisableCrl(const DisableCrlRequest& request) const {
@@ -307,7 +316,8 @@ DisableCrlOutcome RolesAnywhereClient::DisableCrl(const DisableCrlRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegments("/disable");
   };
 
-  return DisableCrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableCrlOutcome(result.GetResultWithOwnership()) : DisableCrlOutcome(std::move(result.GetError()));
 }
 
 DisableProfileOutcome RolesAnywhereClient::DisableProfile(const DisableProfileRequest& request) const {
@@ -324,7 +334,8 @@ DisableProfileOutcome RolesAnywhereClient::DisableProfile(const DisableProfileRe
     endpointResolutionOutcome.GetResult().AddPathSegments("/disable");
   };
 
-  return DisableProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableProfileOutcome(result.GetResultWithOwnership()) : DisableProfileOutcome(std::move(result.GetError()));
 }
 
 DisableTrustAnchorOutcome RolesAnywhereClient::DisableTrustAnchor(const DisableTrustAnchorRequest& request) const {
@@ -341,7 +352,9 @@ DisableTrustAnchorOutcome RolesAnywhereClient::DisableTrustAnchor(const DisableT
     endpointResolutionOutcome.GetResult().AddPathSegments("/disable");
   };
 
-  return DisableTrustAnchorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableTrustAnchorOutcome(result.GetResultWithOwnership())
+                            : DisableTrustAnchorOutcome(std::move(result.GetError()));
 }
 
 EnableCrlOutcome RolesAnywhereClient::EnableCrl(const EnableCrlRequest& request) const {
@@ -358,7 +371,8 @@ EnableCrlOutcome RolesAnywhereClient::EnableCrl(const EnableCrlRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/enable");
   };
 
-  return EnableCrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableCrlOutcome(result.GetResultWithOwnership()) : EnableCrlOutcome(std::move(result.GetError()));
 }
 
 EnableProfileOutcome RolesAnywhereClient::EnableProfile(const EnableProfileRequest& request) const {
@@ -375,7 +389,8 @@ EnableProfileOutcome RolesAnywhereClient::EnableProfile(const EnableProfileReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/enable");
   };
 
-  return EnableProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableProfileOutcome(result.GetResultWithOwnership()) : EnableProfileOutcome(std::move(result.GetError()));
 }
 
 EnableTrustAnchorOutcome RolesAnywhereClient::EnableTrustAnchor(const EnableTrustAnchorRequest& request) const {
@@ -392,7 +407,9 @@ EnableTrustAnchorOutcome RolesAnywhereClient::EnableTrustAnchor(const EnableTrus
     endpointResolutionOutcome.GetResult().AddPathSegments("/enable");
   };
 
-  return EnableTrustAnchorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EnableTrustAnchorOutcome(result.GetResultWithOwnership())
+                            : EnableTrustAnchorOutcome(std::move(result.GetError()));
 }
 
 GetCrlOutcome RolesAnywhereClient::GetCrl(const GetCrlRequest& request) const {
@@ -408,7 +425,8 @@ GetCrlOutcome RolesAnywhereClient::GetCrl(const GetCrlRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCrlId());
   };
 
-  return GetCrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetCrlOutcome(result.GetResultWithOwnership()) : GetCrlOutcome(std::move(result.GetError()));
 }
 
 GetProfileOutcome RolesAnywhereClient::GetProfile(const GetProfileRequest& request) const {
@@ -424,7 +442,8 @@ GetProfileOutcome RolesAnywhereClient::GetProfile(const GetProfileRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileId());
   };
 
-  return GetProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetProfileOutcome(result.GetResultWithOwnership()) : GetProfileOutcome(std::move(result.GetError()));
 }
 
 GetSubjectOutcome RolesAnywhereClient::GetSubject(const GetSubjectRequest& request) const {
@@ -440,7 +459,8 @@ GetSubjectOutcome RolesAnywhereClient::GetSubject(const GetSubjectRequest& reque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSubjectId());
   };
 
-  return GetSubjectOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSubjectOutcome(result.GetResultWithOwnership()) : GetSubjectOutcome(std::move(result.GetError()));
 }
 
 GetTrustAnchorOutcome RolesAnywhereClient::GetTrustAnchor(const GetTrustAnchorRequest& request) const {
@@ -456,7 +476,8 @@ GetTrustAnchorOutcome RolesAnywhereClient::GetTrustAnchor(const GetTrustAnchorRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrustAnchorId());
   };
 
-  return GetTrustAnchorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTrustAnchorOutcome(result.GetResultWithOwnership()) : GetTrustAnchorOutcome(std::move(result.GetError()));
 }
 
 ImportCrlOutcome RolesAnywhereClient::ImportCrl(const ImportCrlRequest& request) const {
@@ -465,7 +486,8 @@ ImportCrlOutcome RolesAnywhereClient::ImportCrl(const ImportCrlRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegments("/crls");
   };
 
-  return ImportCrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportCrlOutcome(result.GetResultWithOwnership()) : ImportCrlOutcome(std::move(result.GetError()));
 }
 
 ListCrlsOutcome RolesAnywhereClient::ListCrls(const ListCrlsRequest& request) const {
@@ -474,7 +496,8 @@ ListCrlsOutcome RolesAnywhereClient::ListCrls(const ListCrlsRequest& request) co
     endpointResolutionOutcome.GetResult().AddPathSegments("/crls");
   };
 
-  return ListCrlsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListCrlsOutcome(result.GetResultWithOwnership()) : ListCrlsOutcome(std::move(result.GetError()));
 }
 
 ListProfilesOutcome RolesAnywhereClient::ListProfiles(const ListProfilesRequest& request) const {
@@ -483,7 +506,8 @@ ListProfilesOutcome RolesAnywhereClient::ListProfiles(const ListProfilesRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/profiles");
   };
 
-  return ListProfilesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListProfilesOutcome(result.GetResultWithOwnership()) : ListProfilesOutcome(std::move(result.GetError()));
 }
 
 ListSubjectsOutcome RolesAnywhereClient::ListSubjects(const ListSubjectsRequest& request) const {
@@ -492,7 +516,8 @@ ListSubjectsOutcome RolesAnywhereClient::ListSubjects(const ListSubjectsRequest&
     endpointResolutionOutcome.GetResult().AddPathSegments("/subjects");
   };
 
-  return ListSubjectsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSubjectsOutcome(result.GetResultWithOwnership()) : ListSubjectsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome RolesAnywhereClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -507,7 +532,9 @@ ListTagsForResourceOutcome RolesAnywhereClient::ListTagsForResource(const ListTa
     endpointResolutionOutcome.GetResult().AddPathSegments("/ListTagsForResource");
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListTrustAnchorsOutcome RolesAnywhereClient::ListTrustAnchors(const ListTrustAnchorsRequest& request) const {
@@ -516,7 +543,9 @@ ListTrustAnchorsOutcome RolesAnywhereClient::ListTrustAnchors(const ListTrustAnc
     endpointResolutionOutcome.GetResult().AddPathSegments("/trustanchors");
   };
 
-  return ListTrustAnchorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTrustAnchorsOutcome(result.GetResultWithOwnership())
+                            : ListTrustAnchorsOutcome(std::move(result.GetError()));
 }
 
 PutAttributeMappingOutcome RolesAnywhereClient::PutAttributeMapping(const PutAttributeMappingRequest& request) const {
@@ -533,7 +562,9 @@ PutAttributeMappingOutcome RolesAnywhereClient::PutAttributeMapping(const PutAtt
     endpointResolutionOutcome.GetResult().AddPathSegments("/mappings");
   };
 
-  return PutAttributeMappingOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutAttributeMappingOutcome(result.GetResultWithOwnership())
+                            : PutAttributeMappingOutcome(std::move(result.GetError()));
 }
 
 PutNotificationSettingsOutcome RolesAnywhereClient::PutNotificationSettings(const PutNotificationSettingsRequest& request) const {
@@ -542,7 +573,9 @@ PutNotificationSettingsOutcome RolesAnywhereClient::PutNotificationSettings(cons
     endpointResolutionOutcome.GetResult().AddPathSegments("/put-notifications-settings");
   };
 
-  return PutNotificationSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? PutNotificationSettingsOutcome(result.GetResultWithOwnership())
+                            : PutNotificationSettingsOutcome(std::move(result.GetError()));
 }
 
 ResetNotificationSettingsOutcome RolesAnywhereClient::ResetNotificationSettings(const ResetNotificationSettingsRequest& request) const {
@@ -551,7 +584,9 @@ ResetNotificationSettingsOutcome RolesAnywhereClient::ResetNotificationSettings(
     endpointResolutionOutcome.GetResult().AddPathSegments("/reset-notifications-settings");
   };
 
-  return ResetNotificationSettingsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? ResetNotificationSettingsOutcome(result.GetResultWithOwnership())
+                            : ResetNotificationSettingsOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome RolesAnywhereClient::TagResource(const TagResourceRequest& request) const {
@@ -560,7 +595,8 @@ TagResourceOutcome RolesAnywhereClient::TagResource(const TagResourceRequest& re
     endpointResolutionOutcome.GetResult().AddPathSegments("/TagResource");
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome RolesAnywhereClient::UntagResource(const UntagResourceRequest& request) const {
@@ -569,7 +605,8 @@ UntagResourceOutcome RolesAnywhereClient::UntagResource(const UntagResourceReque
     endpointResolutionOutcome.GetResult().AddPathSegments("/UntagResource");
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateCrlOutcome RolesAnywhereClient::UpdateCrl(const UpdateCrlRequest& request) const {
@@ -585,7 +622,8 @@ UpdateCrlOutcome RolesAnywhereClient::UpdateCrl(const UpdateCrlRequest& request)
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCrlId());
   };
 
-  return UpdateCrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateCrlOutcome(result.GetResultWithOwnership()) : UpdateCrlOutcome(std::move(result.GetError()));
 }
 
 UpdateProfileOutcome RolesAnywhereClient::UpdateProfile(const UpdateProfileRequest& request) const {
@@ -601,7 +639,8 @@ UpdateProfileOutcome RolesAnywhereClient::UpdateProfile(const UpdateProfileReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileId());
   };
 
-  return UpdateProfileOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateProfileOutcome(result.GetResultWithOwnership()) : UpdateProfileOutcome(std::move(result.GetError()));
 }
 
 UpdateTrustAnchorOutcome RolesAnywhereClient::UpdateTrustAnchor(const UpdateTrustAnchorRequest& request) const {
@@ -617,5 +656,7 @@ UpdateTrustAnchorOutcome RolesAnywhereClient::UpdateTrustAnchor(const UpdateTrus
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrustAnchorId());
   };
 
-  return UpdateTrustAnchorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateTrustAnchorOutcome(result.GetResultWithOwnership())
+                            : UpdateTrustAnchorOutcome(std::move(result.GetError()));
 }

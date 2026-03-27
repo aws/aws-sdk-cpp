@@ -199,7 +199,8 @@ SearchOutcome CloudSearchDomainClient::Search(const SearchRequest& request) cons
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return SearchOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? SearchOutcome(result.GetResultWithOwnership()) : SearchOutcome(std::move(result.GetError()));
 }
 
 SuggestOutcome CloudSearchDomainClient::Suggest(const SuggestRequest& request) const {
@@ -222,7 +223,8 @@ SuggestOutcome CloudSearchDomainClient::Suggest(const SuggestRequest& request) c
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return SuggestOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? SuggestOutcome(result.GetResultWithOwnership()) : SuggestOutcome(std::move(result.GetError()));
 }
 
 UploadDocumentsOutcome CloudSearchDomainClient::UploadDocuments(const UploadDocumentsRequest& request) const {
@@ -234,5 +236,7 @@ UploadDocumentsOutcome CloudSearchDomainClient::UploadDocuments(const UploadDocu
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return UploadDocumentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UploadDocumentsOutcome(result.GetResultWithOwnership())
+                            : UploadDocumentsOutcome(std::move(result.GetError()));
 }

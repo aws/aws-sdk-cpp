@@ -197,7 +197,9 @@ CreateChallengeOutcome PcaConnectorScepClient::CreateChallenge(const CreateChall
     endpointResolutionOutcome.GetResult().AddPathSegments("/challenges");
   };
 
-  return CreateChallengeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChallengeOutcome(result.GetResultWithOwnership())
+                            : CreateChallengeOutcome(std::move(result.GetError()));
 }
 
 CreateConnectorOutcome PcaConnectorScepClient::CreateConnector(const CreateConnectorRequest& request) const {
@@ -206,7 +208,9 @@ CreateConnectorOutcome PcaConnectorScepClient::CreateConnector(const CreateConne
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectors");
   };
 
-  return CreateConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConnectorOutcome(result.GetResultWithOwnership())
+                            : CreateConnectorOutcome(std::move(result.GetError()));
 }
 
 DeleteChallengeOutcome PcaConnectorScepClient::DeleteChallenge(const DeleteChallengeRequest& request) const {
@@ -222,7 +226,9 @@ DeleteChallengeOutcome PcaConnectorScepClient::DeleteChallenge(const DeleteChall
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChallengeArn());
   };
 
-  return DeleteChallengeOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChallengeOutcome(result.GetResultWithOwnership())
+                            : DeleteChallengeOutcome(std::move(result.GetError()));
 }
 
 DeleteConnectorOutcome PcaConnectorScepClient::DeleteConnector(const DeleteConnectorRequest& request) const {
@@ -238,7 +244,9 @@ DeleteConnectorOutcome PcaConnectorScepClient::DeleteConnector(const DeleteConne
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
   };
 
-  return DeleteConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConnectorOutcome(result.GetResultWithOwnership())
+                            : DeleteConnectorOutcome(std::move(result.GetError()));
 }
 
 GetChallengeMetadataOutcome PcaConnectorScepClient::GetChallengeMetadata(const GetChallengeMetadataRequest& request) const {
@@ -254,7 +262,9 @@ GetChallengeMetadataOutcome PcaConnectorScepClient::GetChallengeMetadata(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChallengeArn());
   };
 
-  return GetChallengeMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChallengeMetadataOutcome(result.GetResultWithOwnership())
+                            : GetChallengeMetadataOutcome(std::move(result.GetError()));
 }
 
 GetChallengePasswordOutcome PcaConnectorScepClient::GetChallengePassword(const GetChallengePasswordRequest& request) const {
@@ -270,7 +280,9 @@ GetChallengePasswordOutcome PcaConnectorScepClient::GetChallengePassword(const G
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChallengeArn());
   };
 
-  return GetChallengePasswordOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChallengePasswordOutcome(result.GetResultWithOwnership())
+                            : GetChallengePasswordOutcome(std::move(result.GetError()));
 }
 
 GetConnectorOutcome PcaConnectorScepClient::GetConnector(const GetConnectorRequest& request) const {
@@ -286,7 +298,8 @@ GetConnectorOutcome PcaConnectorScepClient::GetConnector(const GetConnectorReque
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
   };
 
-  return GetConnectorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConnectorOutcome(result.GetResultWithOwnership()) : GetConnectorOutcome(std::move(result.GetError()));
 }
 
 ListChallengeMetadataOutcome PcaConnectorScepClient::ListChallengeMetadata(const ListChallengeMetadataRequest& request) const {
@@ -301,7 +314,9 @@ ListChallengeMetadataOutcome PcaConnectorScepClient::ListChallengeMetadata(const
     endpointResolutionOutcome.GetResult().AddPathSegments("/challengeMetadata");
   };
 
-  return ListChallengeMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChallengeMetadataOutcome(result.GetResultWithOwnership())
+                            : ListChallengeMetadataOutcome(std::move(result.GetError()));
 }
 
 ListConnectorsOutcome PcaConnectorScepClient::ListConnectors(const ListConnectorsRequest& request) const {
@@ -310,7 +325,8 @@ ListConnectorsOutcome PcaConnectorScepClient::ListConnectors(const ListConnector
     endpointResolutionOutcome.GetResult().AddPathSegments("/connectors");
   };
 
-  return ListConnectorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConnectorsOutcome(result.GetResultWithOwnership()) : ListConnectorsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome PcaConnectorScepClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -326,7 +342,9 @@ ListTagsForResourceOutcome PcaConnectorScepClient::ListTagsForResource(const Lis
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome PcaConnectorScepClient::TagResource(const TagResourceRequest& request) const {
@@ -342,7 +360,8 @@ TagResourceOutcome PcaConnectorScepClient::TagResource(const TagResourceRequest&
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome PcaConnectorScepClient::UntagResource(const UntagResourceRequest& request) const {
@@ -363,5 +382,6 @@ UntagResourceOutcome PcaConnectorScepClient::UntagResource(const UntagResourceRe
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

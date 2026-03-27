@@ -275,7 +275,9 @@ AssociatePermissionOutcome QBusinessClient::AssociatePermission(const AssociateP
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return AssociatePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociatePermissionOutcome(result.GetResultWithOwnership())
+                            : AssociatePermissionOutcome(std::move(result.GetError()));
 }
 
 BatchDeleteDocumentOutcome QBusinessClient::BatchDeleteDocument(const BatchDeleteDocumentRequest& request) const {
@@ -299,7 +301,9 @@ BatchDeleteDocumentOutcome QBusinessClient::BatchDeleteDocument(const BatchDelet
     endpointResolutionOutcome.GetResult().AddPathSegments("/documents/delete");
   };
 
-  return BatchDeleteDocumentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDeleteDocumentOutcome(result.GetResultWithOwnership())
+                            : BatchDeleteDocumentOutcome(std::move(result.GetError()));
 }
 
 BatchPutDocumentOutcome QBusinessClient::BatchPutDocument(const BatchPutDocumentRequest& request) const {
@@ -323,7 +327,9 @@ BatchPutDocumentOutcome QBusinessClient::BatchPutDocument(const BatchPutDocument
     endpointResolutionOutcome.GetResult().AddPathSegments("/documents");
   };
 
-  return BatchPutDocumentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchPutDocumentOutcome(result.GetResultWithOwnership())
+                            : BatchPutDocumentOutcome(std::move(result.GetError()));
 }
 
 CancelSubscriptionOutcome QBusinessClient::CancelSubscription(const CancelSubscriptionRequest& request) const {
@@ -346,7 +352,9 @@ CancelSubscriptionOutcome QBusinessClient::CancelSubscription(const CancelSubscr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSubscriptionId());
   };
 
-  return CancelSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? CancelSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CancelSubscriptionOutcome(std::move(result.GetError()));
 }
 
 void QBusinessClient::ChatAsync(Model::ChatRequest& request, const ChatStreamReadyHandler& streamReadyHandler,
@@ -415,7 +423,8 @@ ChatSyncOutcome QBusinessClient::ChatSync(const ChatSyncRequest& request) const 
     endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
   };
 
-  return ChatSyncOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ChatSyncOutcome(result.GetResultWithOwnership()) : ChatSyncOutcome(std::move(result.GetError()));
 }
 
 CheckDocumentAccessOutcome QBusinessClient::CheckDocumentAccess(const CheckDocumentAccessRequest& request) const {
@@ -453,7 +462,9 @@ CheckDocumentAccessOutcome QBusinessClient::CheckDocumentAccess(const CheckDocum
     endpointResolutionOutcome.GetResult().AddPathSegments("/check-document-access");
   };
 
-  return CheckDocumentAccessOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? CheckDocumentAccessOutcome(result.GetResultWithOwnership())
+                            : CheckDocumentAccessOutcome(std::move(result.GetError()));
 }
 
 CreateAnonymousWebExperienceUrlOutcome QBusinessClient::CreateAnonymousWebExperienceUrl(
@@ -478,7 +489,9 @@ CreateAnonymousWebExperienceUrlOutcome QBusinessClient::CreateAnonymousWebExperi
     endpointResolutionOutcome.GetResult().AddPathSegments("/anonymous-url");
   };
 
-  return CreateAnonymousWebExperienceUrlOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAnonymousWebExperienceUrlOutcome(result.GetResultWithOwnership())
+                            : CreateAnonymousWebExperienceUrlOutcome(std::move(result.GetError()));
 }
 
 CreateApplicationOutcome QBusinessClient::CreateApplication(const CreateApplicationRequest& request) const {
@@ -487,7 +500,9 @@ CreateApplicationOutcome QBusinessClient::CreateApplication(const CreateApplicat
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return CreateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateApplicationOutcome(result.GetResultWithOwnership())
+                            : CreateApplicationOutcome(std::move(result.GetError()));
 }
 
 CreateChatResponseConfigurationOutcome QBusinessClient::CreateChatResponseConfiguration(
@@ -505,7 +520,9 @@ CreateChatResponseConfigurationOutcome QBusinessClient::CreateChatResponseConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/chatresponseconfigurations");
   };
 
-  return CreateChatResponseConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateChatResponseConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateChatResponseConfigurationOutcome(std::move(result.GetError()));
 }
 
 CreateDataAccessorOutcome QBusinessClient::CreateDataAccessor(const CreateDataAccessorRequest& request) const {
@@ -522,7 +539,9 @@ CreateDataAccessorOutcome QBusinessClient::CreateDataAccessor(const CreateDataAc
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataaccessors");
   };
 
-  return CreateDataAccessorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataAccessorOutcome(result.GetResultWithOwnership())
+                            : CreateDataAccessorOutcome(std::move(result.GetError()));
 }
 
 CreateDataSourceOutcome QBusinessClient::CreateDataSource(const CreateDataSourceRequest& request) const {
@@ -546,7 +565,9 @@ CreateDataSourceOutcome QBusinessClient::CreateDataSource(const CreateDataSource
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasources");
   };
 
-  return CreateDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataSourceOutcome(result.GetResultWithOwnership())
+                            : CreateDataSourceOutcome(std::move(result.GetError()));
 }
 
 CreateIndexOutcome QBusinessClient::CreateIndex(const CreateIndexRequest& request) const {
@@ -563,7 +584,8 @@ CreateIndexOutcome QBusinessClient::CreateIndex(const CreateIndexRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/indices");
   };
 
-  return CreateIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIndexOutcome(result.GetResultWithOwnership()) : CreateIndexOutcome(std::move(result.GetError()));
 }
 
 CreatePluginOutcome QBusinessClient::CreatePlugin(const CreatePluginRequest& request) const {
@@ -580,7 +602,8 @@ CreatePluginOutcome QBusinessClient::CreatePlugin(const CreatePluginRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegments("/plugins");
   };
 
-  return CreatePluginOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePluginOutcome(result.GetResultWithOwnership()) : CreatePluginOutcome(std::move(result.GetError()));
 }
 
 CreateRetrieverOutcome QBusinessClient::CreateRetriever(const CreateRetrieverRequest& request) const {
@@ -597,7 +620,9 @@ CreateRetrieverOutcome QBusinessClient::CreateRetriever(const CreateRetrieverReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/retrievers");
   };
 
-  return CreateRetrieverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRetrieverOutcome(result.GetResultWithOwnership())
+                            : CreateRetrieverOutcome(std::move(result.GetError()));
 }
 
 CreateSubscriptionOutcome QBusinessClient::CreateSubscription(const CreateSubscriptionRequest& request) const {
@@ -614,7 +639,9 @@ CreateSubscriptionOutcome QBusinessClient::CreateSubscription(const CreateSubscr
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
   };
 
-  return CreateSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSubscriptionOutcome(result.GetResultWithOwnership())
+                            : CreateSubscriptionOutcome(std::move(result.GetError()));
 }
 
 CreateUserOutcome QBusinessClient::CreateUser(const CreateUserRequest& request) const {
@@ -631,7 +658,8 @@ CreateUserOutcome QBusinessClient::CreateUser(const CreateUserRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   };
 
-  return CreateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateUserOutcome(result.GetResultWithOwnership()) : CreateUserOutcome(std::move(result.GetError()));
 }
 
 CreateWebExperienceOutcome QBusinessClient::CreateWebExperience(const CreateWebExperienceRequest& request) const {
@@ -648,7 +676,9 @@ CreateWebExperienceOutcome QBusinessClient::CreateWebExperience(const CreateWebE
     endpointResolutionOutcome.GetResult().AddPathSegments("/experiences");
   };
 
-  return CreateWebExperienceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateWebExperienceOutcome(result.GetResultWithOwnership())
+                            : CreateWebExperienceOutcome(std::move(result.GetError()));
 }
 
 DeleteApplicationOutcome QBusinessClient::DeleteApplication(const DeleteApplicationRequest& request) const {
@@ -664,7 +694,9 @@ DeleteApplicationOutcome QBusinessClient::DeleteApplication(const DeleteApplicat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return DeleteApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
+                            : DeleteApplicationOutcome(std::move(result.GetError()));
 }
 
 DeleteAttachmentOutcome QBusinessClient::DeleteAttachment(const DeleteAttachmentRequest& request) const {
@@ -694,7 +726,9 @@ DeleteAttachmentOutcome QBusinessClient::DeleteAttachment(const DeleteAttachment
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
   };
 
-  return DeleteAttachmentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteAttachmentOutcome(result.GetResultWithOwnership())
+                            : DeleteAttachmentOutcome(std::move(result.GetError()));
 }
 
 DeleteChatControlsConfigurationOutcome QBusinessClient::DeleteChatControlsConfiguration(
@@ -712,7 +746,9 @@ DeleteChatControlsConfigurationOutcome QBusinessClient::DeleteChatControlsConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/chatcontrols");
   };
 
-  return DeleteChatControlsConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChatControlsConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteChatControlsConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteChatResponseConfigurationOutcome QBusinessClient::DeleteChatResponseConfiguration(
@@ -736,7 +772,9 @@ DeleteChatResponseConfigurationOutcome QBusinessClient::DeleteChatResponseConfig
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChatResponseConfigurationId());
   };
 
-  return DeleteChatResponseConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteChatResponseConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteChatResponseConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteConversationOutcome QBusinessClient::DeleteConversation(const DeleteConversationRequest& request) const {
@@ -759,7 +797,9 @@ DeleteConversationOutcome QBusinessClient::DeleteConversation(const DeleteConver
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConversationId());
   };
 
-  return DeleteConversationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConversationOutcome(result.GetResultWithOwnership())
+                            : DeleteConversationOutcome(std::move(result.GetError()));
 }
 
 DeleteDataAccessorOutcome QBusinessClient::DeleteDataAccessor(const DeleteDataAccessorRequest& request) const {
@@ -782,7 +822,9 @@ DeleteDataAccessorOutcome QBusinessClient::DeleteDataAccessor(const DeleteDataAc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataAccessorId());
   };
 
-  return DeleteDataAccessorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataAccessorOutcome(result.GetResultWithOwnership())
+                            : DeleteDataAccessorOutcome(std::move(result.GetError()));
 }
 
 DeleteDataSourceOutcome QBusinessClient::DeleteDataSource(const DeleteDataSourceRequest& request) const {
@@ -812,7 +854,9 @@ DeleteDataSourceOutcome QBusinessClient::DeleteDataSource(const DeleteDataSource
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceId());
   };
 
-  return DeleteDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDataSourceOutcome(result.GetResultWithOwnership())
+                            : DeleteDataSourceOutcome(std::move(result.GetError()));
 }
 
 DeleteGroupOutcome QBusinessClient::DeleteGroup(const DeleteGroupRequest& request) const {
@@ -842,7 +886,8 @@ DeleteGroupOutcome QBusinessClient::DeleteGroup(const DeleteGroupRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupName());
   };
 
-  return DeleteGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGroupOutcome(result.GetResultWithOwnership()) : DeleteGroupOutcome(std::move(result.GetError()));
 }
 
 DeleteIndexOutcome QBusinessClient::DeleteIndex(const DeleteIndexRequest& request) const {
@@ -865,7 +910,8 @@ DeleteIndexOutcome QBusinessClient::DeleteIndex(const DeleteIndexRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexId());
   };
 
-  return DeleteIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteIndexOutcome(result.GetResultWithOwnership()) : DeleteIndexOutcome(std::move(result.GetError()));
 }
 
 DeletePluginOutcome QBusinessClient::DeletePlugin(const DeletePluginRequest& request) const {
@@ -888,7 +934,8 @@ DeletePluginOutcome QBusinessClient::DeletePlugin(const DeletePluginRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPluginId());
   };
 
-  return DeletePluginOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePluginOutcome(result.GetResultWithOwnership()) : DeletePluginOutcome(std::move(result.GetError()));
 }
 
 DeleteRetrieverOutcome QBusinessClient::DeleteRetriever(const DeleteRetrieverRequest& request) const {
@@ -911,7 +958,9 @@ DeleteRetrieverOutcome QBusinessClient::DeleteRetriever(const DeleteRetrieverReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRetrieverId());
   };
 
-  return DeleteRetrieverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRetrieverOutcome(result.GetResultWithOwnership())
+                            : DeleteRetrieverOutcome(std::move(result.GetError()));
 }
 
 DeleteUserOutcome QBusinessClient::DeleteUser(const DeleteUserRequest& request) const {
@@ -934,7 +983,8 @@ DeleteUserOutcome QBusinessClient::DeleteUser(const DeleteUserRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return DeleteUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteUserOutcome(result.GetResultWithOwnership()) : DeleteUserOutcome(std::move(result.GetError()));
 }
 
 DeleteWebExperienceOutcome QBusinessClient::DeleteWebExperience(const DeleteWebExperienceRequest& request) const {
@@ -957,7 +1007,9 @@ DeleteWebExperienceOutcome QBusinessClient::DeleteWebExperience(const DeleteWebE
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWebExperienceId());
   };
 
-  return DeleteWebExperienceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteWebExperienceOutcome(result.GetResultWithOwnership())
+                            : DeleteWebExperienceOutcome(std::move(result.GetError()));
 }
 
 DisassociatePermissionOutcome QBusinessClient::DisassociatePermission(const DisassociatePermissionRequest& request) const {
@@ -980,7 +1032,9 @@ DisassociatePermissionOutcome QBusinessClient::DisassociatePermission(const Disa
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
   };
 
-  return DisassociatePermissionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DisassociatePermissionOutcome(result.GetResultWithOwnership())
+                            : DisassociatePermissionOutcome(std::move(result.GetError()));
 }
 
 GetApplicationOutcome QBusinessClient::GetApplication(const GetApplicationRequest& request) const {
@@ -996,7 +1050,8 @@ GetApplicationOutcome QBusinessClient::GetApplication(const GetApplicationReques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return GetApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetApplicationOutcome(result.GetResultWithOwnership()) : GetApplicationOutcome(std::move(result.GetError()));
 }
 
 GetChatControlsConfigurationOutcome QBusinessClient::GetChatControlsConfiguration(
@@ -1014,7 +1069,9 @@ GetChatControlsConfigurationOutcome QBusinessClient::GetChatControlsConfiguratio
     endpointResolutionOutcome.GetResult().AddPathSegments("/chatcontrols");
   };
 
-  return GetChatControlsConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChatControlsConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetChatControlsConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetChatResponseConfigurationOutcome QBusinessClient::GetChatResponseConfiguration(
@@ -1038,7 +1095,9 @@ GetChatResponseConfigurationOutcome QBusinessClient::GetChatResponseConfiguratio
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChatResponseConfigurationId());
   };
 
-  return GetChatResponseConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetChatResponseConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetChatResponseConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetDataAccessorOutcome QBusinessClient::GetDataAccessor(const GetDataAccessorRequest& request) const {
@@ -1061,7 +1120,9 @@ GetDataAccessorOutcome QBusinessClient::GetDataAccessor(const GetDataAccessorReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataAccessorId());
   };
 
-  return GetDataAccessorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataAccessorOutcome(result.GetResultWithOwnership())
+                            : GetDataAccessorOutcome(std::move(result.GetError()));
 }
 
 GetDataSourceOutcome QBusinessClient::GetDataSource(const GetDataSourceRequest& request) const {
@@ -1091,7 +1152,8 @@ GetDataSourceOutcome QBusinessClient::GetDataSource(const GetDataSourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceId());
   };
 
-  return GetDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDataSourceOutcome(result.GetResultWithOwnership()) : GetDataSourceOutcome(std::move(result.GetError()));
 }
 
 GetDocumentContentOutcome QBusinessClient::GetDocumentContent(const GetDocumentContentRequest& request) const {
@@ -1122,7 +1184,9 @@ GetDocumentContentOutcome QBusinessClient::GetDocumentContent(const GetDocumentC
     endpointResolutionOutcome.GetResult().AddPathSegments("/content");
   };
 
-  return GetDocumentContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDocumentContentOutcome(result.GetResultWithOwnership())
+                            : GetDocumentContentOutcome(std::move(result.GetError()));
 }
 
 GetGroupOutcome QBusinessClient::GetGroup(const GetGroupRequest& request) const {
@@ -1152,7 +1216,8 @@ GetGroupOutcome QBusinessClient::GetGroup(const GetGroupRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGroupName());
   };
 
-  return GetGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGroupOutcome(result.GetResultWithOwnership()) : GetGroupOutcome(std::move(result.GetError()));
 }
 
 GetIndexOutcome QBusinessClient::GetIndex(const GetIndexRequest& request) const {
@@ -1175,7 +1240,8 @@ GetIndexOutcome QBusinessClient::GetIndex(const GetIndexRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexId());
   };
 
-  return GetIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIndexOutcome(result.GetResultWithOwnership()) : GetIndexOutcome(std::move(result.GetError()));
 }
 
 GetMediaOutcome QBusinessClient::GetMedia(const GetMediaRequest& request) const {
@@ -1212,7 +1278,8 @@ GetMediaOutcome QBusinessClient::GetMedia(const GetMediaRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMediaId());
   };
 
-  return GetMediaOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetMediaOutcome(result.GetResultWithOwnership()) : GetMediaOutcome(std::move(result.GetError()));
 }
 
 GetPluginOutcome QBusinessClient::GetPlugin(const GetPluginRequest& request) const {
@@ -1235,7 +1302,8 @@ GetPluginOutcome QBusinessClient::GetPlugin(const GetPluginRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPluginId());
   };
 
-  return GetPluginOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPluginOutcome(result.GetResultWithOwnership()) : GetPluginOutcome(std::move(result.GetError()));
 }
 
 GetPolicyOutcome QBusinessClient::GetPolicy(const GetPolicyRequest& request) const {
@@ -1252,7 +1320,8 @@ GetPolicyOutcome QBusinessClient::GetPolicy(const GetPolicyRequest& request) con
     endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
   };
 
-  return GetPolicyOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPolicyOutcome(result.GetResultWithOwnership()) : GetPolicyOutcome(std::move(result.GetError()));
 }
 
 GetRetrieverOutcome QBusinessClient::GetRetriever(const GetRetrieverRequest& request) const {
@@ -1275,7 +1344,8 @@ GetRetrieverOutcome QBusinessClient::GetRetriever(const GetRetrieverRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRetrieverId());
   };
 
-  return GetRetrieverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRetrieverOutcome(result.GetResultWithOwnership()) : GetRetrieverOutcome(std::move(result.GetError()));
 }
 
 GetUserOutcome QBusinessClient::GetUser(const GetUserRequest& request) const {
@@ -1298,7 +1368,8 @@ GetUserOutcome QBusinessClient::GetUser(const GetUserRequest& request) const {
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return GetUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetUserOutcome(result.GetResultWithOwnership()) : GetUserOutcome(std::move(result.GetError()));
 }
 
 GetWebExperienceOutcome QBusinessClient::GetWebExperience(const GetWebExperienceRequest& request) const {
@@ -1321,7 +1392,9 @@ GetWebExperienceOutcome QBusinessClient::GetWebExperience(const GetWebExperience
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWebExperienceId());
   };
 
-  return GetWebExperienceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetWebExperienceOutcome(result.GetResultWithOwnership())
+                            : GetWebExperienceOutcome(std::move(result.GetError()));
 }
 
 ListApplicationsOutcome QBusinessClient::ListApplications(const ListApplicationsRequest& request) const {
@@ -1330,7 +1403,9 @@ ListApplicationsOutcome QBusinessClient::ListApplications(const ListApplications
     endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
   };
 
-  return ListApplicationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
+                            : ListApplicationsOutcome(std::move(result.GetError()));
 }
 
 ListAttachmentsOutcome QBusinessClient::ListAttachments(const ListAttachmentsRequest& request) const {
@@ -1347,7 +1422,9 @@ ListAttachmentsOutcome QBusinessClient::ListAttachments(const ListAttachmentsReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/attachments");
   };
 
-  return ListAttachmentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAttachmentsOutcome(result.GetResultWithOwnership())
+                            : ListAttachmentsOutcome(std::move(result.GetError()));
 }
 
 ListChatResponseConfigurationsOutcome QBusinessClient::ListChatResponseConfigurations(
@@ -1365,7 +1442,9 @@ ListChatResponseConfigurationsOutcome QBusinessClient::ListChatResponseConfigura
     endpointResolutionOutcome.GetResult().AddPathSegments("/chatresponseconfigurations");
   };
 
-  return ListChatResponseConfigurationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListChatResponseConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListChatResponseConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListConversationsOutcome QBusinessClient::ListConversations(const ListConversationsRequest& request) const {
@@ -1382,7 +1461,9 @@ ListConversationsOutcome QBusinessClient::ListConversations(const ListConversati
     endpointResolutionOutcome.GetResult().AddPathSegments("/conversations");
   };
 
-  return ListConversationsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListConversationsOutcome(result.GetResultWithOwnership())
+                            : ListConversationsOutcome(std::move(result.GetError()));
 }
 
 ListDataAccessorsOutcome QBusinessClient::ListDataAccessors(const ListDataAccessorsRequest& request) const {
@@ -1399,7 +1480,9 @@ ListDataAccessorsOutcome QBusinessClient::ListDataAccessors(const ListDataAccess
     endpointResolutionOutcome.GetResult().AddPathSegments("/dataaccessors");
   };
 
-  return ListDataAccessorsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataAccessorsOutcome(result.GetResultWithOwnership())
+                            : ListDataAccessorsOutcome(std::move(result.GetError()));
 }
 
 ListDataSourceSyncJobsOutcome QBusinessClient::ListDataSourceSyncJobs(const ListDataSourceSyncJobsRequest& request) const {
@@ -1430,7 +1513,9 @@ ListDataSourceSyncJobsOutcome QBusinessClient::ListDataSourceSyncJobs(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/syncjobs");
   };
 
-  return ListDataSourceSyncJobsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSourceSyncJobsOutcome(result.GetResultWithOwnership())
+                            : ListDataSourceSyncJobsOutcome(std::move(result.GetError()));
 }
 
 ListDataSourcesOutcome QBusinessClient::ListDataSources(const ListDataSourcesRequest& request) const {
@@ -1454,7 +1539,9 @@ ListDataSourcesOutcome QBusinessClient::ListDataSources(const ListDataSourcesReq
     endpointResolutionOutcome.GetResult().AddPathSegments("/datasources");
   };
 
-  return ListDataSourcesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDataSourcesOutcome(result.GetResultWithOwnership())
+                            : ListDataSourcesOutcome(std::move(result.GetError()));
 }
 
 ListDocumentsOutcome QBusinessClient::ListDocuments(const ListDocumentsRequest& request) const {
@@ -1478,7 +1565,8 @@ ListDocumentsOutcome QBusinessClient::ListDocuments(const ListDocumentsRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegments("/documents");
   };
 
-  return ListDocumentsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDocumentsOutcome(result.GetResultWithOwnership()) : ListDocumentsOutcome(std::move(result.GetError()));
 }
 
 ListGroupsOutcome QBusinessClient::ListGroups(const ListGroupsRequest& request) const {
@@ -1507,7 +1595,8 @@ ListGroupsOutcome QBusinessClient::ListGroups(const ListGroupsRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegments("/groups");
   };
 
-  return ListGroupsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGroupsOutcome(result.GetResultWithOwnership()) : ListGroupsOutcome(std::move(result.GetError()));
 }
 
 ListIndicesOutcome QBusinessClient::ListIndices(const ListIndicesRequest& request) const {
@@ -1524,7 +1613,8 @@ ListIndicesOutcome QBusinessClient::ListIndices(const ListIndicesRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/indices");
   };
 
-  return ListIndicesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIndicesOutcome(result.GetResultWithOwnership()) : ListIndicesOutcome(std::move(result.GetError()));
 }
 
 ListMessagesOutcome QBusinessClient::ListMessages(const ListMessagesRequest& request) const {
@@ -1547,7 +1637,8 @@ ListMessagesOutcome QBusinessClient::ListMessages(const ListMessagesRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConversationId());
   };
 
-  return ListMessagesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMessagesOutcome(result.GetResultWithOwnership()) : ListMessagesOutcome(std::move(result.GetError()));
 }
 
 ListPluginActionsOutcome QBusinessClient::ListPluginActions(const ListPluginActionsRequest& request) const {
@@ -1571,7 +1662,9 @@ ListPluginActionsOutcome QBusinessClient::ListPluginActions(const ListPluginActi
     endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
   };
 
-  return ListPluginActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPluginActionsOutcome(result.GetResultWithOwnership())
+                            : ListPluginActionsOutcome(std::move(result.GetError()));
 }
 
 ListPluginTypeActionsOutcome QBusinessClient::ListPluginTypeActions(const ListPluginTypeActionsRequest& request) const {
@@ -1588,7 +1681,9 @@ ListPluginTypeActionsOutcome QBusinessClient::ListPluginTypeActions(const ListPl
     endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
   };
 
-  return ListPluginTypeActionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPluginTypeActionsOutcome(result.GetResultWithOwnership())
+                            : ListPluginTypeActionsOutcome(std::move(result.GetError()));
 }
 
 ListPluginTypeMetadataOutcome QBusinessClient::ListPluginTypeMetadata(const ListPluginTypeMetadataRequest& request) const {
@@ -1597,7 +1692,9 @@ ListPluginTypeMetadataOutcome QBusinessClient::ListPluginTypeMetadata(const List
     endpointResolutionOutcome.GetResult().AddPathSegments("/pluginTypeMetadata");
   };
 
-  return ListPluginTypeMetadataOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPluginTypeMetadataOutcome(result.GetResultWithOwnership())
+                            : ListPluginTypeMetadataOutcome(std::move(result.GetError()));
 }
 
 ListPluginsOutcome QBusinessClient::ListPlugins(const ListPluginsRequest& request) const {
@@ -1614,7 +1711,8 @@ ListPluginsOutcome QBusinessClient::ListPlugins(const ListPluginsRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/plugins");
   };
 
-  return ListPluginsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListPluginsOutcome(result.GetResultWithOwnership()) : ListPluginsOutcome(std::move(result.GetError()));
 }
 
 ListRetrieversOutcome QBusinessClient::ListRetrievers(const ListRetrieversRequest& request) const {
@@ -1631,7 +1729,8 @@ ListRetrieversOutcome QBusinessClient::ListRetrievers(const ListRetrieversReques
     endpointResolutionOutcome.GetResult().AddPathSegments("/retrievers");
   };
 
-  return ListRetrieversOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRetrieversOutcome(result.GetResultWithOwnership()) : ListRetrieversOutcome(std::move(result.GetError()));
 }
 
 ListSubscriptionsOutcome QBusinessClient::ListSubscriptions(const ListSubscriptionsRequest& request) const {
@@ -1648,7 +1747,9 @@ ListSubscriptionsOutcome QBusinessClient::ListSubscriptions(const ListSubscripti
     endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions");
   };
 
-  return ListSubscriptionsOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSubscriptionsOutcome(result.GetResultWithOwnership())
+                            : ListSubscriptionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome QBusinessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -1664,7 +1765,9 @@ ListTagsForResourceOutcome QBusinessClient::ListTagsForResource(const ListTagsFo
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceARN());
   };
 
-  return ListTagsForResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
 
 ListWebExperiencesOutcome QBusinessClient::ListWebExperiences(const ListWebExperiencesRequest& request) const {
@@ -1681,7 +1784,9 @@ ListWebExperiencesOutcome QBusinessClient::ListWebExperiences(const ListWebExper
     endpointResolutionOutcome.GetResult().AddPathSegments("/experiences");
   };
 
-  return ListWebExperiencesOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListWebExperiencesOutcome(result.GetResultWithOwnership())
+                            : ListWebExperiencesOutcome(std::move(result.GetError()));
 }
 
 PutFeedbackOutcome QBusinessClient::PutFeedback(const PutFeedbackRequest& request) const {
@@ -1712,7 +1817,8 @@ PutFeedbackOutcome QBusinessClient::PutFeedback(const PutFeedbackRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegments("/feedback");
   };
 
-  return PutFeedbackOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutFeedbackOutcome(result.GetResultWithOwnership()) : PutFeedbackOutcome(std::move(result.GetError()));
 }
 
 PutGroupOutcome QBusinessClient::PutGroup(const PutGroupRequest& request) const {
@@ -1736,7 +1842,8 @@ PutGroupOutcome QBusinessClient::PutGroup(const PutGroupRequest& request) const 
     endpointResolutionOutcome.GetResult().AddPathSegments("/groups");
   };
 
-  return PutGroupOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutGroupOutcome(result.GetResultWithOwnership()) : PutGroupOutcome(std::move(result.GetError()));
 }
 
 SearchRelevantContentOutcome QBusinessClient::SearchRelevantContent(const SearchRelevantContentRequest& request) const {
@@ -1753,7 +1860,9 @@ SearchRelevantContentOutcome QBusinessClient::SearchRelevantContent(const Search
     endpointResolutionOutcome.GetResult().AddPathSegments("/relevant-content");
   };
 
-  return SearchRelevantContentOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SearchRelevantContentOutcome(result.GetResultWithOwnership())
+                            : SearchRelevantContentOutcome(std::move(result.GetError()));
 }
 
 StartDataSourceSyncJobOutcome QBusinessClient::StartDataSourceSyncJob(const StartDataSourceSyncJobRequest& request) const {
@@ -1784,7 +1893,9 @@ StartDataSourceSyncJobOutcome QBusinessClient::StartDataSourceSyncJob(const Star
     endpointResolutionOutcome.GetResult().AddPathSegments("/startsync");
   };
 
-  return StartDataSourceSyncJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartDataSourceSyncJobOutcome(result.GetResultWithOwnership())
+                            : StartDataSourceSyncJobOutcome(std::move(result.GetError()));
 }
 
 StopDataSourceSyncJobOutcome QBusinessClient::StopDataSourceSyncJob(const StopDataSourceSyncJobRequest& request) const {
@@ -1815,7 +1926,9 @@ StopDataSourceSyncJobOutcome QBusinessClient::StopDataSourceSyncJob(const StopDa
     endpointResolutionOutcome.GetResult().AddPathSegments("/stopsync");
   };
 
-  return StopDataSourceSyncJobOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopDataSourceSyncJobOutcome(result.GetResultWithOwnership())
+                            : StopDataSourceSyncJobOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome QBusinessClient::TagResource(const TagResourceRequest& request) const {
@@ -1831,7 +1944,8 @@ TagResourceOutcome QBusinessClient::TagResource(const TagResourceRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceARN());
   };
 
-  return TagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome QBusinessClient::UntagResource(const UntagResourceRequest& request) const {
@@ -1852,7 +1966,8 @@ UntagResourceOutcome QBusinessClient::UntagResource(const UntagResourceRequest& 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceARN());
   };
 
-  return UntagResourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }
 
 UpdateApplicationOutcome QBusinessClient::UpdateApplication(const UpdateApplicationRequest& request) const {
@@ -1868,7 +1983,9 @@ UpdateApplicationOutcome QBusinessClient::UpdateApplication(const UpdateApplicat
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
   };
 
-  return UpdateApplicationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
+                            : UpdateApplicationOutcome(std::move(result.GetError()));
 }
 
 UpdateChatControlsConfigurationOutcome QBusinessClient::UpdateChatControlsConfiguration(
@@ -1886,7 +2003,9 @@ UpdateChatControlsConfigurationOutcome QBusinessClient::UpdateChatControlsConfig
     endpointResolutionOutcome.GetResult().AddPathSegments("/chatcontrols");
   };
 
-  return UpdateChatControlsConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateChatControlsConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateChatControlsConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateChatResponseConfigurationOutcome QBusinessClient::UpdateChatResponseConfiguration(
@@ -1910,7 +2029,9 @@ UpdateChatResponseConfigurationOutcome QBusinessClient::UpdateChatResponseConfig
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChatResponseConfigurationId());
   };
 
-  return UpdateChatResponseConfigurationOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateChatResponseConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateChatResponseConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateDataAccessorOutcome QBusinessClient::UpdateDataAccessor(const UpdateDataAccessorRequest& request) const {
@@ -1933,7 +2054,9 @@ UpdateDataAccessorOutcome QBusinessClient::UpdateDataAccessor(const UpdateDataAc
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataAccessorId());
   };
 
-  return UpdateDataAccessorOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDataAccessorOutcome(result.GetResultWithOwnership())
+                            : UpdateDataAccessorOutcome(std::move(result.GetError()));
 }
 
 UpdateDataSourceOutcome QBusinessClient::UpdateDataSource(const UpdateDataSourceRequest& request) const {
@@ -1963,7 +2086,9 @@ UpdateDataSourceOutcome QBusinessClient::UpdateDataSource(const UpdateDataSource
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceId());
   };
 
-  return UpdateDataSourceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDataSourceOutcome(result.GetResultWithOwnership())
+                            : UpdateDataSourceOutcome(std::move(result.GetError()));
 }
 
 UpdateIndexOutcome QBusinessClient::UpdateIndex(const UpdateIndexRequest& request) const {
@@ -1986,7 +2111,8 @@ UpdateIndexOutcome QBusinessClient::UpdateIndex(const UpdateIndexRequest& reques
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexId());
   };
 
-  return UpdateIndexOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateIndexOutcome(result.GetResultWithOwnership()) : UpdateIndexOutcome(std::move(result.GetError()));
 }
 
 UpdatePluginOutcome QBusinessClient::UpdatePlugin(const UpdatePluginRequest& request) const {
@@ -2009,7 +2135,8 @@ UpdatePluginOutcome QBusinessClient::UpdatePlugin(const UpdatePluginRequest& req
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPluginId());
   };
 
-  return UpdatePluginOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdatePluginOutcome(result.GetResultWithOwnership()) : UpdatePluginOutcome(std::move(result.GetError()));
 }
 
 UpdateRetrieverOutcome QBusinessClient::UpdateRetriever(const UpdateRetrieverRequest& request) const {
@@ -2032,7 +2159,9 @@ UpdateRetrieverOutcome QBusinessClient::UpdateRetriever(const UpdateRetrieverReq
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRetrieverId());
   };
 
-  return UpdateRetrieverOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRetrieverOutcome(result.GetResultWithOwnership())
+                            : UpdateRetrieverOutcome(std::move(result.GetError()));
 }
 
 UpdateSubscriptionOutcome QBusinessClient::UpdateSubscription(const UpdateSubscriptionRequest& request) const {
@@ -2055,7 +2184,9 @@ UpdateSubscriptionOutcome QBusinessClient::UpdateSubscription(const UpdateSubscr
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSubscriptionId());
   };
 
-  return UpdateSubscriptionOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSubscriptionOutcome(result.GetResultWithOwnership())
+                            : UpdateSubscriptionOutcome(std::move(result.GetError()));
 }
 
 UpdateUserOutcome QBusinessClient::UpdateUser(const UpdateUserRequest& request) const {
@@ -2078,7 +2209,8 @@ UpdateUserOutcome QBusinessClient::UpdateUser(const UpdateUserRequest& request) 
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
   };
 
-  return UpdateUserOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateUserOutcome(result.GetResultWithOwnership()) : UpdateUserOutcome(std::move(result.GetError()));
 }
 
 UpdateWebExperienceOutcome QBusinessClient::UpdateWebExperience(const UpdateWebExperienceRequest& request) const {
@@ -2101,5 +2233,7 @@ UpdateWebExperienceOutcome QBusinessClient::UpdateWebExperience(const UpdateWebE
     endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWebExperienceId());
   };
 
-  return UpdateWebExperienceOutcome{InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT)};
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateWebExperienceOutcome(result.GetResultWithOwnership())
+                            : UpdateWebExperienceOutcome(std::move(result.GetError()));
 }

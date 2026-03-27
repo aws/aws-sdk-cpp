@@ -176,12 +176,14 @@ CopyBlueprintStageOutcome BedrockDataAutomationClient::CopyBlueprintStage(const 
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CopyBlueprintStageOutcome>(
       [&]() -> CopyBlueprintStageOutcome {
-        return CopyBlueprintStageOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
-                                                                [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                  resolvedEndpoint.AddPathSegments("/blueprints/");
-                                                                  resolvedEndpoint.AddPathSegment(request.GetBlueprintArn());
-                                                                  resolvedEndpoint.AddPathSegments("/copy-stage");
-                                                                }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/blueprints/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBlueprintArn());
+                                               resolvedEndpoint.AddPathSegments("/copy-stage");
+                                             });
+        return result.IsSuccess() ? CopyBlueprintStageOutcome(result.GetResultWithOwnership())
+                                  : CopyBlueprintStageOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -202,9 +204,11 @@ CreateBlueprintOutcome BedrockDataAutomationClient::CreateBlueprint(const Create
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateBlueprintOutcome>(
       [&]() -> CreateBlueprintOutcome {
-        return CreateBlueprintOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/blueprints/"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/blueprints/"); });
+        return result.IsSuccess() ? CreateBlueprintOutcome(result.GetResultWithOwnership())
+                                  : CreateBlueprintOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -230,13 +234,14 @@ CreateBlueprintVersionOutcome BedrockDataAutomationClient::CreateBlueprintVersio
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateBlueprintVersionOutcome>(
       [&]() -> CreateBlueprintVersionOutcome {
-        return CreateBlueprintVersionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                    Aws::Http::HttpMethod::HTTP_POST,
-                                                                    [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                      resolvedEndpoint.AddPathSegments("/blueprints/");
-                                                                      resolvedEndpoint.AddPathSegment(request.GetBlueprintArn());
-                                                                      resolvedEndpoint.AddPathSegments("/versions/");
-                                                                    }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/blueprints/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBlueprintArn());
+                                               resolvedEndpoint.AddPathSegments("/versions/");
+                                             });
+        return result.IsSuccess() ? CreateBlueprintVersionOutcome(result.GetResultWithOwnership())
+                                  : CreateBlueprintVersionOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -258,9 +263,11 @@ CreateDataAutomationProjectOutcome BedrockDataAutomationClient::CreateDataAutoma
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<CreateDataAutomationProjectOutcome>(
       [&]() -> CreateDataAutomationProjectOutcome {
-        return CreateDataAutomationProjectOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/data-automation-projects/"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/data-automation-projects/"); });
+        return result.IsSuccess() ? CreateDataAutomationProjectOutcome(result.GetResultWithOwnership())
+                                  : CreateDataAutomationProjectOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -286,11 +293,13 @@ DeleteBlueprintOutcome BedrockDataAutomationClient::DeleteBlueprint(const Delete
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteBlueprintOutcome>(
       [&]() -> DeleteBlueprintOutcome {
-        return DeleteBlueprintOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
-                                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                               resolvedEndpoint.AddPathSegments("/blueprints/");
-                                                               resolvedEndpoint.AddPathSegment(request.GetBlueprintArn());
-                                                             }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/blueprints/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBlueprintArn());
+                                             });
+        return result.IsSuccess() ? DeleteBlueprintOutcome(result.GetResultWithOwnership())
+                                  : DeleteBlueprintOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -317,12 +326,13 @@ DeleteDataAutomationProjectOutcome BedrockDataAutomationClient::DeleteDataAutoma
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteDataAutomationProjectOutcome>(
       [&]() -> DeleteDataAutomationProjectOutcome {
-        return DeleteDataAutomationProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                         Aws::Http::HttpMethod::HTTP_DELETE,
-                                                                         [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                           resolvedEndpoint.AddPathSegments("/data-automation-projects/");
-                                                                           resolvedEndpoint.AddPathSegment(request.GetProjectArn());
-                                                                         }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/data-automation-projects/");
+                                               resolvedEndpoint.AddPathSegment(request.GetProjectArn());
+                                             });
+        return result.IsSuccess() ? DeleteDataAutomationProjectOutcome(result.GetResultWithOwnership())
+                                  : DeleteDataAutomationProjectOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -348,11 +358,13 @@ GetBlueprintOutcome BedrockDataAutomationClient::GetBlueprint(const GetBlueprint
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBlueprintOutcome>(
       [&]() -> GetBlueprintOutcome {
-        return GetBlueprintOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                                          [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                            resolvedEndpoint.AddPathSegments("/blueprints/");
-                                                            resolvedEndpoint.AddPathSegment(request.GetBlueprintArn());
-                                                          }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/blueprints/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBlueprintArn());
+                                             });
+        return result.IsSuccess() ? GetBlueprintOutcome(result.GetResultWithOwnership())
+                                  : GetBlueprintOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -379,12 +391,13 @@ GetBlueprintOptimizationStatusOutcome BedrockDataAutomationClient::GetBlueprintO
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetBlueprintOptimizationStatusOutcome>(
       [&]() -> GetBlueprintOptimizationStatusOutcome {
-        return GetBlueprintOptimizationStatusOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/getBlueprintOptimizationStatus/");
-                                     resolvedEndpoint.AddPathSegment(request.GetInvocationArn());
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/getBlueprintOptimizationStatus/");
+                                               resolvedEndpoint.AddPathSegment(request.GetInvocationArn());
+                                             });
+        return result.IsSuccess() ? GetBlueprintOptimizationStatusOutcome(result.GetResultWithOwnership())
+                                  : GetBlueprintOptimizationStatusOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -411,12 +424,13 @@ GetDataAutomationProjectOutcome BedrockDataAutomationClient::GetDataAutomationPr
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetDataAutomationProjectOutcome>(
       [&]() -> GetDataAutomationProjectOutcome {
-        return GetDataAutomationProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                      Aws::Http::HttpMethod::HTTP_POST,
-                                                                      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                        resolvedEndpoint.AddPathSegments("/data-automation-projects/");
-                                                                        resolvedEndpoint.AddPathSegment(request.GetProjectArn());
-                                                                      }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/data-automation-projects/");
+                                               resolvedEndpoint.AddPathSegment(request.GetProjectArn());
+                                             });
+        return result.IsSuccess() ? GetDataAutomationProjectOutcome(result.GetResultWithOwnership())
+                                  : GetDataAutomationProjectOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -439,11 +453,12 @@ InvokeBlueprintOptimizationAsyncOutcome BedrockDataAutomationClient::InvokeBluep
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<InvokeBlueprintOptimizationAsyncOutcome>(
       [&]() -> InvokeBlueprintOptimizationAsyncOutcome {
-        return InvokeBlueprintOptimizationAsyncOutcome(
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                     resolvedEndpoint.AddPathSegments("/invokeBlueprintOptimizationAsync");
-                                   }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/invokeBlueprintOptimizationAsync");
+                                             });
+        return result.IsSuccess() ? InvokeBlueprintOptimizationAsyncOutcome(result.GetResultWithOwnership())
+                                  : InvokeBlueprintOptimizationAsyncOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -464,9 +479,11 @@ ListBlueprintsOutcome BedrockDataAutomationClient::ListBlueprints(const ListBlue
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListBlueprintsOutcome>(
       [&]() -> ListBlueprintsOutcome {
-        return ListBlueprintsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/blueprints/"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/blueprints/"); });
+        return result.IsSuccess() ? ListBlueprintsOutcome(result.GetResultWithOwnership())
+                                  : ListBlueprintsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -488,9 +505,11 @@ ListDataAutomationProjectsOutcome BedrockDataAutomationClient::ListDataAutomatio
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListDataAutomationProjectsOutcome>(
       [&]() -> ListDataAutomationProjectsOutcome {
-        return ListDataAutomationProjectsOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/data-automation-projects/"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/data-automation-projects/"); });
+        return result.IsSuccess() ? ListDataAutomationProjectsOutcome(result.GetResultWithOwnership())
+                                  : ListDataAutomationProjectsOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -511,9 +530,11 @@ ListTagsForResourceOutcome BedrockDataAutomationClient::ListTagsForResource(cons
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
       [&]() -> ListTagsForResourceOutcome {
-        return ListTagsForResourceOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/listTagsForResource"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/listTagsForResource"); });
+        return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                                  : ListTagsForResourceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -534,9 +555,10 @@ TagResourceOutcome BedrockDataAutomationClient::TagResource(const TagResourceReq
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
       [&]() -> TagResourceOutcome {
-        return TagResourceOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/tagResource"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/tagResource"); });
+        return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -557,9 +579,11 @@ UntagResourceOutcome BedrockDataAutomationClient::UntagResource(const UntagResou
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
       [&]() -> UntagResourceOutcome {
-        return UntagResourceOutcome(MakeRequestDeserialize(
+        auto result = MakeRequestDeserialize(
             &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/untagResource"); }));
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/untagResource"); });
+        return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership())
+                                  : UntagResourceOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -585,11 +609,13 @@ UpdateBlueprintOutcome BedrockDataAutomationClient::UpdateBlueprint(const Update
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateBlueprintOutcome>(
       [&]() -> UpdateBlueprintOutcome {
-        return UpdateBlueprintOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
-                                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                               resolvedEndpoint.AddPathSegments("/blueprints/");
-                                                               resolvedEndpoint.AddPathSegment(request.GetBlueprintArn());
-                                                             }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/blueprints/");
+                                               resolvedEndpoint.AddPathSegment(request.GetBlueprintArn());
+                                             });
+        return result.IsSuccess() ? UpdateBlueprintOutcome(result.GetResultWithOwnership())
+                                  : UpdateBlueprintOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -616,12 +642,13 @@ UpdateDataAutomationProjectOutcome BedrockDataAutomationClient::UpdateDataAutoma
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<UpdateDataAutomationProjectOutcome>(
       [&]() -> UpdateDataAutomationProjectOutcome {
-        return UpdateDataAutomationProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(),
-                                                                         Aws::Http::HttpMethod::HTTP_PUT,
-                                                                         [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                                                           resolvedEndpoint.AddPathSegments("/data-automation-projects/");
-                                                                           resolvedEndpoint.AddPathSegment(request.GetProjectArn());
-                                                                         }));
+        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+                                               resolvedEndpoint.AddPathSegments("/data-automation-projects/");
+                                               resolvedEndpoint.AddPathSegment(request.GetProjectArn());
+                                             });
+        return result.IsSuccess() ? UpdateDataAutomationProjectOutcome(result.GetResultWithOwnership())
+                                  : UpdateDataAutomationProjectOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
