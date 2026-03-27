@@ -10,6 +10,7 @@
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
 #include <aws/timestream-influxdb/model/FailoverMode.h>
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
+#include <aws/timestream-influxdb/model/MaintenanceSchedule.h>
 
 #include <utility>
 
@@ -134,6 +135,25 @@ class UpdateDbClusterRequest : public TimestreamInfluxDBRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the maintenance schedule for the DB cluster, including the
+   * preferred maintenance window and timezone.</p>
+   */
+  inline const MaintenanceSchedule& GetMaintenanceSchedule() const { return m_maintenanceSchedule; }
+  inline bool MaintenanceScheduleHasBeenSet() const { return m_maintenanceScheduleHasBeenSet; }
+  template <typename MaintenanceScheduleT = MaintenanceSchedule>
+  void SetMaintenanceSchedule(MaintenanceScheduleT&& value) {
+    m_maintenanceScheduleHasBeenSet = true;
+    m_maintenanceSchedule = std::forward<MaintenanceScheduleT>(value);
+  }
+  template <typename MaintenanceScheduleT = MaintenanceSchedule>
+  UpdateDbClusterRequest& WithMaintenanceSchedule(MaintenanceScheduleT&& value) {
+    SetMaintenanceSchedule(std::forward<MaintenanceScheduleT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dbClusterId;
 
@@ -146,12 +166,15 @@ class UpdateDbClusterRequest : public TimestreamInfluxDBRequest {
   DbInstanceType m_dbInstanceType{DbInstanceType::NOT_SET};
 
   FailoverMode m_failoverMode{FailoverMode::NOT_SET};
+
+  MaintenanceSchedule m_maintenanceSchedule;
   bool m_dbClusterIdHasBeenSet = false;
   bool m_logDeliveryConfigurationHasBeenSet = false;
   bool m_dbParameterGroupIdentifierHasBeenSet = false;
   bool m_portHasBeenSet = false;
   bool m_dbInstanceTypeHasBeenSet = false;
   bool m_failoverModeHasBeenSet = false;
+  bool m_maintenanceScheduleHasBeenSet = false;
 };
 
 }  // namespace Model

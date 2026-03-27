@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
@@ -13,6 +14,7 @@
 #include <aws/timestream-influxdb/model/DeploymentType.h>
 #include <aws/timestream-influxdb/model/InstanceMode.h>
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
+#include <aws/timestream-influxdb/model/MaintenanceSchedule.h>
 #include <aws/timestream-influxdb/model/NetworkType.h>
 #include <aws/timestream-influxdb/model/Status.h>
 
@@ -419,6 +421,59 @@ class UpdateDbInstanceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The maintenance schedule for the DB instance.</p>
+   */
+  inline const MaintenanceSchedule& GetMaintenanceSchedule() const { return m_maintenanceSchedule; }
+  template <typename MaintenanceScheduleT = MaintenanceSchedule>
+  void SetMaintenanceSchedule(MaintenanceScheduleT&& value) {
+    m_maintenanceScheduleHasBeenSet = true;
+    m_maintenanceSchedule = std::forward<MaintenanceScheduleT>(value);
+  }
+  template <typename MaintenanceScheduleT = MaintenanceSchedule>
+  UpdateDbInstanceResult& WithMaintenanceSchedule(MaintenanceScheduleT&& value) {
+    SetMaintenanceSchedule(std::forward<MaintenanceScheduleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of the last completed maintenance operation on the DB
+   * instance.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastMaintenanceTime() const { return m_lastMaintenanceTime; }
+  template <typename LastMaintenanceTimeT = Aws::Utils::DateTime>
+  void SetLastMaintenanceTime(LastMaintenanceTimeT&& value) {
+    m_lastMaintenanceTimeHasBeenSet = true;
+    m_lastMaintenanceTime = std::forward<LastMaintenanceTimeT>(value);
+  }
+  template <typename LastMaintenanceTimeT = Aws::Utils::DateTime>
+  UpdateDbInstanceResult& WithLastMaintenanceTime(LastMaintenanceTimeT&& value) {
+    SetLastMaintenanceTime(std::forward<LastMaintenanceTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of the next scheduled maintenance operation on the DB
+   * instance.</p>
+   */
+  inline const Aws::Utils::DateTime& GetNextMaintenanceTime() const { return m_nextMaintenanceTime; }
+  template <typename NextMaintenanceTimeT = Aws::Utils::DateTime>
+  void SetNextMaintenanceTime(NextMaintenanceTimeT&& value) {
+    m_nextMaintenanceTimeHasBeenSet = true;
+    m_nextMaintenanceTime = std::forward<NextMaintenanceTimeT>(value);
+  }
+  template <typename NextMaintenanceTimeT = Aws::Utils::DateTime>
+  UpdateDbInstanceResult& WithNextMaintenanceTime(NextMaintenanceTimeT&& value) {
+    SetNextMaintenanceTime(std::forward<NextMaintenanceTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -479,6 +534,12 @@ class UpdateDbInstanceResult {
 
   Aws::Vector<InstanceMode> m_instanceModes;
 
+  MaintenanceSchedule m_maintenanceSchedule;
+
+  Aws::Utils::DateTime m_lastMaintenanceTime{};
+
+  Aws::Utils::DateTime m_nextMaintenanceTime{};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_idHasBeenSet = false;
@@ -503,6 +564,9 @@ class UpdateDbInstanceResult {
   bool m_dbClusterIdHasBeenSet = false;
   bool m_instanceModeHasBeenSet = false;
   bool m_instanceModesHasBeenSet = false;
+  bool m_maintenanceScheduleHasBeenSet = false;
+  bool m_lastMaintenanceTimeHasBeenSet = false;
+  bool m_nextMaintenanceTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

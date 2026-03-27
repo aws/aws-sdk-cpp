@@ -11,6 +11,7 @@
 #include <aws/timestream-influxdb/model/DbStorageType.h>
 #include <aws/timestream-influxdb/model/DeploymentType.h>
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
+#include <aws/timestream-influxdb/model/MaintenanceSchedule.h>
 
 #include <utility>
 
@@ -175,6 +176,25 @@ class UpdateDbInstanceRequest : public TimestreamInfluxDBRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the maintenance schedule for the DB instance, including the
+   * preferred maintenance window and timezone.</p>
+   */
+  inline const MaintenanceSchedule& GetMaintenanceSchedule() const { return m_maintenanceSchedule; }
+  inline bool MaintenanceScheduleHasBeenSet() const { return m_maintenanceScheduleHasBeenSet; }
+  template <typename MaintenanceScheduleT = MaintenanceSchedule>
+  void SetMaintenanceSchedule(MaintenanceScheduleT&& value) {
+    m_maintenanceScheduleHasBeenSet = true;
+    m_maintenanceSchedule = std::forward<MaintenanceScheduleT>(value);
+  }
+  template <typename MaintenanceScheduleT = MaintenanceSchedule>
+  UpdateDbInstanceRequest& WithMaintenanceSchedule(MaintenanceScheduleT&& value) {
+    SetMaintenanceSchedule(std::forward<MaintenanceScheduleT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identifier;
 
@@ -191,6 +211,8 @@ class UpdateDbInstanceRequest : public TimestreamInfluxDBRequest {
   DbStorageType m_dbStorageType{DbStorageType::NOT_SET};
 
   int m_allocatedStorage{0};
+
+  MaintenanceSchedule m_maintenanceSchedule;
   bool m_identifierHasBeenSet = false;
   bool m_logDeliveryConfigurationHasBeenSet = false;
   bool m_dbParameterGroupIdentifierHasBeenSet = false;
@@ -199,6 +221,7 @@ class UpdateDbInstanceRequest : public TimestreamInfluxDBRequest {
   bool m_deploymentTypeHasBeenSet = false;
   bool m_dbStorageTypeHasBeenSet = false;
   bool m_allocatedStorageHasBeenSet = false;
+  bool m_maintenanceScheduleHasBeenSet = false;
 };
 
 }  // namespace Model

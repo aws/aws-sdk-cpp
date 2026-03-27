@@ -22,6 +22,10 @@ S3Destination& S3Destination::operator=(JsonView jsonValue) {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
     m_s3BucketHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("S3BucketOwner")) {
+    m_s3BucketOwner = jsonValue.GetString("S3BucketOwner");
+    m_s3BucketOwnerHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("S3Prefix")) {
     m_s3Prefix = jsonValue.GetString("S3Prefix");
     m_s3PrefixHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue S3Destination::Jsonize() const {
 
   if (m_s3BucketHasBeenSet) {
     payload.WithString("S3Bucket", m_s3Bucket);
+  }
+
+  if (m_s3BucketOwnerHasBeenSet) {
+    payload.WithString("S3BucketOwner", m_s3BucketOwner);
   }
 
   if (m_s3PrefixHasBeenSet) {

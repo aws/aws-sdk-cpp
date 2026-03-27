@@ -3889,7 +3889,7 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
    * cross-account observability</a>. For a cross-account <code>StartQuery</code>
    * operation, the query definition must be defined in the monitoring account.</p>
-   * <p>You can have up to 30 concurrent CloudWatch Logs insights queries, including
+   * <p>You can have up to 100 concurrent CloudWatch Logs insights queries, including
    * queries that have been added to dashboards. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
    * Reference</a></p>

@@ -77,7 +77,7 @@ class CreateScheduledQueryRequest : public CloudWatchLogsRequest {
   ///@{
   /**
    * <p>The query language to use for the scheduled query. Valid values are
-   * <code>LogsQL</code>, <code>PPL</code>, and <code>SQL</code>.</p>
+   * <code>CWLI</code>, <code>PPL</code>, and <code>SQL</code>.</p>
    */
   inline QueryLanguage GetQueryLanguage() const { return m_queryLanguage; }
   inline bool QueryLanguageHasBeenSet() const { return m_queryLanguageHasBeenSet; }

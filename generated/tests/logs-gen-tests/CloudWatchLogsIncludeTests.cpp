@@ -289,6 +289,7 @@
 #include <aws/logs/model/QueryDefinition.h>
 #include <aws/logs/model/QueryInfo.h>
 #include <aws/logs/model/QueryLanguage.h>
+#include <aws/logs/model/QueryParameter.h>
 #include <aws/logs/model/QueryStatistics.h>
 #include <aws/logs/model/QueryStatus.h>
 #include <aws/logs/model/RecordField.h>

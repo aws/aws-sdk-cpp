@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
+#include <aws/timestream-influxdb/model/ClusterConfiguration.h>
 #include <aws/timestream-influxdb/model/ClusterDeploymentType.h>
 #include <aws/timestream-influxdb/model/ClusterStatus.h>
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
@@ -15,6 +17,7 @@
 #include <aws/timestream-influxdb/model/EngineType.h>
 #include <aws/timestream-influxdb/model/FailoverMode.h>
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
+#include <aws/timestream-influxdb/model/MaintenanceSchedule.h>
 #include <aws/timestream-influxdb/model/NetworkType.h>
 
 #include <utility>
@@ -298,6 +301,59 @@ class GetDbClusterResult {
 
   ///@{
   /**
+   * <p>The maintenance schedule for the DB cluster.</p>
+   */
+  inline const MaintenanceSchedule& GetMaintenanceSchedule() const { return m_maintenanceSchedule; }
+  template <typename MaintenanceScheduleT = MaintenanceSchedule>
+  void SetMaintenanceSchedule(MaintenanceScheduleT&& value) {
+    m_maintenanceScheduleHasBeenSet = true;
+    m_maintenanceSchedule = std::forward<MaintenanceScheduleT>(value);
+  }
+  template <typename MaintenanceScheduleT = MaintenanceSchedule>
+  GetDbClusterResult& WithMaintenanceSchedule(MaintenanceScheduleT&& value) {
+    SetMaintenanceSchedule(std::forward<MaintenanceScheduleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of the last completed maintenance operation on the DB
+   * cluster.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastMaintenanceTime() const { return m_lastMaintenanceTime; }
+  template <typename LastMaintenanceTimeT = Aws::Utils::DateTime>
+  void SetLastMaintenanceTime(LastMaintenanceTimeT&& value) {
+    m_lastMaintenanceTimeHasBeenSet = true;
+    m_lastMaintenanceTime = std::forward<LastMaintenanceTimeT>(value);
+  }
+  template <typename LastMaintenanceTimeT = Aws::Utils::DateTime>
+  GetDbClusterResult& WithLastMaintenanceTime(LastMaintenanceTimeT&& value) {
+    SetLastMaintenanceTime(std::forward<LastMaintenanceTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of the next scheduled maintenance operation on the DB
+   * cluster.</p>
+   */
+  inline const Aws::Utils::DateTime& GetNextMaintenanceTime() const { return m_nextMaintenanceTime; }
+  template <typename NextMaintenanceTimeT = Aws::Utils::DateTime>
+  void SetNextMaintenanceTime(NextMaintenanceTimeT&& value) {
+    m_nextMaintenanceTimeHasBeenSet = true;
+    m_nextMaintenanceTime = std::forward<NextMaintenanceTimeT>(value);
+  }
+  template <typename NextMaintenanceTimeT = Aws::Utils::DateTime>
+  GetDbClusterResult& WithNextMaintenanceTime(NextMaintenanceTimeT&& value) {
+    SetNextMaintenanceTime(std::forward<NextMaintenanceTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the
    * initial InfluxDB authorization parameters. The secret value is a JSON formatted
    * key-value pair holding InfluxDB authorization values: organization, bucket,
@@ -378,6 +434,23 @@ class GetDbClusterResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Configuration for node modes in the DbCluster.</p>
+   */
+  inline const ClusterConfiguration& GetClusterConfiguration() const { return m_clusterConfiguration; }
+  template <typename ClusterConfigurationT = ClusterConfiguration>
+  void SetClusterConfiguration(ClusterConfigurationT&& value) {
+    m_clusterConfigurationHasBeenSet = true;
+    m_clusterConfiguration = std::forward<ClusterConfigurationT>(value);
+  }
+  template <typename ClusterConfigurationT = ClusterConfiguration>
+  GetDbClusterResult& WithClusterConfiguration(ClusterConfigurationT&& value) {
+    SetClusterConfiguration(std::forward<ClusterConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -426,6 +499,12 @@ class GetDbClusterResult {
 
   LogDeliveryConfiguration m_logDeliveryConfiguration;
 
+  MaintenanceSchedule m_maintenanceSchedule;
+
+  Aws::Utils::DateTime m_lastMaintenanceTime{};
+
+  Aws::Utils::DateTime m_nextMaintenanceTime{};
+
   Aws::String m_influxAuthParametersSecretArn;
 
   Aws::Vector<Aws::String> m_vpcSubnetIds;
@@ -433,6 +512,8 @@ class GetDbClusterResult {
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
 
   FailoverMode m_failoverMode{FailoverMode::NOT_SET};
+
+  ClusterConfiguration m_clusterConfiguration;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
@@ -452,10 +533,14 @@ class GetDbClusterResult {
   bool m_publiclyAccessibleHasBeenSet = false;
   bool m_dbParameterGroupIdentifierHasBeenSet = false;
   bool m_logDeliveryConfigurationHasBeenSet = false;
+  bool m_maintenanceScheduleHasBeenSet = false;
+  bool m_lastMaintenanceTimeHasBeenSet = false;
+  bool m_nextMaintenanceTimeHasBeenSet = false;
   bool m_influxAuthParametersSecretArnHasBeenSet = false;
   bool m_vpcSubnetIdsHasBeenSet = false;
   bool m_vpcSecurityGroupIdsHasBeenSet = false;
   bool m_failoverModeHasBeenSet = false;
+  bool m_clusterConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

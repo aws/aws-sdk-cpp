@@ -45,6 +45,13 @@ QueryDefinition& QueryDefinition::operator=(JsonView jsonValue) {
     }
     m_logGroupNamesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("parameters")) {
+    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
+      m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
+    }
+    m_parametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,6 +84,14 @@ JsonValue QueryDefinition::Jsonize() const {
       logGroupNamesJsonList[logGroupNamesIndex].AsString(m_logGroupNames[logGroupNamesIndex]);
     }
     payload.WithArray("logGroupNames", std::move(logGroupNamesJsonList));
+  }
+
+  if (m_parametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
+      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+    }
+    payload.WithArray("parameters", std::move(parametersJsonList));
   }
 
   return payload;
